@@ -4,7 +4,7 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25.
 
 ## Phase
 
-The working protocol (AGENTS.md) and the check suite (`npm run check`) are set up. The disclosure scorecard tab is being built: `scorecard.js` and edits to `app.js`, `index.html` and `styles.css` sit uncommitted in the main folder and are not part of the protocol work.
+The working protocol (AGENTS.md) and the check suite (`npm run check`) are set up. The disclosure scorecard tab (`scorecard.js`, `data/scorecard.json`) and the fund-vote (N-PX) review script (`scripts/npx_votes.py`) landed on `main` from another session the same day.
 
 ## Live
 
@@ -12,16 +12,16 @@ The working protocol (AGENTS.md) and the check suite (`npm run check`) are set u
 - Public site: https://sophiaquinlanware.github.io/shareholder-advocacy-ai-landscape/ once GitHub Pages is on. Publishing waits on the repo variable `PAGES_ENABLED` = `"true"` (ADR 0001).
 - Weekly refresh: every Monday 13:00 UTC, `.github/workflows/refresh.yml` runs the EDGAR scripts and commits `data/` to `main`.
 
-## Latest check (2026-11-25, `main` at f126e29 plus the protocol files)
+## Latest check (2026-11-25, `main` at 74cbf0f merged with the protocol files)
 
 | Step | Result |
 |---|---|
-| Lint (Biome + Python compile) | pass (42 warnings in existing site files, 0 errors) |
-| Build | pass: 11 data files valid, all linked files present |
+| Lint (Biome + Python compile) | pass (48 warnings in existing site files, 0 errors) |
+| Build | pass: 12 data files valid, all linked files present |
 | Layout: 11 tabs × 1440/390 px × light/dark | pass: no overlapping text, no sideways scrolling |
 | Load errors and local links | **fail**: queue items 1 and 2 |
-| Lighthouse phone | accessibility 100, best practices 96, SEO 100, **performance 77** (bar 80) |
-| Lighthouse desktop | accessibility 100, best practices 96, SEO 100, **performance 68** (bar 80) |
+| Lighthouse phone | accessibility 100, best practices 96, SEO 100, **performance 76** (bar 80) |
+| Lighthouse desktop | accessibility 100, best practices 96, SEO 100, **performance 60** (bar 80) |
 | Outside links (`check:links`, 416 URLs, run before the 406 fix) | 395 ok, 14 refused robots, 3 to check by hand (queue item 4) |
 
 ## Latest review scores
