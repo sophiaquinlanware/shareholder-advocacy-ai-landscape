@@ -11,6 +11,15 @@ on:
   schedule:
     - cron: "0 13 * * 1"
   workflow_dispatch:
+    inputs:
+      task:
+        description: "What to run: refresh (default) or fund-votes (private review, not published)"
+        required: false
+        default: refresh
+      families:
+        description: "For fund-votes: limit to these fund families, comma separated (blank = all)"
+        required: false
+        default: ""
   push:
     branches: [main]
 
@@ -25,7 +34,7 @@ concurrency:
 
 jobs:
   refresh:
-    if: github.event_name != 'push'
+    if: github.event_name != 'push' && (github.event_name != 'workflow_dispatch' || inputs.task != 'fund-votes')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -46,6 +55,28 @@ jobs:
           git add data/
           git diff --cached --quiet || git commit -m "Weekly refresh: $(date -u +%Y-%m-%d)"
           git push
+
+  # Fund votes from Form N-PX, for REVIEW before anything goes on the site.
+  # Nothing is committed or published. The raw result (public SEC data, no commentary)
+  # is kept as a run artifact for 2 days; on a public repo, signed-in GitHub users can download it.
+  fund-votes:
+    if: github.event_name == 'workflow_dispatch' && inputs.task == 'fund-votes'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Read fund votes from SEC Form N-PX
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: python scripts/npx_votes.py --out fund_votes_review.json --families "${{ inputs.families }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fund-votes-review
+          path: fund_votes_review.json
+          retention-days: 2
 
   deploy:
     needs: refresh

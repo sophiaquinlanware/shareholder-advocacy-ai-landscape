@@ -164,12 +164,15 @@ def main():
     # Proposals from the SEC research that the network file does not have yet.
     org_names = {n["id"]: n["label"].lower() for n in nodes.values() if n["type"] in ("investor", "coalition")}
     net_props = [n for n in nodes.values() if n["type"] == "proposal"]
+    covered = set()  # network proposals already paired with an SEC record
     for p in load("proposals.json").get("proposals", []):
         if p["id"] in nodes:
             continue
-        twin = next((n for n in net_props if n.get("company") == p["company"] and n.get("year") == p["year"]
-                     and similar(n["label"].split(": ", 1)[-1], p["title"])), None)
+        cands = [n for n in net_props if n["id"] not in covered and n.get("company") == p["company"] and n.get("year") == p["year"]
+                 and similar(n["label"].split(": ", 1)[-1], p["title"])]
+        twin = max(cands, key=lambda n: len(words(n["label"]) & words(p["title"])), default=None)
         if twin:
+            covered.add(twin["id"])
             for k in ("support_pct", "status", "subtopic"):
                 if p.get(k) is not None and twin.get(k) in (None, "", "UNVERIFIED"):
                     twin[k] = p[k]
@@ -192,6 +195,27 @@ def main():
             core = name.replace(" asset management", "").replace(" investments", "")
             if len(core) > 3 and core in filer:
                 edge(oid, "co-" + (x.get("ticker") or "").upper(), "exempt solicitation " + (x.get("position") or "").lower(), "proposals", x.get("url"))
+
+    # One canonical proposal list, so the feed and the graph always agree.
+    # SEC vote details stay on the SEC records; proposals only the filer network found are added.
+    pj = load("proposals.json")
+    known = {p["id"] for p in pj.get("proposals", [])}
+    twins_of = {}
+    for p in pj.get("proposals", []):
+        twins_of[p["id"]] = p
+    merged_ids = set()
+    for n in nodes.values():
+        if n["type"] != "proposal" or n["id"] in known or n["id"] in covered:
+            continue
+        pj.setdefault("proposals", []).append({
+            "id": n["id"], "company": n.get("company"), "year": n.get("year"),
+            "title": n["label"].split(": ", 1)[-1], "topic": n.get("topic"), "subtopic": n.get("subtopic"),
+            "status": n.get("status"), "support_pct": n.get("support_pct"), "proxy_url": n.get("source_url"),
+            "source": "filer network research"})
+        merged_ids.add(n["id"])
+    if merged_ids:
+        (DATA / "proposals.json").write_text(json.dumps(pj, indent=1, ensure_ascii=False) + "\n")
+        print(f"  added {len(merged_ids)} proposals to proposals.json from the filer network")
 
     # Degree, for sizing dots.
     deg = defaultdict(int)
