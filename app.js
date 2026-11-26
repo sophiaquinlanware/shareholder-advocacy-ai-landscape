@@ -655,7 +655,17 @@ function renderStart() {
 // Old addresses for views that were renamed or folded into another view.
 const TAB_ALIASES = { why: "causality", "weigh-in": "upcoming", water: "upcoming", overview: "start" };
 const lastView = {}; // per section, the view last open in it
+// Tab switches crossfade with the View Transitions API (motion brief stage 7) where the browser has it, except
+// under reduced motion, on the first paint, and in automated test browsers (navigator.webdriver), where the
+// switch must be synchronous.
+let tabsReady = false;
 function showTab(name, focus = false) {
+  const vt = tabsReady && document.startViewTransition && !navigator.webdriver && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  tabsReady = true;
+  if (vt) document.startViewTransition(() => applyTab(name, focus));
+  else applyTab(name, focus);
+}
+function applyTab(name, focus = false) {
   name = TAB_ALIASES[name] || name;
   let panel = document.getElementById("tab-" + name);
   if (!name || !panel || !panel.dataset.group) { name = "start"; panel = document.getElementById("tab-start"); }
@@ -681,6 +691,8 @@ function showTab(name, focus = false) {
   const vBtn = document.querySelector(`#grp-${group} [role="tab"][data-tab="${name}"]`);
   // A section with one view has no view tab: keep focus on the section tab so it never drops to the page.
   if (focus === true && !vBtn && gBtn) gBtn.focus();
+  // Phones: the view tabs scroll sideways; bring the open one into sight.
+  if (vBtn && vBtn.parentElement && vBtn.parentElement.scrollWidth > vBtn.parentElement.clientWidth) vBtn.parentElement.scrollLeft = Math.max(0, vBtn.offsetLeft - 16);
   if (stuck && gBtn) stuck.textContent = gBtn.textContent + (vBtn ? ` · ${vBtn.textContent}` : "");
   try { if (location.hash.slice(1) !== name) window.history.replaceState(null, "", "#" + name); } catch (e) {}
   // Motion stage 2 (motion.js): the newly shown page's heading reveals line by line.

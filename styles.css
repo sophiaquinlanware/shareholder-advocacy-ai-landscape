@@ -589,3 +589,56 @@ select { -webkit-appearance: none; appearance: none; background-image: url("data
 @media (min-width: 641px) { .tabs .tab-row[role="tablist"] > button { padding-left: 7px; padding-right: 7px; letter-spacing: .02em; } }
 .eng-steps { margin: 4px 0 2px; padding-left: 18px; font-size: 12.5px; }
 .eng-steps li { border: 0; padding: 2px 0; }
+
+/* ---------- Motion brief stages 4–10 (motion-layer.js, quicksearch.js) ---------- */
+/* Stage 7: tab switches crossfade (View Transitions); skeletons instead of empty panels while data loads. */
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: var(--dur-micro); animation-timing-function: var(--ease); }
+.panel:empty:not([hidden])::before { content: ""; display: block; height: 260px; margin-top: var(--s-3); border-radius: var(--radius);
+  background: linear-gradient(#eeeeee, #eeeeee) 0 0 / 40% 22px no-repeat, linear-gradient(#f3f3f3, #f3f3f3) 0 44px / 90% 14px no-repeat,
+    linear-gradient(#f3f3f3, #f3f3f3) 0 70px / 80% 14px no-repeat, linear-gradient(#f5f5f5, #f5f5f5) 0 110px / 100% 150px no-repeat;
+  animation: skeleton-pulse 1.4s var(--ease) infinite alternate; }
+@keyframes skeleton-pulse { from { opacity: 1; } to { opacity: .45; } }
+/* Stage 8: micro-interactions. Links draw a thin accent underline left to right on hover; cards lift 3px; buttons
+   press to 0.98; table rows highlight; status pills are soft chips. */
+a { text-decoration-color: color-mix(in srgb, currentColor 55%, transparent); text-underline-offset: 2px; transition: text-decoration-color var(--dur-micro) var(--ease); }
+@media (hover: hover) {
+  a:hover { text-decoration-color: currentColor; }
+  .finding { transition: transform var(--dur-micro) var(--ease), box-shadow var(--dur-micro) var(--ease); }
+  .finding:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 0, 0, .08); }
+  tbody tr:hover { background: #f6f8fb; }
+}
+button { transition: transform 120ms var(--ease); }
+button:active:not([disabled]) { transform: scale(.98); }
+.pill { border-color: var(--control-edge); font-weight: 400; }
+/* Thin scroll-progress bar on long pages (transform only). */
+.scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; background: var(--accent); transform-origin: 0 50%; transform: scaleX(0); z-index: 50; pointer-events: none; transition: opacity var(--dur-micro) var(--ease); }
+/* Stage 9: quick search. */
+.site-header .wrap { position: relative; }
+.qs-open { position: absolute; right: 16px; top: var(--s-4); }
+.qs-open kbd { font: 11px var(--sans); color: var(--ink-soft); border: 1px solid var(--control-edge); border-radius: 3px; padding: 0 4px; }
+.qs-backdrop { position: fixed; inset: 0; background: rgba(20, 20, 20, .35); z-index: 100; display: flex; justify-content: center; align-items: flex-start; padding: 12vh 16px 0; }
+.qs-backdrop[hidden] { display: none; }
+.qs { width: min(640px, 100%); background: var(--surface); border-radius: 8px; box-shadow: 0 20px 60px rgba(0, 0, 0, .3); overflow: hidden; }
+.qs-input { width: 100%; font: 17px var(--sans); border: 0; border-bottom: 1px solid var(--line); padding: 16px 18px; outline: none; }
+.qs-list { list-style: none; margin: 0; padding: 6px 0; max-height: 50vh; overflow-y: auto; }
+.qs-list li { padding: 9px 18px; cursor: pointer; font-size: 14px; }
+.qs-list li[aria-selected="true"] { background: var(--accent-soft); }
+.qs-kind { display: inline-block; min-width: 92px; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); }
+.qs-none { color: var(--ink-soft); }
+.qs-hint { margin: 0; padding: 8px 18px; font-size: 12px; color: var(--ink-soft); border-top: 1px solid var(--line); }
+/* Stage 10: phones turn ordinary tables into stacked cards, each cell labelled with its column. */
+@media (max-width: 640px) {
+  .qs-open { position: static; margin-bottom: 8px; }
+  table.as-cards, table.as-cards tbody, table.as-cards tr, table.as-cards td { display: block; width: auto; }
+  table.as-cards thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  table.as-cards tr { border-bottom: 1px solid var(--control-edge); padding: 8px 10px; }
+  table.as-cards td { border: 0; padding: 3px 0; }
+  table.as-cards td[data-col]::before { content: attr(data-col); display: block; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); }
+  table.as-cards td:empty { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel:empty:not([hidden])::before { animation: none; }
+  .finding:hover { transform: none; }
+  button:active:not([disabled]) { transform: none; }
+}
+@media (hover: none) { .qs-open kbd { display: none; } }

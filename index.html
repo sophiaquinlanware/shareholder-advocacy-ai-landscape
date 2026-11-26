@@ -21,6 +21,7 @@
 <body>
 <header class="site-header">
   <div class="wrap">
+    <button type="button" class="tool qs-open" aria-keyshortcuts="Meta+K Control+K">Search <kbd>⌘K</kbd></button>
     <h1>Shareholder advocacy on AI</h1>
     <p class="tagline">For investors engaging companies on responsible AI: what is on the ballot, what has been asked, where you have leverage, and who else is doing the work.</p>
     <p class="meta" id="last-updated"></p>
@@ -123,6 +124,8 @@
 <!-- d3 loads in parallel and never blocks the first tables; app.js waits for it before drawing graphs. -->
 <script id="d3js" async src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script defer src="motion.js"></script>
+<script defer src="motion-layer.js"></script>
+<script defer src="quicksearch.js"></script>
 <script defer src="roles.js"></script>
 <script defer src="rules.js"></script>
 <script defer src="lenses.js"></script>
