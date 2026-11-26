@@ -4,7 +4,7 @@
 // Audience: shareholder-advocacy practitioners. Labels are plain; no definitions or explainers.
 
 const DATA = {};
-const FILES = ["site", "companies", "upcoming", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph", "scorecard", "fund_votes", "asks", "coverage", "value_chain", "holdings"];
+const FILES = ["site", "companies", "upcoming", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph", "scorecard", "fund_votes", "asks", "coverage", "value_chain"];
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
@@ -619,7 +619,7 @@ function renderStart() {
     .map((c) => ({ date: c.next_proposal_deadline, html: `<strong>${esc(c.name)}</strong>: last day to submit a proposal for the next meeting, ${esc(fmtDate(c.next_proposal_deadline))}${src(c.next_proposal_deadline_source, "proxy")}`, ticker: realTicker(c.ticker), kind: "Filing deadline" }));
   const coming = [...ballots, ...deadlines].sort((a, b) => String(a.date).localeCompare(String(b.date)));
   const shown = coming.slice(0, 8);
-  const comingList = shown.map((x) => `<li><span class="kind">${esc(x.kind)}</span> ${x.html}${x.ticker ? ` <button type="button" class="linklike" data-co="${esc(x.ticker)}">${esc(companyName(x.ticker))} profile</button> · <a href="?plan=${encodeURIComponent(keyForTicker(x.ticker))}#planner">Plan an engagement here</a>` : ""}</li>`).join("");
+  const comingList = shown.map((x) => `<li><span class="kind">${esc(x.kind)}</span> ${x.html}${x.ticker ? ` <button type="button" class="linklike" data-co="${esc(x.ticker)}">${esc(companyName(x.ticker))} profile</button>` : ""}</li>`).join("");
   const items = ((DATA.changes && DATA.changes.items) || []).slice().sort((a, b) => String(b.filed).localeCompare(String(a.filed)));
   const t = DATA.tracking || {};
   const sections = [...document.querySelectorAll('.tabs [role="tab"][data-group]')].slice(1).map((b) => {
@@ -628,17 +628,22 @@ function renderStart() {
     const first = (document.querySelector(`#grp-${g} .panel`) || {}).id.slice(4);
     return `<li><a href="#${esc(first)}">${esc(b.textContent)}</a>: ${esc(q)}</li>`;
   }).join("");
+  const filings = `<p class="count-line">Checked ${esc(t.last_checked ? fmtDate(t.last_checked.slice(0, 10)) : "not yet")}${t.new_this_run != null ? `: ${plural(t.new_this_run, "new filing")} found` : ""}. Found automatically and not yet reviewed.</p>
+    ${items.length ? `<p><a href="#new">See the ${plural(items.length, "new filing")}</a></p>` : ""}`;
+  // The second pass (after the weekly SEC check has loaded) updates only the filings block, so the rest of the
+  // page, including its largest text, is painted once and not redrawn.
+  const box = document.getElementById("start-new");
+  if (box) { box.innerHTML = filings; return; }
   el.innerHTML = `
     <h2>Key dates and findings</h2>
     <p class="intro">Dates you can act on, three things the data shows, and what each section of the site is for.</p>
     <h3 class="sub-h">Coming up</h3>
     ${comingList ? `<ul class="steps coming-up">${comingList}</ul>` : `<p class="status-note">No ballots or open filing deadlines on file.</p>`}
-    <p><a href="#upcoming">All upcoming votes</a>${coming.length > shown.length ? ` · ${coming.length - shown.length} more open filing deadlines are on each company's profile` : ""}</p>
+    <p><a href="#upcoming">All upcoming votes</a> · <a href="#planner">Plan an engagement at any of these companies</a>${coming.length > shown.length ? ` · ${coming.length - shown.length} more open filing deadlines are on each company's profile` : ""}</p>
     <h3 class="sub-h">What the data shows</h3>
     ${findings ? `<ul class="findings">${findings}</ul>` : `<p class="status-note">No findings recorded.</p>`}
     <h3 class="sub-h">New SEC filings</h3>
-    <p class="count-line">Checked ${esc(t.last_checked ? fmtDate(t.last_checked.slice(0, 10)) : "not yet")}${t.new_this_run != null ? `: ${plural(t.new_this_run, "new filing")} found` : ""}. Found automatically and not yet reviewed.</p>
-    ${items.length ? `<p><a href="#new">See the ${plural(items.length, "new filing")}</a></p>` : ""}
+    <div id="start-new">${filings}</div>
     <h3 class="sub-h">How this site is organized</h3>
     <ul class="steps">${sections}</ul>`;
   wireCompanyLinks(el);

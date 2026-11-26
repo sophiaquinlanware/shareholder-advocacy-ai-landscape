@@ -581,6 +581,7 @@ select { -webkit-appearance: none; appearance: none; background-image: url("data
   .pl-orgs, .pl-orgs tbody, .pl-orgs tr, .pl-orgs td { display: block; width: 100%; }
   .pl-orgs tr { border-top: 1px solid var(--line); padding: 10px 0; }
   .pl-orgs td { border: 0; padding: 4px 0; }
+  .pl-orgs td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); margin-bottom: 2px; }
 }
 /* Seven sections fit one row at desktop widths: slightly tighter tab spacing. */
 @media (min-width: 641px) { .tabs .tab-row[role="tablist"] > button { padding-left: 7px; padding-right: 7px; letter-spacing: .02em; } }

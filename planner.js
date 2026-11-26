@@ -77,7 +77,7 @@
     });
     const totals = new Map(D.asks.map((a) => [a.id, D.proposals.filter((p) => p.ask_id === a.id).length]));
     const head = cos.map((c) => `<th scope="col"><abbr title="${esc(c.name)}">${esc(tick(c))}</abbr></th>`).join("");
-    const rows = D.asks.map((a, r) => `<tr><th scope="row" class="pl-mx-row">${esc(a.label)} <span class="ticker">${totals.get(a.id)}</span></th>${cos.map((c, i) => {
+    const rows = D.asks.map((a, r) => `<tr><th scope="row" class="pl-mx-row">${esc(a.label)} <span class="ticker">${totals.get(a.id)} filed</span></th>${cos.map((c, i) => {
       const x = cell.get(a.id + "|" + tick(c));
       const on = S.co === (c.id || c.ticker) && S.ask === a.id;
       const label = `${a.label} at ${c.name}: ${x ? `filed ${plural(x.n, "time")}${x.best != null ? `, highest support ${Math.round(x.best)}%` : ""}${x.up ? ", on the next ballot" : ""}` : "not filed in this dataset"}`;
@@ -204,7 +204,8 @@
       const myC = idx.members.get(mine);
       cand.forEach((x) => [...(idx.members.get(x.org) || [])].filter((k) => myC.has(k)).forEach((k) => add(x.org, "coal", (idx.nodes.get(k) || {}).label || k, (idx.nodes.get(k) || {}).source_url)));
     }
-    const all = [...cand.values()].sort((a, b) => b.kinds.size - a.kinds.size || b.filings - a.filings || idx.nodes.get(a.org).label.localeCompare(idx.nodes.get(b.org).label));
+    const score = (x) => x.kinds.size - (x.kinds.has("coal") ? 1 : 0);
+    const all = [...cand.values()].sort((a, b) => score(b) - score(a) || b.filings - a.filings || idx.nodes.get(a.org).label.localeCompare(idx.nodes.get(b.org).label));
     const list = all.slice(0, S.showAll ? all.length : 20);
     const shortlist = getList();
     const rows = list.map((x) => {
@@ -219,7 +220,7 @@
         <td><button type="button" class="chip pl-add" data-org="${esc(x.org)}" aria-pressed="${inList}" aria-label="Shortlist ${esc(n.label)}">Shortlist</button></td></tr>`;
     }).join("");
     return `<section class="pl-card pl-wide" aria-labelledby="pl-h-who"><h3 id="pl-h-who" tabindex="-1">Organizations with a public record on this ask or at ${esc(c.name)}</h3>
-      <p class="status-note">Each organization is listed with the kinds of public record that apply: ${KINDS.map((k) => k.label.toLowerCase()).join("; ")}. Sorted by how many kinds apply, then by how many filings of this ask. A record shows what an organization has done, not whether it would work with you; this is a starting list for outreach, not a recommendation.</p>
+      <p class="status-note">Each organization is listed with the kinds of public record that apply: ${KINDS.map((k) => k.label.toLowerCase()).join("; ")}. Sorted by how many kinds apply (a shared coalition is shown but does not count), then by how many filings of this ask. A record shows what an organization has done, not whether it would work with you; this is a starting list for outreach, not a recommendation.</p>
       <p class="count-line">Showing ${list.length} of ${all.length}.${all.length > 20 ? ` <button type="button" class="linklike" id="pl-more">${S.showAll ? "Show the first 20" : "Show all"}</button>` : ""}</p>
       ${rows ? `<div class="table-wrap"><table class="pl-orgs"><thead><tr><th scope="col">Organization</th><th scope="col">Public record</th><th scope="col">Engagement leads</th><th scope="col"><span class="visually-hidden">Shortlist</span></th></tr></thead><tbody>${rows}</tbody></table></div>` : `<p class="status-note">No organization in this dataset has filed, backed or voted for this ask, or reported holdings here.</p>`}
     </section>`;
@@ -307,7 +308,7 @@
       b.addEventListener("click", () => { S.co = b.dataset.co; S.ask = b.dataset.ask; sync(false); const again = out.querySelector('.pl-mx[aria-current="true"]'); if (again) again.focus(); });
       b.addEventListener("keydown", (e) => {
         const r = +b.dataset.r, ci = +b.dataset.c;
-        const to = { ArrowRight: [r, ci + 1], ArrowLeft: [r, ci - 1], ArrowDown: [r + 1, ci], ArrowUp: [r - 1, ci], Home: [r, 0] }[e.key];
+        const to = { ArrowRight: [r, ci + 1], ArrowLeft: [r, ci - 1], ArrowDown: [r + 1, ci], ArrowUp: [r - 1, ci], Home: [r, 0], End: [r, cells.filter((x) => +x.dataset.r === r).length - 1] }[e.key];
         if (!to) return;
         const n = at(to[0], to[1]);
         if (!n) return;
@@ -322,9 +323,9 @@
     const filings = D.proposals.filter((p) => p.ask_id === S.ask).length;
     if (status) status.textContent = `Plan for ${c.name}, ${askOf(S.ask).label}: ${plural(filings, "filing")} of this ask in this dataset.`;
   }
-  function sync(focus) {
+  function sync(focus, write = true) {
     ["pl-co", "pl-ask", "pl-mine"].forEach((id) => { const el = document.getElementById(id); if (el) el.value = { "pl-co": S.co, "pl-ask": S.ask, "pl-mine": S.mine }[id] || ""; });
-    try {
+    if (write) try {
       const q = new URLSearchParams(location.search);
       q.delete("plan");
       const rest = q.toString();
@@ -334,9 +335,18 @@
     if (focus) { const h = document.getElementById("pl-h-rec"); if (h) { h.tabIndex = -1; h.focus(); } }
   }
 
+  // Build the planner only when its view is first shown, so the rest of the site loads without waiting for it.
   window.renderPlanner = function (data) {
     const el = document.getElementById("tab-planner");
     if (!el) return;
+    if (el.hidden) {
+      const mo = new MutationObserver(() => { if (!el.hidden) { mo.disconnect(); build(el, data); } });
+      mo.observe(el, { attributes: true, attributeFilter: ["hidden"] });
+      return;
+    }
+    build(el, data);
+  };
+  function build(el, data) {
     D = { graph: data.graph && data.graph.nodes ? data.graph : { nodes: [], edges: [] }, proposals: (data.proposals && data.proposals.proposals) || [],
       companies: data.companies || [], asks: (data.asks && data.asks.asks) || [], people: (data.people && data.people.people) || [],
       fundVotes: data.fund_votes, holdings: data.holdings, coverage: data.coverage, causality: data.causality, valueChain: data.value_chain };
@@ -371,6 +381,6 @@
       const st = document.getElementById("pl-status");
       try { await navigator.clipboard.writeText(url); st.textContent = "Link copied."; } catch (e) { st.textContent = `Copy this link: ${url}`; }
     });
-    sync();
-  };
+    sync(false, false);
+  }
 })();
