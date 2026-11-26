@@ -58,7 +58,7 @@ Values are in `styles.css`; they are not repeated here so there is one source.
 - **Callout** (accent left border), **timeline**, **levers** tiles, **steps** list.
 - **Graph controls:** search input and select (`.net-controls`), segmented toggle (`.seg`), legend chips (`.leg`, `.chip`), side detail panel (`.net-panel`).
 - **Source link** (`.src`) after each fact; **"source pending"** (`.unverified`) when the source is missing.
-- **Sticky first column** (`.sticky-col`): the row header of a wide table stays in view while the table scrolls sideways inside its box (fund votes tab). In the body it reads as normal 14px text, not the uppercase table-header style.
+- **Sticky first column** (`.sticky-col`): the row header of a wide table stays in view while the table scrolls sideways inside its box (fund votes tab). In the body it reads as normal 14px text, not the uppercase table-header style. Its table box gets `scroll-padding-left` at least as wide as the column (330px), so a keyboard-focused cell never hides under it. The table caption is left-aligned (`.fv-caption`) so it is not cut off on phones.
 - **Focus outline on scroll boxes** (`.table-wrap:focus-visible`): 2px `--accent` outline, so keyboard users can see and scroll a wide table.
 - **Labelled filter** (`.sr-label`): a visible text label wrapping a select in `.net-controls`, 13px `--ink-soft`.
 - **Coming soon** placeholder (`.coming`) for tabs not built yet.

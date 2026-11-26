@@ -1,11 +1,8 @@
 {
  "generated": "2026-11-26",
+ "first_meeting_covered": "2023-07-01",
  "last_meeting_covered": "2026-06-30",
  "method": "SEC Form N-PX structured filings (latest filing per period). Only shareholder proposals. A vote matches a proposal at the same company and meeting (or the same year when the meeting date is not on file) when at least 75% of the title's key words appear in the filing's description, at least 50% the other way, and it beats the next-best proposal at that meeting by 0.15. Anything close but not certain goes to the review list.",
- "reviewed_families": [
-  "Parnassus"
- ],
- "reviewed_note": "Parnassus votes were checked by a person against the filings on 2026-11-25. Other families were matched automatically and spot-checked (every split, every match below 1.0, and 10 random rows), but not reviewed row by row.",
  "families": {
   "Parnassus": [
    "Parnassus Funds",
@@ -40,9 +37,95 @@
    "Praxis Mutual Funds"
   ]
  },
- "not_covered": [
-  "Praxis: files Form N-PX only in the older text format, which this tracker cannot read yet.",
-  "Domini: only its 2024 filing is in the structured format; its 2025 and 2026 filings are text."
+ "coverage": {
+  "Calvert": [
+   "2024-06-30",
+   "2025-06-30",
+   "2026-06-30"
+  ],
+  "Vanguard": [
+   "2024-06-30",
+   "2025-06-30",
+   "2026-06-30"
+  ],
+  "Domini": [
+   "2024-06-30"
+  ],
+  "Green Century": [
+   "2024-06-30",
+   "2025-06-30",
+   "2026-06-30"
+  ],
+  "TIAA-CREF": [
+   "2025-06-30",
+   "2026-06-30"
+  ],
+  "BlackRock (iShares)": [
+   "2024-06-30",
+   "2025-06-30",
+   "2026-06-30"
+  ],
+  "Impax (Pax)": [
+   "2024-06-30",
+   "2025-06-30",
+   "2026-06-30"
+  ],
+  "Parnassus": [
+   "2024-06-30",
+   "2025-06-30",
+   "2026-06-30"
+  ]
+ },
+ "not_shown": [
+  "Praxis files Form N-PX only in the older text format, which this tracker cannot read yet, so it is not shown."
+ ],
+ "reviewed": [
+  {
+   "family": "Parnassus",
+   "reviewed_by": "Sophia Ware (owner), in chat",
+   "date": "2026-11-25",
+   "proposal_ids": [
+    "aapl-2024-7",
+    "aapl-2025-4",
+    "aapl-2025-5",
+    "amzn-2024-14",
+    "amzn-2024-16",
+    "amzn-2024-6",
+    "amzn-2025-11",
+    "amzn-2025-7",
+    "amzn-2025-8",
+    "amzn-2026-5",
+    "googl-2024-11",
+    "googl-2024-12",
+    "googl-2024-13",
+    "googl-2025-10",
+    "googl-2025-11",
+    "googl-2025-12",
+    "googl-2025-7",
+    "googl-2025-9",
+    "googl-2026-11",
+    "googl-2026-12",
+    "googl-2026-13",
+    "googl-2026-14",
+    "googl-2026-5",
+    "googl-2026-6",
+    "meta-2026-11",
+    "meta-2026-3",
+    "meta-2026-9",
+    "msft-2023-11",
+    "msft-2023-13",
+    "msft-2024-6",
+    "msft-2024-7",
+    "msft-2024-8",
+    "msft-2024-9",
+    "msft-2025-10",
+    "msft-2025-6",
+    "msft-2025-7",
+    "msft-2025-8",
+    "msft-2025-9",
+    "nvda-2026-7"
+   ]
+  }
  ],
  "filings": [
   {
@@ -381,7 +464,7 @@
    "counts": {
     "FOR": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036124038969/"
@@ -389,7 +472,8 @@
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Domini",
@@ -400,14 +484,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/851680/000102140824007381/"
    ],
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -418,14 +503,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893424000980/"
    ],
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -436,14 +522,15 @@
    "counts": {
     "FOR": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834424017055/"
    ],
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots (The Board recommends a vote AGAINST this proposal)"
    ],
-   "min_confidence": 0.5
+   "min_confidence": 0.5,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -454,7 +541,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140824002675/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140824002683/"
@@ -462,7 +549,8 @@
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "Vanguard",
@@ -473,7 +561,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465924094482/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465924094269/"
@@ -481,7 +569,8 @@
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -492,14 +581,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
    ],
    "npx_descriptions": [
     "Report on Risks Related to AI Generated Misinformation and Disinformation"
    ],
-   "min_confidence": 0.5
+   "min_confidence": 0.5,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -510,7 +600,7 @@
    "counts": {
     "FOR": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036124038969/"
@@ -518,7 +608,8 @@
    "npx_descriptions": [
     "Report on AI Misinformation and Disinformation"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Domini",
@@ -529,14 +620,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/851680/000102140824007381/"
    ],
    "npx_descriptions": [
     "Report on AI Misinformation and Disinformation"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -547,14 +639,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893424000980/"
    ],
    "npx_descriptions": [
     "Report on AI Misinformation and Disinformation"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -565,7 +658,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140824002675/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140824002683/"
@@ -573,7 +666,8 @@
    "npx_descriptions": [
     "Report on AI Misinformation and Disinformation"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "Vanguard",
@@ -584,7 +678,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465924094482/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465924094269/"
@@ -592,7 +686,8 @@
    "npx_descriptions": [
     "Report on AI Misinformation and Disinformation"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -603,7 +698,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036124038969/"
@@ -611,7 +706,8 @@
    "npx_descriptions": [
     "A shareholder proposal requesting a report on the use of Al"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Domini",
@@ -622,14 +718,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/851680/000102140824007381/"
    ],
    "npx_descriptions": [
     "A shareholder proposal requesting a report on the use of Al"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -640,14 +737,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893424000980/"
    ],
    "npx_descriptions": [
     "A shareholder proposal requesting a report on the use of AI"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -658,14 +756,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834424017055/"
    ],
    "npx_descriptions": [
     "A shareholder proposal requesting a report on the use of AI."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -676,7 +775,7 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140824002675/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140824002683/"
@@ -684,7 +783,8 @@
    "npx_descriptions": [
     "A shareholder proposal requesting a report on the use of Al"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "Vanguard",
@@ -695,7 +795,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465924094482/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465924094269/"
@@ -703,7 +803,8 @@
    "npx_descriptions": [
     "A shareholder proposal requesting a report on the use of Al"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -714,7 +815,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036124038969/"
@@ -722,7 +823,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON CUSTOMER USE OF CERTAIN TECHNOLOGIES"
    ],
-   "min_confidence": 0.8
+   "min_confidence": 0.8,
+   "reviewed": false
   },
   {
    "family": "Domini",
@@ -733,14 +835,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/851680/000102140824007381/"
    ],
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON CUSTOMER USE OF CERTAIN TECHNOLOGIES"
    ],
-   "min_confidence": 0.8
+   "min_confidence": 0.8,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -751,14 +854,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140824002675/"
    ],
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON CUSTOMER USE OF CERTAIN TECHNOLOGIES"
    ],
-   "min_confidence": 0.8
+   "min_confidence": 0.8,
+   "reviewed": true
   },
   {
    "family": "Vanguard",
@@ -769,7 +873,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465924094482/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465924094269/"
@@ -777,7 +881,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON CUSTOMER USE OF CERTAIN TECHNOLOGIES"
    ],
-   "min_confidence": 0.8
+   "min_confidence": 0.8,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -788,7 +893,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036124038969/"
@@ -796,7 +901,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE ARTIFICIAL INTELLIGENCE"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Domini",
@@ -807,14 +913,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/851680/000102140824007381/"
    ],
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE ARTIFICIAL INTELLIGENCE"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -825,14 +932,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140824002675/"
    ],
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE ARTIFICIAL INTELLIGENCE"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "Vanguard",
@@ -843,7 +951,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465924094482/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465924094269/"
@@ -851,7 +959,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE ARTIFICIAL INTELLIGENCE"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -862,14 +971,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
    ],
    "npx_descriptions": [
     "Report on Customer Due Diligence"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -880,7 +990,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036124038969/"
@@ -888,7 +998,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON CUSTOMER DUE DILIGENCE"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Domini",
@@ -899,14 +1010,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/851680/000102140824007381/"
    ],
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON CUSTOMER DUE DILIGENCE"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -917,14 +1029,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140824002675/"
    ],
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON CUSTOMER DUE DILIGENCE"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "Vanguard",
@@ -935,7 +1048,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465924094482/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465924094269/"
@@ -943,7 +1056,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON CUSTOMER DUE DILIGENCE"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -954,7 +1068,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465924094482/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465924094269/"
@@ -962,7 +1076,8 @@
    "npx_descriptions": [
     "A shareholder proposal regarding human rights impact assessment on AI systems driving targeted advertising."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -973,14 +1088,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
    ],
    "npx_descriptions": [
     "Report on Generative AI Misinformation and Disinformation Risks"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -991,7 +1107,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465924094482/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465924094269/"
@@ -999,7 +1115,8 @@
    "npx_descriptions": [
     "A shareholder proposal regarding report on generative AI misinformation and disinformation risks."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -1010,7 +1127,7 @@
    "counts": {
     "FOR": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036124038969/"
@@ -1018,7 +1135,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding Al principles and Board oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Domini",
@@ -1029,14 +1147,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/851680/000102140824007381/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding Al principles and Board oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -1047,14 +1166,15 @@
    "counts": {
     "ABSTAIN": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893424000980/"
    ],
    "npx_descriptions": [
     "Stockholder Proposal Regarding AI Principles and Board Oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -1065,14 +1185,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834424017055/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding AI principles and Board oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -1083,7 +1204,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140824002675/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140824002683/"
@@ -1091,7 +1212,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding Al principles and Board oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "Vanguard",
@@ -1102,7 +1224,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465924094482/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465924094269/"
@@ -1110,7 +1232,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding Al principles and Board oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -1121,14 +1244,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
    ],
    "npx_descriptions": [
     "Report on Risks Related to AI Generated Misinformation and Disinformation"
    ],
-   "min_confidence": 0.67
+   "min_confidence": 0.67,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -1139,7 +1263,7 @@
    "counts": {
     "FOR": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036124038969/"
@@ -1147,7 +1271,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a report on generative Al misinformation and disinformation risks"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Domini",
@@ -1158,14 +1283,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/851680/000102140824007381/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a report on generative Al misinformation and disinformation risks"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -1176,14 +1302,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893424000980/"
    ],
    "npx_descriptions": [
     "Stockholder Proposal Regarding a Report on Generative AI Misinformation and Disinformation Risks"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -1194,14 +1321,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834424017055/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a report on generative AI misinformation and disinformation risks"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -1212,7 +1340,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140824002675/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140824002683/"
@@ -1220,7 +1348,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a report on generative Al misinformation and disinformation risks"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "Vanguard",
@@ -1231,7 +1360,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465924094482/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465924094269/"
@@ -1239,7 +1368,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a report on generative Al misinformation and disinformation risks"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -1250,14 +1380,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
    ],
    "npx_descriptions": [
     "Publish Human Rights Risk Assessment on the AI-Driven Targeted Ad Policies"
    ],
-   "min_confidence": 0.88
+   "min_confidence": 0.88,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -1268,7 +1399,7 @@
    "counts": {
     "FOR": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036124038969/"
@@ -1276,7 +1407,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a human rights assessment of Al-driven targeted ad policies"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Domini",
@@ -1287,14 +1419,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/851680/000102140824007381/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a human rights assessment of Al-driven targeted ad policies"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -1305,14 +1438,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893424000980/"
    ],
    "npx_descriptions": [
     "Stockholder Proposal Regarding a Human Rights Assessment of AI-Driven Targeted Ad Policies"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -1323,14 +1457,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834424017055/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a human rights assessment of AI-driven targeted ad policies"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -1341,7 +1476,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140824002675/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140824002683/"
@@ -1349,7 +1484,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a human rights assessment of Al-driven targeted ad policies"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "Vanguard",
@@ -1360,7 +1496,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465924094482/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465924094269/"
@@ -1368,7 +1504,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a human rights assessment of Al-driven targeted ad policies"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -1379,7 +1516,7 @@
    "counts": {
     "FOR": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036124038969/"
@@ -1387,7 +1524,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a report on online safety for children"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Domini",
@@ -1398,14 +1536,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/851680/000102140824007381/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a report on online safety for children"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -1416,14 +1555,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893424000980/"
    ],
    "npx_descriptions": [
     "Stockholder Proposal Regarding a Report on Online Safety for Children"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -1434,14 +1574,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834424017055/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a report on online safety for children"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -1452,7 +1593,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140824002675/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140824002683/"
@@ -1460,7 +1601,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a report on online safety for children"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -1471,7 +1613,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465924094482/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465924094269/"
@@ -1479,7 +1621,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a report on online safety for children"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -1490,14 +1633,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -1508,7 +1652,7 @@
    "counts": {
     "FOR": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036125031861/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036125031857/"
@@ -1516,7 +1660,8 @@
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -1527,14 +1672,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893425000756/"
    ],
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -1545,14 +1691,15 @@
    "counts": {
     "FOR": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834425017033/"
    ],
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -1563,7 +1710,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140825002660/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140825002658/"
@@ -1571,7 +1718,8 @@
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -1582,14 +1730,15 @@
    "counts": {
     "AGAINST": 8
    },
-   "vote_records": 8,
+   "fund_records": 8,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
    ],
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -1600,7 +1749,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465925083530/"
@@ -1608,7 +1757,8 @@
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -1619,14 +1769,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
     "Report on Artificial Intelligence and Machine Learning Tools for Oil and Gas Development and Production."
    ],
-   "min_confidence": 0.78
+   "min_confidence": 0.78,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -1637,7 +1788,7 @@
    "counts": {
     "AGAINST": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036125031861/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036125031857/"
@@ -1645,7 +1796,8 @@
    "npx_descriptions": [
     "Report on Artificial Intelligence and Machine Learning Tools for Oil and Gas Development and Production"
    ],
-   "min_confidence": 0.78
+   "min_confidence": 0.78,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -1656,14 +1808,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893425000756/"
    ],
    "npx_descriptions": [
     "Report on Artificial Intelligence and Machine Learning Tools for Oil and Gas Development and Production."
    ],
-   "min_confidence": 0.78
+   "min_confidence": 0.78,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -1674,14 +1827,15 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834425017033/"
    ],
    "npx_descriptions": [
     "Report on Artificial Intelligence and Machine Learning Tools for Oil and Gas Development and Production."
    ],
-   "min_confidence": 0.78
+   "min_confidence": 0.78,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -1692,7 +1846,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140825002660/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140825002658/"
@@ -1700,7 +1854,8 @@
    "npx_descriptions": [
     "Report on Artificial Intelligence and Machine Learning Tools for Oil and Gas Development and Production"
    ],
-   "min_confidence": 0.78
+   "min_confidence": 0.78,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -1711,14 +1866,15 @@
    "counts": {
     "AGAINST": 8
    },
-   "vote_records": 8,
+   "fund_records": 8,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
    ],
    "npx_descriptions": [
     "Report on Artificial Intelligence and Machine Learning Tools for Oil and Gas Development and Production"
    ],
-   "min_confidence": 0.78
+   "min_confidence": 0.78,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -1729,7 +1885,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465925083530/"
@@ -1737,7 +1893,8 @@
    "npx_descriptions": [
     "Report on Artificial Intelligence and Machine Learning Tools for Oil and Gas Development and Production"
    ],
-   "min_confidence": 0.78
+   "min_confidence": 0.78,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -1748,14 +1905,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
     "Report on AI Misinformation and Disinformation."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -1766,7 +1924,7 @@
    "counts": {
     "FOR": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036125031861/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036125031857/"
@@ -1774,7 +1932,8 @@
    "npx_descriptions": [
     "Report on AI Misinformation and Disinformation"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -1785,14 +1944,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893425000756/"
    ],
    "npx_descriptions": [
     "Report on AI Misinformation and Disinformation."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -1803,14 +1963,15 @@
    "counts": {
     "FOR": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834425017033/"
    ],
    "npx_descriptions": [
     "Report on AI Misinformation and Disinformation."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -1821,7 +1982,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140825002660/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140825002658/"
@@ -1829,7 +1990,8 @@
    "npx_descriptions": [
     "Report on AI Misinformation and Disinformation"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -1840,14 +2002,15 @@
    "counts": {
     "FOR": 8
    },
-   "vote_records": 8,
+   "fund_records": 8,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
    ],
    "npx_descriptions": [
     "Report on AI Misinformation and Disinformation"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -1858,7 +2021,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465925083530/"
@@ -1866,7 +2029,8 @@
    "npx_descriptions": [
     "Report on AI Misinformation and Disinformation"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -1877,14 +2041,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
     "Report on AI Data Sourcing Accountability."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -1895,7 +2060,7 @@
    "counts": {
     "FOR": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036125031861/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036125031857/"
@@ -1903,7 +2068,8 @@
    "npx_descriptions": [
     "Report on AI Data Sourcing Accountability"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -1914,14 +2080,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893425000756/"
    ],
    "npx_descriptions": [
     "Report on AI Data Sourcing Accountability."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -1932,14 +2099,15 @@
    "counts": {
     "ABSTAIN": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834425017033/"
    ],
    "npx_descriptions": [
     "Report on AI Data Sourcing Accountability."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -1950,7 +2118,7 @@
    "counts": {
     "ABSTAIN": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140825002660/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140825002658/"
@@ -1958,7 +2126,8 @@
    "npx_descriptions": [
     "Report on AI Data Sourcing Accountability"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -1969,14 +2138,15 @@
    "counts": {
     "FOR": 8
    },
-   "vote_records": 8,
+   "fund_records": 8,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
    ],
    "npx_descriptions": [
     "Report on AI Data Sourcing Accountability"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -1987,7 +2157,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465925083530/"
@@ -1995,7 +2165,8 @@
    "npx_descriptions": [
     "Report on AI Data Sourcing Accountability"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -2006,14 +2177,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
     "A shareholder proposal entitled \"Report on Ethical AI Data Acquisition and Usage\""
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -2024,7 +2196,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036125031861/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036125031857/"
@@ -2032,7 +2204,8 @@
    "npx_descriptions": [
     "A shareholder proposal entitled \"Report on Ethical AI Data Acquisition and Usage\""
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -2043,14 +2216,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893425000756/"
    ],
    "npx_descriptions": [
     "A shareholder proposal entitled \"Report on Ethical AI Data Acquisition and Usage\""
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -2061,14 +2235,15 @@
    "counts": {
     "ABSTAIN": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834425017033/"
    ],
    "npx_descriptions": [
     "A shareholder proposal entitled \"Report on Ethical AI Data Acquisition and Usage\""
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -2079,7 +2254,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140825002660/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140825002658/"
@@ -2087,7 +2262,8 @@
    "npx_descriptions": [
     "A shareholder proposal entitled \"Report on Ethical AI Data Acquisition and Usage\""
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -2098,14 +2274,15 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
    ],
    "npx_descriptions": [
     "A shareholder proposal entitled \"Report on Ethical AI Data Acquisition and Usage\""
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -2116,7 +2293,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465925083530/"
@@ -2124,7 +2301,8 @@
    "npx_descriptions": [
     "A shareholder proposal entitled \"Report on Ethical AI Data Acquisition and Usage\""
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -2135,14 +2313,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
     "A shareholder proposal entitled \"Report on Costs and Benefits of Child Sex Abuse Material-Identifying Software & User Privacy\""
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -2153,7 +2332,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036125031861/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036125031857/"
@@ -2161,7 +2340,8 @@
    "npx_descriptions": [
     "A shareholder proposal entitled \"Report on Costs and Benefits of Child Sex Abuse Material-Identifying Software & User Privacy\""
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -2172,14 +2352,15 @@
    "counts": {
     "ABSTAIN": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893425000756/"
    ],
    "npx_descriptions": [
     "A shareholder proposal entitled \"Report on Costs and Benefits of Child Sex Abuse Material-Identifying Software & User Privacy\""
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -2190,14 +2371,15 @@
    "counts": {
     "ABSTAIN": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834425017033/"
    ],
    "npx_descriptions": [
     "A shareholder proposal entitled \"Report on Costs and Benefits of Child Sex Abuse Material-Identifying Software & User Privacy\""
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -2208,7 +2390,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140825002660/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140825002658/"
@@ -2216,7 +2398,8 @@
    "npx_descriptions": [
     "A shareholder proposal entitled \"Report on Costs and Benefits of Child Sex Abuse Material-Identifying Software & User Privacy\""
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -2227,14 +2410,15 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
    ],
    "npx_descriptions": [
     "A shareholder proposal entitled \"Report on Costs and Benefits of Child Sex Abuse Material-Identifying Software & User Privacy\""
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -2245,7 +2429,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465925083530/"
@@ -2253,7 +2437,8 @@
    "npx_descriptions": [
     "A shareholder proposal entitled \"Report on Costs and Benefits of Child Sex Abuse Material-Identifying Software & User Privacy\""
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -2264,14 +2449,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON DATA USAGE OVERSIGHT IN AI OFFERINGS"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -2282,7 +2468,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036125031861/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036125031857/"
@@ -2290,7 +2476,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON DATA USAGE OVERSIGHT IN AI OFFERINGS"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -2301,14 +2488,15 @@
    "counts": {
     "ABSTAIN": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834425017033/"
    ],
    "npx_descriptions": [
     "Shareholder proposal requesting a report on data dosage oversight in AI offerings"
    ],
-   "min_confidence": 0.8
+   "min_confidence": 0.8,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -2319,7 +2507,7 @@
    "counts": {
     "ABSTAIN": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140825002660/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140825002658/"
@@ -2327,7 +2515,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON DATA USAGE OVERSIGHT IN AI OFFERINGS"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -2338,14 +2527,15 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
    ],
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON DATA USAGE OVERSIGHT IN AI OFFERINGS"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -2356,7 +2546,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465925083530/"
@@ -2364,7 +2554,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON DATA USAGE OVERSIGHT IN AI OFFERINGS"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -2375,14 +2566,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING ADDITIONAL REPORTING ON IMPACT OF DATA CENTERS ON CLIMATE COMMITMENTS"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -2393,7 +2585,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036125031861/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036125031857/"
@@ -2401,7 +2593,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING ADDITIONAL REPORTING ON IMPACT OF DATA CENTERS ON CLIMATE COMMITMENTS"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -2412,14 +2605,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834425017033/"
    ],
    "npx_descriptions": [
     "Shareholder proposal requesting additional reporting on impact of data centers on climate commitments"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -2430,7 +2624,7 @@
    "counts": {
     "FOR": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140825002660/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140825002658/"
@@ -2438,7 +2632,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING ADDITIONAL REPORTING ON IMPACT OF DATA CENTERS ON CLIMATE COMMITMENTS"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -2449,14 +2644,15 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
    ],
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING ADDITIONAL REPORTING ON IMPACT OF DATA CENTERS ON CLIMATE COMMITMENTS"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -2467,7 +2663,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465925083530/"
@@ -2475,7 +2671,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING ADDITIONAL REPORTING ON IMPACT OF DATA CENTERS ON CLIMATE COMMITMENTS"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -2486,14 +2683,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING AN ASSESSMENT OF BOARD STRUCTURE FOR OVERSIGHT OF AI"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -2504,7 +2702,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036125031861/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036125031857/"
@@ -2512,7 +2710,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING AN ASSESSMENT OF BOARD STRUCTURE FOR OVERSIGHT OF AI"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -2523,14 +2722,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834425017033/"
    ],
    "npx_descriptions": [
     "Shareholder proposal requesting an assessment of board structure for oversight of AI"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -2541,7 +2741,7 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140825002660/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140825002658/"
@@ -2549,7 +2749,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING AN ASSESSMENT OF BOARD STRUCTURE FOR OVERSIGHT OF AI"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -2560,14 +2761,15 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
    ],
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING AN ASSESSMENT OF BOARD STRUCTURE FOR OVERSIGHT OF AI"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -2578,7 +2780,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
     "https://www.sec.gov/Archives/edgar/data/862084/000110465925083530/"
@@ -2586,7 +2788,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING AN ASSESSMENT OF BOARD STRUCTURE FOR OVERSIGHT OF AI"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -2597,14 +2800,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding report on risks of deepfakes in online child exploitation."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "TIAA-CREF",
@@ -2615,14 +2819,15 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding report on risks of deepfakes in online child exploitation."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -2633,7 +2838,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
     "https://www.sec.gov/Archives/edgar/data/52848/000110465925083585/",
@@ -2642,7 +2847,8 @@
    "npx_descriptions": [
     "A shareholder proposal regarding report on risks of deepfakes in online child exploitation."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -2653,14 +2859,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding report on AI data usage oversight."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "TIAA-CREF",
@@ -2671,14 +2878,15 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding report on Al data usage oversight."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -2689,7 +2897,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
     "https://www.sec.gov/Archives/edgar/data/52848/000110465925083585/",
@@ -2698,7 +2906,8 @@
    "npx_descriptions": [
     "A shareholder proposal regarding report on Al data usage oversight."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -2709,14 +2918,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding GHG emissions reduction actions."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "TIAA-CREF",
@@ -2727,14 +2937,15 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding GHG emissions reduction actions."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -2745,7 +2956,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
     "https://www.sec.gov/Archives/edgar/data/52848/000110465925083585/",
@@ -2754,7 +2965,8 @@
    "npx_descriptions": [
     "A shareholder proposal regarding GHG emissions reduction actions."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -2765,14 +2977,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding report on child safety impacts and actual harm reduction to children."
    ],
-   "min_confidence": 0.71
+   "min_confidence": 0.71,
+   "reviewed": false
   },
   {
    "family": "TIAA-CREF",
@@ -2783,14 +2996,15 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding report on child safety impacts and actual harm reduction to children."
    ],
-   "min_confidence": 0.71
+   "min_confidence": 0.71,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -2801,7 +3015,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
     "https://www.sec.gov/Archives/edgar/data/52848/000110465925083585/",
@@ -2810,7 +3024,8 @@
    "npx_descriptions": [
     "A shareholder proposal regarding report on child safety impacts and actual harm reduction to children."
    ],
-   "min_confidence": 0.71
+   "min_confidence": 0.71,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -2821,14 +3036,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a report on risks of discrimination in GenAI"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -2839,7 +3055,7 @@
    "counts": {
     "AGAINST": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036125031861/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036125031857/"
@@ -2847,7 +3063,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a report on risks of discrimination in GenAl"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -2858,14 +3075,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893425000756/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a report on risks of discrimination in GenAI"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -2876,14 +3094,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834425017033/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a report on risks of discrimination in GenAI"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -2894,7 +3113,7 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140825002660/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140825002658/"
@@ -2902,7 +3121,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a report on risks of discrimination in GenAl"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -2913,14 +3133,15 @@
    "counts": {
     "AGAINST": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a report on risks of discrimination in GenAl"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -2931,7 +3152,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
     "https://www.sec.gov/Archives/edgar/data/52848/000110465925083585/",
@@ -2940,7 +3161,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a report on risks of discrimination in GenAl"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -2951,14 +3173,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a report on AI data usage oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -2969,7 +3192,7 @@
    "counts": {
     "FOR": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036125031861/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036125031857/"
@@ -2977,7 +3200,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a report on Al data usage oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -2988,14 +3212,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893425000756/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a report on AI data usage oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -3006,14 +3231,15 @@
    "counts": {
     "ABSTAIN": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834425017033/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a report on AI data usage oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -3024,7 +3250,7 @@
    "counts": {
     "ABSTAIN": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140825002660/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140825002658/"
@@ -3032,7 +3258,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a report on Al data usage oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -3043,14 +3270,15 @@
    "counts": {
     "AGAINST": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a report on Al data usage oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -3061,7 +3289,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
     "https://www.sec.gov/Archives/edgar/data/52848/000110465925083585/",
@@ -3070,7 +3298,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a report on Al data usage oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -3081,14 +3310,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a human rights impact assessment of AI-driven targeted ad policies"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -3099,7 +3329,7 @@
    "counts": {
     "FOR": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036125031861/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036125031857/"
@@ -3107,7 +3337,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a human rights impact assessment of Al-driven targeted ad policies"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -3118,14 +3349,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893425000756/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a human rights impact assessment of AI-driven targeted ad policies"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -3136,14 +3368,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834425017033/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a human rights impact assessment of AI-driven targeted ad policies"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -3154,7 +3387,7 @@
    "counts": {
     "FOR": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140825002660/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140825002658/"
@@ -3162,7 +3395,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a human rights impact assessment of Al-driven targeted ad policies"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -3173,14 +3407,15 @@
    "counts": {
     "FOR": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a human rights impact assessment of Al-driven targeted ad policies"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -3191,7 +3426,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
     "https://www.sec.gov/Archives/edgar/data/52848/000110465925083585/",
@@ -3200,7 +3435,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a human rights impact assessment of Al-driven targeted ad policies"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -3211,14 +3447,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding an enhanced disclosure on climate goals"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -3229,7 +3466,7 @@
    "counts": {
     "FOR": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036125031861/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036125031857/"
@@ -3237,7 +3474,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding an enhanced disclosure on climate goals"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -3248,14 +3486,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893425000756/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding an enhanced disclosure on climate goals"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -3266,14 +3505,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834425017033/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding an enhanced disclosure on climate goals"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -3284,7 +3524,7 @@
    "counts": {
     "FOR": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140825002660/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140825002658/"
@@ -3292,7 +3532,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding an enhanced disclosure on climate goals"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -3303,14 +3544,15 @@
    "counts": {
     "AGAINST": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding an enhanced disclosure on climate goals"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -3321,7 +3563,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
     "https://www.sec.gov/Archives/edgar/data/52848/000110465925083585/",
@@ -3330,7 +3572,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding an enhanced disclosure on climate goals"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -3341,14 +3584,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a report on the due diligence process to assess human rights risks in CAHRA"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -3359,7 +3603,7 @@
    "counts": {
     "FOR": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036125031861/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036125031857/"
@@ -3367,7 +3611,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a report on the due diligence process to assess human rights risks in CAHRA"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -3378,14 +3623,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893425000756/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a report on the due diligence process to assess human rights risks in CAHRA"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -3396,14 +3642,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834425017033/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a report on the due diligence process to assess human rights risks in CAHRA"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -3414,7 +3661,7 @@
    "counts": {
     "FOR": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000102140825002660/",
     "https://www.sec.gov/Archives/edgar/data/866256/000102140825002658/"
@@ -3422,7 +3669,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a report on the due diligence process to assess human rights risks in CAHRA"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -3433,14 +3681,15 @@
    "counts": {
     "AGAINST": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
    ],
    "npx_descriptions": [
     "Stockholder proposal regarding a report on the due diligence process to assess human rights risks in CAHRA"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -3451,7 +3700,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
     "https://www.sec.gov/Archives/edgar/data/52848/000110465925083585/",
@@ -3460,7 +3709,8 @@
    "npx_descriptions": [
     "Stockholder proposal regarding a report on the due diligence process to assess human rights risks in CAHRA"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -3471,14 +3721,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding Board authorization of an investment in xAl."
    ],
-   "min_confidence": 0.75
+   "min_confidence": 0.75,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -3489,14 +3740,15 @@
    "counts": {
     "ABSTAIN": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding Board authorization of an investment in xAl."
    ],
-   "min_confidence": 0.75
+   "min_confidence": 0.75,
+   "reviewed": false
   },
   {
    "family": "TIAA-CREF",
@@ -3507,14 +3759,15 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding Board authorization of an investment in xAl."
    ],
-   "min_confidence": 0.75
+   "min_confidence": 0.75,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -3525,14 +3778,15 @@
    "counts": {
     "ABSTAIN": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding Board authorization of an investment in xAl."
    ],
-   "min_confidence": 0.75
+   "min_confidence": 0.75,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -3543,7 +3797,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
@@ -3551,7 +3805,8 @@
    "npx_descriptions": [
     "Report on AI and Machine Learning Tools for Oil and Gas Development and Production"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -3562,7 +3817,7 @@
    "counts": {
     "AGAINST": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036126032180/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036126032175/"
@@ -3570,7 +3825,8 @@
    "npx_descriptions": [
     "Report on Al and Machine Learning Tools for Oil and Gas Development and Production"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -3581,14 +3837,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
    ],
    "npx_descriptions": [
     "Report on AI and Machine Learning Tools for Oil and Gas Development and Production"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -3599,14 +3856,15 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834426016225/"
    ],
    "npx_descriptions": [
     "Report on AI and Machine Learning Tools for Oil and Gas Development and Production"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -3617,7 +3875,7 @@
    "counts": {
     "FOR": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/",
     "https://www.sec.gov/Archives/edgar/data/866256/000119312526358189/"
@@ -3625,7 +3883,8 @@
    "npx_descriptions": [
     "Report on Al and Machine Learning Tools for Oil and Gas Development and Production"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -3636,14 +3895,15 @@
    "counts": {
     "AGAINST": 7
    },
-   "vote_records": 7,
+   "fund_records": 7,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
    ],
    "npx_descriptions": [
     "Report on Al and Machine Learning Tools for Oil and Gas Development and Production"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -3654,14 +3914,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/"
    ],
    "npx_descriptions": [
     "Report on Al and Machine Learning Tools for Oil and Gas Development and Production"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -3672,7 +3933,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
@@ -3680,7 +3941,8 @@
    "npx_descriptions": [
     "Report on Risks of Censorship in Generative Artificial Intelligence"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -3691,7 +3953,7 @@
    "counts": {
     "AGAINST": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036126032180/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036126032175/"
@@ -3699,7 +3961,8 @@
    "npx_descriptions": [
     "Report on Risks of Censorship in Generative Artificial Intelligence"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -3710,14 +3973,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
    ],
    "npx_descriptions": [
     "Report on Risks of Censorship in Generative Artificial Intelligence"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -3728,14 +3992,15 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834426016225/"
    ],
    "npx_descriptions": [
     "Report on Risks of Censorship in Generative Artificial Intelligence"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -3746,7 +4011,7 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/",
     "https://www.sec.gov/Archives/edgar/data/866256/000119312526358189/"
@@ -3754,7 +4019,8 @@
    "npx_descriptions": [
     "Report on Risks of Censorship in Generative Artificial Intelligence"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -3765,14 +4031,15 @@
    "counts": {
     "AGAINST": 7
    },
-   "vote_records": 7,
+   "fund_records": 7,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
    ],
    "npx_descriptions": [
     "Report on Risks of Censorship in Generative Artificial Intelligence"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -3783,14 +4050,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/"
    ],
    "npx_descriptions": [
     "Report on Risks of Censorship in Generative Artificial Intelligence"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -3801,7 +4069,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
@@ -3809,7 +4077,8 @@
    "npx_descriptions": [
     "Report on AI Data Usage Oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -3820,7 +4089,7 @@
    "counts": {
     "FOR": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036126032180/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036126032175/"
@@ -3828,7 +4097,8 @@
    "npx_descriptions": [
     "Report on Al Data Usage Oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -3839,14 +4109,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
    ],
    "npx_descriptions": [
     "Report on AI Data Usage Oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -3857,14 +4128,15 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834426016225/"
    ],
    "npx_descriptions": [
     "Report on AI Data Usage Oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -3875,7 +4147,7 @@
    "counts": {
     "ABSTAIN": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/",
     "https://www.sec.gov/Archives/edgar/data/866256/000119312526358189/"
@@ -3883,7 +4155,8 @@
    "npx_descriptions": [
     "Report on Al Data Usage Oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -3894,14 +4167,15 @@
    "counts": {
     "AGAINST": 7
    },
-   "vote_records": 7,
+   "fund_records": 7,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
    ],
    "npx_descriptions": [
     "Report on Al Data Usage Oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -3912,14 +4186,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/"
    ],
    "npx_descriptions": [
     "Report on Al Data Usage Oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -3930,7 +4205,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
@@ -3938,7 +4213,8 @@
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -3949,7 +4225,7 @@
    "counts": {
     "FOR": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036126032180/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036126032175/"
@@ -3957,7 +4233,8 @@
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -3968,14 +4245,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
    ],
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -3986,14 +4264,15 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834426016225/"
    ],
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -4004,7 +4283,7 @@
    "counts": {
     "FOR": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/",
     "https://www.sec.gov/Archives/edgar/data/866256/000119312526358189/"
@@ -4012,7 +4291,8 @@
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -4023,14 +4303,15 @@
    "counts": {
     "AGAINST": 7
    },
-   "vote_records": 7,
+   "fund_records": 7,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
    ],
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -4041,14 +4322,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/"
    ],
    "npx_descriptions": [
     "Report on Data Operations in Human Rights Hotspots"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -4059,7 +4341,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
@@ -4067,7 +4349,8 @@
    "npx_descriptions": [
     "Report on Human Rights Due Diligence"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -4078,7 +4361,7 @@
    "counts": {
     "FOR": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036126032180/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036126032175/"
@@ -4086,7 +4369,8 @@
    "npx_descriptions": [
     "Report on Human Rights Due Diligence"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -4097,14 +4381,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
    ],
    "npx_descriptions": [
     "Report on Human Rights Due Diligence"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -4115,14 +4400,15 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834426016225/"
    ],
    "npx_descriptions": [
     "Report on Human Rights Due Diligence"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -4133,7 +4419,7 @@
    "counts": {
     "FOR": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/",
     "https://www.sec.gov/Archives/edgar/data/866256/000119312526358189/"
@@ -4141,7 +4427,8 @@
    "npx_descriptions": [
     "Report on Human Rights Due Diligence"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -4152,14 +4439,15 @@
    "counts": {
     "AGAINST": 7
    },
-   "vote_records": 7,
+   "fund_records": 7,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
    ],
    "npx_descriptions": [
     "Report on Human Rights Due Diligence"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -4170,14 +4458,15 @@
    "counts": {
     "AGAINST": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/"
    ],
    "npx_descriptions": [
     "Report on Human Rights Due Diligence"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -4188,7 +4477,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
@@ -4196,7 +4485,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING ADDITIONAL REPORTING ON IMPACT OF DATA CENTERS ON CLIMATE COMMITMENTS"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -4207,7 +4497,7 @@
    "counts": {
     "FOR": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036126032180/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036126032175/"
@@ -4215,7 +4505,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING ADDITIONAL REPORTING ON IMPACT OF DATA CENTERS ON CLIMATE COMMITMENTS"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -4226,14 +4517,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834426016225/"
    ],
    "npx_descriptions": [
     "Shareholder Proposal Requesting Additional Reporting On Impact Of Data Centers On Climate Commitments"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -4244,7 +4536,7 @@
    "counts": {
     "FOR": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/",
     "https://www.sec.gov/Archives/edgar/data/866256/000119312526358189/"
@@ -4252,7 +4544,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING ADDITIONAL REPORTING ON IMPACT OF DATA CENTERS ON CLIMATE COMMITMENTS"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -4263,14 +4556,15 @@
    "counts": {
     "FOR": 7
    },
-   "vote_records": 7,
+   "fund_records": 7,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
    ],
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING ADDITIONAL REPORTING ON IMPACT OF DATA CENTERS ON CLIMATE COMMITMENTS"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -4279,11 +4573,11 @@
    "meeting_date": "2026-05-20",
    "vote": "SPLIT",
    "counts": {
-    "AGAINST": 4,
-    "FOR": 2,
-    "ABSTAIN": 1
+    "AGAINST": 3,
+    "FOR": 1,
+    "SPLIT_WITHIN_FUND": 1
    },
-   "vote_records": 7,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/"
    ],
@@ -4291,7 +4585,8 @@
     "SHAREHOLDER PROPOSAL REQUESTING ADDITIONAL REPORTING ON IMPACT OF DATA CENTERS ON CLIMATE COMMITMENTS",
     "Shareholder Proposal Requesting Additional Reporting On Impact Of Data Centers On Climate Commitments"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -4302,7 +4597,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
@@ -4310,7 +4605,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON IMPACT OF CLIMATE COMMITMENTS"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -4321,7 +4617,7 @@
    "counts": {
     "AGAINST": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036126032180/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036126032175/"
@@ -4329,7 +4625,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON IMPACT OF CLIMATE COMMITMENTS"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -4340,14 +4637,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834426016225/"
    ],
    "npx_descriptions": [
     "Shareholder Proposal Requesting A Report On Impact Of Climate Commitments"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -4358,7 +4656,7 @@
    "counts": {
     "AGAINST": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/",
     "https://www.sec.gov/Archives/edgar/data/866256/000119312526358189/"
@@ -4366,7 +4664,8 @@
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON IMPACT OF CLIMATE COMMITMENTS"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "TIAA-CREF",
@@ -4377,14 +4676,15 @@
    "counts": {
     "AGAINST": 7
    },
-   "vote_records": 7,
+   "fund_records": 7,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
    ],
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON IMPACT OF CLIMATE COMMITMENTS"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -4393,11 +4693,10 @@
    "meeting_date": "2026-05-20",
    "vote": "SPLIT",
    "counts": {
-    "AGAINST": 5,
-    "ABSTAIN": 1,
-    "FOR": 1
+    "AGAINST": 4,
+    "SPLIT_WITHIN_FUND": 1
    },
-   "vote_records": 7,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/"
    ],
@@ -4405,7 +4704,8 @@
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON IMPACT OF CLIMATE COMMITMENTS",
     "Shareholder Proposal Requesting A Report On Impact Of Climate Commitments"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -4417,7 +4717,7 @@
     "AGAINST": 1,
     "FOR": 2
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
@@ -4425,7 +4725,8 @@
    "npx_descriptions": [
     "A shareholder proposal regarding data protection impact assessment on generative Al chatbots."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -4436,14 +4737,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding data protection impact assessment on generative Al chatbots."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -4454,14 +4756,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding data protection impact assessment on generative Al chatbots."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -4472,14 +4775,15 @@
    "counts": {
     "FOR": 7
    },
-   "vote_records": 7,
+   "fund_records": 7,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding data protection impact assessment on generative Al chatbots."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -4488,11 +4792,11 @@
    "meeting_date": "2026-05-27",
    "vote": "SPLIT",
    "counts": {
-    "AGAINST": 8,
-    "FOR": 4,
-    "ABSTAIN": 2
+    "AGAINST": 6,
+    "FOR": 2,
+    "SPLIT_WITHIN_FUND": 2
    },
-   "vote_records": 14,
+   "fund_records": 10,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/",
     "https://www.sec.gov/Archives/edgar/data/52848/000110465926102044/"
@@ -4501,7 +4805,8 @@
     "A shareholder proposal regarding data protection impact assessment on generative AI chatbots.",
     "A shareholder proposal regarding data protection impact assessment on generative Al chatbots."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -4512,7 +4817,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
@@ -4520,7 +4825,8 @@
    "npx_descriptions": [
     "A shareholder proposal regarding report on Al data usage oversight."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -4531,14 +4837,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding report on Al data usage oversight."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -4549,33 +4856,32 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding report on Al data usage oversight."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
    "proposal_id": "meta-2026-3",
    "company": "META",
    "meeting_date": "2026-05-27",
-   "vote": "SPLIT",
-   "counts": {
-    "FOR": 7,
-    "AGAINST": 7
-   },
-   "vote_records": 14,
+   "vote": "NEEDS_CHECK",
+   "counts": {},
+   "fund_records": 14,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding report on Al data usage oversight."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -4584,11 +4890,11 @@
    "meeting_date": "2026-05-27",
    "vote": "SPLIT",
    "counts": {
-    "AGAINST": 10,
-    "FOR": 4,
-    "ABSTAIN": 2
+    "AGAINST": 8,
+    "FOR": 2,
+    "SPLIT_WITHIN_FUND": 2
    },
-   "vote_records": 16,
+   "fund_records": 12,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/",
     "https://www.sec.gov/Archives/edgar/data/52848/000110465926102044/"
@@ -4597,7 +4903,8 @@
     "A shareholder proposal regarding report on AI data usage oversight.",
     "A shareholder proposal regarding report on Al data usage oversight."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -4608,7 +4915,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
@@ -4616,7 +4923,8 @@
    "npx_descriptions": [
     "A shareholder proposal regarding report on climate change-related commitments."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -4627,14 +4935,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding report on climate change-related commitments."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -4645,14 +4954,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding report on climate change-related commitments."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -4663,14 +4973,15 @@
    "counts": {
     "FOR": 7
    },
-   "vote_records": 7,
+   "fund_records": 7,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding report on climate change-related commitments."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -4679,11 +4990,11 @@
    "meeting_date": "2026-05-27",
    "vote": "SPLIT",
    "counts": {
-    "AGAINST": 8,
-    "FOR": 4,
-    "ABSTAIN": 2
+    "AGAINST": 6,
+    "FOR": 2,
+    "SPLIT_WITHIN_FUND": 2
    },
-   "vote_records": 14,
+   "fund_records": 10,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/",
     "https://www.sec.gov/Archives/edgar/data/52848/000110465926102044/"
@@ -4691,7 +5002,8 @@
    "npx_descriptions": [
     "A shareholder proposal regarding report on climate change-related commitments."
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -4702,7 +5014,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
@@ -4710,7 +5022,8 @@
    "npx_descriptions": [
     "A shareholder proposal regarding report on integrating child safety improvements into the executive compensation program."
    ],
-   "min_confidence": 0.62
+   "min_confidence": 0.62,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -4721,14 +5034,15 @@
    "counts": {
     "FOR": 1
    },
-   "vote_records": 1,
+   "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
    ],
    "npx_descriptions": [
     "A shareholder proposal regarding report on integrating child safety improvements into the executive compensation program."
    ],
-   "min_confidence": 0.62
+   "min_confidence": 0.62,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -4737,11 +5051,11 @@
    "meeting_date": "2026-05-27",
    "vote": "SPLIT",
    "counts": {
-    "AGAINST": 6,
-    "FOR": 4,
-    "ABSTAIN": 2
+    "AGAINST": 4,
+    "FOR": 2,
+    "SPLIT_WITHIN_FUND": 2
    },
-   "vote_records": 12,
+   "fund_records": 8,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/",
     "https://www.sec.gov/Archives/edgar/data/52848/000110465926102044/"
@@ -4749,7 +5063,8 @@
    "npx_descriptions": [
     "A shareholder proposal regarding report on integrating child safety improvements into the executive compensation program."
    ],
-   "min_confidence": 0.62
+   "min_confidence": 0.62,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -4760,7 +5075,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
@@ -4768,7 +5083,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding a report on data privacy"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -4779,7 +5095,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036126032180/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036126032175/"
@@ -4787,7 +5103,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding a report on data privacy"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -4798,14 +5115,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
    ],
    "npx_descriptions": [
     "Shareholder proposal regarding a report on data privacy"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -4816,14 +5134,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834426016225/"
    ],
    "npx_descriptions": [
     "Shareholder proposal regarding a report on data privacy"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -4834,7 +5153,7 @@
    "counts": {
     "FOR": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/",
     "https://www.sec.gov/Archives/edgar/data/866256/000119312526358189/"
@@ -4842,7 +5161,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding a report on data privacy"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -4853,159 +5173,166 @@
    "counts": {
     "AGAINST": 6
    },
-   "vote_records": 6,
+   "fund_records": 6,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
    ],
    "npx_descriptions": [
     "Shareholder proposal regarding a report on data privacy"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
    "proposal_id": "googl-2026-11",
+   "company": "GOOGL",
+   "meeting_date": "2026-06-05",
+   "vote": "SPLIT",
+   "counts": {
+    "AGAINST": 6,
+    "FOR": 2,
+    "SPLIT_WITHIN_FUND": 2
+   },
+   "fund_records": 10,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/",
+    "https://www.sec.gov/Archives/edgar/data/52848/000110465926102044/"
+   ],
+   "npx_descriptions": [
+    "Shareholder proposal regarding a report on data privacy"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "proposal_id": "googl-2026-12",
+   "company": "GOOGL",
+   "meeting_date": "2026-06-05",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 2
+   },
+   "fund_records": 2,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
+    "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
+   ],
+   "npx_descriptions": [
+    "Shareholder proposal regarding AI Board oversight"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
+   "family": "Calvert",
+   "proposal_id": "googl-2026-12",
+   "company": "GOOGL",
+   "meeting_date": "2026-06-05",
+   "vote": "FOR",
+   "counts": {
+    "FOR": 3
+   },
+   "fund_records": 3,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1105446/000114036126032180/",
+    "https://www.sec.gov/Archives/edgar/data/356682/000114036126032175/"
+   ],
+   "npx_descriptions": [
+    "Shareholder proposal regarding AI Board oversight"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
+   "family": "Green Century",
+   "proposal_id": "googl-2026-12",
+   "company": "GOOGL",
+   "meeting_date": "2026-06-05",
+   "vote": "FOR",
+   "counts": {
+    "FOR": 2
+   },
+   "fund_records": 2,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
+   ],
+   "npx_descriptions": [
+    "Shareholder proposal regarding AI Board oversight"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
+   "family": "Impax (Pax)",
+   "proposal_id": "googl-2026-12",
+   "company": "GOOGL",
+   "meeting_date": "2026-06-05",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 2
+   },
+   "fund_records": 2,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/76721/000139834426016225/"
+   ],
+   "npx_descriptions": [
+    "Shareholder proposal regarding AI Board oversight"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
+   "family": "Parnassus",
+   "proposal_id": "googl-2026-12",
+   "company": "GOOGL",
+   "meeting_date": "2026-06-05",
+   "vote": "FOR",
+   "counts": {
+    "FOR": 5
+   },
+   "fund_records": 5,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/",
+    "https://www.sec.gov/Archives/edgar/data/866256/000119312526358189/"
+   ],
+   "npx_descriptions": [
+    "Shareholder proposal regarding AI Board oversight"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": true
+  },
+  {
+   "family": "TIAA-CREF",
+   "proposal_id": "googl-2026-12",
+   "company": "GOOGL",
+   "meeting_date": "2026-06-05",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 6
+   },
+   "fund_records": 6,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
+   ],
+   "npx_descriptions": [
+    "Shareholder proposal regarding AI Board oversight"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
+   "family": "Vanguard",
+   "proposal_id": "googl-2026-12",
    "company": "GOOGL",
    "meeting_date": "2026-06-05",
    "vote": "SPLIT",
    "counts": {
     "AGAINST": 8,
-    "FOR": 4,
-    "ABSTAIN": 2
+    "SPLIT_WITHIN_FUND": 2
    },
-   "vote_records": 14,
-   "sources": [
-    "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/",
-    "https://www.sec.gov/Archives/edgar/data/52848/000110465926102044/"
-   ],
-   "npx_descriptions": [
-    "Shareholder proposal regarding a report on data privacy"
-   ],
-   "min_confidence": 1.0
-  },
-  {
-   "family": "BlackRock (iShares)",
-   "proposal_id": "googl-2026-12",
-   "company": "GOOGL",
-   "meeting_date": "2026-06-05",
-   "vote": "AGAINST",
-   "counts": {
-    "AGAINST": 2
-   },
-   "vote_records": 2,
-   "sources": [
-    "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
-    "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
-   ],
-   "npx_descriptions": [
-    "Shareholder proposal regarding AI Board oversight"
-   ],
-   "min_confidence": 1.0
-  },
-  {
-   "family": "Calvert",
-   "proposal_id": "googl-2026-12",
-   "company": "GOOGL",
-   "meeting_date": "2026-06-05",
-   "vote": "FOR",
-   "counts": {
-    "FOR": 3
-   },
-   "vote_records": 3,
-   "sources": [
-    "https://www.sec.gov/Archives/edgar/data/1105446/000114036126032180/",
-    "https://www.sec.gov/Archives/edgar/data/356682/000114036126032175/"
-   ],
-   "npx_descriptions": [
-    "Shareholder proposal regarding AI Board oversight"
-   ],
-   "min_confidence": 1.0
-  },
-  {
-   "family": "Green Century",
-   "proposal_id": "googl-2026-12",
-   "company": "GOOGL",
-   "meeting_date": "2026-06-05",
-   "vote": "FOR",
-   "counts": {
-    "FOR": 2
-   },
-   "vote_records": 2,
-   "sources": [
-    "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
-   ],
-   "npx_descriptions": [
-    "Shareholder proposal regarding AI Board oversight"
-   ],
-   "min_confidence": 1.0
-  },
-  {
-   "family": "Impax (Pax)",
-   "proposal_id": "googl-2026-12",
-   "company": "GOOGL",
-   "meeting_date": "2026-06-05",
-   "vote": "AGAINST",
-   "counts": {
-    "AGAINST": 2
-   },
-   "vote_records": 2,
-   "sources": [
-    "https://www.sec.gov/Archives/edgar/data/76721/000139834426016225/"
-   ],
-   "npx_descriptions": [
-    "Shareholder proposal regarding AI Board oversight"
-   ],
-   "min_confidence": 1.0
-  },
-  {
-   "family": "Parnassus",
-   "proposal_id": "googl-2026-12",
-   "company": "GOOGL",
-   "meeting_date": "2026-06-05",
-   "vote": "FOR",
-   "counts": {
-    "FOR": 5
-   },
-   "vote_records": 5,
-   "sources": [
-    "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/",
-    "https://www.sec.gov/Archives/edgar/data/866256/000119312526358189/"
-   ],
-   "npx_descriptions": [
-    "Shareholder proposal regarding AI Board oversight"
-   ],
-   "min_confidence": 1.0
-  },
-  {
-   "family": "TIAA-CREF",
-   "proposal_id": "googl-2026-12",
-   "company": "GOOGL",
-   "meeting_date": "2026-06-05",
-   "vote": "AGAINST",
-   "counts": {
-    "AGAINST": 6
-   },
-   "vote_records": 6,
-   "sources": [
-    "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
-   ],
-   "npx_descriptions": [
-    "Shareholder proposal regarding AI Board oversight"
-   ],
-   "min_confidence": 1.0
-  },
-  {
-   "family": "Vanguard",
-   "proposal_id": "googl-2026-12",
-   "company": "GOOGL",
-   "meeting_date": "2026-06-05",
-   "vote": "SPLIT",
-   "counts": {
-    "AGAINST": 10,
-    "ABSTAIN": 2,
-    "FOR": 2
-   },
-   "vote_records": 14,
+   "fund_records": 10,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/",
     "https://www.sec.gov/Archives/edgar/data/52848/000110465926102044/"
@@ -5013,7 +5340,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding AI Board oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -5025,7 +5353,7 @@
     "AGAINST": 1,
     "FOR": 1
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
@@ -5033,7 +5361,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding a report on AI-generated misinformation"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -5044,7 +5373,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036126032180/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036126032175/"
@@ -5052,7 +5381,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding a report on AI-generated misinformation"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -5063,14 +5393,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
    ],
    "npx_descriptions": [
     "Shareholder proposal regarding a report on AI-generated misinformation"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -5081,14 +5412,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834426016225/"
    ],
    "npx_descriptions": [
     "Shareholder proposal regarding a report on AI-generated misinformation"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -5099,7 +5431,7 @@
    "counts": {
     "FOR": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/",
     "https://www.sec.gov/Archives/edgar/data/866256/000119312526358189/"
@@ -5107,7 +5439,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding a report on AI-generated misinformation"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -5118,14 +5451,15 @@
    "counts": {
     "FOR": 6
    },
-   "vote_records": 6,
+   "fund_records": 6,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
    ],
    "npx_descriptions": [
     "Shareholder proposal regarding a report on AI-generated misinformation"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -5134,11 +5468,11 @@
    "meeting_date": "2026-06-05",
    "vote": "SPLIT",
    "counts": {
-    "AGAINST": 8,
-    "FOR": 4,
-    "ABSTAIN": 2
+    "AGAINST": 6,
+    "FOR": 2,
+    "SPLIT_WITHIN_FUND": 2
    },
-   "vote_records": 14,
+   "fund_records": 10,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/",
     "https://www.sec.gov/Archives/edgar/data/52848/000110465926102044/"
@@ -5146,7 +5480,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding a report on AI-generated misinformation"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -5157,7 +5492,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
@@ -5165,7 +5500,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding a report on AI data usage oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -5176,7 +5512,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036126032180/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036126032175/"
@@ -5184,7 +5520,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding a report on AI data usage oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -5195,14 +5532,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
    ],
    "npx_descriptions": [
     "Shareholder proposal regarding a report on AI data usage oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -5213,14 +5551,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834426016225/"
    ],
    "npx_descriptions": [
     "Shareholder proposal regarding a report on AI data usage oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -5231,7 +5570,7 @@
    "counts": {
     "FOR": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/",
     "https://www.sec.gov/Archives/edgar/data/866256/000119312526358189/"
@@ -5239,7 +5578,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding a report on AI data usage oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -5250,14 +5590,15 @@
    "counts": {
     "FOR": 6
    },
-   "vote_records": 6,
+   "fund_records": 6,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
    ],
    "npx_descriptions": [
     "Shareholder proposal regarding a report on AI data usage oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -5266,11 +5607,11 @@
    "meeting_date": "2026-06-05",
    "vote": "SPLIT",
    "counts": {
-    "AGAINST": 8,
-    "FOR": 4,
-    "ABSTAIN": 2
+    "AGAINST": 6,
+    "FOR": 2,
+    "SPLIT_WITHIN_FUND": 2
    },
-   "vote_records": 14,
+   "fund_records": 10,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/",
     "https://www.sec.gov/Archives/edgar/data/52848/000110465926102044/"
@@ -5278,7 +5619,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding a report on AI data usage oversight"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -5289,7 +5631,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
@@ -5297,7 +5639,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding an enhanced disclosure on climate goals"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -5308,7 +5651,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036126032180/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036126032175/"
@@ -5316,7 +5659,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding an enhanced disclosure on climate goals"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -5327,14 +5671,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
    ],
    "npx_descriptions": [
     "Shareholder proposal regarding an enhanced disclosure on climate goals"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -5345,14 +5690,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834426016225/"
    ],
    "npx_descriptions": [
     "Shareholder proposal regarding an enhanced disclosure on climate goals"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -5363,7 +5709,7 @@
    "counts": {
     "FOR": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/",
     "https://www.sec.gov/Archives/edgar/data/866256/000119312526358189/"
@@ -5371,7 +5717,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding an enhanced disclosure on climate goals"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -5382,14 +5729,15 @@
    "counts": {
     "FOR": 6
    },
-   "vote_records": 6,
+   "fund_records": 6,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
    ],
    "npx_descriptions": [
     "Shareholder proposal regarding an enhanced disclosure on climate goals"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -5398,11 +5746,11 @@
    "meeting_date": "2026-06-05",
    "vote": "SPLIT",
    "counts": {
-    "AGAINST": 8,
-    "FOR": 4,
-    "ABSTAIN": 2
+    "AGAINST": 6,
+    "FOR": 2,
+    "SPLIT_WITHIN_FUND": 2
    },
-   "vote_records": 14,
+   "fund_records": 10,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/",
     "https://www.sec.gov/Archives/edgar/data/52848/000110465926102044/"
@@ -5410,7 +5758,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding an enhanced disclosure on climate goals"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -5421,7 +5770,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
@@ -5429,7 +5778,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding a report on water usage and AI development"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -5440,7 +5790,7 @@
    "counts": {
     "AGAINST": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036126032180/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036126032175/"
@@ -5448,7 +5798,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding a report on water usage and AI development"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -5459,14 +5810,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
    ],
    "npx_descriptions": [
     "Shareholder proposal regarding a report on water usage and AI development"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -5477,14 +5829,15 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834426016225/"
    ],
    "npx_descriptions": [
     "Shareholder proposal regarding a report on water usage and AI development"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -5495,7 +5848,7 @@
    "counts": {
     "FOR": 5
    },
-   "vote_records": 5,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/",
     "https://www.sec.gov/Archives/edgar/data/866256/000119312526358189/"
@@ -5503,7 +5856,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding a report on water usage and AI development"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -5514,14 +5868,15 @@
    "counts": {
     "AGAINST": 6
    },
-   "vote_records": 6,
+   "fund_records": 6,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
    ],
    "npx_descriptions": [
     "Shareholder proposal regarding a report on water usage and AI development"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -5530,11 +5885,10 @@
    "meeting_date": "2026-06-05",
    "vote": "SPLIT",
    "counts": {
-    "AGAINST": 10,
-    "ABSTAIN": 2,
-    "FOR": 2
+    "AGAINST": 8,
+    "SPLIT_WITHIN_FUND": 2
    },
-   "vote_records": 14,
+   "fund_records": 10,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/",
     "https://www.sec.gov/Archives/edgar/data/52848/000110465926102044/"
@@ -5542,7 +5896,8 @@
    "npx_descriptions": [
     "Shareholder proposal regarding a report on water usage and AI development"
    ],
-   "min_confidence": 1.0
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "BlackRock (iShares)",
@@ -5553,7 +5908,7 @@
    "counts": {
     "AGAINST": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
@@ -5561,7 +5916,8 @@
    "npx_descriptions": [
     "Approval of a non-binding stockholder proposal requesting reporting on greenhouse gas emissions from the use of our sold products."
    ],
-   "min_confidence": 0.78
+   "min_confidence": 0.78,
+   "reviewed": false
   },
   {
    "family": "Calvert",
@@ -5572,7 +5928,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1105446/000114036126032180/",
     "https://www.sec.gov/Archives/edgar/data/356682/000114036126032175/"
@@ -5580,7 +5936,8 @@
    "npx_descriptions": [
     "Approval of a non-binding stockholder proposal requesting reporting on greenhouse gas emissions from the use of our sold products."
    ],
-   "min_confidence": 0.78
+   "min_confidence": 0.78,
+   "reviewed": false
   },
   {
    "family": "Green Century",
@@ -5591,14 +5948,15 @@
    "counts": {
     "FOR": 2
    },
-   "vote_records": 2,
+   "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
    ],
    "npx_descriptions": [
     "Approval of a non-binding stockholder proposal requesting reporting on greenhouse gas emissions from the use of our sold products."
    ],
-   "min_confidence": 0.78
+   "min_confidence": 0.78,
+   "reviewed": false
   },
   {
    "family": "Impax (Pax)",
@@ -5609,14 +5967,15 @@
    "counts": {
     "AGAINST": 4
    },
-   "vote_records": 4,
+   "fund_records": 4,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/76721/000139834426016225/"
    ],
    "npx_descriptions": [
     "Approval of a non-binding stockholder proposal requesting reporting on greenhouse gas emissions from the use of our sold products."
    ],
-   "min_confidence": 0.78
+   "min_confidence": 0.78,
+   "reviewed": false
   },
   {
    "family": "Parnassus",
@@ -5627,7 +5986,7 @@
    "counts": {
     "FOR": 3
    },
-   "vote_records": 3,
+   "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/",
     "https://www.sec.gov/Archives/edgar/data/866256/000119312526358189/"
@@ -5635,7 +5994,8 @@
    "npx_descriptions": [
     "Approval of a non-binding stockholder proposal requesting reporting on greenhouse gas emissions from the use of our sold products."
    ],
-   "min_confidence": 0.78
+   "min_confidence": 0.78,
+   "reviewed": true
   },
   {
    "family": "TIAA-CREF",
@@ -5646,14 +6006,15 @@
    "counts": {
     "AGAINST": 6
    },
-   "vote_records": 6,
+   "fund_records": 6,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
    ],
    "npx_descriptions": [
     "Approval of a non-binding stockholder proposal requesting reporting on greenhouse gas emissions from the use of our sold products."
    ],
-   "min_confidence": 0.78
+   "min_confidence": 0.78,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -5662,19 +6023,304 @@
    "meeting_date": "2026-06-24",
    "vote": "SPLIT",
    "counts": {
-    "AGAINST": 4,
-    "FOR": 2,
-    "ABSTAIN": 1
+    "AGAINST": 3,
+    "FOR": 1,
+    "SPLIT_WITHIN_FUND": 1
    },
-   "vote_records": 7,
+   "fund_records": 5,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/"
    ],
    "npx_descriptions": [
     "Approval of a non-binding stockholder proposal requesting reporting on greenhouse gas emissions from the use of our sold products."
    ],
-   "min_confidence": 0.78
+   "min_confidence": 0.78,
+   "reviewed": false
   }
  ],
- "first_meeting_covered": "2023-07-01"
+ "near_misses": [
+  {
+   "family": "Parnassus",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.67,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/747546/000102140824002675/"
+  },
+  {
+   "family": "Parnassus",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.5,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/747546/000102140824002675/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "AAPL",
+   "meeting_date": "2024-02-28",
+   "npx_description": "Report on Use of Artificial Intelligence",
+   "best_guess": "aapl-2024-7",
+   "title_cover": 0.5,
+   "description_cover": 0.33,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "Establish a Board Committee on Artificial Intelligence",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.8,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "META",
+   "meeting_date": "2024-05-29",
+   "npx_description": "Report on Human Rights Impact Assessment of Targeted Advertising",
+   "best_guess": "meta-2024-10",
+   "title_cover": 0.67,
+   "description_cover": 1.0,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "AAPL",
+   "meeting_date": "2024-02-28",
+   "npx_description": "Report on Use of Artificial Intelligence",
+   "best_guess": "aapl-2024-7",
+   "title_cover": 0.5,
+   "description_cover": 0.33,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "Establish a Board Committee on Artificial Intelligence",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.8,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "META",
+   "meeting_date": "2024-05-29",
+   "npx_description": "Report on Human Rights Impact Assessment of Targeted Advertising",
+   "best_guess": "meta-2024-10",
+   "title_cover": 0.67,
+   "description_cover": 1.0,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
+  },
+  {
+   "family": "Vanguard",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.67,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/36405/000110465924094482/"
+  },
+  {
+   "family": "Vanguard",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.5,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/36405/000110465924094482/"
+  },
+  {
+   "family": "Vanguard",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.67,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/862084/000110465924094269/"
+  },
+  {
+   "family": "Vanguard",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.5,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/862084/000110465924094269/"
+  },
+  {
+   "family": "Calvert",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.67,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/"
+  },
+  {
+   "family": "Calvert",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.5,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/"
+  },
+  {
+   "family": "Calvert",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.67,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/"
+  },
+  {
+   "family": "Calvert",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.5,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/"
+  },
+  {
+   "family": "Calvert",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.67,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/356682/000114036124038969/"
+  },
+  {
+   "family": "Calvert",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.5,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/356682/000114036124038969/"
+  },
+  {
+   "family": "Domini",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.67,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/851680/000102140824007381/"
+  },
+  {
+   "family": "Domini",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.5,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/851680/000102140824007381/"
+  },
+  {
+   "family": "Impax (Pax)",
+   "company": "MSFT",
+   "meeting_date": "2023-12-07",
+   "npx_description": "Report on AI Misinformation and Disinformation (The Board recommends a vote AGAINST this proposal)",
+   "best_guess": "msft-2023-13",
+   "title_cover": 1.0,
+   "description_cover": 0.38,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/76721/000139834424017055/"
+  },
+  {
+   "family": "Impax (Pax)",
+   "company": "MSFT",
+   "meeting_date": "2023-12-07",
+   "npx_description": "Report on AI Misinformation and Disinformation (The Board recommends a vote AGAINST this proposal)",
+   "best_guess": "msft-2023-13",
+   "title_cover": 1.0,
+   "description_cover": 0.38,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/76721/000139834424017055/"
+  },
+  {
+   "family": "Impax (Pax)",
+   "company": "MSFT",
+   "meeting_date": "2023-12-07",
+   "npx_description": "Report on AI Misinformation and Disinformation (The Board recommends a vote AGAINST this proposal)",
+   "best_guess": "msft-2023-13",
+   "title_cover": 1.0,
+   "description_cover": 0.38,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/76721/000139834424017055/"
+  },
+  {
+   "family": "Impax (Pax)",
+   "company": "MSFT",
+   "meeting_date": "2023-12-07",
+   "npx_description": "Report on AI Misinformation and Disinformation (The Board recommends a vote AGAINST this proposal)",
+   "best_guess": "msft-2023-13",
+   "title_cover": 1.0,
+   "description_cover": 0.38,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/76721/000139834424017055/"
+  },
+  {
+   "family": "Impax (Pax)",
+   "company": "MSFT",
+   "meeting_date": "2023-12-07",
+   "npx_description": "Report on AI Misinformation and Disinformation (The Board recommends a vote AGAINST this proposal)",
+   "best_guess": "msft-2023-13",
+   "title_cover": 1.0,
+   "description_cover": 0.38,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/76721/000139834424017055/"
+  }
+ ],
+ "notes": [
+  "Vanguard Institutional Index Funds 0001104659-26-101889: no structured vote table (older text format)",
+  "ticker:DSEFX 0001021408-25-002683: no structured vote table (older text format)",
+  "ticker:DSEFX 0001193125-26-344194: no structured vote table (older text format)",
+  "Praxis Mutual Funds 0001398344-24-015276: no structured vote table (older text format)",
+  "Praxis Mutual Funds 0001398344-25-014789: no structured vote table (older text format)",
+  "Praxis Mutual Funds 0001398344-26-013429: no structured vote table (older text format)"
+ ]
 }

@@ -1,0 +1,51 @@
+{
+ "about": "Fund-vote rows a person has checked against the filings. scripts/publish_fund_votes.py marks only these rows as reviewed; every other row shows 'not yet reviewed'.",
+ "reviewed": [
+  {
+   "family": "Parnassus",
+   "reviewed_by": "Sophia Ware (owner), in chat",
+   "date": "2026-11-25",
+   "proposal_ids": [
+    "aapl-2024-7",
+    "aapl-2025-4",
+    "aapl-2025-5",
+    "amzn-2024-14",
+    "amzn-2024-16",
+    "amzn-2024-6",
+    "amzn-2025-11",
+    "amzn-2025-7",
+    "amzn-2025-8",
+    "amzn-2026-5",
+    "googl-2024-11",
+    "googl-2024-12",
+    "googl-2024-13",
+    "googl-2025-10",
+    "googl-2025-11",
+    "googl-2025-12",
+    "googl-2025-7",
+    "googl-2025-9",
+    "googl-2026-11",
+    "googl-2026-12",
+    "googl-2026-13",
+    "googl-2026-14",
+    "googl-2026-5",
+    "googl-2026-6",
+    "meta-2026-11",
+    "meta-2026-3",
+    "meta-2026-9",
+    "msft-2023-11",
+    "msft-2023-13",
+    "msft-2024-6",
+    "msft-2024-7",
+    "msft-2024-8",
+    "msft-2024-9",
+    "msft-2025-10",
+    "msft-2025-6",
+    "msft-2025-7",
+    "msft-2025-8",
+    "msft-2025-9",
+    "nvda-2026-7"
+   ]
+  }
+ ]
+}
