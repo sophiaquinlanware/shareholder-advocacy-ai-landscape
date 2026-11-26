@@ -133,6 +133,8 @@ def npx_filings(cik, since_year=2024):
 def words(text):
     t = re.sub(r"\bal\b", "ai", (text or "").lower())          # filings often OCR "AI" as "Al"
     t = re.sub(r"genal\b", "genai", t)
+    t = re.sub(r"artificial[\s-]+intelligence", "ai", t)          # "Artificial Intelligence" and "AI" are the same word here
+    t = re.sub(r"\bgenerative\s+ai\b", "genai", t)
     # "ai" is only two letters but is the most important word here, so it is kept.
     return {w for w in re.findall(r"[a-z0-9]+", t) if w not in STOP and (len(w) > 2 or w == "ai")}
 
