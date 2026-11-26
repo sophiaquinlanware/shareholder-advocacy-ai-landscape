@@ -47,9 +47,18 @@ FAMILIES = {
 }
 
 ISSUERS = {
-    "MSFT": (r"MICROSOFT", "594918104"), "GOOGL": (r"ALPHABET", "02079K"), "META": (r"META PLATFORMS", "30303M"),
-    "AMZN": (r"AMAZON", "023135"), "NVDA": (r"NVIDIA", "67066G"), "AAPL": (r"APPLE INC", "037833"),
-    "TSLA": (r"TESLA", "88160R"),
+    # Matched on the issuer name as funds report it (CUSIP prefix as a second key where known).
+    "MSFT": (r"^MICROSOFT", "594918104"), "GOOGL": (r"^ALPHABET", "02079K"), "META": (r"^META PLATFORMS", "30303M"),
+    "AMZN": (r"^AMAZON", "023135"), "NVDA": (r"^NVIDIA", "67066G"), "AAPL": (r"^APPLE INC", "037833"),
+    "TSLA": (r"^TESLA", "88160R"),
+    "IBM": (r"^INTERNATIONAL BUSINESS MACHINES", "459200"), "CRM": (r"^SALESFORCE", "79466L"),
+    "ADBE": (r"^ADOBE", "00724F"), "INTU": (r"^INTUIT", "461202"), "VRSK": (r"^VERISK", "92345Y"),
+    "WDAY": (r"^WORKDAY", "98138H"), "NOW": (r"^SERVICENOW", "81762P"), "PLTR": (r"^PALANTIR", "69608A"),
+    "CSCO": (r"^CISCO SYSTEMS", "17275R"), "AXON": (r"^AXON ENTERPRISE", "05464C"),
+    "MSI": (r"^MOTOROLA SOLUTIONS", "620076"), "NFLX": (r"^NETFLIX", "64110L"),
+    "DIS": (r"^(THE )?WALT DISNEY", "254687"), "CMCSA": (r"^COMCAST", "20030N"), "ORCL": (r"^ORACLE CORP", "68389X"),
+    "AMD": (r"^ADVANCED MICRO DEVICES", "007903"), "AVGO": (r"^BROADCOM", "11135F"),
+    "CRWV": (r"^COREWEAVE", None), "DLR": (r"^DIGITAL REALTY", "253868"), "SO": (r"^(THE )?SOUTHERN CO(MPANY)?\b", "842587"),
 }
 
 STOP = {"the", "of", "on", "and", "for", "a", "an", "to", "in", "report", "shareholder", "proposal", "regarding",
@@ -179,7 +188,7 @@ def parse_votes(path, tickers_by_cusip):
         el.clear()
         cusip = rec.get("cusip", "").upper()
         name = rec.get("issuerName", "").upper()
-        tic = next((t for t, (pat, cp) in ISSUERS.items() if cusip.startswith(cp) or re.search(pat, name)), None)
+        tic = next((t for t, (pat, cp) in ISSUERS.items() if (cp and cusip.startswith(cp)) or re.search(pat, name)), None)
         if not tic:
             continue
         rec["ticker"] = tic
