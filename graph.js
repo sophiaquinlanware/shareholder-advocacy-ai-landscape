@@ -736,18 +736,20 @@
       const fs = Number(el.getAttribute("font-size")) || 11;
       const full = d.label.length > 42 ? d.label.slice(0, 40) + "…" : d.label;
       const short = d.label.length > SHORT ? d.label.slice(0, SHORT - 1) + "…" : d.label;
-      const h = fs * 1.2;
+      const h = fs * 1.3;
       const r = radius(d) + 4;
       let pick = null;
       let text = full;
+      // Measured width of the text (the browser's own measure), plus a small gap.
+      const measure = (t) => { if (el.textContent !== t) el.textContent = t; return (el.getComputedTextLength ? el.getComputedTextLength() : t.length * fs * 0.6) + 3; };
       for (const t of short === full ? [full] : [full, short]) {
-        for (const c of spots(d, fs, t.length * fs * 0.56, h, r)) {
+        for (const c of spots(d, fs, measure(t), h, r)) {
           c.box.nx = d.x; c.box.ny = d.y;
           if (!hits(c.box)) { pick = c; text = t; break; }
         }
         if (pick) break;
       }
-      const w = full.length * fs * 0.56;
+      const w = measure(full);
       const cands = spots(d, fs, w, h, r);
       if (el.textContent !== text) el.textContent = text;
       // The focused node always keeps its label, at its first in-bounds spot.
