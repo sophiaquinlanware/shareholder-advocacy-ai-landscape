@@ -28,7 +28,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "SEC Rule 14a-8 ... No later than close of business (5:30 p.m. Pacific Time) on June 24, 2027",
-   "degree": 62
+   "degree": 67
   },
   {
    "id": "co-GOOGL",
@@ -60,7 +60,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "Corporate Secretary must receive the written proposal ... no later than Friday, December 25, 2026.",
-   "degree": 57
+   "degree": 62
   },
   {
    "id": "co-META",
@@ -89,7 +89,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "the proposal must be received by us ... no later than December 17, 2026.",
-   "degree": 34
+   "degree": 38
   },
   {
    "id": "co-AMZN",
@@ -120,7 +120,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "must be received no later than 6:00 p.m., Pacific Time, on Thursday, December 10, 2026",
-   "degree": 34
+   "degree": 39
   },
   {
    "id": "co-NVDA",
@@ -148,7 +148,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "must submit their proposals in writing ... on or before January 12, 2027.",
-   "degree": 32
+   "degree": 37
   },
   {
    "id": "co-AAPL",
@@ -173,7 +173,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm",
    "next_proposal_deadline_status": "passed",
    "next_proposal_deadline_quote": "must be received on or before the close of business on September 10, 2026.",
-   "degree": 24
+   "degree": 29
   },
   {
    "id": "co-TSLA",
@@ -201,7 +201,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "such a proposal would need to be received ... no later than June 21, 2027",
-   "degree": 14
+   "degree": 18
   },
   {
    "id": "co-ANT",
@@ -250,7 +250,7 @@
    "country": "US",
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm",
    "next_proposal_deadline_note": "No annual meeting held yet as a public company, so no Rule 14a-8 date is set; the deadline is a reasonable time before the first proxy is sent.",
-   "degree": 4
+   "degree": 12
   },
   {
    "id": "co-openai",
@@ -633,7 +633,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
    "next_proposal_deadline_status": "passed",
    "next_proposal_deadline_quote": "must be received at our corporate headquarters no later than November 10, 2026",
-   "degree": 1
+   "degree": 13
   },
   {
    "id": "co-CRM",
@@ -658,7 +658,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "must be received at our principal executive offices not later than the close of business on December 17, 2026",
-   "degree": 5
+   "degree": 19
   },
   {
    "id": "co-ADBE",
@@ -682,7 +682,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000043/adbe-20260227.htm",
    "next_proposal_deadline_status": "passed",
    "next_proposal_deadline_quote": "we must receive the proposal at our principal executive offices, addressed to the Corporate Secretary, no later than October 30, 2026",
-   "degree": 0
+   "degree": 12
   },
   {
    "id": "co-INTU",
@@ -706,7 +706,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000053/intu-20261125.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "so that the Corporate Secretary receives it at our principal executive offices by the close of business ... on July 28, 2027",
-   "degree": 2
+   "degree": 17
   },
   {
    "id": "co-VRSK",
@@ -729,7 +729,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1442145/000119312526141398/d23242ddef14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "We must receive the proposal no later than December 4, 2026.",
-   "degree": 2
+   "degree": 11
   },
   {
    "id": "co-WDAY",
@@ -752,7 +752,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1327811/000110465926055687/tm261347-2_def14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "we must receive such proposals no later than January 5, 2027.",
-   "degree": 1
+   "degree": 11
   },
   {
    "id": "co-NOW",
@@ -777,7 +777,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000039/now-20260406.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "must be received by the Company not later than December 7, 2026",
-   "degree": 0
+   "degree": 12
   },
   {
    "id": "co-PLTR",
@@ -800,7 +800,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "the proposal must be received by our corporate secretary at our corporate headquarters on or before December 25, 2026",
-   "degree": 2
+   "degree": 13
   },
   {
    "id": "co-CSCO",
@@ -826,7 +826,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "such proposals must be received by Cisco no later than July 1, 2027.",
-   "degree": 3
+   "degree": 18
   },
   {
    "id": "co-AXON",
@@ -849,7 +849,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1069183/000162828026025521/axon-20260416.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "be received not later than December 17, 2026 by the Corporate Secretary of the Company",
-   "degree": 1
+   "degree": 10
   },
   {
    "id": "co-MSI",
@@ -872,7 +872,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/68505/000119312526139004/d50373ddef14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "must be received by the Secretary, Motorola Solutions, Inc. ... no later than December 3, 2026",
-   "degree": 0
+   "degree": 9
   },
   {
    "id": "co-HO",
@@ -1019,7 +1019,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1065280/000119312526159286/d20613ddef14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "must be received by our Secretary no later than December 17, 2026",
-   "degree": 1
+   "degree": 18
   },
   {
    "id": "co-warner-bros-discovery",
@@ -1061,7 +1061,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000013/dis-20260122.htm",
    "next_proposal_deadline_status": "passed",
    "next_proposal_deadline_quote": "shareholder proposals must be received by the Company's Secretary no later than the close of business on September 24, 2026",
-   "degree": 1
+   "degree": 13
   },
   {
    "id": "co-CMCSA",
@@ -1084,7 +1084,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1166691/000119312526177138/cmcsa-20260424.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "under Rule 14a-8 ... must be received no later than December 25, 2026",
-   "degree": 1
+   "degree": 11
   },
   {
    "id": "co-ORCL",
@@ -1111,7 +1111,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526402816/orcl-20260925.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "Proposals for inclusion in 2027 proxy statement ... No later than the close of business on May 28, 2027.",
-   "degree": 13
+   "degree": 17
   },
   {
    "id": "co-9984",
@@ -1176,7 +1176,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "submitted in writing ... and received by us on or before November 27, 2026",
-   "degree": 18
+   "degree": 23
   },
   {
    "id": "co-AVGO",
@@ -1201,7 +1201,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/d49254ddef14a.htm",
    "next_proposal_deadline_status": "passed",
    "next_proposal_deadline_quote": "must comply with ... Rule 14a-8 ... and be received no later than November 2, 2026",
-   "degree": 17
+   "degree": 22
   },
   {
    "id": "co-TSM",
@@ -1293,7 +1293,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000191/crwv-20260422.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "our Corporate Secretary must receive the written proposal ... not later than December 23, 2026",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "co-NBIS",
@@ -1337,7 +1337,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "your proposal must be received in writing not later than December 18, 2026",
-   "degree": 2
+   "degree": 7
   },
   {
    "id": "co-SO",
@@ -1360,7 +1360,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "pursuant to Rule 14a-8 of the Exchange Act for the 2027 annual meeting is December 4, 2026",
-   "degree": 1
+   "degree": 10
   },
   {
    "id": "co-MU",
@@ -1569,7 +1569,7 @@
    "description": "Sustainable wealth manager; lead filer of generative-AI misinformation proposals.",
    "website": "https://arjuna-capital.com",
    "source_url": "https://arjuna-capital.com",
-   "degree": 31
+   "degree": 34
   },
   {
    "id": "open-mic",
@@ -1602,7 +1602,7 @@
    "description": "Islamic-values ethical asset manager active in human rights shareholder advocacy.",
    "website": "https://www.azzad.net",
    "source_url": "https://www.azzad.net",
-   "degree": 20
+   "degree": 36
   },
   {
    "id": "as-you-sow",
@@ -1701,7 +1701,7 @@
    "description": "ESG investment manager; files on AI principles and data center climate impacts.",
    "website": "https://www.trilliuminvest.com",
    "source_url": "https://www.trilliuminvest.com",
-   "degree": 37
+   "degree": 46
   },
   {
    "id": "csjp",
@@ -1723,7 +1723,7 @@
    "description": "Boston socially responsible manager filing on AI, cloud and human rights.",
    "website": "https://www.zevin.com",
    "source_url": "https://www.zevin.com",
-   "degree": 34
+   "degree": 38
   },
   {
    "id": "jewish-investor-network",
@@ -1811,7 +1811,7 @@
    "description": "Sustainable manager; co-founder and co-lead of WBA ethical AI coalition.",
    "website": "https://www.bostoncommonasset.com",
    "source_url": "https://www.bostoncommonasset.com",
-   "degree": 16
+   "degree": 19
   },
   {
    "id": "harrington",
@@ -1822,7 +1822,7 @@
    "description": "California socially responsible manager and frequent shareholder activist.",
    "website": "https://www.harringtoninvestments.com",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923005962/b425233px14a6g.htm",
-   "degree": 9
+   "degree": 19
   },
   {
    "id": "aviva",
@@ -2174,7 +2174,7 @@
    "description": "ESG mutual fund manager; member of WBA ethical AI coalition.",
    "website": "https://www.parnassus.com",
    "source_url": "https://www.parnassus.com",
-   "degree": 27
+   "degree": 29
   },
   {
    "id": "fidelity-intl",
@@ -2218,7 +2218,7 @@
    "description": "UK asset manager with published AI expectations and Big Tech engagement.",
    "website": "https://www.lgim.com",
    "source_url": "https://group.legalandgeneral.com/en/newsroom/press-releases/lgim-dials-up-engagement-on-nature-health-and-ai-in-latest-active-ownership-report",
-   "degree": 15
+   "degree": 31
   },
   {
    "id": "nbim",
@@ -2251,7 +2251,7 @@
    "description": "Socially responsible manager; signed IASJ Amazon responsible-AI solicitation.",
    "website": "https://www.northstarasset.com",
    "source_url": "https://www.northstarasset.com",
-   "degree": 35
+   "degree": 46
   },
   {
    "id": "ceres",
@@ -2306,7 +2306,7 @@
    "description": null,
    "website": null,
    "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
-   "degree": 18
+   "degree": 34
   },
   {
    "id": "calstrs",
@@ -2317,7 +2317,7 @@
    "description": null,
    "website": null,
    "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
-   "degree": 17
+   "degree": 33
   },
   {
    "id": "dws",
@@ -2383,7 +2383,7 @@
    "description": null,
    "website": null,
    "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
-   "degree": 17
+   "degree": 33
   },
   {
    "id": "calvert-research-and-management",
@@ -2427,7 +2427,7 @@
    "description": null,
    "website": null,
    "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
-   "degree": 15
+   "degree": 30
   },
   {
    "id": "state-street",
@@ -2504,7 +2504,7 @@
    "description": null,
    "website": null,
    "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
-   "degree": 14
+   "degree": 29
   },
   {
    "id": "maryknoll-sisters",
@@ -3087,7 +3087,7 @@
    "description": "US sustainable investment advisory firm.",
    "website": "https://firstaffirmative.com",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
-   "degree": 1
+   "degree": 22
   },
   {
    "id": "auris-gestion",
@@ -3197,7 +3197,7 @@
    "description": "Bank whose largest stockholder is a Workers United joint board; its LongView Funds engage companies and file shareholder resolutions on net-zero emissions, diversity, freedom of association and reproductive rights.",
    "website": "https://www.amalgamatedbank.com",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1823608/000182360824000104/amal-20240411.htm",
-   "degree": 11
+   "degree": 28
   },
   {
    "id": "bailard",
@@ -3208,7 +3208,7 @@
    "description": "California wealth and asset manager whose Sustainable, Responsible and Impact Investing group engages companies and co-files proposals with partners such as As You Sow and ICCR, for example at CVS Health in 2023.",
    "website": "https://www.bailard.com",
    "source_url": "https://www.bailard.com/impact/engagement-advocacy",
-   "degree": 1
+   "degree": 21
   },
   {
    "id": "capital-group",
@@ -9382,6 +9382,14 @@
    "source_url": "https://www.unpri.org/events/webinar-ai-data-centres",
    "verified": "2026-11",
    "degree": 1
+  },
+  {
+   "id": "fidelity",
+   "type": "investor",
+   "layer": "investors",
+   "label": "FMR LLC",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "degree": 27
   },
   {
    "id": "ev-un-guiding-principles",
@@ -19864,6 +19872,24 @@
    "pct_of_portfolio": 2.51
   },
   {
+   "source": "parnassus",
+   "target": "co-INTU",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/",
+   "value_usd": 2039656.0,
+   "pct_of_portfolio": 0.01
+  },
+  {
+   "source": "parnassus",
+   "target": "co-NFLX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/",
+   "value_usd": 1798017.0,
+   "pct_of_portfolio": 0.01
+  },
+  {
    "source": "trillium",
    "target": "co-MSFT",
    "type": "holds shares in",
@@ -19945,6 +19971,87 @@
    "pct_of_portfolio": 1.91
   },
   {
+   "source": "trillium",
+   "target": "co-IBM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "value_usd": 522314.0,
+   "pct_of_portfolio": 0.02
+  },
+  {
+   "source": "trillium",
+   "target": "co-CRM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "value_usd": 619380.0,
+   "pct_of_portfolio": 0.02
+  },
+  {
+   "source": "trillium",
+   "target": "co-ADBE",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "value_usd": 1304339.0,
+   "pct_of_portfolio": 0.04
+  },
+  {
+   "source": "trillium",
+   "target": "co-INTU",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "value_usd": 24501154.0,
+   "pct_of_portfolio": 0.77
+  },
+  {
+   "source": "trillium",
+   "target": "co-VRSK",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "value_usd": 15976485.0,
+   "pct_of_portfolio": 0.5
+  },
+  {
+   "source": "trillium",
+   "target": "co-NOW",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "value_usd": 38232993.0,
+   "pct_of_portfolio": 1.2
+  },
+  {
+   "source": "trillium",
+   "target": "co-CSCO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "value_usd": 7836110.0,
+   "pct_of_portfolio": 0.25
+  },
+  {
+   "source": "trillium",
+   "target": "co-NFLX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "value_usd": 26037788.0,
+   "pct_of_portfolio": 0.82
+  },
+  {
+   "source": "trillium",
+   "target": "co-DIS",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "value_usd": 606951.0,
+   "pct_of_portfolio": 0.02
+  },
+  {
    "source": "boston-common",
    "target": "co-MSFT",
    "type": "holds shares in",
@@ -19997,6 +20104,33 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/",
    "value_usd": 42668531.0,
    "pct_of_portfolio": 2.47
+  },
+  {
+   "source": "boston-common",
+   "target": "co-CRM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/",
+   "value_usd": 4560638.0,
+   "pct_of_portfolio": 0.26
+  },
+  {
+   "source": "boston-common",
+   "target": "co-NFLX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/",
+   "value_usd": 19672493.0,
+   "pct_of_portfolio": 1.14
+  },
+  {
+   "source": "boston-common",
+   "target": "co-DLR",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/",
+   "value_usd": 3803911.0,
+   "pct_of_portfolio": 0.22
   },
   {
    "source": "zevin",
@@ -20060,6 +20194,42 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/",
    "value_usd": 11511539.0,
    "pct_of_portfolio": 1.65
+  },
+  {
+   "source": "zevin",
+   "target": "co-CSCO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/",
+   "value_usd": 463778.0,
+   "pct_of_portfolio": 0.07
+  },
+  {
+   "source": "zevin",
+   "target": "co-NFLX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/",
+   "value_usd": 7623609.0,
+   "pct_of_portfolio": 1.09
+  },
+  {
+   "source": "zevin",
+   "target": "co-DLR",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/",
+   "value_usd": 11755029.0,
+   "pct_of_portfolio": 1.68
+  },
+  {
+   "source": "zevin",
+   "target": "co-SO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/",
+   "value_usd": 219659.0,
+   "pct_of_portfolio": 0.03
   },
   {
    "source": "domini",
@@ -20141,6 +20311,33 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/",
    "value_usd": 10109005.0,
    "pct_of_portfolio": 2.26
+  },
+  {
+   "source": "arjuna",
+   "target": "co-IBM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/",
+   "value_usd": 1432405.0,
+   "pct_of_portfolio": 0.32
+  },
+  {
+   "source": "arjuna",
+   "target": "co-CSCO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/",
+   "value_usd": 3795465.0,
+   "pct_of_portfolio": 0.85
+  },
+  {
+   "source": "arjuna",
+   "target": "co-NFLX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/",
+   "value_usd": 1045997.0,
+   "pct_of_portfolio": 0.23
   },
   {
    "source": "northstar",
@@ -20231,6 +20428,105 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
    "value_usd": 1884924.0,
    "pct_of_portfolio": 0.34
+  },
+  {
+   "source": "northstar",
+   "target": "co-IBM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 121959.0,
+   "pct_of_portfolio": 0.02
+  },
+  {
+   "source": "northstar",
+   "target": "co-CRM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 253869.0,
+   "pct_of_portfolio": 0.05
+  },
+  {
+   "source": "northstar",
+   "target": "co-ADBE",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 1200058.0,
+   "pct_of_portfolio": 0.22
+  },
+  {
+   "source": "northstar",
+   "target": "co-INTU",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 385308.0,
+   "pct_of_portfolio": 0.07
+  },
+  {
+   "source": "northstar",
+   "target": "co-NOW",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 287100.0,
+   "pct_of_portfolio": 0.05
+  },
+  {
+   "source": "northstar",
+   "target": "co-PLTR",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 25215.0,
+   "pct_of_portfolio": 0.0
+  },
+  {
+   "source": "northstar",
+   "target": "co-CSCO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 742776.0,
+   "pct_of_portfolio": 0.13
+  },
+  {
+   "source": "northstar",
+   "target": "co-NFLX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 214632.0,
+   "pct_of_portfolio": 0.04
+  },
+  {
+   "source": "northstar",
+   "target": "co-DIS",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 863887.0,
+   "pct_of_portfolio": 0.16
+  },
+  {
+   "source": "northstar",
+   "target": "co-CMCSA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 15456.0,
+   "pct_of_portfolio": 0.0
+  },
+  {
+   "source": "northstar",
+   "target": "co-SPCX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 7647.0,
+   "pct_of_portfolio": 0.0
   },
   {
    "source": "amalgamated-bank",
@@ -20332,6 +20628,159 @@
    "pct_of_portfolio": 2.28
   },
   {
+   "source": "amalgamated-bank",
+   "target": "co-IBM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 34748.0,
+   "pct_of_portfolio": 0.24
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-CRM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 32105.0,
+   "pct_of_portfolio": 0.22
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-ADBE",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 18727.0,
+   "pct_of_portfolio": 0.13
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-INTU",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 43781.0,
+   "pct_of_portfolio": 0.31
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-VRSK",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 3914.0,
+   "pct_of_portfolio": 0.03
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-WDAY",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 6702.0,
+   "pct_of_portfolio": 0.05
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-NOW",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 27198.0,
+   "pct_of_portfolio": 0.19
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-PLTR",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 83128.0,
+   "pct_of_portfolio": 0.58
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-CSCO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 75659.0,
+   "pct_of_portfolio": 0.53
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-AXON",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 6579.0,
+   "pct_of_portfolio": 0.05
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-MSI",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 13218.0,
+   "pct_of_portfolio": 0.09
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-NFLX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 58228.0,
+   "pct_of_portfolio": 0.41
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-DIS",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 30863.0,
+   "pct_of_portfolio": 0.22
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-CMCSA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 13163.0,
+   "pct_of_portfolio": 0.09
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-DLR",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 10508.0,
+   "pct_of_portfolio": 0.07
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-SO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 16284.0,
+   "pct_of_portfolio": 0.11
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-SPCX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 6400.0,
+   "pct_of_portfolio": 0.04
+  },
+  {
    "source": "federated-hermes-eos",
    "target": "co-MSFT",
    "type": "holds shares in",
@@ -20420,6 +20869,150 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
    "value_usd": 764218356.0,
    "pct_of_portfolio": 1.07
+  },
+  {
+   "source": "federated-hermes-eos",
+   "target": "co-IBM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 1724910.0,
+   "pct_of_portfolio": 0.0
+  },
+  {
+   "source": "federated-hermes-eos",
+   "target": "co-CRM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 12607295.0,
+   "pct_of_portfolio": 0.02
+  },
+  {
+   "source": "federated-hermes-eos",
+   "target": "co-ADBE",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 88975271.0,
+   "pct_of_portfolio": 0.12
+  },
+  {
+   "source": "federated-hermes-eos",
+   "target": "co-INTU",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 442389637.0,
+   "pct_of_portfolio": 0.62
+  },
+  {
+   "source": "federated-hermes-eos",
+   "target": "co-VRSK",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 505564.0,
+   "pct_of_portfolio": 0.0
+  },
+  {
+   "source": "federated-hermes-eos",
+   "target": "co-WDAY",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 29368361.0,
+   "pct_of_portfolio": 0.04
+  },
+  {
+   "source": "federated-hermes-eos",
+   "target": "co-NOW",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 89135277.0,
+   "pct_of_portfolio": 0.12
+  },
+  {
+   "source": "federated-hermes-eos",
+   "target": "co-PLTR",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 13249313.0,
+   "pct_of_portfolio": 0.02
+  },
+  {
+   "source": "federated-hermes-eos",
+   "target": "co-CSCO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 130882924.0,
+   "pct_of_portfolio": 0.18
+  },
+  {
+   "source": "federated-hermes-eos",
+   "target": "co-AXON",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 78665198.0,
+   "pct_of_portfolio": 0.11
+  },
+  {
+   "source": "federated-hermes-eos",
+   "target": "co-MSI",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 54528307.0,
+   "pct_of_portfolio": 0.08
+  },
+  {
+   "source": "federated-hermes-eos",
+   "target": "co-NFLX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 213601694.0,
+   "pct_of_portfolio": 0.3
+  },
+  {
+   "source": "federated-hermes-eos",
+   "target": "co-DIS",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 30614856.0,
+   "pct_of_portfolio": 0.04
+  },
+  {
+   "source": "federated-hermes-eos",
+   "target": "co-CMCSA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 884761.0,
+   "pct_of_portfolio": 0.0
+  },
+  {
+   "source": "federated-hermes-eos",
+   "target": "co-SO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 155376815.0,
+   "pct_of_portfolio": 0.22
+  },
+  {
+   "source": "federated-hermes-eos",
+   "target": "co-SPCX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 105843528.0,
+   "pct_of_portfolio": 0.15
   },
   {
    "source": "lgim",
@@ -20521,6 +21114,150 @@
    "pct_of_portfolio": 2.31
   },
   {
+   "source": "lgim",
+   "target": "co-IBM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 1411414185.0,
+   "pct_of_portfolio": 0.29
+  },
+  {
+   "source": "lgim",
+   "target": "co-CRM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 1244683770.0,
+   "pct_of_portfolio": 0.26
+  },
+  {
+   "source": "lgim",
+   "target": "co-ADBE",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 755928092.0,
+   "pct_of_portfolio": 0.16
+  },
+  {
+   "source": "lgim",
+   "target": "co-INTU",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 1533102407.0,
+   "pct_of_portfolio": 0.32
+  },
+  {
+   "source": "lgim",
+   "target": "co-VRSK",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 188409439.0,
+   "pct_of_portfolio": 0.04
+  },
+  {
+   "source": "lgim",
+   "target": "co-WDAY",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 273322857.0,
+   "pct_of_portfolio": 0.06
+  },
+  {
+   "source": "lgim",
+   "target": "co-NOW",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 817766145.0,
+   "pct_of_portfolio": 0.17
+  },
+  {
+   "source": "lgim",
+   "target": "co-PLTR",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 2314274254.0,
+   "pct_of_portfolio": 0.48
+  },
+  {
+   "source": "lgim",
+   "target": "co-CSCO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 3396483032.0,
+   "pct_of_portfolio": 0.7
+  },
+  {
+   "source": "lgim",
+   "target": "co-AXON",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 187456493.0,
+   "pct_of_portfolio": 0.04
+  },
+  {
+   "source": "lgim",
+   "target": "co-MSI",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 508526656.0,
+   "pct_of_portfolio": 0.1
+  },
+  {
+   "source": "lgim",
+   "target": "co-NFLX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 1822898098.0,
+   "pct_of_portfolio": 0.38
+  },
+  {
+   "source": "lgim",
+   "target": "co-DIS",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 1130251866.0,
+   "pct_of_portfolio": 0.23
+  },
+  {
+   "source": "lgim",
+   "target": "co-CMCSA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 542455933.0,
+   "pct_of_portfolio": 0.11
+  },
+  {
+   "source": "lgim",
+   "target": "co-SO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 641631597.0,
+   "pct_of_portfolio": 0.13
+  },
+  {
+   "source": "lgim",
+   "target": "co-SPCX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 269662854.0,
+   "pct_of_portfolio": 0.06
+  },
+  {
    "source": "new-york-state-common-retirement-fund",
    "target": "co-MSFT",
    "type": "holds shares in",
@@ -20618,6 +21355,141 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
    "value_usd": 1740947163.0,
    "pct_of_portfolio": 2.44
+  },
+  {
+   "source": "new-york-state-common-retirement-fund",
+   "target": "co-CRM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 212727367.0,
+   "pct_of_portfolio": 0.3
+  },
+  {
+   "source": "new-york-state-common-retirement-fund",
+   "target": "co-ADBE",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 109028256.0,
+   "pct_of_portfolio": 0.15
+  },
+  {
+   "source": "new-york-state-common-retirement-fund",
+   "target": "co-INTU",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 235899327.0,
+   "pct_of_portfolio": 0.33
+  },
+  {
+   "source": "new-york-state-common-retirement-fund",
+   "target": "co-VRSK",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 13381170.0,
+   "pct_of_portfolio": 0.02
+  },
+  {
+   "source": "new-york-state-common-retirement-fund",
+   "target": "co-WDAY",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 23617040.0,
+   "pct_of_portfolio": 0.03
+  },
+  {
+   "source": "new-york-state-common-retirement-fund",
+   "target": "co-NOW",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 155401346.0,
+   "pct_of_portfolio": 0.22
+  },
+  {
+   "source": "new-york-state-common-retirement-fund",
+   "target": "co-PLTR",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 444662929.0,
+   "pct_of_portfolio": 0.62
+  },
+  {
+   "source": "new-york-state-common-retirement-fund",
+   "target": "co-CSCO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 500675171.0,
+   "pct_of_portfolio": 0.7
+  },
+  {
+   "source": "new-york-state-common-retirement-fund",
+   "target": "co-AXON",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 16748270.0,
+   "pct_of_portfolio": 0.02
+  },
+  {
+   "source": "new-york-state-common-retirement-fund",
+   "target": "co-MSI",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 79398269.0,
+   "pct_of_portfolio": 0.11
+  },
+  {
+   "source": "new-york-state-common-retirement-fund",
+   "target": "co-NFLX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 309434784.0,
+   "pct_of_portfolio": 0.43
+  },
+  {
+   "source": "new-york-state-common-retirement-fund",
+   "target": "co-DIS",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 199976325.0,
+   "pct_of_portfolio": 0.28
+  },
+  {
+   "source": "new-york-state-common-retirement-fund",
+   "target": "co-CMCSA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 83172552.0,
+   "pct_of_portfolio": 0.12
+  },
+  {
+   "source": "new-york-state-common-retirement-fund",
+   "target": "co-DLR",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 33016842.0,
+   "pct_of_portfolio": 0.05
+  },
+  {
+   "source": "new-york-state-common-retirement-fund",
+   "target": "co-SPCX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 93321996.0,
+   "pct_of_portfolio": 0.13
   },
   {
    "source": "calpers",
@@ -20719,6 +21591,150 @@
    "pct_of_portfolio": 2.37
   },
   {
+   "source": "calpers",
+   "target": "co-IBM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 412988953.0,
+   "pct_of_portfolio": 0.22
+  },
+  {
+   "source": "calpers",
+   "target": "co-CRM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 389013023.0,
+   "pct_of_portfolio": 0.2
+  },
+  {
+   "source": "calpers",
+   "target": "co-ADBE",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 299712893.0,
+   "pct_of_portfolio": 0.16
+  },
+  {
+   "source": "calpers",
+   "target": "co-INTU",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 530576847.0,
+   "pct_of_portfolio": 0.28
+  },
+  {
+   "source": "calpers",
+   "target": "co-VRSK",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 39568455.0,
+   "pct_of_portfolio": 0.02
+  },
+  {
+   "source": "calpers",
+   "target": "co-WDAY",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 60361155.0,
+   "pct_of_portfolio": 0.03
+  },
+  {
+   "source": "calpers",
+   "target": "co-NOW",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 156960955.0,
+   "pct_of_portfolio": 0.08
+  },
+  {
+   "source": "calpers",
+   "target": "co-PLTR",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 841217720.0,
+   "pct_of_portfolio": 0.44
+  },
+  {
+   "source": "calpers",
+   "target": "co-CSCO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 844255963.0,
+   "pct_of_portfolio": 0.44
+  },
+  {
+   "source": "calpers",
+   "target": "co-AXON",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 34811000.0,
+   "pct_of_portfolio": 0.02
+  },
+  {
+   "source": "calpers",
+   "target": "co-MSI",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 179095308.0,
+   "pct_of_portfolio": 0.09
+  },
+  {
+   "source": "calpers",
+   "target": "co-NFLX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 514246089.0,
+   "pct_of_portfolio": 0.27
+  },
+  {
+   "source": "calpers",
+   "target": "co-DIS",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 264061413.0,
+   "pct_of_portfolio": 0.14
+  },
+  {
+   "source": "calpers",
+   "target": "co-CMCSA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 181206313.0,
+   "pct_of_portfolio": 0.09
+  },
+  {
+   "source": "calpers",
+   "target": "co-SO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 176841836.0,
+   "pct_of_portfolio": 0.09
+  },
+  {
+   "source": "calpers",
+   "target": "co-SPCX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 146148793.0,
+   "pct_of_portfolio": 0.08
+  },
+  {
    "source": "calstrs",
    "target": "co-MSFT",
    "type": "holds shares in",
@@ -20818,6 +21834,150 @@
    "pct_of_portfolio": 2.18
   },
   {
+   "source": "calstrs",
+   "target": "co-CRM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 271097606.0,
+   "pct_of_portfolio": 0.25
+  },
+  {
+   "source": "calstrs",
+   "target": "co-ADBE",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 143244660.0,
+   "pct_of_portfolio": 0.13
+  },
+  {
+   "source": "calstrs",
+   "target": "co-INTU",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 329220544.0,
+   "pct_of_portfolio": 0.3
+  },
+  {
+   "source": "calstrs",
+   "target": "co-VRSK",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 36783656.0,
+   "pct_of_portfolio": 0.03
+  },
+  {
+   "source": "calstrs",
+   "target": "co-WDAY",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 54626404.0,
+   "pct_of_portfolio": 0.05
+  },
+  {
+   "source": "calstrs",
+   "target": "co-NOW",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 203760731.0,
+   "pct_of_portfolio": 0.19
+  },
+  {
+   "source": "calstrs",
+   "target": "co-PLTR",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 608874311.0,
+   "pct_of_portfolio": 0.56
+  },
+  {
+   "source": "calstrs",
+   "target": "co-CSCO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 634533096.0,
+   "pct_of_portfolio": 0.58
+  },
+  {
+   "source": "calstrs",
+   "target": "co-AXON",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 48571209.0,
+   "pct_of_portfolio": 0.04
+  },
+  {
+   "source": "calstrs",
+   "target": "co-MSI",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 112823720.0,
+   "pct_of_portfolio": 0.1
+  },
+  {
+   "source": "calstrs",
+   "target": "co-NFLX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 437179977.0,
+   "pct_of_portfolio": 0.4
+  },
+  {
+   "source": "calstrs",
+   "target": "co-DIS",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 276280270.0,
+   "pct_of_portfolio": 0.25
+  },
+  {
+   "source": "calstrs",
+   "target": "co-CMCSA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 121049814.0,
+   "pct_of_portfolio": 0.11
+  },
+  {
+   "source": "calstrs",
+   "target": "co-DLR",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 90852222.0,
+   "pct_of_portfolio": 0.08
+  },
+  {
+   "source": "calstrs",
+   "target": "co-SO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 106703717.0,
+   "pct_of_portfolio": 0.1
+  },
+  {
+   "source": "calstrs",
+   "target": "co-SPCX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 104743154.0,
+   "pct_of_portfolio": 0.1
+  },
+  {
    "source": "blackrock",
    "target": "co-MSFT",
    "type": "holds shares in",
@@ -20906,6 +22066,987 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
    "value_usd": 54909661593.0,
    "pct_of_portfolio": 1.24
+  },
+  {
+   "source": "blackrock",
+   "target": "co-IBM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 13035173782.0,
+   "pct_of_portfolio": 0.3
+  },
+  {
+   "source": "blackrock",
+   "target": "co-CRM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 19173802872.0,
+   "pct_of_portfolio": 0.43
+  },
+  {
+   "source": "blackrock",
+   "target": "co-ADBE",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 21520676761.0,
+   "pct_of_portfolio": 0.49
+  },
+  {
+   "source": "blackrock",
+   "target": "co-INTU",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 29436519657.0,
+   "pct_of_portfolio": 0.67
+  },
+  {
+   "source": "blackrock",
+   "target": "co-VRSK",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 3144551425.0,
+   "pct_of_portfolio": 0.07
+  },
+  {
+   "source": "blackrock",
+   "target": "co-WDAY",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 3106084497.0,
+   "pct_of_portfolio": 0.07
+  },
+  {
+   "source": "blackrock",
+   "target": "co-NOW",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 13419898541.0,
+   "pct_of_portfolio": 0.3
+  },
+  {
+   "source": "blackrock",
+   "target": "co-PLTR",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 3033406570.0,
+   "pct_of_portfolio": 0.07
+  },
+  {
+   "source": "blackrock",
+   "target": "co-CSCO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 16858151156.0,
+   "pct_of_portfolio": 0.38
+  },
+  {
+   "source": "blackrock",
+   "target": "co-AXON",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 2455555934.0,
+   "pct_of_portfolio": 0.06
+  },
+  {
+   "source": "blackrock",
+   "target": "co-MSI",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 5202999259.0,
+   "pct_of_portfolio": 0.12
+  },
+  {
+   "source": "blackrock",
+   "target": "co-NFLX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 21328757393.0,
+   "pct_of_portfolio": 0.48
+  },
+  {
+   "source": "blackrock",
+   "target": "co-DIS",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 12257515824.0,
+   "pct_of_portfolio": 0.28
+  },
+  {
+   "source": "blackrock",
+   "target": "co-CMCSA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 12575935640.0,
+   "pct_of_portfolio": 0.28
+  },
+  {
+   "source": "blackrock",
+   "target": "co-SO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 6077338734.0,
+   "pct_of_portfolio": 0.14
+  },
+  {
+   "source": "harrington",
+   "target": "co-MSFT",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/",
+   "value_usd": 13450967.0,
+   "pct_of_portfolio": 6.43
+  },
+  {
+   "source": "harrington",
+   "target": "co-GOOGL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/",
+   "value_usd": 17712629.0,
+   "pct_of_portfolio": 8.47
+  },
+  {
+   "source": "harrington",
+   "target": "co-AMZN",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/",
+   "value_usd": 6099939.0,
+   "pct_of_portfolio": 2.92
+  },
+  {
+   "source": "harrington",
+   "target": "co-NVDA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/",
+   "value_usd": 3577573.0,
+   "pct_of_portfolio": 1.71
+  },
+  {
+   "source": "harrington",
+   "target": "co-AAPL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/",
+   "value_usd": 18966390.0,
+   "pct_of_portfolio": 9.07
+  },
+  {
+   "source": "harrington",
+   "target": "co-ORCL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/",
+   "value_usd": 4781884.0,
+   "pct_of_portfolio": 2.29
+  },
+  {
+   "source": "harrington",
+   "target": "co-AMD",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/",
+   "value_usd": 5984848.0,
+   "pct_of_portfolio": 2.86
+  },
+  {
+   "source": "harrington",
+   "target": "co-AVGO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/",
+   "value_usd": 551368.0,
+   "pct_of_portfolio": 0.26
+  },
+  {
+   "source": "harrington",
+   "target": "co-INTU",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/",
+   "value_usd": 1714676.0,
+   "pct_of_portfolio": 0.82
+  },
+  {
+   "source": "harrington",
+   "target": "co-NFLX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/",
+   "value_usd": 4568275.0,
+   "pct_of_portfolio": 2.18
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-MSFT",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 9871649.0,
+   "pct_of_portfolio": 2.16
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-GOOGL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 13766300.0,
+   "pct_of_portfolio": 3.02
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-META",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 6909949.0,
+   "pct_of_portfolio": 1.51
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-AMZN",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 4501661.0,
+   "pct_of_portfolio": 0.99
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-NVDA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 17768474.0,
+   "pct_of_portfolio": 3.89
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-AAPL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 15624871.0,
+   "pct_of_portfolio": 3.42
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-TSLA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 2095169.0,
+   "pct_of_portfolio": 0.46
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-ORCL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 884879.0,
+   "pct_of_portfolio": 0.19
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-AMD",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 3440971.0,
+   "pct_of_portfolio": 0.75
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-AVGO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 3827340.0,
+   "pct_of_portfolio": 0.84
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-IBM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 664987.0,
+   "pct_of_portfolio": 0.15
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-CRM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 1262432.0,
+   "pct_of_portfolio": 0.28
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-ADBE",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 596484.0,
+   "pct_of_portfolio": 0.13
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-INTU",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 1864252.0,
+   "pct_of_portfolio": 0.41
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-WDAY",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 329933.0,
+   "pct_of_portfolio": 0.07
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-NOW",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 849431.0,
+   "pct_of_portfolio": 0.19
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-PLTR",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 379035.0,
+   "pct_of_portfolio": 0.08
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-CSCO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 3726229.0,
+   "pct_of_portfolio": 0.82
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-NFLX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 1645712.0,
+   "pct_of_portfolio": 0.36
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-DIS",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 729017.0,
+   "pct_of_portfolio": 0.16
+  },
+  {
+   "source": "first-affirmative",
+   "target": "co-CMCSA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+   "value_usd": 764069.0,
+   "pct_of_portfolio": 0.17
+  },
+  {
+   "source": "bailard",
+   "target": "co-MSFT",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 215756477.0,
+   "pct_of_portfolio": 4.37
+  },
+  {
+   "source": "bailard",
+   "target": "co-GOOGL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 185105469.0,
+   "pct_of_portfolio": 3.75
+  },
+  {
+   "source": "bailard",
+   "target": "co-META",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 42632782.0,
+   "pct_of_portfolio": 0.86
+  },
+  {
+   "source": "bailard",
+   "target": "co-AMZN",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 67312168.0,
+   "pct_of_portfolio": 1.36
+  },
+  {
+   "source": "bailard",
+   "target": "co-NVDA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 207104931.0,
+   "pct_of_portfolio": 4.19
+  },
+  {
+   "source": "bailard",
+   "target": "co-AAPL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 272339751.0,
+   "pct_of_portfolio": 5.51
+  },
+  {
+   "source": "bailard",
+   "target": "co-TSLA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 2090905.0,
+   "pct_of_portfolio": 0.04
+  },
+  {
+   "source": "bailard",
+   "target": "co-ORCL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 4700312.0,
+   "pct_of_portfolio": 0.1
+  },
+  {
+   "source": "bailard",
+   "target": "co-AMD",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 24736218.0,
+   "pct_of_portfolio": 0.5
+  },
+  {
+   "source": "bailard",
+   "target": "co-AVGO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 45104702.0,
+   "pct_of_portfolio": 0.91
+  },
+  {
+   "source": "bailard",
+   "target": "co-IBM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 3431489.0,
+   "pct_of_portfolio": 0.07
+  },
+  {
+   "source": "bailard",
+   "target": "co-CRM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 4520635.0,
+   "pct_of_portfolio": 0.09
+  },
+  {
+   "source": "bailard",
+   "target": "co-ADBE",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 2703157.0,
+   "pct_of_portfolio": 0.05
+  },
+  {
+   "source": "bailard",
+   "target": "co-INTU",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 5631200.0,
+   "pct_of_portfolio": 0.11
+  },
+  {
+   "source": "bailard",
+   "target": "co-NOW",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 18312391.0,
+   "pct_of_portfolio": 0.37
+  },
+  {
+   "source": "bailard",
+   "target": "co-PLTR",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 612402.0,
+   "pct_of_portfolio": 0.01
+  },
+  {
+   "source": "bailard",
+   "target": "co-CSCO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 16246682.0,
+   "pct_of_portfolio": 0.33
+  },
+  {
+   "source": "bailard",
+   "target": "co-NFLX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 17950338.0,
+   "pct_of_portfolio": 0.36
+  },
+  {
+   "source": "bailard",
+   "target": "co-DIS",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 9717721.0,
+   "pct_of_portfolio": 0.2
+  },
+  {
+   "source": "bailard",
+   "target": "co-SO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+   "value_usd": 3821100.0,
+   "pct_of_portfolio": 0.08
+  },
+  {
+   "source": "azzad",
+   "target": "co-MSFT",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
+   "value_usd": 25511948.0,
+   "pct_of_portfolio": 2.29
+  },
+  {
+   "source": "azzad",
+   "target": "co-GOOGL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
+   "value_usd": 38281471.0,
+   "pct_of_portfolio": 3.43
+  },
+  {
+   "source": "azzad",
+   "target": "co-META",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
+   "value_usd": 26243238.0,
+   "pct_of_portfolio": 2.35
+  },
+  {
+   "source": "azzad",
+   "target": "co-AMZN",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
+   "value_usd": 2498975.0,
+   "pct_of_portfolio": 0.22
+  },
+  {
+   "source": "azzad",
+   "target": "co-NVDA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
+   "value_usd": 57290655.0,
+   "pct_of_portfolio": 5.14
+  },
+  {
+   "source": "azzad",
+   "target": "co-AAPL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
+   "value_usd": 44757793.0,
+   "pct_of_portfolio": 4.02
+  },
+  {
+   "source": "azzad",
+   "target": "co-TSLA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
+   "value_usd": 15745368.0,
+   "pct_of_portfolio": 1.41
+  },
+  {
+   "source": "azzad",
+   "target": "co-AMD",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
+   "value_usd": 12898942.0,
+   "pct_of_portfolio": 1.16
+  },
+  {
+   "source": "azzad",
+   "target": "co-AVGO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
+   "value_usd": 18033150.0,
+   "pct_of_portfolio": 1.62
+  },
+  {
+   "source": "azzad",
+   "target": "co-IBM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
+   "value_usd": 4579172.0,
+   "pct_of_portfolio": 0.41
+  },
+  {
+   "source": "azzad",
+   "target": "co-CRM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
+   "value_usd": 3416651.0,
+   "pct_of_portfolio": 0.31
+  },
+  {
+   "source": "azzad",
+   "target": "co-INTU",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
+   "value_usd": 2128673.0,
+   "pct_of_portfolio": 0.19
+  },
+  {
+   "source": "azzad",
+   "target": "co-WDAY",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
+   "value_usd": 4328724.0,
+   "pct_of_portfolio": 0.39
+  },
+  {
+   "source": "azzad",
+   "target": "co-CSCO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
+   "value_usd": 5238555.0,
+   "pct_of_portfolio": 0.47
+  },
+  {
+   "source": "azzad",
+   "target": "co-AXON",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
+   "value_usd": 804398.0,
+   "pct_of_portfolio": 0.07
+  },
+  {
+   "source": "azzad",
+   "target": "co-MSI",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
+   "value_usd": 549567.0,
+   "pct_of_portfolio": 0.05
+  },
+  {
+   "source": "fidelity",
+   "target": "co-MSFT",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 104520177799.0,
+   "pct_of_portfolio": 4.51
+  },
+  {
+   "source": "fidelity",
+   "target": "co-GOOGL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 125345370941.0,
+   "pct_of_portfolio": 5.41
+  },
+  {
+   "source": "fidelity",
+   "target": "co-META",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 73550553979.0,
+   "pct_of_portfolio": 3.17
+  },
+  {
+   "source": "fidelity",
+   "target": "co-AMZN",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 80386924697.0,
+   "pct_of_portfolio": 3.47
+  },
+  {
+   "source": "fidelity",
+   "target": "co-NVDA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 213034649836.0,
+   "pct_of_portfolio": 9.19
+  },
+  {
+   "source": "fidelity",
+   "target": "co-AAPL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 123213667912.0,
+   "pct_of_portfolio": 5.31
+  },
+  {
+   "source": "fidelity",
+   "target": "co-TSLA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 13773938962.0,
+   "pct_of_portfolio": 0.59
+  },
+  {
+   "source": "fidelity",
+   "target": "co-ORCL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 3736031242.0,
+   "pct_of_portfolio": 0.16
+  },
+  {
+   "source": "fidelity",
+   "target": "co-CRWV",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 118590171.0,
+   "pct_of_portfolio": 0.01
+  },
+  {
+   "source": "fidelity",
+   "target": "co-AMD",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 32600802547.0,
+   "pct_of_portfolio": 1.41
+  },
+  {
+   "source": "fidelity",
+   "target": "co-AVGO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 44752634691.0,
+   "pct_of_portfolio": 1.93
+  },
+  {
+   "source": "fidelity",
+   "target": "co-IBM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 930737164.0,
+   "pct_of_portfolio": 0.04
+  },
+  {
+   "source": "fidelity",
+   "target": "co-CRM",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 2337427131.0,
+   "pct_of_portfolio": 0.1
+  },
+  {
+   "source": "fidelity",
+   "target": "co-ADBE",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 672140567.0,
+   "pct_of_portfolio": 0.03
+  },
+  {
+   "source": "fidelity",
+   "target": "co-INTU",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 1578699948.0,
+   "pct_of_portfolio": 0.07
+  },
+  {
+   "source": "fidelity",
+   "target": "co-VRSK",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 53249227.0,
+   "pct_of_portfolio": 0.0
+  },
+  {
+   "source": "fidelity",
+   "target": "co-WDAY",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 220121145.0,
+   "pct_of_portfolio": 0.01
+  },
+  {
+   "source": "fidelity",
+   "target": "co-NOW",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 1141245689.0,
+   "pct_of_portfolio": 0.05
+  },
+  {
+   "source": "fidelity",
+   "target": "co-PLTR",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 9161937007.0,
+   "pct_of_portfolio": 0.4
+  },
+  {
+   "source": "fidelity",
+   "target": "co-CSCO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 4280906706.0,
+   "pct_of_portfolio": 0.18
+  },
+  {
+   "source": "fidelity",
+   "target": "co-AXON",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 937855626.0,
+   "pct_of_portfolio": 0.04
+  },
+  {
+   "source": "fidelity",
+   "target": "co-MSI",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 2066397380.0,
+   "pct_of_portfolio": 0.09
+  },
+  {
+   "source": "fidelity",
+   "target": "co-NFLX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 4820376931.0,
+   "pct_of_portfolio": 0.21
+  },
+  {
+   "source": "fidelity",
+   "target": "co-DIS",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 1950946257.0,
+   "pct_of_portfolio": 0.08
+  },
+  {
+   "source": "fidelity",
+   "target": "co-CMCSA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 730812989.0,
+   "pct_of_portfolio": 0.03
+  },
+  {
+   "source": "fidelity",
+   "target": "co-SO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 1872419199.0,
+   "pct_of_portfolio": 0.08
+  },
+  {
+   "source": "fidelity",
+   "target": "co-SPCX",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+   "value_usd": 36327436092.0,
+   "pct_of_portfolio": 1.57
   },
   {
    "source": "iahr",

@@ -1,6 +1,6 @@
 {
   "as_of_quarter": "2026Q3",
-  "note": "SEC EDGAR rejected the specified User-Agent (HTTP 403, Undeclared Automated Tool) on 2026-11-25, so no 13F data was collected. Only NBIM (non-EDGAR, published semi-annually) is included; its latest period is H1 2026 (2026-06-30), not Q3 2026.",
+  "note": "Positions in the companies under US proxy rules, from each investor's latest Form 13F (US equity holdings of managers over $100 million), plus Norges Bank's own published holdings. A 13F shows the manager's holdings, not who can file a proposal; pct_of_portfolio is the share of that 13F's reported value.",
   "investors": [
     {
       "id": "nbim",
@@ -121,6 +121,70 @@
       "filing_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
       "report_period": "2024-06-30",
       "accession": "0001086364-24-008417"
+    },
+    {
+      "id": "boston-trust-walden",
+      "name": "Boston Trust Walden",
+      "cik": 829937,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/829937/000082993712000002/",
+      "report_period": "2011-12-31",
+      "accession": "0000829937-12-000002"
+    },
+    {
+      "id": "impax",
+      "name": "Impax Asset Management",
+      "cik": 1634155,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1634155/000163415518000004/",
+      "report_period": "2018-06-30",
+      "accession": "0001634155-18-000004"
+    },
+    {
+      "id": "harrington",
+      "name": "Harrington Investments",
+      "cik": 1386364,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/",
+      "report_period": "2026-09-30",
+      "accession": "0001386364-26-000006"
+    },
+    {
+      "id": "first-affirmative",
+      "name": "First Affirmative Financial Network",
+      "cik": 1656282,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
+      "report_period": "2026-09-30",
+      "accession": "0001656282-26-000008"
+    },
+    {
+      "id": "bailard",
+      "name": "Bailard",
+      "cik": 750641,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
+      "report_period": "2026-09-30",
+      "accession": "0001172661-26-004508"
+    },
+    {
+      "id": "nuveen-tiaa",
+      "name": "Nuveen",
+      "cik": 1311016,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1311016/000095012319011186/",
+      "report_period": "2019-09-30",
+      "accession": "0000950123-19-011186"
+    },
+    {
+      "id": "azzad",
+      "name": "Azzad Asset Management",
+      "cik": 1121914,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
+      "report_period": "2026-09-30",
+      "accession": "0001121914-26-000009"
+    },
+    {
+      "id": "fidelity",
+      "name": "FMR LLC",
+      "cik": 315066,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
+      "report_period": "2026-09-30",
+      "accession": "0000315066-26-002964"
     }
   ],
   "holdings": [
@@ -307,6 +371,22 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/"
     },
     {
+      "investor": "parnassus-investments",
+      "company": "INTU",
+      "value_usd": 2039656.0,
+      "shares": 5016.0,
+      "pct_of_portfolio": 0.01,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/"
+    },
+    {
+      "investor": "parnassus-investments",
+      "company": "NFLX",
+      "value_usd": 1798017.0,
+      "shares": 25841.0,
+      "pct_of_portfolio": 0.01,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/"
+    },
+    {
       "investor": "trillium-asset-management",
       "company": "MSFT",
       "value_usd": 200650499.0,
@@ -379,6 +459,78 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
     },
     {
+      "investor": "trillium-asset-management",
+      "company": "IBM",
+      "value_usd": 522314.0,
+      "shares": 2375.0,
+      "pct_of_portfolio": 0.02,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
+      "investor": "trillium-asset-management",
+      "company": "CRM",
+      "value_usd": 619380.0,
+      "shares": 2698.0,
+      "pct_of_portfolio": 0.02,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
+      "investor": "trillium-asset-management",
+      "company": "ADBE",
+      "value_usd": 1304339.0,
+      "shares": 5436.0,
+      "pct_of_portfolio": 0.04,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
+      "investor": "trillium-asset-management",
+      "company": "INTU",
+      "value_usd": 24501154.0,
+      "shares": 64931.0,
+      "pct_of_portfolio": 0.77,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
+      "investor": "trillium-asset-management",
+      "company": "VRSK",
+      "value_usd": 15976485.0,
+      "shares": 95181.0,
+      "pct_of_portfolio": 0.5,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
+      "investor": "trillium-asset-management",
+      "company": "NOW",
+      "value_usd": 38232993.0,
+      "shares": 285297.0,
+      "pct_of_portfolio": 1.2,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
+      "investor": "trillium-asset-management",
+      "company": "CSCO",
+      "value_usd": 7836110.0,
+      "shares": 72806.0,
+      "pct_of_portfolio": 0.25,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
+      "investor": "trillium-asset-management",
+      "company": "NFLX",
+      "value_usd": 26037788.0,
+      "shares": 374211.0,
+      "pct_of_portfolio": 0.82,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
+      "investor": "trillium-asset-management",
+      "company": "DIS",
+      "value_usd": 606951.0,
+      "shares": 5786.0,
+      "pct_of_portfolio": 0.02,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
       "investor": "boston-common-asset-management",
       "company": "MSFT",
       "value_usd": 86025127.0,
@@ -424,6 +576,30 @@
       "value_usd": 42668531.0,
       "shares": 121497.0,
       "pct_of_portfolio": 2.47,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/"
+    },
+    {
+      "investor": "boston-common-asset-management",
+      "company": "CRM",
+      "value_usd": 4560638.0,
+      "shares": 19866.0,
+      "pct_of_portfolio": 0.26,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/"
+    },
+    {
+      "investor": "boston-common-asset-management",
+      "company": "NFLX",
+      "value_usd": 19672493.0,
+      "shares": 282732.0,
+      "pct_of_portfolio": 1.14,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/"
+    },
+    {
+      "investor": "boston-common-asset-management",
+      "company": "DLR",
+      "value_usd": 3803911.0,
+      "shares": 21671.0,
+      "pct_of_portfolio": 0.22,
       "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/"
     },
     {
@@ -480,6 +656,38 @@
       "value_usd": 11511539.0,
       "shares": 32779.0,
       "pct_of_portfolio": 1.65,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/"
+    },
+    {
+      "investor": "zevin-asset-management",
+      "company": "CSCO",
+      "value_usd": 463778.0,
+      "shares": 4309.0,
+      "pct_of_portfolio": 0.07,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/"
+    },
+    {
+      "investor": "zevin-asset-management",
+      "company": "NFLX",
+      "value_usd": 7623609.0,
+      "shares": 109566.0,
+      "pct_of_portfolio": 1.09,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/"
+    },
+    {
+      "investor": "zevin-asset-management",
+      "company": "DLR",
+      "value_usd": 11755029.0,
+      "shares": 66969.0,
+      "pct_of_portfolio": 1.68,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/"
+    },
+    {
+      "investor": "zevin-asset-management",
+      "company": "SO",
+      "value_usd": 219659.0,
+      "shares": 2650.0,
+      "pct_of_portfolio": 0.03,
       "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/"
     },
     {
@@ -552,6 +760,30 @@
       "value_usd": 10109005.0,
       "shares": 28785.0,
       "pct_of_portfolio": 2.26,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/"
+    },
+    {
+      "investor": "arjuna-capital",
+      "company": "IBM",
+      "value_usd": 1432405.0,
+      "shares": 6513.0,
+      "pct_of_portfolio": 0.32,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/"
+    },
+    {
+      "investor": "arjuna-capital",
+      "company": "CSCO",
+      "value_usd": 3795465.0,
+      "shares": 35264.0,
+      "pct_of_portfolio": 0.85,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/"
+    },
+    {
+      "investor": "arjuna-capital",
+      "company": "NFLX",
+      "value_usd": 1045997.0,
+      "shares": 15033.0,
+      "pct_of_portfolio": 0.23,
       "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/"
     },
     {
@@ -632,6 +864,94 @@
       "value_usd": 1884924.0,
       "shares": 5580.0,
       "pct_of_portfolio": 0.34,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "IBM",
+      "value_usd": 121959.0,
+      "shares": 485.0,
+      "pct_of_portfolio": 0.02,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "CRM",
+      "value_usd": 253869.0,
+      "shares": 1050.0,
+      "pct_of_portfolio": 0.05,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "ADBE",
+      "value_usd": 1200058.0,
+      "shares": 4705.0,
+      "pct_of_portfolio": 0.22,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "INTU",
+      "value_usd": 385308.0,
+      "shares": 900.0,
+      "pct_of_portfolio": 0.07,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "NOW",
+      "value_usd": 287100.0,
+      "shares": 1875.0,
+      "pct_of_portfolio": 0.05,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "PLTR",
+      "value_usd": 25215.0,
+      "shares": 125.0,
+      "pct_of_portfolio": 0.0,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "CSCO",
+      "value_usd": 742776.0,
+      "shares": 6925.0,
+      "pct_of_portfolio": 0.13,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "NFLX",
+      "value_usd": 214632.0,
+      "shares": 3300.0,
+      "pct_of_portfolio": 0.04,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "DIS",
+      "value_usd": 863887.0,
+      "shares": 7725.0,
+      "pct_of_portfolio": 0.16,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "CMCSA",
+      "value_usd": 15456.0,
+      "shares": 700.0,
+      "pct_of_portfolio": 0.0,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "SPCX",
+      "value_usd": 7647.0,
+      "shares": 48.0,
+      "pct_of_portfolio": 0.0,
       "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
     },
     {
@@ -723,6 +1043,142 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
     },
     {
+      "investor": "amalgamated-bank",
+      "company": "IBM",
+      "value_usd": 34748.0,
+      "shares": 157994.0,
+      "pct_of_portfolio": 0.24,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "CRM",
+      "value_usd": 32105.0,
+      "shares": 139850.0,
+      "pct_of_portfolio": 0.22,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "ADBE",
+      "value_usd": 18727.0,
+      "shares": 78048.0,
+      "pct_of_portfolio": 0.13,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "INTU",
+      "value_usd": 43781.0,
+      "shares": 123675.0,
+      "pct_of_portfolio": 0.31,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "VRSK",
+      "value_usd": 3914.0,
+      "shares": 23318.0,
+      "pct_of_portfolio": 0.03,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "WDAY",
+      "value_usd": 6702.0,
+      "shares": 35189.0,
+      "pct_of_portfolio": 0.05,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "NOW",
+      "value_usd": 27198.0,
+      "shares": 202957.0,
+      "pct_of_portfolio": 0.19,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "PLTR",
+      "value_usd": 83128.0,
+      "shares": 444415.0,
+      "pct_of_portfolio": 0.58,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "CSCO",
+      "value_usd": 75659.0,
+      "shares": 702955.0,
+      "pct_of_portfolio": 0.53,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "AXON",
+      "value_usd": 6579.0,
+      "shares": 15571.0,
+      "pct_of_portfolio": 0.05,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "MSI",
+      "value_usd": 13218.0,
+      "shares": 29639.0,
+      "pct_of_portfolio": 0.09,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "NFLX",
+      "value_usd": 58228.0,
+      "shares": 836846.0,
+      "pct_of_portfolio": 0.41,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "DIS",
+      "value_usd": 30863.0,
+      "shares": 294218.0,
+      "pct_of_portfolio": 0.22,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "CMCSA",
+      "value_usd": 13163.0,
+      "shares": 604933.0,
+      "pct_of_portfolio": 0.09,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "DLR",
+      "value_usd": 10508.0,
+      "shares": 59864.0,
+      "pct_of_portfolio": 0.07,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "SO",
+      "value_usd": 16284.0,
+      "shares": 196451.0,
+      "pct_of_portfolio": 0.11,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "SPCX",
+      "value_usd": 6400.0,
+      "shares": 42424.0,
+      "pct_of_portfolio": 0.04,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
       "investor": "federated-hermes",
       "company": "MSFT",
       "value_usd": 1319896132.0,
@@ -800,6 +1256,134 @@
       "value_usd": 764218356.0,
       "shares": 2176082.0,
       "pct_of_portfolio": 1.07,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "IBM",
+      "value_usd": 1724910.0,
+      "shares": 7843.0,
+      "pct_of_portfolio": 0.0,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "CRM",
+      "value_usd": 12607295.0,
+      "shares": 54917.0,
+      "pct_of_portfolio": 0.02,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "ADBE",
+      "value_usd": 88975271.0,
+      "shares": 370823.0,
+      "pct_of_portfolio": 0.12,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "INTU",
+      "value_usd": 442389637.0,
+      "shares": 1622004.0,
+      "pct_of_portfolio": 0.62,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "VRSK",
+      "value_usd": 505564.0,
+      "shares": 3012.0,
+      "pct_of_portfolio": 0.0,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "WDAY",
+      "value_usd": 29368361.0,
+      "shares": 154197.0,
+      "pct_of_portfolio": 0.04,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "NOW",
+      "value_usd": 89135277.0,
+      "shares": 665139.0,
+      "pct_of_portfolio": 0.12,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "PLTR",
+      "value_usd": 13249313.0,
+      "shares": 70833.0,
+      "pct_of_portfolio": 0.02,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "CSCO",
+      "value_usd": 130882924.0,
+      "shares": 1216045.0,
+      "pct_of_portfolio": 0.18,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "AXON",
+      "value_usd": 78665198.0,
+      "shares": 186181.0,
+      "pct_of_portfolio": 0.11,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "MSI",
+      "value_usd": 54528307.0,
+      "shares": 122269.0,
+      "pct_of_portfolio": 0.08,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "NFLX",
+      "value_usd": 213601694.0,
+      "shares": 3069872.0,
+      "pct_of_portfolio": 0.3,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "DIS",
+      "value_usd": 30614856.0,
+      "shares": 291848.0,
+      "pct_of_portfolio": 0.04,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "CMCSA",
+      "value_usd": 884761.0,
+      "shares": 40660.0,
+      "pct_of_portfolio": 0.0,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "SO",
+      "value_usd": 155376815.0,
+      "shares": 1902109.0,
+      "pct_of_portfolio": 0.22,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "SPCX",
+      "value_usd": 105843528.0,
+      "shares": 701601.0,
+      "pct_of_portfolio": 0.15,
       "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
     },
     {
@@ -891,6 +1475,134 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
     },
     {
+      "investor": "legal-general",
+      "company": "IBM",
+      "value_usd": 1411414185.0,
+      "shares": 6417561.0,
+      "pct_of_portfolio": 0.29,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "CRM",
+      "value_usd": 1244683770.0,
+      "shares": 5421805.0,
+      "pct_of_portfolio": 0.26,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "ADBE",
+      "value_usd": 755928092.0,
+      "shares": 3150488.0,
+      "pct_of_portfolio": 0.16,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "INTU",
+      "value_usd": 1533102407.0,
+      "shares": 4480738.0,
+      "pct_of_portfolio": 0.32,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "VRSK",
+      "value_usd": 188409439.0,
+      "shares": 1122487.0,
+      "pct_of_portfolio": 0.04,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "WDAY",
+      "value_usd": 273322857.0,
+      "shares": 1435067.0,
+      "pct_of_portfolio": 0.06,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "NOW",
+      "value_usd": 817766145.0,
+      "shares": 6102277.0,
+      "pct_of_portfolio": 0.17,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "PLTR",
+      "value_usd": 2314274254.0,
+      "shares": 12372490.0,
+      "pct_of_portfolio": 0.48,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "CSCO",
+      "value_usd": 3396483032.0,
+      "shares": 31557029.0,
+      "pct_of_portfolio": 0.7,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "AXON",
+      "value_usd": 187456493.0,
+      "shares": 443663.0,
+      "pct_of_portfolio": 0.04,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "MSI",
+      "value_usd": 508526656.0,
+      "shares": 1140271.0,
+      "pct_of_portfolio": 0.1,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "NFLX",
+      "value_usd": 1822898098.0,
+      "shares": 26198593.0,
+      "pct_of_portfolio": 0.38,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "DIS",
+      "value_usd": 1130251866.0,
+      "shares": 10774565.0,
+      "pct_of_portfolio": 0.23,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "CMCSA",
+      "value_usd": 542455933.0,
+      "shares": 24929041.0,
+      "pct_of_portfolio": 0.11,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "SO",
+      "value_usd": 641631597.0,
+      "shares": 7740760.0,
+      "pct_of_portfolio": 0.13,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "SPCX",
+      "value_usd": 269662854.0,
+      "shares": 1787504.0,
+      "pct_of_portfolio": 0.06,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
       "investor": "nys-common-retirement-fund",
       "company": "MSFT",
       "value_usd": 4338861137.0,
@@ -976,6 +1688,126 @@
       "value_usd": 1740947163.0,
       "shares": 4957280.0,
       "pct_of_portfolio": 2.44,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "CRM",
+      "value_usd": 212727367.0,
+      "shares": 926634.0,
+      "pct_of_portfolio": 0.3,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "ADBE",
+      "value_usd": 109028256.0,
+      "shares": 454398.0,
+      "pct_of_portfolio": 0.15,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "INTU",
+      "value_usd": 235899327.0,
+      "shares": 716175.0,
+      "pct_of_portfolio": 0.33,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "VRSK",
+      "value_usd": 13381170.0,
+      "shares": 79721.0,
+      "pct_of_portfolio": 0.02,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "WDAY",
+      "value_usd": 23617040.0,
+      "shares": 124000.0,
+      "pct_of_portfolio": 0.03,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "NOW",
+      "value_usd": 155401346.0,
+      "shares": 1159625.0,
+      "pct_of_portfolio": 0.22,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "PLTR",
+      "value_usd": 444662929.0,
+      "shares": 2377241.0,
+      "pct_of_portfolio": 0.62,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "CSCO",
+      "value_usd": 500675171.0,
+      "shares": 4651818.0,
+      "pct_of_portfolio": 0.7,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "AXON",
+      "value_usd": 16748270.0,
+      "shares": 39639.0,
+      "pct_of_portfolio": 0.02,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "MSI",
+      "value_usd": 79398269.0,
+      "shares": 178035.0,
+      "pct_of_portfolio": 0.11,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "NFLX",
+      "value_usd": 309434784.0,
+      "shares": 4447180.0,
+      "pct_of_portfolio": 0.43,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "DIS",
+      "value_usd": 199976325.0,
+      "shares": 1906352.0,
+      "pct_of_portfolio": 0.28,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "CMCSA",
+      "value_usd": 83172552.0,
+      "shares": 3822268.0,
+      "pct_of_portfolio": 0.12,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "DLR",
+      "value_usd": 33016842.0,
+      "shares": 188098.0,
+      "pct_of_portfolio": 0.05,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "SPCX",
+      "value_usd": 93321996.0,
+      "shares": 618600.0,
+      "pct_of_portfolio": 0.13,
       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
     },
     {
@@ -1067,6 +1899,134 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
     },
     {
+      "investor": "calpers",
+      "company": "IBM",
+      "value_usd": 412988953.0,
+      "shares": 1877820.0,
+      "pct_of_portfolio": 0.22,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "CRM",
+      "value_usd": 389013023.0,
+      "shares": 1694529.0,
+      "pct_of_portfolio": 0.2,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "ADBE",
+      "value_usd": 299712893.0,
+      "shares": 1249116.0,
+      "pct_of_portfolio": 0.16,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "INTU",
+      "value_usd": 530576847.0,
+      "shares": 1511025.0,
+      "pct_of_portfolio": 0.28,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "VRSK",
+      "value_usd": 39568455.0,
+      "shares": 235737.0,
+      "pct_of_portfolio": 0.02,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "WDAY",
+      "value_usd": 60361155.0,
+      "shares": 316923.0,
+      "pct_of_portfolio": 0.03,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "NOW",
+      "value_usd": 156960955.0,
+      "shares": 1171263.0,
+      "pct_of_portfolio": 0.08,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "PLTR",
+      "value_usd": 841217720.0,
+      "shares": 4497288.0,
+      "pct_of_portfolio": 0.44,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "CSCO",
+      "value_usd": 844255963.0,
+      "shares": 7844058.0,
+      "pct_of_portfolio": 0.44,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "AXON",
+      "value_usd": 34811000.0,
+      "shares": 82389.0,
+      "pct_of_portfolio": 0.02,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "MSI",
+      "value_usd": 179095308.0,
+      "shares": 401586.0,
+      "pct_of_portfolio": 0.09,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "NFLX",
+      "value_usd": 514246089.0,
+      "shares": 7390717.0,
+      "pct_of_portfolio": 0.27,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "DIS",
+      "value_usd": 264061413.0,
+      "shares": 2517268.0,
+      "pct_of_portfolio": 0.14,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "CMCSA",
+      "value_usd": 181206313.0,
+      "shares": 8327496.0,
+      "pct_of_portfolio": 0.09,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "SO",
+      "value_usd": 176841836.0,
+      "shares": 2133452.0,
+      "pct_of_portfolio": 0.09,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "SPCX",
+      "value_usd": 146148793.0,
+      "shares": 968771.0,
+      "pct_of_portfolio": 0.08,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
       "investor": "calstrs",
       "company": "MSFT",
       "value_usd": 5413077359.0,
@@ -1155,6 +2115,134 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
     },
     {
+      "investor": "calstrs",
+      "company": "CRM",
+      "value_usd": 271097606.0,
+      "shares": 1180893.0,
+      "pct_of_portfolio": 0.25,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "ADBE",
+      "value_usd": 143244660.0,
+      "shares": 597002.0,
+      "pct_of_portfolio": 0.13,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "INTU",
+      "value_usd": 329220544.0,
+      "shares": 1077632.0,
+      "pct_of_portfolio": 0.3,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "VRSK",
+      "value_usd": 36783656.0,
+      "shares": 219146.0,
+      "pct_of_portfolio": 0.03,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "WDAY",
+      "value_usd": 54626404.0,
+      "shares": 286813.0,
+      "pct_of_portfolio": 0.05,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "NOW",
+      "value_usd": 203760731.0,
+      "shares": 1520489.0,
+      "pct_of_portfolio": 0.19,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "PLTR",
+      "value_usd": 608874311.0,
+      "shares": 3255142.0,
+      "pct_of_portfolio": 0.56,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "CSCO",
+      "value_usd": 634533096.0,
+      "shares": 5895504.0,
+      "pct_of_portfolio": 0.58,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "AXON",
+      "value_usd": 48571209.0,
+      "shares": 114956.0,
+      "pct_of_portfolio": 0.04,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "MSI",
+      "value_usd": 112823720.0,
+      "shares": 252985.0,
+      "pct_of_portfolio": 0.1,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "NFLX",
+      "value_usd": 437179977.0,
+      "shares": 6283127.0,
+      "pct_of_portfolio": 0.4,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "DIS",
+      "value_usd": 276280270.0,
+      "shares": 2633749.0,
+      "pct_of_portfolio": 0.25,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "CMCSA",
+      "value_usd": 121049814.0,
+      "shares": 5562951.0,
+      "pct_of_portfolio": 0.11,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "DLR",
+      "value_usd": 90852222.0,
+      "shares": 517588.0,
+      "pct_of_portfolio": 0.08,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "SO",
+      "value_usd": 106703717.0,
+      "shares": 1287293.0,
+      "pct_of_portfolio": 0.1,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "SPCX",
+      "value_usd": 104743154.0,
+      "shares": 694307.0,
+      "pct_of_portfolio": 0.1,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
       "investor": "blackrock",
       "company": "MSFT",
       "value_usd": 247736163987.0,
@@ -1233,6 +2321,879 @@
       "shares": 34200333.0,
       "pct_of_portfolio": 1.24,
       "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "IBM",
+      "value_usd": 13035173782.0,
+      "shares": 75369608.0,
+      "pct_of_portfolio": 0.3,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "CRM",
+      "value_usd": 19173802872.0,
+      "shares": 74577218.0,
+      "pct_of_portfolio": 0.43,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "ADBE",
+      "value_usd": 21520676761.0,
+      "shares": 38738303.0,
+      "pct_of_portfolio": 0.49,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "INTU",
+      "value_usd": 29436519657.0,
+      "shares": 56973811.0,
+      "pct_of_portfolio": 0.67,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "VRSK",
+      "value_usd": 3144551425.0,
+      "shares": 11665930.0,
+      "pct_of_portfolio": 0.07,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "WDAY",
+      "value_usd": 3106084497.0,
+      "shares": 13893740.0,
+      "pct_of_portfolio": 0.07,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "NOW",
+      "value_usd": 13419898541.0,
+      "shares": 17059121.0,
+      "pct_of_portfolio": 0.3,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "PLTR",
+      "value_usd": 3033406570.0,
+      "shares": 119755490.0,
+      "pct_of_portfolio": 0.07,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "CSCO",
+      "value_usd": 16858151156.0,
+      "shares": 354833743.0,
+      "pct_of_portfolio": 0.38,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "AXON",
+      "value_usd": 2455555934.0,
+      "shares": 17878755.0,
+      "pct_of_portfolio": 0.06,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "MSI",
+      "value_usd": 5202999259.0,
+      "shares": 13477527.0,
+      "pct_of_portfolio": 0.12,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "NFLX",
+      "value_usd": 21328757393.0,
+      "shares": 31603778.0,
+      "pct_of_portfolio": 0.48,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "DIS",
+      "value_usd": 12257515824.0,
+      "shares": 123451665.0,
+      "pct_of_portfolio": 0.28,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "CMCSA",
+      "value_usd": 12575935640.0,
+      "shares": 321142381.0,
+      "pct_of_portfolio": 0.28,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "SO",
+      "value_usd": 6077338734.0,
+      "shares": 127520343.0,
+      "pct_of_portfolio": 0.14,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "harrington",
+      "company": "MSFT",
+      "value_usd": 13450967.0,
+      "shares": 26225.0,
+      "pct_of_portfolio": 6.43,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/"
+    },
+    {
+      "investor": "harrington",
+      "company": "GOOGL",
+      "value_usd": 17712629.0,
+      "shares": 51711.0,
+      "pct_of_portfolio": 8.47,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/"
+    },
+    {
+      "investor": "harrington",
+      "company": "AMZN",
+      "value_usd": 6099939.0,
+      "shares": 24483.0,
+      "pct_of_portfolio": 2.92,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/"
+    },
+    {
+      "investor": "harrington",
+      "company": "NVDA",
+      "value_usd": 3577573.0,
+      "shares": 15665.0,
+      "pct_of_portfolio": 1.71,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/"
+    },
+    {
+      "investor": "harrington",
+      "company": "AAPL",
+      "value_usd": 18966390.0,
+      "shares": 56953.0,
+      "pct_of_portfolio": 9.07,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/"
+    },
+    {
+      "investor": "harrington",
+      "company": "ORCL",
+      "value_usd": 4781884.0,
+      "shares": 34828.0,
+      "pct_of_portfolio": 2.29,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/"
+    },
+    {
+      "investor": "harrington",
+      "company": "AMD",
+      "value_usd": 5984848.0,
+      "shares": 9783.0,
+      "pct_of_portfolio": 2.86,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/"
+    },
+    {
+      "investor": "harrington",
+      "company": "AVGO",
+      "value_usd": 551368.0,
+      "shares": 1570.0,
+      "pct_of_portfolio": 0.26,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/"
+    },
+    {
+      "investor": "harrington",
+      "company": "INTU",
+      "value_usd": 1714676.0,
+      "shares": 5265.0,
+      "pct_of_portfolio": 0.82,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/"
+    },
+    {
+      "investor": "harrington",
+      "company": "NFLX",
+      "value_usd": 4568275.0,
+      "shares": 65655.0,
+      "pct_of_portfolio": 2.18,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "MSFT",
+      "value_usd": 9871649.0,
+      "shares": 19247.0,
+      "pct_of_portfolio": 2.16,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "GOOGL",
+      "value_usd": 13766300.0,
+      "shares": 40191.0,
+      "pct_of_portfolio": 3.02,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "META",
+      "value_usd": 6909949.0,
+      "shares": 9529.0,
+      "pct_of_portfolio": 1.51,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "AMZN",
+      "value_usd": 4501661.0,
+      "shares": 18068.0,
+      "pct_of_portfolio": 0.99,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "NVDA",
+      "value_usd": 17768474.0,
+      "shares": 77802.0,
+      "pct_of_portfolio": 3.89,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "AAPL",
+      "value_usd": 15624871.0,
+      "shares": 46919.0,
+      "pct_of_portfolio": 3.42,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "TSLA",
+      "value_usd": 2095169.0,
+      "shares": 5905.0,
+      "pct_of_portfolio": 0.46,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "ORCL",
+      "value_usd": 884879.0,
+      "shares": 6445.0,
+      "pct_of_portfolio": 0.19,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "AMD",
+      "value_usd": 3440971.0,
+      "shares": 5625.0,
+      "pct_of_portfolio": 0.75,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "AVGO",
+      "value_usd": 3827340.0,
+      "shares": 10898.0,
+      "pct_of_portfolio": 0.84,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "IBM",
+      "value_usd": 664987.0,
+      "shares": 3024.0,
+      "pct_of_portfolio": 0.15,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "CRM",
+      "value_usd": 1262432.0,
+      "shares": 5499.0,
+      "pct_of_portfolio": 0.28,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "ADBE",
+      "value_usd": 596484.0,
+      "shares": 2486.0,
+      "pct_of_portfolio": 0.13,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "INTU",
+      "value_usd": 1864252.0,
+      "shares": 5885.0,
+      "pct_of_portfolio": 0.41,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "WDAY",
+      "value_usd": 329933.0,
+      "shares": 1732.0,
+      "pct_of_portfolio": 0.07,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "NOW",
+      "value_usd": 849431.0,
+      "shares": 6339.0,
+      "pct_of_portfolio": 0.19,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "PLTR",
+      "value_usd": 379035.0,
+      "shares": 2026.0,
+      "pct_of_portfolio": 0.08,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "CSCO",
+      "value_usd": 3726229.0,
+      "shares": 34621.0,
+      "pct_of_portfolio": 0.82,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "NFLX",
+      "value_usd": 1645712.0,
+      "shares": 23652.0,
+      "pct_of_portfolio": 0.36,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "DIS",
+      "value_usd": 729017.0,
+      "shares": 6950.0,
+      "pct_of_portfolio": 0.16,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "CMCSA",
+      "value_usd": 764069.0,
+      "shares": 35113.0,
+      "pct_of_portfolio": 0.17,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "bailard",
+      "company": "MSFT",
+      "value_usd": 215756477.0,
+      "shares": 420659.0,
+      "pct_of_portfolio": 4.37,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "GOOGL",
+      "value_usd": 185105469.0,
+      "shares": 538877.0,
+      "pct_of_portfolio": 3.75,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "META",
+      "value_usd": 42632782.0,
+      "shares": 58789.0,
+      "pct_of_portfolio": 0.86,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "AMZN",
+      "value_usd": 67312168.0,
+      "shares": 270167.0,
+      "pct_of_portfolio": 1.36,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "NVDA",
+      "value_usd": 207104931.0,
+      "shares": 906843.0,
+      "pct_of_portfolio": 4.19,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "AAPL",
+      "value_usd": 272339751.0,
+      "shares": 817787.0,
+      "pct_of_portfolio": 5.51,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "TSLA",
+      "value_usd": 2090905.0,
+      "shares": 5893.0,
+      "pct_of_portfolio": 0.04,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "ORCL",
+      "value_usd": 4700312.0,
+      "shares": 34233.0,
+      "pct_of_portfolio": 0.1,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "AMD",
+      "value_usd": 24736218.0,
+      "shares": 40434.0,
+      "pct_of_portfolio": 0.5,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "AVGO",
+      "value_usd": 45104702.0,
+      "shares": 128433.0,
+      "pct_of_portfolio": 0.91,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "IBM",
+      "value_usd": 3431489.0,
+      "shares": 15602.0,
+      "pct_of_portfolio": 0.07,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "CRM",
+      "value_usd": 4520635.0,
+      "shares": 19691.0,
+      "pct_of_portfolio": 0.09,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "ADBE",
+      "value_usd": 2703157.0,
+      "shares": 11265.0,
+      "pct_of_portfolio": 0.05,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "INTU",
+      "value_usd": 5631200.0,
+      "shares": 19929.0,
+      "pct_of_portfolio": 0.11,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "NOW",
+      "value_usd": 18312391.0,
+      "shares": 136649.0,
+      "pct_of_portfolio": 0.37,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "PLTR",
+      "value_usd": 612402.0,
+      "shares": 3274.0,
+      "pct_of_portfolio": 0.01,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "CSCO",
+      "value_usd": 16246682.0,
+      "shares": 150949.0,
+      "pct_of_portfolio": 0.33,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "NFLX",
+      "value_usd": 17950338.0,
+      "shares": 257981.0,
+      "pct_of_portfolio": 0.36,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "DIS",
+      "value_usd": 9717721.0,
+      "shares": 92637.0,
+      "pct_of_portfolio": 0.2,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "SO",
+      "value_usd": 3821100.0,
+      "shares": 46098.0,
+      "pct_of_portfolio": 0.08,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "azzad",
+      "company": "MSFT",
+      "value_usd": 25511948.0,
+      "shares": 49741.0,
+      "pct_of_portfolio": 2.29,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/"
+    },
+    {
+      "investor": "azzad",
+      "company": "GOOGL",
+      "value_usd": 38281471.0,
+      "shares": 111294.0,
+      "pct_of_portfolio": 3.43,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/"
+    },
+    {
+      "investor": "azzad",
+      "company": "META",
+      "value_usd": 26243238.0,
+      "shares": 36189.0,
+      "pct_of_portfolio": 2.35,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/"
+    },
+    {
+      "investor": "azzad",
+      "company": "AMZN",
+      "value_usd": 2498975.0,
+      "shares": 10030.0,
+      "pct_of_portfolio": 0.22,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/"
+    },
+    {
+      "investor": "azzad",
+      "company": "NVDA",
+      "value_usd": 57290655.0,
+      "shares": 250857.0,
+      "pct_of_portfolio": 5.14,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/"
+    },
+    {
+      "investor": "azzad",
+      "company": "AAPL",
+      "value_usd": 44757793.0,
+      "shares": 134400.0,
+      "pct_of_portfolio": 4.02,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/"
+    },
+    {
+      "investor": "azzad",
+      "company": "TSLA",
+      "value_usd": 15745368.0,
+      "shares": 44377.0,
+      "pct_of_portfolio": 1.41,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/"
+    },
+    {
+      "investor": "azzad",
+      "company": "AMD",
+      "value_usd": 12898942.0,
+      "shares": 21085.0,
+      "pct_of_portfolio": 1.16,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/"
+    },
+    {
+      "investor": "azzad",
+      "company": "AVGO",
+      "value_usd": 18033150.0,
+      "shares": 51349.0,
+      "pct_of_portfolio": 1.62,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/"
+    },
+    {
+      "investor": "azzad",
+      "company": "IBM",
+      "value_usd": 4579172.0,
+      "shares": 20821.0,
+      "pct_of_portfolio": 0.41,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/"
+    },
+    {
+      "investor": "azzad",
+      "company": "CRM",
+      "value_usd": 3416651.0,
+      "shares": 14883.0,
+      "pct_of_portfolio": 0.31,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/"
+    },
+    {
+      "investor": "azzad",
+      "company": "INTU",
+      "value_usd": 2128673.0,
+      "shares": 5235.0,
+      "pct_of_portfolio": 0.19,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/"
+    },
+    {
+      "investor": "azzad",
+      "company": "WDAY",
+      "value_usd": 4328724.0,
+      "shares": 22728.0,
+      "pct_of_portfolio": 0.39,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/"
+    },
+    {
+      "investor": "azzad",
+      "company": "CSCO",
+      "value_usd": 5238555.0,
+      "shares": 48672.0,
+      "pct_of_portfolio": 0.47,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/"
+    },
+    {
+      "investor": "azzad",
+      "company": "AXON",
+      "value_usd": 804398.0,
+      "shares": 1904.0,
+      "pct_of_portfolio": 0.07,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/"
+    },
+    {
+      "investor": "azzad",
+      "company": "MSI",
+      "value_usd": 549567.0,
+      "shares": 1232.0,
+      "pct_of_portfolio": 0.05,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "MSFT",
+      "value_usd": 104520177799.0,
+      "shares": 203782761.0,
+      "pct_of_portfolio": 4.51,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "GOOGL",
+      "value_usd": 125345370941.0,
+      "shares": 370736123.0,
+      "pct_of_portfolio": 5.41,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "META",
+      "value_usd": 73550553979.0,
+      "shares": 101423859.0,
+      "pct_of_portfolio": 3.17,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "AMZN",
+      "value_usd": 80386924697.0,
+      "shares": 322644691.0,
+      "pct_of_portfolio": 3.47,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "NVDA",
+      "value_usd": 213034649836.0,
+      "shares": 932807820.0,
+      "pct_of_portfolio": 9.19,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "AAPL",
+      "value_usd": 123213667912.0,
+      "shares": 369988793.0,
+      "pct_of_portfolio": 5.31,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "TSLA",
+      "value_usd": 13773938962.0,
+      "shares": 38820605.0,
+      "pct_of_portfolio": 0.59,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "ORCL",
+      "value_usd": 3736031242.0,
+      "shares": 28665792.0,
+      "pct_of_portfolio": 0.16,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "CRWV",
+      "value_usd": 118590171.0,
+      "shares": 1361228.0,
+      "pct_of_portfolio": 0.01,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "AMD",
+      "value_usd": 32600802547.0,
+      "shares": 53290183.0,
+      "pct_of_portfolio": 1.41,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "AVGO",
+      "value_usd": 44752634691.0,
+      "shares": 127431404.0,
+      "pct_of_portfolio": 1.93,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "IBM",
+      "value_usd": 930737164.0,
+      "shares": 4231970.0,
+      "pct_of_portfolio": 0.04,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "CRM",
+      "value_usd": 2337427131.0,
+      "shares": 10181762.0,
+      "pct_of_portfolio": 0.1,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "ADBE",
+      "value_usd": 672140567.0,
+      "shares": 2801287.0,
+      "pct_of_portfolio": 0.03,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "INTU",
+      "value_usd": 1578699948.0,
+      "shares": 5856311.0,
+      "pct_of_portfolio": 0.07,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "VRSK",
+      "value_usd": 53249227.0,
+      "shares": 317243.0,
+      "pct_of_portfolio": 0.0,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "WDAY",
+      "value_usd": 220121145.0,
+      "shares": 1155734.0,
+      "pct_of_portfolio": 0.01,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "NOW",
+      "value_usd": 1141245689.0,
+      "shares": 8516123.0,
+      "pct_of_portfolio": 0.05,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "PLTR",
+      "value_usd": 9161937007.0,
+      "shares": 48981219.0,
+      "pct_of_portfolio": 0.4,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "CSCO",
+      "value_usd": 4280906706.0,
+      "shares": 39774288.0,
+      "pct_of_portfolio": 0.18,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "AXON",
+      "value_usd": 937855626.0,
+      "shares": 26598796.0,
+      "pct_of_portfolio": 0.04,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "MSI",
+      "value_usd": 2066397380.0,
+      "shares": 4633491.0,
+      "pct_of_portfolio": 0.09,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "NFLX",
+      "value_usd": 4820376931.0,
+      "shares": 69278198.0,
+      "pct_of_portfolio": 0.21,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "DIS",
+      "value_usd": 1950946257.0,
+      "shares": 18598153.0,
+      "pct_of_portfolio": 0.08,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "CMCSA",
+      "value_usd": 730812989.0,
+      "shares": 33585156.0,
+      "pct_of_portfolio": 0.03,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "SO",
+      "value_usd": 1872419199.0,
+      "shares": 32519829.0,
+      "pct_of_portfolio": 0.08,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "SPCX",
+      "value_usd": 36327436092.0,
+      "shares": 248291710.0,
+      "pct_of_portfolio": 1.57,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
     }
-  ]
+  ],
+  "issuers_version": "2026-11-26"
 }
