@@ -497,3 +497,10 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
 .net-views { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-1) var(--s-2); margin: var(--s-2) 0 var(--s-1); }
 .net-views .count-line { flex: 1 1 100%; margin: 0; }
 .net-views .seg[hidden], #net-scrub[hidden], #net-topic[hidden], #net-year[hidden] { display: none; }
+/* Tool buttons (owner, 2026-11-26: "Show all" and "My holdings" should read as settings, not as key items):
+   square corners, a light grey fill and no colour dot, unlike the round key chips. */
+.tool { display: inline-flex; align-items: center; gap: 6px; font: 13px var(--sans); color: var(--ink); background: #ececec; border: 1px solid transparent; border-radius: 3px; padding: 5px 10px; cursor: pointer; transition: background-color var(--dur-micro) var(--ease); }
+.tool:hover { background: #e0e0e0; }
+.tool[aria-pressed="true"], .tool[aria-expanded="true"] { background: var(--accent); color: #ffffff; }
+.tool[aria-pressed="true"]:focus-visible, .tool[aria-expanded="true"]:focus-visible { outline-color: var(--ink); }
+.net-legend .leg-all { margin-right: var(--s-1); }

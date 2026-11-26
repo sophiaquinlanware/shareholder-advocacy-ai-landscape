@@ -319,8 +319,8 @@
         </div>
       </div>
       <div class="net-tools">
-        <button type="button" class="chip" id="net-hold-btn" aria-expanded="false" aria-controls="net-hold">My holdings</button>
-        <button type="button" class="chip" id="net-gaps" aria-pressed="false">Show topics not filed</button>
+        <button type="button" class="tool" id="net-hold-btn" aria-expanded="false" aria-controls="net-hold">My holdings</button>
+        <button type="button" class="tool" id="net-gaps" aria-pressed="false">Show topics not filed</button>
       </div>
       <div id="net-hold" class="net-hold" hidden>
         <label for="net-hold-input">Tickers, separated by commas, spaces or new lines</label>
@@ -548,7 +548,7 @@
     if (!el) return;
     const on = state.cfg.catColor && catList().length;
     el.hidden = !on;
-    el.innerHTML = on ? `<span class="status-note">Proposals by what they ask about:</span> <button type="button" class="chip leg-all" data-cat-all="1">Show all</button>${catList().map((c) => chip("data-cat", c.id, catState(c.id), cssVar(`--gn-cat-${c.id}`), c.label)).join("")}` : "";
+    el.innerHTML = on ? `<span class="status-note">Proposals by what they ask about:</span> <button type="button" class="tool leg-all" data-cat-all="1"><span aria-hidden="true">↺</span> Show all</button>${catList().map((c) => chip("data-cat", c.id, catState(c.id), cssVar(`--gn-cat-${c.id}`), c.label)).join("")}` : "";
   }
   // Key chips have three states, cycled by clicking (owner, 2026-11-26: "you click it all lights up of the
   // category vs click again and it cross it off"): shown → highlighted (the rest of the graph dims) →
@@ -573,7 +573,7 @@
     const kinds = [...new Set(data.nodes.map((n) => n.kind))].filter((k) => !mode().hides.has(k));
     const order = Object.keys(TYPE_LABEL);
     kinds.sort((a, b) => order.indexOf(a) - order.indexOf(b));
-    document.getElementById("net-legend").innerHTML = `<button type="button" class="chip leg-all" data-all="1">Show all</button>` +
+    document.getElementById("net-legend").innerHTML = `<button type="button" class="tool leg-all" data-all="1"><span aria-hidden="true">↺</span> Show all</button>` +
       kinds.map((k) => chip("data-kind", k, kindState(k), nodeColor(k), kindLabel(k))).join("");
   }
 
