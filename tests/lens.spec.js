@@ -23,7 +23,7 @@ test("?lens= in a shared link opens that lens", async ({ page }) => {
   await page.waitForLoadState("networkidle");
   await page.waitForSelector("#net-lens input:checked");
   expect(await page.$eval("#net-lens input:checked", (i) => i.value)).toBe("individual");
-  await expect(page.locator("#net-intro")).toContainText("Node size = how many AI proposals each company has had");
+  await expect(page.locator("#net-intro")).toContainText("Bigger circles are companies with more AI proposals");
 });
 
 test("the What you can do block shows only when the lens has an action", async ({ page }) => {
@@ -85,4 +85,31 @@ test("labels are off until a node is selected, then name it and its connections"
   const after = await shown();
   expect(after).toContain("Microsoft");
   expect(after.length).toBeGreaterThan(5);
+});
+
+test("graph labels never overlap, including after selecting a busy node", async ({ page }) => {
+  await page.goto("/index.html?lens=impact#network");
+  await page.waitForLoadState("networkidle");
+  await page.waitForSelector("#net-graph svg text", { state: "attached", timeout: 60000 });
+  const overlaps = () =>
+    page.$$eval("#net-graph text", (ts) => {
+      const shown = ts
+        .filter(
+          (t) => t.getAttribute("display") !== "none" && Number(t.getAttribute("opacity")) > 0 && t.textContent.trim(),
+        )
+        .map((t) => t.getBoundingClientRect());
+      let n = 0;
+      for (let i = 0; i < shown.length; i++)
+        for (let j = i + 1; j < shown.length; j++) {
+          const a = shown[i];
+          const b = shown[j];
+          if (a.left < b.right - 1 && b.left < a.right - 1 && a.top < b.bottom - 1 && b.top < a.bottom - 1) n++;
+        }
+      return n;
+    });
+  for (const id of ["co-MSFT", "afl-cio", "trillium"]) {
+    await page.evaluate((x) => window.focusNetworkNode(x), id);
+    await page.waitForTimeout(900);
+    expect(await overlaps(), `overlapping labels after selecting ${id}`).toBe(0);
+  }
 });

@@ -32,8 +32,8 @@ test("tickers and a fund: the list narrows and shows the fund's earlier vote wit
   await expect(page.locator("#lf-h")).toHaveText("Upcoming AI proposals at your companies");
   await expect(page.locator("#lf-status")).toContainText("for MSFT; fund family: Vanguard.");
   const fund = page.locator(".feed-fund").first();
-  await expect(fund.locator("h5")).toHaveText(/How your fund voted (last year|on the \d{4} version)/);
-  await expect(fund).toContainText(/Vanguard(: | funds in these filings)/);
+  await expect(fund.locator("h5")).toHaveText(/How Vanguard funds voted (last year|on the \d{4} version)/);
+  await expect(fund).toContainText("Vanguard: ");
   await expect(fund).toContainText("matched in this dataset by company, topic and similar title");
   await expect(page.locator(".feed-item").filter({ hasText: "Cisco" })).toHaveCount(0);
 });
@@ -49,7 +49,7 @@ test("a fund family with no readable votes gives the reason; unknown input is re
   await show(page, "Praxis, ZZZZ");
   await expect(page.locator("#lf-status")).toContainText("Praxis files Form N-PX only in the older text format");
   await expect(page.locator("#lf-status")).toContainText(
-    "Not found among the tracked companies or the fund families with readable Form N-PX votes: ZZZZ",
+    /Not found among the \d+ tracked companies or the \d+ fund families with readable Form N-PX votes: ZZZZ/,
   );
 });
 

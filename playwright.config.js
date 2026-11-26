@@ -9,6 +9,9 @@ export default defineConfig({
   testDir: "tests",
   outputDir: "test-results",
   fullyParallel: true,
+  // The local python server drops connections under full parallel load (seen 2026-11-26 once the lens tests
+  // grew), so the run is capped at 3 workers.
+  workers: 3,
   reporter: [["list"]],
   use: { baseURL: `http://localhost:${PORT}`, channel: "chrome" },
   webServer: {

@@ -174,7 +174,10 @@
     const col = (state.cols || COLUMNS).find((c) => c.kinds.includes(d.kind));
     return col ? col.x : 0.5;
   };
-  // Column headers (short on phones) and filer-type band labels, redrawn when layers change.
+  // Column headers (short on phones), drawn on top on an opaque strip that nodes can't enter (they're held
+  // below HEADER_H). The filer-type row labels were dropped (owner, 2026-11-26): the colour key names the
+  // types, and nodes spill across the bands, so row labels pointed at the wrong nodes.
+  const HEADER_H = 26;
   function drawAxis() {
     if (!state.axis) return;
     const { width, height } = state.size;
@@ -182,13 +185,10 @@
     const SHORT = { People: "People", Filers: "Filers", Proposals: "Proposals", Companies: "Cos.", "Frontier labs": "Labs" };
     state.cols = activeColumns();
     state.axis.selectAll("*").remove();
+    state.axis.append("rect").attr("x", -width).attr("y", -height).attr("width", width * 3).attr("height", height + HEADER_H).attr("fill", cssVar("--g-bg"));
     state.axis.selectAll("text.col").data(state.cols).join("text").attr("class", "col")
       .attr("x", (c) => c.x * width).attr("y", 14).attr("text-anchor", "middle").attr("font-size", narrow ? 9.5 : 11)
       .text((c) => (narrow ? SHORT[c.label] : c.label).toUpperCase());
-    const bands = FILER_ROWS.filter((k) => !state.hiddenKinds.has(k) && state.data.nodes.some((n) => n.kind === k));
-    if (!narrow) state.axis.selectAll("text.band").data(bands).join("text").attr("class", "band")
-      .attr("x", 6).attr("y", (k) => groupY({ kind: k }) * height + 4).attr("font-size", 10).attr("font-weight", 400)
-      .text((k) => TYPE_LABEL[k]);
     state.axis.attr("display", state.cfg.group > 0 ? null : "none");
   }
   // Re-aim the grouping forces after layers change, then let the layout settle again.
@@ -272,7 +272,7 @@
     if (!state.node) { intro(); return; }
     state.node.attr("r", radius);
     drawRings();
-    state.labels.attr("font-size", (d) => (d.kind === "company" ? state.cfg.textSize + 2 : state.cfg.textSize)).attr("dx", (d) => radius(d) + 4);
+    state.labels.attr("font-size", (d) => (d.kind === "company" ? state.cfg.textSize + 2 : state.cfg.textSize));
     state.linkSel.attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.4 : 1) * state.cfg.linkScale);
     if (!relayout) declutter();
     applyStyles();
@@ -352,48 +352,77 @@
     } catch (e) {}
   }
   let termSeq = 0;
-  function term(name, label) {
+  // A term button; its definition is collected in defs and placed after the paragraph, so opening it never
+  // splits a sentence. ctx names the item for repeated terms ("Proxy statement" in every item).
+  function term(name, label, defs, ctx) {
     const def = (lens().feed && lens().feed.glossary[name]) || "";
     if (!def) return esc(label || name);
     const id = `term-${++termSeq}`;
-    return `<button type="button" class="term" aria-expanded="false" aria-controls="${id}">${esc(label || name)}</button><span class="term-def" id="${id}" hidden>${esc(def)}</span>`;
+    defs.push(`<p class="term-def" id="${id}" hidden><strong>${esc(name[0].toUpperCase() + name.slice(1))}:</strong> ${esc(def)}</p>`);
+    return `<button type="button" class="term" aria-expanded="false" aria-controls="${id}">${esc(label || name)}${ctx ? `<span class="visually-hidden">, ${esc(ctx)}</span>` : ""}</button>`;
   }
   const longDate = (iso) => new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
   function feedShell() {
     const F = lens().feed;
     const box = document.getElementById("net-feed");
+    const d0 = [];
+    const introP = `<p class="intro">Upcoming votes on AI-related ${term("shareholder proposal", "shareholder proposals", d0)} at the ${term("annual meeting", "annual meetings", d0)} of the companies this site tracks.</p>${d0.join("")}`;
     box.innerHTML = `
       <h3 id="lf-h">Upcoming AI proposals in this tracker</h3>
-      <p class="intro">Upcoming votes on AI-related ${term("shareholder proposal", "shareholder proposals")} at the ${term("annual meeting", "annual meetings")} of the companies this site tracks.</p>
+      ${introP}
       ${state.ctx.disclaimer ? `<p class="status-note">${esc(state.ctx.disclaimer)}</p>` : ""}
       <form role="search" id="lf-form" class="feed-form">
         <label for="lf-in">Your tickers or fund name</label>
         <div class="feed-row"><input id="lf-in" type="text" autocomplete="off" spellcheck="false" aria-describedby="lf-hint">
         <button type="submit" class="chip">Show</button></div>
-        <p id="lf-hint" class="status-note">For example: MSFT, AAPL, Vanguard. Separate several with commas. Tickers entered here also set My holdings in the graph. Stored in this browser only.</p>
+        <p id="lf-hint" class="status-note">For example: MSFT, AAPL, Vanguard. Use stock tickers, not company names. Separate several with commas. Tickers entered here also set My holdings in the graph. Stored in this browser only.</p>
       </form>
       <p id="lf-status" class="count-line" aria-live="polite"></p>
-      <div id="lf-list"></div>
-      <button type="button" class="chip" id="lf-to-graph">See the bigger picture</button>`;
+      <button type="button" class="chip" id="lf-to-graph">See the bigger picture</button>
+      <div id="lf-list"></div>`;
     let fund = "";
     try { fund = localStorage.getItem("fund") || ""; } catch (e) {}
     document.getElementById("lf-in").value = [...state.holdings, ...(fund ? [fund] : [])].join(", ");
     document.getElementById("lf-form").addEventListener("submit", (e) => { e.preventDefault(); feedApply(true); });
     document.getElementById("lf-to-graph").addEventListener("click", () => setFeedView("graph", true));
+    // Click or tap pins a definition open or closed; hovering shows it until the pointer leaves both the
+    // button and the definition (WCAG 1.4.13: dismissible with Esc, hoverable, persistent while pointed at).
+    const setOpen = (b, open) => {
+      b.setAttribute("aria-expanded", String(open));
+      document.getElementById(b.getAttribute("aria-controls")).hidden = !open;
+    };
     box.addEventListener("click", (e) => {
       const b = e.target.closest(".term");
       if (!b) return;
-      const open = b.getAttribute("aria-expanded") !== "true";
-      b.setAttribute("aria-expanded", String(open));
-      document.getElementById(b.getAttribute("aria-controls")).hidden = !open;
+      const open = !(b.dataset.pinned === "1");
+      b.dataset.pinned = open ? "1" : "";
+      setOpen(b, open);
+    });
+    let hoverTimer;
+    box.addEventListener("mouseover", (e) => {
+      const b = e.target.closest(".term");
+      const d = e.target.closest(".term-def");
+      clearTimeout(hoverTimer);
+      if (b && b.getAttribute("aria-expanded") !== "true") setOpen(b, true);
+      if (d) clearTimeout(hoverTimer);
+    });
+    box.addEventListener("mouseout", (e) => {
+      const from = e.target.closest(".term, .term-def");
+      if (!from || (e.relatedTarget && from.contains(e.relatedTarget))) return;
+      const b = from.classList.contains("term") ? from : box.querySelector(`.term[aria-controls="${from.id}"]`);
+      if (!b || b.dataset.pinned === "1") return;
+      hoverTimer = setTimeout(() => {
+        const def = document.getElementById(b.getAttribute("aria-controls"));
+        if (!b.matches(":hover") && !def.matches(":hover") && b.dataset.pinned !== "1") setOpen(b, false);
+      }, 300);
     });
     box.addEventListener("keydown", (e) => {
       if (e.key !== "Escape") return;
-      const b = e.target.closest(".term") || (e.target.closest(".term-def") && e.target.closest(".term-def").previousElementSibling);
+      const b = e.target.closest(".term");
       if (!b || b.getAttribute("aria-expanded") !== "true") return;
       e.stopPropagation();
-      b.setAttribute("aria-expanded", "false");
-      document.getElementById(b.getAttribute("aria-controls")).hidden = true;
+      b.dataset.pinned = "";
+      setOpen(b, false);
       b.focus();
     });
     feedApply(false);
@@ -418,15 +447,16 @@
       const f = F.fund(state.ctx, it.p, m.family);
       if (!f) return "";
       const links = f.links.map((l) => ` <a class="src" href="${esc(l.href)}" target="_blank" rel="noopener">[${esc(l.label)}<span class="visually-hidden">, ${esc(ctxName(it))}</span>]</a>`).join("");
-      return `<div class="feed-fund"><h5>${esc(f.heading)}</h5><p>${esc(f.text)}${links}</p><p class="status-note">From ${term("Form N-PX")} filings. ${esc(f.about)}</p></div>`;
+      const d = [];
+      return `<div class="feed-fund"><h5>${esc(f.heading)}</h5><p>${esc(f.text)}${links}</p>${f.detail ? `<p class="status-note">${esc(f.detail)}</p>` : ""}<p class="status-note">From ${term("Form N-PX", "Form N-PX", d, ctxName(it))} filings. ${esc(f.about)}</p>${d.join("")}</div>`;
     };
-    const li = items.map((it) => `<li class="feed-item">
+    const li = items.map((it) => { const d = []; return `<li class="feed-item">
         <h4>${esc(it.company)}</h4>
         <p class="feed-sum">${esc(it.summary)}${it.summarySource ? ` <a class="src" href="${esc(it.summarySource)}" target="_blank" rel="noopener">[source<span class="visually-hidden">, ${esc(ctxName(it))}</span>]</a>` : ""}</p>
         <p><time datetime="${esc(it.date)}">Annual meeting ${esc(longDate(it.date))}</time>${it.note ? `. Proxy note: “${esc(it.note)}”` : ""}</p>
-        <p>${term("proxy statement", "Proxy statement")}: ${it.proxy ? `<a class="src" href="${esc(it.proxy)}" target="_blank" rel="noopener">[open<span class="visually-hidden"> the proxy statement for ${esc(ctxName(it))}</span>]</a>` : `<span class="unverified">source pending</span>`}${it.topic ? ` · Topic: ${esc(it.topic)}` : ""}</p>
+        <p>${it.proxy ? `<a class="src" href="${esc(it.proxy)}" target="_blank" rel="noopener">Read the proxy statement<span class="visually-hidden"> for ${esc(ctxName(it))}</span></a>` : `Proxy statement: <span class="unverified">source pending</span>`} ${term("proxy statement", "What's a proxy statement?", d, ctxName(it))}${it.topic ? ` · Topic: ${esc(it.topic)}` : ""}</p>${d.join("")}
         ${fundHtml(it)}
-      </li>`).join("");
+      </li>`; }).join("");
     const ql = quiet.map((q) => `<li class="feed-item feed-quiet"><h4>${esc(q.name)}</h4><p>No upcoming AI proposals in this tracker for ${esc(q.name)}.</p>${q.deadline ? `<p>${esc(q.deadline)}${q.source ? ` <a class="src" href="${esc(q.source)}" target="_blank" rel="noopener">[source<span class="visually-hidden">, ${esc(q.name)} proxy statement</span>]</a>` : ` <span class="unverified">source pending</span>`}</p>` : ""}</li>`).join("");
     document.getElementById("lf-list").innerHTML = items.length || quiet.length ? `<ul class="feed-list">${li}${ql}</ul>` : `<p>No upcoming AI proposals in this tracker.</p>`;
     document.getElementById("lf-h").textContent = m.tickers.length ? "Upcoming AI proposals at your companies" : "Upcoming AI proposals in this tracker";
@@ -435,7 +465,10 @@
     if (m.family) parts.push(`fund family: ${m.family}`);
     let line = parts.join("; ") + ".";
     if (m.familyNote) line += ` ${m.familyNote}`;
-    if (m.notFound.length) line += ` Not found among the tracked companies or the fund families with readable Form N-PX votes: ${m.notFound.join(", ")}.`;
+    if (m.extraFamilies.length) line += ` Only the first fund family is used; also matched: ${m.extraFamilies.join(", ")}.`;
+    const nCos = (state.ctx.companies || []).filter((c) => c.ticker).length;
+    const nFam = state.ctx.fv ? state.ctx.fv.families.length : 0;
+    if (m.notFound.length) line += ` Not found among the ${nCos} tracked companies or the ${nFam} fund families with readable Form N-PX votes: ${m.notFound.join(", ")}.`;
     if (!m.tickers.length && m.family) line += " No tickers entered, so nothing is faded in the bigger picture.";
     document.getElementById("lf-status").textContent = line;
   }
@@ -452,9 +485,13 @@
     saveView();
     ensureDrawn();
     if (hasFeed && moveFocus) {
-      document.getElementById("net-lens-status").textContent = state.feedView === "graph" ? "Showing the graph; your holdings are highlighted." : "Showing the list of upcoming AI proposals.";
       document.getElementById(state.feedView === "graph" ? "lf-back" : "lf-to-graph").focus();
-      if (state.feedView === "graph") applyStyles();
+      if (state.feedView === "graph" && state.node) applyStyles();
+      const msg = state.feedView === "graph"
+        ? `Showing the graph. ${state.holdings.size ? `Companies you entered (${[...state.holdings].join(", ")}) are at full strength; others are faded.` : "No tickers entered, so nothing is faded."}`
+        : "Showing the list of upcoming AI proposals.";
+      // After the focus move, so the focus change doesn't cut the message off.
+      setTimeout(() => { document.getElementById("net-lens-status").textContent = msg; }, 150);
     }
   }
   function ensureDrawn() {
@@ -481,7 +518,9 @@
   function intro() {
     refreshConnected();
     const shown = state.data.nodes.filter(visible).length;
-    document.getElementById("net-intro").textContent = `${shown} of ${state.data.nodes.length} nodes shown. Node size = ${lens().sizeLabel}. Company tiers are this site's reading of each company's main role in the AI value chain.`;
+    document.getElementById("net-intro").textContent = lens().plainIntro
+      ? lens().plainIntro(shown, state.data.nodes.length)
+      : `${shown} of ${state.data.nodes.length} nodes shown. Node size = ${lens().sizeLabel}. Company tiers are this site's reading of each company's main role in the AI value chain.`;
   }
 
   function neighbors(id) {
@@ -642,6 +681,59 @@
         // Labels are off by default; selecting a node (or hovering, or keyboard focus) names it and its connections.
         return state.cfg.labels && labelCandidate(d) && !state.hiddenLabels.has(d.id) ? 1 : 0;
       });
+    layoutLabels();
+  }
+
+  // ---------- Label placement: no two shown labels overlap ----------
+  // Each shown label tries right, left, above and below its node, in that order, and takes the first spot
+  // that clears every label already placed and the header strip. Priority: the selected, hovered or
+  // keyboard-focused node, then companies and labs, then by connections. A label with no free spot is
+  // hidden; that node is still listed by name in the panel's connections and in the List view.
+  function layoutLabels() {
+    if (!state.labels || !state.size) return;
+    // Bounds are the part of the graph visible on screen at the current zoom, so no label is cut off.
+    const { width, height } = state.size;
+    const t = state.svg ? d3.zoomTransform(state.svg.node()) : { x: 0, y: 0, k: 1 };
+    const vx0 = -t.x / t.k, vx1 = (width - t.x) / t.k, vy0 = -t.y / t.k;
+    const top = Math.max(state.cfg.group > 0 ? HEADER_H : 0, vy0 + 4 / t.k);
+    const vy1 = (height - t.y) / t.k;
+    const focusId = state.selected || state.hover || state.kbId;
+    const items = [];
+    state.labels.each(function (d) {
+      if (this.getAttribute("display") === "none" || Number(this.getAttribute("opacity")) === 0 || d.x == null) return;
+      items.push({ d, el: this });
+    });
+    const rank = (d) => (d.id === focusId ? 0 : d.id === state.hover || d.id === state.kbId ? 1 : isCompanyKind(d.kind) ? 2 : 3);
+    items.sort((a, b) => rank(a.d) - rank(b.d) || (b.d.degree || 0) - (a.d.degree || 0));
+    const placed = [];
+    // Shown node circles count as obstacles too, so a label doesn't print over another shown node.
+    const circles = items.map(({ d }) => ({ x: d.x, y: d.y, r: radius(d) }));
+    const hits = (b) => placed.some((p) => b[0] < p[2] && p[0] < b[2] && b[1] < p[3] && p[1] < b[3])
+      || circles.some((c) => c.x > b[0] - c.r && c.x < b[2] + c.r && c.y > b[1] - c.r && c.y < b[3] + c.r && !(c.x === b.nx && c.y === b.ny));
+    for (const { d, el } of items) {
+      const fs = Number(el.getAttribute("font-size")) || 11;
+      const w = el.textContent.length * fs * 0.56;
+      const h = fs * 1.2;
+      const r = radius(d) + 4;
+      const cands = [
+        { a: "start", x: d.x + r, y: d.y + fs * 0.35, box: [d.x + r, d.y - h / 2, d.x + r + w, d.y + h / 2] },
+        { a: "end", x: d.x - r, y: d.y + fs * 0.35, box: [d.x - r - w, d.y - h / 2, d.x - r, d.y + h / 2] },
+        { a: "middle", x: d.x, y: d.y - r - 2, box: [d.x - w / 2, d.y - r - 2 - h, d.x + w / 2, d.y - r - 2] },
+        { a: "middle", x: d.x, y: d.y + r + fs, box: [d.x - w / 2, d.y + r, d.x + w / 2, d.y + r + h] },
+      ].filter((c) => c.box[1] >= top && c.box[3] <= vy1 && c.box[0] >= Math.max(0, vx0) && c.box[2] <= Math.min(width, vx1));
+      let pick = null;
+      for (const c of cands) {
+        c.box.nx = d.x; c.box.ny = d.y;
+        if (!hits(c.box)) { pick = c; break; }
+      }
+      // The focused node always keeps its label, at its first in-bounds spot.
+      if (!pick && d.id === focusId) pick = cands[0] || { a: "start", x: d.x + r, y: d.y + fs * 0.35, box: [d.x + r, d.y - h / 2, d.x + r + w, d.y + h / 2] };
+      if (!pick) { el.setAttribute("opacity", 0); continue; }
+      placed.push(pick.box);
+      el.setAttribute("x", pick.x);
+      el.setAttribute("y", pick.y);
+      el.setAttribute("text-anchor", pick.a);
+    }
   }
 
   // Marks on a node, one group per node, all from the lens's rings(). One table (DESIGN.md "Lenses"):
@@ -942,7 +1034,7 @@
     const svg = d3.select(el).append("svg").attr("viewBox", [0, 0, width, height]).attr("width", width).attr("height", height);
     const g = svg.append("g");
     state.svg = svg;
-    state.zoom = d3.zoom().scaleExtent([0.2, 5]).on("zoom", (ev) => g.attr("transform", ev.transform));
+    state.zoom = d3.zoom().scaleExtent([0.2, 5]).on("zoom", (ev) => { g.attr("transform", ev.transform); layoutLabels(); });
     svg.call(state.zoom).on("dblclick.zoom", null);
     svg.on("click", (ev) => { if (ev.target.tagName === "svg") { state.selected = null; applyStyles(); } });
 
@@ -956,10 +1048,6 @@
       .force("gx", d3.forceX((d) => groupX(d) * width).strength(state.cfg.group))
       .force("gy", d3.forceY((d) => groupY(d) * height).strength(state.cfg.group * 0.8));
     state.sim = sim;
-    // Column labels for the grouped layout; they move and zoom with the graph.
-    state.axis = g.append("g").attr("font-size", 11).attr("font-weight", 600).attr("fill", cssVar("--g-label-soft"))
-      .attr("display", state.cfg.group > 0 ? null : "none");
-    drawAxis();
     state.linkSel = g.append("g").attr("stroke", cssVar("--g-link")).attr("fill", "none").selectAll("path").data(data.links).join("path")
       .attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.4 : 1) * state.cfg.linkScale)
       // Membership links are dashed; links with no source (inferred) are dotted, so the two never look alike.
@@ -978,7 +1066,7 @@
         .on("start", (ev, d) => { if (!ev.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
         .on("drag", (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
         .on("end", (ev, d) => { if (!ev.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }));
-    state.node.append("title").text((d) => d.label);
+    // No SVG <title>: its browser tooltip printed a second label over the graph. The label itself shows on hover.
     // Lens rings (dashed, accent) and the keyboard focus mark (solid ink ring with a white gap) sit on top.
     state.ringLayer = g.append("g").attr("pointer-events", "none");
     state.focusMark = g.append("g").attr("pointer-events", "none").attr("display", "none");
@@ -992,22 +1080,28 @@
       .attr("font-weight", (d) => (d.kind === "company" ? 600 : 400))
       .attr("fill", cssVar("--g-label"))
       .attr("pointer-events", "none")
-      .attr("dx", (d) => radius(d) + 4).attr("dy", 4);
+      // A dark outline under each label keeps it legible over lines and nodes.
+      .attr("stroke", cssVar("--g-bg")).attr("stroke-width", 3).attr("stroke-linejoin", "round").attr("paint-order", "stroke")
+      .attr("dx", 0).attr("dy", 0);
+    // Column labels for the grouped layout, on top of everything; they move and zoom with the graph.
+    state.axis = g.append("g").attr("font-size", 11).attr("font-weight", 600).attr("fill", cssVar("--g-label-soft"))
+      .attr("pointer-events", "none").attr("display", state.cfg.group > 0 ? null : "none");
+    drawAxis();
 
     // Keep every node inside the box (below the column headers), and anchor right-hand labels leftwards.
     const draw = () => {
       data.nodes.forEach((d) => {
+        // Room for the node's rings (up to r+12) and, at the top, the column header strip.
         const r = radius(d) + 2;
+        const top = (state.cfg.group > 0 ? HEADER_H : 0) + radius(d) + 14;
         d.x = Math.max(r, Math.min(width - r, d.x));
-        d.y = Math.max(r + 22, Math.min(height - r, d.y));
+        d.y = Math.max(top, Math.min(height - r, d.y));
       });
       state.linkSel.attr("d", arc);
       state.node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
       if (state.ringSel) state.ringSel.attr("transform", (d) => `translate(${d.x},${d.y})`);
       placeFocusMark();
-      state.labels.attr("x", (d) => d.x).attr("y", (d) => d.y)
-        .attr("text-anchor", (d) => (d.x > width * 0.72 ? "end" : "start"))
-        .attr("dx", (d) => (d.x > width * 0.72 ? -(radius(d) + 4) : radius(d) + 4));
+      layoutLabels();
     };
     state.draw = draw;
     sim.on("tick", draw);
@@ -1076,7 +1170,9 @@
       refreshConnected();
       const hidden = [...new Set([...state.hiddenKinds].map((k) => (FILER_ROWS.includes(k) ? "filers" : { person: "people", policy: "policy", response: "responses", public: "public engagement" }[k] || TYPE_LABEL[k])))];
       const shown = state.data.nodes.filter(visible).length;
-      document.getElementById("net-lens-status").textContent = `${lens().label} view${hidden.length ? ": " + hidden.join(", ") + " hidden" : ""}. ${shown} of ${state.data.nodes.length} nodes shown.`;
+      document.getElementById("net-lens-status").textContent = lens().feed && state.feedView === "feed"
+        ? `${lens().label} view: a list of upcoming AI proposals. See the bigger picture opens the graph.`
+        : `${lens().label} view${hidden.length ? ": " + hidden.join(", ") + " hidden" : ""}. ${shown} of ${state.data.nodes.length} nodes shown.`;
     }
   }
 

@@ -44,6 +44,11 @@
       const checked = new Set(data.proposals_checked || []);
       const held = new Set(data.held_back_proposals || []);
       const trusts = new Map();
+      // Trust and fund names from the families list (ticker entries without their "ticker:" prefix) and filings.
+      if (data.families && !Array.isArray(data.families)) Object.entries(data.families).forEach(([fam, list]) => {
+        if (!trusts.has(fam)) trusts.set(fam, new Set());
+        (list || []).forEach((t) => trusts.get(fam).add(String(t).replace(/^ticker:/, "")));
+      });
       (data.filings || []).forEach((f) => {
         if (!trusts.has(f.family)) trusts.set(f.family, new Set());
         trusts.get(f.family).add(f.trust);

@@ -235,7 +235,7 @@
   // this out). General descriptions only: no thresholds, dates or other rule details. The owner edits these.
   const GLOSSARY = {
     "shareholder proposal": "A request one shareholder puts to all shareholders for a vote at a company's annual meeting, for example asking the company to publish a report.",
-    "annual meeting": "The yearly meeting where a company's shareholders vote on directors and proposals. Most people vote online or by mail beforehand.",
+    "annual meeting": "The yearly meeting where a company's shareholders vote on directors and proposals. Shareholders can vote online or by mail beforehand.",
     "proxy statement": "The document a company sends before its annual meeting. It lists everything on the ballot, including shareholder proposals and the company's response to each.",
     "Form N-PX": "A yearly filing in which US mutual funds and ETFs report how they voted on each item at the companies they hold.",
   };
@@ -250,22 +250,25 @@
       const tokens = String(text || "").split(/[,\n;]+/).map((t) => t.trim()).filter(Boolean);
       const tickers = new Set((ctx.companies || []).map((c) => String(c.ticker || "").toUpperCase()).filter(Boolean));
       const ix = ctx.fv;
-      const out = { tickers: [], family: null, familyNote: "", notFound: [] };
+      const out = { tickers: [], family: null, familyNote: "", notFound: [], extraFamilies: [] };
+      // Generic words that appear in many fund names don't pick a family on their own.
+      const GENERIC = new Set(["fund", "funds", "trust", "index", "etf", "etfs", "series", "the", "and", "investments", "investment"]);
       for (const tok of tokens) {
         const up = tok.toUpperCase();
         if (tickers.has(up)) { if (!out.tickers.includes(up)) out.tickers.push(up); continue; }
         const low = tok.toLowerCase();
         let fam = null;
-        if (ix && low.length >= 3) {
+        if (ix && low.length >= 3 && !GENERIC.has(low)) {
           fam = ix.allFamilies.find((f) => {
             const names = [f, f.replace(/\s*\(.*\)/, ""), ...((f.match(/\(([^)]+)\)/) || [])[1] ? [f.match(/\(([^)]+)\)/)[1]] : []), ...(ix.trusts.get(f) || [])].map((x) => x.toLowerCase());
-            return names.some((n) => n.includes(low) || low.includes(n));
+            return names.some((n) => n.length >= 3 && (n.includes(low) || low.includes(n)));
           }) || null;
         }
         if (fam && !out.family) {
           out.family = fam;
           if (!ix.families.includes(fam)) out.familyNote = ix.notShown.find((t) => t.includes(fam)) || `${fam} has no readable Form N-PX votes in this data.`;
-        } else if (!fam) out.notFound.push(tok);
+        } else if (fam && fam !== out.family) out.extraFamilies.push(fam);
+        else if (!fam) out.notFound.push(tok);
       }
       return out;
     },
@@ -298,11 +301,13 @@
       const e = [...(p.vote_history || [])].filter((v) => v.proposal_id).sort((a, b) => b.year - a.year)[0];
       if (!e) return null;
       const earlier = (ctx.proposals || []).find((x) => x.id === e.proposal_id) || {};
-      const near = earlier.meeting_date && p.meeting_date && dayOf(p.meeting_date) - dayOf(earlier.meeting_date) <= 400;
-      const heading = near ? "How your fund voted last year" : `How your fund voted on the ${e.year} version`;
+      // "Last year" when the earlier meeting was about 12 months before this one (up to 13 months).
+      const near = earlier.meeting_date && p.meeting_date && dayOf(p.meeting_date) - dayOf(earlier.meeting_date) <= 396;
+      const heading = near ? `How ${family} funds voted last year` : `How ${family} funds voted on the ${e.year} version`;
       const about = `Earlier version: “${e.title || earlier.title || ""}” (${e.year}), matched in this dataset by company, topic and similar title.`;
       if (!ix.families.includes(family)) return null;
-      if (!ix.usable(e.proposal_id)) return { heading, text: "Not checked: that earlier version isn't in the fund votes data.", about, links: [] };
+      // Held back for checking, or not among the proposals checked: nothing is shown.
+      if (!ix.usable(e.proposal_id)) return null;
       const row = ix.byKey.get(`${family}|${e.proposal_id}`);
       const cov = FV.coverage(ix, family, earlier.meeting_date);
       if (!row) {
@@ -314,7 +319,8 @@
       const notes = [row.reviewed ? "" : "matched automatically, not yet reviewed", cov === "partial" ? "from part of this family's filings for that year" : ""].filter(Boolean);
       return {
         heading,
-        text: `${family} funds in these filings (${plural(n, "fund record", "fund records")}): ${FV.voteText(row)}${notes.length ? " (" + notes.join("; ") + ")" : ""}.`,
+        text: `${family}: ${FV.voteText(row)}`,
+        detail: [`from ${plural(n, "fund's filing", "funds' filings")}`, ...notes].join(" · "),
         about,
         links: (row.sources || []).map((u, i) => ({ href: u, label: `${family} Form N-PX filing ${i + 1}` })),
       };
@@ -341,6 +347,8 @@
       label: "Individual investor",
       feed: FEED,
       sizeLabel: "how many AI proposals each company has had",
+      // Plain-language intro for the graph view of this lens.
+      plainIntro: (shown, total) => `Showing ${shown} of ${total} items. Bigger circles are companies with more AI proposals. Companies are grouped by their main role in AI, as this site reads it. Click any circle for details.`,
       measure: { label: "AI proposals on file", value: (n, ctx) => (isCompany(n) ? proposalsOnFile(n, ctx) : null) },
       defaults: { hiddenKinds: [...FILERS, "person", "policy", "response", "public"], orphans: true },
       size(n, ctx) {
