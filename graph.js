@@ -729,8 +729,23 @@
         // Recurring asks (Policymaker lens) are always named: there are only a dozen and they are the point of the view.
         if (d.kind === "ask") return 1;
         return state.cfg.labels && labelCandidate(d) && !state.hiddenLabels.has(d.id) ? 1 : 0;
-      });
+      })
+      // The clicked (or hovered, or keyboard-focused) node's own label stands out from its neighbours' labels
+      // (owner, 2026-11-26): larger, bold, white on a blue pill; the neighbours' labels go a softer grey.
+      .attr("font-size", (d) => (d.kind === "company" ? state.cfg.textSize + 2 : state.cfg.textSize) + (d.id === focusId ? 3 : 0))
+      .attr("font-weight", (d) => (d.id === focusId ? 700 : d.kind === "company" ? 600 : 400))
+      .attr("fill", (d) => (d.id === focusId ? cssVar("--g-focus") : near ? cssVar("--g-label-soft") : cssVar("--g-label")));
     layoutLabels();
+    placeSelectedPill(focusId);
+  }
+
+  // A blue pill behind the focused node's label, so its name reads as the one chosen.
+  function placeSelectedPill(focusId) {
+    if (!state.selPill) return;
+    const el = focusId && state.labels.filter((d) => d.id === focusId).node();
+    if (!el || el.getAttribute("display") === "none" || Number(el.getAttribute("opacity")) === 0) { state.selPill.attr("display", "none"); return; }
+    const b = el.getBBox();
+    state.selPill.attr("display", null).attr("x", b.x - 5).attr("y", b.y - 2).attr("width", b.width + 10).attr("height", b.height + 4);
   }
 
   // ---------- Label placement: no two shown labels overlap ----------
@@ -1151,6 +1166,7 @@
     state.focusMark.append("circle").attr("class", "fm-ring").attr("fill", "none").attr("stroke", cssVar("--g-focus")).attr("stroke-width", 2);
     drawRings();
 
+    state.selPill = g.append("rect").attr("rx", 5).attr("fill", cssVar("--accent")).attr("display", "none").attr("pointer-events", "none");
     state.labels = g.append("g").selectAll("text").data(data.nodes).join("text")
       .text((d) => (d.label.length > 42 ? d.label.slice(0, 40) + "…" : d.label))
       .attr("font-size", (d) => (d.kind === "company" ? state.cfg.textSize + 2 : state.cfg.textSize))
@@ -1179,6 +1195,7 @@
       if (state.ringSel) state.ringSel.attr("transform", (d) => `translate(${d.x},${d.y})`);
       placeFocusMark();
       layoutLabels();
+      placeSelectedPill(state.hover || state.selected || state.kbId);
     };
     state.draw = draw;
     sim.on("tick", draw);
