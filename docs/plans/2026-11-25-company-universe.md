@@ -94,3 +94,9 @@ Companies that use AI in their own operations without selling or deploying it to
 - Rating rules: proposals open = record holders can give advance notice, no stake minimum; narrowing = ownership threshold, a Texas-style opt-in available to the board, or unusually short window; closed = proposals effectively barred. Director votes open = majority voting and no controller; narrowing = classified board or a controller over 30%; closed = plurality voting or a controller over 50%. Voting control open = no holder over 10%; narrowing = a holder 10 to 50%; closed = over 50% of votes.
 - Ownership for 9 private labs: a company or registry page stating ownership, or a "no public statement found after search" note listing what was searched.
 - Five researchers in parallel, then a data accuracy result review.
+
+### Rating rule refinements (round 3, applied to all tracked companies)
+
+- **Voting control counts founders, insiders and affiliated holders.** Passive index managers (Vanguard, BlackRock, State Street, Fidelity) are noted in the control text but do not move the rating: their funds vote under their own policies and report limited voting power. Verisk, Axon, Motorola Solutions, Salesforce, Adobe, IBM and Digital Realty are "open" on this basis.
+- **"Closed" means a person or group holds about half the vote or more**, including structures fixed just under 50% (Palantir) and founder groups together over 50% (CoreWeave, Workday).
+- **Votes against directors** is "closed" when a controller holds about half or more, applied to Alphabet (founders about 52.7%) for consistency with the written rule.
