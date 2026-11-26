@@ -572,12 +572,20 @@ select { -webkit-appearance: none; appearance: none; background-image: url("data
 .pl-mx { width: 32px; height: 26px; border: 1px solid var(--control-edge); border-radius: 3px; background: var(--surface); font: 400 12px var(--sans); color: var(--ink); cursor: pointer; padding: 0; }
 .pl-mx.filed { background: var(--accent-soft); }
 .pl-mx.up { box-shadow: inset 0 0 0 2px var(--accent); }
+.pl-mx.crit { border-style: dashed; border-color: var(--ink-soft); background: var(--surface); }
+/* Row labels are ask names, read as text: no uppercase table-header styling. */
+.pl-mx-row { text-transform: none; letter-spacing: normal; color: var(--ink); }
+.pl-mx-row .pl-short { display: none; }
+.pl-mx-row .ticker { display: block; }
 .pl-mx[aria-current="true"] { background: var(--accent); color: var(--surface); border-color: var(--accent); }
 .pl-mx:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
 @media (max-width: 640px) {
   .pl-controls select { min-width: 0; width: 100%; }
   .pl-grid { grid-template-columns: 1fr; }
-  .pl-mx-row { min-width: 130px; max-width: 150px; font-size: 12px; }
+  .pl-mx-row { min-width: 136px; max-width: 144px; font-size: 12px; line-height: 1.25; padding: 5px 6px 5px 2px; }
+  /* Phones show the short ask name; the full name stays for screen readers. */
+  .pl-mx-row .pl-long { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .pl-mx-row .pl-short { display: inline; }
   /* Organizations table as stacked cards on phones. */
   .pl-orgs thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .pl-orgs, .pl-orgs tbody, .pl-orgs tr, .pl-orgs td { display: block; width: 100%; }

@@ -77,20 +77,21 @@
       const x = cell.get(k) || { n: 0, best: null, up: false, crit: 0 };
       x.n += 1;
       if (idx.critical.has(p.id)) x.crit += 1;
-      if (p.support_pct != null) x.best = Math.max(x.best ?? 0, p.support_pct);
+      // Highest support leaves out filings from filers critical of ESG, as the record below does.
+      if (p.support_pct != null && !idx.critical.has(p.id)) x.best = Math.max(x.best ?? 0, p.support_pct);
       if (p.status === "upcoming") x.up = true;
       cell.set(k, x);
     });
     const totals = new Map(D.asks.map((a) => [a.id, D.proposals.filter((p) => p.ask_id === a.id).length]));
     const head = cos.map((c) => `<th scope="col"><abbr title="${esc(c.name)}">${esc(tick(c))}</abbr></th>`).join("");
-    const rows = D.asks.map((a, r) => `<tr><th scope="row" class="pl-mx-row">${esc(a.label)} <span class="ticker">${totals.get(a.id)} filed</span></th>${cos.map((c, i) => {
+    const rows = D.asks.map((a, r) => `<tr><th scope="row" class="pl-mx-row"><span class="pl-long">${esc(a.label)}</span><span class="pl-short" aria-hidden="true">${esc(a.short_label || a.label)}</span> <span class="ticker">${totals.get(a.id)} filed</span></th>${cos.map((c, i) => {
       const x = cell.get(a.id + "|" + tick(c));
       const on = S.co === (c.id || c.ticker) && S.ask === a.id;
-      const label = `${a.label} at ${c.name}: ${x ? `filed ${plural(x.n, "time")}${x.best != null ? `, highest support ${Math.round(x.best)}%` : ""}${x.up ? ", on the next ballot" : ""}${x.crit ? `, ${x.crit === x.n ? "" : `${x.crit} of them `}filed from a critical stance on ESG` : ""}` : "not filed in this dataset"}`;
-      return `<td><button type="button" class="pl-mx${x ? " filed" : ""}${x && x.up ? " up" : ""}" data-co="${esc(c.id || c.ticker)}" data-ask="${esc(a.id)}" data-r="${r}" data-c="${i}" tabindex="${on ? 0 : -1}"${on ? ' aria-current="true"' : ""} aria-label="${esc(label)}">${x ? (x.best != null ? Math.round(x.best) : "•") : ""}</button></td>`;
+      const label = `${a.label} at ${c.name}: ${x ? `filed ${plural(x.n, "time")}${x.best != null ? `, highest support ${Math.round(x.best)}%` : ""}${x.up ? ", on the next ballot" : ""}${x.crit ? `, ${x.crit === x.n ? (x.n === 1 ? "by a filer" : "all by filers") : `${x.crit} of them by filers`} critical of ESG${x.best != null ? " (left out of the highest support)" : ""}` : ""}` : "not filed in this dataset"}`;
+      return `<td><button type="button" class="pl-mx${x ? " filed" : ""}${x && x.crit === x.n ? " crit" : ""}${x && x.up ? " up" : ""}" data-co="${esc(c.id || c.ticker)}" data-ask="${esc(a.id)}" data-r="${r}" data-c="${i}" tabindex="${on ? 0 : -1}"${on ? ' aria-current="true"' : ""} aria-label="${esc(label)}">${x ? (x.best != null ? Math.round(x.best) : "•") : ""}</button></td>`;
     }).join("")}</tr>`).join("");
     return `<section class="pl-card pl-wide" aria-labelledby="pl-h-mx"><h3 id="pl-h-mx">What has been asked where</h3>
-      <p class="status-note">Rows are asks (with how often each has been filed), columns are the US-listed companies. A number is the highest support that ask has had at that company (% for ÷ (for + against)); a dot means filed but not voted; an outlined square is on the next ballot; an empty square has no filing there in this dataset. Choose a square to plan it; arrow keys move between squares.</p>
+      <p class="status-note">Rows are asks (with how often each has been filed), columns are the US-listed companies. A number is the highest support that ask has had at that company (% for ÷ (for + against)), leaving out filings from filers critical of ESG; a dot means filed but not voted; a dashed square was filed only by filers critical of ESG; an outlined square is on the next ballot; an empty square has no filing there in this dataset. Choose a square to plan it; arrow keys move between squares.</p>
       <div class="table-wrap pl-mx-wrap"><table class="pl-mx-table"><thead><tr><th scope="col"><span class="visually-hidden">Ask</span></th>${head}</tr></thead><tbody>${rows}</tbody></table></div></section>`;
   }
 
@@ -106,7 +107,7 @@
     const cos = [...new Set(all.map((p) => p.company))];
     const thr = window.RULES && window.RULES.RESUBMISSION_THRESHOLDS;
     const row = (p) => `<li><strong>${esc(p.company)}</strong> ${esc(p.year)}: ${esc(p.title)} · ${esc(p.status)}${p.support_pct != null ? ` · ${esc(p.support_pct)}%` : ""}${idx.critical.has(p.id) ? ` <span class="ticker">filed from a critical stance on ESG</span>` : ""}${src(p.results_url || p.proxy_url, p.results_url ? "results" : "proxy")}</li>`;
-    const critNote = crit.length ? ` ${plural(crit.length, "filing")} came from a filer critical of ESG and ${crit.length === 1 ? "is" : "are"} left out of the support figures${voted.length ? "" : ", which leaves no vote to summarize"}.` : "";
+    const critNote = crit.length ? ` ${plural(crit.length, "filing")} came from ${crit.length === 1 ? "a filer" : "filers"} critical of ESG and ${crit.length === 1 ? "is" : "are"} left out of the support figures${voted.length ? "" : ", which leaves no vote to summarize"}.` : "";
     return `<section class="pl-card" aria-labelledby="pl-h-rec"><h3 id="pl-h-rec">How this ask has gone</h3>
       <p>${all.length ? `Filed ${plural(all.length, "time")} at ${plural(cos.length, "company", "companies")} in this dataset since ${Math.min(...all.map((p) => p.year))}${voted.length ? `; median support ${pct(med)} across ${plural(voted.length, "vote")}${best ? `, highest ${pct(best.support_pct)} at ${esc(best.company)} ${esc(best.year)}` : ""}` : ""}.${critNote}` : "Not filed at any company in this dataset."}</p>
       <h4>At ${esc(c.name)}</h4>

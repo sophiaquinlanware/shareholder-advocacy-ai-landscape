@@ -4,6 +4,7 @@
   {
    "id": "ask-dc-water",
    "label": "Data center water use",
+   "short_label": "Data center water",
    "match": [
     "water"
    ],
@@ -12,6 +13,7 @@
   {
    "id": "ask-dc-siting-rights",
    "label": "Human rights in data center siting",
+   "short_label": "Data center siting rights",
    "match": [
     "hotspot",
     "data center siting",
@@ -22,6 +24,7 @@
   {
    "id": "ask-ai-fossil-fuels",
    "label": "AI tools sold for oil and gas",
+   "short_label": "AI for oil and gas",
    "match": [
     "oil and gas"
    ],
@@ -30,6 +33,7 @@
   {
    "id": "ask-dc-climate-energy",
    "label": "Data center energy, emissions and costs",
+   "short_label": "Data center energy",
    "match": [
     "climate",
     "ghg",
@@ -45,6 +49,7 @@
   {
    "id": "ask-child-safety",
    "label": "Child safety and AI",
+   "short_label": "Child safety",
    "match": [
     "child",
     "csam",
@@ -55,6 +60,7 @@
   {
    "id": "ask-targeted-ads-rights",
    "label": "Human rights of AI-driven targeted ads",
+   "short_label": "Targeted ads rights",
    "match": [
     "targeted ad",
     "targeted advertising"
@@ -64,6 +70,7 @@
   {
    "id": "ask-customer-due-diligence",
    "label": "Customer and end-use due diligence (surveillance, military, facial recognition)",
+   "short_label": "Customer due diligence",
    "match": [
     "due diligence",
     "customer use",
@@ -82,6 +89,7 @@
   {
    "id": "ask-ai-misinformation",
    "label": "AI misinformation and disinformation",
+   "short_label": "Misinformation",
    "match": [
     "misinformation",
     "disinformation"
@@ -91,6 +99,7 @@
   {
    "id": "ask-ai-bias",
    "label": "AI bias, discrimination and viewpoint",
+   "short_label": "Bias and viewpoint",
    "match": [
     "bias",
     "discrimination",
@@ -101,6 +110,7 @@
   {
    "id": "ask-ai-training-data",
    "label": "Training data and user data in AI",
+   "short_label": "Training and user data",
    "match": [
     "data usage",
     "data sourcing",
@@ -114,6 +124,7 @@
   {
    "id": "ask-ai-workforce",
    "label": "AI and workers",
+   "short_label": "AI and workers",
    "match": [
     "worker",
     "workforce"
@@ -123,6 +134,7 @@
   {
    "id": "ask-ai-oversight-reporting",
    "label": "Board oversight and AI transparency reporting",
+   "short_label": "Board oversight and reporting",
    "match": [
     "board oversight",
     "board structure",
