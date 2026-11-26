@@ -16,7 +16,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm",
-   "notes": null
+   "notes": null,
+   "filing_deadline": "2023-06-29",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312522270484/d318171ddef14a.htm"
   },
   {
    "id": "msft-2023-13",
@@ -34,7 +36,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm",
-   "notes": "The 8-K text reads \"On December 7, 2022\" but it reports the 2023 Annual Shareholders Meeting; the DEF 14A sets the meeting for December 7, 2023, so the 8-K date looks like a typo."
+   "notes": "The 8-K text reads \"On December 7, 2022\" but it reports the 2023 Annual Shareholders Meeting; the DEF 14A sets the meeting for December 7, 2023, so the 8-K date looks like a typo.",
+   "filing_deadline": "2023-06-29",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312522270484/d318171ddef14a.htm"
   },
   {
    "id": "msft-2024-6",
@@ -52,7 +56,19 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm",
-   "notes": null
+   "notes": null,
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "msft-2023-11",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "support_pct": 33.58,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject",
+   "filing_deadline": "2024-06-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm"
   },
   {
    "id": "msft-2024-7",
@@ -70,7 +86,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm",
-   "notes": null
+   "notes": null,
+   "filing_deadline": "2024-06-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm"
   },
   {
    "id": "msft-2024-8",
@@ -88,7 +106,19 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm",
-   "notes": null
+   "notes": null,
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "msft-2023-13",
+     "title": "Report on AI Misinformation and Disinformation",
+     "support_pct": 21.17,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject",
+   "filing_deadline": "2024-06-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm"
   },
   {
    "id": "msft-2024-9",
@@ -106,7 +136,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm",
-   "notes": null
+   "notes": null,
+   "filing_deadline": "2024-06-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm"
   },
   {
    "id": "msft-2025-6",
@@ -124,7 +156,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
-   "notes": null
+   "notes": null,
+   "filing_deadline": "2025-07-01",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
   },
   {
    "id": "msft-2025-7",
@@ -142,7 +176,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
-   "notes": null
+   "notes": null,
+   "filing_deadline": "2025-07-01",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
   },
   {
    "id": "msft-2025-8",
@@ -160,7 +196,26 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
-   "notes": null
+   "notes": null,
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "msft-2023-11",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "support_pct": 33.58,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm"
+    },
+    {
+     "year": 2024,
+     "proposal_id": "msft-2024-6",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "support_pct": 32.03,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject",
+   "filing_deadline": "2025-07-01",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
   },
   {
    "id": "msft-2025-9",
@@ -178,7 +233,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
-   "notes": null
+   "notes": null,
+   "filing_deadline": "2025-07-01",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
   },
   {
    "id": "msft-2025-10",
@@ -196,7 +253,19 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
-   "notes": null
+   "notes": null,
+   "vote_history": [
+    {
+     "year": 2024,
+     "proposal_id": "msft-2024-7",
+     "title": "Report on AI and Machine Learning Tools for Oil and Gas Development and Production",
+     "support_pct": 9.71,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject",
+   "filing_deadline": "2025-07-01",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
   },
   {
    "id": "meta-2023-5",
@@ -214,7 +283,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000083/meta-20230531.htm",
-   "notes": "Meta Class B shares carry 10 votes each. Counts are as the 8-K reports them."
+   "notes": "Meta Class B shares carry 10 votes each. Counts are as the 8-K reports them.",
+   "filing_deadline": "2022-12-09",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680122000043/meta2022definitiveproxysta.htm"
   },
   {
    "id": "meta-2024-6",
@@ -232,7 +303,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000057/meta-20240529.htm",
-   "notes": "Meta dual-class voting power"
+   "notes": "Meta dual-class voting power",
+   "filing_deadline": "2023-12-16",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
   },
   {
    "id": "meta-2024-10",
@@ -250,7 +323,19 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000057/meta-20240529.htm",
-   "notes": "Meta dual-class voting power"
+   "notes": "Meta dual-class voting power",
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "meta-2023-5",
+     "title": "Human Rights Impact Assessment of Targeted Advertising",
+     "support_pct": 17.02,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000083/meta-20230531.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject",
+   "filing_deadline": "2023-12-16",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
   },
   {
    "id": "meta-2025-10",
@@ -268,7 +353,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm",
-   "notes": "Meta dual-class voting power"
+   "notes": "Meta dual-class voting power",
+   "filing_deadline": "2024-12-20",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
   },
   {
    "id": "meta-2025-11",
@@ -286,7 +373,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm",
-   "notes": "Meta dual-class voting power"
+   "notes": "Meta dual-class voting power",
+   "filing_deadline": "2024-12-20",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
   },
   {
    "id": "meta-2025-12",
@@ -304,7 +393,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm",
-   "notes": "Meta dual-class voting power"
+   "notes": "Meta dual-class voting power",
+   "filing_deadline": "2024-12-20",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
   },
   {
    "id": "meta-2026-3",
@@ -322,7 +413,19 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm",
-   "notes": "Meta dual-class voting power"
+   "notes": "Meta dual-class voting power",
+   "vote_history": [
+    {
+     "year": 2025,
+     "proposal_id": "meta-2025-11",
+     "title": "Report on AI Data Usage Oversight",
+     "support_pct": 9.93,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject",
+   "filing_deadline": "2025-12-18",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
   },
   {
    "id": "meta-2026-9",
@@ -340,7 +443,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm",
-   "notes": "Meta dual-class voting power"
+   "notes": "Meta dual-class voting power",
+   "filing_deadline": "2025-12-18",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
   },
   {
    "id": "meta-2026-11",
@@ -358,7 +463,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm",
-   "notes": "Meta dual-class voting power"
+   "notes": "Meta dual-class voting power",
+   "filing_deadline": "2025-12-18",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
   },
   {
    "id": "googl-2023-10",
@@ -376,7 +483,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm",
-   "notes": "Alphabet Class B shares carry 10 votes each. Counts are voting power as the 8-K reports them."
+   "notes": "Alphabet Class B shares carry 10 votes each. Counts are voting power as the 8-K reports them.",
+   "filing_deadline": "2022-12-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm"
   },
   {
    "id": "googl-2023-11",
@@ -394,7 +503,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "filing_deadline": "2022-12-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm"
   },
   {
    "id": "googl-2023-12",
@@ -412,7 +523,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "filing_deadline": "2022-12-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm"
   },
   {
    "id": "googl-2024-11",
@@ -430,7 +543,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "filing_deadline": "2023-12-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
   },
   {
    "id": "googl-2024-12",
@@ -448,7 +563,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "filing_deadline": "2023-12-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
   },
   {
    "id": "googl-2024-13",
@@ -466,7 +583,19 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "googl-2023-11",
+     "title": "Human Rights Assessment of Targeted Ad Policies and Practices",
+     "support_pct": 18.02,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject",
+   "filing_deadline": "2023-12-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
   },
   {
    "id": "googl-2025-7",
@@ -484,7 +613,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "filing_deadline": "2024-12-27",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
   },
   {
    "id": "googl-2025-9",
@@ -502,7 +633,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "filing_deadline": "2024-12-27",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
   },
   {
    "id": "googl-2025-10",
@@ -520,7 +653,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "filing_deadline": "2024-12-27",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
   },
   {
    "id": "googl-2025-11",
@@ -538,7 +673,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "filing_deadline": "2024-12-27",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
   },
   {
    "id": "googl-2025-12",
@@ -556,7 +693,19 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "vote_history": [
+    {
+     "year": 2024,
+     "proposal_id": "googl-2024-13",
+     "title": "Human Rights Assessment of AI-Driven Targeted Ad Policies",
+     "support_pct": 18.56,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject",
+   "filing_deadline": "2024-12-27",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
   },
   {
    "id": "googl-2025-15(floor)",
@@ -574,7 +723,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
-   "notes": "Floor proposal that was not in the 2025 proxy statement."
+   "notes": "Floor proposal that was not in the 2025 proxy statement.",
+   "filing_deadline": "2024-12-27",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
   },
   {
    "id": "googl-2026-5",
@@ -592,7 +743,19 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "vote_history": [
+    {
+     "year": 2025,
+     "proposal_id": "googl-2025-7",
+     "title": "Enhanced Disclosure on Climate Goals",
+     "support_pct": 8.21,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject",
+   "filing_deadline": "2025-12-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
   },
   {
    "id": "googl-2026-6",
@@ -610,7 +773,9 @@
    "water": true,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
-   "notes": "WATER FLAG. Alphabet dual-class voting power."
+   "notes": "WATER FLAG. Alphabet dual-class voting power.",
+   "filing_deadline": "2025-12-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
   },
   {
    "id": "googl-2026-11",
@@ -628,7 +793,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "filing_deadline": "2025-12-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
   },
   {
    "id": "googl-2026-12",
@@ -646,7 +813,19 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "vote_history": [
+    {
+     "year": 2024,
+     "proposal_id": "googl-2024-11",
+     "title": "AI Principles and Board Oversight",
+     "support_pct": 7.4,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject",
+   "filing_deadline": "2025-12-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
   },
   {
    "id": "googl-2026-13",
@@ -664,7 +843,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "filing_deadline": "2025-12-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
   },
   {
    "id": "googl-2026-14",
@@ -682,7 +863,19 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "vote_history": [
+    {
+     "year": 2025,
+     "proposal_id": "googl-2025-11",
+     "title": "Report on AI Data Usage Oversight",
+     "support_pct": 12.38,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject",
+   "filing_deadline": "2025-12-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
   },
   {
    "id": "amzn-2023-7",
@@ -700,7 +893,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923065457/tm2315877d1_8k.htm",
-   "notes": null
+   "notes": null,
+   "filing_deadline": "2022-12-15",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465922045572/tm223357-5_def14a.htm"
   },
   {
    "id": "amzn-2023-23",
@@ -718,7 +913,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923065457/tm2315877d1_8k.htm",
-   "notes": null
+   "notes": null,
+   "filing_deadline": "2022-12-15",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465922045572/tm223357-5_def14a.htm"
   },
   {
    "id": "amzn-2024-6",
@@ -736,7 +933,19 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924065117/tm2414140d1_8k.htm",
-   "notes": null
+   "notes": null,
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "amzn-2023-7",
+     "title": "Report on Customer Due Diligence",
+     "support_pct": 34.18,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923065457/tm2315877d1_8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject",
+   "filing_deadline": "2023-12-15",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm"
   },
   {
    "id": "amzn-2024-14",
@@ -754,7 +963,19 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924065117/tm2414140d1_8k.htm",
-   "notes": null
+   "notes": null,
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "amzn-2023-23",
+     "title": "Report on Customer Use of Certain Technologies (Rekognition facial recognition)",
+     "support_pct": 37.48,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923065457/tm2315877d1_8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject",
+   "filing_deadline": "2023-12-15",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm"
   },
   {
    "id": "amzn-2024-16",
@@ -772,7 +993,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924065117/tm2414140d1_8k.htm",
-   "notes": null
+   "notes": null,
+   "filing_deadline": "2023-12-15",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm"
   },
   {
    "id": "amzn-2025-7",
@@ -790,7 +1013,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm",
-   "notes": null
+   "notes": null,
+   "filing_deadline": "2024-12-12",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm"
   },
   {
    "id": "amzn-2025-8",
@@ -808,7 +1033,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm",
-   "notes": null
+   "notes": null,
+   "filing_deadline": "2024-12-12",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm"
   },
   {
    "id": "amzn-2025-11",
@@ -826,7 +1053,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm",
-   "notes": null
+   "notes": null,
+   "filing_deadline": "2024-12-12",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm"
   },
   {
    "id": "amzn-2026-5",
@@ -844,7 +1073,19 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926065717/tm2614288d1_8k.htm",
-   "notes": null
+   "notes": null,
+   "vote_history": [
+    {
+     "year": 2025,
+     "proposal_id": "amzn-2025-7",
+     "title": "Additional Reporting on Impact of Data Centers on Climate Commitments",
+     "support_pct": 20.11,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject",
+   "filing_deadline": "2025-12-11",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm"
   },
   {
    "id": "amzn-2026-floor",
@@ -862,7 +1103,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926065717/tm2614288d1_8k.htm",
-   "notes": "Floor proposal"
+   "notes": "Floor proposal",
+   "filing_deadline": "2025-12-11",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm"
   },
   {
    "id": "aapl-2024-7",
@@ -880,7 +1123,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124010155/ny20022580x1_8k.htm",
-   "notes": null
+   "notes": null,
+   "filing_deadline": "2023-09-14",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817923000019/laap2023_def14a.htm"
   },
   {
    "id": "aapl-2025-4",
@@ -898,7 +1143,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125005876/ef20044022_8k.htm",
-   "notes": null
+   "notes": null,
+   "filing_deadline": "2024-09-13",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm"
   },
   {
    "id": "aapl-2025-5",
@@ -916,7 +1163,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125005876/ef20044022_8k.htm",
-   "notes": null
+   "notes": null,
+   "filing_deadline": "2024-09-13",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm"
   },
   {
    "id": "tsla-2025-7",
@@ -934,7 +1183,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925090866/tm252289-12_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925108507/tm2530590d1_8k.htm",
-   "notes": "The Board made no recommendation. More votes were cast FOR than AGAINST, but Tesla bylaws count abstentions as AGAINST, so the 8-K reports it as not approved. Under the bylaw basis, For/(For+Against+Abstain) = 43.25%. The Board said it would examine next steps."
+   "notes": "The Board made no recommendation. More votes were cast FOR than AGAINST, but Tesla bylaws count abstentions as AGAINST, so the 8-K reports it as not approved. Under the bylaw basis, For/(For+Against+Abstain) = 43.25%. The Board said it would examine next steps.",
+   "filing_deadline": "2024-12-17",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465924053333/tm2326076d15_def14a.htm"
   },
   {
    "id": "nvda-2026-7",
@@ -952,7 +1203,9 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm",
-   "notes": "NVIDIA counts abstentions as AGAINST."
+   "notes": "NVIDIA counts abstentions as AGAINST.",
+   "filing_deadline": "2026-01-13",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000095/nvda-20250512.htm"
   },
   {
    "id": "msft-2026-4",
@@ -971,7 +1224,9 @@
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "results_url": null,
    "notes": null,
-   "results_note": "Not yet filed (meeting 2026-12-08)"
+   "results_note": "Not yet filed (meeting 2026-12-08)",
+   "filing_deadline": "2026-06-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
   },
   {
    "id": "msft-2026-5",
@@ -990,7 +1245,19 @@
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "results_url": null,
    "notes": null,
-   "results_note": "Not yet filed (meeting 2026-12-08)"
+   "results_note": "Not yet filed (meeting 2026-12-08)",
+   "vote_history": [
+    {
+     "year": 2025,
+     "proposal_id": "msft-2025-9",
+     "title": "Report on Human Rights Due Diligence",
+     "support_pct": 26.34,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject",
+   "filing_deadline": "2026-06-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
   },
   {
    "id": "msft-2026-6",
@@ -1009,7 +1276,33 @@
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "results_url": null,
    "notes": null,
-   "results_note": "Not yet filed (meeting 2026-12-08)"
+   "results_note": "Not yet filed (meeting 2026-12-08)",
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "msft-2023-11",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "support_pct": 33.58,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm"
+    },
+    {
+     "year": 2024,
+     "proposal_id": "msft-2024-6",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "support_pct": 32.03,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
+    },
+    {
+     "year": 2025,
+     "proposal_id": "msft-2025-8",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "support_pct": 27.48,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject",
+   "filing_deadline": "2026-06-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
   },
   {
    "id": "googl-2023-audit-committee-review",
@@ -1021,7 +1314,9 @@
    "status": "voted",
    "support_pct": 8.37,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
-   "source": "filer network research"
+   "source": "filer network research",
+   "filing_deadline": "2022-12-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm"
   },
   {
    "id": "googl-2024-child-online-safety",
@@ -1035,7 +1330,9 @@
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf",
    "source": "filer network research",
    "meeting_date": "2024-06-07",
-   "meeting_date_source": "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/"
+   "meeting_date_source": "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/",
+   "filing_deadline": "2023-12-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
   },
   {
    "id": "meta-2023-community-standards",
@@ -1047,7 +1344,9 @@
    "status": "voted",
    "support_pct": 7.16,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
-   "source": "filer network research"
+   "source": "filer network research",
+   "filing_deadline": "2022-12-09",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680122000043/meta2022definitiveproxysta.htm"
   },
   {
    "id": "meta-2025-child-safety",
@@ -1061,7 +1360,9 @@
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "source": "filer network research",
    "meeting_date": "2025-05-28",
-   "meeting_date_source": "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
+   "meeting_date_source": "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/",
+   "filing_deadline": "2024-12-20",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
   },
   {
    "id": "meta-2026-child-safety-pay",
@@ -1075,7 +1376,9 @@
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "source": "filer network research",
    "meeting_date": "2026-05-27",
-   "meeting_date_source": "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/"
+   "meeting_date_source": "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
+   "filing_deadline": "2025-12-18",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
   },
   {
    "id": "amzn-2026-responsible-ai-sales",
@@ -1091,7 +1394,9 @@
    "proponent": "American Baptist Home Mission Societies",
    "status_reason": "Excluded by Amazon as not meeting the resubmission thresholds; SEC staff said it would not object.",
    "status_source_url": "https://www.minerva.info/post/resolution-rejections-amazon-to-exclude-at-least-seven-shareholder-proposals",
-   "proponent_source_url": "https://news.bloomberglaw.com/esg/amazon-to-block-investor-vote-on-ai-services-for-israel-dhs"
+   "proponent_source_url": "https://news.bloomberglaw.com/esg/amazon-to-block-investor-vote-on-ai-services-for-israel-dhs",
+   "filing_deadline": "2025-12-11",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm"
   },
   {
    "id": "aapl-2026-ai-energy",
@@ -1107,7 +1412,9 @@
    "proponent": "Tulipshare",
    "status_reason": "Withdrawn after Apple sought SEC no-action relief arguing the proposal would micromanage the company. No reason for the withdrawal is public.",
    "status_source_url": "https://www.minerva.info/post/apple-shareholders-stunted-proposals-plummet-as-sec-shift-bites",
-   "proponent_source_url": "https://www.minerva.info/post/apple-shareholders-stunted-proposals-plummet-as-sec-shift-bites"
+   "proponent_source_url": "https://www.minerva.info/post/apple-shareholders-stunted-proposals-plummet-as-sec-shift-bites",
+   "filing_deadline": "2025-09-12",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm"
   },
   {
    "id": "nvda-2026-military-ai",
@@ -1121,7 +1428,9 @@
    "proxy_url": "https://collaborate.unpri.org/group/38826/home",
    "source": "filer network research",
    "status_reason": null,
-   "status_source_url": null
+   "status_source_url": null,
+   "filing_deadline": "2026-01-13",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000095/nvda-20250512.htm"
   },
   {
    "id": "amzn-2026-climate-cost",
@@ -1135,7 +1444,236 @@
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
    "source": "filer network research",
    "meeting_date": "2026-05-20",
-   "meeting_date_source": "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/"
+   "meeting_date_source": "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
+   "filing_deadline": "2025-12-11",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm"
+  },
+  {
+   "id": "ibm-2026-7",
+   "company": "IBM",
+   "year": 2026,
+   "meeting_date": "2026-04-28",
+   "item": "7",
+   "title": "Stockholder proposal requesting a report on AI bias",
+   "proponent": "National Center for Public Policy Research",
+   "topic": "AI governance & oversight",
+   "subtopic": "Report on methods used to remove bias from AI models, and whether avoiding disparate impact undermines accuracy (anti-ESG framing)",
+   "status": "voted",
+   "support_pct": 2.45,
+   "support_note": "IBM's 8-K reports 2.4% For. For 14,185,799; Against 565,479,507; Abstain 10,880,912; broker non-votes 153,795,179.",
+   "water": false,
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000043/ibm-20260428.htm",
+   "filing_deadline": "2025-11-10",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/51143/000110465925022186/tm2430706-6_def14aseq1.htm",
+   "notes": "Proxy heading for the proposal text: \"Proposal 7 - AI Bias Audit\". Proponent owned at least 7 shares per the proxy.",
+   "source": "SEC filings (round 29)"
+  },
+  {
+   "id": "axon-2023-6",
+   "company": "AXON",
+   "year": 2023,
+   "meeting_date": "2023-05-31",
+   "item": "6",
+   "title": "Shareholder Proposal to Discontinue the Development of a Non-Lethal TASER Drone System",
+   "proponent": "the Jubitz Foundation",
+   "topic": "Social & economic impacts",
+   "subtopic": "Taser-equipped drones and AI surveillance in schools and public spaces; civil rights concerns raised by former members of Axon's AI Ethics Board",
+   "status": "voted",
+   "support_pct": 13.67,
+   "support_note": "8-K counts: For 7,399,803; Against 46,721,724; Abstain 2,743,129; broker non-votes 8,214,032. Single class of common stock.",
+   "water": false,
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/1069183/000106918323000019/axon-20230531xdef14a.htm",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1069183/000155837023010762/axon-20230531x8k.htm",
+   "filing_deadline": "2022-12-09",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1069183/000155837022005230/tmb-20220520xdef14a.htm",
+   "notes": "Resolved clause cites the public safety and human and civil rights issues raised by former members of the Axon AI Ethics Board; nine of thirteen board members resigned in 2022 over the drone plan.",
+   "source": "SEC filings (round 29)"
+  },
+  {
+   "id": "pltr-2026-4",
+   "company": "PLTR",
+   "year": 2026,
+   "meeting_date": "2026-06-03",
+   "item": "4",
+   "title": "Independent Report on Due Diligence Process",
+   "proponent": "The Presbyterian Church (U.S.A.), as lead filer",
+   "topic": "Social & economic impacts",
+   "subtopic": "Due diligence on customer use of defense-related products (including AI targeting such as Project Maven) in conflict-affected and high-risk areas; human rights and humanitarian law",
+   "status": "voted",
+   "support_pct": 8.28,
+   "support_note": "8-K counts after giving effect to voting power: For 192,995,867; Against 2,137,396,027; Abstain 24,466,108; broker non-votes 381,084,411. Dual/multi-class: Class B has 10 votes per share and Class F about 160.412 votes per share on this item, so support among Class A holders alone is higher but not reported.",
+   "water": false,
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000033/pltr-20260603.htm",
+   "filing_deadline": "2025-12-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165525000057/pltr-20250424.htm",
+   "notes": "First shareholder proposals on a Palantir ballot since its 2020 listing (2023 to 2025 proxies carried none). Supporting statement cites Palantir taking over Project Maven, described as an AI-driven system. Board opposed Items 4 and 5 in one statement.",
+   "source": "SEC filings (round 29)"
+  },
+  {
+   "id": "pltr-2026-5",
+   "company": "PLTR",
+   "year": 2026,
+   "meeting_date": "2026-06-03",
+   "item": "5",
+   "title": "Human Rights Impact Assessment",
+   "proponent": "Sisters of St. Joseph of Peace, as lead filer",
+   "topic": "Social & economic impacts",
+   "subtopic": "Human rights impact assessment of Palantir products, including government use of Palantir AI for immigration surveillance and enforcement",
+   "status": "voted",
+   "support_pct": 12.47,
+   "support_note": "8-K counts after giving effect to voting power: For 290,935,808; Against 2,042,181,192; Abstain 21,741,002; broker non-votes 381,084,411. Dual/multi-class: Class B has 10 votes per share and Class F about 160.412 votes per share on this item, so support among Class A holders alone is higher but not reported.",
+   "water": false,
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000033/pltr-20260603.htm",
+   "filing_deadline": "2025-12-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165525000057/pltr-20250424.htm",
+   "notes": "Supporting statement says ICE and other US agencies use Palantir's artificial intelligence to combine social media and private data to track migrants, and cites ImmigrationOS.",
+   "source": "SEC filings (round 29)"
+  },
+  {
+   "id": "nflx-2024-4",
+   "company": "NFLX",
+   "year": 2024,
+   "meeting_date": "2024-06-06",
+   "item": "4",
+   "title": "Report on Netflix's Use of Artificial Intelligence",
+   "proponent": "AFL-CIO Equity Index Funds and co-filers (represented by Segal Marco Advisors)",
+   "topic": "AI governance & oversight",
+   "subtopic": "AI transparency report: use of AI in operations, board oversight role, and ethical guidelines",
+   "status": "voted",
+   "support_pct": 43.29,
+   "support_note": "8-K Item 5.07: For 144,328,782; Against 189,038,209; Abstain 1,842,864; Broker non-votes 37,164,996. Not approved.",
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312524100913/d521836ddef14a.htm",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528024000185/nflx-20240606.htm",
+   "filing_deadline": "2023-12-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1065280/000119312523110513/d405125ddef14a.htm",
+   "notes": "Part of the AFL-CIO 2024 AI transparency campaign at media and tech companies; same resolution as the ones filed at Disney and Comcast.",
+   "source": "SEC filings (round 29)"
+  },
+  {
+   "id": "dis-2024-afl-ai",
+   "company": "DIS",
+   "year": 2024,
+   "meeting_date": "2024-04-03",
+   "item": null,
+   "title": "AI transparency report (AFL-CIO Equity Index Funds)",
+   "proponent": "AFL-CIO Equity Index Funds and co-filers",
+   "topic": "AI governance & oversight",
+   "subtopic": "AI transparency report: use of AI in operations, board oversight role, and ethical guidelines",
+   "status": "withdrawn",
+   "support_pct": null,
+   "support_note": null,
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448924000073/dis-20240201.htm",
+   "results_url": null,
+   "filing_deadline": "2023-10-12",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1744489/000119312523025766/d354565ddefc14a.htm",
+   "notes": "SEC staff denied Disney's request to exclude the proposal under Rule 14a-8(i)(7) on January 3, 2024 (letter: https://business.cch.com/srd/TheWaltDisneyCompany.pdf; SEC index: https://www.sec.gov/corpfin/2023-2024-shareholder-proposals-no-action). The proposal does not appear in Disney's 2024 proxy (a contested DEFC14A); FTI Consulting on the Harvard Law School Forum (2024-09-29) reports the AFL-CIO withdrew it following commitments from Disney: https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/. Withdrawal date not found.",
+   "source": "SEC filings (round 29)"
+  },
+  {
+   "id": "cmcsa-2024-afl-ai",
+   "company": "CMCSA",
+   "year": 2024,
+   "meeting_date": "2024-06-10",
+   "item": null,
+   "title": "AI Transparency Report",
+   "proponent": "AFL-CIO",
+   "topic": "AI governance & oversight",
+   "subtopic": "AI transparency report: use of AI in operations, board oversight role, and ethical guidelines",
+   "status": "withdrawn",
+   "support_pct": null,
+   "support_note": null,
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/1166691/000130817924000600/cmcsa4226581-def14a.htm",
+   "results_url": null,
+   "filing_deadline": "2023-12-30",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1166691/000130817923000809/cmcsa4130111-def14a.htm",
+   "notes": "Not in Comcast's 2024 proxy (only shareholder item was a political expenditures report). PRI collaboration platform lists 'AI Transparency Report at Comcast Corp.' as withdrawn for the 2024 AGM: https://collaborate.unpri.org/group/23611/home. FTI Consulting on the Harvard Law School Forum reports the AFL-CIO withdrew it following company commitments: https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/. No SEC no-action letter found; withdrawal date not found. Filer named per the FTI Consulting review on the Harvard Law School Forum; the PRI database is not cited because its terms bar republishing.",
+   "source": "SEC filings (round 29)"
+  },
+  {
+   "id": "so-2026-9",
+   "company": "SO",
+   "year": 2026,
+   "meeting_date": "2026-05-13",
+   "item": "9",
+   "title": "Report on Data Center Costs",
+   "proponent": "As You Sow, on behalf of the As You Sow Foundation Fund",
+   "topic": "Data center impacts",
+   "subtopic": "Safeguards against shifting the cost of new AI data center infrastructure to residential and small business customers",
+   "status": "voted",
+   "support_pct": 9.74,
+   "support_note": "Southern reports 9.74% of votes cast For (76,742,427 For, 710,841,526 Against, 9,778,219 abstentions), the same basis.",
+   "water": false,
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000040/so-20260513.htm",
+   "filing_deadline": "2025-12-12",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/92122/000009212225000036/so-20250410.htm",
+   "notes": "WHEREAS cites Georgia, where 80% of projected demand would serve artificial intelligence (AI) data centers.",
+   "source": "SEC filings (round 29)"
+  },
+  {
+   "id": "dlr-2026-4",
+   "company": "DLR",
+   "year": 2026,
+   "meeting_date": "2026-05-29",
+   "item": "4",
+   "title": "Stockholder Proposal Regarding Enhanced Water Risk Disclosure",
+   "proponent": "The NorthStar Asset Management, Inc. Funded Pension Plan and Proxy Impact, on behalf of Broz Family Investments LLC",
+   "topic": "Data center impacts",
+   "subtopic": "WATER: region-level water risk and water intensity metrics for data centers in water-stressed areas",
+   "status": "voted",
+   "support_pct": 22.47,
+   "support_note": "8-K gives counts only (69,757,155 For, 240,748,354 Against, 2,755,449 abstentions); no company percentage.",
+   "water": true,
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926068907/dlr-20260529x8k.htm",
+   "filing_deadline": "2025-12-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817925000509/dlr000000-def14a.htm",
+   "notes": "Jointly presented by NorthStar and Proxy Impact. Same proponent and subject (water) as dlr-2025-5.",
+   "source": "SEC filings (round 29)"
+  },
+  {
+   "id": "dlr-2025-5",
+   "company": "DLR",
+   "year": 2025,
+   "meeting_date": "2025-06-06",
+   "item": "5",
+   "title": "Stockholder Proposal Regarding Human Right to Water",
+   "proponent": "The NorthStar Asset Management, Inc. Funded Pension Plan",
+   "topic": "Data center impacts",
+   "subtopic": "WATER: human right to water policy and minimizing data center water use in high water stress regions",
+   "status": "voted",
+   "support_pct": 10.37,
+   "support_note": "8-K gives counts only (30,399,496 For, 262,854,063 Against, 2,801,831 abstentions); no company percentage.",
+   "water": true,
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817925000509/dlr000000-def14a.htm",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1297996/000155837025008511/dlr-20250606x8k.htm",
+   "filing_deadline": "2024-12-27",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817924000607/ldlr2024_def14a.htm",
+   "notes": "Supporting statement cites generative AI workloads that require significant water for cooling.",
+   "source": "SEC filings (round 29)"
+  },
+  {
+   "id": "csco-2026-5",
+   "company": "CSCO",
+   "year": 2026,
+   "meeting_date": "2026-12-15",
+   "item": "5",
+   "title": "Human rights impact assessment of high-risk customers and end uses",
+   "proponent": "Azzad Asset Management (lead filer)",
+   "topic": "Social & economic impacts",
+   "subtopic": "Surveillance, military and immigration enforcement uses of Cisco products",
+   "status": "upcoming",
+   "support_pct": null,
+   "support_note": null,
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm",
+   "results_url": null,
+   "notes": "Title paraphrased from the proxy item. The resolution text does not mention AI; it is included because the filer's exempt solicitation cites Cisco's AI infrastructure sales to government and military.",
+   "evidence_url": "https://www.sec.gov/Archives/edgar/data/858877/000121465926014472/x1116261px14a6g.htm",
+   "source": "SEC filings (round 29)",
+   "filing_deadline_note": "Not recorded: the 2025 proxy deadline sentence was not read for this proposal."
   }
  ],
  "exempt_solicitations": [
@@ -1658,6 +2196,16 @@
    "item": "7 GHG Emissions Disclosure (sold products / AI data centers)",
    "position": "FOR (UNVERIFIED wording)",
    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000121465926006075/b513262px14a6g.htm"
+  }
+ ],
+ "about": "AI-related shareholder proposals at the 29 companies subject to US proxy rules, meetings from 2023. AI test: a proposal is included when its resolution, or the filer's own published case for it (proxy supporting statement or exempt solicitation), is about AI governance, safety, AI's social or economic effects, or AI data centers. A passing mention of data center demand in background text is not enough. Support = For / (For + Against) from the 8-K Item 5.07 counts.",
+ "excluded": [
+  {
+   "company": "SO",
+   "year": 2025,
+   "title": "Disclose Assumptions Underlying Continued Reliance on Fossil Fuel-Based Energy",
+   "reason": "The resolution asks about fossil fuel assumptions; data centers appear only in passing in the background text.",
+   "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000092122&type=DEF%2014A"
   }
  ]
 }

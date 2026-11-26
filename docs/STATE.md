@@ -8,7 +8,7 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 
 
 | Session | Owns | Branch | State |
 |---|---|---|---|
-| Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | none open | On `main`: 60 companies with tiers; rights maps for 29 US companies; `data/value_chain.json` with 44 sourced ties and `per_tier` facts (`scripts/build_value_chain.py`, run weekly after `build_graph.py`). Next data job: extend `data/proposals.json` to all 29 US-proxy companies (proposal counts now cover the original 7). |
+| Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | none open | On `main`: 60 companies with tiers; rights maps for 29 US companies; value chain (44 ties, `per_tier`); AI proposals at all 29 US-proxy companies (76, from 2023), `vote_history` (16 linked), filing deadlines (75 proposals) and `next_proposal_deadline` with open/passed status (27 companies), recomputed weekly by `scripts/build_proposal_links.py`. `seeking` is empty: no public calls for co-filers found. |
 | UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, the view JS files incl. `votes.js`, `DESIGN.md`, `tests/` | `design/lens-phase1` (pushed, **not merged**; waits for the owner's go-ahead) | Round 2 live. Lens Phase 1 built and checked on the branch; see "Lens Phase 1" below. Next: lens Phase 2 after the owner's go-ahead, and the value-chain and engagement maps (data now on `data/value-chain`). |
 | Protocol setup | `AGENTS.md`, `CLAUDE.md`, checks, `docs/` structure | `docs-session-onboarding` (local) | Idle. |
 
