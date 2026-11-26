@@ -1,0 +1,128 @@
+{
+ "about": "Recurring investor asks: groups of AI shareholder proposals that ask companies for the same kind of thing. scripts/build_proposal_links.py assigns each proposal an ask_id by the ordered rules below (first match on title and subtopic wins). This grouping is this site's reading.",
+ "asks": [
+  {
+   "id": "ask-dc-water",
+   "label": "Data center water use",
+   "match": [
+    "water"
+   ]
+  },
+  {
+   "id": "ask-dc-siting-rights",
+   "label": "Human rights in data center siting",
+   "match": [
+    "hotspot",
+    "data center siting",
+    "siting"
+   ]
+  },
+  {
+   "id": "ask-ai-fossil-fuels",
+   "label": "AI tools sold for oil and gas",
+   "match": [
+    "oil and gas"
+   ]
+  },
+  {
+   "id": "ask-dc-climate-energy",
+   "label": "Data center energy, emissions and costs",
+   "match": [
+    "climate",
+    "ghg",
+    "emission",
+    "energy",
+    "data center costs",
+    "renewable"
+   ]
+  },
+  {
+   "id": "ask-child-safety",
+   "label": "Child safety and AI",
+   "match": [
+    "child",
+    "csam",
+    "deepfake"
+   ]
+  },
+  {
+   "id": "ask-targeted-ads-rights",
+   "label": "Human rights of AI-driven targeted ads",
+   "match": [
+    "targeted ad",
+    "targeted advertising"
+   ]
+  },
+  {
+   "id": "ask-customer-due-diligence",
+   "label": "Customer and end-use due diligence (surveillance, military, facial recognition)",
+   "match": [
+    "due diligence",
+    "customer use",
+    "military",
+    "surveillance",
+    "facial recognition",
+    "rekognition",
+    "high-risk customers",
+    "cahra",
+    "human rights impact assessment",
+    "taser",
+    "dhs"
+   ]
+  },
+  {
+   "id": "ask-ai-misinformation",
+   "label": "AI misinformation and disinformation",
+   "match": [
+    "misinformation",
+    "disinformation"
+   ]
+  },
+  {
+   "id": "ask-ai-bias",
+   "label": "AI bias, discrimination and viewpoint",
+   "match": [
+    "bias",
+    "discrimination",
+    "censorship"
+   ]
+  },
+  {
+   "id": "ask-ai-training-data",
+   "label": "Training data and user data in AI",
+   "match": [
+    "data usage",
+    "data sourcing",
+    "data acquisition",
+    "data privacy",
+    "data protection",
+    "training data"
+   ]
+  },
+  {
+   "id": "ask-ai-workforce",
+   "label": "AI and workers",
+   "match": [
+    "worker",
+    "workforce"
+   ]
+  },
+  {
+   "id": "ask-ai-oversight-reporting",
+   "label": "Board oversight and AI transparency reporting",
+   "match": [
+    "board oversight",
+    "board structure",
+    "oversee artificial",
+    "ai committee",
+    "audit and compliance committee",
+    "transparency report",
+    "use of ai",
+    "use of artificial intelligence",
+    "algorithm disclosures",
+    "ai principles",
+    "ai board"
+   ]
+  }
+ ]
+}
