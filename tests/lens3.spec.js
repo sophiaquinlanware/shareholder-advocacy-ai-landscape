@@ -32,7 +32,7 @@ test("tickers and a fund: the list narrows and shows the fund's earlier vote wit
   await expect(page.locator("#lf-h")).toHaveText("Upcoming AI proposals at your companies");
   await expect(page.locator("#lf-status")).toContainText("for MSFT; fund family: Vanguard.");
   const fund = page.locator(".feed-fund").first();
-  await expect(fund.locator("h5")).toHaveText(/How Vanguard funds voted (last year|on the \d{4} version)/);
+  await expect(fund.locator("h5")).toHaveText(/Vanguard funds, (last year|on the \d{4} version)/);
   await expect(fund).toContainText("Vanguard: ");
   await expect(fund).toContainText("matched in this dataset by company, topic and similar title");
   await expect(page.locator(".feed-item").filter({ hasText: "Cisco" })).toHaveCount(0);

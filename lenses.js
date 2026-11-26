@@ -252,7 +252,7 @@
       const ix = ctx.fv;
       const out = { tickers: [], family: null, familyNote: "", notFound: [], extraFamilies: [] };
       // Generic words that appear in many fund names don't pick a family on their own.
-      const GENERIC = new Set(["fund", "funds", "trust", "index", "etf", "etfs", "series", "the", "and", "investments", "investment"]);
+      const GENERIC = new Set(["fund", "funds", "trust", "index", "etf", "etfs", "series", "the", "and", "investments", "investment", "invest", "global", "social", "equity", "growth", "income"]);
       for (const tok of tokens) {
         const up = tok.toUpperCase();
         if (tickers.has(up)) { if (!out.tickers.includes(up)) out.tickers.push(up); continue; }
@@ -303,7 +303,7 @@
       const earlier = (ctx.proposals || []).find((x) => x.id === e.proposal_id) || {};
       // "Last year" when the earlier meeting was about 12 months before this one (up to 13 months).
       const near = earlier.meeting_date && p.meeting_date && dayOf(p.meeting_date) - dayOf(earlier.meeting_date) <= 396;
-      const heading = near ? `How ${family} funds voted last year` : `How ${family} funds voted on the ${e.year} version`;
+      const heading = near ? `${family} funds, last year` : `${family} funds, on the ${e.year} version`;
       const about = `Earlier version: “${e.title || earlier.title || ""}” (${e.year}), matched in this dataset by company, topic and similar title.`;
       if (!ix.families.includes(family)) return null;
       // Held back for checking, or not among the proposals checked: nothing is shown.
@@ -320,7 +320,8 @@
       return {
         heading,
         text: `${family}: ${FV.voteText(row)}`,
-        detail: [`from ${plural(n, "fund's filing", "funds' filings")}`, ...notes].join(" · "),
+        // Counts are N-PX vote records (one record can cover several fund series), as on the Fund votes tab.
+        detail: [`${plural(n, "fund record", "fund records")} in ${plural((row.sources || []).length, "Form N-PX filing", "Form N-PX filings")}`, ...notes].join(" · "),
         about,
         links: (row.sources || []).map((u, i) => ({ href: u, label: `${family} Form N-PX filing ${i + 1}` })),
       };
@@ -348,7 +349,19 @@
       feed: FEED,
       sizeLabel: "how many AI proposals each company has had",
       // Plain-language intro for the graph view of this lens.
-      plainIntro: (shown, total) => `Showing ${shown} of ${total} items. Bigger circles are companies with more AI proposals. Companies are grouped by their main role in AI, as this site reads it. Click any circle for details.`,
+      // Plain names for the key in this lens.
+      kindLabels: {
+        "tier-chips": "Chip makers",
+        "tier-datacenters": "Data centers and power",
+        "tier-compute": "Cloud providers",
+        "tier-labs": "AI model makers",
+        "tier-capital": "Big investors in AI",
+        "tier-deployers": "Companies using AI",
+        lab: "AI model makers",
+        company: "Company",
+        proposal: "Shareholder proposal",
+      },
+      plainIntro: (shown, total) => `Showing ${shown} of ${total} circles (companies, proposals and AI model makers). Bigger circles are companies with more AI proposals. Companies are grouped by their main role in AI, as this site reads it. Click any circle for details.`,
       measure: { label: "AI proposals on file", value: (n, ctx) => (isCompany(n) ? proposalsOnFile(n, ctx) : null) },
       defaults: { hiddenKinds: [...FILERS, "person", "policy", "response", "public"], orphans: true },
       size(n, ctx) {

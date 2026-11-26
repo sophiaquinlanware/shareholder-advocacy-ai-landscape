@@ -506,12 +506,17 @@
     }
   }
 
+  // A lens can rename the key in plain words (lens.kindLabels); the facts and colours stay the same.
+  const kindLabel = (k) => (lens().kindLabels && lens().kindLabels[k]) || TYPE_LABEL[k];
+  function relabelLegend() {
+    document.querySelectorAll("#net-legend .leg").forEach((b) => { const t = b.querySelector(".leg-text"); if (t) t.textContent = kindLabel(b.dataset.kind); });
+  }
   function legend(data) {
     const kinds = [...new Set(data.nodes.map((n) => n.kind))];
     const order = Object.keys(TYPE_LABEL);
     kinds.sort((a, b) => order.indexOf(a) - order.indexOf(b));
     document.getElementById("net-legend").innerHTML = kinds.map((k) =>
-      `<button type="button" class="leg" data-kind="${esc(k)}" aria-pressed="${!state.hiddenKinds.has(k)}"><span class="dot" style="background:${nodeColor(k)}"></span>${esc(TYPE_LABEL[k])}</button>`).join("");
+      `<button type="button" class="leg" data-kind="${esc(k)}" aria-pressed="${!state.hiddenKinds.has(k)}"><span class="dot" style="background:${nodeColor(k)}"></span><span class="leg-text">${esc(kindLabel(k))}</span></button>`).join("");
   }
 
   // One plain line: how much is shown, and what node size means. Recomputed when layers change.
@@ -710,24 +715,46 @@
     const circles = items.map(({ d }) => ({ x: d.x, y: d.y, r: radius(d) }));
     const hits = (b) => placed.some((p) => b[0] < p[2] && p[0] < b[2] && b[1] < p[3] && p[1] < b[3])
       || circles.some((c) => c.x > b[0] - c.r && c.x < b[2] + c.r && c.y > b[1] - c.r && c.y < b[3] + c.r && !(c.x === b.nx && c.y === b.ny));
-    for (const { d, el } of items) {
-      const fs = Number(el.getAttribute("font-size")) || 11;
-      const w = el.textContent.length * fs * 0.56;
-      const h = fs * 1.2;
-      const r = radius(d) + 4;
-      const cands = [
-        { a: "start", x: d.x + r, y: d.y + fs * 0.35, box: [d.x + r, d.y - h / 2, d.x + r + w, d.y + h / 2] },
-        { a: "end", x: d.x - r, y: d.y + fs * 0.35, box: [d.x - r - w, d.y - h / 2, d.x - r, d.y + h / 2] },
+    // Candidate spots: right, left, above, below, then the four diagonals. If none is free, the label is
+    // tried again shortened to SHORT characters (the full name is in the panel and the List view).
+    const SHORT = 22;
+    const spots = (d, fs, w, h, r) => {
+      const dy = fs * 0.35;
+      const dg = r * 0.75;
+      return [
+        { a: "start", x: d.x + r, y: d.y + dy, box: [d.x + r, d.y - h / 2, d.x + r + w, d.y + h / 2] },
+        { a: "end", x: d.x - r, y: d.y + dy, box: [d.x - r - w, d.y - h / 2, d.x - r, d.y + h / 2] },
         { a: "middle", x: d.x, y: d.y - r - 2, box: [d.x - w / 2, d.y - r - 2 - h, d.x + w / 2, d.y - r - 2] },
         { a: "middle", x: d.x, y: d.y + r + fs, box: [d.x - w / 2, d.y + r, d.x + w / 2, d.y + r + h] },
+        { a: "start", x: d.x + dg, y: d.y - dg, box: [d.x + dg, d.y - dg - h * 0.8, d.x + dg + w, d.y - dg + h * 0.2] },
+        { a: "start", x: d.x + dg, y: d.y + dg + fs * 0.8, box: [d.x + dg, d.y + dg, d.x + dg + w, d.y + dg + h] },
+        { a: "end", x: d.x - dg, y: d.y - dg, box: [d.x - dg - w, d.y - dg - h * 0.8, d.x - dg, d.y - dg + h * 0.2] },
+        { a: "end", x: d.x - dg, y: d.y + dg + fs * 0.8, box: [d.x - dg - w, d.y + dg, d.x - dg, d.y + dg + h] },
       ].filter((c) => c.box[1] >= top && c.box[3] <= vy1 && c.box[0] >= Math.max(0, vx0) && c.box[2] <= Math.min(width, vx1));
+    };
+    for (const { d, el } of items) {
+      const fs = Number(el.getAttribute("font-size")) || 11;
+      const full = d.label.length > 42 ? d.label.slice(0, 40) + "…" : d.label;
+      const short = d.label.length > SHORT ? d.label.slice(0, SHORT - 1) + "…" : d.label;
+      const h = fs * 1.2;
+      const r = radius(d) + 4;
       let pick = null;
-      for (const c of cands) {
-        c.box.nx = d.x; c.box.ny = d.y;
-        if (!hits(c.box)) { pick = c; break; }
+      let text = full;
+      for (const t of short === full ? [full] : [full, short]) {
+        for (const c of spots(d, fs, t.length * fs * 0.56, h, r)) {
+          c.box.nx = d.x; c.box.ny = d.y;
+          if (!hits(c.box)) { pick = c; text = t; break; }
+        }
+        if (pick) break;
       }
+      const w = full.length * fs * 0.56;
+      const cands = spots(d, fs, w, h, r);
+      if (el.textContent !== text) el.textContent = text;
       // The focused node always keeps its label, at its first in-bounds spot.
-      if (!pick && d.id === focusId) pick = cands[0] || { a: "start", x: d.x + r, y: d.y + fs * 0.35, box: [d.x + r, d.y - h / 2, d.x + r + w, d.y + h / 2] };
+      if (!pick && d.id === focusId) {
+        pick = cands[0] || { a: "start", x: d.x + r, y: d.y + fs * 0.35, box: [d.x + r, d.y - h / 2, d.x + r + w, d.y + h / 2] };
+        if (el.textContent !== full) el.textContent = full;
+      }
       if (!pick) { el.setAttribute("opacity", 0); continue; }
       placed.push(pick.box);
       el.setAttribute("x", pick.x);
@@ -1161,6 +1188,7 @@
     }
     document.querySelectorAll("#net-legend .leg").forEach((b) => b.setAttribute("aria-pressed", String(!state.hiddenKinds.has(b.dataset.kind))));
     saveLens(id);
+    relabelLegend();
     setFeedView(lens().feed ? "feed" : "graph", false);
     drawRings();
     applySettings(true);
@@ -1172,7 +1200,7 @@
       const shown = state.data.nodes.filter(visible).length;
       document.getElementById("net-lens-status").textContent = lens().feed && state.feedView === "feed"
         ? `${lens().label} view: a list of upcoming AI proposals. See the bigger picture opens the graph.`
-        : `${lens().label} view${hidden.length ? ": " + hidden.join(", ") + " hidden" : ""}. ${shown} of ${state.data.nodes.length} nodes shown.`;
+        : `${lens().label} view${hidden.length ? ": " + hidden.join(", ") + " hidden" : ""}. ${shown} of ${state.data.nodes.length} ${lens().plainIntro ? "circles" : "nodes"} shown.`;
     }
   }
 

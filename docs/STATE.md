@@ -90,13 +90,22 @@ The owner's spec has four phases, and each phase gets its own plan and reviews i
   - result R1: UX 74, accessibility 84 PASS, data 70.
   - result R2: UX 84 PASS, data 86 PASS. Their remaining points were fixed after R2 and not re-reviewed: the ring reads as the threshold after the vote, "Close to the N% threshold", a refile goes to the meeting after the company's open deadline, and "at the threshold" covers a 0-point margin.
 
+- **Phase 3 (Individual investor; plan docs/plans/2026-11-26-lens-phase3.md, Revision 2 plus build notes):** a list first (`view=feed|graph`).
+  - **Input and list:** a tickers-or-fund input lists upcoming AI proposals with `plain_summary` (or the title), the meeting date, the proxy note and "Read the proxy statement".
+  - **Fund votes:** "How {Family} funds voted last year", using the Fund votes tab's join and wording (`window.FundVotes`).
+  - **Definitions:** plain-language definitions open on hover or tap, in this lens only. PRODUCT.md and DESIGN.md record the exception.
+  - **Bigger picture:** "See the bigger picture" opens the graph with holdings applied.
+  - **Change to the owner's spec:** fund nodes are not added to the graph, because fund_votes.json has no graph edges. Fund votes appear as feed lines.
+- **Legibility (owner, 2026-11-26):**
+  - graph labels never overlap; the browser tooltip is removed;
+  - column headers sit on an opaque strip that nodes can't enter;
+  - filer row labels are dropped. The owner asked whether the axes help. The answer given: the column headers do, the row labels didn't.
+- **Process slip (2026-11-26):** a command chain pushed Phase 2 to `main` while one test (a timing flake) was failing. Fixed 3 minutes later in 1bfef97, with the check passing. Pushes are now conditional on the check's exit code.
+- **Tests:** Playwright is capped at 3 workers, because the local python server dropped connections under full parallel load.
+
 ## Next (UI session)
 
-1. **Lens Phase 3 (Individual investor):**
-   - a feed first: tickers or fund in, upcoming AI proposals out, with `plain_summary` (falling back to the title), vote date and source;
-   - fund N-PX votes and `pass_through_voting` where the data has them;
-   - "See the bigger picture" opens the graph with holdings applied;
-   - hover definitions in this lens only.
+1. **Phase 3 follow-up:** show `pass_through_voting` once data/phase3 merges (`offered` null means no program found on the pages checked, never "no").
 2. **Lens Phase 4 (Policymaker):** clusters by topic, sized by how often an ask recurs; `coverage` on topic-to-policy edges.
 3. **Value-chain map and engagement map** from `data/value_chain.json` (`ties`, `per_tier`).
 
