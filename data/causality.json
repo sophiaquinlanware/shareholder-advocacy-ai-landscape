@@ -1,6 +1,90 @@
 {
  "events": [
   {
+   "id": "un-guiding-principles",
+   "date": "2011-06-16",
+   "title": "UN Human Rights Council endorses the Guiding Principles on Business and Human Rights",
+   "actor": "UN Human Rights Council",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Global",
+   "summary": "Voluntary standard: companies should carry out human rights due diligence on impacts they cause, contribute to or are linked to through business relationships, which for AI vendors includes customer use of their products, and report on how they address them.",
+   "source_url": "https://www.ohchr.org/sites/default/files/documents/publications/guidingprinciplesbusinesshr_en.pdf",
+   "source_kind": "official",
+   "status": "voluntary",
+   "region": "Global"
+  },
+  {
+   "id": "cn-pipl",
+   "date": "2021-08-20",
+   "title": "China adopts the Personal Information Protection Law",
+   "actor": "National People's Congress Standing Committee",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "In force from 2021-11-01, it requires any company that uses personal data for automated decisions in China to keep those decisions transparent and fair, bars unreasonable price discrimination, and requires a non-personalized option or easy opt-out for automated content pushes and marketing (Article 24). People can demand an explanation of, and refuse, decisions made solely by automated means that significantly affect them.",
+   "source_url": "http://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
+  },
+  {
+   "id": "cn-ai-ethics-norms",
+   "date": "2021-09-25",
+   "title": "China issues Ethical Norms for New Generation AI",
+   "actor": "National New Generation AI Governance Expert Committee (Ministry of Science and Technology)",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "China",
+   "summary": "Sets six basic ethical requirements (human welfare, fairness, privacy and security, controllability, accountability, ethics literacy) and 18 specific requirements for managing, developing, supplying and using AI. It is guidance for companies and institutions, with no penalties.",
+   "source_url": "https://www.most.gov.cn/kjbgz/202109/t20210926_177063.html",
+   "source_kind": "primary",
+   "status": "nonbinding",
+   "region": "China"
+  },
+  {
+   "id": "cn-dc-energy-standard",
+   "date": "2021-10-11",
+   "title": "China sets a national energy efficiency limit standard for data centers (GB 40879-2021)",
+   "actor": "State Administration for Market Regulation; Standardization Administration of China",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "Sets energy efficiency limit values and grades, measured by the ratio of total data center electricity to IT equipment electricity, for new, rebuilt and expanded data centers; edge data centers are excluded. Took effect 2022-11-01.",
+   "source_url": "https://www.chinesestandard.net/PDF-EN/GB40879-2021EN-P09P-H7528H-273421.pdf",
+   "source_kind": "secondary",
+   "status": "in force",
+   "region": "China"
+  },
+  {
+   "id": "cn-algorithm-provisions",
+   "date": "2022-01-04",
+   "title": "China publishes the Algorithmic Recommendation Provisions",
+   "actor": "Cyberspace Administration of China; MIIT; Ministry of Public Security; SAMR",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "In force from 2022-03-01 for any company using recommendation algorithms in Chinese internet services: users must be able to switch off personalization or delete profile tags, minors must not be pushed harmful content or induced into addiction, scheduling algorithms must protect gig workers' pay and rest, and unfair algorithmic price discrimination is banned. Services with public-opinion or social-mobilization capacity must file their algorithms with the CAC within 10 working days and undergo security assessments.",
+   "source_url": "https://www.cac.gov.cn/2022-01/04/c_1642894606364259.htm",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
+  },
+  {
+   "id": "cn-algorithm-registry",
+   "date": "2022-08-12",
+   "title": "CAC begins publishing the national algorithm filing registry",
+   "actor": "Cyberspace Administration of China",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "The CAC began publishing the names and filing numbers of algorithms filed under the Algorithmic Recommendation Provisions, searchable at beian.cac.gov.cn, and has kept adding batches through October 2026.",
+   "source_url": "https://www.cac.gov.cn/2022-08/12/c_1661927474338504.htm",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
+  },
+  {
    "id": "vwfi-launch",
    "date": "2022-08-16",
    "title": "Ceres launches the Valuing Water Finance Initiative",
@@ -9,7 +93,22 @@
    "kind": "campaign",
    "jurisdiction": "Global",
    "summary": "64 investors with $9.8 trillion launched an effort to engage 72 large corporate water users, including Alphabet, Amazon, Apple and Microsoft, on six Corporate Expectations for Valuing Water.",
-   "source_url": "https://www.ceres.org/resources/news/ceres-launches-new-investor-led-effort-to-move-corporate-water-users-and-polluters-to-value-and-act-on-water-as-a-financial-risk"
+   "source_url": "https://www.ceres.org/resources/news/ceres-launches-new-investor-led-effort-to-move-corporate-water-users-and-polluters-to-value-and-act-on-water-as-a-financial-risk",
+   "region": "Global"
+  },
+  {
+   "id": "cn-deep-synthesis-provisions",
+   "date": "2022-12-11",
+   "title": "China publishes the Deep Synthesis Provisions",
+   "actor": "Cyberspace Administration of China; MIIT; Ministry of Public Security",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "In force from 2023-01-10, providers of deepfake and other synthetic text, voice, image and video services must label generated content, keep logs, manage training data security, get separate consent before editing a person's face or voice, and not produce fake news. Providers with public-opinion capacity, and their technical supporters, must file under the algorithm registry.",
+   "source_url": "https://www.cac.gov.cn/2022-12/11/c_1672221949354811.htm",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
   },
   {
    "id": "parnassus-intuit-engagement",
@@ -21,7 +120,148 @@
    "jurisdiction": "US federal",
    "summary": "Private engagement on AI policies, governance, staffing and resourcing. No filed proposal found. Start date is year only.",
    "source_url": "https://www.parnassus.com/updates/article/the_new_imperative_of_responsible_ai",
-   "date_precision": "year"
+   "date_precision": "year",
+   "region": "United States"
+  },
+  {
+   "id": "eu-csrd-in-force",
+   "date": "2023-01-05",
+   "title": "EU Corporate Sustainability Reporting Directive enters into force",
+   "actor": "European Union",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "EU",
+   "summary": "Large companies report under the European Sustainability Reporting Standards, including greenhouse gas emissions (scopes 1 to 3), energy, water and own-workforce and value-chain impacts where material, with first reports for financial year 2024 from the largest public-interest entities. EU subsidiaries of US tech groups are covered; non-EU parent reporting starts later.",
+   "source_url": "https://eur-lex.europa.eu/eli/dir/2022/2464/oj",
+   "source_kind": "official",
+   "status": "in force; scope narrowed by Omnibus I",
+   "region": "European Union"
+  },
+  {
+   "id": "cn-micron-review",
+   "date": "2023-05-21",
+   "title": "Micron products fail China's cybersecurity review",
+   "actor": "Cybersecurity Review Office (Cyberspace Administration of China)",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "The review office found Micron products sold in China posed serious network security risks to critical information infrastructure, so operators of that infrastructure must stop buying Micron products.",
+   "source_url": "https://www.cac.gov.cn/2023-05/21/c_1686348043518073.htm",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
+  },
+  {
+   "id": "oecd-mne-guidelines-2023",
+   "date": "2023-06-08",
+   "title": "OECD updates Guidelines for Multinational Enterprises, adding technology due diligence",
+   "actor": "OECD",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Global",
+   "summary": "Voluntary guidelines now expect companies developing or selling technology to do risk-based due diligence on its use, including by customers, and set climate expectations such as emissions targets. Complaints go to government National Contact Points.",
+   "source_url": "https://www.oecd.org/en/publications/oecd-guidelines-for-multinational-enterprises-on-responsible-business-conduct_81f92357-en.html",
+   "source_kind": "official",
+   "status": "voluntary",
+   "region": "Global"
+  },
+  {
+   "id": "cn-gallium-germanium-controls",
+   "date": "2023-07-03",
+   "title": "China puts gallium and germanium items under export control",
+   "actor": "Ministry of Commerce; General Administration of Customs",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "From 2023-08-01, exporters need a dual-use export license to ship listed gallium and germanium items, materials used in chipmaking.",
+   "source_url": "https://www.mofcom.gov.cn/zcfb/dwmygl/art/2023/art_52b9a321087f402bb3d310d18b07967e.html",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
+  },
+  {
+   "id": "nyc-ll144",
+   "date": "2023-07-05",
+   "title": "NYC begins enforcing Local Law 144 on automated hiring tools",
+   "actor": "NYC Department of Consumer and Worker Protection",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "New York City",
+   "summary": "Employers and agencies using automated employment decision tools for NYC jobs must get an annual independent bias audit, publish a summary, and notify candidates.",
+   "source_url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
+  },
+  {
+   "id": "cn-genai-measures",
+   "date": "2023-07-13",
+   "title": "China publishes the Interim Measures for Generative AI Services",
+   "actor": "Cyberspace Administration of China; NDRC; Ministry of Education; MOST; MIIT; Ministry of Public Security; NRTA",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "In force from 2023-08-15 for anyone, Chinese or foreign, offering generative AI to the public in China, including through APIs: training data must come from lawful sources, respect IP and have consent for personal data; providers must prevent discrimination in design and training data, label generated images and video, guard against minors' over-reliance, and report illegal content. Services with public-opinion capacity need a security assessment and algorithm filing, and overseas services that break the rules can be blocked.",
+   "source_url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
+  },
+  {
+   "id": "eu-dsa-vlop-duties",
+   "date": "2023-08-25",
+   "title": "EU Digital Services Act duties apply to very large platforms",
+   "actor": "European Commission",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "EU",
+   "summary": "Designated very large platforms and search engines, including Meta's Facebook and Instagram, Google Search and YouTube, Amazon Store, Apple App Store, LinkedIn, Bing and X, must assess and reduce systemic risks each year, including risks to minors, civic discourse and elections, publish risk reports and independent audits, and offer a recommender option not based on profiling. On all online platforms, ads based on profiling with sensitive data, and profiling-based ads shown to minors, are banned (Articles 26 and 28).",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/dsa-impact-platforms",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "European Union"
+  },
+  {
+   "id": "cn-ethics-review-measures",
+   "date": "2023-09-07",
+   "title": "China issues Trial Measures for Science and Technology Ethics Review",
+   "actor": "Ministry of Science and Technology and nine other bodies",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "In force from 2023-12-01, companies and institutions doing AI research in ethically sensitive areas must set up ethics review committees, and research on algorithm models with public-opinion mobilization capacity or highly autonomous decision systems in risky settings needs additional expert review.",
+   "source_url": "https://www.gov.cn/zhengce/zhengceku/202310/content_6908045.htm",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
+  },
+  {
+   "id": "cn-global-ai-governance-initiative",
+   "date": "2023-10-18",
+   "title": "China announces the Global AI Governance Initiative",
+   "actor": "Government of China (Cyberspace Administration of China publication)",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "China",
+   "summary": "A diplomatic statement of principles for AI governance, including a people-centred approach, respect for other countries' sovereignty when supplying AI, risk testing and opposition to using AI to interfere in other countries. It sets no company duties.",
+   "source_url": "https://www.cac.gov.cn/2023-10/18/c_1699291032884978.htm",
+   "source_kind": "primary",
+   "status": "nonbinding",
+   "region": "China"
+  },
+  {
+   "id": "cn-minors-online-regulations",
+   "date": "2023-10-24",
+   "title": "China publishes Regulations on the Protection of Minors Online",
+   "actor": "State Council",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "In force from 2024-01-01, platforms with very large numbers of minor users or major influence on minors must run regular minors' protection impact assessments, offer a minors' mode, set up an independent oversight body mostly of outside members, and publish a yearly minors' online protection social responsibility report. Fines for some breaches reach 50 million yuan.",
+   "source_url": "https://www.gov.cn/zhengce/content/202310/content_6911288.htm",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
   },
   {
    "id": "vwfi-benchmark-2023",
@@ -32,7 +272,93 @@
    "kind": "milestone",
    "jurisdiction": "Global",
    "summary": "Ceres assessed the 72 focus companies against the Corporate Expectations; 94 investors with more than $17 trillion were then committed to engage them.",
-   "source_url": "https://www.ceres.org/resources/news/companies-are-making-progress-on-water-management-but-new-report-calls-for-greater-action-to-ensure-sustainable-water-supplies"
+   "source_url": "https://www.ceres.org/resources/news/companies-are-making-progress-on-water-management-but-new-report-calls-for-greater-action-to-ensure-sustainable-water-supplies",
+   "region": "Global"
+  },
+  {
+   "id": "uk-osa-royal-assent",
+   "date": "2023-10-26",
+   "title": "UK Online Safety Act becomes law",
+   "actor": "UK Parliament",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "UK",
+   "summary": "User-to-user and search services must assess and reduce risks of illegal content and, where children can use them, content harmful to children, under codes enforced by Ofcom with fines up to 18 million pounds or 10% of worldwide revenue.",
+   "source_url": "https://www.legislation.gov.uk/ukpga/2023/50/contents",
+   "source_kind": "official",
+   "status": "in force (duties phased in)",
+   "region": "United Kingdom"
+  },
+  {
+   "id": "g7-hiroshima-code",
+   "date": "2023-10-30",
+   "title": "G7 issues Hiroshima Process Code of Conduct for advanced AI developers",
+   "actor": "G7 leaders",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Global",
+   "summary": "Voluntary code asking organisations that build advanced AI to manage risks across the lifecycle, publish transparency reports on capabilities and limits, disclose governance and risk policies, and use content authentication.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/library/hiroshima-process-international-code-conduct-advanced-ai-systems",
+   "source_kind": "official",
+   "status": "voluntary",
+   "region": "Global"
+  },
+  {
+   "id": "us-eo-14110",
+   "date": "2023-10-30",
+   "title": "Biden signs EO 14110 on safe, secure and trustworthy AI",
+   "actor": "President Biden",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "US federal",
+   "summary": "Used the Defense Production Act to make developers of large dual-use foundation models report training plans and red-team results to Commerce, and directed agency guidance on bias, privacy and watermarking.",
+   "source_url": "https://www.federalregister.gov/documents/2023/11/01/2023-24283/safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence",
+   "source_kind": "official",
+   "status": "revoked",
+   "region": "United States"
+  },
+  {
+   "id": "uk-bletchley-declaration",
+   "date": "2023-11-01",
+   "title": "Bletchley Declaration on frontier AI safety",
+   "actor": "UK Government (AI Safety Summit)",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "UK",
+   "summary": "28 countries and the EU agreed that frontier AI developers have a strong responsibility for the safety of their systems, including through testing and evaluation. It is a nonbinding statement with no company duties.",
+   "source_url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023",
+   "source_kind": "official",
+   "status": "nonbinding",
+   "region": "Global"
+  },
+  {
+   "id": "uk-aisi-launch",
+   "date": "2023-11-02",
+   "title": "UK launches the AI Safety Institute",
+   "actor": "UK Government",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "UK",
+   "summary": "A government body to test advanced AI models before and after release, with access agreed voluntarily with developers. It has no powers to compel companies.",
+   "source_url": "https://www.gov.uk/government/publications/ai-safety-institute-overview/introducing-the-ai-safety-institute",
+   "source_kind": "official",
+   "status": "renamed February 2025",
+   "region": "United Kingdom"
+  },
+  {
+   "id": "iso-iec-42001",
+   "date": "2023-12",
+   "date_precision": "month",
+   "title": "ISO/IEC 42001 AI management system standard published",
+   "actor": "ISO and IEC",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Global",
+   "summary": "Voluntary, certifiable standard for an AI management system: top management sets an AI policy, roles, risk and impact assessments and controls. It requires no public reporting.",
+   "source_url": "https://www.iso.org/standard/42001",
+   "source_kind": "official",
+   "status": "voluntary",
+   "region": "Global"
   },
   {
    "id": "arjuna-msft-vote-2023",
@@ -43,7 +369,8 @@
    "kind": "campaign",
    "jurisdiction": "US federal",
    "summary": "First-time proposal asked Microsoft to report on generative AI misinformation and disinformation risks. Microsoft opposed, citing a planned annual AI transparency report.",
-   "source_url": "https://www.businesswire.com/news/home/20231207496751/en/Arjuna-Capital-Microsoft-Investors-Weigh-in-on-Generative-Artificial-Intelligences-Mis--and-Disinformation-Problem"
+   "source_url": "https://www.businesswire.com/news/home/20231207496751/en/Arjuna-Capital-Microsoft-Investors-Weigh-in-on-Generative-Artificial-Intelligences-Mis--and-Disinformation-Problem",
+   "region": "United States"
   },
   {
    "id": "apple-aflcio-vote-2024",
@@ -54,7 +381,64 @@
    "kind": "campaign",
    "jurisdiction": "US federal",
    "summary": "Proposal sought a report on Apple's AI use and ethics. Apple said it already provides AI transparency. It received 37.5% of votes cast for and against, per Apple's 8-K.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124010155/ny20022580x1_8k.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124010155/ny20022580x1_8k.htm",
+   "region": "United States"
+  },
+  {
+   "id": "eu-eed-dc-reporting",
+   "date": "2024-03-14",
+   "title": "EU requires data centres to report energy and water use",
+   "actor": "European Commission",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "EU",
+   "summary": "Delegated Regulation 2024/1364 under the Energy Efficiency Directive makes operators of EU data centres of 500 kW or more report energy use, power usage effectiveness, water use, renewable energy share and waste heat reuse to a European database each year, first by September 15, 2024. The Commission publishes aggregated figures, not per-site data.",
+   "source_url": "https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficiency-targets-directive-and-rules/energy-efficiency-directive/energy-performance-data-centres_en",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "European Union"
+  },
+  {
+   "id": "un-ga-res-78-265",
+   "date": "2024-03-21",
+   "title": "UN General Assembly adopts first AI resolution on safe, secure and trustworthy AI",
+   "actor": "UN General Assembly",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Global",
+   "summary": "US-led resolution adopted without a vote encourages states and companies to develop AI that respects human rights. It is nonbinding and imposes no duties on companies.",
+   "source_url": "https://digitallibrary.un.org/record/4043244",
+   "source_kind": "official",
+   "status": "nonbinding",
+   "region": "Global"
+  },
+  {
+   "id": "eu-dsa-election-guidelines",
+   "date": "2024-03-26",
+   "title": "Commission election guidelines for very large platforms cover generative AI",
+   "actor": "European Commission",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "EU",
+   "summary": "Guidelines under DSA Article 35 recommend that very large platforms and search engines label AI-generated content, red-team generative AI systems before release, and stop recommender systems spreading AI-made disinformation. Platforms that do not follow them must show the Commission equally effective measures. Formally adopted April 26, 2024.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-providers-vlops-and-vloses-mitigation-systemic-risks-electoral-processes",
+   "source_kind": "official",
+   "status": "in force (guidelines)",
+   "region": "European Union"
+  },
+  {
+   "id": "cn-genai-registry",
+   "date": "2024-04-02",
+   "title": "CAC begins publishing the generative AI service filing registry",
+   "actor": "Cyberspace Administration of China",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "Lists generative AI services that completed filing under the 2023 Interim Measures and requires apps built on them to show the model name and filing number; by 2026-04-30, 868 services had been filed and 530 apps or features registered.",
+   "source_url": "https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
   },
   {
    "id": "msft-rai-report-2024",
@@ -65,7 +449,36 @@
    "kind": "disclosure",
    "jurisdiction": "US federal",
    "summary": "Inaugural annual report on how Microsoft builds, deploys and oversees generative AI, fulfilling a July 2023 White House commitment.",
-   "source_url": "https://blogs.microsoft.com/on-the-issues/2024/05/01/responsible-ai-transparency-report-2024/"
+   "source_url": "https://blogs.microsoft.com/on-the-issues/2024/05/01/responsible-ai-transparency-report-2024/",
+   "region": "United States"
+  },
+  {
+   "id": "oecd-ai-principles-2024",
+   "date": "2024-05-03",
+   "title": "OECD updates its 2019 AI Principles",
+   "actor": "OECD Council at Ministerial level",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Global",
+   "summary": "Revised Recommendation on AI addresses general-purpose and generative AI, adding safety, information integrity and environmental sustainability. It is addressed to governments and is not binding on companies.",
+   "source_url": "https://www.oecd.org/en/about/news/press-releases/2024/05/oecd-updates-ai-principles-to-stay-abreast-of-rapid-technological-developments.html",
+   "source_kind": "official",
+   "status": "nonbinding",
+   "region": "Global"
+  },
+  {
+   "id": "seoul-frontier-commitments",
+   "date": "2024-05-21",
+   "title": "Companies sign Frontier AI Safety Commitments at the Seoul AI Summit",
+   "actor": "UK and Republic of Korea governments; signatory companies",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Global",
+   "summary": "Voluntary pledges by AI developers to publish safety frameworks setting risk thresholds and mitigations, and to report on how they meet them, with frameworks due before the next summit in France.",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "source_kind": "official",
+   "status": "voluntary",
+   "region": "Global"
   },
   {
    "id": "meta-genai-vote-2024",
@@ -76,7 +489,22 @@
    "kind": "campaign",
    "jurisdiction": "US federal",
    "summary": "Filers say about 53.6% of non-insider votes supported the generative AI risk proposal; it failed overall due to dual-class shares.",
-   "source_url": "https://openmic.org/news/2024/6/majority-of-independent-shareholders-support-more-disclosure-accountability-at-meta-for-generative-ai-alphabet-up-next"
+   "source_url": "https://openmic.org/news/2024/6/majority-of-independent-shareholders-support-more-disclosure-accountability-at-meta-for-generative-ai-alphabet-up-next",
+   "region": "United States"
+  },
+  {
+   "id": "sg-genai-framework",
+   "date": "2024-05-30",
+   "title": "Singapore publishes Model AI Governance Framework for Generative AI",
+   "actor": "IMDA and AI Verify Foundation",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Singapore",
+   "summary": "Voluntary framework with nine dimensions, including accountability, data, trusted development, incident reporting, testing, security and content provenance. No legal duties.",
+   "source_url": "https://aiverifyfoundation.sg/resources/mgf-gen-ai/",
+   "source_kind": "official",
+   "status": "voluntary",
+   "region": "Asia-Pacific"
   },
   {
    "id": "alphabet-genai-vote-2024",
@@ -87,7 +515,36 @@
    "kind": "campaign",
    "jurisdiction": "US federal",
    "summary": "Generative AI risk report proposal failed but drew strong independent support, per filers.",
-   "source_url": "https://www.openmic.org/news/2024/6/2024-shareholder-votes-send-strong-message-to-meta-and-alphabet-regarding-artificial-intelligence"
+   "source_url": "https://www.openmic.org/news/2024/6/2024-shareholder-votes-send-strong-message-to-meta-and-alphabet-regarding-artificial-intelligence",
+   "region": "United States"
+  },
+  {
+   "id": "ie-dpc-meta-pause",
+   "date": "2024-06-14",
+   "title": "Meta pauses EU AI training after Irish DPC request",
+   "actor": "Irish Data Protection Commission",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "Ireland (EU)",
+   "summary": "After engagement with the DPC, Meta's lead EU privacy regulator, Meta paused plans to train its large language models on public Facebook and Instagram posts by adults in the EU and EEA.",
+   "source_url": "https://www.dataprotection.ie/news-media/latest-news/dpcs-engagement-meta-ai",
+   "source_kind": "official",
+   "status": "superseded (training resumed May 2025)",
+   "region": "European Union"
+  },
+  {
+   "id": "un-ga-res-78-311",
+   "date": "2024-07-01",
+   "title": "UN General Assembly adopts China-led AI capacity-building resolution",
+   "actor": "UN General Assembly",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Global",
+   "summary": "Resolution on international cooperation on AI capacity-building, adopted by consensus with US support, asks for help for developing countries. Nonbinding; no company duties.",
+   "source_url": "https://digitallibrary.un.org/record/4054005",
+   "source_kind": "official",
+   "status": "nonbinding",
+   "region": "Global"
   },
   {
    "id": "openmic-msft-refile",
@@ -98,7 +555,36 @@
    "kind": "campaign",
    "jurisdiction": "US federal",
    "summary": "Filers said the 2024 transparency report lacked detail and metrics on generative AI misinformation risks and asked for annual reporting.",
-   "source_url": "https://www.openmic.org/news/2024/7/16/open-mic-refiles-shareholder-proposal-at-microsoft-calling-for-annual-report-on-mitigation-of-ai-risks"
+   "source_url": "https://www.openmic.org/news/2024/7/16/open-mic-refiles-shareholder-proposal-at-microsoft-calling-for-annual-report-on-mitigation-of-ai-risks",
+   "region": "United States"
+  },
+  {
+   "id": "cn-green-dc-action-plan",
+   "date": "2024-07-23",
+   "title": "China issues the Special Action Plan for Green and Low-Carbon Data Centers",
+   "actor": "NDRC; MIIT; National Energy Administration; National Data Administration",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "China",
+   "summary": "Targets an average national data center PUE below 1.5 by end of 2025, requires new and expanded large large and very large data centers to reach PUE of 1.25 or less and national hub projects 1.2 or less, sets stricter energy and water efficiency review for new projects, and aims for more than 80% green electricity at new hub data centers by end of 2025.",
+   "source_url": "https://www.gov.cn/zhengce/zhengceku/202407/P020240724272072479001.pdf",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
+  },
+  {
+   "id": "eu-csddd-in-force",
+   "date": "2024-07-25",
+   "title": "EU Corporate Sustainability Due Diligence Directive enters into force",
+   "actor": "European Union",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "EU",
+   "summary": "Large EU and non-EU companies must identify, prevent and remedy adverse human rights and environmental impacts in their own operations and chains of activities, and originally adopt a climate transition plan. Omnibus I later narrowed scope, removed the transition plan duty and moved application to July 2029.",
+   "source_url": "https://eur-lex.europa.eu/eli/dir/2024/1760/oj",
+   "source_kind": "official",
+   "status": "in force; application from July 26, 2029",
+   "region": "European Union"
   },
   {
    "id": "eu-ai-act-in-force",
@@ -109,7 +595,360 @@
    "kind": "policy",
    "jurisdiction": "EU",
    "summary": "Risk-based AI regulation takes effect, with general-purpose AI provisions applying 12 months later and most high-risk rules later still.",
-   "source_url": "https://commission.europa.eu/news/ai-act-enters-force-2024-08-01_en"
+   "source_url": "https://commission.europa.eu/news/ai-act-enters-force-2024-08-01_en",
+   "region": "European Union"
+  },
+  {
+   "id": "illinois-hb3773",
+   "date": "2024-08-09",
+   "title": "Illinois amends Human Rights Act to cover AI in employment",
+   "actor": "Illinois Governor J.B. Pritzker",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Illinois",
+   "summary": "From January 1, 2026, employers may not use AI that has a discriminatory effect in hiring, promotion or discharge decisions, or use ZIP codes as a proxy, and must notify employees when AI is used.",
+   "source_url": "https://www.ilga.gov/Legislation/BillStatus?DocNum=3773&GAID=17&GA=103&DocTypeID=HB&SessionID=112",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
+  },
+  {
+   "id": "coe-ai-convention-opens",
+   "date": "2024-09-05",
+   "title": "Council of Europe AI Framework Convention opens for signature",
+   "actor": "Council of Europe",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Global",
+   "summary": "First binding international AI treaty (CETS 225). Parties must address AI risks to human rights, democracy and the rule of law, including by private actors, but may choose how. First signers included the US, UK, EU, Norway and Israel. Not yet in force.",
+   "source_url": "https://www.coe.int/en/web/portal/-/council-of-europe-opens-first-ever-global-treaty-on-ai-for-signature",
+   "source_kind": "official",
+   "status": "signed, not in force",
+   "region": "Global"
+  },
+  {
+   "id": "au-guardrails-proposal",
+   "date": "2024-09-05",
+   "title": "Australia proposes mandatory guardrails for high-risk AI",
+   "actor": "Department of Industry, Science and Resources",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Australia",
+   "summary": "Proposals paper set out ten guardrails for high-risk AI, such as testing, transparency and human oversight, and options to make them mandatory. The government said in December 2025 it will not proceed with them at this time.",
+   "source_url": "https://consult.industry.gov.au/ai-regulatory-guardrails",
+   "source_kind": "official",
+   "status": "not proceeding",
+   "region": "Asia-Pacific"
+  },
+  {
+   "id": "cn-ai-safety-framework-1",
+   "date": "2024-09-09",
+   "title": "TC260 releases the AI Safety Governance Framework 1.0",
+   "actor": "National Cybersecurity Standardization Technical Committee (TC260)",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "China",
+   "summary": "A non-binding technical guide that classifies AI risks (model, data, system, and cyber, physical-world, cognitive and ethical application risks) and sets out technical and governance measures and safe development guidelines for developers and providers.",
+   "source_url": "https://www.cac.gov.cn/2024-09/09/c_1727567886199789.htm",
+   "source_kind": "primary",
+   "status": "superseded",
+   "region": "China"
+  },
+  {
+   "id": "ca-sb942",
+   "date": "2024-09-19",
+   "title": "California enacts SB 942, the AI Transparency Act",
+   "actor": "California Governor Gavin Newsom",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "California",
+   "summary": "Generative AI providers with over one million monthly users must offer a free AI detection tool and embed latent disclosures in AI images, video and audio, with an option for visible labels. AB 853 later moved the start to August 2, 2026.",
+   "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB942",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
+  },
+  {
+   "id": "cn-network-data-security-regs",
+   "date": "2024-09-24",
+   "title": "China publishes the Network Data Security Management Regulations",
+   "actor": "State Council",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "In force from 2025-01-01, Article 19 requires data handlers that provide generative AI services to strengthen security management of training data and its processing and to prevent and handle data security risks.",
+   "source_url": "https://www.gov.cn/zhengce/content/202409/content_6977766.htm",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
+  },
+  {
+   "id": "ftc-operation-ai-comply",
+   "date": "2024-09-25",
+   "title": "FTC announces Operation AI Comply",
+   "actor": "Federal Trade Commission",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "US federal",
+   "summary": "Five enforcement actions, including against DoNotPay and Rytr, over deceptive AI claims or AI tools used to deceive. The FTC said there is no AI exemption from existing consumer protection law.",
+   "source_url": "https://www.ftc.gov/news-events/news/press-releases/2024/09/ftc-announces-crackdown-deceptive-ai-claims-schemes",
+   "source_kind": "official",
+   "status": "completed",
+   "region": "United States"
+  },
+  {
+   "id": "ca-ab2013",
+   "date": "2024-09-28",
+   "title": "California enacts AB 2013 on generative AI training data transparency",
+   "actor": "California Governor Gavin Newsom",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "California",
+   "summary": "From January 1, 2026, developers of generative AI offered to Californians must post documentation on their training data, including sources, whether it holds personal information or copyrighted material, and collection dates.",
+   "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB2013",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
+  },
+  {
+   "id": "uk-ofcom-genai-letter",
+   "date": "2024-11-08",
+   "title": "Ofcom says the Online Safety Act covers many generative AI chatbots",
+   "actor": "Ofcom",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "UK",
+   "summary": "Open letter says AI-generated content shared on user-to-user services, user-built chatbots others can use, and AI tools that search several websites fall under Online Safety Act duties.",
+   "source_url": "https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/open-letter-to-uk-online-service-providers-regarding-generative-ai-and-chatbots",
+   "source_kind": "official",
+   "status": "in force (regulator guidance)",
+   "region": "United Kingdom"
+  },
+  {
+   "id": "cn-aiia-safety-commitments",
+   "date": "2024-12-01",
+   "title": "DeepSeek and 16 other Chinese firms sign the AI Safety Commitments",
+   "actor": "Artificial Intelligence Industry Alliance (AIIA); China Academy of Information and Communications Technology",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "China",
+   "summary": "Voluntary industry commitments, closely modelled on the Seoul Frontier AI Safety Commitments, covering red-teaming, transparency about frontier model capabilities and limits, safety organization, risk research, data and infrastructure security and safety measures for open-source releases.",
+   "source_url": "https://carnegieendowment.org/research/2025/01/deepseek-and-other-chinese-firms-converge-with-western-companies-on-ai-promises",
+   "source_kind": "secondary",
+   "status": "voluntary",
+   "date_precision": "month",
+   "region": "China"
+  },
+  {
+   "id": "cn-us-dual-use-export-ban",
+   "date": "2024-12-03",
+   "title": "China bans dual-use exports to US military users and gallium, germanium and antimony exports to the US",
+   "actor": "Ministry of Commerce",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "Bans dual-use exports to US military users or uses and in principle denies licenses for gallium, germanium, antimony and superhard materials to the US, with stricter review for graphite. MOFCOM suspended the second clause from 2025-11-09 to 2026-11-27 (Announcement 2025 No. 72) and again from 2026-11-28 to 2027-01-27 (Announcement 2026 No. 59); the ban on military users stays in force.",
+   "source_url": "https://www.mofcom.gov.cn/zfxxgk/gkml/art/2024/art_99f5d51bbe6a412ca309d5818c4dee52.html",
+   "source_kind": "primary",
+   "status": "in force (clause 2 suspended to 2027-01-27)",
+   "region": "China",
+   "suspension_source_url": "https://www.mofcom.gov.cn/zwgk/zcfb/art/2026/art_69b3633579184af38198463be8116ebf.html"
+  },
+  {
+   "id": "cn-samr-nvidia-probe",
+   "date": "2024-12-09",
+   "title": "China opens an antitrust investigation into Nvidia",
+   "actor": "State Administration for Market Regulation",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "SAMR opened a case into suspected violations of the Anti-Monopoly Law and of the conditions it set in 2020 when approving Nvidia's acquisition of Mellanox.",
+   "source_url": "https://www.samr.gov.cn/xw/zj/art/2024/art_ed4d3090401741a0894e475d35db652b.html",
+   "source_kind": "primary",
+   "status": "investigation open",
+   "region": "China"
+  },
+  {
+   "id": "br-ai-bill-senate",
+   "date": "2024-12-10",
+   "title": "Brazil's Senate passes AI bill PL 2338/2023",
+   "actor": "Federal Senate of Brazil",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Brazil",
+   "summary": "Risk-based AI bill with duties for high-risk systems, generative AI and copyright remuneration; it has been in a Chamber of Deputies special committee since 2025 without a vote.",
+   "source_url": "https://www25.senado.leg.br/web/atividade/materias/-/materia/157233",
+   "source_kind": "official",
+   "status": "bill, not law",
+   "region": "Americas (other)"
+  },
+  {
+   "id": "eu-edpb-opinion-ai-models",
+   "date": "2024-12-18",
+   "title": "EDPB opinion on personal data in AI models",
+   "actor": "European Data Protection Board",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "EU",
+   "summary": "Opinion 28/2024, requested by the Irish DPC, says AI models trained on personal data are not always anonymous, that legitimate interest can be a legal basis only after a three-step test case by case, and that unlawful training can affect use of the model. Regulators apply it when enforcing the GDPR against model developers.",
+   "source_url": "https://www.edpb.europa.eu/news/news/2024/edpb-opinion-ai-models-gdpr-principles-support-responsible-ai_en",
+   "source_kind": "official",
+   "status": "in force (GDPR interpretation)",
+   "region": "European Union"
+  },
+  {
+   "id": "it-garante-openai-fine",
+   "date": "2024-12-20",
+   "title": "Italian Garante fines OpenAI 15 million euros over ChatGPT training data",
+   "actor": "Garante per la protezione dei dati personali",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "Italy (EU)",
+   "summary": "The Garante found OpenAI trained ChatGPT on personal data without an adequate legal basis and breached transparency duties, fined it 15 million euros and ordered a six-month public information campaign. A Rome court annulled the decision in March 2026.",
+   "source_url": "https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/10085432",
+   "source_kind": "official",
+   "status": "annulled by Rome court (March 2026)",
+   "region": "European Union"
+  },
+  {
+   "id": "kr-ai-basic-act-passed",
+   "date": "2024-12-26",
+   "title": "South Korea passes AI Basic Act",
+   "actor": "National Assembly of Korea",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "South Korea",
+   "summary": "Comprehensive AI law (Law No. 20676, promulgated January 21, 2025) with duties for high-impact and generative AI providers and a domestic representative rule for large foreign companies, effective after a one-year transition.",
+   "source_url": "https://www.foley.com/insights/publications/2025/01/south-korea-national-assembly-passes-new-ai-bill/",
+   "source_kind": "secondary (law firm)",
+   "status": "enacted",
+   "region": "Asia-Pacific"
+  },
+  {
+   "id": "ca-aida-dies",
+   "date": "2025-01-06",
+   "title": "Canada's AIDA dies when Parliament is prorogued",
+   "actor": "Parliament of Canada",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Canada",
+   "summary": "Bill C-27, which held the Artificial Intelligence and Data Act and a privacy law rewrite, died on the order paper; Canada has no federal AI statute.",
+   "source_url": "https://www.dlapiper.com/insights/publications/2025/01/canadian-privacy-and-ai-horizon-shifts-again",
+   "source_kind": "secondary (law firm)",
+   "status": "died",
+   "region": "Americas (other)"
+  },
+  {
+   "id": "bis-ai-diffusion-rule",
+   "date": "2025-01-15",
+   "title": "BIS issues the AI Diffusion Rule",
+   "actor": "Commerce Department, Bureau of Industry and Security",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "US federal",
+   "summary": "Interim final rule set worldwide licence requirements and country tiers for advanced AI chips and controlled some frontier model weights, with compliance due May 15, 2025.",
+   "source_url": "https://www.federalregister.gov/documents/2025/01/15/2025-00636/framework-for-artificial-intelligence-diffusion",
+   "source_kind": "official",
+   "status": "rescinded",
+   "region": "United States"
+  },
+  {
+   "id": "us-eo-14148",
+   "date": "2025-01-20",
+   "title": "EO 14148 revokes EO 14110",
+   "actor": "President Trump",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "US federal",
+   "summary": "Initial rescissions order revoked Biden's AI order on the first day of the new administration, ending its reporting directions for frontier developers.",
+   "source_url": "https://www.whitehouse.gov/presidential-actions/2025/01/initial-rescissions-of-harmful-executive-orders-and-actions/",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
+  },
+  {
+   "id": "us-eo-14179",
+   "date": "2025-01-23",
+   "title": "EO 14179 orders removal of barriers to US AI leadership",
+   "actor": "President Trump",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "US federal",
+   "summary": "Directed officials to review and undo actions taken under the revoked EO 14110, revise OMB AI memos, and produce an AI Action Plan within 180 days. No direct company duties.",
+   "source_url": "https://www.federalregister.gov/documents/2025/01/31/2025-02172/removing-barriers-to-american-leadership-in-artificial-intelligence",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
+  },
+  {
+   "id": "georgia-psc-large-load",
+   "date": "2025-01-23",
+   "title": "Georgia regulators approve data center billing rule",
+   "actor": "Georgia Public Service Commission",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "Georgia",
+   "summary": "Lets Georgia Power charge new customers above 100 MW for transmission, distribution and upstream generation costs, with minimum bills and contracts up to 15 years; the PSC reviews contracts.",
+   "source_url": "https://psc.ga.gov/site/assets/files/8617/media_advisory_data_centers_rule_1-23-2025.pdf",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
+  },
+  {
+   "id": "intl-ai-safety-report-2025",
+   "date": "2025-01-29",
+   "title": "First International AI Safety Report published",
+   "actor": "Expert panel chaired by Yoshua Bengio",
+   "lane": "government",
+   "kind": "milestone",
+   "jurisdiction": "Global",
+   "summary": "Scientific review of general-purpose AI capabilities and risks, commissioned at the 2023 Bletchley summit. It makes no recommendations and imposes no duties.",
+   "source_url": "https://www.gov.uk/government/publications/international-ai-safety-report-2025",
+   "source_kind": "official",
+   "status": "published",
+   "region": "Global"
+  },
+  {
+   "id": "eu-ai-act-prohibitions-literacy",
+   "date": "2025-02-02",
+   "title": "EU AI Act bans and AI literacy duty apply",
+   "actor": "European Commission",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "EU",
+   "summary": "Eight banned AI practices apply, including manipulative or exploitative AI, social scoring, untargeted scraping of facial images and emotion recognition at work or school, and providers and deployers must take measures for their staff's AI literacy. Commission guidelines on the bans followed on February 4, 2025; the 2026 omnibus recast the literacy duty as an obligation of means.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-prohibited-ai-practices",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "European Union"
+  },
+  {
+   "id": "haip-reporting-framework",
+   "date": "2025-02-07",
+   "title": "OECD launches the Hiroshima AI Process reporting framework",
+   "actor": "OECD",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Global",
+   "summary": "Voluntary framework for organisations to report publicly on how they apply the G7 Code of Conduct, covering risk assessment, transparency, governance, content provenance and data protection.",
+   "source_url": "https://oecd.org/en/about/news/press-releases/2025/02/oecd-launches-global-framework-to-monitor-application-of-g7-hiroshima-ai-code-of-conduct.html",
+   "source_kind": "official",
+   "status": "voluntary",
+   "region": "Global"
+  },
+  {
+   "id": "paris-ai-action-summit",
+   "date": "2025-02-11",
+   "title": "Paris AI Action Summit statement; US and UK do not sign",
+   "actor": "France and India (co-chairs)",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Global",
+   "summary": "Statement on Inclusive and Sustainable AI for People and the Planet, signed by about 60 countries plus the EU and the African Union Commission, sets nonbinding priorities. The United States and United Kingdom did not sign. No company duties.",
+   "source_url": "https://www.elysee.fr/en/emmanuel-macron/2025/02/11/statement-on-inclusive-and-sustainable-artificial-intelligence-for-people-and-the-planet",
+   "source_kind": "official",
+   "status": "nonbinding",
+   "region": "Global"
   },
   {
    "id": "sec-slb-14m",
@@ -120,7 +959,8 @@
    "kind": "rule",
    "jurisdiction": "US federal",
    "summary": "Staff guidance restored the pre-2021 approach to the ordinary business and economic relevance exclusions, giving companies more room to exclude proposals, including on AI.",
-   "source_url": "https://www.sec.gov/about/shareholder-proposals-staff-legal-bulletin-no-14m-cf"
+   "source_url": "https://www.sec.gov/about/shareholder-proposals-staff-legal-bulletin-no-14m-cf",
+   "region": "United States"
   },
   {
    "id": "crenshaw-dissent-14m",
@@ -131,7 +971,50 @@
    "kind": "response",
    "jurisdiction": "US federal",
    "summary": "Dissenting statement said the bulletin changes the rules for excluding shareholder proposals mid-season.",
-   "source_url": "https://www.sec.gov/newsroom/speeches-statements/crenshaw-statement-staff-legal-bulletin-14m-021225"
+   "source_url": "https://www.sec.gov/newsroom/speeches-statements/crenshaw-statement-staff-legal-bulletin-14m-021225",
+   "region": "United States"
+  },
+  {
+   "id": "uk-aisi-renamed",
+   "date": "2025-02-14",
+   "title": "UK AI Safety Institute renamed AI Security Institute",
+   "actor": "UK Government (DSIT)",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "UK",
+   "summary": "The renamed institute focuses on national security and crime risks from AI, adds a criminal misuse team with the Home Office, and the government said it will not focus on bias or freedom of speech. It imposes no company duties.",
+   "source_url": "https://www.gov.uk/government/news/tackling-ai-security-risks-to-unleash-growth-and-deliver-plan-for-change",
+   "source_kind": "official",
+   "status": "in operation",
+   "region": "United Kingdom"
+  },
+  {
+   "id": "cn-labeling-measures",
+   "date": "2025-03-14",
+   "title": "China publishes the Measures for Labeling AI-Generated and Synthetic Content",
+   "actor": "Cyberspace Administration of China; MIIT; Ministry of Public Security; NRTA",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "In force from 2025-09-01 with a mandatory national standard: providers covered by the algorithm, deep synthesis and generative AI rules must add hidden labels in file metadata, and visible labels to text, audio, images, video and virtual scenes where content may confuse the public; platforms that distribute content must check for and display labels. Removing or forging labels is banned.",
+   "source_url": "https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
+  },
+  {
+   "id": "virginia-hb2084",
+   "date": "2025-03-24",
+   "title": "Virginia HB 2084 asks regulators to review large-customer rate classes",
+   "actor": "Virginia General Assembly; Governor",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Virginia",
+   "summary": "Directs the State Corporation Commission, in Dominion and Appalachian Power rate cases through mid-2027, to consider whether separate customer classes are reasonable; explicit data center language was removed before passage.",
+   "source_url": "https://lis.virginia.gov/bill-details/20251/HB2084",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
   },
   {
    "id": "delaware-sb21",
@@ -142,7 +1025,23 @@
    "kind": "policy",
    "jurisdiction": "Delaware",
    "summary": "Narrowed controlling-stockholder liability and books-and-records rights, responding to Chancery rulings like the Tesla pay case and to companies leaving Delaware.",
-   "source_url": "https://corpgov.law.harvard.edu/2025/04/06/delaware-revamps-its-general-corporation-law-will-it-stop-companies-from-leaving"
+   "source_url": "https://corpgov.law.harvard.edu/2025/04/06/delaware-revamps-its-general-corporation-law-will-it-stop-companies-from-leaving",
+   "region": "United States"
+  },
+  {
+   "id": "cn-genai-security-standards",
+   "date": "2025-04-01",
+   "title": "China issues national standards on generative AI service security, training data and data annotation",
+   "actor": "State Administration for Market Regulation; Standardization Administration of China (TC260)",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "China",
+   "summary": "Three recommended national standards (GB/T 45654, 45652 and 45674-2025) set security requirements for generative AI services, for pre-training and fine-tuning data, and for data annotation, with self-assessment methods for providers.",
+   "source_url": "https://www.secrss.com/articles/78325",
+   "source_kind": "secondary",
+   "status": "nonbinding",
+   "date_precision": "month",
+   "region": "China"
   },
   {
    "id": "reincorporation-trend",
@@ -153,7 +1052,92 @@
    "kind": "milestone",
    "jurisdiction": "Nevada; Texas",
    "summary": "Memo lists firms moving to Nevada and Texas after Chancery rulings. Later reports say the pace did not slow after SB 21 (this site has not confirmed the share figures).",
-   "source_url": "https://corpgov.law.harvard.edu/2025/04/06/delaware-revamps-its-general-corporation-law-will-it-stop-companies-from-leaving"
+   "source_url": "https://corpgov.law.harvard.edu/2025/04/06/delaware-revamps-its-general-corporation-law-will-it-stop-companies-from-leaving",
+   "region": "United States"
+  },
+  {
+   "id": "eu-ai-continent-plan",
+   "date": "2025-04-09",
+   "title": "Commission adopts AI Continent Action Plan",
+   "actor": "European Commission",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "EU",
+   "summary": "Plan for compute (including AI gigafactories), data, skills, adoption and simpler AI rules. It imposes no duties on companies itself; it led to the Cloud and AI Development Act proposal.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/faqs/ai-continent-action-plan-qa",
+   "source_kind": "official",
+   "status": "nonbinding plan",
+   "region": "European Union"
+  },
+  {
+   "id": "eu-stop-the-clock",
+   "date": "2025-04-14",
+   "title": "EU 'stop-the-clock' directive delays CSRD and CSDDD",
+   "actor": "European Union",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "EU",
+   "summary": "Directive 2025/794 postponed CSRD reporting for companies not yet reporting by two years and pushed back CSDDD transposition and first application by one year, while the Omnibus content changes were negotiated.",
+   "source_url": "https://eur-lex.europa.eu/eli/dir/2025/794/oj",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "European Union"
+  },
+  {
+   "id": "nvidia-h20-license",
+   "date": "2025-04-15",
+   "title": "US requires a licence for Nvidia H20 chip sales to China",
+   "actor": "US government (Commerce)",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "US federal",
+   "summary": "Nvidia disclosed it was told on April 9 that H20 exports to China need a licence indefinitely and expected up to $5.5 billion in charges.",
+   "source_url": "https://techcrunch.com/2025/04/15/us-government-imposes-license-requirement-on-nvidia-h20-exports",
+   "source_kind": "news",
+   "status": "superseded",
+   "region": "United States"
+  },
+  {
+   "id": "haip-first-reports",
+   "date": "2025-04-24",
+   "title": "First Hiroshima AI Process reports published",
+   "actor": "OECD; reporting companies",
+   "lane": "government",
+   "kind": "milestone",
+   "jurisdiction": "Global",
+   "summary": "OECD published the first round of voluntary reports from 19 organisations. From this site's company list: Google, Microsoft, OpenAI, Anthropic, Salesforce and SoftBank Corp. (a SoftBank Group subsidiary). Amazon reported in Q4 2025 and Cohere in Q3 2026.",
+   "source_url": "https://oecd.ai/en/wonk/initial-submissions-g7-hiroshima-ai-process-reporting-framework",
+   "source_kind": "official",
+   "status": "voluntary",
+   "region": "Global"
+  },
+  {
+   "id": "cn-qinglang-ai-misuse-2025",
+   "date": "2025-04-30",
+   "title": "CAC launches the Qinglang campaign against AI technology misuse",
+   "actor": "Cyberspace Administration of China",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "China",
+   "summary": "A three-month enforcement campaign targeting unfiled AI services, face and voice cloning without consent, poorly managed training data, missing content labels, AI-made rumours and harm to minors.",
+   "source_url": "https://www.cac.gov.cn/2025-04/30/c_1747719097461951.htm",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
+  },
+  {
+   "id": "bis-diffusion-rescission",
+   "date": "2025-05-13",
+   "title": "BIS rescinds the AI Diffusion Rule and issues chip guidance",
+   "actor": "Commerce Department, Bureau of Industry and Security",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "US federal",
+   "summary": "BIS said it would not enforce the diffusion rule and would replace it, and warned that using Huawei Ascend chips anywhere risks violating US export controls, with diligence expectations for chips used to train Chinese models.",
+   "source_url": "https://www.bis.gov/press-release/department-commerce-announces-rescission-biden-era-artificial-intelligence-diffusion-rule-strengthens",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
   },
   {
    "id": "texas-sb29",
@@ -164,7 +1148,8 @@
    "kind": "policy",
    "jurisdiction": "Texas",
    "summary": "Effective on signing; protects listed Texas companies' directors, lets companies set ownership thresholds for derivative suits, and aims to attract incorporations.",
-   "source_url": "https://gov.texas.gov/news/post/governor-abbott-signs-pro-growth-business-legislation-into-law"
+   "source_url": "https://gov.texas.gov/news/post/governor-abbott-signs-pro-growth-business-legislation-into-law",
+   "region": "United States"
   },
   {
    "id": "texas-sb1057",
@@ -175,7 +1160,78 @@
    "kind": "policy",
    "jurisdiction": "Texas",
    "summary": "Opt-in law lets companies require $1 million or 3% ownership, six-month holding, and solicitation of 67% of voting power. Effective September 1, 2025.",
-   "source_url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB01057F.htm"
+   "source_url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB01057F.htm",
+   "region": "United States"
+  },
+  {
+   "id": "us-take-it-down-act",
+   "date": "2025-05-19",
+   "title": "TAKE IT DOWN Act signed",
+   "actor": "President Trump; Congress",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "US federal",
+   "summary": "Criminalizes publishing nonconsensual intimate images, including AI deepfakes, and requires covered platforms to remove reported images within 48 hours, with FTC enforcement from May 19, 2026.",
+   "source_url": "https://www.ftc.gov/business-guidance/resources/complying-take-it-down-act",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
+  },
+  {
+   "id": "ie-dpc-meta-ai-training-2025",
+   "date": "2025-05-21",
+   "title": "Meta resumes EU AI training after Irish DPC review",
+   "actor": "Irish Data Protection Commission",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "Ireland (EU)",
+   "summary": "After the EDPB opinion, Meta changed its plan and added safeguards, including an objection option, before training on adults' public Facebook and Instagram content from May 27, 2025. The DPC made recommendations and required Meta to report on how well the safeguards work in October 2025.",
+   "source_url": "https://www.dataprotection.ie/news-media/latest-news/dpc-statement-meta-ai",
+   "source_kind": "official",
+   "status": "in force (supervision ongoing)",
+   "region": "European Union"
+  },
+  {
+   "id": "jp-ai-promotion-act",
+   "date": "2025-05-28",
+   "title": "Japan enacts AI Promotion Act",
+   "actor": "National Diet of Japan",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Japan",
+   "summary": "Framework law (Act No. 53 of 2025) creating an AI Strategic Headquarters led by the Prime Minister and a Basic AI Plan. Businesses must make efforts to cooperate with government measures; there are no penalties or detailed compliance duties.",
+   "source_url": "https://www.japaneselawtranslation.go.jp/en/laws/view/5066/en",
+   "source_kind": "official",
+   "status": "in force (most provisions from June 4, 2025)",
+   "region": "Asia-Pacific"
+  },
+  {
+   "id": "oregon-power-act",
+   "date": "2025-06-16",
+   "title": "Oregon POWER Act (HB 3546) creates a rate class for large energy users",
+   "actor": "Oregon Governor Tina Kotek",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Oregon",
+   "summary": "Directs the Public Utility Commission to put facilities using 20 MW or more, such as data centers, in a separate rate class so their grid costs are not shifted to households. Signing date per a law school summary.",
+   "source_url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3546",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
+  },
+  {
+   "id": "uk-data-use-access-act",
+   "date": "2025-06-19",
+   "title": "UK Data (Use and Access) Act 2025 passed",
+   "actor": "UK Parliament",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "UK",
+   "summary": "Changes UK data protection law, including rules on automated decision-making, and requires the government (not companies) to publish an economic impact assessment and a report on copyright works in AI development, including developer disclosure of training data and web crawlers, within nine months.",
+   "source_url": "https://www.legislation.gov.uk/ukpga/2025/18/contents",
+   "source_kind": "official",
+   "status": "in force (commenced in stages)",
+   "region": "United Kingdom"
   },
   {
    "id": "msft-rai-report-2025",
@@ -186,7 +1242,36 @@
    "kind": "disclosure",
    "jurisdiction": "US federal",
    "summary": "Second annual report on Microsoft's responsible AI practices and customer support.",
-   "source_url": "https://blogs.microsoft.com/on-the-issues/2025/06/20/our-2025-responsible-ai-transparency-report/"
+   "source_url": "https://blogs.microsoft.com/on-the-issues/2025/06/20/our-2025-responsible-ai-transparency-report/",
+   "region": "United States"
+  },
+  {
+   "id": "texas-sb6-large-loads",
+   "date": "2025-06-20",
+   "title": "Texas SB 6 sets rules for large loads such as data centers",
+   "actor": "Texas Governor Greg Abbott",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Texas",
+   "summary": "Loads of 75 MW or more in ERCOT pay interconnection study fees, disclose backup generation, and can be curtailed in grid emergencies. Effective on signing.",
+   "source_url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB6",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
+  },
+  {
+   "id": "texas-traiga",
+   "date": "2025-06-22",
+   "title": "Texas enacts TRAIGA (HB 149)",
+   "actor": "Texas Governor Greg Abbott",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Texas",
+   "summary": "From January 1, 2026, bars developing or deploying AI intended to incite self-harm, unlawfully discriminate, or produce child sexual abuse material or sexual deepfakes; disparate impact alone is not proof of intent. Attorney General enforces, with a cure period.",
+   "source_url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00149F.htm",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
   },
   {
    "id": "intuit-ai-disclosure",
@@ -197,7 +1282,8 @@
    "kind": "disclosure",
    "jurisdiction": "US federal",
    "summary": "Per Parnassus, Intuit released public AI governance and risk management disclosure in the first half of 2025. The date shown is approximate.",
-   "source_url": "https://www.parnassus.com/updates/article/the_new_imperative_of_responsible_ai"
+   "source_url": "https://www.parnassus.com/updates/article/the_new_imperative_of_responsible_ai",
+   "region": "United States"
   },
   {
    "id": "senate-strikes-moratorium",
@@ -208,7 +1294,8 @@
    "kind": "milestone",
    "jurisdiction": "US federal",
    "summary": "Proposed moratorium on state AI laws was removed from the budget reconciliation bill before passage.",
-   "source_url": "https://www.ncsl.org/press-room/details/partnership-not-preemption-state-legislators-stand-against-federal-ai-overreach"
+   "source_url": "https://www.ncsl.org/press-room/details/partnership-not-preemption-state-legislators-stand-against-federal-ai-overreach",
+   "region": "United States"
   },
   {
    "id": "eu-gpai-code",
@@ -219,7 +1306,8 @@
    "kind": "policy",
    "jurisdiction": "EU",
    "summary": "Voluntary code with transparency, copyright, and safety and security chapters, offered as a way for model providers to show AI Act compliance.",
-   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/gpai-code-practice"
+   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/gpai-code-practice",
+   "region": "European Union"
   },
   {
    "id": "openai-eu-code",
@@ -230,7 +1318,22 @@
    "kind": "response",
    "jurisdiction": "EU",
    "summary": "OpenAI said it would sign the GPAI Code of Practice, subject to formal approval by the AI Board.",
-   "source_url": "https://openai.com/global-affairs/eu-code-of-practice/"
+   "source_url": "https://openai.com/global-affairs/eu-code-of-practice/",
+   "region": "European Union"
+  },
+  {
+   "id": "eu-dsa-minors-guidelines",
+   "date": "2025-07-14",
+   "title": "Commission publishes DSA guidelines on protecting minors",
+   "actor": "European Commission",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "EU",
+   "summary": "Guidelines under DSA Article 28 set out what online platforms minors can access should do on age assurance, grooming, harmful content, addictive design and commercial practices, including a risk review. They are not binding, but the Commission uses them as its benchmark when it checks compliance.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-protection-minors",
+   "source_kind": "official",
+   "status": "in force (nonbinding guidelines)",
+   "region": "European Union"
   },
   {
    "id": "meta-declines-eu-code",
@@ -241,7 +1344,8 @@
    "kind": "response",
    "jurisdiction": "EU",
    "summary": "Joel Kaplan said the code creates legal uncertainty and goes beyond the AI Act. Meta remained absent from the signatory list in 2026.",
-   "source_url": "https://www.euronews.com/2025/07/18/meta-rebuffs-eus-ai-code-of-practice"
+   "source_url": "https://www.euronews.com/2025/07/18/meta-rebuffs-eus-ai-code-of-practice",
+   "region": "European Union"
   },
   {
    "id": "anthropic-eu-code",
@@ -252,7 +1356,8 @@
    "kind": "response",
    "jurisdiction": "EU",
    "summary": "After review, Anthropic said it intends to sign the General-Purpose AI Code of Practice.",
-   "source_url": "https://www.anthropic.com/news/eu-code-practice"
+   "source_url": "https://www.anthropic.com/news/eu-code-practice",
+   "region": "European Union"
   },
   {
    "id": "us-ai-action-plan",
@@ -263,7 +1368,92 @@
    "kind": "policy",
    "jurisdiction": "US federal",
    "summary": "Over 90 nonbinding federal actions on innovation, infrastructure and diplomacy, plus executive orders including faster permitting for data centers.",
-   "source_url": "https://www.whitehouse.gov/releases/2025/07/white-house-unveils-americas-ai-action-plan"
+   "source_url": "https://www.whitehouse.gov/releases/2025/07/white-house-unveils-americas-ai-action-plan",
+   "region": "United States"
+  },
+  {
+   "id": "us-eo-14318",
+   "date": "2025-07-23",
+   "title": "EO 14318 speeds federal permitting for data centers",
+   "actor": "President Trump",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "US federal",
+   "summary": "Fast-tracks federal permits, environmental reviews and financing for data center projects needing over 100 MW of new load for AI. Eases rules for companies; adds no duties.",
+   "source_url": "https://www.govinfo.gov/content/pkg/FR-2025-07-28/html/2025-14212.htm",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
+  },
+  {
+   "id": "us-eo-14319",
+   "date": "2025-07-23",
+   "title": "EO 14319 on 'Preventing Woke AI' in federal procurement",
+   "actor": "President Trump",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "US federal",
+   "summary": "Agencies may buy only large language models that meet two Unbiased AI Principles, truth-seeking and ideological neutrality, with contract terms set through OMB guidance. Applies only to federal purchases.",
+   "source_url": "https://www.whitehouse.gov/presidential-actions/2025/07/preventing-woke-ai-in-the-federal-government/",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
+  },
+  {
+   "id": "us-eo-14320",
+   "date": "2025-07-23",
+   "title": "EO 14320 promotes exports of the American AI technology stack",
+   "actor": "President Trump",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "US federal",
+   "summary": "Creates a Commerce-led American AI Exports Program inviting industry consortia to propose full-stack AI export packages backed by federal financing tools. No duties.",
+   "source_url": "https://www.govinfo.gov/content/pkg/FR-2025-07-28/html/2025-14218.htm",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
+  },
+  {
+   "id": "uk-osa-children-codes",
+   "date": "2025-07-25",
+   "title": "Ofcom's children's safety codes take effect",
+   "actor": "Ofcom",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "UK",
+   "summary": "Services in scope of the Online Safety Act that allow pornography or content promoting self-harm, suicide or eating disorders must use highly effective age checks, and services children use must have finished children's risk assessments and give age-appropriate experiences.",
+   "source_url": "https://www.ofcom.org.uk/online-safety/protecting-children/online-age-checks-must-be-in-force-from-tomorrow",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United Kingdom"
+  },
+  {
+   "id": "cn-global-ai-governance-action-plan",
+   "date": "2025-07-26",
+   "title": "China releases the Global AI Governance Action Plan",
+   "actor": "Ministry of Foreign Affairs of China",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "China",
+   "summary": "A 13-point diplomatic plan released at the World AI Conference, including calls to jointly set AI energy and water efficiency standards, eliminate algorithmic bias, protect personal data and support UN-based AI governance. It sets no company duties.",
+   "source_url": "https://www.mfa.gov.cn/eng/xw/zyxw/202507/t20250729_11679232.html",
+   "source_kind": "primary",
+   "status": "nonbinding",
+   "region": "China"
+  },
+  {
+   "id": "cn-ai-safety-commitments-framework",
+   "date": "2025-07-26",
+   "title": "Chinese industry releases the China AI Safety Commitments Framework",
+   "actor": "China AI Safety and Development Association (CnAISDA); CAICT",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "China",
+   "summary": "An expanded voluntary commitment framework, built on the December 2024 AIIA commitments, adding international safety cooperation and frontier AI risk prevention; CAICT said it would promote disclosure and testing by signatory firms.",
+   "source_url": "https://www.ithome.com/0/871/842.htm",
+   "source_kind": "secondary",
+   "status": "voluntary",
+   "region": "China"
   },
   {
    "id": "google-eu-code",
@@ -274,7 +1464,8 @@
    "kind": "response",
    "jurisdiction": "EU",
    "summary": "Google committed to sign while voicing concerns that parts of the code and AI Act could slow innovation in Europe.",
-   "source_url": "https://blog.google/around-the-globe/google-europe/eu-ai-code-practice/"
+   "source_url": "https://blog.google/around-the-globe/google-europe/eu-ai-code-practice/",
+   "region": "European Union"
   },
   {
    "id": "microsoft-eu-code",
@@ -285,7 +1476,22 @@
    "kind": "response",
    "jurisdiction": "EU",
    "summary": "Microsoft publicly shared its decision to become a signatory a day after Google, per trade press.",
-   "source_url": "https://www.ciodive.com/news/Google-european-union-AI-act-code-signatory/756343/"
+   "source_url": "https://www.ciodive.com/news/Google-european-union-AI-act-code-signatory/756343/",
+   "region": "European Union"
+  },
+  {
+   "id": "cn-nvidia-h20-summons",
+   "date": "2025-07-31",
+   "title": "CAC summons Nvidia over H20 chip security risks",
+   "actor": "Cyberspace Administration of China",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "Citing reported tracking and remote shutdown capabilities in Nvidia computing chips, the CAC required Nvidia to explain the backdoor and vulnerability risks of H20 chips sold in China and submit supporting evidence.",
+   "source_url": "https://www.cac.gov.cn/2025-07/31/c_1755675743897163.htm",
+   "source_kind": "primary",
+   "status": "completed",
+   "region": "China"
   },
   {
    "id": "xai-eu-code-safety",
@@ -296,7 +1502,8 @@
    "kind": "response",
    "jurisdiction": "EU",
    "summary": "xAI joined the Safety and Security chapter only, calling the rest overreach, so it must show transparency and copyright compliance by other means.",
-   "source_url": "https://www.euronews.com/2025/08/01/some-26-tech-companies-sign-up-to-eu-commissions-ai-code"
+   "source_url": "https://www.euronews.com/2025/08/01/some-26-tech-companies-sign-up-to-eu-commissions-ai-code",
+   "region": "European Union"
   },
   {
    "id": "eu-gpai-obligations",
@@ -307,7 +1514,8 @@
    "kind": "policy",
    "jurisdiction": "EU",
    "summary": "GPAI providers must meet transparency and copyright duties; models already on the market have until August 2, 2027.",
-   "source_url": "https://digital-strategy.ec.europa.eu/en/news/eu-rules-general-purpose-ai-models-start-apply-bringing-more-transparency-safety-and-accountability"
+   "source_url": "https://digital-strategy.ec.europa.eu/en/news/eu-rules-general-purpose-ai-models-start-apply-bringing-more-transparency-safety-and-accountability",
+   "region": "European Union"
   },
   {
    "id": "openai-newsom-letter",
@@ -318,7 +1526,36 @@
    "kind": "response",
    "jurisdiction": "California",
    "summary": "Letter asked California to treat compliance with federal or EU frameworks, such as the EU code, as satisfying state AI safety rules.",
-   "source_url": "https://openai.com/global-affairs/letter-to-governor-newsom-on-harmonized-regulation"
+   "source_url": "https://openai.com/global-affairs/letter-to-governor-newsom-on-harmonized-regulation",
+   "region": "United States"
+  },
+  {
+   "id": "un-ai-panel-dialogue",
+   "date": "2025-08-26",
+   "title": "UN creates Independent International Scientific Panel on AI and Global Dialogue on AI Governance",
+   "actor": "UN General Assembly",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Global",
+   "summary": "Resolution 79/325, adopted by consensus, sets up a 40-member scientific panel with an annual report and a Global Dialogue for governments and stakeholders. No company duties.",
+   "source_url": "https://digitallibrary.un.org/record/4087699",
+   "source_kind": "official",
+   "status": "nonbinding",
+   "region": "Global"
+  },
+  {
+   "id": "cn-ai-plus-opinions",
+   "date": "2025-08-26",
+   "title": "State Council issues Opinions on the AI Plus action",
+   "actor": "State Council",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "China",
+   "summary": "Sets national goals for AI adoption across science, industry, consumption, public welfare and governance, including more than 70% uptake of new smart devices and AI agents by 2027 and more than 90% by 2030. It is an industrial policy, not a set of company duties.",
+   "source_url": "https://www.gov.cn/zhengce/content/202508/content_7037861.htm",
+   "source_kind": "primary",
+   "status": "nonbinding plan",
+   "region": "China"
   },
   {
    "id": "colorado-ai-delay",
@@ -329,7 +1566,8 @@
    "kind": "policy",
    "jurisdiction": "Colorado",
    "summary": "Special-session bill SB 25B-004 moved the effective date from February 1, 2026. The 2026 session then repealed and replaced the act with SB 26-189 (see next event).",
-   "source_url": "https://www.akingump.com/en/insights/ai-law-and-regulation-tracker/colorado-postpones-implementation-of-colorado-ai-act-sb-24-205"
+   "source_url": "https://www.akingump.com/en/insights/ai-law-and-regulation-tracker/colorado-postpones-implementation-of-colorado-ai-act-sb-24-205",
+   "region": "United States"
   },
   {
    "id": "exxon-retail-voting",
@@ -340,7 +1578,8 @@
    "kind": "milestone",
    "jurisdiction": "US federal",
    "summary": "After an SEC no-action letter in September 2025, Exxon let retail holders give standing voting instructions. The day shown is approximate.",
-   "source_url": "https://www.broadridge.com/insights/standing-voting-instructions-lessons-from-the-first-year-experiences-of-exxonmobil-and-bigbear-ai"
+   "source_url": "https://www.broadridge.com/insights/standing-voting-instructions-lessons-from-the-first-year-experiences-of-exxonmobil-and-bigbear-ai",
+   "region": "United States"
   },
   {
    "id": "anthropic-endorses-sb53",
@@ -351,7 +1590,92 @@
    "kind": "response",
    "jurisdiction": "California",
    "summary": "Anthropic backed the frontier AI transparency bill, while major tech groups lobbied against it.",
-   "source_url": "https://anthropic.com/news/anthropic-is-endorsing-sb-53"
+   "source_url": "https://anthropic.com/news/anthropic-is-endorsing-sb-53",
+   "region": "United States"
+  },
+  {
+   "id": "ftc-6b-ai-companions",
+   "date": "2025-09-11",
+   "title": "FTC opens 6(b) study of AI chatbots acting as companions",
+   "actor": "Federal Trade Commission",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "US federal",
+   "summary": "Compulsory orders to Alphabet, Character Technologies, Instagram, Meta, OpenAI, Snap and xAI ask how they test and monitor harms to children and teens, monetize engagement, and handle chat data. Answers go to the FTC, not the public.",
+   "source_url": "https://www.ftc.gov/news-events/news/press-releases/2025/09/ftc-launches-inquiry-ai-chatbots-acting-companions",
+   "source_kind": "official",
+   "status": "pending",
+   "region": "United States"
+  },
+  {
+   "id": "eu-data-act-applies",
+   "date": "2025-09-12",
+   "title": "EU Data Act starts to apply",
+   "actor": "European Commission",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "EU",
+   "summary": "Makers of connected products must let users access and share the data their devices generate, and cloud providers such as Amazon, Microsoft, Google and Oracle must let customers switch or use several providers, with switching and egress charges ending from January 12, 2027. Design duties for new connected products apply from September 2026.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/data-act",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "European Union"
+  },
+  {
+   "id": "cn-analog-chip-antidumping",
+   "date": "2025-09-13",
+   "title": "China opens an anti-dumping investigation into US analog chips",
+   "actor": "Ministry of Commerce",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "Investigation, on a petition from the Jiangsu Semiconductor Industry Association, into interface and gate driver chips made at 40nm and above imported from the US.",
+   "source_url": "https://www.mofcom.gov.cn/zwgk/zcfb/art/2025/art_c7f379bfff21421596c6f1df5d925400.html",
+   "source_kind": "primary",
+   "status": "investigation open",
+   "region": "China"
+  },
+  {
+   "id": "cn-us-ic-antidiscrimination",
+   "date": "2025-09-13",
+   "title": "China opens an anti-discrimination investigation into US chip measures",
+   "actor": "Ministry of Commerce",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "Investigates US tariffs, chip export controls since 2022, CHIPS Act limits and May 2025 guidance restricting use of Huawei Ascend chips and use of US AI chips to train Chinese models.",
+   "source_url": "https://www.mofcom.gov.cn/zwgk/zcfb/art/2025/art_10f0b79967124892ba1be0981d9e56f6.html",
+   "source_kind": "primary",
+   "status": "investigation open",
+   "region": "China"
+  },
+  {
+   "id": "cn-samr-nvidia-finding",
+   "date": "2025-09-15",
+   "title": "China finds Nvidia violated antitrust law and widens its probe",
+   "actor": "State Administration for Market Regulation",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "SAMR said a preliminary investigation found Nvidia violated the Anti-Monopoly Law and its 2020 Mellanox approval conditions, and it began a further investigation.",
+   "source_url": "https://www.samr.gov.cn/xw/zj/art/2025/art_66b8363c3a194ba0a394a843d6cf3fd1.html",
+   "source_kind": "primary",
+   "status": "preliminary findings; no final decision",
+   "region": "China"
+  },
+  {
+   "id": "cn-ai-safety-framework-2",
+   "date": "2025-09-15",
+   "title": "AI Safety Governance Framework 2.0 released",
+   "actor": "CNCERT/CC under CAC guidance; TC260",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "China",
+   "summary": "Updates the 2024 framework with revised risk categories, risk grading and updated safety measures; it remains a non-binding technical document.",
+   "source_url": "https://www.cac.gov.cn/2025-09/15/c_1759653448369123.htm",
+   "source_kind": "primary",
+   "status": "nonbinding",
+   "region": "China"
   },
   {
    "id": "ceres-drained-by-data",
@@ -362,7 +1686,8 @@
    "kind": "milestone",
    "jurisdiction": "US (Phoenix, Arizona case study)",
    "summary": "Analysis with Cathay Financial Holdings and Bluerisk of data center water demand around Phoenix, covering cooling water and water used to generate their electricity, and the water-stress risk that can pose for companies.",
-   "source_url": "https://www.ceres.org/resources/news/water-impacts-from-data-centers-may-expose-companies-to-more-risk-than-acknowledged-a-new-analysis-shows"
+   "source_url": "https://www.ceres.org/resources/news/water-impacts-from-data-centers-may-expose-companies-to-more-risk-than-acknowledged-a-new-analysis-shows",
+   "region": "United States"
   },
   {
    "id": "ca-sb53-signed",
@@ -373,7 +1698,79 @@
    "kind": "policy",
    "jurisdiction": "California",
    "summary": "Large frontier developers must publish safety frameworks and transparency reports and report critical safety incidents; whistleblower protections; AG enforces penalties.",
-   "source_url": "https://www.gov.ca.gov/2025/09/29/governor-newsom-signs-sb-53-advancing-californias-world-leading-artificial-intelligence-industry/"
+   "source_url": "https://www.gov.ca.gov/2025/09/29/governor-newsom-signs-sb-53-advancing-californias-world-leading-artificial-intelligence-industry/",
+   "region": "United States"
+  },
+  {
+   "id": "cn-rare-earth-chip-controls",
+   "date": "2025-10-09",
+   "title": "China extends rare earth export controls abroad, with case-by-case review for advanced chips and military AI",
+   "actor": "Ministry of Commerce",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "Requires foreign exporters of items containing Chinese rare earths to get Chinese licenses, with case-by-case review for uses in 14nm-and-below logic chips, 256-layer-and-above memory, related equipment and AI research with potential military use. Suspended from 2025-11-07 to 2026-11-10 (Announcement 2025 No. 70) and again from 2026-11-11 to 2027-01-10 (MOFCOM/GAC Announcement 2026 No. 58).",
+   "source_url": "https://www.mofcom.gov.cn/zwgk/zcfb/art/2025/art_7fc9bff0fb4546ecb02f66ee77d0e5f6.html",
+   "source_kind": "primary",
+   "status": "suspended (to 2027-01-10)",
+   "region": "China",
+   "suspension_source_url": "http://dltb.mofcom.gov.cn/swyw/art/2026/art_bab1f1be0cee4e4ab0b496f02e7cff0d.html"
+  },
+  {
+   "id": "cn-samr-qualcomm-probe",
+   "date": "2025-10-10",
+   "title": "China opens an antitrust investigation into Qualcomm",
+   "actor": "State Administration for Market Regulation",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "SAMR opened a case because Qualcomm completed its acquisition of Autotalks without notifying the regulator.",
+   "source_url": "https://www.samr.gov.cn/xw/zj/art/2025/art_d1fc65d76fd8491a8f5ab7405c5ed798.html",
+   "source_kind": "primary",
+   "status": "investigation open",
+   "region": "China"
+  },
+  {
+   "id": "ca-sb243",
+   "date": "2025-10-13",
+   "title": "California enacts SB 243 on companion chatbots",
+   "actor": "California Governor Gavin Newsom",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "California",
+   "summary": "From January 1, 2026, companion chatbot operators must disclose the bot is AI, keep suicide and self-harm protocols, remind known minors to take breaks, and take reasonable steps to block sexual content for minors; private right of action.",
+   "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB243",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
+  },
+  {
+   "id": "ca-ab853",
+   "date": "2025-10-13",
+   "title": "California AB 853 delays and expands the AI Transparency Act",
+   "actor": "California Governor Gavin Newsom",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "California",
+   "summary": "Moved SB 942's start to August 2, 2026 and added duties for large online platforms and generative AI hosting platforms from 2027 and capture-device makers from 2028.",
+   "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB853",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
+  },
+  {
+   "id": "cn-cybersecurity-law-ai-amendment",
+   "date": "2025-10-28",
+   "title": "China amends the Cybersecurity Law to add an AI article",
+   "actor": "National People's Congress Standing Committee",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "In force from 2026-01-01, a new Article 20 commits the state to AI research, training data and computing infrastructure, AI ethics rules, and risk monitoring, assessment and safety supervision; the amendment also raises penalties for network operators.",
+   "source_url": "http://www.npc.gov.cn/npc/c2/c30834/202510/t20251028_449048.html",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
   },
   {
    "id": "vwfi-benchmark-2025",
@@ -384,7 +1781,22 @@
    "kind": "milestone",
    "jurisdiction": "Global",
    "summary": "Assessed 71 focus companies; the high-tech analysis covers Alphabet, Amazon, Apple, Microsoft and Sony and discusses data center and semiconductor water use. Tech industry average rose to 32.7 of 90 points from 23.7 in 2023.",
-   "source_url": "https://assets.ceres.org/files/vwfi-benchmark-tech-2025-(1).pdf"
+   "source_url": "https://assets.ceres.org/files/vwfi-benchmark-tech-2025-(1).pdf",
+   "region": "Global"
+  },
+  {
+   "id": "in-ai-governance-guidelines",
+   "date": "2025-11-05",
+   "title": "India releases AI Governance Guidelines",
+   "actor": "Ministry of Electronics and IT (MeitY)",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "India",
+   "summary": "Principle-based guidelines under the IndiaAI Mission that rely on existing laws and voluntary measures rather than a new AI law; no new binding company duties.",
+   "source_url": "https://www.digitalindia.gov.in/press_release/meity-unveils-india-ai-governance-guidelines-under-indiaai-mission-to-ensure-safe-inclusive-and-responsible-adoption-of-artificial-intelligence-across-sectors/",
+   "source_kind": "official",
+   "status": "nonbinding",
+   "region": "Asia-Pacific"
   },
   {
    "id": "sec-noaction-pause",
@@ -395,7 +1807,8 @@
    "kind": "rule",
    "jurisdiction": "US federal",
    "summary": "For the 2025-2026 season, staff said it would not respond to no-action requests except under Rule 14a-8(i)(1), citing post-shutdown resource limits. Companies still file notices.",
-   "source_url": "https://www.sec.gov/newsroom/speeches-statements/statement-regarding-division-corporation-finances-role-exchange-act-rule-14a-8-process-current-proxy-season"
+   "source_url": "https://www.sec.gov/newsroom/speeches-statements/statement-regarding-division-corporation-finances-role-exchange-act-rule-14a-8-process-current-proxy-season",
+   "region": "United States"
   },
   {
    "id": "eu-omnibus-proposal",
@@ -406,7 +1819,36 @@
    "kind": "policy",
    "jurisdiction": "EU",
    "summary": "Proposal to push high-risk AI obligations back toward 2027 as part of a simplification package.",
-   "source_url": "https://www.euronews.com/2025/11/19/european-commission-delays-full-implementation-of-ai-act-to-2027"
+   "source_url": "https://www.euronews.com/2025/11/19/european-commission-delays-full-implementation-of-ai-act-to-2027",
+   "region": "European Union"
+  },
+  {
+   "id": "au-national-ai-plan",
+   "date": "2025-12-02",
+   "title": "Australia's National AI Plan drops a standalone AI act",
+   "actor": "Australian Government",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Australia",
+   "summary": "Plan relies on existing technology-neutral laws, with possible targeted changes, instead of mandatory AI guardrails or an AI act. No new company duties.",
+   "source_url": "https://www.industry.gov.au/publications/national-ai-plan",
+   "source_kind": "official",
+   "status": "nonbinding plan",
+   "region": "Asia-Pacific"
+  },
+  {
+   "id": "au-social-media-min-age",
+   "date": "2025-12-10",
+   "title": "Australia's social media minimum age takes effect",
+   "actor": "eSafety Commissioner",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "Australia",
+   "summary": "Under the Online Safety Amendment (Social Media Minimum Age) Act 2024, age-restricted platforms including Facebook, Instagram, Threads, X and YouTube must take reasonable steps to stop under-16s having accounts.",
+   "source_url": "https://www.esafety.gov.au/about-us/industry-regulation/social-media-age-restrictions",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "Asia-Pacific"
   },
   {
    "id": "us-eo-14365",
@@ -417,7 +1859,8 @@
    "kind": "policy",
    "jurisdiction": "US federal",
    "summary": "EO 14365 creates a DOJ AI Litigation Task Force, ties some state funding to AI laws, and asks for a preemptive federal framework.",
-   "source_url": "https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence/"
+   "source_url": "https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence/",
+   "region": "United States"
   },
   {
    "id": "ny-raise-signed",
@@ -428,7 +1871,36 @@
    "kind": "policy",
    "jurisdiction": "New York",
    "summary": "Requires large frontier developers to publish safety frameworks and report incidents within 72 hours; signed on condition of 2026 chapter amendments.",
-   "source_url": "https://www.governor.ny.gov/news/governor-hochul-signs-nation-leading-legislation-require-ai-frameworks-ai-frontier-models"
+   "source_url": "https://www.governor.ny.gov/news/governor-hochul-signs-nation-leading-legislation-require-ai-frameworks-ai-frontier-models",
+   "region": "United States"
+  },
+  {
+   "id": "jp-ai-basic-plan",
+   "date": "2025-12-23",
+   "title": "Japan adopts first AI Basic Plan",
+   "actor": "Cabinet of Japan",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Japan",
+   "summary": "First plan under the AI Promotion Act aims for reliable AI and more staff at the Japan AI Safety Institute. No binding company duties.",
+   "source_url": "https://english.adnkronos.com/2025/12/23/japan-govt-adopts-1st-basic-plan-on-ai/",
+   "source_kind": "secondary (news)",
+   "status": "nonbinding plan",
+   "region": "Asia-Pacific"
+  },
+  {
+   "id": "uk-ofcom-x-grok-investigation",
+   "date": "2026-01-12",
+   "title": "Ofcom investigates X over Grok sexualised images",
+   "actor": "Ofcom",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "UK",
+   "summary": "Formal investigation into whether X met its Online Safety Act duties to remove illegal content and protect children after Grok was used to make sexualised images. On 3 February 2026 Ofcom said it cannot currently investigate the standalone Grok service's creation of illegal images; by October 2026 Grok had restricted pornographic content for UK children after Ofcom engagement.",
+   "source_url": "https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/ofcom-launches-investigation-into-x-over-grok-sexualised-imagery",
+   "source_kind": "official",
+   "status": "investigation open",
+   "region": "United Kingdom"
   },
   {
    "id": "msft-community-first",
@@ -439,7 +1911,64 @@
    "kind": "disclosure",
    "jurisdiction": "US federal",
    "summary": "Five commitments to datacenter communities, including not raising local electricity prices and protecting water supplies.",
-   "source_url": "https://blogs.microsoft.com/on-the-issues/2026/01/13/community-first-ai-infrastructure/"
+   "source_url": "https://blogs.microsoft.com/on-the-issues/2026/01/13/community-first-ai-infrastructure/",
+   "region": "United States"
+  },
+  {
+   "id": "bis-h200-case-by-case",
+   "date": "2026-01-15",
+   "title": "BIS moves H200-class chip exports to China to case-by-case review",
+   "actor": "Commerce Department, Bureau of Industry and Security",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "US federal",
+   "summary": "Following a December 2025 presidential announcement, licences for Nvidia H200, AMD MI325X and similar chips to China and Macau are reviewed case by case if exporters certify US supply, third-party testing and know-your-customer and remote-access safeguards.",
+   "source_url": "https://www.govinfo.gov/content/pkg/FR-2026-01-15/html/2026-00789.htm",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
+  },
+  {
+   "id": "kr-ai-basic-act-in-force",
+   "date": "2026-01-22",
+   "title": "South Korea's AI Basic Act and enforcement decree take effect",
+   "actor": "Ministry of Science and ICT",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "South Korea",
+   "summary": "Providers must tell users in advance when a product uses high-impact or generative AI and label generative AI outputs; high-impact AI operators need risk management, explanation and human oversight; large foreign providers above revenue or user thresholds must name a Korean representative.",
+   "source_url": "https://www.trade.gov/market-intelligence/south-korea-ai-basic-act",
+   "source_kind": "secondary (research or other government)",
+   "status": "in force",
+   "region": "Asia-Pacific"
+  },
+  {
+   "id": "eu-dsa-x-grok-proceedings",
+   "date": "2026-01-26",
+   "title": "Commission opens DSA investigation into Grok on X",
+   "actor": "European Commission",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "EU",
+   "summary": "Formal proceedings examine whether X assessed and reduced the risks of rolling out Grok in the EU, including manipulated sexual images that may amount to child sexual abuse material, and widen the 2023 case on X's recommender systems. X must file an ad hoc risk assessment of Grok's functions.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-investigates-grok-and-xs-recommender-systems-under-digital-services-act",
+   "source_kind": "official",
+   "status": "investigation open",
+   "region": "European Union"
+  },
+  {
+   "id": "intl-ai-safety-report-2026",
+   "date": "2026-02-03",
+   "title": "Second International AI Safety Report published",
+   "actor": "Expert panel chaired by Yoshua Bengio",
+   "lane": "government",
+   "kind": "milestone",
+   "jurisdiction": "Global",
+   "summary": "Updated scientific review of general-purpose AI capabilities and risks, released ahead of the India summit; it reports that 12 companies published or updated frontier AI safety frameworks in 2025. No duties.",
+   "source_url": "https://internationalaisafetyreport.org/",
+   "source_kind": "official",
+   "status": "published",
+   "region": "Global"
   },
   {
    "id": "iigcc-ai-data-centres-insight",
@@ -450,7 +1979,50 @@
    "kind": "milestone",
    "jurisdiction": "Europe / Global",
    "summary": "Insight covering data centre emissions, water use for cooling and physical risk; IIGCC said it plans guidance, insights and engagement tools on data centre operations, developed with members.",
-   "source_url": "https://www.iigcc.org/insights/ai-data-centres-climate-and-nature-risks-for-investors"
+   "source_url": "https://www.iigcc.org/insights/ai-data-centres-climate-and-nature-risks-for-investors",
+   "region": "Global"
+  },
+  {
+   "id": "in-it-rules-sgi",
+   "date": "2026-02-10",
+   "title": "India requires labels on AI-generated content",
+   "actor": "Ministry of Electronics and IT (MeitY)",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "India",
+   "summary": "Amended IT intermediary rules, in force February 20, 2026, define synthetically generated information: intermediaries that enable creating AI content must label it prominently and embed metadata; social media intermediaries must get users to declare AI content and verify it with technical measures.",
+   "source_url": "https://www.businesstoday.in/technology/story/govt-tightens-rules-on-ai-generated-content-mandates-labels-and-faster-takedowns-515505-2026-02-10",
+   "source_kind": "secondary (news)",
+   "status": "in force",
+   "region": "Asia-Pacific"
+  },
+  {
+   "id": "india-ai-impact-summit",
+   "date": "2026-02-21",
+   "title": "India AI Impact Summit adopts New Delhi Declaration; US signs",
+   "actor": "Government of India",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Global",
+   "summary": "About 88 countries and organisations, including the US, China, UK and EU, endorsed a nonbinding declaration (counts vary by source); frontier AI companies separately signed voluntary New Delhi Frontier AI Impact Commitments, including publishing aggregated data on AI's economic effects.",
+   "source_url": "https://www.newsonair.gov.in/india-ai-impact-summit-2026-adopts-new-delhi-declaration/",
+   "source_kind": "official",
+   "status": "nonbinding",
+   "region": "Global"
+  },
+  {
+   "id": "eu-omnibus-i-adopted",
+   "date": "2026-02-26",
+   "title": "Omnibus I cuts back CSRD and CSDDD",
+   "actor": "European Union",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "EU",
+   "summary": "Directive 2026/470 limits CSRD reporting to companies with over 1,000 employees and 450 million euros turnover, and limits the CSDDD to EU companies with over 5,000 employees and 1.5 billion euros turnover and non-EU companies with over 1.5 billion euros EU turnover. It deletes the CSDDD climate transition plan duty and sets CSDDD application for July 26, 2029. In force March 18, 2026.",
+   "source_url": "https://www.lw.com/en/insights/EU-Sustainability-Omnibus-Published-in-the-Official-Journal",
+   "source_kind": "secondary (law firm)",
+   "status": "in force",
+   "region": "European Union"
   },
   {
    "id": "proponent-lawsuits-2026",
@@ -461,7 +2033,64 @@
    "kind": "response",
    "jurisdiction": "US federal",
    "summary": "Law firm reports litigation against companies rose after the revised 14a-8 process; Skadden later counted six proponents suing six companies. Date is month of memo.",
-   "source_url": "https://www.jonesday.com/es/insights/2026/03/shareholder-proposal-litigation-increases-following-the-secs-revised-rule-14a8-process"
+   "source_url": "https://www.jonesday.com/es/insights/2026/03/shareholder-proposal-litigation-increases-following-the-secs-revised-rule-14a8-process",
+   "region": "United States"
+  },
+  {
+   "id": "au-esafety-codes-ai-companions",
+   "date": "2026-03-09",
+   "title": "Australian online safety codes apply to AI companion chatbots",
+   "actor": "eSafety Commissioner",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "Australia",
+   "summary": "Industry codes registered in September 2025 require services, including generative AI services and AI companion chatbots able to produce sexually explicit, violent or self-harm material, to confirm users are 18 or over before giving access to it; some duties start later.",
+   "source_url": "https://www.esafety.gov.au/newsroom/media-releases/new-industry-codes-seek-to-take-on-ai-chatbots-that-encourage-suicide-and-engage-in-sexually-explicit-conversations-with-aussie-kids",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "Asia-Pacific"
+  },
+  {
+   "id": "cn-15th-five-year-plan",
+   "date": "2026-03-12",
+   "title": "China adopts the 15th Five-Year Plan with AI governance goals",
+   "actor": "National People's Congress",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "China",
+   "summary": "Calls for AI laws, ethics rules, algorithm filing, transparency and safety assessment systems, lifecycle AI risk management and measures to address AI's effects on employment.",
+   "source_url": "http://www.npc.gov.cn/npc/c2/c30834/202603/t20260316_453274.html",
+   "source_kind": "primary",
+   "status": "nonbinding plan",
+   "region": "China"
+  },
+  {
+   "id": "it-rome-court-annuls-openai-fine",
+   "date": "2026-03-18",
+   "title": "Rome court annuls the Garante's OpenAI fine",
+   "actor": "Tribunale di Roma",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "Italy (EU)",
+   "summary": "The court held the Garante lacked competence because OpenAI's EU establishment in Ireland put the case under the GDPR one-stop-shop, led by the Irish DPC. It did not rule on whether the GDPR was breached.",
+   "source_url": "https://www.wsgr.com/en/insights/openai-prevails-in-landmark-italian-ai-and-gdpr-enforcement-case.html",
+   "source_kind": "secondary (law firm)",
+   "status": "decided; appeal status not confirmed",
+   "region": "European Union"
+  },
+  {
+   "id": "uk-copyright-ai-report",
+   "date": "2026-03-18",
+   "title": "UK government publishes report on copyright and AI",
+   "actor": "UK Government (DSIT, IPO)",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "UK",
+   "summary": "Report and impact assessment required by the Data (Use and Access) Act covering training data transparency, technical measures and licensing; commentators say it drops the earlier opt-out proposal. It imposes no duties on AI developers.",
+   "source_url": "https://www.gov.uk/government/publications/report-and-impact-assessment-on-copyright-and-artificial-intelligence/report-on-copyright-and-artificial-intelligence",
+   "source_kind": "official",
+   "status": "published; no legislation yet",
+   "region": "United Kingdom"
   },
   {
    "id": "iccr-ays-lawsuit",
@@ -472,7 +2101,8 @@
    "kind": "response",
    "jurisdiction": "US federal",
    "summary": "Suit in D.C. federal court argues the SEC changed how Rule 14a-8 works without notice-and-comment rulemaking under the APA. Pending as of latest reports.",
-   "source_url": "https://news.ballotpedia.org/2026/03/30/advocacy-groups-sue-sec-over-proxy-policy-shift-2/"
+   "source_url": "https://news.ballotpedia.org/2026/03/30/advocacy-groups-sue-sec-over-proxy-policy-shift-2/",
+   "region": "United States"
   },
   {
    "id": "ny-raise-amended",
@@ -483,7 +2113,8 @@
    "kind": "policy",
    "jurisdiction": "New York",
    "summary": "Chapter amendment adopts SB 53's $500 million revenue threshold and cuts penalties to $1 million and $3 million. Effective January 1, 2027 (per law firm).",
-   "source_url": "https://www.mofo.com/resources/insights/260403-new-york-amends-the-raise-act-to-align-more-closely"
+   "source_url": "https://www.mofo.com/resources/insights/260403-new-york-amends-the-raise-act-to-align-more-closely",
+   "region": "United States"
   },
   {
    "id": "blackrock-voting-choice-2026",
@@ -494,7 +2125,120 @@
    "kind": "milestone",
    "jurisdiction": "US federal",
    "summary": "Index equity clients with about $851 billion in assets were using Voting Choice; eligible assets with individual investors reach about $3.96 trillion.",
-   "source_url": "https://www.blackrock.com/corporate/about-us/investment-stewardship/blackrock-voting-choice"
+   "source_url": "https://www.blackrock.com/corporate/about-us/investment-stewardship/blackrock-voting-choice",
+   "region": "United States"
+  },
+  {
+   "id": "cn-ai-energy-action-plan",
+   "date": "2026-04-08",
+   "title": "China issues an action plan linking AI and energy",
+   "actor": "NDRC; National Energy Administration; MIIT; National Data Administration",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "China",
+   "summary": "Makes renewable energy plans, PUE, green electricity share and waste heat recovery key criteria in energy and carbon review of new and expanded computing facilities, and promotes direct green power supply to them.",
+   "source_url": "https://www.nea.gov.cn/20260508/4dae97ca01d348e4871bb8654be34b3a/c.html",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
+  },
+  {
+   "id": "cn-anthropomorphic-ai-measures",
+   "date": "2026-04-10",
+   "title": "China publishes Interim Measures for anthropomorphic AI interaction services",
+   "actor": "Cyberspace Administration of China; NDRC; MIIT; Ministry of Public Security; SAMR",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "In force from 2026-07-15 for AI companion and emotional interaction services: providers may not offer virtual partner or relative services to minors, need guardian consent for users under 14, must offer a minors' mode, intervene when users signal self-harm, avoid fostering dependence, and manage training data. Services with 1 million registered or 100,000 monthly active users must file security assessments with provincial regulators and complete algorithm filing.",
+   "source_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
+  },
+  {
+   "id": "cn-labeling-enforcement-2026",
+   "date": "2026-04-28",
+   "title": "CAC penalizes Jianying, Maoxiang and Jimeng AI for missing AI labels",
+   "actor": "Cyberspace Administration of China",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "Local cyberspace offices summoned, warned and ordered corrections from the Jianying and Maoxiang apps and the Jimeng AI site for not properly labeling AI-generated content, under the labeling measures and generative AI rules.",
+   "source_url": "https://www.cac.gov.cn/2026-04/28/c_1779119736411711.htm",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
+  },
+  {
+   "id": "eu-dsa-meta-minors-findings",
+   "date": "2026-04-29",
+   "title": "Commission preliminarily finds Meta breaches DSA on under-13 users",
+   "actor": "European Commission",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "EU",
+   "summary": "Preliminary findings say Facebook and Instagram fail to identify, assess and reduce the risk of children under 13 using them, since a false birthdate is not checked.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-meta-breach-digital-services-act-failing-prevent-minors-under-13",
+   "source_kind": "official",
+   "status": "preliminary findings; no final decision",
+   "region": "European Union"
+  },
+  {
+   "id": "uk-crime-policing-act-ai",
+   "date": "2026-04-29",
+   "title": "UK Crime and Policing Act 2026 adds AI child abuse and chatbot powers",
+   "actor": "UK Parliament",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "UK",
+   "summary": "Section 72 will make it an offence, once commenced, to make, possess or supply tools designed to create child sexual abuse images (England and Wales). Section 248, in force, lets the Secretary of State extend Online Safety Act illegal content duties to any AI service by regulations; none have been made yet.",
+   "source_url": "https://www.legislation.gov.uk/ukpga/2026/20/section/248",
+   "source_kind": "official",
+   "status": "enacted; s.72 not yet in force; no s.248 regulations yet",
+   "region": "United Kingdom"
+  },
+  {
+   "id": "cn-qinglang-ai-apps-2026",
+   "date": "2026-04-30",
+   "title": "CAC launches the Qinglang campaign against AI application disorder",
+   "actor": "Cyberspace Administration of China",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "China",
+   "summary": "A four-month enforcement campaign against unfiled models, weak safety filtering, unlawful or unauthorized training data, data poisoning, missing labels, open-source model safety gaps and AI content that harms minors.",
+   "source_url": "https://www.cac.gov.cn/2026-04/30/c_1779289298718765.htm",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
+  },
+  {
+   "id": "cn-ai-agents-opinions",
+   "date": "2026-05-08",
+   "title": "China issues Implementation Opinions on AI agents",
+   "actor": "Cyberspace Administration of China; NDRC; MIIT",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "China",
+   "summary": "Sets principles for AI agents and tiered governance: in sensitive and key sectors, agents face filing, testing and recall of problem products, while low-risk uses rely on self-testing and reporting; it also targets addiction and emotional dependence risks for minors and older people.",
+   "source_url": "https://www.cac.gov.cn/2026-05/08/c_1779979789523320.htm",
+   "source_kind": "primary",
+   "status": "nonbinding",
+   "region": "China"
+  },
+  {
+   "id": "cn-state-council-legislative-plan-2026",
+   "date": "2026-05-11",
+   "title": "State Council plans comprehensive AI legislation",
+   "actor": "General Office of the State Council",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "China",
+   "summary": "The State Council's 2026 legislative plan calls for speeding up comprehensive legislation on the healthy development of AI. No draft AI law has been published.",
+   "source_url": "https://www.gov.cn/yaowen/liebiao/202605/content_7068353.htm",
+   "source_kind": "primary",
+   "status": "proposed",
+   "region": "China"
   },
   {
    "id": "colorado-sb26-189",
@@ -505,7 +2249,36 @@
    "kind": "policy",
    "jurisdiction": "Colorado",
    "summary": "SB 26-189 repeals and reenacts SB 24-205 as a law on automated decision-making technology used in consequential decisions (jobs, education, housing, lending, insurance, health care, government services). It drops the impact assessment duty, keeps consumer notices, explanations and human review, and takes effect January 1, 2027. The Attorney General enforces it; there is no private right of action.",
-   "source_url": "https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189"
+   "source_url": "https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189",
+   "region": "United States"
+  },
+  {
+   "id": "coe-ai-convention-eu-ratifies",
+   "date": "2026-05-15",
+   "title": "EU ratifies the Council of Europe AI Convention",
+   "actor": "European Union",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Global",
+   "summary": "EU deposited the first instrument of ratification. The treaty needs five ratifications, three by Council of Europe members, to enter into force; this site found no other confirmed ratification.",
+   "source_url": "https://www.coe.int/en/web/artificial-intelligence/-/european-union-ratifies-the-council-of-europe-framework-convention-on-artificial-intelligence",
+   "source_kind": "official",
+   "status": "ratified by EU, not in force",
+   "region": "Global"
+  },
+  {
+   "id": "ftc-take-it-down-enforcement",
+   "date": "2026-05-19",
+   "title": "FTC begins enforcing TAKE IT DOWN Act platform duties",
+   "actor": "Federal Trade Commission",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "US federal",
+   "summary": "Platform removal duties took effect May 19, 2026; the FTC sent warning letters to 12 operators of nudify tools, after reminder letters to 15 major platforms including Alphabet, Amazon, Apple, Meta and Microsoft.",
+   "source_url": "https://www.ftc.gov/news-events/news/press-releases/2026/05/ftc-sends-warning-letters-companies-about-compliance-take-it-down-act",
+   "source_kind": "official",
+   "status": "in force",
+   "region": "United States"
   },
   {
    "id": "amazon-datacenter-vote-2026",
@@ -516,7 +2289,36 @@
    "kind": "campaign",
    "jurisdiction": "US federal",
    "summary": "Proposal on AI data center energy demand drew less support than a similar 2025 measure (20.1%). Date is report date.",
-   "source_url": "https://www.insurancejournal.com/news/national/2026/05/22/871049.htm"
+   "source_url": "https://www.insurancejournal.com/news/national/2026/05/22/871049.htm",
+   "region": "United States"
+  },
+  {
+   "id": "ca-bill-c36",
+   "date": "2026-06-15",
+   "title": "Canada tables privacy bill with automated decision rules",
+   "actor": "Government of Canada (ISED)",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Canada",
+   "summary": "Bill C-36, the Protecting Privacy and Consumer Data Act, would modernize Canada's private-sector privacy law, add rules on automated decisions and children's data, and create a Digital Safety and Data Protection Commission. It does not revive AIDA.",
+   "source_url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/06/government-of-canada-tables-new-legislation-to-protect-childrens-data-strengthen-privacy-and-build-trust-in-the-digital-economy.html",
+   "source_kind": "official",
+   "status": "bill, not law",
+   "region": "Americas (other)"
+  },
+  {
+   "id": "eu-cada-proposal",
+   "date": "2026-06-03",
+   "title": "Commission proposes Cloud and AI Development Act",
+   "actor": "European Commission",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "EU",
+   "summary": "Proposed regulation COM(2026) 502 aims to triple EU data centre capacity in five to seven years with faster permits in acceleration zones and support for strategic data centre projects; the data centre rating scheme is meant to feed its sustainability assessments.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/library/proposal-cloud-and-ai-development-act-cada",
+   "source_kind": "official",
+   "status": "proposed",
+   "region": "European Union"
   },
   {
    "id": "great-american-ai-act",
@@ -527,7 +2329,36 @@
    "kind": "policy",
    "jurisdiction": "US federal",
    "summary": "A bipartisan House discussion draft, not yet introduced, would bar state laws specifically regulating AI model development for three years and add federal frontier-model duties similar to California SB 53 and New York's RAISE Act.",
-   "source_url": "https://fpf.org/blog/frontier-ai-goes-federal-how-the-great-american-ai-act-compares-to-state-laws/"
+   "source_url": "https://fpf.org/blog/frontier-ai-goes-federal-how-the-great-american-ai-act-compares-to-state-laws/",
+   "region": "United States"
+  },
+  {
+   "id": "ca-bill-c34",
+   "date": "2026-06-10",
+   "title": "Canada tables Safe Social Media Act covering AI chatbots",
+   "actor": "Government of Canada (Canadian Heritage)",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Canada",
+   "summary": "Bill C-34 would bar children under 16 from social media, require operators of human-like chatbots to be transparent about their reporting thresholds in crisis situations and limit harmful content, and create a Digital Safety Commission.",
+   "source_url": "https://www.canada.ca/en/canadian-heritage/news/2026/06/government-of-canada-introduces-legislation-to-make-social-media-services-and-ai-chatbots-safer-for-children.html",
+   "source_kind": "official",
+   "status": "bill, not law",
+   "region": "Americas (other)"
+  },
+  {
+   "id": "cn-nfra-ai-banking-guidance",
+   "date": "2026-06-18",
+   "title": "China issues guidance on safe AI use in banking and insurance",
+   "actor": "National Financial Regulatory Administration",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "China",
+   "summary": "32 guidance points require banks and insurers using AI to bring AI risk into enterprise risk management, apply risk grading and approval for high-risk uses, keep human oversight at key points of high-risk applications and manage outsourcing and supply chain risk.",
+   "source_url": "https://www.news.cn/tech/20260618/52e251c6c92a4059bae3936266172a6e/c.html",
+   "source_kind": "secondary",
+   "status": "in force",
+   "region": "China"
   },
   {
    "id": "msft-water-update",
@@ -538,7 +2369,8 @@
    "kind": "disclosure",
    "jurisdiction": "US federal",
    "summary": "Blog on datacenter water intensity cites over $500 million in more than 75 water projects since 2020.",
-   "source_url": "https://blogs.microsoft.com/blog/2026/06/24/inside-microsofts-two-decade-push-to-cut-water-intensity-while-scaling-for-growth/"
+   "source_url": "https://blogs.microsoft.com/blog/2026/06/24/inside-microsofts-two-decade-push-to-cut-water-intensity-while-scaling-for-growth/",
+   "region": "United States"
   },
   {
    "id": "eu-omnibus-adopted",
@@ -549,7 +2381,8 @@
    "kind": "policy",
    "jurisdiction": "EU",
    "summary": "Annex III high-risk duties move to December 2, 2027 and Annex I to August 2, 2028; adds explicit deepfake ban. This site has not confirmed the entry-into-force date.",
-   "source_url": "https://www.cuatrecasas.com/en/global/intellectual-property/art/council-eu-approves-digital-omnibus-ai"
+   "source_url": "https://www.cuatrecasas.com/en/global/intellectual-property/art/council-eu-approves-digital-omnibus-ai",
+   "region": "European Union"
   },
   {
    "id": "utah-hb76",
@@ -560,7 +2393,8 @@
    "kind": "policy",
    "jurisdiction": "Utah",
    "summary": "HB 76 requires large data centers drawing 75 acre feet or more a year to notify the state and file annual water use reports.",
-   "source_url": "https://le.utah.gov/Session/2026/bills/enrolled/HB0076.pdf"
+   "source_url": "https://le.utah.gov/Session/2026/bills/enrolled/HB0076.pdf",
+   "region": "United States"
   },
   {
    "id": "bigtech-ai-support-2026",
@@ -571,7 +2405,8 @@
    "kind": "milestone",
    "jurisdiction": "US federal",
    "summary": "AI proposals at Alphabet, Amazon and Meta averaged 7.6% in 2026, down from 9.8% in 2025 and 21.4% in 2024. The date shown is approximate.",
-   "source_url": "https://www.glasslewis.com/article/a-look-at-2026-big-tech-shareholder-proposals"
+   "source_url": "https://www.glasslewis.com/article/a-look-at-2026-big-tech-shareholder-proposals",
+   "region": "United States"
   },
   {
    "id": "exclusions-2026-season",
@@ -582,7 +2417,8 @@
    "kind": "milestone",
    "jurisdiction": "US federal",
    "summary": "Post-season memo: about 45% of excluded proposals came from one individual filer; Glass Lewis found companies excluded fewer proposals than feared without staff relief.",
-   "source_url": "https://corpgov.law.harvard.edu/2026/07/23/the-2026-shareholder-proposal-exclusion-experience-and-takeaways-for-the-2027-season/"
+   "source_url": "https://corpgov.law.harvard.edu/2026/07/23/the-2026-shareholder-proposal-exclusion-experience-and-takeaways-for-the-2027-season/",
+   "region": "United States"
   },
   {
    "id": "sec-aug14-statement",
@@ -593,7 +2429,8 @@
    "kind": "rule",
    "jurisdiction": "US federal",
    "summary": "Staff stopped responding to all no-action requests, including (i)(1), until further notice. Companies must still submit 14a-8(j) notices through an online form.",
-   "source_url": "https://sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426"
+   "source_url": "https://sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426",
+   "region": "United States"
   },
   {
    "id": "ceres-water-behind-the-watts",
@@ -604,7 +2441,8 @@
    "kind": "milestone",
    "jurisdiction": "US (VA, TX, CA, IL, GA, OH, AZ)",
    "summary": "Finds data centers in seven states depend on about 3.4 trillion gallons of freshwater a year for their electricity; asks investors to seek fuller water disclosure from data center companies and power producers.",
-   "source_url": "https://www.ceres.org/resources/news/new-ceres-report-spotlights-data-centers-biggest-and-least-visible-water-use-the-power-that-runs-them"
+   "source_url": "https://www.ceres.org/resources/news/new-ceres-report-spotlights-data-centers-biggest-and-least-visible-water-use-the-power-that-runs-them",
+   "region": "United States"
   },
   {
    "id": "sec-oira-submission",
@@ -615,7 +2453,8 @@
    "kind": "milestone",
    "jurisdiction": "US federal",
    "summary": "Ballotpedia reports the proposed rescission was submitted for interagency review and listed as economically significant on the regulatory agenda.",
-   "source_url": "https://news.ballotpedia.org/2026/08/24/sec-makes-shareholder-proposal-no-action-pause-permanent-2/"
+   "source_url": "https://news.ballotpedia.org/2026/08/24/sec-makes-shareholder-proposal-no-action-pause-permanent-2/",
+   "region": "United States"
   },
   {
    "id": "dfking-2026-season",
@@ -626,7 +2465,22 @@
    "kind": "milestone",
    "jurisdiction": "US federal",
    "summary": "D.F. King reports 2026 shareholder proposal submissions were down nearly 25% from 2025, the lowest level in a decade.",
-   "source_url": "https://corpgov.law.harvard.edu/2026/08/31/2026-proxy-season-shareholder-proposals/"
+   "source_url": "https://corpgov.law.harvard.edu/2026/08/31/2026-proxy-season-shareholder-proposals/",
+   "region": "United States"
+  },
+  {
+   "id": "cn-spc-ai-disputes-opinions",
+   "date": "2026-09-07",
+   "title": "Supreme People's Court issues opinions on AI dispute cases",
+   "actor": "Supreme People's Court",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "China",
+   "summary": "24 judicial rules for courts on AI cases, covering liability, use of public personal data in model training, AI product defects, open-source liability, deepfakes and algorithmic discrimination.",
+   "source_url": "https://www.court.gov.cn/zixun/xiangqing/511101.html",
+   "source_kind": "primary",
+   "status": "in force",
+   "region": "China"
   },
   {
    "id": "sec-14a8-rescission-proposal",
@@ -637,7 +2491,8 @@
    "kind": "rule",
    "jurisdiction": "US federal",
    "summary": "Release 34-106383, File S7-2026-32, would end the federal shareholder proposal rule and leave proposals to state law and company governing documents. 60-day comment period.",
-   "source_url": "https://www.sec.gov/rules/proposed/2026/34-106383.pdf"
+   "source_url": "https://www.sec.gov/rules/proposed/2026/34-106383.pdf",
+   "region": "United States"
   },
   {
    "id": "cii-statement-rescission",
@@ -648,7 +2503,8 @@
    "kind": "response",
    "jurisdiction": "US federal",
    "summary": "CII executive director Glenn Davis publicly opposed the proposal on release day, per a law firm summary. ICCR warned of losing an early warning system.",
-   "source_url": "https://www.cohenmilstein.com/the-end-of-the-federal-shareholder-proposal-rule-the-secs-effort-to-rescind-rule-14a-8/"
+   "source_url": "https://www.cohenmilstein.com/the-end-of-the-federal-shareholder-proposal-rule-the-secs-effort-to-rescind-rule-14a-8/",
+   "region": "United States"
   },
   {
    "id": "ca-ab2619",
@@ -659,7 +2515,22 @@
    "kind": "policy",
    "jurisdiction": "California",
    "summary": "AB 2619 ties water reporting to business licenses; AB 2469 requires water supply assessments for new data centers. Signing date per law firm.",
-   "source_url": "https://www.hklaw.com/en/insights/publications/2026/10/californias-2026-data-center-laws-what-you-need-to-know"
+   "source_url": "https://www.hklaw.com/en/insights/publications/2026/10/californias-2026-data-center-laws-what-you-need-to-know",
+   "region": "United States"
+  },
+  {
+   "id": "eu-dc-rating-scheme",
+   "date": "2026-09-21",
+   "title": "Commission sets out EU sustainability rating scheme for data centres",
+   "actor": "European Commission",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "EU",
+   "summary": "A delegated regulation would give each EU data centre above 500 kW a sustainability label based on reported energy and water use, waste heat reuse, clean energy and grid flexibility, with first labels expected in 2027. Parliament and Council had a two-month scrutiny period after September 21, 2026; entry into force is not confirmed.",
+   "source_url": "https://commission.europa.eu/news-and-media/news/making-data-centres-energy-efficient-thanks-new-eu-rating-system-2026-09-21_en",
+   "source_kind": "official",
+   "status": "proposed (delegated act; scrutiny period ended, entry into force not confirmed)",
+   "region": "European Union"
   },
   {
    "id": "ny-comptrollers-statement",
@@ -670,7 +2541,8 @@
    "kind": "response",
    "jurisdiction": "US federal",
    "summary": "Joint statement opposed the proposal, urged companies to keep supporting shareholder proposals, and predicted lengthy legal challenges. A statement, not a docket letter.",
-   "source_url": "https://www.osc.ny.gov/press/releases/2026/09/nys-comptroller-dinapoli-and-nyc-comptroller-levine-statement-secs-plan-silence-shareholders-public"
+   "source_url": "https://www.osc.ny.gov/press/releases/2026/09/nys-comptroller-dinapoli-and-nyc-comptroller-levine-statement-secs-plan-silence-shareholders-public",
+   "region": "United States"
   },
   {
    "id": "vanguard-investor-choice-2026",
@@ -681,7 +2553,8 @@
    "kind": "milestone",
    "jurisdiction": "US federal",
    "summary": "Pass-through voting participation grew more than sixfold; no single voting policy got over 38% of selections.",
-   "source_url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/who-we-are/pressroom/press-release-vanguard-investor-choice-participation-grows-more-than-sixfold-surpassing-half-a-million-investors-092926.html"
+   "source_url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/who-we-are/pressroom/press-release-vanguard-investor-choice-participation-grows-more-than-sixfold-surpassing-half-a-million-investors-092926.html",
+   "region": "United States"
   },
   {
    "id": "iss-ai-proposals-2026",
@@ -692,7 +2565,22 @@
    "kind": "milestone",
    "jurisdiction": "US federal",
    "summary": "AI-related shareholder proposals at US companies grew over five years to 29 in 2026, while environmental and social proposals fell more than 60%. Average support for AI proposals fell to 10.3%.",
-   "source_url": "https://corpgov.law.harvard.edu/2026/10/06/governing-ai-corporate-oversight-and-shareholder-engagement/"
+   "source_url": "https://corpgov.law.harvard.edu/2026/10/06/governing-ai-corporate-oversight-and-shareholder-engagement/",
+   "region": "United States"
+  },
+  {
+   "id": "cn-ai-tech-export-catalogue",
+   "date": "2026-10-16",
+   "title": "China proposes adding AI technologies to its export control catalogue",
+   "actor": "Ministry of Commerce; Ministry of Science and Technology",
+   "lane": "government",
+   "kind": "rule",
+   "jurisdiction": "China",
+   "summary": "Proposes listing 23 AI technologies (large models, agents, computing clusters, information processing) as prohibited or restricted for export, excluding technology already public through open source or papers. Exporters must register such technology exports now, before the catalogue is finalized.",
+   "source_url": "https://www.mofcom.gov.cn/zcfb/blgg/gg/2026/art/2026/art_05e2643a8ca04eb9adf9dd0542991fe4.html",
+   "source_kind": "primary",
+   "status": "proposed",
+   "region": "China"
   },
   {
    "id": "iigcc-bondholder-data-centres",
@@ -703,7 +2591,8 @@
    "kind": "milestone",
    "jurisdiction": "Europe / Global",
    "summary": "Notes hyperscaler (Alphabet, Amazon, Meta, Microsoft, Oracle) bond issuance and sets out water and resilience questions bondholders can raise; mentions a forthcoming IIGCC data centre playbook.",
-   "source_url": "https://www.iigcc.org/insights/financing-ai-what-the-data-centre-boom-means-for-bondholder-stewardship"
+   "source_url": "https://www.iigcc.org/insights/financing-ai-what-the-data-centre-boom-means-for-bondholder-stewardship",
+   "region": "Global"
   },
   {
    "id": "s7-2026-32-comment-count",
@@ -714,7 +2603,8 @@
    "kind": "milestone",
    "jurisdiction": "US federal",
    "summary": "The docket for the proposal to rescind Rule 14a-8 shows 394 entries when comments closed. Letters on file include TIAA and Nuveen, L&G Asset Management, Wespath, the Washington State Investment Board, the Investment Adviser Association, the AJL Foundation with Oxfam America, the State Financial Officers Foundation and a staff memo of a meeting with CII. This site has not reviewed each letter's position.",
-   "source_url": "https://www.sec.gov/rules-regulations/public-comments/s7-2026-32"
+   "source_url": "https://www.sec.gov/rules-regulations/public-comments/s7-2026-32",
+   "region": "United States"
   }
  ],
  "links": [
@@ -969,6 +2859,412 @@
    "type": "led to",
    "explanation": "Second biennial benchmark of the same focus companies, with a high-tech analysis of data center and chip water use.",
    "source_url": "https://www.ceres.org/resources/news/companies-are-stepping-up-on-water-stewardship-but-ceres-latest-benchmark-urges-faster-action-as-water-risks-deepen"
+  },
+  {
+   "from": "oecd-ai-principles-2024",
+   "to": "g7-hiroshima-code",
+   "type": "cited by",
+   "explanation": "The G7 Code says it builds on the OECD AI Principles (the 2019 version; the 2024 update came later).",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/library/hiroshima-process-international-code-conduct-advanced-ai-systems"
+  },
+  {
+   "from": "g7-hiroshima-code",
+   "to": "haip-reporting-framework",
+   "type": "led to",
+   "explanation": "OECD built the reporting framework to monitor how organisations apply the G7 Code.",
+   "source_url": "https://oecd.org/en/about/news/press-releases/2025/02/oecd-launches-global-framework-to-monitor-application-of-g7-hiroshima-ai-code-of-conduct.html"
+  },
+  {
+   "from": "haip-reporting-framework",
+   "to": "haip-first-reports",
+   "type": "led to",
+   "explanation": "First reports under the framework were published in April 2025.",
+   "source_url": "https://oecd.ai/en/wonk/initial-submissions-g7-hiroshima-ai-process-reporting-framework"
+  },
+  {
+   "from": "seoul-frontier-commitments",
+   "to": "paris-ai-action-summit",
+   "type": "led to",
+   "explanation": "Signatories committed to publish their safety frameworks before the next summit in France.",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+  },
+  {
+   "from": "un-ga-res-78-265",
+   "to": "un-ga-res-78-311",
+   "type": "cited by",
+   "explanation": "The July 2024 resolution reaffirms resolution 78/265 of 21 March 2024.",
+   "source_url": "https://digitallibrary.un.org/record/4054005/files/A_RES_78_311-EN.pdf"
+  },
+  {
+   "from": "coe-ai-convention-opens",
+   "to": "coe-ai-convention-eu-ratifies",
+   "type": "led to",
+   "explanation": "The EU, an original signer, became the first party to ratify.",
+   "source_url": "https://www.coe.int/en/web/artificial-intelligence/-/european-union-ratifies-the-council-of-europe-framework-convention-on-artificial-intelligence"
+  },
+  {
+   "from": "us-eo-14148",
+   "to": "us-eo-14110",
+   "type": "restricts",
+   "explanation": "EO 14148 revoked EO 14110 on January 20, 2025.",
+   "source_url": "https://www.whitehouse.gov/presidential-actions/2025/01/initial-rescissions-of-harmful-executive-orders-and-actions/"
+  },
+  {
+   "from": "us-eo-14110",
+   "to": "us-eo-14179",
+   "type": "led to",
+   "explanation": "EO 14179 ordered a review of actions taken under the revoked EO 14110.",
+   "source_url": "https://www.federalregister.gov/documents/2025/01/31/2025-02172/removing-barriers-to-american-leadership-in-artificial-intelligence"
+  },
+  {
+   "from": "us-eo-14179",
+   "to": "us-ai-action-plan",
+   "type": "led to",
+   "explanation": "EO 14179 required an AI Action Plan within 180 days.",
+   "source_url": "https://www.federalregister.gov/documents/2025/01/31/2025-02172/removing-barriers-to-american-leadership-in-artificial-intelligence"
+  },
+  {
+   "from": "us-eo-14179",
+   "to": "us-eo-14365",
+   "type": "cited by",
+   "explanation": "EO 14365 cites EO 14179 in Section 1 (Purpose).",
+   "source_url": "https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence/"
+  },
+  {
+   "from": "us-ai-action-plan",
+   "to": "us-eo-14318",
+   "type": "led to",
+   "explanation": "The data center permitting order was issued with the Action Plan to carry out its infrastructure pillar.",
+   "source_url": "https://www.jonesday.com/en/insights/2025/08/white-house-issues-executive-orders-on-ai-action-plan"
+  },
+  {
+   "from": "us-ai-action-plan",
+   "to": "us-eo-14319",
+   "type": "led to",
+   "explanation": "The federal procurement order on LLM neutrality was issued with the Action Plan.",
+   "source_url": "https://www.jonesday.com/en/insights/2025/08/white-house-issues-executive-orders-on-ai-action-plan"
+  },
+  {
+   "from": "us-ai-action-plan",
+   "to": "us-eo-14320",
+   "type": "led to",
+   "explanation": "The AI export order was issued with the Action Plan to carry out its diplomacy pillar.",
+   "source_url": "https://www.jonesday.com/en/insights/2025/08/white-house-issues-executive-orders-on-ai-action-plan"
+  },
+  {
+   "from": "senate-strikes-moratorium",
+   "to": "us-eo-14365",
+   "type": "led to",
+   "explanation": "Bloomberg Law reports the order came after the Senate rejected a comparable moratorium 99-1 and a later attempt to add preemption to the defense bill failed.",
+   "source_url": "https://news.bloomberglaw.com/bloomberg-government-news/trump-signs-order-seeking-to-limit-state-level-ai-regulation"
+  },
+  {
+   "from": "colorado-ai-delay",
+   "to": "us-eo-14365",
+   "type": "cited by",
+   "explanation": "EO 14365 names Colorado's law banning algorithmic discrimination as an example of state overreach.",
+   "source_url": "https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence/"
+  },
+  {
+   "from": "bis-ai-diffusion-rule",
+   "to": "bis-diffusion-rescission",
+   "type": "led to",
+   "explanation": "Commerce rescinded the rule before its May 15, 2025 compliance date and promised a replacement.",
+   "source_url": "https://www.bis.gov/press-release/department-commerce-announces-rescission-biden-era-artificial-intelligence-diffusion-rule-strengthens"
+  },
+  {
+   "from": "ca-ab853",
+   "to": "ca-sb942",
+   "type": "restricts",
+   "explanation": "AB 853 delayed SB 942's operative date from January 1 to August 2, 2026.",
+   "source_url": "https://www.morganlewis.com/pubs/2026/08/new-california-ai-disclosure-rules-become-operative"
+  },
+  {
+   "from": "us-take-it-down-act",
+   "to": "ftc-take-it-down-enforcement",
+   "type": "led to",
+   "explanation": "The Act gave platforms one year to set up removal processes, enforced by the FTC from May 19, 2026.",
+   "source_url": "https://www.ftc.gov/news-events/news/press-releases/2026/05/ftc-sends-warning-letters-companies-about-compliance-take-it-down-act"
+  },
+  {
+   "from": "intl-ai-safety-report-2026",
+   "to": "india-ai-impact-summit",
+   "type": "led to",
+   "explanation": "The second report was released ahead of the India AI Impact Summit to inform it.",
+   "source_url": "https://www.techuk.org/insights/news/the-release-of-the-international-ai-safety-report-2026-navigating-rapid-ai-advancement-and-emerging-risks"
+  },
+  {
+   "from": "eu-dsa-vlop-duties",
+   "to": "eu-dsa-election-guidelines",
+   "type": "enables",
+   "explanation": "The election guidelines are issued under the DSA's Article 35 risk mitigation duty for very large platforms.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-providers-vlops-and-vloses-mitigation-systemic-risks-electoral-processes"
+  },
+  {
+   "from": "eu-dsa-vlop-duties",
+   "to": "eu-dsa-x-grok-proceedings",
+   "type": "enables",
+   "explanation": "The Commission says X had to assess Grok's risks under the DSA systemic risk duties before deploying it.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-investigates-grok-and-xs-recommender-systems-under-digital-services-act"
+  },
+  {
+   "from": "eu-dsa-minors-guidelines",
+   "to": "eu-dsa-meta-minors-findings",
+   "type": "cited by",
+   "explanation": "The Commission used its 2025 minors guidelines as a benchmark in its preliminary findings against Meta.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-meta-breach-digital-services-act-failing-prevent-minors-under-13"
+  },
+  {
+   "from": "ie-dpc-meta-pause",
+   "to": "eu-edpb-opinion-ai-models",
+   "type": "led to",
+   "explanation": "The EDPB says the Irish DPC requested its opinion on AI models and personal data.",
+   "source_url": "https://www.edpb.europa.eu/news/news/2024/edpb-opinion-ai-models-gdpr-principles-support-responsible-ai_en"
+  },
+  {
+   "from": "eu-edpb-opinion-ai-models",
+   "to": "ie-dpc-meta-ai-training-2025",
+   "type": "led to",
+   "explanation": "After the EDPB opinion, Meta reassessed its plan and gave the DPC updated documents before resuming training.",
+   "source_url": "https://www.dataprotection.ie/news-media/latest-news/dpc-statement-meta-ai"
+  },
+  {
+   "from": "it-garante-openai-fine",
+   "to": "it-rome-court-annuls-openai-fine",
+   "type": "led to",
+   "explanation": "OpenAI's appeal of the fine led the Rome court to annul it.",
+   "source_url": "https://www.wsgr.com/en/insights/openai-prevails-in-landmark-italian-ai-and-gdpr-enforcement-case.html"
+  },
+  {
+   "from": "eu-eed-dc-reporting",
+   "to": "eu-dc-rating-scheme",
+   "type": "led to",
+   "explanation": "The rating scheme builds on the data centre data reported under Delegated Regulation 2024/1364.",
+   "source_url": "https://commission.europa.eu/news-and-media/news/making-data-centres-energy-efficient-thanks-new-eu-rating-system-2026-09-21_en"
+  },
+  {
+   "from": "eu-ai-continent-plan",
+   "to": "eu-cada-proposal",
+   "type": "led to",
+   "explanation": "The Cloud and AI Development Act is part of the AI Continent Action Plan.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/library/proposal-cloud-and-ai-development-act-cada"
+  },
+  {
+   "from": "eu-stop-the-clock",
+   "to": "eu-csrd-in-force",
+   "type": "restricts",
+   "explanation": "Postponed CSRD reporting for companies not yet reporting by two years.",
+   "source_url": "https://eur-lex.europa.eu/eli/dir/2025/794/oj"
+  },
+  {
+   "from": "eu-stop-the-clock",
+   "to": "eu-csddd-in-force",
+   "type": "restricts",
+   "explanation": "Postponed CSDDD transposition and first application by one year.",
+   "source_url": "https://eur-lex.europa.eu/eli/dir/2025/794/oj"
+  },
+  {
+   "from": "eu-omnibus-i-adopted",
+   "to": "eu-csrd-in-force",
+   "type": "restricts",
+   "explanation": "Raised CSRD thresholds to over 1,000 employees and 450 million euros turnover.",
+   "source_url": "https://www.lw.com/en/insights/EU-Sustainability-Omnibus-Published-in-the-Official-Journal"
+  },
+  {
+   "from": "eu-omnibus-i-adopted",
+   "to": "eu-csddd-in-force",
+   "type": "restricts",
+   "explanation": "Narrowed CSDDD scope, removed the climate transition plan duty and set application for July 2029.",
+   "source_url": "https://www.lw.com/en/insights/EU-Sustainability-Omnibus-Published-in-the-Official-Journal"
+  },
+  {
+   "from": "eu-ai-act-in-force",
+   "to": "eu-ai-act-prohibitions-literacy",
+   "type": "enables",
+   "explanation": "The AI Act's bans and AI literacy article apply from February 2, 2025, six months after entry into force.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-prohibited-ai-practices"
+  },
+  {
+   "from": "eu-omnibus-adopted",
+   "to": "eu-ai-act-prohibitions-literacy",
+   "type": "restricts",
+   "explanation": "The AI omnibus recast the Article 4 AI literacy duty in revised form, per law firm.",
+   "source_url": "https://www.cuatrecasas.com/en/portugal/intellectual-property/art/digital-omnibus-ai-has-been-published"
+  },
+  {
+   "from": "uk-bletchley-declaration",
+   "to": "uk-aisi-launch",
+   "type": "led to",
+   "explanation": "The UK announced the AI Safety Institute at the Bletchley Park summit.",
+   "source_url": "https://www.gov.uk/government/publications/ai-safety-institute-overview/introducing-the-ai-safety-institute"
+  },
+  {
+   "from": "uk-aisi-launch",
+   "to": "uk-aisi-renamed",
+   "type": "led to",
+   "explanation": "The AI Safety Institute became the AI Security Institute.",
+   "source_url": "https://www.gov.uk/government/news/tackling-ai-security-risks-to-unleash-growth-and-deliver-plan-for-change"
+  },
+  {
+   "from": "uk-osa-royal-assent",
+   "to": "uk-osa-children-codes",
+   "type": "enables",
+   "explanation": "The children's codes are made under the Online Safety Act.",
+   "source_url": "https://www.ofcom.org.uk/online-safety/protecting-children/online-age-checks-must-be-in-force-from-tomorrow"
+  },
+  {
+   "from": "uk-osa-royal-assent",
+   "to": "uk-ofcom-x-grok-investigation",
+   "type": "enables",
+   "explanation": "Ofcom's investigation tests X against its Online Safety Act duties.",
+   "source_url": "https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/ofcom-launches-investigation-into-x-over-grok-sexualised-imagery"
+  },
+  {
+   "from": "uk-ofcom-x-grok-investigation",
+   "to": "uk-crime-policing-act-ai",
+   "type": "led to",
+   "explanation": "After the Grok images, the government said it would close the legal gap for chatbots through an amendment to the Crime and Policing Bill.",
+   "source_url": "https://www.gov.uk/government/news/pm-no-platform-gets-a-free-pass-government-takes-action-to-keep-children-safe-online"
+  },
+  {
+   "from": "uk-data-use-access-act",
+   "to": "uk-copyright-ai-report",
+   "type": "led to",
+   "explanation": "Sections 135 and 136 of the Act required the report and impact assessment.",
+   "source_url": "https://www.gov.uk/government/publications/report-and-impact-assessment-on-copyright-and-artificial-intelligence/report-on-copyright-and-artificial-intelligence"
+  },
+  {
+   "from": "jp-ai-promotion-act",
+   "to": "jp-ai-basic-plan",
+   "type": "led to",
+   "explanation": "The Basic AI Plan is made under the AI Promotion Act.",
+   "source_url": "https://www8.cao.go.jp/cstp/ai/ai_hou_gaiyou_en.pdf"
+  },
+  {
+   "from": "kr-ai-basic-act-passed",
+   "to": "kr-ai-basic-act-in-force",
+   "type": "led to",
+   "explanation": "The Act took effect after a one-year transition with its enforcement decree.",
+   "source_url": "https://fpf.org/blog/south-koreas-new-ai-framework-act-a-balancing-act-between-innovation-and-regulation/"
+  },
+  {
+   "from": "au-guardrails-proposal",
+   "to": "au-national-ai-plan",
+   "type": "led to",
+   "explanation": "The government says feedback on the guardrails paper informed the National AI Plan and it will not proceed with mandatory guardrails at this time.",
+   "source_url": "https://consult.industry.gov.au/ai-regulatory-guardrails"
+  },
+  {
+   "from": "cn-algorithm-provisions",
+   "to": "cn-algorithm-registry",
+   "type": "led to",
+   "explanation": "The CAC published the algorithm filing list under the Algorithmic Recommendation Provisions.",
+   "source_url": "https://www.cac.gov.cn/2022-08/12/c_1661927474338504.htm"
+  },
+  {
+   "from": "cn-genai-measures",
+   "to": "cn-genai-registry",
+   "type": "led to",
+   "explanation": "The CAC said it runs generative AI filing as required by the Interim Measures.",
+   "source_url": "https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm"
+  },
+  {
+   "from": "cn-algorithm-provisions",
+   "to": "cn-labeling-measures",
+   "type": "led to",
+   "explanation": "The labeling measures name the Algorithmic Recommendation Provisions as a legal basis.",
+   "source_url": "https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm"
+  },
+  {
+   "from": "cn-deep-synthesis-provisions",
+   "to": "cn-labeling-measures",
+   "type": "led to",
+   "explanation": "The labeling measures name the Deep Synthesis Provisions as a basis and implement their Articles 16 and 17.",
+   "source_url": "https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm"
+  },
+  {
+   "from": "cn-genai-measures",
+   "to": "cn-labeling-measures",
+   "type": "led to",
+   "explanation": "The labeling measures name the generative AI Interim Measures as a legal basis.",
+   "source_url": "https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm"
+  },
+  {
+   "from": "cn-labeling-measures",
+   "to": "cn-labeling-enforcement-2026",
+   "type": "led to",
+   "explanation": "The CAC said the three platforms violated the labeling measures, among other rules.",
+   "source_url": "https://www.cac.gov.cn/2026-04/28/c_1779119736411711.htm"
+  },
+  {
+   "from": "cn-pipl",
+   "to": "cn-genai-measures",
+   "type": "enables",
+   "explanation": "The Interim Measures were made under the Personal Information Protection Law, among other laws.",
+   "source_url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm"
+  },
+  {
+   "from": "cn-global-ai-governance-initiative",
+   "to": "cn-ai-safety-framework-1",
+   "type": "led to",
+   "explanation": "The CAC said TC260 drafted the framework to implement the Global AI Governance Initiative.",
+   "source_url": "https://www.cac.gov.cn/2024-09/09/c_1727567886199789.htm"
+  },
+  {
+   "from": "cn-ai-safety-framework-1",
+   "to": "cn-ai-safety-framework-2",
+   "type": "led to",
+   "explanation": "Framework 2.0 builds on the 2024 framework.",
+   "source_url": "https://www.cac.gov.cn/2025-09/15/c_1759653448369123.htm"
+  },
+  {
+   "from": "cn-aiia-safety-commitments",
+   "to": "cn-ai-safety-commitments-framework",
+   "type": "led to",
+   "explanation": "CAICT said the 2025 framework builds on the AIIA commitments of December 2024.",
+   "source_url": "https://www.ithome.com/0/871/842.htm"
+  },
+  {
+   "from": "cn-ai-plus-opinions",
+   "to": "cn-ai-agents-opinions",
+   "type": "led to",
+   "explanation": "The agent opinions state they were made to implement the State Council AI Plus opinions.",
+   "source_url": "https://www.cac.gov.cn/2026-05/08/c_1779979789523320.htm"
+  },
+  {
+   "from": "cn-ai-plus-opinions",
+   "to": "cn-ai-energy-action-plan",
+   "type": "led to",
+   "explanation": "The AI and energy action plan says it implements the AI Plus opinions.",
+   "source_url": "https://www.nea.gov.cn/20260508/4dae97ca01d348e4871bb8654be34b3a/c.html"
+  },
+  {
+   "from": "cn-minors-online-regulations",
+   "to": "cn-anthropomorphic-ai-measures",
+   "type": "led to",
+   "explanation": "The anthropomorphic AI measures name the minors online protection regulations as a legal basis.",
+   "source_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm"
+  },
+  {
+   "from": "cn-algorithm-provisions",
+   "to": "cn-anthropomorphic-ai-measures",
+   "type": "enables",
+   "explanation": "The measures require AI companion providers to file under the Algorithmic Recommendation Provisions.",
+   "source_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm"
+  },
+  {
+   "from": "cn-samr-nvidia-probe",
+   "to": "cn-samr-nvidia-finding",
+   "type": "led to",
+   "explanation": "SAMR's 2025 finding came from the investigation it opened in December 2024.",
+   "source_url": "https://www.samr.gov.cn/xw/zj/art/2025/art_66b8363c3a194ba0a394a843d6cf3fd1.html"
+  },
+  {
+   "from": "cn-15th-five-year-plan",
+   "to": "cn-spc-ai-disputes-opinions",
+   "type": "led to",
+   "explanation": "The Supreme People's Court cited the Five-Year Plan's call for AI rules as background for its opinions.",
+   "source_url": "https://www.court.gov.cn/zixun/xiangqing/511101.html"
   }
  ]
 }
