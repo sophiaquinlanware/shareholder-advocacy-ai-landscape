@@ -190,6 +190,14 @@
       "filing_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
       "report_period": "2026-09-30",
       "accession": "0000315066-26-002964"
+    },
+    {
+      "id": "dana",
+      "name": "Dana Investment Advisors",
+      "cik": 1427514,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1427514/000142751426000007/",
+      "report_period": "2026-09-30",
+      "accession": "0001427514-26-000007"
     }
   ],
   "holdings": [
@@ -477,6 +485,14 @@
       "value_usd": 1304339.0,
       "shares": 5436.0,
       "pct_of_portfolio": 0.04,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
+      "investor": "trillium-asset-management",
+      "company": "INTU",
+      "value_usd": 4007869.0,
+      "shares": 14536.0,
+      "pct_of_portfolio": 0.13,
       "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
     },
     {
@@ -1041,6 +1057,14 @@
     },
     {
       "investor": "amalgamated-bank",
+      "company": "INTU",
+      "value_usd": 13706000.0,
+      "shares": 49713.0,
+      "pct_of_portfolio": 0.1,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
       "company": "VRSK",
       "value_usd": 3914000.0,
       "shares": 23318.0,
@@ -1245,6 +1269,14 @@
       "value_usd": 88975271.0,
       "shares": 370823.0,
       "pct_of_portfolio": 0.12,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "INTU",
+      "value_usd": 371827192.0,
+      "shares": 1348617.0,
+      "pct_of_portfolio": 0.52,
       "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
     },
     {
@@ -1457,6 +1489,14 @@
     },
     {
       "investor": "legal-general",
+      "company": "INTU",
+      "value_usd": 519737889.0,
+      "shares": 1885089.0,
+      "pct_of_portfolio": 0.11,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
       "company": "VRSK",
       "value_usd": 188409439.0,
       "shares": 1122487.0,
@@ -1653,6 +1693,14 @@
       "value_usd": 109028256.0,
       "shares": 454398.0,
       "pct_of_portfolio": 0.15,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "INTU",
+      "value_usd": 79312669.0,
+      "shares": 287667.0,
+      "pct_of_portfolio": 0.11,
       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
     },
     {
@@ -1865,6 +1913,14 @@
     },
     {
       "investor": "calpers",
+      "company": "INTU",
+      "value_usd": 176585914.0,
+      "shares": 640477.0,
+      "pct_of_portfolio": 0.09,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
       "company": "VRSK",
       "value_usd": 39568455.0,
       "shares": 235737.0,
@@ -2065,6 +2121,14 @@
     },
     {
       "investor": "calstrs",
+      "company": "INTU",
+      "value_usd": 111810331.0,
+      "shares": 405536.0,
+      "pct_of_portfolio": 0.1,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
       "company": "VRSK",
       "value_usd": 36783656.0,
       "shares": 219146.0,
@@ -2168,6 +2232,126 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
     },
     {
+      "investor": "dana",
+      "company": "MSFT",
+      "value_usd": 153855928.0,
+      "shares": 299973.0,
+      "pct_of_portfolio": 4.17,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1427514/000142751426000007/"
+    },
+    {
+      "investor": "dana",
+      "company": "GOOGL",
+      "value_usd": 120203987.0,
+      "shares": 349791.0,
+      "pct_of_portfolio": 3.26,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1427514/000142751426000007/"
+    },
+    {
+      "investor": "dana",
+      "company": "META",
+      "value_usd": 57606151.0,
+      "shares": 79437.0,
+      "pct_of_portfolio": 1.56,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1427514/000142751426000007/"
+    },
+    {
+      "investor": "dana",
+      "company": "AMZN",
+      "value_usd": 84249525.0,
+      "shares": 338148.0,
+      "pct_of_portfolio": 2.29,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1427514/000142751426000007/"
+    },
+    {
+      "investor": "dana",
+      "company": "NVDA",
+      "value_usd": 177076035.0,
+      "shares": 775357.0,
+      "pct_of_portfolio": 4.8,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1427514/000142751426000007/"
+    },
+    {
+      "investor": "dana",
+      "company": "AAPL",
+      "value_usd": 194019076.0,
+      "shares": 582605.0,
+      "pct_of_portfolio": 5.26,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1427514/000142751426000007/"
+    },
+    {
+      "investor": "dana",
+      "company": "ORCL",
+      "value_usd": 24005754.0,
+      "shares": 174842.0,
+      "pct_of_portfolio": 0.65,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1427514/000142751426000007/"
+    },
+    {
+      "investor": "dana",
+      "company": "AMD",
+      "value_usd": 10417050.0,
+      "shares": 17028.0,
+      "pct_of_portfolio": 0.28,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1427514/000142751426000007/"
+    },
+    {
+      "investor": "dana",
+      "company": "AVGO",
+      "value_usd": 57780228.0,
+      "shares": 164527.0,
+      "pct_of_portfolio": 1.57,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1427514/000142751426000007/"
+    },
+    {
+      "investor": "dana",
+      "company": "CRM",
+      "value_usd": 5484129.0,
+      "shares": 23889.0,
+      "pct_of_portfolio": 0.15,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1427514/000142751426000007/"
+    },
+    {
+      "investor": "dana",
+      "company": "ADBE",
+      "value_usd": 2119630.0,
+      "shares": 8834.0,
+      "pct_of_portfolio": 0.06,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1427514/000142751426000007/"
+    },
+    {
+      "investor": "dana",
+      "company": "NOW",
+      "value_usd": 57874496.0,
+      "shares": 431867.0,
+      "pct_of_portfolio": 1.57,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1427514/000142751426000007/"
+    },
+    {
+      "investor": "dana",
+      "company": "CSCO",
+      "value_usd": 42182571.0,
+      "shares": 391922.0,
+      "pct_of_portfolio": 1.14,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1427514/000142751426000007/"
+    },
+    {
+      "investor": "dana",
+      "company": "NFLX",
+      "value_usd": 1601454.0,
+      "shares": 23016.0,
+      "pct_of_portfolio": 0.04,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1427514/000142751426000007/"
+    },
+    {
+      "investor": "dana",
+      "company": "DIS",
+      "value_usd": 20957680.0,
+      "shares": 199787.0,
+      "pct_of_portfolio": 0.57,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1427514/000142751426000007/"
+    },
+    {
       "investor": "harrington",
       "company": "MSFT",
       "value_usd": 13450967.0,
@@ -2233,6 +2417,14 @@
     },
     {
       "investor": "harrington",
+      "company": "INTU",
+      "value_usd": 897350.0,
+      "shares": 3255.0,
+      "pct_of_portfolio": 0.43,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/"
+    },
+    {
+      "investor": "harrington",
       "company": "NFLX",
       "value_usd": 4568275.0,
       "shares": 65655.0,
@@ -2244,7 +2436,7 @@
       "company": "MSFT",
       "value_usd": 9871649.0,
       "shares": 19247.0,
-      "pct_of_portfolio": 2.16,
+      "pct_of_portfolio": 2.17,
       "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
     },
     {
@@ -2258,9 +2450,9 @@
     {
       "investor": "first-affirmative",
       "company": "META",
-      "value_usd": 6909949.0,
-      "shares": 9529.0,
-      "pct_of_portfolio": 1.51,
+      "value_usd": 6039733.0,
+      "shares": 8329.0,
+      "pct_of_portfolio": 1.33,
       "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
     },
     {
@@ -2276,7 +2468,7 @@
       "company": "NVDA",
       "value_usd": 17768474.0,
       "shares": 77802.0,
-      "pct_of_portfolio": 3.89,
+      "pct_of_portfolio": 3.9,
       "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
     },
     {
@@ -2284,7 +2476,7 @@
       "company": "AAPL",
       "value_usd": 15624871.0,
       "shares": 46919.0,
-      "pct_of_portfolio": 3.42,
+      "pct_of_portfolio": 3.43,
       "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
     },
     {
@@ -2308,7 +2500,7 @@
       "company": "AMD",
       "value_usd": 3440971.0,
       "shares": 5625.0,
-      "pct_of_portfolio": 0.75,
+      "pct_of_portfolio": 0.76,
       "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
     },
     {
@@ -2341,6 +2533,14 @@
       "value_usd": 596484.0,
       "shares": 2486.0,
       "pct_of_portfolio": 0.13,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
+    },
+    {
+      "investor": "first-affirmative",
+      "company": "INTU",
+      "value_usd": 1113239.0,
+      "shares": 4038.0,
+      "pct_of_portfolio": 0.24,
       "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/"
     },
     {
@@ -2501,6 +2701,14 @@
       "value_usd": 2703157.0,
       "shares": 11265.0,
       "pct_of_portfolio": 0.05,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
+    },
+    {
+      "investor": "bailard",
+      "company": "INTU",
+      "value_usd": 5207492.0,
+      "shares": 18887.0,
+      "pct_of_portfolio": 0.11,
       "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/"
     },
     {
@@ -2692,7 +2900,7 @@
       "company": "META",
       "value_usd": 73550553979.0,
       "shares": 101423859.0,
-      "pct_of_portfolio": 3.17,
+      "pct_of_portfolio": 3.18,
       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
     },
     {
@@ -2708,7 +2916,7 @@
       "company": "NVDA",
       "value_usd": 213034649836.0,
       "shares": 932807820.0,
-      "pct_of_portfolio": 9.19,
+      "pct_of_portfolio": 9.2,
       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
     },
     {
@@ -2716,7 +2924,7 @@
       "company": "AAPL",
       "value_usd": 123213667912.0,
       "shares": 369988793.0,
-      "pct_of_portfolio": 5.31,
+      "pct_of_portfolio": 5.32,
       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
     },
     {
@@ -2738,8 +2946,8 @@
     {
       "investor": "fidelity",
       "company": "CRWV",
-      "value_usd": 118590171.0,
-      "shares": 1361228.0,
+      "value_usd": 118407219.0,
+      "shares": 1359128.0,
       "pct_of_portfolio": 0.01,
       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
     },
@@ -2780,6 +2988,14 @@
       "company": "ADBE",
       "value_usd": 672140567.0,
       "shares": 2801287.0,
+      "pct_of_portfolio": 0.03,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+    },
+    {
+      "investor": "fidelity",
+      "company": "INTU",
+      "value_usd": 620794621.0,
+      "shares": 2251622.0,
       "pct_of_portfolio": 0.03,
       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
     },
@@ -2880,5 +3096,5 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
     }
   ],
-  "issuers_version": "2026-11-26"
+  "issuers_version": "2026-11-26b"
 }
