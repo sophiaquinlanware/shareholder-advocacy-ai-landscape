@@ -38,44 +38,92 @@
   ]
  },
  "coverage": {
-  "Calvert": [
-   "2024-06-30",
-   "2025-06-30",
-   "2026-06-30"
-  ],
-  "Vanguard": [
-   "2024-06-30",
-   "2025-06-30",
-   "2026-06-30"
-  ],
-  "Domini": [
-   "2024-06-30"
-  ],
-  "Green Century": [
-   "2024-06-30",
-   "2025-06-30",
-   "2026-06-30"
-  ],
-  "TIAA-CREF": [
-   "2025-06-30",
-   "2026-06-30"
-  ],
-  "BlackRock (iShares)": [
-   "2024-06-30",
-   "2025-06-30",
-   "2026-06-30"
-  ],
-  "Impax (Pax)": [
-   "2024-06-30",
-   "2025-06-30",
-   "2026-06-30"
-  ],
-  "Parnassus": [
-   "2024-06-30",
-   "2025-06-30",
-   "2026-06-30"
-  ]
+  "Parnassus": {
+   "2024-06-30": "full",
+   "2025-06-30": "full",
+   "2026-06-30": "full"
+  },
+  "BlackRock (iShares)": {
+   "2024-06-30": "full",
+   "2025-06-30": "full",
+   "2026-06-30": "full"
+  },
+  "Vanguard": {
+   "2024-06-30": "full",
+   "2025-06-30": "full",
+   "2026-06-30": "partial"
+  },
+  "Calvert": {
+   "2024-06-30": "full",
+   "2025-06-30": "full",
+   "2026-06-30": "full"
+  },
+  "Domini": {
+   "2024-06-30": "full"
+  },
+  "Green Century": {
+   "2024-06-30": "full",
+   "2025-06-30": "full",
+   "2026-06-30": "full"
+  },
+  "Impax (Pax)": {
+   "2024-06-30": "full",
+   "2025-06-30": "full",
+   "2026-06-30": "full"
+  },
+  "TIAA-CREF": {
+   "2024-06-30": "full",
+   "2025-06-30": "full",
+   "2026-06-30": "full"
+  }
  },
+ "held_back_proposals": [
+  "meta-2026-3"
+ ],
+ "unreadable_filings": [
+  {
+   "family": "Vanguard",
+   "cik": 862084,
+   "trust": "VANGUARD INSTITUTIONAL INDEX FUNDS",
+   "period": "2026-06-30",
+   "accession": "0001104659-26-101889"
+  },
+  {
+   "family": "Domini",
+   "cik": 851680,
+   "trust": "DOMINI INVESTMENT TRUST",
+   "period": "2025-06-30",
+   "accession": "0001021408-25-002683"
+  },
+  {
+   "family": "Domini",
+   "cik": 851680,
+   "trust": "DOMINI INVESTMENT TRUST",
+   "period": "2026-06-30",
+   "accession": "0001193125-26-344194"
+  },
+  {
+   "family": "Praxis",
+   "cik": 912900,
+   "trust": "PRAXIS FUNDS",
+   "period": "2024-06-30",
+   "accession": "0001398344-24-015276"
+  },
+  {
+   "family": "Praxis",
+   "cik": 912900,
+   "trust": "PRAXIS FUNDS",
+   "period": "2025-06-30",
+   "accession": "0001398344-25-014789"
+  },
+  {
+   "family": "Praxis",
+   "cik": 912900,
+   "trust": "PRAXIS FUNDS",
+   "period": "2026-06-30",
+   "accession": "0001398344-26-013429"
+  }
+ ],
  "not_shown": [
   "Praxis files Form N-PX only in the older text format, which this tracker cannot read yet, so it is not shown."
  ],
@@ -175,6 +223,22 @@
    "filed": "2026-08-20",
    "period": "2026-06-30",
    "url": "https://www.sec.gov/Archives/edgar/data/866256/000119312526358189/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "trust": "iSHARES TRUST",
+   "form": "N-PX",
+   "filed": "2024-08-27",
+   "period": "2024-06-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "trust": "iSHARES TRUST",
+   "form": "N-PX",
+   "filed": "2025-08-28",
+   "period": "2025-06-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/"
   },
   {
    "family": "BlackRock (iShares)",
@@ -380,6 +444,14 @@
    "family": "TIAA-CREF",
    "trust": "TIAA-CREF FUNDS",
    "form": "N-PX",
+   "filed": "2024-08-29",
+   "period": "2024-06-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+  },
+  {
+   "family": "TIAA-CREF",
+   "trust": "TIAA-CREF FUNDS",
+   "form": "N-PX",
    "filed": "2025-08-29",
    "period": "2025-06-30",
    "url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
@@ -553,6 +625,25 @@
    "reviewed": true
   },
   {
+   "family": "TIAA-CREF",
+   "proposal_id": "msft-2023-11",
+   "company": "MSFT",
+   "meeting_date": "2023-12-07",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 8
+   },
+   "fund_records": 8,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+   ],
+   "npx_descriptions": [
+    "Report on Data Operations in Human Rights Hotspots"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
    "family": "Vanguard",
    "proposal_id": "msft-2023-11",
    "company": "MSFT",
@@ -579,10 +670,11 @@
    "meeting_date": "2023-12-07",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 1
+    "AGAINST": 5
    },
-   "fund_records": 1,
+   "fund_records": 5,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
    ],
    "npx_descriptions": [
@@ -668,6 +760,25 @@
    ],
    "min_confidence": 1.0,
    "reviewed": true
+  },
+  {
+   "family": "TIAA-CREF",
+   "proposal_id": "msft-2023-13",
+   "company": "MSFT",
+   "meeting_date": "2023-12-07",
+   "vote": "FOR",
+   "counts": {
+    "FOR": 8
+   },
+   "fund_records": 8,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+   ],
+   "npx_descriptions": [
+    "Report on AI Misinformation and Disinformation"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -787,6 +898,25 @@
    "reviewed": true
   },
   {
+   "family": "TIAA-CREF",
+   "proposal_id": "aapl-2024-7",
+   "company": "AAPL",
+   "meeting_date": "2024-02-28",
+   "vote": "FOR",
+   "counts": {
+    "FOR": 5
+   },
+   "fund_records": 5,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+   ],
+   "npx_descriptions": [
+    "A shareholder proposal requesting a report on the use of Al"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
    "family": "Vanguard",
    "proposal_id": "aapl-2024-7",
    "company": "AAPL",
@@ -863,6 +993,25 @@
    ],
    "min_confidence": 0.8,
    "reviewed": true
+  },
+  {
+   "family": "TIAA-CREF",
+   "proposal_id": "amzn-2024-14",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 5
+   },
+   "fund_records": 5,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+   ],
+   "npx_descriptions": [
+    "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON CUSTOMER USE OF CERTAIN TECHNOLOGIES"
+   ],
+   "min_confidence": 0.8,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -943,6 +1092,25 @@
    "reviewed": true
   },
   {
+   "family": "TIAA-CREF",
+   "proposal_id": "amzn-2024-16",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 5
+   },
+   "fund_records": 5,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+   ],
+   "npx_descriptions": [
+    "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE ARTIFICIAL INTELLIGENCE"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
    "family": "Vanguard",
    "proposal_id": "amzn-2024-16",
    "company": "AMZN",
@@ -969,10 +1137,11 @@
    "meeting_date": "2024-05-22",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 2
+    "AGAINST": 5
    },
-   "fund_records": 2,
+   "fund_records": 5,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
    ],
    "npx_descriptions": [
@@ -1040,6 +1209,25 @@
    "reviewed": true
   },
   {
+   "family": "TIAA-CREF",
+   "proposal_id": "amzn-2024-6",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 5
+   },
+   "fund_records": 5,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+   ],
+   "npx_descriptions": [
+    "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON CUSTOMER DUE DILIGENCE"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
    "family": "Vanguard",
    "proposal_id": "amzn-2024-6",
    "company": "AMZN",
@@ -1055,6 +1243,25 @@
    ],
    "npx_descriptions": [
     "SHAREHOLDER PROPOSAL REQUESTING A REPORT ON CUSTOMER DUE DILIGENCE"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
+   "family": "TIAA-CREF",
+   "proposal_id": "meta-2024-10",
+   "company": "META",
+   "meeting_date": "2024-05-29",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 5
+   },
+   "fund_records": 5,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+   ],
+   "npx_descriptions": [
+    "A shareholder proposal regarding human rights impact assessment on AI systems driving targeted advertising."
    ],
    "min_confidence": 1.0,
    "reviewed": false
@@ -1086,14 +1293,34 @@
    "meeting_date": "2024-05-29",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 2
+    "AGAINST": 5
    },
-   "fund_records": 2,
+   "fund_records": 5,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
    ],
    "npx_descriptions": [
     "Report on Generative AI Misinformation and Disinformation Risks"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
+   "family": "TIAA-CREF",
+   "proposal_id": "meta-2024-6",
+   "company": "META",
+   "meeting_date": "2024-05-29",
+   "vote": "FOR",
+   "counts": {
+    "FOR": 5
+   },
+   "fund_records": 5,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+   ],
+   "npx_descriptions": [
+    "A shareholder proposal regarding report on generative AI misinformation and disinformation risks."
    ],
    "min_confidence": 1.0,
    "reviewed": false
@@ -1216,6 +1443,25 @@
    "reviewed": true
   },
   {
+   "family": "TIAA-CREF",
+   "proposal_id": "googl-2024-11",
+   "company": "GOOGL",
+   "meeting_date": "2024-06-07",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 4
+   },
+   "fund_records": 4,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal regarding Al principles and Board oversight"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
    "family": "Vanguard",
    "proposal_id": "googl-2024-11",
    "company": "GOOGL",
@@ -1242,10 +1488,11 @@
    "meeting_date": "2024-06-07",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 1
+    "AGAINST": 4
    },
-   "fund_records": 1,
+   "fund_records": 4,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
    ],
    "npx_descriptions": [
@@ -1352,6 +1599,25 @@
    "reviewed": true
   },
   {
+   "family": "TIAA-CREF",
+   "proposal_id": "googl-2024-12",
+   "company": "GOOGL",
+   "meeting_date": "2024-06-07",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 4
+   },
+   "fund_records": 4,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal regarding a report on generative Al misinformation and disinformation risks"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
    "family": "Vanguard",
    "proposal_id": "googl-2024-12",
    "company": "GOOGL",
@@ -1378,10 +1644,11 @@
    "meeting_date": "2024-06-07",
    "vote": "FOR",
    "counts": {
-    "FOR": 1
+    "FOR": 4
    },
-   "fund_records": 1,
+   "fund_records": 4,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
    ],
    "npx_descriptions": [
@@ -1486,6 +1753,25 @@
    ],
    "min_confidence": 1.0,
    "reviewed": true
+  },
+  {
+   "family": "TIAA-CREF",
+   "proposal_id": "googl-2024-13",
+   "company": "GOOGL",
+   "meeting_date": "2024-06-07",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 4
+   },
+   "fund_records": 4,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal regarding a human rights assessment of Al-driven targeted ad policies"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
   },
   {
    "family": "Vanguard",
@@ -1605,6 +1891,25 @@
    "reviewed": false
   },
   {
+   "family": "TIAA-CREF",
+   "proposal_id": "googl-2024-child-online-safety",
+   "company": "GOOGL",
+   "meeting_date": "2024-06-07",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 4
+   },
+   "fund_records": 4,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal regarding a report on online safety for children"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
    "family": "Vanguard",
    "proposal_id": "googl-2024-child-online-safety",
    "company": "GOOGL",
@@ -1631,10 +1936,11 @@
    "meeting_date": "2024-12-10",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 1
+    "AGAINST": 8
    },
-   "fund_records": 1,
+   "fund_records": 8,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
@@ -1767,10 +2073,11 @@
    "meeting_date": "2024-12-10",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 1
+    "AGAINST": 8
    },
-   "fund_records": 1,
+   "fund_records": 8,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
@@ -1903,10 +2210,11 @@
    "meeting_date": "2024-12-10",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 1
+    "AGAINST": 8
    },
-   "fund_records": 1,
+   "fund_records": 8,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
@@ -2039,10 +2347,11 @@
    "meeting_date": "2024-12-10",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 1
+    "AGAINST": 8
    },
-   "fund_records": 1,
+   "fund_records": 8,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
@@ -2175,10 +2484,11 @@
    "meeting_date": "2025-02-25",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 1
+    "AGAINST": 10
    },
-   "fund_records": 1,
+   "fund_records": 10,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
@@ -2311,10 +2621,11 @@
    "meeting_date": "2025-02-25",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 1
+    "AGAINST": 10
    },
-   "fund_records": 1,
+   "fund_records": 10,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
@@ -2447,10 +2758,11 @@
    "meeting_date": "2025-05-21",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 2
+    "AGAINST": 11
    },
-   "fund_records": 2,
+   "fund_records": 11,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
@@ -2564,10 +2876,11 @@
    "meeting_date": "2025-05-21",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 2
+    "AGAINST": 11
    },
-   "fund_records": 2,
+   "fund_records": 11,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
@@ -2681,10 +2994,11 @@
    "meeting_date": "2025-05-21",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 2
+    "AGAINST": 11
    },
-   "fund_records": 2,
+   "fund_records": 11,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
@@ -2798,10 +3112,11 @@
    "meeting_date": "2025-05-28",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 2
+    "AGAINST": 10
    },
-   "fund_records": 2,
+   "fund_records": 10,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
@@ -2857,10 +3172,11 @@
    "meeting_date": "2025-05-28",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 2
+    "AGAINST": 10
    },
-   "fund_records": 2,
+   "fund_records": 10,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
@@ -2916,10 +3232,11 @@
    "meeting_date": "2025-05-28",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 2
+    "AGAINST": 10
    },
-   "fund_records": 2,
+   "fund_records": 10,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
@@ -2975,10 +3292,11 @@
    "meeting_date": "2025-05-28",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 2
+    "AGAINST": 10
    },
-   "fund_records": 2,
+   "fund_records": 10,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
@@ -3034,10 +3352,11 @@
    "meeting_date": "2025-06-06",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 1
+    "AGAINST": 8
    },
-   "fund_records": 1,
+   "fund_records": 8,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
@@ -3171,10 +3490,11 @@
    "meeting_date": "2025-06-06",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 1
+    "AGAINST": 8
    },
-   "fund_records": 1,
+   "fund_records": 8,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
@@ -3306,12 +3626,14 @@
    "proposal_id": "googl-2025-12",
    "company": "GOOGL",
    "meeting_date": "2025-06-06",
-   "vote": "FOR",
+   "vote": "SPLIT",
    "counts": {
+    "AGAINST": 7,
     "FOR": 1
    },
-   "fund_records": 1,
+   "fund_records": 8,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
@@ -3445,10 +3767,11 @@
    "meeting_date": "2025-06-06",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 1
+    "AGAINST": 8
    },
-   "fund_records": 1,
+   "fund_records": 8,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
@@ -3582,10 +3905,11 @@
    "meeting_date": "2025-06-06",
    "vote": "AGAINST",
    "counts": {
-    "AGAINST": 1
+    "AGAINST": 8
    },
-   "fund_records": 1,
+   "fund_records": 8,
    "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/",
     "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
    ],
    "npx_descriptions": [
@@ -4813,10 +5137,8 @@
    "proposal_id": "meta-2026-3",
    "company": "META",
    "meeting_date": "2026-05-27",
-   "vote": "AGAINST",
-   "counts": {
-    "AGAINST": 3
-   },
+   "vote": "NEEDS_CHECK",
+   "counts": {},
    "fund_records": 3,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
@@ -4833,10 +5155,8 @@
    "proposal_id": "meta-2026-3",
    "company": "META",
    "meeting_date": "2026-05-27",
-   "vote": "FOR",
-   "counts": {
-    "FOR": 1
-   },
+   "vote": "NEEDS_CHECK",
+   "counts": {},
    "fund_records": 1,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
@@ -4852,10 +5172,8 @@
    "proposal_id": "meta-2026-3",
    "company": "META",
    "meeting_date": "2026-05-27",
-   "vote": "FOR",
-   "counts": {
-    "FOR": 2
-   },
+   "vote": "NEEDS_CHECK",
+   "counts": {},
    "fund_records": 2,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/747546/000119312526358191/"
@@ -4888,12 +5206,8 @@
    "proposal_id": "meta-2026-3",
    "company": "META",
    "meeting_date": "2026-05-27",
-   "vote": "SPLIT",
-   "counts": {
-    "AGAINST": 8,
-    "FOR": 2,
-    "SPLIT_WITHIN_FUND": 2
-   },
+   "vote": "NEEDS_CHECK",
+   "counts": {},
    "fund_records": 12,
    "sources": [
     "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/",
@@ -6063,6 +6377,116 @@
   },
   {
    "family": "BlackRock (iShares)",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "Establish a Board Committee on Artificial Intelligence",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.8,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "META",
+   "meeting_date": "2024-05-29",
+   "npx_description": "Report on Human Rights Impact Assessment of Targeted Advertising",
+   "best_guess": "meta-2024-10",
+   "title_cover": 0.67,
+   "description_cover": 1.0,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "AAPL",
+   "meeting_date": "2024-02-28",
+   "npx_description": "Report on Use of Artificial Intelligence",
+   "best_guess": "aapl-2024-7",
+   "title_cover": 0.5,
+   "description_cover": 0.33,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "Establish a Board Committee on Artificial Intelligence",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.8,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "META",
+   "meeting_date": "2024-05-29",
+   "npx_description": "Report on Human Rights Impact Assessment of Targeted Advertising",
+   "best_guess": "meta-2024-10",
+   "title_cover": 0.67,
+   "description_cover": 1.0,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "AAPL",
+   "meeting_date": "2024-02-28",
+   "npx_description": "Report on Use of Artificial Intelligence",
+   "best_guess": "aapl-2024-7",
+   "title_cover": 0.5,
+   "description_cover": 0.33,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "Establish a Board Committee on Artificial Intelligence",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.8,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "META",
+   "meeting_date": "2024-05-29",
+   "npx_description": "Report on Human Rights Impact Assessment of Targeted Advertising",
+   "best_guess": "meta-2024-10",
+   "title_cover": 0.67,
+   "description_cover": 1.0,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "AAPL",
+   "meeting_date": "2024-02-28",
+   "npx_description": "Report on Use of Artificial Intelligence",
+   "best_guess": "aapl-2024-7",
+   "title_cover": 0.5,
+   "description_cover": 0.33,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "AAPL",
+   "meeting_date": "2024-02-28",
+   "npx_description": "Report on Use of Artificial Intelligence",
+   "best_guess": "aapl-2024-7",
+   "title_cover": 0.5,
+   "description_cover": 0.33,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
+  },
+  {
+   "family": "BlackRock (iShares)",
    "company": "AAPL",
    "meeting_date": "2024-02-28",
    "npx_description": "Report on Use of Artificial Intelligence",
@@ -6313,6 +6737,116 @@
    "description_cover": 0.38,
    "runner_up_combined": 0.0,
    "source_url": "https://www.sec.gov/Archives/edgar/data/76721/000139834424017055/"
+  },
+  {
+   "family": "TIAA-CREF",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.67,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+  },
+  {
+   "family": "TIAA-CREF",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.5,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+  },
+  {
+   "family": "TIAA-CREF",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.67,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+  },
+  {
+   "family": "TIAA-CREF",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.5,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+  },
+  {
+   "family": "TIAA-CREF",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.67,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+  },
+  {
+   "family": "TIAA-CREF",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.5,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+  },
+  {
+   "family": "TIAA-CREF",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.67,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+  },
+  {
+   "family": "TIAA-CREF",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.5,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+  },
+  {
+   "family": "TIAA-CREF",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.67,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+  },
+  {
+   "family": "TIAA-CREF",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.67,
+   "description_cover": 0.5,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
   }
  ],
  "notes": [
