@@ -1295,7 +1295,7 @@
     const votes = rows.reduce((k, r) => k + r.upcoming.length, 0);
     const openN = rows.filter((r) => r.open).length;
     const filerSet = new Set(rows.flatMap((r) => r.filers));
-    const fmtD = (iso) => new Date(String(iso).slice(0, 10) + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+    const fmtD = (iso) => window.DATES.long(String(iso).slice(0, 10));
     box.hidden = false;
     box.innerHTML = `<h3 id="net-port-h" class="sub-h">Your portfolio: what it connects to</h3>
       <p class="count-line">${held.length} compan${held.length === 1 ? "y" : "ies"} held in this map${state.portInvestor ? ` (holdings reported by ${esc(((holdingsData() || {}).investors || []).find((i) => i.id === state.portInvestor)?.name || "")})` : ""} · tied to ${allLabs.size} frontier lab${allLabs.size === 1 ? "" : "s"} · ${votes} AI proposal${votes === 1 ? "" : "s"} on upcoming ballots · ${openN} with a proposal filing deadline open · ${filerSet.size} investors and groups already filing AI proposals at these companies (in this dataset).</p>

@@ -8,7 +8,7 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   const src = (url, label = "source") => (url ? ` <a class="src" href="${esc(url)}" target="_blank" rel="noopener">[${esc(label)}]</a>` : "");
   const plural = (n, one, many = one + "s") => `${n} ${n === 1 ? one : many}`;
-  const fmt = (iso) => (iso ? new Date(String(iso).slice(0, 10) + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }) : "");
+  const fmt = (iso) => (iso ? window.DATES.long(String(iso).slice(0, 10)) : "");
   const median = (v) => { if (!v.length) return null; const s = [...v].sort((a, b) => a - b), m = Math.floor(s.length / 2); return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
   const pct = (x) => (x == null ? "" : `${Math.round(x * 10) / 10}%`);
   const money = (usd) => (usd < 1e6 ? "under $1M" : `$${Math.round(usd / 1e6).toLocaleString("en-US")}M`);
