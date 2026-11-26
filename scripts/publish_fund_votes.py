@@ -89,6 +89,10 @@ def main(src):
         "proposals_checked": run["proposals_checked"],
         "summary": summary,
         "near_misses": run.get("review", []),
+        # Pass-through voting per family (data/pass_through_voting.json, sourced by hand).
+        "pass_through_voting": {f["family"]: {k: f.get(k) for k in ("offered", "note", "source_url", "evidence")}
+                                for f in (json.loads((DATA / "pass_through_voting.json").read_text())["families"]
+                                          if (DATA / "pass_through_voting.json").exists() else [])},
         "notes": run.get("notes", []),
     }
     (DATA / "fund_votes.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
