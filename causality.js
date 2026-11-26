@@ -74,15 +74,14 @@
     });
     // Month labels along the top, placed with the same stretched scale.
     const months = d3.timeMonth.range(d3.timeMonth.ceil(t0), t1, 1).filter((m, i, all) => i === 0 || xr(m) - xr(all[i - 1]) > 0);
-    // The first label, and the first label after each change of year, carries the year.
-    let lastX = -1e9, lastYear = null;
+    // Every label carries its year ("Jun ’25"), so any part of the chart, scrolled or screenshotted, is dated
+    // (owner, 2026-11-26).
+    let lastX = -1e9;
     months.forEach((m) => {
       const mx = xr(m);
-      if (mx - lastX < 56) return;
+      if (mx - lastX < 64) return;
       lastX = mx;
-      const showYear = m.getFullYear() !== lastYear;
-      lastYear = m.getFullYear();
-      svg.append("text").text(d3.timeFormat(showYear ? "%b %Y" : "%b")(m)).attr("x", mx).attr("y", top - 10)
+      svg.append("text").text(d3.timeFormat("%b ’%y")(m)).attr("x", mx).attr("y", top - 10)
         .attr("font-size", 10.5).attr("fill", cssVar("--ink-soft")).attr("text-anchor", "middle");
       svg.append("line").attr("x1", mx).attr("x2", mx).attr("y1", top).attr("y2", H - 30).attr("stroke", cssVar("--line")).attr("stroke-width", 0.6);
     });

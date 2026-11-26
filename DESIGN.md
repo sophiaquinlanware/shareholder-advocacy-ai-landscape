@@ -92,8 +92,8 @@ Six sections, in the order of an engagement cycle (owner, 2026-11-26: "like you 
 - **Deadlines and votes:** Key dates and findings (`#start`) · AI proposals on upcoming ballots (`#upcoming`) · New SEC filings (`#new`)
 - **AI value chain:** Chips to AI products (`#value-chain`) · Ties to each frontier lab (`#pathways`)
 - **Company profiles:** One company in full (`#company`) · AI disclosure scores (`#parnassus`) · Shareholder proposal rights (`#rights`)
-- **Proposals and results:** All AI proposals (`#feed`) · How fund families voted (`#votes`)
-- **Network and contacts** (owner, 2026-11-26; was "Investors and contacts"): Network of investors, proposals and companies (`#network`) · Engagement leads (`#people`) · Results of private engagement (`#outcomes`)
+- **Proposals and results:** All AI proposals (`#feed`) · How fund families voted (`#votes`) · Results of private engagement (`#outcomes`; moved here from Network and contacts, owner 2026-11-26: that section maps the network and players)
+- **Network and contacts** (owner, 2026-11-26; was "Investors and contacts"): Network of investors, proposals and companies (`#network`) · Engagement leads (`#people`)
 - **Laws and rules:** AI laws and rule changes (`#causality`)
 
 Labels say what each view holds (owner, 2026-11-26: titles "not enough information that is precise about the actual information stored in each tab"). The line under each section tab lists its contents. View buttons with a count (`data-count-label`) are filled from the data by `labelCounts()` in app.js.
@@ -199,3 +199,10 @@ Roles are derived from the data session's sourced tiers and consumer/enterprise 
 4. No decorative visuals; every visual is blue and has a text equivalent.
 5. Counts, ranges and lists come from the data, never typed into copy.
 6. Plain labels; no definitions, explainers or slogans. The one exception is the Individual investor lens, which has plain-language definitions behind `.term` buttons, as the owner's spec asks.
+
+
+## Lines and controls (owner, 2026-11-26)
+
+- **Full-width hairlines** ("lines all the way through the sheet … not overdoing it"): the header, section bar, row of views and footer each sit on a line that runs edge to edge, matching the full-width graph band.
+- **Select boxes** use one centred chevron in every browser.
+- **Dated timelines:** every month label on the Laws and rules chart carries its year ("Jun ’25"), so any part of it read alone is dated.
