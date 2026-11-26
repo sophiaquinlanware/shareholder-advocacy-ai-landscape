@@ -114,11 +114,10 @@
       <ol class="pw-bars" id="pw-bars"></ol>
       <h3 class="sub-h">Gaps in the tie data</h3>
       <ul class="pw-gaps">${(data.gaps || []).map((g) => `<li>${esc(g)}</li>`).join("") || "<li>None listed.</li>"}</ul>
-      <h3 class="sub-h">Map of ties and filers</h3>
-      <p class="count-line">Filers → companies → labs. Line width = proposals filed or tie strength (1–3). Choose companies to see the labs they reach together.</p>
-      <p class="count-line" id="pw-map-note"></p>
+      <h3 class="sub-h">Value-chain ties: companies → frontier labs</h3>
+      <p class="count-line">Each line is a sourced tie (ownership, investment, board seat, compute, chips or customer); width = tie strength (1–3). Who files proposals where is in the AI advocacy network. Choose companies to see the labs they reach together.</p>
       <details class="pw-cos"><summary>Companies</summary><div class="chips">${cos}</div></details>
-      <div class="net-legend"><span class="leg static"><span class="dot" style="background:var(--t-equity)"></span>company → lab tie (width = strength)</span><span class="leg static"><span class="dot" style="background:var(--t-filer)"></span>filer → company (width = proposals filed)</span></div>
+      <div class="net-legend"><span class="leg static"><span class="dot" style="background:var(--t-equity)"></span>company → lab tie (width = strength)</span></div>
       <div id="pw-graph" class="net-graph pw-graph"></div>
       <div id="pw-panel" class="pw-panel"></div>
       <details class="pw-all"><summary>All ties (${data.ties.length})</summary>
@@ -278,29 +277,25 @@
     const el = document.getElementById("pw-graph");
     const W = el.clientWidth || 800;
     const narrow = W < 640;
-    const inv = shownInvestors();
-    const investors = [...new Map(inv.map((p) => [p.org.id, p.org])).values()]
-      .sort((a, b) => inv.filter((p) => p.org.id === b.id).length - inv.filter((p) => p.org.id === a.id).length || a.name.localeCompare(b.name));
+    // Value-chain ties only (owner, 2026-11-26): this map shows how companies tie to labs; who files which proposal
+    // is the AI advocacy network's job. Filers stay in the routes table above.
+    const inv = [];
     const cols = [
-      { key: "inv", title: "Filers", items: investors.map((o) => ({ id: "o:" + o.id, label: o.name, ref: o })) },
       { key: "co", title: narrow ? "Value chain" : "Value chain (companies tied to labs)", items: byTier(S.data.public_companies).map((c) => ({ id: "c:" + c.id, label: c.name.replace(/\s*\(.*\)/, ""), ref: c })) },
       { key: "lab", title: "Frontier labs", items: S.data.labs.map((l) => ({ id: "l:" + l.id, label: l.name.replace(/\s*\(.*\)/, ""), ref: l })) },
     ];
     const rowH = narrow ? 36 : 24;
     const H = Math.max(260, Math.max(...cols.map((c) => c.items.length)) * rowH + 60);
-    // Three label areas and two link gaps. Filer labels sit left of their dot; company and lab labels right.
-    const G = narrow ? 22 : Math.max(36, Math.round(W * 0.1));
-    const colW = (W - 16 - 2 * G) / 3;
-    const xs = [8 + colW, 8 + colW + G, 8 + colW * 2 + G * 2];
+    // Two label areas (companies, labs) with the ties running between them.
+    const G = narrow ? 40 : Math.max(80, Math.round(W * 0.18));
+    const colW = (W - 16 - G) / 2;
+    const xs = [8, 8 + colW + G];
     const pos = new Map();
     cols.forEach((col, ci) => {
       const span = col.items.length * rowH;
       const top = 40 + (H - 50 - span) / 2;
-      col.items.forEach((it, i) => pos.set(it.id, { x: xs[ci], y: top + i * rowH + rowH / 2, col: ci, ...it }));
+      col.items.forEach((it, i) => pos.set(it.id, { x: xs[ci], y: top + i * rowH + rowH / 2, col: col.key, ...it }));
     });
-    const note = document.getElementById("pw-map-note");
-    const lab = S.data.labs.find((l) => l.id === S.lab);
-    note.textContent = S.selectedCos.size ? `Filers shown: ${investors.length}, with AI proposals on record at the companies chosen.` : lab ? `Filers shown: ${investors.length}, with AI proposals on record at the companies tied to ${lab.name}.` : "";
     return { cols, pos, W, H, xs, colW, narrow, inv };
   }
 
@@ -358,13 +353,13 @@
     S.nodes = svg.append("g").selectAll("g").data([...L.pos.values()]).join("g")
       .attr("transform", (d) => `translate(${d.x},${d.y})`).style("cursor", "pointer")
       .on("click", (ev, d) => onNode(d));
-    S.nodes.append("circle").attr("r", 4).attr("fill", (d) => cssVar(d.col === 0 ? "--blue-mid" : "--blue"));
+    S.nodes.append("circle").attr("r", 4).attr("fill", (d) => cssVar("--blue"));
     S.nodes.append("text").attr("y", 0).attr("font-size", L.narrow ? 10 : 11.5).attr("fill", cssVar("--ink"))
       .attr("stroke", cssVar("--surface") || "#fff").attr("stroke-width", 3).attr("paint-order", "stroke").attr("stroke-linejoin", "round")
-      .attr("text-anchor", (d) => (d.col === 0 ? "end" : "start"))
-      .each(function (d) { wrapLabel(d3.select(this), d.label, labelW - 12, d.col === 0 ? -8 : 8); d.tw = this.getBBox().width; });
+      .attr("text-anchor", "start")
+      .each(function (d) { wrapLabel(d3.select(this), d.label, labelW - 12, 8); d.tw = this.getBBox().width; });
     // Company → lab lines start just after each company's label.
-    S.links.attr("d", (d) => curve({ x: d.a.x + (d.a.col === 0 ? 4 : 12 + (d.a.tw || labelW)), y: d.a.y }, { x: d.b.x - 4, y: d.b.y }));
+    S.links.attr("d", (d) => curve({ x: d.a.x + 12 + (d.a.tw || labelW), y: d.a.y }, { x: d.b.x - 4, y: d.b.y }));
     apply();
   }
 
@@ -450,8 +445,8 @@
   }
 
   function onNode(d) {
-    if (d.col === 2) return selectLab(d.ref.id, true);
-    if (d.col === 1) {
+    if (d.col === "lab") return selectLab(d.ref.id, true);
+    if (d.col === "co") {
       const box = document.querySelector(`#tab-pathways .pw-cos input[value="${d.ref.id}"]`);
       if (box) { box.checked = !box.checked; box.dispatchEvent(new Event("change")); document.querySelector("#tab-pathways .pw-cos").open = true; }
       return;

@@ -167,6 +167,15 @@
     const cols = COLUMNS.filter((c) => c.kinds.some((k) => present.has(k) && !state.hiddenKinds.has(k)));
     return cols.map((c, i) => ({ ...c, x: cols.length === 1 ? 0.5 : 0.1 + (i * 0.8) / (cols.length - 1) }));
   }
+  // Each node's group target (column x, band y, as fractions of the box), folded into the oval the graph is kept
+  // in: a target near a corner is pulled in toward the middle (to 78% of the oval's radius), so the columns curve
+  // with the oval instead of piling into the corners (owner, 2026-11-26: "a bit more naturally circled").
+  function ovalTarget(d) {
+    const nx = groupX(d) * 2 - 1, ny = groupY(d) * 2 - 1;
+    const k = Math.hypot(nx, ny), lim = 0.78;
+    const f = k > lim ? lim / k : 1;
+    return { x: (nx * f + 1) / 2, y: (ny * f + 1) / 2 };
+  }
   const groupX = (d) => {
     if (TOP_BAND.includes(d.kind)) return 0.5;
     // A "topic not filed" node sits just left of its company.
@@ -194,10 +203,13 @@
   // Re-aim the grouping forces after layers change, then let the layout settle again.
   function regroup() {
     if (!state.sim) return;
+    // Showing or hiding types changes how many nodes there are: resize the box when it should change by over 12%.
+    const want = desiredHeight(state.size.width);
+    if (state.drawn && Math.abs(want - state.size.height) / state.size.height > 0.12) { state.sim.stop(); drawGraph(); return; }
     drawAxis();
     const { width, height } = state.size;
-    state.sim.force("gx").x((d) => groupX(d) * width);
-    state.sim.force("gy").y((d) => groupY(d) * height);
+    state.sim.force("gx").x((d) => ovalTarget(d).x * width);
+    state.sim.force("gy").y((d) => ovalTarget(d).y * height);
     if (REDUCED_MOTION) { state.sim.alpha(1).stop(); state.sim.tick(300); state.draw(); } else state.sim.alpha(0.5).restart();
   }
   const groupY = (d) => {
@@ -300,7 +312,9 @@
 
   function shell(el) {
     el.innerHTML = `
+      <p class="eyebrow net-kind">Proposal flow</p>
       <h2>AI advocacy network</h2>
+      <p class="count-line">Who files AI shareholder proposals, on what, at which companies, and how those companies tie to frontier labs. Filers → proposals → companies → labs. For value-chain ties alone, see Lab pathways.</p>
       <fieldset class="lens-pick" id="net-lens"><legend>View as</legend>${Object.entries(window.LENSES || {}).map(([id, l]) =>
         `<label class="chip"><input type="radio" name="net-lens" value="${esc(id)}"${id === state.lens ? " checked" : ""}> ${esc(l.label)}</label>`).join("")}</fieldset>
       <p class="visually-hidden" id="net-lens-status" aria-live="polite"></p>
@@ -1154,10 +1168,20 @@
     el.addEventListener("blur", () => { if (state.kbId) { state.hover = null; applyStyles(); } });
   }
 
+  // The graph box grows with what it shows (owner, 2026-11-26: "a bigger rectangle space that adapts to the amount
+  // of nodes"): its height is set from the total area of the visible nodes at a comfortable packing density, between
+  // the old fixed height and 1,600px (1,000px on phones).
+  function desiredHeight(width) {
+    const phone = window.innerWidth < 640;
+    const base = phone ? 460 : 600, cap = phone ? 1000 : 1600;
+    const area = state.data.nodes.filter(visible).reduce((t, n) => t + Math.PI * (radius(n) + 6) ** 2, 0);
+    return Math.round(Math.max(base, Math.min(cap, (area * 2.4) / Math.max(320, width) + HEADER_H + 60)));
+  }
   function drawGraph() {
     const el = document.getElementById("net-graph");
     el.innerHTML = "";
     const width = el.clientWidth || 800;
+    el.style.height = desiredHeight(width) + "px";
     const height = el.clientHeight || 560;
     state.size = { width, height };
     state.cols = activeColumns();
@@ -1172,13 +1196,30 @@
 
     const sim = d3.forceSimulation(data.nodes)
       .force("link", d3.forceLink(data.links).id((d) => d.id).distance((l) => linkBase(l) * state.cfg.linkDist).strength(state.cfg.linkStrength))
-      .force("charge", d3.forceManyBody().strength((d) => (d.kind === "company" ? -420 : -110) * state.cfg.repel))
+      .force("charge", d3.forceManyBody().strength((d) => (d.kind === "company" ? -420 : -110) * state.cfg.repel).distanceMax(Math.max(220, Math.min(width, height) * 0.4)))
       .force("collide", d3.forceCollide().radius((d) => radius(d) + 3))
       .force("center", d3.forceCenter(width / 2, height / 2))
       .force("x", d3.forceX(width / 2).strength(state.cfg.center))
       .force("y", d3.forceY(height / 2).strength(state.cfg.center * 1.25))
-      .force("gx", d3.forceX((d) => groupX(d) * width).strength(state.cfg.group))
-      .force("gy", d3.forceY((d) => groupY(d) * height).strength(state.cfg.group * 0.8));
+      .force("gx", d3.forceX((d) => ovalTarget(d).x * width).strength(state.cfg.group))
+      .force("gy", d3.forceY((d) => ovalTarget(d).y * height).strength(state.cfg.group * 0.8))
+      // A soft oval boundary (owner, 2026-11-26: "it doesn't have to go so far to the edge … a bit more naturally
+      // circled"): a node outside the oval inscribed in the box is drawn gently back toward the middle, so the cloud
+      // rounds off instead of piling up along the edges. The hard limit below is only a safety margin.
+      .force("oval", (alpha) => {
+        const top = state.cfg.group > 0 ? HEADER_H : 0;
+        const cx = width / 2, cy = (top + height) / 2;
+        const rx = width / 2 - 28, ry = (height - top) / 2 - 24;
+        for (const d of state.data.nodes) {
+          const nx = (d.x - cx) / rx, ny = (d.y - cy) / ry;
+          const k = Math.hypot(nx, ny);
+          if (k > 1) {
+            const pull = ((k - 1) / k) * alpha * 2.5;
+            d.vx -= (d.x - cx) * pull;
+            d.vy -= (d.y - cy) * pull;
+          }
+        }
+      });
     state.sim = sim;
     state.linkSel = g.append("g").attr("stroke", cssVar("--g-link")).attr("fill", "none").selectAll("path").data(data.links).join("path")
       .attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.4 : 1) * state.cfg.linkScale)

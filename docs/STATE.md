@@ -41,6 +41,15 @@ Upcoming votes · Company lookup · Proposals · Fund votes · Rights map · AI 
   - Layout shift: 0.20 → 0.03. Lighthouse: phone 100, desktop 97.
 - **Stages 3–10** follow one at a time, each shown to the owner: count-ups, charts drawing in, row stagger, timelines, view transitions and skeletons, micro-interactions, Cmd+K, and mobile cards.
 
+## Title, graph space, two graphs' jobs (owner, 2026-11-26)
+
+- **Site title:** "Shareholder advocacy on AI" (34px; the eyebrow label is gone).
+- **Network box:** grows with its visible nodes (600–1,600px; 460–1,000px on phones). It uses a soft oval boundary instead of pinning nodes to the edges.
+- **Lab pathways map:** value-chain ties only (companies → labs). The network is labelled "Proposal flow".
+- **First tabs load faster:** five small data files are preloaded, and the large ones start after.
+- **Check:** 160 passed; Lighthouse phone 100, desktop 91.
+- **Owner idea, next, after the data session's restructure merges:** two views on the network graph, (1) how everything is connected and (2) active and past proposals.
+
 ## Network key (owner, 2026-11-26)
 
 The "only" links are gone. Clicking a type chip cycles it: shown → highlighted (the rest dims) → crossed off → shown. "Show all" resets. Proposal categories work the same way. Small and owner-directed, so it was not separately reviewed; a test covers the cycle.
