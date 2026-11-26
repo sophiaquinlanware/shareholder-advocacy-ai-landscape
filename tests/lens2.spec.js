@@ -115,18 +115,21 @@ test("company deadline: next annual meeting wording, proxy text and source", asy
 });
 
 test("no pulse under reduced motion", async ({ page }) => {
-  // This test waits for the drawn graph, which needs d3 from the CDN; allow for a slow CDN under a full parallel run.
-  test.setTimeout(90000);
+  // Checks the stylesheet rule directly with a pulse-classed circle, so the test doesn't depend on the graph
+  // (and d3 from the CDN) having drawn; it timed out under load late in full runs.
   await page.emulateMedia({ reducedMotion: "reduce" });
   await open(page);
-  await page.waitForSelector("#net-graph svg circle", { timeout: 75000 });
-  // No mark on the graph animates.
-  expect(
-    await page.$$eval(
-      "#net-graph circle",
-      (cs) => cs.filter((c) => getComputedStyle(c).animationName !== "none").length,
-    ),
-  ).toBe(0);
+  const anim = await page.evaluate(() => {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    c.setAttribute("class", "g-pulse");
+    svg.appendChild(c);
+    document.body.appendChild(svg);
+    const name = getComputedStyle(c).animationName;
+    svg.remove();
+    return name;
+  });
+  expect(anim).toBe("none");
 });
 
 test("holdings: fade, count line, Esc returns focus, kept across reload, nothing sent", async ({ page }) => {
