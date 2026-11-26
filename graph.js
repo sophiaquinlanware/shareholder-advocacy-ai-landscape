@@ -114,11 +114,43 @@
     { x: 0.92, label: "Frontier labs", kinds: ["lab"] },
   ];
   const TOP_BAND = ["policy", "response", "public"];
+  // Columns whose node types are all hidden give up their space; the rest spread across the width.
+  function activeColumns() {
+    const present = new Set(state.data.nodes.map((n) => n.kind));
+    const cols = COLUMNS.filter((c) => c.kinds.some((k) => present.has(k) && !state.hiddenKinds.has(k)));
+    return cols.map((c, i) => ({ ...c, x: cols.length === 1 ? 0.5 : 0.1 + (i * 0.8) / (cols.length - 1) }));
+  }
   const groupX = (d) => {
     if (TOP_BAND.includes(d.kind)) return 0.5;
-    const col = COLUMNS.find((c) => c.kinds.includes(d.kind));
+    const col = (state.cols || COLUMNS).find((c) => c.kinds.includes(d.kind));
     return col ? col.x : 0.5;
   };
+  // Column headers (short on phones) and filer-type band labels, redrawn when layers change.
+  function drawAxis() {
+    if (!state.axis) return;
+    const { width, height } = state.size;
+    const narrow = width < 640;
+    const SHORT = { People: "People", Filers: "Filers", Proposals: "Proposals", Companies: "Cos.", "Frontier labs": "Labs" };
+    state.cols = activeColumns();
+    state.axis.selectAll("*").remove();
+    state.axis.selectAll("text.col").data(state.cols).join("text").attr("class", "col")
+      .attr("x", (c) => c.x * width).attr("y", 14).attr("text-anchor", "middle").attr("font-size", narrow ? 9.5 : 11)
+      .text((c) => (narrow ? SHORT[c.label] : c.label).toUpperCase());
+    const bands = FILER_ROWS.filter((k) => !state.hiddenKinds.has(k) && state.data.nodes.some((n) => n.kind === k));
+    if (!narrow) state.axis.selectAll("text.band").data(bands).join("text").attr("class", "band")
+      .attr("x", 6).attr("y", (k) => groupY({ kind: k }) * height + 4).attr("font-size", 10).attr("font-weight", 400)
+      .text((k) => TYPE_LABEL[k]);
+    state.axis.attr("display", state.cfg.group > 0 ? null : "none");
+  }
+  // Re-aim the grouping forces after layers change, then let the layout settle again.
+  function regroup() {
+    if (!state.sim) return;
+    drawAxis();
+    const { width, height } = state.size;
+    state.sim.force("gx").x((d) => groupX(d) * width);
+    state.sim.force("gy").y((d) => groupY(d) * height);
+    if (REDUCED_MOTION) { state.sim.alpha(1).stop(); state.sim.tick(300); state.draw(); } else state.sim.alpha(0.5).restart();
+  }
   const groupY = (d) => {
     if (TOP_BAND.includes(d.kind)) return 0.06;
     const i = FILER_ROWS.indexOf(d.kind);
@@ -145,7 +177,7 @@
     const maxDeg = Math.max(...state.data.nodes.map((n) => n.degree || 0));
     const row = (s) => {
       const max = s.key === "labelMin" ? maxDeg : s.max;
-      return `<label class="gs-row"><span>${esc(s.label)} <output id="gs-out-${s.key}">${esc(s.fmt(state.cfg[s.key]))}</output></span>
+      return `<label class="gs-row"><span>${esc(s.label)} <output id="gs-out-${s.key}" aria-hidden="true">${esc(s.fmt(state.cfg[s.key]))}</output></span>
         <input type="range" data-gs="${s.key}" min="${s.min}" max="${max}" step="${s.step}" value="${state.cfg[s.key]}"></label>`;
     };
     const group = (g) => `<fieldset class="gs-group"><legend>${g}</legend>${SLIDERS.filter((s) => s.group === g).map(row).join("")}</fieldset>`;
@@ -197,7 +229,7 @@
     sim.force("y").strength(state.cfg.center * 1.25);
     sim.force("gx").strength(state.cfg.group);
     sim.force("gy").strength(state.cfg.group * 0.8);
-    state.axis.attr("display", state.cfg.group > 0 ? null : "none");
+    drawAxis();
     if (REDUCED_MOTION) { sim.alpha(1).stop(); sim.tick(300); state.draw(); } else sim.alpha(0.6).restart();
   }
   const linkBase = (l) => (l.relation === "member of" ? 90 : l.relation === "proposal at" ? 55 : l.relation === "works at" ? 22 : 45);
@@ -205,7 +237,7 @@
 
   function shell(el) {
     el.innerHTML = `
-      <h2>Network</h2>
+      <h2>Co-filer network</h2>
       <p class="intro" id="net-intro"></p>
       <div class="net-controls">
         <input type="search" id="net-search" placeholder="Search an organization or company" aria-label="Search the network">
@@ -219,7 +251,7 @@
       <div id="net-legend" class="net-legend"></div>
       <details id="net-settings" class="graph-settings"></details>
       <div class="net-body">
-        <div id="net-graph" class="net-graph" aria-label="Network graph"></div>
+        <div id="net-graph" class="net-graph" role="group" aria-label="Co-filer network graph; the List view has the same data as a table"></div>
         <div id="net-list" class="net-list" hidden></div>
         <aside id="net-panel" class="net-panel" aria-live="polite"><p class="status-note">Select a node for its connections and sources.</p></aside>
       </div>`;
@@ -237,7 +269,7 @@
   function intro() {
     refreshConnected();
     const shown = state.data.nodes.filter(visible).length;
-    document.getElementById("net-intro").textContent = `${shown} of ${state.data.nodes.length} nodes shown. Node size = number of connections. Switch layers in the legend; adjust size, labels and forces in Graph settings.`;
+    document.getElementById("net-intro").textContent = `${shown} of ${state.data.nodes.length} nodes shown. Node size = number of connections.`;
   }
 
   function neighbors(id) {
@@ -284,6 +316,7 @@
       const b = document.querySelector(`#net-legend .leg[data-kind="${n.kind}"]`);
       if (b) b.setAttribute("aria-pressed", "true");
       intro();
+      regroup();
     }
     state.selected = id;
     showPanel(n);
@@ -342,6 +375,7 @@
     const width = el.clientWidth || 800;
     const height = el.clientHeight || 560;
     state.size = { width, height };
+    state.cols = activeColumns();
     const data = state.data;
 
     const svg = d3.select(el).append("svg").attr("viewBox", [0, 0, width, height]).attr("width", width).attr("height", height);
@@ -364,7 +398,7 @@
     // Column labels for the grouped layout; they move and zoom with the graph.
     state.axis = g.append("g").attr("font-size", 11).attr("font-weight", 600).attr("fill", cssVar("--ink-soft"))
       .attr("display", state.cfg.group > 0 ? null : "none");
-    state.axis.selectAll("text").data(COLUMNS).join("text").attr("x", (c) => c.x * width).attr("y", 14).attr("text-anchor", "middle").text((c) => c.label.toUpperCase());
+    drawAxis();
     state.linkSel = g.append("g").attr("stroke", cssVar("--blue-3")).attr("fill", "none").selectAll("path").data(data.links).join("path")
       .attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.4 : 1) * state.cfg.linkScale)
       .attr("stroke-dasharray", (l) => (l.relation === "member of" || l.derived ? "3 3" : null));
@@ -391,10 +425,18 @@
       .attr("pointer-events", "none")
       .attr("dx", (d) => radius(d) + 4).attr("dy", 4);
 
+    // Keep every node inside the box (below the column headers), and anchor right-hand labels leftwards.
     const draw = () => {
+      data.nodes.forEach((d) => {
+        const r = radius(d) + 2;
+        d.x = Math.max(r, Math.min(width - r, d.x));
+        d.y = Math.max(r + 22, Math.min(height - r, d.y));
+      });
       state.linkSel.attr("d", arc);
       state.node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
-      state.labels.attr("x", (d) => d.x).attr("y", (d) => d.y);
+      state.labels.attr("x", (d) => d.x).attr("y", (d) => d.y)
+        .attr("text-anchor", (d) => (d.x > width * 0.72 ? "end" : "start"))
+        .attr("dx", (d) => (d.x > width * 0.72 ? -(radius(d) + 4) : radius(d) + 4));
     };
     state.draw = draw;
     sim.on("tick", draw);
@@ -412,7 +454,7 @@
       return `<tr><td><button class="linklike" data-id="${esc(n.id)}">${esc(n.label)}</button></td><td>${esc(TYPE_LABEL[n.kind])}</td><td>${props.length}</td><td>${esc(cos)}</td></tr>`;
     }).join("");
     const el = document.getElementById("net-list");
-    el.innerHTML = `<div class="table-wrap"><table><thead><tr><th>Organization</th><th>Type</th><th>AI proposals</th><th>Companies</th></tr></thead><tbody>${rows || `<tr><td colspan="4">No matches.</td></tr>`}</tbody></table></div>`;
+    el.innerHTML = `<div class="table-wrap"><table><thead><tr><th scope="col">Organization</th><th scope="col">Type</th><th scope="col">AI proposals</th><th scope="col">Companies</th></tr></thead><tbody>${rows || `<tr><td colspan="4">No matches.</td></tr>`}</tbody></table></div>`;
     el.querySelectorAll(".linklike").forEach((b) => b.addEventListener("click", () => {
       const n = state.data.nodes.find((x) => x.id === b.dataset.id);
       state.selected = n.id; showPanel(n);
@@ -437,10 +479,11 @@
       if (state.hiddenKinds.has(k)) state.hiddenKinds.delete(k); else state.hiddenKinds.add(k);
       b.setAttribute("aria-pressed", String(!state.hiddenKinds.has(k)));
       refresh();
+      regroup();
     }));
-    document.querySelectorAll(".seg button").forEach((b) => b.addEventListener("click", () => {
+    document.querySelectorAll("#tab-network .seg button").forEach((b) => b.addEventListener("click", () => {
       state.view = b.dataset.view;
-      document.querySelectorAll(".seg button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      document.querySelectorAll("#tab-network .seg button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
       document.getElementById("net-graph").hidden = state.view !== "graph";
       document.getElementById("net-list").hidden = state.view !== "list";
       if (state.view === "list") drawList();

@@ -31,9 +31,11 @@ test("the page loads with no errors and no missing files", async ({ page }) => {
 });
 
 test("every tab: no sideways scrolling, no overlapping text", async ({ page }, info) => {
+  const problems = [];
+  // Graphs draw when their tab first opens, so script errors there only show up here.
+  page.on("pageerror", (err) => problems.push(`script error: ${err.message}`));
   await page.goto("/index.html");
   await page.waitForLoadState("networkidle");
-  const problems = [];
   for (const tab of await tabNames(page)) {
     await page.click(`[role="tab"][data-tab="${tab}"]`);
     await page.waitForTimeout(600); // let graphs settle before measuring

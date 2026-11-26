@@ -58,7 +58,7 @@
     // Tie type is named in the tie table and the side panel.
     const legend = `<span class="leg static"><span class="dot" style="background:${cssVar("--t-equity")}"></span>company → lab tie (width = strength)</span>`;
     el.innerHTML = `
-      <h2>Pathways</h2>
+      <h2>Lab pathways</h2>
       <p class="intro">${data.ties.length} ties between ${data.public_companies.length} public companies and ${data.labs.length} frontier labs, with the filers active at each company. Line width = tie strength (1–3) or proposals filed.</p>
       <div class="pw-modes">
         <div><p class="pw-label">Labs</p><div class="chips">${labs}</div></div>
@@ -221,7 +221,7 @@
   window.renderPathways = function (data, network) {
     const el = document.getElementById("tab-pathways");
     if (!data || !data.labs || !data.labs.length) {
-      el.innerHTML = `<div class="coming"><h2>Influence pathways</h2><p>Being sourced now.</p></div>`;
+      el.innerHTML = `<div class="coming"><h2>Lab pathways</h2><p>Being sourced now.</p></div>`;
       return;
     }
     S = { data, inv: investorLinks(network || {}), selectedCos: new Set(), activeIds: null };

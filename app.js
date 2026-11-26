@@ -95,25 +95,44 @@ function renderUpcoming() {
       <td>${esc(filer) || `<span class="ticker">Filer not recorded</span>`}</td>
       <td>${topicTag(i.topic)}</td>
       <td>${esc(i.board_rec || "")}</td>
-      <td class="num">${h.voted ? `${h.voted} voted<div class="ticker">median ${h.median}%, high ${h.max}%</div>` : `<span class="ticker">none on file</span>`}</td></tr>`;
+      <td class="num">${historyText(h) ? `<button type="button" class="linklike" data-co="${esc(m.ticker)}">${esc(historyText(h))}</button>` : `<span class="ticker">none on file</span>`}</td></tr>`;
   }).join("");
   document.getElementById("tab-upcoming").innerHTML = `
     <h2>Upcoming votes</h2>
-    <p class="intro">${plural(items.length, "AI proposal")} on ${plural(meetings.filter((m) => (m.items || []).length).length, "ballot")}, by meeting date. Source: each company's proxy statement. "AI votes at company" = earlier AI proposals there with a recorded result.</p>
-    ${rows ? `<div class="table-wrap"><table><thead><tr><th scope="col">Meeting</th><th scope="col">Company</th><th scope="col">Item</th><th scope="col">Proposal</th><th scope="col">Filed by</th><th scope="col">Topic</th><th scope="col">Board</th><th scope="col">AI votes at company</th></tr></thead><tbody>${rows}</tbody></table></div>` : `<p class="status-note">No AI proposals on announced ballots.</p>`}
+    <p class="intro">${plural(items.length, "AI proposal")} on ${plural(meetings.filter((m) => (m.items || []).length).length, "ballot")}, by meeting date. Source: each company's proxy statement.</p>
+    ${rows ? `<div class="table-wrap"><table><thead><tr><th scope="col">Meeting</th><th scope="col">Company</th><th scope="col">Item</th><th scope="col">Proposal</th><th scope="col">Filed by</th><th scope="col">Topic</th><th scope="col">Board</th><th scope="col">Earlier AI votes here</th></tr></thead><tbody>${rows}</tbody></table></div>` : `<p class="status-note">No AI proposals on announced ballots.</p>`}
     ${empty.length ? `<h3 class="sub-h">Meetings with no AI proposals on the ballot, or ballot not yet filed</h3>
       <ul class="steps">${empty.map((m) => `<li><button type="button" class="linklike" data-co="${esc(m.ticker)}">${esc(m.company)}</button>, ${esc(m.meeting_label)}: ${esc(m.status_label || "")}${m.proxy_url ? src(m.proxy_url, "proxy") : ""}</li>`).join("")}</ul>` : ""}`;
   wireCompanyLinks(document.getElementById("tab-upcoming"));
 }
 
-// Earlier AI proposals at a company that have a recorded result: count, median and highest support.
+// Earlier AI votes at a company: only proposals with a vote-results filing and a meeting date (the same
+// rule as the Proposals chart). Count, median and high at the stored precision, plus how many of them
+// the company reports on another basis (their notes are in the history table).
+const pct = (x) => `${Math.round(x * 100) / 100}%`;
 function history(ticker) {
-  const v = ((DATA.proposals && DATA.proposals.proposals) || []).filter((p) => p.company === ticker && p.status === "voted" && p.support_pct != null).map((p) => p.support_pct).sort((a, b) => a - b);
-  if (!v.length) return { voted: 0 };
+  const all = ((DATA.proposals && DATA.proposals.proposals) || []).filter((p) => p.company === ticker && p.status === "voted");
+  const rows = all.filter((p) => p.support_pct != null && p.results_url && p.meeting_date);
+  const v = rows.map((p) => p.support_pct).sort((a, b) => a - b);
+  if (!v.length) return { voted: 0, total: all.length };
   const mid = Math.floor(v.length / 2);
   const median = v.length % 2 ? v[mid] : (v[mid - 1] + v[mid]) / 2;
-  return { voted: v.length, median: Math.round(median * 10) / 10, max: v.at(-1) };
+  return { voted: v.length, total: all.length, median, max: v.at(-1), basis: rows.filter((p) => p.support_note && !/match/i.test(p.support_note)).length };
 }
+// "11 votes with a filing · median 21.2% · high 36.19%", flagging any the company reports on another basis.
+function historyText(h) {
+  if (!h.voted) return h.total ? `${h.total} voted, no vote-results filing recorded` : "";
+  return `${plural(h.voted, "vote")} with a filing${h.total > h.voted ? ` (of ${h.total})` : ""} · median ${pct(h.median)} · high ${pct(h.max)}${h.basis ? ` · company reports ${h.basis} on another basis` : ""}`;
+}
+// Support notes repeat across many rows (e.g. every dual-class vote), so each distinct note is listed
+// once under its table and rows carry its number.
+function footnotes(rows) {
+  const map = new Map();
+  rows.forEach((p) => { if (p.support_note && !map.has(p.support_note)) map.set(p.support_note, map.size + 1); });
+  return map;
+}
+const fnMark = (map, p) => (p.support_note ? `<sup class="fn"><span class="visually-hidden">note </span>${map.get(p.support_note)}</sup>` : "");
+const fnList = (map) => (map.size ? `<ol class="fn-list" aria-label="Notes on support figures">${[...map.keys()].map((t) => `<li>${esc(t)}</li>`).join("")}</ol>` : "");
 // Any element with data-co="TICKER" opens that company in Company lookup.
 function wireCompanyLinks(root) {
   root.querySelectorAll("[data-co]").forEach((b) => b.addEventListener("click", () => openCompany(b.dataset.co)));
@@ -121,30 +140,37 @@ function wireCompanyLinks(root) {
 
 // ---------- Company lookup ----------
 // One company, everything on file: upcoming ballot, proposal history, filers, rights, lab ties, disclosure score.
-function companyTickers() {
-  const fromCos = (DATA.companies || []).map((c) => c.ticker);
-  const fromProps = ((DATA.proposals && DATA.proposals.proposals) || []).map((p) => p.company);
-  return [...new Set([...fromCos, ...fromProps].filter(Boolean))].sort((a, b) => companyName(a).localeCompare(companyName(b)));
+// Companies are keyed by their id in companies.json (private companies have no ticker); a proposal
+// company missing from that file is keyed by its ticker.
+const realTicker = (t) => (t && !/^(private|UNVERIFIED)$/i.test(t) ? t : "");
+function companyEntries() {
+  const cos = DATA.companies || [];
+  const list = cos.map((c) => ({ key: c.id || c.ticker, c }));
+  const known = new Set(cos.map((c) => c.ticker).filter(Boolean));
+  const propCos = new Set(((DATA.proposals && DATA.proposals.proposals) || []).map((p) => p.company).filter(Boolean));
+  propCos.forEach((t) => { if (!known.has(t)) list.push({ key: t, c: { ticker: t, name: t } }); });
+  return list.sort((a, b) => a.c.name.localeCompare(b.c.name));
 }
+const keyForTicker = (t) => { const c = (DATA.companies || []).find((x) => x.ticker === t); return c ? c.id || c.ticker : t; };
 function openCompany(ticker) {
   const pick = document.getElementById("co-pick");
   if (!pick) return;
+  const key = keyForTicker(ticker);
   // If a sector or reason filter hides this company, clear the filters first.
-  if (![...pick.options].some((o) => o.value === ticker)) {
+  if (![...pick.options].some((o) => o.value === key)) {
     ["co-sector", "co-basis"].forEach((id) => {
       const s = document.getElementById(id);
       if (s && s.value) { s.value = ""; s.dispatchEvent(new Event("change")); }
     });
   }
-  pick.value = ticker;
-  drawCompany(ticker);
+  pick.value = key;
+  drawCompany(key);
   showTab("company", true);
 }
 function renderCompany() {
   const el = document.getElementById("tab-company");
-  const all = companyTickers();
+  const all = companyEntries();
   const cos = DATA.companies || [];
-  const info = (t) => cos.find((c) => c.ticker === t) || {};
   const sectors = [...new Set(cos.flatMap((c) => c.sectors || []))].sort();
   const bases = [...new Set(cos.map((c) => c.basis_type).filter(Boolean))].sort();
   const F = { sector: "", basis: "" };
@@ -160,9 +186,9 @@ function renderCompany() {
     <div id="co-body" aria-live="polite"></div>`;
   const pick = document.getElementById("co-pick");
   const fill = () => {
-    const list = all.filter((t) => (!F.sector || (info(t).sectors || []).includes(F.sector)) && (!F.basis || info(t).basis_type === F.basis));
-    const keep = list.includes(pick.value) ? pick.value : list[0];
-    pick.innerHTML = list.map((t) => `<option value="${esc(t)}">${esc(companyName(t))} (${esc(t)})</option>`).join("");
+    const list = all.filter(({ c }) => (!F.sector || (c.sectors || []).includes(F.sector)) && (!F.basis || c.basis_type === F.basis));
+    const keep = list.some((e) => e.key === pick.value) ? pick.value : list[0] && list[0].key;
+    pick.innerHTML = list.map(({ key, c }) => `<option value="${esc(key)}">${esc(c.name)}${realTicker(c.ticker) ? ` (${esc(c.ticker)})` : ""}</option>`).join("");
     document.getElementById("co-count").textContent = `${plural(list.length, "company", "companies")}${F.sector || F.basis ? ` of ${all.length}` : ""}.`;
     if (keep) { pick.value = keep; drawCompany(keep); } else document.getElementById("co-body").innerHTML = `<p class="status-note">No companies match.</p>`;
   };
@@ -175,19 +201,21 @@ function renderCompany() {
 function factRow(label, obj) {
   return obj && obj.text ? `<div><dt>${esc(label)}</dt><dd>${esc(obj.text)}${src(obj.url)}</dd></div>` : `<div><dt>${esc(label)}</dt><dd><span class="unverified">source pending</span></dd></div>`;
 }
-function drawCompany(t) {
-  const c = (DATA.companies || []).find((x) => x.ticker === t) || { ticker: t, name: companyName(t) };
-  const props = ((DATA.proposals && DATA.proposals.proposals) || []).filter((p) => p.company === t)
+function drawCompany(key) {
+  const entry = companyEntries().find((e) => e.key === key) || { c: { ticker: key, name: key } };
+  const c = entry.c;
+  const t = realTicker(c.ticker);
+  const props = ((DATA.proposals && DATA.proposals.proposals) || []).filter((p) => t && p.company === t)
     .sort((a, b) => String(b.meeting_date || b.year).localeCompare(String(a.meeting_date || a.year)));
   const h = history(t);
-  const meeting = ((DATA.upcoming && DATA.upcoming.meetings) || []).find((m) => m.ticker === t);
+  const meeting = t ? ((DATA.upcoming && DATA.upcoming.meetings) || []).find((m) => m.ticker === t) : null;
   // Filers: organizations linked to this company's proposals in the shared graph.
   const G = DATA.graph && DATA.graph.nodes ? DATA.graph : { nodes: [], edges: [] };
   const byId = new Map(G.nodes.map((n) => [n.id, n]));
   const filerCount = new Map();
   G.edges.forEach((e) => {
     const o = byId.get(e.source), p = byId.get(e.target);
-    if (o && p && p.type === "proposal" && p.company === t && ["investor", "coalition"].includes(o.type) && /filer/.test(e.type)) {
+    if (t && o && p && p.type === "proposal" && p.company === t && ["investor", "coalition"].includes(o.type) && /filer/.test(e.type)) {
       const k = o.id;
       if (!filerCount.has(k)) filerCount.set(k, { node: o, n: 0 });
       filerCount.get(k).n += 1;
@@ -195,38 +223,44 @@ function drawCompany(t) {
   });
   const filers = [...filerCount.values()].sort((a, b) => b.n - a.n || a.node.label.localeCompare(b.node.label));
   const pw = DATA.pathways || {};
-  const ties = (pw.ties || []).filter((x) => x.from === t.toLowerCase());
+  // Ties from this company to labs; and, when the company is itself a frontier lab, ties into it.
+  const ids = new Set([c.id, t.toLowerCase()].filter(Boolean));
+  const ties = (pw.ties || []).filter((x) => ids.has(x.from));
+  const inbound = (pw.ties || []).filter((x) => ids.has(x.to));
+  const coName = (id) => ((pw.public_companies || []).find((x) => x.id === id) || {}).name || id;
   const labName = (id) => ((pw.labs || []).find((l) => l.id === id) || {}).name || id;
-  const sc = ((DATA.scorecard && DATA.scorecard.companies) || []).find((x) => x.ticker === t);
+  const sc = t ? ((DATA.scorecard && DATA.scorecard.companies) || []).find((x) => x.ticker === t) : null;
   const scCount = (k) => (sc ? sc.scores.filter((s) => s.score === k).length : 0);
   const nCrit = DATA.scorecard && DATA.scorecard.criteria ? DATA.scorecard.criteria.length : 0;
 
+  const notes = footnotes(props);
   const propRows = props.map((p) => `<tr>
       <td class="nowrap">${p.meeting_date ? esc(fmtDate(p.meeting_date, true)) : `${esc(p.year)}`}</td>
       <td>${esc(p.title)}${p.results_url ? src(p.results_url, "results") : p.proxy_url ? src(p.proxy_url, "proxy") : ""}${(p.status === "withdrawn" || p.status === "excluded") ? `<div class="reason"><strong>Reason:</strong> ${p.status_reason ? esc(p.status_reason) + src(p.status_source_url) : "Reason not yet recorded."}</div>` : ""}</td>
       <td>${p.proponent && !/UNVERIFIED/.test(p.proponent) ? esc(p.proponent) : `<span class="ticker">not recorded</span>`}</td>
       <td><span class="pill st-${esc(p.status)}">${esc(PROPOSAL_STATUS[p.status] || p.status)}</span></td>
-      <td class="num">${p.support_pct != null ? `${esc(p.support_pct)}%` : ""}${p.support_note ? `<div class="note">${esc(p.support_note)}</div>` : ""}</td></tr>`).join("");
+      <td class="num">${p.support_pct != null ? `${esc(p.support_pct)}%${fnMark(notes, p)}${p.results_url ? "" : `<div class="note">Vote-results filing not recorded</div>`}` : ""}</td></tr>`).join("");
   const ballot = meeting && (meeting.items || []).length ? `<div class="table-wrap"><table><thead><tr><th scope="col">Item</th><th scope="col">Proposal</th><th scope="col">Topic</th><th scope="col">Board</th></tr></thead><tbody>${meeting.items.map((i) => `<tr><td>${esc(i.number)}</td><td>${esc(i.title)}${src(i.url || meeting.proxy_url, "proxy")}</td><td>${topicTag(i.topic)}</td><td>${esc(i.board_rec || "")}</td></tr>`).join("")}</tbody></table></div>` : "";
 
   document.getElementById("co-body").innerHTML = `
-    <h3 class="co-title">${esc(c.name)} <span class="ticker">${esc(t)}</span></h3>
+    <h3 class="co-title">${esc(c.name)} <span class="ticker">${esc(t || (c.shareholder_route === "private" ? "private" : ""))}</span></h3>
     <dl class="summary">
-      ${c.shareholder_route ? `<div><dt>Shareholder route</dt><dd>${esc(c.shareholder_route)}${src(c.route_source_url)}</dd></div>` : ""}
+      ${c.shareholder_route || c.route_note ? `<div><dt>Shareholder route</dt><dd>${shareholderRoute(c)}</dd></div>` : ""}
       ${c.sectors && c.sectors.length ? `<div><dt>Sectors</dt><dd>${esc(c.sectors.join(", "))}</dd></div>` : ""}
       <div><dt>Proposal route (rights map)</dt><dd>${c.rights_tracked === false ? `<span class="ticker">not yet tracked</span>` : `<span class="pill ${esc(c.route_status || "pending")}">${esc(STATUS_LABEL[c.route_status] || "Being verified")}</span>`}</dd></div>
-      <div><dt>AI proposals on file</dt><dd>${props.length}${h.voted ? ` · ${h.voted} voted · median ${h.median}% · high ${h.max}%` : ""}</dd></div>
+      <div><dt>AI proposals on file</dt><dd>${props.length}${historyText(h) ? ` · ${esc(historyText(h))}` : ""}</dd></div>
       <div><dt>Next meeting</dt><dd>${meeting ? `${esc(meeting.meeting_label)} · ${esc(meeting.status_label || "")}${meeting.proxy_url ? src(meeting.proxy_url, "proxy") : ""}` : `<span class="ticker">not listed</span>`}</dd></div>
       <div><dt>Disclosure score</dt><dd>${sc ? `${scCount("met")} met · ${scCount("partial")} partial · ${scCount("silent")} silent of ${nCrit}` : `<span class="ticker">not scored</span>`}</dd></div>
     </dl>
     ${whyIncluded(c)}
     ${ballot ? `<h3 class="sub-h">Upcoming ballot</h3>${ballot}` : ""}
     <h3 class="sub-h">AI proposal history</h3>
-    ${propRows ? `<div class="table-wrap"><table><thead><tr><th scope="col">Meeting</th><th scope="col">Proposal</th><th scope="col">Filed by</th><th scope="col">Status</th><th scope="col">Support</th></tr></thead><tbody>${propRows}</tbody></table></div><p><button type="button" class="linklike" data-feed="${esc(t)}">Open in Proposals with filters</button></p>` : `<p class="status-note">No AI proposals on file.</p>`}
+    ${propRows ? `<div class="table-wrap"><table><thead><tr><th scope="col">Meeting</th><th scope="col">Proposal</th><th scope="col">Filed by</th><th scope="col">Status</th><th scope="col">Support</th></tr></thead><tbody>${propRows}</tbody></table></div>${fnList(notes)}<p><button type="button" class="linklike" data-feed="${esc(t)}">Open in Proposals with filters</button></p>` : `<p class="status-note">No AI proposals on file${t ? "" : " (no US-listed shares)"}.</p>`}
     <h3 class="sub-h">Filers active here</h3>
     ${filers.length ? `<div class="table-wrap"><table><thead><tr><th scope="col">Organization</th><th scope="col">AI proposals here</th><th scope="col"><span class="visually-hidden">Network</span></th></tr></thead><tbody>${filers.map((f) => `<tr><td>${esc(f.node.label)}</td><td class="num">${f.n}</td><td><button type="button" class="linklike" data-net="${esc(f.node.id)}">Show in network</button></td></tr>`).join("")}</tbody></table></div>` : `<p class="status-note">No filers recorded.</p>`}
     <h3 class="sub-h">Frontier-lab ties</h3>
-    ${ties.length ? `<div class="table-wrap"><table><thead><tr><th scope="col">Lab</th><th scope="col">Tie</th><th scope="col">Strength</th><th scope="col">Detail</th></tr></thead><tbody>${ties.map((x) => `<tr><td>${esc(labName(x.to))}</td><td>${esc(x.type)}</td><td class="num">${esc(x.strength ?? "")}</td><td>${esc(x.description || "")}${src(x.source_url)}</td></tr>`).join("")}</tbody></table></div>` : `<p class="status-note">No frontier-lab ties recorded.</p>`}
+    ${ties.length ? `<div class="table-wrap"><table><thead><tr><th scope="col">Lab</th><th scope="col">Tie</th><th scope="col">Strength</th><th scope="col">Detail</th></tr></thead><tbody>${ties.map((x) => `<tr><td>${esc(labName(x.to))}</td><td>${esc(x.type)}</td><td class="num">${esc(x.strength ?? "")}</td><td>${esc(x.description || "")}${src(x.source_url)}</td></tr>`).join("")}</tbody></table></div>` : inbound.length ? "" : `<p class="status-note">No frontier-lab ties recorded.</p>`}
+    ${inbound.length ? `<h3 class="sub-h">Public companies tied to this lab</h3><div class="table-wrap"><table><thead><tr><th scope="col">Company</th><th scope="col">Tie</th><th scope="col">Strength</th><th scope="col">Detail</th></tr></thead><tbody>${inbound.map((x) => `<tr><td>${esc(coName(x.from))}</td><td>${esc(x.type)}</td><td class="num">${esc(x.strength ?? "")}</td><td>${esc(x.description || "")}${src(x.source_url)}</td></tr>`).join("")}</tbody></table></div>` : ""}
     <h3 class="sub-h">Proposal rights</h3>
     ${c.rights_tracked === false ? `<p class="status-note">Not yet researched for this company.</p>` : `
     ${c.route_status_reason ? `<p class="status-note">${esc(c.route_status_reason)}</p>` : ""}
@@ -280,6 +314,7 @@ function renderFeed() {
 
   const F = { status: "", co: "", topic: "", year: "" };
   const sort = { key: "date", dir: "desc" };
+  let feedNotes = new Map();
   const filterOn = (p, skipStatus) => (skipStatus || !F.status || p.status === F.status) && (!F.co || p.company === F.co) && (!F.topic || normTopic(p.topic) === F.topic) && (!F.year || String(p.year) === F.year);
   const dateKey = (p) => p.meeting_date || `${p.year}-07-01`;
   const filerOf = (p) => {
@@ -303,9 +338,8 @@ function renderFeed() {
     { key: "support", label: "Support", sortValue: (p) => (p.support_pct == null ? -1 : p.support_pct), cls: "num",
       render: (p) => {
         if (p.support_pct == null) return "";
-        const note = p.support_note ? `<div class="note">${esc(p.support_note)}</div>` : "";
         const noFiling = p.results_url ? "" : `<div class="note">Vote-results filing not recorded</div>`;
-        return `${esc(p.support_pct)}%${note}${noFiling}`;
+        return `${esc(p.support_pct)}%${fnMark(feedNotes, p)}${noFiling}`;
       } },
   ];
 
@@ -319,8 +353,9 @@ function renderFeed() {
   };
   const drawTable = () => {
     const rows = all.filter((p) => filterOn(p));
+    feedNotes = footnotes(rows);
     const box = document.getElementById("feed-table");
-    box.innerHTML = sortableTable(cols, rows, sort, (p) => `id="prop-${esc(p.id)}"`);
+    box.innerHTML = sortableTable(cols, rows, sort, (p) => `id="prop-${esc(p.id)}"`) + fnList(feedNotes);
     wireSort(box, sort, drawTable);
     const filtered = Object.values(F).some(Boolean);
     document.getElementById("feed-count").textContent = `Showing ${plural(rows.length, "proposal")}${filtered ? ` of ${all.length}` : ""}.`;
@@ -394,10 +429,18 @@ function renderFeed() {
 const symbolName = (shape) => ({ circle: "symbolCircle", square: "symbolSquare", triangle: "symbolTriangle", diamond: "symbolDiamond" })[shape];
 
 // ---------- Rights map ----------
-// "Why included" (data: engagement_basis + basis_type), with its source and any source note.
+// "Why included" (data: engagement_basis + basis_type), with its source, any source note,
+// and the owner's note where the owner chose to include a company.
 function whyIncluded(c) {
   if (!c.engagement_basis || !c.engagement_basis.text) return "";
-  return `<p class="status-note"><strong>Why included${c.basis_type ? ` (${esc(c.basis_type)})` : ""}:</strong> ${esc(c.engagement_basis.text)}${src(c.engagement_basis.url)}${c.source_note ? ` <span class="ticker">${esc(c.source_note)}</span>` : ""}</p>`;
+  return `<p class="status-note"><strong>Why included${c.basis_type ? ` (${esc(c.basis_type)})` : ""}:</strong> ${esc(c.engagement_basis.text)}${src(c.engagement_basis.url)}${c.source_note ? ` <span class="ticker">${esc(c.source_note)}</span>` : ""}</p>${c.owner_choice_note ? `<p class="status-note">${esc(c.owner_choice_note)}</p>` : ""}`;
+}
+// Shareholder route: the route and its source; with no route, the data's note says why
+// (notes that start "source pending" are shown in the source-pending style).
+function shareholderRoute(c) {
+  const note = c.route_note ? `<div class="note${/^source pending/i.test(c.route_note) ? " unverified" : ""}">${esc(c.route_note)}</div>` : "";
+  if (!c.shareholder_route) return note || `<span class="unverified">source pending</span>`;
+  return `${esc(c.shareholder_route)}${src(c.route_source_url)}${note}`;
 }
 
 function renderRights() {
@@ -471,8 +514,8 @@ function renderPeople() {
     { key: "links", label: "Links", render: (p) => `${src(p.profile_url, "profile")} <button type="button" class="linklike" data-person="person-${esc(p.id)}">Show in network</button>` },
   ];
   el.innerHTML = `
-    <h2>People</h2>
-    <p class="intro">Heads of stewardship and engagement at organizations active on AI. Public professional details only.</p>
+    <h2>Contacts</h2>
+    <p class="intro">Heads of stewardship and engagement at filer organizations. Public professional details only.</p>
     <div class="net-controls"><input type="search" id="people-search" placeholder="Search name, organization or AI work" aria-label="Search people"></div>
     <p class="count-line" id="people-count" aria-live="polite"></p>
     <div class="table-wrap" id="people-table"></div>`;

@@ -194,6 +194,15 @@ Every item below overrides the matching part of the plan above.
 - **Upcoming votes:** adds "AI votes at company" (earlier voted AI proposals there: count, median, high) and links each company to Company lookup.
 - **Look:** one white theme, black text, Inter only, smaller and denser type, blue only for links, selected controls and every data visual (`--blue-1/2/3`). Status pills use shape and fill, not hue. Dark mode is removed by the owner's direction.
 
+**Owner decision on the tabs live on main (2026-11-25).** Asked: "Why now: its policy timeline moves into 'Policy and causality', the explainer text goes. How you can weigh in: removed; its upcoming-votes table becomes the first tab, the retail voting guides go. Data center water: removed (it was a 'coming soon' placeholder)." Answer: **"Yes, as described."** Fund votes (merged from `data/fund-votes`) keeps its tab and its `#votes` link; Upcoming votes uses `#upcoming`. Old links redirect: `#why` goes to Policy and causality; `#weigh-in` and `#water` go to Upcoming votes.
+
+**Company universe** (data session, `data/company-universe`, 60 companies): Company lookup keys companies by `id` (private companies have no ticker) and shows:
+- `shareholder_route`, or `route_note` when there's no route;
+- `owner_choice_note`;
+- "Why included".
+
+Frontier labs list the public companies tied to them. The Rights map lists only `rights_tracked` companies. Tested with that branch's data: 24/24 Playwright pass.
+
 **Protocol note:** AGENTS.md rule 27.3 says not to mix structure and colour in one round. The owner directed both during this build, so they ship together. The result review covers both, and STATE.md records the deviation.
 
 ## Not doing

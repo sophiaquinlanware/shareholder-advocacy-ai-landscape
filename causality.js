@@ -38,14 +38,16 @@
     box.innerHTML = "";
     const W = Math.max(box.clientWidth || 900, 720, C.events.length * 34);
     const laneH = 120, top = 30, left = 150;
-    const H = top + LANES.length * laneH + 30;
     const ev = C.events.filter((e) => e.date && (!C.juris || e.jurisdiction === C.juris));
+    // Only lanes that hold events in the current view take space.
+    const lanes = LANES.filter((l) => ev.some((e) => e.lane === l.key));
+    const H = top + lanes.length * laneH + 30;
     const dates = ev.map((e) => new Date(e.date));
     // Time runs on a square-root scale so the crowded recent months get more room than quiet years.
     const [t0, t1] = d3.extent(dates);
     const span = t1 - t0 || 1;
     const xr = (d) => left + 20 + (W - left - 60) * Math.pow((d - t0) / span, 1.8);
-    const laneY = (k) => top + Math.max(0, LANES.findIndex((l) => l.key === k)) * laneH + laneH / 2;
+    const laneY = (k) => top + Math.max(0, lanes.findIndex((l) => l.key === k)) * laneH + laneH / 2;
 
     // Spread events that land close together in the same lane so they don't overlap.
     const placed = [];
@@ -62,7 +64,7 @@
       .attr("viewBox", "0 -4 8 8").attr("refX", 12).attr("markerWidth", 7).attr("markerHeight", 7).attr("orient", "auto")
       .append("path").attr("d", "M0,-4L8,0L0,4").attr("fill", cssVar(v)));
 
-    LANES.forEach((l, i) => {
+    lanes.forEach((l, i) => {
       svg.append("rect").attr("x", 0).attr("y", top + i * laneH).attr("width", W).attr("height", laneH)
         .attr("fill", i % 2 ? cssVar("--bg") : cssVar("--surface"));
       svg.append("text").text(l.label).attr("x", 10).attr("y", top + i * laneH + laneH / 2 + 4)
@@ -70,12 +72,15 @@
     });
     // Month labels along the top, placed with the same stretched scale.
     const months = d3.timeMonth.range(d3.timeMonth.floor(t0), t1, 1).filter((m, i, all) => i === 0 || xr(m) - xr(all[i - 1]) > 0);
-    let lastX = -1e9;
+    // The first label, and the first label after each change of year, carries the year.
+    let lastX = -1e9, lastYear = null;
     months.forEach((m) => {
       const mx = xr(m);
       if (mx - lastX < 56) return;
       lastX = mx;
-      svg.append("text").text(d3.timeFormat(m.getMonth() === 0 ? "%b %Y" : "%b")(m)).attr("x", mx).attr("y", top - 10)
+      const showYear = m.getFullYear() !== lastYear;
+      lastYear = m.getFullYear();
+      svg.append("text").text(d3.timeFormat(showYear ? "%b %Y" : "%b")(m)).attr("x", mx).attr("y", top - 10)
         .attr("font-size", 10.5).attr("fill", cssVar("--ink-soft")).attr("text-anchor", "middle");
       svg.append("line").attr("x1", mx).attr("x2", mx).attr("y1", top).attr("y2", H - 30).attr("stroke", cssVar("--line")).attr("stroke-width", 0.6);
     });
@@ -144,7 +149,7 @@
 
   window.renderCausality = function (data) {
     const el = document.getElementById("tab-causality");
-    if (!data || !data.events || !data.events.length) { el.innerHTML = `<div class="coming"><h2>Causality map</h2><p>Being sourced now.</p></div>`; return; }
+    if (!data || !data.events || !data.events.length) { el.innerHTML = `<div class="coming"><h2>Policy and causality</h2><p>Being sourced now.</p></div>`; return; }
     C = { events: data.events, links: data.links || [], mode: "both", highlight: null, juris: "" };
     const juris = [...new Set(C.events.map((e) => e.jurisdiction).filter(Boolean))].sort();
     const legend = Object.keys(LINK_VAR).map((k) => `<span class="leg static"><svg class="mark" viewBox="0 0 24 12" aria-hidden="true"><line x1="0" y1="6" x2="24" y2="6" stroke="${cssVar("--cz-link")}" stroke-width="2"${LINK_DASH[k] ? ` stroke-dasharray="${LINK_DASH[k]}"` : ""}></line></svg>${esc(k)}</span>`).join("");
