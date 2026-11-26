@@ -134,6 +134,1268 @@
    ]
   }
  ],
- "ties": [],
- "per_tier": {}
+ "ties": [
+  {
+   "from": "nvidia",
+   "to": "meta-platforms",
+   "type": "supplies chips",
+   "description": "Multiyear partnership to deploy Nvidia CPUs, millions of Blackwell and Rubin GPUs, and Spectrum-X Ethernet switches.",
+   "as_of": "2026-02",
+   "source_url": "https://nvidianews.nvidia.com/news/meta-builds-ai-infrastructure-with-nvidia",
+   "source_kind": "primary"
+  },
+  {
+   "from": "amd",
+   "to": "meta-platforms",
+   "type": "supplies chips",
+   "description": "Multi-year deal to deploy up to 6 gigawatts of AMD Instinct GPUs, starting with a custom MI450-based GPU.",
+   "as_of": "2026-02",
+   "source_url": "https://newsroom.amd.com/news/amd-and-meta-announce-expanded-strategic-partnersh/",
+   "source_kind": "primary"
+  },
+  {
+   "from": "broadcom",
+   "to": "meta-platforms",
+   "type": "supplies chips",
+   "description": "Broadcom delivers technology for Meta's MTIA accelerator chips through 2029; initial commitment exceeds 1 gigawatt.",
+   "as_of": "2026-04",
+   "source_url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-announces-extended-partnership-meta-deploy-technology",
+   "source_kind": "primary"
+  },
+  {
+   "from": "amd",
+   "to": "oracle",
+   "type": "supplies chips",
+   "description": "Oracle Cloud to offer a public AI supercluster of 50,000 AMD Instinct MI450 GPUs from Q3 2026.",
+   "as_of": "2025-10",
+   "source_url": "https://newsroom.amd.com/news/oracle-and-amd-expand-partnership-to-help-customers-ach/",
+   "source_kind": "primary"
+  },
+  {
+   "from": "nvidia",
+   "to": "coreweave",
+   "type": "supplies chips",
+   "description": "CoreWeave's 10-K says all GPUs in its infrastructure today are Nvidia GPUs.",
+   "as_of": "2026-03",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000104/crwv-20251231.htm",
+   "source_kind": "primary"
+  },
+  {
+   "from": "nvidia",
+   "to": "microsoft",
+   "type": "supplies chips",
+   "description": "Azure is deploying Nvidia Vera Rubin NVL72 racks across its Fairwater AI datacenter sites.",
+   "as_of": "2026-01",
+   "source_url": "https://azure.microsoft.com/en-us/blog/microsofts-strategic-ai-datacenter-planning-enables-seamless-large-scale-nvidia-rubin-deployments/",
+   "source_kind": "primary"
+  },
+  {
+   "from": "nvidia",
+   "to": "amazon",
+   "type": "supplies chips",
+   "description": "AWS and Nvidia plan to deploy 2 million additional Nvidia GPUs across AWS infrastructure.",
+   "as_of": "2026-08",
+   "source_url": "https://press.aboutamazon.com/aws/2026/8/aws-and-nvidia-to-deliver-2-million-additional-gpus-and-next-generation-infrastructure-for-agentic-and-physical-ai",
+   "source_kind": "primary"
+  },
+  {
+   "from": "nvidia",
+   "to": "alphabet",
+   "type": "supplies chips",
+   "description": "Google Cloud A5X instances run on Nvidia Vera Rubin NVL72, scaling to as many as 960,000 Rubin GPUs.",
+   "as_of": "2026-10",
+   "source_url": "https://blogs.nvidia.com/blog/google-cloud-vera-rubin-infrastructure/",
+   "source_kind": "primary"
+  },
+  {
+   "from": "nvidia",
+   "to": "oracle",
+   "type": "supplies chips",
+   "description": "OCI Zettascale10 clusters connect hundreds of thousands of Nvidia GPUs, initially up to 800,000.",
+   "as_of": "2025-10",
+   "source_url": "https://www.oracle.com/news/announcement/ai-world-oracle-unveils-next-generation-oci-zettascale10-cluster-for-ai-2025-10-14/",
+   "source_kind": "primary"
+  },
+  {
+   "from": "nvidia",
+   "to": "nebius-group",
+   "type": "supplies chips",
+   "description": "Nebius, an Nvidia Cloud Partner, will deploy Vera Rubin NVL72 in US and European data centers from H2 2026.",
+   "as_of": "2026-01",
+   "source_url": "https://nebius.com/newsroom/nebius-to-offer-nvidia-vera-rubin-nvl-72-in-us-and-europe-from-h2-2026",
+   "source_kind": "primary"
+  },
+  {
+   "from": "nvidia",
+   "to": "softbank-group",
+   "type": "supplies chips",
+   "description": "SoftBank Corp., a SoftBank Group unit, deployed a DGX SuperPOD with over 4,000 Nvidia Blackwell GPUs.",
+   "as_of": "2025-07",
+   "source_url": "https://www.softbank.jp/en/corp/news/press/sbkk/2025/20250723_01/",
+   "source_kind": "primary"
+  },
+  {
+   "from": "amd",
+   "to": "microsoft",
+   "type": "supplies chips",
+   "description": "Microsoft is bringing AMD's Helios AI platform and EPYC CPUs to Azure, including ND MI455X v7 VMs.",
+   "as_of": "2026-07",
+   "source_url": "https://blogs.microsoft.com/blog/2026/07/20/microsoft-expands-azure-ai-and-hpc-infrastructure-with-amd/",
+   "source_kind": "primary"
+  },
+  {
+   "from": "amd",
+   "to": "ibm",
+   "type": "supplies chips",
+   "description": "IBM Cloud offers AMD EPYC CPUs and Instinct GPUs for AI training and inference.",
+   "as_of": "2026-05",
+   "source_url": "https://www.ibm.com/new/announcements/amd-and-ibm-deepen-collaboration-across-hybrid-sovereign-and-enterprise-ai",
+   "source_kind": "primary"
+  },
+  {
+   "from": "amd",
+   "to": "g42",
+   "type": "supplies chips",
+   "description": "G42's large-scale AI cluster in the UAE features AMD MI350X GPUs, per Cisco's release.",
+   "as_of": "2025-10",
+   "source_url": "https://investor.cisco.com/news/news-details/2025/Cisco-and-G42-Deepen-US-UAE-Technology-Partnership-to-Build-Secure-End-to-End-AI-Infrastructure-in-the-UAE/default.aspx",
+   "source_kind": "primary"
+  },
+  {
+   "from": "cisco-systems",
+   "to": "g42",
+   "type": "supplies chips",
+   "description": "Cisco will power, connect and secure a large G42 AI cluster with its networking, compute and security stack.",
+   "as_of": "2025-10",
+   "source_url": "https://investor.cisco.com/news/news-details/2025/Cisco-and-G42-Deepen-US-UAE-Technology-Partnership-to-Build-Secure-End-to-End-AI-Infrastructure-in-the-UAE/default.aspx",
+   "source_kind": "primary"
+  },
+  {
+   "from": "broadcom",
+   "to": "alphabet",
+   "type": "supplies chips",
+   "description": "Long-term agreement for Broadcom to develop and supply Google's future custom TPUs and AI rack components through 2031.",
+   "as_of": "2026-04",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526144028/d87999d8k.htm",
+   "source_kind": "primary"
+  },
+  {
+   "from": "broadcom",
+   "to": "apple",
+   "type": "supplies chips",
+   "description": "Broadcom's Fort Collins, Colorado facility produces radio frequency components for a wide range of Apple products.",
+   "as_of": "2026-10",
+   "source_url": "https://www.apple.com/newsroom/2026/10/apple-announces-american-manufacturing-program-partners-for-latest-iphone-lineup/",
+   "source_kind": "primary"
+  },
+  {
+   "from": "sk-hynix",
+   "to": "nvidia",
+   "type": "supplies chips",
+   "description": "Nvidia's 10-K names SK hynix as one of its memory suppliers.",
+   "as_of": "2026-01",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+   "source_kind": "primary"
+  },
+  {
+   "from": "samsung-electronics",
+   "to": "nvidia",
+   "type": "supplies chips",
+   "description": "Nvidia's 10-K names Samsung as one of its memory suppliers.",
+   "as_of": "2026-01",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+   "source_kind": "primary"
+  },
+  {
+   "from": "arm-holdings",
+   "to": "microsoft",
+   "type": "supplies chips",
+   "description": "Microsoft's Cobalt 200 CPUs are Arm-based custom silicon running across Azure data centers.",
+   "as_of": "2026-08",
+   "source_url": "https://newsroom.arm.com/blog/inside-arms-hyperscale-surge",
+   "source_kind": "primary"
+  },
+  {
+   "from": "arm-holdings",
+   "to": "amazon",
+   "type": "supplies chips",
+   "description": "AWS Graviton CPUs, including Graviton5, are Arm-based custom silicon.",
+   "as_of": "2026-08",
+   "source_url": "https://newsroom.arm.com/blog/inside-arms-hyperscale-surge",
+   "source_kind": "primary"
+  },
+  {
+   "from": "tsmc",
+   "to": "nvidia",
+   "type": "manufactures for",
+   "description": "Nvidia's 10-K says it uses foundries such as TSMC to produce its semiconductor wafers.",
+   "as_of": "2026-01",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+   "source_kind": "primary"
+  },
+  {
+   "from": "samsung-electronics",
+   "to": "nvidia",
+   "type": "manufactures for",
+   "description": "Nvidia's 10-K names Samsung, with TSMC, among the foundries producing its wafers.",
+   "as_of": "2026-01",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+   "source_kind": "primary"
+  },
+  {
+   "from": "tsmc",
+   "to": "amd",
+   "type": "manufactures for",
+   "description": "AMD relies on TSMC for all wafers for its microprocessor and GPU products at 7nm or smaller.",
+   "as_of": "2026-02",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm",
+   "source_kind": "primary"
+  },
+  {
+   "from": "tsmc",
+   "to": "broadcom",
+   "type": "manufactures for",
+   "description": "About 95% of wafers made by Broadcom's contract manufacturers in fiscal 2025 were produced by TSMC.",
+   "as_of": "2025-12",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/avgo-20251102.htm",
+   "source_kind": "primary"
+  },
+  {
+   "from": "tsmc",
+   "to": "apple",
+   "type": "manufactures for",
+   "description": "TSMC's Arizona fab is producing more than 100 million chips for Apple products in 2026.",
+   "as_of": "2026-10",
+   "source_url": "https://www.apple.com/newsroom/2026/10/apple-announces-american-manufacturing-program-partners-for-latest-iphone-lineup/",
+   "source_kind": "primary"
+  },
+  {
+   "from": "samsung-electronics",
+   "to": "tesla",
+   "type": "manufactures for",
+   "description": "Tesla's 10-K cites a new collaboration with Samsung to make advanced AI inference and training chips in the US.",
+   "as_of": "2026-01",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
+   "source_kind": "primary"
+  },
+  {
+   "from": "digital-realty-trust",
+   "to": "oracle",
+   "type": "leases capacity to",
+   "description": "Oracle is Digital Realty's second-largest customer, 9.0% of annualized recurring revenue across 42 locations.",
+   "as_of": "2026-02",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
+   "source_kind": "primary"
+  },
+  {
+   "from": "digital-realty-trust",
+   "to": "ibm",
+   "type": "leases capacity to",
+   "description": "IBM is Digital Realty's fifth-largest customer, 2.3% of annualized recurring revenue across 34 locations.",
+   "as_of": "2026-02",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
+   "source_kind": "primary"
+  },
+  {
+   "from": "digital-realty-trust",
+   "to": "meta-platforms",
+   "type": "leases capacity to",
+   "description": "Meta Platforms is Digital Realty's eighth-largest customer, 1.6% of annualized recurring revenue across 49 locations.",
+   "as_of": "2026-02",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
+   "source_kind": "primary"
+  },
+  {
+   "from": "digital-realty-trust",
+   "to": "microsoft",
+   "type": "leases capacity to",
+   "description": "LinkedIn, a Microsoft subsidiary, is Digital Realty's seventh-largest customer by annualized recurring revenue.",
+   "as_of": "2026-02",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
+   "source_kind": "primary"
+  },
+  {
+   "from": "southern-company",
+   "to": "openai",
+   "type": "supplies power to",
+   "description": "Georgia regulators' staff approved Georgia Power's contract to serve a planned OpenAI data center near Savannah.",
+   "as_of": "2026-08",
+   "source_url": "https://www.ajc.com/business/2026/08/georgia-power-deal-to-power-openai-data-center-near-savannah-is-approved/",
+   "source_kind": "secondary"
+  },
+  {
+   "from": "coreweave",
+   "to": "meta-platforms",
+   "type": "provides compute to",
+   "description": "Expanded long-term agreement for dedicated AI cloud capacity across multiple sites through December 2032, about $21 billion.",
+   "as_of": "2026-04",
+   "source_url": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-and-Meta-Announce-21-Billion-Expanded-AI-Infrastructure-Agreement/default.aspx",
+   "source_kind": "primary"
+  },
+  {
+   "from": "coreweave",
+   "to": "microsoft",
+   "type": "provides compute to",
+   "description": "Microsoft was CoreWeave's top customer, about 67% of its 2025 revenue.",
+   "as_of": "2026-03",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000104/crwv-20251231.htm",
+   "source_kind": "primary"
+  },
+  {
+   "from": "nebius-group",
+   "to": "microsoft",
+   "type": "provides compute to",
+   "description": "Multi-year agreement to deliver dedicated AI capacity to Microsoft from Nebius's Vineland, New Jersey data center.",
+   "as_of": "2025-09",
+   "source_url": "https://nebius.com/newsroom/nebius-announces-multi-billion-dollar-agreement-with-microsoft-for-ai-infrastructure",
+   "source_kind": "primary"
+  },
+  {
+   "from": "nebius-group",
+   "to": "meta-platforms",
+   "type": "provides compute to",
+   "description": "Five-year deal to provide $12 billion of dedicated capacity on Nvidia Vera Rubin from early 2027.",
+   "as_of": "2026-03",
+   "source_url": "https://nebius.com/newsroom/nebius-signs-new-ai-infrastructure-agreement-with-meta",
+   "source_kind": "primary"
+  },
+  {
+   "from": "apple",
+   "to": "openai",
+   "type": "distributes models",
+   "description": "Apple integrated ChatGPT access into Siri and system features in iOS 18, iPadOS 18 and macOS Sequoia.",
+   "as_of": "2024-06",
+   "source_url": "https://www.apple.com/newsroom/2024/06/introducing-apple-intelligence-for-iphone-ipad-and-mac/",
+   "source_kind": "primary"
+  },
+  {
+   "from": "apple",
+   "to": "alphabet",
+   "type": "distributes models",
+   "description": "Next-generation Apple Foundation Models, powering a more personalized Siri, will be based on Google's Gemini models.",
+   "as_of": "2026-01",
+   "source_url": "https://blog.google/company-news/inside-google/company-announcements/joint-statement-google-apple/",
+   "source_kind": "primary"
+  },
+  {
+   "from": "salesforce",
+   "to": "anthropic",
+   "type": "distributes models",
+   "description": "Claudeforce partnership: Claude is available in Agentforce and is the default model for Slack AI and Slackbot.",
+   "as_of": "2026-08",
+   "source_url": "https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce/",
+   "source_kind": "primary"
+  },
+  {
+   "from": "salesforce",
+   "to": "openai",
+   "type": "distributes models",
+   "description": "Customers can use OpenAI frontier models, including GPT-5, to build agents and prompts on the Salesforce Platform.",
+   "as_of": "2025-10",
+   "source_url": "https://www.salesforce.com/news/press-releases/2025/10/14/openai-partnership-expansion-announcement/",
+   "source_kind": "primary"
+  },
+  {
+   "from": "servicenow",
+   "to": "anthropic",
+   "type": "distributes models",
+   "description": "Claude is the default model powering ServiceNow Build Agent and is integrated into core ServiceNow workflows.",
+   "as_of": "2026-01",
+   "source_url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-and-Anthropic-partner-to-help-customers-build-AI-powered-applications-accelerate-time-to-value-and-apply-trusted-AI-to-critical-industries/default.aspx",
+   "source_kind": "primary"
+  },
+  {
+   "from": "servicenow",
+   "to": "openai",
+   "type": "distributes models",
+   "description": "Enhanced collaboration gives ServiceNow customers direct access to OpenAI frontier models, including GPT-5.2.",
+   "as_of": "2026-01",
+   "source_url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-and-OpenAI-collaborate-to-deepen-and-accelerate-enterprise-AI-outcomes/default.aspx",
+   "source_kind": "primary"
+  },
+  {
+   "from": "oracle",
+   "to": "meta-platforms",
+   "type": "distributes models",
+   "description": "OCI Generative AI offers Meta Llama 4 Maverick, Llama 4 Scout and Llama 3.3 chat models.",
+   "as_of": "2026-09",
+   "source_url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai/meta-models.htm",
+   "source_kind": "primary"
+  },
+  {
+   "from": "alibaba-group",
+   "to": "deepseek",
+   "type": "distributes models",
+   "description": "Alibaba Cloud Model Studio lets customers call DeepSeek series models, including DeepSeek V4 versions.",
+   "as_of": "2026-11",
+   "source_url": "https://www.alibabacloud.com/help/en/model-studio/deepseek-api",
+   "source_kind": "primary"
+  }
+ ],
+ "per_tier": {
+  "chips": {
+   "companies": 9,
+   "labs_reached_directly": [
+    "Anthropic",
+    "Cohere",
+    "Google DeepMind",
+    "Meta Superintelligence Labs (incl. FAIR)",
+    "Mistral AI",
+    "OpenAI",
+    "Perplexity",
+    "Reflection AI",
+    "Safe Superintelligence (SSI)",
+    "Thinking Machines Lab",
+    "xAI"
+   ],
+   "labs_reached_in_two_steps": [
+    "Amazon AGI / Nova",
+    "Microsoft AI (MAI Superintelligence Team)"
+   ],
+   "ties_from_tier": 27,
+   "ties_into_tier": 6,
+   "ai_proposals": 2,
+   "proposal_topics": {
+    "Data center impacts": 1,
+    "Social & economic impacts": 1
+   },
+   "median_support_pct": 17.6,
+   "asks_made": [
+    {
+     "company": "NVDA",
+     "year": 2026,
+     "title": "Greenhouse Gas Emissions Disclosure (GHG from use of sold products)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm"
+    },
+    {
+     "company": "NVDA",
+     "year": 2026,
+     "title": "Rationale for Military Sales (AI-enabled capabilities)",
+     "url": "https://collaborate.unpri.org/group/38826/home"
+    }
+   ],
+   "investor_engagements": [
+    "nvidia",
+    "tsmc"
+   ],
+   "safety_commitments": [
+    "huawei-technologies",
+    "samsung-electronics"
+   ],
+   "fund_vote_rows": 7,
+   "shareholder_routes": {
+    "US proxy rules apply": 4,
+    "private": 1,
+    "US-listed foreign issuer": 3,
+    "listed outside the US": 1
+   },
+   "active_filers": [
+    {
+     "id": "green-century",
+     "name": "Green Century Capital Management",
+     "proposals": 2
+    },
+    {
+     "id": "mercy",
+     "name": "Mercy Investment Services",
+     "proposals": 1
+    },
+    {
+     "id": "open-mic",
+     "name": "Open MIC (Open Media and Information Companies Initiative)",
+     "proposals": 1
+    },
+    {
+     "id": "ttt-investments",
+     "name": "TTT Investments LLC",
+     "proposals": 1
+    }
+   ],
+   "coalitions": [
+    {
+     "id": "iccr",
+     "name": "Interfaith Center on Corporate Responsibility (ICCR)",
+     "members_active_here": 3
+    },
+    {
+     "id": "iahr",
+     "name": "Investor Alliance for Human Rights",
+     "members_active_here": 2
+    },
+    {
+     "id": "wba-cic-ethical-ai",
+     "name": "WBA Collective Impact Coalition for Ethical AI",
+     "members_active_here": 1
+    }
+   ],
+   "people": [
+    {
+     "id": "person-audrey-mocle",
+     "name": "Audrey Mocle",
+     "org": "Open MIC"
+    },
+    {
+     "id": "person-lydia-kuykendal",
+     "name": "Lydia Kuykendal",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-mary-minette",
+     "name": "Mary Minette",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-michael-connor",
+     "name": "Michael Connor",
+     "org": "Open MIC"
+    }
+   ]
+  },
+  "datacenters": {
+   "companies": 2,
+   "labs_reached_directly": [],
+   "labs_reached_in_two_steps": [
+    "Anthropic",
+    "Meta Superintelligence Labs (incl. FAIR)",
+    "Microsoft AI (MAI Superintelligence Team)",
+    "Mistral AI",
+    "OpenAI"
+   ],
+   "ties_from_tier": 5,
+   "ties_into_tier": 0,
+   "ai_proposals": 0,
+   "proposal_topics": {},
+   "median_support_pct": null,
+   "asks_made": [],
+   "investor_engagements": [],
+   "safety_commitments": [],
+   "fund_vote_rows": 0,
+   "shareholder_routes": {
+    "US proxy rules apply": 2
+   },
+   "active_filers": [],
+   "coalitions": [],
+   "people": []
+  },
+  "compute": {
+   "companies": 8,
+   "labs_reached_directly": [
+    "Amazon AGI / Nova",
+    "Anthropic",
+    "Google DeepMind",
+    "Meta Superintelligence Labs (incl. FAIR)",
+    "Microsoft AI (MAI Superintelligence Team)",
+    "Mistral AI",
+    "OpenAI",
+    "Reflection AI",
+    "Safe Superintelligence (SSI)",
+    "Thinking Machines Lab"
+   ],
+   "labs_reached_in_two_steps": [
+    "Cohere",
+    "Perplexity",
+    "xAI"
+   ],
+   "ties_from_tier": 6,
+   "ties_into_tier": 18,
+   "ai_proposals": 46,
+   "proposal_topics": {
+    "Social & economic impacts": 25,
+    "Data center impacts": 12,
+    "AI governance & oversight": 9
+   },
+   "median_support_pct": 12.7,
+   "asks_made": [
+    {
+     "company": "AMZN",
+     "year": 2026,
+     "title": "Additional Reporting on Impact of Data Centers on Climate Commitments",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    },
+    {
+     "company": "AMZN",
+     "year": 2026,
+     "title": "Establish and maintain a worker-oriented AI advisory council (presented at the meeting under the bylaws; not in the proxy)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    },
+    {
+     "company": "AMZN",
+     "year": 2026,
+     "title": "Responsible AI policies vs sales of AI/cloud to militaries and DHS",
+     "url": "https://news.bloomberglaw.com/esg/amazon-to-block-investor-vote-on-ai-services-for-israel-dhs"
+    },
+    {
+     "company": "AMZN",
+     "year": 2026,
+     "title": "Report on Impact of Climate Commitments",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Enhanced Disclosure on Climate Goals",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on Water Usage and AI Development",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on Data Privacy",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "AI Board Oversight",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on AI-Generated Misinformation",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on AI Data Usage Oversight",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "MSFT",
+     "year": 2026,
+     "title": "Additional Disclosures Meeting Climate Commitments",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+    },
+    {
+     "company": "MSFT",
+     "year": 2026,
+     "title": "Report on Human Rights Due Diligence",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+    }
+   ],
+   "investor_engagements": [],
+   "safety_commitments": [
+    "g42",
+    "alibaba-group"
+   ],
+   "fund_vote_rows": 230,
+   "shareholder_routes": {
+    "US proxy rules apply": 5,
+    "private": 1,
+    "US-listed foreign issuer": 2
+   },
+   "active_filers": [
+    {
+     "id": "nlpc",
+     "name": "National Legal and Policy Center",
+     "proposals": 10
+    },
+    {
+     "id": "eko",
+     "name": "Ekō (formerly SumOfUs)",
+     "proposals": 7
+    },
+    {
+     "id": "trillium",
+     "name": "Trillium Asset Management",
+     "proposals": 7
+    },
+    {
+     "id": "share",
+     "name": "SHARE (Shareholder Association for Research and Education)",
+     "proposals": 7
+    },
+    {
+     "id": "arjuna",
+     "name": "Arjuna Capital",
+     "proposals": 6
+    },
+    {
+     "id": "zevin",
+     "name": "Zevin Asset Management",
+     "proposals": 6
+    },
+    {
+     "id": "open-mic",
+     "name": "Open MIC (Open Media and Information Companies Initiative)",
+     "proposals": 5
+    },
+    {
+     "id": "as-you-sow",
+     "name": "As You Sow",
+     "proposals": 5
+    },
+    {
+     "id": "iasj",
+     "name": "Investor Advocates for Social Justice",
+     "proposals": 5
+    },
+    {
+     "id": "azzad",
+     "name": "Azzad Asset Management",
+     "proposals": 4
+    },
+    {
+     "id": "ucc-pension",
+     "name": "Pension Plan of The United Church of Canada",
+     "proposals": 4
+    },
+    {
+     "id": "mercy",
+     "name": "Mercy Investment Services",
+     "proposals": 4
+    }
+   ],
+   "coalitions": [
+    {
+     "id": "iccr",
+     "name": "Interfaith Center on Corporate Responsibility (ICCR)",
+     "members_active_here": 13
+    },
+    {
+     "id": "iahr",
+     "name": "Investor Alliance for Human Rights",
+     "members_active_here": 11
+    },
+    {
+     "id": "wba-cic-ethical-ai",
+     "name": "WBA Collective Impact Coalition for Ethical AI",
+     "members_active_here": 5
+    }
+   ],
+   "people": [
+    {
+     "id": "person-amy-orr",
+     "name": "Amy Orr",
+     "org": "Boston Common Asset Management"
+    },
+    {
+     "id": "person-andrea-ranger",
+     "name": "Andrea Ranger",
+     "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-andrew-behar",
+     "name": "Andrew Behar",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-audrey-mocle",
+     "name": "Audrey Mocle",
+     "org": "Open MIC"
+    },
+    {
+     "id": "person-brandon-rees",
+     "name": "Brandon Rees",
+     "org": "AFL-CIO Office of Investment"
+    },
+    {
+     "id": "person-christina-oconnell",
+     "name": "Christina O'Connell",
+     "org": "Ekō"
+    },
+    {
+     "id": "person-danielle-fugere",
+     "name": "Danielle Fugere",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-emma-ruby-sachs",
+     "name": "Emma Ruby-Sachs",
+     "org": "Ekō"
+    },
+    {
+     "id": "person-jonas-kron",
+     "name": "Jonas Kron",
+     "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-joshua-brockwell",
+     "name": "Joshua Brockwell",
+     "org": "Azzad Asset Management"
+    },
+    {
+     "id": "person-julia-cedarholm",
+     "name": "Julia Cedarholm",
+     "org": "Arjuna Capital"
+    },
+    {
+     "id": "person-julie-goodridge",
+     "name": "Julie N.W. Goodridge",
+     "org": "NorthStar Asset Management"
+    },
+    {
+     "id": "person-lauren-compere",
+     "name": "Lauren Compere",
+     "org": "Boston Common Asset Management"
+    },
+    {
+     "id": "person-lydia-kuykendal",
+     "name": "Lydia Kuykendal",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-marcela-pinilla",
+     "name": "Marcela Pinilla",
+     "org": "Zevin Asset Management"
+    },
+    {
+     "id": "person-mary-minette",
+     "name": "Mary Minette",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-michael-connor",
+     "name": "Michael Connor",
+     "org": "Open MIC"
+    },
+    {
+     "id": "person-natasha-lamb",
+     "name": "Natasha Lamb",
+     "org": "Arjuna Capital"
+    },
+    {
+     "id": "person-richard-butters",
+     "name": "Richard Butters",
+     "org": "Aviva Investors"
+    },
+    {
+     "id": "person-whitney-nguyen",
+     "name": "Whitney Nguyen",
+     "org": "NorthStar Asset Management"
+    }
+   ]
+  },
+  "labs": {
+   "companies": 16,
+   "labs_reached_directly": [
+    "Anthropic",
+    "Meta Superintelligence Labs (incl. FAIR)",
+    "Reflection AI",
+    "xAI"
+   ],
+   "labs_reached_in_two_steps": [
+    "Cohere",
+    "Google DeepMind",
+    "Microsoft AI (MAI Superintelligence Team)",
+    "Mistral AI",
+    "OpenAI",
+    "Perplexity",
+    "Safe Superintelligence (SSI)",
+    "Thinking Machines Lab"
+   ],
+   "ties_from_tier": 0,
+   "ties_into_tier": 14,
+   "ai_proposals": 12,
+   "proposal_topics": {
+    "Social & economic impacts": 10,
+    "Data center impacts": 2
+   },
+   "median_support_pct": 8.5,
+   "asks_made": [
+    {
+     "company": "META",
+     "year": 2026,
+     "title": "Report on AI Data Usage Oversight",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+    },
+    {
+     "company": "META",
+     "year": 2026,
+     "title": "Report on Climate Change-Related Commitments",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+    },
+    {
+     "company": "META",
+     "year": 2026,
+     "title": "Data Protection Impact Assessment on Generative AI Chatbots",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+    },
+    {
+     "company": "META",
+     "year": 2026,
+     "title": "Integrate Child Safety into Executive Compensation",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+    },
+    {
+     "company": "META",
+     "year": 2025,
+     "title": "Report on Risks of Deepfakes in Online Child Exploitation",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+    },
+    {
+     "company": "META",
+     "year": 2025,
+     "title": "Report on AI Data Usage Oversight",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+    },
+    {
+     "company": "META",
+     "year": 2025,
+     "title": "GHG Emissions Reduction Actions",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+    },
+    {
+     "company": "META",
+     "year": 2025,
+     "title": "Report on Child Safety Impacts and Harm Reduction",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+    },
+    {
+     "company": "META",
+     "year": 2024,
+     "title": "Report on Generative AI Misinformation and Disinformation Risks",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+    },
+    {
+     "company": "META",
+     "year": 2024,
+     "title": "Human Rights Impact Assessment on AI Systems Driving Targeted Advertising",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+    },
+    {
+     "company": "META",
+     "year": 2023,
+     "title": "Human Rights Impact Assessment of Targeted Advertising",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
+    },
+    {
+     "company": "META",
+     "year": 2023,
+     "title": "Report on Enforcement of Community Standards",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
+    }
+   ],
+   "investor_engagements": [],
+   "safety_commitments": [
+    "anthropic",
+    "spacex",
+    "openai",
+    "mistral-ai",
+    "cohere",
+    "inflection-ai",
+    "magic",
+    "minimax",
+    "zhipu-ai",
+    "01-ai",
+    "deepseek",
+    "aleph-alpha",
+    "black-forest-labs",
+    "reflection-ai",
+    "writer"
+   ],
+   "fund_vote_rows": 35,
+   "shareholder_routes": {
+    "US proxy rules apply": 3,
+    "not determined": 3,
+    "private": 8,
+    "listed outside the US": 2
+   },
+   "active_filers": [
+    {
+     "id": "mercy",
+     "name": "Mercy Investment Services",
+     "proposals": 5
+    },
+    {
+     "id": "as-you-sow",
+     "name": "As You Sow",
+     "proposals": 5
+    },
+    {
+     "id": "nlpc",
+     "name": "National Legal and Policy Center",
+     "proposals": 3
+    },
+    {
+     "id": "proxy-impact",
+     "name": "Proxy Impact",
+     "proposals": 3
+    },
+    {
+     "id": "nei",
+     "name": "NEI Investments",
+     "proposals": 2
+    },
+    {
+     "id": "arjuna",
+     "name": "Arjuna Capital",
+     "proposals": 2
+    },
+    {
+     "id": "eko",
+     "name": "Ekō (formerly SumOfUs)",
+     "proposals": 2
+    },
+    {
+     "id": "bowyer",
+     "name": "Bowyer Research",
+     "proposals": 2
+    },
+    {
+     "id": "pcusa",
+     "name": "Presbyterian Church (U.S.A.)",
+     "proposals": 2
+    },
+    {
+     "id": "omi-us",
+     "name": "Missionary Oblates of Mary Immaculate, US Province",
+     "proposals": 1
+    },
+    {
+     "id": "benedictine-mt-scholastica",
+     "name": "Benedictine Sisters of Mount St. Scholastica",
+     "proposals": 1
+    },
+    {
+     "id": "commonspirit",
+     "name": "CommonSpirit Health",
+     "proposals": 1
+    }
+   ],
+   "coalitions": [
+    {
+     "id": "iccr",
+     "name": "Interfaith Center on Corporate Responsibility (ICCR)",
+     "members_active_here": 7
+    },
+    {
+     "id": "iahr",
+     "name": "Investor Alliance for Human Rights",
+     "members_active_here": 2
+    },
+    {
+     "id": "wba-cic-ethical-ai",
+     "name": "WBA Collective Impact Coalition for Ethical AI",
+     "members_active_here": 2
+    }
+   ],
+   "people": [
+    {
+     "id": "person-andrew-behar",
+     "name": "Andrew Behar",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-audrey-mocle",
+     "name": "Audrey Mocle",
+     "org": "Open MIC"
+    },
+    {
+     "id": "person-christina-oconnell",
+     "name": "Christina O'Connell",
+     "org": "Ekō"
+    },
+    {
+     "id": "person-danielle-fugere",
+     "name": "Danielle Fugere",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-emma-ruby-sachs",
+     "name": "Emma Ruby-Sachs",
+     "org": "Ekō"
+    },
+    {
+     "id": "person-julia-cedarholm",
+     "name": "Julia Cedarholm",
+     "org": "Arjuna Capital"
+    },
+    {
+     "id": "person-kamil-zabielski",
+     "name": "Kamil Zabielski",
+     "org": "Storebrand Asset Management"
+    },
+    {
+     "id": "person-lydia-kuykendal",
+     "name": "Lydia Kuykendal",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-mary-minette",
+     "name": "Mary Minette",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-michael-connor",
+     "name": "Michael Connor",
+     "org": "Open MIC"
+    },
+    {
+     "id": "person-michael-passoff",
+     "name": "Michael Passoff",
+     "org": "Proxy Impact"
+    },
+    {
+     "id": "person-natasha-lamb",
+     "name": "Natasha Lamb",
+     "org": "Arjuna Capital"
+    }
+   ]
+  },
+  "capital": {
+   "companies": 2,
+   "labs_reached_directly": [
+    "OpenAI",
+    "Perplexity",
+    "xAI"
+   ],
+   "labs_reached_in_two_steps": [
+    "Anthropic",
+    "Cohere",
+    "Mistral AI",
+    "Reflection AI",
+    "Safe Superintelligence (SSI)",
+    "Thinking Machines Lab"
+   ],
+   "ties_from_tier": 0,
+   "ties_into_tier": 2,
+   "ai_proposals": 1,
+   "proposal_topics": {
+    "AI governance & oversight": 1
+   },
+   "median_support_pct": 53.6,
+   "asks_made": [
+    {
+     "company": "TSLA",
+     "year": 2025,
+     "title": "Board Authorization of an Investment in xAI",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925090866/tm252289-12_def14a.htm"
+    }
+   ],
+   "investor_engagements": [],
+   "safety_commitments": [],
+   "fund_vote_rows": 4,
+   "shareholder_routes": {
+    "US proxy rules apply": 1,
+    "listed outside the US": 1
+   },
+   "active_filers": [],
+   "coalitions": [],
+   "people": []
+  },
+  "deployers": {
+   "companies": 23,
+   "labs_reached_directly": [
+    "Anthropic",
+    "Cohere",
+    "Google DeepMind",
+    "Mistral AI",
+    "OpenAI"
+   ],
+   "labs_reached_in_two_steps": [
+    "Meta Superintelligence Labs (incl. FAIR)",
+    "Safe Superintelligence (SSI)",
+    "Thinking Machines Lab"
+   ],
+   "ties_from_tier": 6,
+   "ties_into_tier": 4,
+   "ai_proposals": 4,
+   "proposal_topics": {
+    "Social & economic impacts": 2,
+    "AI governance & oversight": 1,
+    "Data center impacts": 1
+   },
+   "median_support_pct": 11.6,
+   "asks_made": [
+    {
+     "company": "AAPL",
+     "year": 2026,
+     "title": "AI and Data Center Use in Energy Strategy",
+     "url": "https://www.minerva.info/post/apple-shareholders-stunted-proposals-plummet-as-sec-shift-bites"
+    },
+    {
+     "company": "AAPL",
+     "year": 2025,
+     "title": "Report on Ethical AI Data Acquisition and Usage",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm"
+    },
+    {
+     "company": "AAPL",
+     "year": 2025,
+     "title": "Report on Costs and Benefits of Child Sex Abuse Material-Identifying Software & User Privacy",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm"
+    },
+    {
+     "company": "AAPL",
+     "year": 2024,
+     "title": "Report on Use of AI",
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm"
+    }
+   ],
+   "investor_engagements": [
+    "salesforce",
+    "intuit",
+    "verisk-analytics",
+    "workday",
+    "motorola-solutions",
+    "thales"
+   ],
+   "safety_commitments": [
+    "naver",
+    "beijing-volcano-engine-technology",
+    "stability-ai",
+    "scale-ai",
+    "adobe",
+    "servicenow",
+    "beijing-baidu-network-technology",
+    "tencent-holdings",
+    "shanghai-sensetime-intelligent-technology"
+   ],
+   "fund_vote_rows": 22,
+   "shareholder_routes": {
+    "US proxy rules apply": 14,
+    "listed outside the US": 3,
+    "not determined": 6
+   },
+   "active_filers": [
+    {
+     "id": "bowyer",
+     "name": "Bowyer Research",
+     "proposals": 2
+    },
+    {
+     "id": "nlpc",
+     "name": "National Legal and Policy Center",
+     "proposals": 2
+    },
+    {
+     "id": "afl-cio",
+     "name": "AFL-CIO (Equity Index Funds)",
+     "proposals": 1
+    },
+    {
+     "id": "tulipshare",
+     "name": "Tulipshare",
+     "proposals": 1
+    }
+   ],
+   "coalitions": [
+    {
+     "id": "iccr",
+     "name": "Interfaith Center on Corporate Responsibility (ICCR)",
+     "members_active_here": 1
+    },
+    {
+     "id": "iahr",
+     "name": "Investor Alliance for Human Rights",
+     "members_active_here": 1
+    }
+   ],
+   "people": [
+    {
+     "id": "person-brandon-rees",
+     "name": "Brandon Rees",
+     "org": "AFL-CIO Office of Investment"
+    }
+   ]
+  }
+ },
+ "derived_note": "ties come from data/value_chain_ties.json and data/pathways.json, each with a source; per_tier is computed by scripts/build_value_chain.py from the site's data files and describes where engagement has happened and what is connected. It is not a recommendation."
 }

@@ -27,3 +27,9 @@ Script: `scripts/build_value_chain.py`, run with `build_graph.py`.
 - Every tie has a source URL that loads; derived numbers are recomputed by script.
 - Plan review then result review: Data accuracy and UX / content.
 - No "target" or "influence" language in tier text (PRODUCT.md Never claim 1-2).
+
+## Built (2026-11-25)
+
+- `data/value_chain_ties.json`: 44 sourced ties (21 chip supply, 10 model distribution, 6 manufacturing, 4 capacity leases, 4 compute, 1 power), each checked against the page it cites; 2 weak ties dropped (a user-written Tencent post; a 2024 Palantir item not rechecked).
+- `scripts/build_value_chain.py` fills `ties` and `per_tier` in `data/value_chain.json`; it runs in the weekly job after `build_graph.py`.
+- **Known gap:** the proposal feed covers the original seven companies, so per-tier proposal counts understate data centers and deployers (Digital Realty, Southern, IBM, Netflix, Disney and others had AI proposals). Next data job: extend `data/proposals.json` to all 29 companies with US proxy routes.
