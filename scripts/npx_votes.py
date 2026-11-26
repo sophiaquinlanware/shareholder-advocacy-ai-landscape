@@ -253,13 +253,18 @@ def main():
                                                "runner_up_combined": round(runner, 2), "source_url": base})
                             continue
                         hows = sorted({v.get("howVoted", "").upper() for v in rec["votes"] if v.get("howVoted")})
+                        # One proxyTable record is one fund's (series') vote on one item. More than one
+                        # howVoted inside a record means that fund split its own shares (pass-through
+                        # voting programs do this), not that different funds disagreed.
                         shares = sum(float(v.get("sharesVoted") or 0) for v in rec["votes"])
                         results.append({
                             "family": family, "trust": f["trust"], "proposal_id": best["id"], "company": rec["ticker"],
                             "meeting_date": md, "npx_description": rec.get("voteDescription"),
                             "match_confidence": round(s, 2), "description_cover": round(rev, 2), "how_voted": hows,
                             "shares_voted": shares, "series_count": len(set(rec["series"])) or None,
-                            "source_url": base, "filed": f["filed"],
+                            "source_url": base, "filed": f["filed"], "period": f["period"],
+                            "series": sorted(set(rec["series"])),
+                            "vote_lines": [{"how": v.get("howVoted", "").upper(), "shares": v.get("sharesVoted")} for v in rec["votes"]],
                         })
                 print(f"  {family} / {trust} {f['filed']}: done")
 
@@ -273,14 +278,15 @@ def main():
                                    "npx_descriptions": set(), "min_confidence": 1.0})
         e["npx_descriptions"].add(r["npx_description"] or "")
         e["min_confidence"] = min(e["min_confidence"], r["match_confidence"], r["description_cover"])
-        for h in r["how_voted"]:
-            e["counts"][h] = e["counts"].get(h, 0) + 1
+        # Count fund records by how they voted; a record with several values is a within-fund split.
+        key = r["how_voted"][0] if len(r["how_voted"]) == 1 else "SPLIT_WITHIN_FUND"
+        e["counts"][key] = e["counts"].get(key, 0) + 1
         e["sources"].add(r["source_url"])
     rows = []
     for e in summary.values():
         c = e["counts"]
-        vote = next(iter(c)) if len(c) == 1 else "SPLIT"
-        rows.append({**e, "vote": vote, "vote_records": sum(c.values()), "sources": sorted(e["sources"]),
+        vote = next(iter(c)) if len(c) == 1 and "SPLIT_WITHIN_FUND" not in c else "SPLIT"
+        rows.append({**e, "vote": vote, "fund_records": sum(c.values()), "sources": sorted(e["sources"]),
                      "npx_descriptions": sorted(e["npx_descriptions"]), "min_confidence": round(e["min_confidence"], 2)})
     rows.sort(key=lambda r: (r["meeting_date"], r["proposal_id"], r["family"]))
     checked = sorted({p["id"] for p in proposals})
@@ -290,7 +296,10 @@ def main():
                       "title's key words appear in the filing's description, at least 50% the other way, and it beats the next-best "
                       "proposal at that meeting by 0.15. Anything close but not certain goes to the review list."),
            "families": {k: v for k, v in FAMILIES.items() if not want or k in want},
-           "proposals_checked": checked, "filings": filings_used, "summary": rows, "review": review, "notes": notes}
+           "proposals_checked": checked, "filings": filings_used, "summary": rows, "review": review, "notes": notes,
+           # Which N-PX periods (year ending June 30) each family has a readable filing for.
+           "coverage": {fam: sorted({f["period"] for f in filings_used if f["family"] == fam}) for fam in {f["family"] for f in filings_used}},
+           "records": results}
     Path(args.out).write_text(json.dumps(out, indent=1) + "\n")
     print(f"{len(results)} votes matched across {len(filings_used)} filings; {len(review)} sent to review. Notes: {len(notes)}")
 
