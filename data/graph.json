@@ -2269,6 +2269,7 @@
    "filing_deadline": "2023-06-29",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312522270484/d318171ddef14a.htm",
    "meeting_date": "2023-12-07",
+   "support_note": "Microsoft reports 33.57% \"Votes For\", which matches For/(For+Against) to within 0.01 (Microsoft appears to truncate rather than round).",
    "degree": 2
   },
   {
@@ -2287,6 +2288,7 @@
    "filing_deadline": "2023-06-29",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312522270484/d318171ddef14a.htm",
    "meeting_date": "2023-12-07",
+   "support_note": "Microsoft reports 21.16% \"Votes For\", which matches For/(For+Against) to within 0.01 (Microsoft appears to truncate rather than round).",
    "degree": 6
   },
   {
@@ -2314,6 +2316,7 @@
    "filing_deadline": "2024-06-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "meeting_date": "2024-12-10",
+   "support_note": "Microsoft reports 32.03% \"Votes For\", which matches For/(For+Against) to within 0.01 (Microsoft appears to truncate rather than round).",
    "degree": 1
   },
   {
@@ -2332,6 +2335,7 @@
    "filing_deadline": "2024-06-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "meeting_date": "2024-12-10",
+   "support_note": "Microsoft reports 9.71% \"Votes For\", which matches For/(For+Against) to within 0.01 (Microsoft appears to truncate rather than round).",
    "degree": 3
   },
   {
@@ -2359,6 +2363,7 @@
    "filing_deadline": "2024-06-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "meeting_date": "2024-12-10",
+   "support_note": "Microsoft reports 18.67% \"Votes For\", which matches For/(For+Against) to within 0.01 (Microsoft appears to truncate rather than round).",
    "degree": 6
   },
   {
@@ -2377,6 +2382,7 @@
    "filing_deadline": "2024-06-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "meeting_date": "2024-12-10",
+   "support_note": "Microsoft reports 36.19% \"Votes For\", which matches For/(For+Against) to within 0.01 (Microsoft appears to truncate rather than round).",
    "degree": 3
   },
   {
@@ -2395,6 +2401,7 @@
    "filing_deadline": "2025-07-01",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "meeting_date": "2025-12-05",
+   "support_note": "Microsoft reports 0.69% \"Votes For\", which matches For/(For+Against) to within 0.01 (Microsoft appears to truncate rather than round).",
    "degree": 2
   },
   {
@@ -2413,6 +2420,7 @@
    "filing_deadline": "2025-07-01",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "meeting_date": "2025-12-05",
+   "support_note": "Microsoft reports 13.36% \"Votes For\", which matches For/(For+Against) to within 0.01 (Microsoft appears to truncate rather than round).",
    "degree": 3
   },
   {
@@ -2447,6 +2455,7 @@
    "filing_deadline": "2025-07-01",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "meeting_date": "2025-12-05",
+   "support_note": "Microsoft reports 27.48% \"Votes For\", which matches For/(For+Against) to within 0.01 (Microsoft appears to truncate rather than round).",
    "degree": 1
   },
   {
@@ -2465,6 +2474,7 @@
    "filing_deadline": "2025-07-01",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "meeting_date": "2025-12-05",
+   "support_note": "Microsoft reports 26.34% \"Votes For\", which matches For/(For+Against) to within 0.01 (Microsoft appears to truncate rather than round).",
    "degree": 8
   },
   {
@@ -2492,6 +2502,7 @@
    "filing_deadline": "2025-07-01",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "meeting_date": "2025-12-05",
+   "support_note": "Microsoft reports 8.75% \"Votes For\", which matches For/(For+Against) to within 0.01 (Microsoft appears to truncate rather than round).",
    "degree": 3
   },
   {
@@ -2510,6 +2521,7 @@
    "filing_deadline": "2026-06-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "meeting_date": "2026-12-08",
+   "results_note": "Not yet filed (meeting 2026-12-08)",
    "degree": 2
   },
   {
@@ -2537,6 +2549,7 @@
    "filing_deadline": "2026-06-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "meeting_date": "2026-12-08",
+   "results_note": "Not yet filed (meeting 2026-12-08)",
    "degree": 6
   },
   {
@@ -2578,6 +2591,7 @@
    "filing_deadline": "2026-06-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "meeting_date": "2026-12-08",
+   "results_note": "Not yet filed (meeting 2026-12-08)",
    "degree": 3
   },
   {
@@ -2596,6 +2610,7 @@
    "filing_deadline": "2022-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm",
    "meeting_date": "2023-06-02",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 6
   },
   {
@@ -2614,6 +2629,7 @@
    "filing_deadline": "2022-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm",
    "meeting_date": "2023-06-02",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 4
   },
   {
@@ -2632,6 +2648,7 @@
    "filing_deadline": "2022-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm",
    "meeting_date": "2023-06-02",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 3
   },
   {
@@ -2666,6 +2683,7 @@
    "filing_deadline": "2023-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "meeting_date": "2024-06-07",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 6
   },
   {
@@ -2684,6 +2702,7 @@
    "filing_deadline": "2023-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "meeting_date": "2024-06-07",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 5
   },
   {
@@ -2711,6 +2730,7 @@
    "filing_deadline": "2023-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "meeting_date": "2024-06-07",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 6
   },
   {
@@ -2746,6 +2766,7 @@
    "filing_deadline": "2024-12-27",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "meeting_date": "2025-06-06",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 3
   },
   {
@@ -2764,6 +2785,7 @@
    "filing_deadline": "2024-12-27",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "meeting_date": "2025-06-06",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 3
   },
   {
@@ -2782,6 +2804,7 @@
    "filing_deadline": "2024-12-27",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "meeting_date": "2025-06-06",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 3
   },
   {
@@ -2809,6 +2832,7 @@
    "filing_deadline": "2024-12-27",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "meeting_date": "2025-06-06",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 14
   },
   {
@@ -2827,6 +2851,7 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "meeting_date": "2026-06-05",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 2
   },
   {
@@ -2845,6 +2870,7 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "meeting_date": "2026-06-05",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 6
   },
   {
@@ -2872,6 +2898,7 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "meeting_date": "2026-06-05",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 4
   },
   {
@@ -2890,6 +2917,7 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "meeting_date": "2026-06-05",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 2
   },
   {
@@ -2917,6 +2945,7 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "meeting_date": "2026-06-05",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 2
   },
   {
@@ -2935,6 +2964,7 @@
    "filing_deadline": "2022-12-09",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680122000043/meta2022definitiveproxysta.htm",
    "meeting_date": "2023-05-31",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 8
   },
   {
@@ -2969,6 +2999,7 @@
    "filing_deadline": "2023-12-16",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
    "meeting_date": "2024-05-29",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 6
   },
   {
@@ -2996,6 +3027,7 @@
    "filing_deadline": "2023-12-16",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
    "meeting_date": "2024-05-29",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 4
   },
   {
@@ -3014,6 +3046,7 @@
    "filing_deadline": "2024-12-20",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "meeting_date": "2025-05-28",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 3
   },
   {
@@ -3032,6 +3065,7 @@
    "filing_deadline": "2024-12-20",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "meeting_date": "2025-05-28",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 3
   },
   {
@@ -3050,6 +3084,7 @@
    "filing_deadline": "2024-12-20",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "meeting_date": "2025-05-28",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 3
   },
   {
@@ -3094,6 +3129,7 @@
    "filing_deadline": "2025-12-18",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "meeting_date": "2026-05-27",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 2
   },
   {
@@ -3112,6 +3148,7 @@
    "filing_deadline": "2025-12-18",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "meeting_date": "2026-05-27",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 4
   },
   {
@@ -3130,6 +3167,7 @@
    "filing_deadline": "2025-12-18",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "meeting_date": "2026-05-27",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 6
   },
   {
@@ -3165,6 +3203,7 @@
    "filing_deadline": "2022-12-15",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465922045572/tm223357-5_def14a.htm",
    "meeting_date": "2023-05-24",
+   "support_note": "The 8-K gives raw counts only, no percentage.",
    "degree": 3
   },
   {
@@ -3183,6 +3222,7 @@
    "filing_deadline": "2022-12-15",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465922045572/tm223357-5_def14a.htm",
    "meeting_date": "2023-05-24",
+   "support_note": "The 8-K gives raw counts only, no percentage.",
    "degree": 1
   },
   {
@@ -3210,6 +3250,7 @@
    "filing_deadline": "2023-12-15",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
    "meeting_date": "2024-05-22",
+   "support_note": "The 8-K gives raw counts only, no percentage.",
    "degree": 5
   },
   {
@@ -3237,6 +3278,7 @@
    "filing_deadline": "2023-12-15",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
    "meeting_date": "2024-05-22",
+   "support_note": "The 8-K gives raw counts only, no percentage.",
    "degree": 1
   },
   {
@@ -3255,6 +3297,7 @@
    "filing_deadline": "2023-12-15",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
    "meeting_date": "2024-05-22",
+   "support_note": "The 8-K gives raw counts only, no percentage.",
    "degree": 2
   },
   {
@@ -3273,6 +3316,7 @@
    "filing_deadline": "2024-12-12",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "meeting_date": "2025-05-21",
+   "support_note": "The 8-K gives raw counts only, no percentage.",
    "degree": 1
   },
   {
@@ -3291,6 +3335,7 @@
    "filing_deadline": "2024-12-12",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "meeting_date": "2025-05-21",
+   "support_note": "The 8-K gives raw counts only, no percentage.",
    "degree": 2
   },
   {
@@ -3309,6 +3354,7 @@
    "filing_deadline": "2024-12-12",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "meeting_date": "2025-05-21",
+   "support_note": "The 8-K gives raw counts only, no percentage.",
    "degree": 3
   },
   {
@@ -3336,6 +3382,7 @@
    "filing_deadline": "2025-12-11",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "meeting_date": "2026-05-20",
+   "support_note": "The 8-K gives raw counts only, no percentage.",
    "degree": 3
   },
   {
@@ -3369,6 +3416,8 @@
    "source_url": "https://news.bloomberglaw.com/esg/amazon-to-block-investor-vote-on-ai-services-for-israel-dhs",
    "filing_deadline": "2025-12-11",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
+   "status_reason": "Excluded by Amazon under Rule 14a-8(i)(12) (resubmission): a similar 2024 proposal got 16.8%, below the 25% needed. SEC staff said they would not object (January 30, 2026).",
+   "status_source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/americanbaptisthomeamazon13026.pdf",
    "degree": 9
   },
   {
@@ -3387,6 +3436,7 @@
    "filing_deadline": "2025-12-11",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "meeting_date": "2026-05-20",
+   "support_note": "Floor proposal: raised at the meeting, so shares voted earlier by proxy could not vote on it. Support is not comparable with proposals in the proxy; the 8-K gives the raw counts.",
    "degree": 2
   },
   {
@@ -3405,6 +3455,7 @@
    "filing_deadline": "2023-09-14",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817923000019/laap2023_def14a.htm",
    "meeting_date": "2024-02-28",
+   "support_note": "The 8-K gives raw counts only, no percentage.",
    "degree": 3
   },
   {
@@ -3423,6 +3474,7 @@
    "filing_deadline": "2024-09-13",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm",
    "meeting_date": "2025-02-25",
+   "support_note": "The 8-K gives raw counts only, no percentage.",
    "degree": 3
   },
   {
@@ -3439,6 +3491,8 @@
    "source_url": "https://www.minerva.info/post/apple-shareholders-stunted-proposals-plummet-as-sec-shift-bites",
    "filing_deadline": "2025-09-12",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
+   "status_reason": "Withdrawn by Tulipshare after Apple asked the SEC to let it exclude the proposal as not economically significant (Rule 14a-8(i)(5)) and as ordinary business or micromanagement (Rule 14a-8(i)(7)). No reason for the withdrawal is public.",
+   "status_source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/tulipshareapple112625.pdf",
    "degree": 2
   },
   {
@@ -3457,6 +3511,7 @@
    "filing_deadline": "2026-01-13",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000095/nvda-20250512.htm",
    "meeting_date": "2026-06-24",
+   "support_note": "Majority of shares present, with abstentions counted as against: 17.44% For/(For+Against+Abstain). The 8-K gives no percentage.",
    "degree": 4
   },
   {
@@ -3491,6 +3546,7 @@
    "filing_deadline": "2024-12-17",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465924053333/tm2326076d15_def14a.htm",
    "meeting_date": "2025-11-06",
+   "support_note": "Tesla bylaw basis counts abstentions as against: 43.25%. The 8-K gives no percentage.",
    "degree": 1
   },
   {
@@ -5120,6 +5176,8 @@
    "filing_deadline": "2024-12-27",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "meeting_date": "2025-06-06",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 2
   },
   {
@@ -5138,6 +5196,8 @@
    "filing_deadline": "2024-12-27",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "meeting_date": "2025-06-06",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
+   "support_note": "Floor proposal: raised at the meeting, so shares voted earlier by proxy could not vote on it. Support is not comparable with proposals in the proxy; the 8-K gives the raw counts.",
    "degree": 1
   },
   {
@@ -5165,6 +5225,8 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "meeting_date": "2026-06-05",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
+   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
    "degree": 2
   },
   {
@@ -5183,6 +5245,8 @@
    "filing_deadline": "2024-09-13",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm",
    "meeting_date": "2025-02-25",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125005876/ef20044022_8k.htm",
+   "support_note": "The 8-K gives raw counts only, no percentage.",
    "degree": 2
   },
   {
@@ -5201,6 +5265,8 @@
    "filing_deadline": "2025-11-10",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/51143/000110465925022186/tm2430706-6_def14aseq1.htm",
    "meeting_date": "2026-04-28",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000043/ibm-20260428.htm",
+   "support_note": "IBM's 8-K reports 2.4% For. For 14,185,799; Against 565,479,507; Abstain 10,880,912; broker non-votes 153,795,179.",
    "degree": 1
   },
   {
@@ -5219,6 +5285,8 @@
    "filing_deadline": "2022-12-09",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1069183/000155837022005230/tmb-20220520xdef14a.htm",
    "meeting_date": "2023-05-31",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1069183/000155837023010762/axon-20230531x8k.htm",
+   "support_note": "8-K counts: For 7,399,803; Against 46,721,724; Abstain 2,743,129; broker non-votes 8,214,032. Single class of common stock.",
    "degree": 1
   },
   {
@@ -5237,6 +5305,8 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165525000057/pltr-20250424.htm",
    "meeting_date": "2026-06-03",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000033/pltr-20260603.htm",
+   "support_note": "8-K counts after giving effect to voting power: For 192,995,867; Against 2,137,396,027; Abstain 24,466,108; broker non-votes 381,084,411. Dual/multi-class: Class B has 10 votes per share and Class F about 160.412 votes per share on this item, so support among Class A holders alone is higher but not reported.",
    "degree": 2
   },
   {
@@ -5255,6 +5325,8 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165525000057/pltr-20250424.htm",
    "meeting_date": "2026-06-03",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000033/pltr-20260603.htm",
+   "support_note": "8-K counts after giving effect to voting power: For 290,935,808; Against 2,042,181,192; Abstain 21,741,002; broker non-votes 381,084,411. Dual/multi-class: Class B has 10 votes per share and Class F about 160.412 votes per share on this item, so support among Class A holders alone is higher but not reported.",
    "degree": 1
   },
   {
@@ -5273,6 +5345,8 @@
    "filing_deadline": "2023-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1065280/000119312523110513/d405125ddef14a.htm",
    "meeting_date": "2024-06-06",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528024000185/nflx-20240606.htm",
+   "support_note": "8-K Item 5.07: For 144,328,782; Against 189,038,209; Abstain 1,842,864; Broker non-votes 37,164,996. Not approved.",
    "degree": 1
   },
   {
@@ -5327,6 +5401,8 @@
    "filing_deadline": "2025-12-12",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/92122/000009212225000036/so-20250410.htm",
    "meeting_date": "2026-05-13",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000040/so-20260513.htm",
+   "support_note": "Southern reports 9.74% of votes cast For (76,742,427 For, 710,841,526 Against, 9,778,219 abstentions), the same basis.",
    "degree": 2
   },
   {
@@ -5345,6 +5421,8 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817925000509/dlr000000-def14a.htm",
    "meeting_date": "2026-05-29",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926068907/dlr-20260529x8k.htm",
+   "support_note": "8-K gives counts only (69,757,155 For, 240,748,354 Against, 2,755,449 abstentions); no company percentage.",
    "degree": 3
   },
   {
@@ -5363,6 +5441,8 @@
    "filing_deadline": "2024-12-27",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817924000607/ldlr2024_def14a.htm",
    "meeting_date": "2025-06-06",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1297996/000155837025008511/dlr-20250606x8k.htm",
+   "support_note": "8-K gives counts only (30,399,496 For, 262,854,063 Against, 2,801,831 abstentions); no company percentage.",
    "degree": 2
   },
   {
