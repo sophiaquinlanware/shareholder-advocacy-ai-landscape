@@ -90,7 +90,7 @@
       const label = `${a.label} at ${c.name}: ${x ? `filed ${plural(x.n, "time")}${x.best != null ? `, highest support ${Math.round(x.best)}%` : ""}${x.up ? ", on the next ballot" : ""}${x.crit ? `, ${x.crit === x.n ? (x.n === 1 ? "by a filer" : "all by filers") : `${x.crit} of them by filers`} critical of ESG${x.best != null ? " (left out of the highest support)" : ""}` : ""}` : "not filed in this dataset"}`;
       return `<td><button type="button" class="pl-mx${x ? " filed" : ""}${x && x.crit === x.n ? " crit" : ""}${x && x.up ? " up" : ""}" data-co="${esc(c.id || c.ticker)}" data-ask="${esc(a.id)}" data-r="${r}" data-c="${i}" tabindex="${on ? 0 : -1}"${on ? ' aria-current="true"' : ""} aria-label="${esc(label)}">${x ? (x.best != null ? Math.round(x.best) : "•") : ""}</button></td>`;
     }).join("")}</tr>`).join("");
-    return `<section class="pl-card pl-wide" aria-labelledby="pl-h-mx"><h3 id="pl-h-mx">What has been asked where</h3>
+    return `<section class="pl-card pl-wide" aria-labelledby="pl-h-mx"><h3 id="pl-h-mx">AI shareholder engagement tracker: each ask, by company</h3>
       <p class="status-note">Rows are asks (with how often each has been filed), columns are the US-listed companies. A number is the highest support that ask has had at that company (% for ÷ (for + against)), leaving out filings from filers critical of ESG; a dot means filed but not voted; a dashed square was filed only by filers critical of ESG; an outlined square is on the next ballot; an empty square has no filing there in this dataset. Choose a square to plan it; arrow keys move between squares.</p>
       <div class="table-wrap pl-mx-wrap"><table class="pl-mx-table"><thead><tr><th scope="col"><span class="visually-hidden">Ask</span></th>${head}</tr></thead><tbody>${rows}</tbody></table></div></section>`;
   }
@@ -338,6 +338,8 @@
       if (left < wrap.scrollLeft || right > wrap.scrollLeft + wrap.clientWidth) wrap.scrollLeft = Math.max(0, left - 40);
     }
     drawShortlist();
+    // planner-docs.js (UI session) adds the escalation step and drafted documents after each redraw.
+    document.dispatchEvent(new CustomEvent("plannerdraw"));
     const status = document.getElementById("pl-status");
     const filings = D.proposals.filter((p) => p.ask_id === S.ask).length;
     if (status) status.textContent = `Plan for ${c.name}, ${askOf(S.ask).label}: ${plural(filings, "filing")} of this ask in this dataset.`;
@@ -354,6 +356,26 @@
     } catch (e) { /* address bar unchanged */ }
     draw(write);
     if (focus) { const h = document.getElementById("pl-h-rec"); if (h) { h.tabIndex = -1; h.focus(); } }
+  }
+
+  // Read-only access for planner-docs.js: the current plan and the data it draws from.
+  window.PLANNER = {
+    get: () => (S && D ? { S, D, idx, coById, askOf, tick, deadlineOpen, today, orgsFor: (c) => organizationsData(c) } : null),
+  };
+  // Organizations with a public record on this ask or at this company, as data (filers critical of ESG left out),
+  // for the coalition draft.
+  function organizationsData(c) {
+    const t = tick(c);
+    const out = new Map();
+    idx.acts.forEach((a) => {
+      if (a.org === S.mine || !(LEAD.has(a.type) || CO.has(a.type) || BACK.has(a.type))) return;
+      if (a.prop.ask_id !== S.ask && a.prop.company !== t) return;
+      const n = idx.nodes.get(a.org);
+      if (!n) return;
+      if (!out.has(a.org)) out.set(a.org, { id: a.org, name: n.label, type: n.org_type || n.type, items: [], people: (idx.people.get(a.org) || []).slice(0, 2) });
+      out.get(a.org).items.push({ text: `${LEAD.has(a.type) ? "lead-filed" : CO.has(a.type) ? "co-filed" : "backed"} ${a.prop.company} ${a.prop.year}`, url: a.url, anti: /anti-ESG/i.test(n.org_type || "") });
+    });
+    return [...out.values()].filter((o) => !o.items.some((i) => i.anti)).sort((a, b) => b.items.length - a.items.length || a.name.localeCompare(b.name));
   }
 
   // Build the planner only when its view is first shown, so the rest of the site loads without waiting for it.
@@ -397,6 +419,7 @@
       </div>
       <p id="pl-status" class="visually-hidden" role="status"></p>
       <div id="pl-out"></div>
+      <div id="pl-docs"></div>
       <aside id="pl-shortlist" class="pl-card" aria-labelledby="pl-h-list"></aside>`;
     document.getElementById("pl-co").addEventListener("change", (e) => { S.co = e.target.value; sync(); });
     document.getElementById("pl-ask").addEventListener("change", (e) => { S.ask = e.target.value; sync(); });

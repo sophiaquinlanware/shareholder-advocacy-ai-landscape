@@ -208,7 +208,17 @@
   const axisFollow = () => {
     if (!state.axis || !state.size) return;
     const t = state.zt || d3.zoomIdentity;
-    state.axis.selectAll("text.col").attr("x", (c) => t.applyX(c.x * state.size.width));
+    // Each heading sits over the middle of its column's visible nodes (owner, 2026-11-27: "evenly distributed along
+    // the top", not off at the edge), falling back to the column's target position.
+    // Headings sit at the columns' evenly spaced positions, where the layout holds each cluster.
+    const mid = (c) => {
+      const xs = state.data.nodes.filter((n) => c.kinds.includes(n.kind) && Number.isFinite(n.x) && visible(n)).map((n) => n.x);
+      const target = c.x * state.size.width;
+      if (!xs.length) return target;
+      const m = xs.reduce((a, b) => a + b, 0) / xs.length;
+      return (target + m) / 2;
+    };
+    state.axis.selectAll("text.col").attr("x", (c) => t.applyX(mid(c)));
   };
   // Fit the box to the graph once the layout settles (owner, 2026-11-26: "fit the black box to the model so
   // there's a more natural fit"): the box's height shrinks to the nodes' extent, centred, never zoomed in past
@@ -338,7 +348,7 @@
     sim.force("collide").radius((d) => radius(d) + 3);
     sim.force("x").strength(state.cfg.center);
     sim.force("y").strength(state.cfg.center * 1.25);
-    sim.force("gx").strength(state.cfg.group);
+    sim.force("gx").strength(Math.min(1, state.cfg.group * 1.8));
     sim.force("gy").strength(state.cfg.group * 0.8);
     drawAxis();
     // Sliders fire continuously, so no off-screen pass here: a damped restart keeps the motion gentle.
@@ -599,7 +609,7 @@
     if (!el) return;
     const on = state.cfg.catColor && catList().length;
     el.hidden = !on;
-    el.innerHTML = on ? `<span class="status-note">Proposals by what they ask about:</span> <button type="button" class="tool leg-all" data-cat-all="1"><span aria-hidden="true">↺</span> Show all</button>${catList().map((c) => chip("data-cat", c.id, catState(c.id), cssVar(`--gn-cat-${c.id}`), c.label)).join("")}` : "";
+    el.innerHTML = on ? `<span class="status-note">Proposals by what they ask about:</span> <button type="button" class="tool leg-all" data-cat-all="1">Show all <span aria-hidden="true">↺</span></button>${catList().map((c) => chip("data-cat", c.id, catState(c.id), cssVar(`--gn-cat-${c.id}`), c.label)).join("")}` : "";
   }
   // Key chips have three states, cycled by clicking (owner, 2026-11-26: "you click it all lights up of the
   // category vs click again and it cross it off"): shown → highlighted (the rest of the graph dims) →
@@ -624,7 +634,7 @@
     const kinds = [...new Set(data.nodes.map((n) => n.kind))].filter((k) => !mode().hides.has(k));
     const order = Object.keys(TYPE_LABEL);
     kinds.sort((a, b) => order.indexOf(a) - order.indexOf(b));
-    document.getElementById("net-legend").innerHTML = `<button type="button" class="tool leg-all" data-all="1"><span aria-hidden="true">↺</span> Show all</button>` +
+    document.getElementById("net-legend").innerHTML = `<button type="button" class="tool leg-all" data-all="1">Show all <span aria-hidden="true">↺</span></button>` +
       kinds.map((k) => chip("data-kind", k, kindState(k), nodeColor(k), kindLabel(k))).join("");
   }
 
@@ -649,9 +659,12 @@
       : `${c.shown} of ${c.total} organizations, people, proposals and companies shown${c.extra}. Circle size = ${lens().sizeLabel}. Company roles are this site's reading of each company's main role in AI.`;
   }
 
+  // Neighbors through links drawn in the current view only, so everything that lights up on hover or selection
+  // has a visible line to the node (owner, 2026-11-27: some lit nodes had no "relational string").
   function neighbors(id) {
     const s = new Set([id]);
     state.data.links.forEach((l) => {
+      if (!inMode(l) || !visible(l.source) || !visible(l.target)) return;
       if (l.source.id === id) s.add(l.target.id);
       if (l.target.id === id) s.add(l.source.id);
     });
@@ -1420,7 +1433,8 @@
       .force("center", d3.forceCenter(width / 2, height / 2))
       .force("x", d3.forceX(width / 2).strength(state.cfg.center))
       .force("y", d3.forceY(height / 2).strength(state.cfg.center * 1.25))
-      .force("gx", d3.forceX((d) => ovalTarget(d).x * width).strength(state.cfg.group))
+      // Columns are held firmly sideways (1.8× the grouping force) so each cluster sits under its heading.
+      .force("gx", d3.forceX((d) => ovalTarget(d).x * width).strength(Math.min(1, state.cfg.group * 1.8)))
       .force("gy", d3.forceY((d) => ovalTarget(d).y * height).strength(state.cfg.group * 0.8))
       // A soft oval boundary (owner, 2026-11-26: "it doesn't have to go so far to the edge … a bit more naturally
       // circled"): a node outside the oval inscribed in the box is drawn gently back toward the middle, so the cloud
@@ -1499,7 +1513,7 @@
     };
     state.draw = draw;
     sim.on("tick", draw);
-    sim.on("end", () => { fitToContent(); declutter(); applyStyles(); });
+    sim.on("end", () => { fitToContent(); axisFollow(); declutter(); applyStyles(); });
     // Work out most of the layout before showing it (owner, 2026-11-26: the nodes "shake a lot" when a graph first
     // opens; "gently wiggly … nothing violent"): nodes start near their column, the layout runs off-screen, and
     // only the last few percent plays on screen, heavily damped.

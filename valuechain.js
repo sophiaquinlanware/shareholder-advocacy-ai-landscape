@@ -13,14 +13,17 @@
   const plural = (n, one, many) => `${n} ${n === 1 ? one : many || one + "s"}`;
   const src = (u, label = "source") => (u ? ` <a class="src" href="${esc(u)}" target="_blank" rel="noopener">[${esc(label)}]</a>` : ` <span class="unverified">source pending</span>`);
   // Tie types differ by dash pattern, not colour (all marks are blue on white).
-  const DASH = { "supplies chips": null, "manufactures for": "12 4", "leases capacity to": "4 4", "provides compute to": "6 2 2 2", "supplies power to": "1 3", "distributes models": "8 3 1 3" };
+  // Six clearly different line patterns (owner, 2026-11-27: the old dashes were "not distinct enough"): solid, long
+  // dash, round dots, dash-dot, short dash, dash-dot-dot. Dotted lines use round caps so the dots read as dots.
+  const DASH = { "supplies chips": null, "manufactures for": "14 6", "leases capacity to": "0.1 6", "provides compute to": "12 4 2 4", "supplies power to": "5 5", "distributes models": "12 3 2 3 2 3" };
+  const CAP = { "leases capacity to": "round" };
   // Each tie type as words that read as a sentence: "{from} {phrase} {to}".
   const PHRASE = { "supplies chips": "supplies chips to", "manufactures for": "manufactures for", "leases capacity to": "leases capacity to", "provides compute to": "provides compute to", "supplies power to": "supplies power to", "distributes models": "distributes the models of" };
   const phrase = (t) => PHRASE[t] || t;
-  const SHORT_TIER = { chips: "Chips", datacenters: "Data centers", cloud: "Cloud", labs: "Labs", capital: "Investors", consumer: "Consumer", business: "Business" };
-  // Flow columns in value-chain order; strategic investors sit as a band under frontier labs (capital feeds labs).
-  // Columns are the site's company roles (roles.js) in value-chain order; strategic investors sit under labs.
-  const FLOW = ["chips", "datacenters", "cloud", "labs", "consumer", "business"];
+  const SHORT_TIER = { chips: "Chips", datacenters: "Data centers", cloud: "Cloud platforms", labs: "Frontier labs", capital: "Strategic investors", consumer: "Consumer", business: "Business" };
+  // Columns are the site's company roles (roles.js) in value-chain order, with strategic investors in their own
+  // column at the end (owner, 2026-11-27: they looked misplaced under frontier labs).
+  const FLOW = ["chips", "datacenters", "cloud", "labs", "consumer", "business", "capital"];
   const roleOfId = (id) => (window.ROLES && CO.get(id) ? window.ROLES.roleOf(CO.get(id)) : (CO.get(id) || {}).tier);
   // per_tier data comes by value-chain tier; its rows use the role names, with deployers covering both products roles.
   const TIER_AS_ROLE = { chips: "Chips and hardware", datacenters: "Data centers and power", compute: "Cloud and model platforms", labs: "Frontier labs", capital: "Strategic investors", deployers: "Consumer and business products" };
@@ -56,13 +59,12 @@
     if (typeof d3 === "undefined") { box.innerHTML = `<p class="status-note">The chart library did not load; the ties are listed below.</p>`; return; }
     const inTies = new Set(V.ties.flatMap((t) => [t.from, t.to]));
     const W = Math.max(720, box.clientWidth || 900);
-    const narrow = W < 760;
     const colX = (i) => 70 + (i * (W - 220)) / (FLOW.length - 1);
+    // Short column headings whenever the full ones would run into each other.
+    const narrow = (W - 220) / (FLOW.length - 1) < 175;
     const rowH = 20;
     const cols = FLOW.map((tid, i) => {
-      let ids = [...inTies].filter((id) => roleOfId(id) === tid).sort((a, b) => name(a).localeCompare(name(b)));
-      const cap = [...inTies].filter((id) => roleOfId(id) === "capital").sort((a, b) => name(a).localeCompare(name(b)));
-      if (tid === "labs" && cap.length) ids = ids.concat("__capital__", cap);
+      const ids = [...inTies].filter((id) => roleOfId(id) === tid).sort((a, b) => name(a).localeCompare(name(b)));
       return { tid, x: colX(i), ids };
     });
     const H = 60 + Math.max(...cols.map((c) => c.ids.length)) * rowH + 30;
@@ -81,10 +83,9 @@
         const mx = (a.x + b.x) / 2;
         return a.x === b.x ? `M${a.x},${a.y}C${a.x + 60},${a.y} ${b.x + 60},${b.y} ${b.x},${b.y}` : `M${a.x},${a.y}C${mx},${a.y} ${mx},${b.y} ${b.x},${b.y}`;
       })
-      .attr("class", "vc-tie").attr("stroke", ink).attr("stroke-opacity", 0.55).attr("stroke-width", 1.4).attr("stroke-dasharray", (t) => DASH[t.type] || null)
+      .attr("class", "vc-tie").attr("stroke", ink).attr("stroke-opacity", 0.7).attr("stroke-width", 2).attr("stroke-dasharray", (t) => DASH[t.type] || null).attr("stroke-linecap", (t) => CAP[t.type] || "butt")
       .append("title").text((t) => `${name(t.from)} ${phrase(t.type)} ${name(t.to)}`);
     const nodes = svg.append("g").selectAll("g").data([...pos.entries()]).join("g").attr("transform", ([, p]) => `translate(${p.x},${p.y})`);
-    nodes.filter(([id]) => id === "__capital__").append("text").attr("x", -6).attr("y", 4).attr("font-size", 12).attr("font-weight", 400).attr("fill", cssVar("--ink-soft")).text(`${tierLabel("capital").toUpperCase()}`);
     const co = nodes.filter(([id]) => id !== "__capital__")
       .attr("tabindex", 0).attr("role", "button").attr("aria-label", ([id]) => `${name(id)}: ${plural(deg.get(id) || 0, "tie")}`).style("cursor", "pointer")
       .on("click", (ev, [id]) => showCompany(id))
@@ -95,14 +96,14 @@
       .attr("stroke", cssVar("--surface")).attr("stroke-width", 3).attr("stroke-linejoin", "round").attr("paint-order", "stroke").text(([id]) => (name(id).length > 26 ? name(id).slice(0, 25) + "…" : name(id)));
     // Key: one dash pattern per tie type.
     document.getElementById("vc-key").innerHTML = [...new Set(V.ties.map((t) => t.type))].map((k) =>
-      `<span class="leg static"><svg class="mark" viewBox="0 0 28 10" aria-hidden="true"><line x1="0" y1="5" x2="28" y2="5" stroke="${ink}" stroke-width="2"${DASH[k] ? ` stroke-dasharray="${DASH[k]}"` : ""}></line></svg>${esc(k)}</span>`).join("")
-      + `<span class="status-note">Each line is one sourced tie; open a company to read its ties in words. Circle size = number of sourced ties; companies with no sourced tie are counted in each tier's panel. Strategic investors sit under frontier labs; their equity stakes are in Ties to each frontier lab.</span>`;
+      `<span class="leg static"><svg class="mark vc-line" viewBox="0 0 44 10" aria-hidden="true"><line x1="2" y1="5" x2="42" y2="5" stroke="${ink}" stroke-width="2.5"${DASH[k] ? ` stroke-dasharray="${DASH[k]}"` : ""}${CAP[k] ? ` stroke-linecap="${CAP[k]}"` : ""}></line></svg>${esc(k)}</span>`).join("")
+      + `<span class="status-note">Each line is one sourced tie; open a company to read its ties in words. Circle size = number of sourced ties; companies with no sourced tie are counted in each tier's panel. Strategic investors have their own column; their equity stakes in labs are in Ties to each frontier lab.</span>`;
   }
 
   // Ties of the chosen tier or company stay strong; the rest fade, so crossing lines stay readable.
   function highlight(keep) {
     if (typeof d3 === "undefined") return;
-    d3.selectAll("#vc-flow path.vc-tie").attr("stroke-opacity", (x) => (keep(x) ? 0.95 : 0.08)).attr("stroke-width", (x) => (keep(x) ? 2 : 1.2));
+    d3.selectAll("#vc-flow path.vc-tie").attr("stroke-opacity", (x) => (keep(x) ? 0.95 : 0.08)).attr("stroke-width", (x) => (keep(x) ? 2.6 : 1.6));
   }
   // Clear then set, so the same message is announced again on a repeat click.
   function announce(t) {
