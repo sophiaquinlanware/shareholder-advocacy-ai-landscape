@@ -216,6 +216,7 @@ def main():
                 if k in p:
                     twin[k] = p[k]
             twin["results_url"] = p.get("results_url")
+            twin["sec_id"] = p["id"]  # its id in proposals.json, so pages can join the two
             continue
         co = "co-" + p["company"].upper()
         node(co, type="company", layer="companies", label=TICKER_NAME.get(p["company"], p["company"]), ticker=p["company"])

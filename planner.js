@@ -11,7 +11,10 @@
   const fmt = (iso) => (iso ? new Date(String(iso).slice(0, 10) + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }) : "");
   const median = (v) => { if (!v.length) return null; const s = [...v].sort((a, b) => a - b), m = Math.floor(s.length / 2); return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
   const pct = (x) => (x == null ? "" : `${Math.round(x * 10) / 10}%`);
-  const money = (usd) => `$${Math.round(usd / 1e6).toLocaleString("en-US")}M`;
+  const money = (usd) => (usd < 1e6 ? "under $1M" : `$${Math.round(usd / 1e6).toLocaleString("en-US")}M`);
+  // A deadline marked open when the data was built may have passed since.
+  const today = () => new Date().toISOString().slice(0, 10);
+  const deadlineOpen = (c) => c.next_proposal_deadline_status === "open" && String(c.next_proposal_deadline || "") >= today();
 
   // Fund families (data/fund_votes.json) by their organization in the network.
   const FAMILY_ORG = { "Parnassus": "parnassus", "Calvert": "calvert-research-and-management", "Domini": "domini", "Green Century": "green-century",
@@ -53,7 +56,9 @@
       const label = i.cik ? `Form 13F for the quarter ending ${fmt(i.report_period)}` : `${i.name} holdings report, ${fmt(i.report_period)}`;
       [i.filing_url, i.data_url].filter(Boolean).forEach((u) => holdSrc.set(u, label));
     });
-    return { nodes, orgs, acts, holdsAt, members, people, holdSrc, votes: (D.fundVotes && D.fundVotes.summary) || [] };
+    // Proposals lead-filed by an organization that files from a critical stance on ESG (for example NLPC, NCPPR).
+    const critical = new Set(acts.filter((a) => LEAD.has(a.type) && /anti-ESG/i.test((nodes.get(a.org) || {}).org_type || "")).map((a) => a.prop.sec_id || a.prop.id));
+    return { nodes, orgs, acts, holdsAt, members, people, holdSrc, critical, votes: (D.fundVotes && D.fundVotes.summary) || [] };
   }
 
   const askOf = (id) => D.asks.find((a) => a.id === id) || { label: id };
@@ -69,8 +74,9 @@
     D.proposals.forEach((p) => {
       if (!p.ask_id) return;
       const k = p.ask_id + "|" + p.company;
-      const x = cell.get(k) || { n: 0, best: null, up: false };
+      const x = cell.get(k) || { n: 0, best: null, up: false, crit: 0 };
       x.n += 1;
+      if (idx.critical.has(p.id)) x.crit += 1;
       if (p.support_pct != null) x.best = Math.max(x.best ?? 0, p.support_pct);
       if (p.status === "upcoming") x.up = true;
       cell.set(k, x);
@@ -80,7 +86,7 @@
     const rows = D.asks.map((a, r) => `<tr><th scope="row" class="pl-mx-row">${esc(a.label)} <span class="ticker">${totals.get(a.id)} filed</span></th>${cos.map((c, i) => {
       const x = cell.get(a.id + "|" + tick(c));
       const on = S.co === (c.id || c.ticker) && S.ask === a.id;
-      const label = `${a.label} at ${c.name}: ${x ? `filed ${plural(x.n, "time")}${x.best != null ? `, highest support ${Math.round(x.best)}%` : ""}${x.up ? ", on the next ballot" : ""}` : "not filed in this dataset"}`;
+      const label = `${a.label} at ${c.name}: ${x ? `filed ${plural(x.n, "time")}${x.best != null ? `, highest support ${Math.round(x.best)}%` : ""}${x.up ? ", on the next ballot" : ""}${x.crit ? `, ${x.crit === x.n ? "" : `${x.crit} of them `}filed from a critical stance on ESG` : ""}` : "not filed in this dataset"}`;
       return `<td><button type="button" class="pl-mx${x ? " filed" : ""}${x && x.up ? " up" : ""}" data-co="${esc(c.id || c.ticker)}" data-ask="${esc(a.id)}" data-r="${r}" data-c="${i}" tabindex="${on ? 0 : -1}"${on ? ' aria-current="true"' : ""} aria-label="${esc(label)}">${x ? (x.best != null ? Math.round(x.best) : "•") : ""}</button></td>`;
     }).join("")}</tr>`).join("");
     return `<section class="pl-card pl-wide" aria-labelledby="pl-h-mx"><h3 id="pl-h-mx">What has been asked where</h3>
@@ -93,14 +99,16 @@
     const t = tick(c);
     const all = D.proposals.filter((p) => p.ask_id === ask);
     const here = all.filter((p) => p.company === t).sort((a, b) => String(b.meeting_date || b.year).localeCompare(String(a.meeting_date || a.year)));
-    const voted = all.filter((p) => p.status === "voted" && p.support_pct != null);
+    const crit = all.filter((p) => idx.critical.has(p.id));
+    const voted = all.filter((p) => p.status === "voted" && p.support_pct != null && !idx.critical.has(p.id));
     const med = median(voted.map((p) => p.support_pct));
     const best = voted.slice().sort((a, b) => b.support_pct - a.support_pct)[0];
     const cos = [...new Set(all.map((p) => p.company))];
     const thr = window.RULES && window.RULES.RESUBMISSION_THRESHOLDS;
-    const row = (p) => `<li><strong>${esc(p.company)}</strong> ${esc(p.year)}: ${esc(p.title)} · ${esc(p.status)}${p.support_pct != null ? ` · ${esc(p.support_pct)}%` : ""}${src(p.results_url || p.proxy_url, p.results_url ? "results" : "proxy")}</li>`;
+    const row = (p) => `<li><strong>${esc(p.company)}</strong> ${esc(p.year)}: ${esc(p.title)} · ${esc(p.status)}${p.support_pct != null ? ` · ${esc(p.support_pct)}%` : ""}${idx.critical.has(p.id) ? ` <span class="ticker">filed from a critical stance on ESG</span>` : ""}${src(p.results_url || p.proxy_url, p.results_url ? "results" : "proxy")}</li>`;
+    const critNote = crit.length ? ` ${plural(crit.length, "filing")} came from a filer critical of ESG and ${crit.length === 1 ? "is" : "are"} left out of the support figures${voted.length ? "" : ", which leaves no vote to summarize"}.` : "";
     return `<section class="pl-card" aria-labelledby="pl-h-rec"><h3 id="pl-h-rec">How this ask has gone</h3>
-      <p>${all.length ? `Filed ${plural(all.length, "time")} at ${plural(cos.length, "company", "companies")} in this dataset since 2023; median support ${pct(med)} across ${plural(voted.length, "vote")}${best ? `, highest ${pct(best.support_pct)} at ${esc(best.company)} ${esc(best.year)}` : ""}.` : "Not filed at any company in this dataset."}</p>
+      <p>${all.length ? `Filed ${plural(all.length, "time")} at ${plural(cos.length, "company", "companies")} in this dataset since ${Math.min(...all.map((p) => p.year))}${voted.length ? `; median support ${pct(med)} across ${plural(voted.length, "vote")}${best ? `, highest ${pct(best.support_pct)} at ${esc(best.company)} ${esc(best.year)}` : ""}` : ""}.${critNote}` : "Not filed at any company in this dataset."}</p>
       <h4>At ${esc(c.name)}</h4>
       ${here.length ? `<ul class="steps tight">${here.map(row).join("")}</ul>${thr ? `<p class="note">SEC resubmission thresholds for a similar proposal within three years: ${thr.join("%, ")}% after one, two or three votes (this site's reading of Rule 14a-8(i)(12)).</p>` : ""}` : `<p class="status-note">Not filed here in this dataset.</p>`}
       ${all.length > here.length ? `<details><summary>Elsewhere (${all.length - here.length})</summary><ul class="steps tight">${all.filter((p) => p.company !== t).sort((a, b) => (b.year || 0) - (a.year || 0)).map(row).join("")}</ul></details>` : ""}
@@ -114,11 +122,13 @@
     const route = c.route_status ? { open: "Still open", narrowing: "Narrowing", closed: "Closed" }[c.route_status] || c.route_status : null;
     const ties = ((D.valueChain && D.valueChain.all_ties) || []).filter((x) => x.from === c.id && x.kind === "lab tie").slice(0, 5);
     const fact = (l, v) => `<div><dt>${esc(l)}</dt><dd>${v}</dd></div>`;
+    const us = c.shareholder_route === "US proxy rules apply";
+    const passed = c.next_proposal_deadline && !deadlineOpen(c) && (c.next_proposal_deadline_status === "passed" || String(c.next_proposal_deadline) < today());
     return `<section class="pl-card" aria-labelledby="pl-h-time"><h3 id="pl-h-time">Timing and rights at ${esc(c.name)}</h3>
       <dl class="summary">
-        ${fact("Next filing deadline", c.next_proposal_deadline ? `${esc(fmt(c.next_proposal_deadline))}${c.next_proposal_deadline_status === "passed" ? " (passed)" : ""}${src(c.next_proposal_deadline_source, "proxy")}` : `<span class="ticker">not on file</span>`)}
+        ${fact("Next filing deadline", c.next_proposal_deadline ? `${esc(fmt(c.next_proposal_deadline))}${passed ? " (passed)" : ""}${src(c.next_proposal_deadline_source, "proxy")}` : `<span class="ticker">not on file</span>`)}
         ${fact("AI proposals on the next ballot", upcoming.length ? upcoming.map((p) => `${esc(p.title)} (${esc(fmt(p.meeting_date))})${src(p.proxy_url, "proxy")}`).join("<br>") : `<span class="ticker">none on file</span>`)}
-        ${fact("Proposal route if Rule 14a-8 ends", route ? `${esc(route)}${c.route_status_reason ? ` <span class="ticker">${esc(c.route_status_reason)}</span>` : ""}` : `<span class="ticker">not researched</span>`)}
+        ${us ? fact("Proposal route if Rule 14a-8 ends", route ? `${esc(route)}${c.route_status_reason ? ` <span class="ticker">${esc(c.route_status_reason)}</span>` : ""}` : `<span class="ticker">not researched</span>`) : fact("Shareholder route", `${esc((c.shareholder_route || "not researched").replace(/^./, (m) => m.toUpperCase()))}. <span class="ticker">Filing deadlines and the grid above cover US-listed companies under the US proxy rules only.</span>`)}
         ${c.threshold && c.threshold.text ? fact("Ownership threshold", esc(c.threshold.text) + src(c.threshold.url)) : ""}
         ${c.director_voting && c.director_voting.text ? fact("Director elections", esc(c.director_voting.text) + src(c.director_voting.url)) : ""}
         ${ties.length ? fact("Ties to frontier labs", ties.map((x) => `${esc(x.to_label || x.to)}: ${esc(x.type)}${src(x.source_url)}`).join("<br>")) : ""}
@@ -134,19 +144,19 @@
     const hereAsks = new Set(D.proposals.filter((p) => p.company === t).map((p) => p.ask_id));
     const gap = new Map();
     D.proposals.forEach((p) => {
-      if (!p.ask_id || hereAsks.has(p.ask_id) || !peers.has(p.company)) return;
+      if (!p.ask_id || p.ask_id === ask || hereAsks.has(p.ask_id) || !peers.has(p.company)) return;
       const g = gap.get(p.ask_id) || { cos: new Set(), sup: [] };
-      g.cos.add(p.company); if (p.support_pct != null) g.sup.push(p.support_pct);
+      g.cos.add(p.company); if (p.support_pct != null && !idx.critical.has(p.id)) g.sup.push(p.support_pct);
       gap.set(p.ask_id, g);
     });
     const gaps = [...gap.entries()].sort((a, b) => b[1].cos.size - a[1].cos.size).slice(0, 6);
     const filedAt = new Set(D.proposals.filter((p) => p.ask_id === ask).map((p) => p.company));
-    const untouched = usCos().filter((x) => !filedAt.has(tick(x)) && x.next_proposal_deadline_status === "open")
+    const untouched = usCos().filter((x) => x !== c && !filedAt.has(tick(x)) && deadlineOpen(x))
       .sort((a, b) => String(a.next_proposal_deadline).localeCompare(String(b.next_proposal_deadline))).slice(0, 8);
     return `<section class="pl-card" aria-labelledby="pl-h-ideas"><h3 id="pl-h-ideas">Ideas to explore</h3>
       <h4>Asks filed at other ${esc(roleLabel(c).toLowerCase())} companies but not at ${esc(c.name)} (in this dataset)</h4>
       ${gaps.length ? `<ul class="steps tight">${gaps.map(([a, g]) => `<li><button type="button" class="linklike pl-ask" data-ask="${esc(a)}">${esc(askOf(a).label)}</button>: filed at ${esc([...g.cos].join(", "))}${g.sup.length ? `, median support ${pct(median(g.sup))}` : ""}</li>`).join("")}</ul>` : `<p class="status-note">None in this dataset.</p>`}
-      <h4>US-listed companies with an open filing deadline and no filing of this ask in this dataset</h4>
+      <h4>Other US-listed companies with an open filing deadline and no filing of this ask in this dataset</h4>
       ${untouched.length ? `<ul class="steps tight">${untouched.map((x) => `<li><button type="button" class="linklike pl-co" data-co="${esc(x.id || x.ticker)}">${esc(x.name)}</button>: deadline ${esc(fmt(x.next_proposal_deadline))}${src(x.next_proposal_deadline_source, "proxy")}</li>`).join("")}</ul>` : `<p class="status-note">None on file.</p>`}
     </section>`;
   }
@@ -170,6 +180,7 @@
   const unrev = (f) => (f.unreviewed ? ` <span class="unverified">matched automatically, ${f.unreviewed} of ${f.n} not yet reviewed</span>` : "");
 
   // ---------- Organizations with a public record on this ask or company ----------
+  const score = (x) => x.kinds.size - (x.kinds.has("coal") ? 1 : 0);
   function organizations(c, ask, mine) {
     const t = tick(c);
     const cand = new Map();
@@ -204,7 +215,6 @@
       const myC = idx.members.get(mine);
       cand.forEach((x) => [...(idx.members.get(x.org) || [])].filter((k) => myC.has(k)).forEach((k) => add(x.org, "coal", (idx.nodes.get(k) || {}).label || k, (idx.nodes.get(k) || {}).source_url)));
     }
-    const score = (x) => x.kinds.size - (x.kinds.has("coal") ? 1 : 0);
     const all = [...cand.values()].sort((a, b) => score(b) - score(a) || b.filings - a.filings || idx.nodes.get(a.org).label.localeCompare(idx.nodes.get(b.org).label));
     const list = all.slice(0, S.showAll ? all.length : 20);
     const shortlist = getList();
@@ -214,7 +224,7 @@
       const inList = shortlist.some((s) => s.id === x.org);
       const opp = /anti-ESG/i.test(n.org_type || "");
       const reasons = KINDS.filter((k) => x.kinds.has(k.id)).map((k) => `<li><strong>${esc(k.label)}:</strong> ${[...x.kinds.get(k.id).entries()].map(([it, u]) => `${esc(it)}${src(u)}`).join("; ")}${k.id === "votes" && x.unrev ? unrev(x.unrev) : ""}</li>`).join("");
-      return `<tr class="pl-org"><td data-label="Organization"><strong>${esc(n.label)}</strong><div class="ticker">${esc(n.org_type || n.type)} · ${plural(x.kinds.size, "kind")} of record</div>${opp ? `<div class="note">Files from a critical stance on ESG; it can share an ask while seeking a different outcome.</div>` : ""}</td>
+      return `<tr class="pl-org"><td data-label="Organization"><strong>${esc(n.label)}</strong><div class="ticker">${esc(n.org_type || n.type)} · ${plural(score(x), "kind")} of record on this ask or company</div>${opp ? `<div class="note">Files from a critical stance on ESG; it can share an ask while seeking a different outcome.</div>` : ""}</td>
         <td data-label="Public record"><ul class="pl-why">${reasons}</ul></td>
         <td data-label="Engagement leads">${ppl.length ? ppl.map((p) => `${esc(p.name)}<div class="ticker">${esc(p.title)}</div>${src(p.profile_url, "profile")}`).join("<br>") : `<span class="ticker">no lead on file</span>`}</td>
         <td><button type="button" class="chip pl-add" data-org="${esc(x.org)}" aria-pressed="${inList}" aria-label="Shortlist ${esc(n.label)}">Shortlist</button></td></tr>`;
@@ -271,7 +281,7 @@
     const ex = document.getElementById("pl-export");
     if (ex) ex.addEventListener("click", () => {
       const q = (v) => `"${String(v ?? "").replace(/"/g, '""')}"`;
-      const csv = ["Organization,Engagement leads,Planned for,Network id"].concat(getList().map((s) => [s.name, s.people, s.context, s.id].map(q).join(","))).join("\n");
+      const csv = ["Organization,Engagement leads,Planned for,Public record at the time,Network id"].concat(getList().map((s) => [s.name, s.people, s.context, s.record, s.id].map(q).join(","))).join("\n");
       const a = document.createElement("a");
       a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
       a.download = "engagement-shortlist.csv";
@@ -284,14 +294,15 @@
 
   // ---------- Page ----------
   const planUrl = () => `${location.pathname}?plan=${[S.co, S.ask, S.mine].filter(Boolean).map(encodeURIComponent).join("~")}#planner`;
-  function draw() {
+  function draw(reveal = false) {
     const c = coById(S.co);
     const out = document.getElementById("pl-out");
     if (!c) { out.innerHTML = `<p class="status-note">Choose a company.</p>`; return; }
     out.innerHTML = `${grid()}<div class="pl-grid">${record(c, S.ask)}${timing(c)}</div>${ideas(c, S.ask)}${organizations(c, S.ask, S.mine)}<div class="pl-grid">${yours(c, S.ask, S.mine)}${policy(S.ask)}</div>`;
     out.querySelectorAll(".pl-add").forEach((b) => b.addEventListener("click", () => {
       const id = b.dataset.org, n = idx.nodes.get(id), list = getList();
-      setList(list.some((s) => s.id === id) ? list.filter((s) => s.id !== id) : list.concat([{ id, name: n.label, people: (idx.people.get(id) || []).slice(0, 2).map((p) => p.name).join("; "), context: `${c.name}: ${askOf(S.ask).label}` }]));
+      const row = b.closest("tr"), record = row ? [...row.querySelectorAll(".pl-why > li > strong")].map((s) => s.textContent.replace(/:$/, "")).join("; ") : "";
+      setList(list.some((s) => s.id === id) ? list.filter((s) => s.id !== id) : list.concat([{ id, name: n.label, people: (idx.people.get(id) || []).slice(0, 2).map((p) => p.name).join("; "), context: `${c.name}: ${askOf(S.ask).label}`, record }]));
       draw();
       const again = document.querySelector(`.pl-add[data-org="${CSS.escape(id)}"]`);
       if (again) again.focus();
@@ -318,6 +329,12 @@
         n.focus();
       });
     });
+    const cur = out.querySelector('.pl-mx[aria-current="true"]'), wrap = out.querySelector(".pl-mx-wrap");
+    if (reveal && cur && wrap) {
+      const rowHead = out.querySelector(".pl-mx-row"), w = rowHead ? rowHead.offsetWidth : 0;
+      const td = cur.closest("td"), left = td.offsetLeft - w, right = td.offsetLeft + td.offsetWidth;
+      if (left < wrap.scrollLeft || right > wrap.scrollLeft + wrap.clientWidth) wrap.scrollLeft = Math.max(0, left - 40);
+    }
     drawShortlist();
     const status = document.getElementById("pl-status");
     const filings = D.proposals.filter((p) => p.ask_id === S.ask).length;
@@ -331,7 +348,7 @@
       const rest = q.toString();
       history.replaceState(null, "", `${location.pathname}?${rest ? rest + "&" : ""}plan=${[S.co, S.ask, S.mine].filter(Boolean).map(encodeURIComponent).join("~")}${location.hash}`);
     } catch (e) { /* address bar unchanged */ }
-    draw();
+    draw(write);
     if (focus) { const h = document.getElementById("pl-h-rec"); if (h) { h.tabIndex = -1; h.focus(); } }
   }
 
@@ -359,6 +376,9 @@
     S = { co: fromUrl[0] || (soonCo && (soonCo.id || soonCo.ticker)) || (usCos()[0] || {}).id, ask: fromUrl[1] || (soon && soon.ask_id) || (topAsk && topAsk[0]),
       mine: fromUrl[2] || "", memory: [], showAll: false };
     S.mine = S.mine || store.get(MINE, "");
+    if (!tick(coById(S.co))) S.co = (soonCo && (soonCo.id || soonCo.ticker)) || (usCos()[0] || {}).id;
+    if (!D.asks.some((a) => a.id === S.ask)) S.ask = (soon && soon.ask_id) || (topAsk && topAsk[0]);
+    if (S.mine && !idx.orgs.some((o) => o.id === S.mine)) S.mine = "";
     const cos = D.companies.filter((c) => tick(c)).sort((a, b) => a.name.localeCompare(b.name));
     const orgs = idx.orgs.slice().sort((a, b) => a.label.localeCompare(b.label));
     el.innerHTML = `

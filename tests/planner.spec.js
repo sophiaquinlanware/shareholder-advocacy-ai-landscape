@@ -70,3 +70,28 @@ test("arrow keys move between grid squares", async ({ page }) => {
   await page.keyboard.press("ArrowRight");
   await expect(page.locator(".pl-mx:focus")).toHaveAttribute("tabindex", "0");
 });
+
+test("filings from filers critical of ESG are marked and left out of the support figures", async ({ page }) => {
+  await open(page, "?plan=microsoft~ask-ai-training-data");
+  const rec = page.locator("#pl-h-rec").locator("..");
+  await expect(rec).toContainText("filer critical of ESG and are left out of the support figures");
+  await expect(rec.locator("li").first()).toContainText("filed from a critical stance on ESG");
+});
+
+test("a company outside the US proxy rules shows its route, and a link to a company not on file falls back", async ({
+  page,
+}) => {
+  await open(page, "?plan=tencent-holdings~ask-dc-climate-energy");
+  await expect(page.locator("#pl-h-time").locator("..")).toContainText("Listed outside the US.");
+  await expect(page.locator("#pl-h-time").locator("..")).not.toContainText("Rule 14a-8 ends");
+  await open(page, "?plan=no-such-company~no-such-ask");
+  await expect(page.locator("#pl-co")).not.toHaveValue("");
+  await expect(page.locator("#pl-h-time")).not.toContainText("undefined");
+});
+
+test("ideas leave out the company and ask already chosen", async ({ page }) => {
+  await open(page, "?plan=microsoft~ask-ai-misinformation");
+  const ideas = page.locator("#pl-h-ideas").locator("..");
+  await expect(ideas.locator('.pl-co[data-co="microsoft"]')).toHaveCount(0);
+  await expect(ideas.locator('.pl-ask[data-ask="ask-ai-misinformation"]')).toHaveCount(0);
+});
