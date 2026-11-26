@@ -325,3 +325,7 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
 @media (max-width: 600px) {
   .card { padding: 12px; }
 }
+
+/* Lab pathways reuses the network box but stays on the white page with blue marks: only the co-filer network
+   has the dark canvas (owner, 2026-11-26: "You can't read this text"). */
+.net-graph.pw-graph { background: var(--surface); border-color: var(--line); }

@@ -37,7 +37,7 @@ test("an ask's panel: recurrence, support by year, coverage scoped and not confi
   // Only "none" entries: scoped to this map, with its own line form.
   await page.evaluate(() => window.focusNetworkNode("ask-dc-siting-rights"));
   await expect(panel(page).locator(".ring-cov-none")).toContainText("No rule in this map reaches this");
-  await expect(panel(page).locator(".net-actions")).toContainText("Checked, no requirement found:");
+  await expect(panel(page).locator(".net-actions")).toContainText("No requirement found.");
 });
 
 test("an ask with no coverage entries reads 'not yet assessed', never 'no rule'", async ({ page }) => {
@@ -74,13 +74,13 @@ test("year scrubber caps proposals, keeps upto= in the URL, and gives way to a s
   await expect(page).not.toHaveURL(/upto=/);
 });
 
-test("Play toggles to Pause and back, with aria-pressed", async ({ page }) => {
+test("Play changes its name to Pause and back (no aria-pressed)", async ({ page }) => {
   await open(page, "?lens=impact");
   const b = page.locator("#net-play");
   await b.click();
-  await expect(b).toHaveAttribute("aria-pressed", "true");
   await expect(b).toHaveText("Pause");
+  await expect(b).not.toHaveAttribute("aria-pressed", /.*/);
   await b.click();
-  await expect(b).toHaveAttribute("aria-pressed", "false");
+  await expect(b).toHaveText("Play");
   await expect(page.locator("#net-scrub-status")).toContainText("Stopped at");
 });

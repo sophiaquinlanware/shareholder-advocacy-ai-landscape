@@ -332,7 +332,8 @@
   // Floor proposals (raised at the meeting; proxy votes couldn't be cast on them), as votes.js detects them:
   // "floor" in the id, source, label or support note, or a title saying it was presented at the meeting.
   const isFloor = (p) => /floor/i.test(`${p.id} ${p.source_url || ""} ${p.label || ""} ${p.support_note || ""}`) || /presented at the meeting/i.test(p.title || p.label || "");
-  const askProposals = (n, ctx) => ctx.nodes.filter((p) => p.kind === "proposal" && p.ask_id === n.id);
+  // Proposals with this ask, up to the year scrubber's year when it is set (ctx.upto), so text matches the graph.
+  const askProposals = (n, ctx) => ctx.nodes.filter((p) => p.kind === "proposal" && p.ask_id === n.id && (!ctx.upto || Number(p.year) <= ctx.upto));
   // Coverage roll-up for an ask from data/coverage.json: full -> covered; any partial -> partially covered;
   // only "none" entries -> no rule in this map; no entries -> not yet assessed (absence is never "no rule").
   function askCoverage(n, ctx) {
@@ -347,7 +348,11 @@
     }
     return { kind: "cov-none", label: "No rule in this map reaches this", entries, unreviewed };
   }
-  const isDualClass = (p) => /dual|class/i.test(p.support_note || "");
+  // Dual-class figures: notes that mention dual/multi-class voting or class B shares ("single class" isn't).
+  const isDualClass = (p) => /dual|multi-class|class b/i.test(p.support_note || "") && !/single class/i.test(p.support_note || "");
+  // Figures this site computed from 8-K vote counts (the 8-K states no percentage).
+  const isComputed = (p) => /not stated|raw counts|8-k counts|computed/i.test(p.support_note || "");
+  const isAbstainBasis = (p) => /abstain|abstention/i.test(p.support_note || "");
   function askActions(n, ctx) {
     const out = [];
     const props = askProposals(n, ctx);
@@ -357,7 +362,7 @@
     const by = (st) => props.filter((p) => p.status === st && !isFloor(p)).length;
     const floor = props.filter(isFloor).length;
     const parts = [[by("voted"), "voted"], [by("upcoming"), "upcoming"], [by("excluded"), "excluded"], [by("withdrawn"), "withdrawn"], [floor, "raised from the floor"]].filter(([k]) => k).map(([k, t]) => `${k} ${t}`);
-    out.push({ text: `${plural(props.length, "proposal", "proposals")} at ${plural(cos.size, "company", "companies")}${span ? ", " + span : ""}${parts.length ? ": " + parts.join(", ") : ""}.` });
+    out.push({ text: `${plural(props.length, "proposal", "proposals")} at ${plural(cos.size, "company", "companies")}${span ? ", " + span : ""}${parts.length ? ": " + parts.join(", ") : ""}${ctx.upto ? ` (up to ${ctx.upto}, as the year slider shows)` : ""}.` });
     // Support by year: voted, non-floor proposals with a figure and a linked results filing. The average is
     // the owner's spec for this lens (an exception to the site's no-average rule, recorded in DESIGN.md).
     const voted = props.filter((p) => p.status === "voted" && !isFloor(p) && p.support_pct != null);
@@ -365,20 +370,30 @@
     const yearsV = [...new Set(linked.map((p) => Number(p.year)))].sort((a, b) => a - b);
     for (const y of yearsV) {
       const v = linked.filter((p) => Number(p.year) === y).map((p) => Number(p.support_pct)).sort((a, b) => a - b);
-      const avg = Math.round((v.reduce((a, b) => a + b, 0) / v.length) * 10) / 10;
-      out.push({ text: v.length === 1 ? `${y}: 1 vote, ${v[0]}%` : `${y}: ${v.length} votes, ${v[0]}%–${v.at(-1)}%, average ${avg}%` });
+      const avg = (v.reduce((a, b) => a + b, 0) / v.length).toFixed(1);
+      const ps = linked.filter((p) => Number(p.year) === y).sort((a, b) => a.support_pct - b.support_pct);
+      out.push({
+        text: v.length === 1 ? `${y}: 1 vote, ${v[0]}%` : `${y}: ${v.length} votes, ${v[0]}%–${v.at(-1)}%, average ${avg}%`,
+        links: ps.map((p) => ({ href: p.results_url, label: `${p.company} ${p.support_pct}%${isDualClass(p) ? " (dual-class)" : isAbstainBasis(p) ? " (abstentions counted)" : ""}` })),
+      });
     }
     if (linked.length) {
       const dual = linked.filter(isDualClass).length;
+      const abst = linked.filter((p) => !isDualClass(p) && isAbstainBasis(p)).length;
       const left = voted.length - linked.length;
-      out.push({ text: `Averages are computed by this site from the figures as recorded (most come from 8-K vote counts, not stated percentages); notes are in Proposals.${dual ? ` ${dual} of these figures ${dual === 1 ? "is" : "are"} dual-class (counted by votes cast).` : ""}${left ? ` ${plural(left, "vote", "votes")} without a linked results filing ${left === 1 ? "is" : "are"} left out.` : ""}` });
+      const comp = linked.filter(isComputed).length;
+      out.push({ text: `Averages are computed by this site from the figures as recorded${comp ? `; ${comp} of ${linked.length} figures were computed from 8-K vote counts (the 8-K states no percentage)` : "; each figure is the percentage the company states"}. Notes are in Proposals.${dual ? ` ${dual} of these figures ${dual === 1 ? "is" : "are"} dual-class (counted by votes cast).` : ""}${abst ? ` ${abst} ${abst === 1 ? "counts" : "count"} abstentions with votes against, as the company's bylaw does.` : ""}${left ? ` ${plural(left, "vote", "votes")} without a linked results filing ${left === 1 ? "is" : "are"} left out.` : ""}` });
     }
     // Coverage, one line per entry.
     const c = askCoverage(n, ctx);
     if (!c.entries.length) out.push({ text: "Coverage: not yet assessed." });
     c.entries.forEach((e) => {
-      if (e.coverage === "none" || !e.graph_id) {
-        out.push({ text: `Checked, no requirement found: ${e.note || ""}`, href: e.source_url || null, hrefLabel: "source", needsSource: true });
+      if (e.coverage !== "none" && !e.graph_id) {
+        out.push({ text: `${e.policy_id || "A policy not in this map"} (${e.policy_status || "status not recorded"}): ${e.coverage === "full" ? "covers" : "partially covers"} this ask. ${e.note || ""}`, href: e.source_url || null, hrefLabel: "source", needsSource: true });
+        return;
+      }
+      if (e.coverage === "none") {
+        out.push({ text: `No requirement found. ${e.note || ""}`, href: e.source_url || null, hrefLabel: "source", needsSource: true });
         return;
       }
       const pol = ctx.byId.get(e.graph_id);
@@ -395,12 +410,13 @@
     ctx.links.forEach((l) => {
       if (l.relation !== "acted in" || !coIds.has(end(l.source))) return;
       const ev = ctx.byId.get(end(l.target));
-      if (!ev || seen.has(ev.id)) return;
+      // Only events in the companies or labs lanes are company actions (not investor campaigns or news).
+      if (!ev || seen.has(ev.id) || !["companies", "labs"].includes(ev.lane)) return;
       const text = `${ev.label} ${ev.description || ""}`.toLowerCase();
       if (!terms.some((t) => text.includes(t))) return;
       seen.add(ev.id);
       const who = ctx.byId.get(end(l.source));
-      acts.push({ text: `${who ? who.label : ""}: ${ev.label} (${ev.kind_label || ev.kind || "event"}, ${ev.date || "date not recorded"})`, href: ev.source_url || l.source_url || null, hrefLabel: "source", needsSource: true });
+      acts.push({ text: `${who ? who.label : ""}: ${ev.label} (${ev.ev_kind || "event"}, ${ev.date || "date not recorded"})`, href: ev.source_url || l.source_url || null, hrefLabel: "source", needsSource: true });
     });
     if (acts.length) { out.push({ text: "Company actions in the Causality map that mention this ask:" }); out.push(...acts); }
     else out.push({ text: "No Causality map events at these companies mention this ask." });

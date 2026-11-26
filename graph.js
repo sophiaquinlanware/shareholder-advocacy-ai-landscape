@@ -102,7 +102,7 @@
         const tier = n.tier || (window.companyTiers || new Map()).get(n.ticker);
         if (tier && TYPE_LABEL["tier-" + tier]) kind = "tier-" + tier;
       }
-      return { ...n, kind, label: n.label };
+      return { ...n, kind, ev_kind: n.kind, label: n.label };
     });
     const ids = new Set(nodes.map((n) => n.id));
     const links = G.edges.filter((e) => ids.has(e.source) && ids.has(e.target))
@@ -161,7 +161,7 @@
     { x: 0.25, label: "Filers", kinds: FILER_ROWS },
     { x: 0.5, label: "Proposals", kinds: ["proposal"] },
     { x: 0.62, label: "Asks", kinds: ["ask"] },
-    { x: 0.73, label: "Companies", kinds: ["company", ...TIERS.filter((t) => t.id !== "labs").map((t) => "tier-" + t.id)] },
+    { x: 0.73, label: "Value chain, by tier", kinds: ["company", ...TIERS.filter((t) => t.id !== "labs").map((t) => "tier-" + t.id)] },
     { x: 0.92, label: "Frontier labs", kinds: ["lab", "tier-labs"] },
   ];
   const TOP_BAND = ["policy", "response", "public"];
@@ -186,7 +186,7 @@
     if (!state.axis) return;
     const { width, height } = state.size;
     const narrow = width < 640;
-    const SHORT = { People: "People", Filers: "Filers", Proposals: "Proposals", Asks: "Asks", Companies: "Cos.", "Frontier labs": "Labs" };
+    const SHORT = { People: "People", Filers: "Filers", Proposals: "Proposals", Asks: "Asks", "Value chain, by tier": "Value chain", "Frontier labs": "Labs" };
     state.cols = activeColumns();
     state.axis.selectAll("*").remove();
     state.axis.append("rect").attr("x", -width).attr("y", -height).attr("width", width * 3).attr("height", height + HEADER_H).attr("fill", cssVar("--g-bg"));
@@ -332,18 +332,18 @@
       <p class="count-line" id="net-hold-status" aria-live="polite"></p>
       <div id="net-legend" class="net-legend"></div>
       <details id="net-settings" class="graph-settings"></details>
+      <div class="scrub" id="net-scrub">
+        <label for="net-upto">Show the network up to <span id="net-upto-val"></span></label>
+        <input type="range" id="net-upto" step="1">
+        <button type="button" class="chip" id="net-play">Play</button>
+        <p class="status-note" id="net-scrub-note"></p>
+        <p class="visually-hidden" id="net-scrub-status" aria-live="polite"></p>
+      </div>
       <div class="net-body">
         <div class="net-graph-wrap">
           <div id="net-graph" class="net-graph" tabindex="0" role="application" aria-roledescription="network graph" aria-describedby="net-kb-hint" aria-label="Co-filer network graph. Up and Down arrows move between nodes, Enter opens one, Escape clears. The List view has the same data as a table."></div>
           <p class="kb-hint" id="net-kb-hint">Keyboard: Tab into the graph, ↑ ↓ to move between nodes, Enter to open, Esc to clear.</p>
           <p class="visually-hidden" id="net-kb" aria-live="polite"></p>
-          <div class="scrub" id="net-scrub">
-            <label for="net-upto">Show the network up to <span id="net-upto-val"></span></label>
-            <input type="range" id="net-upto" step="1">
-            <button type="button" class="chip" id="net-play" aria-pressed="false">Play</button>
-            <p class="status-note" id="net-scrub-note"></p>
-            <p class="visually-hidden" id="net-scrub-status" aria-live="polite"></p>
-          </div>
         </div>
         <div id="net-list" class="net-list" hidden></div>
         <aside id="net-panel" class="net-panel" aria-label="Selected node"><p class="status-note">Select a node for its connections and sources.</p></aside>
@@ -575,15 +575,18 @@
       facts = `${n.date ? `<p class="ticker">${esc(n.date)}${n.actor ? " · " + esc(n.actor) : ""}</p>` : ""}<p>${esc(n.description || "")} ${link(n.source_url)}</p>`;
     } else if (n.kind === "company") {
       facts = `<p>${esc(n.degree)} connections in this map.</p>`;
+    } else if (n.kind === "ask") {
+      facts = `<p class="status-note">Grouped by this site from data/asks.json: proposals that make this ask, across companies and years.</p>`;
     } else if (n.kind === "gap") {
       facts = `<p class="status-note">Computed by this site from the proposals in this dataset; not a statement about filings outside it.</p>`;
     } else {
       facts = `<p>${esc(n.description || "")} ${link(n.source_url)}</p>${n.website ? `<p><a href="${esc(n.website)}" target="_blank" rel="noopener">Website</a></p>` : ""}`;
     }
+    const head = `<p class="eyebrow" style="margin:0 0 4px">${esc(TYPE_LABEL[n.kind])}</p><h3>${esc(n.label)}</h3>${ringHtml}`;
+    // For an ask, its name and coverage mark come first, so the long figures below are clearly about it.
+    const top = n.kind === "ask" ? `${head}${facts}${actHtml}` : `${actHtml}${head}${facts}`;
     document.getElementById("net-panel").innerHTML = `
-      ${actHtml}
-      <p class="eyebrow" style="margin:0 0 4px">${esc(TYPE_LABEL[n.kind])}</p>
-      <h3>${esc(n.label)}</h3>${ringHtml}${facts}
+      ${top}
       ${pathFinderHtml(n)}
       <h4 style="margin:14px 0 4px;font-size:14px">Connections</h4><ul class="conn">${rel || "<li>None yet</li>"}</ul>`;
     document.querySelectorAll("#net-panel .conn .linklike").forEach((b) => b.addEventListener("click", () => focus(b.dataset.id)));
@@ -629,7 +632,11 @@
   const nodeYear = (n) => (n.kind === "proposal" ? Number(n.year) : String(n.id).startsWith("ev-") && n.date ? Number(String(n.date).slice(0, 4)) : null);
   function baseVisible(n) {
     if (n.kind === "gap") { const c = state.byId.get(n.gapFor); return !!c && baseVisible(c); }
-    if (state.upto) { const y = nodeYear(n); if (y && y > state.upto) return false; }
+    if (state.upto) {
+      const y = nodeYear(n);
+      if (y && y > state.upto) return false;
+      if (n.kind === "ask" && !state.data.nodes.some((p) => p.kind === "proposal" && p.ask_id === n.id && Number(p.year) <= state.upto)) return false;
+    }
     if (state.hiddenKinds.has(n.kind)) return false;
     if (n.kind === "proposal") {
       if (state.topic && n.topic !== state.topic) return false;
@@ -702,6 +709,8 @@
         if (q) return d.label.toLowerCase().includes(q) ? 1 : 0;
         if (near) return near.has(d.id) ? 1 : 0;
         // Labels are off by default; selecting a node (or hovering, or keyboard focus) names it and its connections.
+        // Recurring asks (Policymaker lens) are always named: there are only a dozen and they are the point of the view.
+        if (d.kind === "ask") return 1;
         return state.cfg.labels && labelCandidate(d) && !state.hiddenLabels.has(d.id) ? 1 : 0;
       });
     layoutLabels();
@@ -1182,7 +1191,7 @@
         : `<th scope="col" aria-sort="${dir}"><button type="button" class="th-sort" id="net-list-sort">Connections ${dir === "descending" ? "↓" : "↑"}</button></th>`}
       ${state.holdings.size ? `<th scope="col">Held</th>` : ""}<th scope="col">Status</th><th scope="col">${esc(lens().actionsHeading || "What you can do")}</th></tr></thead>
       <tbody>${body || `<tr><td colspan="${(m ? 6 : 5) + (state.holdings.size ? 1 : 0)}">No matches.</td></tr>`}</tbody></table></div>`;
-    document.getElementById("net-list-count").textContent = `${rows.length} nodes in this view (${lens().label}), sorted by ${sortLabel.toLowerCase()}.`;
+    document.getElementById("net-list-count").textContent = `${rows.length} nodes in this view (${lens().label}), sorted by ${sortLabel.toLowerCase()}.${state.upto ? ` Proposals and events up to ${state.upto} only (year slider above).` : ""}`;
     document.getElementById("net-list-sort").addEventListener("click", () => {
       state.listSort = dir === "descending" ? "ascending" : "descending";
       drawList();
@@ -1271,7 +1280,7 @@
     clearInterval(playTimer);
     playTimer = null;
     const b = document.getElementById("net-play");
-    if (b) { b.textContent = "Play"; b.setAttribute("aria-pressed", "false"); }
+    if (b) b.textContent = "Play";
     if (announce) document.getElementById("net-scrub-status").textContent = `Stopped at ${state.upto || yearRange()[1]}.`;
   }
   function saveUpto() {
@@ -1298,20 +1307,27 @@
   function scrubTo(y, refresh, announce) {
     const [, hi] = yearRange();
     state.upto = y >= hi ? null : y;
+    state.ctx.upto = state.upto;
+    state.ctx.cache = {};
     scrubSync();
     // A selected or keyboard-focused node that the cap hides is cleared.
+    let cleared = false;
     for (const key of ["selected", "kbId", "hover"]) {
       const n = state[key] && state.byId.get(state[key]);
       if (n && !baseVisible(n)) {
         state[key] = null;
-        if (key === "selected") document.getElementById("net-panel").innerHTML = `<p class="status-note">The selected node is after ${y}, so it is hidden. Select another node.</p>`;
+        if (key === "selected") {
+          document.getElementById("net-panel").innerHTML = `<p class="status-note">The selected node is after ${y}, so it is hidden. Select another node.</p>`;
+          cleared = true;
+        }
       }
     }
     refresh();
     if (state.ringSel) placeFocusMark();
+    if (state.selected && state.byId.get(state.selected)) showPanel(state.byId.get(state.selected));
     if (announce) {
       const n = state.data.nodes.filter((x) => x.kind === "proposal" && visible(x)).length;
-      document.getElementById("net-scrub-status").textContent = `Up to ${y}: ${n} ${n === 1 ? "proposal" : "proposals"} shown.`;
+      document.getElementById("net-scrub-status").textContent = `Up to ${y}: ${n} ${n === 1 ? "proposal" : "proposals"} shown.${cleared ? " The selected node is after that year, so the panel was cleared." : ""}`;
     }
   }
   function wireScrubber(refresh) {
@@ -1323,7 +1339,6 @@
       const [lo, hi] = yearRange();
       let y = state.upto && state.upto < hi ? state.upto : lo;
       b.textContent = "Pause";
-      b.setAttribute("aria-pressed", "true");
       scrubTo(y, refresh, true);
       playTimer = setInterval(() => {
         y += 1;
@@ -1410,7 +1425,8 @@
     {
       const u = Number(new URLSearchParams(location.search).get("upto"));
       const [lo, hi] = yearRange();
-      if (u && u >= lo && u < hi) state.upto = u;
+      // Clamped to the data's years; at or past the last year it means no cap.
+      if (u) { const c = Math.max(lo, Math.min(hi, u)); state.upto = c < hi ? c : null; state.ctx.upto = state.upto; }
     }
     refreshConnected();
     settingsPanel();
