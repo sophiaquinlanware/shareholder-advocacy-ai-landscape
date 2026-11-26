@@ -56,7 +56,13 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
           git diff --cached --quiet || git commit -m "Weekly refresh: $(date -u +%Y-%m-%d)"
-          git push
+          # Other sessions push to main too: replay this commit on top of theirs, then push; try a few times.
+          # A file both changed stops the run (rebase aborted) rather than overwrite newer work.
+          for i in 1 2 3; do
+            if git pull --rebase origin "${GITHUB_REF_NAME}"; then git push && exit 0; else git rebase --abort; exit 1; fi
+            sleep 10
+          done
+          exit 1
 
   # Fund votes from Form N-PX, for REVIEW before anything goes on the site.
   # Nothing is committed or published. The raw result (public SEC data, no commentary)

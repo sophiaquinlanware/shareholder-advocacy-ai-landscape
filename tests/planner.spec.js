@@ -10,7 +10,8 @@ async function open(page, query = "") {
 test("the planner opens with a company and an ask, and shows its five parts", async ({ page }, info) => {
   await open(page);
   await expect(page.locator("#tab-planner h2")).toHaveText("Plan an engagement");
-  for (const h of ["#pl-h-time", "#pl-h-rec", "#pl-h-who", "#pl-h-pol", "#pl-h-ideas"]) await expect(page.locator(h)).toBeVisible();
+  for (const h of ["#pl-h-time", "#pl-h-rec", "#pl-h-who", "#pl-h-pol", "#pl-h-ideas"])
+    await expect(page.locator(h)).toBeVisible();
   await expect(page.locator("#pl-co")).not.toHaveValue("");
   await expect(page.locator("#pl-ask")).not.toHaveValue("");
   await page.screenshot({ path: `tests/screenshots/${info.project.name}/planner-full.png`, fullPage: true });
