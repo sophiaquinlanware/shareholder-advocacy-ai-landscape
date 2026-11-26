@@ -49,7 +49,7 @@
    "2026-06-30": "full"
   },
   "Vanguard": {
-   "2024-06-30": "full",
+   "2024-06-30": "partial",
    "2025-06-30": "full",
    "2026-06-30": "partial"
   },
@@ -80,6 +80,12 @@
  "held_back_proposals": [
   "meta-2026-3"
  ],
+ "held_back_reasons": {
+  "meta-2026-3": {
+   "reason": "Meta's 2026 ballot had two AI-data proposals: Item 3 (AI Data Usage Oversight, National Legal and Policy Center) and Item 11 (Data Protection Impact Assessment on Generative AI Chatbots, Mercy Investment Services). Some fund filings describe both as AI data usage oversight, so their votes on the two cannot be told apart.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+  }
+ },
  "unreadable_filings": [
   {
    "family": "Vanguard",
@@ -300,14 +306,6 @@
    "family": "Vanguard",
    "trust": "VANGUARD WORLD FUND",
    "form": "N-PX",
-   "filed": "2024-08-29",
-   "period": "2024-06-30",
-   "url": "https://www.sec.gov/Archives/edgar/data/52848/000110465924094271/"
-  },
-  {
-   "family": "Vanguard",
-   "trust": "VANGUARD WORLD FUND",
-   "form": "N-PX",
    "filed": "2025-08-27",
    "period": "2025-06-30",
    "url": "https://www.sec.gov/Archives/edgar/data/52848/000110465925083585/"
@@ -480,6 +478,9 @@
   "amzn-2026-5",
   "amzn-2026-climate-cost",
   "amzn-2026-floor",
+  "axon-2023-6",
+  "dlr-2025-5",
+  "dlr-2026-4",
   "googl-2023-10",
   "googl-2023-11",
   "googl-2023-12",
@@ -500,6 +501,7 @@
   "googl-2026-14",
   "googl-2026-5",
   "googl-2026-6",
+  "ibm-2026-7",
   "meta-2023-5",
   "meta-2023-community-standards",
   "meta-2024-10",
@@ -523,7 +525,11 @@
   "msft-2025-7",
   "msft-2025-8",
   "msft-2025-9",
+  "nflx-2024-4",
   "nvda-2026-7",
+  "pltr-2026-4",
+  "pltr-2026-5",
+  "so-2026-9",
   "tsla-2025-7"
  ],
  "summary": [
@@ -1363,6 +1369,141 @@
     "A shareholder proposal regarding report on generative AI misinformation and disinformation risks."
    ],
    "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
+   "family": "Calvert",
+   "proposal_id": "nflx-2024-4",
+   "company": "NFLX",
+   "meeting_date": "2024-06-06",
+   "vote": "FOR",
+   "counts": {
+    "FOR": 3
+   },
+   "fund_records": 3,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/",
+    "https://www.sec.gov/Archives/edgar/data/356682/000114036124038969/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal entitled, \"Report on Netflix's Use of Artificial Intelligence,\" if properly presented at the meeting."
+   ],
+   "min_confidence": 0.5,
+   "reviewed": false
+  },
+  {
+   "family": "Domini",
+   "proposal_id": "nflx-2024-4",
+   "company": "NFLX",
+   "meeting_date": "2024-06-06",
+   "vote": "FOR",
+   "counts": {
+    "FOR": 1
+   },
+   "fund_records": 1,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/851680/000102140824007381/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal entitled, \"Report on Netflix's Use of Artificial Intelligence,\" if properly presented at the meeting."
+   ],
+   "min_confidence": 0.5,
+   "reviewed": false
+  },
+  {
+   "family": "Green Century",
+   "proposal_id": "nflx-2024-4",
+   "company": "NFLX",
+   "meeting_date": "2024-06-06",
+   "vote": "FOR",
+   "counts": {
+    "FOR": 1
+   },
+   "fund_records": 1,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/877232/000143893424000980/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal entitled, \"Report on Netflix's Use of Artificial Intelligence,\" if properly presented at the meeting"
+   ],
+   "min_confidence": 0.5,
+   "reviewed": false
+  },
+  {
+   "family": "Impax (Pax)",
+   "proposal_id": "nflx-2024-4",
+   "company": "NFLX",
+   "meeting_date": "2024-06-06",
+   "vote": "FOR",
+   "counts": {
+    "FOR": 1
+   },
+   "fund_records": 1,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/76721/000139834424017055/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal entitled, Report on Netflix s Use of Artificial Intelligence, if properly presented at the meeting."
+   ],
+   "min_confidence": 0.5,
+   "reviewed": false
+  },
+  {
+   "family": "Parnassus",
+   "proposal_id": "nflx-2024-4",
+   "company": "NFLX",
+   "meeting_date": "2024-06-06",
+   "vote": "FOR",
+   "counts": {
+    "FOR": 1
+   },
+   "fund_records": 1,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/747546/000102140824002675/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal entitled, \"Report on Netflix's Use of Artificial Intelligence,\" if properly presented at the meeting."
+   ],
+   "min_confidence": 0.5,
+   "reviewed": false
+  },
+  {
+   "family": "TIAA-CREF",
+   "proposal_id": "nflx-2024-4",
+   "company": "NFLX",
+   "meeting_date": "2024-06-06",
+   "vote": "FOR",
+   "counts": {
+    "FOR": 5
+   },
+   "fund_records": 5,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal entitled, \"Report on Netflix's Use of Artificial Intelligence,\" if properly presented at the meeting."
+   ],
+   "min_confidence": 0.5,
+   "reviewed": false
+  },
+  {
+   "family": "Vanguard",
+   "proposal_id": "nflx-2024-4",
+   "company": "NFLX",
+   "meeting_date": "2024-06-06",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 2
+   },
+   "fund_records": 2,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/36405/000110465924094482/",
+    "https://www.sec.gov/Archives/edgar/data/862084/000110465924094269/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal entitled, \"Report on Netflix's Use of Artificial Intelligence,\" if properly presented at the meeting."
+   ],
+   "min_confidence": 0.5,
    "reviewed": false
   },
   {
@@ -3367,6 +3508,121 @@
   },
   {
    "family": "BlackRock (iShares)",
+   "proposal_id": "dlr-2025-5",
+   "company": "DLR",
+   "meeting_date": "2025-06-06",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 7
+   },
+   "fund_records": 7,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893425002321/"
+   ],
+   "npx_descriptions": [
+    "A stockholder proposal regarding human right to water, if properly presented."
+   ],
+   "min_confidence": 0.6,
+   "reviewed": false
+  },
+  {
+   "family": "Calvert",
+   "proposal_id": "dlr-2025-5",
+   "company": "DLR",
+   "meeting_date": "2025-06-06",
+   "vote": "FOR",
+   "counts": {
+    "FOR": 2
+   },
+   "fund_records": 2,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1105446/000114036125031861/"
+   ],
+   "npx_descriptions": [
+    "A stockholder proposal regarding human right to water, if properly presented."
+   ],
+   "min_confidence": 0.6,
+   "reviewed": false
+  },
+  {
+   "family": "Green Century",
+   "proposal_id": "dlr-2025-5",
+   "company": "DLR",
+   "meeting_date": "2025-06-06",
+   "vote": "FOR",
+   "counts": {
+    "FOR": 1
+   },
+   "fund_records": 1,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/877232/000143893425000756/"
+   ],
+   "npx_descriptions": [
+    "A stockholder proposal regarding human right to water, if properly presented."
+   ],
+   "min_confidence": 0.6,
+   "reviewed": false
+  },
+  {
+   "family": "Impax (Pax)",
+   "proposal_id": "dlr-2025-5",
+   "company": "DLR",
+   "meeting_date": "2025-06-06",
+   "vote": "ABSTAIN",
+   "counts": {
+    "ABSTAIN": 1
+   },
+   "fund_records": 1,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/76721/000139834425017033/"
+   ],
+   "npx_descriptions": [
+    "A stockholder proposal regarding human right to water, if properly presented."
+   ],
+   "min_confidence": 0.6,
+   "reviewed": false
+  },
+  {
+   "family": "TIAA-CREF",
+   "proposal_id": "dlr-2025-5",
+   "company": "DLR",
+   "meeting_date": "2025-06-06",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 5
+   },
+   "fund_records": 5,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041325002829/"
+   ],
+   "npx_descriptions": [
+    "A stockholder proposal regarding human right to water, if properly presented."
+   ],
+   "min_confidence": 0.6,
+   "reviewed": false
+  },
+  {
+   "family": "Vanguard",
+   "proposal_id": "dlr-2025-5",
+   "company": "DLR",
+   "meeting_date": "2025-06-06",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 2
+   },
+   "fund_records": 2,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/36405/000110465925083451/",
+    "https://www.sec.gov/Archives/edgar/data/862084/000110465925083530/"
+   ],
+   "npx_descriptions": [
+    "A stockholder proposal regarding human right to water, if properly presented."
+   ],
+   "min_confidence": 0.6,
+   "reviewed": false
+  },
+  {
+   "family": "BlackRock (iShares)",
    "proposal_id": "googl-2025-10",
    "company": "GOOGL",
    "meeting_date": "2025-06-06",
@@ -4814,6 +5070,163 @@
   },
   {
    "family": "BlackRock (iShares)",
+   "proposal_id": "ibm-2026-7",
+   "company": "IBM",
+   "meeting_date": "2026-04-28",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 2
+   },
+   "fund_records": 2,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
+    "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
+   ],
+   "npx_descriptions": [
+    "Stockholder Proposal Requesting a Report on Al Bias"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
+   "family": "Calvert",
+   "proposal_id": "ibm-2026-7",
+   "company": "IBM",
+   "meeting_date": "2026-04-28",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 3
+   },
+   "fund_records": 3,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1105446/000114036126032180/"
+   ],
+   "npx_descriptions": [
+    "Stockholder Proposal Requesting a Report on Al Bias"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
+   "family": "Impax (Pax)",
+   "proposal_id": "ibm-2026-7",
+   "company": "IBM",
+   "meeting_date": "2026-04-28",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 1
+   },
+   "fund_records": 1,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/76721/000139834426016225/"
+   ],
+   "npx_descriptions": [
+    "Stockholder Proposal Requesting a Report on AI Bias"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
+   "family": "TIAA-CREF",
+   "proposal_id": "ibm-2026-7",
+   "company": "IBM",
+   "meeting_date": "2026-04-28",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 4
+   },
+   "fund_records": 4,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
+   ],
+   "npx_descriptions": [
+    "Stockholder Proposal Requesting a Report on Al Bias"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
+   "family": "Vanguard",
+   "proposal_id": "ibm-2026-7",
+   "company": "IBM",
+   "meeting_date": "2026-04-28",
+   "vote": "SPLIT",
+   "counts": {
+    "AGAINST": 4,
+    "SPLIT_WITHIN_FUND": 1
+   },
+   "fund_records": 5,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/"
+   ],
+   "npx_descriptions": [
+    "Stockholder Proposal Requesting a Report on AI Bias",
+    "Stockholder Proposal Requesting a Report on Al Bias"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "proposal_id": "so-2026-9",
+   "company": "SO",
+   "meeting_date": "2026-05-13",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 2
+   },
+   "fund_records": 2,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal regarding a report on data center costs"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
+   "family": "TIAA-CREF",
+   "proposal_id": "so-2026-9",
+   "company": "SO",
+   "meeting_date": "2026-05-13",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 3
+   },
+   "fund_records": 3,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal regarding a report on data center costs"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
+   "family": "Vanguard",
+   "proposal_id": "so-2026-9",
+   "company": "SO",
+   "meeting_date": "2026-05-13",
+   "vote": "SPLIT",
+   "counts": {
+    "AGAINST": 3,
+    "FOR": 1,
+    "SPLIT_WITHIN_FUND": 1
+   },
+   "fund_records": 5,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal regarding a report on data center costs"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
+   "family": "BlackRock (iShares)",
    "proposal_id": "amzn-2026-5",
    "company": "AMZN",
    "meeting_date": "2026-05-20",
@@ -5398,6 +5811,246 @@
     "A shareholder proposal regarding report on integrating child safety improvements into the executive compensation program."
    ],
    "min_confidence": 0.62,
+   "reviewed": false
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "proposal_id": "dlr-2026-4",
+   "company": "DLR",
+   "meeting_date": "2026-05-29",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 2
+   },
+   "fund_records": 2,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
+    "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
+   ],
+   "npx_descriptions": [
+    "A stockholder proposal regarding enhanced water risk disclosure, if properly presented."
+   ],
+   "min_confidence": 0.67,
+   "reviewed": false
+  },
+  {
+   "family": "Calvert",
+   "proposal_id": "dlr-2026-4",
+   "company": "DLR",
+   "meeting_date": "2026-05-29",
+   "vote": "FOR",
+   "counts": {
+    "FOR": 3
+   },
+   "fund_records": 3,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1105446/000114036126032180/"
+   ],
+   "npx_descriptions": [
+    "A stockholder proposal regarding enhanced water risk disclosure, if properly presented."
+   ],
+   "min_confidence": 0.67,
+   "reviewed": false
+  },
+  {
+   "family": "Green Century",
+   "proposal_id": "dlr-2026-4",
+   "company": "DLR",
+   "meeting_date": "2026-05-29",
+   "vote": "FOR",
+   "counts": {
+    "FOR": 1
+   },
+   "fund_records": 1,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/877232/000143893426000241/"
+   ],
+   "npx_descriptions": [
+    "A stockholder proposal regarding enhanced water risk disclosure, if properly presented."
+   ],
+   "min_confidence": 0.67,
+   "reviewed": false
+  },
+  {
+   "family": "Impax (Pax)",
+   "proposal_id": "dlr-2026-4",
+   "company": "DLR",
+   "meeting_date": "2026-05-29",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 1
+   },
+   "fund_records": 1,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/76721/000139834426016225/"
+   ],
+   "npx_descriptions": [
+    "A stockholder proposal regarding enhanced water risk disclosure, if properly presented."
+   ],
+   "min_confidence": 0.67,
+   "reviewed": false
+  },
+  {
+   "family": "TIAA-CREF",
+   "proposal_id": "dlr-2026-4",
+   "company": "DLR",
+   "meeting_date": "2026-05-29",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 5
+   },
+   "fund_records": 5,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
+   ],
+   "npx_descriptions": [
+    "A stockholder proposal regarding enhanced water risk disclosure, if properly presented."
+   ],
+   "min_confidence": 0.67,
+   "reviewed": false
+  },
+  {
+   "family": "Vanguard",
+   "proposal_id": "dlr-2026-4",
+   "company": "DLR",
+   "meeting_date": "2026-05-29",
+   "vote": "SPLIT",
+   "counts": {
+    "AGAINST": 3,
+    "FOR": 1,
+    "SPLIT_WITHIN_FUND": 1
+   },
+   "fund_records": 5,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/"
+   ],
+   "npx_descriptions": [
+    "A stockholder proposal regarding enhanced water risk disclosure, if properly presented."
+   ],
+   "min_confidence": 0.67,
+   "reviewed": false
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "proposal_id": "pltr-2026-4",
+   "company": "PLTR",
+   "meeting_date": "2026-06-03",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 2
+   },
+   "fund_records": 2,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
+    "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal entitled \"Independent Report on Due Diligence Process,\" if properly presented at the Annual Meeting."
+   ],
+   "min_confidence": 0.5,
+   "reviewed": false
+  },
+  {
+   "family": "TIAA-CREF",
+   "proposal_id": "pltr-2026-4",
+   "company": "PLTR",
+   "meeting_date": "2026-06-03",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 6
+   },
+   "fund_records": 6,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal entitled \"Independent Report on Due Diligence Process,\" if properly presented at the Annual Meeting."
+   ],
+   "min_confidence": 0.5,
+   "reviewed": false
+  },
+  {
+   "family": "Vanguard",
+   "proposal_id": "pltr-2026-4",
+   "company": "PLTR",
+   "meeting_date": "2026-06-03",
+   "vote": "SPLIT",
+   "counts": {
+    "AGAINST": 3,
+    "FOR": 1,
+    "SPLIT_WITHIN_FUND": 1
+   },
+   "fund_records": 5,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal entitled \"Independent Report on Due Diligence Process\", if properly presented at the Annual Meeting.",
+    "Stockholder proposal entitled \"Independent Report on Due Diligence Process,\" if properly presented at the Annual Meeting."
+   ],
+   "min_confidence": 0.5,
+   "reviewed": false
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "proposal_id": "pltr-2026-5",
+   "company": "PLTR",
+   "meeting_date": "2026-06-03",
+   "vote": "SPLIT",
+   "counts": {
+    "AGAINST": 1,
+    "FOR": 1
+   },
+   "fund_records": 2,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
+    "https://www.sec.gov/Archives/edgar/data/1524513/000143893426002350/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal entitled \"Human Rights Impact Assessment,\" if properly presented at the Annual Meeting."
+   ],
+   "min_confidence": 0.5,
+   "reviewed": false
+  },
+  {
+   "family": "TIAA-CREF",
+   "proposal_id": "pltr-2026-5",
+   "company": "PLTR",
+   "meeting_date": "2026-06-03",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 6
+   },
+   "fund_records": 6,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1084380/000093041326002625/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal entitled \"Human Rights Impact Assessment,\" if properly presented at the Annual Meeting."
+   ],
+   "min_confidence": 0.5,
+   "reviewed": false
+  },
+  {
+   "family": "Vanguard",
+   "proposal_id": "pltr-2026-5",
+   "company": "PLTR",
+   "meeting_date": "2026-06-03",
+   "vote": "SPLIT",
+   "counts": {
+    "AGAINST": 3,
+    "FOR": 1,
+    "SPLIT_WITHIN_FUND": 1
+   },
+   "fund_records": 5,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/36405/000110465926101970/"
+   ],
+   "npx_descriptions": [
+    "Stockholder proposal entitled \"Human Rights Impact Assessment\", if properly presented at the Annual Meeting.",
+    "Stockholder proposal entitled \"Human Rights Impact Assessment,\" if properly presented at the Annual Meeting."
+   ],
+   "min_confidence": 0.5,
    "reviewed": false
   },
   {
@@ -6386,23 +7039,12 @@
   },
   {
    "family": "BlackRock (iShares)",
-   "company": "GOOGL",
-   "meeting_date": "2024-06-07",
-   "npx_description": "Amend Audit and Compliance Committee Charter to Include Artificial Intelligence Oversight",
-   "best_guess": "googl-2024-11",
-   "title_cover": 0.5,
-   "description_cover": 0.25,
-   "runner_up_combined": 0.13,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
-  },
-  {
-   "family": "BlackRock (iShares)",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "Establish a Board Committee on Artificial Intelligence",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.6,
-   "description_cover": 0.75,
+   "company": "NFLX",
+   "meeting_date": "2024-06-06",
+   "npx_description": "Report on Use of Artificial Intelligence",
+   "best_guess": "nflx-2024-4",
+   "title_cover": 0.67,
+   "description_cover": 1.0,
    "runner_up_combined": 0.0,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
   },
@@ -6430,6 +7072,17 @@
   },
   {
    "family": "BlackRock (iShares)",
+   "company": "NFLX",
+   "meeting_date": "2024-06-06",
+   "npx_description": "Report on Use of Artificial Intelligence",
+   "best_guess": "nflx-2024-4",
+   "title_cover": 0.67,
+   "description_cover": 1.0,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
+  },
+  {
+   "family": "BlackRock (iShares)",
    "company": "GOOGL",
    "meeting_date": "2024-06-07",
    "npx_description": "Amend Audit and Compliance Committee Charter to Include Artificial Intelligence Oversight",
@@ -6447,6 +7100,50 @@
    "best_guess": "amzn-2024-16",
    "title_cover": 0.6,
    "description_cover": 0.75,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "NFLX",
+   "meeting_date": "2024-06-06",
+   "npx_description": "Report on Use of Artificial Intelligence",
+   "best_guess": "nflx-2024-4",
+   "title_cover": 0.67,
+   "description_cover": 1.0,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "GOOGL",
+   "meeting_date": "2024-06-07",
+   "npx_description": "Amend Audit and Compliance Committee Charter to Include Artificial Intelligence Oversight",
+   "best_guess": "googl-2024-11",
+   "title_cover": 0.5,
+   "description_cover": 0.25,
+   "runner_up_combined": 0.13,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "Establish a Board Committee on Artificial Intelligence",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.6,
+   "description_cover": 0.75,
+   "runner_up_combined": 0.0,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
+  },
+  {
+   "family": "BlackRock (iShares)",
+   "company": "NFLX",
+   "meeting_date": "2024-06-06",
+   "npx_description": "Report on Use of Artificial Intelligence",
+   "best_guess": "nflx-2024-4",
+   "title_cover": 0.67,
+   "description_cover": 1.0,
    "runner_up_combined": 0.0,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
   },
@@ -6529,6 +7226,7 @@
   }
  ],
  "notes": [
+  "Vanguard World Fund 0001104659-24-094271: index failed (HTTP Error 502: Bad Gateway)",
   "Vanguard Institutional Index Funds 0001104659-26-101889: no structured vote table (older text format)",
   "ticker:DSEFX 0001021408-25-002683: no structured vote table (older text format)",
   "ticker:DSEFX 0001193125-26-344194: no structured vote table (older text format)",
