@@ -656,7 +656,11 @@
       // Memberships and focus lists carry the date the source listed them, so they don't read as current.
       const asOf = l.as_of ? ` <span class="ticker">(${l.relation === "member of" ? "listed as a member" : "listed"} as of ${esc(new Date(String(l.as_of).slice(0, 7) + "-15T12:00:00Z").toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" }))}${l.note ? "; " + esc(l.note) : ""})</span>` : "";
       if (l.relation === "missing") return `<li><button type="button" class="linklike" data-id="${esc(other.id)}">${esc(other.label)}</button> <span class="ticker">topic not filed</span> <span class="conf">· none in this dataset</span></li>`;
-      return `<li><button type="button" class="linklike" data-id="${esc(other.id)}">${esc(other.label)}</button> <span class="ticker">${esc(dir)}</span> <span class="conf conf-${c.level}">· ${c.level === "inferred" ? "no source, " + esc(c.text) : "source: " + esc(c.text)}</span>${asOf}${l.source_url ? " " + link(l.source_url) : ""}</li>`;
+      // Direct engagements reported by the investor list their steps (date, what happened, source and page).
+      const steps = Array.isArray(l.steps) && l.steps.length
+        ? `<ol class="eng-steps">${l.steps.map((st) => `<li><span class="nowrap">${esc(st.date || "")}</span>: ${esc(st.title || "")} ${link(st.source_url)}${st.source_page ? ` <span class="ticker">p. ${esc(st.source_page)}</span>` : ""}</li>`).join("")}</ol>${l.reported_by ? `<span class="ticker">Reported by ${esc(l.reported_by)}; not independently confirmed.</span>` : ""}`
+        : "";
+      return `<li><button type="button" class="linklike" data-id="${esc(other.id)}">${esc(other.label)}</button> <span class="ticker">${esc(dir)}</span> <span class="conf conf-${c.level}">· ${c.level === "inferred" ? "no source, " + esc(c.text) : "source: " + esc(c.text)}</span>${asOf}${l.source_url ? " " + link(l.source_url) : ""}${steps}</li>`;
     }).join("");
     // "What you can do": from the active lens; left out when the lens has nothing for this node.
     const acts = actions(n);
@@ -1038,6 +1042,7 @@
     seeking: { label: "Filer seeking co-filers or support", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.seek}" stroke-width="1.5" stroke-dasharray="1 2.5" stroke-linecap="round"/>` },
     "cov-covered": { label: "Ask already required by a rule in this map", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.ring}" stroke-width="2"/>` },
     "cov-partial": { label: "Ask partly covered by a rule", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.ring}" stroke-width="1.6" stroke-dasharray="5 2"/>` },
+    engaged: { label: "Investor engaged the company directly (reported by the investor; open a node for the steps)", svg: (c) => `<line x1="2" y1="9" x2="22" y2="9" stroke="${c.ring}" stroke-width="2" stroke-dasharray="5 2 1.5 2"/>` },
     "cov-none": { label: "No rule in this map reaches this ask", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.risk}" stroke-width="1.6" stroke-dasharray="1 2.5" stroke-linecap="round"/>` },
   };
   function markKey() {
@@ -1045,6 +1050,7 @@
     if (!el) return;
     const kinds = new Set();
     state.data.nodes.forEach((n) => { if (visible(n)) rings(n).forEach((m) => kinds.add(m.kind)); });
+    if (state.data.links.some((l) => l.relation === "engaged directly" && inMode(l) && visible(l.source) && visible(l.target))) kinds.add("engaged");
     const list = Object.keys(MARK_KEY).filter((k) => kinds.has(k));
     el.hidden = !list.length;
     const c = { ring: cssVar("--g-ring"), win: cssVar("--g-window"), risk: cssVar("--g-risk"), seek: cssVar("--g-seeking") };
@@ -1270,6 +1276,13 @@
         state.path = null; applyStyles();
         out.innerHTML = `<h5 id="net-path-sum" class="path-sum" tabindex="-1">No path in this map from ${esc(n.label)} to ${esc(state.byId.get(to).label)} through people, coalitions, co-filing or filings.</h5>`;
       } else {
+        // A route that lies wholly in the other view switches to it, so the whole route is drawn.
+        const isProp = (l) => l.layer === "proposals";
+        const need = steps.every((x) => isProp(x.l)) ? "proposals" : steps.every((x) => !isProp(x.l)) ? "connections" : null;
+        if (need && need !== state.mode) {
+          setMode(need, false);
+          document.getElementById("net-lens-status").textContent = `Switched to the ${mode().label} view to draw this route.`;
+        }
         state.path = { from: n.id, nodes: new Set([n.id, ...steps.map((x) => x.b)]), links: new Set(steps.map((x) => x.l)) };
         steps.forEach((x) => state.byId.get(x.b) && state.hiddenKinds.delete(state.byId.get(x.b).kind));
         const inferred = steps.filter((x) => x.l.relation === "co-filed with").length;
@@ -1418,7 +1431,7 @@
     state.linkSel = g.append("g").attr("stroke", cssVar("--g-link")).attr("fill", "none").selectAll("path").data(data.links).join("path")
       .attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.4 : 1) * state.cfg.linkScale)
       // Membership links are dashed; links with no source (inferred) are dotted, so the two never look alike.
-      .attr("stroke-dasharray", (l) => (l.relation === "missing" ? "5 3" : l.relation === "coverage" && l.coverage !== "full" ? "8 3" : conf(l).level === "inferred" ? "1 3" : l.relation === "member of" ? "3 3" : null));
+      .attr("stroke-dasharray", (l) => (l.relation === "engaged directly" ? "7 2 2 2" : l.relation === "missing" ? "5 3" : l.relation === "coverage" && l.coverage !== "full" ? "8 3" : conf(l).level === "inferred" ? "1 3" : l.relation === "member of" ? "3 3" : null));
 
     state.node = g.append("g").selectAll("circle").data(data.nodes).join("circle")
       .attr("r", radius)

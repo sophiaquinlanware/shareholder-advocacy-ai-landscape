@@ -96,9 +96,19 @@
     lanes.forEach((l, i) => {
       svg.append("rect").attr("x", 0).attr("y", laneTop(i)).attr("width", W).attr("height", laneHs[i])
         .attr("fill", i % 2 ? cssVar("--bg") : cssVar("--surface"));
-      svg.append("text").text(l.label).attr("x", 10).attr("y", laneTop(i) + laneHs[i] / 2 + 4)
-        .attr("font-size", 12).attr("font-weight", 400).attr("fill", cssVar("--ink-soft"));
     });
+    // Lane names stay pinned at the left edge while the chart scrolls sideways (it opens on the latest events).
+    const laneLabels = () => {
+      const g = svg.append("g").attr("class", "cz-lane-labels");
+      lanes.forEach((l, i) => {
+        g.append("text").text(l.label).attr("x", 10).attr("y", laneTop(i) + laneHs[i] / 2 + 4)
+          .attr("font-size", 12).attr("font-weight", 400).attr("fill", cssVar("--ink-soft"))
+          .attr("stroke", cssVar("--surface")).attr("stroke-width", 4).attr("paint-order", "stroke");
+      });
+      const sc = box.closest(".cz-scroll");
+      const follow = () => g.attr("transform", `translate(${sc ? sc.scrollLeft : 0},0)`);
+      if (sc) { sc.onscroll = follow; requestAnimationFrame(follow); }
+    };
     // Month labels along the top, placed with the same stretched scale.
     const months = d3.timeMonth.range(d3.timeMonth.ceil(t0), t1, 1).filter((m, i, all) => i === 0 || xr(m) - xr(all[i - 1]) > 0);
     // Every label carries its year ("Jun ’25"), so any part of the chart, scrolled or screenshotted, is dated
@@ -132,6 +142,7 @@
     C.nodeSel.append("title").text((e) => `${evDate(e)}: ${e.title}`);
     C.labelSel = C.nodeSel.append("text").text((e) => (e.title.length > 34 ? e.title.slice(0, 33) + "…" : e.title))
       .attr("x", 9).attr("y", 4).attr("font-size", 10.5).attr("fill", cssVar("--ink")).attr("opacity", 0);
+    laneLabels();
     apply();
   }
 

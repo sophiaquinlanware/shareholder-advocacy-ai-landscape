@@ -109,6 +109,8 @@
       <div class="table-wrap pw-routes" id="pw-routes" tabindex="0" role="region" aria-labelledby="pw-routes-h"></div>
       <p class="note pw-note">Tie groups, strength and related asks are this site's reading, not disclosed figures or advice. Owner: parent company. Major shareholder: an equity stake rated strength 3. Board seat or observer: a board seat or observer role. Compute: cloud or compute provider. Chips: chip supplier. Co-investor: an equity stake rated 1–2. Customer: distribution partner or commercial agreement. A company with several ties is sorted by its strongest. Related asks are the recurring asks (All proposals) grouped with each tie type; the count is AI proposals already filed at that company under each.</p>
       <div id="pw-findings"></div>
+      <div id="pw-twostep"></div>
+      <div id="pw-holders"></div>
       <h3 class="sub-h">Labs reached, by company</h3>
       <p class="count-line">Number of frontier labs each company has a sourced tie to.</p>
       <ol class="pw-bars" id="pw-bars"></ol>
@@ -237,6 +239,72 @@
         <li><strong>Filing deadline open</strong> (${open.length} of ${rows.length}): ${open.map((r) => `${esc(r.pc.name)} (${esc(r.deadline.date)}) ${link(r.deadline.source)}`).join(", ") || "none on record"}.</li>
       </ul>`;
     return { none, open };
+  }
+
+  // ---------- Two-step routes (queued by the owner, 2026-11-26) ----------
+  // A company tied by a sourced value-chain tie to a company that is itself tied to the lab ("TSMC makes chips for
+  // Nvidia, which holds equity in OpenAI"). Both ties are shown with their sources. Routes, not pressure.
+  function twoStep(rows, lab) {
+    const box = document.getElementById("pw-twostep");
+    const recs = ctx().companies || [];
+    const byId = new Map(recs.map((c) => [c.id, c]));
+    const rowByTicker = new Map();
+    rows.forEach((r) => tickersOf(r.pc).forEach((t) => rowByTicker.set(t, r)));
+    const direct = new Set(rows.flatMap((r) => tickersOf(r.pc)));
+    const out = [];
+    for (const t of S.vcTies) {
+      if (t.to_kind && t.to_kind !== "company") continue;
+      const a = byId.get(t.from), b = byId.get(t.to);
+      if (!a || !b || !b.ticker) continue;
+      const r = rowByTicker.get(b.ticker);
+      if (!r || (a.ticker && direct.has(a.ticker))) continue;
+      out.push({ a, b, t, r });
+    }
+    if (!out.length) { box.innerHTML = ""; return; }
+    out.sort((x, y) => x.a.name.localeCompare(y.a.name));
+    box.innerHTML = `
+      <h3 class="sub-h">Two-step routes to ${esc(lab.name)}</h3>
+      <p class="count-line">${out.length} tie${out.length === 1 ? "" : "s"} from companies not tied to ${esc(lab.name)} directly to a company that is. Both ties are sourced.</p>
+      <div class="table-wrap"><table><thead><tr><th scope="col">Company</th><th scope="col">Tie</th><th scope="col">Via</th><th scope="col">Tie to ${esc(lab.name)}</th></tr></thead><tbody>
+      ${out.map(({ a, b, t, r }) => `<tr><td>${esc(a.name)}${a.ticker ? ` <span class="ticker">${esc(a.ticker)}</span>` : ""}</td><td>${esc(t.type)}${t.as_of ? `, as of ${esc(t.as_of)}` : ""} ${link(t.source_url)}</td><td>${esc(b.name)}</td><td>${r.ties.map((x) => `${esc(x.type)} ${link(x.source_url)}`).join("<br>")}</td></tr>`).join("")}
+      </tbody></table></div>`;
+  }
+
+  // ---------- Holders of the route companies (queued by the owner, 2026-11-26) ----------
+  // From data/holdings.json (latest Form 13F, and Norges Bank's own list): which investors hold shares in the
+  // companies tied to this lab, and whether they have filed AI proposals there. Holdings, not influence.
+  function holders(rows, lab) {
+    const box = document.getElementById("pw-holders");
+    const H = S.holdings;
+    if (!H || !H.holdings || !H.holdings.length) { box.innerHTML = ""; return; }
+    const inv = new Map((H.investors || []).map((i) => [i.id, i]));
+    const byTicker = new Map();
+    rows.forEach((r) => tickersOf(r.pc).forEach((t) => byTicker.set(t, r)));
+    const per = new Map();
+    for (const h of H.holdings) {
+      const r = byTicker.get(h.company);
+      if (!r) continue;
+      if (!per.has(h.investor)) per.set(h.investor, []);
+      per.get(h.investor).push({ h, r });
+    }
+    if (!per.size) { box.innerHTML = ""; return; }
+    const usd = (v) => (v >= 1e12 ? `$${(v / 1e12).toFixed(2)}T` : v >= 1e9 ?`$${(v / 1e9).toFixed(1)}B` : v >= 1e6 ? `$${(v / 1e6).toFixed(0)}M` : `$${Math.round(v / 1e3)}K`);
+    const filedAt = (id, r) => S.inv.some((p) => p.org.id === id && tickersOf(r.pc).includes(p.ticker));
+    const list = [...per.entries()]
+      .map(([id, hs]) => ({ id, i: inv.get(id) || { name: id }, hs, total: hs.reduce((t, x) => t + (x.h.value_usd || 0), 0) }))
+      .sort((a, b) => b.total - a.total);
+    const nCos = new Set([...per.values()].flat().map((x) => x.r.pc.id)).size;
+    box.innerHTML = `
+      <h3 class="sub-h">Investors holding the companies tied to ${esc(lab.name)}</h3>
+      <p class="count-line">${list.length} investors with reported positions in ${nCos} of these companies, as of ${esc(H.as_of_quarter || "the latest filing")}. Positions come from each investor's latest Form 13F (Norges Bank: its own published list). A holding is not a vote or a filing.</p>
+      <div class="table-wrap"><table><thead><tr><th scope="col">Investor</th><th scope="col" class="num">Value held</th><th scope="col">Companies held (value; share of the company where reported)</th><th scope="col">Filed AI proposals at these companies</th></tr></thead><tbody>
+      ${list.map(({ id, i, hs, total }) => {
+        const filed = hs.filter((x) => filedAt(id, x.r)).map((x) => x.r.pc.name);
+        const held = [...hs].sort((a, b) => (b.h.value_usd || 0) - (a.h.value_usd || 0))
+          .map((x) => `${esc(x.r.pc.name)} (${usd(x.h.value_usd || 0)}${x.h.ownership_pct != null ? `; ${esc(x.h.ownership_pct)}%` : ""})`).join(", ");
+        return `<tr><td>${esc(i.name)} ${link(i.filing_url || (hs[0] && hs[0].h.source_url), "filing")}</td><td class="num">${usd(total)}</td><td>${held}</td><td>${filed.length ? esc(filed.join(", ")) : `<span class="ticker">none in this site's records</span>`}</td></tr>`;
+      }).join("")}
+      </tbody></table></div>`;
   }
 
   function labsReached() {
@@ -401,6 +469,8 @@
     document.getElementById("pw-routes-h").textContent = `Routes to ${lab.name}`;
     const rows = routesTable();
     const f = findings(rows, lab);
+    twoStep(rows, lab);
+    holders(rows, lab);
     S.summary = `${rows.length} compan${rows.length === 1 ? "y" : "ies"} tied to ${lab.name}: ${f.open.length} with an open filing deadline, ${f.none.length} with no AI proposals filed yet.`;
     const c = COLS.find((x) => x.key === sortState.key);
     document.getElementById("pw-status").textContent = c ? `${S.summary} Sorted by ${c.say[sortState.dir === "asc" ? 0 : 1]}.` : S.summary;
@@ -458,13 +528,13 @@
     selectCompanies();
   }
 
-  window.renderPathways = function (data, network) {
+  window.renderPathways = function (data, network, extra = {}) {
     const el = document.getElementById("tab-pathways");
     if (!data || !data.labs || !data.labs.length) {
       el.innerHTML = `<div class="coming"><h2>Routes to a frontier lab</h2><p>Being sourced now.</p></div>`;
       return;
     }
-    S = { data, inv: investorLinks(network), selectedCos: new Set(), lab: null };
+    S = { data, inv: investorLinks(network), selectedCos: new Set(), lab: null, holdings: extra.holdings || null, vcTies: extra.vcTies || [] };
     shell(el, data);
     el.querySelectorAll("[data-lab]").forEach((b) => b.addEventListener("click", () => selectLab(b.dataset.lab, false)));
     el.querySelectorAll('.pw-cos input[type="checkbox"]').forEach((b) => b.addEventListener("change", () => {

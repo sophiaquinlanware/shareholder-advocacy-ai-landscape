@@ -800,7 +800,10 @@ async function main() {
     openCompany,
   };
   window.renderNetwork(DATA.graph && DATA.graph.nodes ? DATA.graph : DATA.network, (DATA.people || {}).people);
-  window.renderPathways(DATA.pathways, DATA.graph && DATA.graph.nodes ? DATA.graph : DATA.network);
+  window.renderPathways(DATA.pathways, DATA.graph && DATA.graph.nodes ? DATA.graph : DATA.network, {
+    holdings: DATA.holdings || null,
+    vcTies: (DATA.value_chain && DATA.value_chain.all_ties) || [],
+  });
   window.renderCausality(DATA.causality);
   if (window.renderValueChain) window.renderValueChain(DATA.value_chain, DATA.companies);
   window.renderScorecard(DATA.scorecard);
