@@ -66,9 +66,13 @@ def main():
 
     # Companies first, so every layer below can point at the same company node.
     # data/companies.json is the list of companies in scope, with sectors and shareholder route.
+    # Listed companies are keyed by ticker (so filings and pathways join up); private or unverified
+    # ones by their id, so none is silently left out.
     for c in load("companies.json") or []:
-        if c.get("ticker") and c.get("ticker") not in ("private", "UNVERIFIED"):
-            node("co-" + c["ticker"].upper(), type="company", layer="companies", label=c["name"], ticker=c["ticker"],
+        listed = c.get("ticker") and c.get("ticker") not in ("private", "UNVERIFIED")
+        if c.get("id") or listed:
+            node("co-" + (c["ticker"].upper() if listed else c["id"]), type="company", layer="companies", label=c["name"],
+                 ticker=c["ticker"] if listed else None,
                  sectors=c.get("sectors"), shareholder_route=c.get("shareholder_route"),
                  basis_type=c.get("basis_type"), description=(c.get("engagement_basis") or {}).get("text"),
                  source_url=(c.get("engagement_basis") or {}).get("url"))

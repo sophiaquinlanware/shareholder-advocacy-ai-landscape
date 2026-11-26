@@ -170,6 +170,89 @@
    "degree": 4
   },
   {
+   "id": "co-openai",
+   "type": "company",
+   "layer": "companies",
+   "label": "OpenAI",
+   "ticker": null,
+   "sectors": [
+    "frontier lab",
+    "consumer AI",
+    "enterprise AI"
+   ],
+   "shareholder_route": "private",
+   "basis_type": "safety commitment",
+   "description": "2024: Signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "degree": 2
+  },
+  {
+   "id": "co-mistral-ai",
+   "type": "company",
+   "layer": "companies",
+   "label": "Mistral AI",
+   "ticker": null,
+   "sectors": [
+    "frontier lab",
+    "enterprise AI",
+    "consumer AI"
+   ],
+   "shareholder_route": "private",
+   "basis_type": "safety commitment",
+   "description": "2024: Signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "degree": 0
+  },
+  {
+   "id": "co-cohere",
+   "type": "company",
+   "layer": "companies",
+   "label": "Cohere",
+   "ticker": null,
+   "sectors": [
+    "frontier lab",
+    "enterprise AI"
+   ],
+   "shareholder_route": "private",
+   "basis_type": "safety commitment",
+   "description": "2024: Signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "degree": 0
+  },
+  {
+   "id": "co-g42",
+   "type": "company",
+   "layer": "companies",
+   "label": "G42",
+   "ticker": null,
+   "sectors": [
+    "frontier lab",
+    "enterprise AI",
+    "data centers & compute"
+   ],
+   "shareholder_route": "private",
+   "basis_type": "safety commitment",
+   "description": "2024: Signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "degree": 0
+  },
+  {
+   "id": "co-inflection-ai",
+   "type": "company",
+   "layer": "companies",
+   "label": "Inflection AI",
+   "ticker": null,
+   "sectors": [
+    "frontier lab",
+    "enterprise AI"
+   ],
+   "shareholder_route": "private",
+   "basis_type": "safety commitment",
+   "description": "2024: Signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "degree": 0
+  },
+  {
    "id": "co-035420",
    "type": "company",
    "layer": "companies",
@@ -182,6 +265,21 @@
    "shareholder_route": "listed outside the US",
    "basis_type": "safety commitment",
    "description": "2024: Signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "degree": 0
+  },
+  {
+   "id": "co-magic",
+   "type": "company",
+   "layer": "companies",
+   "label": "Magic",
+   "ticker": null,
+   "sectors": [
+    "frontier lab"
+   ],
+   "shareholder_route": "private",
+   "basis_type": "safety commitment",
+   "description": "2024: Named in the signatory list of the Frontier AI Safety Commitments as an organisation added to the original list (UK and Korean governments)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "degree": 0
   },
@@ -215,6 +313,145 @@
    "basis_type": "safety commitment",
    "description": "2024: Zhipu.ai signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "degree": 0
+  },
+  {
+   "id": "co-01-ai",
+   "type": "company",
+   "layer": "companies",
+   "label": "01.AI",
+   "ticker": null,
+   "sectors": [
+    "frontier lab"
+   ],
+   "shareholder_route": "private",
+   "basis_type": "safety commitment",
+   "description": "2024: Signed the Frontier AI Safety Commitments as an added signatory, listed as 01.ai (UK and Korean governments)",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "degree": 0
+  },
+  {
+   "id": "co-deepseek",
+   "type": "company",
+   "layer": "companies",
+   "label": "DeepSeek",
+   "ticker": null,
+   "sectors": [
+    "frontier lab",
+    "consumer AI"
+   ],
+   "shareholder_route": "private",
+   "basis_type": "safety commitment",
+   "description": "2024: DeepSeek joined sixteen other Chinese companies in signing China's AI Safety Commitments (Carnegie Endowment analysis)",
+   "source_url": "https://carnegieendowment.org/research/2025/01/deepseek-and-other-chinese-firms-converge-with-western-companies-on-ai-promises",
+   "degree": 0
+  },
+  {
+   "id": "co-beijing-volcano-engine-technology",
+   "type": "company",
+   "layer": "companies",
+   "label": "Beijing Volcano Engine Technology Co., Ltd.",
+   "ticker": null,
+   "sectors": [
+    "enterprise AI"
+   ],
+   "shareholder_route": "UNVERIFIED",
+   "basis_type": "safety commitment",
+   "description": "2024: Signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance, via ETO AGORA)",
+   "source_url": "https://agora.eto.tech/instrument/1831",
+   "degree": 0
+  },
+  {
+   "id": "co-aleph-alpha",
+   "type": "company",
+   "layer": "companies",
+   "label": "Aleph Alpha",
+   "ticker": null,
+   "sectors": [
+    "frontier lab",
+    "enterprise AI"
+   ],
+   "shareholder_route": "private",
+   "basis_type": "safety commitment",
+   "description": "2025: Listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission)",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+   "degree": 0
+  },
+  {
+   "id": "co-black-forest-labs",
+   "type": "company",
+   "layer": "companies",
+   "label": "Black Forest Labs",
+   "ticker": null,
+   "sectors": [
+    "frontier lab",
+    "consumer AI"
+   ],
+   "shareholder_route": "private",
+   "basis_type": "safety commitment",
+   "description": "2025: Listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission)",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+   "degree": 0
+  },
+  {
+   "id": "co-reflection-ai",
+   "type": "company",
+   "layer": "companies",
+   "label": "Reflection AI",
+   "ticker": null,
+   "sectors": [
+    "frontier lab"
+   ],
+   "shareholder_route": "private",
+   "basis_type": "safety commitment",
+   "description": "2025: Listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission)",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+   "degree": 0
+  },
+  {
+   "id": "co-writer",
+   "type": "company",
+   "layer": "companies",
+   "label": "WRITER",
+   "ticker": null,
+   "sectors": [
+    "enterprise AI",
+    "frontier lab"
+   ],
+   "shareholder_route": "private",
+   "basis_type": "safety commitment",
+   "description": "2025: Listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission)",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+   "degree": 0
+  },
+  {
+   "id": "co-stability-ai",
+   "type": "company",
+   "layer": "companies",
+   "label": "Stability AI",
+   "ticker": null,
+   "sectors": [
+    "consumer AI"
+   ],
+   "shareholder_route": "private",
+   "basis_type": "safety commitment",
+   "description": "2023: Signed the US voluntary AI commitments in the second round of eight companies (White House fact sheet, September 2023)",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "degree": 0
+  },
+  {
+   "id": "co-scale-ai",
+   "type": "company",
+   "layer": "companies",
+   "label": "Scale AI",
+   "ticker": null,
+   "sectors": [
+    "enterprise AI"
+   ],
+   "shareholder_route": "private",
+   "basis_type": "safety commitment",
+   "description": "2023: Signed the US voluntary AI commitments in the second round of eight companies (White House fact sheet, September 2023)",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
    "degree": 0
   },
   {
@@ -407,6 +644,22 @@
    "degree": 0
   },
   {
+   "id": "co-beijing-baidu-network-technology",
+   "type": "company",
+   "layer": "companies",
+   "label": "Beijing Baidu Network Technology Co., Ltd.",
+   "ticker": null,
+   "sectors": [
+    "consumer AI",
+    "enterprise AI"
+   ],
+   "shareholder_route": "UNVERIFIED",
+   "basis_type": "safety commitment",
+   "description": "2024: Signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance, via ETO AGORA)",
+   "source_url": "https://agora.eto.tech/instrument/1831",
+   "degree": 0
+  },
+  {
    "id": "co-BABA",
    "type": "company",
    "layer": "companies",
@@ -442,6 +695,37 @@
    "degree": 0
   },
   {
+   "id": "co-huawei-technologies",
+   "type": "company",
+   "layer": "companies",
+   "label": "Huawei Technologies",
+   "ticker": null,
+   "sectors": [
+    "enterprise AI",
+    "data centers & compute"
+   ],
+   "shareholder_route": "private",
+   "basis_type": "safety commitment",
+   "description": "2024: Huawei Technologies Co., Ltd. signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance, via ETO AGORA)",
+   "source_url": "https://agora.eto.tech/instrument/1831",
+   "degree": 0
+  },
+  {
+   "id": "co-shanghai-sensetime-intelligent-technology",
+   "type": "company",
+   "layer": "companies",
+   "label": "Shanghai SenseTime Intelligent Technology Co., Ltd.",
+   "ticker": null,
+   "sectors": [
+    "enterprise AI"
+   ],
+   "shareholder_route": "UNVERIFIED",
+   "basis_type": "safety commitment",
+   "description": "2024: Signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance, via ETO AGORA)",
+   "source_url": "https://agora.eto.tech/instrument/1831",
+   "degree": 0
+  },
+  {
    "id": "co-NFLX",
    "type": "company",
    "layer": "companies",
@@ -454,6 +738,21 @@
    "basis_type": "shareholder proposal",
    "description": "2024: Proposal 4 asked for a report on Netflix's use of AI (AFL-CIO Equity Index Funds)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312524100913/d521836ddef14a.htm",
+   "degree": 0
+  },
+  {
+   "id": "co-warner-bros-discovery",
+   "type": "company",
+   "layer": "companies",
+   "label": "Warner Bros. Discovery",
+   "ticker": null,
+   "sectors": [
+    "consumer AI"
+   ],
+   "shareholder_route": "UNVERIFIED",
+   "basis_type": "shareholder proposal",
+   "description": "2024: Proposal 5 asked for a report on use of AI (AFL-CIO Equity Index Funds and New York City Employees' Retirement System)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1437107/000143710724000102/wbd-20240419.htm",
    "degree": 0
   },
   {
@@ -753,7 +1052,7 @@
    "status": "private",
    "description": "ChatGPT/GPT maker; PBC controlled by OpenAI Foundation; $852B post-money (Mar 2026); confidential IPO filing June 2026.",
    "source_url": "https://techcrunch.com/2026/06/08/following-anthropic-openai-files-confidentially-for-ipo/",
-   "degree": 18
+   "degree": 16
   },
   {
    "id": "lab-anthropic",
@@ -9451,7 +9750,7 @@
    "source_url": "https://corpgov.law.harvard.edu/2025/04/06/delaware-revamps-its-general-corporation-law-will-it-stop-companies-from-leaving"
   },
   {
-   "source": "lab-openai",
+   "source": "co-openai",
    "target": "ev-openai-eu-code",
    "type": "acted in",
    "layer": "policy",
@@ -9493,7 +9792,7 @@
    "source_url": "https://www.euronews.com/2025/08/01/some-26-tech-companies-sign-up-to-eu-commissions-ai-code"
   },
   {
-   "source": "lab-openai",
+   "source": "co-openai",
    "target": "ev-openai-newsom-letter",
    "type": "acted in",
    "layer": "policy",
