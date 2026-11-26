@@ -641,6 +641,10 @@ async function main() {
   // Inputs the network's lenses read (lenses.js): meetings with a ballot out, and Company lookup.
   window.LENS_CTX = {
     upcoming: (DATA.upcoming && DATA.upcoming.meetings) || [],
+    disclaimer: (DATA.upcoming && DATA.upcoming.disclaimer) || "",
+    proposals: (DATA.proposals && DATA.proposals.proposals) || [],
+    companies: DATA.companies || [],
+    fundVotes: DATA.fund_votes || null,
     hasCompany: (t) => companyEntries().some((e) => e.key === keyForTicker(t)),
     openCompany,
   };

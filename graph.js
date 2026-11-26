@@ -298,8 +298,11 @@
       <h2>Co-filer network</h2>
       <fieldset class="lens-pick" id="net-lens"><legend>View as</legend>${Object.entries(window.LENSES || {}).map(([id, l]) =>
         `<label class="chip"><input type="radio" name="net-lens" value="${esc(id)}"${id === state.lens ? " checked" : ""}> ${esc(l.label)}</label>`).join("")}</fieldset>
-      <p class="intro" id="net-intro"></p>
       <p class="visually-hidden" id="net-lens-status" aria-live="polite"></p>
+      <section id="net-feed" class="net-feed" aria-labelledby="lf-h" hidden></section>
+      <div id="net-graph-area">
+      <button type="button" class="chip" id="lf-back" hidden>Back to the list</button>
+      <p class="intro" id="net-intro"></p>
       <div class="net-controls">
         <input type="search" id="net-search" placeholder="Search an organization or company" aria-label="Search the network">
         <select id="net-topic" aria-label="Filter by topic"><option value="">All topics</option></select>
@@ -330,7 +333,140 @@
         </div>
         <div id="net-list" class="net-list" hidden></div>
         <aside id="net-panel" class="net-panel" aria-label="Selected node"><p class="status-note">Select a node for its connections and sources.</p></aside>
+      </div>
       </div>`;
+  }
+
+  // ---------- Individual investor feed (lenses.js FEED): a list first, the graph on request ----------
+  // view=feed|graph is kept in the URL (replaceState, like ?lens=). Only lenses with a feed have the list.
+  const VIEW_KEY = "view";
+  function urlView() {
+    const v = new URLSearchParams(location.search).get(VIEW_KEY);
+    return v === "graph" ? "graph" : "feed";
+  }
+  function saveView() {
+    try {
+      const u = new URL(location.href);
+      if (lens().feed) u.searchParams.set(VIEW_KEY, state.feedView); else u.searchParams.delete(VIEW_KEY);
+      window.history.replaceState(null, "", u.pathname + u.search + location.hash);
+    } catch (e) {}
+  }
+  let termSeq = 0;
+  function term(name, label) {
+    const def = (lens().feed && lens().feed.glossary[name]) || "";
+    if (!def) return esc(label || name);
+    const id = `term-${++termSeq}`;
+    return `<button type="button" class="term" aria-expanded="false" aria-controls="${id}">${esc(label || name)}</button><span class="term-def" id="${id}" hidden>${esc(def)}</span>`;
+  }
+  const longDate = (iso) => new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
+  function feedShell() {
+    const F = lens().feed;
+    const box = document.getElementById("net-feed");
+    box.innerHTML = `
+      <h3 id="lf-h">Upcoming AI proposals in this tracker</h3>
+      <p class="intro">Upcoming votes on AI-related ${term("shareholder proposal", "shareholder proposals")} at the ${term("annual meeting", "annual meetings")} of the companies this site tracks.</p>
+      ${state.ctx.disclaimer ? `<p class="status-note">${esc(state.ctx.disclaimer)}</p>` : ""}
+      <form role="search" id="lf-form" class="feed-form">
+        <label for="lf-in">Your tickers or fund name</label>
+        <div class="feed-row"><input id="lf-in" type="text" autocomplete="off" spellcheck="false" aria-describedby="lf-hint">
+        <button type="submit" class="chip">Show</button></div>
+        <p id="lf-hint" class="status-note">For example: MSFT, AAPL, Vanguard. Separate several with commas. Tickers entered here also set My holdings in the graph. Stored in this browser only.</p>
+      </form>
+      <p id="lf-status" class="count-line" aria-live="polite"></p>
+      <div id="lf-list"></div>
+      <button type="button" class="chip" id="lf-to-graph">See the bigger picture</button>`;
+    let fund = "";
+    try { fund = localStorage.getItem("fund") || ""; } catch (e) {}
+    document.getElementById("lf-in").value = [...state.holdings, ...(fund ? [fund] : [])].join(", ");
+    document.getElementById("lf-form").addEventListener("submit", (e) => { e.preventDefault(); feedApply(true); });
+    document.getElementById("lf-to-graph").addEventListener("click", () => setFeedView("graph", true));
+    box.addEventListener("click", (e) => {
+      const b = e.target.closest(".term");
+      if (!b) return;
+      const open = b.getAttribute("aria-expanded") !== "true";
+      b.setAttribute("aria-expanded", String(open));
+      document.getElementById(b.getAttribute("aria-controls")).hidden = !open;
+    });
+    box.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape") return;
+      const b = e.target.closest(".term") || (e.target.closest(".term-def") && e.target.closest(".term-def").previousElementSibling);
+      if (!b || b.getAttribute("aria-expanded") !== "true") return;
+      e.stopPropagation();
+      b.setAttribute("aria-expanded", "false");
+      document.getElementById(b.getAttribute("aria-controls")).hidden = true;
+      b.focus();
+    });
+    feedApply(false);
+    if (F) document.getElementById("lf-status").setAttribute("data-ready", "1");
+  }
+  function feedApply(fromSubmit) {
+    const F = lens().feed;
+    if (!F) return;
+    const m = F.match(state.ctx, document.getElementById("lf-in").value);
+    if (fromSubmit) {
+      state.holdings = new Set(m.tickers);
+      saveHoldings();
+      holdStatus();
+      const hi = document.getElementById("net-hold-input");
+      if (hi) hi.value = m.tickers.join(", ");
+      try { if (m.family) localStorage.setItem("fund", m.family); else localStorage.removeItem("fund"); } catch (e) {}
+    }
+    const items = F.items(state.ctx, m.tickers);
+    const quiet = F.quiet(state.ctx, m.tickers, items);
+    const ctxName = (it) => `${it.company} ${it.p.year}: ${it.p.title}`;
+    const fundHtml = (it) => {
+      const f = F.fund(state.ctx, it.p, m.family);
+      if (!f) return "";
+      const links = f.links.map((l) => ` <a class="src" href="${esc(l.href)}" target="_blank" rel="noopener">[${esc(l.label)}<span class="visually-hidden">, ${esc(ctxName(it))}</span>]</a>`).join("");
+      return `<div class="feed-fund"><h5>${esc(f.heading)}</h5><p>${esc(f.text)}${links}</p><p class="status-note">From ${term("Form N-PX")} filings. ${esc(f.about)}</p></div>`;
+    };
+    const li = items.map((it) => `<li class="feed-item">
+        <h4>${esc(it.company)}</h4>
+        <p class="feed-sum">${esc(it.summary)}${it.summarySource ? ` <a class="src" href="${esc(it.summarySource)}" target="_blank" rel="noopener">[source<span class="visually-hidden">, ${esc(ctxName(it))}</span>]</a>` : ""}</p>
+        <p><time datetime="${esc(it.date)}">Annual meeting ${esc(longDate(it.date))}</time>${it.note ? `. Proxy note: “${esc(it.note)}”` : ""}</p>
+        <p>${term("proxy statement", "Proxy statement")}: ${it.proxy ? `<a class="src" href="${esc(it.proxy)}" target="_blank" rel="noopener">[open<span class="visually-hidden"> the proxy statement for ${esc(ctxName(it))}</span>]</a>` : `<span class="unverified">source pending</span>`}${it.topic ? ` · Topic: ${esc(it.topic)}` : ""}</p>
+        ${fundHtml(it)}
+      </li>`).join("");
+    const ql = quiet.map((q) => `<li class="feed-item feed-quiet"><h4>${esc(q.name)}</h4><p>No upcoming AI proposals in this tracker for ${esc(q.name)}.</p>${q.deadline ? `<p>${esc(q.deadline)}${q.source ? ` <a class="src" href="${esc(q.source)}" target="_blank" rel="noopener">[source<span class="visually-hidden">, ${esc(q.name)} proxy statement</span>]</a>` : ` <span class="unverified">source pending</span>`}</p>` : ""}</li>`).join("");
+    document.getElementById("lf-list").innerHTML = items.length || quiet.length ? `<ul class="feed-list">${li}${ql}</ul>` : `<p>No upcoming AI proposals in this tracker.</p>`;
+    document.getElementById("lf-h").textContent = m.tickers.length ? "Upcoming AI proposals at your companies" : "Upcoming AI proposals in this tracker";
+    const parts = [];
+    parts.push(`Showing ${items.length} upcoming AI ${items.length === 1 ? "vote" : "votes"}${m.tickers.length ? ` for ${m.tickers.join(", ")}` : " in this tracker"}`);
+    if (m.family) parts.push(`fund family: ${m.family}`);
+    let line = parts.join("; ") + ".";
+    if (m.familyNote) line += ` ${m.familyNote}`;
+    if (m.notFound.length) line += ` Not found among the tracked companies or the fund families with readable Form N-PX votes: ${m.notFound.join(", ")}.`;
+    if (!m.tickers.length && m.family) line += " No tickers entered, so nothing is faded in the bigger picture.";
+    document.getElementById("lf-status").textContent = line;
+  }
+  // Shows the feed or the graph area for the active lens; draws the graph the first time its area is visible.
+  function setFeedView(v, moveFocus) {
+    const hasFeed = !!lens().feed;
+    state.feedView = hasFeed ? v : "graph";
+    const feed = document.getElementById("net-feed");
+    const area = document.getElementById("net-graph-area");
+    feed.hidden = state.feedView !== "feed";
+    area.hidden = state.feedView === "feed";
+    document.getElementById("lf-back").hidden = !hasFeed;
+    if (hasFeed && !feed.dataset.built) { feed.dataset.built = "1"; feedShell(); }
+    saveView();
+    ensureDrawn();
+    if (hasFeed && moveFocus) {
+      document.getElementById("net-lens-status").textContent = state.feedView === "graph" ? "Showing the graph; your holdings are highlighted." : "Showing the list of upcoming AI proposals.";
+      document.getElementById(state.feedView === "graph" ? "lf-back" : "lf-to-graph").focus();
+      if (state.feedView === "graph") applyStyles();
+    }
+  }
+  function ensureDrawn() {
+    const tab = document.getElementById("tab-network");
+    const area = document.getElementById("net-graph-area");
+    if (!tab || tab.hidden || area.hidden || typeof d3 === "undefined") return;
+    const w = document.getElementById("net-graph").clientWidth;
+    if (!state.drawn || (state.size && w && Math.abs(w - state.size.width) > 2)) {
+      if (state.sim) state.sim.stop();
+      state.drawn = true;
+      drawGraph();
+    }
   }
 
   function legend(data) {
@@ -931,6 +1067,7 @@
     }
     document.querySelectorAll("#net-legend .leg").forEach((b) => b.setAttribute("aria-pressed", String(!state.hiddenKinds.has(b.dataset.kind))));
     saveLens(id);
+    setFeedView(lens().feed ? "feed" : "graph", false);
     drawRings();
     applySettings(true);
     regroup();
@@ -974,6 +1111,7 @@
     wireHoldings();
     gapButton();
     document.getElementById("net-gaps").addEventListener("click", () => setGaps(!state.gaps));
+    document.getElementById("lf-back").addEventListener("click", () => setFeedView("feed", true));
     document.querySelectorAll("#tab-network .seg button").forEach((b) => b.addEventListener("click", () => {
       state.view = b.dataset.view;
       document.querySelectorAll("#tab-network .seg button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
@@ -1007,7 +1145,9 @@
     const app = window.LENS_CTX || {};
     state.ctx = { nodes: data.nodes, links: data.links, byId: state.byId, cache: {},
       upcoming: new Map(((app.upcoming || [])).map((m) => [m.ticker, m])),
-      hasCompany: app.hasCompany || (() => false), openCompany: app.openCompany || (() => {}) };
+      hasCompany: app.hasCompany || (() => false), openCompany: app.openCompany || (() => {}),
+      proposals: app.proposals || [], companies: app.companies || [], disclaimer: app.disclaimer || "",
+      fv: window.FundVotes ? window.FundVotes.index(app.fundVotes) : null };
     shell(el);
     refreshConnected();
     settingsPanel();
@@ -1016,10 +1156,12 @@
     wire();
     holdStatus();
     // The graph needs a visible container to measure, so draw it the first time its tab opens.
-    const draw = () => { if (!state.drawn && !el.hidden) { state.drawn = true; drawGraph(); } };
+    state.feedView = lens().feed ? urlView() : "graph";
+    setFeedView(state.feedView, false);
+    const draw = () => ensureDrawn();
     new MutationObserver(draw).observe(el, { attributes: true, attributeFilter: ["hidden"] });
     draw();
     let t;
-    window.addEventListener("resize", () => { clearTimeout(t); t = setTimeout(() => { if (state.drawn && !el.hidden) { state.sim.stop(); drawGraph(); } }, 250); });
+    window.addEventListener("resize", () => { clearTimeout(t); t = setTimeout(() => { const a = document.getElementById("net-graph-area"); if (state.drawn && !el.hidden && !a.hidden) { state.sim.stop(); drawGraph(); } }, 250); });
   };
 })();

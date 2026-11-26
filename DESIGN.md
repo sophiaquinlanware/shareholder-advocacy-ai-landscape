@@ -113,6 +113,12 @@ A new lens is one more entry. `rules.js` holds rule-based settings with comments
 - **Find a path to…** (person and filer panels): a breadth-first search over people, coalition, co-filing and filing edges.
   - Every hop is labelled with its source; inferred co-filing and shared coalition membership are named as such.
   - Focus goes to the summary. Esc in the panel clears the path.
+- **Individual investor feed (Phase 3):** this lens opens on a list (`#net-feed`), not the graph. `view=feed|graph` is kept in the URL.
+  - **Input:** a search form, "Your tickers or fund name". Tickers become My holdings; the fund is kept in `localStorage["fund"]`.
+  - **List:** a `<ul>`, one `<li>` per upcoming AI proposal: an h4 for the company, the summary (`plain_summary` or the title), `<time>` and the proxy link.
+  - **Fund line:** "How your fund voted last year" uses the Fund votes tab's join and wording (`window.FundVotes` in votes.js).
+  - **Switching views:** "See the bigger picture" shows the graph with the overlay and moves focus to "Back to the list". Going back returns focus to "See the bigger picture".
+  - **Terms:** disclosure buttons (`.term`, `aria-expanded`) with an inline definition (`.term-def`); Esc closes it. The text lives in `GLOSSARY` in lenses.js.
 - **List view:** every visible node, with Name, Type, Connections (sortable), Status and What you can do. It is the text equivalent of the graph.
 
 ## Focus and motion
@@ -127,4 +133,4 @@ A new lens is one more entry. `rules.js` holds rule-based settings with comments
 3. Wide content scrolls inside its own box, never the page.
 4. No decorative visuals; every visual is blue and has a text equivalent.
 5. Counts, ranges and lists come from the data, never typed into copy.
-6. Plain labels; no definitions, explainers or slogans.
+6. Plain labels; no definitions, explainers or slogans. The one exception is the Individual investor lens, which has plain-language definitions behind `.term` buttons, as the owner's spec asks.

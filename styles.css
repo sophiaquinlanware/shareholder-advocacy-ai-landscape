@@ -226,6 +226,25 @@ tr.hit td { background: var(--accent-soft); }
 @media (prefers-reduced-motion: no-preference) {
   .g-pulse { animation: g-pulse 2.5s ease-in-out 2; }
 }
+/* Phase 3: Individual investor feed and plain-language terms */
+.net-feed { max-width: 760px; }
+.net-feed h3 { margin: 4px 0 6px; font-size: 17px; }
+.feed-form label { display: block; font-weight: 600; font-size: 14px; margin: 8px 0 4px; }
+.feed-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.feed-row input { flex: 1 1 220px; min-width: 0; font: 14px var(--sans); color: var(--ink); background: var(--surface); border: 1px solid var(--control-edge); border-radius: 4px; padding: 6px 8px; }
+.feed-list { list-style: none; padding: 0; margin: 8px 0 12px; }
+.feed-item { border-top: 1px solid var(--line); padding: 10px 0; }
+.feed-item h4 { margin: 0 0 4px; font-size: 15px; }
+.feed-item p { margin: 4px 0; }
+.feed-sum { font-weight: 500; }
+.feed-fund { border-left: 3px solid var(--accent); padding: 2px 0 2px 10px; margin-top: 6px; }
+.feed-fund h5 { margin: 0 0 2px; font-size: 13px; }
+.term { font: inherit; color: inherit; background: none; border: 0; padding: 0; text-decoration: underline dotted; text-underline-offset: 3px; cursor: help; }
+.term[aria-expanded="true"] { text-decoration-style: solid; }
+.term-def { display: block; font-size: 13px; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 4px; padding: 6px 8px; margin: 4px 0; }
+.term-def[hidden] { display: none; }
+#lf-back { margin: 0 0 8px; }
+#lf-back[hidden] { display: none; }
 @keyframes g-pulse { 0%, 100% { stroke-opacity: 1; } 50% { stroke-opacity: 0.25; } }
 .ring-note { font-size: 12px; font-weight: 600; color: var(--accent); }
 .ring-note::before { content: "◌ " / ""; }

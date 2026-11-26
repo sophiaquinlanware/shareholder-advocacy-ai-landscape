@@ -33,6 +33,37 @@
     return `Split: ${parts.join(", ")}`;
   }
 
+  // Shared with the Individual investor feed (lenses.js), so the two views word and join votes the same way.
+  // index(data) builds the lookups once; row(ix, family, proposalId) returns the summary row or null.
+  window.FundVotes = {
+    LABEL,
+    voteText,
+    periodFor,
+    index(data) {
+      if (!data || !data.summary) return null;
+      const checked = new Set(data.proposals_checked || []);
+      const held = new Set(data.held_back_proposals || []);
+      const trusts = new Map();
+      (data.filings || []).forEach((f) => {
+        if (!trusts.has(f.family)) trusts.set(f.family, new Set());
+        trusts.get(f.family).add(f.trust);
+      });
+      return {
+        families: [...new Set(data.summary.map((r) => r.family))].sort((a, b) => a.localeCompare(b)),
+        allFamilies: Array.isArray(data.families) ? data.families : Object.keys(data.families || {}),
+        trusts,
+        notShown: data.not_shown || [],
+        coverage: data.coverage || {},
+        byKey: new Map(data.summary.map((r) => [`${r.family}|${r.proposal_id}`, r])),
+        usable: (id) => checked.has(id) && !held.has(id),
+        reviewed: data.reviewed || [],
+      };
+    },
+    coverage(ix, family, meetingDate) {
+      return meetingDate ? (ix.coverage[family] || {})[periodFor(meetingDate)] || "" : "";
+    },
+  };
+
   function cell(f, p) {
     const r = V.byKey.get(`${f}|${p.id}`);
     const cov = coverageOf(f, p);

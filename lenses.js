@@ -230,6 +230,97 @@
     return [{ text: `No ${n.topic} proposal at ${n.companyLabel} in this dataset (${plural(n.covered, "company", "companies")} with AI proposals tracked; compared with all of them, any value-chain tier). Filed at ${n.filedAt.length} of them: ${filed}.` }];
   }
 
+  // ---------- Individual investor feed (Phase 3) ----------
+  // Plain-language definitions, shown only in this lens (owner's spec; PRODUCT.md and DESIGN.md rule 6 carve
+  // this out). General descriptions only: no thresholds, dates or other rule details. The owner edits these.
+  const GLOSSARY = {
+    "shareholder proposal": "A request one shareholder puts to all shareholders for a vote at a company's annual meeting, for example asking the company to publish a report.",
+    "annual meeting": "The yearly meeting where a company's shareholders vote on directors and proposals. Most people vote online or by mail beforehand.",
+    "proxy statement": "The document a company sends before its annual meeting. It lists everything on the ballot, including shareholder proposals and the company's response to each.",
+    "Form N-PX": "A yearly filing in which US mutual funds and ETFs report how they voted on each item at the companies they hold.",
+  };
+  const dayOf = (iso) => { const [y, m, d] = String(iso).slice(0, 10).split("-").map(Number); return Date.UTC(y, m - 1, d) / 86400000; };
+  const companyName = (ctx, t) => ((ctx.companies || []).find((c) => c.ticker === t) || {}).name || t;
+
+  const FEED = {
+    glossary: GLOSSARY,
+    // Splits on commas and new lines. Tickers match tracked companies; anything else of 3+ characters is
+    // tried as a fund family (family name, the name in brackets, or one of its trusts, either way round).
+    match(ctx, text) {
+      const tokens = String(text || "").split(/[,\n;]+/).map((t) => t.trim()).filter(Boolean);
+      const tickers = new Set((ctx.companies || []).map((c) => String(c.ticker || "").toUpperCase()).filter(Boolean));
+      const ix = ctx.fv;
+      const out = { tickers: [], family: null, familyNote: "", notFound: [] };
+      for (const tok of tokens) {
+        const up = tok.toUpperCase();
+        if (tickers.has(up)) { if (!out.tickers.includes(up)) out.tickers.push(up); continue; }
+        const low = tok.toLowerCase();
+        let fam = null;
+        if (ix && low.length >= 3) {
+          fam = ix.allFamilies.find((f) => {
+            const names = [f, f.replace(/\s*\(.*\)/, ""), ...((f.match(/\(([^)]+)\)/) || [])[1] ? [f.match(/\(([^)]+)\)/)[1]] : []), ...(ix.trusts.get(f) || [])].map((x) => x.toLowerCase());
+            return names.some((n) => n.includes(low) || low.includes(n));
+          }) || null;
+        }
+        if (fam && !out.family) {
+          out.family = fam;
+          if (!ix.families.includes(fam)) out.familyNote = ix.notShown.find((t) => t.includes(fam)) || `${fam} has no readable Form N-PX votes in this data.`;
+        } else if (!fam) out.notFound.push(tok);
+      }
+      return out;
+    },
+    // Upcoming AI proposals (status "upcoming", meeting today or later, US Eastern), soonest first.
+    items(ctx, tickers) {
+      const today = window.RULES ? window.RULES.todayISO() : new Date().toISOString().slice(0, 10);
+      return (ctx.proposals || [])
+        .filter((p) => p.status === "upcoming" && p.meeting_date && p.meeting_date >= today && (!tickers.length || tickers.includes(p.company)))
+        .sort((a, b) => a.meeting_date.localeCompare(b.meeting_date) || a.company.localeCompare(b.company))
+        .map((p) => {
+          const m = ctx.upcoming.get(p.company);
+          const note = m && m.sort === p.meeting_date ? firstSentence(m.note) : "";
+          return { p, company: companyName(ctx, p.company), summary: p.plain_summary || p.title, summarySource: p.plain_summary_source || null, date: p.meeting_date, proxy: p.proxy_url, note, topic: p.topic };
+        });
+    },
+    // Companies entered that have no upcoming AI proposal in this tracker, with the next proposal deadline.
+    quiet(ctx, tickers, listed) {
+      const have = new Set(listed.map((i) => i.p.company));
+      return tickers.filter((t) => !have.has(t)).map((t) => {
+        const c = ctx.nodes.find((n) => n.ticker === t && (n.kind === "company" || String(n.kind).startsWith("tier-")));
+        const d = c && window.RULES && window.RULES.deadlineInfo(c);
+        return { ticker: t, name: companyName(ctx, t), deadline: d ? `Proposal deadline for the next annual meeting: ${fmtDate(d.date)} (${plural(d.days, "day", "days")} left)` : "", source: d ? d.source : null };
+      });
+    },
+    // The fund family's Form N-PX vote on the most recent earlier version of this proposal, or null.
+    fund(ctx, p, family) {
+      const ix = ctx.fv;
+      const FV = window.FundVotes;
+      if (!ix || !FV || !family) return null;
+      const e = [...(p.vote_history || [])].filter((v) => v.proposal_id).sort((a, b) => b.year - a.year)[0];
+      if (!e) return null;
+      const earlier = (ctx.proposals || []).find((x) => x.id === e.proposal_id) || {};
+      const near = earlier.meeting_date && p.meeting_date && dayOf(p.meeting_date) - dayOf(earlier.meeting_date) <= 400;
+      const heading = near ? "How your fund voted last year" : `How your fund voted on the ${e.year} version`;
+      const about = `Earlier version: “${e.title || earlier.title || ""}” (${e.year}), matched in this dataset by company, topic and similar title.`;
+      if (!ix.families.includes(family)) return null;
+      if (!ix.usable(e.proposal_id)) return { heading, text: "Not checked: that earlier version isn't in the fund votes data.", about, links: [] };
+      const row = ix.byKey.get(`${family}|${e.proposal_id}`);
+      const cov = FV.coverage(ix, family, earlier.meeting_date);
+      if (!row) {
+        const t = cov === "full" ? "No vote found in the filings checked." : cov === "partial" ? "Partly checked: only some of this family's filings for that year could be read, and no vote was found in them." : "Not checked: no readable filing covers that meeting.";
+        return { heading, text: `${family}: ${t}`, about, links: [] };
+      }
+      if (row.vote === "NEEDS_CHECK") return { heading, text: `${family}: needs checking. The filings list two ballot items that both read as this proposal, so votes can't be matched to it with confidence.`, about, links: [] };
+      const n = row.fund_records || Object.values(row.counts || {}).reduce((a, b) => a + b, 0);
+      const notes = [row.reviewed ? "" : "matched automatically, not yet reviewed", cov === "partial" ? "from part of this family's filings for that year" : ""].filter(Boolean);
+      return {
+        heading,
+        text: `${family} funds in these filings (${plural(n, "fund record", "fund records")}): ${FV.voteText(row)}${notes.length ? " (" + notes.join("; ") + ")" : ""}.`,
+        about,
+        links: (row.sources || []).map((u, i) => ({ href: u, label: `${family} Form N-PX filing ${i + 1}` })),
+      };
+    },
+  };
+
   window.LENSES = {
     impact: {
       label: "Impact investor",
@@ -248,7 +339,8 @@
     },
     individual: {
       label: "Individual investor",
-      sizeLabel: "AI proposals on file (companies)",
+      feed: FEED,
+      sizeLabel: "how many AI proposals each company has had",
       measure: { label: "AI proposals on file", value: (n, ctx) => (isCompany(n) ? proposalsOnFile(n, ctx) : null) },
       defaults: { hiddenKinds: [...FILERS, "person", "policy", "response", "public"], orphans: true },
       size(n, ctx) {

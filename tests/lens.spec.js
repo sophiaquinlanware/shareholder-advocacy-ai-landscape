@@ -19,9 +19,11 @@ test("choosing a lens updates ?lens=, keeps #network, and survives a reload", as
 });
 
 test("?lens= in a shared link opens that lens", async ({ page }) => {
-  await openNetwork(page, "?lens=individual");
+  await page.goto("/index.html?lens=individual&view=graph#network");
+  await page.waitForLoadState("networkidle");
+  await page.waitForSelector("#net-lens input:checked");
   expect(await page.$eval("#net-lens input:checked", (i) => i.value)).toBe("individual");
-  await expect(page.locator("#net-intro")).toContainText("Node size = AI proposals on file");
+  await expect(page.locator("#net-intro")).toContainText("Node size = how many AI proposals each company has had");
 });
 
 test("the What you can do block shows only when the lens has an action", async ({ page }) => {
