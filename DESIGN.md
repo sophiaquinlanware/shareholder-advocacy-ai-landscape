@@ -32,6 +32,7 @@ All colours are CSS custom properties ("tokens") on `:root` in `styles.css`, eac
 - **Advocacy network node types** `--n-*`: company, proposal, manager, nonprofit, faith, pension, labor, foundation, coalition, other, person.
 - **Influence pathway tie types** `--t-*`: equity, compute, chips, dist(ribution), board, commercial, parent, lab.
 - **Disclosure scorecard** `--sc-*`: met, partial, silent.
+- **Fund votes** use no palette on purpose: every vote is the neutral `.pill.pending` label, so no vote reads as right or wrong (PRODUCT.md "Never claim" 1).
 
 Values are in `styles.css`; they are not repeated here so there is one source.
 
@@ -57,6 +58,9 @@ Values are in `styles.css`; they are not repeated here so there is one source.
 - **Callout** (accent left border), **timeline**, **levers** tiles, **steps** list.
 - **Graph controls:** search input and select (`.net-controls`), segmented toggle (`.seg`), legend chips (`.leg`, `.chip`), side detail panel (`.net-panel`).
 - **Source link** (`.src`) after each fact; **"source pending"** (`.unverified`) when the source is missing.
+- **Sticky first column** (`.sticky-col`): the row header of a wide table stays in view while the table scrolls sideways inside its box (fund votes tab). In the body it reads as normal 14px text, not the uppercase table-header style.
+- **Focus outline on scroll boxes** (`.table-wrap:focus-visible`): 2px `--accent` outline, so keyboard users can see and scroll a wide table.
+- **Labelled filter** (`.sr-label`): a visible text label wrapping a select in `.net-controls`, 13px `--ink-soft`.
 - **Coming soon** placeholder (`.coming`) for tabs not built yet.
 - **Footer:** the informs-not-coordinates statement, PRI link, credit and "open an issue" link.
 
