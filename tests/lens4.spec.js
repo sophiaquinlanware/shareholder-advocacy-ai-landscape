@@ -53,7 +53,7 @@ test("an ask with no coverage entries reads 'not yet assessed', never 'no rule'"
 test("year scrubber caps proposals, keeps upto= in the URL, and gives way to a single selected year", async ({
   page,
 }) => {
-  await open(page, "?lens=impact");
+  await open(page, "?lens=impact&graph=proposals");
   const r = page.locator("#net-upto");
   const min = await r.getAttribute("min");
   await r.fill(min);
@@ -76,7 +76,7 @@ test("year scrubber caps proposals, keeps upto= in the URL, and gives way to a s
 });
 
 test("Play changes its name to Pause and back (no aria-pressed)", async ({ page }) => {
-  await open(page, "?lens=impact");
+  await open(page, "?lens=impact&graph=proposals");
   const b = page.locator("#net-play");
   await b.click();
   await expect(b).toHaveText("Pause");
@@ -188,4 +188,44 @@ test("Motion: headings reveal line by line, then return to plain text; reduced m
   await p2.click("#tabbtn-pathways");
   expect(await p2.locator("#tab-pathways h2 .rl").count()).toBe(0);
   await ctx.close();
+});
+
+test("Network views: Connections hides proposals; Proposals shows them, with Active and Past", async ({ page }) => {
+  await open(page, "?lens=impact");
+  const shown = (kind) =>
+    page.$$eval(
+      "#net-graph svg > g > g > circle",
+      (cs, k) => cs.filter((c) => c.__data__ && c.__data__.kind === k && c.getAttribute("display") !== "none").length,
+      kind,
+    );
+  await expect(page.locator('#net-mode [data-mode="connections"]')).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("#net-pstatus")).toBeHidden();
+  expect(await shown("proposal")).toBe(0);
+  await page.click('#net-mode [data-mode="proposals"]');
+  await expect(page).toHaveURL(/graph=proposals/);
+  await expect(page.locator("#net-pstatus")).toBeVisible();
+  expect(await shown("proposal")).toBeGreaterThan(10);
+  expect(await shown("lab")).toBe(0);
+  const active = Number((await page.locator('#net-pstatus [data-pstatus="active"]').textContent()).match(/\d+/)[0]);
+  await page.click('#net-pstatus [data-pstatus="active"]');
+  expect(await shown("proposal")).toBe(active);
+  await expect(page.locator("#net-lens-status")).toContainText("Active");
+});
+
+test("Network views: the Policymaker lens opens on Proposals; focusing a proposal from Connections switches views", async ({
+  page,
+}) => {
+  await open(page, "?lens=policy");
+  await expect(page.locator('#net-mode [data-mode="proposals"]')).toHaveAttribute("aria-pressed", "true");
+  await page.click('#net-lens input[value="impact"]');
+  await page.click('#net-mode [data-mode="connections"]');
+  const pid = await page.evaluate(() => {
+    const c = [...document.querySelectorAll("#net-graph svg > g > g > circle")].find(
+      (x) => x.__data__ && x.__data__.kind === "proposal",
+    );
+    return c && c.__data__.id;
+  });
+  await page.evaluate((id) => window.focusNetworkNode(id), pid);
+  await expect(page.locator('#net-mode [data-mode="proposals"]')).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("#net-lens-status")).toContainText("Switched to the Proposals view");
 });

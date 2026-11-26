@@ -30,7 +30,7 @@
   function shell(el) {
     const nCos = new Set(V.ties.flatMap((t) => [t.from, t.to])).size;
     el.innerHTML = `
-      <h2>The chain, tier by tier</h2>
+      <h2>AI value chain, from chips to AI products: companies by tier</h2>
       <p class="intro">Where companies sit in the AI value chain, how they are tied to each other, and where investors have already engaged at each tier. ${plural(V.ties.length, "sourced tie")} between ${nCos} companies. ${esc(V.about ? "Tiers are this site's reading of each company's main role." : "")}</p>
       <div class="vc-tiers" role="group" aria-label="Tiers">${V.tiers
         .slice()
@@ -96,7 +96,7 @@
     // Key: one dash pattern per tie type.
     document.getElementById("vc-key").innerHTML = [...new Set(V.ties.map((t) => t.type))].map((k) =>
       `<span class="leg static"><svg class="mark" viewBox="0 0 28 10" aria-hidden="true"><line x1="0" y1="5" x2="28" y2="5" stroke="${ink}" stroke-width="2"${DASH[k] ? ` stroke-dasharray="${DASH[k]}"` : ""}></line></svg>${esc(k)}</span>`).join("")
-      + `<span class="status-note">Each line is one sourced tie; open a company to read its ties in words. Circle size = number of sourced ties; companies with no sourced tie are counted in each tier's panel. Strategic investors sit under frontier labs; their equity stakes are in Routes to a lab.</span>`;
+      + `<span class="status-note">Each line is one sourced tie; open a company to read its ties in words. Circle size = number of sourced ties; companies with no sourced tie are counted in each tier's panel. Strategic investors sit under frontier labs; their equity stakes are in Ties to each frontier lab.</span>`;
   }
 
   // Ties of the chosen tier or company stay strong; the rest fade, so crossing lines stay readable.
@@ -136,10 +136,10 @@
         <li><strong>Active here:</strong> ${(p.active_filers || []).length >= 12 ? "the 12 most active filers" : plural((p.active_filers || []).length, "filer")}, ${plural((p.coalitions || []).length, "coalition")}, ${plural((p.people || []).length, "person", "people")} on file.</li>
       </ul>
       <h4 id="vc-reach" tabindex="-1">Labs connected by sourced ties</h4>
-      <p class="status-note">From the sourced ties here and in Routes to a lab (chips, compute and distribution, plus equity stakes and parent companies), including labs owned by companies in this tier.</p>
+      <p class="status-note">From the sourced ties here and in Ties to each frontier lab (chips, compute and distribution, plus equity stakes and parent companies), including labs owned by companies in this tier.</p>
       <p>Reached directly${ownLabs}: ${(p.labs_reached_directly || []).map(esc).join(", ") || "none in the data"}.</p>
       ${routes.length ? `<p>Reached in two steps:</p><ul class="conn">${routes.join("")}</ul>` : ""}
-      <p class="status-note">Ties out of this tier: ${p.ties_from_tier ?? 0}; into it: ${p.ties_into_tier ?? 0}. A tie between two companies in the same tier counts both ways. The map above shows operating ties; equity stakes are drawn in Routes to a lab.</p>
+      <p class="status-note">Ties out of this tier: ${p.ties_from_tier ?? 0}; into it: ${p.ties_into_tier ?? 0}. A tie between two companies in the same tier counts both ways. The map above shows operating ties; equity stakes are drawn in Ties to each frontier lab.</p>
       <h4 id="vc-asks" tabindex="-1">Asks made here</h4>
       <p>${plural(p.ai_proposals || 0, "AI proposal")}${(p.proposal_topics && Object.keys(p.proposal_topics).length) ? ` (${Object.entries(p.proposal_topics).map(([k, n]) => `${esc(k)} ${n}`).join(", ")})` : ""}${p.median_support_pct != null ? `; median support ${p.median_support_pct}%, computed by this site from the recorded figures` : ""}.</p>
       ${capped(p.asks_made, p.ai_proposals, "proposals")}
@@ -156,7 +156,7 @@
       <h4 id="vc-routes" tabindex="-1">Shareholder routes</h4>
       <p>${routesMix ? esc(routesMix) : "Not recorded"}.</p>
       <h4 id="vc-fund" tabindex="-1">Fund-family votes on file</h4>
-      <p>${p.fund_vote_rows ?? 0} votes, counted once per fund family per proposal, from Form N-PX filings on proposals at these companies. Most are matched automatically and not yet reviewed; see How funds voted for each one.</p>`;
+      <p>${p.fund_vote_rows ?? 0} votes, counted once per fund family per proposal, from Form N-PX filings on proposals at these companies. Most are matched automatically and not yet reviewed; see How fund families voted for each one.</p>`;
     highlight((x) => (CO.get(x.from) || {}).tier === tid || (CO.get(x.to) || {}).tier === tid);
     announce(`${t.label}: details below the chart.`);
     document.querySelectorAll(".vc-tiers .chip").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.tier === tid)));
@@ -220,7 +220,7 @@
   window.renderValueChain = function (data, companies) {
     const el = document.getElementById("tab-value-chain");
     if (!el) return;
-    if (!data || !data.tiers || !data.ties) { el.innerHTML = `<div class="coming"><h2>Value chain</h2><p>Being sourced now.</p></div>`; return; }
+    if (!data || !data.tiers || !data.ties) { el.innerHTML = `<div class="coming"><h2>AI value chain</h2><p>Being sourced now.</p></div>`; return; }
     V = data;
     CO = new Map((companies || []).map((c) => [c.id, c]));
     shell(el);

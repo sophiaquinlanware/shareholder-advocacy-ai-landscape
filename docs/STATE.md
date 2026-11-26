@@ -50,6 +50,15 @@ Start here (Overview · Upcoming votes · New SEC filings) · Value chain (The c
 - **Check:** 160 passed; Lighthouse phone 100, desktop 91.
 - **Owner idea, next, after the data session's restructure merges:** two views on the network graph, (1) how everything is connected and (2) active and past proposals.
 
+## Network: two views, colour families, layout (owner, 2026-11-26)
+
+- **Two views:** "Connections" (who is tied to whom; the default) and "Proposals" (filers → proposals → companies; All, Active or Past). The view is kept in the URL as `graph=`. The Policymaker lens opens on Proposals. Plan docs/plans/2026-11-26-network-views.md; plan R1 68, result R1 76. The result R1 fixes went in after that review and were not re-reviewed.
+- **Colour families:** investors and advocates are green-blue; companies and labs pink-orange-red; proposals and asks yellow; policy neutral.
+- **Tool buttons:** "Show all", "My holdings" and "Show asks not yet filed" are square grey tool buttons.
+- **Layout:** a spread-out rounded rectangle that stays aligned to the column headings.
+- **Value chain naming:** headings name it ("AI value chain, from chips to AI products"), never "the chain".
+- **Check:** 168 passed; Lighthouse phone 100, desktop 95.
+
 ## Network key (owner, 2026-11-26)
 
 The "only" links are gone. Clicking a type chip cycles it: shown → highlighted (the rest dims) → crossed off → shown. "Show all" resets. Proposal categories work the same way. Small and owner-directed, so it was not separately reviewed; a test covers the cycle.
