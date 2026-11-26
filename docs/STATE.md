@@ -1,6 +1,6 @@
 # Shareholder Advocacy AI Landscape — current state
 
-Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 (data session, after policy coverage).
+Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 (UI session: lens Phases 1–4, Value chain tab, categories filter, all live).
 
 ## Sessions and branches (read this first)
 
@@ -9,7 +9,7 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 
 | Session | Owns | Branch | State |
 |---|---|---|---|
 | Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | none open | On `main`: 60 companies with tiers; rights maps for 29 US companies; value chain (44 ties, `per_tier`); 76 AI proposals at the 29 US-proxy companies (from 2023) with `plain_summary` (71), `ask_id` (12 recurring asks in `data/asks.json`), `vote_history` (16), filing deadlines and company `next_proposal_deadline` with open/passed status, recomputed weekly; fund votes (331 rows) with `pass_through_voting`; **`data/coverage.json`** (25 rows: how far causality-map policies already require each ask; 23 partial, 2 none, 0 full; every row `reviewed: false`); causality now has Colorado SB 26-189 (repeal and replace, signed 2026-05-14). `seeking` is empty: no public calls for co-filers found. |
-| UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, `graph.js`, `lenses.js`, `rules.js`, the other view JS files incl. `votes.js`, `DESIGN.md`, `tests/` | `design/lens-phase2` (merged to `main` when its reviews pass; the owner said to publish without asking) | Lens Phase 1 live; Phase 2 built (see "Lens system" below). Next: lens Phase 3 (Individual investor feed), Phase 4 (Policymaker), then the value-chain and engagement maps. |
+| UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, `graph.js`, `lenses.js`, `rules.js`, `valuechain.js`, the other view JS files incl. `votes.js`, `DESIGN.md`, `tests/` | none open (all merged to `main`) | Live: lens Phases 1–4; Value chain tab (12 tabs); Policy and causality as one map; the proposal categories filter and colour option (inert until the data session merges `category`). |
 | Protocol setup | `AGENTS.md`, `CLAUDE.md`, checks, `docs/` structure | `docs-session-onboarding` (local) | Idle. |
 
 **Data contract:** views read only `data/*.json`.
@@ -121,6 +121,13 @@ The owner's spec has four phases, and each phase gets its own plan and reviews i
   - **Flow:** a layered flow of the 44 sourced ties by tier, blue on white.
   - **Panels:** tier and company panels, structured by the owner's three parts (labs connected, asks made, who is active), plus shareholder routes.
   - **Engagement by tier:** a heatmap of true totals only; capped lists in value_chain.json are listed, never counted.
+
+- **Value chain reviews:** R1 UX 72, accessibility 77, data 72; R2 UX 86, accessibility 88, data 86, all PASS.
+- **Proposal categories (owner, via the data session, 2026-11-26):**
+  - **Proposals tab:** a "What it asks about" filter, plus the categories note.
+  - **Network:** Graph settings → "Colour proposals by what they ask about".
+  - Both read asks.json `categories` and `category` on proposals or graph nodes, and show nothing until that data is on `main`.
+  - Not separately reviewed (small, data-driven, tested with test data).
 
 ## Next (UI session)
 
