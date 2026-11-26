@@ -689,7 +689,7 @@
     "listed outside the US": 1,
     "private": 1
    },
-   "active_filers_count": 71,
+   "active_filers_count": 74,
    "active_filers": [
     {
      "id": "trillium",
@@ -702,18 +702,23 @@
      "proposals": 7
     },
     {
+     "id": "mercy",
+     "name": "Mercy Investment Services",
+     "proposals": 7
+    },
+    {
      "id": "share",
      "name": "SHARE (Shareholder Association for Research and Education)",
      "proposals": 7
     },
     {
-     "id": "mercy",
-     "name": "Mercy Investment Services",
+     "id": "nlpc",
+     "name": "National Legal and Policy Center",
      "proposals": 6
     },
     {
-     "id": "nlpc",
-     "name": "National Legal and Policy Center",
+     "id": "omi-us",
+     "name": "Missionary Oblates of Mary Immaculate, US Province",
      "proposals": 6
     },
     {
@@ -727,9 +732,9 @@
      "proposals": 5
     },
     {
-     "id": "omi-us",
-     "name": "Missionary Oblates of Mary Immaculate, US Province",
-     "proposals": 5
+     "id": "benedictine-mt-scholastica",
+     "name": "Benedictine Sisters of Mount St. Scholastica",
+     "proposals": 4
     },
     {
      "id": "commonspirit",
@@ -742,14 +747,9 @@
      "proposals": 4
     },
     {
-     "id": "ucc-pension",
-     "name": "Pension Plan of The United Church of Canada",
+     "id": "maryknoll-sisters",
+     "name": "Maryknoll Sisters",
      "proposals": 4
-    },
-    {
-     "id": "abhms",
-     "name": "American Baptist Home Mission Societies",
-     "proposals": 3
     }
    ],
    "coalitions": [
@@ -904,11 +904,6 @@
      "id": "person-edmond-ho",
      "name": "Edmond Ho",
      "org": "Vancity Investment Management"
-    },
-    {
-     "id": "person-eliza-pan",
-     "name": "Eliza Pan",
-     "org": "Amazon Employees for Climate Justice"
     },
     {
      "id": "person-emma-ruby-sachs",
@@ -1328,7 +1323,7 @@
    "shareholder_routes": {
     "US proxy rules apply": 6
    },
-   "active_filers_count": 45,
+   "active_filers_count": 46,
    "active_filers": [
     {
      "id": "as-you-sow",
@@ -1371,6 +1366,11 @@
      "proposals": 3
     },
     {
+     "id": "pcusa",
+     "name": "Presbyterian Church (U.S.A.)",
+     "proposals": 3
+    },
+    {
      "id": "portico",
      "name": "Portico Benefit Services",
      "proposals": 3
@@ -1383,11 +1383,6 @@
     {
      "id": "bowyer",
      "name": "Bowyer Research",
-     "proposals": 2
-    },
-    {
-     "id": "congregation-of-st-joseph-oh",
-     "name": "Congregation of St. Joseph (Ohio)",
      "proposals": 2
     }
    ],
@@ -1718,7 +1713,7 @@
     "US-listed foreign issuer": 2,
     "private": 1
    },
-   "active_filers_count": 77,
+   "active_filers_count": 80,
    "active_filers": [
     {
      "id": "trillium",
@@ -1734,11 +1729,6 @@
      "id": "nlpc",
      "name": "National Legal and Policy Center",
      "proposals": 10
-    },
-    {
-     "id": "as-you-sow",
-     "name": "As You Sow",
-     "proposals": 7
     },
     {
      "id": "iahr",
@@ -1766,6 +1756,11 @@
      "proposals": 6
     },
     {
+     "id": "as-you-sow",
+     "name": "As You Sow",
+     "proposals": 6
+    },
+    {
      "id": "iasj",
      "name": "Investor Advocates for Social Justice",
      "proposals": 6
@@ -1776,9 +1771,9 @@
      "proposals": 6
     },
     {
-     "id": "azzad",
-     "name": "Azzad Asset Management",
-     "proposals": 5
+     "id": "mercy",
+     "name": "Mercy Investment Services",
+     "proposals": 6
     }
    ],
    "coalitions": [
@@ -1933,11 +1928,6 @@
      "id": "person-edmond-ho",
      "name": "Edmond Ho",
      "org": "Vancity Investment Management"
-    },
-    {
-     "id": "person-eliza-pan",
-     "name": "Eliza Pan",
-     "org": "Amazon Employees for Climate Justice"
     },
     {
      "id": "person-emma-ruby-sachs",
@@ -2387,7 +2377,7 @@
     "not determined": 3,
     "private": 9
    },
-   "active_filers_count": 72,
+   "active_filers_count": 73,
    "active_filers": [
     {
      "id": "trillium",
@@ -2987,7 +2977,7 @@
     "US proxy rules apply": 5,
     "listed outside the US": 1
    },
-   "active_filers_count": 79,
+   "active_filers_count": 82,
    "active_filers": [
     {
      "id": "trillium",
@@ -3005,13 +2995,13 @@
      "proposals": 10
     },
     {
-     "id": "as-you-sow",
-     "name": "As You Sow",
+     "id": "iahr",
+     "name": "Investor Alliance for Human Rights",
      "proposals": 7
     },
     {
-     "id": "iahr",
-     "name": "Investor Alliance for Human Rights",
+     "id": "mercy",
+     "name": "Mercy Investment Services",
      "proposals": 7
     },
     {
@@ -3035,6 +3025,11 @@
      "proposals": 6
     },
     {
+     "id": "as-you-sow",
+     "name": "As You Sow",
+     "proposals": 6
+    },
+    {
      "id": "iasj",
      "name": "Investor Advocates for Social Justice",
      "proposals": 6
@@ -3042,11 +3037,6 @@
     {
      "id": "jlens",
      "name": "JLens",
-     "proposals": 6
-    },
-    {
-     "id": "mercy",
-     "name": "Mercy Investment Services",
      "proposals": 6
     }
    ],
@@ -3207,11 +3197,6 @@
      "id": "person-edmond-ho",
      "name": "Edmond Ho",
      "org": "Vancity Investment Management"
-    },
-    {
-     "id": "person-eliza-pan",
-     "name": "Eliza Pan",
-     "org": "Amazon Employees for Climate Justice"
     },
     {
      "id": "person-emma-ruby-sachs",
@@ -3543,16 +3528,16 @@
    "labs_reached_in_two_steps": [],
    "ties_from_tier": 10,
    "ties_into_tier": 23,
-   "ai_proposals": 70,
+   "ai_proposals": 72,
    "proposal_topics": {
-    "Social & economic impacts": 40,
+    "Social & economic impacts": 42,
     "AI governance & oversight": 15,
     "Data center impacts": 15
    },
    "median_support_pct": 12.4,
    "median_support_base": {
     "with_recorded_support": 61,
-    "proposals": 70
+    "proposals": 72
    },
    "asks_made": [
     {
@@ -3586,6 +3571,18 @@
      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
     },
     {
+     "company": "CRM",
+     "year": 2026,
+     "title": "AI-Related Human Rights Risks",
+     "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm"
+    },
+    {
+     "company": "CRM",
+     "year": 2026,
+     "title": "Dual-use and Defense Technologies",
+     "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm"
+    },
+    {
      "company": "GOOGL",
      "year": 2026,
      "title": "Enhanced Disclosure on Climate Goals",
@@ -3614,18 +3611,6 @@
      "year": 2026,
      "title": "Report on AI-Generated Misinformation",
      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
-    },
-    {
-     "company": "GOOGL",
-     "year": 2026,
-     "title": "Report on AI Data Usage Oversight",
-     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
-    },
-    {
-     "company": "IBM",
-     "year": 2026,
-     "title": "Stockholder proposal requesting a report on AI bias",
-     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm"
     }
    ],
    "investor_engagements": [
@@ -3664,14 +3649,14 @@
      "proposals": 15
     },
     {
-     "id": "as-you-sow",
-     "name": "As You Sow",
-     "proposals": 13
-    },
-    {
      "id": "eko",
      "name": "Ekō (formerly SumOfUs)",
      "proposals": 13
+    },
+    {
+     "id": "as-you-sow",
+     "name": "As You Sow",
+     "proposals": 12
     },
     {
      "id": "trillium",
@@ -3681,12 +3666,17 @@
     {
      "id": "mercy",
      "name": "Mercy Investment Services",
-     "proposals": 10
+     "proposals": 11
     },
     {
      "id": "omi-us",
      "name": "Missionary Oblates of Mary Immaculate, US Province",
-     "proposals": 10
+     "proposals": 11
+    },
+    {
+     "id": "open-mic",
+     "name": "Open MIC (Open Media and Information Companies Initiative)",
+     "proposals": 9
     },
     {
      "id": "arjuna",
@@ -3701,11 +3691,6 @@
     {
      "id": "iasj",
      "name": "Investor Advocates for Social Justice",
-     "proposals": 8
-    },
-    {
-     "id": "open-mic",
-     "name": "Open MIC (Open Media and Information Companies Initiative)",
      "proposals": 8
     },
     {
@@ -3886,11 +3871,6 @@
      "id": "person-edmond-ho",
      "name": "Edmond Ho",
      "org": "Vancity Investment Management"
-    },
-    {
-     "id": "person-eliza-pan",
-     "name": "Eliza Pan",
-     "org": "Amazon Employees for Climate Justice"
     },
     {
      "id": "person-emma-ruby-sachs",
