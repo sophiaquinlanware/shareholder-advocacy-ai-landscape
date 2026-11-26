@@ -28,7 +28,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "SEC Rule 14a-8 ... No later than close of business (5:30 p.m. Pacific Time) on June 24, 2027",
-   "degree": 49
+   "degree": 66
   },
   {
    "id": "co-GOOGL",
@@ -60,7 +60,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "Corporate Secretary must receive the written proposal ... no later than Friday, December 25, 2026.",
-   "degree": 44
+   "degree": 64
   },
   {
    "id": "co-META",
@@ -89,7 +89,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "the proposal must be received by us ... no later than December 17, 2026.",
-   "degree": 24
+   "degree": 35
   },
   {
    "id": "co-AMZN",
@@ -120,7 +120,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "must be received no later than 6:00 p.m., Pacific Time, on Thursday, December 10, 2026",
-   "degree": 22
+   "degree": 34
   },
   {
    "id": "co-NVDA",
@@ -148,7 +148,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "must submit their proposals in writing ... on or before January 12, 2027.",
-   "degree": 19
+   "degree": 32
   },
   {
    "id": "co-AAPL",
@@ -173,7 +173,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm",
    "next_proposal_deadline_status": "passed",
    "next_proposal_deadline_quote": "must be received on or before the close of business on September 10, 2026.",
-   "degree": 12
+   "degree": 24
   },
   {
    "id": "co-TSLA",
@@ -201,7 +201,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "such a proposal would need to be received ... no later than June 21, 2027",
-   "degree": 4
+   "degree": 14
   },
   {
    "id": "co-ANT",
@@ -1111,7 +1111,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526402816/orcl-20260925.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "Proposals for inclusion in 2027 proxy statement ... No later than the close of business on May 28, 2027.",
-   "degree": 2
+   "degree": 13
   },
   {
    "id": "co-9984",
@@ -1176,7 +1176,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "submitted in writing ... and received by us on or before November 27, 2026",
-   "degree": 5
+   "degree": 18
   },
   {
    "id": "co-AVGO",
@@ -1201,7 +1201,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/d49254ddef14a.htm",
    "next_proposal_deadline_status": "passed",
    "next_proposal_deadline_quote": "must comply with ... Rule 14a-8 ... and be received no later than November 2, 2026",
-   "degree": 4
+   "degree": 17
   },
   {
    "id": "co-TSM",
@@ -1293,7 +1293,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000191/crwv-20260422.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "our Corporate Secretary must receive the written proposal ... not later than December 23, 2026",
-   "degree": 3
+   "degree": 8
   },
   {
    "id": "co-NBIS",
@@ -2305,8 +2305,8 @@
    "org_type": "investor",
    "description": null,
    "website": null,
-   "source_url": null,
-   "degree": 7
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "degree": 18
   },
   {
    "id": "calstrs",
@@ -2316,8 +2316,8 @@
    "org_type": "investor",
    "description": null,
    "website": null,
-   "source_url": null,
-   "degree": 6
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "degree": 17
   },
   {
    "id": "dws",
@@ -2426,8 +2426,8 @@
    "org_type": "investor",
    "description": null,
    "website": null,
-   "source_url": null,
-   "degree": 5
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "degree": 15
   },
   {
    "id": "state-street",
@@ -3285,7 +3285,7 @@
    "description": "Bank whose largest stockholder is a Workers United joint board; its LongView Funds engage companies and file shareholder resolutions on net-zero emissions, diversity, freedom of association and reproductive rights.",
    "website": "https://www.amalgamatedbank.com",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1823608/000182360824000104/amal-20240411.htm",
-   "degree": 0
+   "degree": 11
   },
   {
    "id": "bailard",
@@ -9455,6 +9455,86 @@
    "degree": 1
   },
   {
+   "id": "parnassus-investments",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Parnassus Investments",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/",
+   "degree": 9
+  },
+  {
+   "id": "trillium-asset-management",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Trillium Asset Management",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "degree": 16
+  },
+  {
+   "id": "boston-common-asset-management",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Boston Common Asset Management",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/",
+   "degree": 6
+  },
+  {
+   "id": "zevin-asset-management",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Zevin Asset Management",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/",
+   "degree": 9
+  },
+  {
+   "id": "domini-impact-investments",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Domini Impact Investments",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1399069/000095012320002357/",
+   "degree": 1
+  },
+  {
+   "id": "arjuna-capital",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Arjuna Capital",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/",
+   "degree": 12
+  },
+  {
+   "id": "northstar-asset-management",
+   "type": "investor",
+   "layer": "investors",
+   "label": "NorthStar Asset Management",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "degree": 14
+  },
+  {
+   "id": "federated-hermes",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Federated Hermes",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "degree": 10
+  },
+  {
+   "id": "legal-general",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Legal & General Group",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "degree": 11
+  },
+  {
+   "id": "nys-common-retirement-fund",
+   "type": "investor",
+   "layer": "investors",
+   "label": "New York State Common Retirement Fund",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "degree": 11
+  },
+  {
    "id": "ev-vwfi-launch",
    "type": "response",
    "layer": "policy",
@@ -10386,7 +10466,7 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "ask_id": "ask-dc-climate-energy",
    "category": "data-centers",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "googl-2025-15(floor)",
@@ -10441,7 +10521,7 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-dc-climate-energy",
    "category": "data-centers",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "aapl-2025-5",
@@ -10675,7 +10755,7 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm",
    "ask_id": "ask-dc-water",
    "category": "data-centers",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "dlr-2025-5",
@@ -10699,7 +10779,7 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817925000509/dlr000000-def14a.htm",
    "ask_id": "ask-dc-water",
    "category": "data-centers",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "csco-2026-5",
@@ -10744,7 +10824,7 @@
    "plain_summary_note": "Secondary source: the resolution was not in a proxy statement. Text from the ICCR guide.",
    "ask_id": "ask-ai-oversight-reporting",
    "category": "governance-safety",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "crm-2026-dual-use-defense",
@@ -18002,6 +18082,1131 @@
    "pct_of_portfolio": 0.9465
   },
   {
+   "source": "parnassus-investments",
+   "target": "co-MSFT",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/",
+   "value_usd": 2149953704.0,
+   "pct_of_portfolio": 6.36
+  },
+  {
+   "source": "parnassus-investments",
+   "target": "co-GOOGL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/",
+   "value_usd": 1535824822.0,
+   "pct_of_portfolio": 4.54
+  },
+  {
+   "source": "parnassus-investments",
+   "target": "co-META",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/",
+   "value_usd": 678946874.0,
+   "pct_of_portfolio": 2.01
+  },
+  {
+   "source": "parnassus-investments",
+   "target": "co-AMZN",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/",
+   "value_usd": 1862960325.0,
+   "pct_of_portfolio": 5.51
+  },
+  {
+   "source": "parnassus-investments",
+   "target": "co-NVDA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/",
+   "value_usd": 1750078452.0,
+   "pct_of_portfolio": 5.18
+  },
+  {
+   "source": "parnassus-investments",
+   "target": "co-AAPL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/",
+   "value_usd": 1139902484.0,
+   "pct_of_portfolio": 3.37
+  },
+  {
+   "source": "parnassus-investments",
+   "target": "co-ORCL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/",
+   "value_usd": 60298041.0,
+   "pct_of_portfolio": 0.18
+  },
+  {
+   "source": "parnassus-investments",
+   "target": "co-AMD",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/",
+   "value_usd": 885195920.0,
+   "pct_of_portfolio": 2.62
+  },
+  {
+   "source": "parnassus-investments",
+   "target": "co-AVGO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/",
+   "value_usd": 848150540.0,
+   "pct_of_portfolio": 2.51
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "co-MSFT",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "value_usd": 200650499.0,
+   "pct_of_portfolio": 6.29
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "co-GOOGL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "value_usd": 192148189.0,
+   "pct_of_portfolio": 6.02
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "co-META",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "value_usd": 453238.0,
+   "pct_of_portfolio": 0.01
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "co-AMZN",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "value_usd": 883735.0,
+   "pct_of_portfolio": 0.03
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "co-NVDA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "value_usd": 263614856.0,
+   "pct_of_portfolio": 8.26
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "co-AAPL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "value_usd": 168094820.0,
+   "pct_of_portfolio": 5.27
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "co-ORCL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "value_usd": 1081649.0,
+   "pct_of_portfolio": 0.03
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "co-AMD",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "value_usd": 1858527.0,
+   "pct_of_portfolio": 0.06
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "co-AVGO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+   "value_usd": 61090267.0,
+   "pct_of_portfolio": 1.91
+  },
+  {
+   "source": "boston-common-asset-management",
+   "target": "co-MSFT",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/",
+   "value_usd": 86025127.0,
+   "pct_of_portfolio": 4.99
+  },
+  {
+   "source": "boston-common-asset-management",
+   "target": "co-GOOGL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/",
+   "value_usd": 87263170.0,
+   "pct_of_portfolio": 5.06
+  },
+  {
+   "source": "boston-common-asset-management",
+   "target": "co-NVDA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/",
+   "value_usd": 82404300.0,
+   "pct_of_portfolio": 4.78
+  },
+  {
+   "source": "boston-common-asset-management",
+   "target": "co-AAPL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/",
+   "value_usd": 77811122.0,
+   "pct_of_portfolio": 4.51
+  },
+  {
+   "source": "boston-common-asset-management",
+   "target": "co-AMD",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/",
+   "value_usd": 9634608.0,
+   "pct_of_portfolio": 0.56
+  },
+  {
+   "source": "boston-common-asset-management",
+   "target": "co-AVGO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/",
+   "value_usd": 42668531.0,
+   "pct_of_portfolio": 2.47
+  },
+  {
+   "source": "zevin-asset-management",
+   "target": "co-MSFT",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/",
+   "value_usd": 34447176.0,
+   "pct_of_portfolio": 4.93
+  },
+  {
+   "source": "zevin-asset-management",
+   "target": "co-GOOGL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/",
+   "value_usd": 47644657.0,
+   "pct_of_portfolio": 6.82
+  },
+  {
+   "source": "zevin-asset-management",
+   "target": "co-AMZN",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/",
+   "value_usd": 23498002.0,
+   "pct_of_portfolio": 3.36
+  },
+  {
+   "source": "zevin-asset-management",
+   "target": "co-NVDA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/",
+   "value_usd": 32184385.0,
+   "pct_of_portfolio": 4.6
+  },
+  {
+   "source": "zevin-asset-management",
+   "target": "co-TSLA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/",
+   "value_usd": 366519.0,
+   "pct_of_portfolio": 0.05
+  },
+  {
+   "source": "zevin-asset-management",
+   "target": "co-AMD",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/",
+   "value_usd": 255716.0,
+   "pct_of_portfolio": 0.04
+  },
+  {
+   "source": "zevin-asset-management",
+   "target": "co-AVGO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/",
+   "value_usd": 11511539.0,
+   "pct_of_portfolio": 1.65
+  },
+  {
+   "source": "domini-impact-investments",
+   "target": "co-TSLA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1399069/000095012320002357/",
+   "value_usd": 288.0,
+   "pct_of_portfolio": 3.79
+  },
+  {
+   "source": "arjuna-capital",
+   "target": "co-MSFT",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/",
+   "value_usd": 25065936.0,
+   "pct_of_portfolio": 5.6
+  },
+  {
+   "source": "arjuna-capital",
+   "target": "co-GOOGL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/",
+   "value_usd": 27827124.0,
+   "pct_of_portfolio": 6.21
+  },
+  {
+   "source": "arjuna-capital",
+   "target": "co-AMZN",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/",
+   "value_usd": 12313492.0,
+   "pct_of_portfolio": 2.75
+  },
+  {
+   "source": "arjuna-capital",
+   "target": "co-NVDA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/",
+   "value_usd": 34609473.0,
+   "pct_of_portfolio": 7.73
+  },
+  {
+   "source": "arjuna-capital",
+   "target": "co-AAPL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/",
+   "value_usd": 35707336.0,
+   "pct_of_portfolio": 7.97
+  },
+  {
+   "source": "arjuna-capital",
+   "target": "co-ORCL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/",
+   "value_usd": 1361193.0,
+   "pct_of_portfolio": 0.3
+  },
+  {
+   "source": "arjuna-capital",
+   "target": "co-AMD",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/",
+   "value_usd": 4470743.0,
+   "pct_of_portfolio": 1.0
+  },
+  {
+   "source": "arjuna-capital",
+   "target": "co-AVGO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/",
+   "value_usd": 10109005.0,
+   "pct_of_portfolio": 2.26
+  },
+  {
+   "source": "northstar-asset-management",
+   "target": "co-MSFT",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 14977496.0,
+   "pct_of_portfolio": 2.71
+  },
+  {
+   "source": "northstar-asset-management",
+   "target": "co-GOOGL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 6559268.0,
+   "pct_of_portfolio": 1.19
+  },
+  {
+   "source": "northstar-asset-management",
+   "target": "co-META",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 55802.0,
+   "pct_of_portfolio": 0.01
+  },
+  {
+   "source": "northstar-asset-management",
+   "target": "co-AMZN",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 3151327.0,
+   "pct_of_portfolio": 0.57
+  },
+  {
+   "source": "northstar-asset-management",
+   "target": "co-NVDA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 8298407.0,
+   "pct_of_portfolio": 1.5
+  },
+  {
+   "source": "northstar-asset-management",
+   "target": "co-AAPL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 51869823.0,
+   "pct_of_portfolio": 9.38
+  },
+  {
+   "source": "northstar-asset-management",
+   "target": "co-TSLA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 28986.0,
+   "pct_of_portfolio": 0.01
+  },
+  {
+   "source": "northstar-asset-management",
+   "target": "co-ORCL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 374477.0,
+   "pct_of_portfolio": 0.07
+  },
+  {
+   "source": "northstar-asset-management",
+   "target": "co-AMD",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 3857986.0,
+   "pct_of_portfolio": 0.7
+  },
+  {
+   "source": "northstar-asset-management",
+   "target": "co-AVGO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+   "value_usd": 1884924.0,
+   "pct_of_portfolio": 0.34
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-MSFT",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 710181.0,
+   "pct_of_portfolio": 4.97
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-GOOGL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 724802.0,
+   "pct_of_portfolio": 5.08
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-META",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 307829.0,
+   "pct_of_portfolio": 2.16
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-AMZN",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 419796.0,
+   "pct_of_portfolio": 2.94
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-NVDA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 1080047.0,
+   "pct_of_portfolio": 7.56
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-AAPL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 910923.0,
+   "pct_of_portfolio": 6.38
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-TSLA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 198870.0,
+   "pct_of_portfolio": 1.39
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-ORCL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 46155.0,
+   "pct_of_portfolio": 0.32
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-CRWV",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 1891.0,
+   "pct_of_portfolio": 0.01
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-AMD",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 196601.0,
+   "pct_of_portfolio": 1.38
+  },
+  {
+   "source": "amalgamated-bank",
+   "target": "co-AVGO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+   "value_usd": 325769.0,
+   "pct_of_portfolio": 2.28
+  },
+  {
+   "source": "federated-hermes",
+   "target": "co-MSFT",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 1319896132.0,
+   "pct_of_portfolio": 1.85
+  },
+  {
+   "source": "federated-hermes",
+   "target": "co-GOOGL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 1476540637.0,
+   "pct_of_portfolio": 2.07
+  },
+  {
+   "source": "federated-hermes",
+   "target": "co-META",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 455525443.0,
+   "pct_of_portfolio": 0.64
+  },
+  {
+   "source": "federated-hermes",
+   "target": "co-AMZN",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 1044448472.0,
+   "pct_of_portfolio": 1.46
+  },
+  {
+   "source": "federated-hermes",
+   "target": "co-NVDA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 2317611887.0,
+   "pct_of_portfolio": 3.25
+  },
+  {
+   "source": "federated-hermes",
+   "target": "co-AAPL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 1979194466.0,
+   "pct_of_portfolio": 2.77
+  },
+  {
+   "source": "federated-hermes",
+   "target": "co-TSLA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 298028336.0,
+   "pct_of_portfolio": 0.42
+  },
+  {
+   "source": "federated-hermes",
+   "target": "co-ORCL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 13878283.0,
+   "pct_of_portfolio": 0.02
+  },
+  {
+   "source": "federated-hermes",
+   "target": "co-AMD",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 437711221.0,
+   "pct_of_portfolio": 0.61
+  },
+  {
+   "source": "federated-hermes",
+   "target": "co-AVGO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+   "value_usd": 764218356.0,
+   "pct_of_portfolio": 1.07
+  },
+  {
+   "source": "legal-general",
+   "target": "co-MSFT",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 24871054423.0,
+   "pct_of_portfolio": 5.12
+  },
+  {
+   "source": "legal-general",
+   "target": "co-GOOGL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 23118465179.0,
+   "pct_of_portfolio": 4.76
+  },
+  {
+   "source": "legal-general",
+   "target": "co-META",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 9777841976.0,
+   "pct_of_portfolio": 2.01
+  },
+  {
+   "source": "legal-general",
+   "target": "co-AMZN",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 13617165946.0,
+   "pct_of_portfolio": 2.8
+  },
+  {
+   "source": "legal-general",
+   "target": "co-NVDA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 36095831027.0,
+   "pct_of_portfolio": 7.44
+  },
+  {
+   "source": "legal-general",
+   "target": "co-AAPL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 35205747796.0,
+   "pct_of_portfolio": 7.25
+  },
+  {
+   "source": "legal-general",
+   "target": "co-TSLA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 7283599640.0,
+   "pct_of_portfolio": 1.5
+  },
+  {
+   "source": "legal-general",
+   "target": "co-ORCL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 1357532604.0,
+   "pct_of_portfolio": 0.28
+  },
+  {
+   "source": "legal-general",
+   "target": "co-CRWV",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 116958255.0,
+   "pct_of_portfolio": 0.02
+  },
+  {
+   "source": "legal-general",
+   "target": "co-AMD",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 6789022504.0,
+   "pct_of_portfolio": 1.4
+  },
+  {
+   "source": "legal-general",
+   "target": "co-AVGO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+   "value_usd": 11211482631.0,
+   "pct_of_portfolio": 2.31
+  },
+  {
+   "source": "nys-common-retirement-fund",
+   "target": "co-MSFT",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 4338861137.0,
+   "pct_of_portfolio": 6.08
+  },
+  {
+   "source": "nys-common-retirement-fund",
+   "target": "co-GOOGL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 4142859151.0,
+   "pct_of_portfolio": 5.81
+  },
+  {
+   "source": "nys-common-retirement-fund",
+   "target": "co-META",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 1687188559.0,
+   "pct_of_portfolio": 2.36
+  },
+  {
+   "source": "nys-common-retirement-fund",
+   "target": "co-AMZN",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 2780394159.0,
+   "pct_of_portfolio": 3.9
+  },
+  {
+   "source": "nys-common-retirement-fund",
+   "target": "co-NVDA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 5688837091.0,
+   "pct_of_portfolio": 7.97
+  },
+  {
+   "source": "nys-common-retirement-fund",
+   "target": "co-AAPL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 5476118605.0,
+   "pct_of_portfolio": 7.68
+  },
+  {
+   "source": "nys-common-retirement-fund",
+   "target": "co-TSLA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 1079396595.0,
+   "pct_of_portfolio": 1.51
+  },
+  {
+   "source": "nys-common-retirement-fund",
+   "target": "co-ORCL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 249272681.0,
+   "pct_of_portfolio": 0.35
+  },
+  {
+   "source": "nys-common-retirement-fund",
+   "target": "co-CRWV",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 16143336.0,
+   "pct_of_portfolio": 0.02
+  },
+  {
+   "source": "nys-common-retirement-fund",
+   "target": "co-AMD",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 1131297180.0,
+   "pct_of_portfolio": 1.59
+  },
+  {
+   "source": "nys-common-retirement-fund",
+   "target": "co-AVGO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+   "value_usd": 1740947163.0,
+   "pct_of_portfolio": 2.44
+  },
+  {
+   "source": "calpers",
+   "target": "co-MSFT",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 9885468420.0,
+   "pct_of_portfolio": 5.18
+  },
+  {
+   "source": "calpers",
+   "target": "co-GOOGL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 9523177924.0,
+   "pct_of_portfolio": 4.99
+  },
+  {
+   "source": "calpers",
+   "target": "co-META",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 4407001531.0,
+   "pct_of_portfolio": 2.31
+  },
+  {
+   "source": "calpers",
+   "target": "co-AMZN",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 5132909070.0,
+   "pct_of_portfolio": 2.69
+  },
+  {
+   "source": "calpers",
+   "target": "co-NVDA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 12738573702.0,
+   "pct_of_portfolio": 6.68
+  },
+  {
+   "source": "calpers",
+   "target": "co-AAPL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 12043322625.0,
+   "pct_of_portfolio": 6.31
+  },
+  {
+   "source": "calpers",
+   "target": "co-TSLA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 1820700774.0,
+   "pct_of_portfolio": 0.95
+  },
+  {
+   "source": "calpers",
+   "target": "co-ORCL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 457025705.0,
+   "pct_of_portfolio": 0.24
+  },
+  {
+   "source": "calpers",
+   "target": "co-CRWV",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 42737674.0,
+   "pct_of_portfolio": 0.02
+  },
+  {
+   "source": "calpers",
+   "target": "co-AMD",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 1979797900.0,
+   "pct_of_portfolio": 1.04
+  },
+  {
+   "source": "calpers",
+   "target": "co-AVGO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+   "value_usd": 4530595077.0,
+   "pct_of_portfolio": 2.37
+  },
+  {
+   "source": "calstrs",
+   "target": "co-MSFT",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 5413077359.0,
+   "pct_of_portfolio": 4.96
+  },
+  {
+   "source": "calstrs",
+   "target": "co-GOOGL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 5402837736.0,
+   "pct_of_portfolio": 4.95
+  },
+  {
+   "source": "calstrs",
+   "target": "co-META",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 2386246850.0,
+   "pct_of_portfolio": 2.19
+  },
+  {
+   "source": "calstrs",
+   "target": "co-AMZN",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 3600566559.0,
+   "pct_of_portfolio": 3.3
+  },
+  {
+   "source": "calstrs",
+   "target": "co-NVDA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 7876756544.0,
+   "pct_of_portfolio": 7.22
+  },
+  {
+   "source": "calstrs",
+   "target": "co-AAPL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 7313330668.0,
+   "pct_of_portfolio": 6.7
+  },
+  {
+   "source": "calstrs",
+   "target": "co-TSLA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 1516329144.0,
+   "pct_of_portfolio": 1.39
+  },
+  {
+   "source": "calstrs",
+   "target": "co-ORCL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 354338760.0,
+   "pct_of_portfolio": 0.32
+  },
+  {
+   "source": "calstrs",
+   "target": "co-CRWV",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 39449853.0,
+   "pct_of_portfolio": 0.04
+  },
+  {
+   "source": "calstrs",
+   "target": "co-AMD",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 1494462998.0,
+   "pct_of_portfolio": 1.37
+  },
+  {
+   "source": "calstrs",
+   "target": "co-AVGO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+   "value_usd": 2377126443.0,
+   "pct_of_portfolio": 2.18
+  },
+  {
+   "source": "blackrock",
+   "target": "co-MSFT",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 247736163987.0,
+   "pct_of_portfolio": 5.61
+  },
+  {
+   "source": "blackrock",
+   "target": "co-GOOGL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 141875011591.0,
+   "pct_of_portfolio": 3.21
+  },
+  {
+   "source": "blackrock",
+   "target": "co-META",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 81262293039.0,
+   "pct_of_portfolio": 1.84
+  },
+  {
+   "source": "blackrock",
+   "target": "co-AMZN",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 125360342023.0,
+   "pct_of_portfolio": 2.84
+  },
+  {
+   "source": "blackrock",
+   "target": "co-NVDA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 227480902640.0,
+   "pct_of_portfolio": 5.15
+  },
+  {
+   "source": "blackrock",
+   "target": "co-AAPL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 222363339623.0,
+   "pct_of_portfolio": 5.03
+  },
+  {
+   "source": "blackrock",
+   "target": "co-TSLA",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 37613903389.0,
+   "pct_of_portfolio": 0.85
+  },
+  {
+   "source": "blackrock",
+   "target": "co-ORCL",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 18158966218.0,
+   "pct_of_portfolio": 0.41
+  },
+  {
+   "source": "blackrock",
+   "target": "co-AMD",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 21239684543.0,
+   "pct_of_portfolio": 0.48
+  },
+  {
+   "source": "blackrock",
+   "target": "co-AVGO",
+   "type": "holds shares in",
+   "layer": "companies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+   "value_usd": 54909661593.0,
+   "pct_of_portfolio": 1.24
+  },
+  {
    "source": "ceres",
    "target": "ev-vwfi-launch",
    "type": "acted in",
@@ -18556,6 +19761,13 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
   },
   {
+   "source": "trillium-asset-management",
+   "target": "googl-2025-7",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+  },
+  {
    "source": "googl-2025-15(floor)",
    "target": "co-GOOGL",
    "type": "proposal at",
@@ -18571,6 +19783,13 @@
   },
   {
    "source": "trillium",
+   "target": "googl-2026-5",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+  },
+  {
+   "source": "trillium-asset-management",
    "target": "googl-2026-5",
    "type": "filed (named in proxy)",
    "layer": "proposals",
@@ -18703,6 +19922,13 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm"
   },
   {
+   "source": "northstar-asset-management",
+   "target": "dlr-2026-4",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm"
+  },
+  {
    "source": "dlr-2025-5",
    "target": "co-DLR",
    "type": "proposal at",
@@ -18711,6 +19937,13 @@
   },
   {
    "source": "northstar",
+   "target": "dlr-2025-5",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817925000509/dlr000000-def14a.htm"
+  },
+  {
+   "source": "northstar-asset-management",
    "target": "dlr-2025-5",
    "type": "filed (named in proxy)",
    "layer": "proposals",
@@ -18745,6 +19978,13 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm"
   },
   {
+   "source": "northstar-asset-management",
+   "target": "crm-2026-ai-human-rights",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm"
+  },
+  {
    "source": "crm-2026-dual-use-defense",
    "target": "co-CRM",
    "type": "proposal at",
@@ -18759,6 +19999,13 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465923014650/o117232px14a6g.htm"
   },
   {
+   "source": "arjuna-capital",
+   "target": "co-MSFT",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465923014650/o117232px14a6g.htm"
+  },
+  {
    "source": "as-you-sow",
    "target": "co-MSFT",
    "type": "exempt solicitation for",
@@ -18767,6 +20014,13 @@
   },
   {
    "source": "arjuna",
+   "target": "co-MSFT",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465924018068/j1030243px14a6g.htm"
+  },
+  {
+   "source": "arjuna-capital",
    "target": "co-MSFT",
    "type": "exempt solicitation for",
    "layer": "proposals",
@@ -18788,6 +20042,13 @@
   },
   {
    "source": "northstar",
+   "target": "co-MSFT",
+   "type": "exempt solicitation support",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925013664/z911251px14a6g.htm"
+  },
+  {
+   "source": "northstar-asset-management",
    "target": "co-MSFT",
    "type": "exempt solicitation support",
    "layer": "proposals",
@@ -18857,6 +20118,13 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465926013276/y1027263px14a6g.htm"
   },
   {
+   "source": "trillium-asset-management",
+   "target": "co-MSFT",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465926013276/y1027263px14a6g.htm"
+  },
+  {
    "source": "jlens",
    "target": "co-MSFT",
    "type": "exempt solicitation against",
@@ -18893,6 +20161,13 @@
   },
   {
    "source": "arjuna",
+   "target": "co-META",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465924007454/o423247px14a6g.htm"
+  },
+  {
+   "source": "arjuna-capital",
    "target": "co-META",
    "type": "exempt solicitation for",
    "layer": "proposals",
@@ -18948,7 +20223,21 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923006504/r54230px14a6g.htm"
   },
   {
+   "source": "trillium-asset-management",
+   "target": "co-GOOGL",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923006504/r54230px14a6g.htm"
+  },
+  {
    "source": "arjuna",
+   "target": "co-GOOGL",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924008379/o532411px14a6g.htm"
+  },
+  {
+   "source": "arjuna-capital",
    "target": "co-GOOGL",
    "type": "exempt solicitation for",
    "layer": "proposals",
@@ -18962,7 +20251,21 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924008582/e58244px14a6g.htm"
   },
   {
+   "source": "trillium-asset-management",
+   "target": "co-GOOGL",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924008582/e58244px14a6g.htm"
+  },
+  {
    "source": "trillium",
+   "target": "co-GOOGL",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006528/w429250px14a6g.htm"
+  },
+  {
+   "source": "trillium-asset-management",
    "target": "co-GOOGL",
    "type": "exempt solicitation for",
    "layer": "proposals",
@@ -18990,6 +20293,13 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925007295/p59255px14a6g.htm"
   },
   {
+   "source": "zevin-asset-management",
+   "target": "co-GOOGL",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925007295/p59255px14a6g.htm"
+  },
+  {
    "source": "inspire",
    "target": "co-GOOGL",
    "type": "exempt solicitation for",
@@ -19011,6 +20321,13 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465926005129/o427262px14a6g.htm"
   },
   {
+   "source": "trillium-asset-management",
+   "target": "co-GOOGL",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465926005129/o427262px14a6g.htm"
+  },
+  {
    "source": "jlens",
    "target": "co-GOOGL",
    "type": "exempt solicitation against",
@@ -19026,6 +20343,13 @@
   },
   {
    "source": "zevin",
+   "target": "co-GOOGL",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465926005597/o55262px14a6g.htm"
+  },
+  {
+   "source": "zevin-asset-management",
    "target": "co-GOOGL",
    "type": "exempt solicitation for",
    "layer": "proposals",
