@@ -156,7 +156,7 @@
     const juris = [...new Set(C.events.map((e) => e.jurisdiction).filter(Boolean))].sort();
     const legend = Object.keys(LINK_VAR).map((k) => `<span class="leg static"><svg class="mark" viewBox="0 0 24 12" aria-hidden="true"><line x1="0" y1="6" x2="24" y2="6" stroke="${cssVar("--cz-link")}" stroke-width="2"${LINK_DASH[k] ? ` stroke-dasharray="${LINK_DASH[k]}"` : ""}></line></svg>${esc(k)}</span>`).join("");
     el.innerHTML = `
-      <h2>Policy map: what led to what</h2>
+      <h2>AI laws and rule changes: what led to what</h2>
       <p class="intro">What changed in the rules and laws around AI and shareholder proposals, and what led to what. Select an event to trace its causes and effects. ${C.events.length} dated events, ${fmt(d3min(C.events))} to ${fmt(d3max(C.events))}, with ${C.links.length} sourced links.</p>
       <div class="net-controls">
         <div class="seg" role="group" aria-label="Trace">

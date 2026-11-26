@@ -106,7 +106,7 @@
     const el = document.getElementById("tab-votes");
     if (!el) return;
     if (!data || !data.summary || !data.summary.length) {
-      el.innerHTML = `<div class="coming"><h2>How funds voted</h2><p>Being checked now.</p></div>`;
+      el.innerHTML = `<div class="coming"><h2>How fund families voted</h2><p>Being checked now.</p></div>`;
       return;
     }
     const checked = new Set(data.proposals_checked || []);
@@ -131,7 +131,7 @@
     const reviewedBy = (data.reviewed || []).map((r) => `${r.family}, ${r.proposal_ids.length} proposals (${longDate(r.date)})`).join("; ");
     const opt = (v, t, sel) => `<option value="${esc(v)}"${sel ? " selected" : ""}>${esc(t)}</option>`;
     el.innerHTML = `
-      <h2>How funds voted</h2>
+      <h2>How fund families voted</h2>
       <p class="intro">Form N-PX votes by ${families.length} fund families on AI proposals at tracked companies, meetings ${esc(longDate(data.first_meeting_covered))} to ${esc(longDate(data.last_meeting_covered))}. Each vote links to its filing. No vote is rated, and nothing here suggests how to vote. Not affiliated with any fund shown.</p>
       <ul class="steps">
         <li><strong>Split</strong> means the family reported more than one way of voting on that proposal. The numbers count fund records: different funds can vote differently, and a single fund can split its own shares, as pass-through voting programs do.</li>
