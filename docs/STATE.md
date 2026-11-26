@@ -152,6 +152,8 @@ The owner's spec has four phases, and each phase gets its own plan and reviews i
 6. **Network link contrast:** links are `--blue-3` at 0.35 opacity (about 1.5:1). The dotted "inferred" lines are hard to tell from dashed membership lines at 1px. The panel and List view carry the same facts as text. Raising the opacity makes the graph busier, so it's for the owner (accessibility R1).
 7. **Proposals tab has no filer filter**, so the network can't offer "Open its filings in Proposals".
 
+12. **Ceres and the Valuing Water Finance Initiative (owner asked, 2026-11-26):** these aren't in data/ yet. Add them as coalitions, with member edges to filers already in the graph, the companies they engage (data-center water and energy) and any AI data-center events. The data session's research agent may have left results in its scratchpad (ceres.json); nothing has been merged. Data session.
+
 ## Owner actions
 
 - Confirm or change the Lighthouse bar (ADR 0002).

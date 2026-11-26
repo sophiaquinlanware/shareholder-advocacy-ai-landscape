@@ -44,10 +44,12 @@ test("a company with no upcoming AI proposal says so, scoped to this tracker", a
   await expect(page.locator(".feed-quiet")).toContainText("No upcoming AI proposals in this tracker for Apple.");
 });
 
-test("a fund family with no readable votes gives the reason; unknown input is reported", async ({ page }) => {
+test("a fund family is matched by name; unknown input is reported", async ({ page }) => {
+  // Praxis's votes are readable since the all-filings run (fund_votes.json not_shown is empty), so it matches.
   await openFeed(page);
   await show(page, "Praxis, ZZZZ");
-  await expect(page.locator("#lf-status")).toContainText("Praxis files Form N-PX only in the older text format");
+  await expect(page.locator("#lf-status")).toContainText("fund family: Praxis");
+  await expect(page.locator("#lf-status")).not.toContainText("older text format");
   await expect(page.locator("#lf-status")).toContainText(
     /Not found among the \d+ tracked companies or the \d+ fund families with readable Form N-PX votes: ZZZZ/,
   );
