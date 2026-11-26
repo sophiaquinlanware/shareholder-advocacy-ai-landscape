@@ -136,8 +136,8 @@
     },
     {
      "id": "G2",
-     "score": "met",
-     "evidence": "The proxy states the Environmental, Social, and Public Policy Committee oversees responsible AI policies and programs and AI governance and regulation risk.",
+     "score": "partial",
+     "evidence": "The proxy says the Environmental, Social, and Public Policy Committee oversees responsible AI and AI governance risk; the committee charter itself was not checked for AI language.",
      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
      "doc_date": "2026-10"
     },
