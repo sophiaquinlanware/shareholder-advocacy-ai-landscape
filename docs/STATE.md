@@ -2,6 +2,23 @@
 
 Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25.
 
+## Sessions and branches (read this first; updated 2026-11-25 by the data session)
+
+**The live site is `main`**, published to https://sophiaquinlanware.github.io/shareholder-advocacy-ai-landscape/ on every push. Anything not on `main` is not on the site. As of `e95c5b1` the live site has: the blue-green restyle (round 1), the **Fund votes** tab (`votes.js`, section `#tab-votes`, tab `data-tab="votes"`), the disclosure scorecard, and sourced status reasons for withdrawn/excluded proposals.
+
+| Session | Owns | Branch | State |
+|---|---|---|---|
+| Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | `data/company-universe` (open) | Company universe (60 companies, owner kept all) in cleanup; plan reviewed and revised once. Not merged. |
+| UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, the view JS files, `DESIGN.md` | `design/round2-structure` (open, work in progress) | Round 2 structure: ten task-led tabs, white/black/blue look. **Not merged, so not live.** Also a private Claude Design canvas with mockups, which is not the site. |
+| Protocol setup | `AGENTS.md`, `CLAUDE.md`, checks, `docs/` structure | `docs-session-onboarding` (local) | Idle. |
+
+**Before `design/round2-structure` merges** (it branched before the Fund votes merge and is 16 commits behind `main`):
+1. Merge `main` into it first (rule 17) and run `npm run check`.
+2. **Tab id collision:** round 2's "Upcoming votes" tab uses `data-tab="votes"` / `#tab-votes`, which the live Fund votes tab already uses (`votes.js` draws into `#tab-votes`). Keep the Fund votes tab (owner-approved and published). Suggested: give Fund votes `data-tab="fundvotes"` / `#tab-fundvotes` and change the one `getElementById("tab-votes")` in `votes.js`; or rename Upcoming votes. Either way, both tabs must survive the merge.
+3. Tabs on `main` that round 2 drops or renames ("Why now", "How you can weigh in", "Data center water", "Fund votes") need an explicit decision in the round 2 plan, quoting the owner.
+
+**Data contract between sessions:** views read only `data/*.json`. Company fields agreed for the universe: `sectors`, `engagement_basis` {text,url} (labelled "Why included"), `basis_type`, `shareholder_route` + `route_source_url`, `rights_tracked`, `source_note`. Proposal fields: `status_reason`, `status_source_url`, `proponent`, `meeting_date_source`, `results_note`.
+
 ## Phase
 
 The **blue-green restyle, round 1 of 2 (colour and type only)**, is merged to `main` (plan: docs/plans/2026-11-25-blue-green-restyle.md). It covers:
@@ -14,6 +31,8 @@ The **blue-green restyle, round 1 of 2 (colour and type only)**, is merged to `m
 - a hatched or outlined scorecard state.
 
 Wording, chart types and data are unchanged. **Round 2 (structure and wording) is next** and needs the owner's go-ahead. See "Round 2 brief" below.
+
+**Fund votes tab** (Form N-PX), merged 2026-11-25 from branch `data/fund-votes` with the owner's go-ahead: 8 fund families (BlackRock iShares, Calvert, Domini, Green Century, Impax, Parnassus, TIAA-CREF, Vanguard) on the AI proposals voted July 2023 to June 2026, 298 family-by-proposal rows. Data pipeline: `scripts/npx_votes.py` (manual "fund-votes" task in refresh.yml, needs `SEC_USER_AGENT`) → run artifact → `scripts/publish_fund_votes.py` → `data/fund_votes.json`; reviewed rows in `data/fund_votes_reviewed.json` (Parnassus, 39, owner, 2026-11-25). Plan: docs/plans/2026-11-25-fund-votes.md.
 
 Before that: the working protocol (AGENTS.md) and the check suite (`npm run check`) were set up. The disclosure scorecard tab and the fund-vote (N-PX) review script landed the same day.
 
@@ -37,6 +56,24 @@ Before that: the working protocol (AGENTS.md) and the check suite (`npm run chec
 | Layout shift (CLS) | phone 0.44, desktop 0.493 (was 0.49). The font swap adds about 0.01; the rest is queue item 3. |
 | Web-font bytes (latin woff2, measured) | 93,348 (was 170,600 with Source Serif 4): −45% |
 
+## Latest check (2026-11-25, merge of `data/fund-votes` into `main`)
+
+| Step | Result |
+|---|---|
+| Lint | pass (0 errors) |
+| Build | pass |
+| Tests: 12 tabs × 1440/390 px × light/dark, load errors, local links | **24/24 pass** (queue items 1 and 2 fixed in data) |
+| Lighthouse phone | accessibility 100, best practices 100, SEO 100, **performance 77** (bar 80) |
+| Lighthouse desktop | accessibility 100, best practices 100, SEO 100, **performance 57** (bar 80) |
+
+## Latest review scores (fund votes)
+
+| Field | Plan R1 | Result R1 | Result R2 |
+|---|---|---|---|
+| Data accuracy | 62 REVISE | 72 REVISE | 78 REVISE → fixes applied after the round cap, not re-reviewed (owner approved publishing) |
+| UX / content | 76 REVISE | 78 REVISE | 86 PASS |
+| Accessibility | 74 REVISE | 82 PASS | not needed |
+
 ## Latest review scores (blue-green restyle)
 
 | Field | Plan R1 | Result R1 | Result R2 |
@@ -49,14 +86,14 @@ Before that: the working protocol (AGENTS.md) and the check suite (`npm run chec
 
 1. **Data-science audit of every chart.** For each dataset (graph.json, pathways.json, causality.json, proposals.json, scorecard.json), record its entities, relation types, counts and time span, then pick the chart that best shows how things relate. Candidates from the canvas: a layered filers → companies → labs view for pathways, and a network that sizes nodes by prevalence. No decorative visuals: a chart has to be drawn from `data/`.
 2. **Wording for practitioners.** The audience is shareholder advocates. Cut definitions, primers and the retail "how to vote" content. Headings become plain data labels, with no slogans. Examples to replace: "The ballot route is narrowing", "Where leverage still exists", "How you can weigh in".
-3. **Proposal feed:** all 65 proposals, including withdrawn and excluded, each with a status label and the sourced reason. Needs a `status_reason` and `status_source_url` field in `data/proposals.json`; the data session owns that file.
+3. **Proposal feed:** all 65 proposals, including withdrawn and excluded, each with a status label and the sourced reason. `status_reason`, `status_source_url` and `proponent` are now in `data/proposals.json` for the three withdrawn/excluded proposals (merged from `data/proposal-status`).
 4. **Always-visible table equivalents** for the pathways and causality graphs, as the network has.
 5. Every control does something real: no placeholder links or buttons.
 
 ## Queue (found, not picked up)
 
-1. **Missing data files.** `app.js` loads `data/changes.json` and `data/tracking.json`. Neither exists until the weekly job first runs `scripts/refresh.py`, so the page logs two 404 errors. Fix: commit empty starting files (`{"items": []}` and `{}`), or have `app.js` skip the request when they're absent.
-2. **Text in a link field.** Three Microsoft proposals in `data/proposals.json` have `results_url` set to "Not yet filed (meeting 2026-12-08)", which the page turns into a broken link. Fix in the data shape: empty `results_url` plus a separate note.
+1. **Fund votes follow-ups.** (a) 14 near-miss votes (3 distinct items, mostly BlackRock wording) sit in `data/fund_votes.json` `near_misses` for a person to confirm; (b) Meta 2026 "AI data usage oversight" is held back ("Needs checking"): two ballot items read as it; check the proxy and add the second proposal; (c) peer families are not reviewed row by row (shown with †); (d) Praxis and Domini 2025-26 file N-PX as text only; (e) data accuracy R2 fixes were applied after the round cap and not re-reviewed.
+2. **Company universe expansion** (owner, 2026-11-25: every company worth influencing on responsible AI across consumer AI, enterprise AI, data centers and frontier labs). Data session researching; plan to come as docs/plans/2026-11-25-company-universe.md. Agreed fields with the UI session: `sectors` (["consumer AI", "enterprise AI", "data centers & compute", "frontier lab"]) and `engagement_basis` {text, url} in data/companies.json.
 3. **Layout shift.** CLS 0.44–0.49 (good is under 0.1), because content jumps as tabs fill in after the data loads. This is why performance is under 80. It's a change to how the page works, so it needs the owner's go-ahead. Pair it with `defer` on the scripts at the end of `index.html` and a preload for the Inter Tight woff2; Lighthouse estimates 1.5 s of render-blocking time.
 4. **Outside links to check by hand:** an SEC comment PDF (`data/causality.json`) returned 404 without an SEC user agent; www.omiusa.org and www.harringtoninvestments.com (`data/graph.json`) would not connect from Node.
 5. **Deploy publishes the whole repo** (`path: .` in refresh.yml), including docs/ and tests/. It could publish `dist/` after `npm run build` instead. This is a deploy change, so it's for the owner.
@@ -66,7 +103,7 @@ Before that: the working protocol (AGENTS.md) and the check suite (`npm run chec
 9. **Network legend colour reuse:** 15 legend entries share 11 colours (DESIGN.md, palettes). This is part of the round 2 chart audit.
 10. **Disclosure scorecard layout:** the 17-column heatmap is wider than its column at desktop width, so the last pillar is cut off next to the 300px panel. Reported by the data session.
 
-Parked, not merged: local branch `fix-missing-data-and-results-link` (commit 1129740, in the `.claude/worktrees/protocol-setup` worktree, not pushed) has unreviewed fixes for queue items 1 and 2. Use it or delete it.
+Parked, not merged: local branch `fix-missing-data-and-results-link` (commit 1129740, in the `.claude/worktrees/protocol-setup` worktree, not pushed) duplicates the old missing-files and link-field fixes, which are now on `main` from `data/fund-votes`. It can be deleted.
 
 ## Owner actions
 

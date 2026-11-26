@@ -4,7 +4,7 @@
 // Audience: shareholder-advocacy practitioners. Labels are plain; no definitions or explainers.
 
 const DATA = {};
-const FILES = ["site", "companies", "upcoming", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph", "scorecard"];
+const FILES = ["site", "companies", "upcoming", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph", "scorecard", "fund_votes"];
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
@@ -77,7 +77,7 @@ function wireSort(box, state, redraw) {
 }
 
 // ---------- Upcoming votes ----------
-function renderVotes() {
+function renderUpcoming() {
   const up = DATA.upcoming || {};
   const meetings = [...(up.meetings || [])].sort((a, b) => String(a.sort || "").localeCompare(String(b.sort || "")));
   const items = meetings.flatMap((m) => (m.items || []).map((i) => {
@@ -97,13 +97,13 @@ function renderVotes() {
       <td>${esc(i.board_rec || "")}</td>
       <td class="num">${h.voted ? `${h.voted} voted<div class="ticker">median ${h.median}%, high ${h.max}%</div>` : `<span class="ticker">none on file</span>`}</td></tr>`;
   }).join("");
-  document.getElementById("tab-votes").innerHTML = `
+  document.getElementById("tab-upcoming").innerHTML = `
     <h2>Upcoming votes</h2>
     <p class="intro">${plural(items.length, "AI proposal")} on ${plural(meetings.filter((m) => (m.items || []).length).length, "ballot")}, by meeting date. Source: each company's proxy statement. "AI votes at company" = earlier AI proposals there with a recorded result.</p>
     ${rows ? `<div class="table-wrap"><table><thead><tr><th scope="col">Meeting</th><th scope="col">Company</th><th scope="col">Item</th><th scope="col">Proposal</th><th scope="col">Filed by</th><th scope="col">Topic</th><th scope="col">Board</th><th scope="col">AI votes at company</th></tr></thead><tbody>${rows}</tbody></table></div>` : `<p class="status-note">No AI proposals on announced ballots.</p>`}
     ${empty.length ? `<h3 class="sub-h">Meetings with no AI proposals on the ballot, or ballot not yet filed</h3>
       <ul class="steps">${empty.map((m) => `<li><button type="button" class="linklike" data-co="${esc(m.ticker)}">${esc(m.company)}</button>, ${esc(m.meeting_label)}: ${esc(m.status_label || "")}${m.proxy_url ? src(m.proxy_url, "proxy") : ""}</li>`).join("")}</ul>` : ""}`;
-  wireCompanyLinks(document.getElementById("tab-votes"));
+  wireCompanyLinks(document.getElementById("tab-upcoming"));
 }
 
 // Earlier AI proposals at a company that have a recorded result: count, median and highest support.
@@ -522,7 +522,10 @@ function policyTimeline() {
 }
 
 // ---------- Tabs (WAI-ARIA tabs pattern: arrow keys, Home/End, roving tabindex) ----------
+// Old links keep working: tabs that were renamed or folded into another tab.
+const TAB_ALIASES = { why: "causality", "weigh-in": "upcoming", water: "upcoming", new: "new" };
 function showTab(name, focus = false) {
+  name = TAB_ALIASES[name] || name;
   const buttons = [...document.querySelectorAll('.tabs [role="tab"]')];
   if (!buttons.some((b) => b.dataset.tab === name)) name = buttons[0].dataset.tab;
   buttons.forEach((b) => {
@@ -579,7 +582,7 @@ async function main() {
     document.getElementById("last-updated").textContent = `${plural(nCos, "company", "companies")} · ${plural(nProps, "proposal")} · every fact links to its source · SEC filings last checked ${fmtDate(checked)}`;
   };
   header();
-  renderVotes();
+  renderUpcoming();
   renderFeed();
   renderRights();
   await rest;
@@ -594,6 +597,7 @@ async function main() {
   window.renderCausality(DATA.causality);
   document.getElementById("tab-causality").insertAdjacentHTML("afterbegin", policyTimeline());
   window.renderScorecard(DATA.scorecard);
+  window.renderVotes(DATA.fund_votes, DATA.proposals);
   renderPeople();
   renderNew();
 }

@@ -12,7 +12,7 @@ The tracker has two phases.
 | Vote results | SEC EDGAR 8-K, Item 5.07 | Automatic | Weekly |
 | Investor letters to other shareholders | SEC EDGAR exempt solicitations (PX14A6G) | Automatic | Weekly |
 | Proposals filed and later withdrawn (these never reach the proxy) | As You Sow's shareholder resolution tracker and the annual *Proxy Preview* report; ICCR's annual proxy resolutions guide | Checked by hand when each is published | Each proxy season (roughly January to March) |
-| How funds voted | SEC EDGAR Form N-PX | Automatic once the institutional votes tab is built | Yearly (filed by August 31) |
+| How funds voted | SEC EDGAR Form N-PX (structured filings, meetings from July 2023) | Manual "fund-votes" task in the GitHub Actions tab runs `scripts/npx_votes.py`; a person checks the result, then `scripts/publish_fund_votes.py` builds `data/fund_votes.json`. Rows a person has reviewed are listed in `data/fund_votes_reviewed.json` | Yearly, after the August 31 filing deadline |
 | Bylaws and proposal thresholds | Company 8-K and 10-K exhibits (bylaws, usually Exhibit 3.2) | Automatic flag when a company files a bylaw change (8-K Item 5.03) | Weekly flag, reviewed by hand |
 | Ties between public companies and AI labs | Company 10-K and 10-Q filings and press releases | Reviewed by hand | Quarterly |
 | People leading engagement | Each organization's own team or leadership page | Links checked automatically, roles reviewed by hand | Quarterly |

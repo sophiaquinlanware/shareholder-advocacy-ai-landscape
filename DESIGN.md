@@ -42,6 +42,8 @@ One white theme (`color-scheme: light`). All colours are tokens on `:root` in `s
 | Policy and causality | Event nodes mid blue. Link type by dash pattern: led to solid · responded to dashed · restricts dotted · enables dash-dot · cited by sparse dots. |
 | Disclosure scorecard | Met = solid blue, partial = hatched blue, silent = grey outline. |
 
+**Fund votes** (from main, data session) use no palette on purpose: every vote is the neutral `.pill.pending` label, so no vote reads as right or wrong (PRODUCT.md "Never claim" 1). The table has a sticky first column (`.sticky-col`, with `scroll-padding-left` 330px on its box so a focused cell never hides under it), a left-aligned caption (`.fv-caption`), labelled filters (`.sr-label`) and a focus outline on the scroll box (`.table-wrap:focus-visible`).
+
 Every visual has a text equivalent on the same tab: the proposals table, the network list view, the pathways tie table, the causality event table, and the scorecard evidence panel.
 
 ## Typography
@@ -58,9 +60,9 @@ Every visual has a text equivalent on the same tab: the proposals table, the net
 
 ## Tabs (task order)
 
-Upcoming votes · Company lookup · Proposals · Rights map · Co-filer network · Contacts · Lab pathways · Policy and causality · Disclosure scorecard · New filings.
+Upcoming votes (`#upcoming`) · Company lookup · Proposals · Fund votes (`#votes`, unchanged from main) · Rights map · Co-filer network · Contacts · Lab pathways · Policy and causality · Disclosure scorecard · New filings.
 
-They follow the WAI-ARIA tabs pattern: `aria-controls` and `aria-labelledby`, a roving tabindex, and Left/Right/Home/End keys. An unknown hash opens the first tab.
+They follow the WAI-ARIA tabs pattern: `aria-controls` and `aria-labelledby`, a roving tabindex, and Left/Right/Home/End keys. Old links redirect: `#why` goes to Policy and causality, which holds the policy timeline; `#weigh-in` and `#water` go to Upcoming votes. Any other unknown hash opens the first tab.
 
 ## Components
 
