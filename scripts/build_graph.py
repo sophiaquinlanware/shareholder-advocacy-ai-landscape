@@ -240,7 +240,8 @@ def main():
     # Fields for the impact investor view, copied from proposals.json and companies.json
     # (vote history, filing deadlines, calls for co-filers) onto the matching graph nodes.
     PHASE2_FIELDS = ("vote_history", "filing_deadline", "filing_deadline_source", "seeking", "meeting_date",
-                     "results_url", "support_note", "results_note", "status_reason", "status_source_url")
+                     "results_url", "support_note", "results_note", "status_reason", "status_source_url",
+                     "plain_summary", "plain_summary_source", "plain_summary_note")
     # The SEC-based record (proposals.json) is authoritative for these, whatever the node's id.
     AUTHORITATIVE = ("support_pct", "status", "topic", "subtopic")
     pj_by_id = {p["id"]: p for p in load("proposals.json").get("proposals", [])}

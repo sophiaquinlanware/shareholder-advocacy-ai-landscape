@@ -7225,6 +7225,56 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/76721/000139834424017055/"
   }
  ],
+ "pass_through_voting": {
+  "Parnassus": {
+   "offered": null,
+   "note": "No program found on the Parnassus stewardship proxy voting page.",
+   "source_url": "https://www.parnassus.com/sustainability/stewardship/proxy-voting",
+   "evidence": "no program found on the pages checked"
+  },
+  "BlackRock (iShares)": {
+   "offered": true,
+   "note": "Partial: 650+ institutional index and systematic pooled funds plus SMAs, and a U.S. retail program for participating funds such as iShares Core S&P 500 ETF.",
+   "source_url": "https://www.blackrock.com/corporate/about-us/investment-stewardship/blackrock-voting-choice",
+   "evidence": "stated by the family"
+  },
+  "Vanguard": {
+   "offered": true,
+   "note": "Partial: 32 equity index mutual funds and ETFs as of July 31, 2026, open to individual investors, advisors and plan sponsors.",
+   "source_url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/about-our-funds/proxy-voting-across-funds/investor-choice.html",
+   "evidence": "stated by the family"
+  },
+  "Calvert (Morgan Stanley)": {
+   "offered": null,
+   "note": "No program found on the Calvert 2026 proxy season page or calvert.com; Calvert votes fund proxies itself.",
+   "source_url": "https://www.calvert.com/insights/articles/2026-proxy-season.html",
+   "evidence": "no program found on the pages checked"
+  },
+  "Domini": {
+   "offered": false,
+   "note": "No program found on the Domini Proxy Voting page, which describes votes Domini casts on behalf of its fund investors.",
+   "source_url": "https://domini.com/proxyvoting",
+   "evidence": "the family says it votes fund proxies itself"
+  },
+  "Green Century": {
+   "offered": null,
+   "note": "No program found on the Green Century Our Impact page; Green Century votes each fund's proxies itself.",
+   "source_url": "https://www.greencentury.com/our-impact/",
+   "evidence": "no program found on the pages checked"
+  },
+  "Impax (Pax)": {
+   "offered": null,
+   "note": "No program found on the Impax Investment Sustainability and Stewardship page or in searches of its U.S. proxy documents.",
+   "source_url": "https://impaxam.com/impax-sustainability-centre/investment-sustainability-and-stewardship/",
+   "evidence": "no program found on the pages checked"
+  },
+  "TIAA-CREF (Nuveen)": {
+   "offered": null,
+   "note": "Nuveen proxy voting page blocked automated access; searches of Nuveen and TIAA filings found no program.",
+   "source_url": "https://www.nuveen.com/global/proxy-voting",
+   "evidence": "not determinable from the family pages"
+  }
+ },
  "notes": [
   "Vanguard World Fund 0001104659-24-094271: index failed (HTTP Error 502: Bad Gateway)",
   "Vanguard Institutional Index Funds 0001104659-26-101889: no structured vote table (older text format)",
