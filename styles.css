@@ -467,15 +467,6 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
 @media (max-width: 640px) { .st-site { display: none; } .st-page { font-size: 16px; } }
 @media (prefers-reduced-motion: reduce) { .sticky-title { transition: none; } }
 
-/* Owner (2026-11-26): the page title stays visible while scrolling; the tab rows tuck away on scroll down and
-   return on scroll up (from the motion brief), which also keeps the bar short on phones. */
-/* Only opacity animates (motion brief: transform and opacity only); the height change is instant and the
-   browser keeps the content where it was. */
-.tab-row { transition: opacity var(--dur-micro) var(--ease); max-height: 480px; overflow: hidden; }
-.tabs.is-stuck.tabs-tucked .tab-row { max-height: 0; opacity: 0; overflow: hidden; }
-.tabs.is-stuck.tabs-tucked .sticky-title { padding-bottom: 10px; }
-.tabs:focus-within .tab-row { max-height: 480px !important; opacity: 1 !important; }
-@media (prefers-reduced-motion: reduce) { .tab-row { transition: none; } }
 
 /* Motion stage 2: headline line reveal (motion.js). Each line sits in a clipped box; its text rises into it. */
 .rl { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; }

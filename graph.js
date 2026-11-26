@@ -199,11 +199,38 @@
     const SHORT = { People: "People", Filers: "Filers", Proposals: "Proposals", Asks: "Asks", "AI companies, by role": "By role", "Frontier labs": "Labs" };
     state.cols = activeColumns();
     state.axis.selectAll("*").remove();
-    state.axis.append("rect").attr("x", -width).attr("y", -height).attr("width", width * 3).attr("height", height + HEADER_H).attr("fill", cssVar("--g-bg"));
+    state.axis.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", HEADER_H).attr("fill", cssVar("--g-bg"));
     state.axis.selectAll("text.col").data(state.cols).join("text").attr("class", "col")
-      .attr("x", (c) => c.x * width).attr("y", 14).attr("text-anchor", "middle").attr("font-size", narrow ? 9.5 : 11)
+      .attr("x", (c) => (state.zt || d3.zoomIdentity).applyX(c.x * width)).attr("y", 16).attr("text-anchor", "middle").attr("font-size", narrow ? 9.5 : 11)
       .text((c) => (narrow ? SHORT[c.label] || c.label : c.label).toUpperCase());
     state.axis.attr("display", state.cfg.group > 0 ? null : "none");
+  }
+  const axisFollow = () => {
+    if (!state.axis || !state.size) return;
+    const t = state.zt || d3.zoomIdentity;
+    state.axis.selectAll("text.col").attr("x", (c) => t.applyX(c.x * state.size.width));
+  };
+  // Fit the box to the graph once the layout settles (owner, 2026-11-26: "fit the black box to the model so
+  // there's a more natural fit"): the box's height shrinks to the nodes' extent, centred, never zoomed in past
+  // 100%. Skipped once the viewer has zoomed or panned.
+  function fitToContent() {
+    if (state.userZoomed || !state.svg || state.view !== "graph") return;
+    const vis = state.data.nodes.filter(visible);
+    if (!vis.length) return;
+    const pad = 24, top = HEADER_H + 10;
+    let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+    for (const n of vis) {
+      const r = radius(n) + 14;
+      x0 = Math.min(x0, n.x - r); x1 = Math.max(x1, n.x + r); y0 = Math.min(y0, n.y - r); y1 = Math.max(y1, n.y + r);
+    }
+    const W = state.size.width;
+    const k = Math.min(1, (W - 2 * pad) / Math.max(1, x1 - x0));
+    const H = Math.max(360, Math.round(top + (y1 - y0) * k + pad));
+    const el = document.getElementById("net-graph");
+    el.style.height = H + "px";
+    state.svg.attr("height", H).attr("viewBox", [0, 0, W, H]);
+    state.fitH = H;
+    state.svg.call(state.zoom.transform, d3.zoomIdentity.translate((W - (x1 - x0) * k) / 2 - x0 * k, top - y0 * k).scale(k));
   }
   // Re-aim the grouping forces after layers change, then let the layout settle again.
   function regroup() {
@@ -358,7 +385,7 @@
       <div class="net-body">
         <div class="net-graph-wrap">
           <div id="net-graph" class="net-graph" tabindex="0" role="application" aria-roledescription="network graph" aria-describedby="net-kb-hint" aria-label="AI advocacy network graph: investors, proposals, companies, labs and policy. Up and Down arrows move between nodes, Enter opens one, Escape clears. The List view has the same data as a table."></div>
-          <p class="kb-hint" id="net-kb-hint">Keyboard: Tab into the graph, ↑ ↓ to move between nodes, Enter to open, Esc to clear.</p>
+          <p class="kb-hint" id="net-kb-hint">Keyboard: Tab into the graph, ↑ ↓ to move between nodes, Enter to open, Esc to clear. Zoom: pinch, or Ctrl/⌘ + scroll; drag to pan.</p>
           <p class="visually-hidden" id="net-kb" aria-live="polite"></p>
         </div>
         <div id="net-list" class="net-list" hidden></div>
@@ -705,7 +732,8 @@
     applyStyles();
     if (state.zoom && n.x != null) {
       const { width, height } = state.size;
-      state.svg.transition().duration(REDUCED_MOTION ? 0 : 500).ease(d3.easeExpOut).call(state.zoom.transform, d3.zoomIdentity.translate(width / 2, height / 2).scale(1.6).translate(-n.x, -n.y));
+      state.userZoomed = true;
+      state.svg.transition().duration(REDUCED_MOTION ? 0 : 500).ease(d3.easeExpOut).call(state.zoom.transform, d3.zoomIdentity.translate(width / 2, (state.fitH || height) / 2).scale(1.6).translate(-n.x, -n.y));
     }
   }
 
@@ -927,7 +955,7 @@
     const t = state.svg ? d3.zoomTransform(state.svg.node()) : { x: 0, y: 0, k: 1 };
     const vx0 = -t.x / t.k, vx1 = (width - t.x) / t.k, vy0 = -t.y / t.k;
     const top = Math.max(state.cfg.group > 0 ? HEADER_H : 0, vy0 + 4 / t.k);
-    const vy1 = (height - t.y) / t.k;
+    const vy1 = ((state.fitH || height) - t.y) / t.k;
     const focusId = state.selected || state.hover || state.kbId;
     const items = [];
     state.labels.each(function (d) {
@@ -1259,7 +1287,8 @@
     if (!state.zoom || n.x == null) return;
     const { width, height } = state.size;
     const k = zoomIn ? 1.6 : d3.zoomTransform(state.svg.node()).k;
-    state.svg.transition().duration(REDUCED_MOTION ? 0 : 200).ease(d3.easeExpOut).call(state.zoom.transform, d3.zoomIdentity.translate(width / 2, height / 2).scale(k).translate(-n.x, -n.y));
+    state.userZoomed = true;
+    state.svg.transition().duration(REDUCED_MOTION ? 0 : 200).ease(d3.easeExpOut).call(state.zoom.transform, d3.zoomIdentity.translate(width / 2, (state.fitH || height) / 2).scale(k).translate(-n.x, -n.y));
   }
   function wireKeys() {
     const el = document.getElementById("net-graph");
@@ -1300,13 +1329,26 @@
     el.style.height = desiredHeight(width) + "px";
     const height = el.clientHeight || 560;
     state.size = { width, height };
+    state.fitH = null;
     state.cols = activeColumns();
     const data = state.data;
 
     const svg = d3.select(el).append("svg").attr("viewBox", [0, 0, width, height]).attr("width", width).attr("height", height);
     const g = svg.append("g");
     state.svg = svg;
-    state.zoom = d3.zoom().scaleExtent([0.2, 5]).on("zoom", (ev) => { g.attr("transform", ev.transform); layoutLabels(); });
+    // A plain mouse wheel scrolls the page (owner, 2026-11-26: scrolling over the graph used to zoom it out); pinch, or
+    // Ctrl/⌘ + scroll, zooms. Dragging still pans.
+    state.userZoomed = false;
+    state.zt = d3.zoomIdentity;
+    state.zoom = d3.zoom().scaleExtent([0.2, 5])
+      .filter((ev) => (ev.type === "wheel" ? ev.ctrlKey || ev.metaKey : !ev.button))
+      .on("zoom", (ev) => {
+        g.attr("transform", ev.transform);
+        state.zt = ev.transform;
+        if (ev.sourceEvent) state.userZoomed = true;
+        axisFollow();
+        layoutLabels();
+      });
     svg.call(state.zoom).on("dblclick.zoom", null);
     svg.on("click", (ev) => { if (ev.target.tagName === "svg") { state.selected = null; applyStyles(); } });
 
@@ -1378,8 +1420,8 @@
       // A dark outline under each label keeps it legible over lines and nodes.
       .attr("stroke", cssVar("--g-bg")).attr("stroke-width", 3).attr("stroke-linejoin", "round").attr("paint-order", "stroke")
       .attr("dx", 0).attr("dy", 0);
-    // Column labels for the grouped layout, on top of everything; they move and zoom with the graph.
-    state.axis = g.append("g").attr("font-size", 12).attr("font-weight", 400).attr("fill", cssVar("--g-label-soft"))
+    // Column labels for the grouped layout: pinned in a strip at the top of the box, sliding sideways with the graph.
+    state.axis = svg.append("g").attr("font-size", 12).attr("font-weight", 400).attr("fill", cssVar("--g-label-soft"))
       .attr("pointer-events", "none").attr("display", state.cfg.group > 0 ? null : "none");
     drawAxis();
 
@@ -1401,8 +1443,8 @@
     };
     state.draw = draw;
     sim.on("tick", draw);
-    sim.on("end", () => { declutter(); applyStyles(); });
-    if (REDUCED_MOTION) { sim.stop(); sim.tick(300); draw(); declutter(); }
+    sim.on("end", () => { fitToContent(); declutter(); applyStyles(); });
+    if (REDUCED_MOTION) { sim.stop(); sim.tick(300); draw(); fitToContent(); declutter(); }
     applyStyles();
   }
 

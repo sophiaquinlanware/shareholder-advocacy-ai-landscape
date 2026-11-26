@@ -689,21 +689,8 @@ function setupTabs() {
     new IntersectionObserver(([e]) => nav.classList.toggle("is-stuck", !e.isIntersecting)).observe(head);
   }
   if (nav) {
-    // Tab rows tuck away on scroll down and come back on scroll up; the page title stays.
-    // The bar's height change shifts the page and the browser compensates the scroll position, which would
-    // read as a scroll the other way; so after each change, wait for it to settle before reading direction.
-    let lastY = window.scrollY, settling = false;
-    window.addEventListener("scroll", () => {
-      if (settling) return;
-      const y = window.scrollY;
-      if (Math.abs(y - lastY) < 8) return;
-      const tuck = y > lastY && y > 200;
-      lastY = y;
-      if (tuck === nav.classList.contains("tabs-tucked")) return;
-      nav.classList.toggle("tabs-tucked", tuck);
-      settling = true;
-      setTimeout(() => { settling = false; lastY = window.scrollY; }, 600);
-    }, { passive: true });
+    // The tab rows used to tuck away on scroll down; since the six-section restructure the bar is one row, so it
+    // simply stays (the tuck also fought with scroll-into-view and made the bar jitter).
     // Keep focused elements clear of the sticky bar (WCAG 2.4.11): scroll padding follows its real height.
     const setBar = () => document.documentElement.style.setProperty("--bar-h", nav.offsetHeight + "px");
     if ("ResizeObserver" in window) new ResizeObserver(setBar).observe(nav);

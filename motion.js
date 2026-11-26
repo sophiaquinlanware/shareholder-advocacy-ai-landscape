@@ -16,8 +16,8 @@
       duration: 1.0,
       easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)), // expo out: the site's one curve
       smoothWheel: true,
-      // The graph boxes zoom on the wheel: leave those to the browser.
-      prevent: (node) => !!(node.closest && node.closest(".net-graph, .vc-flow, [data-lenis-prevent]")),
+      // The network graph no longer zooms on a plain wheel (pinch or Ctrl/⌘ + scroll does), so the page scrolls over it.
+      prevent: (node) => !!(node.closest && node.closest("[data-lenis-prevent]")),
     });
     lenis.on("scroll", window.ScrollTrigger.update);
     window.gsap.ticker.add((time) => lenis.raf(time * 1000));
