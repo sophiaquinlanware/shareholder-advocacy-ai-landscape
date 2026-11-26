@@ -1,6 +1,6 @@
 # Shareholder Advocacy AI Landscape — current state
 
-Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 (data session: full sweep for data accuracy, spelling and bugs, 96a309b and 923d57d; UI session fixed the sweep leftovers e1cac0f).
+Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 (UI session: Your portfolio, planner drafts and escalation, network fixes, 4cf28b3 and 31cb168; data session building the section reorder and simulator).
 
 ## Sessions and branches (read this first)
 
@@ -31,10 +31,15 @@ Deadlines and votes · Plan an engagement (`#planner`, data session) · AI value
 ## Network graph (`#network`)
 
 - **Two views:** Connections (default) and Proposals (All · Active · Past), in the URL as `graph=`; Policymaker opens on Proposals.
-- **Colours by family:** investors blue, coalitions green, proposals yellow, companies pink → red → orange in value-chain order, people and policy neutral. A "Marks" key explains rings and flags on screen; direct engagements (Parnassus) list their steps.
+- **Colours by family:** investors blue, coalitions green, proposals neon yellow (#ffff1a, kept clear of the orange marks), companies pink → red → orange in value-chain order, people and policy neutral. A "Marks" key explains rings and flags on screen; direct engagements (Parnassus) list their steps.
 - **Layout:** full-width black band of fixed height (`--strip-h`); graph laid out to the left of the floating panel, fitted after a gentle off-screen settle; rounded-rectangle boundary aligned to column headings; plain wheel scrolls the page (pinch or Ctrl/⌘ + scroll zooms).
-- **Key:** chips cycle shown → highlighted → crossed off; "Show all", "My holdings" and "Show asks not yet filed" are grey tool buttons.
+- **Key:** chips in rainbow order, cycling shown → highlighted → crossed off; "Show all ↺", "Your portfolio" and "Show asks not yet filed" are grey tool buttons. Resubmission mark is an orange dashed ring; marked nodes get collision room so rings never cover a small dot. Timeline slider is labelled as time ("the network as it stood at the end of <year>", Play builds it year by year).
+- **Your portfolio:** load an investor's reported holdings (holdings.json) or tick companies, or paste tickers; stored in the browser only. Held companies are named and ringed white; their links and everything they connect to stay lit. A table under the graph lists each held company's frontier labs, AI proposals and upcoming ballots, who already files there, the next filing deadline and a "Plan an engagement" link. Not reviewed by agents.
 - Plans: docs/plans/2026-11-26-network-views.md (plan R1 68; result R1 76, fixes applied, not re-reviewed).
+
+## Plan an engagement (`#planner`)
+
+`planner-docs.js` (UI session) adds "Evaluate the level of escalation" (seven rungs, what's on record at this company for this ask, nothing recommended) and "Draft a document and save it as a PDF" (email, board letter, coalition invitation, Rule 14a-8 proposal with a 500-word count, engagement plan; numbered sources; print layout prints the draft only). Plan docs/plans/2026-11-27-planner-escalation-docs.md. Dates use `window.DATES.long`; `planner.js` is released back to the data session.
 
 ## Lab pathways (`#pathways`)
 
@@ -46,7 +51,7 @@ Routes table per lab (tie, strength, rights and deadline, filers, related asks, 
 
 ## Latest check
 
-`npm run check` on `fix/full-sweep` after rebasing on the UI leftovers (923d57d): lint pass, build pass, Playwright 244 passed; Lighthouse phone 100/100/100/98, desktop 100/100/100/86 (desktop varies between runs on this machine). Full sweep reviews (docs/reviews/2026-11-26 full sweep result R1/R2 *): proposals data 91 PASS; companies, policy, holdings and people data R1 72, R2 79 REVISE (its one R2 failure, convertible notes counted as shares, is fixed and confirmed by a fresh SEC read, but not re-reviewed: round cap); spelling and grammar R1 78, R2 88 PASS; bugs R1 74, R2 88 PASS.
+`npm run check` on main after 31cb168 (UI): Playwright 244 passed, 4 skipped; Lighthouse phone 100/100/100/98, desktop 100/100/100/93. Earlier sweep: `npm run check` on `fix/full-sweep` after rebasing on the UI leftovers (923d57d): lint pass, build pass, Playwright 244 passed; Lighthouse phone 100/100/100/98, desktop 100/100/100/86 (desktop varies between runs on this machine). Full sweep reviews (docs/reviews/2026-11-26 full sweep result R1/R2 *): proposals data 91 PASS; companies, policy, holdings and people data R1 72, R2 79 REVISE (its one R2 failure, convertible notes counted as shares, is fixed and confirmed by a fresh SEC read, but not re-reviewed: round cap); spelling and grammar R1 78, R2 88 PASS; bugs R1 74, R2 88 PASS.
 
 ## Queue (found, not picked up)
 
@@ -62,7 +67,7 @@ Routes table per lab (tie, strength, rights and deadline, filers, related asks, 
 10. **Network "focus company of" edges** use the default line style, with no key entry.
 11. **Sweep leftovers (owner or either session):** one date format site-wide; "Alphabet (Google)" in the scorecard; people `ai_focus` "no AI work found" phrasing varies; causality `jurisdiction` labels; percentage precision; the type label "anti-ESG proponent" (network.json) vs the planner's "critical of ESG" (owner to choose); site.json levers sentence "vote against the directors" sits near the no-vote-recommendation rule (owner to glance); value-chain tier names (three variants); Warner Bros. Discovery has no ticker or route; Zhipu ticker "2513" vs MiniMax "00100"; Pathways says "as of 2026Q3" while NBIM is June 30, 2026; sources that would not load for checking: it-rome-court-annuls-openai-fine, coe-ai-convention-eu-ratifies, au-guardrails-proposal, cn-rare-earth-chip-controls suspension, 3 people pages.
 12. **Publishing quirk:** a deploy that fails with "No artifacts named github-pages" or "Multiple artifacts" succeeds when the whole workflow run is re-run (not only the failed job).
-13. **Reviews owed:** this round's motion stages 3–10, Lab pathways two-step routes and holders, and the Laws and rules filters were checked by tests and screenshots but not by review agents.
+13. **Reviews owed:** Your portfolio, planner drafts and escalation, this round's motion stages 3–10, Lab pathways two-step routes and holders, and the Laws and rules filters were checked by tests and screenshots but not by review agents.
 
 ## Owner actions
 

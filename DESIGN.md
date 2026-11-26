@@ -231,3 +231,9 @@ Not built from the brief, by owner decision: off-white background, serif heading
 - **Laws and rules:** lane names stay pinned while the chart scrolls.
 - **How fund families voted:** a pass-through voting table ("No program found on the pages checked" for null, never "no").
 - **Tables:** `aria-sort` only on the sorted column.
+
+## Your portfolio and planner drafts (2026-11-26)
+
+- **Your portfolio (network):** the shareholder's view. Load an investor's reported holdings or pick companies; held companies carry a white ring and their names; links from them stay bright and the rest fades. The table under the graph answers "where do I have reach": frontier labs tied, AI proposals and ballots, who already files, next filing deadline, and a link into Plan an engagement. Wording is data-only: "A holding is not a vote or a filing."
+- **Proposal colour:** neon yellow #ffff1a, so it never reads as the orange of company roles or the resubmission ring.
+- **Planner drafts:** documents print alone (title, body, numbered sources with full URLs) and end with the "check every fact" footer; the escalation card states facts per rung and never recommends one.
