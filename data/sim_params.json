@@ -1,0 +1,3518 @@
+{
+ "about": "Inputs for the engagement scenario simulator, computed by this site from data/ (proposals, network, holdings, fund votes, policy). Counts are kept so each estimate shows how many cases it rests on.",
+ "seasons_observed": [
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "estimates": {
+  "refile": {
+   "k": 19,
+   "n": 34
+  },
+  "support_delta": {
+   "n": 17,
+   "mean": -3.07,
+   "sd": 6.29,
+   "log_sd": 0.512,
+   "use_mean": false
+  },
+  "new_cells_by_season": {
+   "2023": 8,
+   "2024": 11,
+   "2025": 14,
+   "2026": 12
+  },
+  "new_cells_per_season": 12.33,
+  "commitment": {
+   "k": 3,
+   "n": 72,
+   "ids": [
+    "dis-2024-afl-ai",
+    "cmcsa-2024-afl-ai",
+    "vrsk-2024-responsible-ai"
+   ]
+  },
+  "commitment_first": {
+   "k": 3,
+   "n": 47
+  },
+  "commitment_refile": {
+   "k": 0,
+   "n": 25
+  },
+  "exclusion": {
+   "k": 3,
+   "n": 72
+  },
+  "new_pair_exposed": {
+   "k": 7,
+   "n": 147,
+   "label": "same ask filed at a same-role company the season before"
+  },
+  "new_pair_unexposed": {
+   "k": 30,
+   "n": 837,
+   "label": "not filed at a same-role company the season before"
+  }
+ },
+ "ask_support": {
+  "ask-dc-water": {
+   "n": 3,
+   "median": 10.37,
+   "sd": 8.59,
+   "values": [
+    1.5,
+    10.37,
+    22.47
+   ]
+  },
+  "ask-dc-siting-rights": {
+   "n": 4,
+   "median": 29.76,
+   "sd": 8.08,
+   "values": [
+    13.11,
+    27.48,
+    32.03,
+    33.58
+   ]
+  },
+  "ask-ai-fossil-fuels": {
+   "n": 2,
+   "median": 9.23,
+   "sd": 0.48,
+   "values": [
+    8.75,
+    9.71
+   ]
+  },
+  "ask-dc-climate-energy": {
+   "n": 8,
+   "median": 8.98,
+   "sd": 5.9,
+   "values": [
+    3.25,
+    6.91,
+    7.35,
+    8.21,
+    9.74,
+    17.57,
+    18.39,
+    20.11
+   ]
+  },
+  "ask-child-safety": {
+   "n": 5,
+   "median": 8.91,
+   "sd": 4.11,
+   "values": [
+    3.42,
+    6.45,
+    8.91,
+    13.43,
+    14.24
+   ]
+  },
+  "ask-targeted-ads-rights": {
+   "n": 5,
+   "median": 17.02,
+   "sd": 1.78,
+   "values": [
+    14.29,
+    14.45,
+    17.02,
+    18.02,
+    18.56
+   ]
+  },
+  "ask-customer-due-diligence": {
+   "n": 9,
+   "median": 16.79,
+   "sd": 10.68,
+   "values": [
+    4.51,
+    8.28,
+    12.47,
+    13.67,
+    16.79,
+    19.08,
+    26.34,
+    34.18,
+    37.48
+   ]
+  },
+  "ask-ai-misinformation": {
+   "n": 5,
+   "median": 17.61,
+   "sd": 3.99,
+   "values": [
+    9.3,
+    16.73,
+    17.61,
+    18.67,
+    21.17
+   ]
+  },
+  "ask-ai-bias": {
+   "n": 2,
+   "median": 0.57,
+   "sd": 0.11,
+   "values": [
+    0.46,
+    0.69
+   ]
+  },
+  "ask-ai-training-data": {
+   "n": 2,
+   "median": 6.32,
+   "sd": 0.29,
+   "values": [
+    6.03,
+    6.61
+   ]
+  },
+  "ask-ai-workforce": {
+   "n": 0,
+   "median": null,
+   "sd": null,
+   "values": []
+  },
+  "ask-ai-oversight-reporting": {
+   "n": 8,
+   "median": 9.98,
+   "sd": 13.94,
+   "values": [
+    3.74,
+    7.4,
+    8.36,
+    9.7,
+    10.27,
+    17.02,
+    37.53,
+    43.29
+   ]
+  }
+ },
+ "backtest": {
+  "fit_seasons": [
+   2023,
+   2024,
+   2025
+  ],
+  "test_season": 2026,
+  "refiled": {
+   "expected": 5.3,
+   "actual": 9,
+   "eligible": 11,
+   "filed_before": 19
+  },
+  "new_pairs": {
+   "expected": 12.5,
+   "actual": 12
+  },
+  "support_error": {
+   "n": 5,
+   "with_average_drift_mae": 7.24,
+   "same_as_last_year_mae": 5.67
+  },
+  "support_model": "last support carried forward, with the observed yearly spread"
+ },
+ "thresholds": {
+  "values": [
+   5,
+   15,
+   25
+  ],
+  "lookback_years": 5,
+  "recent_years": 3
+ },
+ "cells": [
+  {
+   "company": "AAPL",
+   "ask": "ask-ai-oversight-reporting",
+   "seasons": {
+    "2024": [
+     {
+      "id": "aapl-2024-7",
+      "status": "voted",
+      "support": 37.53,
+      "critical": false,
+      "filers": [
+       "afl-cio",
+       "segal-marco-advisors"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "AAPL",
+   "ask": "ask-ai-training-data",
+   "seasons": {
+    "2025": [
+     {
+      "id": "aapl-2025-4",
+      "status": "voted",
+      "support": 11.57,
+      "critical": true,
+      "filers": [
+       "nlpc"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "AAPL",
+   "ask": "ask-child-safety",
+   "seasons": {
+    "2025": [
+     {
+      "id": "aapl-2025-5",
+      "status": "voted",
+      "support": 8.91,
+      "critical": false,
+      "filers": [
+       "bowyer",
+       "american-family-association",
+       "american-family-association"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "AAPL",
+   "ask": "ask-dc-climate-energy",
+   "seasons": {
+    "2026": [
+     {
+      "id": "aapl-2026-ai-energy",
+      "status": "withdrawn",
+      "support": null,
+      "critical": false,
+      "filers": [
+       "tulipshare"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "AMZN",
+   "ask": "ask-ai-oversight-reporting",
+   "seasons": {
+    "2024": [
+     {
+      "id": "amzn-2024-16",
+      "status": "voted",
+      "support": 9.7,
+      "critical": false,
+      "filers": [
+       "afl-cio",
+       "afl-cio"
+      ]
+     }
+    ],
+    "2025": [
+     {
+      "id": "amzn-2025-8",
+      "status": "voted",
+      "support": 10.27,
+      "critical": false,
+      "filers": [
+       "afl-cio",
+       "segal-marco-advisors",
+       "afl-cio"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "AMZN",
+   "ask": "ask-ai-training-data",
+   "seasons": {
+    "2025": [
+     {
+      "id": "amzn-2025-11",
+      "status": "voted",
+      "support": 10.79,
+      "critical": true,
+      "filers": [
+       "nlpc"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "AMZN",
+   "ask": "ask-ai-workforce",
+   "seasons": {
+    "2026": [
+     {
+      "id": "amzn-2026-floor",
+      "status": "voted",
+      "support": null,
+      "critical": false,
+      "filers": [
+       "united-for-respect",
+       "united-for-respect"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "AMZN",
+   "ask": "ask-customer-due-diligence",
+   "seasons": {
+    "2023": [
+     {
+      "id": "amzn-2023-7",
+      "status": "voted",
+      "support": 34.18,
+      "critical": false,
+      "filers": [
+       "abhms",
+       "iasj",
+       "maryknoll-sisters",
+       "sisters-of-charity-st-elizabeth",
+       "capuchin-province-st-joseph",
+       "abhms"
+      ]
+     },
+     {
+      "id": "amzn-2023-23",
+      "status": "voted",
+      "support": 37.48,
+      "critical": false,
+      "filers": [
+       "harrington",
+       "bon-secours-mercy-health",
+       "mercy",
+       "commonspirit"
+      ]
+     }
+    ],
+    "2024": [
+     {
+      "id": "amzn-2024-6",
+      "status": "voted",
+      "support": 16.79,
+      "critical": false,
+      "filers": [
+       "abhms",
+       "maryknoll-sisters",
+       "omi-us",
+       "abhms"
+      ]
+     },
+     {
+      "id": "amzn-2024-14",
+      "status": "voted",
+      "support": 19.08,
+      "critical": false,
+      "filers": [
+       "harrington"
+      ]
+     }
+    ],
+    "2026": [
+     {
+      "id": "amzn-2026-responsible-ai-sales",
+      "status": "excluded",
+      "support": null,
+      "critical": false,
+      "filers": [
+       "abhms",
+       "united-for-respect",
+       "adrian-dominican",
+       "benedictine-mt-scholastica",
+       "snjm",
+       "daughters-of-charity-province-of-st-louise",
+       "northwest-women-religious-investment-trust",
+       "maryknoll-sisters",
+       "omi-us",
+       "northstar",
+       "scl"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "AMZN",
+   "ask": "ask-dc-climate-energy",
+   "seasons": {
+    "2025": [
+     {
+      "id": "amzn-2025-7",
+      "status": "voted",
+      "support": 20.11,
+      "critical": false,
+      "filers": [
+       "amazon-employees-for-climate-justice",
+       "majority-action"
+      ]
+     }
+    ],
+    "2026": [
+     {
+      "id": "amzn-2026-5",
+      "status": "voted",
+      "support": 18.39,
+      "critical": false,
+      "filers": [
+       "as-you-sow",
+       "mercy",
+       "mercy",
+       "mercy"
+      ]
+     },
+     {
+      "id": "amzn-2026-climate-cost",
+      "status": "voted",
+      "support": 1.23,
+      "critical": true,
+      "filers": [
+       "nlpc",
+       "nlpc"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "AXON",
+   "ask": "ask-customer-due-diligence",
+   "seasons": {
+    "2023": [
+     {
+      "id": "axon-2023-6",
+      "status": "voted",
+      "support": 13.67,
+      "critical": false,
+      "filers": [
+       "jubitz-foundation",
+       "open-mic"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "CMCSA",
+   "ask": "ask-ai-oversight-reporting",
+   "seasons": {
+    "2024": [
+     {
+      "id": "cmcsa-2024-afl-ai",
+      "status": "withdrawn",
+      "support": null,
+      "critical": false,
+      "filers": [
+       "afl-cio",
+       "afl-cio-reserve-fund"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "CRM",
+   "ask": "ask-ai-oversight-reporting",
+   "seasons": {
+    "2026": [
+     {
+      "id": "crm-2026-ai-human-rights",
+      "status": "withdrawn",
+      "support": null,
+      "critical": false,
+      "filers": [
+       "northstar",
+       "northstar"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "CRM",
+   "ask": "ask-customer-due-diligence",
+   "seasons": {
+    "2026": [
+     {
+      "id": "crm-2026-dual-use-defense",
+      "status": "excluded",
+      "support": null,
+      "critical": false,
+      "filers": [
+       "open-mic"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "CSCO",
+   "ask": "ask-customer-due-diligence",
+   "seasons": {
+    "2026": [
+     {
+      "id": "csco-2026-5",
+      "status": "upcoming",
+      "support": null,
+      "critical": false,
+      "filers": [
+       "azzad"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "DIS",
+   "ask": "ask-ai-oversight-reporting",
+   "seasons": {
+    "2024": [
+     {
+      "id": "dis-2024-afl-ai",
+      "status": "withdrawn",
+      "support": null,
+      "critical": false,
+      "filers": [
+       "afl-cio",
+       "afl-cio-reserve-fund"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "DLR",
+   "ask": "ask-dc-water",
+   "seasons": {
+    "2025": [
+     {
+      "id": "dlr-2025-5",
+      "status": "voted",
+      "support": 10.37,
+      "critical": false,
+      "filers": [
+       "northstar",
+       "northstar"
+      ]
+     }
+    ],
+    "2026": [
+     {
+      "id": "dlr-2026-4",
+      "status": "voted",
+      "support": 22.47,
+      "critical": false,
+      "filers": [
+       "proxy-impact",
+       "northstar",
+       "northstar",
+       "proxy-impact",
+       "broz-family-investments"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "GOOGL",
+   "ask": "ask-ai-bias",
+   "seasons": {
+    "2025": [
+     {
+      "id": "googl-2025-10",
+      "status": "voted",
+      "support": 0.46,
+      "critical": false,
+      "filers": [
+       "inspire"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "GOOGL",
+   "ask": "ask-ai-misinformation",
+   "seasons": {
+    "2024": [
+     {
+      "id": "googl-2024-12",
+      "status": "voted",
+      "support": 17.61,
+      "critical": false,
+      "filers": [
+       "arjuna",
+       "open-mic",
+       "eko"
+      ]
+     }
+    ],
+    "2026": [
+     {
+      "id": "googl-2026-13",
+      "status": "voted",
+      "support": 9.3,
+      "critical": false,
+      "filers": [
+       "vancity"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "GOOGL",
+   "ask": "ask-ai-oversight-reporting",
+   "seasons": {
+    "2023": [
+     {
+      "id": "googl-2023-12",
+      "status": "voted",
+      "support": 17.02,
+      "critical": false,
+      "filers": [
+       "trillium"
+      ]
+     },
+     {
+      "id": "googl-2023-audit-committee-review",
+      "status": "voted",
+      "support": 8.36,
+      "critical": false,
+      "filers": [
+       "harrington",
+       "aviva",
+       "nordea",
+       "harrington"
+      ]
+     }
+    ],
+    "2024": [
+     {
+      "id": "googl-2024-11",
+      "status": "voted",
+      "support": 7.4,
+      "critical": false,
+      "filers": [
+       "trillium",
+       "benedictine-baltimore",
+       "benedictine-mt-scholastica",
+       "mercy"
+      ]
+     }
+    ],
+    "2026": [
+     {
+      "id": "googl-2026-12",
+      "status": "voted",
+      "support": 3.74,
+      "critical": false,
+      "filers": [
+       "share",
+       "ucc-pension",
+       "parnassus",
+       "pfa-pension"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "GOOGL",
+   "ask": "ask-ai-training-data",
+   "seasons": {
+    "2025": [
+     {
+      "id": "googl-2025-11",
+      "status": "voted",
+      "support": 12.38,
+      "critical": true,
+      "filers": [
+       "nlpc"
+      ]
+     }
+    ],
+    "2026": [
+     {
+      "id": "googl-2026-11",
+      "status": "voted",
+      "support": 6.03,
+      "critical": false,
+      "filers": [
+       "zevin",
+       "benedictine-mt-scholastica",
+       "benedictine-cullman",
+       "boston-common",
+       "omi-us",
+       "scl",
+       "episcopal-church-dfms",
+       "united-church-funds"
+      ]
+     },
+     {
+      "id": "googl-2026-14",
+      "status": "voted",
+      "support": 12.26,
+      "critical": true,
+      "filers": [
+       "nlpc"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "GOOGL",
+   "ask": "ask-child-safety",
+   "seasons": {
+    "2024": [
+     {
+      "id": "googl-2024-child-online-safety",
+      "status": "voted",
+      "support": 14.24,
+      "critical": false,
+      "filers": [
+       "boston-common",
+       "boston-common"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "GOOGL",
+   "ask": "ask-customer-due-diligence",
+   "seasons": {
+    "2025": [
+     {
+      "id": "googl-2025-9",
+      "status": "voted",
+      "support": 4.51,
+      "critical": false,
+      "filers": [
+       "zevin"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "GOOGL",
+   "ask": "ask-dc-climate-energy",
+   "seasons": {
+    "2025": [
+     {
+      "id": "googl-2025-7",
+      "status": "voted",
+      "support": 8.21,
+      "critical": false,
+      "filers": [
+       "trillium",
+       "as-you-sow",
+       "zevin",
+       "trillium"
+      ]
+     }
+    ],
+    "2026": [
+     {
+      "id": "googl-2026-5",
+      "status": "voted",
+      "support": 7.35,
+      "critical": false,
+      "filers": [
+       "trillium",
+       "trillium",
+       "adrian-dominican",
+       "congregation-of-st-joseph-oh"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "GOOGL",
+   "ask": "ask-dc-siting-rights",
+   "seasons": {
+    "2023": [
+     {
+      "id": "googl-2023-10",
+      "status": "voted",
+      "support": 13.11,
+      "critical": false,
+      "filers": [
+       "eko",
+       "dana",
+       "marianists",
+       "omi-us"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "GOOGL",
+   "ask": "ask-dc-water",
+   "seasons": {
+    "2026": [
+     {
+      "id": "googl-2026-6",
+      "status": "voted",
+      "support": 1.5,
+      "critical": false,
+      "filers": [
+       "inspire"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "GOOGL",
+   "ask": "ask-targeted-ads-rights",
+   "seasons": {
+    "2023": [
+     {
+      "id": "googl-2023-11",
+      "status": "voted",
+      "support": 18.02,
+      "critical": false,
+      "filers": [
+       "share",
+       "ucc-pension",
+       "commonspirit"
+      ]
+     }
+    ],
+    "2024": [
+     {
+      "id": "googl-2024-13",
+      "status": "voted",
+      "support": 18.56,
+      "critical": false,
+      "filers": [
+       "share",
+       "ucc-pension",
+       "commonspirit",
+       "mercy"
+      ]
+     }
+    ],
+    "2025": [
+     {
+      "id": "googl-2025-12",
+      "status": "voted",
+      "support": 14.29,
+      "critical": false,
+      "filers": [
+       "share",
+       "ucc-pension",
+       "akademikerpension",
+       "ap-pension",
+       "benedictine-mt-scholastica",
+       "commonspirit",
+       "klp",
+       "mn",
+       "mercy",
+       "omi-us",
+       "benedictine-cullman",
+       "scl"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "IBM",
+   "ask": "ask-ai-bias",
+   "seasons": {
+    "2026": [
+     {
+      "id": "ibm-2026-7",
+      "status": "voted",
+      "support": 2.45,
+      "critical": true,
+      "filers": [
+       "ncppr",
+       "ncppr"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "META",
+   "ask": "ask-ai-misinformation",
+   "seasons": {
+    "2024": [
+     {
+      "id": "meta-2024-6",
+      "status": "voted",
+      "support": 16.73,
+      "critical": false,
+      "filers": [
+       "arjuna",
+       "open-mic",
+       "eko",
+       "marguerite-casey-foundation",
+       "woodcock-foundation"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "META",
+   "ask": "ask-ai-training-data",
+   "seasons": {
+    "2025": [
+     {
+      "id": "meta-2025-11",
+      "status": "voted",
+      "support": 9.93,
+      "critical": true,
+      "filers": [
+       "nlpc"
+      ]
+     }
+    ],
+    "2026": [
+     {
+      "id": "meta-2026-3",
+      "status": "voted",
+      "support": 10.17,
+      "critical": true,
+      "filers": [
+       "nlpc"
+      ]
+     },
+     {
+      "id": "meta-2026-11",
+      "status": "voted",
+      "support": 6.61,
+      "critical": false,
+      "filers": [
+       "mercy",
+       "storebrand",
+       "dana"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "META",
+   "ask": "ask-child-safety",
+   "seasons": {
+    "2025": [
+     {
+      "id": "meta-2025-10",
+      "status": "voted",
+      "support": 6.45,
+      "critical": false,
+      "filers": [
+       "bowyer"
+      ]
+     },
+     {
+      "id": "meta-2025-child-safety",
+      "status": "voted",
+      "support": 13.43,
+      "critical": false,
+      "filers": [
+       "proxy-impact",
+       "durocher-fund",
+       "dana",
+       "providence-st-joseph-health",
+       "episcopal-church-dfms",
+       "benedictine-mt-scholastica",
+       "maryknoll-sisters",
+       "sisters-holy-names-us-ontario",
+       "commonspirit",
+       "portico",
+       "sisters-of-the-humility-of-mary",
+       "pfa-pension",
+       "benedictine-cullman",
+       "christian-brothers-investment-services",
+       "csjp",
+       "praxis-mutual-funds-everence-financial",
+       "omi-us",
+       "presentation-sisters-aberdeen",
+       "daughters-of-charity-province-of-st-louise",
+       "adrian-dominican",
+       "congregation-of-st-joseph-oh",
+       "proxy-impact"
+      ]
+     }
+    ],
+    "2026": [
+     {
+      "id": "meta-2026-child-safety-pay",
+      "status": "voted",
+      "support": 3.42,
+      "critical": false,
+      "filers": [
+       "proxy-impact",
+       "auris-gestion",
+       "benedictine-mt-scholastica",
+       "commonspirit",
+       "congregation-of-st-joseph-oh",
+       "daughters-of-charity-province-of-st-louise",
+       "episcopal-church-dfms",
+       "durocher-fund",
+       "praxis-mutual-funds-everence-financial",
+       "northwest-women-religious-investment-trust",
+       "pfa-pension",
+       "csjp",
+       "snjm",
+       "proxy-impact"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "META",
+   "ask": "ask-dc-climate-energy",
+   "seasons": {
+    "2025": [
+     {
+      "id": "meta-2025-12",
+      "status": "voted",
+      "support": 3.25,
+      "critical": false,
+      "filers": [
+       "as-you-sow"
+      ]
+     }
+    ],
+    "2026": [
+     {
+      "id": "meta-2026-9",
+      "status": "voted",
+      "support": 6.91,
+      "critical": false,
+      "filers": [
+       "as-you-sow",
+       "pcusa",
+       "portico",
+       "adrian-dominican",
+       "raymond-john-wean-foundation",
+       "first-affirmative",
+       "pcusa"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "META",
+   "ask": "ask-targeted-ads-rights",
+   "seasons": {
+    "2023": [
+     {
+      "id": "meta-2023-5",
+      "status": "voted",
+      "support": 17.02,
+      "critical": false,
+      "filers": [
+       "mercy",
+       "nei",
+       "omi-us",
+       "benedictine-mt-scholastica",
+       "commonspirit",
+       "axa-im"
+      ]
+     }
+    ],
+    "2024": [
+     {
+      "id": "meta-2024-10",
+      "status": "voted",
+      "support": 14.45,
+      "critical": false,
+      "filers": [
+       "mercy",
+       "nei"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "MSFT",
+   "ask": "ask-ai-bias",
+   "seasons": {
+    "2025": [
+     {
+      "id": "msft-2025-6",
+      "status": "voted",
+      "support": 0.69,
+      "critical": false,
+      "filers": [
+       "ridgeline",
+       "american-conservative-values-etf"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "MSFT",
+   "ask": "ask-ai-fossil-fuels",
+   "seasons": {
+    "2024": [
+     {
+      "id": "msft-2024-7",
+      "status": "voted",
+      "support": 9.71,
+      "critical": false,
+      "filers": [
+       "as-you-sow"
+      ]
+     }
+    ],
+    "2025": [
+     {
+      "id": "msft-2025-10",
+      "status": "voted",
+      "support": 8.75,
+      "critical": false,
+      "filers": [
+       "as-you-sow"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "MSFT",
+   "ask": "ask-ai-misinformation",
+   "seasons": {
+    "2023": [
+     {
+      "id": "msft-2023-13",
+      "status": "voted",
+      "support": 21.17,
+      "critical": false,
+      "filers": [
+       "arjuna",
+       "open-mic",
+       "eko",
+       "azzad"
+      ]
+     }
+    ],
+    "2024": [
+     {
+      "id": "msft-2024-8",
+      "status": "voted",
+      "support": 18.67,
+      "critical": false,
+      "filers": [
+       "arjuna",
+       "open-mic",
+       "eko"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "MSFT",
+   "ask": "ask-ai-training-data",
+   "seasons": {
+    "2024": [
+     {
+      "id": "msft-2024-9",
+      "status": "voted",
+      "support": 36.19,
+      "critical": true,
+      "filers": [
+       "nlpc"
+      ]
+     }
+    ],
+    "2025": [
+     {
+      "id": "msft-2025-7",
+      "status": "voted",
+      "support": 13.36,
+      "critical": true,
+      "filers": [
+       "nlpc"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "MSFT",
+   "ask": "ask-customer-due-diligence",
+   "seasons": {
+    "2025": [
+     {
+      "id": "msft-2025-9",
+      "status": "voted",
+      "support": 26.34,
+      "critical": false,
+      "filers": [
+       "rshm",
+       "chicory-wealth",
+       "northstar"
+      ]
+     }
+    ],
+    "2026": [
+     {
+      "id": "msft-2026-5",
+      "status": "upcoming",
+      "support": null,
+      "critical": false,
+      "filers": [
+       "rshm",
+       "csjp",
+       "zevin",
+       "jewish-investor-network"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "MSFT",
+   "ask": "ask-dc-climate-energy",
+   "seasons": {
+    "2026": [
+     {
+      "id": "msft-2026-4",
+      "status": "upcoming",
+      "support": null,
+      "critical": false,
+      "filers": [
+       "trillium"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "MSFT",
+   "ask": "ask-dc-siting-rights",
+   "seasons": {
+    "2023": [
+     {
+      "id": "msft-2023-11",
+      "status": "voted",
+      "support": 33.58,
+      "critical": false,
+      "filers": [
+       "eko"
+      ]
+     }
+    ],
+    "2024": [
+     {
+      "id": "msft-2024-6",
+      "status": "voted",
+      "support": 32.03,
+      "critical": false,
+      "filers": [
+       "eko"
+      ]
+     }
+    ],
+    "2025": [
+     {
+      "id": "msft-2025-8",
+      "status": "voted",
+      "support": 27.48,
+      "critical": false,
+      "filers": []
+     }
+    ],
+    "2026": [
+     {
+      "id": "msft-2026-6",
+      "status": "upcoming",
+      "support": null,
+      "critical": false,
+      "filers": [
+       "azzad"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "NFLX",
+   "ask": "ask-ai-oversight-reporting",
+   "seasons": {
+    "2024": [
+     {
+      "id": "nflx-2024-4",
+      "status": "voted",
+      "support": 43.29,
+      "critical": false,
+      "filers": [
+       "segal-marco-advisors",
+       "afl-cio",
+       "afl-cio-reserve-fund"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "NVDA",
+   "ask": "ask-customer-due-diligence",
+   "seasons": {
+    "2026": [
+     {
+      "id": "nvda-2026-military-ai",
+      "status": "excluded",
+      "support": null,
+      "critical": false,
+      "filers": [
+       "open-mic",
+       "ttt-investments",
+       "ttt-investments"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "NVDA",
+   "ask": "ask-dc-climate-energy",
+   "seasons": {
+    "2026": [
+     {
+      "id": "nvda-2026-7",
+      "status": "voted",
+      "support": 17.57,
+      "critical": false,
+      "filers": [
+       "green-century",
+       "mercy",
+       "green-century",
+       "mercy"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "PLTR",
+   "ask": "ask-customer-due-diligence",
+   "seasons": {
+    "2026": [
+     {
+      "id": "pltr-2026-4",
+      "status": "voted",
+      "support": 8.28,
+      "critical": false,
+      "filers": [
+       "pcusa",
+       "pcusa",
+       "portico",
+       "omi-us"
+      ]
+     },
+     {
+      "id": "pltr-2026-5",
+      "status": "voted",
+      "support": 12.47,
+      "critical": false,
+      "filers": [
+       "csjp"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "SO",
+   "ask": "ask-dc-climate-energy",
+   "seasons": {
+    "2026": [
+     {
+      "id": "so-2026-9",
+      "status": "voted",
+      "support": 9.74,
+      "critical": false,
+      "filers": [
+       "as-you-sow",
+       "as-you-sow",
+       "mercy",
+       "adrian-dominican",
+       "mercy"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "company": "VRSK",
+   "ask": "ask-ai-bias",
+   "seasons": {
+    "2024": [
+     {
+      "id": "vrsk-2024-responsible-ai",
+      "status": "withdrawn",
+      "support": null,
+      "critical": false,
+      "filers": [
+       "parnassus",
+       "parnassus"
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "companies": [
+  {
+   "id": "adobe",
+   "ticker": "ADBE",
+   "name": "Adobe",
+   "route_status": "open",
+   "next_deadline": "2026-10-30",
+   "tier": "deployers"
+  },
+  {
+   "id": "alphabet",
+   "ticker": "GOOGL",
+   "name": "Alphabet",
+   "route_status": "narrowing",
+   "next_deadline": "2026-12-25",
+   "tier": "compute"
+  },
+  {
+   "id": "amazon",
+   "ticker": "AMZN",
+   "name": "Amazon",
+   "route_status": "open",
+   "next_deadline": "2026-12-10",
+   "tier": "compute"
+  },
+  {
+   "id": "amd",
+   "ticker": "AMD",
+   "name": "AMD",
+   "route_status": "open",
+   "next_deadline": "2026-11-27",
+   "tier": "chips"
+  },
+  {
+   "id": "anthropic",
+   "ticker": "ANT",
+   "name": "Anthropic",
+   "route_status": "narrowing",
+   "next_deadline": null,
+   "tier": "labs"
+  },
+  {
+   "id": "apple",
+   "ticker": "AAPL",
+   "name": "Apple",
+   "route_status": "open",
+   "next_deadline": "2026-09-10",
+   "tier": "deployers"
+  },
+  {
+   "id": "axon-enterprise",
+   "ticker": "AXON",
+   "name": "Axon Enterprise",
+   "route_status": "open",
+   "next_deadline": "2026-12-17",
+   "tier": "deployers"
+  },
+  {
+   "id": "broadcom",
+   "ticker": "AVGO",
+   "name": "Broadcom",
+   "route_status": "open",
+   "next_deadline": "2026-11-02",
+   "tier": "chips"
+  },
+  {
+   "id": "cisco-systems",
+   "ticker": "CSCO",
+   "name": "Cisco Systems",
+   "route_status": "open",
+   "next_deadline": "2027-07-01",
+   "tier": "chips"
+  },
+  {
+   "id": "comcast",
+   "ticker": "CMCSA",
+   "name": "Comcast",
+   "route_status": "narrowing",
+   "next_deadline": "2026-12-25",
+   "tier": "deployers"
+  },
+  {
+   "id": "coreweave",
+   "ticker": "CRWV",
+   "name": "CoreWeave",
+   "route_status": "narrowing",
+   "next_deadline": "2026-12-23",
+   "tier": "compute"
+  },
+  {
+   "id": "digital-realty-trust",
+   "ticker": "DLR",
+   "name": "Digital Realty Trust",
+   "route_status": "open",
+   "next_deadline": "2026-12-18",
+   "tier": "datacenters"
+  },
+  {
+   "id": "ibm",
+   "ticker": "IBM",
+   "name": "IBM",
+   "route_status": "open",
+   "next_deadline": "2026-11-10",
+   "tier": "deployers"
+  },
+  {
+   "id": "intuit",
+   "ticker": "INTU",
+   "name": "Intuit",
+   "route_status": "open",
+   "next_deadline": "2027-07-28",
+   "tier": "deployers"
+  },
+  {
+   "id": "meta-platforms",
+   "ticker": "META",
+   "name": "Meta",
+   "route_status": "narrowing",
+   "next_deadline": "2026-12-17",
+   "tier": "labs"
+  },
+  {
+   "id": "microsoft",
+   "ticker": "MSFT",
+   "name": "Microsoft",
+   "route_status": "open",
+   "next_deadline": "2027-06-24",
+   "tier": "compute"
+  },
+  {
+   "id": "motorola-solutions",
+   "ticker": "MSI",
+   "name": "Motorola Solutions",
+   "route_status": "open",
+   "next_deadline": "2026-12-03",
+   "tier": "deployers"
+  },
+  {
+   "id": "netflix",
+   "ticker": "NFLX",
+   "name": "Netflix",
+   "route_status": "open",
+   "next_deadline": "2026-12-17",
+   "tier": "deployers"
+  },
+  {
+   "id": "nvidia",
+   "ticker": "NVDA",
+   "name": "Nvidia",
+   "route_status": "open",
+   "next_deadline": "2027-01-12",
+   "tier": "chips"
+  },
+  {
+   "id": "oracle",
+   "ticker": "ORCL",
+   "name": "Oracle",
+   "route_status": "narrowing",
+   "next_deadline": "2027-05-28",
+   "tier": "compute"
+  },
+  {
+   "id": "palantir-technologies",
+   "ticker": "PLTR",
+   "name": "Palantir Technologies",
+   "route_status": "narrowing",
+   "next_deadline": "2026-12-25",
+   "tier": "deployers"
+  },
+  {
+   "id": "salesforce",
+   "ticker": "CRM",
+   "name": "Salesforce",
+   "route_status": "open",
+   "next_deadline": "2026-12-17",
+   "tier": "deployers"
+  },
+  {
+   "id": "servicenow",
+   "ticker": "NOW",
+   "name": "ServiceNow",
+   "route_status": "open",
+   "next_deadline": "2026-12-07",
+   "tier": "deployers"
+  },
+  {
+   "id": "southern-company",
+   "ticker": "SO",
+   "name": "Southern Company",
+   "route_status": "open",
+   "next_deadline": "2026-12-04",
+   "tier": "datacenters"
+  },
+  {
+   "id": "spacex",
+   "ticker": "SPCX",
+   "name": "SpaceX (including xAI)",
+   "route_status": "narrowing",
+   "next_deadline": null,
+   "tier": "labs"
+  },
+  {
+   "id": "tesla",
+   "ticker": "TSLA",
+   "name": "Tesla",
+   "route_status": "narrowing",
+   "next_deadline": "2027-06-21",
+   "tier": "capital"
+  },
+  {
+   "id": "verisk-analytics",
+   "ticker": "VRSK",
+   "name": "Verisk Analytics",
+   "route_status": "open",
+   "next_deadline": "2026-12-04",
+   "tier": "deployers"
+  },
+  {
+   "id": "walt-disney",
+   "ticker": "DIS",
+   "name": "Walt Disney",
+   "route_status": "open",
+   "next_deadline": "2026-09-24",
+   "tier": "deployers"
+  },
+  {
+   "id": "workday",
+   "ticker": "WDAY",
+   "name": "Workday",
+   "route_status": "narrowing",
+   "next_deadline": "2027-01-05",
+   "tier": "deployers"
+  }
+ ],
+ "filers": {
+  "ask-dc-siting-rights": {
+   "eko": 3,
+   "dana": 1,
+   "marianists": 1,
+   "omi-us": 1,
+   "azzad": 1
+  },
+  "ask-ai-misinformation": {
+   "arjuna": 4,
+   "open-mic": 4,
+   "eko": 4,
+   "azzad": 1,
+   "marguerite-casey-foundation": 1,
+   "woodcock-foundation": 1,
+   "vancity": 1
+  },
+  "ask-ai-fossil-fuels": {
+   "as-you-sow": 2
+  },
+  "ask-ai-bias": {
+   "parnassus": 2,
+   "ridgeline": 1,
+   "american-conservative-values-etf": 1,
+   "inspire": 1
+  },
+  "ask-customer-due-diligence": {
+   "abhms": 5,
+   "maryknoll-sisters": 3,
+   "omi-us": 3,
+   "open-mic": 3,
+   "rshm": 2,
+   "northstar": 2,
+   "zevin": 2,
+   "harrington": 2,
+   "csjp": 2,
+   "ttt-investments": 2,
+   "pcusa": 2,
+   "chicory-wealth": 1,
+   "iasj": 1,
+   "sisters-of-charity-st-elizabeth": 1,
+   "capuchin-province-st-joseph": 1,
+   "bon-secours-mercy-health": 1,
+   "mercy": 1,
+   "commonspirit": 1,
+   "jewish-investor-network": 1,
+   "united-for-respect": 1,
+   "adrian-dominican": 1,
+   "benedictine-mt-scholastica": 1,
+   "snjm": 1,
+   "daughters-of-charity-province-of-st-louise": 1,
+   "northwest-women-religious-investment-trust": 1,
+   "scl": 1,
+   "jubitz-foundation": 1,
+   "portico": 1,
+   "azzad": 1
+  },
+  "ask-targeted-ads-rights": {
+   "mercy": 4,
+   "commonspirit": 4,
+   "share": 3,
+   "ucc-pension": 3,
+   "nei": 2,
+   "omi-us": 2,
+   "benedictine-mt-scholastica": 2,
+   "axa-im": 1,
+   "akademikerpension": 1,
+   "ap-pension": 1,
+   "klp": 1,
+   "mn": 1,
+   "benedictine-cullman": 1,
+   "scl": 1
+  },
+  "ask-child-safety": {
+   "proxy-impact": 4,
+   "bowyer": 2,
+   "american-family-association": 2,
+   "boston-common": 2,
+   "durocher-fund": 2,
+   "episcopal-church-dfms": 2,
+   "benedictine-mt-scholastica": 2,
+   "commonspirit": 2,
+   "pfa-pension": 2,
+   "csjp": 2,
+   "praxis-mutual-funds-everence-financial": 2,
+   "daughters-of-charity-province-of-st-louise": 2,
+   "congregation-of-st-joseph-oh": 2,
+   "dana": 1,
+   "providence-st-joseph-health": 1,
+   "maryknoll-sisters": 1,
+   "sisters-holy-names-us-ontario": 1,
+   "portico": 1,
+   "sisters-of-the-humility-of-mary": 1,
+   "benedictine-cullman": 1,
+   "christian-brothers-investment-services": 1,
+   "omi-us": 1,
+   "presentation-sisters-aberdeen": 1,
+   "adrian-dominican": 1,
+   "auris-gestion": 1,
+   "northwest-women-religious-investment-trust": 1,
+   "snjm": 1
+  },
+  "ask-dc-climate-energy": {
+   "mercy": 7,
+   "as-you-sow": 6,
+   "trillium": 5,
+   "adrian-dominican": 3,
+   "pcusa": 2,
+   "green-century": 2,
+   "portico": 1,
+   "raymond-john-wean-foundation": 1,
+   "first-affirmative": 1,
+   "zevin": 1,
+   "congregation-of-st-joseph-oh": 1,
+   "amazon-employees-for-climate-justice": 1,
+   "majority-action": 1,
+   "tulipshare": 1
+  },
+  "ask-ai-training-data": {
+   "mercy": 1,
+   "storebrand": 1,
+   "dana": 1,
+   "zevin": 1,
+   "benedictine-mt-scholastica": 1,
+   "benedictine-cullman": 1,
+   "boston-common": 1,
+   "omi-us": 1,
+   "scl": 1,
+   "episcopal-church-dfms": 1,
+   "united-church-funds": 1
+  },
+  "ask-ai-oversight-reporting": {
+   "afl-cio": 8,
+   "segal-marco-advisors": 3,
+   "afl-cio-reserve-fund": 3,
+   "trillium": 2,
+   "harrington": 2,
+   "northstar": 2,
+   "benedictine-baltimore": 1,
+   "benedictine-mt-scholastica": 1,
+   "mercy": 1,
+   "share": 1,
+   "ucc-pension": 1,
+   "parnassus": 1,
+   "pfa-pension": 1,
+   "aviva": 1,
+   "nordea": 1
+  },
+  "ask-dc-water": {
+   "northstar": 4,
+   "proxy-impact": 2,
+   "inspire": 1,
+   "broz-family-investments": 1
+  },
+  "ask-ai-workforce": {
+   "united-for-respect": 2
+  }
+ },
+ "holders": {
+  "AAPL": [
+   "amalgamated-bank",
+   "arjuna",
+   "azzad",
+   "bailard",
+   "boston-common",
+   "calpers",
+   "calstrs",
+   "dana",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "harrington",
+   "lgim",
+   "nbim",
+   "new-york-state-common-retirement-fund",
+   "northstar",
+   "parnassus",
+   "trillium"
+  ],
+  "AMD": [
+   "amalgamated-bank",
+   "arjuna",
+   "azzad",
+   "bailard",
+   "boston-common",
+   "calpers",
+   "calstrs",
+   "dana",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "harrington",
+   "lgim",
+   "nbim",
+   "new-york-state-common-retirement-fund",
+   "northstar",
+   "parnassus",
+   "trillium",
+   "zevin"
+  ],
+  "AMZN": [
+   "amalgamated-bank",
+   "arjuna",
+   "azzad",
+   "bailard",
+   "calpers",
+   "calstrs",
+   "dana",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "harrington",
+   "lgim",
+   "nbim",
+   "new-york-state-common-retirement-fund",
+   "northstar",
+   "parnassus",
+   "trillium",
+   "zevin"
+  ],
+  "AVGO": [
+   "amalgamated-bank",
+   "arjuna",
+   "azzad",
+   "bailard",
+   "boston-common",
+   "calpers",
+   "calstrs",
+   "dana",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "harrington",
+   "lgim",
+   "nbim",
+   "new-york-state-common-retirement-fund",
+   "northstar",
+   "parnassus",
+   "trillium",
+   "zevin"
+  ],
+  "CRWV": [
+   "amalgamated-bank",
+   "calpers",
+   "calstrs",
+   "fidelity",
+   "lgim",
+   "nbim",
+   "new-york-state-common-retirement-fund"
+  ],
+  "GOOGL": [
+   "amalgamated-bank",
+   "arjuna",
+   "azzad",
+   "bailard",
+   "boston-common",
+   "calpers",
+   "calstrs",
+   "dana",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "harrington",
+   "lgim",
+   "nbim",
+   "new-york-state-common-retirement-fund",
+   "northstar",
+   "parnassus",
+   "trillium",
+   "zevin"
+  ],
+  "META": [
+   "amalgamated-bank",
+   "azzad",
+   "bailard",
+   "calpers",
+   "calstrs",
+   "dana",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "lgim",
+   "nbim",
+   "new-york-state-common-retirement-fund",
+   "northstar",
+   "parnassus",
+   "trillium"
+  ],
+  "MSFT": [
+   "amalgamated-bank",
+   "arjuna",
+   "azzad",
+   "bailard",
+   "boston-common",
+   "calpers",
+   "calstrs",
+   "dana",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "harrington",
+   "lgim",
+   "nbim",
+   "new-york-state-common-retirement-fund",
+   "northstar",
+   "parnassus",
+   "trillium",
+   "zevin"
+  ],
+  "NVDA": [
+   "amalgamated-bank",
+   "arjuna",
+   "azzad",
+   "bailard",
+   "boston-common",
+   "calpers",
+   "calstrs",
+   "dana",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "harrington",
+   "lgim",
+   "nbim",
+   "new-york-state-common-retirement-fund",
+   "northstar",
+   "parnassus",
+   "trillium",
+   "zevin"
+  ],
+  "ORCL": [
+   "amalgamated-bank",
+   "arjuna",
+   "bailard",
+   "calpers",
+   "calstrs",
+   "dana",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "harrington",
+   "lgim",
+   "nbim",
+   "new-york-state-common-retirement-fund",
+   "northstar",
+   "parnassus",
+   "trillium"
+  ],
+  "TSLA": [
+   "amalgamated-bank",
+   "azzad",
+   "bailard",
+   "calpers",
+   "calstrs",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "lgim",
+   "nbim",
+   "new-york-state-common-retirement-fund",
+   "northstar",
+   "zevin"
+  ],
+  "NFLX": [
+   "amalgamated-bank",
+   "arjuna",
+   "bailard",
+   "boston-common",
+   "calpers",
+   "calstrs",
+   "dana",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "harrington",
+   "lgim",
+   "new-york-state-common-retirement-fund",
+   "northstar",
+   "parnassus",
+   "trillium",
+   "zevin"
+  ],
+  "IBM": [
+   "amalgamated-bank",
+   "arjuna",
+   "azzad",
+   "bailard",
+   "calpers",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "lgim",
+   "northstar",
+   "trillium"
+  ],
+  "CRM": [
+   "amalgamated-bank",
+   "azzad",
+   "bailard",
+   "boston-common",
+   "calpers",
+   "calstrs",
+   "dana",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "lgim",
+   "new-york-state-common-retirement-fund",
+   "northstar",
+   "trillium"
+  ],
+  "ADBE": [
+   "amalgamated-bank",
+   "bailard",
+   "calpers",
+   "calstrs",
+   "dana",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "lgim",
+   "new-york-state-common-retirement-fund",
+   "northstar",
+   "trillium"
+  ],
+  "INTU": [
+   "amalgamated-bank",
+   "bailard",
+   "calpers",
+   "calstrs",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "harrington",
+   "lgim",
+   "new-york-state-common-retirement-fund",
+   "trillium"
+  ],
+  "VRSK": [
+   "amalgamated-bank",
+   "calpers",
+   "calstrs",
+   "federated-hermes-eos",
+   "fidelity",
+   "lgim",
+   "new-york-state-common-retirement-fund",
+   "trillium"
+  ],
+  "NOW": [
+   "amalgamated-bank",
+   "bailard",
+   "calpers",
+   "calstrs",
+   "dana",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "lgim",
+   "new-york-state-common-retirement-fund",
+   "northstar",
+   "trillium"
+  ],
+  "CSCO": [
+   "amalgamated-bank",
+   "arjuna",
+   "azzad",
+   "bailard",
+   "calpers",
+   "calstrs",
+   "dana",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "lgim",
+   "new-york-state-common-retirement-fund",
+   "northstar",
+   "trillium",
+   "zevin"
+  ],
+  "DIS": [
+   "amalgamated-bank",
+   "bailard",
+   "calpers",
+   "calstrs",
+   "dana",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "lgim",
+   "new-york-state-common-retirement-fund",
+   "northstar",
+   "trillium"
+  ],
+  "DLR": [
+   "amalgamated-bank",
+   "boston-common",
+   "calstrs",
+   "new-york-state-common-retirement-fund",
+   "zevin"
+  ],
+  "SO": [
+   "amalgamated-bank",
+   "bailard",
+   "calpers",
+   "calstrs",
+   "federated-hermes-eos",
+   "fidelity",
+   "lgim",
+   "zevin"
+  ],
+  "PLTR": [
+   "amalgamated-bank",
+   "bailard",
+   "calpers",
+   "calstrs",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "lgim",
+   "new-york-state-common-retirement-fund",
+   "northstar"
+  ],
+  "CMCSA": [
+   "amalgamated-bank",
+   "calpers",
+   "calstrs",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "lgim",
+   "new-york-state-common-retirement-fund",
+   "northstar"
+  ],
+  "SPCX": [
+   "amalgamated-bank",
+   "calpers",
+   "calstrs",
+   "federated-hermes-eos",
+   "fidelity",
+   "lgim",
+   "new-york-state-common-retirement-fund",
+   "northstar"
+  ],
+  "WDAY": [
+   "amalgamated-bank",
+   "azzad",
+   "calpers",
+   "calstrs",
+   "federated-hermes-eos",
+   "fidelity",
+   "first-affirmative",
+   "lgim",
+   "new-york-state-common-retirement-fund"
+  ],
+  "AXON": [
+   "amalgamated-bank",
+   "azzad",
+   "calpers",
+   "calstrs",
+   "federated-hermes-eos",
+   "fidelity",
+   "lgim",
+   "new-york-state-common-retirement-fund"
+  ],
+  "MSI": [
+   "amalgamated-bank",
+   "azzad",
+   "calpers",
+   "calstrs",
+   "federated-hermes-eos",
+   "fidelity",
+   "lgim",
+   "new-york-state-common-retirement-fund"
+  ]
+ },
+ "family_for": {
+  "Calvert": {
+   "ask-dc-siting-rights": {
+    "for": 3,
+    "n": 3
+   },
+   "ask-ai-misinformation": {
+    "for": 4,
+    "n": 4
+   },
+   "ask-ai-oversight-reporting": {
+    "for": 6,
+    "n": 6
+   },
+   "ask-customer-due-diligence": {
+    "for": 4,
+    "n": 4
+   },
+   "ask-targeted-ads-rights": {
+    "for": 2,
+    "n": 2
+   },
+   "ask-child-safety": {
+    "for": 2,
+    "n": 2
+   },
+   "ask-ai-fossil-fuels": {
+    "for": 0,
+    "n": 2
+   },
+   "ask-ai-training-data": {
+    "for": 5,
+    "n": 7
+   },
+   "ask-dc-climate-energy": {
+    "for": 5,
+    "n": 6
+   },
+   "ask-dc-water": {
+    "for": 2,
+    "n": 3
+   },
+   "ask-ai-bias": {
+    "for": 0,
+    "n": 3
+   }
+  },
+  "Domini": {
+   "ask-dc-siting-rights": {
+    "for": 3,
+    "n": 3
+   },
+   "ask-ai-misinformation": {
+    "for": 4,
+    "n": 4
+   },
+   "ask-ai-oversight-reporting": {
+    "for": 6,
+    "n": 6
+   },
+   "ask-customer-due-diligence": {
+    "for": 4,
+    "n": 4
+   },
+   "ask-targeted-ads-rights": {
+    "for": 2,
+    "n": 2
+   },
+   "ask-child-safety": {
+    "for": 2,
+    "n": 2
+   },
+   "ask-ai-fossil-fuels": {
+    "for": 2,
+    "n": 2
+   },
+   "ask-ai-training-data": {
+    "for": 7,
+    "n": 7
+   },
+   "ask-dc-climate-energy": {
+    "for": 5,
+    "n": 6
+   },
+   "ask-dc-water": {
+    "for": 2,
+    "n": 3
+   },
+   "ask-ai-bias": {
+    "for": 0,
+    "n": 3
+   }
+  },
+  "Green Century": {
+   "ask-dc-siting-rights": {
+    "for": 3,
+    "n": 3
+   },
+   "ask-ai-misinformation": {
+    "for": 4,
+    "n": 4
+   },
+   "ask-ai-oversight-reporting": {
+    "for": 3,
+    "n": 4
+   },
+   "ask-targeted-ads-rights": {
+    "for": 2,
+    "n": 2
+   },
+   "ask-child-safety": {
+    "for": 2,
+    "n": 3
+   },
+   "ask-ai-fossil-fuels": {
+    "for": 2,
+    "n": 2
+   },
+   "ask-ai-training-data": {
+    "for": 4,
+    "n": 7
+   },
+   "ask-dc-water": {
+    "for": 3,
+    "n": 3
+   },
+   "ask-ai-bias": {
+    "for": 0,
+    "n": 2
+   },
+   "ask-dc-climate-energy": {
+    "for": 4,
+    "n": 4
+   },
+   "ask-customer-due-diligence": {
+    "for": 2,
+    "n": 2
+   }
+  },
+  "Impax (Pax)": {
+   "ask-dc-siting-rights": {
+    "for": 2,
+    "n": 3
+   },
+   "ask-ai-oversight-reporting": {
+    "for": 4,
+    "n": 5
+   },
+   "ask-ai-misinformation": {
+    "for": 2,
+    "n": 3
+   },
+   "ask-targeted-ads-rights": {
+    "for": 2,
+    "n": 2
+   },
+   "ask-child-safety": {
+    "for": 1,
+    "n": 2
+   },
+   "ask-ai-fossil-fuels": {
+    "for": 0,
+    "n": 2
+   },
+   "ask-ai-training-data": {
+    "for": 0,
+    "n": 7
+   },
+   "ask-dc-climate-energy": {
+    "for": 2,
+    "n": 6
+   },
+   "ask-dc-water": {
+    "for": 0,
+    "n": 3
+   },
+   "ask-ai-bias": {
+    "for": 0,
+    "n": 3
+   },
+   "ask-customer-due-diligence": {
+    "for": 1,
+    "n": 2
+   }
+  },
+  "Parnassus": {
+   "ask-dc-siting-rights": {
+    "for": 3,
+    "n": 3
+   },
+   "ask-ai-misinformation": {
+    "for": 4,
+    "n": 4
+   },
+   "ask-ai-oversight-reporting": {
+    "for": 4,
+    "n": 6
+   },
+   "ask-customer-due-diligence": {
+    "for": 4,
+    "n": 4
+   },
+   "ask-targeted-ads-rights": {
+    "for": 2,
+    "n": 2
+   },
+   "ask-child-safety": {
+    "for": 1,
+    "n": 2
+   },
+   "ask-ai-fossil-fuels": {
+    "for": 2,
+    "n": 2
+   },
+   "ask-ai-training-data": {
+    "for": 3,
+    "n": 8
+   },
+   "ask-dc-climate-energy": {
+    "for": 6,
+    "n": 7
+   },
+   "ask-ai-bias": {
+    "for": 0,
+    "n": 2
+   },
+   "ask-dc-water": {
+    "for": 1,
+    "n": 1
+   }
+  },
+  "Praxis": {
+   "ask-dc-siting-rights": {
+    "for": 3,
+    "n": 3
+   },
+   "ask-ai-misinformation": {
+    "for": 5,
+    "n": 5
+   },
+   "ask-ai-oversight-reporting": {
+    "for": 6,
+    "n": 6
+   },
+   "ask-customer-due-diligence": {
+    "for": 4,
+    "n": 4
+   },
+   "ask-targeted-ads-rights": {
+    "for": 3,
+    "n": 3
+   },
+   "ask-child-safety": {
+    "for": 3,
+    "n": 4
+   },
+   "ask-ai-fossil-fuels": {
+    "for": 2,
+    "n": 2
+   },
+   "ask-ai-training-data": {
+    "for": 9,
+    "n": 9
+   },
+   "ask-dc-climate-energy": {
+    "for": 8,
+    "n": 9
+   },
+   "ask-dc-water": {
+    "for": 2,
+    "n": 3
+   },
+   "ask-ai-bias": {
+    "for": 0,
+    "n": 2
+   }
+  },
+  "TIAA-CREF": {
+   "ask-dc-siting-rights": {
+    "for": 0,
+    "n": 3
+   },
+   "ask-ai-misinformation": {
+    "for": 4,
+    "n": 5
+   },
+   "ask-ai-oversight-reporting": {
+    "for": 2,
+    "n": 6
+   },
+   "ask-customer-due-diligence": {
+    "for": 0,
+    "n": 6
+   },
+   "ask-targeted-ads-rights": {
+    "for": 1,
+    "n": 3
+   },
+   "ask-child-safety": {
+    "for": 0,
+    "n": 4
+   },
+   "ask-ai-fossil-fuels": {
+    "for": 0,
+    "n": 2
+   },
+   "ask-ai-training-data": {
+    "for": 3,
+    "n": 9
+   },
+   "ask-dc-climate-energy": {
+    "for": 3,
+    "n": 9
+   },
+   "ask-dc-water": {
+    "for": 0,
+    "n": 3
+   },
+   "ask-ai-bias": {
+    "for": 0,
+    "n": 3
+   }
+  },
+  "Vanguard": {
+   "ask-dc-siting-rights": {
+    "for": 0,
+    "n": 3
+   },
+   "ask-ai-misinformation": {
+    "for": 0,
+    "n": 5
+   },
+   "ask-ai-oversight-reporting": {
+    "for": 0,
+    "n": 6
+   },
+   "ask-customer-due-diligence": {
+    "for": 0,
+    "n": 6
+   },
+   "ask-targeted-ads-rights": {
+    "for": 0,
+    "n": 3
+   },
+   "ask-child-safety": {
+    "for": 0,
+    "n": 5
+   },
+   "ask-ai-fossil-fuels": {
+    "for": 0,
+    "n": 2
+   },
+   "ask-ai-training-data": {
+    "for": 0,
+    "n": 9
+   },
+   "ask-dc-climate-energy": {
+    "for": 0,
+    "n": 9
+   },
+   "ask-dc-water": {
+    "for": 0,
+    "n": 3
+   },
+   "ask-ai-bias": {
+    "for": 0,
+    "n": 3
+   }
+  },
+  "BlackRock (iShares)": {
+   "ask-ai-misinformation": {
+    "for": 0,
+    "n": 5
+   },
+   "ask-ai-oversight-reporting": {
+    "for": 0,
+    "n": 3
+   },
+   "ask-customer-due-diligence": {
+    "for": 0,
+    "n": 5
+   },
+   "ask-targeted-ads-rights": {
+    "for": 0,
+    "n": 2
+   },
+   "ask-dc-siting-rights": {
+    "for": 0,
+    "n": 2
+   },
+   "ask-ai-fossil-fuels": {
+    "for": 0,
+    "n": 2
+   },
+   "ask-ai-training-data": {
+    "for": 0,
+    "n": 9
+   },
+   "ask-child-safety": {
+    "for": 0,
+    "n": 4
+   },
+   "ask-dc-climate-energy": {
+    "for": 0,
+    "n": 9
+   },
+   "ask-dc-water": {
+    "for": 0,
+    "n": 3
+   },
+   "ask-ai-bias": {
+    "for": 0,
+    "n": 3
+   }
+  }
+ },
+ "policy": {
+  "ask-dc-water": {
+   "full": 0,
+   "partial": 4,
+   "none": 0,
+   "regions": [
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "Utah data center water reporting law takes effect",
+     "status": null,
+     "source_url": "https://le.utah.gov/Session/2026/bills/enrolled/HB0076.pdf"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "California requires data centers to report annual water use",
+     "status": null,
+     "source_url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB2619"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU requires data centers to report energy and water use",
+     "status": "in force",
+     "source_url": "https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficiency-targets-directive-and-rules/energy-efficiency-directive/energy-performance-data-centres_en"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU Corporate Sustainability Reporting Directive enters into force",
+     "status": "in force; scope narrowed by Omnibus I",
+     "source_url": "https://eur-lex.europa.eu/eli/dir/2022/2464/oj"
+    }
+   ]
+  },
+  "ask-dc-siting-rights": {
+   "full": 0,
+   "partial": 2,
+   "none": 0,
+   "regions": [
+    {
+     "region": "Global",
+     "coverage": "partial",
+     "policy": "UN Human Rights Council endorses the Guiding Principles on Business and Human Rights",
+     "status": "voluntary",
+     "source_url": "https://www.ohchr.org/sites/default/files/documents/publications/guidingprinciplesbusinesshr_en.pdf"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU Corporate Sustainability Due Diligence Directive enters into force",
+     "status": "in force; application from July 26, 2029",
+     "source_url": "https://eur-lex.europa.eu/eli/dir/2024/1760/oj"
+    }
+   ]
+  },
+  "ask-ai-fossil-fuels": {
+   "full": 0,
+   "partial": 0,
+   "none": 1,
+   "regions": []
+  },
+  "ask-dc-climate-energy": {
+   "full": 0,
+   "partial": 10,
+   "none": 0,
+   "regions": [
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU AI Act obligations for general-purpose models apply",
+     "status": null,
+     "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689"
+    },
+    {
+     "region": "Global",
+     "coverage": "partial",
+     "policy": "OECD updates Guidelines for Multinational Enterprises, adding technology due diligence",
+     "status": "voluntary",
+     "source_url": "https://www.oecd.org/en/publications/oecd-guidelines-for-multinational-enterprises-on-responsible-business-conduct_81f92357-en.html"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "Texas SB 6 sets rules for large loads such as data centers",
+     "status": "in force",
+     "source_url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB6"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "Oregon POWER Act (HB 3546) creates a rate class for large energy users",
+     "status": "in force",
+     "source_url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3546"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "Georgia regulators approve data center billing rule",
+     "status": "in force",
+     "source_url": "https://psc.ga.gov/site/assets/files/8617/media_advisory_data_centers_rule_1-23-2025.pdf"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU requires data centers to report energy and water use",
+     "status": "in force",
+     "source_url": "https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficiency-targets-directive-and-rules/energy-efficiency-directive/energy-performance-data-centres_en"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU Corporate Sustainability Reporting Directive enters into force",
+     "status": "in force; scope narrowed by Omnibus I",
+     "source_url": "https://eur-lex.europa.eu/eli/dir/2022/2464/oj"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China sets a national energy efficiency limit standard for data centers (GB 40879-2021)",
+     "status": "in force",
+     "source_url": "https://www.chinesestandard.net/PDF-EN/GB40879-2021EN-P09P-H7528H-273421.pdf"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China issues the Special Action Plan for Green and Low-Carbon Data Centers",
+     "status": "in force",
+     "source_url": "https://www.gov.cn/zhengce/zhengceku/202407/P020240724272072479001.pdf"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China issues an action plan linking AI and energy",
+     "status": "in force",
+     "source_url": "https://www.nea.gov.cn/20260508/4dae97ca01d348e4871bb8654be34b3a/c.html"
+    }
+   ]
+  },
+  "ask-child-safety": {
+   "full": 0,
+   "partial": 17,
+   "none": 0,
+   "regions": [
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU AI Act enters into force",
+     "status": null,
+     "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "Council approves AI digital omnibus, delaying high-risk deadlines",
+     "status": null,
+     "source_url": "https://www.cuatrecasas.com/en/global/intellectual-property/art/council-eu-approves-digital-omnibus-ai"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU publishes General-Purpose AI Code of Practice",
+     "status": null,
+     "source_url": "https://ec.europa.eu/newsroom/dae/redirection/document/118119"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "TAKE IT DOWN Act signed",
+     "status": "in force",
+     "source_url": "https://www.ftc.gov/business-guidance/resources/complying-take-it-down-act"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "California enacts SB 243 on companion chatbots",
+     "status": "in force",
+     "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB243"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "Texas enacts TRAIGA (HB 149)",
+     "status": "in force",
+     "source_url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00149F.htm"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "FTC opens 6(b) study of AI chatbots acting as companions",
+     "status": "pending",
+     "source_url": "https://www.ftc.gov/news-events/news/press-releases/2025/09/ftc-launches-inquiry-ai-chatbots-acting-companions"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU Digital Services Act duties apply to very large platforms",
+     "status": "in force",
+     "source_url": "https://eur-lex.europa.eu/eli/reg/2022/2065/oj"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "Commission publishes DSA guidelines on protecting minors",
+     "status": "in force (nonbinding guidelines)",
+     "source_url": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-protection-minors"
+    },
+    {
+     "region": "United Kingdom",
+     "coverage": "partial",
+     "policy": "Ofcom's children's safety codes take effect",
+     "status": "in force",
+     "source_url": "https://www.ofcom.org.uk/online-safety/protecting-children/online-age-checks-must-be-in-force-from-tomorrow"
+    },
+    {
+     "region": "United Kingdom",
+     "coverage": "partial",
+     "policy": "UK Crime and Policing Act 2026 adds AI child abuse and chatbot powers",
+     "status": "enacted; s.72 not yet in force; no s.248 regulations yet",
+     "source_url": "https://www.legislation.gov.uk/ukpga/2026/20/section/248"
+    },
+    {
+     "region": "Asia-Pacific",
+     "coverage": "partial",
+     "policy": "Australia's social media minimum age takes effect",
+     "status": "in force",
+     "source_url": "https://www.esafety.gov.au/about-us/industry-regulation/social-media-age-restrictions"
+    },
+    {
+     "region": "Asia-Pacific",
+     "coverage": "partial",
+     "policy": "Australian online safety codes apply to AI companion chatbots",
+     "status": "in force",
+     "source_url": "https://www.esafety.gov.au/newsroom/media-releases/new-industry-codes-seek-to-take-on-ai-chatbots-that-encourage-suicide-and-engage-in-sexually-explicit-conversations-with-aussie-kids"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China publishes the Algorithmic Recommendation Provisions",
+     "status": "in force",
+     "source_url": "https://www.cac.gov.cn/2022-01/04/c_1642894606364259.htm"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China publishes the Interim Measures for Generative AI Services",
+     "status": "in force",
+     "source_url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China publishes Regulations on the Protection of Minors Online",
+     "status": "in force",
+     "source_url": "https://www.gov.cn/zhengce/content/202310/content_6911288.htm"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China publishes Interim Measures for anthropomorphic AI interaction services",
+     "status": "in force",
+     "source_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm"
+    }
+   ]
+  },
+  "ask-targeted-ads-rights": {
+   "full": 0,
+   "partial": 4,
+   "none": 0,
+   "regions": [
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU AI Act enters into force",
+     "status": null,
+     "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU Digital Services Act duties apply to very large platforms",
+     "status": "in force",
+     "source_url": "https://eur-lex.europa.eu/eli/reg/2022/2065/oj"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China adopts the Personal Information Protection Law",
+     "status": "in force",
+     "source_url": "http://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China publishes the Algorithmic Recommendation Provisions",
+     "status": "in force",
+     "source_url": "https://www.cac.gov.cn/2022-01/04/c_1642894606364259.htm"
+    }
+   ]
+  },
+  "ask-customer-due-diligence": {
+   "full": 0,
+   "partial": 6,
+   "none": 0,
+   "regions": [
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU AI Act enters into force",
+     "status": null,
+     "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "Council approves AI digital omnibus, delaying high-risk deadlines",
+     "status": null,
+     "source_url": "https://www.cuatrecasas.com/en/global/intellectual-property/art/council-eu-approves-digital-omnibus-ai"
+    },
+    {
+     "region": "Global",
+     "coverage": "partial",
+     "policy": "UN Human Rights Council endorses the Guiding Principles on Business and Human Rights",
+     "status": "voluntary",
+     "source_url": "https://www.ohchr.org/sites/default/files/documents/publications/guidingprinciplesbusinesshr_en.pdf"
+    },
+    {
+     "region": "Global",
+     "coverage": "partial",
+     "policy": "OECD updates Guidelines for Multinational Enterprises, adding technology due diligence",
+     "status": "voluntary",
+     "source_url": "https://www.oecd.org/en/publications/oecd-guidelines-for-multinational-enterprises-on-responsible-business-conduct_81f92357-en.html"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "BIS moves H200-class chip exports to China to case-by-case review",
+     "status": "in force",
+     "source_url": "https://www.govinfo.gov/content/pkg/FR-2026-01-15/html/2026-00789.htm"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU Corporate Sustainability Due Diligence Directive enters into force",
+     "status": "in force; application from July 26, 2029",
+     "source_url": "https://eur-lex.europa.eu/eli/dir/2024/1760/oj"
+    }
+   ]
+  },
+  "ask-ai-misinformation": {
+   "full": 0,
+   "partial": 12,
+   "none": 0,
+   "regions": [
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU AI Act enters into force",
+     "status": null,
+     "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU AI Act obligations for general-purpose models apply",
+     "status": null,
+     "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU publishes General-Purpose AI Code of Practice",
+     "status": null,
+     "source_url": "https://ec.europa.eu/newsroom/dae/redirection/document/118119"
+    },
+    {
+     "region": "Global",
+     "coverage": "partial",
+     "policy": "G7 issues Hiroshima Process Code of Conduct for advanced AI developers",
+     "status": "voluntary",
+     "source_url": "https://digital-strategy.ec.europa.eu/en/library/hiroshima-process-international-code-conduct-advanced-ai-systems"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "California enacts SB 942, the AI Transparency Act",
+     "status": "in force",
+     "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB942"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU Digital Services Act duties apply to very large platforms",
+     "status": "in force",
+     "source_url": "https://eur-lex.europa.eu/eli/reg/2022/2065/oj"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "Commission election guidelines for very large platforms cover generative AI",
+     "status": "in force (guidelines)",
+     "source_url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-providers-vlops-and-vloses-mitigation-systemic-risks-electoral-processes"
+    },
+    {
+     "region": "Asia-Pacific",
+     "coverage": "partial",
+     "policy": "India requires labels on AI-generated content",
+     "status": "in force",
+     "source_url": "https://www.businesstoday.in/technology/story/govt-tightens-rules-on-ai-generated-content-mandates-labels-and-faster-takedowns-515505-2026-02-10"
+    },
+    {
+     "region": "Asia-Pacific",
+     "coverage": "partial",
+     "policy": "South Korea's AI Basic Act and enforcement decree take effect",
+     "status": "in force",
+     "source_url": "https://www.trade.gov/market-intelligence/south-korea-ai-basic-act"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China publishes the Deep Synthesis Provisions",
+     "status": "in force",
+     "source_url": "https://www.cac.gov.cn/2022-12/11/c_1672221949354811.htm"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China publishes the Interim Measures for Generative AI Services",
+     "status": "in force",
+     "source_url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China publishes the Measures for Labeling AI-Generated and Synthetic Content",
+     "status": "in force",
+     "source_url": "https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm"
+    }
+   ]
+  },
+  "ask-ai-bias": {
+   "full": 0,
+   "partial": 11,
+   "none": 0,
+   "regions": [
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "Council approves AI digital omnibus, delaying high-risk deadlines",
+     "status": null,
+     "source_url": "https://www.cuatrecasas.com/en/global/intellectual-property/art/council-eu-approves-digital-omnibus-ai"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "Colorado repeals and replaces its AI Act with SB 26-189",
+     "status": null,
+     "source_url": "https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU publishes General-Purpose AI Code of Practice",
+     "status": null,
+     "source_url": "https://ec.europa.eu/newsroom/dae/redirection/document/118119"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "NYC begins enforcing Local Law 144 on automated hiring tools",
+     "status": "in force",
+     "source_url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "Illinois amends Human Rights Act to cover AI in employment",
+     "status": "in force",
+     "source_url": "https://www.ilga.gov/Legislation/BillStatus?DocNum=3773&GAID=17&GA=103&DocTypeID=HB&SessionID=112"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "Texas enacts TRAIGA (HB 149)",
+     "status": "in force",
+     "source_url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00149F.htm"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "EO 14319 on 'Preventing Woke AI' in federal procurement",
+     "status": "in force",
+     "source_url": "https://www.whitehouse.gov/presidential-actions/2025/07/preventing-woke-ai-in-the-federal-government/"
+    },
+    {
+     "region": "Asia-Pacific",
+     "coverage": "partial",
+     "policy": "South Korea's AI Basic Act and enforcement decree take effect",
+     "status": "in force",
+     "source_url": "https://www.trade.gov/market-intelligence/south-korea-ai-basic-act"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China publishes the Interim Measures for Generative AI Services",
+     "status": "in force",
+     "source_url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China adopts the Personal Information Protection Law",
+     "status": "in force",
+     "source_url": "http://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China publishes the Algorithmic Recommendation Provisions",
+     "status": "in force",
+     "source_url": "https://www.cac.gov.cn/2022-01/04/c_1642894606364259.htm"
+    }
+   ]
+  },
+  "ask-ai-training-data": {
+   "full": 0,
+   "partial": 11,
+   "none": 0,
+   "regions": [
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU AI Act obligations for general-purpose models apply",
+     "status": null,
+     "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU publishes General-Purpose AI Code of Practice",
+     "status": null,
+     "source_url": "https://ec.europa.eu/newsroom/dae/redirection/document/118115"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "Colorado repeals and replaces its AI Act with SB 26-189",
+     "status": null,
+     "source_url": "https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189"
+    },
+    {
+     "region": "Global",
+     "coverage": "partial",
+     "policy": "G7 issues Hiroshima Process Code of Conduct for advanced AI developers",
+     "status": "voluntary",
+     "source_url": "https://digital-strategy.ec.europa.eu/en/library/hiroshima-process-international-code-conduct-advanced-ai-systems"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "California enacts AB 2013 on generative AI training data transparency",
+     "status": "in force",
+     "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB2013"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EDPB opinion on personal data in AI models",
+     "status": "in force (GDPR interpretation)",
+     "source_url": "https://www.edpb.europa.eu/news/news/2024/edpb-opinion-ai-models-gdpr-principles-support-responsible-ai_en"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "Meta resumes EU AI training after Irish DPC review",
+     "status": "in force (supervision ongoing)",
+     "source_url": "https://www.dataprotection.ie/news-media/latest-news/dpc-statement-meta-ai"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China publishes the Interim Measures for Generative AI Services",
+     "status": "in force",
+     "source_url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China publishes the Deep Synthesis Provisions",
+     "status": "in force",
+     "source_url": "https://www.cac.gov.cn/2022-12/11/c_1672221949354811.htm"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China publishes the Network Data Security Management Regulations",
+     "status": "in force",
+     "source_url": "https://www.gov.cn/zhengce/content/202409/content_6977766.htm"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China publishes Interim Measures for anthropomorphic AI interaction services",
+     "status": "in force",
+     "source_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm"
+    }
+   ]
+  },
+  "ask-ai-workforce": {
+   "full": 0,
+   "partial": 7,
+   "none": 0,
+   "regions": [
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "Council approves AI digital omnibus, delaying high-risk deadlines",
+     "status": null,
+     "source_url": "https://www.cuatrecasas.com/en/global/intellectual-property/art/council-eu-approves-digital-omnibus-ai"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "Colorado repeals and replaces its AI Act with SB 26-189",
+     "status": null,
+     "source_url": "https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189"
+    },
+    {
+     "region": "Global",
+     "coverage": "partial",
+     "policy": "India AI Impact Summit adopts New Delhi Declaration; US signs",
+     "status": "nonbinding",
+     "source_url": "https://theprint.in/economy/leading-ai-firms-indian-innovators-make-new-delhi-frontier-ai-impact-commitments-vaishnaw/2858856"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "NYC begins enforcing Local Law 144 on automated hiring tools",
+     "status": "in force",
+     "source_url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "Illinois amends Human Rights Act to cover AI in employment",
+     "status": "in force",
+     "source_url": "https://www.ilga.gov/Legislation/BillStatus?DocNum=3773&GAID=17&GA=103&DocTypeID=HB&SessionID=112"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU AI Act bans and AI literacy duty apply",
+     "status": "in force",
+     "source_url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-prohibited-ai-practices"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China publishes the Algorithmic Recommendation Provisions",
+     "status": "in force",
+     "source_url": "https://www.cac.gov.cn/2022-01/04/c_1642894606364259.htm"
+    }
+   ]
+  },
+  "ask-ai-oversight-reporting": {
+   "full": 0,
+   "partial": 14,
+   "none": 0,
+   "regions": [
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "Newsom signs SB 53, Transparency in Frontier AI Act",
+     "status": null,
+     "source_url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "New York amends RAISE Act to mirror California SB 53",
+     "status": null,
+     "source_url": "https://www.mofo.com/resources/insights/260403-new-york-amends-the-raise-act-to-align-more-closely"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU AI Act obligations for general-purpose models apply",
+     "status": null,
+     "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689"
+    },
+    {
+     "region": "Global",
+     "coverage": "partial",
+     "policy": "G7 issues Hiroshima Process Code of Conduct for advanced AI developers",
+     "status": "voluntary",
+     "source_url": "https://digital-strategy.ec.europa.eu/en/library/hiroshima-process-international-code-conduct-advanced-ai-systems"
+    },
+    {
+     "region": "Global",
+     "coverage": "partial",
+     "policy": "OECD launches the Hiroshima AI Process reporting framework",
+     "status": "voluntary",
+     "source_url": "https://oecd.ai/en/transparency/reports"
+    },
+    {
+     "region": "Global",
+     "coverage": "partial",
+     "policy": "ISO/IEC 42001 AI management system standard published",
+     "status": "voluntary",
+     "source_url": "https://www.iso.org/standard/42001"
+    },
+    {
+     "region": "Global",
+     "coverage": "partial",
+     "policy": "Companies sign Frontier AI Safety Commitments at the Seoul AI Summit",
+     "status": "voluntary",
+     "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+    },
+    {
+     "region": "United States",
+     "coverage": "partial",
+     "policy": "Biden signs EO 14110 on safe, secure and trustworthy AI",
+     "status": "revoked",
+     "source_url": "https://www.federalregister.gov/documents/2023/11/01/2023-24283/safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence"
+    },
+    {
+     "region": "European Union",
+     "coverage": "partial",
+     "policy": "EU Digital Services Act duties apply to very large platforms",
+     "status": "in force",
+     "source_url": "https://eur-lex.europa.eu/eli/reg/2022/2065/oj"
+    },
+    {
+     "region": "Asia-Pacific",
+     "coverage": "partial",
+     "policy": "South Korea's AI Basic Act and enforcement decree take effect",
+     "status": "in force",
+     "source_url": "https://www.trade.gov/market-intelligence/south-korea-ai-basic-act"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China publishes the Algorithmic Recommendation Provisions",
+     "status": "in force",
+     "source_url": "https://www.cac.gov.cn/2022-01/04/c_1642894606364259.htm"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China publishes the Interim Measures for Generative AI Services",
+     "status": "in force",
+     "source_url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China issues Trial Measures for Science and Technology Ethics Review",
+     "status": "in force",
+     "source_url": "https://www.gov.cn/zhengce/zhengceku/202310/content_6908045.htm"
+    },
+    {
+     "region": "China",
+     "coverage": "partial",
+     "policy": "China publishes Interim Measures for anthropomorphic AI interaction services",
+     "status": "in force",
+     "source_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm"
+    }
+   ]
+  }
+ },
+ "rescission": {
+  "id": "sec-14a8-rescission-proposal",
+  "title": "SEC proposes rescinding Rule 14a-8 and amending Rule 14a-4",
+  "status": null,
+  "source_url": "https://www.sec.gov/rules/proposed/2026/34-106383.pdf"
+ },
+ "literature": [
+  {
+   "id": "lead_investor",
+   "label": "A lead investor heading a coalition raises the chance of engagement success by about a third",
+   "value": 1.33,
+   "source_url": "https://www.ecgi.global/publications/working-papers/coordinated-engagements",
+   "source": "Dimson, Karakaş and Li, Coordinated Engagements (working paper; forthcoming, Journal of Finance)",
+   "applies_to": "company commitment"
+  },
+  {
+   "id": "coalition_shape",
+   "label": "Collaborative engagements average 1.4 lead and 21 supporting investors",
+   "value": 1.4,
+   "source_url": "https://www.ecgi.global/publications/working-papers/coordinated-engagements",
+   "source": "Dimson, Karakaş and Li, Coordinated Engagements",
+   "applies_to": "context only"
+  }
+ ],
+ "critical_ids": [
+  "aapl-2025-4",
+  "amzn-2025-11",
+  "amzn-2026-climate-cost",
+  "googl-2025-11",
+  "googl-2026-14",
+  "ibm-2026-7",
+  "meta-2025-11",
+  "meta-2026-3",
+  "msft-2024-9",
+  "msft-2025-7"
+ ]
+}

@@ -4,7 +4,7 @@
 // Audience: shareholder-advocacy practitioners. Labels are plain; no definitions or explainers.
 
 const DATA = {};
-const FILES = ["site", "companies", "upcoming", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph", "scorecard", "fund_votes", "asks", "coverage", "value_chain", "holdings", "pass_through_voting"];
+const FILES = ["site", "companies", "upcoming", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph", "scorecard", "fund_votes", "asks", "coverage", "value_chain", "holdings", "pass_through_voting", "sim_params"];
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
@@ -839,6 +839,7 @@ async function main() {
   renderNew();
   renderStart(); // again, now that the weekly SEC check (changes, tracking) has loaded
   if (window.renderPlanner) window.renderPlanner(DATA);
+  if (window.renderSimulator) window.renderSimulator(DATA);
   labelCounts();
   document.dispatchEvent(new Event("siteready"));
 }

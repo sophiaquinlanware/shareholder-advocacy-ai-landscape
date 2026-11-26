@@ -28,7 +28,7 @@
   </div>
 </header>
 
-<!-- Six sections in the order of an engagement cycle (docs/plans/2026-11-26-analyst-restructure.md).
+<!-- Seven sections: context first, then planning and testing last (owner, 2026-11-26; docs/plans/2026-11-26-engagement-simulator.md).
      Each section has its own row of views; every view keeps its old address (#feed, #network, ...). -->
 <nav class="tabs" aria-label="Sections">
   <!-- Owner (2026-11-26): "when you scroll you still see the title header so you always know which page you are on".
@@ -36,12 +36,12 @@
   <div class="wrap sticky-title" aria-hidden="true"><span class="st-site">Shareholder advocacy towards responsible AI</span><span class="st-page" id="sticky-page"></span></div>
   <div class="wrap tab-row" role="tablist" aria-label="Sections">
     <button type="button" role="tab" id="gbtn-start" aria-controls="grp-start" data-group="start" aria-selected="true">Deadlines and votes</button>
-    <button type="button" role="tab" id="gbtn-plan" aria-controls="grp-plan" data-group="plan" aria-selected="false" tabindex="-1">Plan an engagement</button>
-    <button type="button" role="tab" id="gbtn-chain" aria-controls="grp-chain" data-group="chain" aria-selected="false" tabindex="-1">AI value chain</button>
     <button type="button" role="tab" id="gbtn-companies" aria-controls="grp-companies" data-group="companies" aria-selected="false" tabindex="-1">Company profiles</button>
+    <button type="button" role="tab" id="gbtn-chain" aria-controls="grp-chain" data-group="chain" aria-selected="false" tabindex="-1">AI value chain</button>
     <button type="button" role="tab" id="gbtn-proposals" aria-controls="grp-proposals" data-group="proposals" aria-selected="false" tabindex="-1">Proposals and results</button>
     <button type="button" role="tab" id="gbtn-engaging" aria-controls="grp-engaging" data-group="engaging" aria-selected="false" tabindex="-1">Network and contacts</button>
     <button type="button" role="tab" id="gbtn-policy" aria-controls="grp-policy" data-group="policy" aria-selected="false" tabindex="-1">Laws and rules</button>
+    <button type="button" role="tab" id="gbtn-plan" aria-controls="grp-plan" data-group="plan" aria-selected="false" tabindex="-1">Plan and test</button>
   </div>
 </nav>
 
@@ -56,21 +56,7 @@
     <section id="tab-start" class="panel" role="tabpanel" aria-labelledby="tabbtn-start" data-group="start"></section>
     <section id="tab-upcoming" class="panel" role="tabpanel" aria-labelledby="tabbtn-upcoming" data-group="start" hidden></section>
     <section id="tab-new" class="panel" role="tabpanel" aria-labelledby="tabbtn-new" data-group="start" hidden></section>
-  </div>
-
-  <div id="grp-plan" class="group" role="tabpanel" aria-labelledby="gbtn-plan" hidden>
-    <p class="group-q">For one company and one ask: the filing deadline and your rights there, how the ask has gone, organizations that filed, backed, voted for it or hold the shares, what policy already requires, and other asks to consider.</p>
-    <section id="tab-planner" class="panel" data-group="plan" hidden></section>
-  </div>
-
-  <div id="grp-chain" class="group" role="tabpanel" aria-labelledby="gbtn-chain" hidden>
-    <p class="group-q">How chip makers, data centers, cloud providers, frontier labs and AI product companies are tied to each other, and which companies own, fund or supply each frontier lab.</p>
-    <div class="subtabs" role="tablist" aria-label="Value chain views">
-      <button type="button" role="tab" id="tabbtn-value-chain" aria-controls="tab-value-chain" data-tab="value-chain" aria-selected="true">Chips to AI products</button>
-      <button type="button" role="tab" id="tabbtn-pathways" aria-controls="tab-pathways" data-tab="pathways" aria-selected="false" tabindex="-1">Ties to each frontier lab</button>
-    </div>
-    <section id="tab-value-chain" class="panel" role="tabpanel" aria-labelledby="tabbtn-value-chain" data-group="chain" hidden></section>
-    <section id="tab-pathways" class="panel" role="tabpanel" aria-labelledby="tabbtn-pathways" data-group="chain" hidden></section>
+    <p class="next-section"><a href="#company">Next: Company profiles →</a></p>
   </div>
 
   <div id="grp-companies" class="group" role="tabpanel" aria-labelledby="gbtn-companies" hidden>
@@ -83,6 +69,18 @@
     <section id="tab-company" class="panel" role="tabpanel" aria-labelledby="tabbtn-company" data-group="companies" hidden></section>
     <section id="tab-parnassus" class="panel" role="tabpanel" aria-labelledby="tabbtn-parnassus" data-group="companies" hidden></section>
     <section id="tab-rights" class="panel" role="tabpanel" aria-labelledby="tabbtn-rights" data-group="companies" hidden></section>
+    <p class="next-section"><a href="#value-chain">Next: AI value chain →</a></p>
+  </div>
+
+  <div id="grp-chain" class="group" role="tabpanel" aria-labelledby="gbtn-chain" hidden>
+    <p class="group-q">How chip makers, data centers, cloud providers, frontier labs and AI product companies are tied to each other, and which companies own, fund or supply each frontier lab.</p>
+    <div class="subtabs" role="tablist" aria-label="Value chain views">
+      <button type="button" role="tab" id="tabbtn-value-chain" aria-controls="tab-value-chain" data-tab="value-chain" aria-selected="true">Chips to AI products</button>
+      <button type="button" role="tab" id="tabbtn-pathways" aria-controls="tab-pathways" data-tab="pathways" aria-selected="false" tabindex="-1">Ties to each frontier lab</button>
+    </div>
+    <section id="tab-value-chain" class="panel" role="tabpanel" aria-labelledby="tabbtn-value-chain" data-group="chain" hidden></section>
+    <section id="tab-pathways" class="panel" role="tabpanel" aria-labelledby="tabbtn-pathways" data-group="chain" hidden></section>
+    <p class="next-section"><a href="#feed">Next: Proposals and results →</a></p>
   </div>
 
   <div id="grp-proposals" class="group" role="tabpanel" aria-labelledby="gbtn-proposals" hidden>
@@ -95,6 +93,7 @@
     <section id="tab-feed" class="panel" role="tabpanel" aria-labelledby="tabbtn-feed" data-group="proposals" hidden></section>
     <section id="tab-votes" class="panel" role="tabpanel" aria-labelledby="tabbtn-votes" data-group="proposals" hidden></section>
     <section id="tab-outcomes" class="panel" role="tabpanel" aria-labelledby="tabbtn-outcomes" data-group="proposals" hidden></section>
+    <p class="next-section"><a href="#network">Next: Network and contacts →</a></p>
   </div>
 
   <div id="grp-engaging" class="group" role="tabpanel" aria-labelledby="gbtn-engaging" hidden>
@@ -105,11 +104,23 @@
     </div>
     <section id="tab-network" class="panel" role="tabpanel" aria-labelledby="tabbtn-network" data-group="engaging" hidden></section>
     <section id="tab-people" class="panel" role="tabpanel" aria-labelledby="tabbtn-people" data-group="engaging" hidden></section>
+    <p class="next-section"><a href="#causality">Next: Laws and rules →</a></p>
   </div>
 
   <div id="grp-policy" class="group" role="tabpanel" aria-labelledby="gbtn-policy" hidden>
     <p class="group-q">AI laws, SEC rule changes, and how companies and investors have responded, with what led to what.</p>
     <section id="tab-causality" class="panel" data-group="policy" hidden></section>
+    <p class="next-section"><a href="#planner">Next: Plan and test →</a></p>
+  </div>
+
+  <div id="grp-plan" class="group" role="tabpanel" aria-labelledby="gbtn-plan" hidden>
+    <p class="group-q">Plan an engagement at one company on one ask with what the earlier sections show, then test plans forward in time against a model of how filers, companies, voters and policy have behaved.</p>
+    <div class="subtabs" role="tablist" aria-label="Plan and test views">
+      <button type="button" role="tab" id="tabbtn-planner" aria-controls="tab-planner" data-tab="planner" aria-selected="true">Plan an engagement</button>
+      <button type="button" role="tab" id="tabbtn-simulate" aria-controls="tab-simulate" data-tab="simulate" aria-selected="false" tabindex="-1">Test plans over time</button>
+    </div>
+    <section id="tab-planner" class="panel" role="tabpanel" aria-labelledby="tabbtn-planner" data-group="plan" hidden></section>
+    <section id="tab-simulate" class="panel" role="tabpanel" aria-labelledby="tabbtn-simulate" data-group="plan" hidden></section>
   </div>
 </main>
 
@@ -137,6 +148,7 @@
 <script defer src="scorecard.js"></script>
 <script defer src="votes.js"></script>
 <script defer src="planner.js"></script>
+<script defer src="sim.js"></script>
 <script defer src="planner-docs.js"></script>
 <script defer src="app.js"></script>
 <!-- Motion libraries (docs/plans/2026-11-26-motion.md): GSAP, ScrollTrigger and Lenis, pinned. Last in order, so the

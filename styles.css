@@ -726,3 +726,26 @@ button:active:not([disabled]) { transform: scale(.98); }
   .net-marks { flex-wrap: nowrap; }
   .net-marks .leg.static { white-space: nowrap; }
 }
+
+
+/* ---------- Test plans over time (sim.js) ---------- */
+.next-section { margin: 28px 0 8px; font-size: 14px; }
+.next-section a { font-weight: 500; }
+.sim-plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.sim-plan { margin: 0; min-width: 0; } /* fieldsets default to min-content width; long ask names would push the page sideways */
+.sim-plan legend { font-weight: 600; padding: 0 4px; }
+.sim-plan label, .sim-grid label { display: block; margin: 6px 0; font-size: 14px; }
+.sim-plan select, .sim-grid select { width: 100%; max-width: 100%; }
+.sim-plans { grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); }
+.sim-grid input[type="number"] { width: 5em; }
+.sim-target { border-top: 1px solid var(--line); padding-top: 6px; margin-top: 6px; }
+.sim-swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: baseline; }
+.sim-settings { margin: 12px 0; }
+.sim-field { list-style: none; padding: 0; margin: 8px 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); gap: 4px; }
+.sim-cell { position: relative; font-size: 11px; text-align: center; padding: 8px 2px; border-radius: 3px; border: 1px solid var(--control-edge);
+  background: color-mix(in srgb, var(--accent) calc(var(--fill) * 100%), var(--surface)); color: var(--ink);
+  box-shadow: inset 0 0 0 calc(var(--ring) * 3px) var(--ink); }
+.sim-cell.mine span[aria-hidden] { text-decoration: underline; text-decoration-thickness: 2px; }
+.sim-log { font-size: 13px; padding-left: 20px; max-height: 360px; overflow: auto; }
+.sim-log li { margin: 2px 0; }
+.sim-log li.strong { font-weight: 600; }
