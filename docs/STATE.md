@@ -20,7 +20,7 @@ Before that: the working protocol (AGENTS.md) and the check suite (`npm run chec
 ## Live
 
 - Code on GitHub: `sophiaquinlanware/shareholder-advocacy-ai-landscape`, branch `main`.
-- Public site: https://sophiaquinlanware.github.io/shareholder-advocacy-ai-landscape/ once GitHub Pages is on. Publishing waits on the repo variable `PAGES_ENABLED` = `"true"` (ADR 0001).
+- Public site: https://sophiaquinlanware.github.io/shareholder-advocacy-ai-landscape/. The repo variable `PAGES_ENABLED` is `"true"` (set 2026-11-26 01:03 UTC, ADR 0001), so every push to `main` republishes the site through `refresh.yml`.
 - Weekly refresh: every Monday 13:00 UTC, `.github/workflows/refresh.yml` runs the EDGAR scripts and commits `data/` to `main`.
 - The reference design for the client-facing UI is the owner's private Claude Design canvas "AI Landscape Client UI". It has four screens: Home, Influence pathways, Microsoft profile and Proposal feed.
 
