@@ -179,6 +179,20 @@ def main():
         }
 
     vc["ties"] = ties
+    # One list of every sourced tie (supply chain between companies, and company to frontier lab), one schema,
+    # so a single Value chain view can show the whole chain.
+    all_ties = [{**t, "kind": "supply chain", "to_kind": "company"} for t in ties]
+    pw_to_company = {c["id"]: by_ticker.get((c.get("ticker") or "").split("/")[-1].strip().upper()) for c in pathways.get("public_companies", [])}
+    lab_label = {l["id"]: l["name"] for l in pathways.get("labs", [])}
+    for t in pathways.get("ties", []):
+        c = pw_to_company.get(t["from"])
+        if not c:
+            continue
+        k = key_of_lab.get(t["to"], "lab:" + t["to"])
+        all_ties.append({"from": c["id"], "to": k.split(":", 1)[1], "to_kind": "company" if k.startswith("company:") else "lab",
+                         "to_label": lab_label.get(t["to"], t["to"]), "type": t["type"], "description": t.get("description"),
+                         "as_of": t.get("as_of"), "strength": t.get("strength"), "source_url": t.get("source_url"), "kind": "lab tie"})
+    vc["all_ties"] = all_ties
     vc["per_tier"] = per_tier
     vc["derived_note"] = ("ties come from data/value_chain_ties.json and data/pathways.json, each with a source; per_tier is "
                           "computed by scripts/build_value_chain.py from the site's data files and describes where engagement "

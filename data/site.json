@@ -41,5 +41,28 @@
   ],
   "rights_intro": "For each company: where it is incorporated, what its bylaws require to bring a proposal, and how much room investors would have if the SEC rescinds Rule 14a-8.",
   "status_key": "Still open means the company's own rules leave a workable path for proposals even without Rule 14a-8. Narrowing means higher thresholds, a controlling shareholder or similar limits make that path harder. Closed means the company has adopted rules that shut out most proposal filers. These ratings are this site's reading of the cited documents, not a legal opinion.",
-  "why_now_note": "Emptied 2026-11-25 at the owner's request: every item is now an event in data/causality.json (texas-sb1057, sec-noaction-pause, sec-aug14-statement, dfking-2026-season, sec-14a8-rescission-proposal, vanguard-investor-choice-2026, iss-ai-proposals-2026), so the separate Policy timeline would repeat the map."
+  "why_now_note": "Emptied 2026-11-25 at the owner's request: every item is now an event in data/causality.json (texas-sb1057, sec-noaction-pause, sec-aug14-statement, dfking-2026-season, sec-14a8-rescission-proposal, vanguard-investor-choice-2026, iss-ai-proposals-2026), so the separate Policy timeline would repeat the map.",
+  "findings": [
+    {
+      "id": "no-alignment-asks",
+      "title": "No proposal asks about model alignment",
+      "text": "None of the 78 AI proposals at these 29 companies since 2023 asks directly about model alignment or catastrophic risk. The 12 governance proposals ask for board oversight and transparency instead.",
+      "basis": "This site's classification of every proposal in data/proposals.json (data/asks.json categories).",
+      "link": "#feed"
+    },
+    {
+      "id": "support-falling",
+      "title": "Support for AI proposals has fallen",
+      "text": "Median support (for as a share of for plus against) was 17.0% in 2023 (11 votes) and 17.6% in 2024 (15), then 10.4% in 2025 (21) and 7.8% in 2026 (18).",
+      "basis": "Computed from each company's 8-K vote results, linked on every proposal.",
+      "link": "#feed"
+    },
+    {
+      "id": "policy-gaps",
+      "title": "Policy covers part of each ask, none in full",
+      "text": "No recurring ask is fully required by a law or code on the Policy map. Two have no policy at all: human rights reviews of where data centers are built, and reporting on AI sold for oil and gas.",
+      "basis": "data/coverage.json, this site's reading of each policy's text; not yet confirmed by a person.",
+      "link": "#causality"
+    }
+  ]
 }
