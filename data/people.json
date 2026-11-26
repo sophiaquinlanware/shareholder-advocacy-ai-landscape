@@ -1805,17 +1805,6 @@
    "verified_date": "2026-11"
   },
   {
-   "id": "maggie-randolph",
-   "name": "Maggie Randolph",
-   "title": "Director of Public Policy; ICCR board member",
-   "org_name": "Trinity Health",
-   "org_id": "trinity-health",
-   "ai_focus": "General shareholder advocacy; no AI work found",
-   "profile_url": "https://www.iccr.org/board-of-directors/",
-   "profile_source": "other",
-   "verified_date": "2026-11"
-  },
-  {
    "id": "whitney-shepard",
    "name": "Whitney Shepard",
    "title": "Co-Executive Director",
@@ -1866,7 +1855,7 @@
    "org_name": "Center for Political Accountability",
    "org_id": "center-for-political-accountability",
    "ai_focus": "General shareholder advocacy; no AI work found",
-   "profile_url": "https://www.politicalaccountability.net/about/staff/",
+   "profile_url": "https://www.politicalaccountability.net/about-us/staff/",
    "profile_source": "employer bio",
    "verified_date": "2026-11"
   },
@@ -1877,18 +1866,7 @@
    "org_name": "Center for Political Accountability",
    "org_id": "center-for-political-accountability",
    "ai_focus": "General shareholder advocacy; no AI work found",
-   "profile_url": "https://www.politicalaccountability.net/about/staff/",
-   "profile_source": "employer bio",
-   "verified_date": "2026-11"
-  },
-  {
-   "id": "bronson-frick",
-   "name": "Bronson Frick",
-   "title": "Director of Advocacy",
-   "org_name": "American Nonsmokers' Rights Foundation",
-   "org_id": "american-nonsmokers-rights-foundation",
-   "ai_focus": "General shareholder advocacy; no AI work found",
-   "profile_url": "https://no-smoke.org/about-us/staff/",
+   "profile_url": "https://www.politicalaccountability.net/about-us/staff/",
    "profile_source": "employer bio",
    "verified_date": "2026-11"
   },
@@ -1948,17 +1926,6 @@
    "verified_date": "2026-11"
   },
   {
-   "id": "eliza-pan",
-   "name": "Eliza Pan",
-   "title": "Spokesperson",
-   "org_name": "Amazon Employees for Climate Justice",
-   "org_id": "amazon-employees-for-climate-justice",
-   "ai_focus": "General shareholder advocacy; no AI work found",
-   "profile_url": "https://www.iccr.org/at-amazons-annual-meeting-investors-continue-to-raise-significant-risks-to-workers-and-the-environment/",
-   "profile_source": "other",
-   "verified_date": "2026-11"
-  },
-  {
    "id": "david-stocks",
    "name": "David Stocks",
    "title": "Executive Director",
@@ -1987,8 +1954,8 @@
    "org_name": "The California Wellness Foundation",
    "org_id": "california-wellness-foundation",
    "ai_focus": "General shareholder advocacy; no AI work found",
-   "profile_url": "https://www.ai-cio.com/news/why-we-co-filed-shareholder-engagement-as-fiduciary-imperative-in-age-of-surveillance-risk/",
-   "profile_source": "other",
+   "profile_url": "https://www.calwellness.org/mission/staff/",
+   "profile_source": "employer bio",
    "verified_date": "2026-11"
   },
   {
@@ -1998,8 +1965,8 @@
    "org_name": "AJL Foundation",
    "org_id": "ajl-foundation",
    "ai_focus": "General shareholder advocacy; no AI work found",
-   "profile_url": "https://www.ajlfoundation.org/",
-   "profile_source": "other",
+   "profile_url": "https://www.ajlfoundation.org/about-0",
+   "profile_source": "employer bio",
    "verified_date": "2026-11"
   },
   {
@@ -2009,8 +1976,8 @@
    "org_name": "AJL Foundation",
    "org_id": "ajl-foundation",
    "ai_focus": "General shareholder advocacy; no AI work found",
-   "profile_url": "https://www.ajlfoundation.org/",
-   "profile_source": "other",
+   "profile_url": "https://www.ajlfoundation.org/about-0",
+   "profile_source": "employer bio",
    "verified_date": "2026-11"
   },
   {
@@ -2020,7 +1987,7 @@
    "org_name": "National Center for Public Policy Research (Free Enterprise Project)",
    "org_id": "ncppr",
    "ai_focus": "General shareholder advocacy; no AI work found",
-   "profile_url": "https://nationalcenter.org/ncppr/staff/steve-milloy/",
+   "profile_url": "https://nationalcenter.org/staff/steve-milloy/",
    "profile_source": "employer bio",
    "verified_date": "2026-11"
   },
@@ -2130,8 +2097,8 @@
    "org_name": "Investor Group on Climate Change (IGCC)",
    "org_id": "igcc",
    "ai_focus": "General shareholder advocacy; no AI work found",
-   "profile_url": "https://www.igcc.org.au/about-igcc/our-team/",
-   "profile_source": "employer bio",
+   "profile_url": "https://www.climateaction100.org/about/",
+   "profile_source": "other",
    "verified_date": "2026-11"
   },
   {
@@ -2171,17 +2138,6 @@
    "id": "jen-sisson",
    "name": "Jen Sisson",
    "title": "CEO",
-   "org_name": "International Corporate Governance Network (ICGN)",
-   "org_id": "icgn",
-   "ai_focus": "General shareholder advocacy; no AI work found",
-   "profile_url": "https://icgn.org/about-us/who-we-are/",
-   "profile_source": "employer bio",
-   "verified_date": "2026-11"
-  },
-  {
-   "id": "peter-van-veen",
-   "name": "Peter van Veen",
-   "title": "Global Policy Director",
    "org_name": "International Corporate Governance Network (ICGN)",
    "org_id": "icgn",
    "ai_focus": "General shareholder advocacy; no AI work found",
@@ -2284,7 +2240,7 @@
    "org_name": "HSBC Asset Management",
    "org_id": "hsbc-asset-management",
    "ai_focus": "General shareholder advocacy; no AI work found",
-   "profile_url": "https://30percentclub.org/uk-investor-group/",
+   "profile_url": "https://30percentclub.org/chapters/Uk/",
    "profile_source": "other",
    "verified_date": "2026-11"
   },
@@ -2292,17 +2248,6 @@
    "id": "patricia-fletcher",
    "name": "Patricia Fletcher",
    "title": "Chief Executive Officer",
-   "org_name": "Responsible Investment Association (RIA Canada)",
-   "org_id": "ria-canada",
-   "ai_focus": "General shareholder advocacy; no AI work found",
-   "profile_url": "https://riacanada.ca/Web/AboutUs/Our-Team.aspx",
-   "profile_source": "employer bio",
-   "verified_date": "2026-11"
-  },
-  {
-   "id": "glen-pichanick",
-   "name": "Glen Pichanick",
-   "title": "Head of Advocacy and Industry Insights",
    "org_name": "Responsible Investment Association (RIA Canada)",
    "org_id": "ria-canada",
    "ai_focus": "General shareholder advocacy; no AI work found",
@@ -2608,17 +2553,6 @@
    "verified_date": "2026-11"
   },
   {
-   "id": "janne-werning",
-   "name": "Janne Werning",
-   "title": "Head of ESG Capital Markets and Stewardship",
-   "org_name": "Union Investment",
-   "org_id": "union-investment",
-   "ai_focus": "General shareholder advocacy; no AI work found",
-   "profile_url": "https://citywire.com/selector/news/three-companies-union-investment-influenced-through-engagement/a1295709",
-   "profile_source": "other",
-   "verified_date": "2026-11"
-  },
-  {
    "id": "brynn-obrien",
    "name": "Brynn O'Brien",
    "title": "Co-Chief Executive Officer",
@@ -2669,7 +2603,7 @@
    "org_name": "Australian Council of Superannuation Investors (ACSI)",
    "org_id": "acsi",
    "ai_focus": "General shareholder advocacy; no AI work found",
-   "profile_url": "https://acsi.org.au/about/our-staff/",
+   "profile_url": "https://acsi.org.au/about/our-team",
    "profile_source": "employer bio",
    "verified_date": "2026-11"
   },
@@ -2680,7 +2614,7 @@
    "org_name": "Australian Council of Superannuation Investors (ACSI)",
    "org_id": "acsi",
    "ai_focus": "General shareholder advocacy; no AI work found",
-   "profile_url": "https://acsi.org.au/about/our-staff/",
+   "profile_url": "https://acsi.org.au/about/our-team",
    "profile_source": "employer bio",
    "verified_date": "2026-11"
   },
@@ -2691,7 +2625,7 @@
    "org_name": "Australian Council of Superannuation Investors (ACSI)",
    "org_id": "acsi",
    "ai_focus": "General shareholder advocacy; no AI work found",
-   "profile_url": "https://acsi.org.au/about/our-staff/",
+   "profile_url": "https://acsi.org.au/about/our-team",
    "profile_source": "employer bio",
    "verified_date": "2026-11"
   },
@@ -2836,6 +2770,61 @@
    "ai_focus": "General shareholder advocacy; no AI work found",
    "profile_url": "https://asiareengage.com/our-team/",
    "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "catherine-howarth",
+   "name": "Catherine Howarth",
+   "title": "Chief Executive",
+   "org_id": "shareaction",
+   "org_name": "ShareAction",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "profile_url": "https://shareaction.org/about-us/our-team",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "rocio-domingo-ramos",
+   "name": "Rocío Domingo-Ramos",
+   "title": "Senior Investor Engagement Manager",
+   "org_id": "shareaction",
+   "org_name": "ShareAction",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "profile_url": "https://shareaction.org/about-us/our-team",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "jocelyn-brown",
+   "name": "Jocelyn Brown",
+   "title": "Head of Corporate Governance",
+   "org_id": "t-rowe-price",
+   "org_name": "T. Rowe Price",
+   "ai_focus": "Co-author of T. Rowe Price's 2026 pre-AGM season review; no AI engagement by name found",
+   "profile_url": "https://www.troweprice.com/en/us/insights/2026-pre-agm-season-review",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "andre-shepley",
+   "name": "Andre Shepley",
+   "title": "Senior Director, Responsible Investing",
+   "org_id": "nuveen-tiaa",
+   "org_name": "Nuveen (TIAA)",
+   "ai_focus": "Speaker at PRI's December 2026 webinar on AI data centres and responsible investment",
+   "profile_url": "https://www.unpri.org/events/webinar-ai-data-centres",
+   "profile_source": "other",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "sherman-jewett",
+   "name": "Sherman Jewett",
+   "title": "Corporate Governance Officer",
+   "org_id": "new-york-state-common-retirement-fund",
+   "org_name": "New York State Common Retirement Fund",
+   "ai_focus": "Speaker at PRI's December 2026 webinar on AI data centres and responsible investment",
+   "profile_url": "https://www.unpri.org/events/webinar-ai-data-centres",
+   "profile_source": "other",
    "verified_date": "2026-11"
   }
  ],

@@ -694,7 +694,8 @@
    "type": "faith-based investor",
    "website": "https://www.maryknollsisters.org",
    "description": "Catholic congregation of women religious that files shareholder proposals on human rights.",
-   "source_url": "https://collaborate.unpri.org/group/24081/home"
+   "source_url": "https://collaborate.unpri.org/group/24081/home",
+   "ai_related": true
   },
   {
    "id": "sisters-of-charity-st-elizabeth",
@@ -709,7 +710,7 @@
    "name": "Province of Saint Joseph of the Capuchin Order",
    "type": "faith-based investor",
    "website": "https://www.thecapuchins.org",
-   "description": "Midwest US province of the Capuchin Franciscan friars that files shareholder proposals.",
+   "description": "Province of the Capuchin Franciscan friars that files shareholder proposals, including a 2024 Amazon proposal.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm"
   },
   {
@@ -717,7 +718,7 @@
    "name": "Amazon Employees for Climate Justice",
    "type": "advocacy nonprofit",
    "website": "https://www.amazonclimatejustice.org",
-   "description": "Group of current and former Amazon workers campaigning on the company's climate impact.",
+   "description": "Group of Amazon employees, independent from the company, campaigning on Amazon's climate impact, including data center energy demand from AI.",
    "source_url": "https://www.iccr.org/?p=50803",
    "ai_related": true
   },
@@ -727,7 +728,8 @@
    "type": "advocacy nonprofit",
    "website": "https://www.majorityaction.us",
    "description": "US nonprofit that organizes shareholders to hold corporate boards accountable on climate and governance.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000199937125005942/amzn-px14a6g_051225.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000199937125005942/amzn-px14a6g_051225.htm",
+   "ai_related": true
   },
   {
    "id": "segal-marco-advisors",
@@ -735,7 +737,8 @@
    "type": "investor",
    "website": "https://www.segalmarco.com",
    "description": "Investment consulting firm that represents the AFL-CIO Equity Index Funds as shareholder proponent at Amazon.",
-   "source_url": "https://collaborate.unpri.org/group/32556/home"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
+   "ai_related": true
   },
   {
    "id": "dominican-sisters-springfield-il",
@@ -743,7 +746,8 @@
    "type": "faith-based investor",
    "website": "https://www.springfieldop.org",
    "description": "Catholic congregation of women religious in Springfield, Illinois.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "ai_related": true
   },
   {
    "id": "northwest-coalition-for-responsible-investment",
@@ -751,15 +755,17 @@
    "type": "coalition",
    "website": null,
    "description": "Coalition of faith-based investors in the US Pacific Northwest engaged in shareholder advocacy.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "ai_related": true
   },
   {
    "id": "ajl-foundation",
    "name": "AJL Foundation",
-   "type": "investor",
+   "type": "foundation/endowment",
    "website": null,
    "description": "Foundation that signed a 2026 investor statement opposing Amazon directors over excluded proposals.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "ai_related": true
   },
   {
    "id": "school-sisters-of-notre-dame-cif",
@@ -767,7 +773,8 @@
    "type": "faith-based investor",
    "website": null,
    "description": "Collective investment fund of the School Sisters of Notre Dame.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "ai_related": true
   },
   {
    "id": "pfc-spa-societa-benefit",
@@ -775,15 +782,17 @@
    "type": "investor",
    "website": null,
    "description": "Italian benefit company that signed a 2026 investor statement on Amazon directors.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "ai_related": true
   },
   {
    "id": "riff-foundation",
    "name": "RIFF Foundation",
-   "type": "investor",
+   "type": "foundation/endowment",
    "website": null,
    "description": "Foundation that signed a 2026 investor statement opposing Amazon directors over excluded proposals.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "ai_related": true
   },
   {
    "id": "obran-capital-advisors",
@@ -791,7 +800,8 @@
    "type": "impact/ESG asset manager",
    "website": null,
    "description": "Investment adviser that signed a 2026 investor statement on Amazon directors.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "ai_related": true
   },
   {
    "id": "figure-8-investment-strategies",
@@ -799,7 +809,8 @@
    "type": "impact/ESG asset manager",
    "website": null,
    "description": "Investment adviser that signed a 2026 investor statement on Amazon directors.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "ai_related": true
   },
   {
    "id": "argosy-trust",
@@ -807,7 +818,8 @@
    "type": "investor",
    "website": null,
    "description": "Trust that signed a 2026 investor statement opposing Amazon directors over excluded proposals.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "ai_related": true
   },
   {
    "id": "vidacaixa",
@@ -815,7 +827,8 @@
    "type": "investor",
    "website": "https://www.vidacaixa.es",
    "description": "Spanish insurance and pension provider that declared a vote for AI transparency proposals on the PRI Collaboration Platform.",
-   "source_url": "https://collaborate.unpri.org/group/20921/home"
+   "source_url": "https://collaborate.unpri.org/group/20921/home",
+   "ai_related": true
   },
   {
    "id": "anima-sgr",
@@ -823,7 +836,8 @@
    "type": "investor",
    "website": "https://www.animasgr.it",
    "description": "Italian asset manager that declared voting intentions on AI proposals on the PRI Collaboration Platform.",
-   "source_url": "https://collaborate.unpri.org/group/20921/home"
+   "source_url": "https://collaborate.unpri.org/group/20921/home",
+   "ai_related": true
   },
   {
    "id": "kutxabank-gestion",
@@ -831,7 +845,8 @@
    "type": "investor",
    "website": "https://www.kutxabank.es",
    "description": "Spanish fund manager that declared a vote for AI transparency proposals on the PRI Collaboration Platform.",
-   "source_url": "https://collaborate.unpri.org/group/20921/home"
+   "source_url": "https://collaborate.unpri.org/group/20921/home",
+   "ai_related": true
   },
   {
    "id": "rothschild-co-am",
@@ -839,15 +854,17 @@
    "type": "investor",
    "website": "https://am.eu.rothschildandco.com",
    "description": "Asset manager that declared a vote for AI transparency proposals on the PRI Collaboration Platform.",
-   "source_url": "https://collaborate.unpri.org/group/20921/home"
+   "source_url": "https://collaborate.unpri.org/group/20921/home",
+   "ai_related": true
   },
   {
    "id": "thematics-am",
    "name": "Thematics Asset Management",
    "type": "impact/ESG asset manager",
-   "website": "https://www.thematics-am.com",
+   "website": null,
    "description": "Thematic equity manager that declared a vote for the Netflix 2024 AI transparency proposal on the PRI Collaboration Platform.",
-   "source_url": "https://collaborate.unpri.org/group/23411/home"
+   "source_url": "https://collaborate.unpri.org/group/23411/home",
+   "ai_related": true
   },
   {
    "id": "american-family-association",
@@ -863,15 +880,17 @@
    "type": "advocacy nonprofit",
    "website": "https://nationalcenter.org",
    "description": "Conservative policy group in Washington, DC that files shareholder proposals through its Free Enterprise Project.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
+   "ai_related": true
   },
   {
    "id": "jubitz-foundation",
    "name": "Jubitz Foundation (Jubitz Family Foundation)",
    "type": "foundation/endowment",
-   "website": "https://www.jubitzfoundation.org",
-   "description": "Portland, Oregon family foundation that filed the Axon 2023 proposal to stop development of a TASER drone system.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1069183/000106918323000019/axon-20230531xdef14a.htm"
+   "website": null,
+   "description": "Family foundation that filed the Axon 2023 proposal to stop development of a TASER drone system.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1069183/000106918323000019/axon-20230531xdef14a.htm",
+   "ai_related": true
   },
   {
    "id": "afl-cio-reserve-fund",
@@ -879,7 +898,8 @@
    "type": "labor fund",
    "website": "https://aflcio.org",
    "description": "AFL-CIO fund listed as lead filer of 2024 AI transparency proposals at Comcast, Disney and Netflix on the PRI Collaboration Platform.",
-   "source_url": "https://collaborate.unpri.org/group/23611/home"
+   "source_url": "https://collaborate.unpri.org/group/23611/home",
+   "ai_related": true
   },
   {
    "id": "american-conservative-values-etf",
@@ -892,9 +912,9 @@
   {
    "id": "state-financial-officers-foundation",
    "name": "State Financial Officers Foundation",
-   "type": "foundation/endowment",
+   "type": "advocacy nonprofit",
    "website": "https://sfof.com",
-   "description": "A nonprofit network of Republican state treasurers, auditors and other state financial officers.",
+   "description": "Nonprofit network of US state financial officers whose CEO signed a 2025 exempt solicitation at Alphabet with Inspire Investing and Bowyer Research.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000109690625000830/insp_px14a6g.htm"
   },
   {
@@ -903,7 +923,8 @@
    "type": "faith-based investor",
    "website": "https://www.csjoseph.org",
    "description": "Catholic women's religious congregation based in Ohio that files shareholder proposals as an ICCR member.",
-   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf"
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "ai_related": true
   },
   {
    "id": "episcopal-church-dfms",
@@ -933,7 +954,7 @@
   {
    "id": "illinois-state-treasurer",
    "name": "Illinois State Treasurer",
-   "type": "public pension",
+   "type": "asset owner",
    "website": "https://illinoistreasurer.gov",
    "description": "Office of the Illinois State Treasurer, which manages state investment portfolios.",
    "source_url": "https://www.csjp.org/news/2026/2/25/pltr"
@@ -1071,7 +1092,7 @@
    "name": "Meyer Memorial Trust",
    "type": "foundation/endowment",
    "website": "https://mmt.org",
-   "description": "Oregon-based private foundation.",
+   "description": "Private foundation that was lead filer, through As You Sow, of the 2023 Meta proposal on enforcement of community standards.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
   },
   {
@@ -1088,15 +1109,17 @@
    "type": "foundation/endowment",
    "website": "https://www.caseygrants.org",
    "description": "US private foundation that co-filed through Open MIC.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
+   "ai_related": true
   },
   {
    "id": "woodcock-foundation",
    "name": "The Woodcock Foundation",
    "type": "foundation/endowment",
-   "website": "https://woodcockfoundation.org",
+   "website": "https://woodcockfdn.org",
    "description": "US private foundation that co-filed through Open MIC.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
+   "ai_related": true
   },
   {
    "id": "comgest",
@@ -1110,7 +1133,7 @@
    "id": "bell-asset-management",
    "name": "Bell Asset Management",
    "type": "investor",
-   "website": "https://www.bellasset.com",
+   "website": "https://www.bellasset.com.au",
    "description": "Australian global equities asset manager.",
    "source_url": "https://collaborate.unpri.org/group/28856/home"
   },
@@ -1119,7 +1142,7 @@
    "name": "Fonds Durocher / Durocher Fund",
    "type": "faith-based investor",
    "website": null,
-   "description": "Investment fund of the Sisters of the Holy Names of Jesus and Mary (Quebec).",
+   "description": "Faith-based fund that co-filed the 2025 Meta child safety proposal and was lead filer of a 2026 UnitedHealth proposal on healthcare consequences of acquisitions.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
   },
   {
@@ -1127,7 +1150,7 @@
    "name": "Providence St. Joseph Health",
    "type": "faith-based investor",
    "website": "https://www.providence.org",
-   "description": "Catholic health system based in Renton, Washington.",
+   "description": "Health system that co-files shareholder proposals with faith-based investors, including the 2025 Meta child safety proposal.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
   },
   {
@@ -1160,15 +1183,17 @@
    "type": "advocacy nonprofit",
    "website": "https://heatinitiative.org",
    "description": "Advocacy group pressing tech companies on child sexual exploitation online.",
-   "source_url": "https://www.prnewswire.com/news-releases/shareholders-to-demand-action-from-mark-zuckerberg-and-meta-on-child-safety-302466218.html"
+   "source_url": "https://www.prnewswire.com/news-releases/shareholders-to-demand-action-from-mark-zuckerberg-and-meta-on-child-safety-302466218.html",
+   "ai_related": true
   },
   {
    "id": "raymond-john-wean-foundation",
    "name": "Raymond John Wean Foundation",
    "type": "foundation/endowment",
-   "website": "https://www.rjweanfdn.org",
+   "website": "https://www.weanfoundation.org",
    "description": "Ohio-based private foundation that co-filed through As You Sow.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
+   "ai_related": true
   },
   {
    "id": "first-affirmative",
@@ -1176,7 +1201,8 @@
    "type": "impact/ESG asset manager",
    "website": "https://firstaffirmative.com",
    "description": "US sustainable investment advisory firm.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
+   "ai_related": true
   },
   {
    "id": "auris-gestion",
@@ -1192,7 +1218,8 @@
    "type": "faith-based investor",
    "website": null,
    "description": "Investment trust of women religious congregations in the US Northwest.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
+   "ai_related": true
   },
   {
    "id": "racial-justice-investing",
@@ -1200,7 +1227,8 @@
    "type": "coalition",
    "website": null,
    "description": "Investor coalition that co-authored investor briefings backing the Microsoft human rights due diligence proposal.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925015002/i1016250px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925015002/i1016250px14a6g.htm",
+   "ai_related": true
   },
   {
    "id": "afsc",
@@ -1208,7 +1236,8 @@
    "type": "advocacy nonprofit",
    "website": "https://afsc.org",
    "description": "Quaker organization whose corporate accountability program publicly backed the 2025 Microsoft human rights due diligence proposal.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925010874/j724252px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925010874/j724252px14a6g.htm",
+   "ai_related": true
   },
   {
    "id": "cmei",
@@ -1216,7 +1245,8 @@
    "type": "advocacy nonprofit",
    "website": null,
    "description": "Organization named as co-author of the October 2025 investor briefing supporting the Microsoft human rights due diligence proposal.",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925015002/i1016250px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925015002/i1016250px14a6g.htm",
+   "ai_related": true
   },
   {
    "id": "edentree",
@@ -1224,7 +1254,8 @@
    "type": "impact/ESG asset manager",
    "website": "https://www.edentreeim.com",
    "description": "UK responsible investment manager that pre-declared a vote for the 2025 Microsoft data center hotspots proposal on the PRI collaboration platform.",
-   "source_url": "https://collaborate.unpri.org/group/35676/home"
+   "source_url": "https://collaborate.unpri.org/group/35676/home",
+   "ai_related": true
   },
   {
    "id": "engine-no-1",
@@ -1258,7 +1289,7 @@
    "name": "Amalgamated Bank (LongView Funds)",
    "type": "impact/ESG asset manager",
    "website": "https://www.amalgamatedbank.com",
-   "description": "Union-owned bank whose LongView Funds engage companies and file shareholder resolutions on net-zero emissions, diversity, freedom of association and reproductive rights.",
+   "description": "Bank whose largest stockholder is a Workers United joint board; its LongView Funds engage companies and file shareholder resolutions on net-zero emissions, diversity, freedom of association and reproductive rights.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1823608/000182360824000104/amal-20240411.htm",
    "ai_related": false
   },
@@ -1339,7 +1370,7 @@
    "name": "Nathan Cummings Foundation",
    "type": "foundation/endowment",
    "website": "https://nathancummings.org",
-   "description": "Foundation with a Head of Active Ownership that files shareholder proposals, including racial equity audits at PepsiCo (2025) and proposals at Coca-Cola Consolidated (2024).",
+   "description": "Foundation that files shareholder proposals, including racial equity audits at PepsiCo (2025) and proposals at Coca-Cola Consolidated (2024).",
    "source_url": "https://www.sec.gov/Archives/edgar/data/77476/000130817925000289/pep4354281-def14a.htm",
    "ai_related": false
   },
@@ -1411,7 +1442,7 @@
    "name": "Socially Responsible Investment Coalition (SRIC)",
    "type": "coalition",
    "website": "http://www.sric-south.org/",
-   "description": "San Antonio, Texas coalition of religious congregations and health systems, an ICCR member since 1982, that promotes corporate responsibility through shareholder resolutions and corporate dialogues; its site says it plans to conclude operations by the end of 2026.",
+   "description": "Texas coalition of religious congregations, an ICCR member since 1982, that promotes corporate responsibility through shareholder resolutions and corporate dialogues; its site says it plans to conclude operations by the end of 2026.",
    "source_url": "http://www.sric-south.org/",
    "ai_related": true
   },
@@ -1420,7 +1451,7 @@
    "name": "Seventh Generation Interfaith Coalition for Responsible Investment",
    "type": "coalition",
    "website": null,
-   "description": "Milwaukee, Wisconsin interfaith shareholder advocacy coalition; it filed a 2023 Boeing proposal asking for a report on whether its climate lobbying aligns with its climate goals, which received 37.2% support.",
+   "description": "Interfaith shareholder advocacy coalition that filed a 2023 Boeing proposal asking for a report on whether its climate lobbying aligns with its climate goals, which received 37.2% support.",
    "source_url": "http://www.3blmedia.com/news/early-proxy-season-results-shareholders-show-support-climate-transition-plan-proposals",
    "ai_related": false
   },
@@ -1429,7 +1460,7 @@
    "name": "Maryknoll Fathers and Brothers (Catholic Foreign Mission Society of America)",
    "type": "faith-based investor",
    "website": "https://maryknollsociety.org/",
-   "description": "ICCR member society whose corporate responsibility representative files proxy resolutions and meets corporate boards through ICCR; its Office for Global Concerns campaigns to protect shareholder advocacy rights.",
+   "description": "ICCR member Catholic missionary society that has filed shareholder proposals; its corporate responsibility representative and Office for Global Concerns have campaigned to protect shareholder advocacy rights.",
    "source_url": "https://maryknollogc.org/action/protect-shareholder-advocacy/",
    "ai_related": false
   },
@@ -1654,8 +1685,8 @@
    "name": "People for the Ethical Treatment of Animals (PETA)",
    "type": "advocacy nonprofit",
    "website": "https://www.peta.org/",
-   "description": "Files shareholder resolutions on animal welfare, including a PepsiCo sugar supply chain proposal voted in May 2026, and buys shares to gain access to annual meetings.",
-   "source_url": "https://www.peta.org/media/news-releases/update-peta-shareholder-resolution-over-animal-abuse-in-pepsicos-sugar-supply-chain-garners-substantial-support/",
+   "description": "Files shareholder resolutions on animal welfare, including a 2026 PepsiCo proposal asking for a report on the treatment of animals within its supply chain.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/77476/000130817926000169/pep015012_def14a.htm",
    "ai_related": false
   },
   {
@@ -1681,7 +1712,7 @@
    "name": "Shareholder Advocacy Forum (project of Americans for Tax Reform)",
    "type": "anti-ESG proponent",
    "website": "https://shareholderadvocacyforum.org/",
-   "description": "Americans for Tax Reform project launched in 2019 to counter activist shareholder proposals and publish voting recommendations against them.",
+   "description": "Americans for Tax Reform project launched in 2019 to counter activist shareholder proposals; it publishes commentary on proposals and related legislation.",
    "source_url": "https://www.atr.org/atr-launches-shareholder-advocacy-forum-counter-rise-corporate-activists",
    "ai_related": false
   },
@@ -1690,8 +1721,8 @@
    "name": "Amazon Watch",
    "type": "advocacy nonprofit",
    "website": "https://amazonwatch.org/",
-   "description": "Uses the AGM season to press banks, insurers and oil companies (Chevron, Citigroup, JPMorgan Chase) on Amazon deforestation and Indigenous rights, working with responsible investors on resolutions.",
-   "source_url": "https://amazonwatch.org/news/2024/0620-investor-eye-on-the-amazon-june-2024",
+   "description": "Uses the AGM season to press banks and oil companies (Chevron, Citigroup, JPMorgan Chase) on Amazon oil financing and Indigenous rights, highlighting shareholder resolutions on these issues.",
+   "source_url": "https://amazonwatch.org/assets/files/2024-june-investor-eye-on-the-amazon.pdf",
    "ai_related": false
   },
   {
@@ -1726,7 +1757,7 @@
    "name": "Union of Concerned Scientists",
    "type": "advocacy nonprofit",
    "website": "https://www.ucsusa.org/",
-   "description": "Describes itself as an institutional investor that supplies scientific analysis to shareholder advocates, attends ExxonMobil annual meetings and urges large investors to back climate proposals.",
+   "description": "Science nonprofit that describes itself as an institutional investor and supplies scientific advice and analysis to networks of sustainable and responsible investors; it opposed the 2019 SEC limits on shareholder proposals.",
    "source_url": "https://sec.gov/comments/s7-23-19/s72319-6744344-207929.pdf",
    "ai_related": false
   },
@@ -1889,8 +1920,8 @@
    "name": "VBDO (Dutch Association of Investors for Sustainable Development)",
    "type": "coalition",
    "website": "https://www.vbdo.nl",
-   "description": "Dutch investor association that promotes sustainable investment and hosts the secretariat of Platform Living Wage Financials.",
-   "source_url": "https://www.vbdo.nl/en/about-vbdo/team/",
+   "description": "Dutch investor association that promotes sustainable investment and publishes an annual AGM engagement report.",
+   "source_url": "https://www.vbdo.nl",
    "country": "Netherlands",
    "ai_related": false
   },
@@ -1929,7 +1960,7 @@
    "name": "Climate Engagement Canada",
    "type": "coalition",
    "website": "https://climateengagement.ca",
-   "description": "Finance-led engagement initiative coordinated by SHARE, RIA, PRI and Ceres that engages Canadian companies on a just transition to net zero.",
+   "description": "Finance-led initiative, with RIA and SHARE as joint secretariat, that drives dialogue between finance and industry on a just transition to a net zero economy.",
    "source_url": "https://climateengagement.ca/",
    "country": "Canada",
    "ai_related": false
@@ -1968,7 +1999,7 @@
    "id": "phoenix-group",
    "name": "Phoenix Group",
    "type": "asset owner",
-   "website": "https://www.thephoenixgroup.com",
+   "website": "https://www.standardlifeplc.com",
    "description": "UK long-term savings group whose Head of Stewardship sits on the Climate Action 100+ global Steering Committee.",
    "source_url": "https://www.climateaction100.org/about/",
    "country": "United Kingdom",
@@ -1999,7 +2030,7 @@
    "name": "QIC",
    "type": "asset owner",
    "website": "https://www.qic.com",
-   "description": "Queensland government-owned investment manager whose General Manager ESG sits on the Climate Action 100+ global Steering Committee.",
+   "description": "Australian investment manager whose General Manager ESG sits on the Climate Action 100+ global Steering Committee.",
    "source_url": "https://www.climateaction100.org/about/",
    "country": "Australia",
    "ai_related": false
@@ -2069,7 +2100,7 @@
    "name": "Royal London Asset Management",
    "type": "impact/ESG asset manager",
    "website": "https://www.rlam.com",
-   "description": "UK manager that may file or co-file shareholder resolutions and lists sustainable and ethical AI, including AI governance and data centre footprints, among its 2026-2028 engagement priorities.",
+   "description": "UK manager whose 2026-2028 engagement priorities include sustainable and ethical AI, covering AI governance and data centre footprints, with escalation where engagement stalls.",
    "source_url": "https://www.rlam.com/en-au/our-views/2026/company-engagement-priorities-for-2026-2028/",
    "country": "United Kingdom",
    "ai_related": true
@@ -2169,7 +2200,7 @@
    "name": "Ohman Fonder",
    "type": "impact/ESG asset manager",
    "website": "https://www.ohman.se",
-   "description": "Swedish fund manager that co-filed the 2024 workers' rights proposal at Amazon and, with Folksam, pressed Amazon on its human rights approach.",
+   "description": "Swedish fund manager that co-filed the 2024 workers' rights proposal at Amazon.",
    "source_url": "https://www.ipe.com/news/investor-coalition-urges-amazon-to-come-clean-on-workers-rights-issues/10073171.article",
    "country": "Sweden",
    "ai_related": false
@@ -2179,7 +2210,7 @@
    "name": "AP7 (Seventh Swedish National Pension Fund)",
    "type": "public pension",
    "website": "https://www.ap7.se",
-   "description": "Swedish state default pension fund that takes part in the Big Tech and Human Rights investor collaboration and publishes a voting policy expecting companies to respect human and workers' rights across their supply chains.",
+   "description": "Swedish state default pension fund that takes part in the Big Tech and Human Rights investor collaboration.",
    "source_url": "https://etikradet.se/en/our-work/proactive-work/big-tech-human-rights/big-tech-human-rights-investor-collaboration/",
    "country": "Sweden",
    "ai_related": false
@@ -2188,7 +2219,7 @@
    "id": "cardano-group",
    "name": "Cardano Group",
    "type": "impact/ESG asset manager",
-   "website": "https://www.cardano.com",
+   "website": null,
    "description": "Pension investment and advisory group that co-filed the 2024 SHARE-led workers' rights proposal at Amazon.",
    "source_url": "https://www.ipe.com/news/investor-coalition-urges-amazon-to-come-clean-on-workers-rights-issues/10073171.article",
    "country": "Netherlands / United Kingdom",
@@ -2199,8 +2230,8 @@
    "name": "PGGM",
    "type": "asset owner",
    "website": "https://www.pggm.nl",
-   "description": "Dutch pension investment manager (for PFZW) that co-filed a 2024 worker-driven social responsibility proposal at Nike and a 2023 Say on Climate resolution at Engie, and joins the Big Tech and Human Rights collaboration.",
-   "source_url": "https://pggm.nl/en/our-services/voting-in-the-2024-agm-season",
+   "description": "Dutch pension investment manager that co-filed a 2024 worker-driven social responsibility proposal at Nike and takes part in the Big Tech and Human Rights investor collaboration.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320187/000121465924014213/o812245px14a6g.htm",
    "country": "Netherlands",
    "ai_related": false
   },
@@ -2209,7 +2240,7 @@
    "name": "APG Asset Management",
    "type": "asset owner",
    "website": "https://assetmanagement.apg.nl",
-   "description": "Dutch pension investment manager (for ABP and others) that publishes an annual stewardship overview and takes part in the Big Tech and Human Rights investor collaboration.",
+   "description": "Dutch pension investment manager that takes part in the Big Tech and Human Rights investor collaboration.",
    "source_url": "https://etikradet.se/en/our-work/proactive-work/big-tech-human-rights/big-tech-human-rights-investor-collaboration/",
    "country": "Netherlands",
    "ai_related": false
@@ -2220,7 +2251,7 @@
    "type": "impact/ESG asset manager",
    "website": "https://www.achmeainvestmentmanagement.nl",
    "description": "Dutch manager whose engagement programme covers climate, biodiversity, human rights and health, and whose Q4 2025 voting report names responsible AI use as a focus area.",
-   "source_url": "https://www.achmeainvestmentmanagement.nl/-/media/files/documenten-inst-en-part/aim-corporate-governance-en-stemverslag-q4-2025.pdf",
+   "source_url": "https://www.achmeainvestmentmanagement.nl/-/media/Files/AchmeaIM/Documenten-Inst-en-Part/AIM-Corporate-Governance-en-Stemverslag-Q4-2025.pdf",
    "country": "Netherlands",
    "ai_related": true
   },
@@ -2248,19 +2279,9 @@
    "id": "meeschaert-amilton-am",
    "name": "Meeschaert Amilton Asset Management",
    "type": "impact/ESG asset manager",
-   "website": "https://www.meeschaert-amilton.com",
-   "description": "French SRI manager that led a 2020 climate resolution at Total and coordinated the group of French shareholders behind the 2023 TotalEnergies climate resolution.",
-   "source_url": "https://theglobeandmail.com/business/industry-news/energy-and-resources/article-investors-join-activists-in-pressing-totalenergies-on-climate-targets/",
-   "country": "France",
-   "ai_related": false
-  },
-  {
-   "id": "la-financiere-de-lechiquier",
-   "name": "La Financiere de l'Echiquier (LFDE)",
-   "type": "impact/ESG asset manager",
-   "website": "https://www.lfde.com",
-   "description": "French asset manager that joined the 2023 group of French shareholders filing a climate resolution at TotalEnergies.",
-   "source_url": "https://theglobeandmail.com/business/industry-news/energy-and-resources/article-investors-join-activists-in-pressing-totalenergies-on-climate-targets/",
+   "website": null,
+   "description": "French SRI manager that coordinated a group of eleven European investors filing a 2020 climate resolution at Total.",
+   "source_url": "https://www.linfodurable.fr/investir-durable/en-bref/engagement-actionnarial-total-cible-par-un-groupement-dinvestisseurs-17515",
    "country": "France",
    "ai_related": false
   },
@@ -2269,7 +2290,7 @@
    "name": "Etica Sgr",
    "type": "impact/ESG asset manager",
    "website": "https://www.eticasgr.com",
-   "description": "Italian responsible investment manager that runs a campaign on responsible AI, signed the Investor Statement on Ethical AI, joins the WBA Collective Impact Coalition for Ethical AI and has published research on autonomous weapons systems.",
+   "description": "Italian responsible investment manager that runs a campaign on responsible AI, signed the Investor Statement on Ethical AI and joins the WBA Collective Impact Coalition for Ethical AI.",
    "source_url": "https://www.eticasgr.com/en/storie/insights/stewardship-report-2025-dialogue-vote-advocacy",
    "country": "Italy",
    "ai_related": true
@@ -2279,8 +2300,8 @@
    "name": "Union Investment",
    "type": "impact/ESG asset manager",
    "website": "https://www.union-investment.com",
-   "description": "German asset manager that combines company dialogue with voting at AGMs, for example pressing BASF on CO2 reduction and lobbying.",
-   "source_url": "https://citywire.com/selector/news/three-companies-union-investment-influenced-through-engagement/a1295709",
+   "description": "German asset manager that votes at company AGMs under its own proxy voting policy and keeps a separate engagement policy.",
+   "source_url": "https://cdn.dam.union-investment.de/601825_ProxyVotingPolicy_2024_E.pdf",
    "country": "Germany",
    "ai_related": false
   },
@@ -2309,7 +2330,7 @@
    "name": "Australian Council of Superannuation Investors (ACSI)",
    "type": "coalition",
    "website": "https://acsi.org.au",
-   "description": "Member body of Australian and international asset owners that engages ASX-listed companies on ESG and governance and publishes an annual stewardship report.",
+   "description": "Member body of Australian asset owners that engages ASX-listed companies on ESG and governance and publishes an annual stewardship report.",
    "source_url": "https://acsi.org.au/publications/stewardship-reports/",
    "country": "Australia",
    "ai_related": false
@@ -2319,8 +2340,8 @@
    "name": "Market Forces",
    "type": "advocacy nonprofit",
    "website": "https://www.marketforces.org.au",
-   "description": "Climate finance campaign group that lodges shareholder resolutions at Australian companies on behalf of shareholders and, since 2021, files proposals at Japanese banks, trading houses and power companies.",
-   "source_url": "https://www.marketforces.org.au/shareholder-resolutions/",
+   "description": "Climate finance campaign group that, with Kiko Network and Rainforest Action Network, filed climate shareholder proposals at Japan's three megabanks and Chubu Electric Power in 2024.",
+   "source_url": "https://kikonet.org/en/content/34616",
    "country": "Australia (also active in Japan and Southeast Asia)",
    "ai_related": false
   },
@@ -2329,7 +2350,7 @@
    "name": "Alphinity Investment Management",
    "type": "impact/ESG asset manager",
    "website": "https://www.alphinity.com.au",
-   "description": "Equity manager that partnered with CSIRO's Data61 to publish a Responsible AI and ESG framework for investors (2024) and applies it in its company engagement and ESG analysis.",
+   "description": "Equity manager that partnered with CSIRO to publish a Responsible AI and ESG framework for investors (2024), designed for engagement with company management and ESG analysis.",
    "source_url": "https://www.csiro.au/en/news/All/News/2024/April/Alphinity-and-CSIRO-release-responsible-AI-framework-for-financial-services",
    "country": "Australia",
    "ai_related": true
@@ -2339,7 +2360,7 @@
    "name": "Australian Ethical",
    "type": "impact/ESG asset manager",
    "website": "https://www.australianethical.com.au",
-   "description": "Ethical fund manager and super fund with an in-house impact and ethics team that runs company engagement and advocacy under its Ethical Criteria.",
+   "description": "Ethical fund manager and super fund whose in-house impact and ethics team applies its Ethical Criteria to investments.",
    "source_url": "https://australianethical.com.au/about/impact-and-ethics-team",
    "country": "Australia",
    "ai_related": false
@@ -2389,7 +2410,7 @@
    "name": "Desjardins Global Asset Management (DGAM)",
    "type": "impact/ESG asset manager",
    "website": "https://www.desjardins.com/en/business/investment/desjardins-global-asset-management.html",
-   "description": "Quebec asset manager whose responsible investment team uses proxy voting, shareholder dialogue and shareholder proposals as its main engagement tools.",
+   "description": "Quebec asset manager whose responsible investment team uses dialogue and proxy voting as its main tools for influencing issuers.",
    "source_url": "https://www.desjardins.com/en/business/investment/desjardins-global-asset-management/responsible-investment.html",
    "country": "Canada",
    "ai_related": false
@@ -2419,7 +2440,7 @@
    "name": "Asia Research and Engagement (ARE)",
    "type": "coalition",
    "website": "https://asiareengage.com",
-   "description": "Runs collaborative engagement programmes in which global institutional investors press Asian companies on energy transition and protein transition, using direct engagement, investor calls and AGM attendance.",
+   "description": "Runs collaborative engagement programmes that bring global institutional investors together to engage Asian companies on energy transition and protein transition.",
    "source_url": "https://asiareengage.com/our-team/",
    "country": "Singapore",
    "ai_related": false
@@ -2429,8 +2450,8 @@
    "name": "Asset Management One",
    "type": "impact/ESG asset manager",
    "website": "https://www.am-one.co.jp/english/",
-   "description": "Large Japanese asset manager whose sustainability report includes a section on Japanese companies' response to AI risks and lists human rights as a stewardship focus area.",
-   "source_url": "https://www.am-one.co.jp/img/english/26/sustainability_report_e_2024_appendix.pdf",
+   "description": "Japanese asset manager whose 2025 sustainability report lists AI and digital innovation among its materiality themes, describes an engagement on AI data center energy demand, and names human rights as a focus area.",
+   "source_url": "https://www.am-one.co.jp/img/english/45/sustainability_report_e_2025.pdf",
    "country": "Japan",
    "ai_related": true
   },
@@ -2438,7 +2459,7 @@
    "id": "sumitomo-mitsui-trust-am",
    "name": "Sumitomo Mitsui Trust Asset Management (SuMi TRUST AM)",
    "type": "impact/ESG asset manager",
-   "website": "https://www.smtam.jp/en/",
+   "website": "https://www.sumitrust-am.com",
    "description": "Japanese asset manager whose 2024-2025 stewardship report covers its business and human rights engagement and ESG points to consider with fast-spreading AI.",
    "source_url": "https://eu.sumitrust-am.com/docs/stewardship-report-2024-2025pdf/download",
    "country": "Japan",
@@ -2453,6 +2474,51 @@
    "source_url": "https://global.nomura-am.co.jp/responsibility-investment/pdf/ri_report_2025.pdf",
    "country": "Japan",
    "ai_related": true
+  },
+  {
+   "id": "shareaction",
+   "name": "ShareAction",
+   "type": "advocacy nonprofit",
+   "country": "United Kingdom",
+   "website": "https://shareaction.org",
+   "description": "UK charity that runs investor initiatives and helps savers and investors co-file shareholder resolutions and question companies at AGMs.",
+   "source_url": "https://shareaction.org/savers-resource-hub/co-filing-resolutions",
+   "ai_related": false
+  },
+  {
+   "id": "pri-advance",
+   "name": "Advance (PRI)",
+   "type": "coalition",
+   "website": "https://www.unpri.org/initiatives/advance",
+   "description": "PRI-led collaborative stewardship initiative on human rights and social issues, launched December 2022; its page reports 270 endorsing investors (107 in engagements) and 35 companies engaged.",
+   "source_url": "https://www.unpri.org/initiatives/advance",
+   "ai_related": false
+  },
+  {
+   "id": "bsr-investor-wg-responsible-ai",
+   "name": "BSR Investor Working Group on Responsible AI",
+   "type": "coalition",
+   "website": "https://www.bsr.org",
+   "description": "BSR working group that meets every two months for twelve months to help investors assess AI-related risks and how companies oversee them across portfolios.",
+   "source_url": "https://www.bsr.org/en/hello/interest/roundtable/investor-working-group-on-responsible-ai",
+   "ai_related": true
+  },
+  {
+   "id": "t-rowe-price",
+   "name": "T. Rowe Price",
+   "type": "mutual fund family",
+   "website": "https://www.troweprice.com",
+   "description": "Mutual fund family whose corporate governance team publishes reviews of each proxy season and votes under its own proxy voting guidelines.",
+   "source_url": "https://www.troweprice.com/en/us/insights/2026-pre-agm-season-review",
+   "ai_related": false
+  },
+  {
+   "id": "pri",
+   "name": "PRI",
+   "type": "coalition",
+   "website": "https://www.unpri.org",
+   "description": "UN-supported network of investors (Principles for Responsible Investment) that runs collaborative stewardship initiatives, including Advance on human rights.",
+   "source_url": "https://www.unpri.org/initiatives/advance"
   }
  ],
  "proposals": [
@@ -4788,6 +4854,13 @@
    "relation": "member of",
    "source_url": "https://www.ceres.org/water/valuing-water-finance-initiative",
    "note": "VWFI is an initiative of Ceres"
+  },
+  {
+   "from": "pri-advance",
+   "to": "pri",
+   "relation": "member of",
+   "source_url": "https://www.unpri.org/initiatives/advance",
+   "note": "Advance is a PRI-led initiative"
   }
  ],
  "engagements": [
@@ -4880,7 +4953,8 @@
    "from": "harrington",
    "to": "amzn-2024-facial-recognition",
    "relation": "lead filer",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
+   "note": "Proxy (Item 14, Report on Customer Use of Certain Technologies) names the shareholder as John Harrington; the firm name Harrington Investments does not appear in the proxy"
   },
   {
    "from": "amazon-employees-for-climate-justice",
@@ -4916,68 +4990,78 @@
    "from": "friends-fiduciary",
    "to": "amzn-2026-responsible-ai-sales",
    "relation": "exempt solicitation",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "Signatory of the IASJ exempt solicitation (filed by Investor Advocates for Social Justice) announcing votes AGAINST four Amazon directors over the company's exclusion of this proposal; the letter does not solicit votes on the proposal itself, which was excluded from the ballot"
   },
   {
    "from": "dominican-sisters-springfield-il",
    "to": "amzn-2026-responsible-ai-sales",
    "relation": "exempt solicitation",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "Signatory of the IASJ exempt solicitation (filed by Investor Advocates for Social Justice) announcing votes AGAINST four Amazon directors over the company's exclusion of this proposal; the letter does not solicit votes on the proposal itself, which was excluded from the ballot"
   },
   {
    "from": "northwest-coalition-for-responsible-investment",
    "to": "amzn-2026-responsible-ai-sales",
    "relation": "exempt solicitation",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "Signatory of the IASJ exempt solicitation (filed by Investor Advocates for Social Justice) announcing votes AGAINST four Amazon directors over the company's exclusion of this proposal; the letter does not solicit votes on the proposal itself, which was excluded from the ballot"
   },
   {
    "from": "maryknoll-sisters",
    "to": "amzn-2026-responsible-ai-sales",
    "relation": "exempt solicitation",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "Signatory of the IASJ exempt solicitation (filed by Investor Advocates for Social Justice) announcing votes AGAINST four Amazon directors over the company's exclusion of this proposal; the letter does not solicit votes on the proposal itself, which was excluded from the ballot"
   },
   {
    "from": "ajl-foundation",
    "to": "amzn-2026-responsible-ai-sales",
    "relation": "exempt solicitation",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
-   "note": "Signatory of IASJ's exempt solicitation letter"
+   "note": "Signatory of the IASJ exempt solicitation (filed by Investor Advocates for Social Justice) announcing votes AGAINST four Amazon directors over the company's exclusion of this proposal; the letter does not solicit votes on the proposal itself, which was excluded from the ballot"
   },
   {
    "from": "school-sisters-of-notre-dame-cif",
    "to": "amzn-2026-responsible-ai-sales",
    "relation": "exempt solicitation",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "Signatory of the IASJ exempt solicitation (filed by Investor Advocates for Social Justice) announcing votes AGAINST four Amazon directors over the company's exclusion of this proposal; the letter does not solicit votes on the proposal itself, which was excluded from the ballot"
   },
   {
    "from": "pfc-spa-societa-benefit",
    "to": "amzn-2026-responsible-ai-sales",
    "relation": "exempt solicitation",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "Signatory of the IASJ exempt solicitation (filed by Investor Advocates for Social Justice) announcing votes AGAINST four Amazon directors over the company's exclusion of this proposal; the letter does not solicit votes on the proposal itself, which was excluded from the ballot"
   },
   {
    "from": "riff-foundation",
    "to": "amzn-2026-responsible-ai-sales",
    "relation": "exempt solicitation",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "Signatory of the IASJ exempt solicitation (filed by Investor Advocates for Social Justice) announcing votes AGAINST four Amazon directors over the company's exclusion of this proposal; the letter does not solicit votes on the proposal itself, which was excluded from the ballot"
   },
   {
    "from": "obran-capital-advisors",
    "to": "amzn-2026-responsible-ai-sales",
    "relation": "exempt solicitation",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "Signatory of the IASJ exempt solicitation (filed by Investor Advocates for Social Justice) announcing votes AGAINST four Amazon directors over the company's exclusion of this proposal; the letter does not solicit votes on the proposal itself, which was excluded from the ballot"
   },
   {
    "from": "figure-8-investment-strategies",
    "to": "amzn-2026-responsible-ai-sales",
    "relation": "exempt solicitation",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "Signatory of the IASJ exempt solicitation (filed by Investor Advocates for Social Justice) announcing votes AGAINST four Amazon directors over the company's exclusion of this proposal; the letter does not solicit votes on the proposal itself, which was excluded from the ballot"
   },
   {
    "from": "argosy-trust",
    "to": "amzn-2026-responsible-ai-sales",
    "relation": "exempt solicitation",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "Signatory of the IASJ exempt solicitation (filed by Investor Advocates for Social Justice) announcing votes AGAINST four Amazon directors over the company's exclusion of this proposal; the letter does not solicit votes on the proposal itself, which was excluded from the ballot"
   },
   {
    "from": "segal-marco-advisors",
@@ -5019,7 +5103,8 @@
    "from": "open-mic",
    "to": "axon-2023-6",
    "relation": "coordinated by",
-   "source_url": "https://openmic.org/news/open-mic-pressures-axon-to-abandon-plan-to-deploy-ai-powered-taser-drones-in-schools"
+   "source_url": "https://openmic.org/news/open-mic-pressures-axon-to-abandon-plan-to-deploy-ai-powered-taser-drones-in-schools",
+   "note": "Open MIC release (Apr 11, 2023) says Open MIC submitted the proposal; the proxy names the Jubitz Foundation as proponent"
   },
   {
    "from": "afl-cio",
@@ -5584,7 +5669,8 @@
    "from": "northstar",
    "to": "dlr-2026-4",
    "relation": "lead filer",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm",
+   "note": "Proxy says NorthStar Asset Management Funded Pension Plan and Proxy Impact (on behalf of Broz Family Investments LLC) intend to jointly present the proposal; it does not name a lead filer"
   },
   {
    "from": "proxy-impact",
@@ -5619,7 +5705,7 @@
   {
    "from": "meyer-memorial-trust",
    "to": "meta-2023-community-standards",
-   "relation": "co-filer",
+   "relation": "lead filer",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
   },
   {
@@ -5872,7 +5958,8 @@
    "from": "eko",
    "to": "msft-2024-hr-hotspots",
    "relation": "co-filer",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925015002/i1016250px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925015002/i1016250px14a6g.htm",
+   "note": "Ekō investor briefing (Oct 2025 exempt solicitation) says the 2024 resolution on the Saudi Arabia data center and other human rights hotspots was filed by Ekō and won about a third of the vote; it does not say whether Ekō was lead or co-filer"
   },
   {
    "from": "american-conservative-values-etf",
@@ -5930,12 +6017,6 @@
    "note": "Named as a partner in the co-filing (NorthStar client communication)"
   },
   {
-   "from": "as-you-sow",
-   "to": "msft-2026-climate-ai-dc",
-   "relation": "supported by",
-   "source_url": "https://www.asyousow.org/resolutions/2026/06/22-microsoft-climate-transition-plan-ai-data-centers"
-  },
-  {
    "from": "trillium",
    "to": "msft-2026-climate-ai-dc",
    "relation": "exempt solicitation",
@@ -5944,13 +6025,13 @@
   {
    "from": "adl",
    "to": "msft-2026-hrdd-ai-misuse",
-   "relation": "exempt solicitation",
+   "relation": "exempt solicitation against",
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000092189526002869/px14a6g14098012_10282026.htm"
   },
   {
    "from": "jlens",
    "to": "msft-2026-hrdd-ai-misuse",
-   "relation": "exempt solicitation",
+   "relation": "exempt solicitation against",
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000092189526002869/px14a6g14098012_10282026.htm"
   },
   {
@@ -5968,14 +6049,110 @@
   {
    "from": "adl",
    "to": "msft-2026-hr-hotspots",
-   "relation": "exempt solicitation",
+   "relation": "exempt solicitation against",
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000092189526002869/px14a6g14098012_10282026.htm"
   },
   {
    "from": "jlens",
    "to": "msft-2026-hr-hotspots",
-   "relation": "exempt solicitation",
+   "relation": "exempt solicitation against",
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000092189526002869/px14a6g14098012_10282026.htm"
+  },
+  {
+   "from": "adrian-dominican",
+   "to": "amzn-2026-responsible-ai-sales",
+   "relation": "co-filer",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "note": "ICCR 2026 Proxy Resolutions and Voting Guide, p. 183"
+  },
+  {
+   "from": "benedictine-mt-scholastica",
+   "to": "amzn-2026-responsible-ai-sales",
+   "relation": "co-filer",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "note": "ICCR 2026 Proxy Resolutions and Voting Guide, p. 183"
+  },
+  {
+   "from": "snjm",
+   "to": "amzn-2026-responsible-ai-sales",
+   "relation": "co-filer",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "note": "ICCR 2026 Proxy Resolutions and Voting Guide, p. 183"
+  },
+  {
+   "from": "daughters-of-charity-province-of-st-louise",
+   "to": "amzn-2026-responsible-ai-sales",
+   "relation": "co-filer",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "note": "ICCR 2026 Proxy Resolutions and Voting Guide, p. 183"
+  },
+  {
+   "from": "northwest-women-religious-investment-trust",
+   "to": "amzn-2026-responsible-ai-sales",
+   "relation": "co-filer",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "note": "ICCR 2026 Proxy Resolutions and Voting Guide, p. 183"
+  },
+  {
+   "from": "snjm",
+   "to": "meta-2026-child-safety-pay",
+   "relation": "co-filer",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "note": "ICCR 2026 Proxy Resolutions and Voting Guide, p. 193"
+  },
+  {
+   "from": "maryknoll-sisters",
+   "to": "amzn-2026-responsible-ai-sales",
+   "relation": "co-filer",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "note": "ICCR 2026 Proxy Resolutions and Voting Guide, p. 183"
+  },
+  {
+   "from": "omi-us",
+   "to": "amzn-2026-responsible-ai-sales",
+   "relation": "co-filer",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "note": "ICCR 2026 Proxy Resolutions and Voting Guide, p. 183"
+  },
+  {
+   "from": "northstar",
+   "to": "amzn-2026-responsible-ai-sales",
+   "relation": "co-filer",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "note": "ICCR 2026 Proxy Resolutions and Voting Guide, p. 183"
+  },
+  {
+   "from": "scl",
+   "to": "amzn-2026-responsible-ai-sales",
+   "relation": "co-filer",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "note": "ICCR 2026 Proxy Resolutions and Voting Guide, p. 183"
+  },
+  {
+   "from": "mercy",
+   "to": "amzn-2026-5",
+   "relation": "lead filer",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "note": "ICCR 2026 Proxy Resolutions and Voting Guide, p. 183"
+  },
+  {
+   "from": "pcusa",
+   "to": "meta-2026-9",
+   "relation": "lead filer",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "note": "ICCR 2026 Proxy Resolutions and Voting Guide, p. 193"
+  },
+  {
+   "from": "northstar",
+   "to": "crm-2026-ai-human-rights",
+   "relation": "lead filer",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf"
+  },
+  {
+   "from": "open-mic",
+   "to": "crm-2026-dual-use-defense",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/scottsalesforce21026.pdf"
   }
  ]
 }
