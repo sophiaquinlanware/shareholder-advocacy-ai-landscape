@@ -2954,7 +2954,7 @@
    "topic": "Social & economic impacts",
    "subtopic": "AI, automation and workforce",
    "status": "voted",
-   "support_pct": 0.0,
+   "support_pct": null,
    "source_url": "https://united4respect.org/wp-content/uploads/2026/03/AI-Advisory-Council_-Amazon-Floor-Resolution-2026-FINAL.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926065717/tm2614288d1_8k.htm",
    "degree": 2
@@ -4683,7 +4683,7 @@
    "topic": "AI governance & oversight",
    "subtopic": "AI product strategy (floor proposal)",
    "status": "voted",
-   "support_pct": 0.0,
+   "support_pct": null,
    "proponent": "UNVERIFIED (the 8-K does not name the proponent)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "degree": 1

@@ -145,9 +145,9 @@
     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204422000085/googexhibit302.htm"
    },
    "Votes against directors": {
-    "level": "narrowing",
-    "label": "Symbolic",
-    "note": "Founders control the result",
+    "level": "closed",
+    "label": "Founder control",
+    "note": "Founders hold about 52.7% of votes, so they decide director elections",
     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
    },
    "Voting control": {
@@ -582,13 +582,13 @@
   "ticker": "TSLA",
   "name": "Tesla",
   "route_status": "narrowing",
-  "route_status_reason": "Tesla has not adopted the Texas ownership threshold, but its board could adopt one without a shareholder vote. A 2025 proposal to require shareholder approval for that failed narrowly. The notice window is short and the board is classified.",
+  "route_status_reason": "Tesla has not adopted the Texas ownership threshold, but its board could adopt one without a shareholder vote. A 2025 proposal to require shareholder approval for that failed narrowly.",
   "state": {
    "text": "Texas",
    "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"
   },
   "bylaw": {
-   "text": "A shareholder of record can bring a proposal with notice 45 to 75 days before the anniversary of the date last year's proxy was mailed, a shorter and earlier window than most. No minimum stake for proposals today.",
+   "text": "A shareholder of record can bring a proposal with notice 45 to 75 days before the anniversary of the date last year's proxy was mailed. No minimum stake for proposals today.",
    "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925050072/tm2515421d1_ex3-1.htm"
   },
   "threshold": {
@@ -702,11 +702,81 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0002130357",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "route_note": "Domestic issuer; first annual proxy statement not yet filed",
   "tier": "labs",
   "tiers": [
    "labs"
+  ],
+  "state": {
+   "text": "Delaware (public benefit corporation)",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/exhibit31-closing8xk.htm"
+  },
+  "bylaw": {
+   "text": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last annual meeting. For the 2027 meeting, notice is due between February 1 and March 3, 2027. No minimum stake. The Class F and Class T holders are exempt from these notice rules.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/exhibit32-closing8xk.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a stockholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/exhibit32-closing8xk.htm"
+  },
+  "control": {
+   "text": "Class A shares carry one vote each and Class N shares have no vote. One Class F share, held by Anthropic Founders, LLC, carries 50.1% of total voting power. One Class T share elects a majority of the board. No proxy statement yet; this is from the IPO closing filings of November 2026.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/ant-20261119.htm"
+  },
+  "director_voting": {
+   "text": "Plurality voting: a director wins with any votes for, so votes against do not unseat anyone. Class T stock elects a majority of the board.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/exhibit32-closing8xk.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/exhibit32-closing8xk.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/exhibit32-closing8xk.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/exhibit32-closing8xk.htm"
+   },
+   "Votes against directors": {
+    "level": "closed",
+    "label": "Plurality",
+    "note": "Plurality voting; Class F holds 50.1% of votes",
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/exhibit32-closing8xk.htm"
+   },
+   "Voting control": {
+    "level": "closed",
+    "label": "Founder control",
+    "note": "Class F share holds 50.1% of votes",
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/ant-20261119.htm"
+   }
+  },
+  "route_status": "narrowing",
+  "route_status_reason": "Any record holder can give notice of a floor proposal, but one Class F share carries 50.1% of the vote and directors are elected by plurality, so outside votes signal views without deciding outcomes.",
+  "notes": [
+   {
+    "text": "Class T stock elects the smallest number of directors that makes up a majority of the board, until no Class T shares remain outstanding.",
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/exhibit31-closing8xk.htm"
+   },
+   {
+    "text": "The board becomes classified (three classes) only after the Class F sunset.",
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/exhibit31-closing8xk.htm"
+   },
+   {
+    "text": "Newly listed November 2026; no annual proxy statement filed yet.",
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/ant-20261119.htm"
+   }
   ]
  },
  {
@@ -739,12 +809,82 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001181412",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "route_note": "Domestic issuer; first annual proxy statement not yet filed",
   "tier": "labs",
   "tiers": [
    "labs",
    "datacenters"
+  ],
+  "state": {
+   "text": "Texas",
+   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026066880/spcx-20260930.htm"
+  },
+  "bylaw": {
+   "text": "A shareholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last annual meeting; the bylaws treat June 19, 2026 as the date of the 2026 meeting. Proposals other than nominations also need the Texas Section 21.373 ownership stake, and the notice must say whether the shareholder will solicit holders of at least 67% of the voting power. Musk and his permitted transferees are exempt from these notice rules.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026043288/exhibit32-8xk.htm"
+  },
+  "threshold": {
+   "text": "$1 million in market value or 3% of voting shares, held for at least six months, under Texas Section 21.373, which the bylaws adopt (Section 9.5).",
+   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026043288/exhibit32-8xk.htm"
+  },
+  "control": {
+   "text": "Class A shares carry one vote and Class B shares carry ten. Musk reported sole voting power over 6.42 billion shares (48.4% of Class A counted as converted), of which 5.22 billion are Class B, as of June 30, 2026. 5.33 billion Class B shares were outstanding on October 15, 2026. No proxy statement yet. Calculated from these share counts, Musk holds about 87% of total votes (this site's calculation; the filings do not state a percentage).",
+   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000110465926095936/xslSCHEDULE_13G_X02/primary_doc.xml"
+  },
+  "director_voting": {
+   "text": "Plurality voting: a director wins with any votes for, so votes against do not unseat anyone. Some seats are Class B director seats.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026043288/exhibit32-8xk.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026043288/exhibit32-8xk.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026043288/exhibit32-8xk.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "narrowing",
+    "label": "Threshold",
+    "note": "$1M or 3% held six months, plus 67% solicitation statement",
+    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026043288/exhibit32-8xk.htm"
+   },
+   "Votes against directors": {
+    "level": "closed",
+    "label": "Plurality",
+    "note": "Plurality voting; Musk holds most votes",
+    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026043288/exhibit32-8xk.htm"
+   },
+   "Voting control": {
+    "level": "closed",
+    "label": "Founder control",
+    "note": "Musk holds most Class B (10 votes per share)",
+    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000110465926095936/xslSCHEDULE_13G_X02/primary_doc.xml"
+   }
+  },
+  "route_status": "narrowing",
+  "route_status_reason": "SpaceX has opted into the Texas ownership threshold for proposals, Musk holds most of the vote through 10-vote Class B shares, and directors are elected by plurality.",
+  "notes": [
+   {
+    "text": "Bylaws require 3% ownership to bring a derivative lawsuit (Section 9.4).",
+    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026043288/exhibit32-8xk.htm"
+   },
+   {
+    "text": "Shareholders may act by written consent (certificate of formation, Article X).",
+    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026043288/exhibit31-8xk.htm"
+   },
+   {
+    "text": "Newly listed June 2026; no annual proxy statement filed yet.",
+    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026066880/spcx-20260930.htm"
+   }
   ]
  },
  {
@@ -1315,11 +1455,73 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000051143&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "deployers",
   "tiers": [
    "deployers",
    "labs"
+  ],
+  "state": {
+   "text": "New York",
+   "url": "https://data.sec.gov/submissions/CIK0000051143.json"
+  },
+  "bylaw": {
+   "text": "A stockholder entitled to vote can bring a proposal with notice 120 to 150 days before the anniversary of the date of last year's proxy statement. No minimum stake. Bylaws as amended through October 1, 2026.",
+   "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000086/finalbylawsoctober12026.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a stockholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000086/finalbylawsoctober12026.htm"
+  },
+  "control": {
+   "text": "One class of voting stock (common), one vote per share. No controlling holder; Vanguard (10.03%), BlackRock (8.3%) and State Street (6.03%) are the largest, as of December 31, 2025. Vanguard reported no sole voting power and shared voting power over 1.09 million shares.",
+   "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm"
+  },
+  "director_voting": {
+   "text": "Majority of votes cast in uncontested elections; a director who falls short must offer to resign, and independent directors decide within 90 days.",
+   "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000086/finalbylawsoctober12026.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000086/finalbylawsoctober12026.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000086/finalbylawsoctober12026.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000086/finalbylawsoctober12026.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000086/finalbylawsoctober12026.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "No controlling holder; largest holders are index managers",
+    "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm"
+   }
+  },
+  "route_status": "open",
+  "route_status_reason": "Any stockholder entitled to vote can give notice of a floor proposal with no stake minimum, directors face majority voting in uncontested elections, and no holder controls the vote; Vanguard's 10.03% is the largest stake.",
+  "notes": [
+   {
+    "text": "Proxy access: 3% held for three years. Holders of 25% can call a special meeting.",
+    "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000086/finalbylawsoctober12026.htm"
+   }
   ]
  },
  {
@@ -1346,10 +1548,72 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "deployers",
   "tiers": [
    "deployers"
+  ],
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm"
+  },
+  "bylaw": {
+   "text": "A stockholder of record can bring a proposal with notice 45 to 75 days before the anniversary of the date the company first mailed proxy materials for the prior annual meeting. For the 2027 meeting, notice is due between January 31 and March 2, 2027. No minimum stake. Bylaws effective December 5, 2024.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000036/exhibit31.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a stockholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000036/exhibit31.htm"
+  },
+  "control": {
+   "text": "One class of stock, one vote per share. No controlling holder; Vanguard (10.2%), BlackRock (8.9%) and State Street (6.0%) are the largest. Vanguard reported shared voting power over only 1.27 million shares.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm"
+  },
+  "director_voting": {
+   "text": "Majority voting in uncontested elections: a nominee needs more votes for than against. A director who falls short has a resignation on file under the governance guidelines, and the board acts within 90 days. All directors stand for election each year.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000036/exhibit31.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000036/exhibit31.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000036/exhibit31.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000036/exhibit31.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000036/exhibit31.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "No controlling holder; largest holders are index managers",
+    "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm"
+   }
+  },
+  "route_status": "open",
+  "route_status_reason": "Any stockholder of record can give notice of a floor proposal with no stake minimum, directors face majority voting, and no holder controls the vote; Vanguard's 10.2% is the largest stake.",
+  "notes": [
+   {
+    "text": "Marc Benioff, Chair and CEO, holds 2.8%.",
+    "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm"
+   }
   ]
  },
  {
@@ -1372,11 +1636,67 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000796343&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "deployers",
   "tiers": [
    "deployers"
-  ]
+  ],
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm"
+  },
+  "bylaw": {
+   "text": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last annual meeting. For the 2027 meeting, notice is due between December 16, 2026 and January 15, 2027. No minimum stake. Bylaws dated April 22, 2025.",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000162828025019665/ex318-k42425.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a stockholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000162828025019665/ex318-k42425.htm"
+  },
+  "control": {
+   "text": "One class of stock, one vote per share. No controlling holder; Vanguard (10.17%) and BlackRock (9.31%) are the largest. Vanguard reported shared voting power over 4.2 million of its 41.5 million shares.",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000043/adbe-20260227.htm"
+  },
+  "director_voting": {
+   "text": "Majority voting in uncontested elections: a nominee needs more votes for than against. Nominees state whether they will tender a resignation if they fall short, under the Corporate Governance Guidelines. All directors are elected each year.",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000162828025019665/ex318-k42425.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/796343/000162828025019665/ex318-k42425.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/796343/000162828025019665/ex318-k42425.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/796343/000162828025019665/ex318-k42425.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/796343/000162828025019665/ex318-k42425.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "No controlling holder; largest holders are index managers",
+    "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000043/adbe-20260227.htm"
+   }
+  },
+  "route_status": "open",
+  "route_status_reason": "Any stockholder of record can give notice of a floor proposal with no stake minimum, directors face majority voting, and no holder controls the vote; Vanguard's 10.17% is the largest stake."
  },
  {
   "id": "intuit",
@@ -1403,10 +1723,72 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000896878&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "deployers",
   "tiers": [
    "deployers"
+  ],
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm"
+  },
+  "bylaw": {
+   "text": "A stockholder of record can bring a proposal with notice 75 to 105 days before the anniversary of the last annual meeting. For the 2028 meeting, notice is due between October 7 and November 6, 2027 (the January 2027 meeting's window has passed). No minimum stake. Bylaws as amended July 27, 2023.",
+   "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687823000026/exhibit301-bylawsofintuiti.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a stockholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687823000026/exhibit301-bylawsofintuiti.htm"
+  },
+  "control": {
+   "text": "One class of stock, one vote per share. No controlling holder; BlackRock (8.84%) and Vanguard Capital Management (7.87%) are the largest. Founder Scott Cook holds 2.13% through trusts.",
+   "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000053/intu-20261125.htm"
+  },
+  "director_voting": {
+   "text": "Majority voting in uncontested elections: a director who gets more votes against than for must offer to resign, and the board decides within 90 days. All directors are elected each year.",
+   "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687823000026/exhibit301-bylawsofintuiti.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687823000026/exhibit301-bylawsofintuiti.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687823000026/exhibit301-bylawsofintuiti.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687823000026/exhibit301-bylawsofintuiti.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687823000026/exhibit301-bylawsofintuiti.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "Largest holder 8.84%",
+    "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000053/intu-20261125.htm"
+   }
+  },
+  "route_status": "open",
+  "route_status_reason": "Any stockholder of record can give notice of a floor proposal with no stake minimum, there is no controlling shareholder, and directors face majority voting.",
+  "notes": [
+   {
+    "text": "Stockholders may act by written consent, and proxy access is 3% held for three years.",
+    "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000053/intu-20261125.htm"
+   }
   ]
  },
  {
@@ -1433,11 +1815,67 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001442145&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "deployers",
   "tiers": [
    "deployers"
-  ]
+  ],
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926004452/vrsk20251231_10k.htm"
+  },
+  "bylaw": {
+   "text": "Any stockholder of record can bring a proposal to the meeting with notice 60 to 90 days before the anniversary of the last meeting. No minimum stake.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1442145/000119312525127567/d908167dex32.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/1442145/000119312525127567/d908167dex32.htm"
+  },
+  "control": {
+   "text": "One class of stock, one vote per share. No controlling holder; Vanguard (12.3%) and BlackRock (7.8%) are the largest holders. Directors are elected every year.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1442145/000119312526141398/d23242ddef14a.htm"
+  },
+  "director_voting": {
+   "text": "Majority voting: a director needs a majority of votes cast in an uncontested election, and under the company's resignation policy an incumbent who falls short must promptly tender a resignation.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1442145/000119312526141398/d23242ddef14a.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1442145/000119312525127567/d908167dex32.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1442145/000119312525127567/d908167dex32.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/1442145/000119312525127567/d908167dex32.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/1442145/000119312525127567/d908167dex32.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "No controlling holder; largest holders are index managers",
+    "url": "https://www.sec.gov/Archives/edgar/data/1442145/000119312526141398/d23242ddef14a.htm"
+   }
+  },
+  "route_status": "open",
+  "route_status_reason": "Any record holder can give notice of a floor proposal, directors face majority voting and are elected every year, and no holder controls the vote; Vanguard is the largest at 12.3%."
  },
  {
   "id": "workday",
@@ -1463,11 +1901,67 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001327811&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "deployers",
   "tiers": [
    "deployers"
-  ]
+  ],
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000014/wday-20260131.htm"
+  },
+  "bylaw": {
+   "text": "Any stockholder of record can bring a proposal to the meeting with notice 75 to 105 days before the anniversary of the last meeting. No minimum stake.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1327811/000110465923007534/tm234245d1_ex3-1.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/1327811/000110465923007534/tm234245d1_ex3-1.htm"
+  },
+  "control": {
+   "text": "Class A shares carry one vote and Class B shares 10 votes. Co-founders Bhusri and Duffield, through a voting agreement, hold about 69% of total voting power as of April 17, 2026. The board is classified: a third of directors are elected each year for three-year terms.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1327811/000110465926055687/tm261347-2_def14a.htm"
+  },
+  "director_voting": {
+   "text": "Majority voting: a director who gets more votes against than for must offer to resign.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1327811/000110465923007534/tm234245d1_ex3-1.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1327811/000110465923007534/tm234245d1_ex3-1.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1327811/000110465923007534/tm234245d1_ex3-1.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/1327811/000110465923007534/tm234245d1_ex3-1.htm"
+   },
+   "Votes against directors": {
+    "level": "closed",
+    "label": "Founder control",
+    "note": "Founders hold 69% of votes; classified board",
+    "url": "https://www.sec.gov/Archives/edgar/data/1327811/000110465926055687/tm261347-2_def14a.htm"
+   },
+   "Voting control": {
+    "level": "closed",
+    "label": "Founder control",
+    "note": "69% of votes with Bhusri and Duffield",
+    "url": "https://www.sec.gov/Archives/edgar/data/1327811/000110465926055687/tm261347-2_def14a.htm"
+   }
+  },
+  "route_status": "narrowing",
+  "route_status_reason": "The notice route stays open, but Bhusri and Duffield hold 69% of the vote and the board is classified, so outside votes signal views without deciding outcomes."
  },
  {
   "id": "servicenow",
@@ -1489,12 +1983,68 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001373715&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "deployers",
   "tiers": [
    "deployers",
    "labs"
-  ]
+  ],
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm"
+  },
+  "bylaw": {
+   "text": "Any stockholder of record can bring a proposal to the meeting with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371525000051/restatedbylaws.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371525000051/restatedbylaws.htm"
+  },
+  "control": {
+   "text": "One class of stock, one vote per share. No controlling holder; BlackRock (8.8%) and Vanguard (8.7%) are the largest holders. Directors are elected every year.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000039/now-20260406.htm"
+  },
+  "director_voting": {
+   "text": "Majority voting: a director needs more votes for than against, and nominees must say whether they will tender a resignation if they fall short.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371525000051/restatedbylaws.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371525000051/restatedbylaws.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371525000051/restatedbylaws.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371525000051/restatedbylaws.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371525000051/restatedbylaws.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "No holder above 10%",
+    "url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000039/now-20260406.htm"
+   }
+  },
+  "route_status": "open",
+  "route_status_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting."
  },
  {
   "id": "palantir-technologies",
@@ -1520,11 +2070,67 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001321655&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "deployers",
   "tiers": [
    "deployers"
-  ]
+  ],
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm"
+  },
+  "bylaw": {
+   "text": "Any stockholder of record can bring a proposal to the meeting with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1321655/000119312522313008/d398605dex32.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/1321655/000119312522313008/d398605dex32.htm"
+  },
+  "control": {
+   "text": "Class A shares carry one vote and Class B shares 10 votes. Class F shares, all held in the Founder Voting Trust, carry a variable vote that brings the founders' total (Class F plus shares under the Founder Voting Agreement and Thiel's excluded shares) to 49.999999% of voting power. Directors are elected every year until the Class F shares convert, after which the board becomes classified.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm"
+  },
+  "director_voting": {
+   "text": "Plurality voting: a director wins with any votes for, so votes against do not unseat anyone.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1321655/000119312522313008/d398605dex32.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1321655/000119312522313008/d398605dex32.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1321655/000119312522313008/d398605dex32.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/1321655/000119312522313008/d398605dex32.htm"
+   },
+   "Votes against directors": {
+    "level": "closed",
+    "label": "Plurality",
+    "note": "Votes against cannot unseat directors",
+    "url": "https://www.sec.gov/Archives/edgar/data/1321655/000119312522313008/d398605dex32.htm"
+   },
+   "Voting control": {
+    "level": "closed",
+    "label": "Founder control",
+    "note": "Founders fixed at just under 50% of votes, with plurality voting",
+    "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm"
+   }
+  },
+  "route_status": "narrowing",
+  "route_status_reason": "The notice route stays open, but directors are elected by plurality and the founders hold just under half of the vote through Class F shares, so outside votes signal views without deciding outcomes."
  },
  {
   "id": "cisco-systems",
@@ -1546,11 +2152,67 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000858877&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "chips",
   "tiers": [
    "chips"
-  ]
+  ],
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/858877/000085887726000132/csco-20260725.htm"
+  },
+  "bylaw": {
+   "text": "Any stockholder of record can bring a proposal to the meeting with notice 60 to 90 days before the anniversary of the date the last proxy materials were sent. No minimum stake.",
+   "url": "https://www.sec.gov/Archives/edgar/data/858877/000085887725000103/exhibit32-amendedandrestat.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/858877/000085887725000103/exhibit32-amendedandrestat.htm"
+  },
+  "control": {
+   "text": "One class of stock, one vote per share. No controlling holder; BlackRock (8.9%), Vanguard Capital Management (7.2%) and State Street (5.0%) are the largest holders. Directors are elected every year.",
+   "url": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm"
+  },
+  "director_voting": {
+   "text": "Majority voting: a director who gets more votes against than for must tender a resignation.",
+   "url": "https://www.sec.gov/Archives/edgar/data/858877/000085887725000103/exhibit32-amendedandrestat.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/858877/000085887725000103/exhibit32-amendedandrestat.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/858877/000085887725000103/exhibit32-amendedandrestat.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/858877/000085887725000103/exhibit32-amendedandrestat.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/858877/000085887725000103/exhibit32-amendedandrestat.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "No holder above 10%",
+    "url": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm"
+   }
+  },
+  "route_status": "open",
+  "route_status_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting."
  },
  {
   "id": "axon-enterprise",
@@ -1571,11 +2233,67 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001069183&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "deployers",
   "tiers": [
    "deployers"
-  ]
+  ],
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/1069183/000162828026011360/axon-20251231.htm"
+  },
+  "bylaw": {
+   "text": "Any stockholder of record can bring a proposal to the meeting with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1069183/000106918323000063/axon-20231220xex3d2.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/1069183/000106918323000063/axon-20231220xex3d2.htm"
+  },
+  "control": {
+   "text": "One class of stock, one vote per share. No controlling holder; Vanguard (11.6%, from an October 2025 filing before an internal realignment) and BlackRock (9.3%) are the largest, and CEO Patrick Smith holds 3.5%. Directors are elected every year.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1069183/000162828026025521/axon-20260416.htm"
+  },
+  "director_voting": {
+   "text": "Majority voting: a director who gets more votes against than for must tender a resignation, and the board decides within 90 days.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1069183/000106918323000063/axon-20231220xex3d2.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1069183/000106918323000063/axon-20231220xex3d2.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1069183/000106918323000063/axon-20231220xex3d2.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/1069183/000106918323000063/axon-20231220xex3d2.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/1069183/000106918323000063/axon-20231220xex3d2.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "No controlling holder; largest holders are index managers",
+    "url": "https://www.sec.gov/Archives/edgar/data/1069183/000162828026025521/axon-20260416.htm"
+   }
+  },
+  "route_status": "open",
+  "route_status_reason": "Any record holder can give notice of a floor proposal, directors face majority voting and are elected every year, and no holder controls the vote; Vanguard is the largest at 11.6%."
  },
  {
   "id": "motorola-solutions",
@@ -1596,11 +2314,67 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000068505&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "deployers",
   "tiers": [
    "deployers"
-  ]
+  ],
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/68505/000006850526000010/msi-20251231.htm"
+  },
+  "bylaw": {
+   "text": "A stockholder of record on the record date can bring a proposal to the meeting with notice no earlier than 120 days before the meeting and at least 60 days before the anniversary of the last proxy filing. No minimum stake.",
+   "url": "https://www.sec.gov/Archives/edgar/data/68505/000119312522289030/d416187dex31.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/68505/000119312522289030/d416187dex31.htm"
+  },
+  "control": {
+   "text": "One class of stock, one vote per share. No controlling holder; Vanguard (13.34%) and BlackRock (8.02%) are the largest holders. Directors are elected every year.",
+   "url": "https://www.sec.gov/Archives/edgar/data/68505/000119312526139004/d50373ddef14a.htm"
+  },
+  "director_voting": {
+   "text": "Majority voting: a director who gets more votes against than for must offer to resign.",
+   "url": "https://www.sec.gov/Archives/edgar/data/68505/000119312522289030/d416187dex31.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/68505/000119312522289030/d416187dex31.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/68505/000119312522289030/d416187dex31.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/68505/000119312522289030/d416187dex31.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/68505/000119312522289030/d416187dex31.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "No controlling holder; largest holders are index managers",
+    "url": "https://www.sec.gov/Archives/edgar/data/68505/000119312526139004/d50373ddef14a.htm"
+   }
+  },
+  "route_status": "open",
+  "route_status_reason": "Any record holder can give notice of a floor proposal, directors face majority voting and are elected every year, and no holder controls the vote; Vanguard is the largest at 13.34%."
  },
  {
   "id": "thales",
@@ -1806,10 +2580,72 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "deployers",
   "tiers": [
    "deployers"
+  ],
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528026000034/nflx-20251231.htm"
+  },
+  "bylaw": {
+   "text": "Any stockholder of record can bring a proposal to the meeting with notice 45 to 75 days before the anniversary of the date the prior year's proxy materials were first mailed. No minimum stake.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528023000062/ex-322023amendedandrestate.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528023000062/ex-322023amendedandrestate.htm"
+  },
+  "control": {
+   "text": "One class of stock, one vote per share. No controlling holder; Vanguard (8.65%), BlackRock (7.34%) and FMR (5.29%) are the largest. Reed Hastings holds under 1%.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312526159286/d20613ddef14a.htm"
+  },
+  "director_voting": {
+   "text": "Majority voting: a director who does not get a majority of votes cast must offer to resign. All directors are elected each year.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528023000062/ex-322023amendedandrestate.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528023000062/ex-322023amendedandrestate.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528023000062/ex-322023amendedandrestate.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528023000062/ex-322023amendedandrestate.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528023000062/ex-322023amendedandrestate.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "No holder above 10%",
+    "url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312526159286/d20613ddef14a.htm"
+   }
+  },
+  "route_status": "open",
+  "route_status_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
+  "notes": [
+   {
+    "text": "For the 2027 meeting, notice of floor proposals and nominations is due between January 31, 2027 and March 2, 2027.",
+    "url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312526159286/d20613ddef14a.htm"
+   }
   ]
  },
  {
@@ -1867,10 +2703,72 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "deployers",
   "tiers": [
    "deployers"
+  ],
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000066/dis-20261003.htm"
+  },
+  "bylaw": {
+   "text": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448923000232/fy2024_q1x8kxbylawsxex31.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448923000232/fy2024_q1x8kxbylawsxex31.htm"
+  },
+  "control": {
+   "text": "One class of stock, one vote per share. No controlling holder; Vanguard (8.5%) and BlackRock (6.9%) are the largest.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000013/dis-20260122.htm"
+  },
+  "director_voting": {
+   "text": "Majority voting: a director who does not get a majority of votes cast must offer to resign. All directors are elected each year.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448923000232/fy2024_q1x8kxbylawsxex31.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448923000232/fy2024_q1x8kxbylawsxex31.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448923000232/fy2024_q1x8kxbylawsxex31.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448923000232/fy2024_q1x8kxbylawsxex31.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448923000232/fy2024_q1x8kxbylawsxex31.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "No holder above 10%",
+    "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000013/dis-20260122.htm"
+   }
+  },
+  "route_status": "open",
+  "route_status_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
+  "notes": [
+   {
+    "text": "For the 2027 meeting, notice of floor proposals and nominations is due between November 18, 2026 and December 18, 2026.",
+    "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000013/dis-20260122.htm"
+   }
   ]
  },
  {
@@ -1892,10 +2790,72 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001166691&type=10-K",
   "source_note": "secondary source",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "deployers",
   "tiers": [
    "deployers"
+  ],
+  "state": {
+   "text": "Pennsylvania",
+   "url": "https://www.sec.gov/Archives/edgar/data/1166691/000162828026004994/cmcsa-20251231.htm"
+  },
+  "bylaw": {
+   "text": "Any shareholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting (bylaws Section 2.09). No minimum stake.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1166691/000116669125000011/ex32-12312024a.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/1166691/000116669125000011/ex32-12312024a.htm"
+  },
+  "control": {
+   "text": "Class B shares carry 15 votes each and Class A shares 0.07949 votes each. Brian L. Roberts owns all Class B shares, which hold 33 1/3% of voting power, a share the charter generally protects from dilution. Vanguard holds 10.0% of Class A.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1166691/000119312526177138/cmcsa-20260424.htm"
+  },
+  "director_voting": {
+   "text": "Plurality voting: the nominees with the most votes win, so votes against cannot unseat a director. Roberts holds 33 1/3% of the vote.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1166691/000119312526177138/cmcsa-20260424.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1166691/000119312526177138/cmcsa-20260424.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1166691/000116669125000011/ex32-12312024a.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/1166691/000116669125000011/ex32-12312024a.htm"
+   },
+   "Votes against directors": {
+    "level": "closed",
+    "label": "Plurality",
+    "note": "Votes against cannot unseat directors",
+    "url": "https://www.sec.gov/Archives/edgar/data/1166691/000119312526177138/cmcsa-20260424.htm"
+   },
+   "Voting control": {
+    "level": "narrowing",
+    "label": "Large holder",
+    "note": "Roberts 33 1/3% of votes",
+    "url": "https://www.sec.gov/Archives/edgar/data/1166691/000119312526177138/cmcsa-20260424.htm"
+   }
+  },
+  "route_status": "narrowing",
+  "route_status_reason": "The notice route stays open, but directors are elected by plurality and Brian Roberts holds a fixed 33 1/3% of the vote.",
+  "notes": [
+   {
+    "text": "For the 2027 meeting, notice of floor proposals is due between February 10, 2027 and March 12, 2027 if the meeting is held between May 11 and July 10, 2027.",
+    "url": "https://www.sec.gov/Archives/edgar/data/1166691/000119312526177138/cmcsa-20260424.htm"
+   }
   ]
  },
  {
@@ -1923,11 +2883,77 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001341439&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "compute",
   "tiers": [
    "compute",
    "datacenters"
+  ],
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526277521/orcl-20260531.htm"
+  },
+  "bylaw": {
+   "text": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the date the prior year's proxy materials were first mailed (bylaws Section 1.11). No minimum stake.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312523279837/d606391dex302.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312523279837/d606391dex302.htm"
+  },
+  "control": {
+   "text": "One class of stock, one vote per share. Lawrence J. Ellison holds 38.2% of shares as of September 21, 2026; no other holder above 5% is listed.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526402816/orcl-20260925.htm"
+  },
+  "director_voting": {
+   "text": "Plurality voting, with a policy that a director who gets as many votes withheld as for must offer to resign. Ellison holds 38.2% of the vote.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526402816/orcl-20260925.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526402816/orcl-20260925.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312523279837/d606391dex302.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312523279837/d606391dex302.htm"
+   },
+   "Votes against directors": {
+    "level": "closed",
+    "label": "Plurality",
+    "note": "Plurality voting; Ellison holds 38.2%",
+    "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526402816/orcl-20260925.htm"
+   },
+   "Voting control": {
+    "level": "narrowing",
+    "label": "Large holder",
+    "note": "Ellison 38.2%",
+    "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526402816/orcl-20260925.htm"
+   }
+  },
+  "route_status": "narrowing",
+  "route_status_reason": "The notice route stays open, but directors are elected by plurality and Lawrence Ellison holds 38.2% of the vote.",
+  "notes": [
+   {
+    "text": "For the 2027 meeting, notice of floor proposals and nominations is due between May 28, 2027 and June 27, 2027.",
+    "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526402816/orcl-20260925.htm"
+   },
+   {
+    "text": "413,000,000 of Ellison's shares are pledged as collateral for personal loans.",
+    "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526402816/orcl-20260925.htm"
+   }
   ]
  },
  {
@@ -2004,10 +3030,76 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000002488&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "chips",
   "tiers": [
    "chips"
+  ],
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm"
+  },
+  "bylaw": {
+   "text": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake. The proposer or a representative must attend the meeting.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000218/amd-bylawsnov2026amendment.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000218/amd-bylawsnov2026amendment.htm"
+  },
+  "control": {
+   "text": "One class of stock, one vote per share. No controlling holder; Vanguard (8.8%) and BlackRock (7.7%) are the largest.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm"
+  },
+  "director_voting": {
+   "text": "Majority voting: each nominee has submitted a resignation that takes effect if they do not get a majority of votes cast. All directors are elected each year.",
+   "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000218/amd-bylawsnov2026amendment.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000218/amd-bylawsnov2026amendment.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000218/amd-bylawsnov2026amendment.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000218/amd-bylawsnov2026amendment.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000218/amd-bylawsnov2026amendment.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "No holder above 10%",
+    "url": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm"
+   }
+  },
+  "route_status": "open",
+  "route_status_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
+  "notes": [
+   {
+    "text": "Bylaws amended November 18, 2026 add disclosure rules for proposers and require the proposer to attend. Proposed business must be a proper matter for stockholder action as determined by the Board.",
+    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000218/amd-bylawsnov2026amendment.htm"
+   },
+   {
+    "text": "For the 2027 meeting, notice of floor proposals and nominations is due between January 13, 2027 and February 12, 2027.",
+    "url": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm"
+   }
   ]
  },
  {
@@ -2029,11 +3121,67 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001730168&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "chips",
   "tiers": [
    "chips"
-  ]
+  ],
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/avgo-20251102.htm"
+  },
+  "bylaw": {
+   "text": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312518107559/d562806dex32.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312518107559/d562806dex32.htm"
+  },
+  "control": {
+   "text": "One class of stock, one vote per share. No controlling holder; Vanguard (9.9%) and BlackRock (7.3%) are the largest.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/0001193125-26-085691.txt"
+  },
+  "director_voting": {
+   "text": "Majority voting: a director who does not get a majority of votes must offer to resign.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312518107559/d562806dex32.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312518107559/d562806dex32.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312518107559/d562806dex32.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312518107559/d562806dex32.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312518107559/d562806dex32.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "No holder above 10%",
+    "url": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/0001193125-26-085691.txt"
+   }
+  },
+  "route_status": "open",
+  "route_status_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting."
  },
  {
   "id": "tsmc",
@@ -2139,11 +3287,67 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001769628&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "compute",
   "tiers": [
    "compute"
-  ]
+  ],
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/1769628/000119312525085800/d935353dex32.htm"
+  },
+  "bylaw": {
+   "text": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1769628/000119312525085800/d935353dex32.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/1769628/000119312525085800/d935353dex32.htm"
+  },
+  "control": {
+   "text": "Class B shares carry 10 votes each. As of April 15, 2026, Intrator holds 38.70% of voting power, Venturo 20.30% and McBee 14.59%; directors and officers as a group hold 72.32%.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000191/crwv-20260422.htm"
+  },
+  "director_voting": {
+   "text": "Plurality voting on a board split into three classes with staggered three-year terms, so votes against do not unseat anyone.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000191/crwv-20260422.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000191/crwv-20260422.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1769628/000119312525085800/d935353dex32.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/1769628/000119312525085800/d935353dex32.htm"
+   },
+   "Votes against directors": {
+    "level": "closed",
+    "label": "Plurality",
+    "note": "Votes against cannot unseat directors; classified board",
+    "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000191/crwv-20260422.htm"
+   },
+   "Voting control": {
+    "level": "closed",
+    "label": "Founder control",
+    "note": "Directors and officers together hold 72.32% of votes",
+    "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000191/crwv-20260422.htm"
+   }
+  },
+  "route_status": "narrowing",
+  "route_status_reason": "The notice route stays open, but directors and officers hold 72.32% of the vote through Class B shares and directors are elected by plurality on a classified board."
  },
  {
   "id": "nebius-group",
@@ -2194,10 +3398,76 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001297996&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "tier": "datacenters",
   "tiers": [
    "datacenters"
+  ],
+  "state": {
+   "text": "Maryland",
+   "url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm"
+  },
+  "bylaw": {
+   "text": "A stockholder of record can bring a proposal with notice 120 to 150 days before the anniversary of the date of the prior year's proxy materials, and must appear at the meeting in person or by a qualified representative. For 2027, the proxy gives November 18 to December 18, 2026 for nominations; the bylaws use the same window for other business. No minimum stake. Ninth Amended and Restated Bylaws, April 2023.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1297996/000119312523088804/d477117dex31.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a stockholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/1297996/000119312523088804/d477117dex31.htm"
+  },
+  "control": {
+   "text": "One class of common stock, one vote per share. No controlling holder; BlackRock (11.1%), Cohen & Steers (8.0%), Norges Bank (6.3%) and State Street (5.9%) are the largest.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm"
+  },
+  "director_voting": {
+   "text": "Majority of votes cast in uncontested elections; plurality in contested ones. A director who is not elected tenders a resignation for the board to consider. All directors are elected each year.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1297996/000119312523088804/d477117dex31.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1297996/000119312523088804/d477117dex31.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1297996/000119312523088804/d477117dex31.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/1297996/000119312523088804/d477117dex31.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/1297996/000119312523088804/d477117dex31.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "No controlling holder; largest holders are index managers",
+    "url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm"
+   }
+  },
+  "route_status": "open",
+  "route_status_reason": "Any stockholder of record can give notice of a floor proposal with no stake minimum and directors face majority voting; BlackRock's 11.1% is the largest stake, and the board could opt into Maryland takeover provisions.",
+  "notes": [
+   {
+    "text": "The 10-K says the board could opt into the Maryland business combination provisions or Title 3, Subtitle 8 of the MGCL not currently applicable, and that the bylaws opt out of the control share acquisition provisions.",
+    "url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm"
+   },
+   {
+    "text": "Proxy access allows nominees for up to 20% of the board.",
+    "url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm"
+   }
   ]
  },
  {
@@ -2224,11 +3494,73 @@
   "shareholder_route": "US proxy rules apply",
   "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000092122&type=10-K",
   "source_note": "",
-  "rights_tracked": false,
+  "rights_tracked": true,
   "owner_choice_note": "Included by owner decision; the proposal concerns data center power costs",
   "tier": "datacenters",
   "tiers": [
    "datacenters"
+  ],
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000006/so-20251231.htm"
+  },
+  "bylaw": {
+   "text": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last annual meeting (May 13, 2026). No minimum stake for proposals. Bylaws amended and restated October 20, 2026; a request to call a special meeting now needs the required stake held net long for at least one year.",
+   "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000065/ex3-1soamendedandrestatedb.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a stockholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000065/ex3-1soamendedandrestatedb.htm"
+  },
+  "control": {
+   "text": "One class of stock, one vote per share. No controlling holder; BlackRock (6.9%) and State Street (5.7%) are the largest reported. Vanguard reported in March 2026 that after an internal realignment it no longer has beneficial ownership; its earlier filing showed 8.9%.",
+   "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm"
+  },
+  "director_voting": {
+   "text": "Majority voting in uncontested elections: a nominee needs more than 50% of votes cast. A director who falls short is expected to tender a resignation, and the board acts within 90 days. All directors are elected each year.",
+   "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000065/ex3-1soamendedandrestatedb.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000065/ex3-1soamendedandrestatedb.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000065/ex3-1soamendedandrestatedb.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000065/ex3-1soamendedandrestatedb.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000065/ex3-1soamendedandrestatedb.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "Largest holder 6.9%",
+    "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm"
+   }
+  },
+  "route_status": "open",
+  "route_status_reason": "Any stockholder of record can give notice of a floor proposal with no stake minimum, there is no controlling shareholder, and directors face majority voting.",
+  "notes": [
+   {
+    "text": "Holders of 10% can request a special meeting; proxy access is 3% held for three years.",
+    "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm"
+   }
   ]
  }
 ]
