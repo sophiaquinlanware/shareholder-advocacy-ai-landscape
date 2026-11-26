@@ -229,3 +229,20 @@ test("Network views: the Policymaker lens opens on Proposals; focusing a proposa
   await expect(page.locator('#net-mode [data-mode="proposals"]')).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator("#net-lens-status")).toContainText("Switched to the Proposals view");
 });
+
+test("Laws and rules: region and status filters narrow the chart; Show everything resets", async ({ page }) => {
+  await page.goto("/index.html#causality");
+  await page.waitForLoadState("networkidle");
+  const total = Number((await page.textContent("#cz-count")).match(/of (\d+)/)[1]);
+  const regions = await page.$$eval("#cz-region option", (o) => o.map((x) => x.value).filter(Boolean));
+  test.skip(!regions.length, "no region field in this data");
+  await page.selectOption("#cz-region", regions[0]);
+  const n = Number((await page.textContent("#cz-count")).match(/^(\d+)/)[1]);
+  expect(n).toBeGreaterThan(0);
+  expect(n).toBeLessThan(total);
+  await page.selectOption("#cz-status", { index: 1 });
+  expect(Number((await page.textContent("#cz-count")).match(/^(\d+)/)[1])).toBeLessThanOrEqual(n);
+  await expect(page.locator("#cz-status-key")).toContainText("Status:");
+  await page.click("#cz-reset");
+  await expect(page.locator("#cz-count")).toHaveText(`${total} of ${total} events shown.`);
+});
