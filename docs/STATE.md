@@ -8,7 +8,7 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 
 
 | Session | Owns | Branch | State |
 |---|---|---|---|
-| Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | `data/value-chain` (open) | On `main` since this merge: 60 companies (`data/companies.json`, owner kept all), value-chain tiers (`data/value_chain.json`, `tier`/`tiers` on companies and graph nodes), ownership for 9 private labs. Open on `data/value-chain`: rights maps for 22 more US companies (commit a1f5649, in data accuracy review) and value-chain ties plus per-tier facts (in research). |
+| Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | none open | On `main`: 60 companies with tiers; rights maps for 29 US companies; `data/value_chain.json` with 44 sourced ties and `per_tier` facts (`scripts/build_value_chain.py`, run weekly after `build_graph.py`). Next data job: extend `data/proposals.json` to all 29 US-proxy companies (proposal counts now cover the original 7). |
 | UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, the view JS files incl. `votes.js`, `DESIGN.md`, `tests/` | `design/lens-phase1` (pushed, **not merged**; waits for the owner's go-ahead) | Round 2 live. Lens Phase 1 built and checked on the branch; see "Lens Phase 1" below. Next: lens Phase 2 after the owner's go-ahead, and the value-chain and engagement maps (data now on `data/value-chain`). |
 | Protocol setup | `AGENTS.md`, `CLAUDE.md`, checks, `docs/` structure | `docs-session-onboarding` (local) | Idle. |
 
