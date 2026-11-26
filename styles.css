@@ -66,7 +66,8 @@ a { color: var(--accent); }
 .site-header { padding: var(--s-4) 0 var(--s-2); border-bottom: 1px solid var(--line); }
 .eyebrow { text-transform: uppercase; letter-spacing: .04em; font-size: 12px; font-weight: 400; color: var(--ink-soft); margin: 0 0 4px; }
 .eyebrow.tight { margin: 0 0 4px; }
-h1 { font-weight: 400; font-size: 26px; line-height: 1.2; letter-spacing: -.01em; margin: 0 0 4px; }
+h1 { font-weight: 400; font-size: 34px; line-height: 1.15; letter-spacing: -.015em; margin: 0 0 6px; }
+@media (max-width: 640px) { h1 { font-size: 30px; } }
 h2 { font-weight: 400; font-size: 22px; line-height: 1.25; letter-spacing: -.005em; margin: var(--s-4) 0 var(--s-1); }
 h3 { font-weight: 400; font-size: 17px; margin: 0 0 6px; }
 h4 { font-weight: 400; }
@@ -493,3 +494,6 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
 .finding h4 { margin: 0 0 6px; font-size: 15px; font-weight: 500; }
 .finding p { margin: 0 0 6px; }
 .coming-up .kind { display: inline-block; min-width: 9.5em; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); }
+/* A grey label above a page heading (e.g. "Proposal flow") sits close to it, like the site title's style. */
+.panel > .eyebrow:first-child { margin-top: var(--s-4); }
+.eyebrow + h2 { margin-top: 2px; }

@@ -727,17 +727,20 @@ function d3Ready() {
 
 async function main() {
   setupTabs();
+  const PRELOADED = ["site", "companies", "upcoming", "proposals", "asks"]; // asks: the Proposals tab's category filter
   const load = async (f) => {
     try {
-      const r = await fetch(`data/${f}.json`, { cache: "no-cache" });
+      // Preloaded files use the browser's normal cache rules, so the fetch picks up the preload instead of asking again.
+      const r = await fetch(`data/${f}.json`, PRELOADED.includes(f) ? {} : { cache: "no-cache" });
       DATA[f] = r.ok ? await r.json() : {};
     } catch (e) { DATA[f] = {}; }
   };
   // The first tabs need only four small files; draw them as soon as those arrive while the
   // larger files (the 300 KB relationship graph and the rest) keep loading in parallel.
-  const FIRST = ["site", "companies", "upcoming", "proposals"];
-  const rest = Promise.all(FILES.filter((f) => !FIRST.includes(f)).map(load));
+  // The four are preloaded from index.html; the rest start once they're in, so they don't share the bandwidth.
+  const FIRST = PRELOADED;
   await Promise.all(FIRST.map(load));
+  const rest = Promise.all(FILES.filter((f) => !FIRST.includes(f)).map(load));
   if (!DATA.site || !DATA.site.last_updated) {
     document.querySelector("main").innerHTML = `<p class="coming">The data files did not load. If you opened this file directly, view it through GitHub Pages or a local server instead.</p>`;
     return;
