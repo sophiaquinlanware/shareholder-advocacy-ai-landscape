@@ -112,13 +112,21 @@ def find_cik_by_name(name):
 
 
 def npx_filings(cik, since_year=2024):
+    """All N-PX filings since since_year. The SEC's "recent" list holds only the latest
+    ~1,000 filings, so busy trusts (iShares files thousands of prospectus updates) push older
+    N-PX filings into extra pages listed under filings.files; those are read too."""
     sub = json.loads(get(f"https://data.sec.gov/submissions/CIK{cik:010d}.json"))
-    r = sub["filings"]["recent"]
-    out = []
-    for i, form in enumerate(r["form"]):
-        if form in ("N-PX", "N-PX/A") and int(r["filingDate"][i][:4]) >= since_year:
-            out.append({"accession": r["accessionNumber"][i], "filed": r["filingDate"][i], "period": r["reportDate"][i], "form": form,
-                        "trust": sub.get("name")})
+    pages = [sub["filings"]["recent"]]
+    for extra in sub["filings"].get("files", []):
+        if extra.get("filingTo", "9999") >= f"{since_year}-01-01":
+            pages.append(json.loads(get("https://data.sec.gov/submissions/" + extra["name"])))
+    out, seen = [], set()
+    for r in pages:
+        for i, form in enumerate(r["form"]):
+            if form in ("N-PX", "N-PX/A") and int(r["filingDate"][i][:4]) >= since_year and r["accessionNumber"][i] not in seen:
+                seen.add(r["accessionNumber"][i])
+                out.append({"accession": r["accessionNumber"][i], "filed": r["filingDate"][i], "period": r["reportDate"][i], "form": form,
+                            "trust": sub.get("name")})
     return out
 
 
@@ -200,6 +208,8 @@ def main():
 
     want = [f.strip() for f in args.families.split(",") if f.strip()]
     results, filings_used, notes = [], [], []
+    trusts_searched = {}
+    unreadable = []  # filings found but not in the structured format
     for family, trusts in FAMILIES.items():
         if want and family not in want:
             continue
@@ -212,6 +222,7 @@ def main():
             if not ciks:
                 notes.append(f"{trust}: no N-PX filer found")
                 continue
+            trusts_searched.setdefault(family, []).append({"trust": trust, "cik": ciks[0]})
             filings = npx_filings(ciks[0])
             # An amendment (N-PX/A) restates a period; keep only the latest filing per period.
             latest = {}
@@ -227,6 +238,7 @@ def main():
                 xmls = [i["name"] for i in idx["directory"]["item"] if i["name"].lower().endswith(".xml") and "primary_doc" not in i["name"].lower()]
                 if not xmls:
                     notes.append(f"{trust} {f['accession']}: no structured vote table (older text format)")
+                    unreadable.append({"family": family, "cik": ciks[0], "trust": f["trust"], "period": f["period"], "accession": f["accession"]})
                     continue
                 filings_used.append({**f, "family": family, "cik": ciks[0], "url": base})
                 for xname in xmls:
@@ -299,7 +311,7 @@ def main():
            "proposals_checked": checked, "filings": filings_used, "summary": rows, "review": review, "notes": notes,
            # Which N-PX periods (year ending June 30) each family has a readable filing for.
            "coverage": {fam: sorted({f["period"] for f in filings_used if f["family"] == fam}) for fam in {f["family"] for f in filings_used}},
-           "records": results}
+           "records": results, "trusts_searched": trusts_searched, "unreadable": unreadable}
     Path(args.out).write_text(json.dumps(out, indent=1) + "\n")
     print(f"{len(results)} votes matched across {len(filings_used)} filings; {len(review)} sent to review. Notes: {len(notes)}")
 

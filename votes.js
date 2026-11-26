@@ -20,11 +20,10 @@
     const y = Number(date.slice(0, 4));
     return `${Number(date.slice(5, 7)) >= 7 ? y + 1 : y}-06-30`;
   }
-  function covered(family, p) {
-    const periods = V.coverage[family];
-    if (!periods) return true;
-    if (p.meeting_date) return periods.includes(periodFor(p.meeting_date));
-    return periods.some((x) => x.startsWith(String(p.year)) || x.startsWith(String(Number(p.year) + 1)));
+  // "full", "partial" (only some of the family's trusts readable that year) or "" (none).
+  function coverageOf(family, p) {
+    const per = V.coverage[family] || {};
+    return per[periodFor(p.meeting_date)] || "";
   }
 
   function voteText(row) {
@@ -36,13 +35,14 @@
 
   function cell(f, p) {
     const r = V.byKey.get(`${f}|${p.id}`);
+    const cov = coverageOf(f, p);
     if (!r) {
-      const text = covered(f, p) ? "No vote found" : "Not checked";
+      const text = cov === "full" ? "No vote found" : cov === "partial" ? "Partly checked" : "Not checked";
       return `<td><span class="ticker">${text}</span></td>`;
     }
     const text = voteText(r);
-    const mark = r.reviewed ? "" : "†";
-    const status = r.reviewed ? "" : ", matched automatically, not yet reviewed";
+    const mark = (r.reviewed || r.vote === "NEEDS_CHECK" ? "" : " †") + (cov === "partial" ? " ‡" : "");
+    const status = (r.reviewed ? "" : ", matched automatically, not yet reviewed") + (cov === "partial" ? ", from part of this family's filings for that year" : "");
     const more = r.sources.slice(1).map((u, i) => ` <a class="src" href="${esc(u)}" target="_blank" rel="noopener" aria-label="${esc(`${f}, ${p.title}: filing ${i + 2}${NEW_TAB}`)}">[${i + 2}]</a>`).join("");
     const label = `${f}, ${p.title}: ${text}${status}, N-PX filing${NEW_TAB}`;
     return `<td><a class="pill pending" href="${esc(r.sources[0])}" target="_blank" rel="noopener" aria-label="${esc(label)}">${esc(text)}${mark}</a>${more}</td>`;
@@ -79,7 +79,7 @@
     const lastDay = data.last_meeting_covered || "9999-12-31";
     // Proposals raised from the meeting floor are not in proxy materials, so funds do not report them on N-PX.
     const isFloor = (p) => /floor/i.test(p.id) || /presented at the meeting/i.test(p.title);
-    const inWindow = (p) => (p.meeting_date ? p.meeting_date >= firstDay && p.meeting_date <= lastDay : Number(p.year) > Number(firstDay.slice(0, 4)));
+    const inWindow = (p) => p.meeting_date && p.meeting_date >= firstDay && p.meeting_date <= lastDay;
     const props = ((proposals && proposals.proposals) || [])
       .filter((p) => checked.has(p.id) && (p.status || "").toLowerCase() === "voted" && inWindow(p) && !isFloor(p))
       .sort((a, b) => (a.company + a.year).localeCompare(b.company + b.year));
@@ -91,18 +91,20 @@
     };
     const companies = [...new Set(props.map((p) => p.company))].sort();
     const topics = [...new Set(props.map((p) => p.topic).filter(Boolean))].sort();
-    const reviewedBy = (data.reviewed || []).map((r) => `${r.family} (${r.proposal_ids.length} proposals, ${r.date})`).join("; ");
+    const longDate = (d) => new Date(`${d}T12:00:00`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+    const reviewedBy = (data.reviewed || []).map((r) => `${r.family}, ${r.proposal_ids.length} proposals (${longDate(r.date)})`).join("; ");
     const opt = (v, t, sel) => `<option value="${esc(v)}"${sel ? " selected" : ""}>${esc(t)}</option>`;
     el.innerHTML = `
       <h2>Fund votes</h2>
-      <p class="intro">How fund families voted on the AI-related shareholder proposals that went to a vote at these companies, from July 2023 to June 2026. Every U.S. mutual fund and ETF reports its votes to the SEC each year on Form N-PX. Each vote links to the filing it comes from.</p>
+      <p class="intro">How fund families voted on the AI-related shareholder proposals that went to a vote at the companies this site tracks, from July 2023 to June 2026. Every U.S. mutual fund and ETF reports its votes to the SEC each year on Form N-PX. Each vote links to the filing it comes from.</p>
       <div class="callout">Each fund votes under its own policy. Nothing here says any vote was right or wrong, and nothing here suggests how anyone should vote. This site is independent and is not affiliated with any fund shown.</div>
       <ul class="steps">
         <li><strong>Split</strong> means the family reported more than one way of voting on that proposal. The numbers count fund records: different funds can vote differently, and a single fund can split its own shares, as pass-through voting programs do.</li>
         <li><strong>No vote found</strong> means no matching vote turned up in the filings checked. It does not say why.</li>
         <li><strong>Not checked</strong> means no readable filing from that family covers that meeting.</li>
-        <li><strong>Needs checking</strong> means the filing reports the same fund voting two different ways on what reads as this proposal, which usually means two ballot items were matched to it. It is held back until a person checks the filing.</li>
-        <li><strong>†</strong> marks votes matched automatically and spot-checked, but not yet reviewed row by row.${reviewedBy ? ` Reviewed so far: ${esc(reviewedBy)}.` : ""}</li>
+        <li><strong>Partly checked</strong> means only some of that family's fund trusts had a readable filing for that year. <strong>‡</strong> marks a vote that comes from part of the family's filings for that year.</li>
+        <li><strong>Needs checking</strong> means the filings list two ballot items that both read as this proposal, so votes cannot be matched to it with confidence. It is held back until a person checks the proxy and the filings.</li>
+        <li><strong>†</strong> marks votes matched automatically and spot-checked, but not yet reviewed row by row.${reviewedBy ? ` Reviewed row by row so far: ${esc(reviewedBy)}.` : ""}</li>
         ${(data.not_shown || []).map((t) => `<li>${esc(t)}</li>`).join("")}
       </ul>
       <div class="net-controls">

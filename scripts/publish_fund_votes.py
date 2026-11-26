@@ -31,15 +31,28 @@ def main(src):
     # Conflicts: the same fund (same share count) reported with different votes on one proposal
     # usually means two different ballot items were matched to it. Those cells are held back
     # as "Needs checking" instead of being shown as a split.
-    seen, conflicts = {}, set()
+    # Any fund record appearing twice on one proposal (same filing, same share count), whatever
+    # the votes, means two ballot items were matched to it. The whole proposal is held back for
+    # every family, because the matching for that meeting cannot be trusted.
+    seen, dup_proposals = set(), set()
     for rec in run.get("records", []):
-        if len(rec["vote_lines"]) != 1:
-            continue
-        line = rec["vote_lines"][0]
-        key = (rec["family"], rec["proposal_id"], rec["source_url"], line["shares"])
-        if key in seen and seen[key] != line["how"]:
-            conflicts.add((rec["family"], rec["proposal_id"]))
-        seen.setdefault(key, line["how"])
+        key = (rec["family"], rec["proposal_id"], rec["source_url"], tuple((l["how"], l["shares"]) for l in rec["vote_lines"]))
+        if key in seen:
+            dup_proposals.add(rec["proposal_id"])
+        seen.add(key)
+    conflicts = {(r["family"], r["proposal_id"]) for r in run["summary"] if r["proposal_id"] in dup_proposals}
+
+    # Coverage per family and N-PX period, trust by trust: "full" when every trust searched has a
+    # readable filing for that period, "partial" when only some do.
+    readable = {(f["family"], f["cik"], f["period"]) for f in run["filings"]}
+    periods = sorted({f["period"] for f in run["filings"]})
+    coverage = {}
+    for fam, trusts in run.get("trusts_searched", {}).items():
+        ciks = {t["cik"] for t in trusts}
+        for per in periods:
+            have = {c for c in ciks if (fam, c, per) in readable}
+            if have:
+                coverage.setdefault(fam, {})[per] = "full" if have == ciks else "partial"
     summary = []
     for r in run["summary"]:
         row = {k: r[k] for k in ("family", "proposal_id", "company", "meeting_date", "vote", "counts", "fund_records",
@@ -55,8 +68,10 @@ def main(src):
         "last_meeting_covered": LAST,
         "method": run["method"],
         "families": run["families"],
-        "coverage": run.get("coverage", {}),
-        "not_shown": [v for k, v in NOT_READABLE.items() if k not in run.get("coverage", {})],
+        "coverage": coverage,
+        "held_back_proposals": sorted(dup_proposals),
+        "unreadable_filings": run.get("unreadable", []),
+        "not_shown": [v for k, v in NOT_READABLE.items() if k not in coverage],
         "reviewed": reviewed["reviewed"],
         "filings": [{k: f[k] for k in ("family", "trust", "form", "filed", "period", "url")} for f in run["filings"]],
         "proposals_checked": run["proposals_checked"],
@@ -65,7 +80,8 @@ def main(src):
         "notes": run.get("notes", []),
     }
     (DATA / "fund_votes.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
-    print(f"held back as needs checking: {sorted(conflicts)}")
+    print(f"held back (duplicate ballot items): {sorted(dup_proposals)}; cells: {len(conflicts)}")
+    print("coverage:", json.dumps(coverage))
     print(f"data/fund_votes.json: {len(summary)} rows, {sum(r['reviewed'] for r in summary)} reviewed, "
           f"{len(out['near_misses'])} near misses listed")
 
