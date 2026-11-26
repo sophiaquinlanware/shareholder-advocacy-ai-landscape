@@ -52,22 +52,26 @@
   }
 
   function shell(el, data) {
-    const labs = data.labs.map((l) => `<button class="chip" data-lab="${esc(l.id)}">${esc(l.name)}</button>`).join("");
+    const labs = data.labs.map((l) => `<button type="button" class="chip" data-lab="${esc(l.id)}" aria-pressed="false">${esc(l.name)}</button>`).join("");
     const cos = data.public_companies.map((c) => `<label class="chip"><input type="checkbox" value="${esc(c.id)}"> ${esc(c.name)}</label>`).join("");
-    const legend = Object.keys(TIE_VAR).filter((t) => data.ties.some((x) => x.type === t))
-      .map((t) => `<span class="leg static"><span class="dot" style="background:${cssVar(TIE_VAR[t])}"></span>${esc(t)}</span>`).join("");
+    // Two line kinds, both blue: company → lab ties (navy) and filer → company links (light blue).
+    // Tie type is named in the tie table and the side panel.
+    const legend = `<span class="leg static"><span class="dot" style="background:${cssVar("--t-equity")}"></span>company → lab tie (width = strength)</span>`;
     el.innerHTML = `
-      <h2>Influence pathways</h2>
-      <p class="intro">Most frontier AI labs, like OpenAI, are private, so investors cannot file proposals at them. (Anthropic listed on Nasdaq in November 2026, and xAI is now part of SpaceX, which listed in June 2026.) They can engage the public companies that own stakes in these labs, run their compute, sell them chips or distribute their models. This view traces those routes, from the investors already engaging each company, to the company, to the labs it can influence.</p>
+      <h2>Pathways</h2>
+      <p class="intro">${data.ties.length} ties between ${data.public_companies.length} public companies and ${data.labs.length} frontier labs, with the filers active at each company. Line width = tie strength (1–3) or proposals filed.</p>
       <div class="pw-modes">
-        <div><p class="pw-label">Reach a lab: who has leverage over it?</p><div class="chips">${labs}</div></div>
-        <div><p class="pw-label">Plan an engagement: pick companies to see which labs they reach</p><div class="chips">${cos}</div></div>
+        <div><p class="pw-label">Labs</p><div class="chips">${labs}</div></div>
+        <div><p class="pw-label">Companies</p><div class="chips">${cos}</div></div>
       </div>
-      <div class="net-legend">${legend}<span class="leg static"><span class="dot" style="background:var(--ink-soft)"></span>investor engages company</span></div>
+      <div class="net-legend">${legend}<span class="leg static"><span class="dot" style="background:var(--t-filer)"></span>filer → company (width = proposals filed)</span></div>
       <div class="net-body">
         <div id="pw-graph" class="net-graph pw-graph"></div>
-        <aside id="pw-panel" class="net-panel"><p class="status-note">Pick a lab or a set of companies above. Line thickness shows how strong a tie is. Every tie links to its source.</p></aside>
-      </div>`;
+        <aside id="pw-panel" class="net-panel" aria-live="polite"></aside>
+      </div>
+      <h3 class="sub-h">Ties</h3>
+      <p class="count-line" id="pw-count" aria-live="polite"></p>
+      <div class="table-wrap" id="pw-ties"></div>`;
   }
 
   function layout() {
@@ -107,7 +111,7 @@
     const linkData = [];
     for (const p of S.inv) {
       const a = L.pos.get("o:" + p.org.id), b = L.pos.get("c:" + p.ticker.toLowerCase());
-      if (a && b) linkData.push({ kind: "inv", a, b, w: Math.min(4, 0.8 + p.proposals.length * 0.6), color: cssVar("--ink-soft"), ref: p });
+      if (a && b) linkData.push({ kind: "inv", a, b, w: Math.min(4, 0.8 + p.proposals.length * 0.6), color: cssVar("--t-filer"), ref: p });
     }
     for (const t of S.data.ties) {
       const a = L.pos.get("c:" + t.from), b = L.pos.get("l:" + t.to);
@@ -121,7 +125,7 @@
     S.nodes = svg.append("g").selectAll("g").data([...L.pos.values()]).join("g")
       .attr("transform", (d) => `translate(${d.x},${d.y})`).style("cursor", "pointer")
       .on("click", (ev, d) => onNode(d));
-    S.nodes.append("circle").attr("r", 4).attr("fill", (d) => cssVar(d.col === 0 ? "--n-manager" : d.col === 1 ? "--n-company" : "--t-lab"));
+    S.nodes.append("circle").attr("r", 4).attr("fill", (d) => cssVar(d.col === 0 ? "--n-manager" : d.col === 1 ? "--n-company" : "--n-lab"));
     const maxLen = L.narrow ? 12 : 22;
     S.nodes.append("text").text((d) => (d.label.length > maxLen ? d.label.slice(0, maxLen - 1) + "…" : d.label))
       .attr("x", 8).attr("y", 4).attr("font-size", L.narrow ? 10 : 12).attr("fill", cssVar("--ink"));
@@ -154,18 +158,27 @@
       return `<li><strong>${esc(coName(c))}:</strong> ${list.map((p) => esc(p.org.name)).join(", ")}</li>`;
     }).join("");
     document.getElementById("pw-panel").innerHTML = `
-      <p class="eyebrow" style="margin:0 0 4px">Frontier lab</p><h3>${esc(lab.name)}</h3>
+      <p class="eyebrow tight">Frontier lab</p><h3>${esc(lab.name)}</h3>
       <p>${esc(lab.description || "")} ${link(lab.source_url)}</p>
       <h4 class="pw-h4">Public companies with leverage (${ties.length})</h4><ul class="conn">${tieRows || "<li>None sourced yet.</li>"}</ul>
       <h4 class="pw-h4">Investors already engaging those companies on AI</h4>
-      <ul class="conn">${invByCo || "<li>None in the map yet.</li>"}</ul>
-      <p class="status-note" style="margin-top:12px">These are organizations working on the same companies. The map shows overlap. It does not suggest how anyone should vote.</p>`;
+      <ul class="conn">${invByCo || "<li>None in the map yet.</li>"}</ul>`;
+    tieTable(ties);
+  }
+
+  // Always-visible table of ties: all of them with nothing selected, or the current selection's.
+  function tieTable(ties) {
+    const coName = (id) => (S.data.public_companies.find((c) => c.id === id) || {}).name || id;
+    const labName = (id) => (S.data.labs.find((l) => l.id === id) || {}).name || id;
+    const rows = [...ties].sort((a, b) => coName(a.from).localeCompare(coName(b.from)) || (b.strength || 0) - (a.strength || 0));
+    document.getElementById("pw-count").textContent = `${rows.length} of ${S.data.ties.length} ties${rows.length < S.data.ties.length ? " (current selection)" : ""}.`;
+    document.getElementById("pw-ties").innerHTML = `<table><thead><tr><th scope="col">Company</th><th scope="col">Lab</th><th scope="col">Tie</th><th scope="col">Strength</th><th scope="col">Detail</th><th scope="col">As of</th></tr></thead><tbody>${rows.map((t) => `<tr><td>${esc(coName(t.from))}</td><td>${esc(labName(t.to))}</td><td>${esc(t.type)}</td><td>${esc(t.strength ?? "")}</td><td>${esc(t.description || "")} ${link(t.source_url)}</td><td class="nowrap">${esc(t.as_of || "")}</td></tr>`).join("")}</tbody></table>`;
   }
 
   function selectCompanies() {
     document.querySelectorAll("#tab-pathways [data-lab]").forEach((b) => b.setAttribute("aria-pressed", "false"));
     const cos = S.selectedCos;
-    if (!cos.size) { S.activeIds = null; apply(); return; }
+    if (!cos.size) { S.activeIds = null; apply(); document.getElementById("pw-panel").innerHTML = ""; tieTable(S.data.ties); return; }
     const ties = S.data.ties.filter((t) => cos.has(t.from));
     const reach = new Map();
     ties.forEach((t) => {
@@ -182,12 +195,13 @@
       <ul class="sub">${r.ties.map((t) => `<li>${esc(coName(t.from))}: ${esc(t.type)}. ${esc(t.description)} ${link(t.source_url)}</li>`).join("")}</ul></li>`).join("");
     const shared = [...new Map(inv.map((p) => [p.org.id, p.org])).values()];
     document.getElementById("pw-panel").innerHTML = `
-      <p class="eyebrow" style="margin:0 0 4px">Engagement plan</p>
+      <p class="eyebrow tight">Engagement plan</p>
       <h3>${[...cos].map(coName).join(" + ")}</h3>
       <h4 class="pw-h4">Labs this combination reaches (${reach.size})</h4>
       <ul class="conn">${rows || "<li>No sourced ties yet.</li>"}</ul>
       <h4 class="pw-h4">Organizations already engaging these companies on AI (${shared.length})</h4>
       <p>${shared.map((o) => esc(o.name)).join(", ") || "None in the map yet."}</p>`;
+    tieTable(ties);
   }
 
   function onNode(d) {
@@ -212,6 +226,7 @@
     }
     S = { data, inv: investorLinks(network || {}), selectedCos: new Set(), activeIds: null };
     shell(el, data);
+    tieTable(data.ties);
     el.querySelectorAll("[data-lab]").forEach((b) => b.addEventListener("click", () => selectLab(b.dataset.lab)));
     el.querySelectorAll('input[type="checkbox"]').forEach((b) => b.addEventListener("change", () => {
       if (b.checked) S.selectedCos.add(b.value); else S.selectedCos.delete(b.value);

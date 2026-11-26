@@ -28,7 +28,7 @@
       const cells = crit.map((k) => {
         const s = c.scores.find((x) => x.id === k.id) || { score: "silent" };
         const on = S.sel && S.sel.t === c.ticker && S.sel.k === k.id;
-        return `<td><button class="sc-cell ${esc(s.score)}${on ? " on" : ""}" data-t="${esc(c.ticker)}" data-k="${esc(k.id)}" aria-label="${esc(c.name)}, ${esc(k.label)}: ${esc(LABEL[s.score] || s.score)}"></button></td>`;
+        return `<td><button type="button" class="sc-cell ${esc(s.score)}${on ? " on" : ""}" data-t="${esc(c.ticker)}" data-k="${esc(k.id)}" aria-label="${esc(c.name)}, ${esc(k.label)}: ${esc(LABEL[s.score] || s.score)}"></button></td>`;
       }).join("");
       return `<tr><th class="sc-co">${esc(c.name)}<div class="sc-bar"><span style="width:${pct}%"></span></div><div class="ticker">${t.got} of ${t.max} points</div></th>${cells}</tr>`;
     }).join("");
@@ -42,7 +42,7 @@
     const crit = S.criteria.find((x) => x.id === k);
     const s = c.scores.find((x) => x.id === k) || { score: "silent", evidence: "No public disclosure found." };
     document.getElementById("sc-panel").innerHTML = `
-      <p class="eyebrow" style="margin:0 0 4px">${esc(crit.pillar)}</p>
+      <p class="eyebrow tight">${esc(crit.pillar)}</p>
       <h3>${esc(c.name)}: ${esc(crit.label)}</h3>
       <p><span class="pill ${s.score === "met" ? "open" : s.score === "partial" ? "narrowing" : "pending"}">${esc(LABEL[s.score] || s.score)}</span>${s.doc_date ? ` <span class="ticker">document dated ${esc(s.doc_date)}</span>` : ""}</p>
       <p>${esc(s.evidence || "")} ${s.url ? link(s.url, "company document") : ""}</p>
@@ -63,16 +63,15 @@
       <div><strong>${esc(e.title)}.</strong> ${esc(e.summary)} ${link(e.source_url, e.source_page ? "source, p. " + e.source_page : "source")}</div></li>`).join("");
     el.innerHTML = `
       <h2>Disclosure scorecard</h2>
-      <p class="intro">How each company's public AI disclosure lines up with the <a href="${esc(data.framework_url)}" target="_blank" rel="noopener">Investor Recommendations for an Effective Rights-Based Approach to AI</a>, prepared by Parnassus Investments and other investors (April 2025). The recommendations cover governance, policies and practices, and transparency. Each square is one recommendation. Click it to see what the company has published and where.</p>
-      <div class="callout">Scores read only what each company has published. "Silent" means no public disclosure was found, not that the practice does not exist inside the company. This site is independent and is not affiliated with Parnassus Investments.</div>
+      <p class="intro">${data.companies.length} companies × ${data.criteria.length} criteria from the <a href="${esc(data.framework_url)}" target="_blank" rel="noopener">Investor Recommendations for an Effective Rights-Based Approach to AI</a> (April 2025), scored on published disclosure only. Silent = no public disclosure found. Not affiliated with Parnassus Investments.</p>
       <div class="net-controls">
         <div class="seg" role="group" aria-label="Pillar">
-          <button data-p="" aria-pressed="true">All</button>
-          ${pillars.map((p) => `<button data-p="${esc(p)}" aria-pressed="false">${esc(p.replace(" and accountability", "").replace(" (appendix)", ""))}</button>`).join("")}
+          <button type="button" data-p="" aria-pressed="true">All</button>
+          ${pillars.map((p) => `<button type="button" data-p="${esc(p)}" aria-pressed="false">${esc(p.replace(" and accountability", "").replace(" (appendix)", ""))}</button>`).join("")}
         </div>
         <div class="seg" role="group" aria-label="Sort">
-          <button data-s="score" aria-pressed="true">Sort by score</button>
-          <button data-s="name" aria-pressed="false">A to Z</button>
+          <button type="button" data-s="score" aria-pressed="true">Sort by score</button>
+          <button type="button" data-s="name" aria-pressed="false">A to Z</button>
         </div>
       </div>
       <div class="net-legend">
@@ -80,10 +79,8 @@
         <span class="leg static"><span class="dot sc-partial"></span>Partial</span>
         <span class="leg static"><span class="dot sc-silent"></span>Silent</span>
       </div>
-      <div class="net-body">
-        <div id="sc-matrix" class="table-wrap sc-wrap"></div>
-        <aside id="sc-panel" class="net-panel"><p class="status-note">Click any square to see the evidence.</p></aside>
-      </div>
+      <div id="sc-matrix" class="table-wrap sc-wrap"></div>
+      <aside id="sc-panel" class="net-panel sc-panel" aria-live="polite"><p class="status-note">Select a square for its evidence.</p></aside>
       ${tl ? `<h2>Parnassus engagement outcomes</h2><p class="intro">Public outcomes from Parnassus Investments' AI engagement, as Parnassus has reported them.</p><ul class="timeline">${tl}</ul>` : ""}
       <h2>Documents reviewed</h2><ul class="steps">${docs}</ul>`;
     el.querySelectorAll("[data-p]").forEach((b) => b.addEventListener("click", () => {
