@@ -2154,6 +2154,7 @@
    "support_pct": 33.57,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a1.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm",
+   "meeting_date": "2023-12-07",
    "degree": 2
   },
   {
@@ -2169,6 +2170,7 @@
    "support_pct": 21.16,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a1.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm",
+   "meeting_date": "2023-12-07",
    "degree": 6
   },
   {
@@ -2184,6 +2186,16 @@
    "support_pct": 32.03,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a1.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm",
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "msft-2023-11",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "support_pct": 33.58,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm"
+    }
+   ],
+   "meeting_date": "2024-12-10",
    "degree": 1
   },
   {
@@ -2199,6 +2211,7 @@
    "support_pct": 9.71,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a1.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm",
+   "meeting_date": "2024-12-10",
    "degree": 3
   },
   {
@@ -2214,6 +2227,16 @@
    "support_pct": 18.67,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a1.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm",
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "msft-2023-13",
+     "title": "Report on AI Misinformation and Disinformation",
+     "support_pct": 21.17,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm"
+    }
+   ],
+   "meeting_date": "2024-12-10",
    "degree": 6
   },
   {
@@ -2229,6 +2252,7 @@
    "support_pct": 36.19,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a1.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm",
+   "meeting_date": "2024-12-10",
    "degree": 3
   },
   {
@@ -2244,6 +2268,7 @@
    "support_pct": 0.69,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
+   "meeting_date": "2025-12-05",
    "degree": 2
   },
   {
@@ -2259,6 +2284,7 @@
    "support_pct": 13.36,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
+   "meeting_date": "2025-12-05",
    "degree": 3
   },
   {
@@ -2274,6 +2300,23 @@
    "support_pct": 27.48,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "msft-2023-11",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "support_pct": 33.58,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm"
+    },
+    {
+     "year": 2024,
+     "proposal_id": "msft-2024-6",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "support_pct": 32.03,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
+    }
+   ],
+   "meeting_date": "2025-12-05",
    "degree": 1
   },
   {
@@ -2289,6 +2332,7 @@
    "support_pct": 26.34,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
+   "meeting_date": "2025-12-05",
    "degree": 8
   },
   {
@@ -2304,6 +2348,16 @@
    "support_pct": 8.75,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
+   "vote_history": [
+    {
+     "year": 2024,
+     "proposal_id": "msft-2024-7",
+     "title": "Report on AI and Machine Learning Tools for Oil and Gas Development and Production",
+     "support_pct": 9.71,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
+    }
+   ],
+   "meeting_date": "2025-12-05",
    "degree": 3
   },
   {
@@ -2319,6 +2373,7 @@
    "support_pct": null,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a1.pdf",
    "results_url": null,
+   "meeting_date": "2026-12-08",
    "degree": 2
   },
   {
@@ -2334,6 +2389,16 @@
    "support_pct": null,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a1.pdf",
    "results_url": null,
+   "vote_history": [
+    {
+     "year": 2025,
+     "proposal_id": "msft-2025-9",
+     "title": "Report on Human Rights Due Diligence",
+     "support_pct": 26.34,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+    }
+   ],
+   "meeting_date": "2026-12-08",
    "degree": 6
   },
   {
@@ -2349,6 +2414,30 @@
    "support_pct": null,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a1.pdf",
    "results_url": null,
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "msft-2023-11",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "support_pct": 33.58,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm"
+    },
+    {
+     "year": 2024,
+     "proposal_id": "msft-2024-6",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "support_pct": 32.03,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
+    },
+    {
+     "year": 2025,
+     "proposal_id": "msft-2025-8",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "support_pct": 27.48,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+    }
+   ],
+   "meeting_date": "2026-12-08",
    "degree": 3
   },
   {
@@ -2364,6 +2453,7 @@
    "support_pct": 13.11,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm",
+   "meeting_date": "2023-06-02",
    "degree": 6
   },
   {
@@ -2379,6 +2469,7 @@
    "support_pct": 18.02,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm",
+   "meeting_date": "2023-06-02",
    "degree": 4
   },
   {
@@ -2394,6 +2485,7 @@
    "support_pct": 17.02,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm",
+   "meeting_date": "2023-06-02",
    "degree": 3
   },
   {
@@ -2423,6 +2515,7 @@
    "support_pct": 7.4,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm",
+   "meeting_date": "2024-06-07",
    "degree": 6
   },
   {
@@ -2438,6 +2531,7 @@
    "support_pct": 17.61,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm",
+   "meeting_date": "2024-06-07",
    "degree": 5
   },
   {
@@ -2453,6 +2547,16 @@
    "support_pct": 18.56,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm",
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "googl-2023-11",
+     "title": "Human Rights Assessment of Targeted Ad Policies and Practices",
+     "support_pct": 18.02,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm"
+    }
+   ],
+   "meeting_date": "2024-06-07",
    "degree": 6
   },
   {
@@ -2467,6 +2571,7 @@
    "status": "voted",
    "support_pct": 14.24,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf",
+   "meeting_date": "2024-06-07",
    "degree": 2
   },
   {
@@ -2482,6 +2587,7 @@
    "support_pct": 4.51,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog_courtesy-pdf.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
+   "meeting_date": "2025-06-06",
    "degree": 3
   },
   {
@@ -2497,6 +2603,7 @@
    "support_pct": 0.46,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog_courtesy-pdf.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
+   "meeting_date": "2025-06-06",
    "degree": 3
   },
   {
@@ -2512,6 +2619,7 @@
    "support_pct": 12.38,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog_courtesy-pdf.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
+   "meeting_date": "2025-06-06",
    "degree": 3
   },
   {
@@ -2527,6 +2635,16 @@
    "support_pct": 14.29,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog_courtesy-pdf.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
+   "vote_history": [
+    {
+     "year": 2024,
+     "proposal_id": "googl-2024-13",
+     "title": "Human Rights Assessment of AI-Driven Targeted Ad Policies",
+     "support_pct": 18.56,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm"
+    }
+   ],
+   "meeting_date": "2025-06-06",
    "degree": 14
   },
   {
@@ -2542,6 +2660,7 @@
    "support_pct": 1.5,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
+   "meeting_date": "2026-06-05",
    "degree": 2
   },
   {
@@ -2557,6 +2676,7 @@
    "support_pct": 6.03,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
+   "meeting_date": "2026-06-05",
    "degree": 6
   },
   {
@@ -2572,6 +2692,16 @@
    "support_pct": 3.74,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
+   "vote_history": [
+    {
+     "year": 2024,
+     "proposal_id": "googl-2024-11",
+     "title": "AI Principles and Board Oversight",
+     "support_pct": 7.4,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm"
+    }
+   ],
+   "meeting_date": "2026-06-05",
    "degree": 4
   },
   {
@@ -2587,6 +2717,7 @@
    "support_pct": 9.3,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
+   "meeting_date": "2026-06-05",
    "degree": 2
   },
   {
@@ -2602,6 +2733,16 @@
    "support_pct": 12.26,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
+   "vote_history": [
+    {
+     "year": 2025,
+     "proposal_id": "googl-2025-11",
+     "title": "Report on AI Data Usage Oversight",
+     "support_pct": 12.38,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+    }
+   ],
+   "meeting_date": "2026-06-05",
    "degree": 2
   },
   {
@@ -2617,6 +2758,7 @@
    "support_pct": 17.02,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000083/meta-20230531.htm",
+   "meeting_date": "2023-05-31",
    "degree": 8
   },
   {
@@ -2646,6 +2788,7 @@
    "support_pct": 16.73,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000057/meta-20240529.htm",
+   "meeting_date": "2024-05-29",
    "degree": 6
   },
   {
@@ -2661,6 +2804,16 @@
    "support_pct": 14.45,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000057/meta-20240529.htm",
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "meta-2023-5",
+     "title": "Human Rights Impact Assessment of Targeted Advertising",
+     "support_pct": 17.02,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000083/meta-20230531.htm"
+    }
+   ],
+   "meeting_date": "2024-05-29",
    "degree": 4
   },
   {
@@ -2676,6 +2829,7 @@
    "support_pct": 9.93,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm",
+   "meeting_date": "2025-05-28",
    "degree": 3
   },
   {
@@ -2691,6 +2845,7 @@
    "support_pct": 6.45,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm",
+   "meeting_date": "2025-05-28",
    "degree": 3
   },
   {
@@ -2706,6 +2861,7 @@
    "support_pct": 3.25,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm",
+   "meeting_date": "2025-05-28",
    "degree": 3
   },
   {
@@ -2720,6 +2876,7 @@
    "status": "voted",
    "support_pct": 13.43,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
+   "meeting_date": "2025-05-28",
    "degree": 3
   },
   {
@@ -2735,6 +2892,16 @@
    "support_pct": 10.17,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm",
+   "vote_history": [
+    {
+     "year": 2025,
+     "proposal_id": "meta-2025-11",
+     "title": "Report on AI Data Usage Oversight",
+     "support_pct": 9.93,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm"
+    }
+   ],
+   "meeting_date": "2026-05-27",
    "degree": 2
   },
   {
@@ -2750,6 +2917,7 @@
    "support_pct": 6.61,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm",
+   "meeting_date": "2026-05-27",
    "degree": 4
   },
   {
@@ -2765,6 +2933,7 @@
    "support_pct": 6.91,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm",
+   "meeting_date": "2026-05-27",
    "degree": 6
   },
   {
@@ -2779,6 +2948,7 @@
    "status": "voted",
    "support_pct": 3.42,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
+   "meeting_date": "2026-05-27",
    "degree": 3
   },
   {
@@ -2794,6 +2964,7 @@
    "support_pct": 34.2,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923055145/tm2314311d1_defa14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923065457/tm2315877d1_8k.htm",
+   "meeting_date": "2023-05-24",
    "degree": 3
   },
   {
@@ -2809,6 +2980,7 @@
    "support_pct": 37.5,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923055145/tm2314311d1_defa14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923065457/tm2315877d1_8k.htm",
+   "meeting_date": "2023-05-24",
    "degree": 1
   },
   {
@@ -2824,6 +2996,16 @@
    "support_pct": 16.8,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924065117/tm2414140d1_8k.htm",
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "amzn-2023-7",
+     "title": "Report on Customer Due Diligence",
+     "support_pct": 34.18,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923065457/tm2315877d1_8k.htm"
+    }
+   ],
+   "meeting_date": "2024-05-22",
    "degree": 5
   },
   {
@@ -2839,6 +3021,16 @@
    "support_pct": 19.1,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924065117/tm2414140d1_8k.htm",
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "amzn-2023-23",
+     "title": "Report on Customer Use of Certain Technologies (Rekognition facial recognition)",
+     "support_pct": 37.48,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923065457/tm2315877d1_8k.htm"
+    }
+   ],
+   "meeting_date": "2024-05-22",
    "degree": 1
   },
   {
@@ -2854,6 +3046,7 @@
    "support_pct": 9.7,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924065117/tm2414140d1_8k.htm",
+   "meeting_date": "2024-05-22",
    "degree": 2
   },
   {
@@ -2869,6 +3062,7 @@
    "support_pct": 20.1,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm",
+   "meeting_date": "2025-05-21",
    "degree": 1
   },
   {
@@ -2884,6 +3078,7 @@
    "support_pct": 10.3,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm",
+   "meeting_date": "2025-05-21",
    "degree": 2
   },
   {
@@ -2899,6 +3094,7 @@
    "support_pct": 10.8,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm",
+   "meeting_date": "2025-05-21",
    "degree": 3
   },
   {
@@ -2914,6 +3110,16 @@
    "support_pct": 18.4,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926065717/tm2614288d1_8k.htm",
+   "vote_history": [
+    {
+     "year": 2025,
+     "proposal_id": "amzn-2025-7",
+     "title": "Additional Reporting on Impact of Data Centers on Climate Commitments",
+     "support_pct": 20.11,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm"
+    }
+   ],
+   "meeting_date": "2026-05-20",
    "degree": 3
   },
   {
@@ -2928,6 +3134,7 @@
    "status": "voted",
    "support_pct": 1.2,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
+   "meeting_date": "2026-05-20",
    "degree": 2
   },
   {
@@ -2957,6 +3164,7 @@
    "support_pct": null,
    "source_url": "https://united4respect.org/wp-content/uploads/2026/03/AI-Advisory-Council_-Amazon-Floor-Resolution-2026-FINAL.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926065717/tm2614288d1_8k.htm",
+   "meeting_date": "2026-05-20",
    "degree": 2
   },
   {
@@ -2972,6 +3180,7 @@
    "support_pct": 37.5,
    "source_url": "https://news.bloomberglaw.com/daily-labor-report/apple-investors-reject-bid-for-transparency-on-ai-risks-ethics",
    "results_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124010155/ny20022580x1_8k.htm",
+   "meeting_date": "2024-02-28",
    "degree": 3
   },
   {
@@ -2987,6 +3196,7 @@
    "support_pct": 11.6,
    "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125005876/ef20044022_8k.htm",
+   "meeting_date": "2025-02-25",
    "degree": 3
   },
   {
@@ -3016,6 +3226,7 @@
    "support_pct": 17.6,
    "source_url": "https://www.greencentury.com/shareholders-call-for-nvidia-to-report-carbon-costs-of-ai/",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm",
+   "meeting_date": "2026-06-24",
    "degree": 4
   },
   {
@@ -3045,6 +3256,7 @@
    "support_pct": 53.6,
    "source_url": "https://techcrunch.com/2025/09/05/tesla-shareholders-to-vote-on-investing-in-musks-ai-startup-xai",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925108507/tm2530590d1_8k.htm",
+   "meeting_date": "2025-11-06",
    "degree": 1
   },
   {
@@ -4671,6 +4883,7 @@
    "support_pct": 8.21,
    "proponent": "Trillium ESG Global Equity Fund (lead) and co-filers",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
+   "meeting_date": "2025-06-06",
    "degree": 2
   },
   {
@@ -4686,6 +4899,7 @@
    "support_pct": null,
    "proponent": "UNVERIFIED (the 8-K does not name the proponent)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
+   "meeting_date": "2025-06-06",
    "degree": 1
   },
   {
@@ -4701,6 +4915,16 @@
    "support_pct": 7.35,
    "proponent": "Trillium ESG Global Equity Fund (lead) and co-filers",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+   "vote_history": [
+    {
+     "year": 2025,
+     "proposal_id": "googl-2025-7",
+     "title": "Enhanced Disclosure on Climate Goals",
+     "support_pct": 8.21,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+    }
+   ],
+   "meeting_date": "2026-06-05",
    "degree": 2
   },
   {
@@ -4716,6 +4940,7 @@
    "support_pct": 8.91,
    "proponent": "American Family Association, represented by Bowyer Research",
    "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
+   "meeting_date": "2025-02-25",
    "degree": 2
   }
  ],

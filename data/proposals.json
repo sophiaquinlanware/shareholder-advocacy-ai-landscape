@@ -52,7 +52,17 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm",
-   "notes": null
+   "notes": null,
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "msft-2023-11",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "support_pct": 33.58,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject"
   },
   {
    "id": "msft-2024-7",
@@ -88,7 +98,17 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm",
-   "notes": null
+   "notes": null,
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "msft-2023-13",
+     "title": "Report on AI Misinformation and Disinformation",
+     "support_pct": 21.17,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject"
   },
   {
    "id": "msft-2024-9",
@@ -160,7 +180,24 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
-   "notes": null
+   "notes": null,
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "msft-2023-11",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "support_pct": 33.58,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm"
+    },
+    {
+     "year": 2024,
+     "proposal_id": "msft-2024-6",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "support_pct": 32.03,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject"
   },
   {
    "id": "msft-2025-9",
@@ -196,7 +233,17 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
-   "notes": null
+   "notes": null,
+   "vote_history": [
+    {
+     "year": 2024,
+     "proposal_id": "msft-2024-7",
+     "title": "Report on AI and Machine Learning Tools for Oil and Gas Development and Production",
+     "support_pct": 9.71,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject"
   },
   {
    "id": "meta-2023-5",
@@ -250,7 +297,17 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000057/meta-20240529.htm",
-   "notes": "Meta dual-class voting power"
+   "notes": "Meta dual-class voting power",
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "meta-2023-5",
+     "title": "Human Rights Impact Assessment of Targeted Advertising",
+     "support_pct": 17.02,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000083/meta-20230531.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject"
   },
   {
    "id": "meta-2025-10",
@@ -322,7 +379,17 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm",
-   "notes": "Meta dual-class voting power"
+   "notes": "Meta dual-class voting power",
+   "vote_history": [
+    {
+     "year": 2025,
+     "proposal_id": "meta-2025-11",
+     "title": "Report on AI Data Usage Oversight",
+     "support_pct": 9.93,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject"
   },
   {
    "id": "meta-2026-9",
@@ -466,7 +533,17 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "googl-2023-11",
+     "title": "Human Rights Assessment of Targeted Ad Policies and Practices",
+     "support_pct": 18.02,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject"
   },
   {
    "id": "googl-2025-7",
@@ -556,7 +633,17 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "vote_history": [
+    {
+     "year": 2024,
+     "proposal_id": "googl-2024-13",
+     "title": "Human Rights Assessment of AI-Driven Targeted Ad Policies",
+     "support_pct": 18.56,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject"
   },
   {
    "id": "googl-2025-15(floor)",
@@ -592,7 +679,17 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "vote_history": [
+    {
+     "year": 2025,
+     "proposal_id": "googl-2025-7",
+     "title": "Enhanced Disclosure on Climate Goals",
+     "support_pct": 8.21,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject"
   },
   {
    "id": "googl-2026-6",
@@ -646,7 +743,17 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "vote_history": [
+    {
+     "year": 2024,
+     "proposal_id": "googl-2024-11",
+     "title": "AI Principles and Board Oversight",
+     "support_pct": 7.4,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject"
   },
   {
    "id": "googl-2026-13",
@@ -682,7 +789,17 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
-   "notes": "Alphabet dual-class voting power"
+   "notes": "Alphabet dual-class voting power",
+   "vote_history": [
+    {
+     "year": 2025,
+     "proposal_id": "googl-2025-11",
+     "title": "Report on AI Data Usage Oversight",
+     "support_pct": 12.38,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject"
   },
   {
    "id": "amzn-2023-7",
@@ -736,7 +853,17 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924065117/tm2414140d1_8k.htm",
-   "notes": null
+   "notes": null,
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "amzn-2023-7",
+     "title": "Report on Customer Due Diligence",
+     "support_pct": 34.18,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923065457/tm2315877d1_8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject"
   },
   {
    "id": "amzn-2024-14",
@@ -754,7 +881,17 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924065117/tm2414140d1_8k.htm",
-   "notes": null
+   "notes": null,
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "amzn-2023-23",
+     "title": "Report on Customer Use of Certain Technologies (Rekognition facial recognition)",
+     "support_pct": 37.48,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923065457/tm2315877d1_8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject"
   },
   {
    "id": "amzn-2024-16",
@@ -844,7 +981,17 @@
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926065717/tm2614288d1_8k.htm",
-   "notes": null
+   "notes": null,
+   "vote_history": [
+    {
+     "year": 2025,
+     "proposal_id": "amzn-2025-7",
+     "title": "Additional Reporting on Impact of Data Centers on Climate Commitments",
+     "support_pct": 20.11,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject"
   },
   {
    "id": "amzn-2026-floor",
@@ -990,7 +1137,17 @@
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "results_url": null,
    "notes": null,
-   "results_note": "Not yet filed (meeting 2026-12-08)"
+   "results_note": "Not yet filed (meeting 2026-12-08)",
+   "vote_history": [
+    {
+     "year": 2025,
+     "proposal_id": "msft-2025-9",
+     "title": "Report on Human Rights Due Diligence",
+     "support_pct": 26.34,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject"
   },
   {
    "id": "msft-2026-6",
@@ -1009,7 +1166,31 @@
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "results_url": null,
    "notes": null,
-   "results_note": "Not yet filed (meeting 2026-12-08)"
+   "results_note": "Not yet filed (meeting 2026-12-08)",
+   "vote_history": [
+    {
+     "year": 2023,
+     "proposal_id": "msft-2023-11",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "support_pct": 33.58,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm"
+    },
+    {
+     "year": 2024,
+     "proposal_id": "msft-2024-6",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "support_pct": 32.03,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
+    },
+    {
+     "year": 2025,
+     "proposal_id": "msft-2025-8",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "support_pct": 27.48,
+     "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+    }
+   ],
+   "vote_history_source": "derived: same company, topic and title subject"
   },
   {
    "id": "googl-2023-audit-committee-review",
