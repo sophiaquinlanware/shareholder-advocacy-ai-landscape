@@ -1187,7 +1187,7 @@
       .attr("stroke", cssVar("--g-bg")).attr("stroke-width", 3).attr("stroke-linejoin", "round").attr("paint-order", "stroke")
       .attr("dx", 0).attr("dy", 0);
     // Column labels for the grouped layout, on top of everything; they move and zoom with the graph.
-    state.axis = g.append("g").attr("font-size", 11).attr("font-weight", 400).attr("fill", cssVar("--g-label-soft"))
+    state.axis = g.append("g").attr("font-size", 12).attr("font-weight", 400).attr("fill", cssVar("--g-label-soft"))
       .attr("pointer-events", "none").attr("display", state.cfg.group > 0 ? null : "none");
     drawAxis();
 

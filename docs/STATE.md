@@ -1,6 +1,6 @@
 # Shareholder Advocacy AI Landscape — current state
 
-Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 (data session: census of shareholder advocates merged; earlier the UI session rebuilt Lab pathways).
+Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 (UI session: typeface, type style and one blue; before that the data session merged the census).
 
 ## Sessions and branches (read this first)
 
@@ -9,7 +9,7 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 
 | Session | Owns | Branch | State |
 |---|---|---|---|
 | Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | none open | On `main` (7d8d694): 60 companies with tiers; rights maps for 29 US companies; value chain (44 ties); 76 AI proposals with `ask_id` and `category` (4 categories in asks.json); fund votes from every N-PX filing (414 rows, all 9 families full coverage, incl. Praxis and Domini); coverage.json (25 rows, `reviewed: false`); Ceres, VWFI, IIGCC; 282 organizations in network.json, 263 people, 189 `proposal_links`; Parnassus "engaged directly" edges to 6 companies. graph.json 778 nodes, about 735 KB. |
-| UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, `graph.js`, `lenses.js`, `rules.js`, `roles.js`, `pathways.js`, `valuechain.js`, other view JS, `DESIGN.md`, `tests/` | `design/lab-routes` → merged to `main` when its check passes | Live: lens Phases 1–4, Value chain tab, proposal categories, company roles site-wide, "AI advocacy network". |
+| UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, `graph.js`, `lenses.js`, `rules.js`, `roles.js`, `pathways.js`, `valuechain.js`, other view JS, `DESIGN.md`, `tests/` | `design/type-and-blue` → `main` when its check and review pass | Live: lens Phases 1–4, Value chain tab, proposal categories, company roles site-wide, "AI advocacy network", Lab pathways as routes to a lab. This round: Schibsted Grotesk in regular weights, grey uppercase labels, one blue #1f4e98, hover underline on tabs, sticky page title. |
 | Protocol setup | `AGENTS.md`, `CLAUDE.md`, checks, `docs/` structure | `docs-session-onboarding` (local) | Idle. |
 
 **Owner's standing instruction (2026-11-25):** "Don't ask me any questions about publishing or next steps. Just continue until you complete the project." Merge to `main` once the check and reviews pass.
@@ -20,7 +20,8 @@ Upcoming votes · Company lookup · Proposals · Fund votes · Rights map · AI 
 
 ## Site-wide decisions in force
 
-- **Look:** black and white with blue for visuals, on plain white. The network graph alone has a dark Obsidian-style canvas.
+- **Look:** black and white with **one blue, #1f4e98** (owner, 2026-11-26), on plain white; tints of it where two blues must differ. The network graph alone has a dark Obsidian-style canvas; blue nodes there carry a thin light outline.
+- **Type (owner, 2026-11-26, from a museum site screenshot):** Schibsted Grotesk, regular weight throughout (emphasis 500), grey uppercase tracked labels; tabs draw a thin blue underline on hover; the page name joins the sticky bar on scroll. Plan docs/plans/2026-11-26-type-and-blue.md. Reviews: plan R1 72; result R1 76, R2 78. R2's remaining points were fixed after R2 (round cap) and not re-reviewed: tab rows no longer overflow the bar on phones, two 11px labels raised to 12px, and a fallback font (Arial at 101%, measured) cuts the shift when the font loads. Check: 156 passed; Lighthouse phone 100/100/100/91, desktop 100/100/100/97.
 - **Company roles (roles.js):** one classification everywhere: Frontier labs; Chips and hardware; Data centers and power; Cloud and model platforms; Consumer products; Business and government products; Strategic investors. Plan docs/plans/2026-11-26-company-roles.md.
 - **Network legibility:** labels never overlap; the selected label sits on a blue pill; key "only" and "Show all" controls; year scrubber (`upto=`).
 - **Lenses:** Impact, Individual, Policymaker (phases 1–4). Plans are in docs/plans/2026-11-25-lens-phase1/2 and 2026-11-26-lens-phase3/4.
@@ -68,7 +69,7 @@ Plan docs/plans/2026-11-26-lab-routes.md, with Revision 2. The owner's question:
 
 ## Next (UI session)
 
-1. **"Engaged directly" edge** (data session, branch `data/census-coalitions`): add a legend entry and list its steps (date, title, source) in the network panel. Wait for the branch to merge.
+1. **"Engaged directly" edge** (data now on main, 7d8d694): add a legend entry and list its steps (date, title, source) in the network panel. Next UI task.
 2. **graph.json grows to 790 nodes / 735 KB** with the census branch. Check load time and label density after the merge.
 3. **Phase 3 follow-up:** show `pass_through_voting` (`offered` null means no program found on the pages checked, never "no").
 4. **Value chain follow-ups:** per-tier outcomes aren't in the data yet; `asks_made` and `active_filers` are capped at 12, and true totals would let the heatmap show them.

@@ -84,7 +84,7 @@
       .attr("class", "vc-tie").attr("stroke", ink).attr("stroke-opacity", 0.55).attr("stroke-width", 1.4).attr("stroke-dasharray", (t) => DASH[t.type] || null)
       .append("title").text((t) => `${name(t.from)} ${phrase(t.type)} ${name(t.to)}`);
     const nodes = svg.append("g").selectAll("g").data([...pos.entries()]).join("g").attr("transform", ([, p]) => `translate(${p.x},${p.y})`);
-    nodes.filter(([id]) => id === "__capital__").append("text").attr("x", -6).attr("y", 4).attr("font-size", 10).attr("font-weight", 400).attr("fill", cssVar("--ink-soft")).text(`${tierLabel("capital").toUpperCase()}`);
+    nodes.filter(([id]) => id === "__capital__").append("text").attr("x", -6).attr("y", 4).attr("font-size", 12).attr("font-weight", 400).attr("fill", cssVar("--ink-soft")).text(`${tierLabel("capital").toUpperCase()}`);
     const co = nodes.filter(([id]) => id !== "__capital__")
       .attr("tabindex", 0).attr("role", "button").attr("aria-label", ([id]) => `${name(id)}: ${plural(deg.get(id) || 0, "tie")}`).style("cursor", "pointer")
       .on("click", (ev, [id]) => showCompany(id))

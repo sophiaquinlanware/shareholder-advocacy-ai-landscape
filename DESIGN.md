@@ -18,27 +18,30 @@ One white theme (`color-scheme: light`). All colours are tokens on `:root` in `s
 |---|---|---|
 | `--bg`, `--surface` | #ffffff | page, cards, tables |
 | `--ink` | #111111 | text (18.9) |
-| `--ink-soft` | #555555 | secondary text, headers (7.5) |
+| `--ink-soft` | #6b6b6b | secondary text, grey uppercase labels (5.3) |
 | `--line` | #e0e0e0 | dividers (non-interactive) |
 | `--control-edge` | #8a8a8a | borders of inputs, selects, buttons, chips (3.45, WCAG 1.4.11) |
 | `--head-bg` | #f6f6f6 | table header row, reason box |
-| `--accent` | #1f5f99 | links, selected tab, selected controls (6.7) |
-| `--accent-soft` | #e8f0f9 | highlighted table row, upcoming pill |
-| `--blue-1` | #0b2545 | data: navy (15.4) |
-| `--blue-2` | #2f6fb0 | data: mid blue (5.2) |
-| `--blue-3` | #4f8fcf | data: light blue (3.4) |
+| `--blue` | #1f4e98 | **the one blue** (owner, 2026-11-26: "any blue you have can you have it be this color blue"; sampled from the owner's image). Links, selected tab, selected controls, every data visual (8.1) |
+| `--accent`, `--blue-1/2/3` | = `--blue` | kept as aliases |
+| `--blue-mid` | #7995c1 | 60% tint: marks that must still read at 3:1 (Lab pathways filer lines and dots, unchosen bars) |
+| `--blue-light` | #a5b8d6 | 40% tint: dark-canvas rings and the downstream-use category only (2.0 on white, 8.3 on dark) |
+| `--accent-soft` | #e9edf5 | highlighted table row, upcoming pill |
+| `--heat-1…5` | #e9edf5 … #1f4e98 | Value chain heatmap: 10/30/55/80/100% tints; white text on the top two (4.9, 8.1) |
+
+Where two blues once told things apart, the second is a tint of the same blue, never another hue. On the dark network canvas the one blue is only 2.1:1, so blue nodes (proposals, cloud and model platforms, untyped companies) carry a thin light outline (`--g-label-soft`); the selected node keeps its thicker white stroke. Trade-off: proposals and cloud companies share the blue there; they sit in different columns and the panel names the type. **Scope of "every blue":** the blues and blue-lavenders became the one blue or its tints. Indigo (`--n-person`), cyan (`--n-response`, `--gn-response`, `--gn-tier-datacenters`) and teal stay: they are separate node-type colours on the network canvas, the owner's exception, and turning them blue would merge more types.
 
 **Status pills** carry a text label and use shape and fill, not colour, to separate states.
 - Route: open = solid blue · narrowing = dashed outline · closed = solid black · pending = grey outline.
-- Proposal status: voted = grey outline · upcoming = light blue · withdrawn = dashed outline · excluded = solid black.
+- Proposal status: voted = grey outline · upcoming = blue tint · withdrawn = dashed outline · excluded = solid black.
 
 ## Data visuals: all blue
 
 | Visual | Encoding |
 |---|---|
-| Proposals dot plot | x = meeting date; y = support (0–60%, or higher if the data needs it); one mark per voted proposal with a dated vote-results filing. Topic = shade **and** shape: data centres navy circle, social and economic mid-blue square, governance light-blue triangle. Every mark is filled (owner, 2026-11-26: "Be consistent with the circles"); basis notes are listed under the table, and the key says how many plotted figures have one. Dashed line "50% of for + against". Marks sharing a date are spread 7px apart. |
+| Proposals dot plot | x = meeting date; y = support (0–60%, or higher if the data needs it); one mark per voted proposal with a dated vote-results filing. Topic = shape, all in the one blue: data centres circle, social and economic square, governance triangle. Every mark is filled (owner, 2026-11-26: "Be consistent with the circles"); basis notes are listed under the table, and the key says how many plotted figures have one. Dashed line "50% of for + against". Marks sharing a date are spread 7px apart. |
 | AI advocacy network | **Exception to all-blue and to the white page, by the owner's direction:** the graph box is a dark canvas like Obsidian's graph view (`--g-bg` #1e1e1e; owner: "the black background and colors like this so that the graph looks similar to an Obsidian graph"). One bright, distinct colour per node type (`--gn-*`, each 4.5:1 or more on `--g-bg`), so types read straight off the key. Links are thin grey-blue (`--g-link`) and labels light (`--g-label`). The page, key, panel and List view stay white. Lab pathways keeps the `--n-*` colours on white. **Companies are typed by main role in AI** (roles.js, used site-wide; owner, 2026-11-26): Frontier labs, Chips and hardware, Data centers and power, Cloud and model platforms, Consumer products, Business and government products, Strategic investors. Each has its own colour (`--gn-tier-*`), and companies sit in role bands within the "Value chain, by role" column. The intro says the roles are this site's reading. **The selected node's label stands out** (owner, 2026-11-26): it is larger, bold and white on a blue `--accent` pill, while its connections' labels show in `--g-label-soft`. **Key controls** (owner, 2026-11-26): click a type to hide or show it, "only" beside it to show that type alone, and "Show all" to restore; the proposal-category key works the same way. When 25 or fewer nodes are shown, every node is named. **Labels never overlap** (owner, 2026-11-26: "Make it so it's always legible"). Each shown label takes the first free spot (right, left, above or below its node) within the visible area at the current zoom. Priority goes to the selected node, then companies and labs, then the most connected. A label with no free spot is hidden; its node is still named in the panel and the List view. Labels carry a dark outline, and the browser tooltip is removed. **Grouped 2D layout:** x follows the filing chain (people → filers → proposals → value chain, by tier → frontier labs; owner asked for a more specific word than "companies"), under column headers on an opaque top strip that nodes can't enter. Filer types each get a horizontal band, with no row labels: the key names the types (owner asked whether the axes help; the row labels were dropped as confusing). Policy, responses and public engagement sit in a top band. Size = number of connections. Links thin grey-blue quadratic arcs on the dark canvas. **Graph settings** panel (like Obsidian's): text size, label threshold, node size and link thickness (Display); orphans (Filters); grouping, centre, repel and link force, and link distance (Forces). Saved per viewer in localStorage, with "Reset to defaults". |
-| Lab pathways | **Lab first** (owner, 2026-11-26; plan docs/plans/2026-11-26-lab-routes.md). Pick a lab (OpenAI by default), then: "Routes to {lab}" table, one row per tied company: tie (group, type, as of, source; "reported or unverified" kept from the data), strength (site rating 1–3, with reason), US proxy rights and next filing deadline (open with days left, or passed, computed live), filers with AI proposals there (named filings only, no exempt solicitations; long lists fold after six), related asks (site grouping by tie type, with counts filed there), past support on related asks (latest vote, dual-class flagged). Default sort: strongest tie, then open deadline. Phones show each row as a labelled card. Findings list under it ("No AI proposals filed here yet", companies by number of filers, open deadlines, not tracked). "Labs reached, by company": horizontal blue HTML bars, the chosen lab's companies darker. "Gaps in the tie data". Then the map: filers → companies → labs, filer column trimmed to the chosen lab's companies, labels wrapped (never cut below three lines), company → lab ties navy (width = strength), filer → company light blue (width = proposals filed). The company chips are a secondary filter, collapsed. All ties table collapsed at the bottom. |
+| Lab pathways | **Lab first** (owner, 2026-11-26; plan docs/plans/2026-11-26-lab-routes.md). Pick a lab (OpenAI by default), then: "Routes to {lab}" table, one row per tied company: tie (group, type, as of, source; "reported or unverified" kept from the data), strength (site rating 1–3, with reason), US proxy rights and next filing deadline (open with days left, or passed, computed live), filers with AI proposals there (named filings only, no exempt solicitations; long lists fold after six), related asks (site grouping by tie type, with counts filed there), past support on related asks (latest vote, dual-class flagged). Default sort: strongest tie, then open deadline. Phones show each row as a labelled card. Findings list under it ("No AI proposals filed here yet", companies by number of filers, open deadlines, not tracked). "Labs reached, by company": horizontal HTML bars in the 60% tint, the chosen lab's companies in the full blue. "Gaps in the tie data". Then the map: filers → companies → labs, filer column trimmed to the chosen lab's companies, labels wrapped (never cut below three lines), company → lab ties in the blue (width = strength), filer → company in its 60% tint (width = proposals filed). The company chips are a secondary filter, collapsed. All ties table collapsed at the bottom. |
 | Policy and causality | Event nodes mid blue. Link type by dash pattern: led to solid · responded to dashed · restricts dotted · enables dash-dot · cited by sparse dots. |
 | Disclosure scorecard | Met = solid blue, partial = hatched blue, silent = grey outline. |
 
@@ -48,8 +51,13 @@ Every visual has a text equivalent on the same tab: the proposals table, the net
 
 ## Typography
 
-- One family: Inter (Google Fonts, 400/500/600/700), fallback system-ui. No display face.
-- Sizes: h1 22px/600 · h2 19px/600 · h3 16px/600 · sub-headings 15px · body 15px/1.55 · tables 13px · meta, notes, pills 12–13px.
+Owner (2026-11-26), with a museum site's screenshot: "make it this font and this typographical aesthetic".
+- One family: **Schibsted Grotesk** (Google Fonts, 400 and 500 only, loaded without blocking; `font-synthesis-weight: none`), fallback Helvetica Neue / Arial. Chosen as the closest free match to the screenshot's neutral grotesque after setting the same words in seven candidates.
+- **Regular weight throughout.** Headings 400: h1 26px · h2 22px · h3 and sub-headings 17px, slight negative tracking. Emphasis is 500, never heavier.
+- **Small labels are grey uppercase, 400, tracked .04em:** the eyebrow, tabs (13px), table headers, `dt`, legends, chart column titles (12px), card labels.
+- Body 15px/1.55 · tables 13px · meta, notes, pills 12–13px.
+- **Tabs:** hovering (on devices with a mouse) draws a thin (1px) blue underline that grows from the left; hovered text stays grey, so only the selected tab is black with a 2px underline. No motion under reduced motion.
+- **Sticky page title:** once the header scrolls away, the sticky bar gains one line: the site name as a grey label, then the current page name (18px). Phones show the page name only. Hidden from screen readers (the selected tab already says it). Once stuck, the tab rows tuck away on scroll down and return on scroll up or on keyboard focus (owner's choice, 2026-11-26: the title stays). Scroll padding follows the bar's real height.
 
 ## Layout
 
