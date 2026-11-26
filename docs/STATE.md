@@ -1,6 +1,6 @@
 # Shareholder Advocacy AI Landscape — current state
 
-Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 (UI session, lens Phase 1 on branch, not merged).
+Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 (UI session, lens Phase 2).
 
 ## Sessions and branches (read this first)
 
@@ -9,7 +9,7 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 
 | Session | Owns | Branch | State |
 |---|---|---|---|
 | Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | none open | On `main`: 60 companies with tiers; rights maps for 29 US companies; value chain (44 ties, `per_tier`); AI proposals at all 29 US-proxy companies (76, from 2023), `vote_history` (16 linked), filing deadlines (75 proposals) and `next_proposal_deadline` with open/passed status (27 companies), recomputed weekly by `scripts/build_proposal_links.py`. `seeking` is empty: no public calls for co-filers found. |
-| UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, the view JS files incl. `votes.js`, `DESIGN.md`, `tests/` | `design/lens-phase1` (pushed, **not merged**; waits for the owner's go-ahead) | Round 2 live. Lens Phase 1 built and checked on the branch; see "Lens Phase 1" below. Next: lens Phase 2 after the owner's go-ahead, and the value-chain and engagement maps (data now on `data/value-chain`). |
+| UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, `graph.js`, `lenses.js`, `rules.js`, the other view JS files incl. `votes.js`, `DESIGN.md`, `tests/` | `design/lens-phase2` (merged to `main` when its reviews pass; the owner said to publish without asking) | Lens Phase 1 live; Phase 2 built (see "Lens system" below). Next: lens Phase 3 (Individual investor feed), Phase 4 (Policymaker), then the value-chain and engagement maps. |
 | Protocol setup | `AGENTS.md`, `CLAUDE.md`, checks, `docs/` structure | `docs-session-onboarding` (local) | Idle. |
 
 **Data contract:** views read only `data/*.json`.
@@ -65,22 +65,40 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 
 
 **Network node key by value-chain tier** (owner, after R2): "Instead of 'company,' have 'Frontier AI Labs,' 'hyperscalers,' 'chip builders' … coordinate with the other chat". Built to read `tier` from graph.json, with labels verbatim from the data session. It shows "Company (tier not yet assigned)" until `data/value-chain` merges. Tested with that branch's data: 24/24 pass.
 
-## Lens Phase 1 (branch `design/lens-phase1`)
+## Lens system (Co-filer network)
 
-Plan: docs/plans/2026-11-25-lens-phase1.md (Revision 2, plus Build notes).
-- Co-filer network: a "View as" choice of Impact investor, Individual investor or Policymaker, kept in `?lens=` and in localStorage.
-- `lenses.js` holds each lens's layers, size, rings, actions and measure. `rules.js` holds the edge-confidence domain list.
-- The "What you can do" block; edge confidence (verified / reported / inferred); keyboard node navigation; a List view of every visible node.
-- Labels are off by default and show on select (owner, mid-build).
-- **Dark Obsidian-style graph canvas** (owner, mid-build): `--g-bg` #1e1e1e, bright `--gn-*` node colours (6:1 or more), grey-blue links. The page stays white; Lab pathways keeps `--n-*`.
-- **Bug fixed:** since round 2, tabs no longer wrote `#hash` to the address bar, because `app.js`'s `history()` replaced `window.history`. It is now `voteHistory()`, with a test.
-- **Check (merged with origin/main):** lint 0 errors; 54 passed, 2 skipped (keyboard test at desktop only); Lighthouse 100/100/100 for accessibility, best practices and SEO, performance 100 phone / 90 desktop.
-- **Reviews:** R1 UX 72, accessibility 83 PASS, data 76. R2 UX 86 PASS, data 88 PASS. The dark canvas came after R2 and has not been reviewed.
+The owner's spec has four phases, and each phase gets its own plan and reviews in docs/plans and docs/reviews. **The owner said on 2026-11-25: "Don't ask me any questions about publishing or next steps. Just continue until you complete the project."** So each phase merges to `main` once its check and reviews pass.
+
+- **Phase 1 (live since 4e96e7d):**
+  - "View as" lenses (`lenses.js`) and edge confidence (`rules.js`);
+  - "What you can do";
+  - keyboard nodes;
+  - labels off until a node is selected;
+  - the dark Obsidian-style canvas.
+- **Phase 2 (Impact investor; plan docs/plans/2026-11-25-lens-phase2.md, Revision 2 plus build notes):**
+  - **Deadline rings:** a countdown arc from company `next_proposal_deadline`, about 22 companies live. Proposal `filing_deadline` dates are past once a proposal is on the ballot.
+  - **Seeking asks:** no live data yet; "exempt solicitation" asks are hidden by design (Never claim 1).
+  - **Resubmission marks:** thresholds 5/15/25 in `rules.js`, flagged "verify". Vote chains are joined across nodes. 9 proposals are flagged live. Every line says the earlier votes are matched in this dataset.
+  - **My holdings:** kept in this browser only.
+  - **Topics not filed:** gap nodes scoped to companies with AI proposals in this dataset.
+  - **Find a path to…:** breadth-first search with labelled hops.
+- **Owner decision to confirm:** exempt-solicitation seeking asks, and the owner's example action "Write an exempt solicitation", are not shown. The site states "No exempt solicitation on file for this vote" instead.
+- **Performance:** desktop fell to 75 when the larger data merged; loading Inter without blocking brought it to 98.
+- **Phase 2 check (merged with main 64271e1):** 88 passed, 4 skipped (keyboard tests at desktop only); Lighthouse 100/100/100/100 phone, 100/100/100/98 desktop.
+- **Phase 2 reviews:**
+  - plan R1: UX 68, accessibility 74, data 62, all REVISE; Revision 2 followed.
+  - result R1: UX 74, accessibility 84 PASS, data 70.
+  - result R2: UX 84 PASS, data 86 PASS. Their remaining points were fixed after R2 and not re-reviewed: the ring reads as the threshold after the vote, "Close to the N% threshold", a refile goes to the meeting after the company's open deadline, and "at the threshold" covers a 0-point margin.
 
 ## Next (UI session)
 
-1. **Lens Phase 2** after the owner's go-ahead: open-window aura, seeking aura, resubmission flags (thresholds in `rules.js`), holdings overlay, gap finder, warm path.
-2. **Value-chain map and engagement map:** `data/value_chain.json` `ties` and `per_tier` exist on `data/value-chain`. Show its `derived_note` caveat: proposal counts cover the original 7 companies only.
+1. **Lens Phase 3 (Individual investor):**
+   - a feed first: tickers or fund in, upcoming AI proposals out, with `plain_summary` (falling back to the title), vote date and source;
+   - fund N-PX votes and `pass_through_voting` where the data has them;
+   - "See the bigger picture" opens the graph with holdings applied;
+   - hover definitions in this lens only.
+2. **Lens Phase 4 (Policymaker):** clusters by topic, sized by how often an ask recurs; `coverage` on topic-to-policy edges.
+3. **Value-chain map and engagement map** from `data/value_chain.json` (`ties`, `per_tier`).
 
 ## Queue (found, not picked up)
 
@@ -91,14 +109,14 @@ Plan: docs/plans/2026-11-25-lens-phase1.md (Revision 2, plus Build notes).
    - (d) Praxis and Domini 2025-26 file N-PX as text only.
    - (e) The data accuracy R2 fixes there were not re-reviewed.
 2. **Secondary sources for status reasons:** the Amazon and Apple withdrawal/exclusion reasons cite minerva.info. PRODUCT.md Never claim 4 prefers primary sources (SEC no-action letter or proxy).
-3. **Performance under 80:** the remaining cost is the Google Fonts and data request chain and the 306 KB `graph.json`. Options: self-host Inter, preload the first data files, split graph.json. These change how the page loads, so they're for the owner to decide.
+3. **Performance:** fixed for now: Inter loads without blocking (desktop 98). Self-hosting Inter, or splitting the 383 KB `graph.json`, would help if the data keeps growing.
 4. **Causality time scale:** most events fall in 2025–26. A piecewise time scale would give them more room.
 5. **Phone tables:** Company lookup's history and lab-tie tables are cramped at 390px. Stack or drop low-value columns on phones (UX R2).
 6. **Outside links to check by hand:** an SEC comment PDF (`data/causality.json`); www.omiusa.org and www.harringtoninvestments.com (`data/graph.json`).
 7. **Deploy publishes the whole repo** (`path: .` in refresh.yml). It could publish `dist/` instead; this is the owner's call.
 8. **Playwright still runs a "dark" project** although the site has one white theme. Drop the dark projects in `playwright.config.js` to halve test time.
 9. **Network link contrast:** links are `--blue-3` at 0.35 opacity (about 1.5:1). The dotted "inferred" lines are hard to tell from dashed membership lines at 1px. The panel and List view carry the same facts as text. Raising the opacity makes the graph busier, so it's for the owner (accessibility R1).
-10. **Data, for the data session:** graph.json and proposals.json support values differ slightly (33.57 vs 33.58). Item 6 at Microsoft 2026 is "Social & economic impacts" in graph.json but "Data center impacts" in upcoming.json.
+10. **Data, for the data session:** googl-2026-5's 2026 vote has no `results_url` (it shows "source pending"). Graph nodes carry no `support_note`, so dual-class and count-computed support has only the generic caveat on the network. graph.json and proposals.json support values differ slightly (33.57 vs 33.58). Item 6 at Microsoft 2026 is "Social & economic impacts" in graph.json but "Data center impacts" in upcoming.json.
 11. **Proposals tab has no filer filter**, so the network can't offer "Open its filings in Proposals".
 
 ## Owner actions

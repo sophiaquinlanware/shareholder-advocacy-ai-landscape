@@ -158,7 +158,10 @@
     if (ctx.cache[key] !== undefined) return ctx.cache[key];
     let r = null;
     if (n.status === "upcoming") r = R().resubmission(voteChain(n, ctx), { pending: true, year: n.year });
-    else if (n.status === "voted" && !superseded(n, ctx)) r = R().resubmission(voteChain(n, ctx), { meetingDate: n.meeting_date });
+    else if (n.status === "voted" && !superseded(n, ctx)) {
+      const co = ctx.nodes.find((c) => (c.kind === "company" || String(c.kind).startsWith("tier-")) && c.ticker === n.company);
+      r = R().resubmission(voteChain(n, ctx), { meetingDate: n.meeting_date, nextDeadline: co && co.next_proposal_deadline });
+    }
     if (r) r.chain = voteChain(n, ctx);
     ctx.cache[key] = r;
     return r;
@@ -171,7 +174,7 @@
     const sk = seekingOf(n);
     if (sk.length) out.push({ kind: "seeking", text: `Seeking ${[...new Set(sk.map((s) => SEEKING_LABEL[s.type]))].join(", ")}` });
     const r = resub(n, ctx);
-    if (r) out.push({ kind: "risk", text: r.state === "below" ? "Below this site's reading of the resubmission threshold" : "At risk of losing resubmission eligibility" });
+    if (r) out.push({ kind: "risk", text: r.pending ? `Resubmission threshold after this vote: ${r.needs}% (last vote on the subject ${r.last.pct}%)` : r.state === "below" ? "Below this site's reading of the resubmission threshold" : `Close to the ${r.needs}% resubmission threshold` });
     return out;
   }
 
@@ -196,9 +199,11 @@
         ? `Resubmission threshold after this vote: ${r.needs}% (${basis}). Last vote on the subject: ${r.last.pct}% (${r.last.year}).`
         : r.state === "below"
           ? `Last vote: ${r.last.pct}% (${r.last.year}), under the ${r.needs}% resubmission threshold (${basis}).`
-          : `Last vote: ${r.last.pct}% (${r.last.year}), ${r.margin} ${r.margin === 1 ? "point" : "points"} above the ${r.needs}% resubmission threshold (${basis}).`;
-      out.push({ text: `${text} Earlier votes are matched in this dataset by company, topic and similar title, not confirmed from the proxy.`,
-        links: r.chain.map((v) => ({ href: v.results_url, label: `${v.year} vote: ${v.pct}%` })) });
+          : r.margin === 0
+            ? `Last vote: ${r.last.pct}% (${r.last.year}), at the ${r.needs}% resubmission threshold (${basis}).`
+            : `Last vote: ${r.last.pct}% (${r.last.year}), ${r.margin} ${r.margin === 1 ? "point" : "points"} above the ${r.needs}% resubmission threshold (${basis}).`;
+      out.push({ text, links: r.chain.map((v) => ({ href: v.results_url, label: `${v.year} vote: ${v.pct}%` })) });
+      out.push({ text: "Earlier votes are matched in this dataset by company, topic and similar title, not confirmed from the proxy. Support figures may be on a different basis from the rule's For ÷ (For + Against); notes are in Proposals." });
     }
     return out;
   }

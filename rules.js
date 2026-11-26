@@ -123,9 +123,12 @@
     else {
       // The next meeting after the last vote that hasn't happened yet (same month and day as the last meeting,
       // when its date is known; otherwise the later of next year and this year).
+      // A meeting whose proposal deadline has passed can't take a refile, so when the company's next proposal
+      // deadline is known (next_proposal_deadline), the meeting must fall after it.
       const md = opts.meetingDate ? String(opts.meetingDate).slice(4, 10) : null;
+      const after = opts.nextDeadline && opts.nextDeadline > today ? opts.nextDeadline : today;
       meetingYear = last.year + 1;
-      if (md) { while (`${meetingYear}${md}` < today) meetingYear++; }
+      if (md) { while (`${meetingYear}${md}` < after) meetingYear++; }
       else meetingYear = Math.max(meetingYear, Number(today.slice(0, 4)));
     }
     // The rule applies only if the last vote was in the RECENT_YEARS calendar years before that meeting.

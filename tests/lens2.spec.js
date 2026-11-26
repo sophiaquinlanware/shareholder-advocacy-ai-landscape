@@ -76,7 +76,9 @@ test("resubmission: on the ballot, below, just above, chained, and no flag where
   const acts = () => panel(page).locator(".net-actions");
   // On the ballot: a fact about the bar after this vote, never "below".
   await page.evaluate(() => window.focusNetworkNode("msft-2026-hr-hotspots"));
-  await expect(panel(page)).toContainText("At risk of losing resubmission eligibility");
+  await expect(panel(page).locator(".ring-risk")).toContainText(
+    "Resubmission threshold after this vote: 25% (last vote on the subject 27.48%)",
+  );
   await expect(acts()).toContainText(
     "Resubmission threshold after this vote: 25% (vote 4 on this subject in the 5 years before the 2027 meeting",
   );
@@ -91,6 +93,12 @@ test("resubmission: on the ballot, below, just above, chained, and no flag where
   // Cleared the bar by less than 3 points: stated as a margin, not as "needs".
   await page.evaluate(() => window.focusNetworkNode("amzn-2024-customer-dd"));
   await expect(acts()).toContainText("Last vote: 16.79% (2024), 1.79 points above the 15% resubmission threshold");
+  await expect(panel(page).locator(".ring-risk")).toContainText("Close to the 15% resubmission threshold");
+  // A refile can only reach a meeting whose proposal deadline is still ahead (Microsoft's 2027 meeting).
+  await page.evaluate(() => window.focusNetworkNode("msft-2025-ai-oil-gas"));
+  await expect(acts()).toContainText(
+    "under the 15% resubmission threshold (vote 2 on this subject in the 5 years before the 2027 meeting",
+  );
   // Refiled since (its vote is in a later proposal's history): no flag.
   await page.evaluate(() => window.focusNetworkNode("msft-2024-hr-hotspots"));
   await expect(panel(page).locator("h3")).toContainText("2024");
@@ -109,8 +117,14 @@ test("company deadline: next annual meeting wording, proxy text and source", asy
 test("no pulse under reduced motion", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await open(page);
-  await page.waitForSelector("circle.g-pulse", { state: "attached" });
-  expect(await page.$eval("circle.g-pulse", (c) => getComputedStyle(c).animationName)).toBe("none");
+  await page.waitForSelector("#net-graph svg circle");
+  // No mark on the graph animates.
+  expect(
+    await page.$$eval(
+      "#net-graph circle",
+      (cs) => cs.filter((c) => getComputedStyle(c).animationName !== "none").length,
+    ),
+  ).toBe(0);
 });
 
 test("holdings: fade, count line, Esc returns focus, kept across reload, nothing sent", async ({ page }) => {
