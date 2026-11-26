@@ -333,7 +333,7 @@
       </div>
       <div class="net-tools">
         <button type="button" class="chip" id="net-hold-btn" aria-expanded="false" aria-controls="net-hold">My holdings</button>
-        <button type="button" class="chip" id="net-gaps" aria-pressed="false">Show topics not filed</button>
+        <button type="button" class="chip" id="net-gaps" aria-pressed="false">Show asks not yet filed</button>
       </div>
       <div id="net-hold" class="net-hold" hidden>
         <label for="net-hold-input">Tickers, separated by commas, spaces or new lines</label>
@@ -352,7 +352,7 @@
           <p class="visually-hidden" id="net-kb" aria-live="polite"></p>
         </div>
         <div id="net-list" class="net-list" hidden></div>
-        <aside id="net-panel" class="net-panel" aria-label="Selected node"><p class="status-note">Select a node for its connections and sources.</p></aside>
+        <aside id="net-panel" class="net-panel" aria-label="Selected item"><p class="status-note">Select an organization, person, proposal or company for its connections and sources.</p></aside>
       </div>
       <div class="scrub" id="net-scrub">
         <label for="net-upto">Show the network up to <span id="net-upto-val"></span></label>
@@ -590,7 +590,7 @@
     const shown = state.data.nodes.filter(visible).length;
     document.getElementById("net-intro").textContent = lens().plainIntro
       ? lens().plainIntro(shown, state.data.nodes.length)
-      : `${shown} of ${state.data.nodes.length} nodes shown. Node size = ${lens().sizeLabel}. Company roles are this site's reading of each company's main role in AI.`;
+      : `${shown} of ${state.data.nodes.length} organizations, people, proposals and companies shown. Circle size = ${lens().sizeLabel}. Company roles are this site's reading of each company's main role in AI.`;
   }
 
   function neighbors(id) {
@@ -1161,7 +1161,7 @@
       } else if (e.key === "Escape") {
         state.selected = null; state.hover = null; state.kbId = null;
         applyStyles(); placeFocusMark();
-        document.getElementById("net-panel").innerHTML = `<p class="status-note">Select a node for its connections and sources.</p>`;
+        document.getElementById("net-panel").innerHTML = `<p class="status-note">Select an organization, person, proposal or company for its connections and sources.</p>`;
         say("Selection cleared");
       }
     });
@@ -1466,7 +1466,7 @@
     });
   }
 
-  // "Show topics not filed" belongs to lenses that set gaps: true (the Impact investor lens).
+  // "Show asks not yet filed" belongs to lenses that set gaps: true (the Impact investor lens).
   function gapButton() {
     const b = document.getElementById("net-gaps");
     if (b) b.hidden = !lens().gaps;

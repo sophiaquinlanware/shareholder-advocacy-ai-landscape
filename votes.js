@@ -106,7 +106,7 @@
     const el = document.getElementById("tab-votes");
     if (!el) return;
     if (!data || !data.summary || !data.summary.length) {
-      el.innerHTML = `<div class="coming"><h2>Fund votes</h2><p>Being checked now.</p></div>`;
+      el.innerHTML = `<div class="coming"><h2>How funds voted</h2><p>Being checked now.</p></div>`;
       return;
     }
     const checked = new Set(data.proposals_checked || []);

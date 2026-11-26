@@ -497,3 +497,11 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
 /* A grey label above a page heading (e.g. "Proposal flow") sits close to it, like the site title's style. */
 .panel > .eyebrow:first-child { margin-top: var(--s-4); }
 .eyebrow + h2 { margin-top: 2px; }
+/* Phones: the section bar is one row that scrolls sideways, so content starts near the top; labels in
+   "Coming up" sit on their own line. */
+@media (max-width: 640px) {
+  .tabs .tab-row[role="tablist"] { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .tabs .tab-row[role="tablist"]::-webkit-scrollbar { display: none; }
+  .group-q { margin-top: 12px; }
+  .coming-up .kind { display: block; min-width: 0; }
+}

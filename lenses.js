@@ -82,7 +82,7 @@
       const top = [...count].sort((x, y) => y[1] - x[1] || ctx.byId.get(x[0]).label.localeCompare(ctx.byId.get(y[0]).label)).slice(0, 3);
       if (top.length) out.push({ text: `Filers active here (top ${top.length} of ${count.size} by proposals): ${top.map(([id, c]) => `${ctx.byId.get(id).label} (${c} ${c === 1 ? "proposal" : "proposals"})`).join(", ")}` });
     }
-    if (n.ticker && ctx.hasCompany(n.ticker)) out.push({ button: { label: "Open in Company lookup", run: () => ctx.openCompany(n.ticker) } });
+    if (n.ticker && ctx.hasCompany(n.ticker)) out.push({ button: { label: "Open company profile", run: () => ctx.openCompany(n.ticker) } });
     return out;
   }
 

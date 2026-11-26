@@ -83,11 +83,22 @@ Stage 2:
 - Radius `--radius` 6px; pills 999px.
 - Wide tables and charts scroll inside their own box (`.table-wrap` and `.chart-scroll`, both positioned so nothing escapes); the page never scrolls sideways.
 
-## Tabs (task order)
+## Sections and views (engagement order)
 
-Upcoming votes (`#upcoming`) · Company lookup · Proposals · Fund votes (`#votes`, unchanged from main) · Rights map · AI advocacy network (`#network`, formerly Co-filer network) · Contacts · Lab pathways · Policy and causality · Disclosure scorecard · New filings.
+Site name: **"Shareholder advocacy on AI"** (owner request, 2026-11-26, commit 78b0efd), with a one-line tagline saying who the site is for.
 
-They follow the WAI-ARIA tabs pattern: `aria-controls` and `aria-labelledby`, a roving tabindex, and Left/Right/Home/End keys. Old links redirect: `#why` goes to Policy and causality, which holds the policy timeline; `#weigh-in` and `#water` go to Upcoming votes. Any other unknown hash opens the first tab.
+Six sections, in the order of an engagement cycle (owner, 2026-11-26: "like you are an analyst from [Parnassus] ... eliminate any redundancies ... It feels chronological ... clear why each thing is there"; plan docs/plans/2026-11-26-analyst-restructure.md). Each section opens with the question it answers, then a row of views:
+
+- **Start here:** Overview (`#start`) · Upcoming votes (`#upcoming`) · New SEC filings (`#new`)
+- **Value chain:** The chain (`#value-chain`) · Routes to a lab (`#pathways`)
+- **Companies:** Company profile (`#company`) · Compare disclosure (`#parnassus`) · Compare proposal rights (`#rights`)
+- **Proposals and votes:** All proposals (`#feed`) · How funds voted (`#votes`)
+- **Who's engaging:** Network (`#network`) · Contacts (`#people`) · Engagement outcomes (`#outcomes`)
+- **Policy:** Policy map (`#causality`)
+
+Both rows follow the WAI-ARIA tabs pattern (`aria-controls`, `aria-labelledby`, roving tabindex, Left/Right/Home/End). Every view keeps its own address, so old links open the right place; `#why` goes to the Policy map, `#weigh-in` and `#water` to Upcoming votes, and any unknown hash to the Overview. On phones the section row scrolls sideways on one line.
+
+One vocabulary: company roles from `roles.js` everywhere (the value-chain tiers use the same labels), and proposals classified only by the four categories in `data/asks.json` (shown as "What it asks about").
 
 ## Components
 

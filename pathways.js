@@ -107,7 +107,7 @@
       <h3 class="sub-h" id="pw-routes-h" tabindex="-1">Routes</h3>
       <p class="count-line" id="pw-status" role="status"></p>
       <div class="table-wrap pw-routes" id="pw-routes" tabindex="0" role="region" aria-labelledby="pw-routes-h"></div>
-      <p class="note pw-note">Tie groups, strength and related asks are this site's reading, not disclosed figures or advice. Owner: parent company. Major shareholder: an equity stake rated strength 3. Board seat or observer: a board seat or observer role. Compute: cloud or compute provider. Chips: chip supplier. Co-investor: an equity stake rated 1–2. Customer: distribution partner or commercial agreement. A company with several ties is sorted by its strongest. Related asks are the recurring asks (Proposals tab) grouped with each tie type; the count is AI proposals already filed at that company under each.</p>
+      <p class="note pw-note">Tie groups, strength and related asks are this site's reading, not disclosed figures or advice. Owner: parent company. Major shareholder: an equity stake rated strength 3. Board seat or observer: a board seat or observer role. Compute: cloud or compute provider. Chips: chip supplier. Co-investor: an equity stake rated 1–2. Customer: distribution partner or commercial agreement. A company with several ties is sorted by its strongest. Related asks are the recurring asks (All proposals) grouped with each tie type; the count is AI proposals already filed at that company under each.</p>
       <div id="pw-findings"></div>
       <h3 class="sub-h">Labs reached, by company</h3>
       <p class="count-line">Number of frontier labs each company has a sourced tie to.</p>
@@ -394,7 +394,7 @@
     // A lab that is listed itself (Anthropic as ANT; xAI inside SpaceX) has its own rights record.
     const base = lab.name.replace(/\s*\(.*\)/, "");
     const self = (ctx().companies || []).find((c) => c.ticker && (c.name === base || c.name.includes(`(including ${base})`)));
-    const selfLine = self ? `<p>${esc(base)} is ${self.name === base ? "listed itself" : "inside " + esc(self.name)} (${esc(self.ticker)}): ${esc(self.shareholder_route || "")} ${link(self.route_source_url)}${ctx().hasCompany && ctx().hasCompany(self.ticker) ? ` <button type="button" class="linklike" data-open-co="${esc(self.ticker)}">Open in Company lookup</button>` : ""}</p>` : "";
+    const selfLine = self ? `<p>${esc(base)} is ${self.name === base ? "listed itself" : "inside " + esc(self.name)} (${esc(self.ticker)}): ${esc(self.shareholder_route || "")} ${link(self.route_source_url)}${ctx().hasCompany && ctx().hasCompany(self.ticker) ? ` <button type="button" class="linklike" data-open-co="${esc(self.ticker)}">Open company profile</button>` : ""}</p>` : "";
     const about = document.getElementById("pw-lab-about");
     about.innerHTML = `<p><strong>${esc(lab.name)}</strong>${lab.status ? ` <span class="ticker">${esc(lab.status)}</span>` : ""}. ${esc(lab.description || "")} ${link(lab.source_url)}${RECHECK_LABS.has(lab.id) ? recheckTag : ""}</p>${selfLine}`;
     about.querySelectorAll("[data-open-co]").forEach((b) => b.addEventListener("click", () => ctx().openCompany(b.dataset.openCo)));
@@ -461,7 +461,7 @@
   window.renderPathways = function (data, network) {
     const el = document.getElementById("tab-pathways");
     if (!data || !data.labs || !data.labs.length) {
-      el.innerHTML = `<div class="coming"><h2>Lab pathways</h2><p>Being sourced now.</p></div>`;
+      el.innerHTML = `<div class="coming"><h2>Routes to a frontier lab</h2><p>Being sourced now.</p></div>`;
       return;
     }
     S = { data, inv: investorLinks(network), selectedCos: new Set(), lab: null };

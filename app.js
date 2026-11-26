@@ -265,14 +265,15 @@ function drawCompany(key) {
     <dl class="summary">
       ${c.shareholder_route || c.route_note ? `<div><dt>Shareholder route</dt><dd>${shareholderRoute(c)}</dd></div>` : ""}
       ${window.ROLES && window.ROLES.roleOf(c) ? `<div><dt>Role in AI</dt><dd>${esc(window.ROLES.label(window.ROLES.roleOf(c)))}${window.ROLES.alsoOf(c).length ? `; also ${esc(window.ROLES.alsoOf(c).map(window.ROLES.label).join(", ").toLowerCase())}` : ""} <span class="ticker">(this site's reading)</span></dd></div>` : ""}
-      <div><dt>Proposal route (rights map)</dt><dd>${c.rights_tracked === false ? `<span class="ticker">not yet tracked</span>` : `<span class="pill ${esc(c.route_status || "pending")}">${esc(STATUS_LABEL[c.route_status] || "Being verified")}</span>`}</dd></div>
+      <div><dt>Proposal route</dt><dd>${c.rights_tracked === false ? `<span class="ticker">not yet tracked</span>` : `<span class="pill ${esc(c.route_status || "pending")}">${esc(STATUS_LABEL[c.route_status] || "Being verified")}</span>`}</dd></div>
       <div><dt>AI proposals on file</dt><dd>${props.length}${historyText(h) ? ` · ${esc(historyText(h))}` : ""}</dd></div>
       <div><dt>Next meeting</dt><dd>${meeting ? `${esc(meeting.meeting_label)} · ${esc(meeting.status_label || "")}${meeting.proxy_url ? src(meeting.proxy_url, "proxy") : ""}` : `<span class="ticker">not listed</span>`}</dd></div>
+      <div><dt>Next filing deadline</dt><dd>${c.next_proposal_deadline ? `${esc(fmtDate(c.next_proposal_deadline))}${c.next_proposal_deadline_status === "passed" ? " (passed)" : ""}${src(c.next_proposal_deadline_source, "proxy")}` : `<span class="ticker">not on file</span>`}</dd></div>
       <div><dt>Disclosure score</dt><dd>${sc ? `${scCount("met")} met · ${scCount("partial")} partial · ${scCount("silent")} silent of ${nCrit}` : `<span class="ticker">not scored</span>`}</dd></div>
     </dl>
     ${whyIncluded(c)}
     <h3 class="sub-h">AI proposal history</h3>
-    ${propRows ? `<div class="table-wrap"><table><thead><tr><th scope="col">Meeting</th><th scope="col">Proposal</th><th scope="col">Filed by</th><th scope="col">Status</th><th scope="col">Support</th></tr></thead><tbody>${propRows}</tbody></table></div>${fnList(notes)}<p><button type="button" class="linklike" data-feed="${esc(t)}">Open in Proposals with filters</button></p>` : `<p class="status-note">No AI proposals on file${t ? "" : " (no US-listed shares)"}.</p>`}
+    ${propRows ? `<div class="table-wrap"><table><thead><tr><th scope="col">Meeting</th><th scope="col">Proposal</th><th scope="col">Filed by</th><th scope="col">Status</th><th scope="col">Support</th></tr></thead><tbody>${propRows}</tbody></table></div>${fnList(notes)}<p><button type="button" class="linklike" data-feed="${esc(t)}">See these in All proposals</button></p>` : `<p class="status-note">No AI proposals on file${t ? "" : " (no US-listed shares)"}.</p>`}
     <h3 class="sub-h">Filers active here</h3>
     ${filers.length ? `<div class="table-wrap"><table><thead><tr><th scope="col">Organization</th><th scope="col">AI proposals here</th><th scope="col"><span class="visually-hidden">Network</span></th></tr></thead><tbody>${filers.map((f) => `<tr><td>${esc(f.node.label)}</td><td class="num">${f.n}</td><td><button type="button" class="linklike" data-net="${esc(f.node.id)}">Show in network</button></td></tr>`).join("")}</tbody></table></div>` : `<p class="status-note">No filers recorded.</p>`}
     <h3 class="sub-h">Frontier-lab ties</h3>
@@ -590,18 +591,21 @@ function renderStart() {
   const today = new Date().toISOString().slice(0, 10);
   const findings = (s.findings || []).map((f) => `<li class="finding">
       <h4>${esc(f.title)}</h4><p>${esc(f.text)}</p>
-      <p class="note">${esc(f.basis)}${f.link ? ` <a href="${esc(f.link)}">See the data</a>` : ""}</p></li>`).join("");
+      <p class="note">${esc(f.basis)}${f.link ? ` <a href="${esc(f.link)}" aria-label="See the data: ${esc(f.title)}">See the data</a>` : ""}</p></li>`).join("");
   // Coming up: ballots with AI proposals, then open Rule 14a-8 filing deadlines, soonest first.
-  const ballots = ((DATA.upcoming && DATA.upcoming.meetings) || []).filter((m) => (m.items || []).length)
-    .map((m) => ({ date: m.sort, html: `<strong>${esc(m.company)}</strong> votes on ${plural(m.items.length, "AI proposal")}: ${esc(m.meeting_label)}${src(m.proxy_url, "proxy")}`, ticker: m.ticker, kind: "Vote" }));
+  // Ballots: upcoming AI proposals grouped by company and meeting (the same records as All proposals).
+  const upc = ((DATA.proposals && DATA.proposals.proposals) || []).filter((p) => p.status === "upcoming" && p.meeting_date && p.meeting_date >= today);
+  const byMeeting = new Map();
+  upc.forEach((p) => { const k = p.company + "|" + p.meeting_date; if (!byMeeting.has(k)) byMeeting.set(k, []); byMeeting.get(k).push(p); });
+  const ballots = [...byMeeting.values()].map((ps) => ({ date: ps[0].meeting_date, ticker: ps[0].company, kind: "Vote",
+    html: `<strong>${esc(companyName(ps[0].company))}</strong> votes on ${plural(ps.length, "AI proposal")}: ${esc(fmtDate(ps[0].meeting_date))}${src(ps[0].proxy_url, "proxy")}` }));
   const deadlines = (DATA.companies || []).filter((c) => c.next_proposal_deadline && c.next_proposal_deadline >= today)
     .map((c) => ({ date: c.next_proposal_deadline, html: `<strong>${esc(c.name)}</strong>: last day to submit a proposal for the next meeting, ${esc(fmtDate(c.next_proposal_deadline))}${src(c.next_proposal_deadline_source, "proxy")}`, ticker: realTicker(c.ticker), kind: "Filing deadline" }));
   const coming = [...ballots, ...deadlines].sort((a, b) => String(a.date).localeCompare(String(b.date)));
   const shown = coming.slice(0, 8);
-  const comingList = shown.map((x) => `<li><span class="kind">${esc(x.kind)}</span> ${x.html}${x.ticker ? ` <button type="button" class="linklike" data-co="${esc(x.ticker)}">Company profile</button>` : ""}</li>`).join("");
+  const comingList = shown.map((x) => `<li><span class="kind">${esc(x.kind)}</span> ${x.html}${x.ticker ? ` <button type="button" class="linklike" data-co="${esc(x.ticker)}">${esc(companyName(x.ticker))} profile</button>` : ""}</li>`).join("");
   const items = ((DATA.changes && DATA.changes.items) || []).slice().sort((a, b) => String(b.filed).localeCompare(String(a.filed)));
   const t = DATA.tracking || {};
-  const newList = items.slice(0, 5).map((c) => `<li><strong>${esc(c.company)}</strong>: ${esc(c.what)}, filed ${esc(fmtDate(c.filed))}${src(c.url, c.form)}</li>`).join("");
   const sections = [...document.querySelectorAll('.tabs [role="tab"][data-group]')].slice(1).map((b) => {
     const g = b.dataset.group;
     const q = (document.querySelector(`#grp-${g} .group-q`) || {}).textContent || "";
@@ -609,8 +613,8 @@ function renderStart() {
     return `<li><a href="#${esc(first)}">${esc(b.textContent)}</a>: ${esc(q)}</li>`;
   }).join("");
   el.innerHTML = `
-    <h2>Overview</h2>
-    <p class="intro">Dates you can act on in the coming weeks, three things the data shows, and where to look next.</p>
+    <h2>This week and next</h2>
+    <p class="intro">Dates you can act on, three things the data shows, and what each section of the site is for.</p>
     <h3 class="sub-h">Coming up</h3>
     ${comingList ? `<ul class="steps coming-up">${comingList}</ul>` : `<p class="status-note">No ballots or open filing deadlines on file.</p>`}
     <p><a href="#upcoming">All upcoming votes</a>${coming.length > shown.length ? ` · ${coming.length - shown.length} more open filing deadlines are on each company's profile` : ""}</p>
@@ -618,7 +622,7 @@ function renderStart() {
     ${findings ? `<ul class="findings">${findings}</ul>` : `<p class="status-note">No findings recorded.</p>`}
     <h3 class="sub-h">New SEC filings</h3>
     <p class="count-line">Checked ${esc(t.last_checked ? fmtDate(t.last_checked.slice(0, 10)) : "not yet")}${t.new_this_run != null ? `: ${plural(t.new_this_run, "new filing")} found` : ""}. Found automatically and not yet reviewed.</p>
-    ${newList ? `<ul class="steps">${newList}</ul><p><a href="#new">All new filings</a></p>` : ""}
+    ${items.length ? `<p><a href="#new">See the ${plural(items.length, "new filing")}</a></p>` : ""}
     <h3 class="sub-h">How this site is organized</h3>
     <ul class="steps">${sections}</ul>`;
   wireCompanyLinks(el);
@@ -714,7 +718,7 @@ function setupTabs() {
     });
   });
   // In-page links such as href="#feed" (Start here) open their view.
-  window.addEventListener("hashchange", () => showTab(location.hash.slice(1)));
+  window.addEventListener("hashchange", () => showTab(location.hash.slice(1), true));
   showTab(location.hash.slice(1));
 }
 
