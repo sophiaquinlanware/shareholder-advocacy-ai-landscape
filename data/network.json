@@ -235,7 +235,7 @@
   {
    "id": "inspire",
    "name": "Inspire Investing",
-   "type": "anti-ESG proponent",
+   "type": "faith-based investor",
    "website": "https://www.inspireinvesting.com",
    "description": "Biblically responsible investment firm filing conservative AI proposals.",
    "source_url": "https://www.inspireinvesting.com"
@@ -323,7 +323,7 @@
   {
    "id": "bowyer",
    "name": "Bowyer Research",
-   "type": "anti-ESG proponent",
+   "type": "other",
    "website": "https://www.bowyerresearch.com",
    "description": "Conservative proxy adviser filing and opposing proposals for faith clients.",
    "source_url": "https://www.bowyerresearch.com"

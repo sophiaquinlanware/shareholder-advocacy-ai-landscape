@@ -10,7 +10,7 @@ async function open(page, query = "") {
 test("the planner opens with a company and an ask, and shows its five parts", async ({ page }, info) => {
   await open(page);
   await expect(page.locator("#tab-planner h2")).toHaveText("Plan an engagement");
-  for (const h of ["#pl-h-time", "#pl-h-rec", "#pl-h-who", "#pl-h-pol", "#pl-h-ideas"])
+  for (const h of ["#pl-h-mx", "#pl-h-time", "#pl-h-rec", "#pl-h-who", "#pl-h-pol", "#pl-h-ideas"])
     await expect(page.locator(h)).toBeVisible();
   await expect(page.locator("#pl-co")).not.toHaveValue("");
   await expect(page.locator("#pl-ask")).not.toHaveValue("");
@@ -23,7 +23,6 @@ test("changing the company or ask redraws the plan and keeps it in the address",
   await page.selectOption("#pl-ask", "ask-dc-water");
   await expect(page.locator("#pl-h-time")).toContainText("Alphabet");
   await expect(page).toHaveURL(/plan=alphabet~ask-dc-water/);
-  await expect(page.locator("#pl-link")).toHaveAttribute("href", /plan=alphabet~ask-dc-water/);
 });
 
 test("a shared link opens the same plan", async ({ page }) => {
@@ -34,7 +33,7 @@ test("a shared link opens the same plan", async ({ page }) => {
 
 test("collaborators come with their reasons and sources, and the shortlist keeps them", async ({ page }) => {
   await open(page, "?plan=microsoft~ask-ai-misinformation");
-  const rows = page.locator("#pl-out .pl-wide tbody tr");
+  const rows = page.locator("#pl-out .pl-orgs tbody tr");
   await expect(rows.first()).toBeVisible();
   await expect(rows.first().locator(".pl-why li").first()).toBeVisible();
   await rows.first().locator(".pl-add").click();
@@ -47,9 +46,27 @@ test("collaborators come with their reasons and sources, and the shortlist keeps
 
 test("the company × ask grid opens a plan for the chosen square", async ({ page }) => {
   await open(page);
-  await page.click("#pl-matrix-box > summary");
   const cell = page.locator('.pl-mx[data-co="nvidia"][data-ask="ask-customer-due-diligence"]');
   await cell.click();
   await expect(page.locator("#pl-co")).toHaveValue("nvidia");
   await expect(page.locator("#pl-ask")).toHaveValue("ask-customer-due-diligence");
+});
+
+test("shortlisting keeps focus on the button, and fund votes carry a source and review status", async ({ page }) => {
+  await open(page, "?plan=microsoft~ask-dc-climate-energy");
+  const btn = page.locator(".pl-add").first();
+  const org = await btn.getAttribute("data-org");
+  await btn.click();
+  await expect(page.locator(`.pl-add[data-org="${org}"]`)).toBeFocused();
+  await expect(page.locator(`.pl-add[data-org="${org}"]`)).toHaveAttribute("aria-pressed", "true");
+  const votes = page.locator(".pl-why li", { hasText: "Its funds voted FOR this ask" }).first();
+  await expect(votes.locator("a.src")).toHaveCount(1);
+});
+
+test("arrow keys move between grid squares", async ({ page }) => {
+  await open(page, "?plan=microsoft~ask-dc-climate-energy");
+  const current = page.locator('.pl-mx[aria-current="true"]');
+  await current.focus();
+  await page.keyboard.press("ArrowRight");
+  await expect(page.locator(".pl-mx:focus")).toHaveAttribute("tabindex", "0");
 });
