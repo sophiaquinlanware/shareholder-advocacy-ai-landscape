@@ -77,3 +77,10 @@ Companies that use AI in their own operations without selling or deploying it to
 - Rights-map fields (state, bylaws, thresholds) for the 53 new companies. Queued: the rights researcher can extend them company by company.
 - Fund votes and proposal feed for the new companies (needs new proposal research first).
 - Any page or view change (UI session).
+
+## Data rules as built (after result review R1 and R2)
+
+- **Sentence template** for `engagement_basis.text` and every `evidence` text: "[Year, YYYY to YYYY, or Undated]: [subject] [event] ([filer; ]source name)". Undated when the cited source gives no date for that company. No vote figures, no judgement words.
+- **Routes:** `shareholder_route` is "US proxy rules apply", "US-listed foreign issuer", "listed outside the US", "private", or null. Every non-null value has `route_source_url`. Null means not determined, and `route_note` says why, starting "source pending:" unless a sourced fact explains it (e.g. a Form 15 deregistration). `route_note` may also qualify a non-null value (newly listed domestic issuers).
+- **owner_choice_note**: on entries kept by the owner's decision where the AI link is indirect (TSMC, Southern Company).
+- **Queued:** 9 private labs with "ownership not yet checked" (G42, Inflection, Magic, 01.ai, DeepSeek, Aleph Alpha, Black Forest Labs, Reflection AI, WRITER); rights-map research for the 53 untracked companies.

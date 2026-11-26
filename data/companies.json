@@ -163,7 +163,7 @@
   ],
   "basis_type": "shareholder proposal",
   "engagement_basis": {
-   "text": "2026: Alphabet's proxy listed shareholder proposals on AI board oversight, AI data usage oversight, AI-generated misinformation and water use in AI development (Alphabet proxy statement)",
+   "text": "2026: Alphabet's proxy ballot included shareholder proposals on AI board oversight, AI data usage oversight, AI-generated misinformation and water use in AI development (Alphabet proxy statement)",
    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
   },
   "evidence": [
@@ -1560,7 +1560,7 @@
   "evidence": [],
   "shareholder_route": "private",
   "route_source_url": "https://www.huawei.com/en/corporate-information",
-  "source_note": "secondary source",
+  "source_note": "",
   "rights_tracked": false
  },
  {
@@ -1813,7 +1813,7 @@
   ],
   "basis_type": "investor engagement",
   "engagement_basis": {
-   "text": "2024 to 2025: TSMC engaged by Parnassus on water and renewable energy (Parnassus Investments; 2025 Stewardship Report)",
+   "text": "2024 to 2025: TSMC was engaged by Parnassus on water and renewable energy (Parnassus Investments; 2025 Stewardship Report)",
    "url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf"
   },
   "evidence": [],
@@ -1863,7 +1863,7 @@
   ],
   "basis_type": "compute agreement",
   "engagement_basis": {
-   "text": "2025: SK hynix and Samsung Electronics announced partnerships with OpenAI under Stargate to scale advanced memory chip production (OpenAI)",
+   "text": "2025: SK hynix announced a partnership with OpenAI under Stargate to scale advanced memory chip production (OpenAI)",
    "url": "https://openai.com/index/samsung-and-sk-join-stargate/"
   },
   "evidence": [],
