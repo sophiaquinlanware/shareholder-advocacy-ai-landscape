@@ -871,11 +871,11 @@
    "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
   },
   "evidence": [],
-  "shareholder_route": null,
-  "route_source_url": null,
-  "source_note": "",
+  "shareholder_route": "private",
+  "route_source_url": "https://blogs.microsoft.com/blog/2024/04/15/microsoft-and-g42-partner-to-accelerate-ai-innovation-in-uae-and-beyond/",
+  "source_note": "investor announcement (Microsoft); controlling shareholder detail is from press",
   "rights_tracked": false,
-  "route_note": "source pending: ownership not yet checked",
+  "route_note": "Privately held with no listed shares; Microsoft says it invested $1.5 billion for a minority stake and a board seat, and press reports name Sheikh Tahnoon bin Zayed as controlling shareholder with Mubadala and Silver Lake as minority holders. Two G42 subsidiaries (Presight AI, Bayanat) are listed in Abu Dhabi, but G42 itself is not.",
   "tier": "compute",
   "tiers": [
    "compute",
@@ -904,11 +904,11 @@
     "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/"
    }
   ],
-  "shareholder_route": null,
-  "route_source_url": null,
-  "source_note": "",
+  "shareholder_route": "private",
+  "route_source_url": "https://assets.publishing.service.gov.uk/media/6719ff5f549f63039436b3c8/__Full_text_decision__.pdf",
+  "source_note": "regulator decision (UK CMA)",
   "rights_tracked": false,
-  "route_note": "source pending: ownership not yet checked",
+  "route_note": "Privately held and still independent; the UK CMA decision on the 2024 Microsoft deal covers a model license and hiring of staff, not an acquisition of the company, and no 2025 or 2026 acquisition or listing was found.",
   "tier": "labs",
   "tiers": [
    "labs"
@@ -956,11 +956,11 @@
    "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
   },
   "evidence": [],
-  "shareholder_route": null,
-  "route_source_url": null,
+  "shareholder_route": "private",
+  "route_source_url": "https://magic.dev/blog/100m-token-context-windows",
   "source_note": "",
   "rights_tracked": false,
-  "route_note": "source pending: ownership not yet checked",
+  "route_note": "Privately held, venture-backed; Magic's own post lists investors including Eric Schmidt, Jane Street, Sequoia, Atlassian, Nat Friedman, Daniel Gross and CapitalG, and no acquisition or listing was found through 2026.",
   "tier": "labs",
   "tiers": [
    "labs"
@@ -1060,11 +1060,11 @@
    "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
   },
   "evidence": [],
-  "shareholder_route": null,
-  "route_source_url": null,
-  "source_note": "",
+  "shareholder_route": "private",
+  "route_source_url": "https://news.bloomberglaw.com/capital-markets/ai-pioneer-kai-fu-lees-startup-targets-hong-kong-ipo-next-year",
+  "source_note": "secondary source",
   "rights_tracked": false,
-  "route_note": "source pending: ownership not yet checked",
+  "route_note": "Privately held; Bloomberg reported in July 2026 that it targets a Hong Kong IPO after fiscal 2027, and 36Kr reported a 2026 investment from Hangzhou state-owned capital, but it has no listed shares today.",
   "tier": "labs",
   "tiers": [
    "labs"
@@ -1087,11 +1087,11 @@
    "url": "https://carnegieendowment.org/research/2025/01/deepseek-and-other-chinese-firms-converge-with-western-companies-on-ai-promises"
   },
   "evidence": [],
-  "shareholder_route": null,
-  "route_source_url": null,
+  "shareholder_route": "private",
+  "route_source_url": "https://www.digitimes.com/news/a20260428PD235.html",
   "source_note": "secondary source",
   "rights_tracked": false,
-  "route_note": "source pending: ownership not yet checked",
+  "route_note": "Privately held and controlled by founder Liang Wenfeng; registry data reported in 2026 shows his direct stake rose to 34 percent as DeepSeek took its first outside money, mostly through a limited partnership he manages, plus a direct stake from China's National AI Industry Investment Fund. High-Flyer, also privately held and controlled by Liang, is the affiliated hedge fund, not a listed parent.",
   "tier": "labs",
   "tiers": [
    "labs"
@@ -1140,11 +1140,11 @@
    "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
   },
   "evidence": [],
-  "shareholder_route": null,
-  "route_source_url": null,
-  "source_note": "",
+  "shareholder_route": "private",
+  "route_source_url": "https://gruppe.schwarz/en/press/archive/2025/the-companies-of-schwarz-group-are-planning-to-increase-their-investment-in-aleph-alpha",
+  "source_note": "investor press release (Schwarz Group); Cohere deal status from press",
   "rights_tracked": false,
-  "route_note": "source pending: ownership not yet checked",
+  "route_note": "Privately held; Schwarz Group said on 28 January 2026 it plans to buy Bosch Ventures' shares to expand its anchor-investor position, and a binding agreement to combine with Cohere (signed 16 September 2026) was still pending regulatory approval as of the latest reports, so Aleph Alpha has not yet become part of Cohere.",
   "tier": "labs",
   "tiers": [
    "labs"
@@ -1167,11 +1167,11 @@
    "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
   },
   "evidence": [],
-  "shareholder_route": null,
-  "route_source_url": null,
+  "shareholder_route": "private",
+  "route_source_url": "https://bfl.ai/blog/our-300m-series-b",
   "source_note": "",
   "rights_tracked": false,
-  "route_note": "source pending: ownership not yet checked",
+  "route_note": "Privately held, venture-backed; its own post announces a $300M Series B at a $3.25B valuation co-led by Salesforce Ventures and Anjney Midha, and no acquisition or listing was found.",
   "tier": "labs",
   "tiers": [
    "labs"
@@ -1193,11 +1193,11 @@
    "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
   },
   "evidence": [],
-  "shareholder_route": null,
-  "route_source_url": null,
+  "shareholder_route": "private",
+  "route_source_url": "https://reflection.ai/blog/frontier-open-intelligence",
   "source_note": "",
   "rights_tracked": false,
-  "route_note": "source pending: ownership not yet checked",
+  "route_note": "Privately held, venture-backed; its own post says it raised $2 billion from investors including NVIDIA, Sequoia, Lightspeed, DST and 1789, and press reports a further $2.5 billion round in 2026, with no acquisition or listing found.",
   "tier": "labs",
   "tiers": [
    "labs"
@@ -1220,11 +1220,11 @@
    "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
   },
   "evidence": [],
-  "shareholder_route": null,
-  "route_source_url": null,
+  "shareholder_route": "private",
+  "route_source_url": "https://writer.com/blog/series-c-funding-writer-press-release",
   "source_note": "",
   "rights_tracked": false,
-  "route_note": "source pending: ownership not yet checked",
+  "route_note": "Privately held, venture-backed; its own release announces a $200M Series C co-led by Premji Invest, Radical Ventures and ICONIQ Growth, and no acquisition or IPO was found through 2026.",
   "tier": "labs",
   "tiers": [
    "labs"

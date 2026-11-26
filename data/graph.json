@@ -293,7 +293,7 @@
     "enterprise AI",
     "data centers & compute"
    ],
-   "shareholder_route": null,
+   "shareholder_route": "private",
    "tier": "compute",
    "tiers": [
     "compute",
@@ -314,7 +314,7 @@
     "frontier lab",
     "enterprise AI"
    ],
-   "shareholder_route": null,
+   "shareholder_route": "private",
    "tier": "labs",
    "tiers": [
     "labs"
@@ -353,7 +353,7 @@
    "sectors": [
     "frontier lab"
    ],
-   "shareholder_route": null,
+   "shareholder_route": "private",
    "tier": "labs",
    "tiers": [
     "labs"
@@ -412,7 +412,7 @@
    "sectors": [
     "frontier lab"
    ],
-   "shareholder_route": null,
+   "shareholder_route": "private",
    "tier": "labs",
    "tiers": [
     "labs"
@@ -432,7 +432,7 @@
     "frontier lab",
     "consumer AI"
    ],
-   "shareholder_route": null,
+   "shareholder_route": "private",
    "tier": "labs",
    "tiers": [
     "labs"
@@ -471,7 +471,7 @@
     "frontier lab",
     "enterprise AI"
    ],
-   "shareholder_route": null,
+   "shareholder_route": "private",
    "tier": "labs",
    "tiers": [
     "labs"
@@ -491,7 +491,7 @@
     "frontier lab",
     "consumer AI"
    ],
-   "shareholder_route": null,
+   "shareholder_route": "private",
    "tier": "labs",
    "tiers": [
     "labs"
@@ -510,7 +510,7 @@
    "sectors": [
     "frontier lab"
    ],
-   "shareholder_route": null,
+   "shareholder_route": "private",
    "tier": "labs",
    "tiers": [
     "labs"
@@ -530,7 +530,7 @@
     "enterprise AI",
     "frontier lab"
    ],
-   "shareholder_route": null,
+   "shareholder_route": "private",
    "tier": "labs",
    "tiers": [
     "labs"
