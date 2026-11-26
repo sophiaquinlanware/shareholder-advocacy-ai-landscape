@@ -573,3 +573,5 @@ select { -webkit-appearance: none; appearance: none; background-image: url("data
 .pl-mx.on { background: var(--accent); color: var(--surface, #fff); }
 .pl-mx:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
 @media (max-width: 640px) { .pl-controls select { min-width: 0; width: 100%; } .pl-grid { grid-template-columns: 1fr; } }
+/* Seven sections fit one row at desktop widths: slightly tighter tab spacing. */
+@media (min-width: 641px) { .tabs .tab-row[role="tablist"] > button { padding-left: 7px; padding-right: 7px; letter-spacing: .02em; } }

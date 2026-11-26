@@ -698,24 +698,24 @@
      "proposals": 10
     },
     {
+     "id": "mercy",
+     "name": "Mercy Investment Services",
+     "proposals": 9
+    },
+    {
      "id": "iahr",
      "name": "Investor Alliance for Human Rights",
      "proposals": 7
     },
     {
-     "id": "mercy",
-     "name": "Mercy Investment Services",
+     "id": "nlpc",
+     "name": "National Legal and Policy Center",
      "proposals": 7
     },
     {
      "id": "share",
      "name": "SHARE (Shareholder Association for Research and Education)",
      "proposals": 7
-    },
-    {
-     "id": "nlpc",
-     "name": "National Legal and Policy Center",
-     "proposals": 6
     },
     {
      "id": "omi-us",
@@ -728,28 +728,28 @@
      "proposals": 6
     },
     {
+     "id": "abhms",
+     "name": "American Baptist Home Mission Societies",
+     "proposals": 5
+    },
+    {
      "id": "eko",
      "name": "Ekō (formerly SumOfUs)",
      "proposals": 5
     },
     {
-     "id": "benedictine-mt-scholastica",
-     "name": "Benedictine Sisters of Mount St. Scholastica",
-     "proposals": 4
-    },
-    {
-     "id": "commonspirit",
-     "name": "CommonSpirit Health",
-     "proposals": 4
-    },
-    {
      "id": "harrington",
      "name": "Harrington Investments",
+     "proposals": 5
+    },
+    {
+     "id": "afl-cio",
+     "name": "AFL-CIO (Equity Index Funds)",
      "proposals": 4
     },
     {
-     "id": "maryknoll-sisters",
-     "name": "Maryknoll Sisters",
+     "id": "benedictine-mt-scholastica",
+     "name": "Benedictine Sisters of Mount St. Scholastica",
      "proposals": 4
     }
    ],
@@ -1329,17 +1329,17 @@
     {
      "id": "as-you-sow",
      "name": "As You Sow",
+     "proposals": 9
+    },
+    {
+     "id": "proxy-impact",
+     "name": "Proxy Impact",
      "proposals": 8
     },
     {
      "id": "mercy",
      "name": "Mercy Investment Services",
      "proposals": 7
-    },
-    {
-     "id": "proxy-impact",
-     "name": "Proxy Impact",
-     "proposals": 6
     },
     {
      "id": "northstar",
@@ -1718,23 +1718,33 @@
    "active_filers_count": 80,
    "active_filers": [
     {
+     "id": "eko",
+     "name": "Ekō (formerly SumOfUs)",
+     "proposals": 12
+    },
+    {
      "id": "trillium",
      "name": "Trillium Asset Management",
      "proposals": 12
     },
     {
-     "id": "eko",
-     "name": "Ekō (formerly SumOfUs)",
+     "id": "nlpc",
+     "name": "National Legal and Policy Center",
      "proposals": 11
     },
     {
-     "id": "nlpc",
-     "name": "National Legal and Policy Center",
-     "proposals": 10
+     "id": "as-you-sow",
+     "name": "As You Sow",
+     "proposals": 7
     },
     {
      "id": "iahr",
      "name": "Investor Alliance for Human Rights",
+     "proposals": 7
+    },
+    {
+     "id": "mercy",
+     "name": "Mercy Investment Services",
      "proposals": 7
     },
     {
@@ -1758,11 +1768,6 @@
      "proposals": 6
     },
     {
-     "id": "as-you-sow",
-     "name": "As You Sow",
-     "proposals": 6
-    },
-    {
      "id": "iasj",
      "name": "Investor Advocates for Social Justice",
      "proposals": 6
@@ -1770,11 +1775,6 @@
     {
      "id": "jlens",
      "name": "JLens",
-     "proposals": 6
-    },
-    {
-     "id": "mercy",
-     "name": "Mercy Investment Services",
      "proposals": 6
     }
    ],
@@ -2388,6 +2388,11 @@
      "proposals": 10
     },
     {
+     "id": "as-you-sow",
+     "name": "As You Sow",
+     "proposals": 8
+    },
+    {
      "id": "iahr",
      "name": "Investor Alliance for Human Rights",
      "proposals": 8
@@ -2396,11 +2401,6 @@
      "id": "mercy",
      "name": "Mercy Investment Services",
      "proposals": 8
-    },
-    {
-     "id": "as-you-sow",
-     "name": "As You Sow",
-     "proposals": 7
     },
     {
      "id": "share",
@@ -2428,6 +2428,11 @@
      "proposals": 6
     },
     {
+     "id": "proxy-impact",
+     "name": "Proxy Impact",
+     "proposals": 6
+    },
+    {
      "id": "omi-us",
      "name": "Missionary Oblates of Mary Immaculate, US Province",
      "proposals": 5
@@ -2436,11 +2441,6 @@
      "id": "zevin",
      "name": "Zevin Asset Management",
      "proposals": 5
-    },
-    {
-     "id": "adrian-dominican",
-     "name": "Adrian Dominican Sisters",
-     "proposals": 4
     }
    ],
    "coalitions": [
@@ -2984,19 +2984,29 @@
    "active_filers_count": 82,
    "active_filers": [
     {
+     "id": "eko",
+     "name": "Ekō (formerly SumOfUs)",
+     "proposals": 12
+    },
+    {
      "id": "trillium",
      "name": "Trillium Asset Management",
      "proposals": 12
     },
     {
-     "id": "eko",
-     "name": "Ekō (formerly SumOfUs)",
+     "id": "nlpc",
+     "name": "National Legal and Policy Center",
      "proposals": 11
     },
     {
-     "id": "nlpc",
-     "name": "National Legal and Policy Center",
-     "proposals": 10
+     "id": "mercy",
+     "name": "Mercy Investment Services",
+     "proposals": 9
+    },
+    {
+     "id": "as-you-sow",
+     "name": "As You Sow",
+     "proposals": 7
     },
     {
      "id": "iahr",
@@ -3004,8 +3014,8 @@
      "proposals": 7
     },
     {
-     "id": "mercy",
-     "name": "Mercy Investment Services",
+     "id": "open-mic",
+     "name": "Open MIC (Open Media and Information Companies Initiative)",
      "proposals": 7
     },
     {
@@ -3029,18 +3039,8 @@
      "proposals": 6
     },
     {
-     "id": "as-you-sow",
-     "name": "As You Sow",
-     "proposals": 6
-    },
-    {
      "id": "iasj",
      "name": "Investor Advocates for Social Justice",
-     "proposals": 6
-    },
-    {
-     "id": "jlens",
-     "name": "JLens",
      "proposals": 6
     }
    ],
@@ -3532,9 +3532,9 @@
    "labs_reached_in_two_steps": [],
    "ties_from_tier": 10,
    "ties_into_tier": 23,
-   "ai_proposals": 72,
+   "ai_proposals": 73,
    "proposal_topics": {
-    "Harms to people using AI products": 30,
+    "Harms to people using AI products": 31,
     "Data center externalities": 15,
     "Harms from how customers use AI": 15,
     "AI governance and safety": 12
@@ -3542,7 +3542,7 @@
    "median_support_pct": 12.4,
    "median_support_base": {
     "with_recorded_support": 61,
-    "proposals": 72
+    "proposals": 73
    },
    "asks_made": [
     {
@@ -3651,16 +3651,21 @@
     {
      "id": "nlpc",
      "name": "National Legal and Policy Center",
-     "proposals": 15
-    },
-    {
-     "id": "eko",
-     "name": "Ekō (formerly SumOfUs)",
-     "proposals": 13
+     "proposals": 16
     },
     {
      "id": "as-you-sow",
      "name": "As You Sow",
+     "proposals": 14
+    },
+    {
+     "id": "eko",
+     "name": "Ekō (formerly SumOfUs)",
+     "proposals": 14
+    },
+    {
+     "id": "mercy",
+     "name": "Mercy Investment Services",
      "proposals": 12
     },
     {
@@ -3669,14 +3674,14 @@
      "proposals": 12
     },
     {
-     "id": "mercy",
-     "name": "Mercy Investment Services",
-     "proposals": 11
-    },
-    {
      "id": "omi-us",
      "name": "Missionary Oblates of Mary Immaculate, US Province",
      "proposals": 11
+    },
+    {
+     "id": "afl-cio",
+     "name": "AFL-CIO (Equity Index Funds)",
+     "proposals": 9
     },
     {
      "id": "open-mic",
@@ -3702,11 +3707,6 @@
      "id": "zevin",
      "name": "Zevin Asset Management",
      "proposals": 8
-    },
-    {
-     "id": "afl-cio",
-     "name": "AFL-CIO (Equity Index Funds)",
-     "proposals": 7
     }
    ],
    "coalitions": [

@@ -34,11 +34,13 @@
     const pById = new Map(props.map((p) => [p.id, p]));
     // Graph proposal nodes carry ask_id and company; edges from organizations to them say who filed or backed.
     const acts = []; // { org, prop (graph node), type, url }
+    const holdsAt = []; // { org, co (ticker), value, url } from "holds shares in" edges (13F, matched to network organizations)
     const members = new Map(); // org -> Set(coalition)
     D.graph.edges.forEach((e) => {
       const a = nodes.get(e.source), b = nodes.get(e.target);
       if (!a || !b) return;
       if ((a.type === "investor" || a.type === "coalition") && b.type === "proposal") acts.push({ org: a.id, prop: b, type: e.type, url: e.source_url });
+      if (e.type === "holds shares in" && b.type === "company") holdsAt.push({ org: a.id, co: b.ticker || String(b.id).replace(/^co-/, ""), value: e.value_usd, url: e.source_url });
       if (e.type === "member of") { if (!members.has(a.id)) members.set(a.id, new Set()); members.get(a.id).add(b.id); }
     });
     const people = new Map();
@@ -46,7 +48,7 @@
     const votes = (D.fundVotes && D.fundVotes.summary) || [];
     const holds = (D.holdings && D.holdings.holdings) || [];
     const holderName = new Map(((D.holdings && D.holdings.investors) || []).map((i) => [i.id, i.name]));
-    return { nodes, orgs, orgOf, props, pById, acts, members, people, votes, holds, holderName };
+    return { nodes, orgs, orgOf, props, pById, acts, members, people, votes, holds, holderName, holdsAt };
   }
 
   const askLabel = (id) => ((D.asks.find((a) => a.id === id) || {}).label || id);
@@ -92,36 +94,49 @@
   function collaborators(c, ask, mine) {
     const t = tick(c);
     const cand = new Map();
-    const add = (org, kind, text, url, w) => {
-      if (!org || org === mine) return;
-      if (!cand.has(org)) cand.set(org, { org, score: 0, why: [], kinds: new Set() });
-      const x = cand.get(org);
+    const get = (org) => {
+      if (!org || org === mine) return null;
+      if (!cand.has(org)) cand.set(org, { org, score: 0, kinds: new Set(), groups: new Map() });
+      return cand.get(org);
+    };
+    // Each reason belongs to a group ("Filed this ask at: GOOGL 2025; GOOGL 2026"), with one source per item.
+    const add = (org, kind, group, item, url, w) => {
+      const x = get(org);
+      if (!x) return;
       if (!x.kinds.has(kind)) x.score += w;
       x.kinds.add(kind);
-      if (x.why.length < 6) x.why.push({ text, url });
+      if (!x.groups.has(group)) x.groups.set(group, new Map());
+      const g = x.groups.get(group);
+      if (!g.has(item)) g.set(item, url);
     };
+    // Strongest role per organization and proposal: filing beats backing.
+    const role = new Map();
     idx.acts.forEach((a) => {
       const filed = FILER_TYPES.has(a.type), backed = SUPPORT_TYPES.has(a.type);
       if (!filed && !backed) return;
-      if (a.prop.ask_id === ask && a.prop.company !== t) add(a.org, "ask", `${filed ? "Filed" : "Backed"} this ask at ${a.prop.company} ${a.prop.year}`, a.url, filed ? 3 : 2);
-      if (a.prop.company === t) add(a.org, "here", `${filed ? "Filed" : "Backed"} at ${c.name}: ${String(a.prop.label || "").split(": ").slice(1).join(": ")}`, a.url, 2);
+      const k = a.org + "|" + a.prop.id;
+      const prev = role.get(k);
+      if (!prev || (filed && !prev.filed)) role.set(k, Object.assign({}, a, { filed }));
+    });
+    role.forEach((a) => {
+      const label = a.prop.company + " " + a.prop.year;
+      if (a.prop.ask_id === ask && a.prop.company !== t) add(a.org, "ask", a.filed ? "Filed this ask at" : "Backed this ask at", label, a.url, a.filed ? 3 : 2);
+      if (a.prop.company === t) add(a.org, "here", (a.filed ? "Filed at " : "Backed at ") + c.name, a.prop.year + ": " + String(a.prop.label || "").split(": ").slice(1).join(": "), a.url, 2);
     });
     const askProps = new Set(idx.props.filter((p) => p.ask_id === ask).map((p) => p.id));
     const famFor = new Map();
     idx.votes.forEach((r) => {
       if (!askProps.has(r.proposal_id)) return;
       const f = famFor.get(r.family) || { for: 0, n: 0 };
-      f.n += 1; if (r.vote === "FOR") f.for += 1;
+      f.n += 1;
+      if (r.vote === "FOR") f.for += 1;
       famFor.set(r.family, f);
     });
-    famFor.forEach((f, fam) => { if (f.for) add(FAMILY_ORG[fam] || idx.orgOf(null, fam), "votes", `Fund family voted FOR this ask on ${f.for} of ${f.n} proposals (Form N-PX)`, null, f.for / f.n >= 0.5 ? 2 : 1); });
-    idx.holds.filter((h) => h.company === t).forEach((h) => {
-      const org = HOLDER_ORG[h.investor] || idx.orgOf(h.investor, idx.holderName.get(h.investor));
-      add(org, "holds", `Holds ${c.name} shares${h.value_usd ? ` (about $${(h.value_usd / 1e6).toFixed(0)}M reported)` : ""}`, h.source_url, 2);
-    });
+    famFor.forEach((f, fam) => { if (f.for) add(FAMILY_ORG[fam] || idx.orgOf(null, fam), "votes", "Its funds voted FOR this ask", f.for + " of " + f.n + " proposals (Form N-PX)", null, f.for / f.n >= 0.5 ? 2 : 1); });
+    idx.holdsAt.filter((h) => h.co === t).forEach((h) => add(h.org, "holds", "Holds " + c.name + " shares", h.value ? "about $" + (h.value / 1e6).toFixed(0) + "M on its latest 13F" : "on its latest 13F", h.url, 2));
     if (mine && idx.members.has(mine)) {
       const myC = idx.members.get(mine);
-      cand.forEach((x) => { const shared = [...(idx.members.get(x.org) || [])].filter((k) => myC.has(k)); if (shared.length) { x.score += 1; x.why.push({ text: `Shares ${shared.map((k) => (idx.nodes.get(k) || {}).label || k).join(", ")} with you`, url: null }); } });
+      cand.forEach((x) => { const shared = [...(idx.members.get(x.org) || [])].filter((k) => myC.has(k)); if (shared.length) { x.score += 1; x.groups.set("Shares coalitions with you", new Map(shared.map((k) => [(idx.nodes.get(k) || {}).label || k, null]))); } });
     }
     const list = [...cand.values()].filter((x) => idx.nodes.has(x.org)).sort((a, b) => b.score - a.score || b.kinds.size - a.kinds.size).slice(0, 20);
     const coalitions = new Map();
@@ -132,8 +147,9 @@
       const n = idx.nodes.get(x.org);
       const ppl = (idx.people.get(x.org) || []).slice(0, 2);
       const inList = shortlist.some((s) => s.id === x.org);
-      return `<tr><td><strong>${esc(n.label)}</strong><div class="ticker">${esc(n.org_type || n.type)}</div></td>
-        <td><ul class="pl-why">${x.why.map((w) => `<li>${esc(w.text)}${src(w.url)}</li>`).join("")}</ul></td>
+      const opp = /anti-ESG/i.test(n.org_type || "");
+      return `<tr><td><strong>${esc(n.label)}</strong><div class="ticker">${esc(n.org_type || n.type)}</div>${opp ? `<div class="note">Files from a critical stance on ESG; it can share an ask while seeking a different outcome.</div>` : ""}</td>
+        <td><ul class="pl-why">${[...x.groups.entries()].map(([g, items]) => `<li><strong>${esc(g)}</strong> ${[...items.entries()].map(([it, u]) => `${esc(it)}${src(u)}`).join("; ")}</li>`).join("")}</ul></td>
         <td>${ppl.length ? ppl.map((p) => `${esc(p.name)}<div class="ticker">${esc(p.title)}</div>${src(p.profile_url, "profile")}`).join("<br>") : `<span class="ticker">no lead on file</span>`}</td>
         <td><button type="button" class="chip pl-add" data-org="${esc(x.org)}" aria-pressed="${inList}">${inList ? "On shortlist" : "Add to shortlist"}</button></td></tr>`;
     }).join("");
@@ -287,7 +303,7 @@
     const orgs = idx.orgs.slice().sort((a, b) => a.label.localeCompare(b.label));
     el.innerHTML = `
       <h2>Plan an engagement</h2>
-      <p class="intro">Choose a company and what you want to ask it. The page brings together the filing deadline and your rights there, how the same ask has gone, organizations that have filed, backed, voted for or hold it, what policy already requires, and other asks to consider. Add your organization to see shared coalitions. Every line links to its source.</p>
+      <p class="intro">Choose a company and an ask. Add your organization to see which coalitions you share with each potential partner. Every line links to its source, and the plan's address can be shared.</p>
       <div class="net-controls pl-controls">
         <label>Company <select id="pl-co">${cos.map((c) => `<option value="${esc(c.id || c.ticker)}">${esc(c.name)} (${esc(c.ticker)})</option>`).join("")}</select></label>
         <label>Ask <select id="pl-ask">${D.asks.map((a) => `<option value="${esc(a.id)}">${esc(a.label)} (${askCount.get(a.id) || 0} filed)</option>`).join("")}</select></label>

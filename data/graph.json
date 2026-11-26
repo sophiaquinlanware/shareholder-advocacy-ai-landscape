@@ -729,7 +729,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1442145/000119312526141398/d23242ddef14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "We must receive the proposal no later than December 4, 2026.",
-   "degree": 1
+   "degree": 2
   },
   {
    "id": "co-WDAY",
@@ -1580,7 +1580,7 @@
    "description": "Nonprofit promoting responsible media and tech via shareholder engagement.",
    "website": "https://www.openmic.org",
    "source_url": "https://www.openmic.org",
-   "degree": 18
+   "degree": 19
   },
   {
    "id": "eko",
@@ -1591,7 +1591,7 @@
    "description": "Online campaigning group that files and backs shareholder proposals against corporate abuses.",
    "website": "https://www.eko.org",
    "source_url": "https://www.eko.org",
-   "degree": 29
+   "degree": 30
   },
   {
    "id": "azzad",
@@ -1613,7 +1613,7 @@
    "description": "Shareholder advocacy nonprofit filing environmental and social resolutions.",
    "website": "https://www.asyousow.org",
    "source_url": "https://www.asyousow.org",
-   "degree": 31
+   "degree": 33
   },
   {
    "id": "nlpc",
@@ -1624,7 +1624,7 @@
    "description": "Conservative watchdog filing anti-ESG proposals, including on AI data usage.",
    "website": "https://nlpc.org",
    "source_url": "https://nlpc.org",
-   "degree": 21
+   "degree": 22
   },
   {
    "id": "ridgeline",
@@ -1811,7 +1811,7 @@
    "description": "Sustainable manager; co-founder and co-lead of WBA ethical AI coalition.",
    "website": "https://www.bostoncommonasset.com",
    "source_url": "https://www.bostoncommonasset.com",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "harrington",
@@ -1822,7 +1822,7 @@
    "description": "California socially responsible manager and frequent shareholder activist.",
    "website": "https://www.harringtoninvestments.com",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923005962/b425233px14a6g.htm",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "aviva",
@@ -1877,7 +1877,7 @@
    "description": "Investment program of the Sisters of Mercy; prolific ICCR filer.",
    "website": "https://www.mercyinvestmentservices.org",
    "source_url": "https://www.mercyinvestmentservices.org",
-   "degree": 45
+   "degree": 47
   },
   {
    "id": "inspire",
@@ -1998,7 +1998,7 @@
    "description": "Shareholder advisory firm leading child online safety proposals.",
    "website": "https://www.proxyimpact.com",
    "source_url": "https://www.proxyimpact.com",
-   "degree": 10
+   "degree": 12
   },
   {
    "id": "bowyer",
@@ -2075,7 +2075,7 @@
    "description": "Baptist mission agency; lead filer on Amazon AI and surveillance human rights.",
    "website": "https://abhms.org",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm",
-   "degree": 13
+   "degree": 15
   },
   {
    "id": "afl-cio",
@@ -2086,7 +2086,7 @@
    "description": "US labor federation; its funds file AI transparency and board oversight proposals.",
    "website": "https://aflcio.org",
    "source_url": "https://aflcio.org",
-   "degree": 12
+   "degree": 14
   },
   {
    "id": "united-for-respect",
@@ -2097,7 +2097,7 @@
    "description": "Retail worker organizing group; floor proposal for Amazon worker AI council.",
    "website": "https://united4respect.org",
    "source_url": "https://www.iccr.org/wp-content/uploads/2026/05/Amazon-Floor-Proposal_-Memo-in-Support-.pdf",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "tulipshare",
@@ -2119,7 +2119,7 @@
    "description": "Environmental fund manager; lead filer on Nvidia AI emissions.",
    "website": "https://www.greencentury.com",
    "source_url": "https://www.greencentury.com",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "ttt-investments",
@@ -2130,7 +2130,7 @@
    "description": "Investor entity; co-filer of Nvidia military AI proposal.",
    "website": null,
    "source_url": "https://collaborate.unpri.org/group/38826/home",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "iccr",
@@ -2174,7 +2174,7 @@
    "description": "ESG mutual fund manager; member of WBA ethical AI coalition.",
    "website": "https://www.parnassus.com",
    "source_url": "https://www.parnassus.com",
-   "degree": 25
+   "degree": 27
   },
   {
    "id": "fidelity-intl",
@@ -2570,7 +2570,7 @@
    "description": "Investment consulting firm that represents the AFL-CIO Equity Index Funds as shareholder proponent at Amazon.",
    "website": "https://www.segalmarco.com",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
-   "degree": 3
+   "degree": 5
   },
   {
    "id": "dominican-sisters-springfield-il",
@@ -4880,7 +4880,7 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "ask_id": "ask-customer-due-diligence",
    "category": "downstream-use",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "msft-2025-ai-oil-gas",
@@ -5094,15 +5094,17 @@
    "topic": "AI governance and safety",
    "subtopic": "board risk oversight incl. AI (borderline)",
    "status": "voted",
-   "support_pct": 8.37,
+   "support_pct": 8.36,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "filing_deadline": "2022-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm",
+   "meeting_date": "2023-06-02",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm",
    "plain_summary": "Asks the board to commission an independent assessment of the Audit and Compliance Committee's role in overseeing material risks to public well-being from company operations.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "ask_id": "ask-ai-oversight-reporting",
    "category": "governance-safety",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "googl-2024-ai-principles-oversight",
@@ -5197,11 +5199,12 @@
    "filing_deadline": "2023-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "meeting_date": "2024-06-07",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm",
    "plain_summary": "Asks the board to adopt targets and publish an annual report with metrics on whether YouTube and Alphabet have improved child safety and reduced harm to children on their platforms.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "ask_id": "ask-child-safety",
    "category": "users",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "googl-2025-cahra-hrdd",
@@ -5474,10 +5477,12 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
    "filing_deadline": "2022-12-09",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680122000043/meta2022definitiveproxysta.htm",
+   "meeting_date": "2023-05-31",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000083/meta-20230531.htm",
    "plain_summary": "Asks for a report analyzing why enforcement of Meta's Community Standards has proven ineffective at controlling hate speech, disinformation and content that incites violence or harm.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
    "category": "users",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "meta-2024-genai-misinfo",
@@ -5618,11 +5623,12 @@
    "filing_deadline": "2024-12-20",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "meeting_date": "2025-05-28",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm",
    "plain_summary": "Asks the board to publish a report with targets and metrics assessing whether and how Meta has improved child safety and reduced harm to children on its platforms.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "ask_id": "ask-child-safety",
    "category": "users",
-   "degree": 24
+   "degree": 25
   },
   {
    "id": "meta-2026-ai-data-usage",
@@ -5717,11 +5723,12 @@
    "filing_deadline": "2025-12-18",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "meeting_date": "2026-05-27",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm",
    "plain_summary": "Asks the Compensation Committee to report on the feasibility of tying senior executive pay to performance on improving child safety.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "ask_id": "ask-child-safety",
    "category": "users",
-   "degree": 16
+   "degree": 17
   },
   {
    "id": "amzn-2023-customer-dd",
@@ -5744,7 +5751,7 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
    "ask_id": "ask-customer-due-diligence",
    "category": "downstream-use",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "amzn-2023-facial-recognition",
@@ -5799,7 +5806,7 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "ask_id": "ask-customer-due-diligence",
    "category": "downstream-use",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "amzn-2024-facial-recognition",
@@ -5854,7 +5861,7 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "ask_id": "ask-ai-oversight-reporting",
    "category": "governance-safety",
-   "degree": 2
+   "degree": 4
   },
   {
    "id": "amzn-2025-dc-climate",
@@ -5900,7 +5907,7 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "ask_id": "ask-ai-oversight-reporting",
    "category": "governance-safety",
-   "degree": 3
+   "degree": 5
   },
   {
    "id": "amzn-2025-ai-data-usage",
@@ -5955,7 +5962,7 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
    "ask_id": "ask-dc-climate-energy",
    "category": "data-centers",
-   "degree": 4
+   "degree": 6
   },
   {
    "id": "amzn-2026-climate-cost",
@@ -5967,16 +5974,17 @@
    "topic": "Data center externalities",
    "subtopic": "AI buildout vs climate cost (conservative filer, borderline)",
    "status": "voted",
-   "support_pct": 1.2,
+   "support_pct": 1.23,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
    "filing_deadline": "2025-12-11",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "meeting_date": "2026-05-20",
+   "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926065717/tm2614288d1_8k.htm",
    "plain_summary": "Asks the board to report, by March 31, 2027, the added capital and operating costs of Amazon's climate commitments since 2019 and its reassessment of them given changing expectations for AI infrastructure investment and energy usage.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
    "ask_id": "ask-dc-climate-energy",
    "category": "data-centers",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "amzn-2026-responsible-ai-sales",
@@ -5992,6 +6000,7 @@
    "source_url": "https://news.bloomberglaw.com/esg/amazon-to-block-investor-vote-on-ai-services-for-israel-dhs",
    "filing_deadline": "2025-12-11",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
+   "meeting_date": "2026-05-20",
    "status_reason": "Excluded by Amazon under Rule 14a-8(i)(12) (resubmission): a similar 2024 proposal got 16.8%, below the 25% needed. SEC staff said they would not object (January 30, 2026).",
    "status_source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/americanbaptisthomeamazon13026.pdf",
    "plain_summary": "Asks the board to report on misalignment between Amazon's responsible AI policies and its sales of AI and cloud services, including to Israel's military and DHS.",
@@ -6018,10 +6027,12 @@
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "meeting_date": "2026-05-20",
    "support_note": "Floor proposal: raised at the meeting, so shares voted earlier by proxy could not vote on it. Support is not comparable with proposals in the proxy; the 8-K gives the raw counts.",
-   "plain_summary_note": "No resolution text available: the proposal was withdrawn or raised from the meeting floor.",
+   "plain_summary": "Asks Amazon to set up and keep an independent AI advisory council, made up mainly of frontline warehouse workers plus independent experts, to review and advise on its use of AI, robotics and automated decision-making.",
+   "plain_summary_source": "https://www.iccr.org/wp-content/uploads/2026/05/Amazon-Floor-Proposal_-Memo-in-Support-.pdf",
+   "plain_summary_note": "Secondary source: the proponent's memorandum in support; the resolution was not in the proxy statement.",
    "ask_id": "ask-ai-workforce",
    "category": "downstream-use",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "aapl-2024-ai-transparency",
@@ -6083,6 +6094,7 @@
    "source_url": "https://www.minerva.info/post/apple-shareholders-stunted-proposals-plummet-as-sec-shift-bites",
    "filing_deadline": "2025-09-12",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
+   "meeting_date": "2026-02-24",
    "status_reason": "Withdrawn by Tulipshare after Apple asked the SEC to let it exclude the proposal as not economically significant (Rule 14a-8(i)(5)) and as ordinary business or micromanagement (Rule 14a-8(i)(7)). No reason for the withdrawal is public.",
    "status_source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/tulipshareapple112625.pdf",
    "plain_summary": "Asks for a report evaluating how AI and increased data center use may affect Apple's long-term energy strategy.",
@@ -6113,7 +6125,7 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
    "ask_id": "ask-dc-climate-energy",
    "category": "data-centers",
-   "degree": 4
+   "degree": 6
   },
   {
    "id": "nvda-2026-military-ai",
@@ -6129,10 +6141,15 @@
    "source_url": "https://collaborate.unpri.org/group/38826/home",
    "filing_deadline": "2026-01-13",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000095/nvda-20250512.htm",
-   "plain_summary_note": "The only public resolution text is on the PRI Collaboration Platform, whose terms bar republishing.",
+   "meeting_date": "2026-06-24",
+   "status_reason": "Excluded: NVIDIA notified the SEC (February 20, 2026) that it would omit the proposal as ordinary business under Rule 14a-8(i)(7), citing staff precedent on sales of products to military customers. Under the Division's November 17, 2025 statement, staff replied on March 10, 2026 that it would not object, based solely on the company's representation.",
+   "status_source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/tttnvidia31026.pdf",
+   "plain_summary": "Asks NVIDIA to publish a report explaining its strategic reason for military sales and contracts and how they add long-term shareholder value despite lower margins and legal and reputational risks.",
+   "plain_summary_source": "https://www.sec.gov/files/corpfin/no-action/14a-8/tttnvidia31026.pdf",
+   "plain_summary_note": "Resolution text from the proposal attached to NVIDIA's SEC notification letter.",
    "ask_id": "ask-customer-due-diligence",
    "category": "downstream-use",
-   "degree": 3
+   "degree": 5
   },
   {
    "id": "tsla-2025-xai-investment",
@@ -12138,7 +12155,9 @@
    "meeting_date": "2025-06-06",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
    "support_note": "Floor proposal: raised at the meeting, so shares voted earlier by proxy could not vote on it. Support is not comparable with proposals in the proxy; the 8-K gives the raw counts.",
-   "plain_summary_note": "No resolution text available: the proposal was withdrawn or raised from the meeting floor.",
+   "plain_summary": "Asks for a report on building the ability to preload AI apps into the Android operating system.",
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
+   "plain_summary_note": "Only the one-line description in the 8-K is public; no resolution text found.",
    "category": "users",
    "degree": 1
   },
@@ -12335,7 +12354,11 @@
    "filing_deadline": "2023-10-12",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1744489/000119312523025766/d354565ddefc14a.htm",
    "meeting_date": "2024-04-03",
-   "plain_summary_note": "No resolution text available: the proposal was withdrawn or raised from the meeting floor.",
+   "status_reason": "Withdrawn by the AFL-CIO after Disney committed to enhance its disclosure on its use of AI, as reported by FTI Consulting on the Harvard Law School Forum. SEC staff had earlier (January 3, 2024) declined Disney's request to exclude it under Rule 14a-8(i)(7). Withdrawal date not public.",
+   "status_source_url": "https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/",
+   "plain_summary": "Asks Disney to publish a report on how it uses AI in its business, how the board oversees that use, and any ethical guidelines it has adopted for AI.",
+   "plain_summary_source": "https://business.cch.com/srd/TheWaltDisneyCompany.pdf",
+   "plain_summary_note": "Resolution text from Disney's no-action request and the SEC staff reply (January 3, 2024).",
    "ask_id": "ask-ai-oversight-reporting",
    "category": "governance-safety",
    "degree": 3
@@ -12356,7 +12379,11 @@
    "filing_deadline": "2023-12-30",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1166691/000130817923000809/cmcsa4130111-def14a.htm",
    "meeting_date": "2024-06-10",
-   "plain_summary_note": "No resolution text available: the proposal was withdrawn or raised from the meeting floor.",
+   "status_reason": "Withdrawn by the AFL-CIO after Comcast committed to enhance its disclosure on its use of AI, as reported by FTI Consulting on the Harvard Law School Forum. No SEC no-action letter; withdrawal date not public.",
+   "status_source_url": "https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/",
+   "plain_summary": "Asks Comcast for a report on how it uses AI, how the board oversees that use, and its ethical guidelines for AI.",
+   "plain_summary_source": "https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/",
+   "plain_summary_note": "Secondary source: FTI Consulting describes the AFL-CIO's 2024 proposals as requests for reports on AI usage, ethical guidelines and board oversight; no Comcast resolution text is public outside the PRI platform.",
    "ask_id": "ask-ai-oversight-reporting",
    "category": "governance-safety",
    "degree": 3
@@ -12502,6 +12529,29 @@
    "ask_id": "ask-customer-due-diligence",
    "category": "downstream-use",
    "degree": 2
+  },
+  {
+   "id": "vrsk-2024-responsible-ai",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "VRSK 2024: Responsible AI disclosure (Parnassus)",
+   "company": "VRSK",
+   "year": 2024,
+   "topic": "Harms to people using AI products",
+   "subtopic": "Responsible AI governance and disclosure to avoid unfair discrimination against disadvantaged groups and protected classes in insurance analytics",
+   "status": "withdrawn",
+   "support_pct": null,
+   "proponent": "Parnassus Investments",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1442145/000119312524087955/d653310ddef14a.htm",
+   "meeting_date": "2024-05-15",
+   "status_reason": "Withdrawn by Parnassus after a negotiated agreement: Verisk agreed to publish disclosures on its policies, practices and governance for the responsible use of AI, including its efforts to reduce the risk of disproportionately affecting marginalized groups. Filing and withdrawal dates not public; no SEC no-action letter found.",
+   "status_source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf",
+   "plain_summary": "Asked Verisk to disclose how it governs the responsible use of AI so that its insurance analytics products do not harm disadvantaged groups and protected classes.",
+   "plain_summary_source": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf",
+   "plain_summary_note": "Secondary source: no resolution text is public; summary from the filer's own description (Parnassus Stewardship Report 2024, pp. 14 and 21).",
+   "ask_id": "ask-ai-bias",
+   "category": "users",
+   "degree": 3
   }
  ],
  "edges": [
@@ -22115,6 +22165,20 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm"
   },
   {
+   "source": "vrsk-2024-responsible-ai",
+   "target": "co-VRSK",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1442145/000119312524087955/d653310ddef14a.htm"
+  },
+  {
+   "source": "parnassus",
+   "target": "vrsk-2024-responsible-ai",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1442145/000119312524087955/d653310ddef14a.htm"
+  },
+  {
    "source": "arjuna",
    "target": "co-MSFT",
    "type": "exempt solicitation for",
@@ -22264,7 +22328,7 @@
   {
    "source": "as-you-sow",
    "target": "co-META",
-   "type": "exempt solicitation for (unverified wording)",
+   "type": "exempt solicitation for (memo headed 'vote yes: proposal #12')",
    "layer": "proposals",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465925006514/p428257px14a6g.htm"
   },
@@ -23890,6 +23954,153 @@
    "type": "lead filer",
    "layer": "proposals",
    "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/scottsalesforce21026.pdf"
+  },
+  {
+   "source": "parnassus",
+   "target": "vrsk-2024-responsible-ai",
+   "type": "lead filer",
+   "layer": "proposals",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf"
+  },
+  {
+   "source": "segal-marco-advisors",
+   "target": "amzn-2024-ai-board-committee",
+   "type": "filing representative",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm"
+  },
+  {
+   "source": "segal-marco-advisors",
+   "target": "amzn-2025-ai-board-oversight",
+   "type": "filing representative",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm"
+  },
+  {
+   "source": "as-you-sow",
+   "target": "amzn-2026-dc-climate",
+   "type": "filing representative",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926054974/tm261382d4_defa14a.htm"
+  },
+  {
+   "source": "mercy",
+   "target": "amzn-2026-dc-climate",
+   "type": "co-filer",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926054974/tm261382d4_defa14a.htm"
+  },
+  {
+   "source": "nlpc",
+   "target": "amzn-2026-climate-cost",
+   "type": "lead filer",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926054974/tm261382d4_defa14a.htm"
+  },
+  {
+   "source": "united-for-respect",
+   "target": "amzn-2026-worker-ai-council",
+   "type": "lead filer",
+   "layer": "proposals",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/05/Amazon-Floor-Proposal_-Memo-in-Support-.pdf"
+  },
+  {
+   "source": "green-century",
+   "target": "nvda-2026-product-ghg",
+   "type": "lead filer",
+   "layer": "proposals",
+   "source_url": "https://www.greencentury.com/shareholders-call-for-nvidia-to-report-carbon-costs-of-ai/"
+  },
+  {
+   "source": "mercy",
+   "target": "nvda-2026-product-ghg",
+   "type": "co-filer",
+   "layer": "proposals",
+   "source_url": "https://www.greencentury.com/shareholders-call-for-nvidia-to-report-carbon-costs-of-ai/"
+  },
+  {
+   "source": "ttt-investments",
+   "target": "nvda-2026-military-ai",
+   "type": "lead filer",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/tttnvidia31026.pdf"
+  },
+  {
+   "source": "open-mic",
+   "target": "nvda-2026-military-ai",
+   "type": "filing representative",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/tttnvidia31026.pdf"
+  },
+  {
+   "source": "harrington",
+   "target": "googl-2023-audit-committee-review",
+   "type": "lead filer",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+  },
+  {
+   "source": "boston-common",
+   "target": "googl-2024-child-online-safety",
+   "type": "lead filer",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
+  },
+  {
+   "source": "as-you-sow",
+   "target": "meta-2023-community-standards",
+   "type": "lead filer",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
+  },
+  {
+   "source": "proxy-impact",
+   "target": "meta-2025-child-safety",
+   "type": "lead filer",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+  },
+  {
+   "source": "proxy-impact",
+   "target": "meta-2026-child-safety-pay",
+   "type": "lead filer",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+  },
+  {
+   "source": "eko",
+   "target": "msft-2025-hrdd-ai-misuse",
+   "type": "exempt solicitation",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925010900/i725250px14a6g.htm"
+  },
+  {
+   "source": "abhms",
+   "target": "amzn-2023-customer-dd",
+   "type": "lead filer",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923055145/tm2314311d1_defa14a.htm"
+  },
+  {
+   "source": "abhms",
+   "target": "amzn-2024-customer-dd",
+   "type": "lead filer",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm"
+  },
+  {
+   "source": "afl-cio",
+   "target": "amzn-2024-ai-board-committee",
+   "type": "lead filer",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm"
+  },
+  {
+   "source": "afl-cio",
+   "target": "amzn-2025-ai-board-oversight",
+   "type": "lead filer",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm"
   },
   {
    "source": "parnassus",
