@@ -1,0 +1,126 @@
+{
+  "as_of_quarter": "2026Q3",
+  "note": "SEC EDGAR rejected the specified User-Agent (HTTP 403, Undeclared Automated Tool) on 2026-11-25, so no 13F data was collected. Only NBIM (non-EDGAR, published semi-annually) is included; its latest period is H1 2026 (2026-06-30), not Q3 2026.",
+  "investors": [
+    {
+      "id": "nbim",
+      "name": "Norges Bank Investment Management",
+      "cik": null,
+      "filing_url": "https://www.nbim.no/en/investments/all-investments/",
+      "data_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf",
+      "report_period": "2026-06-30"
+    }
+  ],
+  "holdings": [
+    {
+      "investor": "nbim",
+      "company": "AAPL",
+      "value_usd": 52718798466,
+      "shares": null,
+      "pct_of_portfolio": 3.1741,
+      "ownership_pct": 1.24,
+      "pct_basis": "share of NBIM total equity holdings (all markets) as of 2026-06-30; not a 13F total",
+      "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+    },
+    {
+      "investor": "nbim",
+      "company": "AMD",
+      "value_usd": 12356895031,
+      "shares": null,
+      "pct_of_portfolio": 0.744,
+      "ownership_pct": 1.3,
+      "pct_basis": "share of NBIM total equity holdings (all markets) as of 2026-06-30; not a 13F total",
+      "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+    },
+    {
+      "investor": "nbim",
+      "company": "AMZN",
+      "value_usd": 31867316197,
+      "shares": null,
+      "pct_of_portfolio": 1.9187,
+      "ownership_pct": 1.24,
+      "pct_basis": "share of NBIM total equity holdings (all markets) as of 2026-06-30; not a 13F total",
+      "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+    },
+    {
+      "investor": "nbim",
+      "company": "AVGO",
+      "value_usd": 23402660001,
+      "shares": null,
+      "pct_of_portfolio": 1.409,
+      "ownership_pct": 1.3,
+      "pct_basis": "share of NBIM total equity holdings (all markets) as of 2026-06-30; not a 13F total",
+      "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+    },
+    {
+      "investor": "nbim",
+      "company": "CRWV",
+      "value_usd": 611817235,
+      "shares": null,
+      "pct_of_portfolio": 0.0368,
+      "ownership_pct": 1.12,
+      "pct_basis": "share of NBIM total equity holdings (all markets) as of 2026-06-30; not a 13F total",
+      "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+    },
+    {
+      "investor": "nbim",
+      "company": "GOOGL",
+      "value_usd": 50466058081,
+      "shares": null,
+      "pct_of_portfolio": 3.0385,
+      "ownership_pct": 1.17,
+      "pct_basis": "share of NBIM total equity holdings (all markets) as of 2026-06-30; not a 13F total",
+      "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+    },
+    {
+      "investor": "nbim",
+      "company": "META",
+      "value_usd": 17047898622,
+      "shares": null,
+      "pct_of_portfolio": 1.0264,
+      "ownership_pct": 1.19,
+      "pct_basis": "share of NBIM total equity holdings (all markets) as of 2026-06-30; not a 13F total",
+      "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+    },
+    {
+      "investor": "nbim",
+      "company": "MSFT",
+      "value_usd": 35113298063,
+      "shares": null,
+      "pct_of_portfolio": 2.1141,
+      "ownership_pct": 1.27,
+      "pct_basis": "share of NBIM total equity holdings (all markets) as of 2026-06-30; not a 13F total",
+      "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+    },
+    {
+      "investor": "nbim",
+      "company": "NVDA",
+      "value_usd": 61847326779,
+      "shares": null,
+      "pct_of_portfolio": 3.7237,
+      "ownership_pct": 1.28,
+      "pct_basis": "share of NBIM total equity holdings (all markets) as of 2026-06-30; not a 13F total",
+      "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+    },
+    {
+      "investor": "nbim",
+      "company": "ORCL",
+      "value_usd": 3256817434,
+      "shares": null,
+      "pct_of_portfolio": 0.1961,
+      "ownership_pct": 0.77,
+      "pct_basis": "share of NBIM total equity holdings (all markets) as of 2026-06-30; not a 13F total",
+      "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+    },
+    {
+      "investor": "nbim",
+      "company": "TSLA",
+      "value_usd": 15720016270,
+      "shares": null,
+      "pct_of_portfolio": 0.9465,
+      "ownership_pct": 1,
+      "pct_basis": "share of NBIM total equity holdings (all markets) as of 2026-06-30; not a 13F total",
+      "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+    }
+  ]
+}

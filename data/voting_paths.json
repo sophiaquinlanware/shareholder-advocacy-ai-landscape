@@ -1,0 +1,54 @@
+[
+  {
+    "title": "You own shares yourself",
+    "who": "Stock held directly or in a brokerage account, such as Schwab, Fidelity, Robinhood or E*Trade.",
+    "steps": [
+      "Before each annual meeting you get a notice or voting form by email or mail.",
+      "Find the control number on it. It is usually 16 digits.",
+      "Vote at ProxyVote.com or in your broker's app, by phone, or by mail.",
+      "Can't find the control number? Ask your broker."
+    ],
+    "sources": [
+      { "label": "Investor.gov", "url": "https://www.investor.gov/how-do-i-know-when-vote" },
+      { "label": "ProxyVote", "url": "https://www.proxyvote.com/" }
+    ]
+  },
+  {
+    "title": "You own Vanguard index funds",
+    "who": "Investors in participating Vanguard U.S. equity index funds. Vanguard says all of its U.S. equity index funds join in early 2027.",
+    "steps": [
+      "Vanguard brokerage clients: log in at vanguard.com and choose a voting policy.",
+      "Hold Vanguard funds at another broker? Enroll through ProxyVote.com.",
+      "You pick a policy, not a vote on each item. You can change it at any time."
+    ],
+    "sources": [
+      { "label": "Vanguard Investor Choice", "url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/about-our-funds/proxy-voting-across-funds/investor-choice.html" },
+      { "label": "Broadridge", "url": "https://www.broadridge.com/insights/a-new-way-to-participate-in-vanguard-investor-choice" }
+    ]
+  },
+  {
+    "title": "You own BlackRock iShares funds",
+    "who": "Eligible investors in the participating iShares fund in BlackRock's U.S. Retail Program.",
+    "steps": [
+      "There is no separate sign-up page.",
+      "If you are eligible, a short voting-policy survey comes with your proxy materials.",
+      "Choose one of the listed third-party policies or BlackRock's own."
+    ],
+    "sources": [
+      { "label": "BlackRock Voting Choice", "url": "https://www.blackrock.com/corporate/about-us/investment-stewardship/blackrock-voting-choice" }
+    ]
+  },
+  {
+    "title": "You own Schwab or State Street funds",
+    "who": "Schwab 1000 Index Fund and ETF holders, and holders of many State Street SPDR index funds.",
+    "steps": [
+      "Schwab: choose a voting policy for the Schwab 1000 Index Fund or ETF through Schwab Asset Management.",
+      "State Street: ask your advisor, broker or custodian how to choose a policy for eligible SPDR funds.",
+      "Fidelity: no retail voting choice program found as of November 2026."
+    ],
+    "sources": [
+      { "label": "Schwab", "url": "https://www.schwabassetmanagement.com/proxy-voting" },
+      { "label": "State Street", "url": "https://www.ssga.com/us/en/intermediary/etfs/about-us/what-we-do/asset-stewardship/proxy-voting-choice" }
+    ]
+  }
+]

@@ -1,0 +1,59 @@
+name: Refresh and publish
+
+# Every Monday at 13:00 UTC: check SEC EDGAR for new filings, save them, and republish the site.
+# Also republishes whenever new code or data is pushed, and can be run by hand
+# from the Actions tab with the "Run workflow" button.
+on:
+  schedule:
+    - cron: "0 13 * * 1"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  refresh-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        if: github.event_name != 'push'
+        with:
+          python-version: "3.12"
+
+      - name: Check SEC EDGAR for new filings
+        if: github.event_name != 'push'
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: |
+          python scripts/refresh.py || echo "refresh skipped"
+          python scripts/holdings.py
+          python scripts/build_graph.py
+
+      - name: Save any changes
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "tracker-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "Weekly refresh: $(date -u +%Y-%m-%d)"
+          git push
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deploy
+        uses: actions/deploy-pages@v4
