@@ -102,7 +102,19 @@
       </table>`;
   }
 
-  window.renderVotes = function (data, proposals) {
+  // Pass-through voting (data/pass_through_voting.json): whether each fund family lets fund holders choose their
+  // own votes. "offered: null" means no program was found on the pages checked, never "no program".
+  function ptvTable(ptv) {
+    const fam = (ptv && ptv.families) || [];
+    if (!fam.length) return "";
+    const say = (f) => (f.offered === true ? "Yes" : f.offered === false ? "No" : "No program found on the pages checked");
+    return `<h3 class="sub-h">Can fund holders choose their own votes? (pass-through voting)</h3>
+      <p class="count-line">${esc(ptv.about || "Whether each fund family offers holders of its funds a say in proxy votes.")}</p>
+      <div class="table-wrap"><table><thead><tr><th scope="col">Fund family</th><th scope="col">Offered</th><th scope="col">Detail</th></tr></thead><tbody>
+      ${fam.map((f) => `<tr><td>${esc(f.family)}</td><td>${esc(say(f))}</td><td>${esc(f.note || "")} ${f.source_url ? `<a class="src" href="${esc(f.source_url)}" target="_blank" rel="noopener">[source]</a>` : `<span class="unverified">source pending</span>`}</td></tr>`).join("")}
+      </tbody></table></div>`;
+  }
+  window.renderVotes = function (data, proposals, ptv) {
     const el = document.getElementById("tab-votes");
     if (!el) return;
     if (!data || !data.summary || !data.summary.length) {
@@ -148,7 +160,8 @@
         <label class="sr-label">Fund family <select id="fv-family">${opt("", "All fund families")}${families.map((f) => opt(f, f)).join("")}</select></label>
       </div>
       <div id="fv-table" class="table-wrap" role="region" aria-label="How funds voted, table" tabindex="0"></div>
-      <p class="note">Matching: same company and meeting, with the filing's wording and the proposal title agreeing closely; close calls are left out. Floor proposals are not reported on N-PX.</p>`;
+      <p class="note">Matching: same company and meeting, with the filing's wording and the proposal title agreeing closely; close calls are left out. Floor proposals are not reported on N-PX.</p>
+      ${ptvTable(ptv)}`;
     el.querySelector("#fv-company").addEventListener("change", (e) => { V.company = e.target.value; draw(); });
     el.querySelector("#fv-topic").addEventListener("change", (e) => { V.topic = e.target.value; draw(); });
     el.querySelector("#fv-family").addEventListener("change", (e) => { V.family = e.target.value; draw(); });

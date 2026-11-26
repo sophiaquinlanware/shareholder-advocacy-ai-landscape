@@ -208,3 +208,26 @@ Roles are derived from the data session's sourced tiers and consumer/enterprise 
 - **Select boxes** use one centred chevron in every browser.
 - **Laws and rules filters:** region (with counts; the jurisdiction list narrows to the region), jurisdiction and legal status. Each event node is marked by status: in force (ring around a filled dot), not yet in force (hollow), nonbinding or voluntary (light fill), revoked or superseded (grey, struck through), investigation (dashed), plain event (filled), with a status key. Lanes grow with their stack of events. The panel shows region, status and a "secondary source" note; the list view adds Region and Status columns. "Show everything" clears the filters.
 - **Dated timelines:** every month label on the Laws and rules chart carries its year ("Jun ’25"), so any part of it read alone is dated.
+
+
+## Motion, stages 3–10 (owner: "finish everything", 2026-11-26)
+
+`motion-layer.js` watches views as they render and animates each piece once, when it first scrolls into view (transform and opacity only, one easing; nothing under reduced motion):
+- **Numbers count up:** bar counts, heatmap cells, anything marked `data-countup`. Screen readers get the final figure.
+- **Charts draw in:** Lab pathways and scorecard bars grow from the left; the proposals dot plot, the heatmap and the Laws and rules map fade in by position.
+- **Rows and steps stagger in:** table rows (again after a filter redraws them), the New SEC filings timeline, engagement steps and the findings cards.
+- **Tab switches crossfade** with the View Transitions API where supported (not under reduced motion or in automated test browsers).
+- **Skeletons:** an empty panel shows grey placeholder bars until its data draws.
+- **Micro-interactions:** link underlines darken on hover, finding cards lift 3px, buttons press to 0.98, table rows highlight, chips give a small press, and a 2px scroll-progress bar runs along the top of long pages.
+- **Quick search** (`quicksearch.js`): Cmd/Ctrl+K or the header's Search button finds companies, investors, coalitions, people, labs, sections and views, and goes straight there.
+- **Phones:** ordinary tables become stacked cards labelled from their column headers. The heatmap, fund votes, Lab pathways routes and the network list keep their own layouts.
+
+Not built from the brief, by owner decision: off-white background, serif headings, and a nav that hides entirely on scroll.
+
+## Other additions (2026-11-26)
+
+- **Lab pathways:** two-step routes (company → company → lab, both ties sourced) and investors holding the companies tied to the chosen lab (latest Form 13F; "a holding is not a vote or a filing").
+- **Network:** direct engagements list their steps (date, what happened, source, page; "reported by the investor") and have a key entry; the path finder switches to the view that holds a route.
+- **Laws and rules:** lane names stay pinned while the chart scrolls.
+- **How fund families voted:** a pass-through voting table ("No program found on the pages checked" for null, never "no").
+- **Tables:** `aria-sort` only on the sorted column.

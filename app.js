@@ -4,7 +4,7 @@
 // Audience: shareholder-advocacy practitioners. Labels are plain; no definitions or explainers.
 
 const DATA = {};
-const FILES = ["site", "companies", "upcoming", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph", "scorecard", "fund_votes", "asks", "coverage", "value_chain", "holdings"];
+const FILES = ["site", "companies", "upcoming", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph", "scorecard", "fund_votes", "asks", "coverage", "value_chain", "holdings", "pass_through_voting"];
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
@@ -61,7 +61,8 @@ function sortableTable(cols, rows, state, rowAttrs = () => "") {
     const active = c.key === state.key;
     const sort = active ? (state.dir === "asc" ? "ascending" : "descending") : "none";
     const arrow = active ? (state.dir === "asc" ? "↑" : "↓") : "↕";
-    return `<th scope="col" aria-sort="${sort}"${c.cls ? ` class="${c.cls}"` : ""}><button type="button" class="th-sort" data-sort="${esc(c.key)}">${esc(c.label)} <span aria-hidden="true">${arrow}</span></button></th>`;
+    // aria-sort only on the column the table is sorted by (on every column it reads as noise).
+    return `<th scope="col"${active ? ` aria-sort="${sort}"` : ""}${c.cls ? ` class="${c.cls}"` : ""}><button type="button" class="th-sort" data-sort="${esc(c.key)}">${esc(c.label)} <span aria-hidden="true">${arrow}</span></button></th>`;
   }).join("");
   const body = sorted.map((r) => `<tr ${rowAttrs(r)}>${cols.map((c) => `<td${c.cls ? ` class="${c.cls}"` : ""}>${c.render(r)}</td>`).join("")}</tr>`).join("");
   return `<table><thead><tr>${head}</tr></thead><tbody>${body || `<tr><td colspan="${cols.length}">No matches.</td></tr>`}</tbody></table>`;
@@ -819,7 +820,7 @@ async function main() {
   window.renderCausality(DATA.causality);
   if (window.renderValueChain) window.renderValueChain(DATA.value_chain, DATA.companies);
   window.renderScorecard(DATA.scorecard);
-  window.renderVotes(DATA.fund_votes, DATA.proposals);
+  window.renderVotes(DATA.fund_votes, DATA.proposals, DATA.pass_through_voting);
   renderPeople();
   renderNew();
   renderStart(); // again, now that the weekly SEC check (changes, tracking) has loaded
