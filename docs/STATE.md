@@ -2,6 +2,23 @@
 
 Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25.
 
+## Sessions and branches (read this first; updated 2026-11-25 by the data session)
+
+**The live site is `main`**, published to https://sophiaquinlanware.github.io/shareholder-advocacy-ai-landscape/ on every push. Anything not on `main` is not on the site. As of `e95c5b1` the live site has: the blue-green restyle (round 1), the **Fund votes** tab (`votes.js`, section `#tab-votes`, tab `data-tab="votes"`), the disclosure scorecard, and sourced status reasons for withdrawn/excluded proposals.
+
+| Session | Owns | Branch | State |
+|---|---|---|---|
+| Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | `data/company-universe` (open) | Company universe (60 companies, owner kept all) in cleanup; plan reviewed and revised once. Not merged. |
+| UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, the view JS files, `DESIGN.md` | `design/round2-structure` (open, work in progress) | Round 2 structure: ten task-led tabs, white/black/blue look. **Not merged, so not live.** Also a private Claude Design canvas with mockups, which is not the site. |
+| Protocol setup | `AGENTS.md`, `CLAUDE.md`, checks, `docs/` structure | `docs-session-onboarding` (local) | Idle. |
+
+**Before `design/round2-structure` merges** (it branched before the Fund votes merge and is 16 commits behind `main`):
+1. Merge `main` into it first (rule 17) and run `npm run check`.
+2. **Tab id collision:** round 2's "Upcoming votes" tab uses `data-tab="votes"` / `#tab-votes`, which the live Fund votes tab already uses (`votes.js` draws into `#tab-votes`). Keep the Fund votes tab (owner-approved and published). Suggested: give Fund votes `data-tab="fundvotes"` / `#tab-fundvotes` and change the one `getElementById("tab-votes")` in `votes.js`; or rename Upcoming votes. Either way, both tabs must survive the merge.
+3. Tabs on `main` that round 2 drops or renames ("Why now", "How you can weigh in", "Data center water", "Fund votes") need an explicit decision in the round 2 plan, quoting the owner.
+
+**Data contract between sessions:** views read only `data/*.json`. Company fields agreed for the universe: `sectors`, `engagement_basis` {text,url} (labelled "Why included"), `basis_type`, `shareholder_route` + `route_source_url`, `rights_tracked`, `source_note`. Proposal fields: `status_reason`, `status_source_url`, `proponent`, `meeting_date_source`, `results_note`.
+
 ## Phase
 
 The **blue-green restyle, round 1 of 2 (colour and type only)**, is merged to `main` (plan: docs/plans/2026-11-25-blue-green-restyle.md). It covers:
