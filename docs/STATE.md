@@ -84,12 +84,11 @@ Plan: docs/plans/2026-11-25-lens-phase1.md (Revision 2, plus Build notes).
 
 ## Queue (found, not picked up)
 
-1. **Fund votes follow-ups.**
-   - (a) 14 near-miss votes sit in `data/fund_votes.json` `near_misses` for a person to confirm.
-   - (b) Meta 2026 "AI data usage oversight" is held back.
-   - (c) Peer families are not reviewed row by row.
+1. **Fund votes follow-ups.** Fund votes now cover all 29 US-proxy companies (331 rows).
+   - (a) 18 near-miss votes sit in `data/fund_votes.json` `near_misses` for a person to confirm.
+   - (b) Meta 2026 Item 3 stays "Needs checking": the proxy shows Items 3 and 11 are distinct AI-data proposals that some fund filings describe the same way (reason in `held_back_reasons`).
+   - (c) Peer families are not reviewed row by row (shown with †).
    - (d) Praxis and Domini 2025-26 file N-PX as text only.
-   - (e) The data accuracy R2 fixes there were not re-reviewed.
 2. **Secondary sources for status reasons:** the Amazon and Apple withdrawal/exclusion reasons cite minerva.info. PRODUCT.md Never claim 4 prefers primary sources (SEC no-action letter or proxy).
 3. **Performance under 80:** the remaining cost is the Google Fonts and data request chain and the 306 KB `graph.json`. Options: self-host Inter, preload the first data files, split graph.json. These change how the page loads, so they're for the owner to decide.
 4. **Causality time scale:** most events fall in 2025–26. A piecewise time scale would give them more room.
