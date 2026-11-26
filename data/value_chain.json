@@ -596,6 +596,10 @@
     "AI governance & oversight": 7
    },
    "median_support_pct": 12.3,
+   "median_support_base": {
+    "with_recorded_support": 30,
+    "proposals": 35
+   },
    "asks_made": [
     {
      "company": "AMZN",
@@ -685,6 +689,7 @@
     "listed outside the US": 1,
     "private": 1
    },
+   "active_filers_count": 39,
    "active_filers": [
     {
      "id": "share",
@@ -766,9 +771,19 @@
    ],
    "people": [
     {
+     "id": "person-aaron-acosta",
+     "name": "Aaron Acosta",
+     "org": "Investor Advocates for Social Justice (IASJ)"
+    },
+    {
      "id": "person-amy-orr",
      "name": "Amy Orr",
      "org": "Boston Common Asset Management"
+    },
+    {
+     "id": "person-anders-schelde",
+     "name": "Anders Schelde",
+     "org": "AkademikerPension"
     },
     {
      "id": "person-andrea-ranger",
@@ -781,6 +796,16 @@
      "org": "As You Sow"
     },
     {
+     "id": "person-angele-nsenga",
+     "name": "Angèle Nsenga",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-annie-sanders",
+     "name": "Annie Sanders",
+     "org": "Green Century Capital Management"
+    },
+    {
      "id": "person-audrey-mocle",
      "name": "Audrey Mocle",
      "org": "Open MIC"
@@ -791,9 +816,34 @@
      "org": "AFL-CIO Office of Investment"
     },
     {
+     "id": "person-brianna-harrington",
+     "name": "Brianna Harrington",
+     "org": "Harrington Investments"
+    },
+    {
+     "id": "person-caroline-boden",
+     "name": "Caroline Boden",
+     "org": "Mercy Investment Services"
+    },
+    {
      "id": "person-christina-oconnell",
      "name": "Christina O'Connell",
      "org": "Ekō"
+    },
+    {
+     "id": "person-christopher-richardson",
+     "name": "Christopher Richardson",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-cole-genge",
+     "name": "Cole Genge",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-conrad-mackerron",
+     "name": "Conrad MacKerron",
+     "org": "As You Sow"
     },
     {
      "id": "person-danielle-fugere",
@@ -801,9 +851,59 @@
      "org": "As You Sow"
     },
     {
+     "id": "person-dolapo-makinde",
+     "name": "Dolapo Makinde",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-duane-roberts",
+     "name": "Duane Roberts, CFA",
+     "org": "Dana Investment Advisors"
+    },
+    {
+     "id": "person-edmond-ho",
+     "name": "Edmond Ho",
+     "org": "Vancity Investment Management"
+    },
+    {
      "id": "person-emma-ruby-sachs",
      "name": "Emma Ruby-Sachs",
      "org": "Ekō"
+    },
+    {
+     "id": "person-eric-pedersen",
+     "name": "Eric Pedersen",
+     "org": "Nordea Asset Management"
+    },
+    {
+     "id": "person-gillian-lai",
+     "name": "Gillian Lai",
+     "org": "Vancity Investment Management"
+    },
+    {
+     "id": "person-gina-haas",
+     "name": "Gina Haas",
+     "org": "American Baptist Home Mission Societies (ABHMS)"
+    },
+    {
+     "id": "person-giovanna-eichner",
+     "name": "Giovanna Eichner",
+     "org": "Green Century Capital Management"
+    },
+    {
+     "id": "person-hyewon-han",
+     "name": "Hyewon Han",
+     "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-jens-skancke-presthus",
+     "name": "Jens Skancke Presthus",
+     "org": "KLP"
+    },
+    {
+     "id": "person-john-harrington",
+     "name": "John Harrington",
+     "org": "Harrington Investments"
     },
     {
      "id": "person-jonas-kron",
@@ -816,6 +916,11 @@
      "org": "Azzad Asset Management"
     },
     {
+     "id": "person-juana-lee",
+     "name": "Juana Lee",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
      "id": "person-julia-cedarholm",
      "name": "Julia Cedarholm",
      "org": "Arjuna Capital"
@@ -826,6 +931,36 @@
      "org": "NorthStar Asset Management"
     },
     {
+     "id": "person-katarina-hammar",
+     "name": "Katarina Hammar",
+     "org": "Nordea Asset Management"
+    },
+    {
+     "id": "person-kate-monahan",
+     "name": "Kate Monahan",
+     "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-katie-mccloskey",
+     "name": "Katie McCloskey",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-kelly-poole",
+     "name": "Kelly Poole",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-kevin-thomas",
+     "name": "Kevin Thomas",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-kiran-aziz",
+     "name": "Kiran Aziz",
+     "org": "KLP"
+    },
+    {
      "id": "person-lauren-compere",
      "name": "Lauren Compere",
      "org": "Boston Common Asset Management"
@@ -834,6 +969,16 @@
      "id": "person-lydia-kuykendal",
      "name": "Lydia Kuykendal",
      "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-madison-krieger",
+     "name": "Madison Krieger",
+     "org": "NorthStar Asset Management"
+    },
+    {
+     "id": "person-magdalena-kettis",
+     "name": "Magdalena Kettis",
+     "org": "Nordea Asset Management"
     },
     {
      "id": "person-marcela-pinilla",
@@ -851,6 +996,11 @@
      "org": "Open MIC"
     },
     {
+     "id": "person-morrigan-simpson-marran",
+     "name": "Morrigan Simpson-Marran",
+     "org": "Vancity Investment Management"
+    },
+    {
      "id": "person-natasha-lamb",
      "name": "Natasha Lamb",
      "org": "Arjuna Capital"
@@ -859,6 +1009,46 @@
      "id": "person-richard-butters",
      "name": "Richard Butters",
      "org": "Aviva Investors"
+    },
+    {
+     "id": "person-rikke-berg-jacobsen",
+     "name": "Rikke Berg Jacobsen",
+     "org": "AkademikerPension"
+    },
+    {
+     "id": "person-ruthly-cadestin",
+     "name": "Ruthly Cadestin",
+     "org": "Investor Advocates for Social Justice (IASJ)"
+    },
+    {
+     "id": "person-sarah-couturier-tanoh",
+     "name": "Sarah Couturier-Tanoh",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-seamus-finn",
+     "name": "Rev. Seamus Finn, OMI",
+     "org": "Missionary Oblates of Mary Immaculate, U.S. Province"
+    },
+    {
+     "id": "person-serena-chan",
+     "name": "Serena Chan",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-susan-francois",
+     "name": "Susan Francois, CSJP",
+     "org": "Congregation of the Sisters of St. Joseph of Peace"
+    },
+    {
+     "id": "person-tatiana-parrott",
+     "name": "Tatiana Parrott",
+     "org": "Vancity Investment Management"
+    },
+    {
+     "id": "person-tim-schwarzenberger",
+     "name": "Tim Schwarzenberger",
+     "org": "Inspire Investing"
     },
     {
      "id": "person-whitney-nguyen",
@@ -902,6 +1092,10 @@
     "AI governance & oversight": 1
    },
    "median_support_pct": 10.1,
+   "median_support_base": {
+    "with_recorded_support": 16,
+    "proposals": 16
+   },
    "asks_made": [
     {
      "company": "DLR",
@@ -984,6 +1178,7 @@
    "shareholder_routes": {
     "US proxy rules apply": 6
    },
+   "active_filers_count": 20,
    "active_filers": [
     {
      "id": "as-you-sow",
@@ -1075,9 +1270,29 @@
      "org": "Open MIC"
     },
     {
+     "id": "person-caroline-boden",
+     "name": "Caroline Boden",
+     "org": "Mercy Investment Services"
+    },
+    {
      "id": "person-christina-oconnell",
      "name": "Christina O'Connell",
      "org": "Ekō"
+    },
+    {
+     "id": "person-christopher-richardson",
+     "name": "Christopher Richardson",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-cole-genge",
+     "name": "Cole Genge",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-conrad-mackerron",
+     "name": "Conrad MacKerron",
+     "org": "As You Sow"
     },
     {
      "id": "person-danielle-fugere",
@@ -1085,9 +1300,19 @@
      "org": "As You Sow"
     },
     {
+     "id": "person-duane-roberts",
+     "name": "Duane Roberts, CFA",
+     "org": "Dana Investment Advisors"
+    },
+    {
      "id": "person-emma-ruby-sachs",
      "name": "Emma Ruby-Sachs",
      "org": "Ekō"
+    },
+    {
+     "id": "person-jamie-bonham",
+     "name": "Jamie Bonham",
+     "org": "NEI Investments"
     },
     {
      "id": "person-julia-cedarholm",
@@ -1105,9 +1330,34 @@
      "org": "Storebrand Asset Management"
     },
     {
+     "id": "person-katie-carter",
+     "name": "Katie Carter",
+     "org": "Presbyterian Church (U.S.A.), Mission Responsibility Through Investment (MRTI)"
+    },
+    {
+     "id": "person-katie-mccloskey",
+     "name": "Katie McCloskey",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-kelly-poole",
+     "name": "Kelly Poole",
+     "org": "As You Sow"
+    },
+    {
      "id": "person-lydia-kuykendal",
      "name": "Lydia Kuykendal",
      "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-madison-krieger",
+     "name": "Madison Krieger",
+     "org": "NorthStar Asset Management"
+    },
+    {
+     "id": "person-marilin-llanes",
+     "name": "Sister Marilin M. Llanes, OP",
+     "org": "Adrian Dominican Sisters"
     },
     {
      "id": "person-mary-minette",
@@ -1128,6 +1378,26 @@
      "id": "person-natasha-lamb",
      "name": "Natasha Lamb",
      "org": "Arjuna Capital"
+    },
+    {
+     "id": "person-seamus-finn",
+     "name": "Rev. Seamus Finn, OMI",
+     "org": "Missionary Oblates of Mary Immaculate, U.S. Province"
+    },
+    {
+     "id": "person-simon-doong",
+     "name": "Simon Doong",
+     "org": "Presbyterian Church (U.S.A.), Mission Responsibility Through Investment (MRTI)"
+    },
+    {
+     "id": "person-timnit-ghermay",
+     "name": "Timnit Ghermay",
+     "org": "Intercommunity Peace & Justice Center (IPJC)"
+    },
+    {
+     "id": "person-tulia-machado-helland",
+     "name": "Tulia Machado-Helland",
+     "org": "Storebrand Asset Management"
     },
     {
      "id": "person-whitney-nguyen",
@@ -1164,6 +1434,10 @@
     "AI governance & oversight": 9
    },
    "median_support_pct": 13.2,
+   "median_support_base": {
+    "with_recorded_support": 40,
+    "proposals": 46
+   },
    "asks_made": [
     {
      "company": "AMZN",
@@ -1249,6 +1523,7 @@
     "US-listed foreign issuer": 2,
     "private": 1
    },
+   "active_filers_count": 41,
    "active_filers": [
     {
      "id": "nlpc",
@@ -1330,9 +1605,19 @@
    ],
    "people": [
     {
+     "id": "person-aaron-acosta",
+     "name": "Aaron Acosta",
+     "org": "Investor Advocates for Social Justice (IASJ)"
+    },
+    {
      "id": "person-amy-orr",
      "name": "Amy Orr",
      "org": "Boston Common Asset Management"
+    },
+    {
+     "id": "person-anders-schelde",
+     "name": "Anders Schelde",
+     "org": "AkademikerPension"
     },
     {
      "id": "person-andrea-ranger",
@@ -1345,6 +1630,11 @@
      "org": "As You Sow"
     },
     {
+     "id": "person-angele-nsenga",
+     "name": "Angèle Nsenga",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
      "id": "person-audrey-mocle",
      "name": "Audrey Mocle",
      "org": "Open MIC"
@@ -1355,9 +1645,34 @@
      "org": "AFL-CIO Office of Investment"
     },
     {
+     "id": "person-brianna-harrington",
+     "name": "Brianna Harrington",
+     "org": "Harrington Investments"
+    },
+    {
+     "id": "person-caroline-boden",
+     "name": "Caroline Boden",
+     "org": "Mercy Investment Services"
+    },
+    {
      "id": "person-christina-oconnell",
      "name": "Christina O'Connell",
      "org": "Ekō"
+    },
+    {
+     "id": "person-christopher-richardson",
+     "name": "Christopher Richardson",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-cole-genge",
+     "name": "Cole Genge",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-conrad-mackerron",
+     "name": "Conrad MacKerron",
+     "org": "As You Sow"
     },
     {
      "id": "person-danielle-fugere",
@@ -1365,9 +1680,54 @@
      "org": "As You Sow"
     },
     {
+     "id": "person-dolapo-makinde",
+     "name": "Dolapo Makinde",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-duane-roberts",
+     "name": "Duane Roberts, CFA",
+     "org": "Dana Investment Advisors"
+    },
+    {
+     "id": "person-edmond-ho",
+     "name": "Edmond Ho",
+     "org": "Vancity Investment Management"
+    },
+    {
      "id": "person-emma-ruby-sachs",
      "name": "Emma Ruby-Sachs",
      "org": "Ekō"
+    },
+    {
+     "id": "person-eric-pedersen",
+     "name": "Eric Pedersen",
+     "org": "Nordea Asset Management"
+    },
+    {
+     "id": "person-gillian-lai",
+     "name": "Gillian Lai",
+     "org": "Vancity Investment Management"
+    },
+    {
+     "id": "person-gina-haas",
+     "name": "Gina Haas",
+     "org": "American Baptist Home Mission Societies (ABHMS)"
+    },
+    {
+     "id": "person-hyewon-han",
+     "name": "Hyewon Han",
+     "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-jens-skancke-presthus",
+     "name": "Jens Skancke Presthus",
+     "org": "KLP"
+    },
+    {
+     "id": "person-john-harrington",
+     "name": "John Harrington",
+     "org": "Harrington Investments"
     },
     {
      "id": "person-jonas-kron",
@@ -1380,6 +1740,11 @@
      "org": "Azzad Asset Management"
     },
     {
+     "id": "person-juana-lee",
+     "name": "Juana Lee",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
      "id": "person-julia-cedarholm",
      "name": "Julia Cedarholm",
      "org": "Arjuna Capital"
@@ -1390,6 +1755,36 @@
      "org": "NorthStar Asset Management"
     },
     {
+     "id": "person-katarina-hammar",
+     "name": "Katarina Hammar",
+     "org": "Nordea Asset Management"
+    },
+    {
+     "id": "person-kate-monahan",
+     "name": "Kate Monahan",
+     "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-katie-mccloskey",
+     "name": "Katie McCloskey",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-kelly-poole",
+     "name": "Kelly Poole",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-kevin-thomas",
+     "name": "Kevin Thomas",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-kiran-aziz",
+     "name": "Kiran Aziz",
+     "org": "KLP"
+    },
+    {
      "id": "person-lauren-compere",
      "name": "Lauren Compere",
      "org": "Boston Common Asset Management"
@@ -1398,6 +1793,16 @@
      "id": "person-lydia-kuykendal",
      "name": "Lydia Kuykendal",
      "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-madison-krieger",
+     "name": "Madison Krieger",
+     "org": "NorthStar Asset Management"
+    },
+    {
+     "id": "person-magdalena-kettis",
+     "name": "Magdalena Kettis",
+     "org": "Nordea Asset Management"
     },
     {
      "id": "person-marcela-pinilla",
@@ -1415,6 +1820,11 @@
      "org": "Open MIC"
     },
     {
+     "id": "person-morrigan-simpson-marran",
+     "name": "Morrigan Simpson-Marran",
+     "org": "Vancity Investment Management"
+    },
+    {
      "id": "person-natasha-lamb",
      "name": "Natasha Lamb",
      "org": "Arjuna Capital"
@@ -1423,6 +1833,46 @@
      "id": "person-richard-butters",
      "name": "Richard Butters",
      "org": "Aviva Investors"
+    },
+    {
+     "id": "person-rikke-berg-jacobsen",
+     "name": "Rikke Berg Jacobsen",
+     "org": "AkademikerPension"
+    },
+    {
+     "id": "person-ruthly-cadestin",
+     "name": "Ruthly Cadestin",
+     "org": "Investor Advocates for Social Justice (IASJ)"
+    },
+    {
+     "id": "person-sarah-couturier-tanoh",
+     "name": "Sarah Couturier-Tanoh",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-seamus-finn",
+     "name": "Rev. Seamus Finn, OMI",
+     "org": "Missionary Oblates of Mary Immaculate, U.S. Province"
+    },
+    {
+     "id": "person-serena-chan",
+     "name": "Serena Chan",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-susan-francois",
+     "name": "Susan Francois, CSJP",
+     "org": "Congregation of the Sisters of St. Joseph of Peace"
+    },
+    {
+     "id": "person-tatiana-parrott",
+     "name": "Tatiana Parrott",
+     "org": "Vancity Investment Management"
+    },
+    {
+     "id": "person-tim-schwarzenberger",
+     "name": "Tim Schwarzenberger",
+     "org": "Inspire Investing"
     },
     {
      "id": "person-whitney-nguyen",
@@ -1468,6 +1918,10 @@
     "Data center impacts": 6
    },
    "median_support_pct": 8.8,
+   "median_support_base": {
+    "with_recorded_support": 32,
+    "proposals": 33
+   },
    "asks_made": [
     {
      "company": "GOOGL",
@@ -1573,6 +2027,7 @@
     "not determined": 3,
     "private": 9
    },
+   "active_filers_count": 39,
    "active_filers": [
     {
      "id": "mercy",
@@ -1659,6 +2114,11 @@
      "org": "Boston Common Asset Management"
     },
     {
+     "id": "person-anders-schelde",
+     "name": "Anders Schelde",
+     "org": "AkademikerPension"
+    },
+    {
      "id": "person-andrea-ranger",
      "name": "Andrea Ranger",
      "org": "Trillium Asset Management"
@@ -1669,9 +2129,24 @@
      "org": "As You Sow"
     },
     {
+     "id": "person-angele-nsenga",
+     "name": "Angèle Nsenga",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
      "id": "person-audrey-mocle",
      "name": "Audrey Mocle",
      "org": "Open MIC"
+    },
+    {
+     "id": "person-brianna-harrington",
+     "name": "Brianna Harrington",
+     "org": "Harrington Investments"
+    },
+    {
+     "id": "person-caroline-boden",
+     "name": "Caroline Boden",
+     "org": "Mercy Investment Services"
     },
     {
      "id": "person-christina-oconnell",
@@ -1679,9 +2154,39 @@
      "org": "Ekō"
     },
     {
+     "id": "person-christopher-richardson",
+     "name": "Christopher Richardson",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-cole-genge",
+     "name": "Cole Genge",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-conrad-mackerron",
+     "name": "Conrad MacKerron",
+     "org": "As You Sow"
+    },
+    {
      "id": "person-danielle-fugere",
      "name": "Danielle Fugere",
      "org": "As You Sow"
+    },
+    {
+     "id": "person-dolapo-makinde",
+     "name": "Dolapo Makinde",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-duane-roberts",
+     "name": "Duane Roberts, CFA",
+     "org": "Dana Investment Advisors"
+    },
+    {
+     "id": "person-edmond-ho",
+     "name": "Edmond Ho",
+     "org": "Vancity Investment Management"
     },
     {
      "id": "person-emma-ruby-sachs",
@@ -1689,9 +2194,44 @@
      "org": "Ekō"
     },
     {
+     "id": "person-eric-pedersen",
+     "name": "Eric Pedersen",
+     "org": "Nordea Asset Management"
+    },
+    {
+     "id": "person-gillian-lai",
+     "name": "Gillian Lai",
+     "org": "Vancity Investment Management"
+    },
+    {
+     "id": "person-hyewon-han",
+     "name": "Hyewon Han",
+     "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-jamie-bonham",
+     "name": "Jamie Bonham",
+     "org": "NEI Investments"
+    },
+    {
+     "id": "person-jens-skancke-presthus",
+     "name": "Jens Skancke Presthus",
+     "org": "KLP"
+    },
+    {
+     "id": "person-john-harrington",
+     "name": "John Harrington",
+     "org": "Harrington Investments"
+    },
+    {
      "id": "person-jonas-kron",
      "name": "Jonas Kron",
      "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-juana-lee",
+     "name": "Juana Lee",
+     "org": "SHARE (Shareholder Association for Research and Education)"
     },
     {
      "id": "person-julia-cedarholm",
@@ -1704,6 +2244,41 @@
      "org": "Storebrand Asset Management"
     },
     {
+     "id": "person-katarina-hammar",
+     "name": "Katarina Hammar",
+     "org": "Nordea Asset Management"
+    },
+    {
+     "id": "person-kate-monahan",
+     "name": "Kate Monahan",
+     "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-katie-carter",
+     "name": "Katie Carter",
+     "org": "Presbyterian Church (U.S.A.), Mission Responsibility Through Investment (MRTI)"
+    },
+    {
+     "id": "person-katie-mccloskey",
+     "name": "Katie McCloskey",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-kelly-poole",
+     "name": "Kelly Poole",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-kevin-thomas",
+     "name": "Kevin Thomas",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-kiran-aziz",
+     "name": "Kiran Aziz",
+     "org": "KLP"
+    },
+    {
      "id": "person-lauren-compere",
      "name": "Lauren Compere",
      "org": "Boston Common Asset Management"
@@ -1714,9 +2289,19 @@
      "org": "Mercy Investment Services"
     },
     {
+     "id": "person-magdalena-kettis",
+     "name": "Magdalena Kettis",
+     "org": "Nordea Asset Management"
+    },
+    {
      "id": "person-marcela-pinilla",
      "name": "Marcela Pinilla",
      "org": "Zevin Asset Management"
+    },
+    {
+     "id": "person-marilin-llanes",
+     "name": "Sister Marilin M. Llanes, OP",
+     "org": "Adrian Dominican Sisters"
     },
     {
      "id": "person-mary-minette",
@@ -1734,6 +2319,11 @@
      "org": "Proxy Impact"
     },
     {
+     "id": "person-morrigan-simpson-marran",
+     "name": "Morrigan Simpson-Marran",
+     "org": "Vancity Investment Management"
+    },
+    {
      "id": "person-natasha-lamb",
      "name": "Natasha Lamb",
      "org": "Arjuna Capital"
@@ -1742,6 +2332,51 @@
      "id": "person-richard-butters",
      "name": "Richard Butters",
      "org": "Aviva Investors"
+    },
+    {
+     "id": "person-rikke-berg-jacobsen",
+     "name": "Rikke Berg Jacobsen",
+     "org": "AkademikerPension"
+    },
+    {
+     "id": "person-sarah-couturier-tanoh",
+     "name": "Sarah Couturier-Tanoh",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-seamus-finn",
+     "name": "Rev. Seamus Finn, OMI",
+     "org": "Missionary Oblates of Mary Immaculate, U.S. Province"
+    },
+    {
+     "id": "person-serena-chan",
+     "name": "Serena Chan",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-simon-doong",
+     "name": "Simon Doong",
+     "org": "Presbyterian Church (U.S.A.), Mission Responsibility Through Investment (MRTI)"
+    },
+    {
+     "id": "person-tatiana-parrott",
+     "name": "Tatiana Parrott",
+     "org": "Vancity Investment Management"
+    },
+    {
+     "id": "person-tim-schwarzenberger",
+     "name": "Tim Schwarzenberger",
+     "org": "Inspire Investing"
+    },
+    {
+     "id": "person-timnit-ghermay",
+     "name": "Timnit Ghermay",
+     "org": "Intercommunity Peace & Justice Center (IPJC)"
+    },
+    {
+     "id": "person-tulia-machado-helland",
+     "name": "Tulia Machado-Helland",
+     "org": "Storebrand Asset Management"
     }
    ]
   },
@@ -1775,6 +2410,10 @@
     "AI governance & oversight": 10
    },
    "median_support_pct": 13.8,
+   "median_support_base": {
+    "with_recorded_support": 42,
+    "proposals": 49
+   },
    "asks_made": [
     {
      "company": "AMZN",
@@ -1858,6 +2497,7 @@
     "US proxy rules apply": 5,
     "listed outside the US": 1
    },
+   "active_filers_count": 43,
    "active_filers": [
     {
      "id": "nlpc",
@@ -1939,9 +2579,19 @@
    ],
    "people": [
     {
+     "id": "person-aaron-acosta",
+     "name": "Aaron Acosta",
+     "org": "Investor Advocates for Social Justice (IASJ)"
+    },
+    {
      "id": "person-amy-orr",
      "name": "Amy Orr",
      "org": "Boston Common Asset Management"
+    },
+    {
+     "id": "person-anders-schelde",
+     "name": "Anders Schelde",
+     "org": "AkademikerPension"
     },
     {
      "id": "person-andrea-ranger",
@@ -1954,6 +2604,16 @@
      "org": "As You Sow"
     },
     {
+     "id": "person-angele-nsenga",
+     "name": "Angèle Nsenga",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-annie-sanders",
+     "name": "Annie Sanders",
+     "org": "Green Century Capital Management"
+    },
+    {
      "id": "person-audrey-mocle",
      "name": "Audrey Mocle",
      "org": "Open MIC"
@@ -1964,9 +2624,34 @@
      "org": "AFL-CIO Office of Investment"
     },
     {
+     "id": "person-brianna-harrington",
+     "name": "Brianna Harrington",
+     "org": "Harrington Investments"
+    },
+    {
+     "id": "person-caroline-boden",
+     "name": "Caroline Boden",
+     "org": "Mercy Investment Services"
+    },
+    {
      "id": "person-christina-oconnell",
      "name": "Christina O'Connell",
      "org": "Ekō"
+    },
+    {
+     "id": "person-christopher-richardson",
+     "name": "Christopher Richardson",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-cole-genge",
+     "name": "Cole Genge",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-conrad-mackerron",
+     "name": "Conrad MacKerron",
+     "org": "As You Sow"
     },
     {
      "id": "person-danielle-fugere",
@@ -1974,9 +2659,59 @@
      "org": "As You Sow"
     },
     {
+     "id": "person-dolapo-makinde",
+     "name": "Dolapo Makinde",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-duane-roberts",
+     "name": "Duane Roberts, CFA",
+     "org": "Dana Investment Advisors"
+    },
+    {
+     "id": "person-edmond-ho",
+     "name": "Edmond Ho",
+     "org": "Vancity Investment Management"
+    },
+    {
      "id": "person-emma-ruby-sachs",
      "name": "Emma Ruby-Sachs",
      "org": "Ekō"
+    },
+    {
+     "id": "person-eric-pedersen",
+     "name": "Eric Pedersen",
+     "org": "Nordea Asset Management"
+    },
+    {
+     "id": "person-gillian-lai",
+     "name": "Gillian Lai",
+     "org": "Vancity Investment Management"
+    },
+    {
+     "id": "person-gina-haas",
+     "name": "Gina Haas",
+     "org": "American Baptist Home Mission Societies (ABHMS)"
+    },
+    {
+     "id": "person-giovanna-eichner",
+     "name": "Giovanna Eichner",
+     "org": "Green Century Capital Management"
+    },
+    {
+     "id": "person-hyewon-han",
+     "name": "Hyewon Han",
+     "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-jens-skancke-presthus",
+     "name": "Jens Skancke Presthus",
+     "org": "KLP"
+    },
+    {
+     "id": "person-john-harrington",
+     "name": "John Harrington",
+     "org": "Harrington Investments"
     },
     {
      "id": "person-jonas-kron",
@@ -1989,6 +2724,11 @@
      "org": "Azzad Asset Management"
     },
     {
+     "id": "person-juana-lee",
+     "name": "Juana Lee",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
      "id": "person-julia-cedarholm",
      "name": "Julia Cedarholm",
      "org": "Arjuna Capital"
@@ -1999,6 +2739,36 @@
      "org": "NorthStar Asset Management"
     },
     {
+     "id": "person-katarina-hammar",
+     "name": "Katarina Hammar",
+     "org": "Nordea Asset Management"
+    },
+    {
+     "id": "person-kate-monahan",
+     "name": "Kate Monahan",
+     "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-katie-mccloskey",
+     "name": "Katie McCloskey",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-kelly-poole",
+     "name": "Kelly Poole",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-kevin-thomas",
+     "name": "Kevin Thomas",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-kiran-aziz",
+     "name": "Kiran Aziz",
+     "org": "KLP"
+    },
+    {
      "id": "person-lauren-compere",
      "name": "Lauren Compere",
      "org": "Boston Common Asset Management"
@@ -2007,6 +2777,16 @@
      "id": "person-lydia-kuykendal",
      "name": "Lydia Kuykendal",
      "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-madison-krieger",
+     "name": "Madison Krieger",
+     "org": "NorthStar Asset Management"
+    },
+    {
+     "id": "person-magdalena-kettis",
+     "name": "Magdalena Kettis",
+     "org": "Nordea Asset Management"
     },
     {
      "id": "person-marcela-pinilla",
@@ -2024,6 +2804,11 @@
      "org": "Open MIC"
     },
     {
+     "id": "person-morrigan-simpson-marran",
+     "name": "Morrigan Simpson-Marran",
+     "org": "Vancity Investment Management"
+    },
+    {
      "id": "person-natasha-lamb",
      "name": "Natasha Lamb",
      "org": "Arjuna Capital"
@@ -2032,6 +2817,46 @@
      "id": "person-richard-butters",
      "name": "Richard Butters",
      "org": "Aviva Investors"
+    },
+    {
+     "id": "person-rikke-berg-jacobsen",
+     "name": "Rikke Berg Jacobsen",
+     "org": "AkademikerPension"
+    },
+    {
+     "id": "person-ruthly-cadestin",
+     "name": "Ruthly Cadestin",
+     "org": "Investor Advocates for Social Justice (IASJ)"
+    },
+    {
+     "id": "person-sarah-couturier-tanoh",
+     "name": "Sarah Couturier-Tanoh",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-seamus-finn",
+     "name": "Rev. Seamus Finn, OMI",
+     "org": "Missionary Oblates of Mary Immaculate, U.S. Province"
+    },
+    {
+     "id": "person-serena-chan",
+     "name": "Serena Chan",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-susan-francois",
+     "name": "Susan Francois, CSJP",
+     "org": "Congregation of the Sisters of St. Joseph of Peace"
+    },
+    {
+     "id": "person-tatiana-parrott",
+     "name": "Tatiana Parrott",
+     "org": "Vancity Investment Management"
+    },
+    {
+     "id": "person-tim-schwarzenberger",
+     "name": "Tim Schwarzenberger",
+     "org": "Inspire Investing"
     },
     {
      "id": "person-whitney-nguyen",
@@ -2070,6 +2895,10 @@
     "Data center impacts": 15
    },
    "median_support_pct": 12.4,
+   "median_support_base": {
+    "with_recorded_support": 61,
+    "proposals": 70
+   },
    "asks_made": [
     {
      "company": "AAPL",
@@ -2172,6 +3001,7 @@
     "listed outside the US": 4,
     "not determined": 6
    },
+   "active_filers_count": 51,
    "active_filers": [
     {
      "id": "nlpc",
@@ -2253,9 +3083,19 @@
    ],
    "people": [
     {
+     "id": "person-aaron-acosta",
+     "name": "Aaron Acosta",
+     "org": "Investor Advocates for Social Justice (IASJ)"
+    },
+    {
      "id": "person-amy-orr",
      "name": "Amy Orr",
      "org": "Boston Common Asset Management"
+    },
+    {
+     "id": "person-anders-schelde",
+     "name": "Anders Schelde",
+     "org": "AkademikerPension"
     },
     {
      "id": "person-andrea-ranger",
@@ -2268,6 +3108,11 @@
      "org": "As You Sow"
     },
     {
+     "id": "person-angele-nsenga",
+     "name": "Angèle Nsenga",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
      "id": "person-audrey-mocle",
      "name": "Audrey Mocle",
      "org": "Open MIC"
@@ -2278,9 +3123,34 @@
      "org": "AFL-CIO Office of Investment"
     },
     {
+     "id": "person-brianna-harrington",
+     "name": "Brianna Harrington",
+     "org": "Harrington Investments"
+    },
+    {
+     "id": "person-caroline-boden",
+     "name": "Caroline Boden",
+     "org": "Mercy Investment Services"
+    },
+    {
      "id": "person-christina-oconnell",
      "name": "Christina O'Connell",
      "org": "Ekō"
+    },
+    {
+     "id": "person-christopher-richardson",
+     "name": "Christopher Richardson",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-cole-genge",
+     "name": "Cole Genge",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-conrad-mackerron",
+     "name": "Conrad MacKerron",
+     "org": "As You Sow"
     },
     {
      "id": "person-danielle-fugere",
@@ -2288,9 +3158,59 @@
      "org": "As You Sow"
     },
     {
+     "id": "person-dolapo-makinde",
+     "name": "Dolapo Makinde",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-duane-roberts",
+     "name": "Duane Roberts, CFA",
+     "org": "Dana Investment Advisors"
+    },
+    {
+     "id": "person-edmond-ho",
+     "name": "Edmond Ho",
+     "org": "Vancity Investment Management"
+    },
+    {
      "id": "person-emma-ruby-sachs",
      "name": "Emma Ruby-Sachs",
      "org": "Ekō"
+    },
+    {
+     "id": "person-eric-pedersen",
+     "name": "Eric Pedersen",
+     "org": "Nordea Asset Management"
+    },
+    {
+     "id": "person-gillian-lai",
+     "name": "Gillian Lai",
+     "org": "Vancity Investment Management"
+    },
+    {
+     "id": "person-gina-haas",
+     "name": "Gina Haas",
+     "org": "American Baptist Home Mission Societies (ABHMS)"
+    },
+    {
+     "id": "person-hyewon-han",
+     "name": "Hyewon Han",
+     "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-jamie-bonham",
+     "name": "Jamie Bonham",
+     "org": "NEI Investments"
+    },
+    {
+     "id": "person-jens-skancke-presthus",
+     "name": "Jens Skancke Presthus",
+     "org": "KLP"
+    },
+    {
+     "id": "person-john-harrington",
+     "name": "John Harrington",
+     "org": "Harrington Investments"
     },
     {
      "id": "person-jonas-kron",
@@ -2301,6 +3221,11 @@
      "id": "person-joshua-brockwell",
      "name": "Joshua Brockwell",
      "org": "Azzad Asset Management"
+    },
+    {
+     "id": "person-juana-lee",
+     "name": "Juana Lee",
+     "org": "SHARE (Shareholder Association for Research and Education)"
     },
     {
      "id": "person-julia-cedarholm",
@@ -2318,6 +3243,41 @@
      "org": "Storebrand Asset Management"
     },
     {
+     "id": "person-katarina-hammar",
+     "name": "Katarina Hammar",
+     "org": "Nordea Asset Management"
+    },
+    {
+     "id": "person-kate-monahan",
+     "name": "Kate Monahan",
+     "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-katie-carter",
+     "name": "Katie Carter",
+     "org": "Presbyterian Church (U.S.A.), Mission Responsibility Through Investment (MRTI)"
+    },
+    {
+     "id": "person-katie-mccloskey",
+     "name": "Katie McCloskey",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-kelly-poole",
+     "name": "Kelly Poole",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-kevin-thomas",
+     "name": "Kevin Thomas",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-kiran-aziz",
+     "name": "Kiran Aziz",
+     "org": "KLP"
+    },
+    {
      "id": "person-lauren-compere",
      "name": "Lauren Compere",
      "org": "Boston Common Asset Management"
@@ -2328,9 +3288,24 @@
      "org": "Mercy Investment Services"
     },
     {
+     "id": "person-madison-krieger",
+     "name": "Madison Krieger",
+     "org": "NorthStar Asset Management"
+    },
+    {
+     "id": "person-magdalena-kettis",
+     "name": "Magdalena Kettis",
+     "org": "Nordea Asset Management"
+    },
+    {
      "id": "person-marcela-pinilla",
      "name": "Marcela Pinilla",
      "org": "Zevin Asset Management"
+    },
+    {
+     "id": "person-marilin-llanes",
+     "name": "Sister Marilin M. Llanes, OP",
+     "org": "Adrian Dominican Sisters"
     },
     {
      "id": "person-mary-minette",
@@ -2348,6 +3323,11 @@
      "org": "Proxy Impact"
     },
     {
+     "id": "person-morrigan-simpson-marran",
+     "name": "Morrigan Simpson-Marran",
+     "org": "Vancity Investment Management"
+    },
+    {
      "id": "person-natasha-lamb",
      "name": "Natasha Lamb",
      "org": "Arjuna Capital"
@@ -2356,6 +3336,61 @@
      "id": "person-richard-butters",
      "name": "Richard Butters",
      "org": "Aviva Investors"
+    },
+    {
+     "id": "person-rikke-berg-jacobsen",
+     "name": "Rikke Berg Jacobsen",
+     "org": "AkademikerPension"
+    },
+    {
+     "id": "person-ruthly-cadestin",
+     "name": "Ruthly Cadestin",
+     "org": "Investor Advocates for Social Justice (IASJ)"
+    },
+    {
+     "id": "person-sarah-couturier-tanoh",
+     "name": "Sarah Couturier-Tanoh",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-seamus-finn",
+     "name": "Rev. Seamus Finn, OMI",
+     "org": "Missionary Oblates of Mary Immaculate, U.S. Province"
+    },
+    {
+     "id": "person-serena-chan",
+     "name": "Serena Chan",
+     "org": "SHARE (Shareholder Association for Research and Education)"
+    },
+    {
+     "id": "person-simon-doong",
+     "name": "Simon Doong",
+     "org": "Presbyterian Church (U.S.A.), Mission Responsibility Through Investment (MRTI)"
+    },
+    {
+     "id": "person-susan-francois",
+     "name": "Susan Francois, CSJP",
+     "org": "Congregation of the Sisters of St. Joseph of Peace"
+    },
+    {
+     "id": "person-tatiana-parrott",
+     "name": "Tatiana Parrott",
+     "org": "Vancity Investment Management"
+    },
+    {
+     "id": "person-tim-schwarzenberger",
+     "name": "Tim Schwarzenberger",
+     "org": "Inspire Investing"
+    },
+    {
+     "id": "person-timnit-ghermay",
+     "name": "Timnit Ghermay",
+     "org": "Intercommunity Peace & Justice Center (IPJC)"
+    },
+    {
+     "id": "person-tulia-machado-helland",
+     "name": "Tulia Machado-Helland",
+     "org": "Storebrand Asset Management"
     },
     {
      "id": "person-whitney-nguyen",
