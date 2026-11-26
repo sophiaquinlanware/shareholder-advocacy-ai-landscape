@@ -6,6 +6,16 @@
    "layer": "companies",
    "label": "Microsoft",
    "ticker": "MSFT",
+   "sectors": [
+    "consumer AI",
+    "enterprise AI",
+    "data centers & compute",
+    "frontier lab"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "shareholder proposal",
+   "description": "2024: Proposals for reports on AI misinformation and AI data sourcing were on the proxy ballot (Arjuna Capital and co-filers; National Legal and Policy Center)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "exchange": "Nasdaq",
    "country": "US",
    "degree": 47
@@ -16,9 +26,38 @@
    "layer": "companies",
    "label": "Alphabet",
    "ticker": "GOOGL",
+   "sectors": [
+    "consumer AI",
+    "enterprise AI",
+    "data centers & compute",
+    "frontier lab"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "shareholder proposal",
+   "description": "2026: The proxy listed shareholder proposals on AI board oversight, AI data usage oversight, AI-generated misinformation and water use in AI development (Alphabet proxy statement)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "exchange": "Nasdaq",
    "country": "US",
    "degree": 42
+  },
+  {
+   "id": "co-META",
+   "type": "company",
+   "layer": "companies",
+   "label": "Meta",
+   "ticker": "META",
+   "sectors": [
+    "consumer AI",
+    "data centers & compute",
+    "frontier lab"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "shareholder proposal",
+   "description": "2026: Proposals on AI data usage oversight and a data protection impact assessment of generative AI chatbots were on the proxy ballot (Meta proxy statement)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
+   "exchange": "Nasdaq",
+   "country": "US",
+   "degree": 24
   },
   {
    "id": "co-AMZN",
@@ -26,6 +65,16 @@
    "layer": "companies",
    "label": "Amazon",
    "ticker": "AMZN",
+   "sectors": [
+    "consumer AI",
+    "enterprise AI",
+    "data centers & compute",
+    "frontier lab"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "shareholder proposal",
+   "description": "2025: Proposals asked for an assessment of board oversight of AI and a report on data usage oversight in AI offerings (Amazon proxy statement)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "exchange": "Nasdaq",
    "country": "US",
    "degree": 21
@@ -36,19 +85,18 @@
    "layer": "companies",
    "label": "Nvidia",
    "ticker": "NVDA",
+   "sectors": [
+    "enterprise AI",
+    "data centers & compute",
+    "frontier lab"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "investor engagement",
+   "description": "2024 to 2025: Parnassus engaged Nvidia with an investor group \"to disclose its human-rights policies and risk-management processes\" (Parnassus stewardship report)",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
    "exchange": "Nasdaq",
    "country": "US",
    "degree": 18
-  },
-  {
-   "id": "co-META",
-   "type": "company",
-   "layer": "companies",
-   "label": "Meta Platforms",
-   "ticker": "META",
-   "exchange": "Nasdaq",
-   "country": "US",
-   "degree": 24
   },
   {
    "id": "co-AAPL",
@@ -56,6 +104,13 @@
    "layer": "companies",
    "label": "Apple",
    "ticker": "AAPL",
+   "sectors": [
+    "consumer AI"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "shareholder proposal",
+   "description": "2025: Proposal No. 4 asked for a report on ethical AI data acquisition and usage (Apple proxy statement)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
    "exchange": "Nasdaq",
    "country": "US",
    "degree": 11
@@ -66,19 +121,370 @@
    "layer": "companies",
    "label": "Tesla",
    "ticker": "TSLA",
+   "sectors": [
+    "consumer AI",
+    "data centers & compute"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "shareholder proposal",
+   "description": "2025: Proposal Seven asked about board authorization of an investment in xAI (Tesla proxy statement)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925090866/tm252289-12_def14a.htm",
    "exchange": "Nasdaq",
    "country": "US",
    "degree": 4
   },
   {
+   "id": "co-ANT",
+   "type": "company",
+   "layer": "companies",
+   "label": "Anthropic",
+   "ticker": "ANT",
+   "sectors": [
+    "frontier lab",
+    "enterprise AI",
+    "consumer AI"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "safety commitment",
+   "description": "2024: Signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "degree": 2
+  },
+  {
    "id": "co-SPCX",
    "type": "company",
    "layer": "companies",
-   "label": "SpaceX (Space Exploration Technologies Corp.)",
+   "label": "SpaceX (including xAI)",
    "ticker": "SPCX",
+   "sectors": [
+    "frontier lab",
+    "consumer AI",
+    "data centers & compute"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "safety commitment",
+   "description": "2024: xAI signed the Frontier AI Safety Commitments (UK and Korean governments)",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "exchange": "Nasdaq",
    "country": "US",
+   "degree": 4
+  },
+  {
+   "id": "co-035420",
+   "type": "company",
+   "layer": "companies",
+   "label": "Naver",
+   "ticker": "035420",
+   "sectors": [
+    "frontier lab",
+    "consumer AI"
+   ],
+   "shareholder_route": "listed outside the US",
+   "basis_type": "safety commitment",
+   "description": "2024: Signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "degree": 0
+  },
+  {
+   "id": "co-0100",
+   "type": "company",
+   "layer": "companies",
+   "label": "MiniMax (Shanghai Xiyu Technology)",
+   "ticker": "0100",
+   "sectors": [
+    "frontier lab",
+    "consumer AI"
+   ],
+   "shareholder_route": "listed outside the US",
+   "basis_type": "safety commitment",
+   "description": "2024: Signed the Frontier AI Safety Commitments as an added signatory (UK and Korean governments)",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "degree": 0
+  },
+  {
+   "id": "co-2513",
+   "type": "company",
+   "layer": "companies",
+   "label": "Zhipu AI (Knowledge Atlas Technology)",
+   "ticker": "2513",
+   "sectors": [
+    "frontier lab",
+    "enterprise AI"
+   ],
+   "shareholder_route": "listed outside the US",
+   "basis_type": "safety commitment",
+   "description": "2024: Zhipu.ai signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "degree": 0
+  },
+  {
+   "id": "co-IBM",
+   "type": "company",
+   "layer": "companies",
+   "label": "IBM",
+   "ticker": "IBM",
+   "sectors": [
+    "enterprise AI",
+    "frontier lab"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "shareholder proposal",
+   "description": "2026: Proposal 7 asked for a report on AI bias (IBM proxy statement)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
+   "degree": 0
+  },
+  {
+   "id": "co-CRM",
+   "type": "company",
+   "layer": "companies",
+   "label": "Salesforce",
+   "ticker": "CRM",
+   "sectors": [
+    "enterprise AI"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "investor engagement",
+   "description": "2024 to 2025: Parnassus lists Salesforce among its Responsible AI engagements (Parnassus stewardship report)",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "exchange": "NYSE",
+   "country": "US",
    "degree": 3
+  },
+  {
+   "id": "co-ADBE",
+   "type": "company",
+   "layer": "companies",
+   "label": "Adobe",
+   "ticker": "ADBE",
+   "sectors": [
+    "consumer AI",
+    "enterprise AI"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "safety commitment",
+   "description": "2023: Signed the US voluntary AI commitments in the second round of eight companies (White House fact sheet, September 2023)",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "degree": 0
+  },
+  {
+   "id": "co-INTU",
+   "type": "company",
+   "layer": "companies",
+   "label": "Intuit",
+   "ticker": "INTU",
+   "sectors": [
+    "consumer AI",
+    "enterprise AI"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "investor engagement",
+   "description": "2023 to 2024: Parnassus \"engaged the company on AI governance and risk management\"; Intuit planned public AI governance disclosure in early 2025 (Parnassus stewardship report)",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf",
+   "degree": 1
+  },
+  {
+   "id": "co-VRSK",
+   "type": "company",
+   "layer": "companies",
+   "label": "Verisk Analytics",
+   "ticker": "VRSK",
+   "sectors": [
+    "enterprise AI"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "investor engagement",
+   "description": "2023 to 2024: Parnassus spent \"almost two years engaging\" Verisk \"on various aspects of responsible AI\" and later withdrew a filed proposal after Verisk agreed to disclosures (Parnassus)",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf",
+   "degree": 0
+  },
+  {
+   "id": "co-WDAY",
+   "type": "company",
+   "layer": "companies",
+   "label": "Workday",
+   "ticker": "WDAY",
+   "sectors": [
+    "enterprise AI"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "investor engagement",
+   "description": "2024 to 2025: Parnassus \"engaged Workday on the potential impacts of its AI-driven human-capital management software\" on workers' rights and protections (Parnassus stewardship report)",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "degree": 0
+  },
+  {
+   "id": "co-NOW",
+   "type": "company",
+   "layer": "companies",
+   "label": "ServiceNow",
+   "ticker": "NOW",
+   "sectors": [
+    "enterprise AI",
+    "frontier lab"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "safety commitment",
+   "description": "2025: Listed as a signatory of the EU General-Purpose AI Code of Practice for providers of general-purpose AI models (European Commission)",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+   "degree": 0
+  },
+  {
+   "id": "co-PLTR",
+   "type": "company",
+   "layer": "companies",
+   "label": "Palantir Technologies",
+   "ticker": "PLTR",
+   "sectors": [
+    "enterprise AI"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "shareholder proposal",
+   "description": "2026: Proposals 4 and 5 asked for a due diligence report and a human rights impact assessment, citing Palantir's AI (proxy statement; lead filer Sisters of St. Joseph of Peace)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
+   "degree": 0
+  },
+  {
+   "id": "co-CSCO",
+   "type": "company",
+   "layer": "companies",
+   "label": "Cisco Systems",
+   "ticker": "CSCO",
+   "sectors": [
+    "enterprise AI",
+    "data centers & compute"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "shareholder proposal",
+   "description": "2026: Proposal 5 asked for a human rights impact assessment of high-risk customers; the exempt solicitation cites AI infrastructure sales to government and military (filer's SEC solicitation)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/858877/000121465926014472/x1116261px14a6g.htm",
+   "exchange": "Nasdaq",
+   "country": "US",
+   "degree": 2
+  },
+  {
+   "id": "co-AXON",
+   "type": "company",
+   "layer": "companies",
+   "label": "Axon Enterprise",
+   "ticker": "AXON",
+   "sectors": [
+    "enterprise AI"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "shareholder proposal",
+   "description": "2023: Proposal 6 asked Axon to discontinue a remotely operated TASER drone system, citing concerns raised by its AI Ethics Board (Open MIC exempt solicitation)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1069183/000121465923006485/s53230px14a6g.htm",
+   "degree": 0
+  },
+  {
+   "id": "co-MSI",
+   "type": "company",
+   "layer": "companies",
+   "label": "Motorola Solutions",
+   "ticker": "MSI",
+   "sectors": [
+    "enterprise AI"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "investor engagement",
+   "description": "2022: Candriam and 20 other investors reviewed 15 facial recognition companies and named Motorola Solutions for mitigating human rights risks in its use of AI and the technology (Candriam)",
+   "source_url": "https://www.candriam.com/en/professional/SysSiteAssets/presspage/press/pressrelease/2022/10-2022/frt-interim-report-press-release_final.pdf",
+   "degree": 0
+  },
+  {
+   "id": "co-HO",
+   "type": "company",
+   "layer": "companies",
+   "label": "Thales",
+   "ticker": "HO",
+   "sectors": [
+    "enterprise AI"
+   ],
+   "shareholder_route": "listed outside the US",
+   "basis_type": "investor engagement",
+   "description": "2022: Candriam and 20 other investors reviewed 15 facial recognition companies and named Thales for mitigating human rights risks in its use of AI and the technology (Candriam)",
+   "source_url": "https://www.candriam.com/en/professional/SysSiteAssets/presspage/press/pressrelease/2022/10-2022/frt-interim-report-press-release_final.pdf",
+   "degree": 0
+  },
+  {
+   "id": "co-BABA",
+   "type": "company",
+   "layer": "companies",
+   "label": "Alibaba Group",
+   "ticker": "BABA",
+   "sectors": [
+    "consumer AI",
+    "enterprise AI",
+    "data centers & compute",
+    "frontier lab"
+   ],
+   "shareholder_route": "US-listed foreign issuer",
+   "basis_type": "safety commitment",
+   "description": "2024: Alibaba (China) Co., Ltd. signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance, via ETO AGORA)",
+   "source_url": "https://agora.eto.tech/instrument/1831",
+   "degree": 0
+  },
+  {
+   "id": "co-0700",
+   "type": "company",
+   "layer": "companies",
+   "label": "Tencent Holdings",
+   "ticker": "0700",
+   "sectors": [
+    "consumer AI",
+    "enterprise AI",
+    "frontier lab"
+   ],
+   "shareholder_route": "listed outside the US",
+   "basis_type": "safety commitment",
+   "description": "2024: Shenzhen Tencent Computer Systems Co., Ltd. signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance, via ETO AGORA)",
+   "source_url": "https://agora.eto.tech/instrument/1831",
+   "degree": 0
+  },
+  {
+   "id": "co-NFLX",
+   "type": "company",
+   "layer": "companies",
+   "label": "Netflix",
+   "ticker": "NFLX",
+   "sectors": [
+    "consumer AI"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "shareholder proposal",
+   "description": "2024: Proposal 4 asked for a report on Netflix's use of AI (AFL-CIO Equity Index Funds)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312524100913/d521836ddef14a.htm",
+   "degree": 0
+  },
+  {
+   "id": "co-DIS",
+   "type": "company",
+   "layer": "companies",
+   "label": "Walt Disney",
+   "ticker": "DIS",
+   "sectors": [
+    "consumer AI"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "shareholder proposal",
+   "description": "2024: AFL-CIO Equity Index Funds and co-filers proposed a transparency report on AI use; SEC staff did not concur with exclusion (SEC staff letter, 3 January 2024)",
+   "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/aflciodisney010324-14a8.pdf",
+   "degree": 0
+  },
+  {
+   "id": "co-CMCSA",
+   "type": "company",
+   "layer": "companies",
+   "label": "Comcast",
+   "ticker": "CMCSA",
+   "sectors": [
+    "consumer AI"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "shareholder proposal",
+   "description": "2024: AFL-CIO agreed to withdraw an AI usage proposal after Comcast committed to enhance its AI disclosures (Harvard Law School Forum, citing Responsible Investor)",
+   "source_url": "https://corpgov.law.harvard.edu/?p=168201",
+   "degree": 0
   },
   {
    "id": "co-ORCL",
@@ -86,19 +492,17 @@
    "layer": "companies",
    "label": "Oracle",
    "ticker": "ORCL",
+   "sectors": [
+    "enterprise AI",
+    "data centers & compute"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "compute agreement",
+   "description": "2025: Named by OpenAI as an initial equity funder of the Stargate AI infrastructure project (OpenAI)",
+   "source_url": "https://openai.com/index/announcing-the-stargate-project/",
    "exchange": "NYSE",
    "country": "US",
    "degree": 2
-  },
-  {
-   "id": "co-CRWV",
-   "type": "company",
-   "layer": "companies",
-   "label": "CoreWeave",
-   "ticker": "CRWV",
-   "exchange": "Nasdaq",
-   "country": "US",
-   "degree": 3
   },
   {
    "id": "co-9984",
@@ -106,9 +510,31 @@
    "layer": "companies",
    "label": "SoftBank Group",
    "ticker": "9984",
+   "sectors": [
+    "data centers & compute"
+   ],
+   "shareholder_route": "listed outside the US",
+   "basis_type": "compute agreement",
+   "description": "2025: Named by OpenAI as an initial equity funder and lead partner of the Stargate AI infrastructure project (OpenAI)",
+   "source_url": "https://openai.com/index/announcing-the-stargate-project/",
    "exchange": "Tokyo Stock Exchange",
    "country": "Japan",
    "degree": 2
+  },
+  {
+   "id": "co-ARM",
+   "type": "company",
+   "layer": "companies",
+   "label": "Arm Holdings",
+   "ticker": "ARM",
+   "sectors": [
+    "data centers & compute"
+   ],
+   "shareholder_route": "US-listed foreign issuer",
+   "basis_type": "compute agreement",
+   "description": "2025: Named by OpenAI as a key initial technology partner of the Stargate AI infrastructure project (OpenAI)",
+   "source_url": "https://openai.com/index/announcing-the-stargate-project/",
+   "degree": 0
   },
   {
    "id": "co-AMD",
@@ -116,6 +542,13 @@
    "layer": "companies",
    "label": "AMD",
    "ticker": "AMD",
+   "sectors": [
+    "data centers & compute"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "compute agreement",
+   "description": "2025: OpenAI announced a multi-year agreement to deploy 6 gigawatts of AMD GPUs (OpenAI)",
+   "source_url": "https://openai.com/index/openai-amd-strategic-partnership/",
    "exchange": "Nasdaq",
    "country": "US",
    "degree": 5
@@ -126,29 +559,31 @@
    "layer": "companies",
    "label": "Broadcom",
    "ticker": "AVGO",
+   "sectors": [
+    "data centers & compute"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "compute agreement",
+   "description": "2025: OpenAI announced a collaboration with Broadcom to deploy 10 gigawatts of OpenAI-designed AI accelerators, to complete by the end of 2029 (OpenAI)",
+   "source_url": "https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration/",
    "exchange": "Nasdaq",
    "country": "US",
    "degree": 4
   },
   {
-   "id": "co-CRM",
+   "id": "co-TSM",
    "type": "company",
    "layer": "companies",
-   "label": "Salesforce",
-   "ticker": "CRM",
-   "exchange": "NYSE",
-   "country": "US",
-   "degree": 3
-  },
-  {
-   "id": "co-CSCO",
-   "type": "company",
-   "layer": "companies",
-   "label": "Cisco",
-   "ticker": "CSCO",
-   "exchange": "Nasdaq",
-   "country": "US",
-   "degree": 2
+   "label": "TSMC",
+   "ticker": "TSM",
+   "sectors": [
+    "data centers & compute"
+   ],
+   "shareholder_route": "US-listed foreign issuer",
+   "basis_type": "investor engagement",
+   "description": "2024 to 2025: Parnassus engaged TSMC on \"water quantity and quality risks\" and renewable energy, citing AI's effect on \"computing demands\" (Parnassus stewardship report)",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "degree": 0
   },
   {
    "id": "co-005930",
@@ -156,6 +591,15 @@
    "layer": "companies",
    "label": "Samsung Electronics",
    "ticker": "005930",
+   "sectors": [
+    "data centers & compute",
+    "consumer AI",
+    "frontier lab"
+   ],
+   "shareholder_route": "listed outside the US",
+   "basis_type": "safety commitment",
+   "description": "2024: Signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "exchange": "Korea Exchange",
    "country": "South Korea",
    "degree": 4
@@ -166,9 +610,80 @@
    "layer": "companies",
    "label": "SK hynix",
    "ticker": "000660",
+   "sectors": [
+    "data centers & compute"
+   ],
+   "shareholder_route": "US-listed foreign issuer",
+   "basis_type": "compute agreement",
+   "description": "2025: SK hynix and Samsung Electronics announced partnerships with OpenAI under Stargate to scale advanced memory chip production (OpenAI)",
+   "source_url": "https://openai.com/index/samsung-and-sk-join-stargate/",
    "exchange": "Korea Exchange",
    "country": "South Korea",
    "degree": 2
+  },
+  {
+   "id": "co-CRWV",
+   "type": "company",
+   "layer": "companies",
+   "label": "CoreWeave",
+   "ticker": "CRWV",
+   "sectors": [
+    "data centers & compute"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "compute agreement",
+   "description": "2025: CoreWeave disclosed a material master services agreement with OpenAI for cloud computing capacity, with a September 2025 order form (CoreWeave 8-K)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000119312525216497/d17274d8k.htm",
+   "exchange": "Nasdaq",
+   "country": "US",
+   "degree": 3
+  },
+  {
+   "id": "co-NBIS",
+   "type": "company",
+   "layer": "companies",
+   "label": "Nebius Group",
+   "ticker": "NBIS",
+   "sectors": [
+    "data centers & compute"
+   ],
+   "shareholder_route": "US-listed foreign issuer",
+   "basis_type": "compute agreement",
+   "description": "2025: Nebius agreed to provide Microsoft dedicated GPU capacity, a contract value of about 17.4 billion dollars through 2031 (Nebius 6-K)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465925088312/tm2525580d1_6k.htm",
+   "exchange": "Nasdaq",
+   "country": "Netherlands",
+   "degree": 3
+  },
+  {
+   "id": "co-DLR",
+   "type": "company",
+   "layer": "companies",
+   "label": "Digital Realty Trust",
+   "ticker": "DLR",
+   "sectors": [
+    "data centers & compute"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "shareholder proposal",
+   "description": "2026: A stockholder proposal on enhanced water risk disclosure was on the proxy ballot (Digital Realty proxy statement)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm",
+   "degree": 0
+  },
+  {
+   "id": "co-SO",
+   "type": "company",
+   "layer": "companies",
+   "label": "Southern Company",
+   "ticker": "SO",
+   "sectors": [
+    "data centers & compute"
+   ],
+   "shareholder_route": "US proxy rules apply",
+   "basis_type": "shareholder proposal",
+   "description": "2026: Item 9 asked for a report on data center costs, citing AI data center demand and bills for residential customers (As You Sow)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm",
+   "degree": 0
   },
   {
    "id": "co-MU",
@@ -179,16 +694,6 @@
    "exchange": "Nasdaq",
    "country": "US",
    "degree": 1
-  },
-  {
-   "id": "co-NBIS",
-   "type": "company",
-   "layer": "companies",
-   "label": "Nebius Group",
-   "ticker": "NBIS",
-   "exchange": "Nasdaq",
-   "country": "Netherlands",
-   "degree": 3
   },
   {
    "id": "co-SNOW",
@@ -258,7 +763,7 @@
    "status": "public",
    "description": "Claude maker; IPO priced $83/share on Nasdaq (ANT) 2026-11-19; founders keep voting control via Class F share.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/0001628280-26-074944-index.htm",
-   "degree": 18
+   "degree": 16
   },
   {
    "id": "lab-xai",
@@ -268,7 +773,7 @@
    "status": "in-house",
    "description": "Grok maker; acquired by SpaceX in all-stock deal Feb 2026 (xAI valued ~$250B).",
    "source_url": "https://www.axios.com/2026/02/02/elon-musk-spacex-xai",
-   "degree": 6
+   "degree": 5
   },
   {
    "id": "lab-mistral",
@@ -3508,7 +4013,7 @@
    "jurisdiction": "US federal",
    "description": "Per Parnassus, Intuit released public AI governance and risk management disclosure in the first half of 2025. Exact date UNVERIFIED.",
    "source_url": "https://www.parnassus.com/updates/article/the_new_imperative_of_responsible_ai",
-   "degree": 1
+   "degree": 2
   },
   {
    "id": "ev-msft-rai-report-2025",
@@ -8960,7 +9465,7 @@
    "source_url": "https://www.euronews.com/2025/07/18/meta-rebuffs-eus-ai-code-of-practice"
   },
   {
-   "source": "lab-anthropic",
+   "source": "co-ANT",
    "target": "ev-anthropic-eu-code",
    "type": "acted in",
    "layer": "policy",
@@ -8981,7 +9486,7 @@
    "source_url": "https://www.ciodive.com/news/Google-european-union-AI-act-code-signatory/756343/"
   },
   {
-   "source": "lab-xai",
+   "source": "co-SPCX",
    "target": "ev-xai-eu-code-safety",
    "type": "acted in",
    "layer": "policy",
@@ -8995,7 +9500,7 @@
    "source_url": "https://openai.com/global-affairs/letter-to-governor-newsom-on-harmonized-regulation"
   },
   {
-   "source": "lab-anthropic",
+   "source": "co-ANT",
    "target": "ev-anthropic-endorses-sb53",
    "type": "acted in",
    "layer": "policy",
@@ -9046,6 +9551,13 @@
   {
    "source": "parnassus",
    "target": "ev-parnassus-intuit-engagement",
+   "type": "acted in",
+   "layer": "policy",
+   "source_url": "https://www.parnassus.com/updates/article/the_new_imperative_of_responsible_ai"
+  },
+  {
+   "source": "co-INTU",
+   "target": "ev-intuit-ai-disclosure",
    "type": "acted in",
    "layer": "policy",
    "source_url": "https://www.parnassus.com/updates/article/the_new_imperative_of_responsible_ai"

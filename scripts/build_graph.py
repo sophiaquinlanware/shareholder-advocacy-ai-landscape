@@ -35,6 +35,7 @@ def load(name):
     return json.loads(p.read_text()) if p.exists() else {}
 
 
+
 STOP = {"the", "of", "on", "and", "for", "a", "an", "to", "in", "report", "ai", "inc", "llc", "lp", "asset", "management",
         "investments", "investment", "capital", "fund", "funds", "group", "office"}
 
@@ -64,6 +65,13 @@ def main():
         edges.append({"source": a, "target": b, "type": type_, "layer": layer, "source_url": source_url, **kw})
 
     # Companies first, so every layer below can point at the same company node.
+    # data/companies.json is the list of companies in scope, with sectors and shareholder route.
+    for c in load("companies.json") or []:
+        if c.get("ticker") and c.get("ticker") not in ("private", "UNVERIFIED"):
+            node("co-" + c["ticker"].upper(), type="company", layer="companies", label=c["name"], ticker=c["ticker"],
+                 sectors=c.get("sectors"), shareholder_route=c.get("shareholder_route"),
+                 basis_type=c.get("basis_type"), description=(c.get("engagement_basis") or {}).get("text"),
+                 source_url=(c.get("engagement_basis") or {}).get("url"))
     pw = load("pathways.json")
     for c in pw.get("public_companies", []):
         node("co-" + c.get("ticker", c["id"]).upper(), type="company", layer="companies", label=c["name"],
