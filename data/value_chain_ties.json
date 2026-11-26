@@ -1,5 +1,5 @@
 {
- "about": "Sourced company-to-company links across the AI value chain. Each was checked against the page it cites (2026-11-25). Company-to-frontier-lab equity and compute ties live in pathways.json.",
+ "about": "Sourced company-to-company links across the AI value chain. Each was checked against the page it cites (November 25, 2026). Company-to-frontier-lab equity and compute ties live in pathways.json.",
  "ties": [
   {
    "from": "Nvidia",

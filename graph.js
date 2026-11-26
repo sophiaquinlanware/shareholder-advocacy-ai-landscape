@@ -441,7 +441,7 @@
     defs.push(`<p class="term-def" id="${id}" hidden><strong>${esc(name[0].toUpperCase() + name.slice(1))}:</strong> ${esc(def)}</p>`);
     return `<button type="button" class="term" aria-expanded="false" aria-controls="${id}">${esc(label || name)}${ctx ? `<span class="visually-hidden">, ${esc(ctx)}</span>` : ""}</button>`;
   }
-  const longDate = (iso) => new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
+  const longDate = (iso) => window.DATES.long(iso);
   function feedShell() {
     const F = lens().feed;
     const box = document.getElementById("net-feed");
@@ -679,7 +679,7 @@
       const dir = l.source.id === n.id ? rel : `${rel} (from)`;
       const c = conf(l);
       // Memberships and focus lists carry the date the source listed them, so they don't read as current.
-      const asOf = l.as_of ? ` <span class="ticker">(${l.relation === "member of" ? "listed as a member" : "listed"} as of ${esc(new Date(String(l.as_of).slice(0, 7) + "-15T12:00:00Z").toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" }))}${l.note ? "; " + esc(l.note) : ""})</span>` : "";
+      const asOf = l.as_of ? ` <span class="ticker">(${l.relation === "member of" ? "listed as a member" : "listed"} as of ${esc(window.DATES.long(String(l.as_of).slice(0, 7)))}${l.note ? "; " + esc(l.note) : ""})</span>` : "";
       if (l.relation === "missing") return `<li><button type="button" class="linklike" data-id="${esc(other.id)}">${esc(other.label)}</button> <span class="ticker">topic not filed</span> <span class="conf">· none in this dataset</span></li>`;
       // Direct engagements reported by the investor list their steps (date, what happened, source and page).
       const steps = Array.isArray(l.steps) && l.steps.length
@@ -698,7 +698,7 @@
     } else if (n.kind === "person") {
       facts = `<p>${esc(n.title)}, ${esc(n.org_name)}</p>${n.ai_focus ? `<p><strong>AI work:</strong> ${esc(n.ai_focus)}</p>` : ""}<p>${link(n.profile_url, "public profile")}</p>`;
     } else if (["policy", "response", "public", "lab"].includes(n.kind)) {
-      facts = `${n.date ? `<p class="ticker">${esc(n.date)}${n.actor ? " · " + esc(n.actor) : ""}</p>` : ""}<p>${esc(n.description || "")} ${link(n.source_url)}</p>`;
+      facts = `${n.date ? `<p class="ticker">${esc(window.DATES.long(n.date))}${n.actor ? " · " + esc(n.actor) : ""}</p>` : ""}<p>${esc(n.description || "")} ${link(n.source_url)}</p>`;
     } else if (n.kind === "company") {
       facts = `<p>${esc(n.degree)} ${n.degree === 1 ? "connection" : "connections"} in this map.</p>`;
     } else if (n.kind === "ask") {

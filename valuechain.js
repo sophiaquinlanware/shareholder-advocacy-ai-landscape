@@ -112,7 +112,7 @@
     setTimeout(() => { el.textContent = t; }, 50);
   }
   function tieList(ties) {
-    return `<ul class="conn">${ties.map((t) => `<li>${esc(name(t.from))} ${esc(phrase(t.type))} ${esc(name(t.to))}${t.as_of ? ` <span class="ticker">(${esc(t.as_of)})</span>` : ""}. ${esc(t.description || "")}${src(t.source_url)}${t.source_kind === "secondary" ? ' <span class="conf">· reported (secondary source)</span>' : ""}</li>`).join("") || "<li>None sourced yet.</li>"}</ul>`;
+    return `<ul class="conn">${ties.map((t) => `<li>${esc(name(t.from))} ${esc(phrase(t.type))} ${esc(name(t.to))}${t.as_of ? ` <span class="ticker">(${esc(window.DATES.long(t.as_of))})</span>` : ""}. ${esc(t.description || "")}${src(t.source_url)}${t.source_kind === "secondary" ? ' <span class="conf">· reported (secondary source)</span>' : ""}</li>`).join("") || "<li>None sourced yet.</li>"}</ul>`;
   }
 
   function showTier(tid, section) {

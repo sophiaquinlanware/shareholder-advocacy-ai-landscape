@@ -120,7 +120,7 @@
 
   // ---------- Impact investor marks (Phase 2): deadline, seeking, resubmission ----------
   const R = () => window.RULES || {};
-  const fmtDate = (iso) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
+  const fmtDate = (iso) => window.DATES.long(iso);
   const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
   // Seeking types shown. "exempt solicitation" asks are left out: asking others to campaign on a vote is close
   // to organising investors to vote (PRODUCT.md Never claim 1). Owner decision recorded in docs/STATE.md.

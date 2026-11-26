@@ -16,10 +16,9 @@ function src(url, label = "source") {
 function srcList(list) {
   return (list || []).map((s) => src(s.url, s.label)).join("");
 }
-function fmtDate(iso, short = false) {
-  if (!iso) return "";
-  const d = new Date(iso.slice(0, 10) + "T12:00:00");
-  return d.toLocaleDateString("en-US", { year: "numeric", month: short ? "short" : "long", day: "numeric" });
+// One date style site-wide (dates.js): "November 26, 2026". The second argument is kept for old calls.
+function fmtDate(iso, _short = false) {
+  return iso ? window.DATES.long(String(iso).slice(0, 10)) : "";
 }
 const plural = (n, one, many = one + "s") => `${n} ${n === 1 ? one : many}`;
 

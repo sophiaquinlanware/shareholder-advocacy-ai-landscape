@@ -836,7 +836,7 @@
   },
   "evidence": [
    {
-    "text": "2026: xAI became a wholly owned subsidiary of SpaceX on 2 February 2026 (SpaceX Form 10-Q for the quarter ended 30 September 2026)",
+    "text": "2026: xAI became a wholly owned subsidiary of SpaceX on February 2, 2026 (SpaceX Form 10-Q for the quarter ended September 30, 2026)",
     "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026066880/spcx-20260930.htm"
    },
    {
@@ -1325,7 +1325,7 @@
   "route_source_url": "https://gruppe.schwarz/en/press/archive/2025/the-companies-of-schwarz-group-are-planning-to-increase-their-investment-in-aleph-alpha",
   "source_note": "investor press release (Schwarz Group); Cohere deal status from press",
   "rights_tracked": false,
-  "route_note": "Privately held; Schwarz Group said on 28 January 2026 it plans to buy Bosch Ventures' shares to expand its anchor-investor position, and a binding agreement to combine with Cohere (signed 16 September 2026) was still pending regulatory approval as of the latest reports, so Aleph Alpha has not yet become part of Cohere.",
+  "route_note": "Privately held; Schwarz Group said on January 28, 2026 it plans to buy Bosch Ventures' shares to expand its anchor-investor position, and a binding agreement to combine with Cohere (signed September 16, 2026) was still pending regulatory approval as of the latest reports, so Aleph Alpha has not yet become part of Cohere.",
   "tier": "labs",
   "tiers": [
    "labs"

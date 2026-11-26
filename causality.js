@@ -16,9 +16,9 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const link = (url, label = "source") => url ? `<a class="src" href="${esc(url)}" target="_blank" rel="noopener">[${esc(label)}]</a>` : `<span class="unverified">source pending</span>`;
   const cssVar = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim() || "#888";
-  const fmt = (iso) => new Date(iso + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+  const fmt = (iso) => window.DATES.long(iso);
   // An event known only to the year (date_precision "year") shows the year, never a made-up day.
-  const evDate = (e) => (e.date_precision === "year" ? String(e.date).slice(0, 4) : e.date_precision === "month" ? new Date(e.date + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "short" }) : fmt(e.date));
+  const evDate = (e) => (e.date_precision === "year" ? String(e.date).slice(0, 4) : e.date_precision === "month" ? window.DATES.long(String(e.date).slice(0, 7)) : fmt(e.date));
 
   // Legal status, grouped from the data's free-text "status" (one shared vocabulary). Each group has its own node
   // mark, so a screenshot still shows which rules bind. Events with no status are plain events (an SEC statement, a
