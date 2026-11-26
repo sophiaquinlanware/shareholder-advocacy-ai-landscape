@@ -8,7 +8,7 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 
 
 | Session | Owns | Branch | State |
 |---|---|---|---|
-| Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | `data/company-universe`, `data/value-chain` (open) | Company universe (60 companies) ready to merge **after** round 2, which filters the rights map by `rights_tracked`. Value-chain tiers data in progress (docs/plans/2026-11-25-value-chain.md). |
+| Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | `data/value-chain` (open) | On `main` since this merge: 60 companies (`data/companies.json`, owner kept all), value-chain tiers (`data/value_chain.json`, `tier`/`tiers` on companies and graph nodes), ownership for 9 private labs. Open on `data/value-chain`: rights maps for 22 more US companies (commit a1f5649, in data accuracy review) and value-chain ties plus per-tier facts (in research). |
 | UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, the view JS files incl. `votes.js`, `DESIGN.md`, `tests/` | `design/round2-structure` (merged with this update) | Round 2 live. Next: lens Phase 1 (owner approved), then the value-chain and engagement-map visuals once `data/value_chain.json` lands. |
 | Protocol setup | `AGENTS.md`, `CLAUDE.md`, checks, `docs/` structure | `docs-session-onboarding` (local) | Idle. |
 
