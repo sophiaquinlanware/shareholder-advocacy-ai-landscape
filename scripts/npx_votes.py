@@ -36,13 +36,13 @@ UA = os.environ.get("SEC_USER_AGENT", "").strip()
 # Fund families to check, by the trust names they file under. Parnassus first.
 FAMILIES = {
     "Parnassus": ["Parnassus Funds", "Parnassus Funds II"],
-    "BlackRock (iShares)": ["iShares Trust", "iShares U.S. ETF Trust"],
+    "BlackRock (iShares)": ["ticker:IVV", "iShares U.S. ETF Trust"],
     "Vanguard": ["Vanguard Index Funds", "Vanguard World Fund", "Vanguard Institutional Index Funds"],
     "Calvert": ["Calvert Responsible Index Series", "Calvert Social Investment Fund"],
-    "Domini": ["Domini Investment Trust"],
-    "Green Century": ["Green Century Funds"],
+    "Domini": ["ticker:DSEFX"],
+    "Green Century": ["ticker:GCEQX"],
     "Impax (Pax)": ["Impax Funds Series Trust"],
-    "TIAA-CREF": ["TIAA-CREF Funds"],
+    "TIAA-CREF": ["ticker:TISCX"],
     "Praxis": ["Praxis Mutual Funds"],
 }
 
@@ -82,7 +82,27 @@ def get(url, stream_to=None):
             time.sleep(2 * (attempt + 1))
 
 
+_MF = None
+
+
 def find_ciks(name):
+    """A trust by name (SEC company search), or "ticker:XXXX" to find the trust behind a fund ticker
+    using the SEC's mutual fund ticker file (more reliable when trust names differ from brand names)."""
+    global _MF
+    if name.startswith("ticker:"):
+        if _MF is None:
+            _MF = json.loads(get("https://www.sec.gov/files/company_tickers_mf.json"))
+        want = name.split(":", 1)[1].upper()
+        f = _MF["fields"]
+        for row in _MF["data"]:
+            rec = dict(zip(f, row))
+            if str(rec.get("symbol", "")).upper() == want:
+                return [int(rec["cik"])]
+        return []
+    return find_cik_by_name(name)
+
+
+def find_cik_by_name(name):
     q = urllib.parse.urlencode({"company": name, "type": "N-PX", "owner": "include", "count": 20, "action": "getcompany", "output": "atom"})
     xml = get("https://www.sec.gov/cgi-bin/browse-edgar?" + q).decode("utf-8", "ignore")
     found = re.findall(r"<cik>(\d+)</cik>", xml)
@@ -221,14 +241,16 @@ def main():
                         if not cands:
                             continue
                         desc = rec.get("voteDescription", "")
-                        scored = sorted(((score(p["title"], desc), p) for p in cands), key=lambda x: (x[0][0], x[0][1]), reverse=True)
+                        # Rank by both directions together, so a short title that is a subset of a longer
+                        # description (e.g. "Impact of Climate Commitments") does not tie with the exact one.
+                        scored = sorted(((score(p["title"], desc), p) for p in cands), key=lambda x: x[0][0] + x[0][1], reverse=True)
                         (s, rev), best = scored[0]
-                        runner = scored[1][0][0] if len(scored) > 1 else 0.0
-                        if s < MIN_MATCH or rev < MIN_REVERSE or s - runner < MIN_MARGIN:
+                        runner = sum(scored[1][0]) / 2 if len(scored) > 1 else 0.0
+                        if s < MIN_MATCH or rev < MIN_REVERSE or (s + rev) / 2 - runner < MIN_MARGIN:
                             if s >= 0.5:
                                 review.append({"family": family, "company": rec["ticker"], "meeting_date": md, "npx_description": desc,
                                                "best_guess": best["id"], "title_cover": round(s, 2), "description_cover": round(rev, 2),
-                                               "runner_up": round(runner, 2), "source_url": base})
+                                               "runner_up_combined": round(runner, 2), "source_url": base})
                             continue
                         hows = sorted({v.get("howVoted", "").upper() for v in rec["votes"] if v.get("howVoted")})
                         shares = sum(float(v.get("sharesVoted") or 0) for v in rec["votes"])

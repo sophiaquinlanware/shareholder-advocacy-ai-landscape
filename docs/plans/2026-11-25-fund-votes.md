@@ -20,7 +20,7 @@ This round changes **structure and wording** (a new tab and a new data file). It
 1. **Data: `data/fund_votes.json`** (new). One row per fund family per proposal: family, proposal id, company, meeting date, vote (FOR, AGAINST, ABSTAIN or SPLIT), number of fund records, links to the N-PX filings. Built from the reviewed run artifact. Fund families: Parnassus, BlackRock (iShares), Vanguard, Calvert, Domini, Green Century, Impax (Pax), TIAA-CREF, Praxis (whichever have structured filings).
 2. **View: `votes.js`** (new), drawing a new tab "Fund votes". A table: one row per AI proposal (company, year, title, filer, support), one column per fund family, each cell the vote as a plain neutral label (For / Against / Abstain / Split / blank when the family did not vote). Filters: company, topic, fund family. Each cell links to the N-PX filing.
    - Votes use the neutral `.pill.pending` style for every value. Green and red would imply a right answer, and PRODUCT.md "Never claim" 1 forbids suggesting how to vote.
-   - Intro copy states what N-PX is, that "Split" means a family's funds voted differently, that a blank means no vote was found (often because the fund did not hold the stock), and that the site is independent of every fund shown (Never claim 3).
+   - Intro copy states what N-PX is, that "Split" means a family's funds voted differently (with the count), that "No vote found" means no matching vote in the filings checked (no guess about why), and that the site is independent of every fund shown (Never claim 3).
 3. **Wiring:** one `<section>` and one tab button in `index.html`, `"fund_votes"` added to `FILES` and one render call in `app.js`, `votes.js` script tag. No new tokens or components.
 4. **Docs:** SOURCES.md row for N-PX becomes "manual fund-votes task, yearly after August 31"; STATE.md updated.
 
@@ -28,13 +28,37 @@ This round changes **structure and wording** (a new tab and a new data file). It
 
 | # | Task | Files owned | Check |
 |---|---|---|---|
-| 1 | Build `data/fund_votes.json` from the run artifact, spot-check 10 rows against the filings | `data/fund_votes.json` | data accuracy review; every row has a filing link |
-| 2 | Build `votes.js` and wire the tab | `votes.js`, `index.html`, `app.js` | `npm run check` (11+1 tabs × 1440/390 px × light/dark, no overlap, no sideways scroll) |
+| 1 | Rebuild `data/fund_votes.json` from the fixed script; diff Parnassus against the owner-reviewed rows; spot-check every SPLIT, every match under 1.0 and 10 random rows | `data/fund_votes.json` | data accuracy result review; every row has a filing link |
+| 2 | Build `votes.js` and wire the tab; add the two accessibility rules | `votes.js`, `index.html`, `app.js`, `styles.css`, `DESIGN.md` | `npm run check` (all tabs × 1440/390 px × light/dark, no overlap, no sideways scroll) plus a keyboard pass |
 | 3 | Docs | `SOURCES.md`, `docs/STATE.md`, this plan | read-through |
 
 ## Reviews
 
-One round each, saved to `docs/reviews/`: **Data accuracy** (rows match filings), **UX / content** (plain wording, Never claim list), **Accessibility** (table headers, labels, contrast in both themes).
+Plan round 1 (saved in `docs/reviews/2026-11-25 fund votes plan R1 *.md`): Data accuracy 62 REVISE, UX / content 76 REVISE, Accessibility 74 REVISE. This revision (R1 → revised once, per rule 27.4) adopts the following.
+
+### Revisions adopted
+
+**Data (from the data accuracy review)**
+- Matching fixed in `scripts/npx_votes.py` (commit efd04b2): "ai" kept as a key word; two-sided match plus a margin over the next-best proposal at the same meeting; issuer items skipped; proposals with no meeting date matched within the year; all vote-table files read; one filing per period (amendments do not double count); more trusts per family. Near misses go to a `review` list.
+- `data/fund_votes.json` is rebuilt from the fixed script, **not** from the earlier artifact or the hand-filtered Parnassus file. The rebuilt Parnassus rows are diffed against the 39 rows the owner reviewed; any difference is reported to the owner before publishing.
+- Spot checks: every SPLIT and every match under 1.0, plus 10 random rows, opened in the filing.
+- The JSON lists the trusts searched per family and the proposals checked.
+
+**Wording (from the UX / content review)**
+- Rows: only proposals that went to a vote at meetings up to June 30, 2026 (the last N-PX year). Upcoming, withdrawn and excluded proposals are left out, and the intro says so.
+- A missing vote reads **"No vote found"** in the cell, explained as "no matching vote in the filings checked". No guess about why (no "did not hold the stock").
+- Peer families (everyone except Parnassus) show "auto-detected, not yet reviewed" in the tab intro and in the cell's accessible label, until the owner or a reviewer confirms them (Never claim 4).
+- Columns A to Z by family name, no anchor column, no tallies, no "agreed with" measure. The intro adds: "Each fund votes under its own policy. Nothing here says any vote was right or wrong."
+- "Split" shows the count, e.g. "Split: 3 for, 2 against".
+
+**Accessibility (from the accessibility review)**
+- Table has a `<caption>`, `<th scope="col">` per family and `<th scope="row">` per proposal; each vote link's `aria-label` names the family, proposal, vote and "N-PX filing".
+- The table box is `role="region"`, labelled, `tabindex="0"`, with a sticky first column and a visible focus outline. This adds two rules to `styles.css` (`.table-wrap:focus-visible`, `.sticky-col`), recorded in DESIGN.md first (rule 10).
+- Filters are labelled selects with an "All …" first option. On phones the default is one company at a time.
+
+### Plan-to-build changes
+- Task 1 now reads "rebuild from the fixed script", not "from the reviewed run artifact".
+- Task 2 owns `styles.css` and `DESIGN.md` as well (the two new rules).
 
 ## Not in this round
 
