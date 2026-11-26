@@ -8,54 +8,52 @@
  ],
  "estimates": {
   "refile": {
-   "k": 19,
-   "n": 34
+   "k": 17,
+   "n": 32
   },
-  "support_delta": {
-   "n": 17,
-   "mean": -3.07,
-   "sd": 6.29,
-   "log_sd": 0.512,
-   "use_mean": false
-  },
-  "new_cells_by_season": {
-   "2023": 8,
-   "2024": 11,
-   "2025": 14,
-   "2026": 12
-  },
-  "new_cells_per_season": 12.33,
-  "commitment": {
-   "k": 3,
-   "n": 72,
-   "ids": [
-    "dis-2024-afl-ai",
-    "cmcsa-2024-afl-ai",
-    "vrsk-2024-responsible-ai"
-   ]
-  },
-  "commitment_first": {
-   "k": 3,
-   "n": 47
-  },
-  "commitment_refile": {
-   "k": 0,
-   "n": 25
-  },
-  "exclusion": {
-   "k": 3,
-   "n": 72
+  "lapsed_refile": {
+   "k": 2,
+   "n": 14
   },
   "new_pair_exposed": {
    "k": 7,
-   "n": 147,
+   "n": 146,
    "label": "same ask filed at a same-role company the season before"
   },
   "new_pair_unexposed": {
    "k": 30,
-   "n": 837,
+   "n": 840,
    "label": "not filed at a same-role company the season before"
-  }
+  },
+  "support_delta": {
+   "n": 15,
+   "mean": -2.68,
+   "sd": 6.55,
+   "log_sd": 0.516,
+   "use_mean": false
+  },
+  "commitment": {
+   "k": 3,
+   "n": 54,
+   "pairs": [
+    "DIS ask-ai-oversight-reporting 2024",
+    "CMCSA ask-ai-oversight-reporting 2024",
+    "VRSK ask-ai-bias 2024"
+   ]
+  },
+  "commitment_first": {
+   "k": 3,
+   "n": 35
+  },
+  "commitment_refile": {
+   "k": 0,
+   "n": 19
+  },
+  "exclusion": {
+   "k": 3,
+   "n": 57
+  },
+  "unit": "one per company, ask and season with a filing not lead-filed from a critical stance on ESG"
  },
  "ask_support": {
   "ask-dc-water": {
@@ -203,21 +201,25 @@
   ],
   "test_season": 2026,
   "refiled": {
-   "expected": 5.3,
-   "actual": 9,
-   "eligible": 11,
-   "filed_before": 19
+   "expected": 4.3,
+   "actual": 6,
+   "eligible": 9
+  },
+  "lapsed": {
+   "expected": 3.0,
+   "actual": 2,
+   "eligible": 12
   },
   "new_pairs": {
-   "expected": 12.5,
-   "actual": 12
+   "expected": 12.2,
+   "actual": 14
   },
   "support_error": {
-   "n": 5,
-   "with_average_drift_mae": 7.24,
-   "same_as_last_year_mae": 5.67
+   "n": 4,
+   "with_average_drift_mae": 7.05,
+   "same_as_last_year_mae": 6.17
   },
-  "support_model": "last support carried forward, with the observed yearly spread"
+  "support_model": "last year's figure carried forward"
  },
  "thresholds": {
   "values": [
@@ -232,6 +234,7 @@
   {
    "company": "AAPL",
    "ask": "ask-ai-oversight-reporting",
+   "all_critical": false,
    "seasons": {
     "2024": [
      {
@@ -250,6 +253,7 @@
   {
    "company": "AAPL",
    "ask": "ask-ai-training-data",
+   "all_critical": true,
    "seasons": {
     "2025": [
      {
@@ -267,6 +271,7 @@
   {
    "company": "AAPL",
    "ask": "ask-child-safety",
+   "all_critical": false,
    "seasons": {
     "2025": [
      {
@@ -286,6 +291,7 @@
   {
    "company": "AAPL",
    "ask": "ask-dc-climate-energy",
+   "all_critical": false,
    "seasons": {
     "2026": [
      {
@@ -303,6 +309,7 @@
   {
    "company": "AMZN",
    "ask": "ask-ai-oversight-reporting",
+   "all_critical": false,
    "seasons": {
     "2024": [
      {
@@ -334,6 +341,7 @@
   {
    "company": "AMZN",
    "ask": "ask-ai-training-data",
+   "all_critical": true,
    "seasons": {
     "2025": [
      {
@@ -351,6 +359,7 @@
   {
    "company": "AMZN",
    "ask": "ask-ai-workforce",
+   "all_critical": false,
    "seasons": {
     "2026": [
      {
@@ -369,6 +378,7 @@
   {
    "company": "AMZN",
    "ask": "ask-customer-due-diligence",
+   "all_critical": false,
    "seasons": {
     "2023": [
      {
@@ -447,6 +457,7 @@
   {
    "company": "AMZN",
    "ask": "ask-dc-climate-energy",
+   "all_critical": false,
    "seasons": {
     "2025": [
      {
@@ -489,6 +500,7 @@
   {
    "company": "AXON",
    "ask": "ask-customer-due-diligence",
+   "all_critical": false,
    "seasons": {
     "2023": [
      {
@@ -507,6 +519,7 @@
   {
    "company": "CMCSA",
    "ask": "ask-ai-oversight-reporting",
+   "all_critical": false,
    "seasons": {
     "2024": [
      {
@@ -525,6 +538,7 @@
   {
    "company": "CRM",
    "ask": "ask-ai-oversight-reporting",
+   "all_critical": false,
    "seasons": {
     "2026": [
      {
@@ -543,6 +557,7 @@
   {
    "company": "CRM",
    "ask": "ask-customer-due-diligence",
+   "all_critical": false,
    "seasons": {
     "2026": [
      {
@@ -560,6 +575,7 @@
   {
    "company": "CSCO",
    "ask": "ask-customer-due-diligence",
+   "all_critical": false,
    "seasons": {
     "2026": [
      {
@@ -577,6 +593,7 @@
   {
    "company": "DIS",
    "ask": "ask-ai-oversight-reporting",
+   "all_critical": false,
    "seasons": {
     "2024": [
      {
@@ -595,6 +612,7 @@
   {
    "company": "DLR",
    "ask": "ask-dc-water",
+   "all_critical": false,
    "seasons": {
     "2025": [
      {
@@ -628,6 +646,7 @@
   {
    "company": "GOOGL",
    "ask": "ask-ai-bias",
+   "all_critical": false,
    "seasons": {
     "2025": [
      {
@@ -645,6 +664,7 @@
   {
    "company": "GOOGL",
    "ask": "ask-ai-misinformation",
+   "all_critical": false,
    "seasons": {
     "2024": [
      {
@@ -675,6 +695,7 @@
   {
    "company": "GOOGL",
    "ask": "ask-ai-oversight-reporting",
+   "all_critical": false,
    "seasons": {
     "2023": [
      {
@@ -732,6 +753,7 @@
   {
    "company": "GOOGL",
    "ask": "ask-ai-training-data",
+   "all_critical": false,
    "seasons": {
     "2025": [
      {
@@ -776,6 +798,7 @@
   {
    "company": "GOOGL",
    "ask": "ask-child-safety",
+   "all_critical": false,
    "seasons": {
     "2024": [
      {
@@ -794,6 +817,7 @@
   {
    "company": "GOOGL",
    "ask": "ask-customer-due-diligence",
+   "all_critical": false,
    "seasons": {
     "2025": [
      {
@@ -811,6 +835,7 @@
   {
    "company": "GOOGL",
    "ask": "ask-dc-climate-energy",
+   "all_critical": false,
    "seasons": {
     "2025": [
      {
@@ -845,6 +870,7 @@
   {
    "company": "GOOGL",
    "ask": "ask-dc-siting-rights",
+   "all_critical": false,
    "seasons": {
     "2023": [
      {
@@ -865,6 +891,7 @@
   {
    "company": "GOOGL",
    "ask": "ask-dc-water",
+   "all_critical": false,
    "seasons": {
     "2026": [
      {
@@ -882,6 +909,7 @@
   {
    "company": "GOOGL",
    "ask": "ask-targeted-ads-rights",
+   "all_critical": false,
    "seasons": {
     "2023": [
      {
@@ -937,6 +965,7 @@
   {
    "company": "IBM",
    "ask": "ask-ai-bias",
+   "all_critical": true,
    "seasons": {
     "2026": [
      {
@@ -955,6 +984,7 @@
   {
    "company": "META",
    "ask": "ask-ai-misinformation",
+   "all_critical": false,
    "seasons": {
     "2024": [
      {
@@ -976,6 +1006,7 @@
   {
    "company": "META",
    "ask": "ask-ai-training-data",
+   "all_critical": false,
    "seasons": {
     "2025": [
      {
@@ -1015,6 +1046,7 @@
   {
    "company": "META",
    "ask": "ask-child-safety",
+   "all_critical": false,
    "seasons": {
     "2025": [
      {
@@ -1086,6 +1118,7 @@
   {
    "company": "META",
    "ask": "ask-dc-climate-energy",
+   "all_critical": false,
    "seasons": {
     "2025": [
      {
@@ -1120,6 +1153,7 @@
   {
    "company": "META",
    "ask": "ask-targeted-ads-rights",
+   "all_critical": false,
    "seasons": {
     "2023": [
      {
@@ -1154,6 +1188,7 @@
   {
    "company": "MSFT",
    "ask": "ask-ai-bias",
+   "all_critical": false,
    "seasons": {
     "2025": [
      {
@@ -1172,6 +1207,7 @@
   {
    "company": "MSFT",
    "ask": "ask-ai-fossil-fuels",
+   "all_critical": false,
    "seasons": {
     "2024": [
      {
@@ -1200,6 +1236,7 @@
   {
    "company": "MSFT",
    "ask": "ask-ai-misinformation",
+   "all_critical": false,
    "seasons": {
     "2023": [
      {
@@ -1233,6 +1270,7 @@
   {
    "company": "MSFT",
    "ask": "ask-ai-training-data",
+   "all_critical": true,
    "seasons": {
     "2024": [
      {
@@ -1261,6 +1299,7 @@
   {
    "company": "MSFT",
    "ask": "ask-customer-due-diligence",
+   "all_critical": false,
    "seasons": {
     "2025": [
      {
@@ -1294,6 +1333,7 @@
   {
    "company": "MSFT",
    "ask": "ask-dc-climate-energy",
+   "all_critical": false,
    "seasons": {
     "2026": [
      {
@@ -1311,6 +1351,7 @@
   {
    "company": "MSFT",
    "ask": "ask-dc-siting-rights",
+   "all_critical": false,
    "seasons": {
     "2023": [
      {
@@ -1359,6 +1400,7 @@
   {
    "company": "NFLX",
    "ask": "ask-ai-oversight-reporting",
+   "all_critical": false,
    "seasons": {
     "2024": [
      {
@@ -1378,6 +1420,7 @@
   {
    "company": "NVDA",
    "ask": "ask-customer-due-diligence",
+   "all_critical": false,
    "seasons": {
     "2026": [
      {
@@ -1397,6 +1440,7 @@
   {
    "company": "NVDA",
    "ask": "ask-dc-climate-energy",
+   "all_critical": false,
    "seasons": {
     "2026": [
      {
@@ -1417,6 +1461,7 @@
   {
    "company": "PLTR",
    "ask": "ask-customer-due-diligence",
+   "all_critical": false,
    "seasons": {
     "2026": [
      {
@@ -1446,6 +1491,7 @@
   {
    "company": "SO",
    "ask": "ask-dc-climate-energy",
+   "all_critical": false,
    "seasons": {
     "2026": [
      {
@@ -1467,6 +1513,7 @@
   {
    "company": "VRSK",
    "ask": "ask-ai-bias",
+   "all_critical": false,
    "seasons": {
     "2024": [
      {

@@ -338,6 +338,9 @@
       if (left < wrap.scrollLeft || right > wrap.scrollLeft + wrap.clientWidth) wrap.scrollLeft = Math.max(0, left - 40);
     }
     drawShortlist();
+    // The last step of the site: the same company and ask, tested forward in Plan and test › Test plans over time.
+    const nx = document.getElementById("pl-next");
+    if (nx) nx.href = planUrl().replace(/#planner$/, "#simulate");
     // planner-docs.js (UI session) adds the escalation step and drafted documents after each redraw.
     document.dispatchEvent(new CustomEvent("plannerdraw"));
     const status = document.getElementById("pl-status");
@@ -420,7 +423,8 @@
       <p id="pl-status" class="visually-hidden" role="status"></p>
       <div id="pl-out"></div>
       <div id="pl-docs"></div>
-      <aside id="pl-shortlist" class="pl-card" aria-labelledby="pl-h-list"></aside>`;
+      <aside id="pl-shortlist" class="pl-card" aria-labelledby="pl-h-list"></aside>
+      <p class="next-section"><a id="pl-next" href="#simulate">Next: test this plan over time →</a></p>`;
     document.getElementById("pl-co").addEventListener("change", (e) => { S.co = e.target.value; sync(); });
     document.getElementById("pl-ask").addEventListener("change", (e) => { S.ask = e.target.value; sync(); });
     document.getElementById("pl-mine").addEventListener("change", (e) => { S.mine = e.target.value; store.set(MINE, S.mine); sync(); });

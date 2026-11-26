@@ -74,59 +74,89 @@ def main():
         cells[(p["company"], p["ask_id"])][season_of(p)].append(p)
     seasons = sorted({season_of(p) for p in P})
 
+    role = {c["ticker"]: c.get("tier") for c in us}
+    ask_ids = [x["id"] for x in asks]
+    all_critical = {k for k, by in cells.items() if all(x["id"] in critical for y in by for x in by[y])}
+
+    def votes_by_year(k, before):
+        """One figure a year on the subject (the rule counts votes on substantially the same proposal): the highest
+        vote on a proposal not lead-filed by a filer critical of ESG; where every filing on the pair came from such
+        a filer, the highest of those. sim.js locked() uses the same rule."""
+        by = cells[k]
+        out = []
+        for y in sorted(by):
+            if y >= before:
+                continue
+            v = [x["support_pct"] for x in by[y] if x.get("support_pct") is not None and (k in all_critical or x["id"] not in critical)]
+            if v:
+                out.append((y, max(v)))
+        return out
+
+    def rate(k, n):
+        return {"k": k, "n": n}
+
     def estimates(upto):
-        """Estimate the model from seasons <= upto."""
-        ref_k = ref_n = 0
-        deltas = []
-        logr = []
-        new_by = {}
-        filed_cells = defaultdict(set)
-        for (co, ask), by in cells.items():
+        """Every rate the engine uses, from seasons <= upto."""
+        ref = [0, 0]
+        lapsed = [0, 0]
+        exposed = [0, 0]
+        unexposed = [0, 0]
+        logr, deltas = [], []
+        filed_in = defaultdict(set)  # seasons with a filing not lead-filed from a critical stance (any, for all-critical pairs)
+        for k, by in cells.items():
+            for y in by:
+                if y <= upto and (k in all_critical or any(x["id"] not in critical for x in by[y])):
+                    filed_in[y].add(k)
+        obs = [s for s in seasons if s <= upto]
+        for y in obs[1:]:
+            before = set().union(*(filed_in[s] for s in obs if s < y))
+            for co in tickers:
+                for a in ask_ids:
+                    k = (co, a)
+                    hit = k in filed_in[y]
+                    if k in filed_in[y - 1]:
+                        if not lockout(votes_by_year(k, y), y):
+                            ref[1] += 1; ref[0] += hit
+                    elif k in before:
+                        if not lockout(votes_by_year(k, y), y):
+                            lapsed[1] += 1; lapsed[0] += hit
+                    else:
+                        ex = any(a2 == a and c2 != co and role.get(c2) == role.get(co) for c2, a2 in filed_in[y - 1])
+                        box = exposed if ex else unexposed
+                        box[1] += 1; box[0] += hit
+        for k in cells:
+            v = [(y, s) for y, s in votes_by_year(k, upto + 1) if k not in all_critical]
+            for (ya, sa), (yb, sb) in zip(v, v[1:]):
+                if yb == ya + 1:
+                    deltas.append(sb - sa)
+                    if sa > 0 and sb > 0:
+                        logr.append(math.log(sb / sa))
+        # Company responses, counted once per company, ask and season (as the engine draws them), over filings not
+        # lead-filed from a critical stance on ESG. A commitment: withdrawn because the company agreed to act (the
+        # reason says so). The engine draws a commitment only when the company did not exclude the filing.
+        is_commit = lambda p: p["status"] == "withdrawn" and any(w in (p.get("status_reason") or "").lower() for w in (" committed to", "negotiated agreement", " agreed to"))
+        units = []  # (pair, season, excluded, committed, first)
+        for k, by in cells.items():
             ys = sorted(y for y in by if y <= upto)
             for y in ys:
-                filed_cells[y].add((co, ask))
-            hist = lambda before: [(yy, max((x["support_pct"] for x in by[yy] if x.get("support_pct") is not None), default=None)) for yy in by if yy < before]
-            for y in ys:
-                # Refile rate among pairs the resubmission rule would not block the next season.
-                if y + 1 <= upto and not lockout(hist(y + 1), y + 1):
-                    ref_n += 1
-                    ref_k += (y + 1) in by
-            for a, b in zip(ys, ys[1:]):
-                sa = [x["support_pct"] for x in by[a] if x.get("support_pct") is not None and x["id"] not in critical]
-                sb = [x["support_pct"] for x in by[b] if x.get("support_pct") is not None and x["id"] not in critical]
-                if sa and sb:
-                    deltas.append(max(sb) - max(sa))
-                    if max(sa) > 0 and max(sb) > 0:
-                        logr.append(math.log(max(sb) / max(sa)))
-        seen = set()
-        for y in [s for s in seasons if s <= upto]:
-            new_by[y] = len(filed_cells[y] - seen)
-            seen |= filed_cells[y]
-        first = min(new_by) if new_by else None
-        later = [v for y, v in new_by.items() if y != first]
-        filed = [p for p in P if season_of(p) <= upto and p["status"] in ("voted", "withdrawn", "excluded")]
-        # A company commitment: withdrawn because the company agreed to act (the reason says so).
-        commits = [p for p in filed if p["status"] == "withdrawn" and any(w in (p.get("status_reason") or "").lower() for w in (" committed to", "negotiated agreement", " agreed to"))]
-        excluded = [p for p in filed if p["status"] == "excluded"]
-        # First filing of an ask at a company vs a refile: in this data every commitment came on a first filing.
-        first_season = {}
-        for (co, ask), by in cells.items():
-            ys = [y for y in by if y <= upto]
-            if ys:
-                for x in by[min(ys)]:
-                    first_season[x["id"]] = True
-        f_all = [p for p in filed if first_season.get(p["id"])]
-        r_all = [p for p in filed if not first_season.get(p["id"])]
+                ps = [x for x in by[y] if x["id"] not in critical and x["status"] in ("voted", "withdrawn", "excluded")]
+                if ps:
+                    units.append((k, y, all(x["status"] == "excluded" for x in ps), any(is_commit(x) for x in ps), y == ys[0]))
+        filed = units
+        not_excl = [u for u in units if not u[2]]
+        commits = [u for u in not_excl if u[3]]
         return {
-            "refile": {"k": ref_k, "n": ref_n},
+            "refile": rate(*ref),
+            "lapsed_refile": rate(*lapsed),
+            "new_pair_exposed": {**rate(*exposed), "label": "same ask filed at a same-role company the season before"},
+            "new_pair_unexposed": {**rate(*unexposed), "label": "not filed at a same-role company the season before"},
             "support_delta": {"n": len(deltas), "mean": round(st.mean(deltas), 2) if deltas else 0, "sd": round(st.pstdev(deltas), 2) if len(deltas) > 1 else 8.0,
                               "log_sd": round(st.pstdev(logr), 3) if len(logr) > 1 else 0.5},
-            "new_cells_by_season": new_by,
-            "new_cells_per_season": round(st.mean(later), 2) if later else None,
-            "commitment": {"k": len(commits), "n": len(filed), "ids": [p["id"] for p in commits]},
-            "commitment_first": {"k": sum(1 for p in commits if first_season.get(p["id"])), "n": len(f_all)},
-            "commitment_refile": {"k": sum(1 for p in commits if not first_season.get(p["id"])), "n": len(r_all)},
-            "exclusion": {"k": len(excluded), "n": len(filed)},
+            "commitment": {**rate(len(commits), len(not_excl)), "pairs": [f"{k[0]} {k[1]} {y}" for k, y, *_ in commits]},
+            "commitment_first": rate(sum(1 for u in commits if u[4]), sum(1 for u in not_excl if u[4])),
+            "commitment_refile": rate(sum(1 for u in commits if not u[4]), sum(1 for u in not_excl if not u[4])),
+            "exclusion": rate(sum(1 for u in units if u[2]), len(units)),
+            "unit": "one per company, ask and season with a filing not lead-filed from a critical stance on ESG",
         }
 
     def ask_support(upto):
@@ -139,54 +169,47 @@ def main():
 
     est = estimates(max(seasons))
 
-    role = {c["ticker"]: c.get("tier") for c in us}
-    filed_in = defaultdict(set)  # season -> {(company, ask)}
-    for (co, ask), by in cells.items():
-        for y in by:
-            filed_in[y].add((co, ask))
-    exp_k = exp_n = un_k = un_n = 0
-    for y in seasons[1:]:
-        before = set().union(*(filed_in[s] for s in seasons if s < y))
-        for co in tickers:
-            for a in [x["id"] for x in asks]:
-                if (co, a) in before:
-                    continue
-                exposed = any(a2 == a and c2 != co and role.get(c2) == role.get(co) for c2, a2 in filed_in[y - 1])
-                hit = (co, a) in filed_in[y]
-                if exposed:
-                    exp_n += 1; exp_k += hit
-                else:
-                    un_n += 1; un_k += hit
-    est["new_pair_exposed"] = {"k": exp_k, "n": exp_n, "label": "same ask filed at a same-role company the season before"}
-    est["new_pair_unexposed"] = {"k": un_k, "n": un_n, "label": "not filed at a same-role company the season before"}
-
-    # Backtest: fit on seasons before the last full one, then ask the model about that season.
+    # Held-out test of the engine's rates: fit every rate on the seasons before the last, then compare what those
+    # rates expect for the last season with what was recorded. Posterior means, as the engine's average draw.
     test = max(seasons)
     fit = estimates(test - 1)
-    p_ref = (fit["refile"]["k"] + 1) / (fit["refile"]["n"] + 2)
-    prev = {k for k, by in cells.items() if (test - 1) in by}
-    eligible = [k for k in prev if not lockout([(y, max((x["support_pct"] for x in cells[k][y] if x.get("support_pct") is not None), default=None)) for y in cells[k] if y < test], test)]
-    actual_refiled = sum(1 for k in prev if test in cells[k])
-    actual_new = sum(1 for k, by in cells.items() if test in by and min(by) == test)
+    pm = lambda e: (e["k"] + 1) / (e["n"] + 2)
+    nc = lambda k, y: y in cells[k] and (k in all_critical or any(x["id"] not in critical for x in cells[k][y]))
+    filed_test = {k for k in cells if nc(k, test)}
+    filed_prev = {k for k in cells if nc(k, test - 1)}
+    seen = {k for k in cells if any(nc(k, y) for y in cells[k] if y < test)}
+    exp_new = act_new = 0.0
+    elig_ref, elig_lap = [], []
+    for co in tickers:
+        for a in ask_ids:
+            k = (co, a)
+            if k in filed_prev:
+                if not lockout(votes_by_year(k, test), test):
+                    elig_ref.append(k)
+            elif k in seen:
+                if not lockout(votes_by_year(k, test), test):
+                    elig_lap.append(k)
+            else:
+                ex = any(a2 == a and c2 != co and role.get(c2) == role.get(co) for c2, a2 in filed_prev)
+                exp_new += pm(fit["new_pair_exposed"] if ex else fit["new_pair_unexposed"])
+                act_new += k in filed_test
     abs_naive, abs_model = [], []
-    for k in prev:
-        if test not in cells[k]:
-            continue
-        last = [x["support_pct"] for x in cells[k][test - 1] if x.get("support_pct") is not None and x["id"] not in critical]
-        now = [x["support_pct"] for x in cells[k][test] if x.get("support_pct") is not None and x["id"] not in critical]
-        if last and now:
-            abs_naive.append(abs(max(now) - max(last)))
-            abs_model.append(abs(max(now) - (max(last) + fit["support_delta"]["mean"])))
+    for k in elig_ref:
+        v = dict(votes_by_year(k, test + 1)) if k not in all_critical else {}
+        if test in v and (test - 1) in v:
+            abs_naive.append(abs(v[test] - v[test - 1]))
+            abs_model.append(abs(v[test] - (v[test - 1] + fit["support_delta"]["mean"])))
     backtest = {
         "fit_seasons": [s for s in seasons if s < test], "test_season": test,
-        "refiled": {"expected": round(p_ref * len(eligible), 1), "actual": actual_refiled, "eligible": len(eligible), "filed_before": len(prev)},
-        "new_pairs": {"expected": fit["new_cells_per_season"], "actual": actual_new},
+        "refiled": {"expected": round(pm(fit["refile"]) * len(elig_ref), 1), "actual": sum(1 for k in elig_ref if k in filed_test), "eligible": len(elig_ref)},
+        "lapsed": {"expected": round(pm(fit["lapsed_refile"]) * len(elig_lap), 1), "actual": sum(1 for k in elig_lap if k in filed_test), "eligible": len(elig_lap)},
+        "new_pairs": {"expected": round(exp_new, 1), "actual": int(act_new)},
         "support_error": {"n": len(abs_model), "with_average_drift_mae": round(st.mean(abs_model), 2) if abs_model else None,
                           "same_as_last_year_mae": round(st.mean(abs_naive), 2) if abs_naive else None},
     }
     # The support model the simulator uses is whichever did better on the held-out season.
     drift_better = bool(abs_model) and st.mean(abs_model) < st.mean(abs_naive)
-    backtest["support_model"] = "last support plus the average yearly change" if drift_better else "last support carried forward, with the observed yearly spread"
+    backtest["support_model"] = "last year's figure plus the average yearly change" if drift_better else "last year's figure carried forward"
     est["support_delta"]["use_mean"] = drift_better
 
     # Investors: who has filed each ask (lead or co), and who holds shares at each company (13F, NBIM).
@@ -225,7 +248,7 @@ def main():
         "ask_support": ask_support(max(seasons)),
         "backtest": backtest,
         "thresholds": {"values": THRESHOLDS, "lookback_years": LOOKBACK, "recent_years": RECENT},
-        "cells": [{"company": co, "ask": a, "seasons": {str(y): [{"id": x["id"], "status": x["status"], "support": x.get("support_pct"), "critical": x["id"] in critical,
+        "cells": [{"company": co, "ask": a, "all_critical": (co, a) in all_critical, "seasons": {str(y): [{"id": x["id"], "status": x["status"], "support": x.get("support_pct"), "critical": x["id"] in critical,
                                                                     "filers": [o for o, _ in acts.get(x["id"], [])]} for x in by[y]] for y in sorted(by)}}
                   for (co, a), by in sorted(cells.items())],
         "companies": [{"id": c["id"], "ticker": c["ticker"], "name": c["name"], "route_status": c.get("route_status"),

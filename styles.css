@@ -27,6 +27,8 @@
   --heat-1: #e9edf5; --heat-2: #bccae0; --heat-3: #849ec6; --heat-4: #4c71ad; --heat-5: #1f4e98;
   --accent: var(--blue);
   --accent-soft: #e9edf5;
+  /* Scenarios (Plan and test › Test plans over time): green, so nothing simulated reads as recorded data (owner, 2026-11-26). */
+  --scenario: #1e7a46; --scenario-2: #4f9d6b; --scenario-3: #0f4d2b; --scenario-soft: #e6f2ea;
   --blue-1: var(--blue);
   --blue-2: var(--blue);
   --blue-3: var(--blue);
@@ -74,6 +76,10 @@ h4 { font-weight: 400; }
 h3.sub-h, h4.sub-h { font-size: 17px; margin: var(--s-5) 0 var(--s-1); }
 strong, b { font-weight: 500; }
 .meta { font-size: 13px; color: var(--ink-soft); margin: 0; }
+/* The header's counts line is filled once the data loads: keep its space from the first paint so the page does not
+   jump (one line on wide screens, two on phones). */
+.site-header .meta { min-height: 1.55em; line-height: 1.55; }
+@media (max-width: 640px) { .site-header .meta { min-height: 3.1em; } }
 
 .tabs { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
 /* Tabs wrap onto a second line rather than hide off-screen, so every task is visible. */
@@ -350,6 +356,22 @@ tr.hit td { background: var(--accent-soft); }
 /* Policy and causality: link types are told apart by dash pattern in causality.js. */
 :root { --cz-link: var(--blue-2); --cz-node: var(--blue-2); }
 .cz-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+/* Lane names in their own column outside the scrolling box; time controls above, an overview of the years below. */
+.cz-frame { display: grid; grid-template-columns: 150px minmax(0, 1fr); align-items: start; }
+.cz-lanes { position: relative; }
+.cz-lanes span { position: absolute; right: 12px; transform: translateY(-50%); font-size: 12px; color: var(--ink-soft); text-align: right; line-height: 1.2; }
+.cz-timebar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0 6px 150px; }
+.cz-timebar .chip[aria-disabled="true"] { opacity: .45; cursor: default; }
+.cz-overview { margin: 8px 0 4px 150px; cursor: pointer; }
+.cz-ov-track { position: relative; height: 26px; border-top: 1px solid var(--control-edge); }
+.cz-ov-year { position: absolute; top: 4px; transform: translateX(-50%); font-size: 11px; color: var(--ink-soft); }
+.cz-ov-year::before { content: ""; position: absolute; left: 50%; top: -5px; height: 5px; border-left: 1px solid var(--control-edge); }
+.cz-ov-window { position: absolute; top: -4px; height: 28px; border: 2px solid var(--accent); border-radius: 3px; background: color-mix(in srgb, var(--accent) 8%, transparent); pointer-events: none; }
+@media (max-width: 640px) {
+  .cz-frame { grid-template-columns: 92px minmax(0, 1fr); }
+  .cz-lanes span { font-size: 11px; right: 6px; max-width: 86px; }
+  .cz-timebar, .cz-overview { margin-left: 92px; }
+}
 .cz-graph svg { display: block; }
 .cz-panel { margin-top: 12px; max-height: none; }
 
@@ -745,6 +767,8 @@ button:active:not([disabled]) { transform: scale(.98); }
 .sim-cell { position: relative; font-size: 11px; text-align: center; padding: 8px 2px; border-radius: 3px; border: 1px solid var(--control-edge);
   background: color-mix(in srgb, var(--accent) calc(var(--fill) * 100%), var(--surface)); color: var(--ink);
   box-shadow: inset 0 0 0 calc(var(--ring) * 3px) var(--ink); }
+/* Scenario cells: green up to 60% strength, so dark text keeps at least 4.5:1 on every cell. */
+.sim-cell.scen { background: color-mix(in srgb, var(--scenario) calc(var(--fill) * 60%), var(--surface)); color: var(--ink); }
 .sim-cell.mine span[aria-hidden] { text-decoration: underline; text-decoration-thickness: 2px; }
 .sim-log { font-size: 13px; padding-left: 20px; max-height: 360px; overflow: auto; }
 .sim-log li { margin: 2px 0; }

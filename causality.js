@@ -1,4 +1,4 @@
-// Causality map: what led to what, across government, investors, companies, labs and the public.
+// Causal map (a causal timeline): sourced causal links between events, across government, investors, companies, labs and the public.
 // Time runs left to right; each actor type has its own lane. Arrows show sourced causal links.
 // Click an event to trace its causes (upstream) and its effects (downstream).
 
@@ -12,6 +12,9 @@
   ];
   // All links are blue; the link type is told apart by dash pattern (and named in the legend and table).
   const LINK_VAR = { "led to": "--cz-link", "responded to": "--cz-link", restricts: "--cz-link", enables: "--cz-link", "cited by": "--cz-link" };
+  // Owner, 2026-11-26: name the causal relations as the field does (causal mapping / process tracing).
+  const LINK_LABEL = { "led to": "causes", "responded to": "prompts a response", restricts: "constrains", enables: "enables", "cited by": "is cited by" };
+  const rel = (k) => LINK_LABEL[k] || k;
   const LINK_DASH = { "led to": null, "responded to": "6 3", restricts: "2 3", enables: "8 3 2 3", "cited by": "1 4" };
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const link = (url, label = "source") => url ? `<a class="src" href="${esc(url)}" target="_blank" rel="noopener">[${esc(label)}]</a>` : `<span class="unverified">source pending</span>`;
@@ -57,10 +60,58 @@
     return seen;
   }
 
+  // Time navigation for the sideways-scrolling chart: the dates in view, Earlier / Later, and an overview strip
+  // of the years with the visible window marked (click to jump).
+  function timeNav(xr, t0, t1, W) {
+    const sc = document.querySelector("#tab-causality .cz-scroll");
+    const cap = document.getElementById("cz-window"), ov = document.getElementById("cz-overview");
+    const back = document.getElementById("cz-earlier"), fwd = document.getElementById("cz-later");
+    if (!sc || !cap || !ov) return;
+    const dateAt = (px) => {
+      let lo = +t0, hi = +t1;
+      for (let i = 0; i < 40; i++) { const mid = (lo + hi) / 2; if (xr(new Date(mid)) < px) lo = mid; else hi = mid; }
+      return new Date((lo + hi) / 2);
+    };
+    const ym = (d) => d.toISOString().slice(0, 7);
+    const day = (d) => d.toISOString().slice(0, 10);
+    const D = (v) => (window.DATES ? window.DATES.long(v) : v);
+    const years = d3.timeYear.range(d3.timeYear.ceil(t0), t1);
+    const gap = (100 * 38) / Math.max(200, ov.clientWidth || 600); // at least 38 px between year labels
+    let lastX = -1e9;
+    ov.innerHTML = `<div class="cz-ov-track">${years.map((y) => {
+      const f = (100 * xr(y)) / W;
+      if (f - lastX < gap || f > 100 - gap / 2) return "";
+      lastX = f;
+      return `<span class="cz-ov-year" style="left:${f}%">${y.getFullYear()}</span>`;
+    }).join("")}<span class="cz-ov-window"></span></div>`;
+    const win = ov.querySelector(".cz-ov-window");
+    let settle;
+    const update = () => {
+      const a = sc.scrollLeft, b = a + sc.clientWidth;
+      clearTimeout(settle);
+      settle = setTimeout(() => { cap.textContent = text(a, b); }, 250);
+      win.style.left = `${(100 * a) / W}%`;
+      win.style.width = `${(100 * Math.min(W, sc.clientWidth)) / W}%`;
+      // aria-disabled, not disabled, so keyboard focus stays on the button at either end.
+      if (back) back.setAttribute("aria-disabled", String(a <= 1));
+      if (fwd) fwd.setAttribute("aria-disabled", String(b >= W - 1));
+    };
+    const text = (a, b) => `Showing ${D(ym(dateAt(Math.max(a, xr(t0)))))} to ${D(ym(dateAt(Math.min(b, xr(t1)))))}, of events from ${D(day(t0))} to ${D(day(t1))}. Scroll sideways or use Earlier and Later. The time scale gives recent years more room.`;
+    const smooth = matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+    if (back) back.onclick = () => back.getAttribute("aria-disabled") !== "true" && sc.scrollBy({ left: -0.8 * sc.clientWidth, behavior: smooth });
+    if (fwd) fwd.onclick = () => fwd.getAttribute("aria-disabled") !== "true" && sc.scrollBy({ left: 0.8 * sc.clientWidth, behavior: smooth });
+    ov.onclick = (e) => {
+      const r = ov.querySelector(".cz-ov-track").getBoundingClientRect();
+      sc.scrollTo({ left: ((e.clientX - r.left) / r.width) * W - sc.clientWidth / 2, behavior: smooth });
+    };
+    sc.onscroll = update;
+    requestAnimationFrame(() => { update(); cap.textContent = text(sc.scrollLeft, sc.scrollLeft + sc.clientWidth); });
+  }
+
   function draw() {
     const box = document.getElementById("cz-graph");
     box.innerHTML = "";
-    const top = 30, left = 150;
+    const top = 30, left = 10;
     const ev = C.events.filter(inView);
     if (!ev.length) { box.innerHTML = `<p class="status-note cz-empty">No events match these filters.</p>`; C.nodeSel = C.labelSel = C.linkSel = null; return; }
     const W = Math.max(box.clientWidth || 900, 720, ev.length * 34);
@@ -98,16 +149,15 @@
         .attr("fill", i % 2 ? cssVar("--bg") : cssVar("--surface"));
     });
     // Lane names stay pinned at the left edge while the chart scrolls sideways (it opens on the latest events).
+    // Owner, 2026-11-26: lane names outside the chart box (a fixed column to its left, lined up with the lanes),
+    // and a clear sense of time: Earlier / Later buttons, the dates in view, and an overview strip of the years.
     const laneLabels = () => {
-      const g = svg.append("g").attr("class", "cz-lane-labels");
-      lanes.forEach((l, i) => {
-        g.append("text").text(l.label).attr("x", 10).attr("y", laneTop(i) + laneHs[i] / 2 + 4)
-          .attr("font-size", 12).attr("font-weight", 400).attr("fill", cssVar("--ink-soft"))
-          .attr("stroke", cssVar("--surface")).attr("stroke-width", 4).attr("paint-order", "stroke");
-      });
-      const sc = box.closest(".cz-scroll");
-      const follow = () => g.attr("transform", `translate(${sc ? sc.scrollLeft : 0},0)`);
-      if (sc) { sc.onscroll = follow; requestAnimationFrame(follow); }
+      const col = document.getElementById("cz-lanes");
+      if (col) {
+        col.style.height = `${H}px`;
+        col.innerHTML = lanes.map((l, i) => `<span style="top:${laneTop(i) + laneHs[i] / 2}px">${esc(l.label)}</span>`).join("");
+      }
+      timeNav(xr, t0, t1, W);
     };
     // Month labels along the top, placed with the same stretched scale.
     const months = d3.timeMonth.range(d3.timeMonth.ceil(t0), t1, 1).filter((m, i, all) => i === 0 || xr(m) - xr(all[i - 1]) > 0);
@@ -133,7 +183,7 @@
       .attr("stroke", (l) => cssVar(LINK_VAR[l.type] || "--cz-link")).attr("stroke-width", 1.3)
       .attr("stroke-dasharray", (l) => LINK_DASH[l.type] || null)
       .attr("marker-end", (l) => `url(#arr-${(LINK_VAR[l.type] ? l.type : "cited by").replace(/\W/g, "")})`);
-    C.linkSel.append("title").text((l) => `${l.type}: ${l.explanation || ""}`);
+    C.linkSel.append("title").text((l) => `${rel(l.type)}: ${l.explanation || ""}`);
 
     C.nodeSel = svg.append("g").selectAll("g").data(ev).join("g").attr("transform", (e) => `translate(${e._x},${e._y})`)
       .style("cursor", "pointer").on("click", (evt, e) => select(e.id));
@@ -183,15 +233,15 @@
     C.highlight = C.mode === "causes" ? up : C.mode === "effects" ? down : new Set([...up, ...down]);
     apply();
     const name = (i) => (C.events.find((x) => x.id === i) || {}).title || i;
-    const ins = C.links.filter((l) => l.to === id).map((l) => `<li><button class="linklike" data-ev="${esc(l.from)}">${esc(name(l.from))}</button> <span class="ticker">${esc(l.type)}</span><br>${esc(l.explanation || "")} ${link(l.source_url)}</li>`).join("");
-    const outs = C.links.filter((l) => l.from === id).map((l) => `<li><button class="linklike" data-ev="${esc(l.to)}">${esc(name(l.to))}</button> <span class="ticker">${esc(l.type)}</span><br>${esc(l.explanation || "")} ${link(l.source_url)}</li>`).join("");
+    const ins = C.links.filter((l) => l.to === id).map((l) => `<li><button class="linklike" data-ev="${esc(l.from)}">${esc(name(l.from))}</button> <span class="ticker">${esc(rel(l.type))}</span><br>${esc(l.explanation || "")} ${link(l.source_url)}</li>`).join("");
+    const outs = C.links.filter((l) => l.from === id).map((l) => `<li><button class="linklike" data-ev="${esc(l.to)}">${esc(name(l.to))}</button> <span class="ticker">${esc(rel(l.type))}</span><br>${esc(l.explanation || "")} ${link(l.source_url)}</li>`).join("");
     document.getElementById("cz-panel").innerHTML = `
       <p class="eyebrow tight">${esc(evDate(e))} · ${esc(e.actor || "")}${e.region ? ` · ${esc(e.region)}` : ""}</p>
       <h3>${esc(e.title)}</h3>
       ${e.status ? `<p><strong>Status:</strong> ${esc(e.status)}</p>` : ""}
       <p>${esc(e.summary || "")} ${link(e.source_url)}${isSecondary(e) ? ` <span class="unverified">secondary source</span>` : ""}${e.suspension_source_url ? ` ${link(e.suspension_source_url, "suspension")}` : ""}</p>
-      <h4 class="pw-h4">What led to this (${up.size - 1} ${up.size - 1 === 1 ? "step" : "steps"} upstream)</h4><ul class="conn">${ins || "<li>No sourced causes yet.</li>"}</ul>
-      <h4 class="pw-h4">What this led to (${down.size - 1} ${down.size - 1 === 1 ? "step" : "steps"} downstream)</h4><ul class="conn">${outs || "<li>No sourced effects yet.</li>"}</ul>`;
+      <h4 class="pw-h4">Antecedents (${up.size - 1} ${up.size - 1 === 1 ? "step" : "steps"} upstream)</h4><ul class="conn">${ins || "<li>No sourced antecedents yet.</li>"}</ul>
+      <h4 class="pw-h4">Consequences (${down.size - 1} ${down.size - 1 === 1 ? "step" : "steps"} downstream)</h4><ul class="conn">${outs || "<li>No sourced consequences yet.</li>"}</ul>`;
     document.querySelectorAll("#cz-panel [data-ev]").forEach((b) => b.addEventListener("click", () => select(b.dataset.ev)));
     C.selected = id;
   }
@@ -204,8 +254,8 @@
     const name = (i) => (C.events.find((x) => x.id === i) || {}).title || i;
     const laneName = (k) => (LANES.find((l) => l.key === k) || {}).label || k;
     const rows = [...C.events].sort((a, b) => (a.date < b.date ? -1 : 1)).map((e) => {
-      const ins = C.links.filter((l) => l.to === e.id).map((l) => `${esc(l.type)}: ${esc(name(l.from))}`).join("<br>");
-      const outs = C.links.filter((l) => l.from === e.id).map((l) => `${esc(l.type)}: ${esc(name(l.to))}`).join("<br>");
+      const ins = C.links.filter((l) => l.to === e.id).map((l) => `${esc(rel(l.type))}: ${esc(name(l.from))}`).join("<br>");
+      const outs = C.links.filter((l) => l.from === e.id).map((l) => `${esc(rel(l.type))}: ${esc(name(l.to))}`).join("<br>");
       return `<tr><td class="nowrap">${esc(evDate(e))}</td><td>${esc(e.region || "")}</td><td>${esc(e.status || "")}</td><td>${esc(laneName(e.lane))}</td><td>${esc(e.title)}<div class="ticker">${esc(e.actor || "")}</div> ${link(e.source_url)}</td><td>${ins}</td><td>${outs}</td><td><button type="button" class="linklike" data-show-ev="${esc(e.id)}">Show on map</button></td></tr>`;
     }).join("");
     return `<table><thead><tr><th scope="col">Date</th><th scope="col">Region</th><th scope="col">Status</th><th scope="col">Lane</th><th scope="col">Event</th><th scope="col">From</th><th scope="col">Led to</th><th scope="col"><span class="visually-hidden">Map</span></th></tr></thead><tbody>${rows}</tbody></table>`;
@@ -219,25 +269,27 @@
     const regions = [...new Set(C.events.map((e) => e.region).filter(Boolean))].sort((a, b) => (REGION_ORDER.indexOf(a) + 99) % 99 - (REGION_ORDER.indexOf(b) + 99) % 99 || a.localeCompare(b));
     const statuses = [...STATUS.map((x) => x.key), "event"].filter((k) => C.events.some((e) => statusOf(e) === k));
     const jurisOptions = () => [...new Set(C.events.filter((e) => !C.region || e.region === C.region).map((e) => e.jurisdiction).filter(Boolean))].sort();
-    const legend = Object.keys(LINK_VAR).map((k) => `<span class="leg static"><svg class="mark" viewBox="0 0 24 12" aria-hidden="true"><line x1="0" y1="6" x2="24" y2="6" stroke="${cssVar("--cz-link")}" stroke-width="2"${LINK_DASH[k] ? ` stroke-dasharray="${LINK_DASH[k]}"` : ""}></line></svg>${esc(k)}</span>`).join("");
+    const legend = Object.keys(LINK_VAR).map((k) => `<span class="leg static"><svg class="mark" viewBox="0 0 24 12" aria-hidden="true"><line x1="0" y1="6" x2="24" y2="6" stroke="${cssVar("--cz-link")}" stroke-width="2"${LINK_DASH[k] ? ` stroke-dasharray="${LINK_DASH[k]}"` : ""}></line></svg>${esc(rel(k))}</span>`).join("");
     el.innerHTML = `
-      <h2>AI laws and rule changes: what led to what</h2>
-      <p class="intro">What changed in the rules and laws around AI and shareholder proposals, and what led to what. Select an event to trace its causes and effects. ${C.events.length} dated events, ${fmt(d3min(C.events))} to ${fmt(d3max(C.events))}, with ${C.links.length} sourced links.</p>
+      <h2>Causal map of AI policy and governance</h2>
+      <p class="intro">A causal timeline of AI laws, regulation and SEC rule changes, and of how companies, investors and labs responded. Each arrow is a causal link stated in a cited source. Select an event to trace its antecedents and consequences. ${C.events.length} dated events, ${fmt(d3min(C.events))} to ${fmt(d3max(C.events))}, with ${C.links.length} sourced links.</p>
       <div class="net-controls">
         <div class="seg" role="group" aria-label="Trace">
-          <button type="button" data-mode="both" aria-pressed="true">Causes and effects</button>
-          <button type="button" data-mode="causes" aria-pressed="false">Causes only</button>
-          <button type="button" data-mode="effects" aria-pressed="false">Effects only</button>
+          <button type="button" data-mode="both" aria-pressed="true">Antecedents and consequences</button>
+          <button type="button" data-mode="causes" aria-pressed="false">Antecedents only</button>
+          <button type="button" data-mode="effects" aria-pressed="false">Consequences only</button>
         </div>
         ${regions.length ? `<select id="cz-region" aria-label="Region"><option value="">All regions (${C.events.length})</option>${regions.map((r) => `<option value="${esc(r)}">${esc(r)} (${count((e) => e.region === r)})</option>`).join("")}</select>` : ""}
         <select id="cz-juris" aria-label="Jurisdiction"></select>
         <select id="cz-status" aria-label="Legal status"><option value="">Any status</option>${statuses.map((k) => `<option value="${k}">${esc(STATUS_LABEL[k])} (${count((e) => statusOf(e) === k)})</option>`).join("")}</select>
-        <button type="button" class="chip" id="cz-reset">Show everything</button>
+        <button type="button" class="chip" id="cz-reset">Reset filters</button>
       </div>
       <div class="net-legend">${legend}</div>
       <div class="net-legend" id="cz-status-key"></div>
       <p class="count-line" id="cz-count" aria-live="polite"></p>
-      <div class="cz-scroll"><div id="cz-graph" class="cz-graph"></div></div>
+      <div class="cz-timebar"><button type="button" class="chip" id="cz-earlier">← Earlier</button> <span id="cz-window" class="ticker" aria-live="polite"></span> <button type="button" class="chip" id="cz-later">Later →</button></div>
+      <div class="cz-frame"><div class="cz-lanes" id="cz-lanes" aria-hidden="true"></div><div class="cz-scroll"><div id="cz-graph" class="cz-graph"></div></div></div>
+      <div class="cz-overview" id="cz-overview" aria-hidden="true" title="Years covered; the box is the part in view. Click to jump."></div>
       <aside id="cz-panel" class="net-panel cz-panel" aria-live="polite"></aside>
       <details class="cz-list">
         <summary>List view: the same ${C.events.length} events as text</summary>

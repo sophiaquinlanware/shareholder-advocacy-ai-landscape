@@ -67,14 +67,17 @@
     const asks = D.asks.map((a) => a.id);
     const role = new Map(cos.map((c) => [c.ticker, c.tier]));
     const cells = new Map();
-    cos.forEach((c) => asks.forEach((a) => cells.set(`${c.ticker}|${a}`, { co: c.ticker, ask: a, votes: [], filed: new Set(), pending: [], critical: false, filers: [] })));
+    cos.forEach((c) => asks.forEach((a) => cells.set(`${c.ticker}|${a}`, { co: c.ticker, ask: a, votes: [], filed: new Set(), pending: [], critical: false, allCritical: false, filers: [] })));
     P.cells.forEach((x) => {
       const k = `${x.company}|${x.ask}`;
       const c = cells.get(k);
       if (!c) return;
+      c.allCritical = !!x.all_critical;
       Object.entries(x.seasons).forEach(([y, list]) => {
         const yr = +y;
-        c.filed.add(yr);
+        // A season counts as filed when a filer not critical of ESG filed (any filer, for pairs only they filed on),
+        // as in the estimator.
+        if (x.all_critical || list.some((p) => !p.critical)) c.filed.add(yr);
         list.forEach((p) => {
           if (p.status === "upcoming") c.pending.push(yr);
           if (p.support != null) c.votes.push({ year: yr, support: p.support, critical: p.critical });
@@ -88,8 +91,16 @@
   }
 
   // Rule 14a-8(i)(12): may the company exclude a refile in this season? (votes on the same subject)
-  function locked(votes, season, thr) {
-    const v = votes.filter((x) => x.support != null).sort((a, b) => a.year - b.year);
+  // Same rule as scripts/build_sim_params.py votes_by_year() and lockout(): one figure a year on the subject, the
+  // highest vote on a proposal not filed from a critical stance on ESG (or, where every filing on the pair was,
+  // the highest of those).
+  function yearly(votes, allCritical) {
+    const by = new Map();
+    votes.forEach((x) => { if (x.support != null && (allCritical || !x.critical)) by.set(x.year, Math.max(by.get(x.year) ?? -1, x.support)); });
+    return [...by.entries()].sort((a, b) => a[0] - b[0]).map(([year, support]) => ({ year, support }));
+  }
+  function locked(votes, season, thr, allCritical) {
+    const v = yearly(votes, allCritical);
     if (!v.length) return false;
     const lastV = v[v.length - 1];
     if (season - lastV.year > thr.recent_years) return false;
@@ -104,6 +115,7 @@
     const r = stream(seed, run, ask, "rates");
     const draw = {
       refile: Math.min(1, betaDraw(E.refile, r) * scen.refileMult),
+      lapsed: betaDraw(E.lapsed_refile, r),
       exposed: betaDraw(E.new_pair_exposed, r),
       unexposed: betaDraw(E.new_pair_unexposed, r),
       cFirst: betaDraw(E.commitment_first, r),
@@ -113,14 +125,14 @@
     const prior = P.ask_support[ask] || {};
     const pool = prior.values && prior.values.length ? prior.values : Object.values(P.ask_support).flatMap((a) => a.values || []);
     const logSd = E.support_delta.log_sd || 0.5;
-    // First filing: one of the ask's recorded votes (any company), varied a little. Refile: last year's figure times
+    // First filing: one of the ask's recorded votes (any company). Refile: last year's figure times
     // a yearly ratio drawn with the spread recorded across refiles (no average drift: it did worse on held-out data).
-    const firstVote = (rr) => pool[Math.floor(rr() * pool.length)] * Math.exp(0.25 * normal(rr));
+    const firstVote = (rr) => pool[Math.floor(rr() * pool.length)];
     const nextVote = (lastSup, rr) => lastSup * Math.exp(logSd * normal(rr));
     const st = new Map();
     M.cos.forEach((c) => {
       const base = M.cells.get(`${c.ticker}|${ask}`);
-      st.set(c.ticker, { votes: base.votes.map((v) => ({ ...v })), filed: new Set(base.filed), committed: false, ever: base.filed.size > 0, critical: base.critical });
+      st.set(c.ticker, { votes: base.votes.map((v) => ({ ...v })), filed: new Set(base.filed), committed: false, ever: base.filed.size > 0, critical: base.critical, allCritical: base.allCritical });
     });
     const out = { seasons: {}, targets: {} };
     // Proposals already on a ballot that has not met yet get their vote first.
@@ -148,7 +160,7 @@
           if (c.route_status !== "open") { if (isMine) row.byCo[c.ticker] = "no route"; continue; }
           route = "floor";
           p = isMine ? 1 : (prevFiled.has(c.ticker) ? draw.refile : 0) * scen.floorShare;
-        } else if (locked(s.votes, season, M.thr)) {
+        } else if (locked(s.votes, season, M.thr, s.allCritical)) {
           row.blocked += 1;
           row.byCo[c.ticker] = "blocked";
           if (isMine && log) log.push({ season, text: `You cannot refile ${askLabel(ask)} at ${coName(c.ticker)}: the last vote fell under the Rule 14a-8(i)(12) bar.` });
@@ -157,8 +169,7 @@
         else if (prevFiled.has(c.ticker)) p = draw.refile;
         else {
           const exposed = [...prevFiled].some((t) => t !== c.ticker && M.role.get(t) === c.tier);
-          p = exposed ? draw.exposed : draw.unexposed;
-          if (s.ever) p = Math.max(p, draw.refile * 0.5);
+          p = s.ever ? draw.lapsed : exposed ? draw.exposed : draw.unexposed;
         }
         if (r() >= p) continue;
         const first = !s.ever;
@@ -167,7 +178,7 @@
         row.filed += 1;
         const filer = isMine ? "You" : pickFiler(ask, c.ticker, r);
         let pc = (first ? draw.cFirst : draw.cRefile) * (isMine && plan.lead ? scen.leadMult : 1);
-        if (route === "floor") pc *= 0.5;
+        if (route === "floor") pc *= scen.floorCommit;
         if (route === "14a-8" && r() < draw.excl) {
           row.byCo[c.ticker] = "excluded";
           if (log && (isMine || log.length < 40)) log.push({ season, text: `${filer} ${filer === "You" ? "file" : "files"} ${askLabel(ask)} at ${coName(c.ticker)}; the company excludes it.` });
@@ -245,7 +256,7 @@
         plan.targets.filter((t) => t.ask === a).forEach((t) => {
           const T = res.targets[`${t.co}|${t.ask}`];
           if (o.final[t.co].committed) T.commitBy += 1;
-          if (Object.values(o.seasons).some((row) => row.byCo[t.co] === "blocked")) T.blockedRuns += 1;
+          if (Object.entries(o.seasons).some(([season, row]) => +season >= plan.from && row.byCo[t.co] === "blocked")) T.blockedRuns += 1;
           Object.entries(o.seasons).forEach(([season, row]) => {
             const v = row.byCo[t.co];
             if (typeof v === "number") { T.voted[season] = (T.voted[season] || 0) + 1; T.support[season] = T.support[season] || []; T.support[season].push(v); }
@@ -290,7 +301,8 @@
   const orgName = (id) => { const n = D.graph && D.graph.nodes ? D.graph.nodes.find((x) => x.id === id) : null; return n ? n.label : id; };
 
   // ---------- View ----------
-  const COLORS = ["var(--accent)", "#7a8fb8", "#1f2937"];
+  // Owner, 2026-11-26: scenarios (exploratory, not recorded) are green; recorded data stays blue.
+  const COLORS = ["var(--scenario)", "var(--scenario-2)", "var(--scenario-3)"];
   // Plan A starts from the plan in "Plan an engagement" (or a shared ?plan= link), so the two views follow on.
   function defaultPlan(M) {
     const g = window.PLANNER && window.PLANNER.get ? window.PLANNER.get() : null;
@@ -305,7 +317,7 @@
     const M = setup();
     MAXSUP = 1.1 * Math.max(...Object.values(P.ask_support).flatMap((a) => a.values || [0]));
     S = { M, plans: [defaultPlan(M)], scen: { horizon: M.last + 3, rescind: false, rescindFrom: M.last + 1, leadMult: P.literature.find((l) => l.id === "lead_investor").value,
-      supportBoost: 0, refileMult: 1, floorShare: 0.2, runs: 400 }, season: M.last, result: null, sweep: null };
+      supportBoost: 0, refileMult: 1, floorShare: 0.2, floorCommit: 0.5, runs: 400 }, season: M.last, result: null, sweep: null };
     el.innerHTML = `
       <h2>Test plans over time</h2>
       <p class="intro">Choose one or more companies and asks to file on, then see how the next seasons could unfold under a model built from this site's records: who files again, who files for the first time, how votes move, when the SEC resubmission rule blocks a refile, and when a company commits. Compare up to three plans. Each result is a scenario computed by this site from stated assumptions, not a forecast and not advice.</p>
@@ -321,6 +333,7 @@
     drawSettings();
     drawMethod();
     el.querySelector("#sim-run").addEventListener("click", run);
+    run();
     el.querySelector("#sim-sweep").addEventListener("click", runSweep);
     document.addEventListener("plannerdraw", () => { if (!S.touched) { S.plans[0] = defaultPlan(S.M); drawPlans(); } });
   }
@@ -372,9 +385,11 @@
       <label>Last season shown <select data-s="horizon">${[1, 2, 3, 4].map((k) => S.M.last + k).map((y) => `<option${y === sc.horizon ? " selected" : ""}>${y}</option>`).join("")}</select></label>
       <label class="gs-check"><input type="checkbox" data-s="rescind"${sc.rescind ? " checked" : ""}> The SEC adopts its proposed rescission of Rule 14a-8 ${link(P.rescission && P.rescission.source_url, "proposal")}</label>
       <label>from the season <select data-s="rescindFrom">${[1, 2, 3].map((k) => S.M.last + k).map((y) => `<option${y === sc.rescindFrom ? " selected" : ""}>${y}</option>`).join("")}</select></label>
-      <label>Effect of leading a coalition on the chance of a commitment: × <input type="number" step="0.05" min="1" max="3" data-s="leadMult" value="${sc.leadMult}"> <span class="ticker">default ${lit.value}: ${esc(lit.label.toLowerCase())}${link(lit.source_url, "study")}</span></label>
+      <label>Effect of leading a coalition on the chance of a commitment: × <input type="number" step="0.05" min="1" max="3" data-s="leadMult" value="${sc.leadMult}"> <span class="ticker">default ${lit.value}: in investor-network engagement dialogues, ${esc(lit.label.toLowerCase())}${link(lit.source_url, "study")}; applied here to filings as an assumption</span></label>
       <label>Points of support a coalition adds to your proposals: <input type="number" step="1" min="0" max="20" data-s="supportBoost" value="${sc.supportBoost}"> <span class="ticker">default 0: this data has no estimate</span></label>
       <label>Refile rate × <input type="number" step="0.1" min="0.5" max="1.8" data-s="refileMult" value="${sc.refileMult}"> <span class="ticker">1 = the rate in this data; the held-out test below suggests it may be higher</span></label>
+      <label>Share of usual refilers who would raise a floor proposal after a rescission: <input type="number" step="0.05" min="0" max="1" data-s="floorShare" value="${sc.floorShare}"> <span class="ticker">no estimate in this data</span></label>
+      <label>Chance a floor proposal ends in a commitment, against a filed one: × <input type="number" step="0.1" min="0" max="1" data-s="floorCommit" value="${sc.floorCommit}"> <span class="ticker">no estimate in this data</span></label>
       <label>Runs per scenario <select data-s="runs">${[200, 400, 1000].map((n) => `<option${n === sc.runs ? " selected" : ""}>${n}</option>`).join("")}</select></label>
     </div>`;
     box.addEventListener("change", (e) => {
@@ -423,15 +438,15 @@
       <p class="note">Scenario computed by this site from data/sim_params.json and the assumptions above${sc.rescind ? `, with Rule 14a-8 rescinded from ${sc.rescindFrom}` : ""}. Not a forecast; not advice. Each rate is drawn from its own uncertainty in every run.</p>
       <div class="pl-grid">${rows}</div>
       <section class="pl-card pl-wide" aria-labelledby="sim-h-chart"><h3 id="sim-h-chart">Support over time</h3>
-        <p class="status-note">Dots are recorded votes (8-K results); lines and bands are each plan's middle and middle 80% of support, among runs with a vote that season (runs where the rule blocked a refile or the company committed have no vote). Dashed lines are the Rule 14a-8(i)(12) bars a refile must clear after one, two and three votes.</p>
+        <p class="status-note">Blue dots are recorded votes (8-K results); green lines and bands are scenarios: each plan's middle and middle 80% of support, among runs with a vote that season (runs where the rule blocked a refile or the company committed have no vote). Dashed lines are the Rule 14a-8(i)(12) bars a refile must clear after one, two and three votes.</p>
         <div id="sim-chart"></div></section>
       <section class="pl-card pl-wide" aria-labelledby="sim-h-field"><h3 id="sim-h-field">The field, season by season</h3>
-        <p class="status-note">Recorded seasons show what was filed. Later seasons show the share of runs in which each company has a filing (shade) or a commitment (outline), under ${esc(S.plans[0].name)}. Move the slider through time.</p>
+        <p class="status-note">Recorded seasons show in blue what was filed. Scenario seasons show in green the share of runs in which each company has a filing (shade) or a commitment (outline), under ${esc(S.plans[0].name)}. Move the slider through time.</p>
         <p><label>Season <input type="range" id="sim-season" min="${P.seasons_observed[0]}" max="${sc.horizon}" value="${S.season}" step="1"> <output id="sim-season-out">${S.season}</output></label>
           <label>Ask <select id="sim-field-ask">${askSet.map((a) => `<option value="${esc(a)}">${esc(askLabel(a))}</option>`).join("")}</select></label></p>
         <div id="sim-field"></div></section>
       <section class="pl-card pl-wide" aria-labelledby="sim-h-log"><h3 id="sim-h-log">One run, step by step (${esc(S.plans[0].name)})</h3>
-        <p class="status-note">What the agents did in the first run: filers, companies, the SEC rule and fund families. Fund-family votes use each family's FOR rate on this ask from Form N-PX.</p>
+        <p class="status-note">What the agents did in the first run: filers, companies, the SEC rule and fund families. These are simulated events, not records: each filer named is drawn from the organizations that have filed this ask before, weighted toward those holding the company's shares. Fund-family votes use each family's FOR rate on this ask from Form N-PX.</p>
         <ol class="sim-log">${S.result[0].log.slice(0, 60).map((l) => `<li${l.strong ? ' class="strong"' : ""}><span class="ticker">${l.season}</span> ${esc(l.text)}</li>`).join("") || "<li>No filings in this run.</li>"}</ol></section>`;
     drawChart(seasons);
     drawField();
@@ -441,7 +456,7 @@
 
   function drawChart(seasons) {
     const box = el.querySelector("#sim-chart");
-    const W = Math.max(320, Math.min(1000, Math.round(box.getBoundingClientRect().width) || 700)), H = 260, m = { l: 40, r: 12, t: 10, b: 28 };
+    const W = Math.max(320, Math.min(1000, Math.round(box.getBoundingClientRect().width) || 700)), H = 260, m = { l: 40, r: 24, t: 10, b: 28 };
     const y0 = P.seasons_observed[0], y1 = S.scen.horizon;
     const x = (y) => m.l + ((y - y0) / Math.max(1, y1 - y0)) * (W - m.l - m.r);
     const all = [];
@@ -465,9 +480,14 @@
         svg += `<polygon points="${lo.concat(hi).join(" ")}" fill="${col}" opacity="0.15"/>`;
         svg += `<polyline points="${pts.map((s) => `${x(s)},${y(quant(T.support[s], 0.5))}`).join(" ")}" fill="none" stroke="${col}" stroke-width="2"/>`;
       }
-      hist.forEach((v) => { svg += `<circle cx="${x(v.year)}" cy="${y(v.support)}" r="4" fill="${col}"><title>${v.year}: ${pct(v.support, 1)} (recorded)</title></circle>`; });
+      hist.forEach((v) => { svg += `<circle cx="${x(v.year)}" cy="${y(v.support)}" r="4" fill="var(--accent)"><title>${v.year}: ${pct(v.support, 1)} (recorded)</title></circle>`; });
     });
-    box.innerHTML = svg + "</svg>";
+    const rows = all.flatMap(({ i, t, hist, T }) => [...new Set([...hist.map((v) => v.year), ...seasons])].sort().map((yr) => {
+      const rec = hist.filter((v) => v.year === yr).map((v) => pct(v.support, 1)).join(", ");
+      const s = T.support[yr] || [];
+      return `<tr><td>${esc(S.plans[i].name)}</td><td>${esc(coName(t.co))}, ${esc(askLabel(t.ask))}</td><td>${yr}</td><td>${rec || "–"}</td><td>${s.length ? pct(quant(s, 0.5)) : "–"}</td><td>${s.length ? `${pct(quant(s, 0.1))} to ${pct(quant(s, 0.9))}` : "–"}</td><td>${yr > S.M.last ? share(s.length / S.result[i].runs) : "–"}</td></tr>`;
+    })).join("");
+    box.innerHTML = `${svg}</svg><details><summary>The same figures as a table</summary><div class="table-wrap"><table><thead><tr><th scope="col">Plan</th><th scope="col">Target</th><th scope="col">Season</th><th scope="col">Recorded vote</th><th scope="col">Scenario middle</th><th scope="col">Middle 80% of runs</th><th scope="col">Runs with a vote</th></tr></thead><tbody>${rows}</tbody></table></div><p class="ticker">A dash in the recorded column: no recorded vote on this ask at this company.</p></details>`;
   }
 
   function drawField() {
@@ -491,7 +511,8 @@
         label = `${c.name}, ${s}: filed in ${share(shade)} of runs; committed by then in ${share(commit)}`;
       }
       const mine = S.plans[0].targets.some((t) => t.co === c.ticker && t.ask === a);
-      return `<li class="sim-cell${mine ? " mine" : ""}" style="--fill:${shade.toFixed(2)};--ring:${Math.min(1, commit * 3).toFixed(2)}${shade > 0.55 ? ";color:#fff" : ""}" title="${esc(label)}"><span class="visually-hidden">${esc(label)}</span><span aria-hidden="true">${esc(c.ticker)}</span></li>`;
+      if (mine) label += " (your target)";
+      return `<li class="sim-cell${mine ? " mine" : ""}${real ? "" : " scen"}" style="--fill:${shade.toFixed(2)};--ring:${Math.min(1, commit * 3).toFixed(2)}${!real && shade > 0 ? "" : shade > 0.55 ? ";color:#fff" : ""}" title="${esc(label)}"><span class="visually-hidden">${esc(label)}</span><span aria-hidden="true">${esc(c.ticker)}</span></li>`;
     }).join("");
     box.innerHTML = `<p class="ticker">${real ? "Recorded season" : "Scenario season"} ${s}: ${esc(askLabel(a))}. Your targets are underlined.</p><ul class="sim-field" aria-label="Companies in ${s}">${cells}</ul>`;
   }
@@ -502,11 +523,12 @@
     setTimeout(async () => {
       const st = box.querySelector("[role=status]");
       const list = (await sweep(S.scen, 200, (k, n) => { st.textContent = `Ranking company-and-ask pairs: ask ${k + 1} of ${n}…`; })).slice(0, 12);
-      box.innerHTML = `<div class="table-wrap"><table><thead><tr><th scope="col">Company</th><th scope="col">Ask</th><th scope="col">Change in expected commitments</th><th scope="col">Commits by ${S.scen.horizon}, share of runs</th><th scope="col">Context</th><th scope="col"><span class="visually-hidden">Add</span></th></tr></thead><tbody>
+      box.innerHTML = `<p class="note">In this data every company commitment came on a first filing of an ask at a company (${P.estimates.commitment_first.k} of ${P.estimates.commitment_first.n} first filings; ${P.estimates.commitment_refile.k} of ${P.estimates.commitment_refile.n} refiles), so pairs never filed rank high. Three commitments is a small base: this ranks pairs by the model, it does not say where anyone should file.</p>
+        <div class="table-wrap"><table><thead><tr><th scope="col">Company</th><th scope="col">Ask</th><th scope="col">Change in expected commitments</th><th scope="col">Commits by ${S.scen.horizon}, share of runs</th><th scope="col">Context</th><th scope="col"><span class="visually-hidden">Test</span></th></tr></thead><tbody>
         ${list.map((r) => `<tr><td>${esc(coName(r.co))}</td><td>${esc(askLabel(r.ask))}</td><td>+${r.gain.toFixed(2)}</td><td>${share(r.pTarget)}</td>
           <td>${r.never ? "never filed here" : "filed here before"}${r.holders ? `; ${plural(r.holders, "investor")} that filed this ask elsewhere ${r.holders === 1 ? "holds" : "hold"} shares here` : ""}${r.critical ? "; earlier filings came from filers critical of ESG" : ""}</td>
-          <td><button type="button" class="linklike" data-co="${esc(r.co)}" data-ask="${esc(r.ask)}">Add to ${esc(S.plans[0].name)}</button></td></tr>`).join("")}</tbody></table></div>
-        <p class="note">In this data every company commitment came on a first filing of an ask at a company (${P.estimates.commitment_first.k} of ${P.estimates.commitment_first.n} first filings; ${P.estimates.commitment_refile.k} of ${P.estimates.commitment_refile.n} refiles), so pairs never filed rank high. That echoes research that the most new ground lies where few are already working, but three commitments is a small base.</p>`;
+          <td><button type="button" class="linklike" data-co="${esc(r.co)}" data-ask="${esc(r.ask)}" aria-label="Test ${esc(coName(r.co))}, ${esc(askLabel(r.ask))} in ${esc(S.plans[0].name)}">Test in ${esc(S.plans[0].name)}</button></td></tr>`).join("")}</tbody></table></div>
+`;
       box.querySelectorAll("[data-co]").forEach((b) => b.addEventListener("click", () => {
         S.touched = true;
         S.plans[0].targets.push({ co: b.dataset.co, ask: b.dataset.ask });
@@ -518,26 +540,33 @@
 
   function drawMethod() {
     const E = P.estimates, B = P.backtest;
-    const rate = (e) => `${e.k} of ${e.n} (${share(betaMean(e))})`;
+    const rate = (e) => `${e.k} of ${e.n} recorded (model rate about ${share(betaMean(e))})`;
     el.querySelector("#sim-method").innerHTML = `
       <dl class="summary">
         <div><dt>Refile the next season</dt><dd>${rate(E.refile)} of company-and-ask pairs the SEC rule did not block</dd></div>
+        <div><dt>Refile after a gap of a season or more</dt><dd>${rate(E.lapsed_refile)}</dd></div>
         <div><dt>First filing of an ask at a company</dt><dd>${rate(E.new_pair_exposed)} when the ask was filed at a same-role company the season before; ${rate(E.new_pair_unexposed)} otherwise</dd></div>
         <div><dt>Company commits (proposal withdrawn after an agreement)</dt><dd>${rate(E.commitment_first)} of first filings; ${rate(E.commitment_refile)} of refiles</dd></div>
         <div><dt>Company excludes the proposal</dt><dd>${rate(E.exclusion)}</dd></div>
         <div><dt>Support</dt><dd>A refile starts from last year's figure and moves by a yearly ratio with the spread recorded across ${E.support_delta.n} refiles (${esc(B.support_model)}). A first filing draws from the ask's recorded votes at any company.</dd></div>
-        <div><dt>Held-out test</dt><dd>Fitted on ${B.fit_seasons.join(", ")} and run on ${B.test_season}: refiles expected ${B.refiled.expected}, recorded ${B.refiled.actual} (the model ran low); first filings expected ${B.new_pairs.expected}, recorded ${B.new_pairs.actual}; support error ${B.support_error.same_as_last_year_mae} points carrying last year forward against ${B.support_error.with_average_drift_mae} with an average drift, across ${B.support_error.n} refiles.</dd></div>
+        <div><dt>Held-out test</dt><dd>The refile, refile-after-a-gap and first-filing rates fitted on ${B.fit_seasons.join(", ")} only, then compared with ${B.test_season} (commitments and exclusions are too rare to test on one season, and the after-a-gap rate rests on very few cases): refiles expected ${B.refiled.expected}, recorded ${B.refiled.actual} of ${B.refiled.eligible} pairs the rule left open (the model ran low; the refile setting above can raise it); refiles after a gap expected ${B.lapsed.expected}, recorded ${B.lapsed.actual} of ${B.lapsed.eligible}; first filings expected ${B.new_pairs.expected}, recorded ${B.new_pairs.actual}; support error ${B.support_error.same_as_last_year_mae} points carrying last year forward against ${B.support_error.with_average_drift_mae} with an average drift, across ${B.support_error.n} refiles.</dd></div>
+        <div><dt>Settings with no estimate in this data</dt><dd>Leading a coalition (from a study of investor-network dialogues, applied here to filings), points of support a coalition adds, the share of usual refilers who would use a floor proposal after a rescission, and how much less often a floor proposal ends in a commitment. All are under Assumptions.</dd></div>
         <div><dt>Not modelled</dt><dd>Letters, meetings, exempt solicitations and votes against directors have no outcome records here, so the model covers filings only. Companies, investors and asks are treated alike within each estimate; asks do not affect each other. Proposals filed from a critical stance on ESG are left out of support figures.</dd></div>
       </dl>
-      <p class="note">Built with research on collective behavior in mind: AI agents left alone cluster with familiar partners (Lai, Evans and others${link("https://arxiv.org/abs/2402.12590", "paper")}), and models that know where people already work find more of what is new (Sourati and Evans${link("https://doi.org/10.1038/s41562-023-01648-z", "paper")}). The ranking shows pairs never filed and their holders for that reason.</p>`;
+      <p class="note">Two studies shaped the design. In a simulated gathering of AI agents, the agents kept to small circles of familiar partners rather than meeting new ones (Lai, Evans and others${link("https://arxiv.org/abs/2402.12590", "paper")}); and accounting for where experts already work improved predictions of future discoveries, while steering away from those places surfaced ideas people were unlikely to reach (Sourati and Evans${link("https://doi.org/10.1038/s41562-023-01648-z", "paper")}). So the ranking shows pairs never filed, and the investors that hold shares there and have filed the same ask elsewhere.</p>`;
   }
 
   window.renderSimulator = function (data) {
     el = document.getElementById("tab-simulate");
-    if (!el || !data.sim_params) return;
-    P = data.sim_params;
+    if (!el) return;
     D = { asks: (data.asks && data.asks.asks) || [], graph: data.graph };
-    const go = () => { if (!el.hidden && !el.dataset.built) { el.dataset.built = "1"; build(); } };
+    const go = async () => {
+      if (el.hidden || el.dataset.built) return;
+      el.dataset.built = "1";
+      el.innerHTML = `<p class="status-note" role="status">Loading the model…</p>`;
+      try { P = await fetch("data/sim_params.json").then((r) => r.json()); } catch (e) { el.innerHTML = `<p class="status-note">The model's data did not load.</p>`; return; }
+      build();
+    };
     new MutationObserver(go).observe(el, { attributes: true, attributeFilter: ["hidden"] });
     go();
   };
