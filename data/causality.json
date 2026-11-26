@@ -559,7 +559,8 @@
    "kind": "campaign",
    "jurisdiction": "US federal",
    "summary": "Private engagement on AI policies, governance, staffing and resourcing. No filed proposal found. Start date is year only.",
-   "source_url": "https://www.parnassus.com/updates/article/the_new_imperative_of_responsible_ai"
+   "source_url": "https://www.parnassus.com/updates/article/the_new_imperative_of_responsible_ai",
+   "date_precision": "year"
   },
   {
    "id": "intuit-ai-disclosure",

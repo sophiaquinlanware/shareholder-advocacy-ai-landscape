@@ -45,7 +45,10 @@ def main():
             by_company_year[(c["ticker"].upper(), int(d["for_meeting_year"]))] = d
 
     # Recurring asks: first matching rule in data/asks.json wins; no match leaves ask_id unset.
-    asks = json.loads((DATA / "asks.json").read_text())["asks"] if (DATA / "asks.json").exists() else []
+    asks_doc = json.loads((DATA / "asks.json").read_text()) if (DATA / "asks.json").exists() else {}
+    asks = asks_doc.get("asks", [])
+    cat_of = {a["id"]: a.get("category") for a in asks}
+    overrides = asks_doc.get("proposal_category_overrides", {})
     for p in props:
         text = ((p.get("title") or "") + " " + (p.get("subtopic") or "")).lower()
         hit = next((a["id"] for a in asks if any(m in text for m in a["match"])), None)
@@ -53,6 +56,12 @@ def main():
             p["ask_id"] = hit
         else:
             p.pop("ask_id", None)
+        # Category (asks.json "categories"): from the ask, or a per-proposal override for proposals with no ask.
+        cat = overrides.get(p["id"]) or cat_of.get(hit)
+        if cat:
+            p["category"] = cat
+        else:
+            p.pop("category", None)
 
     linked = 0
     for p in props:

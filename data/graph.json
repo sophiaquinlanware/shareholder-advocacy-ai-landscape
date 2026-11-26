@@ -1613,7 +1613,7 @@
    "description": "Shareholder advocacy nonprofit filing environmental and social resolutions.",
    "website": "https://www.asyousow.org",
    "source_url": "https://www.asyousow.org",
-   "degree": 23
+   "degree": 26
   },
   {
    "id": "nlpc",
@@ -1668,7 +1668,7 @@
    "description": "Coalition of faith-based investors doing shareholder advocacy on human rights.",
    "website": "https://iasj.org",
    "source_url": "https://iasj.org",
-   "degree": 27
+   "degree": 29
   },
   {
    "id": "jlens",
@@ -1701,7 +1701,7 @@
    "description": "ESG investment manager; files on AI principles and data center climate impacts.",
    "website": "https://www.trilliuminvest.com",
    "source_url": "https://www.trilliuminvest.com",
-   "degree": 19
+   "degree": 21
   },
   {
    "id": "csjp",
@@ -1712,7 +1712,7 @@
    "description": "Catholic congregation; co-filer of Microsoft human rights due diligence proposal.",
    "website": "https://www.csjp.org",
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465926013218/b1026263px14a6g.htm",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "zevin",
@@ -1745,7 +1745,7 @@
    "description": "Wisconsin ESG asset manager; co-filer on tech human rights proposals.",
    "website": "https://www.danainvestment.com",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923007656/s522230px14a6g.htm",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "marianists",
@@ -1767,7 +1767,7 @@
    "description": "Catholic missionary order active in ICCR shareholder advocacy.",
    "website": "https://oblatesusa.org/",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923007656/s522230px14a6g.htm",
-   "degree": 26
+   "degree": 27
   },
   {
    "id": "share",
@@ -1778,7 +1778,7 @@
    "description": "Canadian responsible-investment nonprofit filing on AI, targeted ads and oversight.",
    "website": "https://share.ca",
    "source_url": "https://share.ca",
-   "degree": 21
+   "degree": 27
   },
   {
    "id": "ucc-pension",
@@ -1822,7 +1822,7 @@
    "description": "California socially responsible manager and frequent shareholder activist.",
    "website": "https://www.harringtoninvestments.com",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923005962/b425233px14a6g.htm",
-   "degree": 4
+   "degree": 6
   },
   {
    "id": "aviva",
@@ -1844,7 +1844,7 @@
    "description": "Nordic asset manager; co-filer at Alphabet 2023.",
    "website": "https://www.nordeaassetmanagement.com",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923005962/b425233px14a6g.htm",
-   "degree": 3
+   "degree": 6
   },
   {
    "id": "benedictine-baltimore",
@@ -1877,7 +1877,7 @@
    "description": "Investment program of the Sisters of Mercy; prolific ICCR filer.",
    "website": "https://www.mercyinvestmentservices.org",
    "source_url": "https://www.mercyinvestmentservices.org",
-   "degree": 36
+   "degree": 39
   },
   {
    "id": "inspire",
@@ -1888,7 +1888,7 @@
    "description": "Biblically responsible investment firm filing conservative AI proposals.",
    "website": "https://www.inspireinvesting.com",
    "source_url": "https://www.inspireinvesting.com",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "akademikerpension",
@@ -1899,7 +1899,7 @@
    "description": "Danish pension fund for academics; co-filer at Alphabet.",
    "website": "https://akademikerpension.dk",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm",
-   "degree": 12
+   "degree": 14
   },
   {
    "id": "ap-pension",
@@ -1921,7 +1921,7 @@
    "description": "Norwegian public-sector pension insurer; co-filer at Alphabet.",
    "website": "https://www.klp.no",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm",
-   "degree": 12
+   "degree": 14
   },
   {
    "id": "mn",
@@ -1965,7 +1965,7 @@
    "description": "Canadian credit-union-owned responsible investment manager.",
    "website": "https://www.vancity.com",
    "source_url": "https://www.vancity.com",
-   "degree": 2
+   "degree": 6
   },
   {
    "id": "nei",
@@ -1976,7 +1976,7 @@
    "description": "Canadian responsible investment fund manager.",
    "website": "https://www.neiinvestments.com",
    "source_url": "https://collaborate.unpri.org/group/24941/home",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "axa-im",
@@ -2020,7 +2020,7 @@
    "description": "Denomination whose MRTI committee runs shareholder engagement.",
    "website": "https://www.presbyterianmission.org",
    "source_url": "https://www.presbyterianmission.org",
-   "degree": 9
+   "degree": 11
   },
   {
    "id": "portico",
@@ -2042,7 +2042,7 @@
    "description": "Catholic congregation active in ICCR shareholder advocacy.",
    "website": "https://www.adriandominicans.org",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465926005915/o511264px14a6g.htm",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "ipjc",
@@ -2053,7 +2053,7 @@
    "description": "Seattle justice center sponsored by Catholic communities; hosts NW Coalition for Responsible Investment.",
    "website": "https://www.ipjc.org",
    "source_url": "https://www.ipjc.org",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "storebrand",
@@ -2064,7 +2064,7 @@
    "description": "Norwegian asset manager with sustainability focus.",
    "website": "https://www.storebrand.com",
    "source_url": "https://www.boardroomalpha.com/meetings/meta-2026-annual-meeting",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "abhms",
@@ -2075,7 +2075,7 @@
    "description": "Baptist mission agency; lead filer on Amazon AI and surveillance human rights.",
    "website": "https://abhms.org",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "afl-cio",
@@ -2119,7 +2119,7 @@
    "description": "Environmental fund manager; lead filer on Nvidia AI emissions.",
    "website": "https://www.greencentury.com",
    "source_url": "https://www.greencentury.com",
-   "degree": 4
+   "degree": 6
   },
   {
    "id": "ttt-investments",
@@ -2141,7 +2141,7 @@
    "description": "Coalition of 300+ faith and values investors; runs Digital Rights and AI Accountability work.",
    "website": "https://www.iccr.org",
    "source_url": "https://www.iccr.org/digital-rights-and-ai-accountability/",
-   "degree": 21
+   "degree": 23
   },
   {
    "id": "iahr",
@@ -2174,7 +2174,7 @@
    "description": "ESG mutual fund manager; member of WBA ethical AI coalition.",
    "website": "https://www.parnassus.com",
    "source_url": "https://www.parnassus.com",
-   "degree": 6
+   "degree": 8
   },
   {
    "id": "fidelity-intl",
@@ -2185,7 +2185,7 @@
    "description": "Global asset manager; co-founder and co-lead of WBA ethical AI coalition.",
    "website": "https://www.fidelityinternational.com",
    "source_url": "https://www.fidelityinternational.com",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "candriam",
@@ -2207,7 +2207,7 @@
    "description": "Europe's largest asset manager; co-lead of WBA ethical AI coalition.",
    "website": "https://www.amundi.com",
    "source_url": "https://www.amundi.com",
-   "degree": 1
+   "degree": 3
   },
   {
    "id": "lgim",
@@ -2229,7 +2229,7 @@
    "description": "Manages Norway's wealth fund; published responsible AI expectations in 2023.",
    "website": "https://www.nbim.no",
    "source_url": "https://www.nbim.no/en/publications/our-views/2023/responsible-artificial-intelligence/",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "domini",
@@ -2251,7 +2251,7 @@
    "description": "Socially responsible manager; signed IASJ Amazon responsible-AI solicitation.",
    "website": "https://www.northstarasset.com",
    "source_url": "https://www.northstarasset.com",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "msft-2023-hr-hotspots",
@@ -2273,6 +2273,7 @@
    "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud datacenters in countries of \"significant human rights concern\" and how it mitigates those impacts.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "ask_id": "ask-dc-siting-rights",
+   "category": "data-centers",
    "degree": 2
   },
   {
@@ -2295,6 +2296,7 @@
    "plain_summary": "Asks the board for an annual report on risks from Microsoft's role in AI-generated or AI-spread misinformation and disinformation, its planned remediation steps, and their effectiveness.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "ask_id": "ask-ai-misinformation",
+   "category": "users",
    "degree": 6
   },
   {
@@ -2326,6 +2328,7 @@
    "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud datacenters in countries of \"significant human rights concern\" and how it mitigates those impacts.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "ask_id": "ask-dc-siting-rights",
+   "category": "data-centers",
    "degree": 1
   },
   {
@@ -2348,6 +2351,7 @@
    "plain_summary": "Asks for a report on the risks to Microsoft of providing advanced technology, including AI and machine learning tools, to facilitate new oil and gas development and production.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "ask_id": "ask-ai-fossil-fuels",
+   "category": "downstream-use",
    "degree": 3
   },
   {
@@ -2379,6 +2383,7 @@
    "plain_summary": "Asks the board for an annual report on risks from Microsoft's role in AI-generated or AI-spread misinformation and disinformation, its planned remediation steps, and their effectiveness.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "ask_id": "ask-ai-misinformation",
+   "category": "users",
    "degree": 6
   },
   {
@@ -2401,6 +2406,7 @@
    "plain_summary": "Asks for an annual report on risks from unethical or improper use of external data to train Microsoft's AI offerings, how it mitigates them, and how it measures effectiveness.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "ask_id": "ask-ai-training-data",
+   "category": "users",
    "degree": 3
   },
   {
@@ -2423,6 +2429,7 @@
    "plain_summary": "Asks the board for a report on how it oversees risks of generative AI bias against religious or political views and whether such bias affects people's civil rights.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "ask_id": "ask-ai-bias",
+   "category": "users",
    "degree": 2
   },
   {
@@ -2445,6 +2452,7 @@
    "plain_summary": "Asks for an annual report on risks from unethical or improper use of external data to train Microsoft's AI offerings, how it mitigates them, and how it measures effectiveness.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "ask_id": "ask-ai-training-data",
+   "category": "users",
    "degree": 3
   },
   {
@@ -2483,6 +2491,7 @@
    "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud datacenters in countries of \"significant human rights concern\" and how it mitigates those impacts.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "ask_id": "ask-dc-siting-rights",
+   "category": "data-centers",
    "degree": 1
   },
   {
@@ -2505,6 +2514,7 @@
    "plain_summary": "Asks the board for a report assessing how well Microsoft's human rights due diligence prevents and addresses customer misuse of its AI and cloud products that violates human rights.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "ask_id": "ask-customer-due-diligence",
+   "category": "downstream-use",
    "degree": 8
   },
   {
@@ -2536,6 +2546,7 @@
    "plain_summary": "Asks for a report on the climate and financial risks to Microsoft of providing AI and machine learning tools to facilitate oil and gas development and production.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "ask_id": "ask-ai-fossil-fuels",
+   "category": "downstream-use",
    "degree": 3
   },
   {
@@ -2558,6 +2569,7 @@
    "plain_summary": "Asks Microsoft to disclose additional information each year, beyond current disclosures, showing how it will manage its climate commitments as its emissions grow.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "ask_id": "ask-dc-climate-energy",
+   "category": "data-centers",
    "degree": 2
   },
   {
@@ -2589,6 +2601,7 @@
    "plain_summary": "Asks for a report assessing how well Microsoft's human rights due diligence prevents and addresses customer misuse of its AI and cloud products that violates human rights or humanitarian law.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "ask_id": "ask-customer-due-diligence",
+   "category": "downstream-use",
    "degree": 6
   },
   {
@@ -2634,6 +2647,7 @@
    "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud data centers in countries of \"significant human rights concern\" and how it mitigates them.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "ask_id": "ask-dc-siting-rights",
+   "category": "data-centers",
    "degree": 3
   },
   {
@@ -2656,6 +2670,7 @@
    "plain_summary": "Asks the board to commission a report on siting Google Cloud data centers in countries of \"significant human rights concern\" and how the company mitigates the related impacts.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "ask_id": "ask-dc-siting-rights",
+   "category": "data-centers",
    "degree": 6
   },
   {
@@ -2678,6 +2693,7 @@
    "plain_summary": "Asks the board to publish an independent third-party human rights impact assessment of Google's targeted advertising policies and practices across its business.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "ask_id": "ask-targeted-ads-rights",
+   "category": "users",
    "degree": 4
   },
   {
@@ -2700,6 +2716,7 @@
    "plain_summary": "Asks Alphabet to disclose more quantitative and qualitative information on its algorithmic systems, such as how they target ads, their error rates, and effects on user speech.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "ask_id": "ask-ai-oversight-reporting",
+   "category": "governance-safety",
    "degree": 3
   },
   {
@@ -2719,6 +2736,7 @@
    "plain_summary": "Asks the board to commission an independent assessment of the Audit and Compliance Committee's role in overseeing material risks to public well-being from company operations.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "ask_id": "ask-ai-oversight-reporting",
+   "category": "governance-safety",
    "degree": 5
   },
   {
@@ -2741,6 +2759,7 @@
    "plain_summary": "Asks the board to amend the Audit and Compliance Committee charter to make it responsible for overseeing Alphabet's AI activities and implementation of its AI Principles.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "ask_id": "ask-ai-oversight-reporting",
+   "category": "governance-safety",
    "degree": 6
   },
   {
@@ -2763,6 +2782,7 @@
    "plain_summary": "Asks the board for an annual report on risks from Alphabet's role in generative AI misinformation and disinformation, its remediation steps, and how it measures their effectiveness.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "ask_id": "ask-ai-misinformation",
+   "category": "users",
    "degree": 5
   },
   {
@@ -2794,6 +2814,7 @@
    "plain_summary": "Asks the board to publish an independent third-party human rights impact assessment of Google's AI-driven targeted advertising policies and practices.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "ask_id": "ask-targeted-ads-rights",
+   "category": "users",
    "degree": 6
   },
   {
@@ -2814,6 +2835,7 @@
    "plain_summary": "Asks the board to adopt targets and publish an annual report with metrics on whether YouTube and Alphabet have improved child safety and reduced harm to children on their platforms.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "ask_id": "ask-child-safety",
+   "category": "users",
    "degree": 2
   },
   {
@@ -2836,6 +2858,7 @@
    "plain_summary": "Asks the board for an independent report on how Alphabet assesses whether customer use of its products for surveillance, censorship, or military purposes causes human rights harms in conflict areas.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "ask_id": "ask-customer-due-diligence",
+   "category": "downstream-use",
    "degree": 3
   },
   {
@@ -2858,6 +2881,7 @@
    "plain_summary": "Asks the board for a report on how it oversees risks of generative AI bias against religious or political views and whether such bias affects people's civil rights.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "ask_id": "ask-ai-bias",
+   "category": "users",
    "degree": 3
   },
   {
@@ -2880,6 +2904,7 @@
    "plain_summary": "Asks for an annual report on risks from unethical or improper use of external data in developing and deploying Alphabet's AI, how it mitigates them, and how it measures effectiveness.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "ask_id": "ask-ai-training-data",
+   "category": "users",
    "degree": 3
   },
   {
@@ -2911,6 +2936,7 @@
    "plain_summary": "Asks the board to publish an independent third-party human rights impact assessment of Google's AI-driven targeted advertising policies and practices.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "ask_id": "ask-targeted-ads-rights",
+   "category": "users",
    "degree": 14
   },
   {
@@ -2933,6 +2959,7 @@
    "plain_summary": "Asks Alphabet for a report on how its water usage policies and practices align with long-term shareholder value, particularly for brand growth and AI development.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-dc-water",
+   "category": "data-centers",
    "degree": 2
   },
   {
@@ -2955,6 +2982,7 @@
    "plain_summary": "Asks the board for a report on risks from gaps in Alphabet's oversight of customer and user data that could let its services facilitate government surveillance, censorship, or profiling.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-ai-training-data",
+   "category": "users",
    "degree": 6
   },
   {
@@ -2986,6 +3014,7 @@
    "plain_summary": "Asks the board to update the Audit Committee charter to give it formal oversight of responsible AI development and deployment and of AI risks to users' human rights.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-ai-oversight-reporting",
+   "category": "governance-safety",
    "degree": 4
   },
   {
@@ -3008,6 +3037,7 @@
    "plain_summary": "Asks the board to commission a third-party assessment of further actions Alphabet could take to curb the spread of false information, including AI-generated falsehoods, and report the outcome.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-ai-misinformation",
+   "category": "users",
    "degree": 2
   },
   {
@@ -3039,6 +3069,7 @@
    "plain_summary": "Asks for an annual report on risks from unethical or improper use of external data in developing and deploying Alphabet's AI, how it mitigates them, and how it measures effectiveness.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-ai-training-data",
+   "category": "users",
    "degree": 2
   },
   {
@@ -3061,6 +3092,7 @@
    "plain_summary": "Asks the board to publish an independent third-party human rights impact assessment of Facebook's targeted advertising policies and practices across its business.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
    "ask_id": "ask-targeted-ads-rights",
+   "category": "users",
    "degree": 8
   },
   {
@@ -3079,6 +3111,7 @@
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680122000043/meta2022definitiveproxysta.htm",
    "plain_summary": "Asks for a report analyzing why enforcement of Meta's Community Standards has proven ineffective at controlling hate speech, disinformation and content that incites violence or harm.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
+   "category": "users",
    "degree": 3
   },
   {
@@ -3101,6 +3134,7 @@
    "plain_summary": "Asks the board for an annual report on risks from Meta's role in spreading generative AI misinformation and disinformation, its remediation steps, and how it measures their effectiveness.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "ask_id": "ask-ai-misinformation",
+   "category": "users",
    "degree": 6
   },
   {
@@ -3132,6 +3166,7 @@
    "plain_summary": "Asks the board to publish an independent third-party human rights impact assessment of the AI systems that drive Facebook's targeted advertising policies and practices.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "ask_id": "ask-targeted-ads-rights",
+   "category": "users",
    "degree": 4
   },
   {
@@ -3154,6 +3189,7 @@
    "plain_summary": "Asks for an annual report on risks from unethical or improper use of external data in developing and deploying Meta's AI, how it mitigates them, and how it measures effectiveness.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "ask_id": "ask-ai-training-data",
+   "category": "users",
    "degree": 3
   },
   {
@@ -3176,6 +3212,7 @@
    "plain_summary": "Asks Meta to publish a transparency report on its use of deepfake-identifying software to combat the risks of online child exploitation.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "ask_id": "ask-child-safety",
+   "category": "users",
    "degree": 3
   },
   {
@@ -3198,6 +3235,7 @@
    "plain_summary": "Asks Meta to disclose a transition plan for new renewable energy or other actions that cut emissions at least as much as its expanded data centers' added energy demand.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "ask_id": "ask-dc-climate-energy",
+   "category": "data-centers",
    "degree": 3
   },
   {
@@ -3218,6 +3256,7 @@
    "plain_summary": "Asks the board to publish a report with targets and metrics assessing whether and how Meta has improved child safety and reduced harm to children on its platforms.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "ask_id": "ask-child-safety",
+   "category": "users",
    "degree": 3
   },
   {
@@ -3249,6 +3288,7 @@
    "plain_summary": "Asks for an annual report on risks from unethical or improper use of external data in developing and deploying Meta's AI, how it mitigates them, and how it measures effectiveness.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "ask_id": "ask-ai-training-data",
+   "category": "users",
    "degree": 2
   },
   {
@@ -3271,6 +3311,7 @@
    "plain_summary": "Asks the board to oversee a data protection impact assessment of Meta's use of AI chatbot conversations to personalize ads and content, including appropriate use and opt-out procedures.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "ask_id": "ask-ai-training-data",
+   "category": "users",
    "degree": 4
   },
   {
@@ -3293,6 +3334,7 @@
    "plain_summary": "Asks Meta for a report explaining how it will meet its greenhouse gas commitments given rising energy demand from its artificial intelligence work and planned data centers.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "ask_id": "ask-dc-climate-energy",
+   "category": "data-centers",
    "degree": 6
   },
   {
@@ -3313,6 +3355,7 @@
    "plain_summary": "Asks the Compensation Committee to report on the feasibility of tying senior executive pay to performance on improving child safety.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "ask_id": "ask-child-safety",
+   "category": "users",
    "degree": 3
   },
   {
@@ -3335,6 +3378,7 @@
    "plain_summary": "Asks the board to commission an independent report on whether customers' use of Amazon's surveillance, computer vision or cloud storage products contributes to human rights violations.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
    "ask_id": "ask-customer-due-diligence",
+   "category": "downstream-use",
    "degree": 3
   },
   {
@@ -3357,6 +3401,7 @@
    "plain_summary": "Asks the board to commission an independent study of Rekognition on its privacy and civil rights risks, its sale to \"repressive\" governments, and related financial risks.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
    "ask_id": "ask-customer-due-diligence",
+   "category": "downstream-use",
    "degree": 1
   },
   {
@@ -3388,6 +3433,7 @@
    "plain_summary": "Asks the board to commission an independent report on whether customers' use of Amazon's surveillance, computer vision or cloud products contributes to human rights violations or breaches humanitarian law.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "ask_id": "ask-customer-due-diligence",
+   "category": "downstream-use",
    "degree": 5
   },
   {
@@ -3419,6 +3465,7 @@
    "plain_summary": "Asks the board to commission an independent study of Rekognition on its privacy and civil rights risks in the US, its sale to \"repressive\" governments, and related financial risks.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "ask_id": "ask-customer-due-diligence",
+   "category": "downstream-use",
    "degree": 1
   },
   {
@@ -3441,6 +3488,7 @@
    "plain_summary": "Asks the board to create a new committee of independent directors on AI to address human rights risks from developing and deploying AI systems.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "ask_id": "ask-ai-oversight-reporting",
+   "category": "governance-safety",
    "degree": 2
   },
   {
@@ -3463,6 +3511,7 @@
    "plain_summary": "Asks for a report explaining how Amazon will meet its greenhouse gas commitments given the growing energy demand from AI and the data centers it plans to build.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "ask_id": "ask-dc-climate-energy",
+   "category": "data-centers",
    "degree": 1
   },
   {
@@ -3485,6 +3534,7 @@
    "plain_summary": "Asks the board to commission an independent, public assessment of how the board and its committees oversee human rights risks tied to AI.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "ask_id": "ask-ai-oversight-reporting",
+   "category": "governance-safety",
    "degree": 2
   },
   {
@@ -3507,6 +3557,7 @@
    "plain_summary": "Asks for an annual report on risks from unethical or improper use of external data to train Amazon's AI offerings, how it mitigates them, and how it measures that.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "ask_id": "ask-ai-training-data",
+   "category": "users",
    "degree": 3
   },
   {
@@ -3538,6 +3589,7 @@
    "plain_summary": "Asks for a report explaining how Amazon will meet its greenhouse gas commitments given the growing energy demand from AI and the data centers it plans to build.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
    "ask_id": "ask-dc-climate-energy",
+   "category": "data-centers",
    "degree": 3
   },
   {
@@ -3558,6 +3610,7 @@
    "plain_summary": "Asks the board to report, by March 31, 2027, the added capital and operating costs of Amazon's climate commitments since 2019 and its reassessment of them given changing expectations for AI infrastructure investment and energy usage.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
    "ask_id": "ask-dc-climate-energy",
+   "category": "data-centers",
    "degree": 2
   },
   {
@@ -3580,6 +3633,7 @@
    "plain_summary_source": "https://news.bloomberglaw.com/esg/amazon-to-block-investor-vote-on-ai-services-for-israel-dhs",
    "plain_summary_note": "Secondary source: the resolution was not in a proxy statement.",
    "ask_id": "ask-customer-due-diligence",
+   "category": "downstream-use",
    "degree": 9
   },
   {
@@ -3601,6 +3655,7 @@
    "support_note": "Floor proposal: raised at the meeting, so shares voted earlier by proxy could not vote on it. Support is not comparable with proposals in the proxy; the 8-K gives the raw counts.",
    "plain_summary_note": "No resolution text available: the proposal was withdrawn or raised from the meeting floor.",
    "ask_id": "ask-ai-workforce",
+   "category": "downstream-use",
    "degree": 2
   },
   {
@@ -3623,6 +3678,7 @@
    "plain_summary": "Asks for a public transparency report on Apple's use of AI in its business operations and any ethical guidelines it has adopted for that use.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm",
    "ask_id": "ask-ai-oversight-reporting",
+   "category": "governance-safety",
    "degree": 3
   },
   {
@@ -3645,6 +3701,7 @@
    "plain_summary": "Asks for an annual report on risks from Apple's unethical or improper use of external data to develop and train its AI, its mitigation steps, and how it measures them.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
    "ask_id": "ask-ai-training-data",
+   "category": "users",
    "degree": 3
   },
   {
@@ -3667,6 +3724,7 @@
    "plain_summary_source": "https://www.minerva.info/post/apple-shareholders-stunted-proposals-plummet-as-sec-shift-bites",
    "plain_summary_note": "Secondary source: the resolution was not in a proxy statement.",
    "ask_id": "ask-dc-climate-energy",
+   "category": "data-centers",
    "degree": 2
   },
   {
@@ -3689,6 +3747,7 @@
    "plain_summary": "Asks for a report disclosing the greenhouse gas emissions from the use of NVIDIA's sold products.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
    "ask_id": "ask-dc-climate-energy",
+   "category": "data-centers",
    "degree": 4
   },
   {
@@ -3707,6 +3766,7 @@
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000095/nvda-20250512.htm",
    "plain_summary_note": "The only public resolution text is on the PRI Collaboration Platform, whose terms bar republishing.",
    "ask_id": "ask-customer-due-diligence",
+   "category": "downstream-use",
    "degree": 3
   },
   {
@@ -3728,6 +3788,7 @@
    "support_note": "Tesla bylaw basis counts abstentions as against: 43.25%. The 8-K gives no percentage.",
    "plain_summary": "Asks the board to authorize an investment in xAI, in an amount and form the board deems appropriate.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925090866/tm252289-12_def14a.htm",
+   "category": "governance-safety",
    "degree": 1
   },
   {
@@ -4006,11 +4067,11 @@
    "type": "person",
    "layer": "people",
    "label": "Marian Macindoe",
-   "title": "Managing Director (oversees corporate engagement and proxy voting; formerly Head of ESG Stewardship) (role not confirmed since 2025)",
+   "title": "Managing Director, Sustainable Investment Strategy",
    "org_name": "Parnassus Investments",
    "ai_focus": "",
-   "source_url": "https://greenmoney.com/?p=46104",
-   "verified": "UNVERIFIED (last seen 2025)",
+   "source_url": "https://www.parnassus.com/our-team",
+   "verified": "2026-11",
    "degree": 1
   },
   {
@@ -4030,11 +4091,11 @@
    "type": "person",
    "layer": "people",
    "label": "Carine Smith Ihenacho",
-   "title": "Chief Governance and Compliance Officer (stepping down end-2026)",
+   "title": "Chief Governance and Compliance Officer (stepping down; area reorganised from 1 January 2027)",
    "org_name": "Norges Bank Investment Management",
    "ai_focus": "",
-   "source_url": "https://www.nbim.no/en/about-us/leader-group/",
-   "verified": "2026-09",
+   "source_url": "https://www.nbim.no/en/news-and-insights/the-press/press-releases/2026/integrates-ownership-work-into-active-management/",
+   "verified": "2026-11",
    "degree": 1
   },
   {
@@ -4105,7 +4166,7 @@
    "layer": "people",
    "label": "Josh Zinner",
    "title": "CEO",
-   "org_name": "ICCR (Interfaith Center on Corporate Responsibility)",
+   "org_name": "Interfaith Center on Corporate Responsibility (ICCR)",
    "ai_focus": "Issued ICCR statement on papal AI encyclical (2026)",
    "source_url": "https://www.iccr.org/our-team/",
    "verified": "2026-11",
@@ -4140,30 +4201,37 @@
    "type": "person",
    "layer": "people",
    "label": "Jan Rydzak",
-   "title": "Digital Transformation Lead",
-   "org_name": "World Benchmarking Alliance",
-   "ai_focus": "Collective Impact Coalition for Ethical AI",
-   "source_url": "https://www.worldbenchmarkingalliance.org/news/launch-of-the-2025-collective-impact-coalition-for-ethical-ai-progress-report/",
-   "verified": "2025-12",
+   "title": "Executive Director",
+   "org_name": "Ranking Digital Rights",
+   "ai_focus": "Leads Ranking Digital Rights, which scores tech companies on human rights and works with investors through the WBA Collective Impact Coalition for Ethical AI",
+   "source_url": "https://rankingdigitalrights.org/who/",
+   "verified": "2026-11",
    "degree": 2
   },
   {
-   "id": "world-benchmarking-alliance",
+   "id": "ranking-digital-rights",
    "type": "investor",
    "layer": "investors",
-   "label": "World Benchmarking Alliance",
-   "degree": 4
+   "label": "Ranking Digital Rights",
+   "degree": 1
   },
   {
    "id": "person-nicholas-sewe",
    "type": "person",
    "layer": "people",
    "label": "Nicholas Sewe",
-   "title": "Engagement Lead, Digital Transformation",
+   "title": "Sector Specialist – Technology",
    "org_name": "World Benchmarking Alliance",
    "ai_focus": "Facilitated 2025 Ethical AI CIC progress report launch",
-   "source_url": "https://www.worldbenchmarkingalliance.org/news/launch-of-the-2025-collective-impact-coalition-for-ethical-ai-progress-report/",
-   "verified": "2025-12",
+   "source_url": "https://www.worldbenchmarkingalliance.org/about-us/our-team",
+   "verified": "2026-11",
+   "degree": 3
+  },
+  {
+   "id": "world-benchmarking-alliance",
+   "type": "investor",
+   "layer": "investors",
+   "label": "World Benchmarking Alliance",
    "degree": 3
   },
   {
@@ -4183,7 +4251,7 @@
    "type": "investor",
    "layer": "investors",
    "label": "PRI",
-   "degree": 1
+   "degree": 2
   },
   {
    "id": "person-peter-cashion",
@@ -4252,11 +4320,11 @@
    "type": "person",
    "layer": "people",
    "label": "Bruce Duguid",
-   "title": "Director, Head of Stewardship, EOS",
+   "title": "Head of Stewardship, EOS",
    "org_name": "Federated Hermes EOS",
    "ai_focus": "",
    "source_url": "https://www.hermes-investment.com/uk/en/intermediary/eos-stewardship/eos-team/",
-   "verified": "2025",
+   "verified": "2026-11",
    "degree": 1
   },
   {
@@ -4264,18 +4332,18 @@
    "type": "investor",
    "layer": "investors",
    "label": "Federated Hermes EOS",
-   "degree": 2
+   "degree": 5
   },
   {
    "id": "person-leon-kamhi",
    "type": "person",
    "layer": "people",
    "label": "Leon Kamhi",
-   "title": "Chair of EOS and Head of Responsibility, Federated Hermes Limited",
+   "title": "Head of Responsibility and EOS",
    "org_name": "Federated Hermes EOS",
    "ai_focus": "",
    "source_url": "https://www.hermes-investment.com/uploads/2026/05/bce7e29721dd9ac0119058bc65fca144/eos-corporate-policy-context-disclosure-2025.pdf",
-   "verified": "2026-04",
+   "verified": "2026-11",
    "degree": 1
   },
   {
@@ -4283,11 +4351,11 @@
    "type": "person",
    "layer": "people",
    "label": "Kamil Zabielski",
-   "title": "Head of Sustainable Investments",
+   "title": "Head of Sustainable Investment",
    "org_name": "Storebrand Asset Management",
    "ai_focus": "Publicly backed 2026 Alphabet AI human-rights / government contracts proposal",
    "source_url": "https://www.storebrand.com/sam/uk/asset-management/sustainability/core-teams",
-   "verified": "2026-06",
+   "verified": "2026-11",
    "degree": 1
   },
   {
@@ -4295,11 +4363,11 @@
    "type": "person",
    "layer": "people",
    "label": "Benjamin Chekroun",
-   "title": "Engagement Lead (Lead Engagement Analyst)",
+   "title": "Lead Engagement Analyst",
    "org_name": "Candriam",
    "ai_focus": "Candriam co-leads WBA Ethical AI coalition; writes on AI governance",
    "source_url": "https://www.candriam.com/nl-be/professional/insights/topics/esg/why-we-cant-ignore-ai-governance/",
-   "verified": "2026-09",
+   "verified": "2026-11",
    "degree": 3
   },
   {
@@ -4307,11 +4375,11 @@
    "type": "person",
    "layer": "people",
    "label": "Richard Butters",
-   "title": "Head of Stewardship (role not confirmed since undated bio page)",
+   "title": "Head of Stewardship",
    "org_name": "Aviva Investors",
    "ai_focus": "",
    "source_url": "https://www.avivainvestors.com/en-gb/about/our-people/r/richard-butters/",
-   "verified": "UNVERIFIED (undated bio page)",
+   "verified": "2026-11",
    "degree": 1
   },
   {
@@ -4323,7 +4391,7 @@
    "org_name": "Sarasin & Partners",
    "ai_focus": "",
    "source_url": "https://sarasinandpartners.com/stewardship/",
-   "verified": "2026-04",
+   "verified": "2026-11",
    "degree": 1
   },
   {
@@ -4342,7 +4410,7 @@
    "org_name": "Robeco",
    "ai_focus": "Announced 2026 responsible-AI engagement theme",
    "source_url": "https://www.robeco.com/en-uk/insights/2026/01/new-engagement-themes-for-2026-to-cover-climate-and-ai",
-   "verified": "2026-01",
+   "verified": "2026-11",
    "degree": 2
   },
   {
@@ -4350,7 +4418,7 @@
    "type": "investor",
    "layer": "investors",
    "label": "Robeco",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "person-danielle-essink",
@@ -4361,7 +4429,7 @@
    "org_name": "Robeco",
    "ai_focus": "Leads Robeco's 2026 responsible-use-of-AI engagement theme",
    "source_url": "https://www.robeco.com/en-uk/insights/2026/01/new-engagement-themes-for-2026-to-cover-climate-and-ai",
-   "verified": "2026-01",
+   "verified": "2026-11",
    "degree": 2
   },
   {
@@ -4443,6 +4511,1309 @@
    "ai_focus": "Backed Zevin-led 2026 Alphabet government AI contracts proposal",
    "source_url": "https://fortune.com/2026/06/04/worlds-largest-sovereign-wealth-fund-backs-push-for-google-oversight-on-government-ai-contracts/",
    "verified": "2026-06",
+   "degree": 1
+  },
+  {
+   "id": "person-tyler-mccullough",
+   "type": "person",
+   "layer": "people",
+   "label": "Tyler McCullough",
+   "title": "Senior Analyst, Sustainability and Stewardship",
+   "org_name": "Parnassus Investments",
+   "ai_focus": "Sustainability research and stewardship analyst on the Parnassus engagement team; no AI-specific engagement credited to him found",
+   "source_url": "https://www.parnassus.com/our-team/profile/tyler-mccullough",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-sophie-haywood",
+   "type": "person",
+   "layer": "people",
+   "label": "Sophie Haywood",
+   "title": "Analyst, Sustainability and Stewardship",
+   "org_name": "Parnassus Investments",
+   "ai_focus": "Sustainability research and stewardship analyst on the Parnassus engagement team; no AI-specific engagement credited to her found",
+   "source_url": "https://www.parnassus.com/our-team/profile/sophie-haywood",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-annie-sanders",
+   "type": "person",
+   "layer": "people",
+   "label": "Annie Sanders",
+   "title": "Director of Shareholder Advocacy",
+   "org_name": "Green Century Capital Management",
+   "ai_focus": "Leads Green Century's shareholder advocacy team, whose engagements with tech and semiconductor companies target the climate footprint of AI and data centers",
+   "source_url": "https://www.greencentury.com/team/annie-sanders/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-giovanna-eichner",
+   "type": "person",
+   "layer": "people",
+   "label": "Giovanna Eichner",
+   "title": "Shareholder Advocate",
+   "org_name": "Green Century Capital Management",
+   "ai_focus": "Lead contact on Green Century's 2026 NVIDIA proposal asking for reporting of AI product-use emissions (18% support); spoke on data center impacts at Climate Week NYC 2026",
+   "source_url": "https://www.greencentury.com/team/giovanna-eichner-shareholder-advocate/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-lisa-beauvilain",
+   "type": "person",
+   "layer": "people",
+   "label": "Lisa Beauvilain",
+   "title": "Global Head of Sustainability & Stewardship, Co-Head of the Impax Sustainability Centre",
+   "org_name": "Impax Asset Management",
+   "ai_focus": "Heads Impax sustainability and stewardship; Impax's 2026 Stewardship and Advocacy Report, which she introduces, covers its 2025 AI governance engagement programme",
+   "source_url": "https://impaxam.com/about/team/lisa-beauvilain",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "impax",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Impax Asset Management",
+   "degree": 2
+  },
+  {
+   "id": "person-robyn-lockyer",
+   "type": "person",
+   "layer": "people",
+   "label": "Robyn Lockyer",
+   "title": "Co-Head of Stewardship",
+   "org_name": "Impax Asset Management",
+   "ai_focus": "Impax's thematic engagement lead on AI Governance; oversees global engagement and voting",
+   "source_url": "https://impaxam.com/about/team/robin-lockyer",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-mark-regier",
+   "type": "person",
+   "layer": "people",
+   "label": "Mark Regier",
+   "title": "Vice President of Stewardship Investing",
+   "org_name": "Praxis Mutual Funds / Everence Financial",
+   "ai_focus": "Oversees Praxis screening, proxy voting, corporate engagement and community investing; no AI-specific engagement found",
+   "source_url": "https://praxismutualfunds.com/about-us/staff-bios/mark-regier",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "praxis-mutual-funds-everence-financial",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Praxis Mutual Funds / Everence Financial",
+   "degree": 2
+  },
+  {
+   "id": "person-chris-meyer",
+   "type": "person",
+   "layer": "people",
+   "label": "Chris Meyer",
+   "title": "Stewardship Investing Research and Advocacy Manager",
+   "org_name": "Praxis Mutual Funds / Everence Financial",
+   "ai_focus": "Leads Praxis corporate engagement and supports its proxy voting; no AI-specific engagement by him found (Praxis signed a 2023 investor statement on the EU AI Act)",
+   "source_url": "https://praxismutualfunds.com/about-us/staff-bios/chris-meyer",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-amy-obrien",
+   "type": "person",
+   "layer": "people",
+   "label": "Amy O'Brien",
+   "title": "Global Head of Responsible Investing",
+   "org_name": "Nuveen (TIAA)",
+   "ai_focus": "Wrote Nuveen's 'A sustainable investor's guide to AI' (Jan 2026), on AI data privacy, energy and labor risks and on engaging portfolio companies",
+   "source_url": "https://www.nuveen.com/global/about-us/profiles/o/amy-obrien",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "nuveen-tiaa",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Nuveen (TIAA)",
+   "degree": 2
+  },
+  {
+   "id": "person-jeffrey-warshauer",
+   "type": "person",
+   "layer": "people",
+   "label": "Jeffrey Warshauer",
+   "title": "Senior Director, ESG Integration and Stewardship - Public Equities",
+   "org_name": "Nuveen (TIAA)",
+   "ai_focus": "Oversees Nuveen's enterprise engagement and proxy voting program for public equities; no AI-specific engagement by him found",
+   "source_url": "https://www.nuveen.com/global/about-us/profiles/w/jeffrey-warshauer",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-glenn-booraem",
+   "type": "person",
+   "layer": "people",
+   "label": "Glenn Booraem",
+   "title": "Principal; leads Vanguard Capital Management Investment Stewardship (VCMIS); Investment Stewardship Officer of the Vanguard funds",
+   "org_name": "Vanguard",
+   "ai_focus": "Leads VCMIS, whose 2026 annual report covers board oversight of AI risk and its votes on AI proposals at Alphabet and IBM",
+   "source_url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/articles/vanguard-names-leaders-new-investment-stewardship-programs.html",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "vanguard",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Vanguard",
+   "degree": 3
+  },
+  {
+   "id": "person-carolyn-cross",
+   "type": "person",
+   "layer": "people",
+   "label": "Carolyn Cross",
+   "title": "Principal; leads Vanguard Portfolio Management Investment Stewardship (VPMIS); Investment Stewardship Officer of the Vanguard funds",
+   "org_name": "Vanguard",
+   "ai_focus": "Leads VPMIS proxy voting and engagement; its 2026 annual report notes AI-related shareholder proposals, but no AI engagement by her was found",
+   "source_url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/articles/vanguard-names-leaders-new-investment-stewardship-programs.html",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-amra-balic",
+   "type": "person",
+   "layer": "people",
+   "label": "Amra Balic",
+   "title": "Global Co-Head of BlackRock Investment Stewardship",
+   "org_name": "BlackRock",
+   "ai_focus": "Co-leads BIS (index equity); the 2026 Global Voting Spotlight she co-signed names AI adoption as a board oversight theme",
+   "source_url": "https://www.blackrock.com/gls-download/literature/publication/investment-stewardship-voting-spotlight.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "blackrock",
+   "type": "investor",
+   "layer": "investors",
+   "label": "BlackRock",
+   "degree": 4
+  },
+  {
+   "id": "person-john-roe",
+   "type": "person",
+   "layer": "people",
+   "label": "John Roe",
+   "title": "Global Co-Head of BlackRock Investment Stewardship",
+   "org_name": "BlackRock",
+   "ai_focus": "Co-leads BIS (index equity); the 2026 Global Voting Spotlight he co-signed names AI adoption as a board oversight theme",
+   "source_url": "https://www.blackrock.com/gls-download/literature/publication/investment-stewardship-voting-spotlight.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-michelle-edkins",
+   "type": "person",
+   "layer": "people",
+   "label": "Michelle Edkins",
+   "title": "Global Head of BlackRock Active Investment Stewardship",
+   "org_name": "BlackRock",
+   "ai_focus": "Heads BAIS (active funds); her 2025 report foreword cites directors' challenges in overseeing AI",
+   "source_url": "https://www.blackrock.com/corporate/literature/publication/blackrock-active-investment-stewardship-annual-report-2025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-karen-wong",
+   "type": "person",
+   "layer": "people",
+   "label": "Karen Wong",
+   "title": "Senior Vice President, Global Head of Sustainable Investing and Asset Stewardship",
+   "org_name": "State Street Investment Management",
+   "ai_focus": "Leads State Street's asset stewardship and sustainable investing functions; the firm's 2025 report covers an engagement with Microsoft on AI and data centers",
+   "source_url": "https://www.ssga.com/library-content/assets/pdf/global/asset-stewardship/stewardship-report-2025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "state-street",
+   "type": "investor",
+   "layer": "investors",
+   "label": "State Street Investment Management",
+   "degree": 4
+  },
+  {
+   "id": "person-benjamin-colton",
+   "type": "person",
+   "layer": "people",
+   "label": "Benjamin Colton",
+   "title": "Managing Director, Global Head of Asset Stewardship",
+   "org_name": "State Street Investment Management",
+   "ai_focus": "Oversees State Street's global proxy voting and engagement, including 2025 engagement on AI risk at tech companies",
+   "source_url": "https://www.ssga.com/library-content/assets/pdf/global/asset-stewardship/stewardship-report-2025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-holly-fetter",
+   "type": "person",
+   "layer": "people",
+   "label": "Holly Fetter",
+   "title": "Vice President, Americas Head of Stewardship",
+   "org_name": "State Street Investment Management",
+   "ai_focus": "Oversees proxy voting and engagement in the Americas; no AI-specific engagement by her found",
+   "source_url": "https://www.ssga.com/library-content/assets/pdf/global/asset-stewardship/stewardship-report-2025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-devika-kaul",
+   "type": "person",
+   "layer": "people",
+   "label": "Devika Kaul",
+   "title": "Vice President, Head of Stewardship Research",
+   "org_name": "State Street Investment Management",
+   "ai_focus": "Oversees stewardship research; the team published 'Opportunities and Risks Related to Emerging Technologies' (2025) on AI governance at tech companies",
+   "source_url": "https://www.ssga.com/library-content/assets/pdf/global/asset-stewardship/stewardship-report-2025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-anna-stefanovic",
+   "type": "person",
+   "layer": "people",
+   "label": "Anna Stefanovic",
+   "title": "Senior Associate, Investor Alliance for Human Rights",
+   "org_name": "Interfaith Center on Corporate Responsibility (ICCR)",
+   "ai_focus": "Supports the Investor Alliance for Human Rights' investor engagement; bio does not cite AI-specific work",
+   "source_url": "https://www.iccr.org/our-team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-meg-jones-monteiro",
+   "type": "person",
+   "layer": "people",
+   "label": "Meg Jones-Monteiro",
+   "title": "Senior Director, Health Equity and Evaluation",
+   "org_name": "Interfaith Center on Corporate Responsibility (ICCR)",
+   "ai_focus": "Leads ICCR health equity engagement, including member engagements on prevention of algorithmic harms in health care",
+   "source_url": "https://www.iccr.org/our-team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-aaron-acosta",
+   "type": "person",
+   "layer": "people",
+   "label": "Aaron Acosta",
+   "title": "Program Director",
+   "org_name": "Investor Advocates for Social Justice (IASJ)",
+   "ai_focus": "IASJ spokesperson and contact on the 2026 Palantir human rights impact assessment proposal and the 2026 Microsoft proposal on AI and cloud human rights due diligence",
+   "source_url": "https://iasj.org/aaron-acosta/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-ruthly-cadestin",
+   "type": "person",
+   "layer": "people",
+   "label": "Ruthly Cadestin",
+   "title": "Executive Director",
+   "org_name": "Investor Advocates for Social Justice (IASJ)",
+   "ai_focus": "Leads IASJ, which supported 2026 tech human rights proposals at Palantir, Microsoft and Amazon; no personal AI filing found",
+   "source_url": "https://iasj.org/ruthlycadestin/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-susan-francois",
+   "type": "person",
+   "layer": "people",
+   "label": "Susan Francois, CSJP",
+   "title": "Assistant Congregation Leader and Congregation Treasurer",
+   "org_name": "Congregation of the Sisters of St. Joseph of Peace",
+   "ai_focus": "Lead filer of the 2026 Palantir proposal asking for a human rights impact assessment of its products (12.5% per the 8-K; proponents estimate 56% excluding insider votes); co-filer statement on Microsoft AI and cloud human rights due diligence",
+   "source_url": "https://www.csjp.org/susan-francois-asst-congregation-leader",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-timnit-ghermay",
+   "type": "person",
+   "layer": "people",
+   "label": "Timnit Ghermay",
+   "title": "Director of Northwest Coalition for Responsible Investment",
+   "org_name": "Intercommunity Peace & Justice Center (IPJC)",
+   "ai_focus": "Directs NWCRI, IPJC's faith-based shareholder engagement coalition; no AI-specific engagement found",
+   "source_url": "https://ipjc.org/our-team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-katie-carter",
+   "type": "person",
+   "layer": "people",
+   "label": "Katie Carter",
+   "title": "Director of Faith-Based Investing and Shareholder Engagement",
+   "org_name": "Presbyterian Church (U.S.A.), Mission Responsibility Through Investment (MRTI)",
+   "ai_focus": "Contact for the 2026 PC(USA) shareholder proposal at Palantir on customer use of products contributing to human rights harms",
+   "source_url": "https://pcusa.org/news-storytelling/news/2026/10/13/investor-freedom-risk-with-sec-action-and-new-laws-being-proposed",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-simon-doong",
+   "type": "person",
+   "layer": "people",
+   "label": "Simon Doong",
+   "title": "Associate for Corporate, Community and Church Engagement",
+   "org_name": "Presbyterian Church (U.S.A.), Mission Responsibility Through Investment (MRTI)",
+   "ai_focus": "Staff for MRTI corporate engagement and director-voting strategy; no AI-specific engagement found",
+   "source_url": "https://pcusa.org/news-storytelling/news/2025/10/29/mrti-committee-moves-add-director-voting-strategy-possible-tactic",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-seamus-finn",
+   "type": "person",
+   "layer": "people",
+   "label": "Rev. Seamus Finn, OMI",
+   "title": "Director, JPIC Office; Chief of Faith Consistent Investing, OIP Investment Trust",
+   "org_name": "Missionary Oblates of Mary Immaculate, U.S. Province",
+   "ai_focus": "Leads Oblate shareholder engagement; the Oblates co-filed the 2026 Palantir human rights harms proposal and the 2026 Amazon responsible AI proposal",
+   "source_url": "https://omiusajpic.org/about/our-staff/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-marilin-llanes",
+   "type": "person",
+   "layer": "people",
+   "label": "Sister Marilin M. Llanes, OP",
+   "title": "Director and Portfolio Manager, Portfolio Advisory Board (shareholder advocacy and community impact investing)",
+   "org_name": "Adrian Dominican Sisters",
+   "ai_focus": "Leads the congregation's responsible investing; Adrian Dominican Sisters co-filed the 2026 Amazon proposal on aligning AI sales with its Responsible AI approach",
+   "source_url": "https://adriandominicans.org/PAB/Board-and-Staff",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-susan-mika",
+   "type": "person",
+   "layer": "people",
+   "label": "Sister Susan Mika, OSB",
+   "title": "Director, Benedictine Sisters Corporate Responsibility Program and Benedictine Coalition for Responsible Investment",
+   "org_name": "Benedictine Sisters of Boerne, Texas",
+   "ai_focus": "Directs the Benedictine coalition's filings; Boerne Benedictines co-filed the 2026 CVS Health proposal on cybersecurity defenses for AI-enabled threats",
+   "source_url": "https://boernebenedictines.org/sister/sister-susan-mika/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "benedictine-sisters-of-boerne-texas",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Benedictine Sisters of Boerne, Texas",
+   "degree": 1
+  },
+  {
+   "id": "person-gina-haas",
+   "type": "person",
+   "layer": "people",
+   "label": "Gina Haas",
+   "title": "Director of Investments",
+   "org_name": "American Baptist Home Mission Societies (ABHMS)",
+   "ai_focus": "Directs ABHMS investments and its socially responsible investing page; ABHMS was lead filer of the 2026 Amazon responsible AI proposal, but her personal role in it is not stated",
+   "source_url": "https://abhms.org/get-involved/mission-and-impact-investing",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-duane-roberts",
+   "type": "person",
+   "layer": "people",
+   "label": "Duane Roberts, CFA",
+   "title": "Director of Faith and Values-based Strategies",
+   "org_name": "Dana Investment Advisors",
+   "ai_focus": "Leads Dana's faith and values-based strategies; no AI-specific engagement found",
+   "source_url": "https://www.danainvestment.com/meet-the-team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-john-harrington",
+   "type": "person",
+   "layer": "people",
+   "label": "John Harrington",
+   "title": "President and CEO",
+   "org_name": "Harrington Investments",
+   "ai_focus": "Leads a firm that filed a 2023 Alphabet proposal seeking review of board committee oversight of AI; no 2025-2026 AI filing found",
+   "source_url": "https://www.harringtoninvestments.com/about-us/our-staff/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-brianna-harrington",
+   "type": "person",
+   "layer": "people",
+   "label": "Brianna Harrington",
+   "title": "Research Analyst and Shareholder Advocacy Coordinator",
+   "org_name": "Harrington Investments",
+   "ai_focus": "Coordinates the firm's shareholder advocacy; no AI-specific engagement found",
+   "source_url": "https://www.harringtoninvestments.com/about-us/our-staff/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-juana-lee",
+   "type": "person",
+   "layer": "people",
+   "label": "Juana Lee",
+   "title": "Associate Director, Corporate Engagement",
+   "org_name": "SHARE (Shareholder Association for Research and Education)",
+   "ai_focus": "Led SHARE's 2026 responsible AI policy proposal at Shopify and spoke for the 2025 Alphabet AI targeted-ads human rights impact assessment proposal",
+   "source_url": "https://share.ca/about/team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-sarah-couturier-tanoh",
+   "type": "person",
+   "layer": "people",
+   "label": "Sarah Couturier-Tanoh",
+   "title": "Director, Shareholder Advocacy",
+   "org_name": "SHARE (Shareholder Association for Research and Education)",
+   "ai_focus": "Directs SHARE's shareholder advocacy on human rights, decent work, corporate lobbying and supply chain due diligence; no individually sourced AI filing found",
+   "source_url": "https://share.ca/about/team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-kevin-thomas",
+   "type": "person",
+   "layer": "people",
+   "label": "Kevin Thomas",
+   "title": "Chief Executive Officer",
+   "org_name": "SHARE (Shareholder Association for Research and Education)",
+   "ai_focus": "Leads SHARE, the Canadian engagement service provider that filed AI proposals at Alphabet and Shopify for the United Church pension plan",
+   "source_url": "https://share.ca/about/team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-angele-nsenga",
+   "type": "person",
+   "layer": "people",
+   "label": "Angèle Nsenga",
+   "title": "Manager, Shareholder Advocacy",
+   "org_name": "SHARE (Shareholder Association for Research and Education)",
+   "ai_focus": "Shareholder advocacy manager and certified civil rights auditor; no AI-specific engagement found",
+   "source_url": "https://share.ca/about/team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-serena-chan",
+   "type": "person",
+   "layer": "people",
+   "label": "Serena Chan",
+   "title": "Shareholder Advocacy Specialist",
+   "org_name": "SHARE (Shareholder Association for Research and Education)",
+   "ai_focus": "Engages companies and investors on human rights and decent work practices in SHARE's human rights program; no AI-specific engagement found",
+   "source_url": "https://share.ca/about/team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-dolapo-makinde",
+   "type": "person",
+   "layer": "people",
+   "label": "Dolapo Makinde",
+   "title": "Shareholder Advocacy Specialist",
+   "org_name": "SHARE (Shareholder Association for Research and Education)",
+   "ai_focus": "Shareholder advocacy on decent work and human rights; doctoral research at UBC on AI and ESG as anti-corruption tools",
+   "source_url": "https://share.ca/about/team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-jamie-bonham",
+   "type": "person",
+   "layer": "people",
+   "label": "Jamie Bonham",
+   "title": "Senior Director, Head of Responsible Investing",
+   "org_name": "NEI Investments",
+   "ai_focus": "Signs NEI's 2026 Stewardship Roadmap, which sets an AI governance and accountability theme; NEI leads two engagements in the WBA Collective Impact Coalition for Ethical AI",
+   "source_url": "https://www.neiinvestments.com/content/dam/nei/docs/en/responsible-investing/reports/NEI-stewardship-roadmap-2026-en.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-edmond-ho",
+   "type": "person",
+   "layer": "people",
+   "label": "Edmond Ho",
+   "title": "Associate Portfolio Manager, ESG",
+   "org_name": "Vancity Investment Management",
+   "ai_focus": "Supports execution of VCIM's shareholder engagement and ESG strategy; VCIM's ESG team filed the 2026 AI-misinformation proposal at Alphabet",
+   "source_url": "https://www.vcim.ca/team-members/edmond-ho",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-tatiana-parrott",
+   "type": "person",
+   "layer": "people",
+   "label": "Tatiana Parrott",
+   "title": "Investment Analyst, ESG",
+   "org_name": "Vancity Investment Management",
+   "ai_focus": "Conducts ESG reviews and shareholder engagement on VCIM's ESG team, which filed the 2026 AI-misinformation proposal at Alphabet",
+   "source_url": "https://www.vcim.ca/team-members/tatiana-parrott",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-gillian-lai",
+   "type": "person",
+   "layer": "people",
+   "label": "Gillian Lai",
+   "title": "ESG Analyst",
+   "org_name": "Vancity Investment Management",
+   "ai_focus": "Performs shareholder engagements on VCIM's ESG team (joined July 2025), which filed the 2026 AI-misinformation proposal at Alphabet",
+   "source_url": "https://www.vcim.ca/team-members/gillian-lai",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-morrigan-simpson-marran",
+   "type": "person",
+   "layer": "people",
+   "label": "Morrigan Simpson-Marran",
+   "title": "Investment Analyst, ESG",
+   "org_name": "Vancity Investment Management",
+   "ai_focus": "Engages listed companies on social, environmental and governance issues on VCIM's ESG team, which filed the 2026 AI-misinformation proposal at Alphabet",
+   "source_url": "https://www.vcim.ca/team-members/morrigan-simpson-marran",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-kelly-poole",
+   "type": "person",
+   "layer": "people",
+   "label": "Kelly Poole",
+   "title": "Climate and Energy Coordinator",
+   "org_name": "As You Sow",
+   "ai_focus": "Spoke for As You Sow's 2026 proposals at Amazon, Meta and Alphabet on squaring AI data center power demand with climate goals",
+   "source_url": "https://www.asyousow.org/staff/kelly-poole",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-cole-genge",
+   "type": "person",
+   "layer": "people",
+   "label": "Cole Genge",
+   "title": "Senior Director of Programs",
+   "org_name": "As You Sow",
+   "ai_focus": "Oversees As You Sow's program areas including Climate and Energy (home of its AI data center proposals) and shareholder relations management",
+   "source_url": "https://www.asyousow.org/staff/cole-genge",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-conrad-mackerron",
+   "type": "person",
+   "layer": "people",
+   "label": "Conrad MacKerron",
+   "title": "Senior Vice President",
+   "org_name": "As You Sow",
+   "ai_focus": "Long-time manager of As You Sow corporate dialogues and shareholder advocacy; no AI-specific engagement found",
+   "source_url": "https://www.asyousow.org/staff/conrad-mackerron",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-hyewon-han",
+   "type": "person",
+   "layer": "people",
+   "label": "Hyewon Han",
+   "title": "Director of Shareholder Advocacy",
+   "org_name": "Trillium Asset Management",
+   "ai_focus": "Director on Trillium's shareholder advocacy team; Trillium co-filed 2026 AI data center climate proposals at Amazon, Meta and Alphabet; no individually sourced AI filing found",
+   "source_url": "https://www.trilliuminvest.com/team/hyewon-han",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-kate-monahan",
+   "type": "person",
+   "layer": "people",
+   "label": "Kate Monahan",
+   "title": "Director of Shareholder Advocacy",
+   "org_name": "Trillium Asset Management",
+   "ai_focus": "Director on Trillium's shareholder advocacy team; no individually sourced AI filing found",
+   "source_url": "https://www.trilliuminvest.com/team/kate-monahan",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-madison-krieger",
+   "type": "person",
+   "layer": "people",
+   "label": "Madison Krieger",
+   "title": "Activism & Impact Research Analyst",
+   "org_name": "NorthStar Asset Management",
+   "ai_focus": "Helps lead NorthStar's shareholder advocacy, engaging portfolio companies directly; no AI-specific filing found",
+   "source_url": "https://northstarasset.com/team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-christopher-richardson",
+   "type": "person",
+   "layer": "people",
+   "label": "Christopher Richardson",
+   "title": "Shareholder Advocacy Manager",
+   "org_name": "Mercy Investment Services",
+   "ai_focus": "Spoke for 2026 investor proposals asking Amazon, Meta and Alphabet to align AI data center expansion with clean energy",
+   "source_url": "https://mercyinvestmentservices.org/our-people/staff/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-caroline-boden",
+   "type": "person",
+   "layer": "people",
+   "label": "Caroline Boden",
+   "title": "Director of Shareholder Advocacy",
+   "org_name": "Mercy Investment Services",
+   "ai_focus": "Leads Mercy shareholder advocacy on human rights, safer chemicals, sustainable agriculture and nutrition; no AI-specific filing found",
+   "source_url": "https://mercyinvestmentservices.org/our-people/staff/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-katie-mccloskey",
+   "type": "person",
+   "layer": "people",
+   "label": "Katie McCloskey",
+   "title": "Vice President of Social Responsibility",
+   "org_name": "Mercy Investment Services",
+   "ai_focus": "Heads Mercy's social responsibility function, which includes its shareholder advocacy program; no AI-specific filing found",
+   "source_url": "https://mercyinvestmentservices.org/our-people/staff/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-meredith-benton",
+   "type": "person",
+   "layer": "people",
+   "label": "Meredith Benton",
+   "title": "Principal and Founder (also Corporate Engagement Strategist, Nia Impact Capital)",
+   "org_name": "Whistle Stop Capital",
+   "ai_focus": "Tech accountability research on tech-sector governance, privacy and human rights; Nia Impact Capital lists her as a corporate engagement strategist",
+   "source_url": "https://whistlestop.capital/team",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "whistle-stop-capital",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Whistle Stop Capital",
+   "degree": 1
+  },
+  {
+   "id": "person-diana-kearney",
+   "type": "person",
+   "layer": "people",
+   "label": "Diana Kearney",
+   "title": "Lead, Legal & Shareholder Advocacy",
+   "org_name": "Oxfam America",
+   "ai_focus": "general shareholder advocacy (ESG resolutions, corporate accountability, climate justice)",
+   "source_url": "https://www.oxfamamerica.org/explore/people/diana-kearney/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "oxfam-america",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Oxfam America",
+   "degree": 1
+  },
+  {
+   "id": "person-shelley-alpern",
+   "type": "person",
+   "layer": "people",
+   "label": "Shelley Alpern",
+   "title": "Associate Vice President of Corporate Engagement",
+   "org_name": "Rhia Ventures",
+   "ai_focus": "general shareholder advocacy (reproductive and maternal health)",
+   "source_url": "https://rhiaventures.org/about/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "rhia-ventures",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Rhia Ventures",
+   "degree": 1
+  },
+  {
+   "id": "person-patricia-karr-seabrook",
+   "type": "person",
+   "layer": "people",
+   "label": "Patricia Karr Seabrook",
+   "title": "Shareholder Advocacy Coordinator",
+   "org_name": "Miller/Howard Investments",
+   "ai_focus": "general shareholder advocacy",
+   "source_url": "https://mhinvest.com/people",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "miller-howard-investments",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Miller/Howard Investments",
+   "degree": 1
+  },
+  {
+   "id": "person-luda-svystunova",
+   "type": "person",
+   "layer": "people",
+   "label": "Luda Svystunova",
+   "title": "Head of Social Research",
+   "org_name": "Amundi",
+   "ai_focus": "social stewardship (human rights and human capital engagement); no Amundi page found naming her on responsible AI",
+   "source_url": "https://research-center.amundi.com/article/outerblue-ri-driving-action-social-cohesion-through-shareholder-engagement",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-navishka-pandit",
+   "type": "person",
+   "layer": "people",
+   "label": "Navishka Pandit",
+   "title": "Assistant Manager, Engagement, EOS",
+   "org_name": "Federated Hermes EOS",
+   "ai_focus": "engagement with financial services, technology and healthcare companies, with thematic expertise including responsible AI deployment",
+   "source_url": "https://www.federatedhermes.com/en-gb/people/navishka-pandit",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-cambria-allen-ratzlaff",
+   "type": "person",
+   "layer": "people",
+   "label": "Cambria Allen-Ratzlaff",
+   "title": "Interim Chief Executive Officer",
+   "org_name": "PRI",
+   "ai_focus": "general responsible investment leadership",
+   "source_url": "https://www.unpri.org/news-and-press/pri-appoints-cambria-allen-ratzlaff-interim-ceo/13521.article",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-ellie-higgins",
+   "type": "person",
+   "layer": "people",
+   "label": "Ellie Higgins",
+   "title": "Assistant Manager - Engagement, North America",
+   "org_name": "Federated Hermes EOS",
+   "ai_focus": "general shareholder advocacy (sector coverage includes software and communications; thematic work on human rights and natural resources; no AI engagement named)",
+   "source_url": "https://www.federatedhermes.com/en-gb/people/ellie-higgins",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-janet-wong",
+   "type": "person",
+   "layer": "people",
+   "label": "Janet Wong",
+   "title": "North America Investment Stewardship Specialist",
+   "org_name": "J.P. Morgan Asset Management",
+   "ai_focus": "general shareholder advocacy (named for responsible minerals sourcing work; no public AI engagement found)",
+   "source_url": "https://am.jpmorgan.com/content/dam/jpm-am-aem/global/en/sustainable-investing/investment-stewardship-report.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "jpmorgan-am",
+   "type": "investor",
+   "layer": "investors",
+   "label": "J.P. Morgan Asset Management",
+   "degree": 1
+  },
+  {
+   "id": "person-kristin-drake",
+   "type": "person",
+   "layer": "people",
+   "label": "Kristin Drake",
+   "title": "Head of Investment Stewardship Group; Chair, Investment Stewardship Committee",
+   "org_name": "Dimensional Fund Advisors",
+   "ai_focus": "general investment stewardship (no public AI engagement found)",
+   "source_url": "https://www.dimensional.com/us-en/sustainability",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "dimensional-fund-advisors",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Dimensional Fund Advisors",
+   "degree": 1
+  },
+  {
+   "id": "person-courtney-wicks",
+   "type": "person",
+   "layer": "people",
+   "label": "Courtney Wicks",
+   "title": "Executive Director",
+   "org_name": "Center for Mission Aligned and Ethical Investment",
+   "ai_focus": "general shareholder advocacy (corporate accountability, human rights, faith-based investing)",
+   "source_url": "https://www.iccr.org/board-of-directors/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "center-for-mission-aligned-and-ethical-investment",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Center for Mission Aligned and Ethical Investment",
+   "degree": 1
+  },
+  {
+   "id": "person-tim-schwarzenberger",
+   "type": "person",
+   "layer": "people",
+   "label": "Tim Schwarzenberger",
+   "title": "Portfolio Manager, Director of Corporate Engagement",
+   "org_name": "Inspire Investing",
+   "ai_focus": "general shareholder advocacy (faith-based corporate engagement for Christian investors)",
+   "source_url": "https://www.inspireinvesting.com/team",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-caroline-eriksen",
+   "type": "person",
+   "layer": "people",
+   "label": "Caroline Eriksen",
+   "title": "Global Head of Active Ownership",
+   "org_name": "Norges Bank Investment Management",
+   "ai_focus": "Leads NBIM's Active Ownership teams for voting and sustainability, which move into Active Strategies from 1 January 2027; no AI work by her personally was sourced",
+   "source_url": "https://www.nbim.no/en/news-and-insights/the-press/press-releases/2026/integrates-ownership-work-into-active-management/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-tulia-machado-helland",
+   "type": "person",
+   "layer": "people",
+   "label": "Tulia Machado-Helland",
+   "title": "Head of Human Rights and Senior Sustainability Analyst",
+   "org_name": "Storebrand Asset Management",
+   "ai_focus": "Leads Storebrand's human rights engagement, whose 2024-2026 themes expect AI developers and users to run ongoing human rights impact assessments",
+   "source_url": "https://www.storebrand.com/sam/uk/asset-management/sustainability/core-teams",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-ross-teverson",
+   "type": "person",
+   "layer": "people",
+   "label": "Ross Teverson",
+   "title": "Engagement team member, EOS (Retail & Consumer Services, Technology)",
+   "org_name": "Federated Hermes EOS",
+   "ai_focus": "Co-authored EOS's Q1 2026 piece 'Mitigating AI risks to children' on child-safe AI engagement with tech companies",
+   "source_url": "https://www.hermes-investment.com/uploads/2026/05/c55403ebcafbadbbd0c352639946ecb3/eos-per-q1-2026-mitigating-ai-risks-to-children.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-samuel-radford",
+   "type": "person",
+   "layer": "people",
+   "label": "Samuel Radford",
+   "title": "Engagement Specialist",
+   "org_name": "Robeco",
+   "ai_focus": "Co-leads Robeco's 2026 Responsible use of AI engagement theme, focusing on misinformation and content moderation controls",
+   "source_url": "https://www.robeco.com/en-uk/insights/2026/01/new-engagement-themes-for-2026-to-cover-climate-and-ai",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-antje-stobbe",
+   "type": "person",
+   "layer": "people",
+   "label": "Antje Stobbe",
+   "title": "Head of Stewardship",
+   "org_name": "Allianz Global Investors",
+   "ai_focus": "Leads stewardship at AllianzGI, whose 2025 voting policy added a responsible AI resolution category",
+   "source_url": "https://www.allianzgi.com/en/press-centre/media/press-releases/20260303-allianzgi-enhances-governance-and-sustainability-leadership-with-updated-voting-policies-for-2026",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "allianz-global-investors",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Allianz Global Investors",
+   "degree": 1
+  },
+  {
+   "id": "person-julia-christine-rippel",
+   "type": "person",
+   "layer": "people",
+   "label": "Julia-Christine Rippel",
+   "title": "Head of Sustainability & Stewardship Office",
+   "org_name": "DWS",
+   "ai_focus": "Signs DWS's 2025 Stewardship Report, which records support for a proposal on meeting climate commitments given AI and data centre energy demand",
+   "source_url": "https://download.dws.com/download/asset/1dc13fd9-5f5f-445e-a8e0-3064712725d7",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "dws",
+   "type": "investor",
+   "layer": "investors",
+   "label": "DWS",
+   "degree": 1
+  },
+  {
+   "id": "person-caroline-le-meaux",
+   "type": "person",
+   "layer": "people",
+   "label": "Caroline Le Meaux",
+   "title": "Global Head of ESG Research, Engagement and Voting",
+   "org_name": "Amundi",
+   "ai_focus": "Leads the team running Amundi's AI ethics engagements; contributor to its 2026 responsible AI paper",
+   "source_url": "https://research-center.amundi.com/article/esg-thema-23-digital-transition-series-social-dimensions-responsible-ai-deployment",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-michael-herskovich",
+   "type": "person",
+   "layer": "people",
+   "label": "Michael Herskovich",
+   "title": "Global Head of Stewardship",
+   "org_name": "BNP Paribas Asset Management (incl. AXA IM)",
+   "ai_focus": "Leads stewardship at the combined BNPP AM and AXA IM; the 2026 AGM review calls for board capability on AI, and the firm's 2025 report has a responsible AI engagement case study",
+   "source_url": "https://www.bnpparibas-am.com/en/press/mediaroom-en-bnp-paribas-asset-management-unveils-its-2026-annual-general-meeting-season-review-underpinned-by-its-unified-voting-policy/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "bnp-paribas-asset-management-incl-axa-im",
+   "type": "investor",
+   "layer": "investors",
+   "label": "BNP Paribas Asset Management (incl. AXA IM)",
+   "degree": 2
+  },
+  {
+   "id": "person-adam-kanzer",
+   "type": "person",
+   "layer": "people",
+   "label": "Adam Kanzer",
+   "title": "Head of Stewardship, Americas",
+   "org_name": "BNP Paribas Asset Management (incl. AXA IM)",
+   "ai_focus": "Leads Americas stewardship; no AI engagement is attributed to him by name in the sources checked",
+   "source_url": "https://www.axa-im.com.au/sites/au/files/2026-06/BNPP%2BAM%2BSustainability%2BReport%2B2025_AU%20disclaime.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-kiran-aziz",
+   "type": "person",
+   "layer": "people",
+   "label": "Kiran Aziz",
+   "title": "Head of Responsible Investments, KLP Kapitalforvaltning",
+   "org_name": "KLP",
+   "ai_focus": "Leads the team that filed a 2025 shareholder proposal asking Alphabet for an independent human rights impact assessment of AI-driven targeted advertising",
+   "source_url": "https://www.klp.no/fond/ansvarlig-og-barekraftig-fondssparing/_/attachment/inline/e4839e12-0331-4d7b-9bc4-8c17c6d9122f:38d07c5b666c605e063945da3f6dd6bac007db1b/%C3%85rsrapport%20Ansvarlige%20Investeringer%202025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-jens-skancke-presthus",
+   "type": "person",
+   "layer": "people",
+   "label": "Jens Skancke Presthus",
+   "title": "Responsible for human rights, Responsible Investments team",
+   "org_name": "KLP",
+   "ai_focus": "Human rights lead in the team behind KLP's Alphabet AI advertising proposal",
+   "source_url": "https://www.klp.no/fond/ansvarlig-og-barekraftig-fondssparing/_/attachment/inline/e4839e12-0331-4d7b-9bc4-8c17c6d9122f:38d07c5b666c605e063945da3f6dd6bac007db1b/%C3%85rsrapport%20Ansvarlige%20Investeringer%202025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-eric-pedersen",
+   "type": "person",
+   "layer": "people",
+   "label": "Eric Pedersen",
+   "title": "Head of Responsible Investments",
+   "org_name": "Nordea Asset Management",
+   "ai_focus": "Heads the team that co-led the Ranking Digital Rights engagement and pressed Alphabet on AI-driven targeted ads",
+   "source_url": "https://www.nordea.com/en/doc/responsible-investments-report-2025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-katarina-hammar",
+   "type": "person",
+   "layer": "people",
+   "label": "Katarina Hammar",
+   "title": "Head of Investment Stewardship",
+   "org_name": "Nordea Asset Management",
+   "ai_focus": "Leads the stewardship cluster that runs Nordea's engagements, including in the Digital Rights & AI Accountability investor working group",
+   "source_url": "https://www.nordea.com/en/doc/responsible-investments-report-2025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-magdalena-kettis",
+   "type": "person",
+   "layer": "people",
+   "label": "Magdalena Kettis",
+   "title": "Stewardship team member",
+   "org_name": "Nordea Asset Management",
+   "ai_focus": "Serves on the management committee of the Investor Policy Dialogue on Deforestation (IPDD); Nordea's stewardship work includes digital rights and children's online safety engagements",
+   "source_url": "https://www.nordea.com/en/doc/responsible-investments-report-2025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-anders-schelde",
+   "type": "person",
+   "layer": "people",
+   "label": "Anders Schelde",
+   "title": "Chief Investment Officer (Investeringsdirektør)",
+   "org_name": "AkademikerPension",
+   "ai_focus": "Presented the 2025 shareholder proposal at Alphabet's AGM calling for a human rights assessment of AI-driven targeted advertising",
+   "source_url": "https://akademikerpension.dk/presse/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-rikke-berg-jacobsen",
+   "type": "person",
+   "layer": "people",
+   "label": "Rikke Berg Jacobsen",
+   "title": "Head of ESG (Chef for ESG)",
+   "org_name": "AkademikerPension",
+   "ai_focus": "Leads ESG strategy at the fund, whose 2025 report has a Digital Rights and AI section",
+   "source_url": "https://akademikerpension.dk/media/jc3ballu/rapport-om-ansvarlige-investeringer-2025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-jenn-hui-tan",
+   "type": "person",
+   "layer": "people",
+   "label": "Jenn-Hui Tan",
+   "title": "Chief Sustainability Officer",
+   "org_name": "Fidelity International",
+   "ai_focus": "Oversees stewardship at Fidelity, a lead investor in the WBA Collective Impact Coalition for Ethical AI that engaged Microsoft on a generative AI human rights impact assessment",
+   "source_url": "https://adviserservices.fidelity.co.uk/media/fnw/guides/sustainability-and-stewardship-report.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-dan-grandage",
+   "type": "person",
+   "layer": "people",
+   "label": "Dan Grandage",
+   "title": "Chief Sustainable Investment Officer",
+   "org_name": "Aberdeen Investments (formerly abrdn)",
+   "ai_focus": "Leads sustainable investment and stewardship at Aberdeen; AI link comes from news coverage of its 2026 outlook",
+   "source_url": "https://www.aberdeeninvestments.com/en-au/institutional/insights-and-research/stewardship-outcomes-why-investors-should-look-beyond-engagement-numbers",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "aberdeen-investments-formerly-abrdn",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Aberdeen Investments (formerly abrdn)",
+   "degree": 2
+  },
+  {
+   "id": "person-stuart-riddick",
+   "type": "person",
+   "layer": "people",
+   "label": "Stuart Riddick",
+   "title": "Senior Sustainable Investment Manager",
+   "org_name": "Aberdeen Investments (formerly abrdn)",
+   "ai_focus": "Quoted on Aberdeen's sustainable investment outlook; Aberdeen has published investor guidance on responsible AI",
+   "source_url": "https://www.scottishfinancialnews.com/articles/sustainability-evolving-not-fading-as-governance-set-to-lead-esg-by-2030-says-aberdeen",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-claudia-wearmouth",
+   "type": "person",
+   "layer": "people",
+   "label": "Claudia Wearmouth",
+   "title": "Global Head, Responsible Investment",
+   "org_name": "Columbia Threadneedle Investments",
+   "ai_focus": "Leads responsible investment and system-level stewardship; no AI or digital rights engagement attributed to her in the sources checked",
+   "source_url": "https://www.columbiathreadneedle.com/en/gb/intermediary/insights/our-approach-to-system-level-stewardship/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "columbia-threadneedle-investments",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Columbia Threadneedle Investments",
+   "degree": 1
+  },
+  {
+   "id": "person-caroline-escott",
+   "type": "person",
+   "layer": "people",
+   "label": "Caroline Escott",
+   "title": "Head of Investment Stewardship and Co-Head of Sustainable Ownership",
+   "org_name": "Railpen",
+   "ai_focus": "Led Railpen's 2025 report with Chronos Sustainability, 'Achieving Effective AI Governance', urging investors to engage companies on AI risk",
+   "source_url": "https://www.railpen.com/our-people/our-specialists/caroline-escott/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "railpen",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Railpen",
+   "degree": 2
+  },
+  {
+   "id": "person-jasmine-porter",
+   "type": "person",
+   "layer": "people",
+   "label": "Jasmine Porter",
+   "title": "Senior Investment Analyst, Sustainable Ownership",
+   "org_name": "Railpen",
+   "ai_focus": "Focuses on Railpen's Responsible Technology stewardship priority",
+   "source_url": "https://www.railpen.com/our-people/our-specialists/jasmine-porter/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-laura-hillis",
+   "type": "person",
+   "layer": "people",
+   "label": "Laura Hillis",
+   "title": "Managing Director, Responsible Investment",
+   "org_name": "Church of England Pensions Board (National Investing Bodies)",
+   "ai_focus": "Leads responsible investment at the Pensions Board, which with the other National Investing Bodies has a Big Tech engagement policy; no AI-specific work by her was sourced",
+   "source_url": "https://www.churchofengland.org/finance-news/church-england-pensions-board-joins-investor-call-robust-and-predictable-eu-emissions",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "church-of-england-pensions-board-national-investing-bodies",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Church of England Pensions Board (National Investing Bodies)",
+   "degree": 1
+  },
+  {
+   "id": "person-liza-mcdonald",
+   "type": "person",
+   "layer": "people",
+   "label": "Liza McDonald",
+   "title": "Head of Responsible Investment",
+   "org_name": "Aware Super",
+   "ai_focus": "Leads responsible investment at Aware Super; no AI engagement by name found on the cited page",
+   "source_url": "https://aware.com.au/member/about-us/newsroom/february-2026/aware-super-supercharges-scale-ambitions-with-new-investment-structure",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "aware-super",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Aware Super",
+   "degree": 2
+  },
+  {
+   "id": "person-chris-newton",
+   "type": "person",
+   "layer": "people",
+   "label": "Chris Newton",
+   "title": "Head of Stewardship",
+   "org_name": "Aware Super",
+   "ai_focus": "Leads Aware Super's listed-market stewardship team; no AI-specific work by him was sourced",
+   "source_url": "https://www.responsibleinvestment.org/events-news/conference/speaker/chris-newton",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-antonia-parkes",
+   "type": "person",
+   "layer": "people",
+   "label": "Antonia Parkes",
+   "title": "Co-Chair, RIAA Human Rights Working Group",
+   "org_name": "AustralianSuper",
+   "ai_focus": "Co-chairs RIAA's Human Rights Working Group, whose first 2026 meeting (4 March 2026) was on AI and human rights",
+   "source_url": "https://www.responsibleinvestment.org/membership/working-groups/human-rights",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "australiansuper",
+   "type": "investor",
+   "layer": "investors",
+   "label": "AustralianSuper",
+   "degree": 1
+  },
+  {
+   "id": "person-ashley-kopczynski",
+   "type": "person",
+   "layer": "people",
+   "label": "Ashley Kopczynski",
+   "title": "Co-Chair, RIAA Human Rights Working Group",
+   "org_name": "IFM Investors",
+   "ai_focus": "Co-chairs RIAA's Human Rights Working Group, whose first 2026 meeting (4 March 2026) was on AI and human rights",
+   "source_url": "https://www.responsibleinvestment.org/membership/working-groups/human-rights",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "ifm-investors",
+   "type": "investor",
+   "layer": "investors",
+   "label": "IFM Investors",
+   "degree": 1
+  },
+  {
+   "id": "person-estelle-parker",
+   "type": "person",
+   "layer": "people",
+   "label": "Estelle Parker",
+   "title": "Co-CEO",
+   "org_name": "Responsible Investment Association Australasia (RIAA)",
+   "ai_focus": "Co-leads RIAA, whose Human Rights Working Group put AI and human rights on its 2026 programme; no AI work by her personally was sourced",
+   "source_url": "https://www.responsibleinvestment.org/people/estelle-parker",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "responsible-investment-association-australasia-riaa",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Responsible Investment Association Australasia (RIAA)",
    "degree": 1
   },
   {
@@ -4709,7 +6080,7 @@
    "jurisdiction": "US federal",
    "description": "Index equity clients with about $851 billion in assets were using Voting Choice; eligible assets with individual investors reach about $3.96 trillion.",
    "source_url": "https://www.blackrock.com/corporate/about-us/investment-stewardship/blackrock-voting-choice",
-   "degree": 0
+   "degree": 1
   },
   {
    "id": "ev-vanguard-investor-choice-2026",
@@ -4723,7 +6094,7 @@
    "jurisdiction": "US federal",
    "description": "Pass-through voting participation grew more than sixfold; no single voting policy got over 38% of selections.",
    "source_url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/who-we-are/pressroom/press-release-vanguard-investor-choice-participation-grows-more-than-sixfold-surpassing-half-a-million-investors-092926.html",
-   "degree": 0
+   "degree": 1
   },
   {
    "id": "ev-eu-ai-act-in-force",
@@ -5278,6 +6649,7 @@
    "plain_summary": "Asks Alphabet to disclose additional information each year showing if and how it will meet its 2030 climate goals, given its growing greenhouse gas emissions.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "ask_id": "ask-dc-climate-energy",
+   "category": "data-centers",
    "degree": 2
   },
   {
@@ -5299,6 +6671,7 @@
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
    "support_note": "Floor proposal: raised at the meeting, so shares voted earlier by proxy could not vote on it. Support is not comparable with proposals in the proxy; the 8-K gives the raw counts.",
    "plain_summary_note": "No resolution text available: the proposal was withdrawn or raised from the meeting floor.",
+   "category": "users",
    "degree": 1
   },
   {
@@ -5331,6 +6704,7 @@
    "plain_summary": "Asks Alphabet for a report explaining how it will meet its greenhouse gas commitments given rising energy demand from artificial intelligence and its planned data centers.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-dc-climate-energy",
+   "category": "data-centers",
    "degree": 2
   },
   {
@@ -5354,6 +6728,7 @@
    "plain_summary": "Asks for a public transparency report on the costs and benefits of Apple's decisions about using software that identifies child sex abuse material.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
    "ask_id": "ask-child-safety",
+   "category": "users",
    "degree": 2
   },
   {
@@ -5377,6 +6752,7 @@
    "plain_summary": "Asks the board to report on the methods used to remove bias from IBM's AI models, including the risk that avoiding disparate impact in outputs undermines their accuracy and trust.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
    "ask_id": "ask-ai-bias",
+   "category": "users",
    "degree": 1
   },
   {
@@ -5400,6 +6776,7 @@
    "plain_summary": "Asks the company to discontinue development and plans to sell a remotely operated, non-lethal TASER drone system.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1069183/000106918323000019/axon-20230531xdef14a.htm",
    "ask_id": "ask-customer-due-diligence",
+   "category": "downstream-use",
    "degree": 1
   },
   {
@@ -5423,6 +6800,7 @@
    "plain_summary": "Asks for an independent report on Palantir's due diligence on whether customers' use of its defense products contributes to human rights harms or humanitarian law violations in conflict areas.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
    "ask_id": "ask-customer-due-diligence",
+   "category": "downstream-use",
    "degree": 2
   },
   {
@@ -5446,6 +6824,7 @@
    "plain_summary": "Asks the board to publish the results of a human rights impact assessment of the actual and potential impacts from the use of Palantir's products and services.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
    "ask_id": "ask-customer-due-diligence",
+   "category": "downstream-use",
    "degree": 1
   },
   {
@@ -5469,6 +6848,7 @@
    "plain_summary": "Asks Netflix to publish a transparency report on its use of AI in business operations, the board's role in overseeing it, and any ethical AI guidelines adopted.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1065280/000119312524100913/d521836ddef14a.htm",
    "ask_id": "ask-ai-oversight-reporting",
+   "category": "governance-safety",
    "degree": 1
   },
   {
@@ -5489,6 +6869,7 @@
    "meeting_date": "2024-04-03",
    "plain_summary_note": "No resolution text available: the proposal was withdrawn or raised from the meeting floor.",
    "ask_id": "ask-ai-oversight-reporting",
+   "category": "governance-safety",
    "degree": 1
   },
   {
@@ -5509,6 +6890,7 @@
    "meeting_date": "2024-06-10",
    "plain_summary_note": "No resolution text available: the proposal was withdrawn or raised from the meeting floor.",
    "ask_id": "ask-ai-oversight-reporting",
+   "category": "governance-safety",
    "degree": 1
   },
   {
@@ -5532,6 +6914,7 @@
    "plain_summary": "Asks for a report on whether and how Southern is putting safeguards in place to avoid shifting data center infrastructure costs to residential customers and small businesses.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm",
    "ask_id": "ask-dc-climate-energy",
+   "category": "data-centers",
    "degree": 2
   },
   {
@@ -5555,6 +6938,7 @@
    "plain_summary": "Asks the board to disclose annual region-level metrics on Digital Realty's exposure to water risks and its operational water intensity in water-stressed areas.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm",
    "ask_id": "ask-dc-water",
+   "category": "data-centers",
    "degree": 3
   },
   {
@@ -5578,6 +6962,7 @@
    "plain_summary": "Asks the board to create a policy committing the company to the human right to water, including strategies to cut water use in high water stress regions.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817925000509/dlr000000-def14a.htm",
    "ask_id": "ask-dc-water",
+   "category": "data-centers",
    "degree": 2
   },
   {
@@ -5597,6 +6982,7 @@
    "plain_summary": "Asks the board to commission an independent human rights impact assessment of risks from high-risk customers, end users and business relationships, including surveillance, military and immigration enforcement uses.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm",
    "ask_id": "ask-customer-due-diligence",
+   "category": "downstream-use",
    "degree": 2
   }
  ],
@@ -10419,7 +11805,7 @@
    "target": "parnassus",
    "type": "works at",
    "layer": "people",
-   "source_url": "https://greenmoney.com/?p=46104"
+   "source_url": "https://www.parnassus.com/our-team"
   },
   {
    "source": "person-michael-marks",
@@ -10433,7 +11819,7 @@
    "target": "nbim",
    "type": "works at",
    "layer": "people",
-   "source_url": "https://www.nbim.no/en/about-us/leader-group/"
+   "source_url": "https://www.nbim.no/en/news-and-insights/the-press/press-releases/2026/integrates-ownership-work-into-active-management/"
   },
   {
    "source": "person-michael-garland",
@@ -10486,17 +11872,17 @@
   },
   {
    "source": "person-jan-rydzak",
-   "target": "world-benchmarking-alliance",
+   "target": "ranking-digital-rights",
    "type": "works at",
    "layer": "people",
-   "source_url": "https://www.worldbenchmarkingalliance.org/news/launch-of-the-2025-collective-impact-coalition-for-ethical-ai-progress-report/"
+   "source_url": "https://rankingdigitalrights.org/who/"
   },
   {
    "source": "person-nicholas-sewe",
    "target": "world-benchmarking-alliance",
    "type": "works at",
    "layer": "people",
-   "source_url": "https://www.worldbenchmarkingalliance.org/news/launch-of-the-2025-collective-impact-coalition-for-ethical-ai-progress-report/"
+   "source_url": "https://www.worldbenchmarkingalliance.org/about-us/our-team"
   },
   {
    "source": "person-thomas-abrams",
@@ -10623,6 +12009,664 @@
    "type": "works at",
    "layer": "people",
    "source_url": "https://fortune.com/2026/06/04/worlds-largest-sovereign-wealth-fund-backs-push-for-google-oversight-on-government-ai-contracts/"
+  },
+  {
+   "source": "person-tyler-mccullough",
+   "target": "parnassus",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.parnassus.com/our-team/profile/tyler-mccullough"
+  },
+  {
+   "source": "person-sophie-haywood",
+   "target": "parnassus",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.parnassus.com/our-team/profile/sophie-haywood"
+  },
+  {
+   "source": "person-annie-sanders",
+   "target": "green-century",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.greencentury.com/team/annie-sanders/"
+  },
+  {
+   "source": "person-giovanna-eichner",
+   "target": "green-century",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.greencentury.com/team/giovanna-eichner-shareholder-advocate/"
+  },
+  {
+   "source": "person-lisa-beauvilain",
+   "target": "impax",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://impaxam.com/about/team/lisa-beauvilain"
+  },
+  {
+   "source": "person-robyn-lockyer",
+   "target": "impax",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://impaxam.com/about/team/robin-lockyer"
+  },
+  {
+   "source": "person-mark-regier",
+   "target": "praxis-mutual-funds-everence-financial",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://praxismutualfunds.com/about-us/staff-bios/mark-regier"
+  },
+  {
+   "source": "person-chris-meyer",
+   "target": "praxis-mutual-funds-everence-financial",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://praxismutualfunds.com/about-us/staff-bios/chris-meyer"
+  },
+  {
+   "source": "person-amy-obrien",
+   "target": "nuveen-tiaa",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.nuveen.com/global/about-us/profiles/o/amy-obrien"
+  },
+  {
+   "source": "person-jeffrey-warshauer",
+   "target": "nuveen-tiaa",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.nuveen.com/global/about-us/profiles/w/jeffrey-warshauer"
+  },
+  {
+   "source": "person-glenn-booraem",
+   "target": "vanguard",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/articles/vanguard-names-leaders-new-investment-stewardship-programs.html"
+  },
+  {
+   "source": "person-carolyn-cross",
+   "target": "vanguard",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/articles/vanguard-names-leaders-new-investment-stewardship-programs.html"
+  },
+  {
+   "source": "person-amra-balic",
+   "target": "blackrock",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.blackrock.com/gls-download/literature/publication/investment-stewardship-voting-spotlight.pdf"
+  },
+  {
+   "source": "person-john-roe",
+   "target": "blackrock",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.blackrock.com/gls-download/literature/publication/investment-stewardship-voting-spotlight.pdf"
+  },
+  {
+   "source": "person-michelle-edkins",
+   "target": "blackrock",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.blackrock.com/corporate/literature/publication/blackrock-active-investment-stewardship-annual-report-2025.pdf"
+  },
+  {
+   "source": "person-karen-wong",
+   "target": "state-street",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.ssga.com/library-content/assets/pdf/global/asset-stewardship/stewardship-report-2025.pdf"
+  },
+  {
+   "source": "person-benjamin-colton",
+   "target": "state-street",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.ssga.com/library-content/assets/pdf/global/asset-stewardship/stewardship-report-2025.pdf"
+  },
+  {
+   "source": "person-holly-fetter",
+   "target": "state-street",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.ssga.com/library-content/assets/pdf/global/asset-stewardship/stewardship-report-2025.pdf"
+  },
+  {
+   "source": "person-devika-kaul",
+   "target": "state-street",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.ssga.com/library-content/assets/pdf/global/asset-stewardship/stewardship-report-2025.pdf"
+  },
+  {
+   "source": "person-anna-stefanovic",
+   "target": "iccr",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.iccr.org/our-team/"
+  },
+  {
+   "source": "person-meg-jones-monteiro",
+   "target": "iccr",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.iccr.org/our-team/"
+  },
+  {
+   "source": "person-aaron-acosta",
+   "target": "iasj",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://iasj.org/aaron-acosta/"
+  },
+  {
+   "source": "person-ruthly-cadestin",
+   "target": "iasj",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://iasj.org/ruthlycadestin/"
+  },
+  {
+   "source": "person-susan-francois",
+   "target": "csjp",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.csjp.org/susan-francois-asst-congregation-leader"
+  },
+  {
+   "source": "person-timnit-ghermay",
+   "target": "ipjc",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://ipjc.org/our-team/"
+  },
+  {
+   "source": "person-katie-carter",
+   "target": "pcusa",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://pcusa.org/news-storytelling/news/2026/10/13/investor-freedom-risk-with-sec-action-and-new-laws-being-proposed"
+  },
+  {
+   "source": "person-simon-doong",
+   "target": "pcusa",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://pcusa.org/news-storytelling/news/2025/10/29/mrti-committee-moves-add-director-voting-strategy-possible-tactic"
+  },
+  {
+   "source": "person-seamus-finn",
+   "target": "omi-us",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://omiusajpic.org/about/our-staff/"
+  },
+  {
+   "source": "person-marilin-llanes",
+   "target": "adrian-dominican",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://adriandominicans.org/PAB/Board-and-Staff"
+  },
+  {
+   "source": "person-susan-mika",
+   "target": "benedictine-sisters-of-boerne-texas",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://boernebenedictines.org/sister/sister-susan-mika/"
+  },
+  {
+   "source": "person-gina-haas",
+   "target": "abhms",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://abhms.org/get-involved/mission-and-impact-investing"
+  },
+  {
+   "source": "person-duane-roberts",
+   "target": "dana",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.danainvestment.com/meet-the-team/"
+  },
+  {
+   "source": "person-john-harrington",
+   "target": "harrington",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.harringtoninvestments.com/about-us/our-staff/"
+  },
+  {
+   "source": "person-brianna-harrington",
+   "target": "harrington",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.harringtoninvestments.com/about-us/our-staff/"
+  },
+  {
+   "source": "person-juana-lee",
+   "target": "share",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://share.ca/about/team/"
+  },
+  {
+   "source": "person-sarah-couturier-tanoh",
+   "target": "share",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://share.ca/about/team/"
+  },
+  {
+   "source": "person-kevin-thomas",
+   "target": "share",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://share.ca/about/team/"
+  },
+  {
+   "source": "person-angele-nsenga",
+   "target": "share",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://share.ca/about/team/"
+  },
+  {
+   "source": "person-serena-chan",
+   "target": "share",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://share.ca/about/team/"
+  },
+  {
+   "source": "person-dolapo-makinde",
+   "target": "share",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://share.ca/about/team/"
+  },
+  {
+   "source": "person-jamie-bonham",
+   "target": "nei",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.neiinvestments.com/content/dam/nei/docs/en/responsible-investing/reports/NEI-stewardship-roadmap-2026-en.pdf"
+  },
+  {
+   "source": "person-edmond-ho",
+   "target": "vancity",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.vcim.ca/team-members/edmond-ho"
+  },
+  {
+   "source": "person-tatiana-parrott",
+   "target": "vancity",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.vcim.ca/team-members/tatiana-parrott"
+  },
+  {
+   "source": "person-gillian-lai",
+   "target": "vancity",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.vcim.ca/team-members/gillian-lai"
+  },
+  {
+   "source": "person-morrigan-simpson-marran",
+   "target": "vancity",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.vcim.ca/team-members/morrigan-simpson-marran"
+  },
+  {
+   "source": "person-kelly-poole",
+   "target": "as-you-sow",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.asyousow.org/staff/kelly-poole"
+  },
+  {
+   "source": "person-cole-genge",
+   "target": "as-you-sow",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.asyousow.org/staff/cole-genge"
+  },
+  {
+   "source": "person-conrad-mackerron",
+   "target": "as-you-sow",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.asyousow.org/staff/conrad-mackerron"
+  },
+  {
+   "source": "person-hyewon-han",
+   "target": "trillium",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.trilliuminvest.com/team/hyewon-han"
+  },
+  {
+   "source": "person-kate-monahan",
+   "target": "trillium",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.trilliuminvest.com/team/kate-monahan"
+  },
+  {
+   "source": "person-madison-krieger",
+   "target": "northstar",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://northstarasset.com/team/"
+  },
+  {
+   "source": "person-christopher-richardson",
+   "target": "mercy",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://mercyinvestmentservices.org/our-people/staff/"
+  },
+  {
+   "source": "person-caroline-boden",
+   "target": "mercy",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://mercyinvestmentservices.org/our-people/staff/"
+  },
+  {
+   "source": "person-katie-mccloskey",
+   "target": "mercy",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://mercyinvestmentservices.org/our-people/staff/"
+  },
+  {
+   "source": "person-meredith-benton",
+   "target": "whistle-stop-capital",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://whistlestop.capital/team"
+  },
+  {
+   "source": "person-diana-kearney",
+   "target": "oxfam-america",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.oxfamamerica.org/explore/people/diana-kearney/"
+  },
+  {
+   "source": "person-shelley-alpern",
+   "target": "rhia-ventures",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://rhiaventures.org/about/"
+  },
+  {
+   "source": "person-patricia-karr-seabrook",
+   "target": "miller-howard-investments",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://mhinvest.com/people"
+  },
+  {
+   "source": "person-luda-svystunova",
+   "target": "amundi",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://research-center.amundi.com/article/outerblue-ri-driving-action-social-cohesion-through-shareholder-engagement"
+  },
+  {
+   "source": "person-navishka-pandit",
+   "target": "federated-hermes-eos",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.federatedhermes.com/en-gb/people/navishka-pandit"
+  },
+  {
+   "source": "person-cambria-allen-ratzlaff",
+   "target": "pri",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.unpri.org/news-and-press/pri-appoints-cambria-allen-ratzlaff-interim-ceo/13521.article"
+  },
+  {
+   "source": "person-ellie-higgins",
+   "target": "federated-hermes-eos",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.federatedhermes.com/en-gb/people/ellie-higgins"
+  },
+  {
+   "source": "person-janet-wong",
+   "target": "jpmorgan-am",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://am.jpmorgan.com/content/dam/jpm-am-aem/global/en/sustainable-investing/investment-stewardship-report.pdf"
+  },
+  {
+   "source": "person-kristin-drake",
+   "target": "dimensional-fund-advisors",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.dimensional.com/us-en/sustainability"
+  },
+  {
+   "source": "person-courtney-wicks",
+   "target": "center-for-mission-aligned-and-ethical-investment",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.iccr.org/board-of-directors/"
+  },
+  {
+   "source": "person-tim-schwarzenberger",
+   "target": "inspire",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.inspireinvesting.com/team"
+  },
+  {
+   "source": "person-caroline-eriksen",
+   "target": "nbim",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.nbim.no/en/news-and-insights/the-press/press-releases/2026/integrates-ownership-work-into-active-management/"
+  },
+  {
+   "source": "person-tulia-machado-helland",
+   "target": "storebrand",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.storebrand.com/sam/uk/asset-management/sustainability/core-teams"
+  },
+  {
+   "source": "person-ross-teverson",
+   "target": "federated-hermes-eos",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.hermes-investment.com/uploads/2026/05/c55403ebcafbadbbd0c352639946ecb3/eos-per-q1-2026-mitigating-ai-risks-to-children.pdf"
+  },
+  {
+   "source": "person-samuel-radford",
+   "target": "robeco",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.robeco.com/en-uk/insights/2026/01/new-engagement-themes-for-2026-to-cover-climate-and-ai"
+  },
+  {
+   "source": "person-antje-stobbe",
+   "target": "allianz-global-investors",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.allianzgi.com/en/press-centre/media/press-releases/20260303-allianzgi-enhances-governance-and-sustainability-leadership-with-updated-voting-policies-for-2026"
+  },
+  {
+   "source": "person-julia-christine-rippel",
+   "target": "dws",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://download.dws.com/download/asset/1dc13fd9-5f5f-445e-a8e0-3064712725d7"
+  },
+  {
+   "source": "person-caroline-le-meaux",
+   "target": "amundi",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://research-center.amundi.com/article/esg-thema-23-digital-transition-series-social-dimensions-responsible-ai-deployment"
+  },
+  {
+   "source": "person-michael-herskovich",
+   "target": "bnp-paribas-asset-management-incl-axa-im",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.bnpparibas-am.com/en/press/mediaroom-en-bnp-paribas-asset-management-unveils-its-2026-annual-general-meeting-season-review-underpinned-by-its-unified-voting-policy/"
+  },
+  {
+   "source": "person-adam-kanzer",
+   "target": "bnp-paribas-asset-management-incl-axa-im",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.axa-im.com.au/sites/au/files/2026-06/BNPP%2BAM%2BSustainability%2BReport%2B2025_AU%20disclaime.pdf"
+  },
+  {
+   "source": "person-kiran-aziz",
+   "target": "klp",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.klp.no/fond/ansvarlig-og-barekraftig-fondssparing/_/attachment/inline/e4839e12-0331-4d7b-9bc4-8c17c6d9122f:38d07c5b666c605e063945da3f6dd6bac007db1b/%C3%85rsrapport%20Ansvarlige%20Investeringer%202025.pdf"
+  },
+  {
+   "source": "person-jens-skancke-presthus",
+   "target": "klp",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.klp.no/fond/ansvarlig-og-barekraftig-fondssparing/_/attachment/inline/e4839e12-0331-4d7b-9bc4-8c17c6d9122f:38d07c5b666c605e063945da3f6dd6bac007db1b/%C3%85rsrapport%20Ansvarlige%20Investeringer%202025.pdf"
+  },
+  {
+   "source": "person-eric-pedersen",
+   "target": "nordea",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.nordea.com/en/doc/responsible-investments-report-2025.pdf"
+  },
+  {
+   "source": "person-katarina-hammar",
+   "target": "nordea",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.nordea.com/en/doc/responsible-investments-report-2025.pdf"
+  },
+  {
+   "source": "person-magdalena-kettis",
+   "target": "nordea",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.nordea.com/en/doc/responsible-investments-report-2025.pdf"
+  },
+  {
+   "source": "person-anders-schelde",
+   "target": "akademikerpension",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://akademikerpension.dk/presse/"
+  },
+  {
+   "source": "person-rikke-berg-jacobsen",
+   "target": "akademikerpension",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://akademikerpension.dk/media/jc3ballu/rapport-om-ansvarlige-investeringer-2025.pdf"
+  },
+  {
+   "source": "person-jenn-hui-tan",
+   "target": "fidelity-intl",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://adviserservices.fidelity.co.uk/media/fnw/guides/sustainability-and-stewardship-report.pdf"
+  },
+  {
+   "source": "person-dan-grandage",
+   "target": "aberdeen-investments-formerly-abrdn",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.aberdeeninvestments.com/en-au/institutional/insights-and-research/stewardship-outcomes-why-investors-should-look-beyond-engagement-numbers"
+  },
+  {
+   "source": "person-stuart-riddick",
+   "target": "aberdeen-investments-formerly-abrdn",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.scottishfinancialnews.com/articles/sustainability-evolving-not-fading-as-governance-set-to-lead-esg-by-2030-says-aberdeen"
+  },
+  {
+   "source": "person-claudia-wearmouth",
+   "target": "columbia-threadneedle-investments",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.columbiathreadneedle.com/en/gb/intermediary/insights/our-approach-to-system-level-stewardship/"
+  },
+  {
+   "source": "person-caroline-escott",
+   "target": "railpen",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.railpen.com/our-people/our-specialists/caroline-escott/"
+  },
+  {
+   "source": "person-jasmine-porter",
+   "target": "railpen",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.railpen.com/our-people/our-specialists/jasmine-porter/"
+  },
+  {
+   "source": "person-laura-hillis",
+   "target": "church-of-england-pensions-board-national-investing-bodies",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.churchofengland.org/finance-news/church-england-pensions-board-joins-investor-call-robust-and-predictable-eu-emissions"
+  },
+  {
+   "source": "person-liza-mcdonald",
+   "target": "aware-super",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://aware.com.au/member/about-us/newsroom/february-2026/aware-super-supercharges-scale-ambitions-with-new-investment-structure"
+  },
+  {
+   "source": "person-chris-newton",
+   "target": "aware-super",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.responsibleinvestment.org/events-news/conference/speaker/chris-newton"
+  },
+  {
+   "source": "person-antonia-parkes",
+   "target": "australiansuper",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.responsibleinvestment.org/membership/working-groups/human-rights"
+  },
+  {
+   "source": "person-ashley-kopczynski",
+   "target": "ifm-investors",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.responsibleinvestment.org/membership/working-groups/human-rights"
+  },
+  {
+   "source": "person-estelle-parker",
+   "target": "responsible-investment-association-australasia-riaa",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.responsibleinvestment.org/people/estelle-parker"
   },
   {
    "source": "person-marcela-pinilla",
@@ -10903,6 +12947,20 @@
    "type": "acted in",
    "layer": "policy",
    "source_url": "https://corpgov.law.harvard.edu/2025/04/06/delaware-revamps-its-general-corporation-law-will-it-stop-companies-from-leaving"
+  },
+  {
+   "source": "blackrock",
+   "target": "ev-blackrock-voting-choice-2026",
+   "type": "acted in",
+   "layer": "policy",
+   "source_url": "https://www.blackrock.com/corporate/about-us/investment-stewardship/blackrock-voting-choice"
+  },
+  {
+   "source": "vanguard",
+   "target": "ev-vanguard-investor-choice-2026",
+   "type": "acted in",
+   "layer": "policy",
+   "source_url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/who-we-are/pressroom/press-release-vanguard-investor-choice-participation-grows-more-than-sixfold-surpassing-half-a-million-investors-092926.html"
   },
   {
    "source": "co-openai",

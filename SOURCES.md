@@ -20,6 +20,7 @@ The tracker has two phases.
 | People leading engagement | Each organization's own team or leadership page | Links checked automatically, roles reviewed by hand | Quarterly |
 | Pass-through voting programs | Vanguard, BlackRock, Schwab and State Street program pages | Reviewed by hand | Twice a year |
 | Rule changes (Rule 14a-8, state law) | SEC press releases and rule pages; state legislature sites | Reviewed by hand | As they happen |
+| Proposal categories (governance and safety, data center externalities, harms to users, harms from customers' uses) | This site's classification, in `data/asks.json`: each recurring ask has one category and every proposal takes its ask's category (three proposals with no ask are set by hand) | Recomputed weekly by `scripts/build_proposal_links.py` | When a new ask is added |
 | How far policy already covers each recurring ask (`data/coverage.json`) | The enacted text of each policy in `data/causality.json` (legislature, EUR-Lex), with a law firm summary where the legislature page cannot be fetched | Reviewed by hand; every row starts `reviewed: false` until a person confirms it | When a policy in the causality map changes, and yearly |
 
 ## Which companies are in scope

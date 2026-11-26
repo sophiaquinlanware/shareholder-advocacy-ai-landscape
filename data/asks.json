@@ -6,7 +6,8 @@
    "label": "Data center water use",
    "match": [
     "water"
-   ]
+   ],
+   "category": "data-centers"
   },
   {
    "id": "ask-dc-siting-rights",
@@ -15,14 +16,16 @@
     "hotspot",
     "data center siting",
     "siting"
-   ]
+   ],
+   "category": "data-centers"
   },
   {
    "id": "ask-ai-fossil-fuels",
    "label": "AI tools sold for oil and gas",
    "match": [
     "oil and gas"
-   ]
+   ],
+   "category": "downstream-use"
   },
   {
    "id": "ask-dc-climate-energy",
@@ -33,8 +36,11 @@
     "emission",
     "energy",
     "data center costs",
-    "renewable"
-   ]
+    "renewable",
+    "datacenter",
+    "electricity"
+   ],
+   "category": "data-centers"
   },
   {
    "id": "ask-child-safety",
@@ -43,7 +49,8 @@
     "child",
     "csam",
     "deepfake"
-   ]
+   ],
+   "category": "users"
   },
   {
    "id": "ask-targeted-ads-rights",
@@ -51,7 +58,8 @@
    "match": [
     "targeted ad",
     "targeted advertising"
-   ]
+   ],
+   "category": "users"
   },
   {
    "id": "ask-customer-due-diligence",
@@ -68,7 +76,8 @@
     "human rights impact assessment",
     "taser",
     "dhs"
-   ]
+   ],
+   "category": "downstream-use"
   },
   {
    "id": "ask-ai-misinformation",
@@ -76,7 +85,8 @@
    "match": [
     "misinformation",
     "disinformation"
-   ]
+   ],
+   "category": "users"
   },
   {
    "id": "ask-ai-bias",
@@ -85,7 +95,8 @@
     "bias",
     "discrimination",
     "censorship"
-   ]
+   ],
+   "category": "users"
   },
   {
    "id": "ask-ai-training-data",
@@ -97,7 +108,8 @@
     "data privacy",
     "data protection",
     "training data"
-   ]
+   ],
+   "category": "users"
   },
   {
    "id": "ask-ai-workforce",
@@ -105,7 +117,8 @@
    "match": [
     "worker",
     "workforce"
-   ]
+   ],
+   "category": "downstream-use"
   },
   {
    "id": "ask-ai-oversight-reporting",
@@ -122,7 +135,36 @@
     "algorithm disclosures",
     "ai principles",
     "ai board"
-   ]
+   ],
+   "category": "governance-safety"
   }
- ]
+ ],
+ "categories": [
+  {
+   "id": "governance-safety",
+   "label": "AI governance and safety",
+   "about": "How the board oversees AI, the company's AI principles and transparency, and investments in AI labs."
+  },
+  {
+   "id": "data-centers",
+   "label": "Data center externalities",
+   "about": "Effects of building and running data centers: climate and energy, water, local communities and human rights where they are sited, and costs passed to others."
+  },
+  {
+   "id": "users",
+   "label": "Harms to people using AI products",
+   "about": "Effects on the people who use the products: misinformation, child safety, privacy and training data, bias, and AI-driven ads."
+  },
+  {
+   "id": "downstream-use",
+   "label": "Harms from how customers use AI",
+   "about": "Effects of who the AI is sold to and what they do with it: militaries and immigration enforcement, surveillance, oil and gas, and workers."
+  }
+ ],
+ "categories_note": "Four categories set by this site: the owner's three (alignment and governance, data center externalities, effects on consumers) plus a fourth for harms from customers' uses (militaries, surveillance, oil and gas, workers), which fit none of the three. No proposal in this dataset asks about model alignment or catastrophic risk directly; governance proposals ask about board oversight and transparency.",
+ "proposal_category_overrides": {
+  "tsla-2025-7": "governance-safety",
+  "googl-2025-15(floor)": "users",
+  "meta-2023-community-standards": "users"
+ }
 }
