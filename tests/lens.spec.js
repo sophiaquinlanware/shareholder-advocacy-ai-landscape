@@ -67,6 +67,7 @@ test("List view lists every visible node with status and actions", async ({ page
 test("opening a tab puts its name in the address (#hash)", async ({ page }) => {
   await page.goto("/index.html");
   await page.waitForLoadState("networkidle");
+  await page.click('.tabs [role="tab"][data-group="companies"]');
   await page.click('[role="tab"][data-tab="rights"]');
   await expect(page).toHaveURL(/#rights$/);
 });

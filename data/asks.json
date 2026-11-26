@@ -161,7 +161,7 @@
    "about": "Effects of who the AI is sold to and what they do with it: militaries and immigration enforcement, surveillance, oil and gas, and workers."
   }
  ],
- "categories_note": "Four categories set by this site: the owner's three (alignment and governance, data center externalities, effects on consumers) plus a fourth for harms from customers' uses (militaries, surveillance, oil and gas, workers), which fit none of the three. No proposal in this dataset asks about model alignment or catastrophic risk directly; governance proposals ask about board oversight and transparency.",
+ "categories_note": "Each proposal is sorted by what it asks about, in four groups set by this site: AI governance and safety; data center externalities; harms to people using AI products; and harms from how customers use AI (militaries, surveillance, oil and gas, workers). No proposal here asks directly about model alignment or catastrophic risk; governance proposals ask about board oversight and transparency.",
  "proposal_category_overrides": {
   "tsla-2025-7": "governance-safety",
   "googl-2025-15(floor)": "users",

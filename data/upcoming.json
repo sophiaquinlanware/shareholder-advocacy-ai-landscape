@@ -25,21 +25,21 @@
     {
      "number": "4",
      "title": "Additional Disclosures Meeting Climate Commitments (filed by Trillium Asset Management and a co-filer)",
-     "topic": "Data center impacts",
+     "topic": "Data center externalities",
      "board_rec": "Against",
      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
     },
     {
      "number": "5",
      "title": "Report on Human Rights Due Diligence (filed by Religious of the Sacred Heart of Mary and co-filers)",
-     "topic": "Social and economic impacts",
+     "topic": "Harms from how customers use AI",
      "board_rec": "Against",
      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
     },
     {
      "number": "6",
      "title": "Report on Data Operations in Human Rights and Conflict Hotspots (filed by Azzad Asset Management, Inc.)",
-     "topic": "Data center impacts",
+     "topic": "Data center externalities",
      "board_rec": "Against",
      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
     }

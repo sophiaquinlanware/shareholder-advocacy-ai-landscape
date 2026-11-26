@@ -131,7 +131,7 @@
     const reviewedBy = (data.reviewed || []).map((r) => `${r.family}, ${r.proposal_ids.length} proposals (${longDate(r.date)})`).join("; ");
     const opt = (v, t, sel) => `<option value="${esc(v)}"${sel ? " selected" : ""}>${esc(t)}</option>`;
     el.innerHTML = `
-      <h2>Fund votes</h2>
+      <h2>How funds voted</h2>
       <p class="intro">Form N-PX votes by ${families.length} fund families on AI proposals at tracked companies, meetings ${esc(longDate(data.first_meeting_covered))} to ${esc(longDate(data.last_meeting_covered))}. Each vote links to its filing. No vote is rated, and nothing here suggests how to vote. Not affiliated with any fund shown.</p>
       <ul class="steps">
         <li><strong>Split</strong> means the family reported more than one way of voting on that proposal. The numbers count fund records: different funds can vote differently, and a single fund can split its own shares, as pass-through voting programs do.</li>
@@ -144,7 +144,7 @@
       </ul>
       <div class="net-controls">
         <label class="sr-label">Company <select id="fv-company">${opt("", "All companies")}${companies.map((c) => opt(c, NAMES[c] || c, c === V.company)).join("")}</select></label>
-        <label class="sr-label">Topic <select id="fv-topic">${opt("", "All topics")}${topics.map((t) => opt(t, t)).join("")}</select></label>
+        <label class="sr-label">What it asks about <select id="fv-topic">${opt("", "Everything it asks about")}${topics.map((t) => opt(t, t)).join("")}</select></label>
         <label class="sr-label">Fund family <select id="fv-family">${opt("", "All fund families")}${families.map((f) => opt(f, f)).join("")}</select></label>
       </div>
       <div id="fv-table" class="table-wrap" role="region" aria-label="Fund votes table" tabindex="0"></div>

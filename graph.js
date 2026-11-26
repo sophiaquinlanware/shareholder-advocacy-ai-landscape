@@ -300,7 +300,7 @@
 
   function shell(el) {
     el.innerHTML = `
-      <h2>AI advocacy network</h2>
+      <h2>Network of investors, coalitions and people</h2>
       <fieldset class="lens-pick" id="net-lens"><legend>View as</legend>${Object.entries(window.LENSES || {}).map(([id, l]) =>
         `<label class="chip"><input type="radio" name="net-lens" value="${esc(id)}"${id === state.lens ? " checked" : ""}> ${esc(l.label)}</label>`).join("")}</fieldset>
       <p class="visually-hidden" id="net-lens-status" aria-live="polite"></p>
@@ -310,7 +310,7 @@
       <p class="intro" id="net-intro"></p>
       <div class="net-controls">
         <input type="search" id="net-search" placeholder="Search an organization or company" aria-label="Search the network">
-        <select id="net-topic" aria-label="Filter by topic"><option value="">All topics</option></select>
+        <select id="net-topic" aria-label="What it asks about"><option value="">Everything it asks about</option></select>
         <select id="net-year" aria-label="Filter by year"><option value="">All years</option></select>
         <div class="seg" role="group" aria-label="View">
           <button type="button" data-view="graph" aria-pressed="true">Graph</button>

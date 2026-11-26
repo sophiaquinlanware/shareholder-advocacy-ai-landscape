@@ -26,13 +26,15 @@ const plural = (n, one, many = one + "s") => `${n} ${n === 1 ? one : many}`;
 const STATUS_LABEL = { open: "Still open", narrowing: "Narrowing", closed: "Closed", pending: "Being verified" };
 const PROPOSAL_STATUS = { voted: "Voted", upcoming: "Upcoming", withdrawn: "Withdrawn", excluded: "Excluded" };
 
-// One spelling per topic across files ("Social and economic impacts" in upcoming.json).
-const normTopic = (t) => String(t || "").replace(/ and economic/i, " & economic");
-// Topic marks: colour token and shape. Shapes keep topics apart without relying on hue.
+// "topic" on proposals carries what the proposal asks about: the four categories in data/asks.json
+// (owner, 2026-11-26). One spelling per category across files.
+const normTopic = (t) => String(t || "");
+// Category marks: colour token and shape. Shapes keep categories apart without relying on hue.
 const TOPIC_STYLE = {
-  "Data center impacts": { cls: "tp-dc", shape: "circle" },
-  "Social & economic impacts": { cls: "tp-se", shape: "square" },
-  "AI governance & oversight": { cls: "tp-gov", shape: "triangle" },
+  "AI governance and safety": { cls: "tp-gov", shape: "triangle" },
+  "Data center externalities": { cls: "tp-dc", shape: "circle" },
+  "Harms to people using AI products": { cls: "tp-se", shape: "square" },
+  "Harms from how customers use AI": { cls: "tp-other", shape: "diamond" },
 };
 const topicStyle = (t) => TOPIC_STYLE[normTopic(t)] || { cls: "tp-other", shape: "diamond" };
 const cssVar = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
@@ -85,8 +87,11 @@ function renderUpcoming() {
     return { m, i, title: match ? match[1] : i.title, filer: match ? match[2] : "" };
   }));
   const empty = meetings.filter((m) => !(m.items || []).length);
+  const seenCo = new Set();
   const rows = items.map(({ m, i, title, filer }) => {
     const h = voteHistory(m.ticker);
+    const firstForCo = !seenCo.has(m.ticker);
+    seenCo.add(m.ticker);
     return `<tr>
       <td class="nowrap">${esc(m.meeting_label)}<div class="ticker">${esc(m.status_label || "")}</div></td>
       <td><button type="button" class="linklike" data-co="${esc(m.ticker)}">${esc(m.company)}</button></td>
@@ -95,12 +100,12 @@ function renderUpcoming() {
       <td>${esc(filer) || `<span class="ticker">Filer not recorded</span>`}</td>
       <td>${topicTag(i.topic)}</td>
       <td>${esc(i.board_rec || "")}</td>
-      <td class="num">${historyText(h) ? `<button type="button" class="linklike" data-co="${esc(m.ticker)}">${esc(historyText(h))}</button>` : `<span class="ticker">none on file</span>`}</td></tr>`;
+      <td class="num">${!firstForCo ? `<span class="ticker">as above</span>` : historyText(h) ? `<button type="button" class="linklike" data-co="${esc(m.ticker)}">${esc(historyText(h))}</button>` : `<span class="ticker">none on file</span>`}</td></tr>`;
   }).join("");
   document.getElementById("tab-upcoming").innerHTML = `
     <h2>Upcoming votes</h2>
     <p class="intro">${plural(items.length, "AI proposal")} on ${plural(meetings.filter((m) => (m.items || []).length).length, "ballot")}, by meeting date. Source: each company's proxy statement.</p>
-    ${rows ? `<div class="table-wrap"><table><thead><tr><th scope="col">Meeting</th><th scope="col">Company</th><th scope="col">Item</th><th scope="col">Proposal</th><th scope="col">Filed by</th><th scope="col">Topic</th><th scope="col">Board</th><th scope="col">Earlier AI votes here</th></tr></thead><tbody>${rows}</tbody></table></div>` : `<p class="status-note">No AI proposals on announced ballots.</p>`}
+    ${rows ? `<div class="table-wrap"><table><thead><tr><th scope="col">Meeting</th><th scope="col">Company</th><th scope="col">Item</th><th scope="col">Proposal</th><th scope="col">Filed by</th><th scope="col">What it asks about</th><th scope="col">Board</th><th scope="col">Earlier AI votes at this company</th></tr></thead><tbody>${rows}</tbody></table></div>` : `<p class="status-note">No AI proposals on announced ballots.</p>`}
     ${empty.length ? `<h3 class="sub-h">Meetings with no AI proposals on the ballot, or ballot not yet filed</h3>
       <ul class="steps">${empty.map((m) => `<li><button type="button" class="linklike" data-co="${esc(m.ticker)}">${esc(m.company)}</button>, ${esc(m.meeting_label)}: ${esc(m.status_label || "")}${m.proxy_url ? src(m.proxy_url, "proxy") : ""}</li>`).join("")}</ul>` : ""}`;
   wireCompanyLinks(document.getElementById("tab-upcoming"));
@@ -127,13 +132,16 @@ function historyText(h) {
 }
 // Support notes repeat across many rows (e.g. every dual-class vote), so each distinct note is listed
 // once under its table and rows carry its number.
+// Notes that differ only in their figures (e.g. "Microsoft reports 0.69% ...", "... 13.36% ...") are listed
+// once, with the figure written as "N%", so a company's table doesn't repeat the same sentence.
+const noteKey = (t) => String(t).replace(/\d+(?:\.\d+)?%/g, "N%");
 function footnotes(rows) {
   const map = new Map();
-  rows.forEach((p) => { if (p.support_note && !map.has(p.support_note)) map.set(p.support_note, map.size + 1); });
+  rows.forEach((p) => { if (p.support_note && !map.has(noteKey(p.support_note))) map.set(noteKey(p.support_note), map.size + 1); });
   return map;
 }
-const fnMark = (map, p) => (p.support_note ? `<sup class="fn"><span class="visually-hidden">note </span>${map.get(p.support_note)}</sup>` : "");
-const fnList = (map) => (map.size ? `<ol class="fn-list" aria-label="Notes on support figures">${[...map.keys()].map((t) => `<li>${esc(t)}</li>`).join("")}</ol>` : "");
+const fnMark = (map, p) => (p.support_note ? `<sup class="fn"><span class="visually-hidden">note </span>${map.get(noteKey(p.support_note))}</sup>` : "");
+const fnList = (map) => (map.size ? `<ol class="fn-list" aria-label="Notes on support figures">${[...map.keys()].map((t) => `<li>${esc(t)}${/N%/.test(t) ? " (N% is the figure shown in the row.)" : ""}</li>`).join("")}</ol>` : "");
 // Any element with data-co="TICKER" opens that company in Company lookup.
 function wireCompanyLinks(root) {
   root.querySelectorAll("[data-co]").forEach((b) => b.addEventListener("click", () => openCompany(b.dataset.co)));
@@ -178,8 +186,8 @@ function renderCompany() {
   const bases = [...new Set(cos.map((c) => c.basis_type).filter(Boolean))].sort();
   const F = { sector: "", basis: "" };
   el.innerHTML = `
-    <h2>Company lookup</h2>
-    <p class="intro">Everything on file for one company: upcoming ballot, AI proposal history, filers, proposal rights, frontier-lab ties and disclosure score.</p>
+    <h2>Company profile</h2>
+    <p class="intro">Everything on file for one company: why it is included, its next ballot and filing deadline, its AI proposals and how they did, who filed them, its ties to frontier labs, and the proposal rights investors have there.</p>
     <div class="net-controls">
       ${roleIds.length ? `<select id="co-role" aria-label="Main role in AI"><option value="">All roles</option>${roleIds.map((r) => `<option value="${esc(r)}">${esc(R.label(r))}</option>`).join("")}</select>` : ""}
       ${bases.length ? `<select id="co-basis" aria-label="Why included"><option value="">Any reason included</option>${bases.map((s) => `<option>${esc(s)}</option>`).join("")}</select>` : ""}
@@ -190,7 +198,10 @@ function renderCompany() {
   const pick = document.getElementById("co-pick");
   const fill = () => {
     const list = all.filter(({ c }) => (!F.sector || (R && R.roleOf(c) === F.sector)) && (!F.basis || c.basis_type === F.basis));
-    const keep = list.some((e) => e.key === pick.value) ? pick.value : list[0] && list[0].key;
+    // First visit: the company with the soonest AI ballot, so the profile opens on something to act on.
+    const soon = ((DATA.upcoming && DATA.upcoming.meetings) || []).filter((m) => (m.items || []).length).sort((a, b) => String(a.sort).localeCompare(String(b.sort)))[0];
+    const preferred = soon && list.find((e) => e.key === keyForTicker(soon.ticker));
+    const keep = list.some((e) => e.key === pick.value) ? pick.value : (preferred || list[0] || {}).key;
     pick.innerHTML = list.map(({ key, c }) => `<option value="${esc(key)}">${esc(c.name)}${realTicker(c.ticker) ? ` (${esc(c.ticker)})` : ""}</option>`).join("");
     document.getElementById("co-count").textContent = `${plural(list.length, "company", "companies")}${F.sector || F.basis ? ` of ${all.length}` : ""}.`;
     if (keep) { pick.value = keep; drawCompany(keep); } else document.getElementById("co-body").innerHTML = `<p class="status-note">No companies match.</p>`;
@@ -237,13 +248,17 @@ function drawCompany(key) {
   const nCrit = DATA.scorecard && DATA.scorecard.criteria ? DATA.scorecard.criteria.length : 0;
 
   const notes = footnotes(props);
+  // The board's recommendation for proposals on a ballot that is out (from upcoming.json, matched by title).
+  const boardRec = (p) => {
+    const it = meeting && (meeting.items || []).find((i) => String(i.title || "").toLowerCase().startsWith(String(p.title).toLowerCase().slice(0, 30)));
+    return it ? it.board_rec : "";
+  };
   const propRows = props.map((p) => `<tr>
       <td class="nowrap">${p.meeting_date ? esc(fmtDate(p.meeting_date, true)) : `${esc(p.year)}`}</td>
       <td>${esc(p.title)}${p.results_url ? src(p.results_url, "results") : p.proxy_url ? src(p.proxy_url, "proxy") : ""}${(p.status === "withdrawn" || p.status === "excluded") ? `<div class="reason"><strong>Reason:</strong> ${p.status_reason ? esc(p.status_reason) + src(p.status_source_url) : "Reason not yet recorded."}</div>` : ""}</td>
       <td>${p.proponent && !/UNVERIFIED/.test(p.proponent) ? esc(p.proponent) : `<span class="ticker">not recorded</span>`}</td>
-      <td><span class="pill st-${esc(p.status)}">${esc(PROPOSAL_STATUS[p.status] || p.status)}</span></td>
+      <td><span class="pill st-${esc(p.status)}">${esc(PROPOSAL_STATUS[p.status] || p.status)}</span>${p.status === "upcoming" && boardRec(p) ? `<div class="ticker">Board: ${esc(boardRec(p))}</div>` : ""}</td>
       <td class="num">${p.support_pct != null ? `${esc(p.support_pct)}%${fnMark(notes, p)}${p.results_url ? "" : `<div class="note">Vote-results filing not recorded</div>`}` : ""}</td></tr>`).join("");
-  const ballot = meeting && (meeting.items || []).length ? `<div class="table-wrap"><table><thead><tr><th scope="col">Item</th><th scope="col">Proposal</th><th scope="col">Topic</th><th scope="col">Board</th></tr></thead><tbody>${meeting.items.map((i) => `<tr><td>${esc(i.number)}</td><td>${esc(i.title)}${src(i.url || meeting.proxy_url, "proxy")}</td><td>${topicTag(i.topic)}</td><td>${esc(i.board_rec || "")}</td></tr>`).join("")}</tbody></table></div>` : "";
 
   document.getElementById("co-body").innerHTML = `
     <h3 class="co-title">${esc(c.name)} <span class="ticker">${esc(t || (c.shareholder_route === "private" ? "private" : ""))}</span></h3>
@@ -256,7 +271,6 @@ function drawCompany(key) {
       <div><dt>Disclosure score</dt><dd>${sc ? `${scCount("met")} met · ${scCount("partial")} partial · ${scCount("silent")} silent of ${nCrit}` : `<span class="ticker">not scored</span>`}</dd></div>
     </dl>
     ${whyIncluded(c)}
-    ${ballot ? `<h3 class="sub-h">Upcoming ballot</h3>${ballot}` : ""}
     <h3 class="sub-h">AI proposal history</h3>
     ${propRows ? `<div class="table-wrap"><table><thead><tr><th scope="col">Meeting</th><th scope="col">Proposal</th><th scope="col">Filed by</th><th scope="col">Status</th><th scope="col">Support</th></tr></thead><tbody>${propRows}</tbody></table></div>${fnList(notes)}<p><button type="button" class="linklike" data-feed="${esc(t)}">Open in Proposals with filters</button></p>` : `<p class="status-note">No AI proposals on file${t ? "" : " (no US-listed shares)"}.</p>`}
     <h3 class="sub-h">Filers active here</h3>
@@ -303,14 +317,13 @@ function renderFeed() {
   const catNote = cats.length && DATA.asks.categories_note ? DATA.asks.categories_note : "";
 
   el.innerHTML = `
-    <h2>Proposals</h2>
+    <h2>All AI proposals</h2>
     <p class="intro">${plural(all.length, "proposal")}, meetings ${years[0]}–${years.at(-1)}. Support = for ÷ (for + against); where a filing gives counts only or another basis applies, a numbered note says so.</p>
     <div class="status-filter" role="group" aria-label="Filter by status" id="feed-status"></div>
     <div class="net-controls">
       <select id="feed-co" aria-label="Company"><option value="">All companies</option>${companies.map((c) => `<option value="${esc(c)}">${esc(companyName(c))}</option>`).join("")}</select>
-      <select id="feed-topic" aria-label="Topic"><option value="">All topics</option>${topics.map((t) => `<option>${esc(t)}</option>`).join("")}</select>
+      <select id="feed-topic" aria-label="What it asks about"><option value="">Everything it asks about</option>${topics.map((t) => `<option value="${esc(t)}">${esc(t)} (${all.filter((p) => normTopic(p.topic) === t).length})</option>`).join("")}</select>
       <select id="feed-year" aria-label="Meeting year"><option value="">All years</option>${years.map((y) => `<option>${y}</option>`).join("")}</select>
-      ${cats.length ? `<select id="feed-cat" aria-label="What it asks about"><option value="">All asks</option>${cats.map((c) => `<option value="${esc(c.id)}">${esc(c.label)} (${all.filter((p) => p.category === c.id).length})</option>`).join("")}</select>` : ""}
       <button type="button" class="chip" id="feed-clear" hidden>Clear filters</button>
     </div>
     ${catNote ? `<p class="status-note">${esc(catNote)}</p>` : ""}
@@ -382,7 +395,7 @@ function renderFeed() {
     // basis note, but nearly every figure now has one, so the split no longer told anything apart.
     const noted = pts.filter((p) => p.support_note).length;
     key.innerHTML = `${topicKeys}
-      <p class="note">${plural(pts.length, "voted proposal")} plotted. Shape and shade show the topic; every mark is filled.${noted ? ` ${noted} of these figures have a basis note (for example, computed from 8-K vote counts or dual-class voting), listed in the table.` : ""}${skipped > 0 ? ` ${plural(skipped, "voted proposal has", "voted proposals have")} no meeting date or vote-results filing recorded and appear in the table only.` : ""} Upcoming, withdrawn and excluded proposals are in the table.</p>`;
+      <p class="note">${plural(pts.length, "voted proposal")} plotted. Shape and shade show what each proposal asks about; every mark is filled.${noted ? ` ${noted} of these figures have a basis note (for example, computed from 8-K vote counts or dual-class voting), listed in the table.` : ""}${skipped > 0 ? ` ${plural(skipped, "voted proposal has", "voted proposals have")} no meeting date or vote-results filing recorded and appear in the table only.` : ""} Upcoming, withdrawn and excluded proposals are in the table.</p>`;
     if (typeof d3 === "undefined") return;
     if (!pts.length) { box.innerHTML = `<p class="status-note">No voted proposals with a dated vote-results filing match these filters.</p>`; return; }
     const all_pts = all.filter(plottable);
@@ -428,7 +441,6 @@ function renderFeed() {
   };
   const sel = (id, k) => document.getElementById(id).addEventListener("change", (e) => { F[k] = e.target.value; redraw(); });
   sel("feed-co", "co"); sel("feed-topic", "topic"); sel("feed-year", "year");
-  if (document.getElementById("feed-cat")) sel("feed-cat", "cat");
   document.getElementById("feed-clear").addEventListener("click", () => {
     Object.keys(F).forEach((k) => { F[k] = ""; });
     ["feed-co", "feed-topic", "feed-year", "feed-cat"].forEach((id) => { const s = document.getElementById(id); if (s) s.value = ""; });
@@ -480,7 +492,6 @@ function renderRights() {
     const levers = (c.levers || []).map((l) => `<li>${esc(l.text)}${src(l.url)}</li>`).join("");
     return `<details class="card co-detail">
       <summary><strong>${esc(c.name)}</strong> <span class="ticker">${esc(c.ticker)}</span>: ${esc(STATUS_LABEL[c.route_status] || "Being verified")}</summary>
-      ${whyIncluded(c)}
       <p class="status-note">${esc(c.route_status_reason || "")}</p>
       <dl class="facts">
         ${fact("State of incorporation", c.state)}
@@ -494,13 +505,13 @@ function renderRights() {
     </details>`;
   };
   el.innerHTML = `
-    <h2>Rights map</h2>
-    <p class="intro">Proposal route at each company without Rule 14a-8, from bylaws, state of incorporation and share structure. This site's reading of the cited documents, not a legal opinion.</p>
+    <h2>Compare proposal rights</h2>
+    <p class="intro">If the SEC rescinds Rule 14a-8, which companies still let investors put a proposal on the ballot, and how much say they have over directors? From each company's bylaws, state of incorporation and share structure. This site's reading of the cited documents, not a legal opinion.</p>
     ${roleIds.length ? `<div class="net-controls"><select id="rights-sector" aria-label="Main role in AI"><option value="">All roles</option>${roleIds.map((r) => `<option value="${esc(r)}">${esc(R.label(r))}</option>`).join("")}</select></div>` : ""}
     <p class="count-line" id="rights-count" aria-live="polite"></p>
     <div class="table-wrap" id="rights-table"></div>
     ${DATA.site && DATA.site.status_key ? `<p class="note">${esc(DATA.site.status_key)}</p>` : ""}
-    <h2>Company detail</h2>
+    <h3 class="sub-h">Detail by company</h3>
     <div id="rights-cards" class="detail-list"></div>`;
   const draw = () => {
     const rows = cos.filter((c) => !F.sector || (R && R.roleOf(c) === F.sector));
@@ -530,7 +541,7 @@ function renderPeople() {
   ];
   el.innerHTML = `
     <h2>Contacts</h2>
-    <p class="intro">Heads of stewardship and engagement at filer organizations. Public professional details only.</p>
+    <p class="intro">Stewardship, engagement and shareholder advocacy leads at the organizations in the network, each with a public profile page. Public professional details only.</p>
     <div class="net-controls"><input type="search" id="people-search" placeholder="Search name, organization or AI work" aria-label="Search people"></div>
     <p class="count-line" id="people-count" aria-live="polite"></p>
     <div class="table-wrap" id="people-table"></div>`;
@@ -561,36 +572,94 @@ function renderNew() {
   });
   const groups = [...byWeek.entries()].sort((a, b) => (a[0] < b[0] ? 1 : -1)).map(([wk, list]) => `
     <li><div class="date">Found ${esc(fmtDate(wk))}</div>
-      <ul class="conn">${list.map((c) => `<li><strong>${esc(c.company)}</strong>: ${esc(c.what)}, filed ${esc(fmtDate(c.filed))}${c.topic ? ` ${topicTag(c.topic)}` : ""}${src(c.url, c.form)}
+      <ul class="conn">${list.map((c) => `<li><strong>${esc(c.company)}</strong>: ${esc(c.what)}, filed ${esc(fmtDate(c.filed))}${src(c.url, c.form)}
         <div class="ticker">${esc(c.review_status || "")}</div></li>`).join("")}</ul></li>`).join("");
   document.getElementById("tab-new").innerHTML = `
-    <h2>New filings</h2>
-    <p class="intro">Weekly SEC EDGAR check for AI-related proxy statements, PX14A6G filings and vote results. Unreviewed finds are marked.</p>
+    <h2>New SEC filings</h2>
+    <p class="intro">Every Monday the site checks SEC EDGAR for new proxy statements, investor exempt solicitations (PX14A6G), vote results and bylaw changes at the companies it tracks. Finds are listed here before anyone reviews them.</p>
     <p class="count-line">Last check: ${esc(t.last_checked ? fmtDate(t.last_checked.slice(0, 10)) : "not run yet")}.${t.new_this_run != null ? ` ${esc(t.new_this_run)} new AI-related filings in that run.` : ""}</p>
     ${groups ? `<ul class="timeline">${groups}</ul>` : `<p class="status-note">Nothing flagged yet.</p>`}`;
 }
 
-// ---------- Tabs (WAI-ARIA tabs pattern: arrow keys, Home/End, roving tabindex) ----------
-// Old links keep working: tabs that were renamed or folded into another tab.
-const TAB_ALIASES = { why: "causality", "weigh-in": "upcoming", water: "upcoming", new: "new" };
+// ---------- Start here: Overview ----------
+// What an analyst can act on now (ballots out, open filing deadlines, this week's SEC finds), three findings
+// from the data with their basis, and what each section of the site is for.
+function renderStart() {
+  const el = document.getElementById("tab-start");
+  const s = DATA.site || {};
+  const today = new Date().toISOString().slice(0, 10);
+  const findings = (s.findings || []).map((f) => `<li class="finding">
+      <h4>${esc(f.title)}</h4><p>${esc(f.text)}</p>
+      <p class="note">${esc(f.basis)}${f.link ? ` <a href="${esc(f.link)}">See the data</a>` : ""}</p></li>`).join("");
+  // Coming up: ballots with AI proposals, then open Rule 14a-8 filing deadlines, soonest first.
+  const ballots = ((DATA.upcoming && DATA.upcoming.meetings) || []).filter((m) => (m.items || []).length)
+    .map((m) => ({ date: m.sort, html: `<strong>${esc(m.company)}</strong> votes on ${plural(m.items.length, "AI proposal")}: ${esc(m.meeting_label)}${src(m.proxy_url, "proxy")}`, ticker: m.ticker, kind: "Vote" }));
+  const deadlines = (DATA.companies || []).filter((c) => c.next_proposal_deadline && c.next_proposal_deadline >= today)
+    .map((c) => ({ date: c.next_proposal_deadline, html: `<strong>${esc(c.name)}</strong>: last day to submit a proposal for the next meeting, ${esc(fmtDate(c.next_proposal_deadline))}${src(c.next_proposal_deadline_source, "proxy")}`, ticker: realTicker(c.ticker), kind: "Filing deadline" }));
+  const coming = [...ballots, ...deadlines].sort((a, b) => String(a.date).localeCompare(String(b.date)));
+  const shown = coming.slice(0, 8);
+  const comingList = shown.map((x) => `<li><span class="kind">${esc(x.kind)}</span> ${x.html}${x.ticker ? ` <button type="button" class="linklike" data-co="${esc(x.ticker)}">Company profile</button>` : ""}</li>`).join("");
+  const items = ((DATA.changes && DATA.changes.items) || []).slice().sort((a, b) => String(b.filed).localeCompare(String(a.filed)));
+  const t = DATA.tracking || {};
+  const newList = items.slice(0, 5).map((c) => `<li><strong>${esc(c.company)}</strong>: ${esc(c.what)}, filed ${esc(fmtDate(c.filed))}${src(c.url, c.form)}</li>`).join("");
+  const sections = [...document.querySelectorAll('.tabs [role="tab"][data-group]')].slice(1).map((b) => {
+    const g = b.dataset.group;
+    const q = (document.querySelector(`#grp-${g} .group-q`) || {}).textContent || "";
+    const first = (document.querySelector(`#grp-${g} .panel`) || {}).id.slice(4);
+    return `<li><a href="#${esc(first)}">${esc(b.textContent)}</a>: ${esc(q)}</li>`;
+  }).join("");
+  el.innerHTML = `
+    <h2>Overview</h2>
+    <p class="intro">Dates you can act on in the coming weeks, three things the data shows, and where to look next.</p>
+    <h3 class="sub-h">Coming up</h3>
+    ${comingList ? `<ul class="steps coming-up">${comingList}</ul>` : `<p class="status-note">No ballots or open filing deadlines on file.</p>`}
+    <p><a href="#upcoming">All upcoming votes</a>${coming.length > shown.length ? ` · ${coming.length - shown.length} more open filing deadlines are on each company's profile` : ""}</p>
+    <h3 class="sub-h">What the data shows</h3>
+    ${findings ? `<ul class="findings">${findings}</ul>` : `<p class="status-note">No findings recorded.</p>`}
+    <h3 class="sub-h">New SEC filings</h3>
+    <p class="count-line">Checked ${esc(t.last_checked ? fmtDate(t.last_checked.slice(0, 10)) : "not yet")}${t.new_this_run != null ? `: ${plural(t.new_this_run, "new filing")} found` : ""}. Found automatically and not yet reviewed.</p>
+    ${newList ? `<ul class="steps">${newList}</ul><p><a href="#new">All new filings</a></p>` : ""}
+    <h3 class="sub-h">How this site is organized</h3>
+    <ul class="steps">${sections}</ul>`;
+  wireCompanyLinks(el);
+}
+
+// ---------- Sections and views (WAI-ARIA tabs pattern: arrow keys, Home/End, roving tabindex) ----------
+// Six sections in the order of an engagement cycle, each holding one or more views (index.html). Every view
+// keeps its own address (#feed, #network, ...), so old links and the tests open the right place.
+// Old addresses for views that were renamed or folded into another view.
+const TAB_ALIASES = { why: "causality", "weigh-in": "upcoming", water: "upcoming", overview: "start" };
+const lastView = {}; // per section, the view last open in it
 function showTab(name, focus = false) {
   name = TAB_ALIASES[name] || name;
-  const buttons = [...document.querySelectorAll('.tabs [role="tab"]')];
-  if (!buttons.some((b) => b.dataset.tab === name)) name = buttons[0].dataset.tab;
-  buttons.forEach((b) => {
+  let panel = document.getElementById("tab-" + name);
+  if (!name || !panel || !panel.dataset.group) { name = "start"; panel = document.getElementById("tab-start"); }
+  const group = panel.dataset.group;
+  lastView[group] = name;
+  const groupBtns = [...document.querySelectorAll('.tabs [role="tab"][data-group]')];
+  groupBtns.forEach((b) => {
+    const on = b.dataset.group === group;
+    b.setAttribute("aria-selected", String(on));
+    b.tabIndex = on ? 0 : -1;
+    if (on && focus === "group") b.focus();
+  });
+  document.querySelectorAll(".group").forEach((g) => { g.hidden = g.id !== "grp-" + group; });
+  document.querySelectorAll(`#grp-${group} [role="tab"][data-tab]`).forEach((b) => {
     const on = b.dataset.tab === name;
     b.setAttribute("aria-selected", String(on));
     b.tabIndex = on ? 0 : -1;
-    if (on && focus) b.focus();
+    if (on && focus === true) b.focus();
   });
   document.querySelectorAll(".panel").forEach((p) => { p.hidden = p.id !== "tab-" + name; });
   const stuck = document.getElementById("sticky-page");
-  const sel = buttons.find((b) => b.dataset.tab === name);
-  if (stuck && sel) stuck.textContent = sel.textContent;
-  try { window.history.replaceState(null, "", "#" + name); } catch (e) {}
+  const gBtn = groupBtns.find((b) => b.dataset.group === group);
+  const vBtn = document.querySelector(`#grp-${group} [role="tab"][data-tab="${name}"]`);
+  if (stuck && gBtn) stuck.textContent = gBtn.textContent + (vBtn ? ` · ${vBtn.textContent}` : "");
+  try { if (location.hash.slice(1) !== name) window.history.replaceState(null, "", "#" + name); } catch (e) {}
   // Motion stage 2 (motion.js): the newly shown page's heading reveals line by line.
-  document.dispatchEvent(new CustomEvent("tabshown", { detail: { panel: document.getElementById("tab-" + name) } }));
+  document.dispatchEvent(new CustomEvent("tabshown", { detail: { panel } }));
 }
+window.showTab = showTab;
 function setupTabs() {
   // The page title joins the sticky tab bar once the site header has scrolled out of view.
   const head = document.querySelector(".site-header"), nav = document.querySelector(".tabs");
@@ -618,16 +687,34 @@ function setupTabs() {
     if ("ResizeObserver" in window) new ResizeObserver(setBar).observe(nav);
     setBar();
   }
-  const buttons = [...document.querySelectorAll('.tabs [role="tab"]')];
-  buttons.forEach((b, i) => {
-    b.addEventListener("click", () => showTab(b.dataset.tab));
+  // Section tabs: open the view last used in that section, or its first view.
+  const firstView = (g) => (document.querySelector(`#grp-${g} .panel`) || {}).id.slice(4);
+  const groupBtns = [...document.querySelectorAll('.tabs [role="tab"][data-group]')];
+  groupBtns.forEach((b, i) => {
+    b.addEventListener("click", () => showTab(lastView[b.dataset.group] || firstView(b.dataset.group)));
     b.addEventListener("keydown", (e) => {
-      const to = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: buttons.length - 1 }[e.key];
+      const to = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: groupBtns.length - 1 }[e.key];
       if (to == null) return;
       e.preventDefault();
-      showTab(buttons[(to + buttons.length) % buttons.length].dataset.tab, true);
+      const g = groupBtns[(to + groupBtns.length) % groupBtns.length].dataset.group;
+      showTab(lastView[g] || firstView(g), "group");
     });
   });
+  // View tabs inside each section.
+  document.querySelectorAll(".subtabs").forEach((row) => {
+    const views = [...row.querySelectorAll('[role="tab"][data-tab]')];
+    views.forEach((b, i) => {
+      b.addEventListener("click", () => showTab(b.dataset.tab));
+      b.addEventListener("keydown", (e) => {
+        const to = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: views.length - 1 }[e.key];
+        if (to == null) return;
+        e.preventDefault();
+        showTab(views[(to + views.length) % views.length].dataset.tab, true);
+      });
+    });
+  });
+  // In-page links such as href="#feed" (Start here) open their view.
+  window.addEventListener("hashchange", () => showTab(location.hash.slice(1)));
   showTab(location.hash.slice(1));
 }
 
@@ -664,6 +751,7 @@ async function main() {
   header();
   renderUpcoming();
   renderFeed();
+  renderStart();
   renderRights();
   await rest;
   header();
@@ -702,6 +790,7 @@ async function main() {
   window.renderVotes(DATA.fund_votes, DATA.proposals);
   renderPeople();
   renderNew();
+  renderStart(); // again, now that the weekly SEC check (changes, tracking) has loaded
   document.dispatchEvent(new Event("siteready"));
 }
 main();

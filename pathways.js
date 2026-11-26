@@ -99,7 +99,7 @@
     const labs = data.labs.map((l) => `<button type="button" class="chip" data-lab="${esc(l.id)}" aria-pressed="false">${esc(l.name)}</button>`).join("");
     const cos = byTier(data.public_companies).map((c) => `<label class="chip"><input type="checkbox" value="${esc(c.id)}"> ${esc(c.name)}${tierOf(c)[1] ? `<span class="ticker"> · ${esc(tierOf(c)[1])}</span>` : ""}</label>`).join("");
     el.innerHTML = `
-      <h2>Lab pathways</h2>
+      <h2>Routes to a frontier lab</h2>
       <p class="intro">Routes to each frontier lab through the companies tied to it: ${data.ties.length} sourced ties between ${data.public_companies.length} companies and ${data.labs.length} labs, with shareholder rights, filing deadlines and the filers on record at each company.</p>
       <p class="pw-label" id="pw-labs-h">Lab</p>
       <div class="chips" role="group" aria-labelledby="pw-labs-h">${labs}</div>
