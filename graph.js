@@ -232,6 +232,14 @@
     state.fitH = H;
     state.svg.call(state.zoom.transform, d3.zoomIdentity.translate((W - (x1 - x0) * k) / 2 - x0 * k, top - y0 * k).scale(k));
   }
+  // A later change (another view, types shown or hidden, new settings): run most of the new layout off-screen,
+  // then let it glide the rest of the way, heavily damped, instead of jumping.
+  function settleGently(sim) {
+    sim.stop();
+    sim.alpha(0.5).tick(120);
+    if (state.draw) state.draw();
+    sim.velocityDecay(0.7).alpha(0.05).restart();
+  }
   // Re-aim the grouping forces after layers change, then let the layout settle again.
   function regroup() {
     if (!state.sim) return;
@@ -242,7 +250,7 @@
     const { width, height } = state.size;
     state.sim.force("gx").x((d) => ovalTarget(d).x * width);
     state.sim.force("gy").y((d) => ovalTarget(d).y * height);
-    if (REDUCED_MOTION) { state.sim.alpha(1).stop(); state.sim.tick(300); state.draw(); } else state.sim.alpha(0.5).restart();
+    if (REDUCED_MOTION) { state.sim.alpha(1).stop(); state.sim.tick(300); state.draw(); } else settleGently(state.sim);
   }
   const groupY = (d) => {
     if (TOP_BAND.includes(d.kind)) return 0.06;
@@ -337,7 +345,8 @@
     sim.force("gx").strength(state.cfg.group);
     sim.force("gy").strength(state.cfg.group * 0.8);
     drawAxis();
-    if (REDUCED_MOTION) { sim.alpha(1).stop(); sim.tick(300); state.draw(); } else sim.alpha(0.6).restart();
+    // Sliders fire continuously, so no off-screen pass here: a damped restart keeps the motion gentle.
+    if (REDUCED_MOTION) { sim.alpha(1).stop(); sim.tick(300); state.draw(); } else sim.velocityDecay(0.6).alpha(0.3).restart();
   }
   const linkBase = (l) => (l.relation === "member of" ? 90 : l.relation === "proposal at" ? 55 : l.relation === "works at" ? 22 : 45);
   const endId = (x) => (typeof x === "object" ? x.id : x);
@@ -1444,7 +1453,22 @@
     state.draw = draw;
     sim.on("tick", draw);
     sim.on("end", () => { fitToContent(); declutter(); applyStyles(); });
-    if (REDUCED_MOTION) { sim.stop(); sim.tick(300); draw(); fitToContent(); declutter(); }
+    // Work out most of the layout before showing it (owner, 2026-11-26: the nodes "shake a lot" when a graph first
+    // opens; "gently wiggly … nothing violent"): nodes start near their column, the layout runs off-screen, and
+    // only the last few percent plays on screen, heavily damped.
+    sim.stop();
+    for (const n of data.nodes) {
+      if (!Number.isFinite(n.x) || !Number.isFinite(n.y)) {
+        const t = ovalTarget(n);
+        n.x = t.x * width + (Math.random() - 0.5) * 60;
+        n.y = t.y * height + (Math.random() - 0.5) * 60;
+      }
+    }
+    sim.alpha(1).tick(REDUCED_MOTION ? 300 : 240);
+    draw();
+    fitToContent();
+    if (REDUCED_MOTION) declutter();
+    else sim.velocityDecay(0.7).alpha(0.04).restart();
     applyStyles();
   }
 
