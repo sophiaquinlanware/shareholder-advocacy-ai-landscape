@@ -317,6 +317,17 @@ def main():
                if (k := (r["family"], r["trust"], tuple(r["series"]), r["company"], r["meeting_date"])) not in amended
                or amended[k][1] == r["source_url"]]
 
+    # The same record (same trust, item, vote and share counts) can appear in two filings for one period, e.g.
+    # a fund reported in two same-day reports. Count it once. Repeats inside one filing are kept, because
+    # they signal two ballot items matched to one proposal, which the publish step holds back.
+    first_url = {}
+    for r in results:
+        fp = (r["family"], r["trust"], r["proposal_id"], r["meeting_date"], r["npx_description"],
+              tuple((l["how"], l["shares"]) for l in r["vote_lines"]))
+        first_url.setdefault(fp, r["source_url"])
+    results = [r for r in results if first_url[(r["family"], r["trust"], r["proposal_id"], r["meeting_date"], r["npx_description"],
+               tuple((l["how"], l["shares"]) for l in r["vote_lines"]))] == r["source_url"]]
+
     # One row per fund family per proposal. A family files for many funds, so "split"
     # means its funds did not all vote the same way.
     summary = {}
