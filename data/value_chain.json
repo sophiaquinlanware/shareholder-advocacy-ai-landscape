@@ -682,7 +682,7 @@
     "huawei-technologies",
     "samsung-electronics"
    ],
-   "fund_vote_rows": 160,
+   "fund_vote_rows": 201,
    "shareholder_routes": {
     "US proxy rules apply": 6,
     "US-listed foreign issuer": 3,
@@ -1174,7 +1174,7 @@
    "safety_commitments": [
     "spacex"
    ],
-   "fund_vote_rows": 54,
+   "fund_vote_rows": 69,
    "shareholder_routes": {
     "US proxy rules apply": 6
    },
@@ -1517,7 +1517,7 @@
     "alibaba-group",
     "g42"
    ],
-   "fund_vote_rows": 230,
+   "fund_vote_rows": 289,
    "shareholder_routes": {
     "US proxy rules apply": 5,
     "US-listed foreign issuer": 2,
@@ -2019,7 +2019,7 @@
     "writer",
     "zhipu-ai"
    ],
-   "fund_vote_rows": 147,
+   "fund_vote_rows": 183,
    "shareholder_routes": {
     "US proxy rules apply": 6,
     "US-listed foreign issuer": 1,
@@ -2492,7 +2492,7 @@
     "nvidia"
    ],
    "safety_commitments": [],
-   "fund_vote_rows": 241,
+   "fund_vote_rows": 303,
    "shareholder_routes": {
     "US proxy rules apply": 5,
     "listed outside the US": 1
@@ -2994,7 +2994,7 @@
     "stability-ai",
     "tencent-holdings"
    ],
-   "fund_vote_rows": 309,
+   "fund_vote_rows": 385,
    "shareholder_routes": {
     "US proxy rules apply": 19,
     "US-listed foreign issuer": 1,
