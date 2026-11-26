@@ -189,3 +189,25 @@ test("Motion: headings reveal line by line, then return to plain text; reduced m
   expect(await p2.locator("#tab-pathways h2 .rl").count()).toBe(0);
   await ctx.close();
 });
+
+test("Network views: Connections hides proposals; Proposals shows them, with Active and Past", async ({ page }) => {
+  await open(page, "?lens=impact");
+  const shown = (kind) =>
+    page.$$eval(
+      "#net-graph svg > g > g > circle",
+      (cs, k) => cs.filter((c) => c.__data__ && c.__data__.kind === k && c.getAttribute("display") !== "none").length,
+      kind,
+    );
+  await expect(page.locator('#net-mode [data-mode="connections"]')).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("#net-pstatus")).toBeHidden();
+  expect(await shown("proposal")).toBe(0);
+  await page.click('#net-mode [data-mode="proposals"]');
+  await expect(page).toHaveURL(/graph=proposals/);
+  await expect(page.locator("#net-pstatus")).toBeVisible();
+  expect(await shown("proposal")).toBeGreaterThan(10);
+  expect(await shown("lab")).toBe(0);
+  const active = Number((await page.locator('#net-pstatus [data-pstatus="active"]').textContent()).match(/\d+/)[0]);
+  await page.click('#net-pstatus [data-pstatus="active"]');
+  expect(await shown("proposal")).toBe(active);
+  await expect(page.locator("#net-lens-status")).toContainText("Active");
+});

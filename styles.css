@@ -493,3 +493,7 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
 .finding h4 { margin: 0 0 6px; font-size: 15px; font-weight: 500; }
 .finding p { margin: 0 0 6px; }
 .coming-up .kind { display: inline-block; min-width: 9.5em; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); }
+/* Network: two views (docs/plans/2026-11-26-network-views.md). The switch sits directly above the graph box. */
+.net-views { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-1) var(--s-2); margin: var(--s-2) 0 var(--s-1); }
+.net-views .count-line { flex: 1 1 100%; margin: 0; }
+.net-views .seg[hidden], #net-scrub[hidden], #net-topic[hidden], #net-year[hidden] { display: none; }

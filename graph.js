@@ -120,7 +120,7 @@
       add({ ...pp, id: "person-" + pp.id, kind: "person", label: pp.name });
       links.push({ source: "person-" + pp.id, target: pp.org_id, relation: "works at", source_url: pp.profile_url });
     }
-    for (const p of raw.proposals || []) links.push({ source: p.id, target: "co-" + p.company, relation: "proposal at", source_url: p.source_url });
+    for (const p of raw.proposals || []) links.push({ source: p.id, target: "co-" + p.company, relation: "proposal at", layer: "proposals", source_url: p.source_url });
     for (const e of raw.edges || []) if (nodes.has(e.from) && nodes.has(e.to)) links.push({ source: e.from, target: e.to, relation: e.relation, source_url: e.source_url });
     const deg = new Map();
     links.forEach((l) => { deg.set(l.source, (deg.get(l.source) || 0) + 1); deg.set(l.target, (deg.get(l.target) || 0) + 1); });
@@ -164,7 +164,7 @@
   // Columns whose node types are all hidden give up their space; the rest spread across the width.
   function activeColumns() {
     const present = new Set(state.data.nodes.map((n) => n.kind));
-    const cols = COLUMNS.filter((c) => c.kinds.some((k) => present.has(k) && !state.hiddenKinds.has(k)));
+    const cols = COLUMNS.filter((c) => c.kinds.some((k) => present.has(k) && !state.hiddenKinds.has(k) && !mode().hides.has(k)));
     return cols.map((c, i) => ({ ...c, x: cols.length === 1 ? 0.5 : 0.1 + (i * 0.8) / (cols.length - 1) }));
   }
   const groupX = (d) => {
@@ -300,6 +300,7 @@
 
   function shell(el) {
     el.innerHTML = `
+      <p class="eyebrow" id="net-kind"></p>
       <h2>Network of investors, coalitions and people</h2>
       <fieldset class="lens-pick" id="net-lens"><legend>View as</legend>${Object.entries(window.LENSES || {}).map(([id, l]) =>
         `<label class="chip"><input type="radio" name="net-lens" value="${esc(id)}"${id === state.lens ? " checked" : ""}> ${esc(l.label)}</label>`).join("")}</fieldset>
@@ -331,6 +332,11 @@
       <div id="net-legend" class="net-legend"></div>
       <div id="net-catkey" class="net-legend" hidden></div>
       <details id="net-settings" class="graph-settings"></details>
+      <div class="net-views">
+        <div class="seg" role="group" aria-label="Graph view" id="net-mode">${Object.entries(MODES).map(([id, m]) => `<button type="button" data-mode="${id}" aria-pressed="${id === state.mode}">${esc(m.label)}</button>`).join("")}</div>
+        <div class="seg" role="group" aria-label="Proposals shown" id="net-pstatus"${state.mode === "proposals" ? "" : " hidden"}>${pstatusButtons()}</div>
+        <p class="count-line" id="net-mode-note"></p>
+      </div>
       <div class="net-body">
         <div class="net-graph-wrap">
           <div id="net-graph" class="net-graph" tabindex="0" role="application" aria-roledescription="network graph" aria-describedby="net-kb-hint" aria-label="AI advocacy network graph: investors, proposals, companies, labs and policy. Up and Down arrows move between nodes, Enter opens one, Escape clears. The List view has the same data as a table."></div>
@@ -563,7 +569,8 @@
     });
   }
   function legend(data) {
-    const kinds = [...new Set(data.nodes.map((n) => n.kind))];
+    // The key lists only the types the current view can show.
+    const kinds = [...new Set(data.nodes.map((n) => n.kind))].filter((k) => !mode().hides.has(k));
     const order = Object.keys(TYPE_LABEL);
     kinds.sort((a, b) => order.indexOf(a) - order.indexOf(b));
     document.getElementById("net-legend").innerHTML = `<button type="button" class="chip leg-all" data-all="1">Show all</button>` +
@@ -650,6 +657,11 @@
   function focus(id) {
     const n = state.data.nodes.find((x) => x.id === id);
     if (!n) return;
+    // A node the current view doesn't show: switch to the view that does, and say so.
+    if (mode().hides.has(n.kind)) {
+      setMode(state.mode === "proposals" ? "connections" : "proposals", false);
+      document.getElementById("net-lens-status").textContent = `Switched to the ${mode().label} view to show ${n.label}.`;
+    }
     // A node in a hidden layer can't be shown, so switch its layer on first.
     if (state.hiddenKinds.has(n.kind)) {
       state.hiddenKinds.delete(n.kind);
@@ -668,6 +680,71 @@
 
   // The year a node belongs to for the year scrubber: proposals by year, events (ev- nodes) by date.
   const nodeYear = (n) => (n.kind === "proposal" ? Number(n.year) : String(n.id).startsWith("ev-") && n.date ? Number(String(n.date).slice(0, 4)) : null);
+  // Two views of the graph (owner, 2026-11-26: "The first tab is how everything is connected to each other, and
+  // then the next tab on the graph you switch to is active proposals/past"). docs/plans/2026-11-26-network-views.md.
+  // Connections: who is tied to whom (no proposals). Proposals: filers → proposals → companies, active or past.
+  const MODES = {
+    connections: { label: "Connections", eyebrow: "Ties between filers, companies and labs", hides: () => new Set(["proposal", "ask", "gap"]) },
+    // Policy and responses stay in Proposals for the Policymaker lens, whose asks link to them.
+    proposals: { label: "Proposals", eyebrow: "Proposals: filers to companies", hides: () => new Set(["lab", "tier-labs", "person", ...(state.lens === "policy" ? [] : ["policy", "response", "public"])]) },
+  };
+  const mode = () => {
+    const m = MODES[state.mode] || MODES.connections;
+    return { ...m, hides: m.hides() };
+  };
+  // An edge belongs to the Proposals view when the data puts it in the proposals layer; every other edge
+  // (shareholdings, coalition membership and roles, co-filing partners, employers, colleagues and co-authors,
+  // value-chain ties, policy and responses) belongs to Connections.
+  // Exempt solicitations aimed at a company (not at one proposal) carry no year or status, so they show only when
+  // no proposal filter (Active/Past, year) is set.
+  const filtering = () => (state.pstatus && state.pstatus !== "all") || !!state.year || !!state.upto;
+  const inMode = (l) => {
+    const prop = l.layer === "proposals" || (state.lens === "policy" && l.relation === "coverage");
+    if (state.mode !== "proposals") return !prop || false;
+    if (!prop) return false;
+    if (/^exempt solicitation/.test(l.relation || "") && filtering()) {
+      const t = typeof l.target === "object" ? l.target : state.byId.get(l.target);
+      if (t && t.kind !== "proposal") return false;
+    }
+    return true;
+  };
+  const isActive = (p) => p.status === "upcoming";
+  function pstatusButtons() {
+    const ps = state.data.nodes.filter((n) => n.kind === "proposal");
+    const n = { all: ps.length, active: ps.filter(isActive).length, past: ps.filter((p) => !isActive(p)).length };
+    const lab = { all: "All", active: "Active", past: "Past" };
+    return ["all", "active", "past"].map((k) => `<button type="button" data-pstatus="${k}" aria-pressed="${(state.pstatus || "all") === k}">${lab[k]} (${n[k]})</button>`).join("");
+  }
+  const MODE_NOTE = {
+    connections: "Who is tied to whom: shareholdings, coalition membership and roles, co-filing partners, people's employers and colleagues, company → lab ties, and policy events. Proposals are in the Proposals view.",
+    proposals: "Which companies AI shareholder proposals already reach, and who filed, co-filed or solicited for or against them. Active = on a ballot not yet held; past = voted, withdrawn or excluded.",
+  };
+  // Switch the graph between its two views; the layout is rebuilt so it only uses that view's links.
+  function setMode(m, announce = true) {
+    if (!MODES[m]) m = "connections";
+    state.mode = m;
+    document.querySelectorAll("#net-mode [data-mode]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === m)));
+    const ps = document.getElementById("net-pstatus");
+    if (ps) ps.hidden = m !== "proposals";
+    const note = document.getElementById("net-mode-note");
+    if (note) note.textContent = MODE_NOTE[m];
+    const kind = document.getElementById("net-kind");
+    if (kind) kind.textContent = mode().eyebrow;
+    // The topic and year filters and the year slider act on proposals, so they show in the Proposals view only.
+    ["net-topic", "net-year", "net-scrub"].forEach((id) => { const x = document.getElementById(id); if (x) x.hidden = m !== "proposals"; });
+    try {
+      const u = new URL(location.href);
+      if (m === "connections") u.searchParams.delete("graph"); else u.searchParams.set("graph", m);
+      window.history.replaceState(null, "", u.pathname + u.search + location.hash);
+    } catch (e) {}
+    state.selected = null; state.path = null;
+    legend(state.data);
+    syncLegend();
+    refreshConnected();
+    if (state.drawn) { state.sim.stop(); drawGraph(); }
+    if (state.view === "list") drawList();
+    if (announce) document.getElementById("net-lens-status").textContent = `${mode().label} view: ${state.data.nodes.filter(visible).length} nodes shown.`;
+  }
   function baseVisible(n) {
     if (n.kind === "gap") { const c = state.byId.get(n.gapFor); return !!c && baseVisible(c); }
     if (n.kind === "proposal" && state.hiddenCats && state.cfg.catColor && n.category && state.hiddenCats.has(n.category)) return false;
@@ -677,6 +754,8 @@
       if (n.kind === "ask" && !state.data.nodes.some((p) => p.kind === "proposal" && p.ask_id === n.id && Number(p.year) <= state.upto)) return false;
     }
     if (state.hiddenKinds.has(n.kind)) return false;
+    if (mode().hides.has(n.kind)) return false;
+    if (n.kind === "proposal" && state.pstatus && state.pstatus !== "all" && (state.pstatus === "active") !== isActive(n)) return false;
     if (n.kind === "proposal") {
       if (state.topic && n.topic !== state.topic) return false;
       if (state.year && String(n.year) !== state.year) return false;
@@ -688,12 +767,14 @@
     const byId = state.byId;
     state.connected = new Set();
     state.data.links.forEach((l) => {
+      if (!inMode(l)) return;
       const a = byId.get(endId(l.source)), b = byId.get(endId(l.target));
       if (a && b && baseVisible(a) && baseVisible(b)) { state.connected.add(a.id); state.connected.add(b.id); }
     });
   }
+  // In the Proposals view a filer or company shows only when a proposal links it in (orphans never show there).
   function visible(n) {
-    return baseVisible(n) && (state.cfg.orphans || state.connected.has(n.id));
+    return baseVisible(n) && ((state.cfg.orphans && state.mode !== "proposals") || state.connected.has(n.id));
   }
 
   // Default labels: companies, labs (all tiers) and nodes at or above the label threshold.
@@ -745,7 +826,7 @@
       .attr("stroke", (d) => (d.id === state.selected ? cssVar("--g-focus") : d.kind === "gap" ? cssVar("--g-label-soft") : edgeOf(d)))
       .attr("stroke-width", (d) => (d.id === state.selected ? 2.5 : d.kind === "gap" ? 1.5 : 1));
     if (state.ringSel) state.ringSel.attr("display", (d) => (visible(d) ? null : "none")).attr("opacity", nodeOpacity);
-    state.linkSel.attr("display", (l) => (visible(l.source) && visible(l.target) ? null : "none"))
+    state.linkSel.attr("display", (l) => (inMode(l) && visible(l.source) && visible(l.target) ? null : "none"))
       .attr("stroke-opacity", (l) => {
         if (P) return P.links.has(l) ? 0.95 : 0.03;
         if (near) return l.source.id === focusId || l.target.id === focusId ? 0.9 : 0.04;
@@ -978,7 +1059,7 @@
           .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
         const id = `gap:${cid}:${t}`;
         nodes.push({ id, kind: "gap", label: `${t}: none in this dataset`, topic: t, gapFor: cid, companyLabel: c.label, company: c.ticker, covered: at.size, filedAt, degree: 1 });
-        links.push({ source: id, target: cid, relation: "missing", type: "missing", source_url: null, derived: true });
+        links.push({ source: id, target: cid, relation: "missing", type: "missing", layer: "proposals", source_url: null, derived: true });
       }
     }
     return { nodes, links };
@@ -1171,7 +1252,12 @@
     svg.on("click", (ev) => { if (ev.target.tagName === "svg") { state.selected = null; applyStyles(); } });
 
     const sim = d3.forceSimulation(data.nodes)
-      .force("link", d3.forceLink(data.links).id((d) => d.id).distance((l) => linkBase(l) * state.cfg.linkDist).strength(state.cfg.linkStrength))
+      .force("link", d3.forceLink((data.links.forEach((l) => {
+        // Resolve every link to its node objects here: the layout only receives the current view's links, and the
+        // rest still need objects for drawing and lookups.
+        if (typeof l.source !== "object") l.source = state.byId.get(l.source) || l.source;
+        if (typeof l.target !== "object") l.target = state.byId.get(l.target) || l.target;
+      }), data.links.filter(inMode))).id((d) => d.id).distance((l) => linkBase(l) * state.cfg.linkDist).strength(state.cfg.linkStrength))
       .force("charge", d3.forceManyBody().strength((d) => (d.kind === "company" ? -420 : -110) * state.cfg.repel))
       .force("collide", d3.forceCollide().radius((d) => radius(d) + 3))
       .force("center", d3.forceCenter(width / 2, height / 2))
@@ -1281,6 +1367,8 @@
   // Switching lens applies that lens's defaults: layers, orphans; topic and year reset.
   function setLens(id, announce) {
     state.lens = id;
+    // The Policymaker lens is about recurring asks, which live in the Proposals view.
+    if (id === "policy" && state.mode !== "proposals") setMode("proposals", false);
     state.path = null;
     gapButton();
     if (state.gaps && !lens().gaps) setGaps(false);
@@ -1329,11 +1417,11 @@
       asks.forEach((a) => {
         const props = d.nodes.filter((n) => n.kind === "proposal" && n.ask_id === a.id);
         d.nodes.push({ id: a.id, kind: "ask", label: a.label, match: a.match || [], degree: props.length });
-        props.forEach((p) => d.links.push({ source: a.id, target: p.id, relation: "asks for", type: "asks for", source_url: null, derived: true }));
+        props.forEach((p) => d.links.push({ source: a.id, target: p.id, relation: "asks for", type: "asks for", layer: "proposals", source_url: null, derived: true }));
       });
       const ids = new Set(d.nodes.map((n) => n.id));
       ((state.ctx.coverage && state.ctx.coverage.entries) || []).forEach((e) => {
-        if (e.graph_id && ids.has(e.graph_id) && ids.has(e.ask_id)) d.links.push({ source: e.ask_id, target: e.graph_id, relation: "coverage", type: "coverage", coverage: e.coverage, source_url: e.source_url, description: e.note });
+        if (e.graph_id && ids.has(e.graph_id) && ids.has(e.ask_id)) d.links.push({ source: e.ask_id, target: e.graph_id, relation: "coverage", type: "coverage", layer: "proposals", coverage: e.coverage, source_url: e.source_url, description: e.note });
       });
     }
     state.byId = new Map(d.nodes.map((x) => [x.id, x]));
@@ -1432,6 +1520,20 @@
   }
 
   function wire() {
+    document.getElementById("net-mode").addEventListener("click", (e) => {
+      const b = e.target.closest("[data-mode]");
+      if (b && b.dataset.mode !== state.mode) setMode(b.dataset.mode);
+    });
+    document.getElementById("net-pstatus").addEventListener("click", (e) => {
+      const b = e.target.closest("[data-pstatus]");
+      if (!b) return;
+      state.pstatus = b.dataset.pstatus;
+      document.querySelectorAll("#net-pstatus [data-pstatus]").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.pstatus === state.pstatus)));
+      refreshConnected();
+      if (state.drawn) { state.sim.stop(); drawGraph(); }
+      if (state.view === "list") drawList();
+      document.getElementById("net-lens-status").textContent = `${b.textContent} proposals: ${state.data.nodes.filter(visible).length} nodes shown.`;
+    });
     const topics = [...new Set(state.data.nodes.filter((n) => n.kind === "proposal").map((n) => n.topic).filter(Boolean))].sort();
     const years = [...new Set(state.data.nodes.filter((n) => n.kind === "proposal").map((n) => String(n.year)))].sort();
     document.getElementById("net-topic").insertAdjacentHTML("beforeend", topics.map((t) => `<option>${esc(t)}</option>`).join(""));
@@ -1492,9 +1594,9 @@
     gapButton();
     document.getElementById("net-gaps").addEventListener("click", () => setGaps(!state.gaps));
     document.getElementById("lf-back").addEventListener("click", () => setFeedView("feed", true));
-    document.querySelectorAll("#tab-network .seg button").forEach((b) => b.addEventListener("click", () => {
+    document.querySelectorAll("#tab-network .seg button[data-view]").forEach((b) => b.addEventListener("click", () => {
       state.view = b.dataset.view;
-      document.querySelectorAll("#tab-network .seg button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      document.querySelectorAll("#tab-network .seg button[data-view]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
       document.querySelector("#tab-network .net-graph-wrap").hidden = state.view !== "graph";
       document.getElementById("net-list").hidden = state.view !== "list";
       if (state.view === "list") drawList();
@@ -1520,6 +1622,8 @@
     state = { data, byId: new Map(data.nodes.map((n) => [n.id, n])), defaults, cfg: loadSettings(defaults), hiddenKinds: new Set(["person", "policy", "response", "public"]), hiddenLabels: new Set(), query: "", topic: "", year: "", view: "graph", selected: null, hover: null, kbId: null, path: null, gaps: false, hiddenCats: new Set(), litKinds: new Set(), litCats: new Set() };
     state.holdings = loadHoldings();
     state.lens = initialLens();
+    state.mode = new URLSearchParams(location.search).get("graph") === "proposals" || state.lens === "policy" ? "proposals" : "connections";
+    state.pstatus = "all";
     state.hiddenKinds = new Set(lens().defaults.hiddenKinds || [...state.hiddenKinds]);
     // Shared inputs for lens functions (lenses.js). app.js supplies upcoming meetings and Company lookup.
     const app = window.LENS_CTX || {};
@@ -1542,6 +1646,7 @@
     legend(state.data);
     intro();
     wire();
+    setMode(state.mode, false);
     holdStatus();
     scrubSync();
     // The graph needs a visible container to measure, so draw it the first time its tab opens.
