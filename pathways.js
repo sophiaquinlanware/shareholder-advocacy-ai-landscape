@@ -42,7 +42,7 @@
       .map((t) => `<span class="leg static"><span class="dot" style="background:${cssVar(TIE_VAR[t])}"></span>${esc(t)}</span>`).join("");
     el.innerHTML = `
       <h2>Influence pathways</h2>
-      <p class="intro">Frontier AI labs like OpenAI, Anthropic and xAI are private, so investors cannot file proposals at them. They can engage the public companies that own stakes in these labs, run their compute, sell them chips or distribute their models. This view traces those routes, from the investors already engaging each company, to the company, to the labs it can influence.</p>
+      <p class="intro">Most frontier AI labs, like OpenAI, are private, so investors cannot file proposals at them. (Anthropic listed on Nasdaq in November 2026, and xAI is now part of SpaceX, which listed in June 2026.) They can engage the public companies that own stakes in these labs, run their compute, sell them chips or distribute their models. This view traces those routes, from the investors already engaging each company, to the company, to the labs it can influence.</p>
       <div class="pw-modes">
         <div><p class="pw-label">Reach a lab: who has leverage over it?</p><div class="chips">${labs}</div></div>
         <div><p class="pw-label">Plan an engagement: pick companies to see which labs they reach</p><div class="chips">${cos}</div></div>

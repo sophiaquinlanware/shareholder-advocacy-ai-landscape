@@ -189,7 +189,7 @@ function renderFeed() {
     document.getElementById("feed-rows").innerHTML = rows().map((p) => `<tr>
       <td>${esc(p.company)}</td><td>${esc(p.year)}</td>
       <td>${esc(p.title)}${src(p.proxy_url || p.source_url, "proxy")}${p.results_url ? src(p.results_url, "results") : ""}
-        ${filers.get(p.id) ? `<div class="ticker">Filed by ${esc(filers.get(p.id).join(", "))}</div>` : ""}</td>
+        ${(filers.get(p.id) || p.proponent) ? `<div class="ticker">Filed by ${esc(filers.get(p.id) ? filers.get(p.id).join(", ") : p.proponent)}</div>` : ""}</td>
       <td>${esc(p.topic || "")}</td><td>${esc(p.status || "")}</td>
       <td>${p.support_pct != null ? esc(p.support_pct) + "%" : ""}</td></tr>`).join("") || `<tr><td colspan="6">No matches.</td></tr>`;
   };

@@ -1,0 +1,105 @@
+{
+ "intro": "Upcoming annual meetings at these companies and the AI-related proposals on each ballot, then how to take part depending on how you hold your investments.",
+ "disclaimer": "This is information, not advice. The site does not suggest how anyone should vote. Read the proxy statement, including the board's reasons, and decide for yourself.",
+ "meetings": [
+  {
+   "company": "Tesla",
+   "ticker": "TSLA",
+   "meeting_label": "December 3, 2026",
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm",
+   "status": "upcoming",
+   "status_label": "Ballot is out",
+   "note": "Vote by 11:59 p.m. Eastern, December 2, 2026. Shareholders of record on October 13, 2026 can vote. No shareholder proposals on this ballot, so no AI proposals.",
+   "items": [],
+   "sort": "2026-12-03"
+  },
+  {
+   "company": "Microsoft",
+   "ticker": "MSFT",
+   "meeting_label": "December 8, 2026",
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+   "status": "upcoming",
+   "status_label": "Ballot is out",
+   "note": "Vote by 11:59 p.m. Eastern, December 7, 2026. Shareholders of record on September 30, 2026 can vote.",
+   "items": [
+    {
+     "number": "4",
+     "title": "Additional Disclosures Meeting Climate Commitments (filed by Trillium Asset Management and a co-filer)",
+     "topic": "Data center impacts",
+     "board_rec": "Against",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+    },
+    {
+     "number": "5",
+     "title": "Report on Human Rights Due Diligence (filed by Religious of the Sacred Heart of Mary and co-filers)",
+     "topic": "Social and economic impacts",
+     "board_rec": "Against",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+    },
+    {
+     "number": "6",
+     "title": "Report on Data Operations in Human Rights and Conflict Hotspots (filed by Azzad Asset Management, Inc.)",
+     "topic": "Data center impacts",
+     "board_rec": "Against",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+    }
+   ],
+   "sort": "2026-12-08"
+  },
+  {
+   "company": "Apple",
+   "ticker": "AAPL",
+   "meeting_label": "expected late February 2027",
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126006577/ef20060722_8k.htm",
+   "status": "expected",
+   "status_label": "Expected",
+   "note": "The proxy statement is not out yet. The date is estimated from last year's meeting (linked). This page will list any AI proposals once the tracker finds the proxy.",
+   "items": [],
+   "sort": "2027"
+  },
+  {
+   "company": "Amazon",
+   "ticker": "AMZN",
+   "meeting_label": "expected May 2027",
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926065717/tm2614288d1_8k.htm",
+   "status": "expected",
+   "status_label": "Expected",
+   "note": "The proxy statement is not out yet. The date is estimated from last year's meeting (linked). This page will list any AI proposals once the tracker finds the proxy.",
+   "items": [],
+   "sort": "2027"
+  },
+  {
+   "company": "Meta",
+   "ticker": "META",
+   "meeting_label": "expected late May 2027",
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm",
+   "status": "expected",
+   "status_label": "Expected",
+   "note": "The proxy statement is not out yet. The date is estimated from last year's meeting (linked). This page will list any AI proposals once the tracker finds the proxy.",
+   "items": [],
+   "sort": "2027"
+  },
+  {
+   "company": "Alphabet",
+   "ticker": "GOOGL",
+   "meeting_label": "expected early June 2027",
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
+   "status": "expected",
+   "status_label": "Expected",
+   "note": "The proxy statement is not out yet. The date is estimated from last year's meeting (linked). This page will list any AI proposals once the tracker finds the proxy.",
+   "items": [],
+   "sort": "2027"
+  },
+  {
+   "company": "Nvidia",
+   "ticker": "NVDA",
+   "meeting_label": "expected late June 2027",
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm",
+   "status": "expected",
+   "status_label": "Expected",
+   "note": "The proxy statement is not out yet. The date is estimated from last year's meeting (linked). This page will list any AI proposals once the tracker finds the proxy.",
+   "items": [],
+   "sort": "2027"
+  }
+ ]
+}

@@ -1,0 +1,1064 @@
+{
+ "meta": {
+  "compiled": "2026-11-25",
+  "notes": [
+   "Anthropic listed on Nasdaq (ANT) on 2026-11-19, so it is no longer private. It is kept as a lab node with status 'public' because Amazon and Google stakes remain the main pathways into it.",
+   "xAI was acquired by SpaceX (Feb 2026), and SpaceX listed on Nasdaq (SPCX) in June 2026. xAI is therefore modeled as an in-house lab of SpaceX.",
+   "OpenAI confidentially filed a draft S-1 on 2026-06-08. No public S-1 or listing was found as of 2026-11-25.",
+   "SEC CIKs come from EDGAR company search where checked (Anthropic 2130357, SpaceX 1181412). The others are standard EDGAR CIKs from reference knowledge; recheck before automated lookups.",
+   "Ties are directional (public company -> lab). Where press figures are reported rather than disclosed, the description says 'reported'."
+  ]
+ },
+ "labs": [
+  {
+   "id": "openai",
+   "name": "OpenAI",
+   "status": "private",
+   "parent": null,
+   "description": "ChatGPT/GPT maker; PBC controlled by OpenAI Foundation; $852B post-money (Mar 2026); confidential IPO filing June 2026.",
+   "source_url": "https://techcrunch.com/2026/06/08/following-anthropic-openai-files-confidentially-for-ipo/"
+  },
+  {
+   "id": "anthropic",
+   "name": "Anthropic",
+   "status": "public",
+   "parent": null,
+   "description": "Claude maker; IPO priced $83/share on Nasdaq (ANT) 2026-11-19; founders keep voting control via Class F share.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/0001628280-26-074944-index.htm"
+  },
+  {
+   "id": "xai",
+   "name": "xAI",
+   "status": "in-house",
+   "parent": "spacex",
+   "description": "Grok maker; acquired by SpaceX in all-stock deal Feb 2026 (xAI valued ~$250B).",
+   "source_url": "https://www.axios.com/2026/02/02/elon-musk-spacex-xai"
+  },
+  {
+   "id": "mistral",
+   "name": "Mistral AI",
+   "status": "private",
+   "parent": null,
+   "description": "French open-weight/sovereign AI lab; €3B Series D led by Samsung, Sept 2026.",
+   "source_url": "https://techcrunch.com/2026/09/08/mistral-raises-e3b-as-sovereign-ai-becomes-big-business/"
+  },
+  {
+   "id": "ssi",
+   "name": "Safe Superintelligence (SSI)",
+   "status": "private",
+   "parent": null,
+   "description": "Ilya Sutskever's lab; $32B valuation (Apr 2025); Nvidia partnership July 2026.",
+   "source_url": "https://techcrunch.com/2026/07/27/ilya-sutskevers-safe-superintelligence-partners-with-nvidia-to-scale-its-ai-research/"
+  },
+  {
+   "id": "thinking-machines",
+   "name": "Thinking Machines Lab",
+   "status": "private",
+   "parent": null,
+   "description": "Mira Murati's lab; $2B seed at $12B (Jul 2025); Nvidia and Google Cloud deals 2026.",
+   "source_url": "https://techcrunch.com/2026/03/10/thinking-machines-lab-inks-massive-compute-deal-with-nvidia"
+  },
+  {
+   "id": "reflection",
+   "name": "Reflection AI",
+   "status": "private",
+   "parent": null,
+   "description": "US open-weight frontier lab; $2B round led by Nvidia (Oct 2025).",
+   "source_url": "https://techcrunch.com/2025/10/09/reflection-raises-2b-to-be-americas-open-frontier-ai-lab-challenging-deepseek"
+  },
+  {
+   "id": "cohere",
+   "name": "Cohere",
+   "status": "private",
+   "parent": null,
+   "description": "Canadian enterprise/sovereign AI lab; Series E initial close Oct 2026 targeting up to C$7B.",
+   "source_url": "https://lightreading.com/ai-machine-learning/cohere-wraps-initial-close-of-new-funding-round-to-fuel-sovereign-ai-efforts"
+  },
+  {
+   "id": "perplexity",
+   "name": "Perplexity",
+   "status": "private",
+   "parent": null,
+   "description": "AI answer engine; builds on others' models plus own; $20B valuation (2025), Nvidia reportedly eyeing more.",
+   "source_url": "https://siliconangle.com/2026/08/24/nvidia-reportedly-eyes-another-investment-in-perplexity-ai-at-a-30b-valuation/"
+  },
+  {
+   "id": "gdm",
+   "name": "Google DeepMind",
+   "status": "in-house",
+   "parent": "googl",
+   "description": "Alphabet's AI lab; builds Gemini models.",
+   "source_url": "https://deepmind.google/about/"
+  },
+  {
+   "id": "msl",
+   "name": "Meta Superintelligence Labs (incl. FAIR)",
+   "status": "in-house",
+   "parent": "meta",
+   "description": "Meta's frontier AI org formed June 2025, absorbing FAIR and Llama teams.",
+   "source_url": "https://www.cnbc.com/2025/06/30/mark-zuckerberg-creating-meta-superintelligence-labs-read-the-memo.html"
+  },
+  {
+   "id": "msai",
+   "name": "Microsoft AI (MAI Superintelligence Team)",
+   "status": "in-house",
+   "parent": "msft",
+   "description": "Microsoft's in-house model lab under Mustafa Suleyman (MAI models).",
+   "source_url": "https://microsoft.ai/news/towards-humanist-superintelligence/"
+  },
+  {
+   "id": "amazon-agi",
+   "name": "Amazon AGI / Nova",
+   "status": "in-house",
+   "parent": "amzn",
+   "description": "Amazon's in-house foundation model group (Nova models).",
+   "source_url": "https://www.aboutamazon.com/news/aws/amazon-nova-artificial-intelligence-bedrock-aws"
+  }
+ ],
+ "public_companies": [
+  {
+   "id": "msft",
+   "name": "Microsoft",
+   "ticker": "MSFT",
+   "exchange": "Nasdaq",
+   "country": "US",
+   "cik": 789019
+  },
+  {
+   "id": "googl",
+   "name": "Alphabet",
+   "ticker": "GOOGL",
+   "exchange": "Nasdaq",
+   "country": "US",
+   "cik": 1652044
+  },
+  {
+   "id": "amzn",
+   "name": "Amazon",
+   "ticker": "AMZN",
+   "exchange": "Nasdaq",
+   "country": "US",
+   "cik": 1018724
+  },
+  {
+   "id": "nvda",
+   "name": "Nvidia",
+   "ticker": "NVDA",
+   "exchange": "Nasdaq",
+   "country": "US",
+   "cik": 1045810
+  },
+  {
+   "id": "meta",
+   "name": "Meta Platforms",
+   "ticker": "META",
+   "exchange": "Nasdaq",
+   "country": "US",
+   "cik": 1326801
+  },
+  {
+   "id": "aapl",
+   "name": "Apple",
+   "ticker": "AAPL",
+   "exchange": "Nasdaq",
+   "country": "US",
+   "cik": 320193
+  },
+  {
+   "id": "tsla",
+   "name": "Tesla",
+   "ticker": "TSLA",
+   "exchange": "Nasdaq",
+   "country": "US",
+   "cik": 1318605
+  },
+  {
+   "id": "spacex",
+   "name": "SpaceX (Space Exploration Technologies Corp.)",
+   "ticker": "SPCX",
+   "exchange": "Nasdaq",
+   "country": "US",
+   "cik": 1181412
+  },
+  {
+   "id": "orcl",
+   "name": "Oracle",
+   "ticker": "ORCL",
+   "exchange": "NYSE",
+   "country": "US",
+   "cik": 1341439
+  },
+  {
+   "id": "crwv",
+   "name": "CoreWeave",
+   "ticker": "CRWV",
+   "exchange": "Nasdaq",
+   "country": "US",
+   "cik": 1769628
+  },
+  {
+   "id": "softbank",
+   "name": "SoftBank Group",
+   "ticker": "9984",
+   "exchange": "Tokyo Stock Exchange",
+   "country": "Japan",
+   "cik": null
+  },
+  {
+   "id": "amd",
+   "name": "AMD",
+   "ticker": "AMD",
+   "exchange": "Nasdaq",
+   "country": "US",
+   "cik": 2488
+  },
+  {
+   "id": "avgo",
+   "name": "Broadcom",
+   "ticker": "AVGO",
+   "exchange": "Nasdaq",
+   "country": "US",
+   "cik": 1730168
+  },
+  {
+   "id": "crm",
+   "name": "Salesforce",
+   "ticker": "CRM",
+   "exchange": "NYSE",
+   "country": "US",
+   "cik": 1108524
+  },
+  {
+   "id": "csco",
+   "name": "Cisco",
+   "ticker": "CSCO",
+   "exchange": "Nasdaq",
+   "country": "US",
+   "cik": 858877
+  },
+  {
+   "id": "samsung",
+   "name": "Samsung Electronics",
+   "ticker": "005930",
+   "exchange": "Korea Exchange",
+   "country": "South Korea",
+   "cik": null
+  },
+  {
+   "id": "skhynix",
+   "name": "SK hynix",
+   "ticker": "000660",
+   "exchange": "Korea Exchange",
+   "country": "South Korea",
+   "cik": null
+  },
+  {
+   "id": "mu",
+   "name": "Micron Technology",
+   "ticker": "MU",
+   "exchange": "Nasdaq",
+   "country": "US",
+   "cik": 723125
+  },
+  {
+   "id": "nbis",
+   "name": "Nebius Group",
+   "ticker": "NBIS",
+   "exchange": "Nasdaq",
+   "country": "Netherlands",
+   "cik": 1513845
+  },
+  {
+   "id": "snow",
+   "name": "Snowflake",
+   "ticker": "SNOW",
+   "exchange": "NYSE",
+   "country": "US",
+   "cik": 1640147
+  },
+  {
+   "id": "asml",
+   "name": "ASML Holding",
+   "ticker": "ASML",
+   "exchange": "Euronext Amsterdam / Nasdaq",
+   "country": "Netherlands",
+   "cik": 937966
+  },
+  {
+   "id": "tsm",
+   "name": "TSMC",
+   "ticker": "2330 / TSM",
+   "exchange": "Taiwan Stock Exchange / NYSE (ADR)",
+   "country": "Taiwan",
+   "cik": 1046179
+  },
+  {
+   "id": "intc",
+   "name": "Intel",
+   "ticker": "INTC",
+   "exchange": "Nasdaq",
+   "country": "US",
+   "cik": 50863
+  },
+  {
+   "id": "dell",
+   "name": "Dell Technologies",
+   "ticker": "DELL",
+   "exchange": "NYSE",
+   "country": "US",
+   "cik": 1571996
+  }
+ ],
+ "ties": [
+  {
+   "from": "msft",
+   "to": "openai",
+   "type": "equity stake",
+   "description": "~27% diluted stake (~$135B) after Oct 2025 recapitalization; joined 2026 round; current % after dilution UNVERIFIED.",
+   "as_of": "2025-10",
+   "strength": 3,
+   "strength_reason": "Largest outside shareholder; listed by OpenAI as a top dependency risk.",
+   "source_url": "https://blogs.microsoft.com/blog/2025/10/28/the-next-chapter-of-the-microsoft-openai-partnership/"
+  },
+  {
+   "from": "msft",
+   "to": "openai",
+   "type": "cloud/compute provider",
+   "description": "Primary cloud partner; Azure-first launches, but exclusivity ended Apr 2026; OpenAI committed incremental $250B Azure (Oct 2025).",
+   "as_of": "2026-04",
+   "strength": 3,
+   "strength_reason": "Large share of OpenAI compute, though now non-exclusive.",
+   "source_url": "https://blogs.microsoft.com/blog/2026/04/27/the-next-phase-of-the-microsoft-openai-partnership/"
+  },
+  {
+   "from": "msft",
+   "to": "openai",
+   "type": "revenue share/commercial agreement",
+   "description": "Non-exclusive IP license to 2032; OpenAI pays Microsoft revenue share through 2030, now capped; Microsoft stopped paying share back.",
+   "as_of": "2026-04",
+   "strength": 3,
+   "strength_reason": "Contractual economics and IP rights tie Microsoft's results to OpenAI.",
+   "source_url": "https://openai.com/index/next-phase-of-microsoft-partnership"
+  },
+  {
+   "from": "msft",
+   "to": "anthropic",
+   "type": "equity stake",
+   "description": "Up to $5B investment announced Nov 2025; partly funded via Series G.",
+   "as_of": "2025-11",
+   "strength": 2,
+   "strength_reason": "Meaningful dollars but small share of a ~$1.5T company.",
+   "source_url": "https://blogs.microsoft.com/blog/2025/11/18/microsoft-nvidia-and-anthropic-announce-strategic-partnerships/"
+  },
+  {
+   "from": "msft",
+   "to": "anthropic",
+   "type": "cloud/compute provider",
+   "description": "Anthropic committed to buy $30B of Azure compute, option up to 1 GW.",
+   "as_of": "2025-11",
+   "strength": 2,
+   "strength_reason": "Large contract but AWS and Google remain bigger providers.",
+   "source_url": "https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships"
+  },
+  {
+   "from": "msft",
+   "to": "anthropic",
+   "type": "distribution partner",
+   "description": "Claude offered in Microsoft Foundry and used in Microsoft products.",
+   "as_of": "2025-11",
+   "strength": 1,
+   "strength_reason": "One of several distribution channels.",
+   "source_url": "https://blogs.microsoft.com/blog/2025/11/18/microsoft-nvidia-and-anthropic-announce-strategic-partnerships/"
+  },
+  {
+   "from": "msft",
+   "to": "mistral",
+   "type": "equity stake",
+   "description": "Small stake from 2024 investment; no new equity in 2026 deal (amount UNVERIFIED).",
+   "as_of": "2026-07",
+   "strength": 1,
+   "strength_reason": "Minor minority stake.",
+   "source_url": "https://dealroom.co/news/140157-microsoft-commits-multibillion-dollar-deal-to-fund-mistrals-european-ai/"
+  },
+  {
+   "from": "msft",
+   "to": "mistral",
+   "type": "revenue share/commercial agreement",
+   "description": "Multibillion-dollar commitment to use Mistral's European GPU capacity; Mistral models in Foundry/Copilot Studio; joint sales.",
+   "as_of": "2026-07",
+   "strength": 2,
+   "strength_reason": "Material revenue source for Mistral's compute buildout.",
+   "source_url": "https://news.microsoft.com/source/2026/07/21/microsoft-and-mistral-expand-strategic-partnership-to-give-enterprises-and-regulated-industries-frontier-ai-they-can-control/"
+  },
+  {
+   "from": "msft",
+   "to": "msai",
+   "type": "parent company",
+   "description": "Microsoft AI is a wholly owned division of Microsoft.",
+   "as_of": "2025-11",
+   "strength": 3,
+   "strength_reason": "Full ownership and control.",
+   "source_url": "https://microsoft.ai/news/towards-humanist-superintelligence/"
+  },
+  {
+   "from": "googl",
+   "to": "gdm",
+   "type": "parent company",
+   "description": "Google DeepMind is Alphabet's wholly owned AI lab.",
+   "as_of": "2026-11",
+   "strength": 3,
+   "strength_reason": "Full ownership and control.",
+   "source_url": "https://deepmind.google/about/"
+  },
+  {
+   "from": "googl",
+   "to": "anthropic",
+   "type": "equity stake",
+   "description": "~13.7% of all stock post-IPO (non-voting Class N), incl. ~$10B bought in IPO private placement.",
+   "as_of": "2026-11",
+   "strength": 3,
+   "strength_reason": "Second-largest economic holder, though shares carry no votes.",
+   "source_url": "https://techcrunch.com/2026/11/17/amazon-and-google-will-together-own-nearly-30-of-anthropic-after-its-ipo/"
+  },
+  {
+   "from": "googl",
+   "to": "anthropic",
+   "type": "cloud/compute provider",
+   "description": "Up to 1M TPUs (Oct 2025) plus multi-GW next-gen TPU deal with Broadcom from 2027.",
+   "as_of": "2026-04",
+   "strength": 3,
+   "strength_reason": "One of Anthropic's three core compute platforms.",
+   "source_url": "https://www.anthropic.com/news/google-broadcom-partnership-compute"
+  },
+  {
+   "from": "googl",
+   "to": "ssi",
+   "type": "equity stake",
+   "description": "Alphabet invested in SSI's Apr 2025 round; terms undisclosed.",
+   "as_of": "2025-04",
+   "strength": 1,
+   "strength_reason": "Undisclosed minority stake.",
+   "source_url": "https://www.computing.co.uk/news/2025/ai/alphabet-and-nvidia-back-sutskever-ssi"
+  },
+  {
+   "from": "googl",
+   "to": "ssi",
+   "type": "cloud/compute provider",
+   "description": "Google Cloud provides SSI access to TPUs.",
+   "as_of": "2025-04",
+   "strength": 2,
+   "strength_reason": "Key research compute source.",
+   "source_url": "https://www.computing.co.uk/news/2025/ai/alphabet-and-nvidia-back-sutskever-ssi"
+  },
+  {
+   "from": "googl",
+   "to": "thinking-machines",
+   "type": "cloud/compute provider",
+   "description": "First cloud deal, reportedly single-digit billions, non-exclusive.",
+   "as_of": "2026-04",
+   "strength": 2,
+   "strength_reason": "Major compute source for a young lab.",
+   "source_url": "https://techcrunch.com/2026/04/22/exclusive-google-deepens-thinking-machines-lab-ties-with-new-multi-billion-dollar-deal/"
+  },
+  {
+   "from": "googl",
+   "to": "openai",
+   "type": "cloud/compute provider",
+   "description": "Google Cloud added as an OpenAI compute supplier (reported June 2025).",
+   "as_of": "2025-06",
+   "strength": 1,
+   "strength_reason": "Supplementary capacity.",
+   "source_url": "https://www.reuters.com/business/retail-consumer/openai-taps-google-unprecedented-cloud-deal-despite-ai-rivalry-sources-say-2025-06-10/"
+  },
+  {
+   "from": "amzn",
+   "to": "anthropic",
+   "type": "equity stake",
+   "description": "~14.7% of all stock post-IPO (non-voting); $8B + $5B invested, up to $20B more on milestones.",
+   "as_of": "2026-11",
+   "strength": 3,
+   "strength_reason": "Largest outside economic holder.",
+   "source_url": "https://techcrunch.com/2026/11/17/amazon-and-google-will-together-own-nearly-30-of-anthropic-after-its-ipo/"
+  },
+  {
+   "from": "amzn",
+   "to": "anthropic",
+   "type": "cloud/compute provider",
+   "description": "AWS primary cloud/training partner; >$100B over 10 years for up to 5 GW Trainium capacity.",
+   "as_of": "2026-04",
+   "strength": 3,
+   "strength_reason": "Anthropic's primary training infrastructure.",
+   "source_url": "https://www.anthropic.com/news/anthropic-amazon-compute"
+  },
+  {
+   "from": "amzn",
+   "to": "openai",
+   "type": "equity stake",
+   "description": "$50B commitment in 2026 round: $15B upfront, $35B on preset conditions.",
+   "as_of": "2026-02",
+   "strength": 3,
+   "strength_reason": "One of the three largest checks in OpenAI's biggest round.",
+   "source_url": "https://openai.com/index/scaling-ai-for-everyone/"
+  },
+  {
+   "from": "amzn",
+   "to": "openai",
+   "type": "cloud/compute provider",
+   "description": "$38B AWS deal (Nov 2025); 2 GW of Trainium capacity added Feb 2026.",
+   "as_of": "2026-02",
+   "strength": 2,
+   "strength_reason": "Large but one of several OpenAI providers.",
+   "source_url": "https://siliconangle.com/2026/02/27/openai-raises-110b-730b-valuation-expands-aws-nvidia-partnerships/"
+  },
+  {
+   "from": "amzn",
+   "to": "amazon-agi",
+   "type": "parent company",
+   "description": "Amazon AGI / Nova is an in-house Amazon group.",
+   "as_of": "2024-12",
+   "strength": 3,
+   "strength_reason": "Full ownership and control.",
+   "source_url": "https://www.aboutamazon.com/news/aws/amazon-nova-artificial-intelligence-bedrock-aws"
+  },
+  {
+   "from": "nvda",
+   "to": "openai",
+   "type": "equity stake",
+   "description": "$30B in Feb 2026 round; earlier 'up to $100B' Sept 2025 LOI never made definitive.",
+   "as_of": "2026-02",
+   "strength": 3,
+   "strength_reason": "Major shareholder and key supplier.",
+   "source_url": "https://openai.com/index/scaling-ai-for-everyone/"
+  },
+  {
+   "from": "nvda",
+   "to": "openai",
+   "type": "chip supplier",
+   "description": "3 GW inference + 2 GW training on Vera Rubin (Feb 2026); runs across Microsoft, OCI, CoreWeave.",
+   "as_of": "2026-02",
+   "strength": 3,
+   "strength_reason": "Dominant GPU supplier for OpenAI.",
+   "source_url": "https://openai.com/index/scaling-ai-for-everyone/"
+  },
+  {
+   "from": "nvda",
+   "to": "anthropic",
+   "type": "equity stake",
+   "description": "Up to $10B investment announced Nov 2025.",
+   "as_of": "2025-11",
+   "strength": 2,
+   "strength_reason": "Sizable dollars, small percentage.",
+   "source_url": "https://blogs.nvidia.com/blog/microsoft-nvidia-anthropic-announce-partnership"
+  },
+  {
+   "from": "nvda",
+   "to": "anthropic",
+   "type": "chip supplier",
+   "description": "Initial 1 GW commitment on Grace Blackwell and Vera Rubin systems.",
+   "as_of": "2025-11",
+   "strength": 2,
+   "strength_reason": "One of three chip platforms Anthropic uses.",
+   "source_url": "https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships"
+  },
+  {
+   "from": "nvda",
+   "to": "xai",
+   "type": "equity stake",
+   "description": "Strategic investor in xAI's $20B Series E (Jan 2026), amount undisclosed; now converted into SpaceX shares.",
+   "as_of": "2026-01",
+   "strength": 1,
+   "strength_reason": "Undisclosed minority stake, now inside SpaceX.",
+   "source_url": "https://x.ai/news/series-e"
+  },
+  {
+   "from": "nvda",
+   "to": "xai",
+   "type": "chip supplier",
+   "description": "Colossus I/II built on Nvidia GPUs; >1M H100-equivalents end-2025.",
+   "as_of": "2026-01",
+   "strength": 3,
+   "strength_reason": "Essentially sole GPU supplier.",
+   "source_url": "https://x.ai/news/series-e"
+  },
+  {
+   "from": "nvda",
+   "to": "mistral",
+   "type": "equity stake",
+   "description": "Existing backer that invested again in €3B Series D.",
+   "as_of": "2026-09",
+   "strength": 1,
+   "strength_reason": "Minority stake.",
+   "source_url": "https://techcrunch.com/2026/09/08/mistral-raises-e3b-as-sovereign-ai-becomes-big-business/"
+  },
+  {
+   "from": "nvda",
+   "to": "mistral",
+   "type": "chip supplier",
+   "description": "Mistral adding thousands of Vera Rubin GPUs to French data centres.",
+   "as_of": "2026-07",
+   "strength": 2,
+   "strength_reason": "Main chip supplier for Mistral Compute.",
+   "source_url": "https://siliconangle.com/2026/07/21/mistral-ai-strikes-multibillion-deal-microsoft-build-azure-infrastructure-europe/"
+  },
+  {
+   "from": "nvda",
+   "to": "ssi",
+   "type": "equity stake",
+   "description": "Long-term partnership with undisclosed investment (reported ~$5B, UNVERIFIED); also in Apr 2025 round.",
+   "as_of": "2026-07",
+   "strength": 2,
+   "strength_reason": "Likely large stake plus compute dependence.",
+   "source_url": "https://techcrunch.com/2026/07/27/ilya-sutskevers-safe-superintelligence-partners-with-nvidia-to-scale-its-ai-research/"
+  },
+  {
+   "from": "nvda",
+   "to": "ssi",
+   "type": "chip supplier",
+   "description": "Vera Rubin access to raise SSI compute 'by an order of magnitude'.",
+   "as_of": "2026-07",
+   "strength": 2,
+   "strength_reason": "Becomes main compute source.",
+   "source_url": "https://techcrunch.com/2026/07/27/ilya-sutskevers-safe-superintelligence-partners-with-nvidia-to-scale-its-ai-research/"
+  },
+  {
+   "from": "nvda",
+   "to": "thinking-machines",
+   "type": "equity stake",
+   "description": "Seed investor (Jul 2025) plus separate investment with Mar 2026 deal (amount undisclosed).",
+   "as_of": "2026-03",
+   "strength": 2,
+   "strength_reason": "Repeat strategic investor.",
+   "source_url": "https://techcrunch.com/2026/03/10/thinking-machines-lab-inks-massive-compute-deal-with-nvidia"
+  },
+  {
+   "from": "nvda",
+   "to": "thinking-machines",
+   "type": "chip supplier",
+   "description": "Multi-year deal to deploy at least 1 GW of Vera Rubin systems.",
+   "as_of": "2026-03",
+   "strength": 3,
+   "strength_reason": "Core compute for the lab.",
+   "source_url": "https://techcrunch.com/2026/03/10/thinking-machines-lab-inks-massive-compute-deal-with-nvidia"
+  },
+  {
+   "from": "nvda",
+   "to": "reflection",
+   "type": "equity stake",
+   "description": "Led $2B Oct 2025 round, reportedly $800M.",
+   "as_of": "2025-10",
+   "strength": 3,
+   "strength_reason": "Lead and likely largest outside investor.",
+   "source_url": "https://techcrunch.com/2025/10/09/reflection-raises-2b-to-be-americas-open-frontier-ai-lab-challenging-deepseek"
+  },
+  {
+   "from": "nvda",
+   "to": "cohere",
+   "type": "equity stake",
+   "description": "Returning investor in Series E (Oct 2026) and 2025 rounds.",
+   "as_of": "2026-10",
+   "strength": 1,
+   "strength_reason": "Minority stake.",
+   "source_url": "https://lightreading.com/ai-machine-learning/cohere-wraps-initial-close-of-new-funding-round-to-fuel-sovereign-ai-efforts"
+  },
+  {
+   "from": "nvda",
+   "to": "perplexity",
+   "type": "equity stake",
+   "description": "Existing investor; reportedly considering more at ~$30B valuation.",
+   "as_of": "2026-08",
+   "strength": 1,
+   "strength_reason": "Minority stake.",
+   "source_url": "https://siliconangle.com/2026/08/24/nvidia-reportedly-eyes-another-investment-in-perplexity-ai-at-a-30b-valuation/"
+  },
+  {
+   "from": "meta",
+   "to": "msl",
+   "type": "parent company",
+   "description": "Meta Superintelligence Labs is a wholly owned Meta division.",
+   "as_of": "2025-06",
+   "strength": 3,
+   "strength_reason": "Full ownership and control.",
+   "source_url": "https://www.cnbc.com/2025/06/30/mark-zuckerberg-creating-meta-superintelligence-labs-read-the-memo.html"
+  },
+  {
+   "from": "aapl",
+   "to": "openai",
+   "type": "distribution partner",
+   "description": "ChatGPT integrated into Siri and Apple Intelligence; reportedly unchanged after Gemini deal.",
+   "as_of": "2024-06",
+   "strength": 2,
+   "strength_reason": "Reach across Apple's device base.",
+   "source_url": "https://openai.com/index/openai-and-apple-announce-partnership/"
+  },
+  {
+   "from": "aapl",
+   "to": "gdm",
+   "type": "revenue share/commercial agreement",
+   "description": "Multi-year deal: next Apple Foundation Models based on Gemini; terms undisclosed (~$1B/yr reported, UNVERIFIED).",
+   "as_of": "2026-01",
+   "strength": 2,
+   "strength_reason": "Large distribution win for Gemini.",
+   "source_url": "https://blog.google/company-news/inside-google/company-announcements/joint-statement-google-apple/"
+  },
+  {
+   "from": "tsla",
+   "to": "xai",
+   "type": "equity stake",
+   "description": "~$2B of xAI Series E preferred (Jan 2026), despite failed shareholder vote; now SpaceX stock.",
+   "as_of": "2026-01",
+   "strength": 2,
+   "strength_reason": "Shareholder-contested related-party stake.",
+   "source_url": "https://techcrunch.com/2026/01/28/tesla-invested-2b-in-elon-musks-xai"
+  },
+  {
+   "from": "spacex",
+   "to": "xai",
+   "type": "parent company",
+   "description": "SpaceX acquired xAI in all-stock deal (Feb 2026); SpaceX listed as SPCX June 2026.",
+   "as_of": "2026-06",
+   "strength": 3,
+   "strength_reason": "Full ownership.",
+   "source_url": "https://www.npr.org/2026/06/12/nx-s1-5855004/stock-ai-spacex-ipo-elon-musk"
+  },
+  {
+   "from": "spacex",
+   "to": "anthropic",
+   "type": "cloud/compute provider",
+   "description": "Anthropic gets GPU capacity in Colossus 1 and Colossus 2.",
+   "as_of": "2026-05",
+   "strength": 1,
+   "strength_reason": "Supplementary capacity versus AWS/Google.",
+   "source_url": "https://www.anthropic.com/news/series-h"
+  },
+  {
+   "from": "spacex",
+   "to": "reflection",
+   "type": "cloud/compute provider",
+   "description": "~$6.3B ($150M/month) for Nvidia GB300 capacity at Colossus 2, Jul 2026-2029.",
+   "as_of": "2026-06",
+   "strength": 3,
+   "strength_reason": "Reflection's largest compute contract.",
+   "source_url": "https://thenextweb.com/news/spacex-reflection-ai-6-3bn-compute-deal"
+  },
+  {
+   "from": "orcl",
+   "to": "openai",
+   "type": "cloud/compute provider",
+   "description": "Stargate partner: 4.5 GW of US capacity (Jul 2025); ~$300B five-year deal reported.",
+   "as_of": "2025-07",
+   "strength": 3,
+   "strength_reason": "Among OpenAI's largest compute commitments.",
+   "source_url": "https://openai.com/index/stargate-advances-with-partnership-with-oracle/"
+  },
+  {
+   "from": "crwv",
+   "to": "openai",
+   "type": "cloud/compute provider",
+   "description": "Contracts expanded by up to $6.5B, totaling ~$22.4B (Sept 2025).",
+   "as_of": "2025-09",
+   "strength": 2,
+   "strength_reason": "Large contract; OpenAI is a top CoreWeave customer.",
+   "source_url": "https://www.coreweave.com/news/coreweave-expands-agreement-with-openai-by-up-to-6-5b"
+  },
+  {
+   "from": "crwv",
+   "to": "msl",
+   "type": "cloud/compute provider",
+   "description": "Meta committed additional $21B (2027-2032) on top of $14.2B Sept 2025 deal.",
+   "as_of": "2026-04",
+   "strength": 2,
+   "strength_reason": "Major external compute source for Meta AI.",
+   "source_url": "https://www.ciodive.com/news/meta-coreweave-strike-deal-expansion-compute-capacity/817109/"
+  },
+  {
+   "from": "softbank",
+   "to": "openai",
+   "type": "equity stake",
+   "description": "~$64.6B cumulative invested, ~13% stake after $30B follow-on completed Oct 2026 (stake % press-reported).",
+   "as_of": "2026-10",
+   "strength": 3,
+   "strength_reason": "Second-largest outside shareholder; co-led 2026 round.",
+   "source_url": "https://group.softbank/en/news/press/20260227"
+  },
+  {
+   "from": "softbank",
+   "to": "perplexity",
+   "type": "equity stake",
+   "description": "Existing investor (via Vision Fund); amount undisclosed.",
+   "as_of": "2026-08",
+   "strength": 1,
+   "strength_reason": "Minority stake.",
+   "source_url": "https://siliconangle.com/2026/08/24/nvidia-reportedly-eyes-another-investment-in-perplexity-ai-at-a-30b-valuation/"
+  },
+  {
+   "from": "amd",
+   "to": "openai",
+   "type": "chip supplier",
+   "description": "6 GW of AMD Instinct GPUs; OpenAI got warrant for up to 160M AMD shares.",
+   "as_of": "2025-10",
+   "strength": 3,
+   "strength_reason": "Multi-generation supply deal plus cross-equity.",
+   "source_url": "https://openai.com/index/openai-amd-strategic-partnership/"
+  },
+  {
+   "from": "amd",
+   "to": "thinking-machines",
+   "type": "equity stake",
+   "description": "Participated in $2B seed (Jul 2025).",
+   "as_of": "2025-07",
+   "strength": 1,
+   "strength_reason": "Minority seed stake.",
+   "source_url": "https://techcrunch.com/2025/07/15/mira-muratis-thinking-machines-lab-is-worth-12b-in-seed-round/"
+  },
+  {
+   "from": "amd",
+   "to": "cohere",
+   "type": "equity stake",
+   "description": "AMD Ventures invested in 2025 round at $6.8B valuation.",
+   "as_of": "2025-08",
+   "strength": 1,
+   "strength_reason": "Minority stake.",
+   "source_url": "https://techcrunch.com/2025/08/14/cohere-hits-a-6-8b-valuation-as-investors-amd-nvidia-and-salesforce-double-down"
+  },
+  {
+   "from": "amd",
+   "to": "msl",
+   "type": "chip supplier",
+   "description": "Multiyear deal for up to 6 GW of AMD Instinct GPUs for Meta (reported).",
+   "as_of": "2026-03",
+   "strength": 2,
+   "strength_reason": "Large second-source accelerator supply.",
+   "source_url": "https://www.techrepublic.com/article/news-meta-27b-ai-infrastructure-deal-nebius/"
+  },
+  {
+   "from": "avgo",
+   "to": "openai",
+   "type": "chip supplier",
+   "description": "Co-developing 10 GW of OpenAI-designed custom accelerators, deploying 2026-2029.",
+   "as_of": "2025-10",
+   "strength": 3,
+   "strength_reason": "OpenAI's custom-silicon path.",
+   "source_url": "https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration/"
+  },
+  {
+   "from": "avgo",
+   "to": "anthropic",
+   "type": "chip supplier",
+   "description": "Part of multi-GW next-gen TPU agreement with Google, online from 2027.",
+   "as_of": "2026-04",
+   "strength": 2,
+   "strength_reason": "Builds Anthropic's TPU capacity.",
+   "source_url": "https://www.anthropic.com/news/google-broadcom-partnership-compute"
+  },
+  {
+   "from": "avgo",
+   "to": "gdm",
+   "type": "chip supplier",
+   "description": "Broadcom co-designs Google's TPUs used by Google DeepMind (per Anthropic TPU deal context).",
+   "as_of": "2026-04",
+   "strength": 2,
+   "strength_reason": "Key silicon partner for Alphabet.",
+   "source_url": "https://www.anthropic.com/news/google-broadcom-partnership-compute"
+  },
+  {
+   "from": "crm",
+   "to": "anthropic",
+   "type": "distribution partner",
+   "description": "Claude in Agentforce 360 for regulated industries; Claude-Slack integration.",
+   "as_of": "2025-10",
+   "strength": 1,
+   "strength_reason": "One enterprise channel among many.",
+   "source_url": "https://www.salesforce.com/news/press-releases/2025/10/14/anthropic-regulated-industries-partnership-expansion-announcement/"
+  },
+  {
+   "from": "crm",
+   "to": "mistral",
+   "type": "equity stake",
+   "description": "Salesforce Ventures invested again in €3B Series D.",
+   "as_of": "2026-09",
+   "strength": 1,
+   "strength_reason": "Minority stake.",
+   "source_url": "https://techcrunch.com/2026/09/08/mistral-raises-e3b-as-sovereign-ai-becomes-big-business/"
+  },
+  {
+   "from": "crm",
+   "to": "cohere",
+   "type": "equity stake",
+   "description": "Salesforce Ventures investor in 2025 round.",
+   "as_of": "2025-08",
+   "strength": 1,
+   "strength_reason": "Minority stake.",
+   "source_url": "https://techcrunch.com/2025/08/14/cohere-hits-a-6-8b-valuation-as-investors-amd-nvidia-and-salesforce-double-down"
+  },
+  {
+   "from": "csco",
+   "to": "xai",
+   "type": "equity stake",
+   "description": "Cisco Investments named strategic investor in $20B Series E.",
+   "as_of": "2026-01",
+   "strength": 1,
+   "strength_reason": "Undisclosed minority stake.",
+   "source_url": "https://x.ai/news/series-e"
+  },
+  {
+   "from": "csco",
+   "to": "thinking-machines",
+   "type": "equity stake",
+   "description": "Participated in $2B seed (Jul 2025).",
+   "as_of": "2025-07",
+   "strength": 1,
+   "strength_reason": "Minority seed stake.",
+   "source_url": "https://techcrunch.com/2025/07/15/mira-muratis-thinking-machines-lab-is-worth-12b-in-seed-round/"
+  },
+  {
+   "from": "samsung",
+   "to": "mistral",
+   "type": "equity stake",
+   "description": "Led Mistral's €3B Series D (~€21B valuation).",
+   "as_of": "2026-09",
+   "strength": 2,
+   "strength_reason": "Lead investor in largest European AI round.",
+   "source_url": "https://techcrunch.com/2026/09/08/mistral-raises-e3b-as-sovereign-ai-becomes-big-business/"
+  },
+  {
+   "from": "samsung",
+   "to": "openai",
+   "type": "chip supplier",
+   "description": "Stargate partner; LOI to supply memory (DRAM) for OpenAI data centers.",
+   "as_of": "2025-10",
+   "strength": 2,
+   "strength_reason": "HBM/DRAM supply is a bottleneck input.",
+   "source_url": "https://openai.com/index/samsung-and-sk-join-stargate/"
+  },
+  {
+   "from": "samsung",
+   "to": "anthropic",
+   "type": "chip supplier",
+   "description": "Named strategic infrastructure partner in Series H (terms undisclosed).",
+   "as_of": "2026-05",
+   "strength": 1,
+   "strength_reason": "Undisclosed terms.",
+   "source_url": "https://www.anthropic.com/news/series-h"
+  },
+  {
+   "from": "samsung",
+   "to": "perplexity",
+   "type": "distribution partner",
+   "description": "Perplexity integrated into Galaxy S26 AI features (reported).",
+   "as_of": "2026-02",
+   "strength": 1,
+   "strength_reason": "Device distribution; press-reported.",
+   "source_url": "https://www.outlookbusiness.com/deeptech/tech/samsung-partners-with-perplexity-to-boost-galaxy-s26-ai-capabilities"
+  },
+  {
+   "from": "skhynix",
+   "to": "openai",
+   "type": "chip supplier",
+   "description": "Stargate partner; LOI to supply HBM/DRAM.",
+   "as_of": "2025-10",
+   "strength": 2,
+   "strength_reason": "HBM is a bottleneck input.",
+   "source_url": "https://openai.com/index/samsung-and-sk-join-stargate/"
+  },
+  {
+   "from": "skhynix",
+   "to": "anthropic",
+   "type": "chip supplier",
+   "description": "Named strategic infrastructure partner in Series H (terms undisclosed).",
+   "as_of": "2026-05",
+   "strength": 1,
+   "strength_reason": "Undisclosed terms.",
+   "source_url": "https://www.anthropic.com/news/series-h"
+  },
+  {
+   "from": "mu",
+   "to": "anthropic",
+   "type": "chip supplier",
+   "description": "Named strategic infrastructure partner in Series H (terms undisclosed).",
+   "as_of": "2026-05",
+   "strength": 1,
+   "strength_reason": "Undisclosed terms.",
+   "source_url": "https://www.anthropic.com/news/series-h"
+  },
+  {
+   "from": "nbis",
+   "to": "msai",
+   "type": "cloud/compute provider",
+   "description": "$17.4B (up to $19.4B) dedicated GPU capacity for Microsoft through 2031; not lab-specific.",
+   "as_of": "2025-09",
+   "strength": 1,
+   "strength_reason": "Microsoft-wide capacity, link to MAI indirect.",
+   "source_url": "https://www.theregister.com/2025/09/09/microsoft_inks_near_20b_deal/"
+  },
+  {
+   "from": "nbis",
+   "to": "msl",
+   "type": "cloud/compute provider",
+   "description": "Five-year deal worth up to $27B for Meta, on top of $3B 2025 deal.",
+   "as_of": "2026-03",
+   "strength": 2,
+   "strength_reason": "Large external compute for Meta AI.",
+   "source_url": "https://www.techrepublic.com/article/news-meta-27b-ai-infrastructure-deal-nebius/"
+  },
+  {
+   "from": "nbis",
+   "to": "reflection",
+   "type": "cloud/compute provider",
+   "description": "Contract worth more than $1B through 2029.",
+   "as_of": "2026-07",
+   "strength": 2,
+   "strength_reason": "Second-largest Reflection compute deal.",
+   "source_url": "https://techcrunch.com/2026/07/14/reflection-inks-1b-compute-deal-with-nebius/"
+  },
+  {
+   "from": "googl",
+   "to": "msl",
+   "type": "cloud/compute provider",
+   "description": "Multi-year deal for Meta to rent Google TPUs (reported Feb 2026); $10B+ cloud deal Aug 2025.",
+   "as_of": "2026-02",
+   "strength": 2,
+   "strength_reason": "Rival supplies Meta training compute.",
+   "source_url": "https://siliconangle.com/2026/02/26/google-meta-reportedly-strike-new-multibillion-dollar-ai-chip-deal/"
+  },
+  {
+   "from": "snow",
+   "to": "anthropic",
+   "type": "revenue share/commercial agreement",
+   "description": "Multi-year $200M partnership; Claude powers Snowflake Intelligence.",
+   "as_of": "2025-12",
+   "strength": 1,
+   "strength_reason": "Small relative to Anthropic revenue.",
+   "source_url": "https://www.snowflake.com/en/news/press-releases/snowflake-and-anthropic-announce-200-million-partnership-to-bring-agentic-ai-to-global-enterprises/"
+  },
+  {
+   "from": "asml",
+   "to": "mistral",
+   "type": "equity stake",
+   "description": "Led Series C with €1.3B for ~11% fully diluted stake; became largest shareholder.",
+   "as_of": "2025-09",
+   "strength": 3,
+   "strength_reason": "Largest shareholder (as of 2025).",
+   "source_url": "https://www.asml.com/en/news/press-releases/2025/asml-mistral-ai-enter-strategic-partnership"
+  },
+  {
+   "from": "asml",
+   "to": "mistral",
+   "type": "board seat or observer",
+   "description": "ASML CFO Roger Dassen sits on Mistral's Strategic Committee (advisory).",
+   "as_of": "2025-09",
+   "strength": 2,
+   "strength_reason": "Formal governance/advisory role.",
+   "source_url": "https://www.asml.com/en/news/press-releases/2025/asml-mistral-ai-enter-strategic-partnership"
+  }
+ ],
+ "gaps": [
+  "No primary source found for Microsoft's exact OpenAI stake after the 2026 round dilution; OpenAI's public S-1 (if/when filed) would settle it.",
+  "No board seats or observers found for Microsoft, Amazon, Google or Nvidia at OpenAI or Anthropic (Microsoft gave up its OpenAI observer seat in July 2024, not re-sourced here). Only ASML-Mistral is a governance tie.",
+  "TSMC, Intel and Dell: no direct, well-sourced lab tie found. TSMC fabs Nvidia, AMD and Broadcom chips (indirect only). Dell server supply to xAI is reported only by secondary sources. Left out.",
+  "Oracle: the OpenAI tie uses the July 2025 Stargate release; the ~$300B figure is press-reported. Oracle-xAI and Oracle-Cohere were not sourced.",
+  "Microsoft-xAI (Grok on Azure) and Google Cloud-OpenAI ties are weakly sourced or minor; the second relies on a Reuters URL from memory and should be rechecked.",
+  "Perplexity-Samsung investment never confirmed; only device distribution is included.",
+  "Anthropic stake percentages come from TechCrunch's reading of S-1/A Amendment 3; the primary 424B4 is linked on the Anthropic lab node but its principal-stockholders table was not parsed directly.",
+  "Source URLs for msai, amazon-agi, msl lab nodes and the Apple-OpenAI 2024 tie were not re-fetched in this session."
+ ]
+}
