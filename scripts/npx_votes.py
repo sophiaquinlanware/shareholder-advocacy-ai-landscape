@@ -242,11 +242,10 @@ def main():
                 continue
             trusts_searched.setdefault(family, []).append({"trust": trust, "cik": ciks[0]})
             filings = npx_filings(ciks[0])
-            # An amendment (N-PX/A) restates a period; keep only the latest filing per period.
-            latest = {}
+            # A trust can file several N-PX reports for one period (e.g. a "fund notice report" for funds
+            # with no votes plus a voting report for the rest), and an N-PX/A can restate one. All are read;
+            # where the same fund appears in more than one, only its latest filing counts (see below).
             for f in sorted(filings, key=lambda f: f["filed"]):
-                latest[f["period"]] = f
-            for f in latest.values():
                 base = f"https://www.sec.gov/Archives/edgar/data/{ciks[0]}/{f['accession'].replace('-', '')}/"
                 try:
                     idx = json.loads(get(base + "index.json"))
@@ -255,6 +254,13 @@ def main():
                     continue
                 xmls = [i["name"] for i in idx["directory"]["item"] if i["name"].lower().endswith(".xml") and "primary_doc" not in i["name"].lower()]
                 if not xmls:
+                    try:
+                        cover = get(base + "primary_doc.xml").decode("utf-8", "replace")
+                    except Exception:
+                        cover = ""
+                    if "FUND NOTICE REPORT" in cover.upper():
+                        notes.append(f"{trust} {f['accession']}: fund notice report (no votes in this filing)")
+                        continue
                     notes.append(f"{trust} {f['accession']}: no structured vote table (older text format)")
                     unreadable.append({"family": family, "cik": ciks[0], "trust": f["trust"], "period": f["period"], "accession": f["accession"]})
                     continue
@@ -298,6 +304,16 @@ def main():
                         })
                 print(f"  {family} / {trust} {f['filed']}: done")
 
+    # Where one fund (series) at one meeting appears in more than one filing for a period (an amendment
+    # restating an earlier report), keep only the records from the latest filing. Records within one
+    # filing are all kept, so duplicate ballot items there are still caught downstream.
+    latest_for = {}
+    for r in results:
+        k = (r["family"], tuple(r["series"]), r["company"], r["meeting_date"])
+        if k not in latest_for or r["filed"] > latest_for[k][0]:
+            latest_for[k] = (r["filed"], r["source_url"])
+    results = [r for r in results if latest_for[(r["family"], tuple(r["series"]), r["company"], r["meeting_date"])][1] == r["source_url"]]
+
     # One row per fund family per proposal. A family files for many funds, so "split"
     # means its funds did not all vote the same way.
     summary = {}
@@ -321,7 +337,7 @@ def main():
     rows.sort(key=lambda r: (r["meeting_date"], r["proposal_id"], r["family"]))
     checked = sorted({p["id"] for p in proposals})
     out = {"generated": dt.date.today().isoformat(),
-           "method": ("SEC Form N-PX structured filings (latest filing per period). Only shareholder proposals. A vote matches a proposal "
+           "method": ("SEC Form N-PX structured filings (every filing for each period; where a fund appears in more than one, its latest). Only shareholder proposals. A vote matches a proposal "
                       "at the same company and meeting (or the same year when the meeting date is not on file) when at least 75% of the "
                       "title's key words appear in the filing's description, at least 50% the other way, and it beats the next-best "
                       "proposal at that meeting by 0.15. Anything close but not certain goes to the review list."),
