@@ -352,3 +352,8 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
 .vc-summary li { margin: 3px 0; }
 .vc-num.on-dark:focus-visible { outline-color: #ffffff; outline-offset: -3px; }
 .vc-heat .sticky-col { position: sticky; left: 0; background: var(--surface); z-index: 1; min-width: 120px; }
+
+/* Key: each type chip has an "only" button beside it; "Show all" restores every type. */
+.leg-item { display: inline-flex; align-items: center; gap: 2px; }
+.leg-only { font: 12px var(--sans); color: var(--accent); background: none; border: 0; padding: 2px 4px; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.leg-all { margin-right: 4px; }

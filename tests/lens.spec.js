@@ -113,3 +113,15 @@ test("graph labels never overlap, including after selecting a busy node", async 
     await expect.poll(overlaps, { message: `overlapping labels after selecting ${id}`, timeout: 6000 }).toBe(0);
   }
 });
+
+test("key: 'only' shows one type alone; 'Show all' brings every type back", async ({ page }) => {
+  await page.goto("/index.html?lens=impact#network");
+  await page.waitForLoadState("networkidle");
+  await page.waitForSelector("#net-legend .leg-only", { state: "attached" });
+  await page.click('#net-legend [data-only="proposal"]');
+  await expect(page.locator('#net-legend .leg[data-kind="proposal"]')).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator('#net-legend .leg[aria-pressed="true"]')).toHaveCount(1);
+  await expect(page.locator("#net-lens-status")).toContainText("Showing only Proposal.");
+  await page.click("#net-legend [data-all]");
+  await expect(page.locator('#net-legend .leg[aria-pressed="false"]')).toHaveCount(0);
+});

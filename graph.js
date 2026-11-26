@@ -540,14 +540,16 @@
     if (!el) return;
     const on = state.cfg.catColor && catList().length;
     el.hidden = !on;
-    el.innerHTML = on ? `<span class="status-note">Proposals by what they ask about:</span> ${catList().map((c) => `<span class="leg static"><span class="dot" style="background:${cssVar(`--gn-cat-${c.id}`)}"></span>${esc(c.label)}</span>`).join("")}` : "";
+    el.innerHTML = on ? `<span class="status-note">Proposals by what they ask about:</span> <button type="button" class="chip leg-all" data-cat-all="1">Show all</button>${catList().map((c) => `<span class="leg-item"><button type="button" class="leg" data-cat="${esc(c.id)}" aria-pressed="${!state.hiddenCats.has(c.id)}"><span class="dot" style="background:${cssVar(`--gn-cat-${c.id}`)}"></span><span class="leg-text">${esc(c.label)}</span></button><button type="button" class="leg-only" data-cat-only="${esc(c.id)}" aria-label="Show only ${esc(c.label)}">only</button></span>`).join("")}` : "";
   }
   function legend(data) {
     const kinds = [...new Set(data.nodes.map((n) => n.kind))];
     const order = Object.keys(TYPE_LABEL);
     kinds.sort((a, b) => order.indexOf(a) - order.indexOf(b));
-    document.getElementById("net-legend").innerHTML = kinds.map((k) =>
-      `<button type="button" class="leg" data-kind="${esc(k)}" aria-pressed="${!state.hiddenKinds.has(k)}"><span class="dot" style="background:${nodeColor(k)}"></span><span class="leg-text">${esc(kindLabel(k))}</span></button>`).join("");
+    // Each type: click the chip to show or hide it; "only" shows that type alone; "Show all" restores every type
+    // (owner, 2026-11-26: "an option to cross it off … or to only see nodes from that category").
+    document.getElementById("net-legend").innerHTML = `<button type="button" class="chip leg-all" data-all="1">Show all</button>` + kinds.map((k) =>
+      `<span class="leg-item"><button type="button" class="leg" data-kind="${esc(k)}" aria-pressed="${!state.hiddenKinds.has(k)}"><span class="dot" style="background:${nodeColor(k)}"></span><span class="leg-text">${esc(kindLabel(k))}</span></button><button type="button" class="leg-only" data-only="${esc(k)}" aria-label="Show only ${esc(kindLabel(k))}">only</button></span>`).join("");
   }
 
   // One plain line: how much is shown, and what node size means. Recomputed when layers change.
@@ -649,6 +651,7 @@
   const nodeYear = (n) => (n.kind === "proposal" ? Number(n.year) : String(n.id).startsWith("ev-") && n.date ? Number(String(n.date).slice(0, 4)) : null);
   function baseVisible(n) {
     if (n.kind === "gap") { const c = state.byId.get(n.gapFor); return !!c && baseVisible(c); }
+    if (n.kind === "proposal" && state.hiddenCats && state.cfg.catColor && n.category && state.hiddenCats.has(n.category)) return false;
     if (state.upto) {
       const y = nodeYear(n);
       if (y && y > state.upto) return false;
@@ -719,6 +722,7 @@
         return near ? (l.source.id === focusId || l.target.id === focusId ? 0.9 : 0.04) : q ? 0.08 : 0.45;
       })
       .attr("stroke-width", (l) => (P && P.links.has(l) ? 2.5 : (l.relation === "lead filer" ? 1.4 : 1)) * state.cfg.linkScale);
+    const fewShown = state.data.nodes.filter(visible).length <= 25;
     state.labels.attr("display", (d) => (visible(d) ? null : "none"))
       .attr("opacity", (d) => {
         if (P) return P.nodes.has(d.id) ? 1 : 0;
@@ -728,6 +732,8 @@
         // Labels are off by default; selecting a node (or hovering, or keyboard focus) names it and its connections.
         // Recurring asks (Policymaker lens) are always named: there are only a dozen and they are the point of the view.
         if (d.kind === "ask") return 1;
+        // A small view (25 nodes or fewer, e.g. after "only") has room to name every node.
+        if (fewShown) return 1;
         return state.cfg.labels && labelCandidate(d) && !state.hiddenLabels.has(d.id) ? 1 : 0;
       })
       // The clicked (or hovered, or keyboard-focused) node's own label stands out from its neighbours' labels
@@ -1405,13 +1411,42 @@
     document.getElementById("net-topic").addEventListener("change", (e) => { state.topic = e.target.value; refresh(); });
     document.getElementById("net-year").addEventListener("change", (e) => { state.year = e.target.value; stopPlay(); state.upto = null; state.ctx.upto = null; state.ctx.cache = {}; scrubSync(); refresh(); });
     document.getElementById("net-legend").addEventListener("click", (e) => {
+      const kinds = [...document.querySelectorAll("#net-legend .leg")].map((x) => x.dataset.kind);
+      const only = e.target.closest("[data-only]");
+      const all = e.target.closest("[data-all]");
       const b = e.target.closest(".leg");
-      if (!b) return;
-      const k = b.dataset.kind;
-      if (state.hiddenKinds.has(k)) state.hiddenKinds.delete(k); else state.hiddenKinds.add(k);
-      b.setAttribute("aria-pressed", String(!state.hiddenKinds.has(k)));
+      let msg = "";
+      if (only) {
+        state.hiddenKinds = new Set(kinds.filter((k) => k !== only.dataset.only));
+        msg = `Showing only ${kindLabel(only.dataset.only)}.`;
+      } else if (all) {
+        state.hiddenKinds = new Set();
+        msg = "Showing every type.";
+      } else if (b) {
+        const k = b.dataset.kind;
+        if (state.hiddenKinds.has(k)) state.hiddenKinds.delete(k); else state.hiddenKinds.add(k);
+        msg = `${kindLabel(k)} ${state.hiddenKinds.has(k) ? "hidden" : "shown"}.`;
+      } else return;
+      document.querySelectorAll("#net-legend .leg").forEach((x) => x.setAttribute("aria-pressed", String(!state.hiddenKinds.has(x.dataset.kind))));
       refresh();
       regroup();
+      refreshConnected();
+      document.getElementById("net-lens-status").textContent = `${msg} ${state.data.nodes.filter(visible).length} of ${state.data.nodes.length} nodes shown.`;
+    });
+    // Proposal categories (when colour by category is on): the same toggle, only and show-all controls.
+    document.getElementById("net-catkey").addEventListener("click", (e) => {
+      const ids = catList().map((c) => c.id);
+      const only = e.target.closest("[data-cat-only]");
+      const all = e.target.closest("[data-cat-all]");
+      const b = e.target.closest("[data-cat]");
+      if (only) state.hiddenCats = new Set(ids.filter((c) => c !== only.dataset.catOnly));
+      else if (all) state.hiddenCats = new Set();
+      else if (b) { const c = b.dataset.cat; if (state.hiddenCats.has(c)) state.hiddenCats.delete(c); else state.hiddenCats.add(c); }
+      else return;
+      catKey();
+      refresh();
+      refreshConnected();
+      document.getElementById("net-lens-status").textContent = `Proposals shown for: ${catList().filter((c) => !state.hiddenCats.has(c.id)).map((c) => c.label).join(", ") || "no category"}.`;
     });
     wireScrubber(refresh);
     document.querySelectorAll("#net-lens input").forEach((r) => r.addEventListener("change", () => { if (r.checked) setLens(r.value, true); }));
@@ -1445,7 +1480,7 @@
     // Default label threshold: the 12th-highest filer's connection count, so about a dozen filers are named.
     const twelfth = data.nodes.find((n) => n.id === [...topFilers].at(-1));
     const defaults = { ...DEFAULTS, labelMin: twelfth ? twelfth.degree || 0 : 0 };
-    state = { data, byId: new Map(data.nodes.map((n) => [n.id, n])), defaults, cfg: loadSettings(defaults), hiddenKinds: new Set(["person", "policy", "response", "public"]), hiddenLabels: new Set(), query: "", topic: "", year: "", view: "graph", selected: null, hover: null, kbId: null, path: null, gaps: false };
+    state = { data, byId: new Map(data.nodes.map((n) => [n.id, n])), defaults, cfg: loadSettings(defaults), hiddenKinds: new Set(["person", "policy", "response", "public"]), hiddenLabels: new Set(), query: "", topic: "", year: "", view: "graph", selected: null, hover: null, kbId: null, path: null, gaps: false, hiddenCats: new Set() };
     state.holdings = loadHoldings();
     state.lens = initialLens();
     state.hiddenKinds = new Set(lens().defaults.hiddenKinds || [...state.hiddenKinds]);
