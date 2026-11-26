@@ -128,7 +128,7 @@ def main():
                 "DEF 14A": "Proxy statement filed",
                 "DEFA14A": "Additional proxy material filed",
                 "PX14A6G": "Investor exempt solicitation filed",
-                "8-K": "Annual meeting vote results filed" if "5.07" in items else "Bylaw or charter change filed (check the rights map)",
+                "8-K": "Annual meeting vote results filed" if "5.07" in items else "Bylaw or charter change filed (check Companies › Compare proposal rights)",
             }[form]
             new_items.append({
                 "accession": acc,

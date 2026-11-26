@@ -73,7 +73,7 @@
     const svg = d3.select(box).append("svg").attr("viewBox", [0, 0, W, H]).attr("width", W).attr("height", H)
       .attr("role", "group").attr("aria-label", `Value chain: ${V.ties.length} sourced ties between companies, by tier. Each company is a button; the same ties are in the list view below.`);
     cols.forEach((c) => svg.append("text").attr("x", c.x).attr("y", 24).attr("text-anchor", "middle").attr("font-size", 12).attr("font-weight", 400).attr("fill", cssVar("--ink-soft"))
-      .text((narrow ? SHORT_TIER[c.tid] || tierLabel(c.tid) : tierLabel(c.tid)).toUpperCase()));
+      .text((narrow ? SHORT_TIER[c.tid] || tierLabel(c.tid) : c.tid === "business" ? "Business and government" : tierLabel(c.tid)).toUpperCase()));
     const ink = cssVar("--blue-2");
     svg.append("g").attr("fill", "none").selectAll("path").data(V.ties.filter((t) => pos.has(t.from) && pos.has(t.to))).join("path")
       .attr("d", (t) => {
@@ -96,7 +96,7 @@
     // Key: one dash pattern per tie type.
     document.getElementById("vc-key").innerHTML = [...new Set(V.ties.map((t) => t.type))].map((k) =>
       `<span class="leg static"><svg class="mark" viewBox="0 0 28 10" aria-hidden="true"><line x1="0" y1="5" x2="28" y2="5" stroke="${ink}" stroke-width="2"${DASH[k] ? ` stroke-dasharray="${DASH[k]}"` : ""}></line></svg>${esc(k)}</span>`).join("")
-      + `<span class="status-note">Each line is one sourced tie; open a company to read its ties in words. Circle size = number of sourced ties; companies with no sourced tie are counted in the tier details. Strategic investors sit under frontier labs; their equity stakes are in Routes to a lab.</span>`;
+      + `<span class="status-note">Each line is one sourced tie; open a company to read its ties in words. Circle size = number of sourced ties; companies with no sourced tie are counted in each tier's panel. Strategic investors sit under frontier labs; their equity stakes are in Routes to a lab.</span>`;
   }
 
   // Ties of the chosen tier or company stay strong; the rest fade, so crossing lines stay readable.
@@ -156,7 +156,7 @@
       <h4 id="vc-routes" tabindex="-1">Shareholder routes</h4>
       <p>${routesMix ? esc(routesMix) : "Not recorded"}.</p>
       <h4 id="vc-fund" tabindex="-1">Fund-family votes on file</h4>
-      <p>${p.fund_vote_rows ?? 0} votes, counted once per fund family per proposal, from Form N-PX filings on proposals at these companies. Most are matched automatically and not yet reviewed; see Fund votes for each one.</p>`;
+      <p>${p.fund_vote_rows ?? 0} votes, counted once per fund family per proposal, from Form N-PX filings on proposals at these companies. Most are matched automatically and not yet reviewed; see How funds voted for each one.</p>`;
     highlight((x) => (CO.get(x.from) || {}).tier === tid || (CO.get(x.to) || {}).tier === tid);
     announce(`${t.label}: details below the chart.`);
     document.querySelectorAll(".vc-tiers .chip").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.tier === tid)));
@@ -175,7 +175,7 @@
       <h3 id="vc-panel-h" tabindex="-1">${esc(c.name || id)}</h3>
       <h4>Ties from ${esc(c.name || id)}</h4>${tieList(outs)}
       <h4>Ties to ${esc(c.name || id)}</h4>${tieList(ins)}
-      ${c.ticker && window.LENS_CTX && window.LENS_CTX.hasCompany && window.LENS_CTX.hasCompany(c.ticker) ? `<button type="button" class="chip" id="vc-open-co">Open in Company lookup</button>` : ""}`;
+      ${c.ticker && window.LENS_CTX && window.LENS_CTX.hasCompany && window.LENS_CTX.hasCompany(c.ticker) ? `<button type="button" class="chip" id="vc-open-co">Open company profile</button>` : ""}`;
     const b = document.getElementById("vc-open-co");
     if (b) b.addEventListener("click", () => window.LENS_CTX.openCompany(c.ticker));
     highlight((x) => x.from === id || x.to === id);

@@ -1,6 +1,6 @@
 # Shareholder Advocacy AI Landscape — current state
 
-Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 (UI session: typeface, type style and one blue; before that the data session merged the census).
+Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 (data session: analyst restructure, 12 tabs into 6 sections, merged 2161c91).
 
 ## Sessions and branches (read this first)
 
@@ -9,14 +9,14 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 
 | Session | Owns | Branch | State |
 |---|---|---|---|
 | Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | none open | On `main` (7d8d694): 60 companies with tiers; rights maps for 29 US companies; value chain (44 ties); 76 AI proposals with `ask_id` and `category` (4 categories in asks.json); fund votes from every N-PX filing (414 rows, all 9 families full coverage, incl. Praxis and Domini); coverage.json (25 rows, `reviewed: false`); Ceres, VWFI, IIGCC; 285 organizations in network.json, 257 people, 202 `proposal_links`, 78 proposals (Salesforce 2026 added); Parnassus "engaged directly" edges to 6 companies. graph.json 778 nodes, about 735 KB. |
-| UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, `graph.js`, `lenses.js`, `rules.js`, `roles.js`, `pathways.js`, `valuechain.js`, other view JS, `DESIGN.md`, `tests/` | `design/type-and-blue` → `main` when its check and review pass | Live: lens Phases 1–4, Value chain tab, proposal categories, company roles site-wide, "AI advocacy network", Lab pathways as routes to a lab. This round: Schibsted Grotesk in regular weights, grey uppercase labels, one blue #1f4e98, hover underline on tabs, sticky page title. |
+| UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, `graph.js`, `lenses.js`, `rules.js`, `roles.js`, `pathways.js`, `valuechain.js`, other view JS, `DESIGN.md`, `tests/` | none known (page files handed back after the restructure) | Live: lens Phases 1–4, Value chain tab, proposal categories, company roles site-wide, "AI advocacy network", Lab pathways as routes to a lab. This round: Schibsted Grotesk in regular weights, grey uppercase labels, one blue #1f4e98, hover underline on tabs, sticky page title. |
 | Protocol setup | `AGENTS.md`, `CLAUDE.md`, checks, `docs/` structure | `docs-session-onboarding` (local) | Idle. |
 
 **Owner's standing instruction (2026-11-25):** "Don't ask me any questions about publishing or next steps. Just continue until you complete the project." Merge to `main` once the check and reviews pass.
 
-## Tabs (12)
+## Sections and views (6 sections, engagement order; merged 2161c91)
 
-Upcoming votes · Company lookup · Proposals · Fund votes · Rights map · AI advocacy network (`#network`, formerly Co-filer network) · Contacts · Lab pathways · Value chain · Policy and causality · Disclosure scorecard · New filings.
+Start here (Overview · Upcoming votes · New SEC filings) · Value chain (The chain · Routes to a lab) · Companies (Company profile · Compare disclosure · Compare proposal rights) · Proposals and votes (All proposals · How funds voted) · Who's engaging (Network · Contacts · Engagement outcomes) · Policy (Policy map). Every view keeps its old address. Site name "Shareholder advocacy on AI" (owner, 2026-11-26). Plan docs/plans/2026-11-26-analyst-restructure.md; reviews UX/a11y R1 70, R2 83 PASS. Proposal "topic" now carries the four categories (old value in topic_original). Not built from the plan: fund votes expanding inside All proposals (R6); Contacts listing organizations and coalitions too.
 
 ## Site-wide decisions in force
 
@@ -40,6 +40,15 @@ Upcoming votes · Company lookup · Proposals · Fund votes · Rights map · AI 
   - The motion libraries now load last.
   - Layout shift: 0.20 → 0.03. Lighthouse: phone 100, desktop 97.
 - **Stages 3–10** follow one at a time, each shown to the owner: count-ups, charts drawing in, row stagger, timelines, view transitions and skeletons, micro-interactions, Cmd+K, and mobile cards.
+
+## Title, graph space, two graphs' jobs (owner, 2026-11-26)
+
+- **Site title:** "Shareholder advocacy on AI" (34px; the eyebrow label is gone).
+- **Network box:** grows with its visible nodes (600–1,600px; 460–1,000px on phones). It uses a soft oval boundary instead of pinning nodes to the edges.
+- **Lab pathways map:** value-chain ties only (companies → labs). The network is labelled "Proposal flow".
+- **First tabs load faster:** five small data files are preloaded, and the large ones start after.
+- **Check:** 160 passed; Lighthouse phone 100, desktop 91.
+- **Owner idea, next, after the data session's restructure merges:** two views on the network graph, (1) how everything is connected and (2) active and past proposals.
 
 ## Network key (owner, 2026-11-26)
 

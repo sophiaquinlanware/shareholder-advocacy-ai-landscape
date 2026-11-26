@@ -106,7 +106,7 @@
     const el = document.getElementById("tab-votes");
     if (!el) return;
     if (!data || !data.summary || !data.summary.length) {
-      el.innerHTML = `<div class="coming"><h2>Fund votes</h2><p>Being checked now.</p></div>`;
+      el.innerHTML = `<div class="coming"><h2>How funds voted</h2><p>Being checked now.</p></div>`;
       return;
     }
     const checked = new Set(data.proposals_checked || []);
@@ -147,7 +147,7 @@
         <label class="sr-label">What it asks about <select id="fv-topic">${opt("", "Everything it asks about")}${topics.map((t) => opt(t, t)).join("")}</select></label>
         <label class="sr-label">Fund family <select id="fv-family">${opt("", "All fund families")}${families.map((f) => opt(f, f)).join("")}</select></label>
       </div>
-      <div id="fv-table" class="table-wrap" role="region" aria-label="Fund votes table" tabindex="0"></div>
+      <div id="fv-table" class="table-wrap" role="region" aria-label="How funds voted, table" tabindex="0"></div>
       <p class="note">Matching: same company and meeting, with the filing's wording and the proposal title agreeing closely; close calls are left out. Floor proposals are not reported on N-PX.</p>`;
     el.querySelector("#fv-company").addEventListener("change", (e) => { V.company = e.target.value; draw(); });
     el.querySelector("#fv-topic").addEventListener("change", (e) => { V.topic = e.target.value; draw(); });

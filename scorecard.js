@@ -53,7 +53,7 @@
   window.renderScorecard = function (data) {
     const el = document.getElementById("tab-parnassus");
     if (!data || !data.companies || !data.companies.length) {
-      el.innerHTML = `<div class="coming"><h2>Disclosure scorecard</h2><p>Being scored now.</p></div>`;
+      el.innerHTML = `<div class="coming"><h2>Compare disclosure</h2><p>Being scored now.</p></div>`;
       return;
     }
     S = { criteria: data.criteria, companies: data.companies, pillar: "", sort: "score", sel: null };
