@@ -208,15 +208,16 @@
   const axisFollow = () => {
     if (!state.axis || !state.size) return;
     const t = state.zt || d3.zoomIdentity;
-    // Each heading sits over the middle of its column's visible nodes (owner, 2026-11-27: "evenly distributed along
-    // the top", not off at the edge), falling back to the column's target position.
-    // Headings sit at the columns' evenly spaced positions, where the layout holds each cluster.
+    // Each heading sits over the middle of its column's visible nodes, falling back to the column's target position.
     const mid = (c) => {
       const xs = state.data.nodes.filter((n) => c.kinds.includes(n.kind) && Number.isFinite(n.x) && visible(n)).map((n) => n.x);
       const target = c.x * state.size.width;
       if (!xs.length) return target;
-      const m = xs.reduce((a, b) => a + b, 0) / xs.length;
-      return (target + m) / 2;
+      // Centre of the cluster's main body (10th to 90th percentile), so a stray node doesn't pull the heading
+      // away (owner, 2026-11-26: centre the headings over the diagram).
+      xs.sort((a, b) => a - b);
+      const q = (p) => xs[Math.min(xs.length - 1, Math.max(0, Math.round(p * (xs.length - 1))))];
+      return (q(0.1) + q(0.9)) / 2;
     };
     state.axis.selectAll("text.col").attr("x", (c) => t.applyX(mid(c)));
   };
