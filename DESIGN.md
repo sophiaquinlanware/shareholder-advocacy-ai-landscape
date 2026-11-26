@@ -36,6 +36,7 @@ The open status is teal-green and the accent is blue, so an "open" pill isn't mi
 - **Advocacy network node types** `--n-*`: company (= `--ink`), proposal, manager, nonprofit, faith, pension, labor, foundation, coalition, other, person.
 - **Influence pathway tie types** `--t-*`: equity, compute, chips, dist(ribution), board, commercial, parent (= `--ink-soft`), lab.
 - **Disclosure scorecard** `--sc-*`: met (solid), partial (hatched), silent (outlined with `--sc-silent-edge`). The fill pattern carries the state as well as the hue (WCAG 1.4.1).
+- **Fund votes** use no palette on purpose: every vote is the neutral `.pill.pending` label, so no vote reads as right or wrong (PRODUCT.md "Never claim" 1).
 
 Every graph colour reaches 3:1 against `--surface` in both themes. Neighbouring categories that share a hue family also differ in lightness: proposal and other at 2.3:1, person and foundation at 1.7–2.0:1. The site uses one green: asset managers (`--n-manager`) and equity ties (`--t-equity`) use the same teal-green as `--open` and `--sc-met`. Values are in `styles.css` and not repeated here, so there's one source. The network legend has 15 entries sharing 11 colours. Frontier lab reuses labor fund's pink (`--t-lab` = `--n-labor`), and policy, response and public reuse the pension, foundation and nonprofit colours (graph.js:37-45). Those pairs are told apart only by their legend labels. That's past what colour alone can separate, and the round 2 chart audit revisits it.
 
@@ -77,6 +78,9 @@ Lines show relations, so they follow one style: thin and curved, with width stil
 - **Callout** (accent left border), **timeline**, **levers** tiles, **steps** list.
 - **Graph controls:** search input and select (`.net-controls`), segmented toggle (`.seg`), legend chips (`.leg`, `.chip`), side detail panel (`.net-panel`).
 - **Source link** (`.src`) after each fact; **"source pending"** (`.unverified`) when the source is missing.
+- **Sticky first column** (`.sticky-col`): the row header of a wide table stays in view while the table scrolls sideways inside its box (fund votes tab). In the body it reads as normal 14px text, not the uppercase table-header style. Its table box gets `scroll-padding-left` at least as wide as the column (330px), so a keyboard-focused cell never hides under it. The table caption is left-aligned (`.fv-caption`) so it is not cut off on phones.
+- **Focus outline on scroll boxes** (`.table-wrap:focus-visible`): 2px `--accent` outline, so keyboard users can see and scroll a wide table.
+- **Labelled filter** (`.sr-label`): a visible text label wrapping a select in `.net-controls`, 13px `--ink-soft`.
 - **Coming soon** placeholder (`.coming`) for tabs not built yet.
 - **Footer:** the informs-not-coordinates statement, PRI link, credit and "open an issue" link.
 

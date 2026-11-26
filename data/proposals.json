@@ -969,8 +969,9 @@
    "support_note": null,
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
-   "results_url": "Not yet filed (meeting 2026-12-08)",
-   "notes": null
+   "results_url": null,
+   "notes": null,
+   "results_note": "Not yet filed (meeting 2026-12-08)"
   },
   {
    "id": "msft-2026-5",
@@ -987,8 +988,9 @@
    "support_note": null,
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
-   "results_url": "Not yet filed (meeting 2026-12-08)",
-   "notes": null
+   "results_url": null,
+   "notes": null,
+   "results_note": "Not yet filed (meeting 2026-12-08)"
   },
   {
    "id": "msft-2026-6",
@@ -1005,8 +1007,9 @@
    "support_note": null,
    "water": false,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
-   "results_url": "Not yet filed (meeting 2026-12-08)",
-   "notes": null
+   "results_url": null,
+   "notes": null,
+   "results_note": "Not yet filed (meeting 2026-12-08)"
   },
   {
    "id": "googl-2023-audit-committee-review",
@@ -1030,7 +1033,9 @@
    "status": "voted",
    "support_pct": 14.24,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf",
-   "source": "filer network research"
+   "source": "filer network research",
+   "meeting_date": "2024-06-07",
+   "meeting_date_source": "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/"
   },
   {
    "id": "meta-2023-community-standards",
@@ -1054,7 +1059,9 @@
    "status": "voted",
    "support_pct": 13.43,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
-   "source": "filer network research"
+   "source": "filer network research",
+   "meeting_date": "2025-05-28",
+   "meeting_date_source": "https://www.sec.gov/Archives/edgar/data/1524513/000143893425002314/"
   },
   {
    "id": "meta-2026-child-safety-pay",
@@ -1066,7 +1073,9 @@
    "status": "voted",
    "support_pct": 3.42,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
-   "source": "filer network research"
+   "source": "filer network research",
+   "meeting_date": "2026-05-27",
+   "meeting_date_source": "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/"
   },
   {
    "id": "amzn-2026-responsible-ai-sales",
@@ -1114,7 +1123,9 @@
    "status": "voted",
    "support_pct": 1.2,
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
-   "source": "filer network research"
+   "source": "filer network research",
+   "meeting_date": "2026-05-20",
+   "meeting_date_source": "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/"
   }
  ],
  "exempt_solicitations": [
