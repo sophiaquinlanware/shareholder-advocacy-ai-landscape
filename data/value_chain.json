@@ -764,6 +764,16 @@
      "members_active_here": 11
     },
     {
+     "id": "ceres-investor-network",
+     "name": "Ceres Investor Network",
+     "members_active_here": 10
+    },
+    {
+     "id": "vwfi",
+     "name": "Valuing Water Finance Initiative",
+     "members_active_here": 9
+    },
+    {
      "id": "wba-cic-ethical-ai",
      "name": "WBA Collective Impact Coalition for Ethical AI",
      "members_active_here": 5
@@ -1248,6 +1258,16 @@
      "members_active_here": 8
     },
     {
+     "id": "ceres-investor-network",
+     "name": "Ceres Investor Network",
+     "members_active_here": 7
+    },
+    {
+     "id": "vwfi",
+     "name": "Valuing Water Finance Initiative",
+     "members_active_here": 6
+    },
+    {
      "id": "iahr",
      "name": "Investor Alliance for Human Rights",
      "members_active_here": 3
@@ -1596,6 +1616,16 @@
      "id": "iahr",
      "name": "Investor Alliance for Human Rights",
      "members_active_here": 11
+    },
+    {
+     "id": "ceres-investor-network",
+     "name": "Ceres Investor Network",
+     "members_active_here": 9
+    },
+    {
+     "id": "vwfi",
+     "name": "Valuing Water Finance Initiative",
+     "members_active_here": 9
     },
     {
      "id": "wba-cic-ethical-ai",
@@ -2092,8 +2122,18 @@
    ],
    "coalitions": [
     {
+     "id": "ceres-investor-network",
+     "name": "Ceres Investor Network",
+     "members_active_here": 11
+    },
+    {
      "id": "iccr",
      "name": "Interfaith Center on Corporate Responsibility (ICCR)",
+     "members_active_here": 11
+    },
+    {
+     "id": "vwfi",
+     "name": "Valuing Water Finance Initiative",
      "members_active_here": 11
     },
     {
@@ -2570,6 +2610,16 @@
      "id": "iahr",
      "name": "Investor Alliance for Human Rights",
      "members_active_here": 11
+    },
+    {
+     "id": "ceres-investor-network",
+     "name": "Ceres Investor Network",
+     "members_active_here": 10
+    },
+    {
+     "id": "vwfi",
+     "name": "Valuing Water Finance Initiative",
+     "members_active_here": 9
     },
     {
      "id": "wba-cic-ethical-ai",
@@ -3071,8 +3121,18 @@
      "members_active_here": 15
     },
     {
+     "id": "ceres-investor-network",
+     "name": "Ceres Investor Network",
+     "members_active_here": 12
+    },
+    {
      "id": "iahr",
      "name": "Investor Alliance for Human Rights",
+     "members_active_here": 11
+    },
+    {
+     "id": "vwfi",
+     "name": "Valuing Water Finance Initiative",
      "members_active_here": 11
     },
     {

@@ -503,6 +503,190 @@
    "website": "https://www.northstarasset.com",
    "description": "Socially responsible manager; signed IASJ Amazon responsible-AI solicitation.",
    "source_url": "https://www.northstarasset.com"
+  },
+  {
+   "id": "ceres",
+   "name": "Ceres",
+   "type": "coalition",
+   "website": "https://www.ceres.org/about",
+   "description": "Nonprofit advocacy organization, founded in 1989, that works with investors and companies on climate change, water scarcity and pollution, and nature loss. It runs investor, company and policy networks and launched and runs the Valuing Water Finance Initiative.",
+   "source_url": "https://www.ceres.org/about"
+  },
+  {
+   "id": "ceres-investor-network",
+   "name": "Ceres Investor Network",
+   "type": "coalition",
+   "website": "https://www.ceres.org/networks/investor",
+   "description": "Ceres' voluntary membership network of institutional investors (asset owners and managers). Ceres' April 2024 network page said it had more than 220 investors managing more than $46 trillion; the current page gives no count. Members can join initiatives including Climate Action 100+, Nature Action 100 and the Valuing Water Finance Initiative.",
+   "source_url": "https://www.ceres.org/networks/investor"
+  },
+  {
+   "id": "vwfi",
+   "name": "Valuing Water Finance Initiative",
+   "type": "coalition",
+   "website": "https://www.ceres.org/water/valuing-water-finance-initiative",
+   "description": "Investor-led initiative, launched by Ceres on August 16, 2022 with 64 signatories ($9.8 trillion), that engages companies with large water footprints in four industries (food, beverage, apparel, high-tech) to meet six Corporate Expectations for Valuing Water by 2030: water quantity, water quality, ecosystem protection, access to water and sanitation, board oversight, and public policy engagement. Ceres' page now shows 110 investors, about $18 trillion, and 71 focus companies. Ceres benchmarks the focus companies every two years (2023, 2025).",
+   "source_url": "https://www.ceres.org/water/valuing-water-finance-initiative"
+  },
+  {
+   "id": "iigcc",
+   "name": "IIGCC (Institutional Investors Group on Climate Change)",
+   "type": "coalition",
+   "website": "https://www.iigcc.org/insights/ai-data-centres-climate-and-nature-risks-for-investors",
+   "description": "European investor membership body on climate change. In February 2026 it published research on climate and nature risks of AI data centres, including water use, and said it plans data centre guidance, insights and engagement tools; in October 2026 it published bondholder stewardship research on hyperscaler and data centre debt.",
+   "source_url": "https://www.iigcc.org/insights/ai-data-centres-climate-and-nature-risks-for-investors"
+  },
+  {
+   "id": "calpers",
+   "name": "CalPERS",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
+  },
+  {
+   "id": "calstrs",
+   "name": "CalSTRS",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
+  },
+  {
+   "id": "dws",
+   "name": "DWS",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
+  },
+  {
+   "id": "impax",
+   "name": "Impax Asset Management",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
+  },
+  {
+   "id": "nyc-comptrollers-office",
+   "name": "NYC Comptroller's Office (Bureau of Asset Management)",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
+  },
+  {
+   "id": "australiansuper",
+   "name": "AustralianSuper",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
+  },
+  {
+   "id": "aberdeen-investments-formerly-abrdn",
+   "name": "Aberdeen Investments (formerly abrdn)",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
+  },
+  {
+   "id": "federated-hermes-eos",
+   "name": "Federated Hermes EOS",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
+  },
+  {
+   "id": "calvert-research-and-management",
+   "name": "Calvert Research and Management",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
+  },
+  {
+   "id": "friends-fiduciary",
+   "name": "Friends Fiduciary",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
+  },
+  {
+   "id": "nuveen-tiaa",
+   "name": "Nuveen (TIAA)",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
+  },
+  {
+   "id": "blackrock",
+   "name": "BlackRock",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
+  },
+  {
+   "id": "state-street",
+   "name": "State Street Investment Management",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
+  },
+  {
+   "id": "praxis-mutual-funds-everence-financial",
+   "name": "Praxis Mutual Funds / Everence Financial",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
+  },
+  {
+   "id": "miller-howard-investments",
+   "name": "Miller/Howard Investments",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
+  },
+  {
+   "id": "church-of-england-pensions-board-national-investing-bodies",
+   "name": "Church of England Pensions Board (National Investing Bodies)",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
+  },
+  {
+   "id": "ifm-investors",
+   "name": "IFM Investors",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
+  },
+  {
+   "id": "bnp-paribas-asset-management-incl-axa-im",
+   "name": "BNP Paribas Asset Management (incl. AXA IM)",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
+  },
+  {
+   "id": "new-york-state-common-retirement-fund",
+   "name": "New York State Common Retirement Fund",
+   "type": "investor",
+   "website": null,
+   "description": null,
+   "source_url": null
   }
  ],
  "proposals": [
@@ -2441,6 +2625,433 @@
    "relation": "member of",
    "source_url": "https://investorsforhumanrights.org/sites/default/files/attachments/2023-02/List%20of%20signatories%20-%20AI%20Act%20Investor%20Statement%2002152023.pdf",
    "note": "signatory of IAHR EU AI Act investor statement 2023, not confirmed member"
+  },
+  {
+   "from": "adrian-dominican",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "as-you-sow",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "aviva",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "boston-common",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "calpers",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "calstrs",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "commonspirit",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "dana",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "dws",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "fidelity-intl",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "impax",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "jlens",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "mercy",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "nei",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "nyc-comptrollers-office",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "trillium",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "vancity",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "amundi",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "australiansuper",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "from": "aberdeen-investments-formerly-abrdn",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05",
+   "note": "Listed as Aberdeen Standard Investments"
+  },
+  {
+   "from": "federated-hermes-eos",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05",
+   "note": "Listed as Federated Hermes / Federated Hermes Limited"
+  },
+  {
+   "from": "calstrs",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://www.ceres.org/water/valuing-water-finance-initiative",
+   "as_of": "2026-11"
+  },
+  {
+   "from": "australiansuper",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://www.ceres.org/water/valuing-water-finance-initiative",
+   "as_of": "2026-11"
+  },
+  {
+   "from": "arjuna",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "trillium",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "boston-common",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "green-century",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "parnassus",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "mercy",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "calvert-research-and-management",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "impax",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "domini",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "nyc-comptrollers-office",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "calstrs",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "calpers",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "zevin",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "friends-fiduciary",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "nuveen-tiaa",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "blackrock",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "state-street",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "praxis-mutual-funds-everence-financial",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "pcusa",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "portico",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "miller-howard-investments",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "dana",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "as-you-sow",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "federated-hermes-eos",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04",
+   "note": "Listed as Federated Hermes / Federated Hermes Limited"
+  },
+  {
+   "from": "dws",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "nei",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "vancity",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "church-of-england-pensions-board-national-investing-bodies",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "ifm-investors",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "bnp-paribas-asset-management-incl-axa-im",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04",
+   "note": "Listed as BNP Paribas Asset Management (April 2024, before the AXA IM acquisition)"
+  },
+  {
+   "from": "afl-cio",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "from": "new-york-state-common-retirement-fund",
+   "to": "ceres-investor-network",
+   "relation": "member of",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04",
+   "note": "Listed as New York State Comptroller"
+  },
+  {
+   "from": "vwfi",
+   "to": "ceres",
+   "relation": "member of",
+   "source_url": "https://www.ceres.org/water/valuing-water-finance-initiative",
+   "note": "VWFI is an initiative of Ceres"
+  }
+ ],
+ "engagements": [
+  {
+   "coalition": "vwfi",
+   "company": "GOOGL",
+   "what": "On the VWFI focus list (high-tech); assessed in the 2023 and 2025 benchmarks. 2025 benchmark notes Google's target to replenish 120% of freshwater it consumes across offices and data centers by 2030 and its watershed risk framework for siting and cooling choices at data centers.",
+   "source_url": "https://assets.ceres.org/files/vwfi-benchmark-tech-2025-(1).pdf",
+   "as_of": "2025-10"
+  },
+  {
+   "coalition": "vwfi",
+   "company": "AMZN",
+   "what": "On the VWFI focus list (high-tech); assessed in the 2023 and 2025 benchmarks. 2025 benchmark says Amazon again had the lowest relative overall score of the five tech companies, and describes its outside-air cooling and on-site water recycling at data centers.",
+   "source_url": "https://assets.ceres.org/files/vwfi-benchmark-tech-2025-(1).pdf",
+   "as_of": "2025-10"
+  },
+  {
+   "coalition": "vwfi",
+   "company": "AAPL",
+   "what": "On the VWFI focus list (high-tech); assessed in the 2023 and 2025 benchmarks. 2025 benchmark says Apple is the only tech company with a supplier water target (50% average supplier water reuse by 2030) and aims to certify its own data centers to the Alliance for Water Stewardship Standard.",
+   "source_url": "https://assets.ceres.org/files/vwfi-benchmark-tech-2025-(1).pdf",
+   "as_of": "2025-10"
+  },
+  {
+   "coalition": "vwfi",
+   "company": "MSFT",
+   "what": "On the VWFI focus list (high-tech); assessed in the 2023 and 2025 benchmarks. 2025 benchmark says Microsoft had the highest individual score among the five tech companies and cites its water-positive-by-2030 goal, 40% data center water use efficiency target and move to chip-level cooling so AI operations use zero water for cooling.",
+   "source_url": "https://assets.ceres.org/files/vwfi-benchmark-tech-2025-(1).pdf",
+   "as_of": "2025-10"
   }
  ]
 }
