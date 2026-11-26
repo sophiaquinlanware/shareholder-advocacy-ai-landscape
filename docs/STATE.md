@@ -1,6 +1,6 @@
 # Shareholder Advocacy AI Landscape — current state
 
-Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 (UI session: Your portfolio, planner drafts and escalation, network fixes, 4cf28b3 and 31cb168; data session building the section reorder and simulator).
+Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 (data session: Plan and test, engagement simulator, section order, causal map, one date style; c992866).
 
 ## Sessions and branches (read this first)
 
@@ -16,9 +16,13 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 
 
 **Coordination:** both sessions append their own block at the end of `styles.css`; on a merge conflict keep both. Message the other session before editing `index.html` or `app.js` beyond your own view.
 
-## Sections and views (7 sections, engagement order)
+## Sections and views (7 sections: context first, planning last; owner, 2026-11-26)
 
-Deadlines and votes · Plan an engagement (`#planner`, data session) · AI value chain (Chips to AI products · Ties to each frontier lab) · Company profiles · Proposals and results (All AI proposals · How fund families voted · Results of private engagement) · Network and contacts (Network of investors, proposals and companies · Heads of stewardship and engagement) · Laws and rules. Every view keeps its old address. Views are folder tabs on a full-width line.
+Deadlines and votes · Company profiles · AI value chain · Proposals and results · Network and contacts · Laws and rules (now "Causal map of AI policy and governance": lane names outside the scrolling chart, Earlier / Later, dates in view, an overview strip of the years) · **Plan and test** (Plan an engagement `#planner` · Test plans over time `#simulate`). Each section ends with "Next: … →"; the planner ends with "Next: test this plan over time" (`?plan=<co>~<ask>#simulate`). Every view keeps its address.
+
+**Test plans over time** (sim.js, data session): an agent-based scenario model. Data: `data/sim_params.json` from `scripts/build_sim_params.py` (in the weekly job), every rate with its k of n and a held-out test (fit 2023–2025, compare 2026). Agents: filers (refile, refile after a gap, first filing with same-role contagion), the Rule 14a-8(i)(12) bar, companies (exclude, commit), voters, fund families (log), the proposed 14a-8 rescission as a switch, and "you". Scenarios are green, recorded data blue. PRODUCT.md item 5 has the owner's labelled exception for scenario figures. Plan: docs/plans/2026-11-26-engagement-simulator.md. Reviews: methods R1 62, R2 85 PASS; UX R1 72, R2 79 (its three failures fixed after R2, not re-reviewed: round cap). `window.SIM.simulate(plan, scenario)` is there for the network's Proposals view to draw scenario seasons (not built).
+
+One date style site-wide (dates.js, `window.DATES.long`): "November 26, 2026".
 
 ## Site-wide decisions in force
 
@@ -51,7 +55,7 @@ Routes table per lab (tie, strength, rights and deadline, filers, related asks, 
 
 ## Latest check
 
-`npm run check` on main after the title and centring change (UI): Playwright 244 passed, 4 skipped; Lighthouse phone 100/100/100/98, desktop 100/100/100/83 (desktop performance varies 83–93 between runs here). Earlier sweep: `npm run check` on `fix/full-sweep` after rebasing on the UI leftovers (923d57d): lint pass, build pass, Playwright 244 passed; Lighthouse phone 100/100/100/98, desktop 100/100/100/86 (desktop varies between runs on this machine). Full sweep reviews (docs/reviews/2026-11-26 full sweep result R1/R2 *): proposals data 91 PASS; companies, policy, holdings and people data R1 72, R2 79 REVISE (its one R2 failure, convertible notes counted as shares, is fixed and confirmed by a fresh SEC read, but not re-reviewed: round cap); spelling and grammar R1 78, R2 88 PASS; bugs R1 74, R2 88 PASS.
+`npm run check` on main at c992866 (simulator, section order, causal map, on top of the UI's title change): lint pass, build pass, Playwright 268 passed; Lighthouse phone 100/100/100/99, desktop 100/100/100/86.
 
 ## Queue (found, not picked up)
 
