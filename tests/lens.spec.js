@@ -114,14 +114,28 @@ test("graph labels never overlap, including after selecting a busy node", async 
   }
 });
 
-test("key: 'only' shows one type alone; 'Show all' brings every type back", async ({ page }) => {
+test("key: clicking a type cycles shown, highlighted, crossed off; 'Show all' resets", async ({ page }) => {
   await page.goto("/index.html?lens=impact#network");
   await page.waitForLoadState("networkidle");
-  await page.waitForSelector("#net-legend .leg-only", { state: "attached" });
-  await page.click('#net-legend [data-only="proposal"]');
-  await expect(page.locator('#net-legend .leg[data-kind="proposal"]')).toHaveAttribute("aria-pressed", "true");
-  await expect(page.locator('#net-legend .leg[aria-pressed="true"]')).toHaveCount(1);
-  await expect(page.locator("#net-lens-status")).toContainText("Showing only Proposal.");
+  const chip = page.locator('#net-legend .leg[data-kind="proposal"]');
+  await expect(chip).toHaveAttribute("data-state", "on");
+  await chip.click();
+  await expect(chip).toHaveAttribute("data-state", "lit");
+  await expect(chip).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("#net-lens-status")).toContainText("Proposal highlighted.");
+  // Non-proposal nodes dim while proposals are highlighted.
+  const dim = await page.$$eval("#net-graph circle", (cs) =>
+    cs
+      .filter((c) => c.__data__ && c.__data__.kind !== "proposal" && c.getAttribute("display") !== "none")
+      .every((c) => Number(c.getAttribute("opacity")) <= 0.15),
+  );
+  expect(dim).toBe(true);
+  await chip.click();
+  await expect(chip).toHaveAttribute("data-state", "off");
+  await expect(page.locator("#net-lens-status")).toContainText("Proposal hidden.");
+  await chip.click();
+  await expect(chip).toHaveAttribute("data-state", "on");
+  await chip.click();
   await page.click("#net-legend [data-all]");
-  await expect(page.locator('#net-legend .leg[aria-pressed="false"]')).toHaveCount(0);
+  await expect(page.locator('#net-legend .leg:not([data-state="on"])')).toHaveCount(0);
 });

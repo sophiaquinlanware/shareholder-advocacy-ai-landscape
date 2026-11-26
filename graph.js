@@ -542,16 +542,32 @@
     if (!el) return;
     const on = state.cfg.catColor && catList().length;
     el.hidden = !on;
-    el.innerHTML = on ? `<span class="status-note">Proposals by what they ask about:</span> <button type="button" class="chip leg-all" data-cat-all="1">Show all</button>${catList().map((c) => `<span class="leg-item"><button type="button" class="leg" data-cat="${esc(c.id)}" aria-pressed="${!state.hiddenCats.has(c.id)}"><span class="dot" style="background:${cssVar(`--gn-cat-${c.id}`)}"></span><span class="leg-text">${esc(c.label)}</span></button><button type="button" class="leg-only" data-cat-only="${esc(c.id)}" aria-label="Show only ${esc(c.label)}">only</button></span>`).join("")}` : "";
+    el.innerHTML = on ? `<span class="status-note">Proposals by what they ask about:</span> <button type="button" class="chip leg-all" data-cat-all="1">Show all</button>${catList().map((c) => chip("data-cat", c.id, catState(c.id), cssVar(`--gn-cat-${c.id}`), c.label)).join("")}` : "";
+  }
+  // Key chips have three states, cycled by clicking (owner, 2026-11-26: "you click it all lights up of the
+  // category vs click again and it cross it off"): shown → highlighted (the rest of the graph dims) →
+  // crossed off (hidden) → shown. "Show all" puts every chip back to shown.
+  const KEY_NEXT = { on: "lit", lit: "off", off: "on" };
+  const KEY_SAY = { on: "shown", lit: "highlighted", off: "hidden" };
+  const kindState = (k) => (state.hiddenKinds.has(k) ? "off" : state.litKinds.has(k) ? "lit" : "on");
+  const catState = (c) => (state.hiddenCats.has(c) ? "off" : state.litCats.has(c) ? "lit" : "on");
+  const chip = (attr, id, st, color, label) =>
+    `<button type="button" class="leg" ${attr}="${esc(id)}" data-state="${st}" aria-pressed="${st === "lit"}"><span class="dot" style="background:${color}"></span><span class="leg-text">${esc(label)}</span><span class="visually-hidden">, ${KEY_SAY[st]}</span></button>`;
+  function syncLegend() {
+    document.querySelectorAll("#net-legend .leg").forEach((b) => {
+      const st = kindState(b.dataset.kind);
+      b.dataset.state = st;
+      b.setAttribute("aria-pressed", String(st === "lit"));
+      const sr = b.querySelector(".visually-hidden");
+      if (sr) sr.textContent = `, ${KEY_SAY[st]}`;
+    });
   }
   function legend(data) {
     const kinds = [...new Set(data.nodes.map((n) => n.kind))];
     const order = Object.keys(TYPE_LABEL);
     kinds.sort((a, b) => order.indexOf(a) - order.indexOf(b));
-    // Each type: click the chip to show or hide it; "only" shows that type alone; "Show all" restores every type
-    // (owner, 2026-11-26: "an option to cross it off … or to only see nodes from that category").
-    document.getElementById("net-legend").innerHTML = `<button type="button" class="chip leg-all" data-all="1">Show all</button>` + kinds.map((k) =>
-      `<span class="leg-item"><button type="button" class="leg" data-kind="${esc(k)}" aria-pressed="${!state.hiddenKinds.has(k)}"><span class="dot" style="background:${nodeColor(k)}"></span><span class="leg-text">${esc(kindLabel(k))}</span></button><button type="button" class="leg-only" data-only="${esc(k)}" aria-label="Show only ${esc(kindLabel(k))}">only</button></span>`).join("");
+    document.getElementById("net-legend").innerHTML = `<button type="button" class="chip leg-all" data-all="1">Show all</button>` +
+      kinds.map((k) => chip("data-kind", k, kindState(k), nodeColor(k), kindLabel(k))).join("");
   }
 
   // One plain line: how much is shown, and what node size means. Recomputed when layers change.
@@ -637,8 +653,7 @@
     // A node in a hidden layer can't be shown, so switch its layer on first.
     if (state.hiddenKinds.has(n.kind)) {
       state.hiddenKinds.delete(n.kind);
-      const b = document.querySelector(`#net-legend .leg[data-kind="${n.kind}"]`);
-      if (b) b.setAttribute("aria-pressed", "true");
+      syncLegend();
       intro();
       regroup();
     }
@@ -700,6 +715,14 @@
     }
   }
 
+  // A node counts as highlighted when no chip is lit, or its type (or, with category colours on, its proposal
+  // category) is lit.
+  function isLit(d) {
+    const anyKind = state.litKinds && state.litKinds.size, anyCat = state.cfg.catColor && state.litCats && state.litCats.size;
+    if (!anyKind && !anyCat) return true;
+    if (anyKind && state.litKinds.has(d.kind)) return true;
+    return !!(anyCat && d.kind === "proposal" && state.litCats.has(d.category));
+  }
   function applyStyles() {
     refreshConnected();
     const focusId = state.hover || state.selected;
@@ -712,6 +735,8 @@
       let o = 1;
       if (q) o = d.label.toLowerCase().includes(q) ? 1 : 0.12;
       else if (near && !near.has(d.id)) o = 0.12;
+      // Highlighted key chips: everything outside the highlighted types (or proposal categories) dims.
+      if (!isLit(d) && d.id !== focusId) o = Math.min(o, 0.12);
       // Holdings overlay: what the viewer doesn't hold fades to 15%.
       return held(d) || d.id === focusId ? o : Math.min(o, 0.15);
     };
@@ -723,7 +748,9 @@
     state.linkSel.attr("display", (l) => (visible(l.source) && visible(l.target) ? null : "none"))
       .attr("stroke-opacity", (l) => {
         if (P) return P.links.has(l) ? 0.95 : 0.03;
-        return near ? (l.source.id === focusId || l.target.id === focusId ? 0.9 : 0.04) : q ? 0.08 : 0.45;
+        if (near) return l.source.id === focusId || l.target.id === focusId ? 0.9 : 0.04;
+        if (q) return 0.08;
+        return isLit(l.source) || isLit(l.target) ? 0.45 : 0.04;
       })
       .attr("stroke-width", (l) => (P && P.links.has(l) ? 2.5 : (l.relation === "lead filer" ? 1.4 : 1)) * state.cfg.linkScale);
     const fewShown = state.data.nodes.filter(visible).length <= 25;
@@ -733,6 +760,9 @@
         if (!held(d) && d.id !== focusId) return 0;
         if (q) return d.label.toLowerCase().includes(q) ? 1 : 0;
         if (near) return near.has(d.id) ? 1 : 0;
+        if (!isLit(d)) return 0;
+        // Highlighted types: name every highlighted node when there are 25 or fewer.
+        if ((state.litKinds.size || (state.cfg.catColor && state.litCats.size)) && state.data.nodes.filter((n) => visible(n) && isLit(n)).length <= 25) return 1;
         // Labels are off by default; selecting a node (or hovering, or keyboard focus) names it and its connections.
         // Recurring asks (Policymaker lens) are always named: there are only a dozen and they are the point of the view.
         if (d.kind === "ask") return 1;
@@ -1268,7 +1298,7 @@
       const c = document.querySelector("[data-gs-check=orphans]");
       if (c) c.checked = d.orphans;
     }
-    document.querySelectorAll("#net-legend .leg").forEach((b) => b.setAttribute("aria-pressed", String(!state.hiddenKinds.has(b.dataset.kind))));
+    syncLegend();
     saveLens(id);
     relabelLegend();
     setFeedView(lens().feed ? "feed" : "graph", false);
@@ -1415,23 +1445,23 @@
     document.getElementById("net-topic").addEventListener("change", (e) => { state.topic = e.target.value; refresh(); });
     document.getElementById("net-year").addEventListener("change", (e) => { state.year = e.target.value; stopPlay(); state.upto = null; state.ctx.upto = null; state.ctx.cache = {}; scrubSync(); refresh(); });
     document.getElementById("net-legend").addEventListener("click", (e) => {
-      const kinds = [...document.querySelectorAll("#net-legend .leg")].map((x) => x.dataset.kind);
-      const only = e.target.closest("[data-only]");
       const all = e.target.closest("[data-all]");
       const b = e.target.closest(".leg");
       let msg = "";
-      if (only) {
-        state.hiddenKinds = new Set(kinds.filter((k) => k !== only.dataset.only));
-        msg = `Showing only ${kindLabel(only.dataset.only)}.`;
-      } else if (all) {
+      if (all) {
         state.hiddenKinds = new Set();
+        state.litKinds = new Set();
         msg = "Showing every type.";
       } else if (b) {
         const k = b.dataset.kind;
-        if (state.hiddenKinds.has(k)) state.hiddenKinds.delete(k); else state.hiddenKinds.add(k);
-        msg = `${kindLabel(k)} ${state.hiddenKinds.has(k) ? "hidden" : "shown"}.`;
+        const next = KEY_NEXT[kindState(k)];
+        state.hiddenKinds.delete(k);
+        state.litKinds.delete(k);
+        if (next === "off") state.hiddenKinds.add(k);
+        if (next === "lit") state.litKinds.add(k);
+        msg = `${kindLabel(k)} ${KEY_SAY[next]}.`;
       } else return;
-      document.querySelectorAll("#net-legend .leg").forEach((x) => x.setAttribute("aria-pressed", String(!state.hiddenKinds.has(x.dataset.kind))));
+      syncLegend();
       refresh();
       regroup();
       refreshConnected();
@@ -1439,14 +1469,17 @@
     });
     // Proposal categories (when colour by category is on): the same toggle, only and show-all controls.
     document.getElementById("net-catkey").addEventListener("click", (e) => {
-      const ids = catList().map((c) => c.id);
-      const only = e.target.closest("[data-cat-only]");
       const all = e.target.closest("[data-cat-all]");
       const b = e.target.closest("[data-cat]");
-      if (only) state.hiddenCats = new Set(ids.filter((c) => c !== only.dataset.catOnly));
-      else if (all) state.hiddenCats = new Set();
-      else if (b) { const c = b.dataset.cat; if (state.hiddenCats.has(c)) state.hiddenCats.delete(c); else state.hiddenCats.add(c); }
-      else return;
+      if (all) { state.hiddenCats = new Set(); state.litCats = new Set(); }
+      else if (b) {
+        const c = b.dataset.cat;
+        const next = KEY_NEXT[catState(c)];
+        state.hiddenCats.delete(c);
+        state.litCats.delete(c);
+        if (next === "off") state.hiddenCats.add(c);
+        if (next === "lit") state.litCats.add(c);
+      } else return;
       catKey();
       refresh();
       refreshConnected();
@@ -1484,7 +1517,7 @@
     // Default label threshold: the 12th-highest filer's connection count, so about a dozen filers are named.
     const twelfth = data.nodes.find((n) => n.id === [...topFilers].at(-1));
     const defaults = { ...DEFAULTS, labelMin: twelfth ? twelfth.degree || 0 : 0 };
-    state = { data, byId: new Map(data.nodes.map((n) => [n.id, n])), defaults, cfg: loadSettings(defaults), hiddenKinds: new Set(["person", "policy", "response", "public"]), hiddenLabels: new Set(), query: "", topic: "", year: "", view: "graph", selected: null, hover: null, kbId: null, path: null, gaps: false, hiddenCats: new Set() };
+    state = { data, byId: new Map(data.nodes.map((n) => [n.id, n])), defaults, cfg: loadSettings(defaults), hiddenKinds: new Set(["person", "policy", "response", "public"]), hiddenLabels: new Set(), query: "", topic: "", year: "", view: "graph", selected: null, hover: null, kbId: null, path: null, gaps: false, hiddenCats: new Set(), litKinds: new Set(), litCats: new Set() };
     state.holdings = loadHoldings();
     state.lens = initialLens();
     state.hiddenKinds = new Set(lens().defaults.hiddenKinds || [...state.hiddenKinds]);

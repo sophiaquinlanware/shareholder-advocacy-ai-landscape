@@ -32,6 +32,10 @@ Upcoming votes · Company lookup · Proposals · Fund votes · Rights map · AI 
 - **Owner's choices against the brief:** plain white, the grotesque headings, and the title always visible.
 - **Stages 2–10** follow one at a time, each shown to the owner: headline reveal, count-ups, charts drawing in, row stagger, timelines, view transitions and skeletons, micro-interactions, Cmd+K, and mobile cards.
 
+## Network key (owner, 2026-11-26)
+
+The "only" links are gone. Clicking a type chip cycles it: shown → highlighted (the rest dims) → crossed off → shown. "Show all" resets. Proposal categories work the same way. Small and owner-directed, so it was not separately reviewed; a test covers the cycle.
+
 ## Lab pathways: routes to a lab (this round)
 
 Plan docs/plans/2026-11-26-lab-routes.md, with Revision 2. The owner's question: which public companies are routes to Lab X, what kind of pull each has, and whether you can act there this season.
