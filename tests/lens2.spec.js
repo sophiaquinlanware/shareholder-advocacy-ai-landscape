@@ -141,7 +141,9 @@ test("holdings: fade, count line, Esc returns focus, kept across reload, nothing
   });
   await page.click("#net-hold-btn");
   await expect(page.locator("#net-hold-btn")).toHaveAttribute("aria-expanded", "true");
-  await expect(page.locator("#net-hold-input")).toBeFocused();
+  // The panel opens on its first control (load an investor's holdings); tickers can still be pasted.
+  await expect(page.locator("#net-hold-inv")).toBeFocused();
+  await page.click(".port-paste summary");
   await page.fill("#net-hold-input", "msft, xyz");
   await page.click("#net-hold-apply");
   await expect(page.locator("#net-hold-status")).toContainText("1 in this map (MSFT)");
@@ -194,6 +196,7 @@ test("keyboard announcement includes held / not held", async ({ page }, info) =>
   test.skip(info.project.name.startsWith("phone"), "keyboard test runs at desktop width");
   await open(page, { fixtureData: false });
   await page.click("#net-hold-btn");
+  await page.click(".port-paste summary");
   await page.fill("#net-hold-input", "MSFT");
   await page.click("#net-hold-apply");
   await page.focus("#net-graph");

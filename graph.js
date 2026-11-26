@@ -345,7 +345,7 @@
     const sim = state.sim;
     sim.force("charge").strength((d) => (d.kind === "company" ? -420 : -110) * state.cfg.repel);
     sim.force("link").strength(state.cfg.linkStrength).distance((l) => linkBase(l) * state.cfg.linkDist);
-    sim.force("collide").radius((d) => radius(d) + 3);
+    sim.force("collide").radius(collideR);
     sim.force("x").strength(state.cfg.center);
     sim.force("y").strength(state.cfg.center * 1.25);
     sim.force("gx").strength(Math.min(1, state.cfg.group * 1.8));
@@ -378,14 +378,18 @@
         </div>
       </div>
       <div class="net-tools">
-        <button type="button" class="tool" id="net-hold-btn" aria-expanded="false" aria-controls="net-hold">My holdings</button>
+        <button type="button" class="tool" id="net-hold-btn" aria-expanded="false" aria-controls="net-hold">Your portfolio</button>
         <button type="button" class="tool" id="net-gaps" aria-pressed="false">Show asks not yet filed</button>
       </div>
-      <div id="net-hold" class="net-hold" hidden>
-        <label for="net-hold-input">Tickers, separated by commas, spaces or new lines</label>
-        <textarea id="net-hold-input" rows="3" spellcheck="false" autocapitalize="characters"></textarea>
-        <div class="net-hold-row"><button type="button" class="chip" id="net-hold-apply">Apply</button> <button type="button" class="chip" id="net-hold-clear">Clear</button></div>
-        <p class="status-note">Stored in this browser only; nothing is sent anywhere.</p>
+      <div id="net-hold" class="net-hold port" hidden>
+        <h4 class="port-h">Your portfolio</h4>
+        <p class="status-note">Choose the companies you hold, or load an investor's reported holdings, to see what they connect to: frontier labs, the investors already filing there, coalitions and upcoming votes. Kept in this browser only; nothing is sent anywhere.</p>
+        <div class="port-row"><label for="net-hold-inv">Load an investor's reported holdings</label> <select id="net-hold-inv"><option value="">Choose an investor</option></select></div>
+        <fieldset class="port-pick"><legend>Or choose companies</legend><div id="net-hold-cos" class="port-cos"></div></fieldset>
+        <details class="port-paste"><summary>Paste tickers instead</summary>
+          <label for="net-hold-input" class="visually-hidden">Tickers, separated by commas, spaces or new lines</label>
+          <textarea id="net-hold-input" rows="3" spellcheck="false" autocapitalize="characters" placeholder="MSFT, GOOGL, NVDA"></textarea></details>
+        <div class="net-hold-row"><button type="button" class="tool" id="net-hold-apply">Show my portfolio</button> <button type="button" class="tool" id="net-hold-clear">Clear</button></div>
       </div>
       <p class="count-line" id="net-hold-status" aria-live="polite"></p>
       <div id="net-legend" class="net-legend"></div>
@@ -408,12 +412,14 @@
         <aside id="net-panel" class="net-panel" aria-label="Selected item"><p class="status-note">Select an organization, person, proposal or company for its connections and sources.</p></aside>
       </div>
       <div class="scrub" id="net-scrub">
-        <label for="net-upto">Show the network up to <span id="net-upto-val"></span></label>
+        <label for="net-upto">Timeline: the network as it stood at the end of <span id="net-upto-val"></span></label>
         <input type="range" id="net-upto" step="1">
         <button type="button" class="chip" id="net-play">Play</button>
         <p class="status-note" id="net-scrub-note"></p>
+        <p class="status-note">Drag the slider back to see the network in earlier years, or press Play to watch it build year by year.</p>
         <p class="visually-hidden" id="net-scrub-status" aria-live="polite"></p>
       </div>
+      <section id="net-portfolio" class="net-portfolio" aria-labelledby="net-port-h" hidden></section>
       </div>`;
   }
 
@@ -632,8 +638,22 @@
   function legend(data) {
     // The key lists only the types the current view can show.
     const kinds = [...new Set(data.nodes.map((n) => n.kind))].filter((k) => !mode().hides.has(k));
-    const order = Object.keys(TYPE_LABEL);
-    kinds.sort((a, b) => order.indexOf(a) - order.indexOf(b));
+    // Rainbow order (owner, 2026-11-27): by hue, red → orange → yellow → green → blue → violet → pink; pale and
+    // grey types (low saturation) come last.
+    const hsl = (hex) => {
+      const m = String(hex).trim().match(/^#?([0-9a-f]{6})$/i);
+      if (!m) return { h: 999, s: 0 };
+      const n = parseInt(m[1], 16), r = (n >> 16) / 255, g = ((n >> 8) & 255) / 255, b = (n & 255) / 255;
+      const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn, l = (mx + mn) / 2;
+      const s = d ? d / (1 - Math.abs(2 * l - 1)) : 0;
+      let h = 0;
+      if (d) h = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
+      h = (h * 60 + 360) % 360;
+      if (h > 350) h -= 360; // near-red hues count as red; pinks come after violet
+      return { h, s: s * (l > 0.85 ? 0.3 : 1) };
+    };
+    const rank = (k) => { const c = hsl(nodeColor(k)); return c.s < 0.35 ? 1000 + c.h : c.h; };
+    kinds.sort((a, b) => rank(a) - rank(b) || kindLabel(a).localeCompare(kindLabel(b)));
     document.getElementById("net-legend").innerHTML = `<button type="button" class="tool leg-all" data-all="1">Show all <span aria-hidden="true">↺</span></button>` +
       kinds.map((k) => chip("data-kind", k, kindState(k), nodeColor(k), kindLabel(k))).join("");
   }
@@ -852,6 +872,7 @@
     if (state.view === "list") drawList();
     intro();
     holdStatus();
+    portfolioSummary();
     markKey();
     if (announce) document.getElementById("net-lens-status").textContent = `${mode().label} view: ${counts().shown} of ${counts().total} nodes shown${counts().extra}.`;
   }
@@ -920,7 +941,10 @@
     const near = focusId ? neighbors(focusId) : null;
     const q = state.query;
     const P = state.path;
-    const held = (d) => !state.holdings.size || isHeld(d);
+    // Portfolio: held companies stay lit, with everything they link to in this view (labs, filers, coalitions)
+    // and the investor whose holdings were loaded; the rest fades.
+    const reach = state.holdings.size ? portfolioReach() : null;
+    const held = (d) => !state.holdings.size || isHeld(d) || reach.has(d.id);
     const nodeOpacity = (d) => {
       if (P) return P.nodes.has(d.id) ? 1 : 0.12;
       let o = 1;
@@ -933,14 +957,16 @@
     };
     state.node.attr("display", (d) => (visible(d) ? null : "none"))
       .attr("opacity", nodeOpacity)
-      .attr("stroke", (d) => (d.id === state.selected ? cssVar("--g-focus") : d.kind === "gap" ? cssVar("--g-label-soft") : edgeOf(d)))
-      .attr("stroke-width", (d) => (d.id === state.selected ? 2.5 : d.kind === "gap" ? 1.5 : 1));
+      .attr("stroke", (d) => (d.id === state.selected || (state.holdings.size && isCompanyKind(d.kind) && isHeld(d)) ? cssVar("--g-focus") : d.kind === "gap" ? cssVar("--g-label-soft") : edgeOf(d)))
+      .attr("stroke-width", (d) => (d.id === state.selected ? 2.5 : state.holdings.size && isCompanyKind(d.kind) && isHeld(d) ? 2 : d.kind === "gap" ? 1.5 : 1));
     if (state.ringSel) state.ringSel.attr("display", (d) => (visible(d) ? null : "none")).attr("opacity", nodeOpacity);
     state.linkSel.attr("display", (l) => (inMode(l) && visible(l.source) && visible(l.target) ? null : "none"))
       .attr("stroke-opacity", (l) => {
         if (P) return P.links.has(l) ? 0.95 : 0.03;
         if (near) return l.source.id === focusId || l.target.id === focusId ? 0.9 : 0.04;
         if (q) return 0.08;
+        // Portfolio: the lines from held companies stand out; the rest go quiet.
+        if (reach) return isHeld(l.source) || isHeld(l.target) || l.source.id === state.portInvestor ? 0.75 : 0.03;
         return isLit(l.source) || isLit(l.target) ? 0.45 : 0.04;
       })
       .attr("stroke-width", (l) => (P && P.links.has(l) ? 2.5 : (l.relation === "lead filer" ? 1.4 : 1)) * state.cfg.linkScale);
@@ -952,6 +978,8 @@
         if (q) return d.label.toLowerCase().includes(q) ? 1 : 0;
         if (near) return near.has(d.id) ? 1 : 0;
         if (!isLit(d)) return 0;
+        // Portfolio: name each held company and the investor whose holdings were loaded.
+        if (reach && ((isCompanyKind(d.kind) && isHeld(d)) || d.id === state.portInvestor) && !state.hiddenLabels.has(d.id)) return 1;
         // Highlighted types: name every highlighted node when there are 25 or fewer.
         if ((state.litKinds.size || (state.cfg.catColor && state.litCats.size)) && state.data.nodes.filter((n) => visible(n) && isLit(n)).length <= 25) return 1;
         // Labels are off by default; selecting a node (or hovering, or keyboard focus) names it and its connections.
@@ -1063,7 +1091,7 @@
   const MARK_KEY = {
     upcoming: { label: "On a ballot not yet held", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.ring}" stroke-width="1.5" stroke-dasharray="3 2"/>` },
     deadline: { label: "Proposal filing deadline open; the arc shows the time left", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.win}" stroke-width="1.2"/><path d="M12,3A6,6 0 0 1 18,9" fill="none" stroke="${c.win}" stroke-width="2.5" stroke-linecap="round"/>` },
-    risk: { label: "Close to, or below, the support needed to refile (SEC resubmission threshold; this site's reading)", svg: (c) => `<rect x="5" y="12" width="12" height="2.5" fill="${c.risk}"/><text x="19" y="15" font-size="10" fill="${c.risk}" font-family="sans-serif">!</text>` },
+    risk: { label: "Vote support near or below the level needed to refile a similar proposal (SEC resubmission threshold; this site's reading)", svg: (c) => `<circle cx="12" cy="9" r="3" fill="#facc15"/><circle cx="12" cy="9" r="6.5" fill="none" stroke="${c.risk}" stroke-width="1.6" stroke-dasharray="2.5 1.6"/>` },
     seeking: { label: "Filer seeking co-filers or support", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.seek}" stroke-width="1.5" stroke-dasharray="1 2.5" stroke-linecap="round"/>` },
     "cov-covered": { label: "Ask already required by a rule in this map", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.ring}" stroke-width="2"/>` },
     "cov-partial": { label: "Ask partly covered by a rule", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.ring}" stroke-width="1.6" stroke-dasharray="5 2"/>` },
@@ -1081,8 +1109,19 @@
     const c = { ring: cssVar("--g-ring"), win: cssVar("--g-window"), risk: cssVar("--g-risk"), seek: cssVar("--g-seeking") };
     el.innerHTML = list.length ? `<span class="status-note">Marks:</span> ${list.map((k) => `<span class="leg static"><svg class="mark-swatch" viewBox="0 0 24 18" aria-hidden="true"><rect width="24" height="18" rx="3" fill="${cssVar("--g-bg")}"/>${MARK_KEY[k].svg(c)}</svg>${esc(MARK_KEY[k].label)}</span>`).join("")}` : "";
   }
+  // Collision room includes a node's marks (rings reach up to radius + 12), so a small neighbour such as a
+  // proposal dot is never hidden under another node's ring (owner, 2026-11-27: "try not to have overlap").
+  const collideR = (d) => radius(d) + 3 + (rings(d).length ? 13 : 0);
   function drawRings() {
     markKey();
+    // Marks changed with the lens: give the marked nodes their room and let the layout settle briefly.
+    const sig = state.data.nodes.filter((n) => rings(n).length).map((n) => n.id).join("|");
+    if (state.sim && sig !== state.ringSig) {
+      const first = state.ringSig === undefined;
+      state.ringSig = sig;
+      state.sim.force("collide").radius(collideR);
+      if (!first) state.sim.alpha(Math.max(state.sim.alpha(), 0.2)).restart();
+    }
     if (!state.ringLayer) return;
     state.ringLayer.selectAll("*").remove();
     const marked = state.data.nodes.filter((n) => rings(n).length);
@@ -1112,8 +1151,9 @@
         else if (m.kind === "cov-none") g.append("circle").attr("r", r + 9).attr("fill", "none").attr("stroke", cssVar("--g-risk")).attr("stroke-width", 2).attr("stroke-dasharray", "1 3").attr("stroke-linecap", "round");
         else if (m.kind === "seeking") g.append("circle").attr("r", r + 12).attr("fill", "none").attr("stroke", cssVar("--g-seeking")).attr("stroke-width", 2).attr("stroke-dasharray", "1 3").attr("stroke-linecap", "round");
         else if (m.kind === "risk") {
-          g.append("rect").attr("x", -Math.max(r, 5)).attr("y", r + 3).attr("width", Math.max(r, 5) * 2).attr("height", 3).attr("fill", cssVar("--g-risk"));
-          g.append("text").attr("x", Math.max(r, 5) + 3).attr("y", r + 9).attr("font-size", 11).attr("font-weight", 500).attr("fill", cssVar("--g-risk")).text("!");
+          // Vote support near or below the SEC refile threshold: an orange broken ring (owner, 2026-11-27: the old
+          // bar and "!" read as a bug). The key and the panel say what it means.
+          g.append("circle").attr("r", Math.max(r, 4) + 4).attr("fill", "none").attr("stroke", cssVar("--g-risk")).attr("stroke-width", 2).attr("stroke-dasharray", "3 2");
         }
       }
     });
@@ -1141,6 +1181,17 @@
     const t = tickerOf(n);
     return !!t && state.holdings.has(String(t).toUpperCase());
   };
+  function portfolioReach() {
+    const heldIds = new Set(state.data.nodes.filter((n) => isCompanyKind(n.kind) && isHeld(n)).map((n) => n.id));
+    const out = new Set();
+    state.data.links.forEach((l) => {
+      if (!inMode(l) || !visible(l.source) || !visible(l.target)) return;
+      if (heldIds.has(l.source.id)) out.add(l.target.id);
+      if (heldIds.has(l.target.id)) out.add(l.source.id);
+    });
+    if (state.portInvestor && state.byId.has(state.portInvestor)) out.add(state.portInvestor);
+    return out;
+  }
   function holdStatus() {
     const el = document.getElementById("net-hold-status");
     if (!el) return;
@@ -1150,25 +1201,118 @@
     const missing = [...state.holdings].filter((t) => !inMap.has(t));
     el.textContent = `Holdings: ${state.holdings.size} ${state.holdings.size === 1 ? "ticker" : "tickers"}, ${found.length} in this map${found.length ? " (" + found.join(", ") + ")" : ""}.${missing.length ? " Not in this map: " + missing.join(", ") + "." : ""}${state.mode === "proposals" ? " In the Proposals view, held companies with no AI proposal are not shown." : ""} Other nodes are faded.`;
   }
+  // ---------- Your portfolio (owner, 2026-11-27: "think of everything from the shareholders' point of view") ----------
+  // Companies in the map that can be held (a ticker), for the picker; and investors with reported holdings.
+  const holdable = () => [...new Map(state.data.nodes.filter((n) => isCompanyKind(n.kind) && n.kind !== "lab" && n.kind !== "tier-labs" && n.ticker && !/private|unverified/i.test(n.ticker))
+    .map((n) => [String(n.ticker).toUpperCase(), n])).values()].sort((a, b) => a.label.localeCompare(b.label));
+  const holdingsData = () => (typeof DATA !== "undefined" && DATA.holdings) || null;
+  function portfolioPicker() {
+    const cos = document.getElementById("net-hold-cos");
+    if (!cos) return;
+    cos.innerHTML = holdable().map((n) => `<label class="chip"><input type="checkbox" value="${esc(String(n.ticker).toUpperCase())}"${state.holdings.has(String(n.ticker).toUpperCase()) ? " checked" : ""}> ${esc(n.label)} <span class="ticker">${esc(n.ticker)}</span></label>`).join("");
+    const H = holdingsData();
+    const sel = document.getElementById("net-hold-inv");
+    if (sel && H && H.investors) {
+      const n = new Map();
+      (H.holdings || []).forEach((h) => n.set(h.investor, (n.get(h.investor) || 0) + 1));
+      sel.innerHTML = `<option value="">Choose an investor</option>` + H.investors.filter((i) => n.get(i.id))
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map((i) => `<option value="${esc(i.id)}"${state.portInvestor === i.id ? " selected" : ""}>${esc(i.name)} (${n.get(i.id)} compan${n.get(i.id) === 1 ? "y" : "ies"})</option>`).join("");
+    }
+  }
   function wireHoldings() {
     const btn = document.getElementById("net-hold-btn");
     const box = document.getElementById("net-hold");
     const input = document.getElementById("net-hold-input");
-    input.value = [...state.holdings].join(", ");
+    portfolioPicker();
+    const listed = new Set(holdable().map((n) => String(n.ticker).toUpperCase()));
+    input.value = [...state.holdings].filter((t) => !listed.has(t)).join(", ");
+    document.getElementById("net-hold-inv").addEventListener("change", (e) => {
+      state.portInvestor = e.target.value || null;
+      const H = holdingsData();
+      const mine = new Set(((H && H.holdings) || []).filter((h) => h.investor === state.portInvestor).map((h) => String(h.company).toUpperCase()));
+      document.querySelectorAll("#net-hold-cos input").forEach((c) => { c.checked = mine.has(c.value); });
+    });
     const close = () => { box.hidden = true; btn.setAttribute("aria-expanded", "false"); btn.focus(); };
     btn.addEventListener("click", () => {
       const open = box.hidden;
       box.hidden = !open;
       btn.setAttribute("aria-expanded", String(open));
-      if (open) input.focus();
+      if (open) document.getElementById("net-hold-inv").focus();
     });
     box.addEventListener("keydown", (e) => { if (e.key === "Escape") { e.stopPropagation(); close(); } });
     const apply = () => {
-      state.holdings = new Set(input.value.split(/[\s,;]+/).map((t) => t.trim().toUpperCase()).filter(Boolean));
-      saveHoldings(); holdStatus(); applyStyles(); if (state.view === "list") drawList();
+      const picked = [...document.querySelectorAll("#net-hold-cos input:checked")].map((c) => c.value);
+      const typed = input.value.split(/[\s,;]+/).map((t) => t.trim().toUpperCase()).filter(Boolean);
+      state.holdings = new Set([...picked, ...typed]);
+      saveHoldings(); holdStatus(); applyStyles(); portfolioSummary(); if (state.view === "list") drawList();
     };
     document.getElementById("net-hold-apply").addEventListener("click", apply);
-    document.getElementById("net-hold-clear").addEventListener("click", () => { input.value = ""; apply(); input.focus(); });
+    document.getElementById("net-hold-clear").addEventListener("click", () => {
+      input.value = "";
+      state.portInvestor = null;
+      document.getElementById("net-hold-inv").value = "";
+      document.querySelectorAll("#net-hold-cos input").forEach((c) => { c.checked = false; });
+      apply();
+      document.getElementById("net-hold-inv").focus();
+    });
+  }
+
+  // What your portfolio connects to: per held company, its frontier labs, AI proposals and the investors filing
+  // there, the next filing deadline and votes coming up, each with a way into the network or the planner.
+  function portfolioSummary() {
+    const box = document.getElementById("net-portfolio");
+    if (!box) return;
+    if (!state.holdings.size) { box.hidden = true; box.innerHTML = ""; return; }
+    const app = window.LENS_CTX || {};
+    const props = app.proposals || [];
+    const today = window.RULES && window.RULES.todayISO ? window.RULES.todayISO() : new Date().toISOString().slice(0, 10);
+    const held = holdable().filter((n) => isHeld(n));
+    const LAB = (n) => n && (n.kind === "lab" || n.kind === "tier-labs");
+    const FILE = new Set(["lead filer", "co-filer", "filed (named in proxy)"]);
+    const rows = held.map((n) => {
+      const t = String(n.ticker).toUpperCase();
+      const rec = window.companyFor ? window.companyFor(n) : null;
+      const labs = new Set();
+      state.data.links.forEach((l) => {
+        if (l.source.id === n.id && LAB(l.target)) labs.add(l.target.label);
+        if (l.target.id === n.id && LAB(l.source)) labs.add(l.source.label);
+      });
+      const ps = props.filter((p) => p.company === t);
+      const upcoming = ps.filter((p) => p.status === "upcoming" && p.meeting_date && p.meeting_date >= today);
+      const filers = new Map();
+      state.data.links.forEach((l) => {
+        if (!FILE.has(l.relation)) return;
+        const prop = l.target, org = l.source;
+        if (prop && prop.kind === "proposal" && String(prop.company).toUpperCase() === t && org) filers.set(org.id, org.label);
+      });
+      const dl = rec && rec.next_proposal_deadline;
+      const open = dl && dl >= today && rec.next_proposal_deadline_status !== "passed";
+      const firstAsk = (ps.find((p) => p.ask_id) || {}).ask_id || "";
+      return { n, t, rec, labs: [...labs].sort(), ps, upcoming, filers: [...filers.values()].sort(), dl, open, firstAsk };
+    });
+    const allLabs = new Set(rows.flatMap((r) => r.labs));
+    const votes = rows.reduce((k, r) => k + r.upcoming.length, 0);
+    const openN = rows.filter((r) => r.open).length;
+    const filerSet = new Set(rows.flatMap((r) => r.filers));
+    const fmtD = (iso) => new Date(String(iso).slice(0, 10) + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+    box.hidden = false;
+    box.innerHTML = `<h3 id="net-port-h" class="sub-h">Your portfolio: what it connects to</h3>
+      <p class="count-line">${held.length} compan${held.length === 1 ? "y" : "ies"} held in this map${state.portInvestor ? ` (holdings reported by ${esc(((holdingsData() || {}).investors || []).find((i) => i.id === state.portInvestor)?.name || "")})` : ""} · tied to ${allLabs.size} frontier lab${allLabs.size === 1 ? "" : "s"} · ${votes} AI proposal${votes === 1 ? "" : "s"} on upcoming ballots · ${openN} with a proposal filing deadline open · ${filerSet.size} investors and groups already filing AI proposals at these companies (in this dataset).</p>
+      <div class="table-wrap"><table class="port-table"><thead><tr><th scope="col">Company</th><th scope="col">Frontier labs it is tied to</th><th scope="col">AI proposals here</th><th scope="col">Already filing here</th><th scope="col">Next filing deadline</th><th scope="col">Plan</th></tr></thead><tbody>
+      ${rows.map((r) => `<tr><td><button type="button" class="linklike" data-port-node="${esc(r.n.id)}">${esc(r.n.label)}</button> <span class="ticker">${esc(r.t)} · ${esc(kindLabel(r.n.kind))}</span></td>
+        <td>${r.labs.length ? esc(r.labs.join(", ")) : `<span class="ticker">none in this map</span>`}</td>
+        <td>${r.ps.length ? `${r.ps.length} filed${r.upcoming.length ? `; <strong>${r.upcoming.length} on the ballot ${esc(fmtD(r.upcoming[0].meeting_date))}</strong>` : ""}` : `<span class="ticker">none in this dataset</span>`}</td>
+        <td>${r.filers.length ? `${esc(r.filers.slice(0, 3).join(", "))}${r.filers.length > 3 ? ` <span class="ticker">and ${r.filers.length - 3} more</span>` : ""}` : `<span class="ticker">none on record</span>`}</td>
+        <td>${r.dl ? `${esc(fmtD(r.dl))}${r.open ? "" : ` <span class="ticker">(passed)</span>`}` : `<span class="ticker">not on file</span>`}</td>
+        <td>${r.rec && r.rec.id ? `<a href="?plan=${encodeURIComponent(r.rec.id)}${r.firstAsk ? "~" + encodeURIComponent(r.firstAsk) : ""}#planner">Plan an engagement</a>` : ""}</td></tr>`).join("")}
+      </tbody></table></div>
+      <p class="status-note">A holding is not a vote or a filing. Counts are from this site's records.</p>`;
+    box.querySelectorAll("[data-port-node]").forEach((b) => b.addEventListener("click", () => {
+      if (state.view !== "graph") document.querySelector('#tab-network .seg [data-view="graph"]').click();
+      focus(b.dataset.portNode);
+      document.getElementById("net-graph").scrollIntoView({ block: "center" });
+    }));
   }
 
   // ---------- Topics not filed (Impact investor lens): gap nodes, scoped to this dataset ----------
@@ -1429,7 +1573,7 @@
         if (typeof l.target !== "object") l.target = state.byId.get(l.target) || l.target;
       }), data.links.filter(inMode))).id((d) => d.id).distance((l) => linkBase(l) * state.cfg.linkDist).strength(state.cfg.linkStrength))
       .force("charge", d3.forceManyBody().strength((d) => (d.kind === "company" ? -420 : -110) * state.cfg.repel).distanceMax(Math.max(260, Math.min(width, height) * 0.6)))
-      .force("collide", d3.forceCollide().radius((d) => radius(d) + 3))
+      .force("collide", d3.forceCollide().radius(collideR))
       .force("center", d3.forceCenter(width / 2, height / 2))
       .force("x", d3.forceX(width / 2).strength(state.cfg.center))
       .force("y", d3.forceY(height / 2).strength(state.cfg.center * 1.25))
@@ -1860,6 +2004,7 @@
     wire();
     setMode(state.mode, false);
     holdStatus();
+    portfolioSummary();
     scrubSync();
     // The graph needs a visible container to measure, so draw it the first time its tab opens.
     state.feedView = lens().feed ? urlView() : "graph";

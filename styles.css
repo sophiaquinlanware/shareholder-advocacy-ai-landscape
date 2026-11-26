@@ -233,7 +233,7 @@ tr.hit td { background: var(--accent-soft); }
   --gn-ask: #fef08a;
   /* Proposal categories (asks.json), used when "Colour proposals by what they ask about" is on. */
   --gn-cat-governance-safety: #fde047; --gn-cat-data-centers: #eab308; --gn-cat-users: #fef3c7; --gn-cat-downstream-use: #ca8a04;
-  --gn-company: #fda4af; --gn-lab: #f87171; --gn-proposal: #facc15;
+  --gn-company: #fda4af; --gn-lab: #f87171; --gn-proposal: #ffff1a; /* neon yellow (owner, 2026-11-27: "brighter, more neon … to differentiate it from the orange") */
   --gn-manager: #38bdf8; --gn-nonprofit: #bfdbfe; --gn-faith: #3b82f6; --gn-pension: #a5b4fc;
   --gn-labor: #22d3ee; --gn-foundation: #e0e7ff; --gn-coalition: #4ade80; --gn-other: #94a3b8;
   --gn-person: #d4d4d8; --gn-policy: #ffffff; --gn-response: #a8a29e; --gn-public: #c8b89a;
@@ -701,3 +701,16 @@ button:active:not([disabled]) { transform: scale(.98); }
   @page { margin: 22mm 20mm; }
 }
 .leg .mark.vc-line { width: 44px; height: 10px; }
+
+/* Your portfolio (network): picker and summary. */
+.net-hold.port { max-width: none; }
+.port-h { margin: 0 0 4px; font-weight: 400; font-size: 17px; }
+.port-row { margin: 10px 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.port-row select { font: 14px var(--sans); padding: 6px 30px 6px 9px; border: 1px solid var(--control-edge); border-radius: var(--radius); background-color: var(--surface); max-width: 100%; }
+.port-pick { border: 0; padding: 0; margin: 8px 0; }
+.port-pick legend { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); margin-bottom: 6px; }
+.port-cos { display: flex; flex-wrap: wrap; gap: 6px; max-height: 220px; overflow-y: auto; padding: 2px; }
+.port-paste { margin: 8px 0; font-size: 14px; }
+.port-paste textarea { width: 100%; margin-top: 6px; }
+.net-portfolio { margin-top: var(--s-3); }
+.port-cos .chip:has(input:checked) .ticker { color: #ffffff; opacity: .8; }
