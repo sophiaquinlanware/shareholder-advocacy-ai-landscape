@@ -12,7 +12,7 @@ test("choosing a lens updates ?lens=, keeps #network, and survives a reload", as
   await page.check('#net-lens input[value="policy"]');
   await expect(page).toHaveURL(/\?lens=policy#network$/);
   await expect(page.locator("#net-lens-status")).toContainText("Policymaker view");
-  await expect(page.locator("#net-intro")).toContainText("Node size = proposals on the same topic");
+  await expect(page.locator("#net-intro")).toContainText("Node size = number of proposals with this ask");
   await page.reload();
   await page.waitForSelector("#net-lens input:checked");
   expect(await page.$eval("#net-lens input:checked", (i) => i.value)).toBe("policy");

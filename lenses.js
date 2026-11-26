@@ -328,6 +328,85 @@
     },
   };
 
+  // ---------- Policymaker lens: recurring asks (Phase 4) ----------
+  // Floor proposals (raised at the meeting; proxy votes couldn't be cast on them), as votes.js detects them:
+  // "floor" in the id, source, label or support note, or a title saying it was presented at the meeting.
+  const isFloor = (p) => /floor/i.test(`${p.id} ${p.source_url || ""} ${p.label || ""} ${p.support_note || ""}`) || /presented at the meeting/i.test(p.title || p.label || "");
+  const askProposals = (n, ctx) => ctx.nodes.filter((p) => p.kind === "proposal" && p.ask_id === n.id);
+  // Coverage roll-up for an ask from data/coverage.json: full -> covered; any partial -> partially covered;
+  // only "none" entries -> no rule in this map; no entries -> not yet assessed (absence is never "no rule").
+  function askCoverage(n, ctx) {
+    const entries = ((ctx.coverage && ctx.coverage.entries) || []).filter((e) => e.ask_id === n.id);
+    const unreviewed = entries.some((e) => !e.reviewed);
+    if (!entries.length) return { kind: "cov-unknown", label: "Coverage not yet assessed", entries, unreviewed: false };
+    if (entries.some((e) => e.coverage === "full")) return { kind: "cov-covered", label: "Covered by a rule in this map", entries, unreviewed };
+    const partial = entries.filter((e) => e.coverage === "partial");
+    if (partial.length) {
+      const notYet = partial.every((e) => e.policy_status && e.policy_status !== "in force");
+      return { kind: "cov-partial", label: `Partially covered${notYet ? " (not yet in force)" : ""}`, entries, unreviewed };
+    }
+    return { kind: "cov-none", label: "No rule in this map reaches this", entries, unreviewed };
+  }
+  const isDualClass = (p) => /dual|class/i.test(p.support_note || "");
+  function askActions(n, ctx) {
+    const out = [];
+    const props = askProposals(n, ctx);
+    const cos = new Set(props.map((p) => p.company));
+    const years = props.map((p) => Number(p.year)).filter(Boolean).sort((a, b) => a - b);
+    const span = years.length ? (years[0] === years.at(-1) ? `${years[0]}` : `${years[0]}–${years.at(-1)}`) : "";
+    const by = (st) => props.filter((p) => p.status === st && !isFloor(p)).length;
+    const floor = props.filter(isFloor).length;
+    const parts = [[by("voted"), "voted"], [by("upcoming"), "upcoming"], [by("excluded"), "excluded"], [by("withdrawn"), "withdrawn"], [floor, "raised from the floor"]].filter(([k]) => k).map(([k, t]) => `${k} ${t}`);
+    out.push({ text: `${plural(props.length, "proposal", "proposals")} at ${plural(cos.size, "company", "companies")}${span ? ", " + span : ""}${parts.length ? ": " + parts.join(", ") : ""}.` });
+    // Support by year: voted, non-floor proposals with a figure and a linked results filing. The average is
+    // the owner's spec for this lens (an exception to the site's no-average rule, recorded in DESIGN.md).
+    const voted = props.filter((p) => p.status === "voted" && !isFloor(p) && p.support_pct != null);
+    const linked = voted.filter((p) => p.results_url);
+    const yearsV = [...new Set(linked.map((p) => Number(p.year)))].sort((a, b) => a - b);
+    for (const y of yearsV) {
+      const v = linked.filter((p) => Number(p.year) === y).map((p) => Number(p.support_pct)).sort((a, b) => a - b);
+      const avg = Math.round((v.reduce((a, b) => a + b, 0) / v.length) * 10) / 10;
+      out.push({ text: v.length === 1 ? `${y}: 1 vote, ${v[0]}%` : `${y}: ${v.length} votes, ${v[0]}%–${v.at(-1)}%, average ${avg}%` });
+    }
+    if (linked.length) {
+      const dual = linked.filter(isDualClass).length;
+      const left = voted.length - linked.length;
+      out.push({ text: `Averages are computed by this site from the figures as recorded (most come from 8-K vote counts, not stated percentages); notes are in Proposals.${dual ? ` ${dual} of these figures ${dual === 1 ? "is" : "are"} dual-class (counted by votes cast).` : ""}${left ? ` ${plural(left, "vote", "votes")} without a linked results filing ${left === 1 ? "is" : "are"} left out.` : ""}` });
+    }
+    // Coverage, one line per entry.
+    const c = askCoverage(n, ctx);
+    if (!c.entries.length) out.push({ text: "Coverage: not yet assessed." });
+    c.entries.forEach((e) => {
+      if (e.coverage === "none" || !e.graph_id) {
+        out.push({ text: `Checked, no requirement found: ${e.note || ""}`, href: e.source_url || null, hrefLabel: "source", needsSource: true });
+        return;
+      }
+      const pol = ctx.byId.get(e.graph_id);
+      out.push({ text: `${pol ? pol.label : e.policy_id} (${e.policy_status || "status not recorded"}): ${e.coverage === "full" ? "covers" : "partially covers"} this ask. ${e.note || ""}`, href: e.source_url || null, hrefLabel: "source", needsSource: true });
+    });
+    if (c.unreviewed) out.push({ text: "Coverage is this site's reading, not yet confirmed by a person." });
+    // Company actions in the Causality map that mention this ask (ask's match terms), at companies that got it.
+    const terms = (n.match || []).map((t) => String(t).toLowerCase()).filter(Boolean);
+    const coIds = new Set(ctx.nodes.filter((x) => (x.kind === "company" || String(x.kind).startsWith("tier-")) && cos.has(x.ticker)).map((x) => x.id));
+    // Labs a company owns ("parent company" edges) count as that company.
+    ctx.links.forEach((l) => { if (l.relation === "parent company" && coIds.has(end(l.source))) coIds.add(end(l.target)); });
+    const seen = new Set();
+    const acts = [];
+    ctx.links.forEach((l) => {
+      if (l.relation !== "acted in" || !coIds.has(end(l.source))) return;
+      const ev = ctx.byId.get(end(l.target));
+      if (!ev || seen.has(ev.id)) return;
+      const text = `${ev.label} ${ev.description || ""}`.toLowerCase();
+      if (!terms.some((t) => text.includes(t))) return;
+      seen.add(ev.id);
+      const who = ctx.byId.get(end(l.source));
+      acts.push({ text: `${who ? who.label : ""}: ${ev.label} (${ev.kind_label || ev.kind || "event"}, ${ev.date || "date not recorded"})`, href: ev.source_url || l.source_url || null, hrefLabel: "source", needsSource: true });
+    });
+    if (acts.length) { out.push({ text: "Company actions in the Causality map that mention this ask:" }); out.push(...acts); }
+    else out.push({ text: "No Causality map events at these companies mention this ask." });
+    return out;
+  }
+
   window.LENSES = {
     impact: {
       label: "Impact investor",
@@ -378,27 +457,31 @@
     },
     policy: {
       label: "Policymaker",
-      sizeLabel: "proposals on the same topic (proposals)",
+      // Recurring asks (asks.json) are added as nodes in this lens (graph.js setAsks), with coverage edges.
+      asks: true,
+      sizeLabel: "number of proposals with this ask (asks); proposals drawn small",
       actionsHeading: "Same topic",
-      measure: { label: "Proposals on the same topic", value: (n, ctx) => (n.kind === "proposal" ? (byTopic(ctx).get(n.topic) || []).length : null) },
+      actionsHeadingFor: (n) => (n.kind === "ask" ? "This ask" : "Same topic"),
+      measure: { label: "Proposals with this ask", value: (n, ctx) => (n.kind === "ask" ? askProposals(n, ctx).length : null) },
       defaults: { hiddenKinds: [...FILERS, "person", "public"], orphans: false },
       size(n, ctx) {
-        if (n.kind !== "proposal") return null;
-        return 3 + Math.sqrt((byTopic(ctx).get(n.topic) || []).length) * 1.6;
+        if (n.kind === "ask") return 7 + Math.sqrt(askProposals(n, ctx).length) * 3.2;
+        if (n.kind === "proposal") return 3;
+        return null;
       },
-      rings: () => [],
+      rings(n, ctx) {
+        if (n.kind !== "ask") return [];
+        const c = askCoverage(n, ctx);
+        return [{ kind: c.kind, text: `${c.label}${c.unreviewed ? " (this site's reading, not yet confirmed by a person)" : ""}` }];
+      },
       actions(n, ctx) {
+        if (n.kind === "ask") return askActions(n, ctx);
         if (n.kind !== "proposal" || !n.topic) return [];
         const same = byTopic(ctx).get(n.topic) || [];
         const cos = new Set(same.map((p) => p.company));
         const years = same.map((p) => p.year).filter(Boolean).sort();
         const span = years.length ? (years[0] === years.at(-1) ? `${years[0]}` : `${years[0]}–${years.at(-1)}`) : "";
         const out = [{ text: `${n.topic}: ${same.length} proposals at ${cos.size} ${cos.size === 1 ? "company" : "companies"}${span ? ", " + span : ""}` }];
-        // Lowest and highest support where an 8-K reports the vote; no average. Many of these figures are
-        // computed by this site from the 8-K's vote counts (see support_note in data/proposals.json), so the
-        // text points to the notes. Floor proposals (raised at the meeting, so proxy votes could not be cast on
-        // them) are left out: "floor" in the id or source document, or a null support_pct.
-        const isFloor = (p) => /floor/i.test(`${p.id} ${p.source_url || ""}`);
         const voted = same.filter((p) => p.support_pct != null && p.results_url && !isFloor(p)).map((p) => p.support_pct).sort((a, b) => a - b);
         const note = "Some figures are computed from the 8-K's vote counts; notes are in Proposals.";
         if (voted.length === 1) out.push({ text: `Support where an 8-K reports the vote: ${voted[0]}% (1 proposal). ${note}` });

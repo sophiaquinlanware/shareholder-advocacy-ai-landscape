@@ -103,6 +103,7 @@ A new lens is one more entry. `rules.js` holds rule-based settings with comments
   | Proposal deadline | r+9 | solid, plus a 3px countdown arc (full at 90+ days) | `--g-window` |
   | Seeking | r+12 | dotted `1 3` | `--g-seeking` |
   | Resubmission | bar under the node, plus "!" | 3px | `--g-risk` |
+  | Ask coverage: covered / partial / no rule in this map (Policymaker) | r+9 | solid 2.5px / dash `8 3` / dotted `1 3` | `--g-ring`, `--g-ring`, `--g-risk`; panel glyphs ● ◐ ○ |
 
   - The deadline ring pulses twice (5s) and then stays still. It never pulses under reduced motion, and Graph settings can turn the pulse off.
   - Deadlines and thresholds come from `rules.js`, never from page copy.
@@ -119,6 +120,19 @@ A new lens is one more entry. `rules.js` holds rule-based settings with comments
   - **Fund line:** "How your fund voted last year" uses the Fund votes tab's join and wording (`window.FundVotes` in votes.js).
   - **Switching views:** "See the bigger picture" shows the graph with the overlay and moves focus to "Back to the list". Going back returns focus to "See the bigger picture".
   - **Terms:** disclosure buttons (`.term`, `aria-expanded`) with an inline definition (`.term-def`); Esc closes it. The text lives in `GLOSSARY` in lenses.js.
+- **Policymaker lens (Phase 4):**
+  - **Ask nodes:** recurring asks from `data/asks.json`, kind `ask` ("Recurring ask", `--gn-ask`). They're added while this lens is on, each with its proposals beside it and coverage edges to policy nodes (`data/coverage.json`; partial edges dashed `8 3`).
+  - **Marks:** "Covered by a rule in this map", "Partially covered" (plus "not yet in force" where it applies), or "No rule in this map reaches this". With no entries it reads "Coverage not yet assessed", never "no rule". Every mark says "this site's reading, not yet confirmed by a person" while unreviewed. No entry is "full" today, so the solid ring doesn't appear yet.
+  - **Panel ("This ask"):**
+    - recurrence by status;
+    - support by year: range and average. The average is an exception to the site's no-average rule, by the owner's spec; it is labelled as computed by this site, with dual-class and unlinked figures stated;
+    - coverage lines;
+    - company actions in the Causality map that mention the ask (by the ask's match terms). Nothing is called a "commitment", because the data has no such field.
+- **Year scrubber (all lenses):** "Show the network up to {year}" sits under the graph, with Play/Pause (`aria-pressed`) stepping one year every 1.5 s.
+  - **What it caps:** proposals by year, and `ev-` events by date. Companies, filers and labs stay.
+  - **Single year:** with one year chosen in the year select, the slider is disabled, with the reason given.
+  - **URL:** `upto=` in the URL; a lens switch resets it.
+  - **Announcements:** one live message per step, and "Stopped at {year}".
 - **List view:** every visible node, with Name, Type, Connections (sortable), Status and What you can do. It is the text equivalent of the graph.
 
 ## Focus and motion

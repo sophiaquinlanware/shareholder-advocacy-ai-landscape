@@ -118,7 +118,8 @@ test("no pulse under reduced motion", async ({ page }) => {
   // Checks the stylesheet rule directly with a pulse-classed circle, so the test doesn't depend on the graph
   // (and d3 from the CDN) having drawn; it timed out under load late in full runs.
   await page.emulateMedia({ reducedMotion: "reduce" });
-  await open(page);
+  // Only the stylesheet is needed: no data fixture, clock or network-idle wait (they timed out under load).
+  await page.goto("/index.html", { waitUntil: "domcontentloaded" });
   const anim = await page.evaluate(() => {
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");

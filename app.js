@@ -4,7 +4,7 @@
 // Audience: shareholder-advocacy practitioners. Labels are plain; no definitions or explainers.
 
 const DATA = {};
-const FILES = ["site", "companies", "upcoming", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph", "scorecard", "fund_votes"];
+const FILES = ["site", "companies", "upcoming", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph", "scorecard", "fund_votes", "asks", "coverage"];
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
@@ -645,6 +645,9 @@ async function main() {
     proposals: (DATA.proposals && DATA.proposals.proposals) || [],
     companies: DATA.companies || [],
     fundVotes: DATA.fund_votes || null,
+    asks: (DATA.asks && DATA.asks.asks) || [],
+    coverage: DATA.coverage || null,
+    causality: DATA.causality || null,
     hasCompany: (t) => companyEntries().some((e) => e.key === keyForTicker(t)),
     openCompany,
   };

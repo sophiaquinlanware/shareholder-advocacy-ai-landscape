@@ -170,6 +170,8 @@ tr.hit td { background: var(--accent-soft); }
   --g-bg: #1e1e1e; --g-link: #7a8199; --g-label: #dcddde; --g-label-soft: #a1a1aa; --g-ring: #7dd3fc; --g-focus: #ffffff;
   /* Phase 2 marks: deadline ring, seeking ring, resubmission bar. Each 4.5:1 or more on --g-bg. */
   --g-window: #86efac; --g-seeking: #fda4af; --g-risk: #fdba74; --gn-gap: #1e1e1e;
+  /* Phase 4: recurring asks (Policymaker lens). */
+  --gn-ask: #c7d2fe;
   --gn-company: #93c5fd; --gn-lab: #c4b5fd; --gn-proposal: #38bdf8;
   --gn-manager: #4ade80; --gn-nonprofit: #f472b6; --gn-faith: #e879f9; --gn-pension: #fb923c;
   --gn-labor: #facc15; --gn-foundation: #bef264; --gn-coalition: #2dd4bf; --gn-other: #a1a1aa;
@@ -246,12 +248,21 @@ tr.hit td { background: var(--accent-soft); }
 .term-def[hidden] { display: none; }
 #lf-back { margin: 0 0 8px; }
 #lf-back[hidden] { display: none; }
+/* Phase 4: year scrubber under the graph */
+.scrub { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 8px 0 0; font-size: 13px; }
+.scrub label { font-weight: 600; }
+.scrub input[type="range"] { flex: 1 1 200px; min-width: 0; accent-color: var(--accent); }
+.scrub .status-note { flex-basis: 100%; margin: 0; }
+.scrub .status-note:empty { display: none; }
 @keyframes g-pulse { 0%, 100% { stroke-opacity: 1; } 50% { stroke-opacity: 0.25; } }
 .ring-note { font-size: 12px; font-weight: 600; color: var(--accent); }
 .ring-note::before { content: "◌ " / ""; }
 .ring-deadline::before { content: "◷ " / ""; }
 .ring-seeking::before { content: "⋯ " / ""; }
 .ring-risk::before { content: "! " / ""; }
+.ring-cov-covered::before { content: "● " / ""; }
+.ring-cov-partial::before { content: "◐ " / ""; }
+.ring-cov-none::before { content: "○ " / ""; }
 .conf { font-size: 12px; color: var(--ink-soft); }
 .net-graph:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .kb-hint { font-size: 12px; color: var(--ink-soft); margin: 4px 0 0; }

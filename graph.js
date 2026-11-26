@@ -38,6 +38,7 @@
     response: "Company or investor response",
     public: "Public engagement",
     gap: "Topic not filed (this dataset)",
+    ask: "Recurring ask",
   };
   const TYPE_VAR = {
     ...Object.fromEntries(TIERS.map((t) => ["tier-" + t.id, "--n-tier-" + t.id])),
@@ -57,6 +58,7 @@
     response: "--n-response",
     public: "--n-public",
     gap: "--n-gap",
+    ask: "--n-ask",
   };
   const COMPANY_NAMES = { MSFT: "Microsoft", GOOGL: "Alphabet", META: "Meta", AMZN: "Amazon", NVDA: "Nvidia", AAPL: "Apple", TSLA: "Tesla" };
 
@@ -137,6 +139,7 @@
     if (["policy", "response", "public"].includes(n.kind)) return 4 + Math.min(6, Math.sqrt(n.degree) * 1.5);
     if (n.kind === "lab") return 10;
     if (n.kind === "gap") return 6;
+    if (n.kind === "ask") return 8;
     return 6 + Math.min(10, Math.sqrt(n.degree) * 2.4);
   }
   const radius = (n) => {
@@ -157,6 +160,7 @@
     { x: 0.06, label: "People", kinds: ["person"] },
     { x: 0.25, label: "Filers", kinds: FILER_ROWS },
     { x: 0.5, label: "Proposals", kinds: ["proposal"] },
+    { x: 0.62, label: "Asks", kinds: ["ask"] },
     { x: 0.73, label: "Companies", kinds: ["company", ...TIERS.filter((t) => t.id !== "labs").map((t) => "tier-" + t.id)] },
     { x: 0.92, label: "Frontier labs", kinds: ["lab", "tier-labs"] },
   ];
@@ -182,13 +186,13 @@
     if (!state.axis) return;
     const { width, height } = state.size;
     const narrow = width < 640;
-    const SHORT = { People: "People", Filers: "Filers", Proposals: "Proposals", Companies: "Cos.", "Frontier labs": "Labs" };
+    const SHORT = { People: "People", Filers: "Filers", Proposals: "Proposals", Asks: "Asks", Companies: "Cos.", "Frontier labs": "Labs" };
     state.cols = activeColumns();
     state.axis.selectAll("*").remove();
     state.axis.append("rect").attr("x", -width).attr("y", -height).attr("width", width * 3).attr("height", height + HEADER_H).attr("fill", cssVar("--g-bg"));
     state.axis.selectAll("text.col").data(state.cols).join("text").attr("class", "col")
       .attr("x", (c) => c.x * width).attr("y", 14).attr("text-anchor", "middle").attr("font-size", narrow ? 9.5 : 11)
-      .text((c) => (narrow ? SHORT[c.label] : c.label).toUpperCase());
+      .text((c) => (narrow ? SHORT[c.label] || c.label : c.label).toUpperCase());
     state.axis.attr("display", state.cfg.group > 0 ? null : "none");
   }
   // Re-aim the grouping forces after layers change, then let the layout settle again.
@@ -202,6 +206,9 @@
   }
   const groupY = (d) => {
     if (TOP_BAND.includes(d.kind)) return 0.06;
+    // Policymaker lens: each ask has its own row, and its proposals sit beside it.
+    if (state.askY && d.kind === "ask") return state.askY.get(d.id) ?? 0.55;
+    if (state.askY && d.kind === "proposal" && state.askY.has(d.ask_id)) return state.askY.get(d.ask_id);
     if (d.kind === "gap") { const c = state.byId.get(d.gapFor); return c ? groupY(c) : 0.55; }
     const i = FILER_ROWS.indexOf(d.kind);
     if (i >= 0) return 0.16 + (i / (FILER_ROWS.length - 1)) * 0.76;
@@ -330,6 +337,13 @@
           <div id="net-graph" class="net-graph" tabindex="0" role="application" aria-roledescription="network graph" aria-describedby="net-kb-hint" aria-label="Co-filer network graph. Up and Down arrows move between nodes, Enter opens one, Escape clears. The List view has the same data as a table."></div>
           <p class="kb-hint" id="net-kb-hint">Keyboard: Tab into the graph, ↑ ↓ to move between nodes, Enter to open, Esc to clear.</p>
           <p class="visually-hidden" id="net-kb" aria-live="polite"></p>
+          <div class="scrub" id="net-scrub">
+            <label for="net-upto">Show the network up to <span id="net-upto-val"></span></label>
+            <input type="range" id="net-upto" step="1">
+            <button type="button" class="chip" id="net-play" aria-pressed="false">Play</button>
+            <p class="status-note" id="net-scrub-note"></p>
+            <p class="visually-hidden" id="net-scrub-status" aria-live="polite"></p>
+          </div>
         </div>
         <div id="net-list" class="net-list" hidden></div>
         <aside id="net-panel" class="net-panel" aria-label="Selected node"><p class="status-note">Select a node for its connections and sources.</p></aside>
@@ -541,14 +555,15 @@
     if (state.path && state.path.from !== n.id) state.path = null;
     const rel = state.data.links.filter((l) => l.source.id === n.id || l.target.id === n.id).map((l) => {
       const other = l.source.id === n.id ? l.target : l.source;
-      const dir = l.source.id === n.id ? l.relation : `${l.relation} (from)`;
+      const rel = l.relation === "coverage" ? (l.coverage === "full" ? "covers (this site's reading)" : "partially covers (this site's reading)") : l.relation;
+      const dir = l.source.id === n.id ? rel : `${rel} (from)`;
       const c = conf(l);
       if (l.relation === "missing") return `<li><button type="button" class="linklike" data-id="${esc(other.id)}">${esc(other.label)}</button> <span class="ticker">topic not filed</span> <span class="conf">· none in this dataset</span></li>`;
       return `<li><button type="button" class="linklike" data-id="${esc(other.id)}">${esc(other.label)}</button> <span class="ticker">${esc(dir)}</span> <span class="conf conf-${c.level}">· ${c.level === "inferred" ? "no source, " + esc(c.text) : "source: " + esc(c.text)}</span>${l.source_url ? " " + link(l.source_url) : ""}</li>`;
     }).join("");
     // "What you can do": from the active lens; left out when the lens has nothing for this node.
     const acts = actions(n);
-    const actHtml = acts.length ? `<section class="net-actions" aria-labelledby="net-actions-h"><h4 id="net-actions-h">${esc(lens().actionsHeading || "What you can do")}</h4><ul>${acts.map((a, i) => `<li>${actionHtml(a, n.id, i)}</li>`).join("")}</ul></section>` : "";
+    const actHtml = acts.length ? `<section class="net-actions" aria-labelledby="net-actions-h"><h4 id="net-actions-h">${esc((lens().actionsHeadingFor && lens().actionsHeadingFor(n)) || lens().actionsHeading || "What you can do")}</h4><ul>${acts.map((a, i) => `<li>${actionHtml(a, n.id, i)}</li>`).join("")}</ul></section>` : "";
     const ringHtml = rings(n).map((r) => `<p class="ring-note ring-${esc(r.kind)}">${esc(r.text)}</p>`).join("");
     let facts = "";
     if (n.kind === "proposal") {
@@ -610,8 +625,11 @@
     }
   }
 
+  // The year a node belongs to for the year scrubber: proposals by year, events (ev- nodes) by date.
+  const nodeYear = (n) => (n.kind === "proposal" ? Number(n.year) : String(n.id).startsWith("ev-") && n.date ? Number(String(n.date).slice(0, 4)) : null);
   function baseVisible(n) {
     if (n.kind === "gap") { const c = state.byId.get(n.gapFor); return !!c && baseVisible(c); }
+    if (state.upto) { const y = nodeYear(n); if (y && y > state.upto) return false; }
     if (state.hiddenKinds.has(n.kind)) return false;
     if (n.kind === "proposal") {
       if (state.topic && n.topic !== state.topic) return false;
@@ -793,7 +811,10 @@
             g.append("path").attr("d", `M0,${-R}A${R},${R} 0 ${t > Math.PI ? 1 : 0} 1 ${R * Math.sin(t)},${-R * Math.cos(t)}`)
               .attr("fill", "none").attr("stroke", cssVar("--g-window")).attr("stroke-width", 3).attr("stroke-linecap", "round");
           }
-        } else if (m.kind === "seeking") g.append("circle").attr("r", r + 12).attr("fill", "none").attr("stroke", cssVar("--g-seeking")).attr("stroke-width", 2).attr("stroke-dasharray", "1 3").attr("stroke-linecap", "round");
+        } else if (m.kind === "cov-covered") g.append("circle").attr("r", r + 9).attr("fill", "none").attr("stroke", cssVar("--g-ring")).attr("stroke-width", 2.5);
+        else if (m.kind === "cov-partial") g.append("circle").attr("r", r + 9).attr("fill", "none").attr("stroke", cssVar("--g-ring")).attr("stroke-width", 2).attr("stroke-dasharray", "8 3");
+        else if (m.kind === "cov-none") g.append("circle").attr("r", r + 9).attr("fill", "none").attr("stroke", cssVar("--g-risk")).attr("stroke-width", 2).attr("stroke-dasharray", "1 3").attr("stroke-linecap", "round");
+        else if (m.kind === "seeking") g.append("circle").attr("r", r + 12).attr("fill", "none").attr("stroke", cssVar("--g-seeking")).attr("stroke-width", 2).attr("stroke-dasharray", "1 3").attr("stroke-linecap", "round");
         else if (m.kind === "risk") {
           g.append("rect").attr("x", -Math.max(r, 5)).attr("y", r + 3).attr("width", Math.max(r, 5) * 2).attr("height", 3).attr("fill", cssVar("--g-risk"));
           g.append("text").attr("x", Math.max(r, 5) + 3).attr("y", r + 9).attr("font-size", 11).attr("font-weight", 700).attr("fill", cssVar("--g-risk")).text("!");
@@ -1002,8 +1023,9 @@
   // ---------- Keyboard: the graph is one tab stop; Up/Down step through visible nodes ----------
   // Order: companies and labs first, then by number of connections, then by name.
   function kbOrder() {
+    const first = (n) => (lens().asks && n.kind === "ask" ? 2 : isCompanyKind(n.kind) ? 1 : 0);
     return state.data.nodes.filter(visible)
-      .sort((a, b) => (isCompanyKind(b.kind) - isCompanyKind(a.kind)) || (b.degree || 0) - (a.degree || 0) || a.label.localeCompare(b.label));
+      .sort((a, b) => first(b) - first(a) || (b.degree || 0) - (a.degree || 0) || a.label.localeCompare(b.label));
   }
   const say = (t) => { const el = document.getElementById("net-kb"); if (el) el.textContent = t; };
   function kbMove(step) {
@@ -1080,7 +1102,7 @@
     state.linkSel = g.append("g").attr("stroke", cssVar("--g-link")).attr("fill", "none").selectAll("path").data(data.links).join("path")
       .attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.4 : 1) * state.cfg.linkScale)
       // Membership links are dashed; links with no source (inferred) are dotted, so the two never look alike.
-      .attr("stroke-dasharray", (l) => (l.relation === "missing" ? "5 3" : conf(l).level === "inferred" ? "1 3" : l.relation === "member of" ? "3 3" : null));
+      .attr("stroke-dasharray", (l) => (l.relation === "missing" ? "5 3" : l.relation === "coverage" && l.coverage !== "full" ? "8 3" : conf(l).level === "inferred" ? "1 3" : l.relation === "member of" ? "3 3" : null));
 
     state.node = g.append("g").selectAll("circle").data(data.nodes).join("circle")
       .attr("r", radius)
@@ -1179,10 +1201,14 @@
     state.path = null;
     gapButton();
     if (state.gaps && !lens().gaps) setGaps(false);
+    stopPlay();
+    state.upto = null;
+    setAsks(!!lens().asks);
     const d = lens().defaults || {};
     state.hiddenKinds = new Set(d.hiddenKinds || []);
     state.topic = ""; state.year = "";
     ["net-topic", "net-year"].forEach((x) => { const s = document.getElementById(x); if (s) s.value = ""; });
+    scrubSync();
     if (d.orphans != null) {
       state.cfg.orphans = d.orphans;
       const c = document.querySelector("[data-gs-check=orphans]");
@@ -1206,6 +1232,107 @@
     }
   }
 
+  // ---------- Policymaker lens: recurring asks (data/asks.json) and their coverage (data/coverage.json) ----------
+  // Ask nodes are built from the data files while a lens with asks: true is active, then removed.
+  function setAsks(on, quiet) {
+    const d = state.data;
+    d.nodes.splice(0, d.nodes.length, ...d.nodes.filter((n) => n.kind !== "ask"));
+    d.links.splice(0, d.links.length, ...d.links.filter((l) => l.relation !== "asks for" && l.relation !== "coverage"));
+    state.askY = null;
+    if (on) {
+      const asks = (state.ctx.asks || []).filter((a) => d.nodes.some((n) => n.kind === "proposal" && n.ask_id === a.id));
+      state.askY = new Map(asks.map((a, i) => [a.id, asks.length === 1 ? 0.5 : 0.14 + (i / (asks.length - 1)) * 0.8]));
+      asks.forEach((a) => {
+        const props = d.nodes.filter((n) => n.kind === "proposal" && n.ask_id === a.id);
+        d.nodes.push({ id: a.id, kind: "ask", label: a.label, match: a.match || [], degree: props.length });
+        props.forEach((p) => d.links.push({ source: a.id, target: p.id, relation: "asks for", type: "asks for", source_url: null, derived: true }));
+      });
+      const ids = new Set(d.nodes.map((n) => n.id));
+      ((state.ctx.coverage && state.ctx.coverage.entries) || []).forEach((e) => {
+        if (e.graph_id && ids.has(e.graph_id) && ids.has(e.ask_id)) d.links.push({ source: e.ask_id, target: e.graph_id, relation: "coverage", type: "coverage", coverage: e.coverage, source_url: e.source_url, description: e.note });
+      });
+    }
+    state.byId = new Map(d.nodes.map((x) => [x.id, x]));
+    state.ctx.byId = state.byId;
+    state.ctx.cache = {};
+    if (quiet) return;
+    legend(d);
+    if (state.drawn) { state.sim.stop(); drawGraph(); }
+  }
+
+  // ---------- Year scrubber (all lenses): show the network up to a year; Play steps through the years ----------
+  function yearRange() {
+    const ys = state.data.nodes.filter((n) => n.kind === "proposal" && n.year).map((n) => Number(n.year));
+    return ys.length ? [Math.min(...ys), Math.max(...ys)] : [0, 0];
+  }
+  let playTimer = null;
+  function stopPlay(announce) {
+    if (!playTimer) return;
+    clearInterval(playTimer);
+    playTimer = null;
+    const b = document.getElementById("net-play");
+    if (b) { b.textContent = "Play"; b.setAttribute("aria-pressed", "false"); }
+    if (announce) document.getElementById("net-scrub-status").textContent = `Stopped at ${state.upto || yearRange()[1]}.`;
+  }
+  function saveUpto() {
+    try {
+      const u = new URL(location.href);
+      if (state.upto) u.searchParams.set("upto", state.upto); else u.searchParams.delete("upto");
+      window.history.replaceState(null, "", u.pathname + u.search + location.hash);
+    } catch (e) {}
+  }
+  // Syncs the slider with state: range, value, label, and disabled while a single year is selected.
+  function scrubSync() {
+    const r = document.getElementById("net-upto");
+    if (!r) return;
+    const [lo, hi] = yearRange();
+    r.min = lo; r.max = hi;
+    r.value = state.upto || hi;
+    document.getElementById("net-upto-val").textContent = r.value;
+    const single = !!state.year;
+    r.disabled = single;
+    document.getElementById("net-play").disabled = single;
+    document.getElementById("net-scrub-note").textContent = single ? `Showing ${state.year} only. Choose All years to use the slider.` : "";
+    saveUpto();
+  }
+  function scrubTo(y, refresh, announce) {
+    const [, hi] = yearRange();
+    state.upto = y >= hi ? null : y;
+    scrubSync();
+    // A selected or keyboard-focused node that the cap hides is cleared.
+    for (const key of ["selected", "kbId", "hover"]) {
+      const n = state[key] && state.byId.get(state[key]);
+      if (n && !baseVisible(n)) {
+        state[key] = null;
+        if (key === "selected") document.getElementById("net-panel").innerHTML = `<p class="status-note">The selected node is after ${y}, so it is hidden. Select another node.</p>`;
+      }
+    }
+    refresh();
+    if (state.ringSel) placeFocusMark();
+    if (announce) {
+      const n = state.data.nodes.filter((x) => x.kind === "proposal" && visible(x)).length;
+      document.getElementById("net-scrub-status").textContent = `Up to ${y}: ${n} ${n === 1 ? "proposal" : "proposals"} shown.`;
+    }
+  }
+  function wireScrubber(refresh) {
+    const r = document.getElementById("net-upto");
+    const b = document.getElementById("net-play");
+    r.addEventListener("input", () => { stopPlay(); scrubTo(Number(r.value), refresh, true); });
+    b.addEventListener("click", () => {
+      if (playTimer) { stopPlay(true); return; }
+      const [lo, hi] = yearRange();
+      let y = state.upto && state.upto < hi ? state.upto : lo;
+      b.textContent = "Pause";
+      b.setAttribute("aria-pressed", "true");
+      scrubTo(y, refresh, true);
+      playTimer = setInterval(() => {
+        y += 1;
+        scrubTo(y, refresh, true);
+        if (y >= hi) stopPlay(true);
+      }, 1500);
+    });
+  }
+
   // "Show topics not filed" belongs to lenses that set gaps: true (the Impact investor lens).
   function gapButton() {
     const b = document.getElementById("net-gaps");
@@ -1224,14 +1351,17 @@
       if (hit && state.view === "graph") { state.selected = hit.id; showPanel(hit); }
     });
     document.getElementById("net-topic").addEventListener("change", (e) => { state.topic = e.target.value; refresh(); });
-    document.getElementById("net-year").addEventListener("change", (e) => { state.year = e.target.value; refresh(); });
-    document.querySelectorAll("#net-legend .leg").forEach((b) => b.addEventListener("click", () => {
+    document.getElementById("net-year").addEventListener("change", (e) => { state.year = e.target.value; stopPlay(); state.upto = null; scrubSync(); refresh(); });
+    document.getElementById("net-legend").addEventListener("click", (e) => {
+      const b = e.target.closest(".leg");
+      if (!b) return;
       const k = b.dataset.kind;
       if (state.hiddenKinds.has(k)) state.hiddenKinds.delete(k); else state.hiddenKinds.add(k);
       b.setAttribute("aria-pressed", String(!state.hiddenKinds.has(k)));
       refresh();
       regroup();
-    }));
+    });
+    wireScrubber(refresh);
     document.querySelectorAll("#net-lens input").forEach((r) => r.addEventListener("change", () => { if (r.checked) setLens(r.value, true); }));
     wireKeys();
     wireHoldings();
@@ -1273,14 +1403,22 @@
       upcoming: new Map(((app.upcoming || [])).map((m) => [m.ticker, m])),
       hasCompany: app.hasCompany || (() => false), openCompany: app.openCompany || (() => {}),
       proposals: app.proposals || [], companies: app.companies || [], disclaimer: app.disclaimer || "",
-      fv: window.FundVotes ? window.FundVotes.index(app.fundVotes) : null };
+      fv: window.FundVotes ? window.FundVotes.index(app.fundVotes) : null,
+      asks: app.asks || [], coverage: app.coverage || null, causality: app.causality || null };
     shell(el);
+    if (lens().asks) setAsks(true, true);
+    {
+      const u = Number(new URLSearchParams(location.search).get("upto"));
+      const [lo, hi] = yearRange();
+      if (u && u >= lo && u < hi) state.upto = u;
+    }
     refreshConnected();
     settingsPanel();
     legend(state.data);
     intro();
     wire();
     holdStatus();
+    scrubSync();
     // The graph needs a visible container to measure, so draw it the first time its tab opens.
     state.feedView = lens().feed ? urlView() : "graph";
     setFeedView(state.feedView, false);
