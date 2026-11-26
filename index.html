@@ -29,7 +29,7 @@
     <button type="button" role="tab" id="tabbtn-feed" aria-controls="tab-feed" data-tab="feed" aria-selected="false" tabindex="-1">Proposals</button>
     <button type="button" role="tab" id="tabbtn-votes" aria-controls="tab-votes" data-tab="votes" aria-selected="false" tabindex="-1">Fund votes</button>
     <button type="button" role="tab" id="tabbtn-rights" aria-controls="tab-rights" data-tab="rights" aria-selected="false" tabindex="-1">Rights map</button>
-    <button type="button" role="tab" id="tabbtn-network" aria-controls="tab-network" data-tab="network" aria-selected="false" tabindex="-1">Co-filer network</button>
+    <button type="button" role="tab" id="tabbtn-network" aria-controls="tab-network" data-tab="network" aria-selected="false" tabindex="-1">AI advocacy network</button>
     <button type="button" role="tab" id="tabbtn-people" aria-controls="tab-people" data-tab="people" aria-selected="false" tabindex="-1">Contacts</button>
     <button type="button" role="tab" id="tabbtn-pathways" aria-controls="tab-pathways" data-tab="pathways" aria-selected="false" tabindex="-1">Lab pathways</button>
     <button type="button" role="tab" id="tabbtn-value-chain" aria-controls="tab-value-chain" data-tab="value-chain" aria-selected="false" tabindex="-1">Value chain</button>
@@ -64,6 +64,7 @@
 
 <!-- d3 loads in parallel and never blocks the first tables; app.js waits for it before drawing graphs. -->
 <script id="d3js" async src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script defer src="roles.js"></script>
 <script defer src="rules.js"></script>
 <script defer src="lenses.js"></script>
 <script defer src="graph.js"></script>

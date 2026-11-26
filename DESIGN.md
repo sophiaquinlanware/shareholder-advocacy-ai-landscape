@@ -37,7 +37,7 @@ One white theme (`color-scheme: light`). All colours are tokens on `:root` in `s
 | Visual | Encoding |
 |---|---|
 | Proposals dot plot | x = meeting date; y = support (0–60%, or higher if the data needs it); one mark per voted proposal with a dated vote-results filing. Topic = shade **and** shape: data centres navy circle, social and economic mid-blue square, governance light-blue triangle. Every mark is filled (owner, 2026-11-26: "Be consistent with the circles"); basis notes are listed under the table, and the key says how many plotted figures have one. Dashed line "50% of for + against". Marks sharing a date are spread 7px apart. |
-| Co-filer network | **Exception to all-blue and to the white page, by the owner's direction:** the graph box is a dark canvas like Obsidian's graph view (`--g-bg` #1e1e1e; owner: "the black background and colors like this so that the graph looks similar to an Obsidian graph"). One bright, distinct colour per node type (`--gn-*`, each 4.5:1 or more on `--g-bg`), so types read straight off the key. Links are thin grey-blue (`--g-link`) and labels light (`--g-label`). The page, key, panel and List view stay white. Lab pathways keeps the `--n-*` colours on white. **Companies are typed by value-chain tier** (the `tier` field on graph.json nodes, from the data session): Chip builders, Data centers and power, Hyperscalers and AI clouds, Frontier AI labs, Strategic investors, AI deployers. Each tier has its own `--n-tier-*` colour, and companies sit in tier bands within the Companies column. A company with no tier shows as "Company (tier not yet assigned)". The intro says the tiers are this site's reading. **The selected node's label stands out** (owner, 2026-11-26): it is larger, bold and white on a blue `--accent` pill, while its connections' labels show in `--g-label-soft`. **Key controls** (owner, 2026-11-26): click a type to hide or show it, "only" beside it to show that type alone, and "Show all" to restore; the proposal-category key works the same way. When 25 or fewer nodes are shown, every node is named. **Labels never overlap** (owner, 2026-11-26: "Make it so it's always legible"). Each shown label takes the first free spot (right, left, above or below its node) within the visible area at the current zoom. Priority goes to the selected node, then companies and labs, then the most connected. A label with no free spot is hidden; its node is still named in the panel and the List view. Labels carry a dark outline, and the browser tooltip is removed. **Grouped 2D layout:** x follows the filing chain (people → filers → proposals → value chain, by tier → frontier labs; owner asked for a more specific word than "companies"), under column headers on an opaque top strip that nodes can't enter. Filer types each get a horizontal band, with no row labels: the key names the types (owner asked whether the axes help; the row labels were dropped as confusing). Policy, responses and public engagement sit in a top band. Size = number of connections. Links thin grey-blue quadratic arcs on the dark canvas. **Graph settings** panel (like Obsidian's): text size, label threshold, node size and link thickness (Display); orphans (Filters); grouping, centre, repel and link force, and link distance (Forces). Saved per viewer in localStorage, with "Reset to defaults". |
+| AI advocacy network | **Exception to all-blue and to the white page, by the owner's direction:** the graph box is a dark canvas like Obsidian's graph view (`--g-bg` #1e1e1e; owner: "the black background and colors like this so that the graph looks similar to an Obsidian graph"). One bright, distinct colour per node type (`--gn-*`, each 4.5:1 or more on `--g-bg`), so types read straight off the key. Links are thin grey-blue (`--g-link`) and labels light (`--g-label`). The page, key, panel and List view stay white. Lab pathways keeps the `--n-*` colours on white. **Companies are typed by main role in AI** (roles.js, used site-wide; owner, 2026-11-26): Frontier labs, Chips and hardware, Data centers and power, Cloud and model platforms, Consumer products, Business and government products, Strategic investors. Each has its own colour (`--gn-tier-*`), and companies sit in role bands within the "Value chain, by role" column. The intro says the roles are this site's reading. **The selected node's label stands out** (owner, 2026-11-26): it is larger, bold and white on a blue `--accent` pill, while its connections' labels show in `--g-label-soft`. **Key controls** (owner, 2026-11-26): click a type to hide or show it, "only" beside it to show that type alone, and "Show all" to restore; the proposal-category key works the same way. When 25 or fewer nodes are shown, every node is named. **Labels never overlap** (owner, 2026-11-26: "Make it so it's always legible"). Each shown label takes the first free spot (right, left, above or below its node) within the visible area at the current zoom. Priority goes to the selected node, then companies and labs, then the most connected. A label with no free spot is hidden; its node is still named in the panel and the List view. Labels carry a dark outline, and the browser tooltip is removed. **Grouped 2D layout:** x follows the filing chain (people → filers → proposals → value chain, by tier → frontier labs; owner asked for a more specific word than "companies"), under column headers on an opaque top strip that nodes can't enter. Filer types each get a horizontal band, with no row labels: the key names the types (owner asked whether the axes help; the row labels were dropped as confusing). Policy, responses and public engagement sit in a top band. Size = number of connections. Links thin grey-blue quadratic arcs on the dark canvas. **Graph settings** panel (like Obsidian's): text size, label threshold, node size and link thickness (Display); orphans (Filters); grouping, centre, repel and link force, and link distance (Forces). Saved per viewer in localStorage, with "Reset to defaults". |
 | Lab pathways | Company → lab ties navy, width = tie strength. Filer → company links light blue, width = proposals filed. |
 | Policy and causality | Event nodes mid blue. Link type by dash pattern: led to solid · responded to dashed · restricts dotted · enables dash-dot · cited by sparse dots. |
 | Disclosure scorecard | Met = solid blue, partial = hatched blue, silent = grey outline. |
@@ -60,7 +60,7 @@ Every visual has a text equivalent on the same tab: the proposals table, the net
 
 ## Tabs (task order)
 
-Upcoming votes (`#upcoming`) · Company lookup · Proposals · Fund votes (`#votes`, unchanged from main) · Rights map · Co-filer network · Contacts · Lab pathways · Policy and causality · Disclosure scorecard · New filings.
+Upcoming votes (`#upcoming`) · Company lookup · Proposals · Fund votes (`#votes`, unchanged from main) · Rights map · AI advocacy network (`#network`, formerly Co-filer network) · Contacts · Lab pathways · Policy and causality · Disclosure scorecard · New filings.
 
 They follow the WAI-ARIA tabs pattern: `aria-controls` and `aria-labelledby`, a roving tabindex, and Left/Right/Home/End keys. Old links redirect: `#why` goes to Policy and causality, which holds the policy timeline; `#weigh-in` and `#water` go to Upcoming votes. Any other unknown hash opens the first tab.
 
@@ -76,7 +76,7 @@ They follow the WAI-ARIA tabs pattern: `aria-controls` and `aria-labelledby`, a 
 - **Legend chip:** `.leg`. When switched off: struck through, dashed border, hollow dot.
 - **Source link:** `.src`. Missing sources show "source pending" (`.unverified`).
 
-## Lenses (Co-filer network)
+## Lenses (AI advocacy network)
 
 One dataset, several views. `lenses.js` holds every lens (`window.LENSES`). Each lens has:
 - a label;
@@ -139,6 +139,19 @@ A new lens is one more entry. `rules.js` holds rule-based settings with comments
 
 - `:focus-visible` draws a 2px `--accent` outline. On accent-filled controls the outline is `--ink`.
 - `prefers-reduced-motion`: no transitions, the network settles before drawing, and focus jumps instead of animating.
+
+## Company roles (site-wide)
+
+Every view classifies companies the same way, by **main role in AI** (roles.js), with secondary roles listed as "also" (owner, 2026-11-26: "use this to differentiate companies throughout the UI"). The categories come from research into how the EU AI Act, the UK CMA, the OECD and investor stewardship guides classify AI companies. They are role-based (developer, infrastructure, platform, deployer), with deployers split by who is affected:
+- Frontier labs
+- Chips and hardware
+- Data centers and power
+- Cloud and model platforms
+- Consumer products
+- Business and government products
+- Strategic investors
+
+Roles are derived from the data session's sourced tiers and consumer/enterprise tags. Four overrides are stated in roles.js. The classification is shown as "this site's reading". The old "sectors" filter is replaced everywhere. The Value chain tab's per-tier counts still come by tier, so its deployers row reads "Consumer and business products".
 
 ## Named rules
 

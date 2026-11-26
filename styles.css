@@ -161,6 +161,7 @@ tr.hit td { background: var(--accent-soft); }
   /* Value-chain tiers (companies by primary tier). */
   --n-tier-chips: #1e40af; --n-tier-datacenters: #155e75; --n-tier-compute: #4338ca;
   --n-tier-labs: #6d28d9; --n-tier-capital: #a16207; --n-tier-deployers: #374151;
+  --n-tier-cloud: #4338ca; --n-tier-consumer: #374151; --n-tier-business: #047857;
 }
 /* Co-filer network canvas: dark, like Obsidian's graph view (owner, 2026-11-25: "for the graph view i want
    the black background and colors like this so that the graph looks similar to an Obsidian graph").
@@ -180,6 +181,8 @@ tr.hit td { background: var(--accent-soft); }
   --gn-person: #e2e8f0; --gn-policy: #fca5a5; --gn-response: #67e8f9; --gn-public: #f9a8d4;
   --gn-tier-chips: #fbbf24; --gn-tier-datacenters: #22d3ee; --gn-tier-compute: #60a5fa;
   --gn-tier-labs: #a78bfa; --gn-tier-capital: #f87171; --gn-tier-deployers: #d4d4d8;
+  /* Company roles (roles.js): cloud and model platforms, consumer products, business and government products. */
+  --gn-tier-cloud: #60a5fa; --gn-tier-consumer: #e5e7eb; --gn-tier-business: #c08457;
 }
 /* Graph settings panel (display, filters, forces), modelled on Obsidian's graph view settings. */
 .graph-settings { border: 1px solid var(--control-edge); border-radius: var(--radius); padding: 6px 12px; margin: 0 0 10px; font-size: 13px; }

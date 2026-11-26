@@ -452,10 +452,11 @@
       kindLabels: {
         "tier-chips": "Chip makers",
         "tier-datacenters": "Data centers and power",
-        "tier-compute": "Cloud providers",
+        "tier-cloud": "Cloud providers",
         "tier-labs": "AI model makers",
         "tier-capital": "Big investors in AI",
-        "tier-deployers": "Companies using AI",
+        "tier-consumer": "AI in consumer products",
+        "tier-business": "AI sold to businesses and governments",
         lab: "AI model makers",
         company: "Company",
         proposal: "Shareholder proposal",

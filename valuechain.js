@@ -17,9 +17,13 @@
   // Each tie type as words that read as a sentence: "{from} {phrase} {to}".
   const PHRASE = { "supplies chips": "supplies chips to", "manufactures for": "manufactures for", "leases capacity to": "leases capacity to", "provides compute to": "provides compute to", "supplies power to": "supplies power to", "distributes models": "distributes the models of" };
   const phrase = (t) => PHRASE[t] || t;
-  const SHORT_TIER = { chips: "Chips", datacenters: "Data centers", compute: "Clouds", labs: "Labs", capital: "Investors", deployers: "Deployers" };
+  const SHORT_TIER = { chips: "Chips", datacenters: "Data centers", cloud: "Cloud", labs: "Labs", capital: "Investors", consumer: "Consumer", business: "Business" };
   // Flow columns in value-chain order; strategic investors sit as a band under frontier labs (capital feeds labs).
-  const FLOW = ["chips", "datacenters", "compute", "labs", "deployers"];
+  // Columns are the site's company roles (roles.js) in value-chain order; strategic investors sit under labs.
+  const FLOW = ["chips", "datacenters", "cloud", "labs", "consumer", "business"];
+  const roleOfId = (id) => (window.ROLES && CO.get(id) ? window.ROLES.roleOf(CO.get(id)) : (CO.get(id) || {}).tier);
+  // per_tier data comes by value-chain tier; its rows use the role names, with deployers covering both products roles.
+  const TIER_AS_ROLE = { chips: "Chips and hardware", datacenters: "Data centers and power", compute: "Cloud and model platforms", labs: "Frontier labs", capital: "Strategic investors", deployers: "Consumer and business products" };
   let V = null;
   let CO = null;
 
@@ -44,7 +48,7 @@
   }
 
   const name = (id) => (CO.get(id) || {}).name || id;
-  const tierLabel = (id) => (V.tiers.find((t) => t.id === id) || {}).label || id;
+  const tierLabel = (id) => TIER_AS_ROLE[id] || (window.ROLES && window.ROLES.label(id)) || (V.tiers.find((t) => t.id === id) || {}).label || id;
 
   function drawFlow() {
     const box = document.getElementById("vc-flow");
@@ -56,8 +60,9 @@
     const colX = (i) => 70 + (i * (W - 220)) / (FLOW.length - 1);
     const rowH = 20;
     const cols = FLOW.map((tid, i) => {
-      let ids = [...inTies].filter((id) => (CO.get(id) || {}).tier === tid).sort((a, b) => name(a).localeCompare(name(b)));
-      if (tid === "labs") ids = ids.concat("__capital__", [...inTies].filter((id) => (CO.get(id) || {}).tier === "capital").sort((a, b) => name(a).localeCompare(name(b))));
+      let ids = [...inTies].filter((id) => roleOfId(id) === tid).sort((a, b) => name(a).localeCompare(name(b)));
+      const cap = [...inTies].filter((id) => roleOfId(id) === "capital").sort((a, b) => name(a).localeCompare(name(b)));
+      if (tid === "labs" && cap.length) ids = ids.concat("__capital__", cap);
       return { tid, x: colX(i), ids };
     });
     const H = 60 + Math.max(...cols.map((c) => c.ids.length)) * rowH + 30;
@@ -166,7 +171,7 @@
     const ins = V.ties.filter((t) => t.to === id);
     const panel = document.getElementById("vc-panel");
     panel.innerHTML = `
-      <p class="eyebrow" style="margin:0 0 4px">${esc(tierLabel(c.tier))}${(c.tiers || []).length > 1 ? ` · also ${c.tiers.filter((x) => x !== c.tier).map(tierLabel).map(esc).join(", ")}` : ""}</p>
+      <p class="eyebrow" style="margin:0 0 4px">${esc(window.ROLES ? window.ROLES.label(window.ROLES.roleOf(c)) : tierLabel(c.tier))}${window.ROLES && window.ROLES.alsoOf(c).length ? ` · also ${esc(window.ROLES.alsoOf(c).map(window.ROLES.label).join(", "))}` : ""}</p>
       <h3 id="vc-panel-h" tabindex="-1">${esc(c.name || id)}</h3>
       <h4>Ties from ${esc(c.name || id)}</h4>${tieList(outs)}
       <h4>Ties to ${esc(c.name || id)}</h4>${tieList(ins)}

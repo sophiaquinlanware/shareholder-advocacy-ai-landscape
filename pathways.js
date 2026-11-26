@@ -76,9 +76,13 @@
       <div class="table-wrap" id="pw-ties"></div>`;
   }
 
-  // Value-chain tier per company (companies.json tier, by ticker), in value-chain order.
-  const TIER = { chips: [1, "Chip builder"], datacenters: [2, "Data centers and power"], compute: [3, "Hyperscaler or AI cloud"], labs: [4, "Frontier AI lab"], capital: [5, "Strategic investor"], deployers: [6, "AI deployer"] };
-  const tierOf = (c) => TIER[(window.companyTiers || new Map()).get(c.ticker)] || [9, ""];
+  // Main role in AI per company (roles.js), in value-chain order; the same classification as the rest of the site.
+  const ROLE_ORDER = ["chips", "datacenters", "cloud", "labs", "consumer", "business", "capital"];
+  const tierOf = (c) => {
+    const co = window.companyFor ? window.companyFor({ ticker: c.ticker, id: c.id }) : null;
+    const r = co && window.ROLES ? window.ROLES.roleOf(co) : null;
+    return r ? [ROLE_ORDER.indexOf(r), window.ROLES.label(r)] : [9, ""];
+  };
   const byTier = (list) => [...list].sort((a, b) => tierOf(a)[0] - tierOf(b)[0] || a.name.localeCompare(b.name));
 
   function layout() {

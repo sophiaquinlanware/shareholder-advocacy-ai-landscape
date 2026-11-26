@@ -10,16 +10,10 @@
     const mx = (sx + tx) / 2 - (ty - sy) * 0.15, my = (sy + ty) / 2 + (tx - sx) * 0.15;
     return `M${sx},${sy}Q${mx},${my} ${tx},${ty}`;
   };
-  // Companies and labs are typed by their primary value-chain tier ("tier" on graph.json nodes, set by the
-  // data session from data/value_chain.json; labels verbatim from there). A company with no tier stays "Company".
-  const TIERS = [
-    { id: "chips", label: "Chip builders" },
-    { id: "datacenters", label: "Data centers and power" },
-    { id: "compute", label: "Hyperscalers and AI clouds" },
-    { id: "labs", label: "Frontier AI labs" },
-    { id: "capital", label: "Strategic investors" },
-    { id: "deployers", label: "AI deployers" },
-  ];
+  // Companies and labs are typed by their main role in AI (roles.js; owner, 2026-11-26: "use this to
+  // differentiate companies throughout the UI"). A company with no role on file stays "Company".
+  // Kinds keep the "tier-" prefix; the ids are role ids.
+  const TIERS = (window.ROLES ? window.ROLES.list : []).map((r) => ({ id: r.id, label: r.label }));
   const TYPE_LABEL = {
     ...Object.fromEntries(TIERS.map((t) => ["tier-" + t.id, t.label])),
     company: "Company (tier not yet assigned)",
@@ -99,8 +93,10 @@
       let kind = n.type;
       if (kind === "investor") kind = TYPE_VAR[n.org_type] ? n.org_type : "other";
       if (kind === "company" || kind === "lab") {
-        const tier = n.tier || (window.companyTiers || new Map()).get(n.ticker);
-        if (tier && TYPE_LABEL["tier-" + tier]) kind = "tier-" + tier;
+        // Main role from the company record (by ticker, else by id), else from the node's own tier.
+        const co = (window.companyFor && window.companyFor(n)) || null;
+        const role = window.ROLES ? (co ? window.ROLES.roleOf(co) : window.ROLES.roleOfTier(n.tier)) : null;
+        if (role && TYPE_LABEL["tier-" + role]) kind = "tier-" + role;
       }
       return { ...n, kind, ev_kind: n.kind, label: n.label };
     });
@@ -161,7 +157,7 @@
     { x: 0.25, label: "Filers", kinds: FILER_ROWS },
     { x: 0.5, label: "Proposals", kinds: ["proposal"] },
     { x: 0.62, label: "Asks", kinds: ["ask"] },
-    { x: 0.73, label: "Value chain, by tier", kinds: ["company", ...TIERS.filter((t) => t.id !== "labs").map((t) => "tier-" + t.id)] },
+    { x: 0.73, label: "Value chain, by role", kinds: ["company", ...TIERS.filter((t) => t.id !== "labs").map((t) => "tier-" + t.id)] },
     { x: 0.92, label: "Frontier labs", kinds: ["lab", "tier-labs"] },
   ];
   const TOP_BAND = ["policy", "response", "public"];
@@ -186,7 +182,7 @@
     if (!state.axis) return;
     const { width, height } = state.size;
     const narrow = width < 640;
-    const SHORT = { People: "People", Filers: "Filers", Proposals: "Proposals", Asks: "Asks", "Value chain, by tier": "Value chain", "Frontier labs": "Labs" };
+    const SHORT = { People: "People", Filers: "Filers", Proposals: "Proposals", Asks: "Asks", "Value chain, by role": "By role", "Frontier labs": "Labs" };
     state.cols = activeColumns();
     state.axis.selectAll("*").remove();
     state.axis.append("rect").attr("x", -width).attr("y", -height).attr("width", width * 3).attr("height", height + HEADER_H).attr("fill", cssVar("--g-bg"));
@@ -304,7 +300,7 @@
 
   function shell(el) {
     el.innerHTML = `
-      <h2>Co-filer network</h2>
+      <h2>AI advocacy network</h2>
       <fieldset class="lens-pick" id="net-lens"><legend>View as</legend>${Object.entries(window.LENSES || {}).map(([id, l]) =>
         `<label class="chip"><input type="radio" name="net-lens" value="${esc(id)}"${id === state.lens ? " checked" : ""}> ${esc(l.label)}</label>`).join("")}</fieldset>
       <p class="visually-hidden" id="net-lens-status" aria-live="polite"></p>
@@ -337,7 +333,7 @@
       <details id="net-settings" class="graph-settings"></details>
       <div class="net-body">
         <div class="net-graph-wrap">
-          <div id="net-graph" class="net-graph" tabindex="0" role="application" aria-roledescription="network graph" aria-describedby="net-kb-hint" aria-label="Co-filer network graph. Up and Down arrows move between nodes, Enter opens one, Escape clears. The List view has the same data as a table."></div>
+          <div id="net-graph" class="net-graph" tabindex="0" role="application" aria-roledescription="network graph" aria-describedby="net-kb-hint" aria-label="AI advocacy network graph: investors, proposals, companies, labs and policy. Up and Down arrows move between nodes, Enter opens one, Escape clears. The List view has the same data as a table."></div>
           <p class="kb-hint" id="net-kb-hint">Keyboard: Tab into the graph, ↑ ↓ to move between nodes, Enter to open, Esc to clear.</p>
           <p class="visually-hidden" id="net-kb" aria-live="polite"></p>
         </div>
@@ -558,7 +554,7 @@
     const shown = state.data.nodes.filter(visible).length;
     document.getElementById("net-intro").textContent = lens().plainIntro
       ? lens().plainIntro(shown, state.data.nodes.length)
-      : `${shown} of ${state.data.nodes.length} nodes shown. Node size = ${lens().sizeLabel}. Company tiers are this site's reading of each company's main role in the AI value chain.`;
+      : `${shown} of ${state.data.nodes.length} nodes shown. Node size = ${lens().sizeLabel}. Company roles are this site's reading of each company's main role in AI.`;
   }
 
   function neighbors(id) {
@@ -577,8 +573,10 @@
       const rel = l.relation === "coverage" ? (l.coverage === "full" ? "covers (this site's reading)" : "partially covers (this site's reading)") : l.relation;
       const dir = l.source.id === n.id ? rel : `${rel} (from)`;
       const c = conf(l);
+      // Memberships and focus lists carry the date the source listed them, so they don't read as current.
+      const asOf = l.as_of ? ` <span class="ticker">(${l.relation === "member of" ? "listed as a member" : "listed"} as of ${esc(new Date(String(l.as_of).slice(0, 7) + "-15T12:00:00Z").toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" }))}${l.note ? "; " + esc(l.note) : ""})</span>` : "";
       if (l.relation === "missing") return `<li><button type="button" class="linklike" data-id="${esc(other.id)}">${esc(other.label)}</button> <span class="ticker">topic not filed</span> <span class="conf">· none in this dataset</span></li>`;
-      return `<li><button type="button" class="linklike" data-id="${esc(other.id)}">${esc(other.label)}</button> <span class="ticker">${esc(dir)}</span> <span class="conf conf-${c.level}">· ${c.level === "inferred" ? "no source, " + esc(c.text) : "source: " + esc(c.text)}</span>${l.source_url ? " " + link(l.source_url) : ""}</li>`;
+      return `<li><button type="button" class="linklike" data-id="${esc(other.id)}">${esc(other.label)}</button> <span class="ticker">${esc(dir)}</span> <span class="conf conf-${c.level}">· ${c.level === "inferred" ? "no source, " + esc(c.text) : "source: " + esc(c.text)}</span>${asOf}${l.source_url ? " " + link(l.source_url) : ""}</li>`;
     }).join("");
     // "What you can do": from the active lens; left out when the lens has nothing for this node.
     const acts = actions(n);
@@ -1468,7 +1466,7 @@
   window.renderNetwork = function (raw, people) {
     const el = document.getElementById("tab-network");
     if (typeof d3 === "undefined") {
-      el.innerHTML = `<h2>Co-filer network</h2><div id="net-graph"></div>`;
+      el.innerHTML = `<h2>AI advocacy network</h2><div id="net-graph"></div>`;
       document.getElementById("net-graph").innerHTML = `<p class="coming">The graph library did not load. Try reloading the page.</p>`;
       return;
     }

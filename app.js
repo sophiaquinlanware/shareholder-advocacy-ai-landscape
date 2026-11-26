@@ -159,7 +159,7 @@ function openCompany(ticker) {
   const key = keyForTicker(ticker);
   // If a sector or reason filter hides this company, clear the filters first.
   if (![...pick.options].some((o) => o.value === key)) {
-    ["co-sector", "co-basis"].forEach((id) => {
+    ["co-role", "co-basis"].forEach((id) => {
       const s = document.getElementById(id);
       if (s && s.value) { s.value = ""; s.dispatchEvent(new Event("change")); }
     });
@@ -172,14 +172,16 @@ function renderCompany() {
   const el = document.getElementById("tab-company");
   const all = companyEntries();
   const cos = DATA.companies || [];
-  const sectors = [...new Set(cos.flatMap((c) => c.sectors || []))].sort();
+  // Companies are classified by main role in AI (roles.js), the same everywhere on the site.
+  const R = window.ROLES;
+  const roleIds = R ? R.list.filter((r) => cos.some((c) => R.roleOf(c) === r.id)).map((r) => r.id) : [];
   const bases = [...new Set(cos.map((c) => c.basis_type).filter(Boolean))].sort();
   const F = { sector: "", basis: "" };
   el.innerHTML = `
     <h2>Company lookup</h2>
     <p class="intro">Everything on file for one company: upcoming ballot, AI proposal history, filers, proposal rights, frontier-lab ties and disclosure score.</p>
     <div class="net-controls">
-      ${sectors.length ? `<select id="co-sector" aria-label="Sector"><option value="">All sectors</option>${sectors.map((s) => `<option>${esc(s)}</option>`).join("")}</select>` : ""}
+      ${roleIds.length ? `<select id="co-role" aria-label="Main role in AI"><option value="">All roles</option>${roleIds.map((r) => `<option value="${esc(r)}">${esc(R.label(r))}</option>`).join("")}</select>` : ""}
       ${bases.length ? `<select id="co-basis" aria-label="Why included"><option value="">Any reason included</option>${bases.map((s) => `<option>${esc(s)}</option>`).join("")}</select>` : ""}
       <select id="co-pick" aria-label="Company"></select>
     </div>
@@ -187,14 +189,14 @@ function renderCompany() {
     <div id="co-body" aria-live="polite"></div>`;
   const pick = document.getElementById("co-pick");
   const fill = () => {
-    const list = all.filter(({ c }) => (!F.sector || (c.sectors || []).includes(F.sector)) && (!F.basis || c.basis_type === F.basis));
+    const list = all.filter(({ c }) => (!F.sector || (R && R.roleOf(c) === F.sector)) && (!F.basis || c.basis_type === F.basis));
     const keep = list.some((e) => e.key === pick.value) ? pick.value : list[0] && list[0].key;
     pick.innerHTML = list.map(({ key, c }) => `<option value="${esc(key)}">${esc(c.name)}${realTicker(c.ticker) ? ` (${esc(c.ticker)})` : ""}</option>`).join("");
     document.getElementById("co-count").textContent = `${plural(list.length, "company", "companies")}${F.sector || F.basis ? ` of ${all.length}` : ""}.`;
     if (keep) { pick.value = keep; drawCompany(keep); } else document.getElementById("co-body").innerHTML = `<p class="status-note">No companies match.</p>`;
   };
   pick.addEventListener("change", (e) => drawCompany(e.target.value));
-  const s = document.getElementById("co-sector"), b = document.getElementById("co-basis");
+  const s = document.getElementById("co-role"), b = document.getElementById("co-basis");
   if (s) s.addEventListener("change", (e) => { F.sector = e.target.value; fill(); });
   if (b) b.addEventListener("change", (e) => { F.basis = e.target.value; fill(); });
   fill();
@@ -247,7 +249,7 @@ function drawCompany(key) {
     <h3 class="co-title">${esc(c.name)} <span class="ticker">${esc(t || (c.shareholder_route === "private" ? "private" : ""))}</span></h3>
     <dl class="summary">
       ${c.shareholder_route || c.route_note ? `<div><dt>Shareholder route</dt><dd>${shareholderRoute(c)}</dd></div>` : ""}
-      ${c.sectors && c.sectors.length ? `<div><dt>Sectors</dt><dd>${esc(c.sectors.join(", "))}</dd></div>` : ""}
+      ${window.ROLES && window.ROLES.roleOf(c) ? `<div><dt>Role in AI</dt><dd>${esc(window.ROLES.label(window.ROLES.roleOf(c)))}${window.ROLES.alsoOf(c).length ? `; also ${esc(window.ROLES.alsoOf(c).map(window.ROLES.label).join(", ").toLowerCase())}` : ""} <span class="ticker">(this site's reading)</span></dd></div>` : ""}
       <div><dt>Proposal route (rights map)</dt><dd>${c.rights_tracked === false ? `<span class="ticker">not yet tracked</span>` : `<span class="pill ${esc(c.route_status || "pending")}">${esc(STATUS_LABEL[c.route_status] || "Being verified")}</span>`}</dd></div>
       <div><dt>AI proposals on file</dt><dd>${props.length}${historyText(h) ? ` · ${esc(historyText(h))}` : ""}</dd></div>
       <div><dt>Next meeting</dt><dd>${meeting ? `${esc(meeting.meeting_label)} · ${esc(meeting.status_label || "")}${meeting.proxy_url ? src(meeting.proxy_url, "proxy") : ""}` : `<span class="ticker">not listed</span>`}</dd></div>
@@ -459,14 +461,16 @@ function renderRights() {
   const cos = (DATA.companies || []).filter((c) => c.rights_tracked !== false);
   const el = document.getElementById("tab-rights");
   const matrixCols = [...new Set(cos.flatMap((c) => Object.keys(c.matrix || {})))];
-  const sectors = [...new Set(cos.flatMap((c) => c.sectors || []))].sort();
+  // Companies are classified by main role in AI (roles.js), the same everywhere on the site.
+  const R = window.ROLES;
+  const roleIds = R ? R.list.filter((r) => cos.some((c) => R.roleOf(c) === r.id)).map((r) => r.id) : [];
   const RANK = { open: 0, narrowing: 1, closed: 2, pending: 3 };
   const F = { sector: "" };
   const sort = { key: "company", dir: "asc" };
   const pill = (level, label) => `<span class="pill ${esc(level || "pending")}">${esc(label || STATUS_LABEL[level] || level || "Being verified")}</span>`;
   const cols = [
     { key: "company", label: "Company", sortValue: (c) => c.name.toLowerCase(), render: (c) => `<strong>${esc(c.name)}</strong><div class="ticker">${esc(c.ticker)}</div>` },
-    ...(sectors.length ? [{ key: "sectors", label: "Sectors", render: (c) => esc((c.sectors || []).join(", ")) }] : []),
+    ...(roleIds.length ? [{ key: "role", label: "Role in AI", render: (c) => esc(R.label(R.roleOf(c))) }] : []),
     { key: "route", label: "Route", sortValue: (c) => RANK[c.route_status || "pending"], render: (c) => pill(c.route_status) },
     ...matrixCols.map((k) => ({ key: "m:" + k, label: k, sortValue: (c) => RANK[((c.matrix || {})[k] || {}).level || "pending"] ?? 9,
       render: (c) => { const v = (c.matrix || {})[k]; return v ? `${pill(v.level, v.label)}${src(v.url)}<div class="ticker">${esc(v.note || "")}</div>` : `<span class="unverified">source pending</span>`; } })),
@@ -492,18 +496,18 @@ function renderRights() {
   el.innerHTML = `
     <h2>Rights map</h2>
     <p class="intro">Proposal route at each company without Rule 14a-8, from bylaws, state of incorporation and share structure. This site's reading of the cited documents, not a legal opinion.</p>
-    ${sectors.length ? `<div class="net-controls"><select id="rights-sector" aria-label="Sector"><option value="">All sectors</option>${sectors.map((s) => `<option>${esc(s)}</option>`).join("")}</select></div>` : ""}
+    ${roleIds.length ? `<div class="net-controls"><select id="rights-sector" aria-label="Main role in AI"><option value="">All roles</option>${roleIds.map((r) => `<option value="${esc(r)}">${esc(R.label(r))}</option>`).join("")}</select></div>` : ""}
     <p class="count-line" id="rights-count" aria-live="polite"></p>
     <div class="table-wrap" id="rights-table"></div>
     ${DATA.site && DATA.site.status_key ? `<p class="note">${esc(DATA.site.status_key)}</p>` : ""}
     <h2>Company detail</h2>
     <div id="rights-cards" class="detail-list"></div>`;
   const draw = () => {
-    const rows = cos.filter((c) => !F.sector || (c.sectors || []).includes(F.sector));
+    const rows = cos.filter((c) => !F.sector || (R && R.roleOf(c) === F.sector));
     const box = document.getElementById("rights-table");
     box.innerHTML = sortableTable(cols, rows, sort);
     wireSort(box, sort, draw);
-    document.getElementById("rights-count").textContent = `${plural(rows.length, "company", "companies")}${F.sector ? ` in ${F.sector}` : ""}.`;
+    document.getElementById("rights-count").textContent = `${plural(rows.length, "company", "companies")}${F.sector ? ` in ${R.label(F.sector).toLowerCase()}` : ""}.`;
     document.getElementById("rights-cards").innerHTML = rows.map(card).join("");
   };
   const s = document.getElementById("rights-sector");
@@ -639,6 +643,12 @@ async function main() {
   if (!feed.hidden) { delete feed.dataset.drawn; feed.hidden = true; feed.hidden = false; }
   // Primary value-chain tier per listed company, for the network's node types.
   window.companyTiers = new Map((DATA.companies || []).filter((c) => c.ticker && (c.tier || c.primary_tier)).map((c) => [c.ticker, c.tier || c.primary_tier]));
+  // Company record for a graph node (by ticker, else by id without its co-/lab- prefix), for roles.js.
+  {
+    const byTicker = new Map((DATA.companies || []).filter((c) => c.ticker).map((c) => [c.ticker, c]));
+    const byId = new Map((DATA.companies || []).map((c) => [c.id, c]));
+    window.companyFor = (n) => (n.ticker && byTicker.get(n.ticker)) || byId.get(String(n.id).replace(/^(co|lab)-/, "")) || null;
+  }
   // Inputs the network's lenses read (lenses.js): meetings with a ballot out, and Company lookup.
   window.LENS_CTX = {
     upcoming: (DATA.upcoming && DATA.upcoming.meetings) || [],

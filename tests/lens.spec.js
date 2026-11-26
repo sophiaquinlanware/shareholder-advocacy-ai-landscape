@@ -1,4 +1,4 @@
-// Co-filer network lenses (lenses.js): the "View as" choice, its URL, the actions block and keyboard use.
+// AI advocacy network lenses (lenses.js): the "View as" choice, its URL, the actions block and keyboard use.
 import { expect, test } from "@playwright/test";
 
 async function openNetwork(page, query = "") {
