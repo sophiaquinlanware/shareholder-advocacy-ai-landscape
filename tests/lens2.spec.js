@@ -115,9 +115,11 @@ test("company deadline: next annual meeting wording, proxy text and source", asy
 });
 
 test("no pulse under reduced motion", async ({ page }) => {
+  // This test waits for the drawn graph, which needs d3 from the CDN; allow for a slow CDN under a full parallel run.
+  test.setTimeout(90000);
   await page.emulateMedia({ reducedMotion: "reduce" });
   await open(page);
-  await page.waitForSelector("#net-graph svg circle");
+  await page.waitForSelector("#net-graph svg circle", { timeout: 75000 });
   // No mark on the graph animates.
   expect(
     await page.$$eval(
