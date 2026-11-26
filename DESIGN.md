@@ -71,6 +71,11 @@ Owner's motion brief (2026-11-26; plan docs/plans/2026-11-26-motion.md, staged).
 
 The owner kept plain white, the grotesque and the always-visible page title over the brief's off-white, serif and hide-everything nav.
 
+Stage 2:
+- **Headline reveal:** each page's h2 is split into its rendered lines; each line rises from behind a clipped box (500ms, 90ms stagger, `--ease`), then the lines turn inline again, so the heading wraps normally. Under reduced motion it is a 200ms fade. The site title stays still, because it is the page's largest paint.
+- **Font:** self-hosted (`fonts/schibsted-grotesk-latin.woff2`, preloaded) with an Arial fallback matched to its width, ascent and descent.
+- **Numerals:** tabular figures only where figures line up (tables, `.num`, chart text), because in this font they also widen commas.
+
 ## Layout
 
 - `.wrap` max width 1200px, 16px side padding. Dense: tables at 7px × 10px cell padding.

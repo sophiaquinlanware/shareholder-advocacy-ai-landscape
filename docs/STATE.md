@@ -30,7 +30,16 @@ Upcoming votes · Company lookup · Proposals · Fund votes · Rights map · AI 
 
 - **Stage 1, foundation: live.** Lenis with GSAP ScrollTrigger, one easing, the duration and spacing tokens, and tabular numerals. The check passed (156; Lighthouse phone 90, desktop 97). It was not separately reviewed: it is a small infrastructure stage, and the owner reviews each stage.
 - **Owner's choices against the brief:** plain white, the grotesque headings, and the title always visible.
-- **Stages 2–10** follow one at a time, each shown to the owner: headline reveal, count-ups, charts drawing in, row stagger, timelines, view transitions and skeletons, micro-interactions, Cmd+K, and mobile cards.
+- **Stage 2, headline reveal: live.**
+  - Each page's heading rises line by line from behind a mask, once its data has drawn and each time its tab opens. Under reduced motion it is a plain fade.
+  - The site title stays still. It is the page's largest text, and animating it made measured load time swing between 1 and 15 seconds.
+- **Fixed in the same round:**
+  - Tabular numerals had put gaps before commas ("Hill , Jr ."). They now apply to tables, figures and charts only.
+  - The font is now served from this site and preloaded: `fonts/`, SIL OFL, Latin subset.
+  - The fallback font is matched to its measurements.
+  - The motion libraries now load last.
+  - Layout shift: 0.20 → 0.03. Lighthouse: phone 100, desktop 97.
+- **Stages 3–10** follow one at a time, each shown to the owner: count-ups, charts drawing in, row stagger, timelines, view transitions and skeletons, micro-interactions, Cmd+K, and mobile cards.
 
 ## Network key (owner, 2026-11-26)
 

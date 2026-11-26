@@ -5,11 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shareholder Advocacy AI Landscape</title>
 <meta name="description" content="A public, sourced map of where investors still have leverage on AI governance at the largest AI companies.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Schibsted Grotesk loads without blocking the first paint: text draws in the fallback font, then swaps (display=swap). -->
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<!-- Schibsted Grotesk is served from this site (SIL Open Font License, fonts/OFL.txt) and preloaded, so it is
+     usually ready before the first paint and the page doesn't jump when it arrives. One variable file covers 400
+     and 500, Latin characters (U+0000-00FF and common punctuation); anything else falls back to Arial. -->
+<link rel="preload" href="fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -67,10 +66,6 @@
 
 <!-- d3 loads in parallel and never blocks the first tables; app.js waits for it before drawing graphs. -->
 <script id="d3js" async src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<!-- Motion foundation (docs/plans/2026-11-26-motion.md): GSAP, ScrollTrigger and Lenis, pinned, loaded without blocking. -->
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script defer src="motion.js"></script>
 <script defer src="roles.js"></script>
 <script defer src="rules.js"></script>
@@ -82,5 +77,10 @@
 <script defer src="scorecard.js"></script>
 <script defer src="votes.js"></script>
 <script defer src="app.js"></script>
+<!-- Motion libraries (docs/plans/2026-11-26-motion.md): GSAP, ScrollTrigger and Lenis, pinned. Last in order, so the
+     site's own scripts and the heading reveal never wait for them; smooth scrolling starts once the page has loaded. -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 </body>
 </html>

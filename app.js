@@ -588,6 +588,8 @@ function showTab(name, focus = false) {
   const sel = buttons.find((b) => b.dataset.tab === name);
   if (stuck && sel) stuck.textContent = sel.textContent;
   try { window.history.replaceState(null, "", "#" + name); } catch (e) {}
+  // Motion stage 2 (motion.js): the newly shown page's heading reveals line by line.
+  document.dispatchEvent(new CustomEvent("tabshown", { detail: { panel: document.getElementById("tab-" + name) } }));
 }
 function setupTabs() {
   // The page title joins the sticky tab bar once the site header has scrolled out of view.
@@ -700,5 +702,6 @@ async function main() {
   window.renderVotes(DATA.fund_votes, DATA.proposals);
   renderPeople();
   renderNew();
+  document.dispatchEvent(new Event("siteready"));
 }
 main();

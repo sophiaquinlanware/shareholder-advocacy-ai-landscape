@@ -2,8 +2,14 @@
    (links, selected controls, and every data visual). Every colour is a token on :root; DESIGN.md
    describes them. One theme by the owner's direction (2026-11-25): "largely just black and white,
    but where necessary, there is blue. For example, all the visuals should be blue." */
-/* Local Arial scaled to Schibsted Grotesk's width (measured 1.01), so text barely moves when the font swaps in. */
-@font-face { font-family: "Schibsted fallback"; src: local("Arial"), local("ArialMT"); size-adjust: 101%; }
+@font-face {
+  font-family: "Schibsted Grotesk"; font-style: normal; font-weight: 400 500; font-display: swap;
+  src: url("fonts/schibsted-grotesk-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Local Arial matched to Schibsted Grotesk (measured in Chrome: width 1.01, ascent .98, descent .26, no line gap),
+   so text doesn't move when the font swaps in. */
+@font-face { font-family: "Schibsted fallback"; src: local("Arial"), local("ArialMT"); size-adjust: 101%; ascent-override: 97%; descent-override: 25.7%; line-gap-override: 0%; }
 :root {
   --bg: #ffffff;
   --surface: #ffffff;
@@ -39,7 +45,10 @@
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--bar-h, 120px) + 8px); }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans); font-synthesis-weight: none; font-variant-numeric: tabular-nums; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans); font-synthesis-weight: none; }
+/* Tabular numerals where figures line up (tables, counts, charts). Not site-wide: in this font tnum also
+   widens commas and full stops, which put gaps in running text ("proposals ,"). */
+table, .num, svg text, .pw-bar-n, .status-n, .vc-num, .stat { font-variant-numeric: tabular-nums; }
 /* Lenis smooth scroll (motion.js): its recommended base styles. */
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
@@ -463,3 +472,8 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
 .tabs.is-stuck.tabs-tucked .sticky-title { padding-bottom: 10px; }
 .tabs:focus-within .tab-row { max-height: 480px !important; opacity: 1 !important; }
 @media (prefers-reduced-motion: reduce) { .tab-row { transition: none; } }
+
+/* Motion stage 2: headline line reveal (motion.js). Each line sits in a clipped box; its text rises into it. */
+.rl { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; }
+.rl-in { display: block; will-change: transform; }
+.rl-done .rl, .rl-done .rl-in { display: inline; overflow: visible; padding: 0; margin: 0; will-change: auto; }

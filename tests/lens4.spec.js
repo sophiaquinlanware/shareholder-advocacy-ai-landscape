@@ -164,3 +164,24 @@ test("Lab pathways: routes to a lab, sorted by strongest tie, with findings, bar
   await page.locator("#pw-graph").screenshot({ path: `tests/screenshots/lab-routes-map-${info.project.name}.png` });
   await page.locator("#pw-routes").screenshot({ path: `tests/screenshots/lab-routes-table-${info.project.name}.png` });
 });
+
+test("Motion: headings reveal line by line, then return to plain text; reduced motion skips the split", async ({
+  page,
+  browser,
+}) => {
+  await page.goto("/index.html#people");
+  await page.waitForLoadState("networkidle");
+  await page.click("#tabbtn-pathways");
+  // Mid-reveal the heading is split into masked lines …
+  expect(await page.locator("#tab-pathways h2 .rl").count()).toBeGreaterThan(0);
+  // … and afterwards the lines are inline again, so it reads and wraps as plain text.
+  await expect(page.locator("#tab-pathways h2")).toHaveClass(/rl-done/, { timeout: 3000 });
+  await expect(page.locator("#tab-pathways h2")).toHaveText("Lab pathways");
+  const ctx = await browser.newContext({ reducedMotion: "reduce" });
+  const p2 = await ctx.newPage();
+  await p2.goto("/index.html#people");
+  await p2.waitForLoadState("networkidle");
+  await p2.click("#tabbtn-pathways");
+  expect(await p2.locator("#tab-pathways h2 .rl").count()).toBe(0);
+  await ctx.close();
+});
