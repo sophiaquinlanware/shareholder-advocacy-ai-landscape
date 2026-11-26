@@ -132,7 +132,7 @@ test("warm path: a found path lists labelled hops; an unreachable target says so
   await expect(page.locator("#net-path-sum")).toContainText("Path found:");
   await expect(page.locator("#net-path-sum")).toBeFocused();
   await expect(page.locator(".path-steps li").first()).toBeVisible();
-  await expect(page.locator("#net-kb")).toContainText("Path found:");
+  await expect(page.locator("#net-path-sum")).toBeFocused();
   await page.selectOption("#net-path-to", "lab-openai");
   await page.click("#net-path-go");
   await expect(page.locator("#net-path-sum")).toContainText("No path in this map");

@@ -314,7 +314,7 @@
         <button type="button" class="chip" id="net-gaps" aria-pressed="false">Show topics not filed</button>
       </div>
       <div id="net-hold" class="net-hold" hidden>
-        <label for="net-hold-input">Tickers, separated by commas or new lines</label>
+        <label for="net-hold-input">Tickers, separated by commas, spaces or new lines</label>
         <textarea id="net-hold-input" rows="3" spellcheck="false" autocapitalize="characters"></textarea>
         <div class="net-hold-row"><button type="button" class="chip" id="net-hold-apply">Apply</button> <button type="button" class="chip" id="net-hold-clear">Clear</button></div>
         <p class="status-note">Stored in this browser only; nothing is sent anywhere.</p>
@@ -398,8 +398,10 @@
 
   // One action item: its text, its links and, for a button, a real control (panel and List view alike).
   function actionHtml(a, id, i) {
-    const lk = (href, label) => ` <a class="src" href="${esc(href)}" target="_blank" rel="noopener">[${esc(label)}]</a>`;
-    return `${a.text ? esc(a.text) : ""}${a.href ? lk(a.href, a.hrefLabel || "source") : ""}${a.links && a.links.length ? `<ul class="act-links">${a.links.map((l) => `<li>${lk(l.href, l.label)}</li>`).join("")}</ul>` : ""}${a.button ? `<button type="button" class="chip" data-act-node="${esc(id)}" data-act="${i}">${esc(a.button.label)}</button>` : ""}`;
+    // A fact with no source link says "source pending" (DESIGN.md rule 2).
+    const lk = (href, label) => (href ? ` <a class="src" href="${esc(href)}" target="_blank" rel="noopener">[${esc(label)}]</a>` : ` ${esc(label)} <span class="unverified">source pending</span>`);
+    const own = a.href ? lk(a.href, a.hrefLabel || "source") : a.needsSource ? ` <span class="unverified">source pending</span>` : "";
+    return `${a.text ? esc(a.text) : ""}${own}${a.links && a.links.length ? `<ul class="act-links">${a.links.map((l) => `<li>${lk(l.href, l.label)}</li>`).join("")}</ul>` : ""}${a.button ? `<button type="button" class="chip" data-act-node="${esc(id)}" data-act="${i}">${esc(a.button.label)}</button>` : ""}`;
   }
   function wireActions(root) {
     root.querySelectorAll("[data-act]").forEach((b) => b.addEventListener("click", () => {
@@ -515,7 +517,9 @@
     const marked = state.data.nodes.filter((n) => rings(n).length);
     state.ringSel = state.ringLayer.selectAll("g").data(marked).join("g")
       .attr("transform", (d) => `translate(${d.x || 0},${d.y || 0})`);
-    const pulse = state.cfg.pulse;
+    // The pulse plays on the first draw only, so a redraw (a settings change) doesn't start it again.
+    const pulse = state.cfg.pulse && !state.pulsed;
+    if (pulse && marked.some((n) => rings(n).some((m) => m.kind === "deadline"))) state.pulsed = true;
     state.ringSel.each(function (d) {
       const g = d3.select(this);
       const r = radius(d);
@@ -719,8 +723,7 @@
       const steps = findPath(n.id, to);
       if (!steps) {
         state.path = null; applyStyles();
-        out.innerHTML = `<p id="net-path-sum" tabindex="-1"><strong>No path in this map</strong> from ${esc(n.label)} to ${esc(state.byId.get(to).label)} through people, coalitions, co-filing or filings.</p>`;
-        say("No path in this map");
+        out.innerHTML = `<h5 id="net-path-sum" class="path-sum" tabindex="-1">No path in this map from ${esc(n.label)} to ${esc(state.byId.get(to).label)} through people, coalitions, co-filing or filings.</h5>`;
       } else {
         state.path = { from: n.id, nodes: new Set([n.id, ...steps.map((x) => x.b)]), links: new Set(steps.map((x) => x.l)) };
         steps.forEach((x) => state.byId.get(x.b) && state.hiddenKinds.delete(state.byId.get(x.b).kind));
@@ -728,11 +731,10 @@
         const coalitions = new Set(steps.filter((x) => x.l.relation === "member of").map((x) => endId(x.l.target))).size;
         const parts = [inferred && `${inferred} inferred from co-filing`, coalitions && `${coalitions} shared coalition membership`].filter(Boolean);
         const sum = `Path found: ${steps.length} ${steps.length === 1 ? "hop" : "hops"}${parts.length ? " (" + parts.join(", ") + ")" : ""}`;
-        out.innerHTML = `<p id="net-path-sum" tabindex="-1"><strong>${sum}</strong></p><ol class="path-steps">${steps.map(hopHtml).join("")}</ol>
+        out.innerHTML = `<h5 id="net-path-sum" class="path-sum" tabindex="-1">${sum}</h5><ol class="path-steps">${steps.map(hopHtml).join("")}</ol>
           <button type="button" class="chip" id="net-path-clear">Clear path</button>`;
         document.getElementById("net-path-clear").addEventListener("click", clear);
         refreshConnected(); applyStyles();
-        say(sum);
       }
       document.getElementById("net-path-sum").focus();
     });
@@ -757,7 +759,7 @@
     applyStyles();
     placeFocusMark();
     const ring = rings(n).map((r) => r.text.toLowerCase()).join(", ");
-    const holdTxt = state.holdings.size && (isCompanyKind(n.kind) || n.kind === "proposal") ? (isHeld(n) ? ", held" : ", not held") : "";
+    const holdTxt = !state.holdings.size ? "" : tickerOf(n) ? (isHeld(n) ? ", held" : ", not held") : ", faded: not a holding";
     say(`${i + 1} of ${list.length}: ${n.label}, ${TYPE_LABEL[n.kind]}, ${n.degree || 0} connections${ring ? ", " + ring : ""}${holdTxt}`);
     panTo(n, false);
   }
@@ -887,7 +889,7 @@
       .sort((a, b) => ((dir === "descending" ? -1 : 1) * ((val(a) ?? -1) - (val(b) ?? -1))) || a.label.localeCompare(b.label));
     const body = rows.map((n) => {
       const acts = actions(n).map((x, i) => actionHtml(x, n.id, i));
-      const heldCell = state.holdings.size ? `<td>${tickerOf(n) ? (isHeld(n) ? "Held" : "Not held") : "–"}</td>` : "";
+      const heldCell = state.holdings.size ? `<td>${tickerOf(n) ? (isHeld(n) ? "Held" : "Not held") : "Not a holding"}</td>` : "";
       return `<tr><td><button type="button" class="linklike" data-id="${esc(n.id)}">${esc(n.label)}</button></td><td>${esc(TYPE_LABEL[n.kind])}</td>${m ? `<td class="num">${val(n) ?? "–"}</td>` : ""}<td class="num">${n.degree || 0}</td>${heldCell}<td>${esc(rings(n).map((r) => r.text).join(", "))}</td><td>${acts.join("<br>")}</td></tr>`;
     }).join("");
     const el = document.getElementById("net-list");

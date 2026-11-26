@@ -128,13 +128,28 @@
   const seekingOf = (n) => (n.seeking || []).filter((s) => s && SEEKING_LABEL[s.type]);
   const RESUB_NOTE = "this site's reading; thresholds may change";
 
-  function impactRings(n) {
+  // The flag belongs on the latest vote on a subject only: a proposal whose vote appears in a later proposal's
+  // vote_history at the same company has already been refiled, so it isn't flagged.
+  function superseded(ctx) {
+    if (ctx.cache.superseded) return ctx.cache.superseded;
+    const s = new Set();
+    ctx.nodes.forEach((m) => (m.vote_history || []).forEach((v) => s.add(`${m.company}|${v.year}|${Number(v.support_pct)}`)));
+    ctx.cache.superseded = s;
+    return s;
+  }
+  function resub(n, ctx) {
+    if (n.kind !== "proposal" || !R().resubmission) return null;
+    if (n.status === "voted" && superseded(ctx).has(`${n.company}|${n.year}|${Number(n.support_pct)}`)) return null;
+    return R().resubmission(n);
+  }
+
+  function impactRings(n, ctx) {
     const out = upcomingRing(n);
     const d = R().deadlineInfo && R().deadlineInfo(n);
     if (d) out.push({ kind: "deadline", text: `Proposal deadline: ${plural(d.days, "day", "days")} left`, frac: d.frac });
     const sk = seekingOf(n);
     if (sk.length) out.push({ kind: "seeking", text: `Seeking ${[...new Set(sk.map((s) => SEEKING_LABEL[s.type]))].join(", ")}` });
-    const r = n.kind === "proposal" && R().resubmission && R().resubmission(n);
+    const r = resub(n, ctx);
     if (r) out.push({ kind: "risk", text: r.state === "below" ? "Below this site's reading of the resubmission threshold" : "At risk of losing resubmission eligibility" });
     return out;
   }
@@ -144,17 +159,23 @@
     const d = R().deadlineInfo && R().deadlineInfo(n);
     if (d) {
       const what = d.company ? "Proposal deadline for the next annual meeting" : "Co-file before";
-      out.push({ text: `${what} ${fmtDate(d.date)} (${plural(d.days, "day", "days")} left, from the proxy statement)`, href: d.source, hrefLabel: "source" });
+      out.push({ text: `${what} ${fmtDate(d.date)} (${plural(d.days, "day", "days")} left, from the proxy statement)`, href: d.source, hrefLabel: "source", needsSource: true });
     }
     seekingOf(n).forEach((s) => out.push({
       text: `Needs ${SEEKING_LABEL[s.type]}${s.note ? ": " + s.note : ""} · posted by ${s.posted_by || "unknown"}${s.posted_at ? ", " + fmtDate(String(s.posted_at).slice(0, 10)) : ""} · ${s.verified ? "reviewed" : "auto-detected, not yet reviewed"}`,
-      href: s.contact_url, hrefLabel: "contact",
+      href: s.contact_url, hrefLabel: "contact", needsSource: true,
     }));
-    const r = n.kind === "proposal" && R().resubmission && R().resubmission(n);
+    const r = resub(n, ctx);
     if (r) {
       const matched = n.vote_history_source || (n.vote_history || []).some((v) => v.source || v.match) ? " Earlier votes matched by this site (same company and topic, similar title)." : "";
-      out.push({ text: `Last vote: ${r.last.pct}% (${r.last.year}). Needs ${r.needs}% to stay eligible (vote ${r.count} on this subject in ${R().LOOKBACK_YEARS} years; ${RESUB_NOTE}).${r.basisNote ? " Support basis note on file: the rule counts For ÷ (For + Against); see Proposals." : ""}${matched}`,
-        links: (n.vote_history || []).filter((v) => v.results_url).map((v) => ({ href: v.results_url, label: `${v.year} vote` })) });
+      // For a proposal still on the ballot, the bar is stated as a fact about the rule, apart from the meeting
+      // line, so it can't read as a support target for the coming vote.
+      const bar = r.pending
+        ? `Resubmission threshold after this vote: ${r.needs}% (vote ${r.count} on this subject in ${R().LOOKBACK_YEARS} years; ${RESUB_NOTE}). Last vote on the subject: ${r.last.pct}% (${r.last.year}).`
+        : `Last vote: ${r.last.pct}% (${r.last.year}). Needs ${r.needs}% to stay eligible (vote ${r.count} on this subject in ${R().LOOKBACK_YEARS} years; ${RESUB_NOTE}).`;
+      const hist = [...(n.vote_history || [])].sort((a, b) => a.year - b.year);
+      out.push({ text: `${bar}${r.basisNote ? " Support basis note on file: the rule counts For ÷ (For + Against); see Proposals." : ""}${matched}`,
+        links: hist.map((v) => ({ href: v.results_url || null, label: `${v.year} vote: ${v.support_pct}%` })) });
     }
     return out;
   }
@@ -178,7 +199,7 @@
   // Gap nodes (graph.js adds them while "Show topics not filed" is on): the scope is stated in the line itself.
   function gapActions(n, ctx) {
     const filed = (n.filedAt || []).map((f) => `${f.label} (${f.count})`).join(", ");
-    return [{ text: `No ${n.topic} proposal at ${n.companyLabel} in this dataset (${plural(n.covered, "company", "companies")} with AI proposals tracked). Filed at ${n.filedAt.length} of them: ${filed}.` }];
+    return [{ text: `No ${n.topic} proposal at ${n.companyLabel} in this dataset (${plural(n.covered, "company", "companies")} with AI proposals tracked; compared with all of them, any value-chain tier). Filed at ${n.filedAt.length} of them: ${filed}.` }];
   }
 
   window.LENSES = {

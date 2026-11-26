@@ -220,6 +220,7 @@ tr.hit td { background: var(--accent-soft); }
 .net-path h4 { margin: 0 0 6px; font-size: 13px; }
 .net-path select { max-width: 100%; margin-right: 6px; }
 .path-steps { padding-left: 18px; margin: 6px 0; }
+.path-sum { font-size: 13px; margin: 8px 0 4px; }
 .path-steps li { margin: 4px 0; overflow-wrap: anywhere; }
 .net-path .src { white-space: normal; }
 @media (prefers-reduced-motion: no-preference) {
@@ -228,6 +229,9 @@ tr.hit td { background: var(--accent-soft); }
 @keyframes g-pulse { 0%, 100% { stroke-opacity: 1; } 50% { stroke-opacity: 0.25; } }
 .ring-note { font-size: 12px; font-weight: 600; color: var(--accent); }
 .ring-note::before { content: "◌ " / ""; }
+.ring-deadline::before { content: "◷ " / ""; }
+.ring-seeking::before { content: "⋯ " / ""; }
+.ring-risk::before { content: "! " / ""; }
 .conf { font-size: 12px; color: var(--ink-soft); }
 .net-graph:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .kb-hint { font-size: 12px; color: var(--ink-soft); margin: 4px 0 0; }

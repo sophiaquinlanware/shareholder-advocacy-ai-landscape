@@ -128,11 +128,13 @@
     const count = inWindow.length + (pending ? 1 : 0);
     const needs = RESUBMISSION_THRESHOLDS[Math.min(count, RESUBMISSION_THRESHOLDS.length) - 1];
     const pct = Number(last.support_pct);
+    // A proposal on the ballot was eligible, so it is never "below"; it is "at risk" when its last vote on the
+    // subject is under, or within AT_RISK_MARGIN points above, the bar that applies after this vote.
     let state = null;
-    if (pct < needs) state = "below";
+    if (pct < needs && !pending) state = "below";
     else if (pct <= needs + AT_RISK_MARGIN) state = "at-risk";
     if (!state) return null;
-    return { state, last: { year: last.year, pct }, needs, count, basisNote: !!(last.support_note || last.basis_note) };
+    return { state, pending, last: { year: last.year, pct }, needs, count, basisNote: !!(last.support_note || last.basis_note) };
   }
 
   window.RULES = {
