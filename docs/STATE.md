@@ -116,11 +116,19 @@ The owner's spec has four phases, and each phase gets its own plan and reviews i
   - the network column is "Value chain, by tier";
   - Lab pathways' middle column is "Value chain (companies tied to labs)", sorted by tier with tier tags, not "public companies" (some are private, and labs may list).
 
+- **Policy and causality (owner, via the data session, 2026-11-26):** "i dont want redundant information ... my favorite is the visual". The map is the view. The events table is a collapsed list view, the tab has a one-line intro, and the policy timeline is gone (site.json `why_now` is empty).
+- **Value chain tab (#value-chain, 12th tab; plan docs/plans/2026-11-26-value-chain-ui.md):**
+  - **Flow:** a layered flow of the 44 sourced ties by tier, blue on white.
+  - **Panels:** tier and company panels, structured by the owner's three parts (labs connected, asks made, who is active), plus shareholder routes.
+  - **Engagement by tier:** a heatmap of true totals only; capped lists in value_chain.json are listed, never counted.
+
 ## Next (UI session)
 
 1. **Phase 3 follow-up:** show `pass_through_voting` from `data/pass_through_voting.json` (`offered` null means no program found on the pages checked, never "no").
 2. **Lens Phase 4 (Policymaker):** clusters by topic, sized by how often an ask recurs; `coverage` on ask-to-policy edges. Data is live: `data/coverage.json` entries carry `ask_id`, `policy_id`, `graph_id` (the graph's `ev-` node id, null for "none"), `coverage`, `note`, `source_url`, `policy_status`, `reviewed`.
-3. **Value-chain map and engagement map** from `data/value_chain.json` (`ties`, `per_tier`).
+3. **Value chain tab follow-ups:**
+   - per-tier outcomes (adopted, withdrawn after agreement) aren't in the data yet;
+   - `asks_made` and `active_filers` are capped at 12 in build_value_chain.py, and true totals would let the heatmap show them.
 
 ## Queue (found, not picked up)
 

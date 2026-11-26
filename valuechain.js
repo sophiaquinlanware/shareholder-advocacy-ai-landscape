@@ -13,7 +13,11 @@
   const plural = (n, one, many) => `${n} ${n === 1 ? one : many || one + "s"}`;
   const src = (u, label = "source") => (u ? ` <a class="src" href="${esc(u)}" target="_blank" rel="noopener">[${esc(label)}]</a>` : ` <span class="unverified">source pending</span>`);
   // Tie types differ by dash pattern, not colour (all marks are blue on white).
-  const DASH = { "supplies chips": null, "manufactures for": "12 4", "leases capacity to": "4 4", "provides compute to": "4 4", "supplies power to": "1 3", "distributes models": "8 3 1 3" };
+  const DASH = { "supplies chips": null, "manufactures for": "12 4", "leases capacity to": "4 4", "provides compute to": "6 2 2 2", "supplies power to": "1 3", "distributes models": "8 3 1 3" };
+  // Each tie type as words that read as a sentence: "{from} {phrase} {to}".
+  const PHRASE = { "supplies chips": "supplies chips to", "manufactures for": "manufactures for", "leases capacity to": "leases capacity to", "provides compute to": "provides compute to", "supplies power to": "supplies power to", "distributes models": "distributes the models of" };
+  const phrase = (t) => PHRASE[t] || t;
+  const SHORT_TIER = { chips: "Chips", datacenters: "Data centers", compute: "Clouds", labs: "Labs", capital: "Investors", deployers: "Deployers" };
   // Flow columns in value-chain order; strategic investors sit as a band under frontier labs (capital feeds labs).
   const FLOW = ["chips", "datacenters", "compute", "labs", "deployers"];
   let V = null;
@@ -27,16 +31,16 @@
       <div class="vc-tiers" role="group" aria-label="Tiers">${V.tiers
         .slice()
         .sort((a, b) => a.order - b.order)
-        .map((t) => `<button type="button" class="chip" data-tier="${esc(t.id)}">${esc(t.label)}</button>`)
+        .map((t) => `<button type="button" class="chip" data-tier="${esc(t.id)}" aria-pressed="false">${esc(t.label)}</button>`)
         .join("")}</div>
       <div class="net-legend" id="vc-key"></div>
-      <div class="chart-scroll"><div id="vc-flow" class="vc-flow"></div></div>
+      <div class="chart-scroll" tabindex="0" role="region" aria-label="Value chain chart (scrolls sideways on small screens)"><div id="vc-flow" class="vc-flow"></div></div>
       <p class="visually-hidden" id="vc-status" aria-live="polite"></p>
       <section id="vc-panel" class="net-panel vc-panel" aria-label="Details"><p class="status-note">Choose a tier or a company for who it reaches, the asks already made there and who is engaging.</p></section>
       <details class="cz-list"><summary>List view: the same ${V.ties.length} ties as text</summary><div class="table-wrap" id="vc-ties"></div></details>
       <h3 class="sub-h">Engagement by tier</h3>
-      <p class="status-note">Counts per tier, from the site's data; darker blue means more within that column, and each number opens the tier's details. A company can sit in several tiers and is counted in each, so the rows overlap and must not be added up. ${esc(V.derived_note || "")}</p>
-      <div class="table-wrap" id="vc-heat"></div>`;
+      <p class="status-note">Counts per tier, from the site's data; darker blue means more within that column, and each number opens the tier's details. A company can sit in several tiers and is counted in each, so the rows overlap and must not be added up. Proposal counts cover AI-related proposals since 2023 at the companies subject to US proxy rules; companies outside US proxy rules have no proposal data. Not a recommendation.</p>
+      <div class="table-wrap" id="vc-heat" tabindex="0" role="region" aria-label="Engagement by tier table"></div>`;
   }
 
   const name = (id) => (CO.get(id) || {}).name || id;
@@ -62,9 +66,9 @@
     const deg = new Map();
     V.ties.forEach((t) => { deg.set(t.from, (deg.get(t.from) || 0) + 1); deg.set(t.to, (deg.get(t.to) || 0) + 1); });
     const svg = d3.select(box).append("svg").attr("viewBox", [0, 0, W, H]).attr("width", W).attr("height", H)
-      .attr("role", "img").attr("aria-label", `Value chain: ${V.ties.length} sourced ties between companies, by tier. The same ties are in the list view below.`);
+      .attr("role", "group").attr("aria-label", `Value chain: ${V.ties.length} sourced ties between companies, by tier. Each company is a button; the same ties are in the list view below.`);
     cols.forEach((c) => svg.append("text").attr("x", c.x).attr("y", 24).attr("text-anchor", "middle").attr("font-size", 11).attr("font-weight", 600).attr("fill", cssVar("--ink-soft"))
-      .text((narrow ? tierLabel(c.tid).split(" ")[0] : tierLabel(c.tid)).toUpperCase()));
+      .text((narrow ? SHORT_TIER[c.tid] || tierLabel(c.tid) : tierLabel(c.tid)).toUpperCase()));
     const ink = cssVar("--blue-2");
     svg.append("g").attr("fill", "none").selectAll("path").data(V.ties.filter((t) => pos.has(t.from) && pos.has(t.to))).join("path")
       .attr("d", (t) => {
@@ -73,7 +77,7 @@
         return a.x === b.x ? `M${a.x},${a.y}C${a.x + 60},${a.y} ${b.x + 60},${b.y} ${b.x},${b.y}` : `M${a.x},${a.y}C${mx},${a.y} ${mx},${b.y} ${b.x},${b.y}`;
       })
       .attr("class", "vc-tie").attr("stroke", ink).attr("stroke-opacity", 0.55).attr("stroke-width", 1.4).attr("stroke-dasharray", (t) => DASH[t.type] || null)
-      .append("title").text((t) => `${name(t.from)} ${t.type} ${name(t.to)}`);
+      .append("title").text((t) => `${name(t.from)} ${phrase(t.type)} ${name(t.to)}`);
     const nodes = svg.append("g").selectAll("g").data([...pos.entries()]).join("g").attr("transform", ([, p]) => `translate(${p.x},${p.y})`);
     nodes.filter(([id]) => id === "__capital__").append("text").attr("x", -6).attr("y", 4).attr("font-size", 10).attr("font-weight", 600).attr("fill", cssVar("--ink-soft")).text(`${tierLabel("capital").toUpperCase()}`);
     const co = nodes.filter(([id]) => id !== "__capital__")
@@ -87,7 +91,7 @@
     // Key: one dash pattern per tie type.
     document.getElementById("vc-key").innerHTML = [...new Set(V.ties.map((t) => t.type))].map((k) =>
       `<span class="leg static"><svg class="mark" viewBox="0 0 28 10" aria-hidden="true"><line x1="0" y1="5" x2="28" y2="5" stroke="${ink}" stroke-width="2"${DASH[k] ? ` stroke-dasharray="${DASH[k]}"` : ""}></line></svg>${esc(k)}</span>`).join("")
-      + `<span class="status-note">Each line reads "{from} {tie} {to}" (hover or open a company for the wording). Circle size = number of sourced ties; companies with no sourced tie are counted in the tier details. Strategic investors sit under frontier labs; their equity stakes are in Lab pathways.</span>`;
+      + `<span class="status-note">Each line is one sourced tie; open a company to read its ties in words. Circle size = number of sourced ties; companies with no sourced tie are counted in the tier details. Strategic investors sit under frontier labs; their equity stakes are in Lab pathways.</span>`;
   }
 
   // Ties of the chosen tier or company stay strong; the rest fade, so crossing lines stay readable.
@@ -95,8 +99,14 @@
     if (typeof d3 === "undefined") return;
     d3.selectAll("#vc-flow path.vc-tie").attr("stroke-opacity", (x) => (keep(x) ? 0.95 : 0.08)).attr("stroke-width", (x) => (keep(x) ? 2 : 1.2));
   }
+  // Clear then set, so the same message is announced again on a repeat click.
+  function announce(t) {
+    const el = document.getElementById("vc-status");
+    el.textContent = "";
+    setTimeout(() => { el.textContent = t; }, 50);
+  }
   function tieList(ties) {
-    return `<ul class="conn">${ties.map((t) => `<li>${esc(name(t.from))} <span class="ticker">${esc(t.type)}</span> ${esc(name(t.to))}${t.as_of ? ` <span class="ticker">(${esc(t.as_of)})</span>` : ""}. ${esc(t.description || "")}${src(t.source_url)}</li>`).join("") || "<li>None sourced yet.</li>"}</ul>`;
+    return `<ul class="conn">${ties.map((t) => `<li>${esc(name(t.from))} ${esc(phrase(t.type))} ${esc(name(t.to))}${t.as_of ? ` <span class="ticker">(${esc(t.as_of)})</span>` : ""}. ${esc(t.description || "")}${src(t.source_url)}${t.source_kind === "secondary" ? ' <span class="conf">· reported (secondary source)</span>' : ""}</li>`).join("") || "<li>None sourced yet.</li>"}</ul>`;
   }
 
   function showTier(tid, section) {
@@ -105,19 +115,26 @@
     const list = (arr, f) => (arr && arr.length ? `<ul class="conn">${arr.map(f).join("")}</ul>` : `<p class="status-note">None in the data.</p>`);
     const coLine = (id) => { const c = CO.get(id) || {}; const b = c.engagement_basis || {}; return `<li>${esc(c.name || id)}: ${esc(b.text || "")}${src(b.url)}</li>`; };
     const routes = (p.labs_reached_in_two_steps || []).map((r) => `<li><strong>${esc(r.lab)}</strong>: ${r.routes.map((x) => `${esc(name(x.from))} → ${esc(x.tie)} → ${esc(name(x.via))} → ${esc(x.then)} → ${esc(r.lab)}${src(x.source_url)}`).join("; ")}</li>`);
-    const routesMix = p.shareholder_routes ? Object.entries(p.shareholder_routes).map(([k, n]) => `${n} ${k}`).join(", ") : "";
+    const ROUTE = { "US proxy rules apply": ["company under US proxy rules", "companies under US proxy rules"], "US-listed foreign issuer": ["US-listed foreign issuer", "US-listed foreign issuers"], private: ["private company", "private companies"] };
+    const routesMix = p.shareholder_routes ? Object.entries(p.shareholder_routes).map(([k, n]) => `${n} ${(ROUTE[k] || [k, k])[n === 1 ? 0 : 1]}`).join(", ") : "";
     const panel = document.getElementById("vc-panel");
-    const capped = (arr, total, what) => (arr && total && arr.length < total ? `<p class="status-note">Showing ${arr.length} of ${total} ${what}.</p>` : "");
+    const capped = (arr, total, what) => (arr && total && arr.length < total ? `<p class="status-note">The ${arr.length} most recent of ${total} ${what}.</p>` : "");
     const drawn = [...new Set(V.ties.flatMap((x) => [x.from, x.to]))].filter((id) => (CO.get(id) || {}).tier === tid).length;
     const ownLabs = tid === "labs" ? " (this tier's own labs included)" : "";
     panel.innerHTML = `
       <p class="eyebrow" style="margin:0 0 4px">Tier</p>
       <h3 id="vc-panel-h" tabindex="-1">${esc(t.label)}</h3>
       <p>${esc(t.what_it_is || "")} ${plural(p.companies || 0, "company", "companies")} in this tier, ${p.companies_primary || 0} with it as their main role; ${drawn} with a sourced tie appear in the map above.</p>
+      <ul class="vc-summary">
+        <li><strong>Asks made here:</strong> ${plural(p.ai_proposals || 0, "AI proposal")}${p.median_support_pct != null ? `, median support ${p.median_support_pct}% (computed by this site)` : ""}. Outcomes such as adoption or withdrawal after an agreement are not in the data yet.</li>
+        <li><strong>Labs connected:</strong> ${(p.labs_reached_directly || []).length} directly${(p.labs_reached_in_two_steps || []).length ? `, ${(p.labs_reached_in_two_steps || []).length} in two steps` : ""}, through sourced ties, equity stakes or ownership.</li>
+        <li><strong>Active here:</strong> ${plural((p.active_filers || []).length, "filer")}${(p.active_filers || []).length >= 12 ? " (the 12 most active)" : ""}, ${plural((p.coalitions || []).length, "coalition")}, ${plural((p.people || []).length, "person", "people")} on file.</li>
+      </ul>
       <h4 id="vc-reach" tabindex="-1">Labs connected by sourced ties</h4>
+      <p class="status-note">From the sourced ties here and in Lab pathways (chips, compute and distribution, plus equity stakes and parent companies), including labs owned by companies in this tier.</p>
       <p>Reached directly${ownLabs}: ${(p.labs_reached_directly || []).map(esc).join(", ") || "none in the data"}.</p>
       ${routes.length ? `<p>Reached in two steps:</p><ul class="conn">${routes.join("")}</ul>` : ""}
-      <p class="status-note">Ties out of this tier: ${p.ties_from_tier ?? 0}; into it: ${p.ties_into_tier ?? 0}. ${p.ties_note ? esc(String(p.ties_note).replace(/\.?$/, ".")) : ""} Equity stakes are shown in Lab pathways.</p>
+      <p class="status-note">Ties out of this tier: ${p.ties_from_tier ?? 0}; into it: ${p.ties_into_tier ?? 0}. A tie between two companies in the same tier counts both ways. The map above shows operating ties; equity stakes are drawn in Lab pathways.</p>
       <h4 id="vc-asks" tabindex="-1">Asks made here</h4>
       <p>${plural(p.ai_proposals || 0, "AI proposal")}${(p.proposal_topics && Object.keys(p.proposal_topics).length) ? ` (${Object.entries(p.proposal_topics).map(([k, n]) => `${esc(k)} ${n}`).join(", ")})` : ""}${p.median_support_pct != null ? `; median support ${p.median_support_pct}%, computed by this site from the recorded figures` : ""}.</p>
       ${capped(p.asks_made, p.ai_proposals, "proposals")}
@@ -127,13 +144,16 @@
       <h4 id="vc-safety" tabindex="-1">Companies included for a safety commitment</h4>
       ${list(p.safety_commitments, coLine)}
       <h4 id="vc-who" tabindex="-1">Investors, coalitions and people active here</h4>
+      <p class="status-note">From the site's filer data; each filing, membership and profile is sourced in Contacts and the Co-filer network.</p>
       <p>Filers active at this tier's companies${p.active_filers && p.active_filers.length >= 12 ? " (the 12 most active)" : ""}:</p>${list(p.active_filers, (f) => `<li>${esc(f.name)} (${plural(f.proposals, "proposal")})</li>`)}
       <p>Coalitions:</p>${list(p.coalitions, (c) => `<li>${esc(c.name)} (${plural(c.members_active_here, "member")} active here)</li>`)}
-      <p>People on file${p.people && p.people.length >= 20 ? " (up to 20)" : ""}:</p>${list(p.people, (x) => `<li>${esc(x.name)}, ${esc(x.org)}</li>`)}
+      <p>People on file (${(p.people || []).length}):</p>${list(p.people, (x) => `<li>${esc(x.name)}, ${esc(x.org)}</li>`)}
       <h4 id="vc-routes" tabindex="-1">Shareholder routes</h4>
-      <p>${routesMix ? esc(routesMix) : "Not recorded"}. Fund votes on these companies on file: ${p.fund_vote_rows ?? 0}.</p>`;
+      <p>${routesMix ? esc(routesMix) : "Not recorded"}.</p>
+      <h4 id="vc-fund" tabindex="-1">Fund-family votes on file</h4>
+      <p>${p.fund_vote_rows ?? 0} votes, counted once per fund family per proposal, from Form N-PX filings on proposals at these companies. Most are matched automatically and not yet reviewed; see Fund votes for each one.</p>`;
     highlight((x) => (CO.get(x.from) || {}).tier === tid || (CO.get(x.to) || {}).tier === tid);
-    document.getElementById("vc-status").textContent = `${t.label}: details below the chart.`;
+    announce(`${t.label}: details below the chart.`);
     document.querySelectorAll(".vc-tiers .chip").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.tier === tid)));
     const target = document.getElementById(section || "vc-panel-h");
     target.focus({ preventScroll: true });
@@ -154,7 +174,7 @@
     const b = document.getElementById("vc-open-co");
     if (b) b.addEventListener("click", () => window.LENS_CTX.openCompany(c.ticker));
     highlight((x) => x.from === id || x.to === id);
-    document.getElementById("vc-status").textContent = `${c.name || id}: ${plural(outs.length + ins.length, "tie")}, details below the chart.`;
+    announce(`${c.name || id}: ${plural(outs.length + ins.length, "tie")}, details below the chart.`);
     const h = document.getElementById("vc-panel-h");
     h.focus({ preventScroll: true });
     h.scrollIntoView({ block: "start", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
@@ -162,7 +182,7 @@
 
   function drawTieTable() {
     const rows = [...V.ties].sort((a, b) => a.type.localeCompare(b.type) || name(a.from).localeCompare(name(b.from)))
-      .map((t) => `<tr><td>${esc(name(t.from))}</td><td>${esc(t.type)}</td><td>${esc(name(t.to))}</td><td class="nowrap">${esc(t.as_of || "")}</td><td>${src(t.source_url)}${t.source_kind === "secondary" ? ' <span class="conf">· reported (secondary source)</span>' : ""}</td></tr>`).join("");
+      .map((t) => `<tr><td><button type="button" class="linklike" data-co="${esc(t.from)}">${esc(name(t.from))}</button></td><td>${esc(phrase(t.type))}</td><td><button type="button" class="linklike" data-co="${esc(t.to)}">${esc(name(t.to))}</button></td><td class="nowrap">${esc(t.as_of || "")}</td><td>${src(t.source_url)}${t.source_kind === "secondary" ? ' <span class="conf">· reported (secondary source)</span>' : ""}</td></tr>`).join("");
     document.getElementById("vc-ties").innerHTML = `<table><thead><tr><th scope="col">From</th><th scope="col">Tie</th><th scope="col">To</th><th scope="col">As of</th><th scope="col">Source</th></tr></thead><tbody>${rows}</tbody></table>`;
   }
 
@@ -173,7 +193,7 @@
     { key: "ai_proposals", label: "AI proposals", n: (p) => p.ai_proposals || 0, sec: "vc-asks" },
     { key: "investor_engagements", label: "Companies included for a named investor engagement", n: (p) => (p.investor_engagements || []).length, sec: "vc-engagements" },
     { key: "safety_commitments", label: "Companies included for a safety commitment", n: (p) => (p.safety_commitments || []).length, sec: "vc-safety" },
-    { key: "fund_vote_rows", label: "Fund votes on file", n: (p) => p.fund_vote_rows || 0, sec: "vc-routes" },
+    { key: "fund_vote_rows", label: "Fund-family votes on file", n: (p) => p.fund_vote_rows || 0, sec: "vc-fund" },
   ];
   function drawHeat() {
     const tiers = V.tiers.slice().sort((a, b) => a.order - b.order);
@@ -187,8 +207,8 @@
       const bg = STEPS[step];
       return `<td class="num vc-cell" style="background:${bg}"><button type="button" class="vc-num${step >= 3 ? " on-dark" : ""}" data-tier="${t.id}" data-sec="${c.sec}" aria-label="${esc(`${t.label}: ${n} ${c.label.toLowerCase()}, open details`)}">${n}</button></td>`;
     };
-    document.getElementById("vc-heat").innerHTML = `<table class="vc-heat"><caption class="visually-hidden">Engagement by value-chain tier</caption><thead><tr><th scope="col">Tier</th>${COLS.map((c) => `<th scope="col" class="num">${esc(c.label)}</th>`).join("")}</tr></thead>
-      <tbody>${tiers.map((t) => `<tr><th scope="row"><button type="button" class="linklike" data-tier="${t.id}">${esc(t.label)}</button></th>${COLS.map((c) => cell(c, t)).join("")}</tr>`).join("")}</tbody></table>`;
+    document.getElementById("vc-heat").innerHTML = `<table class="vc-heat"><caption class="visually-hidden">Engagement by value-chain tier</caption><thead><tr><th scope="col" class="sticky-col">Tier</th>${COLS.map((c) => `<th scope="col" class="num">${esc(c.label)}</th>`).join("")}</tr></thead>
+      <tbody>${tiers.map((t) => `<tr><th scope="row" class="sticky-col"><button type="button" class="linklike" data-tier="${t.id}">${esc(t.label)}</button></th>${COLS.map((c) => cell(c, t)).join("")}</tr>`).join("")}</tbody></table>`;
   }
 
   window.renderValueChain = function (data, companies) {
@@ -203,6 +223,8 @@
     el.addEventListener("click", (e) => {
       const b = e.target.closest("[data-tier]");
       if (b) showTier(b.dataset.tier, b.dataset.sec);
+      const c = e.target.closest("[data-co]");
+      if (c) showCompany(c.dataset.co);
     });
     // The flow needs a visible container to measure, so it draws the first time the tab opens.
     let drawn = false;

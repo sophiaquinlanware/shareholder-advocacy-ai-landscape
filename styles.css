@@ -346,3 +346,7 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
 .vc-heat .vc-zero { color: var(--ink-soft); }
 .vc-num { font: inherit; font-weight: 600; background: none; border: 0; padding: 2px 4px; color: var(--ink); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
 .vc-num.on-dark { color: #ffffff; }
+.vc-summary { padding-left: 18px; margin: 6px 0 10px; }
+.vc-summary li { margin: 3px 0; }
+.vc-num.on-dark:focus-visible { outline-color: #ffffff; outline-offset: -3px; }
+.vc-heat .sticky-col { position: sticky; left: 0; background: var(--surface); z-index: 1; }
