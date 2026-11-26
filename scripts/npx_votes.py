@@ -298,21 +298,24 @@ def main():
                             "meeting_date": md, "npx_description": rec.get("voteDescription"),
                             "match_confidence": round(s, 2), "description_cover": round(rev, 2), "how_voted": hows,
                             "shares_voted": shares, "series_count": len(set(rec["series"])) or None,
-                            "source_url": base, "filed": f["filed"], "period": f["period"],
+                            "source_url": base, "filed": f["filed"], "period": f["period"], "form": f["form"],
                             "series": sorted(set(rec["series"])),
                             "vote_lines": [{"how": v.get("howVoted", "").upper(), "shares": v.get("sharesVoted")} for v in rec["votes"]],
                         })
                 print(f"  {family} / {trust} {f['filed']}: done")
 
-    # Where one fund (same trust and series) at one meeting appears in more than one filing (an amendment
-    # restating an earlier report), keep only the records from the latest filing. Records within one
-    # filing are all kept, so duplicate ballot items there are still caught downstream.
-    latest_for = {}
+    # Several original N-PX reports for one period are separate reports (different funds) and are all kept.
+    # Only an amendment (N-PX/A) replaces earlier records, for the same trust, fund (series) and meeting;
+    # records with no series ID are replaced only by an amendment from the same trust for that meeting.
+    amended = {}
     for r in results:
-        k = (r["family"], r["trust"], tuple(r["series"]), r["company"], r["meeting_date"])
-        if k not in latest_for or r["filed"] > latest_for[k][0]:
-            latest_for[k] = (r["filed"], r["source_url"])
-    results = [r for r in results if latest_for[(r["family"], r["trust"], tuple(r["series"]), r["company"], r["meeting_date"])][1] == r["source_url"]]
+        if r["form"] == "N-PX/A":
+            k = (r["family"], r["trust"], tuple(r["series"]), r["company"], r["meeting_date"])
+            if k not in amended or r["filed"] > amended[k][0]:
+                amended[k] = (r["filed"], r["source_url"])
+    results = [r for r in results
+               if (k := (r["family"], r["trust"], tuple(r["series"]), r["company"], r["meeting_date"])) not in amended
+               or amended[k][1] == r["source_url"]]
 
     # One row per fund family per proposal. A family files for many funds, so "split"
     # means its funds did not all vote the same way.
@@ -337,7 +340,7 @@ def main():
     rows.sort(key=lambda r: (r["meeting_date"], r["proposal_id"], r["family"]))
     checked = sorted({p["id"] for p in proposals})
     out = {"generated": dt.date.today().isoformat(),
-           "method": ("SEC Form N-PX structured filings (every filing for each period; where a fund appears in more than one, its latest). Only shareholder proposals. A vote matches a proposal "
+           "method": ("SEC Form N-PX structured filings (every filing for each period; an amendment replaces the records it restates). Only shareholder proposals. A vote matches a proposal "
                       "at the same company and meeting (or the same year when the meeting date is not on file) when at least 75% of the "
                       "title's key words appear in the filing's description, at least 50% the other way, and it beats the next-best "
                       "proposal at that meeting by 0.15. Anything close but not certain goes to the review list."),
