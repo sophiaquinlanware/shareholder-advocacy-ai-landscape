@@ -19,7 +19,7 @@
    "notes": null,
    "filing_deadline": "2023-06-29",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312522270484/d318171ddef14a.htm",
-   "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud datacenters in countries of significant human rights concern and how it mitigates those impacts.",
+   "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud datacenters in countries of \"significant human rights concern\" and how it mitigates those impacts.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "ask_id": "ask-dc-siting-rights"
   },
@@ -75,7 +75,7 @@
    "vote_history_source": "derived: same company, topic and title subject",
    "filing_deadline": "2024-06-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
-   "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud datacenters in countries of significant human rights concern and how it mitigates those impacts.",
+   "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud datacenters in countries of \"significant human rights concern\" and how it mitigates those impacts.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "ask_id": "ask-dc-siting-rights"
   },
@@ -240,7 +240,7 @@
    "vote_history_source": "derived: same company, topic and title subject",
    "filing_deadline": "2025-07-01",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
-   "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud datacenters in countries of significant human rights concern and how it mitigates those impacts.",
+   "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud datacenters in countries of \"significant human rights concern\" and how it mitigates those impacts.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "ask_id": "ask-dc-siting-rights"
   },
@@ -546,7 +546,7 @@
    "notes": "Alphabet Class B shares carry 10 votes each. Counts are voting power as the 8-K reports them.",
    "filing_deadline": "2022-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm",
-   "plain_summary": "Asks the board to commission a report on siting Google Cloud data centers in countries of significant human rights concern and how the company mitigates the related impacts.",
+   "plain_summary": "Asks the board to commission a report on siting Google Cloud data centers in countries of \"significant human rights concern\" and how the company mitigates the related impacts.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "ask_id": "ask-dc-siting-rights"
   },
@@ -1032,7 +1032,7 @@
    "notes": null,
    "filing_deadline": "2022-12-15",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465922045572/tm223357-5_def14a.htm",
-   "plain_summary": "Asks the board to commission an independent study of Rekognition on its privacy and civil rights risks, its sale to repressive governments, and related financial risks.",
+   "plain_summary": "Asks the board to commission an independent study of Rekognition on its privacy and civil rights risks, its sale to \"repressive\" governments, and related financial risks.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
    "ask_id": "ask-customer-due-diligence"
   },
@@ -1098,7 +1098,7 @@
    "vote_history_source": "derived: same company, topic and title subject",
    "filing_deadline": "2023-12-15",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
-   "plain_summary": "Asks the board to commission an independent study of Rekognition on its privacy and civil rights risks in the US, its sale to repressive governments, and related financial risks.",
+   "plain_summary": "Asks the board to commission an independent study of Rekognition on its privacy and civil rights risks in the US, its sale to \"repressive\" governments, and related financial risks.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "ask_id": "ask-customer-due-diligence"
   },
@@ -1466,7 +1466,7 @@
    "vote_history_source": "derived: same company, topic and title subject",
    "filing_deadline": "2026-06-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
-   "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud data centers in countries of significant human rights concern and how it mitigates them.",
+   "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud data centers in countries of \"significant human rights concern\" and how it mitigates them.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "ask_id": "ask-dc-siting-rights"
   },
@@ -1638,7 +1638,7 @@
    "meeting_date_source": "https://www.sec.gov/Archives/edgar/data/1100663/000143893426002265/",
    "filing_deadline": "2025-12-11",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
-   "plain_summary": "Asks the board to report, by March 31, 2027, the added capital and operating costs of Amazon's climate commitments since 2019 and its reassessment of them given AI energy demand.",
+   "plain_summary": "Asks the board to report, by March 31, 2027, the added capital and operating costs of Amazon's climate commitments since 2019 and its reassessment of them given changing expectations for AI infrastructure investment and energy usage.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
    "ask_id": "ask-dc-climate-energy"
   },
@@ -1662,7 +1662,7 @@
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/51143/000110465925022186/tm2430706-6_def14aseq1.htm",
    "notes": "Proxy heading for the proposal text: \"Proposal 7 - AI Bias Audit\". Proponent owned at least 7 shares per the proxy.",
    "source": "SEC filings (round 29)",
-   "plain_summary": "Asks the board to report on the methods used to remove bias from IBM's AI models, including whether avoiding disparate impact in outputs undermines their accuracy and trust.",
+   "plain_summary": "Asks the board to report on the methods used to remove bias from IBM's AI models, including the risk that avoiding disparate impact in outputs undermines their accuracy and trust.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
    "ask_id": "ask-ai-bias"
   },

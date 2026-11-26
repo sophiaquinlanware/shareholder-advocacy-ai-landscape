@@ -2270,7 +2270,7 @@
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312522270484/d318171ddef14a.htm",
    "meeting_date": "2023-12-07",
    "support_note": "Microsoft reports 33.57% \"Votes For\", which matches For/(For+Against) to within 0.01 (Microsoft appears to truncate rather than round).",
-   "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud datacenters in countries of significant human rights concern and how it mitigates those impacts.",
+   "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud datacenters in countries of \"significant human rights concern\" and how it mitigates those impacts.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "ask_id": "ask-dc-siting-rights",
    "degree": 2
@@ -2323,7 +2323,7 @@
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "meeting_date": "2024-12-10",
    "support_note": "Microsoft reports 32.03% \"Votes For\", which matches For/(For+Against) to within 0.01 (Microsoft appears to truncate rather than round).",
-   "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud datacenters in countries of significant human rights concern and how it mitigates those impacts.",
+   "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud datacenters in countries of \"significant human rights concern\" and how it mitigates those impacts.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "ask_id": "ask-dc-siting-rights",
    "degree": 1
@@ -2480,7 +2480,7 @@
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "meeting_date": "2025-12-05",
    "support_note": "Microsoft reports 27.48% \"Votes For\", which matches For/(For+Against) to within 0.01 (Microsoft appears to truncate rather than round).",
-   "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud datacenters in countries of significant human rights concern and how it mitigates those impacts.",
+   "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud datacenters in countries of \"significant human rights concern\" and how it mitigates those impacts.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "ask_id": "ask-dc-siting-rights",
    "degree": 1
@@ -2631,7 +2631,7 @@
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "meeting_date": "2026-12-08",
    "results_note": "Not yet filed (meeting 2026-12-08)",
-   "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud data centers in countries of significant human rights concern and how it mitigates them.",
+   "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud data centers in countries of \"significant human rights concern\" and how it mitigates them.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "ask_id": "ask-dc-siting-rights",
    "degree": 3
@@ -2653,7 +2653,7 @@
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm",
    "meeting_date": "2023-06-02",
    "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
-   "plain_summary": "Asks the board to commission a report on siting Google Cloud data centers in countries of significant human rights concern and how the company mitigates the related impacts.",
+   "plain_summary": "Asks the board to commission a report on siting Google Cloud data centers in countries of \"significant human rights concern\" and how the company mitigates the related impacts.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "ask_id": "ask-dc-siting-rights",
    "degree": 6
@@ -3354,7 +3354,7 @@
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465922045572/tm223357-5_def14a.htm",
    "meeting_date": "2023-05-24",
    "support_note": "The 8-K gives raw counts only, no percentage.",
-   "plain_summary": "Asks the board to commission an independent study of Rekognition on its privacy and civil rights risks, its sale to repressive governments, and related financial risks.",
+   "plain_summary": "Asks the board to commission an independent study of Rekognition on its privacy and civil rights risks, its sale to \"repressive\" governments, and related financial risks.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
    "ask_id": "ask-customer-due-diligence",
    "degree": 1
@@ -3416,7 +3416,7 @@
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
    "meeting_date": "2024-05-22",
    "support_note": "The 8-K gives raw counts only, no percentage.",
-   "plain_summary": "Asks the board to commission an independent study of Rekognition on its privacy and civil rights risks in the US, its sale to repressive governments, and related financial risks.",
+   "plain_summary": "Asks the board to commission an independent study of Rekognition on its privacy and civil rights risks in the US, its sale to \"repressive\" governments, and related financial risks.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "ask_id": "ask-customer-due-diligence",
    "degree": 1
@@ -3555,7 +3555,7 @@
    "filing_deadline": "2025-12-11",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "meeting_date": "2026-05-20",
-   "plain_summary": "Asks the board to report, by March 31, 2027, the added capital and operating costs of Amazon's climate commitments since 2019 and its reassessment of them given AI energy demand.",
+   "plain_summary": "Asks the board to report, by March 31, 2027, the added capital and operating costs of Amazon's climate commitments since 2019 and its reassessment of them given changing expectations for AI infrastructure investment and energy usage.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
    "ask_id": "ask-dc-climate-energy",
    "degree": 2
@@ -5458,7 +5458,7 @@
    "meeting_date": "2026-04-28",
    "results_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000043/ibm-20260428.htm",
    "support_note": "IBM's 8-K reports 2.4% For. For 14,185,799; Against 565,479,507; Abstain 10,880,912; broker non-votes 153,795,179.",
-   "plain_summary": "Asks the board to report on the methods used to remove bias from IBM's AI models, including whether avoiding disparate impact in outputs undermines their accuracy and trust.",
+   "plain_summary": "Asks the board to report on the methods used to remove bias from IBM's AI models, including the risk that avoiding disparate impact in outputs undermines their accuracy and trust.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
    "ask_id": "ask-ai-bias",
    "degree": 1

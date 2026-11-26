@@ -7234,13 +7234,13 @@
   },
   "BlackRock (iShares)": {
    "offered": true,
-   "note": "Partial: 650+ institutional index and systematic pooled funds plus SMAs, and a U.S. retail program for participating funds such as iShares Core S&P 500 ETF.",
+   "note": "Partial: 650+ institutional index and systematic pooled funds plus separately managed accounts, and a U.S. retail program for a participating fund.",
    "source_url": "https://www.blackrock.com/corporate/about-us/investment-stewardship/blackrock-voting-choice",
    "evidence": "stated by the family"
   },
   "Vanguard": {
    "offered": true,
-   "note": "Partial: 32 equity index mutual funds and ETFs as of July 31, 2026, open to individual investors, advisors and plan sponsors.",
+   "note": "Available across 32 Vanguard funds, per the Investor Choice page.",
    "source_url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/about-our-funds/proxy-voting-across-funds/investor-choice.html",
    "evidence": "stated by the family"
   },
@@ -7251,10 +7251,10 @@
    "evidence": "no program found on the pages checked"
   },
   "Domini": {
-   "offered": false,
-   "note": "No program found on the Domini Proxy Voting page, which describes votes Domini casts on behalf of its fund investors.",
+   "offered": null,
+   "note": "No program found on the Domini proxy voting page, which describes the votes Domini casts for its fund investors.",
    "source_url": "https://domini.com/proxyvoting",
-   "evidence": "the family says it votes fund proxies itself"
+   "evidence": "no program found on the pages checked"
   },
   "Green Century": {
    "offered": null,
