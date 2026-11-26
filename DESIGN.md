@@ -76,6 +76,26 @@ They follow the WAI-ARIA tabs pattern: `aria-controls` and `aria-labelledby`, a 
 - **Legend chip:** `.leg`. When switched off: struck through, dashed border, hollow dot.
 - **Source link:** `.src`. Missing sources show "source pending" (`.unverified`).
 
+## Lenses (Co-filer network)
+
+One dataset, several views. `lenses.js` holds every lens (`window.LENSES`). Each lens has:
+- a label;
+- `sizeLabel`, so the intro reads "Node size = …";
+- default layers;
+- a size function;
+- rings;
+- actions.
+
+A new lens is one more entry. `rules.js` holds rule-based settings with comments; today that is the secondary-source domain list used for edge confidence.
+
+- **View as:** native radios in a `<fieldset class="lens-pick">`, styled as chips. The choice is kept in `?lens=` (shareable) and `localStorage["lens"]`; the URL wins. Switching applies the lens's layers and resets topic and year. A hidden live line states what changed.
+- **What you can do:** `.net-actions`, at the top of the node panel. It holds facts only: where, when, who, counts and links, never advice or how to vote. It is left out when the lens has nothing for the node.
+- **Edge confidence:** `.conf` text in `--ink-soft` on every connection: verified, reported (secondary domain or "UNVERIFIED" in the edge text), or inferred (no URL). On the graph, inferred lines are dotted `1 3`, and membership lines stay dashed `3 3`.
+- **Rings:** dashed `--accent` ring for "Upcoming vote", always also stated as text (`.ring-note`, List view Status column). The keyboard focus ring is solid `--ink` with a white gap, so the two differ by shape.
+- **Keyboard:** the graph is one tab stop (`role="application"`). ↑/↓ (and ←/→) step through visible nodes, companies and labs first, then by connections. Home and End jump to the first and last. Enter opens the panel and Esc clears it. `#net-kb` announces each step.
+- **Labels:** off by default (owner, 2026-11-25: "don't label the nodes until you click on a node, and then … label all the connection nodes"). Selecting, hovering or keyboard-focusing a node names it and its connections. Graph settings → Filters → Labels turns all labels on (saved per viewer).
+- **List view:** every visible node, with Name, Type, Connections (sortable), Status and What you can do. It is the text equivalent of the graph.
+
 ## Focus and motion
 
 - `:focus-visible` draws a 2px `--accent` outline. On accent-filled controls the outline is `--ink`.
@@ -84,7 +104,7 @@ They follow the WAI-ARIA tabs pattern: `aria-controls` and `aria-labelledby`, a 
 ## Named rules
 
 1. Colours only through tokens.
-2. Every fact carries a source link or "source pending".
+2. Every fact carries a source link or "source pending". Network connections show a confidence marker instead.
 3. Wide content scrolls inside its own box, never the page.
 4. No decorative visuals; every visual is blue and has a text equivalent.
 5. Counts, ranges and lists come from the data, never typed into copy.

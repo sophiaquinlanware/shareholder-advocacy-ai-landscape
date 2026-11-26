@@ -64,6 +64,29 @@
 
   let state = null;
 
+  // ---------- Lenses (lenses.js): which layers start on, what size and rings mean, and the actions ----------
+  const LENS_KEY = "lens";
+  const lens = () => (window.LENSES || {})[state.lens] || { label: "", sizeLabel: "number of connections", defaults: {}, size: () => null, rings: () => [], actions: () => [] };
+  function initialLens() {
+    const ids = Object.keys(window.LENSES || {});
+    const fromUrl = new URLSearchParams(location.search).get("lens");
+    if (ids.includes(fromUrl)) return fromUrl;
+    try { const s = localStorage.getItem(LENS_KEY); if (ids.includes(s)) return s; } catch (e) {}
+    return ids[0] || "impact";
+  }
+  // Keep the choice in the URL (shareable) and in this browser; the #tab hash stays as it is.
+  function saveLens(id) {
+    try { localStorage.setItem(LENS_KEY, id); } catch (e) {}
+    try {
+      const u = new URL(location.href);
+      u.searchParams.set("lens", id);
+      window.history.replaceState(null, "", u.pathname + u.search + location.hash);
+    } catch (e) {}
+  }
+  const rings = (n) => lens().rings(n, state.ctx) || [];
+  const actions = (n) => lens().actions(n, state.ctx) || [];
+  const conf = (l) => (window.RULES ? window.RULES.edgeConfidence(l) : { level: l.source_url ? "verified" : "inferred", text: l.source_url ? "verified" : "inferred" });
+
   // The shared relationship store (data/graph.json): every tab's facts in one graph.
   function buildFromGraph(G) {
     const nodes = G.nodes.map((n) => {
@@ -111,12 +134,15 @@
     if (n.kind === "lab") return 10;
     return 6 + Math.min(10, Math.sqrt(n.degree) * 2.4);
   }
-  const radius = (n) => baseRadius(n) * state.cfg.nodeScale;
+  const radius = (n) => {
+    const r = state.ctx ? lens().size(n, state.ctx) : null;
+    return (r == null ? baseRadius(n) : r) * state.cfg.nodeScale;
+  };
 
   // ---------- Graph settings (like Obsidian's graph view): display, filters and forces ----------
   // Kept per viewer in localStorage; the page works the same without it.
   const SETTINGS_KEY = "net-settings-v1";
-  const DEFAULTS = { textSize: 11, labelMin: 0, nodeScale: 1, linkScale: 1, orphans: true, center: 0.05, repel: 1, linkStrength: 0.6, linkDist: 1, group: 0.5 };
+  const DEFAULTS = { textSize: 11, labelMin: 0, nodeScale: 1, linkScale: 1, labels: false, orphans: true, center: 0.05, repel: 1, linkStrength: 0.6, linkDist: 1, group: 0.5 };
 
   // ---------- Grouped layout: a 2D frame so each kind of node has its own region ----------
   // Left to right follows the filing chain: people → filer organizations → proposals → companies → labs.
@@ -206,6 +232,7 @@
       <div class="gs-grid">
         ${group("Display")}
         <fieldset class="gs-group"><legend>Filters</legend>
+          <label class="gs-check"><input type="checkbox" data-gs-check="labels"${state.cfg.labels ? " checked" : ""}> Labels (off: names show for the selected node and its connections)</label>
           <label class="gs-check"><input type="checkbox" data-gs-check="orphans"${state.cfg.orphans ? " checked" : ""}> Orphans (nodes with no visible links)</label>
         </fieldset>
         ${group("Forces")}
@@ -219,9 +246,9 @@
       saveSettings();
       applySettings(s.group === "Forces" || s.key === "nodeScale");
     }));
-    panel.querySelector("[data-gs-check]").addEventListener("change", (e) => {
-      state.cfg.orphans = e.target.checked; saveSettings(); applySettings(false);
-    });
+    panel.querySelectorAll("[data-gs-check]").forEach((c) => c.addEventListener("change", (e) => {
+      state.cfg[c.dataset.gsCheck] = e.target.checked; saveSettings(); applySettings(false);
+    }));
     document.getElementById("gs-reset").addEventListener("click", () => {
       state.cfg = { ...state.defaults };
       saveSettings();
@@ -259,7 +286,10 @@
   function shell(el) {
     el.innerHTML = `
       <h2>Co-filer network</h2>
+      <fieldset class="lens-pick" id="net-lens"><legend>View as</legend>${Object.entries(window.LENSES || {}).map(([id, l]) =>
+        `<label class="chip"><input type="radio" name="net-lens" value="${esc(id)}"${id === state.lens ? " checked" : ""}> ${esc(l.label)}</label>`).join("")}</fieldset>
       <p class="intro" id="net-intro"></p>
+      <p class="visually-hidden" id="net-lens-status" aria-live="polite"></p>
       <div class="net-controls">
         <input type="search" id="net-search" placeholder="Search an organization or company" aria-label="Search the network">
         <select id="net-topic" aria-label="Filter by topic"><option value="">All topics</option></select>
@@ -272,9 +302,13 @@
       <div id="net-legend" class="net-legend"></div>
       <details id="net-settings" class="graph-settings"></details>
       <div class="net-body">
-        <div id="net-graph" class="net-graph" role="group" aria-label="Co-filer network graph; the List view has the same data as a table"></div>
+        <div class="net-graph-wrap">
+          <div id="net-graph" class="net-graph" tabindex="0" role="application" aria-roledescription="network graph" aria-describedby="net-kb-hint" aria-label="Co-filer network graph. Up and Down arrows move between nodes, Enter opens one, Escape clears. The List view has the same data as a table."></div>
+          <p class="kb-hint" id="net-kb-hint">Keyboard: Tab into the graph, ↑ ↓ to move between nodes, Enter to open, Esc to clear.</p>
+          <p class="visually-hidden" id="net-kb" aria-live="polite"></p>
+        </div>
         <div id="net-list" class="net-list" hidden></div>
-        <aside id="net-panel" class="net-panel" aria-live="polite"><p class="status-note">Select a node for its connections and sources.</p></aside>
+        <aside id="net-panel" class="net-panel" aria-label="Selected node"><p class="status-note">Select a node for its connections and sources.</p></aside>
       </div>`;
   }
 
@@ -290,7 +324,7 @@
   function intro() {
     refreshConnected();
     const shown = state.data.nodes.filter(visible).length;
-    document.getElementById("net-intro").textContent = `${shown} of ${state.data.nodes.length} nodes shown. Node size = number of connections. Company tiers are this site's reading of each company's main role in the AI value chain.`;
+    document.getElementById("net-intro").textContent = `${shown} of ${state.data.nodes.length} nodes shown. Node size = ${lens().sizeLabel}. Company tiers are this site's reading of each company's main role in the AI value chain.`;
   }
 
   function neighbors(id) {
@@ -306,8 +340,13 @@
     const rel = state.data.links.filter((l) => l.source.id === n.id || l.target.id === n.id).map((l) => {
       const other = l.source.id === n.id ? l.target : l.source;
       const dir = l.source.id === n.id ? l.relation : `${l.relation} (from)`;
-      return `<li><button class="linklike" data-id="${esc(other.id)}">${esc(other.label)}</button> <span class="ticker">${esc(dir)}</span> ${link(l.source_url)}</li>`;
+      const c = conf(l);
+      return `<li><button type="button" class="linklike" data-id="${esc(other.id)}">${esc(other.label)}</button> <span class="ticker">${esc(dir)}</span> <span class="conf conf-${c.level}">· ${c.level === "inferred" ? "no source, " + esc(c.text) : "source: " + esc(c.text)}</span>${l.source_url ? " " + link(l.source_url) : ""}</li>`;
     }).join("");
+    // "What you can do": from the active lens; left out when the lens has nothing for this node.
+    const acts = actions(n);
+    const actHtml = acts.length ? `<section class="net-actions" aria-labelledby="net-actions-h"><h4 id="net-actions-h">${esc(lens().actionsHeading || "What you can do")}</h4><ul>${acts.map((a, i) => `<li>${actionHtml(a, n.id, i)}</li>`).join("")}</ul></section>` : "";
+    const ringHtml = rings(n).map((r) => `<p class="ring-note ring-${esc(r.kind)}">${esc(r.text)}</p>`).join("");
     let facts = "";
     if (n.kind === "proposal") {
       facts = `<p><strong>Status:</strong> ${esc(n.status)}${n.support_pct != null ? ` · <strong>Support:</strong> ${esc(n.support_pct)}%` : ""}</p>
@@ -322,10 +361,24 @@
       facts = `<p>${esc(n.description || "")} ${link(n.source_url)}</p>${n.website ? `<p><a href="${esc(n.website)}" target="_blank" rel="noopener">Website</a></p>` : ""}`;
     }
     document.getElementById("net-panel").innerHTML = `
+      ${actHtml}
       <p class="eyebrow" style="margin:0 0 4px">${esc(TYPE_LABEL[n.kind])}</p>
-      <h3>${esc(n.label)}</h3>${facts}
+      <h3>${esc(n.label)}</h3>${ringHtml}${facts}
       <h4 style="margin:14px 0 4px;font-size:14px">Connections</h4><ul class="conn">${rel || "<li>None yet</li>"}</ul>`;
     document.querySelectorAll("#net-panel .linklike").forEach((b) => b.addEventListener("click", () => focus(b.dataset.id)));
+    wireActions(document.getElementById("net-panel"));
+  }
+
+  // One action item: its text, its links and, for a button, a real control (panel and List view alike).
+  function actionHtml(a, id, i) {
+    const lk = (href, label) => ` <a class="src" href="${esc(href)}" target="_blank" rel="noopener">[${esc(label)}]</a>`;
+    return `${a.text ? esc(a.text) : ""}${a.href ? lk(a.href, a.hrefLabel || "source") : ""}${(a.links || []).map((l) => lk(l.href, l.label)).join("")}${a.button ? `<button type="button" class="chip" data-act-node="${esc(id)}" data-act="${i}">${esc(a.button.label)}</button>` : ""}`;
+  }
+  function wireActions(root) {
+    root.querySelectorAll("[data-act]").forEach((b) => b.addEventListener("click", () => {
+      const a = actions(state.byId.get(b.dataset.actNode))[Number(b.dataset.act)];
+      if (a && a.button) a.button.run();
+    }));
   }
 
   function focus(id) {
@@ -399,14 +452,84 @@
         return near && !near.has(d.id) ? 0.12 : 1;
       })
       .attr("stroke-width", (d) => (d.id === state.selected ? 3 : 1.2));
+    if (state.ringSel) state.ringSel.attr("display", (d) => (visible(d) ? null : "none"));
     state.linkSel.attr("display", (l) => (visible(l.source) && visible(l.target) ? null : "none"))
       .attr("stroke-opacity", (l) => (near ? (l.source.id === focusId || l.target.id === focusId ? 0.9 : 0.04) : q ? 0.08 : 0.35));
     state.labels.attr("display", (d) => (visible(d) ? null : "none"))
       .attr("opacity", (d) => {
         if (q) return d.label.toLowerCase().includes(q) ? 1 : 0;
         if (near) return near.has(d.id) ? 1 : 0;
-        return labelCandidate(d) && !state.hiddenLabels.has(d.id) ? 1 : 0;
+        // Labels are off by default; selecting a node (or hovering, or keyboard focus) names it and its connections.
+        return state.cfg.labels && labelCandidate(d) && !state.hiddenLabels.has(d.id) ? 1 : 0;
       });
+  }
+
+  function drawRings() {
+    if (!state.ringLayer) return;
+    state.ringLayer.selectAll("*").remove();
+    state.ringSel = state.ringLayer.selectAll("circle").data(state.data.nodes.filter((n) => rings(n).length)).join("circle")
+      .attr("r", (d) => radius(d) + 4).attr("fill", "none").attr("stroke", cssVar("--accent")).attr("stroke-width", 2).attr("stroke-dasharray", "4 2")
+      .attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+  }
+  function placeFocusMark() {
+    if (!state.focusMark) return;
+    const n = state.kbId && state.byId.get(state.kbId);
+    if (!n || !visible(n) || n.x == null) { state.focusMark.attr("display", "none"); return; }
+    const r = radius(n);
+    state.focusMark.attr("display", null);
+    state.focusMark.select(".fm-gap").attr("cx", n.x).attr("cy", n.y).attr("r", r + 2.5);
+    state.focusMark.select(".fm-ring").attr("cx", n.x).attr("cy", n.y).attr("r", r + 4.5);
+  }
+
+  // ---------- Keyboard: the graph is one tab stop; Up/Down step through visible nodes ----------
+  // Order: companies and labs first, then by number of connections, then by name.
+  function kbOrder() {
+    return state.data.nodes.filter(visible)
+      .sort((a, b) => (isCompanyKind(b.kind) - isCompanyKind(a.kind)) || (b.degree || 0) - (a.degree || 0) || a.label.localeCompare(b.label));
+  }
+  const say = (t) => { const el = document.getElementById("net-kb"); if (el) el.textContent = t; };
+  function kbMove(step) {
+    const list = kbOrder();
+    if (!list.length) return;
+    let i = list.findIndex((n) => n.id === state.kbId);
+    i = i < 0 ? (step > 0 ? 0 : list.length - 1) : (i + step + list.length) % list.length;
+    const n = list[i];
+    state.kbId = n.id;
+    state.hover = n.id;
+    applyStyles();
+    placeFocusMark();
+    const ring = rings(n).map((r) => r.text.toLowerCase()).join(", ");
+    say(`${i + 1} of ${list.length}: ${n.label}, ${TYPE_LABEL[n.kind]}, ${n.degree || 0} connections${ring ? ", " + ring : ""}`);
+    panTo(n, false);
+  }
+  // Bring a node into view at the current zoom; jumps with no animation under reduced motion.
+  function panTo(n, zoomIn) {
+    if (!state.zoom || n.x == null) return;
+    const { width, height } = state.size;
+    const k = zoomIn ? 1.6 : d3.zoomTransform(state.svg.node()).k;
+    state.svg.transition().duration(REDUCED_MOTION ? 0 : 300).call(state.zoom.transform, d3.zoomIdentity.translate(width / 2, height / 2).scale(k).translate(-n.x, -n.y));
+  }
+  function wireKeys() {
+    const el = document.getElementById("net-graph");
+    el.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowDown" || e.key === "ArrowRight") { e.preventDefault(); kbMove(1); }
+      else if (e.key === "ArrowUp" || e.key === "ArrowLeft") { e.preventDefault(); kbMove(-1); }
+      else if (e.key === "Home") { e.preventDefault(); state.kbId = null; kbMove(1); }
+      else if (e.key === "End") { e.preventDefault(); state.kbId = null; kbMove(-1); }
+      else if (e.key === "Enter" || e.key === " ") {
+        const n = state.kbId && state.byId.get(state.kbId);
+        if (!n) return;
+        e.preventDefault();
+        state.selected = n.id; showPanel(n); applyStyles();
+        say(`Opened ${n.label}. Details are in the node panel.`);
+      } else if (e.key === "Escape") {
+        state.selected = null; state.hover = null; state.kbId = null;
+        applyStyles(); placeFocusMark();
+        document.getElementById("net-panel").innerHTML = `<p class="status-note">Select a node for its connections and sources.</p>`;
+        say("Selection cleared");
+      }
+    });
+    el.addEventListener("blur", () => { if (state.kbId) { state.hover = null; applyStyles(); } });
   }
 
   function drawGraph() {
@@ -441,7 +564,8 @@
     drawAxis();
     state.linkSel = g.append("g").attr("stroke", cssVar("--blue-3")).attr("fill", "none").selectAll("path").data(data.links).join("path")
       .attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.4 : 1) * state.cfg.linkScale)
-      .attr("stroke-dasharray", (l) => (l.relation === "member of" || l.derived ? "3 3" : null));
+      // Membership links are dashed; links with no source (inferred) are dotted, so the two never look alike.
+      .attr("stroke-dasharray", (l) => (conf(l).level === "inferred" ? "1 3" : l.relation === "member of" ? "3 3" : null));
 
     state.node = g.append("g").selectAll("circle").data(data.nodes).join("circle")
       .attr("r", radius)
@@ -450,12 +574,18 @@
       .style("cursor", "pointer")
       .on("mouseenter", (ev, d) => { state.hover = d.id; applyStyles(); })
       .on("mouseleave", () => { state.hover = null; applyStyles(); })
-      .on("click", (ev, d) => { ev.stopPropagation(); state.selected = d.id; showPanel(d); applyStyles(); })
+      .on("click", (ev, d) => { ev.stopPropagation(); state.selected = d.id; showPanel(d); applyStyles(); say(`Opened ${d.label}. Details are in the node panel.`); })
       .call(d3.drag()
         .on("start", (ev, d) => { if (!ev.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
         .on("drag", (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
         .on("end", (ev, d) => { if (!ev.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }));
     state.node.append("title").text((d) => d.label);
+    // Lens rings (dashed, accent) and the keyboard focus mark (solid ink ring with a white gap) sit on top.
+    state.ringLayer = g.append("g").attr("pointer-events", "none");
+    state.focusMark = g.append("g").attr("pointer-events", "none").attr("display", "none");
+    state.focusMark.append("circle").attr("class", "fm-gap").attr("fill", "none").attr("stroke", cssVar("--bg")).attr("stroke-width", 3);
+    state.focusMark.append("circle").attr("class", "fm-ring").attr("fill", "none").attr("stroke", cssVar("--ink")).attr("stroke-width", 2);
+    drawRings();
 
     state.labels = g.append("g").selectAll("text").data(data.nodes).join("text")
       .text((d) => (d.label.length > 42 ? d.label.slice(0, 40) + "…" : d.label))
@@ -474,6 +604,8 @@
       });
       state.linkSel.attr("d", arc);
       state.node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+      if (state.ringSel) state.ringSel.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+      placeFocusMark();
       state.labels.attr("x", (d) => d.x).attr("y", (d) => d.y)
         .attr("text-anchor", (d) => (d.x > width * 0.72 ? "end" : "start"))
         .attr("dx", (d) => (d.x > width * 0.72 ? -(radius(d) + 4) : radius(d) + 4));
@@ -485,21 +617,63 @@
     applyStyles();
   }
 
+  // Text equivalent of the graph: every visible node, with the lens's status and actions.
   function drawList() {
-    const orgs = state.data.nodes.filter((n) => !["proposal", "company", "person"].includes(n.kind) && visible(n))
+    const dir = state.listSort || "descending";
+    const m = lens().measure;
+    const val = (n) => (m ? m.value(n, state.ctx) : n.degree || 0);
+    const rows = state.data.nodes.filter(visible)
       .filter((n) => !state.query || n.label.toLowerCase().includes(state.query))
-      .sort((a, b) => b.degree - a.degree);
-    const rows = orgs.map((n) => {
-      const props = state.data.links.filter((l) => l.source.id === n.id && l.target.kind === "proposal" && visible(l.target));
-      const cos = [...new Set(props.map((l) => COMPANY_NAMES[l.target.company] || l.target.company))].join(", ");
-      return `<tr><td><button class="linklike" data-id="${esc(n.id)}">${esc(n.label)}</button></td><td>${esc(TYPE_LABEL[n.kind])}</td><td>${props.length}</td><td>${esc(cos)}</td></tr>`;
+      .sort((a, b) => ((dir === "descending" ? -1 : 1) * ((val(a) ?? -1) - (val(b) ?? -1))) || a.label.localeCompare(b.label));
+    const body = rows.map((n) => {
+      const acts = actions(n).map((x, i) => actionHtml(x, n.id, i));
+      return `<tr><td><button type="button" class="linklike" data-id="${esc(n.id)}">${esc(n.label)}</button></td><td>${esc(TYPE_LABEL[n.kind])}</td>${m ? `<td class="num">${val(n) ?? ""}</td>` : ""}<td class="num">${n.degree || 0}</td><td>${esc(rings(n).map((r) => r.text).join(", "))}</td><td>${acts.join("<br>")}</td></tr>`;
     }).join("");
     const el = document.getElementById("net-list");
-    el.innerHTML = `<div class="table-wrap"><table><thead><tr><th scope="col">Organization</th><th scope="col">Type</th><th scope="col">AI proposals</th><th scope="col">Companies</th></tr></thead><tbody>${rows || `<tr><td colspan="4">No matches.</td></tr>`}</tbody></table></div>`;
+    const sortLabel = m ? m.label : "Connections";
+    if (!document.getElementById("net-list-count")) el.innerHTML = `<p class="count-line" id="net-list-count" aria-live="polite"></p><div id="net-list-table"></div>`;
+    document.getElementById("net-list-table").innerHTML = `<div class="table-wrap"><table><thead><tr><th scope="col">Name</th><th scope="col">Type</th>
+      ${m ? `<th scope="col" aria-sort="${dir}"><button type="button" class="th-sort" id="net-list-sort">${esc(sortLabel)} ${dir === "descending" ? "↓" : "↑"}</button></th><th scope="col">Connections</th>`
+        : `<th scope="col" aria-sort="${dir}"><button type="button" class="th-sort" id="net-list-sort">Connections ${dir === "descending" ? "↓" : "↑"}</button></th>`}
+      <th scope="col">Status</th><th scope="col">${esc(lens().actionsHeading || "What you can do")}</th></tr></thead>
+      <tbody>${body || `<tr><td colspan="${m ? 6 : 5}">No matches.</td></tr>`}</tbody></table></div>`;
+    document.getElementById("net-list-count").textContent = `${rows.length} nodes in this view (${lens().label}), sorted by ${sortLabel.toLowerCase()}.`;
+    document.getElementById("net-list-sort").addEventListener("click", () => {
+      state.listSort = dir === "descending" ? "ascending" : "descending";
+      drawList();
+      document.getElementById("net-list-sort").focus();
+    });
     el.querySelectorAll(".linklike").forEach((b) => b.addEventListener("click", () => {
-      const n = state.data.nodes.find((x) => x.id === b.dataset.id);
+      const n = state.byId.get(b.dataset.id);
       state.selected = n.id; showPanel(n);
     }));
+    wireActions(el);
+  }
+
+  // Switching lens applies that lens's defaults: layers, orphans; topic and year reset.
+  function setLens(id, announce) {
+    state.lens = id;
+    const d = lens().defaults || {};
+    state.hiddenKinds = new Set(d.hiddenKinds || []);
+    state.topic = ""; state.year = "";
+    ["net-topic", "net-year"].forEach((x) => { const s = document.getElementById(x); if (s) s.value = ""; });
+    if (d.orphans != null) {
+      state.cfg.orphans = d.orphans;
+      const c = document.querySelector("[data-gs-check=orphans]");
+      if (c) c.checked = d.orphans;
+    }
+    document.querySelectorAll("#net-legend .leg").forEach((b) => b.setAttribute("aria-pressed", String(!state.hiddenKinds.has(b.dataset.kind))));
+    saveLens(id);
+    drawRings();
+    applySettings(true);
+    regroup();
+    if (state.selected) showPanel(state.byId.get(state.selected));
+    if (announce) {
+      refreshConnected();
+      const hidden = [...new Set([...state.hiddenKinds].map((k) => (FILER_ROWS.includes(k) ? "filers" : { person: "people", policy: "policy", response: "responses", public: "public engagement" }[k] || TYPE_LABEL[k])))];
+      const shown = state.data.nodes.filter(visible).length;
+      document.getElementById("net-lens-status").textContent = `${lens().label} view${hidden.length ? ": " + hidden.join(", ") + " hidden" : ""}. ${shown} of ${state.data.nodes.length} nodes shown.`;
+    }
   }
 
   function wire() {
@@ -522,10 +696,12 @@
       refresh();
       regroup();
     }));
+    document.querySelectorAll("#net-lens input").forEach((r) => r.addEventListener("change", () => { if (r.checked) setLens(r.value, true); }));
+    wireKeys();
     document.querySelectorAll("#tab-network .seg button").forEach((b) => b.addEventListener("click", () => {
       state.view = b.dataset.view;
       document.querySelectorAll("#tab-network .seg button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
-      document.getElementById("net-graph").hidden = state.view !== "graph";
+      document.querySelector("#tab-network .net-graph-wrap").hidden = state.view !== "graph";
       document.getElementById("net-list").hidden = state.view !== "list";
       if (state.view === "list") drawList();
     }));
@@ -534,8 +710,8 @@
   window.focusNetworkNode = (id) => focus(id);
   window.renderNetwork = function (raw, people) {
     const el = document.getElementById("tab-network");
-    shell(el);
     if (typeof d3 === "undefined") {
+      el.innerHTML = `<h2>Co-filer network</h2><div id="net-graph"></div>`;
       document.getElementById("net-graph").innerHTML = `<p class="coming">The graph library did not load. Try reloading the page.</p>`;
       return;
     }
@@ -547,7 +723,15 @@
     // Default label threshold: the 12th-highest filer's connection count, so about a dozen filers are named.
     const twelfth = data.nodes.find((n) => n.id === [...topFilers].at(-1));
     const defaults = { ...DEFAULTS, labelMin: twelfth ? twelfth.degree || 0 : 0 };
-    state = { data, byId: new Map(data.nodes.map((n) => [n.id, n])), defaults, cfg: loadSettings(defaults), hiddenKinds: new Set(["person", "policy", "response", "public"]), hiddenLabels: new Set(), query: "", topic: "", year: "", view: "graph", selected: null, hover: null };
+    state = { data, byId: new Map(data.nodes.map((n) => [n.id, n])), defaults, cfg: loadSettings(defaults), hiddenKinds: new Set(["person", "policy", "response", "public"]), hiddenLabels: new Set(), query: "", topic: "", year: "", view: "graph", selected: null, hover: null, kbId: null };
+    state.lens = initialLens();
+    state.hiddenKinds = new Set(lens().defaults.hiddenKinds || [...state.hiddenKinds]);
+    // Shared inputs for lens functions (lenses.js). app.js supplies upcoming meetings and Company lookup.
+    const app = window.LENS_CTX || {};
+    state.ctx = { nodes: data.nodes, links: data.links, byId: state.byId, cache: {},
+      upcoming: new Map(((app.upcoming || [])).map((m) => [m.ticker, m])),
+      hasCompany: app.hasCompany || (() => false), openCompany: app.openCompany || (() => {}) };
+    shell(el);
     refreshConnected();
     settingsPanel();
     legend(state.data);

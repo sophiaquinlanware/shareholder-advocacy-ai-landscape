@@ -86,7 +86,7 @@ function renderUpcoming() {
   }));
   const empty = meetings.filter((m) => !(m.items || []).length);
   const rows = items.map(({ m, i, title, filer }) => {
-    const h = history(m.ticker);
+    const h = voteHistory(m.ticker);
     return `<tr>
       <td class="nowrap">${esc(m.meeting_label)}<div class="ticker">${esc(m.status_label || "")}</div></td>
       <td><button type="button" class="linklike" data-co="${esc(m.ticker)}">${esc(m.company)}</button></td>
@@ -110,7 +110,7 @@ function renderUpcoming() {
 // rule as the Proposals chart). Count, median and high at the stored precision, plus how many of them
 // carry a basis note or caveat (their notes are listed under the history table).
 const pct = (x) => `${Math.round(x * 100) / 100}%`;
-function history(ticker) {
+function voteHistory(ticker) {
   const all = ((DATA.proposals && DATA.proposals.proposals) || []).filter((p) => p.company === ticker && p.status === "voted");
   const rows = all.filter((p) => p.support_pct != null && p.results_url && p.meeting_date);
   const v = rows.map((p) => p.support_pct).sort((a, b) => a - b);
@@ -208,7 +208,7 @@ function drawCompany(key) {
   const t = realTicker(c.ticker);
   const props = ((DATA.proposals && DATA.proposals.proposals) || []).filter((p) => t && p.company === t)
     .sort((a, b) => String(b.meeting_date || b.year).localeCompare(String(a.meeting_date || a.year)));
-  const h = history(t);
+  const h = voteHistory(t);
   const meeting = t ? ((DATA.upcoming && DATA.upcoming.meetings) || []).find((m) => m.ticker === t) : null;
   // Filers: organizations linked to this company's proposals in the shared graph.
   const G = DATA.graph && DATA.graph.nodes ? DATA.graph : { nodes: [], edges: [] };
@@ -579,7 +579,7 @@ function showTab(name, focus = false) {
     if (on && focus) b.focus();
   });
   document.querySelectorAll(".panel").forEach((p) => { p.hidden = p.id !== "tab-" + name; });
-  try { history.replaceState(null, "", "#" + name); } catch (e) {}
+  try { window.history.replaceState(null, "", "#" + name); } catch (e) {}
 }
 function setupTabs() {
   const buttons = [...document.querySelectorAll('.tabs [role="tab"]')];
@@ -638,6 +638,12 @@ async function main() {
   if (!feed.hidden) { delete feed.dataset.drawn; feed.hidden = true; feed.hidden = false; }
   // Primary value-chain tier per listed company, for the network's node types.
   window.companyTiers = new Map((DATA.companies || []).filter((c) => c.ticker && (c.tier || c.primary_tier)).map((c) => [c.ticker, c.tier || c.primary_tier]));
+  // Inputs the network's lenses read (lenses.js): meetings with a ballot out, and Company lookup.
+  window.LENS_CTX = {
+    upcoming: (DATA.upcoming && DATA.upcoming.meetings) || [],
+    hasCompany: (t) => companyEntries().some((e) => e.key === keyForTicker(t)),
+    openCompany,
+  };
   window.renderNetwork(DATA.graph && DATA.graph.nodes ? DATA.graph : DATA.network, (DATA.people || {}).people);
   window.renderPathways(DATA.pathways, DATA.graph && DATA.graph.nodes ? DATA.graph : DATA.network);
   window.renderCausality(DATA.causality);
