@@ -31,7 +31,6 @@ HELD_BACK_REASONS = {
 }
 
 NOT_READABLE = {
-    "Praxis": "Praxis files Form N-PX only in the older text format, which this tracker cannot read yet, so it is not shown.",
 }
 
 
