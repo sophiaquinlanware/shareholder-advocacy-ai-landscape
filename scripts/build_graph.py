@@ -19,6 +19,7 @@ Derived automatically (no extra research needed):
 """
 
 import json
+import re
 from collections import defaultdict
 from itertools import combinations
 from pathlib import Path
@@ -32,6 +33,19 @@ TICKER_NAME = {"MSFT": "Microsoft", "GOOGL": "Alphabet", "META": "Meta", "AMZN":
 def load(name):
     p = DATA / name
     return json.loads(p.read_text()) if p.exists() else {}
+
+
+STOP = {"the", "of", "on", "and", "for", "a", "an", "to", "in", "report", "ai", "inc", "llc", "lp", "asset", "management",
+        "investments", "investment", "capital", "fund", "funds", "group", "office"}
+
+
+def words(text):
+    return {w for w in re.findall(r"[a-z0-9]+", (text or "").lower()) if w not in STOP and len(w) > 2}
+
+
+def similar(a, b, cutoff=0.5):
+    A, B = words(a), words(b)
+    return bool(A and B) and len(A & B) / min(len(A), len(B)) >= cutoff
 
 
 def main():
@@ -108,8 +122,11 @@ def main():
         node(pid, type="person", layer="people", label=pp["name"], title=pp.get("title"), org_name=pp.get("org_name"),
              ai_focus=pp.get("ai_focus"), source_url=pp.get("profile_url"), verified=pp.get("verified_date"))
         if pp.get("org_id"):
-            node(pp["org_id"], type="investor", layer="investors", label=pp.get("org_name") or pp["org_id"])
-            edge(pid, pp["org_id"], "works at", "people", pp.get("profile_url"))
+            org = pp["org_id"] if pp["org_id"] in nodes else next(
+                (n["id"] for n in nodes.values() if n["type"] in ("investor", "coalition")
+                 and similar(n["label"], pp.get("org_name") or "", 0.6)), pp["org_id"])
+            node(org, type="investor", layer="investors", label=pp.get("org_name") or org)
+            edge(pid, org, "works at", "people", pp.get("profile_url"))
     for r in ppl.get("relations", []):
         a = "person-" + r["from"]
         b = r["to"] if r["to"] in nodes else "person-" + r["to"]
@@ -134,6 +151,11 @@ def main():
         node("ev-" + ev["id"], type=t, layer="policy" if t != "public" else "public", label=ev["title"],
              date=ev.get("date"), lane=ev.get("lane"), kind=ev.get("kind"), actor=ev.get("actor"),
              jurisdiction=ev.get("jurisdiction"), description=ev.get("summary"), source_url=ev.get("source_url"))
+    actors = [n for n in nodes.values() if n["type"] in ("company", "lab", "investor", "coalition")]
+    for ev in cz.get("events", []):
+        who = next((n for n in actors if similar(n["label"], ev.get("actor") or "", 0.6)), None)
+        if who:
+            edge(who["id"], "ev-" + ev["id"], "acted in", "policy", ev.get("source_url"))
     for l in cz.get("links", []):
         a, b = "ev-" + l["from"], "ev-" + l["to"]
         if a in nodes and b in nodes:
@@ -141,8 +163,17 @@ def main():
 
     # Proposals from the SEC research that the network file does not have yet.
     org_names = {n["id"]: n["label"].lower() for n in nodes.values() if n["type"] in ("investor", "coalition")}
+    net_props = [n for n in nodes.values() if n["type"] == "proposal"]
     for p in load("proposals.json").get("proposals", []):
         if p["id"] in nodes:
+            continue
+        twin = next((n for n in net_props if n.get("company") == p["company"] and n.get("year") == p["year"]
+                     and similar(n["label"].split(": ", 1)[-1], p["title"])), None)
+        if twin:
+            for k in ("support_pct", "status", "subtopic"):
+                if p.get(k) is not None and twin.get(k) in (None, "", "UNVERIFIED"):
+                    twin[k] = p[k]
+            twin["results_url"] = p.get("results_url")
             continue
         co = "co-" + p["company"].upper()
         node(co, type="company", layer="companies", label=TICKER_NAME.get(p["company"], p["company"]), ticker=p["company"])

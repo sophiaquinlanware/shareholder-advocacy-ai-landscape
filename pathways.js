@@ -20,7 +20,23 @@
   let S = null;
 
   // Which investor organizations engage which public company, from the proposal network.
+  // Same thing, read from the shared graph (data/graph.json).
+  function investorLinksFromGraph(G) {
+    const byId = new Map(G.nodes.map((n) => [n.id, n]));
+    const pairs = new Map();
+    for (const e of G.edges) {
+      const o = byId.get(e.source), p = byId.get(e.target);
+      if (!o || !p || !["investor", "coalition"].includes(o.type) || p.type !== "proposal") continue;
+      const org = { id: o.id, name: o.label };
+      const key = o.id + "|" + p.company;
+      if (!pairs.has(key)) pairs.set(key, { org, ticker: p.company, proposals: [] });
+      pairs.get(key).proposals.push({ ...p, title: p.label, relation: e.type, edge_source: e.source_url });
+    }
+    return [...pairs.values()];
+  }
+
   function investorLinks(network) {
+    if (network && network.nodes) return investorLinksFromGraph(network);
     const byProposal = new Map((network.proposals || []).map((p) => [p.id, p]));
     const orgs = new Map((network.organizations || []).map((o) => [o.id, o]));
     const pairs = new Map(); // "org|ticker" -> {org, ticker, proposals:[]}
@@ -62,12 +78,12 @@
       .sort((a, b) => S.inv.filter((p) => p.org.id === b.id).length - S.inv.filter((p) => p.org.id === a.id).length);
     const cols = [
       { key: "inv", title: "Investors and advocates", items: investors.map((o) => ({ id: "o:" + o.id, label: o.name, ref: o })) },
-      { key: "co", title: "Public companies", items: S.data.public_companies.map((c) => ({ id: "c:" + c.id, label: c.name, ref: c })) },
-      { key: "lab", title: "Frontier labs", items: S.data.labs.map((l) => ({ id: "l:" + l.id, label: l.name, ref: l })) },
+      { key: "co", title: "Public companies", items: S.data.public_companies.map((c) => ({ id: "c:" + c.id, label: c.name.replace(/\s*\(.*\)/, ""), ref: c })) },
+      { key: "lab", title: "Frontier labs", items: S.data.labs.map((l) => ({ id: "l:" + l.id, label: l.name.replace(/\s*\(.*\)/, ""), ref: l })) },
     ];
     const rowH = narrow ? 20 : 24;
     const H = Math.max(420, Math.max(...cols.map((c) => c.items.length)) * rowH + 70);
-    const xs = narrow ? [8, W * 0.4, W * 0.72] : [16, W * 0.42, W * 0.76];
+    const xs = narrow ? [8, W * 0.36, W * 0.7] : [16, W * 0.38, W * 0.76];
     const pos = new Map();
     cols.forEach((col, ci) => {
       const span = col.items.length * rowH;
@@ -97,7 +113,7 @@
       const a = L.pos.get("c:" + t.from), b = L.pos.get("l:" + t.to);
       if (a && b) linkData.push({ kind: "tie", a, b, w: 1 + (t.strength || 1) * 1.4, color: cssVar(TIE_VAR[t.type] || "--ink-soft"), ref: t });
     }
-    const labelW = L.narrow ? 0 : 140;
+    const labelW = L.narrow ? 70 : 150;
     S.links = svg.append("g").attr("fill", "none").selectAll("path").data(linkData).join("path")
       .attr("d", (d) => curve({ x: d.a.x + (d.a.col === 0 ? labelW + 40 : d.a.col === 1 ? labelW : 0), y: d.a.y }, { x: d.b.x - 6, y: d.b.y }))
       .attr("stroke", (d) => d.color).attr("stroke-width", (d) => d.w);
@@ -105,7 +121,8 @@
       .attr("transform", (d) => `translate(${d.x},${d.y})`).style("cursor", "pointer")
       .on("click", (ev, d) => onNode(d));
     S.nodes.append("circle").attr("r", 4).attr("fill", (d) => cssVar(d.col === 0 ? "--n-manager" : d.col === 1 ? "--n-company" : "--t-lab"));
-    S.nodes.append("text").text((d) => (L.narrow && d.label.length > 16 ? d.label.slice(0, 15) + "…" : d.label))
+    const maxLen = L.narrow ? 12 : 22;
+    S.nodes.append("text").text((d) => (d.label.length > maxLen ? d.label.slice(0, maxLen - 1) + "…" : d.label))
       .attr("x", 8).attr("y", 4).attr("font-size", L.narrow ? 10 : 12).attr("fill", cssVar("--ink"));
     apply();
   }

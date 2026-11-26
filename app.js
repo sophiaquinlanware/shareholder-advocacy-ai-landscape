@@ -275,7 +275,7 @@ async function main() {
   renderWeighIn();
   window.renderNetwork(DATA.graph && DATA.graph.nodes ? DATA.graph : DATA.network, (DATA.people || {}).people);
   renderPeople();
-  window.renderPathways(DATA.pathways, DATA.network);
+  window.renderPathways(DATA.pathways, DATA.graph && DATA.graph.nodes ? DATA.graph : DATA.network);
   renderNew();
   window.renderCausality(DATA.causality);
   renderComing("tab-parnassus", "Disclosure scorecard", "Coming next: each company's public AI disclosure scored against Parnassus Investments' Responsible AI investor recommendations, with sources for every score.");

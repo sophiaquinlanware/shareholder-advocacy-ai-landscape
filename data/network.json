@@ -1,0 +1,2446 @@
+{
+ "organizations": [
+  {
+   "id": "arjuna",
+   "name": "Arjuna Capital",
+   "type": "impact/ESG asset manager",
+   "website": "https://arjuna-capital.com",
+   "description": "Sustainable wealth manager; lead filer of generative-AI misinformation proposals.",
+   "source_url": "https://arjuna-capital.com"
+  },
+  {
+   "id": "open-mic",
+   "name": "Open MIC (Open Media and Information Companies Initiative)",
+   "type": "advocacy nonprofit",
+   "website": "https://www.openmic.org",
+   "description": "Nonprofit promoting responsible media and tech via shareholder engagement.",
+   "source_url": "https://www.openmic.org"
+  },
+  {
+   "id": "eko",
+   "name": "Ek\u014d (formerly SumOfUs)",
+   "type": "advocacy nonprofit",
+   "website": "https://www.eko.org",
+   "description": "Online campaigning group that files and backs shareholder proposals against corporate abuses.",
+   "source_url": "https://www.eko.org"
+  },
+  {
+   "id": "azzad",
+   "name": "Azzad Asset Management",
+   "type": "faith-based investor",
+   "website": "https://www.azzad.net",
+   "description": "Islamic-values ethical asset manager active in human rights shareholder advocacy.",
+   "source_url": "https://www.azzad.net"
+  },
+  {
+   "id": "as-you-sow",
+   "name": "As You Sow",
+   "type": "advocacy nonprofit",
+   "website": "https://www.asyousow.org",
+   "description": "Shareholder advocacy nonprofit filing environmental and social resolutions.",
+   "source_url": "https://www.asyousow.org"
+  },
+  {
+   "id": "nlpc",
+   "name": "National Legal and Policy Center",
+   "type": "other",
+   "website": "https://nlpc.org",
+   "description": "Conservative watchdog filing anti-ESG proposals, including on AI data usage.",
+   "source_url": "https://nlpc.org"
+  },
+  {
+   "id": "ridgeline",
+   "name": "Ridgeline Research LLC",
+   "type": "other",
+   "website": null,
+   "description": "Conservative proxy filer acting for American Conservative Values ETF.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf"
+  },
+  {
+   "id": "rshm",
+   "name": "Religious of the Sacred Heart of Mary",
+   "type": "faith-based investor",
+   "website": null,
+   "description": "Catholic women's religious congregation; lead filer on Microsoft AI human rights due diligence.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf"
+  },
+  {
+   "id": "chicory-wealth",
+   "name": "Chicory Wealth",
+   "type": "impact/ESG asset manager",
+   "website": null,
+   "description": "Values-aligned wealth adviser; co-filer at Microsoft.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925010874/j724252px14a6g.htm"
+  },
+  {
+   "id": "iasj",
+   "name": "Investor Advocates for Social Justice",
+   "type": "faith-based investor",
+   "website": "https://iasj.org",
+   "description": "Coalition of faith-based investors doing shareholder advocacy on human rights.",
+   "source_url": "https://iasj.org"
+  },
+  {
+   "id": "jlens",
+   "name": "JLens",
+   "type": "other",
+   "website": "https://www.jlensnetwork.org",
+   "description": "Jewish values investor network (ADL-affiliated) that opposes some human-rights proposals.",
+   "source_url": "https://www.jlensnetwork.org"
+  },
+  {
+   "id": "adl",
+   "name": "Anti-Defamation League",
+   "type": "advocacy nonprofit",
+   "website": "https://www.adl.org",
+   "description": "Civil rights group; co-files exempt solicitations with JLens opposing proposals.",
+   "source_url": "https://www.adl.org"
+  },
+  {
+   "id": "trillium",
+   "name": "Trillium Asset Management",
+   "type": "impact/ESG asset manager",
+   "website": "https://www.trilliuminvest.com",
+   "description": "ESG investment manager; files on AI principles and data center climate impacts.",
+   "source_url": "https://www.trilliuminvest.com"
+  },
+  {
+   "id": "csjp",
+   "name": "Congregation of the Sisters of St. Joseph of Peace",
+   "type": "faith-based investor",
+   "website": "https://www.csjp.org",
+   "description": "Catholic congregation; co-filer of Microsoft human rights due diligence proposal.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465926013218/b1026263px14a6g.htm"
+  },
+  {
+   "id": "zevin",
+   "name": "Zevin Asset Management",
+   "type": "impact/ESG asset manager",
+   "website": "https://www.zevin.com",
+   "description": "Boston socially responsible manager filing on AI, cloud and human rights.",
+   "source_url": "https://www.zevin.com"
+  },
+  {
+   "id": "jewish-investor-network",
+   "name": "Jewish Investor Network",
+   "type": "faith-based investor",
+   "website": null,
+   "description": "Network of Jewish investors; members co-filed Microsoft human rights proposal.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465926013218/b1026263px14a6g.htm"
+  },
+  {
+   "id": "dana",
+   "name": "Dana Investment Advisors",
+   "type": "impact/ESG asset manager",
+   "website": "https://www.danainvestment.com",
+   "description": "Wisconsin ESG asset manager; co-filer on tech human rights proposals.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923007656/s522230px14a6g.htm"
+  },
+  {
+   "id": "marianists",
+   "name": "The Marianists (Marianist Province of the US)",
+   "type": "faith-based investor",
+   "website": "https://www.marianist.com",
+   "description": "Catholic religious order investing for social responsibility.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923007656/s522230px14a6g.htm"
+  },
+  {
+   "id": "omi-us",
+   "name": "Missionary Oblates of Mary Immaculate, US Province",
+   "type": "faith-based investor",
+   "website": "https://www.omiusa.org",
+   "description": "Catholic missionary order active in ICCR shareholder advocacy.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923007656/s522230px14a6g.htm"
+  },
+  {
+   "id": "share",
+   "name": "SHARE (Shareholder Association for Research and Education)",
+   "type": "advocacy nonprofit",
+   "website": "https://share.ca",
+   "description": "Canadian responsible-investment nonprofit filing on AI, targeted ads and oversight.",
+   "source_url": "https://share.ca"
+  },
+  {
+   "id": "ucc-pension",
+   "name": "Pension Plan of The United Church of Canada",
+   "type": "faith-based investor",
+   "website": "https://united-church.ca",
+   "description": "Church pension plan for which SHARE files Alphabet AI proposals.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf"
+  },
+  {
+   "id": "commonspirit",
+   "name": "CommonSpirit Health",
+   "type": "faith-based investor",
+   "website": "https://www.commonspirit.org",
+   "description": "Catholic health system whose investment program co-files tech proposals.",
+   "source_url": "https://collaborate.unpri.org/group/15876/home"
+  },
+  {
+   "id": "boston-common",
+   "name": "Boston Common Asset Management",
+   "type": "impact/ESG asset manager",
+   "website": "https://www.bostoncommonasset.com",
+   "description": "Sustainable manager; co-founder and co-lead of WBA ethical AI coalition.",
+   "source_url": "https://www.bostoncommonasset.com"
+  },
+  {
+   "id": "harrington",
+   "name": "Harrington Investments",
+   "type": "impact/ESG asset manager",
+   "website": "https://www.harringtoninvestments.com",
+   "description": "California socially responsible manager and frequent shareholder activist.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923005962/b425233px14a6g.htm"
+  },
+  {
+   "id": "aviva",
+   "name": "Aviva Investors",
+   "type": "other",
+   "website": "https://www.avivainvestors.com",
+   "description": "UK asset manager; co-filed at Alphabet, signed IAHR EU AI Act statement.",
+   "source_url": "https://www.avivainvestors.com"
+  },
+  {
+   "id": "nordea",
+   "name": "Nordea Asset Management",
+   "type": "other",
+   "website": "https://www.nordeaassetmanagement.com",
+   "description": "Nordic asset manager; co-filer at Alphabet 2023.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923005962/b425233px14a6g.htm"
+  },
+  {
+   "id": "benedictine-baltimore",
+   "name": "Benedictine Sisters of Baltimore",
+   "type": "faith-based investor",
+   "website": null,
+   "description": "Catholic women's community; co-filer of Alphabet AI oversight proposal.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf"
+  },
+  {
+   "id": "benedictine-mt-scholastica",
+   "name": "Benedictine Sisters of Mount St. Scholastica",
+   "type": "faith-based investor",
+   "website": "https://www.mountosb.org",
+   "description": "Catholic women's community active in ICCR filings.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf"
+  },
+  {
+   "id": "mercy",
+   "name": "Mercy Investment Services",
+   "type": "faith-based investor",
+   "website": "https://www.mercyinvestmentservices.org",
+   "description": "Investment program of the Sisters of Mercy; prolific ICCR filer.",
+   "source_url": "https://www.mercyinvestmentservices.org"
+  },
+  {
+   "id": "inspire",
+   "name": "Inspire Investing",
+   "type": "other",
+   "website": "https://www.inspireinvesting.com",
+   "description": "Biblically responsible investment firm filing conservative AI proposals.",
+   "source_url": "https://www.inspireinvesting.com"
+  },
+  {
+   "id": "akademikerpension",
+   "name": "AkademikerPension",
+   "type": "public pension",
+   "website": "https://akademikerpension.dk",
+   "description": "Danish pension fund for academics; co-filer at Alphabet.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm"
+  },
+  {
+   "id": "ap-pension",
+   "name": "AP Pension",
+   "type": "public pension",
+   "website": "https://appension.dk",
+   "description": "Danish pension company; co-filer at Alphabet.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm"
+  },
+  {
+   "id": "klp",
+   "name": "KLP",
+   "type": "public pension",
+   "website": "https://www.klp.no",
+   "description": "Norwegian public-sector pension insurer; co-filer at Alphabet.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm"
+  },
+  {
+   "id": "mn",
+   "name": "MN",
+   "type": "public pension",
+   "website": "https://www.mn.nl",
+   "description": "Dutch pension fund manager; co-filer at Alphabet.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm"
+  },
+  {
+   "id": "benedictine-cullman",
+   "name": "Benedictine Sisters of Cullman, Alabama",
+   "type": "faith-based investor",
+   "website": null,
+   "description": "Catholic women's monastery; co-filer at Alphabet.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm"
+  },
+  {
+   "id": "scl",
+   "name": "Sisters of Charity of Leavenworth",
+   "type": "faith-based investor",
+   "website": "https://www.scls.org",
+   "description": "Catholic congregation active in faith-based shareholder advocacy.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm"
+  },
+  {
+   "id": "vancity",
+   "name": "Vancity Investment Management",
+   "type": "impact/ESG asset manager",
+   "website": "https://www.vancity.com",
+   "description": "Canadian credit-union-owned responsible investment manager.",
+   "source_url": "https://www.vancity.com"
+  },
+  {
+   "id": "nei",
+   "name": "NEI Investments",
+   "type": "impact/ESG asset manager",
+   "website": "https://www.neiinvestments.com",
+   "description": "Canadian responsible investment fund manager.",
+   "source_url": "https://collaborate.unpri.org/group/24941/home"
+  },
+  {
+   "id": "axa-im",
+   "name": "AXA Investment Managers",
+   "type": "other",
+   "website": "https://www.axa-im.com",
+   "description": "Global asset manager; co-filer at Meta 2023.",
+   "source_url": "https://collaborate.unpri.org/group/17361/home"
+  },
+  {
+   "id": "proxy-impact",
+   "name": "Proxy Impact",
+   "type": "other",
+   "website": "https://www.proxyimpact.com",
+   "description": "Shareholder advisory firm leading child online safety proposals.",
+   "source_url": "https://www.proxyimpact.com"
+  },
+  {
+   "id": "bowyer",
+   "name": "Bowyer Research",
+   "type": "other",
+   "website": "https://www.bowyerresearch.com",
+   "description": "Conservative proxy adviser filing and opposing proposals for faith clients.",
+   "source_url": "https://www.bowyerresearch.com"
+  },
+  {
+   "id": "pcusa",
+   "name": "Presbyterian Church (U.S.A.)",
+   "type": "faith-based investor",
+   "website": "https://www.presbyterianmission.org",
+   "description": "Denomination whose MRTI committee runs shareholder engagement.",
+   "source_url": "https://www.presbyterianmission.org"
+  },
+  {
+   "id": "portico",
+   "name": "Portico Benefit Services",
+   "type": "faith-based investor",
+   "website": "https://www.porticobenefits.org",
+   "description": "Evangelical Lutheran Church in America benefits and pension ministry.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465926005915/o511264px14a6g.htm"
+  },
+  {
+   "id": "adrian-dominican",
+   "name": "Adrian Dominican Sisters",
+   "type": "faith-based investor",
+   "website": "https://www.adriandominicans.org",
+   "description": "Catholic congregation active in ICCR shareholder advocacy.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465926005915/o511264px14a6g.htm"
+  },
+  {
+   "id": "ipjc",
+   "name": "Intercommunity Peace & Justice Center",
+   "type": "faith-based investor",
+   "website": "https://www.ipjc.org",
+   "description": "Seattle justice center sponsored by Catholic communities; hosts NW Coalition for Responsible Investment.",
+   "source_url": "https://www.ipjc.org"
+  },
+  {
+   "id": "storebrand",
+   "name": "Storebrand Asset Management",
+   "type": "other",
+   "website": "https://www.storebrand.com",
+   "description": "Norwegian asset manager with sustainability focus.",
+   "source_url": "https://www.boardroomalpha.com/meetings/meta-2026-annual-meeting"
+  },
+  {
+   "id": "abhms",
+   "name": "American Baptist Home Mission Societies",
+   "type": "faith-based investor",
+   "website": "https://abhms.org",
+   "description": "Baptist mission agency; lead filer on Amazon AI and surveillance human rights.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm"
+  },
+  {
+   "id": "afl-cio",
+   "name": "AFL-CIO (Equity Index Funds)",
+   "type": "labor fund",
+   "website": "https://aflcio.org",
+   "description": "US labor federation; its funds file AI transparency and board oversight proposals.",
+   "source_url": "https://aflcio.org"
+  },
+  {
+   "id": "united-for-respect",
+   "name": "United for Respect Education Fund",
+   "type": "advocacy nonprofit",
+   "website": "https://united4respect.org",
+   "description": "Retail worker organizing group; floor proposal for Amazon worker AI council.",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/05/Amazon-Floor-Proposal_-Memo-in-Support-.pdf"
+  },
+  {
+   "id": "tulipshare",
+   "name": "Tulipshare",
+   "type": "impact/ESG asset manager",
+   "website": "https://www.tulipshare.com",
+   "description": "Activist investment platform filing tech accountability proposals.",
+   "source_url": "https://www.tulipshare.com"
+  },
+  {
+   "id": "green-century",
+   "name": "Green Century Capital Management",
+   "type": "impact/ESG asset manager",
+   "website": "https://www.greencentury.com",
+   "description": "Environmental fund manager; lead filer on Nvidia AI emissions.",
+   "source_url": "https://www.greencentury.com"
+  },
+  {
+   "id": "ttt-investments",
+   "name": "TTT Investments LLC",
+   "type": "other",
+   "website": null,
+   "description": "Investor entity; co-filer of Nvidia military AI proposal.",
+   "source_url": "https://collaborate.unpri.org/group/38826/home"
+  },
+  {
+   "id": "iccr",
+   "name": "Interfaith Center on Corporate Responsibility (ICCR)",
+   "type": "coalition",
+   "website": "https://www.iccr.org",
+   "description": "Coalition of 300+ faith and values investors; runs Digital Rights and AI Accountability work.",
+   "source_url": "https://www.iccr.org/digital-rights-and-ai-accountability/"
+  },
+  {
+   "id": "iahr",
+   "name": "Investor Alliance for Human Rights",
+   "type": "coalition",
+   "website": "https://investorsforhumanrights.org",
+   "description": "ICCR initiative for investor human rights action, including tech and AI.",
+   "source_url": "https://investorsforhumanrights.org/investor-actions-ict-engagement"
+  },
+  {
+   "id": "wba-cic-ethical-ai",
+   "name": "WBA Collective Impact Coalition for Ethical AI",
+   "type": "coalition",
+   "website": "https://www.worldbenchmarkingalliance.org",
+   "description": "World Benchmarking Alliance investor coalition pressing tech firms on ethical AI.",
+   "source_url": "https://www.worldbenchmarkingalliance.org/news/the-world-benchmarking-alliance-fidelity-international-and-boston-common-launch-coalition-to-address-ai-ethical-risks"
+  },
+  {
+   "id": "parnassus",
+   "name": "Parnassus Investments",
+   "type": "impact/ESG asset manager",
+   "website": "https://www.parnassus.com",
+   "description": "ESG mutual fund manager; member of WBA ethical AI coalition.",
+   "source_url": "https://www.parnassus.com"
+  },
+  {
+   "id": "fidelity-intl",
+   "name": "Fidelity International",
+   "type": "other",
+   "website": "https://www.fidelityinternational.com",
+   "description": "Global asset manager; co-founder and co-lead of WBA ethical AI coalition.",
+   "source_url": "https://www.fidelityinternational.com"
+  },
+  {
+   "id": "candriam",
+   "name": "Candriam",
+   "type": "other",
+   "website": "https://www.candriam.com",
+   "description": "European asset manager; co-lead of WBA ethical AI coalition.",
+   "source_url": "https://www.candriam.com"
+  },
+  {
+   "id": "amundi",
+   "name": "Amundi",
+   "type": "other",
+   "website": "https://www.amundi.com",
+   "description": "Europe's largest asset manager; co-lead of WBA ethical AI coalition.",
+   "source_url": "https://www.amundi.com"
+  },
+  {
+   "id": "lgim",
+   "name": "Legal & General Investment Management",
+   "type": "other",
+   "website": "https://www.lgim.com",
+   "description": "UK asset manager with published AI expectations and Big Tech engagement.",
+   "source_url": "https://group.legalandgeneral.com/en/newsroom/press-releases/lgim-dials-up-engagement-on-nature-health-and-ai-in-latest-active-ownership-report"
+  },
+  {
+   "id": "nbim",
+   "name": "Norges Bank Investment Management",
+   "type": "public pension",
+   "website": "https://www.nbim.no",
+   "description": "Manages Norway's wealth fund; published responsible AI expectations in 2023.",
+   "source_url": "https://www.nbim.no/en/publications/our-views/2023/responsible-artificial-intelligence/"
+  },
+  {
+   "id": "domini",
+   "name": "Domini Impact Investments",
+   "type": "impact/ESG asset manager",
+   "website": "https://www.domini.com",
+   "description": "Impact mutual fund firm; ICCR and Investor Alliance member.",
+   "source_url": "https://www.domini.com"
+  },
+  {
+   "id": "northstar",
+   "name": "NorthStar Asset Management",
+   "type": "impact/ESG asset manager",
+   "website": "https://www.northstarasset.com",
+   "description": "Socially responsible manager; signed IASJ Amazon responsible-AI solicitation.",
+   "source_url": "https://www.northstarasset.com"
+  }
+ ],
+ "proposals": [
+  {
+   "id": "msft-2023-hr-hotspots",
+   "company": "MSFT",
+   "year": 2023,
+   "title": "Report on Data Operations in Human Rights Hotspots",
+   "topic": "Social & economic impacts",
+   "subtopic": "human rights of cloud data center siting",
+   "status": "voted",
+   "support_pct": 33.57,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a1.pdf"
+  },
+  {
+   "id": "msft-2023-ai-misinfo",
+   "company": "MSFT",
+   "year": 2023,
+   "title": "Report on AI Misinformation and Disinformation",
+   "topic": "Social & economic impacts",
+   "subtopic": "generative AI misinformation",
+   "status": "voted",
+   "support_pct": 21.16,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a1.pdf"
+  },
+  {
+   "id": "msft-2024-hr-hotspots",
+   "company": "MSFT",
+   "year": 2024,
+   "title": "Report on Data Operations in Human Rights Hotspots",
+   "topic": "Social & economic impacts",
+   "subtopic": "human rights of data center siting",
+   "status": "voted",
+   "support_pct": 32.03,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a1.pdf"
+  },
+  {
+   "id": "msft-2024-ai-oil-gas",
+   "company": "MSFT",
+   "year": 2024,
+   "title": "Report on AI/ML Tools for Oil and Gas Development",
+   "topic": "Data center impacts",
+   "subtopic": "climate impact of AI sold to fossil fuel producers",
+   "status": "voted",
+   "support_pct": 9.71,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a1.pdf"
+  },
+  {
+   "id": "msft-2024-ai-misinfo",
+   "company": "MSFT",
+   "year": 2024,
+   "title": "Report on AI Misinformation and Disinformation",
+   "topic": "Social & economic impacts",
+   "subtopic": "generative AI misinformation",
+   "status": "voted",
+   "support_pct": 18.67,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a1.pdf"
+  },
+  {
+   "id": "msft-2024-ai-data-sourcing",
+   "company": "MSFT",
+   "year": 2024,
+   "title": "Report on AI Data Sourcing Accountability",
+   "topic": "Social & economic impacts",
+   "subtopic": "AI training data / privacy (conservative filer)",
+   "status": "voted",
+   "support_pct": 36.19,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a1.pdf"
+  },
+  {
+   "id": "msft-2025-genai-censorship",
+   "company": "MSFT",
+   "year": 2025,
+   "title": "Report on Risks of Censorship in Generative AI",
+   "topic": "Social & economic impacts",
+   "subtopic": "viewpoint censorship in gen AI (conservative filer)",
+   "status": "voted",
+   "support_pct": 0.69,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf"
+  },
+  {
+   "id": "msft-2025-ai-data-usage",
+   "company": "MSFT",
+   "year": 2025,
+   "title": "Report on AI Data Usage Oversight",
+   "topic": "Social & economic impacts",
+   "subtopic": "customer data used to train AI (conservative filer)",
+   "status": "voted",
+   "support_pct": 13.36,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf"
+  },
+  {
+   "id": "msft-2025-hr-hotspots",
+   "company": "MSFT",
+   "year": 2025,
+   "title": "Report on Data Operations in Human Rights Hotspots",
+   "topic": "Social & economic impacts",
+   "subtopic": "human rights of data center siting",
+   "status": "voted",
+   "support_pct": 27.48,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf"
+  },
+  {
+   "id": "msft-2025-hrdd-ai-misuse",
+   "company": "MSFT",
+   "year": 2025,
+   "title": "Report on Human Rights Due Diligence",
+   "topic": "Social & economic impacts",
+   "subtopic": "military/government misuse of AI and cloud",
+   "status": "voted",
+   "support_pct": 26.34,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf"
+  },
+  {
+   "id": "msft-2025-ai-oil-gas",
+   "company": "MSFT",
+   "year": 2025,
+   "title": "Report on AI/ML Tools for Oil and Gas Development",
+   "topic": "Data center impacts",
+   "subtopic": "climate impact of AI sold to fossil fuel producers",
+   "status": "voted",
+   "support_pct": 8.75,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf"
+  },
+  {
+   "id": "msft-2026-climate-ai-dc",
+   "company": "MSFT",
+   "year": 2026,
+   "title": "Additional Disclosures Meeting Climate Commitments (AI data centers)",
+   "topic": "Data center impacts",
+   "subtopic": "AI data center energy vs climate targets",
+   "status": "upcoming",
+   "support_pct": null,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a1.pdf"
+  },
+  {
+   "id": "msft-2026-hrdd-ai-misuse",
+   "company": "MSFT",
+   "year": 2026,
+   "title": "Report on Human Rights Due Diligence",
+   "topic": "Social & economic impacts",
+   "subtopic": "military misuse of AI and cloud",
+   "status": "upcoming",
+   "support_pct": null,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a1.pdf"
+  },
+  {
+   "id": "msft-2026-hr-hotspots",
+   "company": "MSFT",
+   "year": 2026,
+   "title": "Report on Data Operations in Human Rights and Conflict Hotspots",
+   "topic": "Social & economic impacts",
+   "subtopic": "human rights of AI/cloud data center siting",
+   "status": "upcoming",
+   "support_pct": null,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a1.pdf"
+  },
+  {
+   "id": "googl-2023-dc-siting-hr",
+   "company": "GOOGL",
+   "year": 2023,
+   "title": "Human Rights Assessment of Data Center Siting",
+   "topic": "Data center impacts",
+   "subtopic": "human rights/community impacts of data center siting",
+   "status": "voted",
+   "support_pct": 13.11,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+  },
+  {
+   "id": "googl-2023-targeted-ads-hr",
+   "company": "GOOGL",
+   "year": 2023,
+   "title": "Human Rights Assessment of Targeted Ad Policies",
+   "topic": "Social & economic impacts",
+   "subtopic": "algorithmic targeted advertising",
+   "status": "voted",
+   "support_pct": 18.02,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+  },
+  {
+   "id": "googl-2023-algorithm-disclosure",
+   "company": "GOOGL",
+   "year": 2023,
+   "title": "Algorithm Disclosures",
+   "topic": "Social & economic impacts",
+   "subtopic": "algorithmic systems transparency",
+   "status": "voted",
+   "support_pct": 17.02,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+  },
+  {
+   "id": "googl-2023-audit-committee-review",
+   "company": "GOOGL",
+   "year": 2023,
+   "title": "Performance Review of the Audit and Compliance Committee",
+   "topic": "AI governance & oversight",
+   "subtopic": "board risk oversight incl. AI (borderline)",
+   "status": "voted",
+   "support_pct": 8.37,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+  },
+  {
+   "id": "googl-2024-ai-principles-oversight",
+   "company": "GOOGL",
+   "year": 2024,
+   "title": "AI Principles and Board Oversight",
+   "topic": "AI governance & oversight",
+   "subtopic": "board committee oversight of AI Principles",
+   "status": "voted",
+   "support_pct": 7.4,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf"
+  },
+  {
+   "id": "googl-2024-genai-misinfo",
+   "company": "GOOGL",
+   "year": 2024,
+   "title": "Report on Generative AI Misinformation and Disinformation Risks",
+   "topic": "Social & economic impacts",
+   "subtopic": "generative AI misinformation",
+   "status": "voted",
+   "support_pct": 17.61,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf"
+  },
+  {
+   "id": "googl-2024-ai-targeted-ads-hr",
+   "company": "GOOGL",
+   "year": 2024,
+   "title": "Human Rights Assessment of AI-Driven Targeted Ad Policies",
+   "topic": "Social & economic impacts",
+   "subtopic": "AI targeted advertising",
+   "status": "voted",
+   "support_pct": 18.56,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf"
+  },
+  {
+   "id": "googl-2024-child-online-safety",
+   "company": "GOOGL",
+   "year": 2024,
+   "title": "Report on Online Safety for Children",
+   "topic": "Social & economic impacts",
+   "subtopic": "child safety incl. generative AI",
+   "status": "voted",
+   "support_pct": 14.24,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf"
+  },
+  {
+   "id": "googl-2025-cahra-hrdd",
+   "company": "GOOGL",
+   "year": 2025,
+   "title": "Due Diligence on Human Rights Risks in Conflict-Affected Areas",
+   "topic": "Social & economic impacts",
+   "subtopic": "AI/cloud military use",
+   "status": "voted",
+   "support_pct": 4.51,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog_courtesy-pdf.pdf"
+  },
+  {
+   "id": "googl-2025-genai-discrimination",
+   "company": "GOOGL",
+   "year": 2025,
+   "title": "Report on Risks of Discrimination in GenAI",
+   "topic": "Social & economic impacts",
+   "subtopic": "religious/political bias in gen AI (conservative filer)",
+   "status": "voted",
+   "support_pct": 0.46,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog_courtesy-pdf.pdf"
+  },
+  {
+   "id": "googl-2025-ai-data-usage",
+   "company": "GOOGL",
+   "year": 2025,
+   "title": "Report on AI Data Usage Oversight",
+   "topic": "Social & economic impacts",
+   "subtopic": "AI training data / privacy (conservative filer)",
+   "status": "voted",
+   "support_pct": 12.38,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog_courtesy-pdf.pdf"
+  },
+  {
+   "id": "googl-2025-ai-targeted-ads-hr",
+   "company": "GOOGL",
+   "year": 2025,
+   "title": "Human Rights Impact Assessment of AI-Driven Targeted Ads",
+   "topic": "Social & economic impacts",
+   "subtopic": "AI targeted advertising",
+   "status": "voted",
+   "support_pct": 14.29,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog_courtesy-pdf.pdf"
+  },
+  {
+   "id": "googl-2026-ai-water",
+   "company": "GOOGL",
+   "year": 2026,
+   "title": "Report on Water Usage and AI Development",
+   "topic": "Data center impacts",
+   "subtopic": "AI data center water use (conservative filer)",
+   "status": "voted",
+   "support_pct": 1.5,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf"
+  },
+  {
+   "id": "googl-2026-data-privacy-cloud",
+   "company": "GOOGL",
+   "year": 2026,
+   "title": "Report on Data Privacy (Google Services and Cloud)",
+   "topic": "Social & economic impacts",
+   "subtopic": "AI/cloud human rights risk (Project Nimbus)",
+   "status": "voted",
+   "support_pct": 6.03,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf"
+  },
+  {
+   "id": "googl-2026-ai-board-oversight",
+   "company": "GOOGL",
+   "year": 2026,
+   "title": "AI Board Oversight",
+   "topic": "AI governance & oversight",
+   "subtopic": "audit committee charter oversight of AI",
+   "status": "voted",
+   "support_pct": 3.74,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf"
+  },
+  {
+   "id": "googl-2026-ai-misinfo",
+   "company": "GOOGL",
+   "year": 2026,
+   "title": "Report on AI-Generated Misinformation",
+   "topic": "Social & economic impacts",
+   "subtopic": "generative AI misinformation",
+   "status": "voted",
+   "support_pct": 9.3,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf"
+  },
+  {
+   "id": "googl-2026-ai-data-usage",
+   "company": "GOOGL",
+   "year": 2026,
+   "title": "Report on AI Data Usage Oversight",
+   "topic": "Social & economic impacts",
+   "subtopic": "AI training data / privacy (conservative filer)",
+   "status": "voted",
+   "support_pct": 12.26,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf"
+  },
+  {
+   "id": "meta-2023-targeted-ads-hr",
+   "company": "META",
+   "year": 2023,
+   "title": "Human Rights Impact Assessment of Targeted Advertising",
+   "topic": "Social & economic impacts",
+   "subtopic": "algorithmic targeted advertising",
+   "status": "voted",
+   "support_pct": 17.02,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
+  },
+  {
+   "id": "meta-2023-community-standards",
+   "company": "META",
+   "year": 2023,
+   "title": "Report on Enforcement of Community Standards",
+   "topic": "Social & economic impacts",
+   "subtopic": "content moderation, generative AI (borderline)",
+   "status": "voted",
+   "support_pct": 7.16,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
+  },
+  {
+   "id": "meta-2024-genai-misinfo",
+   "company": "META",
+   "year": 2024,
+   "title": "Report on Generative AI Misinformation and Disinformation Risks",
+   "topic": "Social & economic impacts",
+   "subtopic": "generative AI misinformation",
+   "status": "voted",
+   "support_pct": 16.73,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+  },
+  {
+   "id": "meta-2024-ai-targeted-ads-hr",
+   "company": "META",
+   "year": 2024,
+   "title": "Human Rights Impact Assessment on AI-Driven Targeted Advertising",
+   "topic": "Social & economic impacts",
+   "subtopic": "AI targeted advertising",
+   "status": "voted",
+   "support_pct": 14.45,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+  },
+  {
+   "id": "meta-2025-ai-data-usage",
+   "company": "META",
+   "year": 2025,
+   "title": "Report on AI Data Usage Oversight",
+   "topic": "Social & economic impacts",
+   "subtopic": "AI training data / privacy (conservative filer)",
+   "status": "voted",
+   "support_pct": 9.93,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+  },
+  {
+   "id": "meta-2025-deepfakes-child",
+   "company": "META",
+   "year": 2025,
+   "title": "Report on Risks of Deepfakes in Online Child Exploitation",
+   "topic": "Social & economic impacts",
+   "subtopic": "gen AI deepfakes and child safety (conservative filer)",
+   "status": "voted",
+   "support_pct": 6.45,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+  },
+  {
+   "id": "meta-2025-dc-ghg",
+   "company": "META",
+   "year": 2025,
+   "title": "GHG Emissions Reduction Actions (data centers)",
+   "topic": "Data center impacts",
+   "subtopic": "AI data center energy/emissions",
+   "status": "voted",
+   "support_pct": 3.25,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+  },
+  {
+   "id": "meta-2025-child-safety",
+   "company": "META",
+   "year": 2025,
+   "title": "Report on Child Safety Impacts and Harm Reduction",
+   "topic": "Social & economic impacts",
+   "subtopic": "child safety incl. AI chatbots",
+   "status": "voted",
+   "support_pct": 13.43,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+  },
+  {
+   "id": "meta-2026-ai-data-usage",
+   "company": "META",
+   "year": 2026,
+   "title": "Report on AI Data Usage Oversight",
+   "topic": "Social & economic impacts",
+   "subtopic": "AI training data / privacy (conservative filer)",
+   "status": "voted",
+   "support_pct": 10.17,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+  },
+  {
+   "id": "meta-2026-genai-chatbot-dpia",
+   "company": "META",
+   "year": 2026,
+   "title": "Data Protection Impact Assessment on Generative AI Chatbots",
+   "topic": "Social & economic impacts",
+   "subtopic": "privacy of AI chatbot data",
+   "status": "voted",
+   "support_pct": 6.61,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+  },
+  {
+   "id": "meta-2026-climate-ai-dc",
+   "company": "META",
+   "year": 2026,
+   "title": "Report on Climate Commitments (AI data center energy)",
+   "topic": "Data center impacts",
+   "subtopic": "AI data center energy/emissions",
+   "status": "voted",
+   "support_pct": 6.91,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+  },
+  {
+   "id": "meta-2026-child-safety-pay",
+   "company": "META",
+   "year": 2026,
+   "title": "Integrate Child Safety into Executive Compensation",
+   "topic": "Social & economic impacts",
+   "subtopic": "child safety incl. AI chatbots",
+   "status": "voted",
+   "support_pct": 3.42,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+  },
+  {
+   "id": "amzn-2023-customer-dd",
+   "company": "AMZN",
+   "year": 2023,
+   "title": "Report on Customer Due Diligence",
+   "topic": "Social & economic impacts",
+   "subtopic": "Rekognition, surveillance and AI/ML human rights",
+   "status": "voted",
+   "support_pct": 34.2,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923055145/tm2314311d1_defa14a.htm"
+  },
+  {
+   "id": "amzn-2023-facial-recognition",
+   "company": "AMZN",
+   "year": 2023,
+   "title": "Report on Customer Use of Certain Technologies",
+   "topic": "Social & economic impacts",
+   "subtopic": "facial recognition (Rekognition)",
+   "status": "voted",
+   "support_pct": 37.5,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923055145/tm2314311d1_defa14a.htm"
+  },
+  {
+   "id": "amzn-2024-customer-dd",
+   "company": "AMZN",
+   "year": 2024,
+   "title": "Report on Customer Due Diligence",
+   "topic": "Social & economic impacts",
+   "subtopic": "surveillance, computer vision, cloud human rights",
+   "status": "voted",
+   "support_pct": 16.8,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm"
+  },
+  {
+   "id": "amzn-2024-facial-recognition",
+   "company": "AMZN",
+   "year": 2024,
+   "title": "Report on Customer Use of Certain Technologies",
+   "topic": "Social & economic impacts",
+   "subtopic": "facial recognition (Rekognition)",
+   "status": "voted",
+   "support_pct": 19.1,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm"
+  },
+  {
+   "id": "amzn-2024-ai-board-committee",
+   "company": "AMZN",
+   "year": 2024,
+   "title": "Additional Board Committee to Oversee AI",
+   "topic": "AI governance & oversight",
+   "subtopic": "board AI committee",
+   "status": "voted",
+   "support_pct": 9.7,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm"
+  },
+  {
+   "id": "amzn-2025-dc-climate",
+   "company": "AMZN",
+   "year": 2025,
+   "title": "Impact of Data Centers on Climate Commitments",
+   "topic": "Data center impacts",
+   "subtopic": "AI data center energy vs climate goals",
+   "status": "voted",
+   "support_pct": 20.1,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm"
+  },
+  {
+   "id": "amzn-2025-ai-board-oversight",
+   "company": "AMZN",
+   "year": 2025,
+   "title": "Assessment of Board Structure for Oversight of AI",
+   "topic": "AI governance & oversight",
+   "subtopic": "board AI oversight",
+   "status": "voted",
+   "support_pct": 10.3,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm"
+  },
+  {
+   "id": "amzn-2025-ai-data-usage",
+   "company": "AMZN",
+   "year": 2025,
+   "title": "Report on Data Usage Oversight in AI Offerings",
+   "topic": "Social & economic impacts",
+   "subtopic": "AI training data / privacy (conservative filer)",
+   "status": "voted",
+   "support_pct": 10.8,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm"
+  },
+  {
+   "id": "amzn-2026-dc-climate",
+   "company": "AMZN",
+   "year": 2026,
+   "title": "Impact of Data Centers on Climate Commitments",
+   "topic": "Data center impacts",
+   "subtopic": "AI data center energy vs GHG targets",
+   "status": "voted",
+   "support_pct": 18.4,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+  },
+  {
+   "id": "amzn-2026-climate-cost",
+   "company": "AMZN",
+   "year": 2026,
+   "title": "Report on Impact of Climate Commitments",
+   "topic": "Data center impacts",
+   "subtopic": "AI buildout vs climate cost (conservative filer, borderline)",
+   "status": "voted",
+   "support_pct": 1.2,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+  },
+  {
+   "id": "amzn-2026-responsible-ai-sales",
+   "company": "AMZN",
+   "year": 2026,
+   "title": "Responsible AI policies vs sales of AI/cloud to militaries and DHS",
+   "topic": "Social & economic impacts",
+   "subtopic": "human rights of AI deployment",
+   "status": "excluded",
+   "support_pct": null,
+   "source_url": "https://news.bloomberglaw.com/esg/amazon-to-block-investor-vote-on-ai-services-for-israel-dhs"
+  },
+  {
+   "id": "amzn-2026-worker-ai-council",
+   "company": "AMZN",
+   "year": 2026,
+   "title": "Worker-Oriented AI Advisory Council (floor proposal)",
+   "topic": "Social & economic impacts",
+   "subtopic": "AI, automation and workforce",
+   "status": "voted",
+   "support_pct": null,
+   "source_url": "https://united4respect.org/wp-content/uploads/2026/03/AI-Advisory-Council_-Amazon-Floor-Resolution-2026-FINAL.pdf"
+  },
+  {
+   "id": "aapl-2024-ai-transparency",
+   "company": "AAPL",
+   "year": 2024,
+   "title": "Report on the Use of AI",
+   "topic": "AI governance & oversight",
+   "subtopic": "AI transparency, ethics and workforce",
+   "status": "voted",
+   "support_pct": 37.5,
+   "source_url": "https://news.bloomberglaw.com/daily-labor-report/apple-investors-reject-bid-for-transparency-on-ai-risks-ethics"
+  },
+  {
+   "id": "aapl-2025-ai-data-ethics",
+   "company": "AAPL",
+   "year": 2025,
+   "title": "Report on Ethical AI Data Acquisition and Usage",
+   "topic": "Social & economic impacts",
+   "subtopic": "AI training data, privacy, copyright (conservative filer)",
+   "status": "voted",
+   "support_pct": 11.6,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm"
+  },
+  {
+   "id": "aapl-2026-ai-energy",
+   "company": "AAPL",
+   "year": 2026,
+   "title": "AI and Data Center Use in Energy Strategy",
+   "topic": "Data center impacts",
+   "subtopic": "AI data center energy",
+   "status": "withdrawn",
+   "support_pct": null,
+   "source_url": "https://www.minerva.info/post/apple-shareholders-stunted-proposals-plummet-as-sec-shift-bites"
+  },
+  {
+   "id": "nvda-2026-product-ghg",
+   "company": "NVDA",
+   "year": 2026,
+   "title": "Report on GHG Emissions from Use of Sold Products",
+   "topic": "Data center impacts",
+   "subtopic": "energy/climate footprint of AI chips",
+   "status": "voted",
+   "support_pct": 17.6,
+   "source_url": "https://www.greencentury.com/shareholders-call-for-nvidia-to-report-carbon-costs-of-ai/"
+  },
+  {
+   "id": "nvda-2026-military-ai",
+   "company": "NVDA",
+   "year": 2026,
+   "title": "Rationale for Military Sales (AI-enabled capabilities)",
+   "topic": "Social & economic impacts",
+   "subtopic": "military AI and humanitarian law",
+   "status": "excluded",
+   "support_pct": null,
+   "source_url": "https://collaborate.unpri.org/group/38826/home"
+  },
+  {
+   "id": "tsla-2025-xai-investment",
+   "company": "TSLA",
+   "year": 2025,
+   "title": "Authorize Investment in xAI",
+   "topic": "AI governance & oversight",
+   "subtopic": "AI strategy / related-party AI investment (borderline)",
+   "status": "voted",
+   "support_pct": 53.6,
+   "source_url": "https://techcrunch.com/2025/09/05/tesla-shareholders-to-vote-on-investing-in-musks-ai-startup-xai"
+  }
+ ],
+ "edges": [
+  {
+   "from": "eko",
+   "to": "msft-2023-hr-hotspots",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a1.pdf"
+  },
+  {
+   "from": "arjuna",
+   "to": "msft-2023-ai-misinfo",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a1.pdf"
+  },
+  {
+   "from": "open-mic",
+   "to": "msft-2023-ai-misinfo",
+   "relation": "co-filer",
+   "source_url": "https://www.openmic.org/news/shareholders-demand-transparency-from-microsoft-on-material-risks-of-ai-powered-disinformation"
+  },
+  {
+   "from": "eko",
+   "to": "msft-2023-ai-misinfo",
+   "relation": "co-filer",
+   "source_url": "https://www.openmic.org/news/shareholders-demand-transparency-from-microsoft-on-material-risks-of-ai-powered-disinformation"
+  },
+  {
+   "from": "azzad",
+   "to": "msft-2023-ai-misinfo",
+   "relation": "co-filer",
+   "source_url": "https://www.openmic.org/news/shareholders-demand-transparency-from-microsoft-on-material-risks-of-ai-powered-disinformation"
+  },
+  {
+   "from": "arjuna",
+   "to": "msft-2023-ai-misinfo",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465923014650/o117232px14a6g.htm"
+  },
+  {
+   "from": "as-you-sow",
+   "to": "msft-2024-ai-oil-gas",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a1.pdf"
+  },
+  {
+   "from": "as-you-sow",
+   "to": "msft-2024-ai-oil-gas",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465924018029/o1029241px14a6g.htm"
+  },
+  {
+   "from": "arjuna",
+   "to": "msft-2024-ai-misinfo",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a1.pdf"
+  },
+  {
+   "from": "open-mic",
+   "to": "msft-2024-ai-misinfo",
+   "relation": "co-filer",
+   "source_url": "https://openmic.org/news/2024/7/16/open-mic-refiles-shareholder-proposal-at-microsoft-calling-for-annual-report-on-mitigation-of-ai-risks"
+  },
+  {
+   "from": "eko",
+   "to": "msft-2024-ai-misinfo",
+   "relation": "co-filer",
+   "source_url": "https://openmic.org/news/2024/7/16/open-mic-refiles-shareholder-proposal-at-microsoft-calling-for-annual-report-on-mitigation-of-ai-risks"
+  },
+  {
+   "from": "arjuna",
+   "to": "msft-2024-ai-misinfo",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465924018068/j1030243px14a6g.htm"
+  },
+  {
+   "from": "open-mic",
+   "to": "msft-2024-ai-misinfo",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465924018068/j1030243px14a6g.htm"
+  },
+  {
+   "from": "nlpc",
+   "to": "msft-2024-ai-data-sourcing",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a1.pdf"
+  },
+  {
+   "from": "nlpc",
+   "to": "msft-2024-ai-data-sourcing",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000109690624002070/nlpc_px14a6g.htm"
+  },
+  {
+   "from": "ridgeline",
+   "to": "msft-2025-genai-censorship",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf"
+  },
+  {
+   "from": "nlpc",
+   "to": "msft-2025-ai-data-usage",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf"
+  },
+  {
+   "from": "nlpc",
+   "to": "msft-2025-ai-data-usage",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000109690625001784/nlpc_px14a6g.htm"
+  },
+  {
+   "from": "rshm",
+   "to": "msft-2025-hrdd-ai-misuse",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf"
+  },
+  {
+   "from": "chicory-wealth",
+   "to": "msft-2025-hrdd-ai-misuse",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925010874/j724252px14a6g.htm"
+  },
+  {
+   "from": "iasj",
+   "to": "msft-2025-hrdd-ai-misuse",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925010874/j724252px14a6g.htm"
+  },
+  {
+   "from": "azzad",
+   "to": "msft-2025-hrdd-ai-misuse",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925015203/y1022250px14a6g.htm"
+  },
+  {
+   "from": "eko",
+   "to": "msft-2025-hrdd-ai-misuse",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925016907/j1117252px14a6g.htm"
+  },
+  {
+   "from": "jlens",
+   "to": "msft-2025-hrdd-ai-misuse",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000092189525002903/px14a6g14098msft_11062025.htm",
+   "stance": "oppose"
+  },
+  {
+   "from": "adl",
+   "to": "msft-2025-hrdd-ai-misuse",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000092189525002903/px14a6g14098msft_11062025.htm",
+   "stance": "oppose"
+  },
+  {
+   "from": "as-you-sow",
+   "to": "msft-2025-ai-oil-gas",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf"
+  },
+  {
+   "from": "as-you-sow",
+   "to": "msft-2025-ai-oil-gas",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925016180/u1110251px14a6g.htm"
+  },
+  {
+   "from": "trillium",
+   "to": "msft-2026-climate-ai-dc",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a1.pdf"
+  },
+  {
+   "from": "rshm",
+   "to": "msft-2026-hrdd-ai-misuse",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a1.pdf"
+  },
+  {
+   "from": "csjp",
+   "to": "msft-2026-hrdd-ai-misuse",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465926013218/b1026263px14a6g.htm"
+  },
+  {
+   "from": "zevin",
+   "to": "msft-2026-hrdd-ai-misuse",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465926013218/b1026263px14a6g.htm"
+  },
+  {
+   "from": "jewish-investor-network",
+   "to": "msft-2026-hrdd-ai-misuse",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465926013218/b1026263px14a6g.htm"
+  },
+  {
+   "from": "iasj",
+   "to": "msft-2026-hrdd-ai-misuse",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465926011511/o91268px14a6g.htm"
+  },
+  {
+   "from": "azzad",
+   "to": "msft-2026-hr-hotspots",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a1.pdf"
+  },
+  {
+   "from": "azzad",
+   "to": "msft-2026-hr-hotspots",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465926014752/w1125263px14a6g.htm"
+  },
+  {
+   "from": "eko",
+   "to": "googl-2023-dc-siting-hr",
+   "relation": "lead filer",
+   "source_url": "https://investorsforhumanrights.org/2023-meta-and-alphabet-shareholder-resolutions"
+  },
+  {
+   "from": "dana",
+   "to": "googl-2023-dc-siting-hr",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923007656/s522230px14a6g.htm"
+  },
+  {
+   "from": "marianists",
+   "to": "googl-2023-dc-siting-hr",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923007656/s522230px14a6g.htm"
+  },
+  {
+   "from": "omi-us",
+   "to": "googl-2023-dc-siting-hr",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923007656/s522230px14a6g.htm"
+  },
+  {
+   "from": "eko",
+   "to": "googl-2023-dc-siting-hr",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923007656/s522230px14a6g.htm"
+  },
+  {
+   "from": "share",
+   "to": "googl-2023-targeted-ads-hr",
+   "relation": "lead filer",
+   "source_url": "https://collaborate.unpri.org/group/15876/home"
+  },
+  {
+   "from": "ucc-pension",
+   "to": "googl-2023-targeted-ads-hr",
+   "relation": "lead filer",
+   "source_url": "https://collaborate.unpri.org/group/15876/home",
+   "note": "SHARE filed on behalf of the plan"
+  },
+  {
+   "from": "commonspirit",
+   "to": "googl-2023-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://collaborate.unpri.org/group/15876/home"
+  },
+  {
+   "from": "trillium",
+   "to": "googl-2023-algorithm-disclosure",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923006504/r54230px14a6g.htm"
+  },
+  {
+   "from": "trillium",
+   "to": "googl-2023-algorithm-disclosure",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923006504/r54230px14a6g.htm"
+  },
+  {
+   "from": "harrington",
+   "to": "googl-2023-audit-committee-review",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923005962/b425233px14a6g.htm"
+  },
+  {
+   "from": "aviva",
+   "to": "googl-2023-audit-committee-review",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923005962/b425233px14a6g.htm"
+  },
+  {
+   "from": "nordea",
+   "to": "googl-2023-audit-committee-review",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923005962/b425233px14a6g.htm"
+  },
+  {
+   "from": "harrington",
+   "to": "googl-2023-audit-committee-review",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923005962/b425233px14a6g.htm"
+  },
+  {
+   "from": "trillium",
+   "to": "googl-2024-ai-principles-oversight",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf"
+  },
+  {
+   "from": "benedictine-baltimore",
+   "to": "googl-2024-ai-principles-oversight",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf"
+  },
+  {
+   "from": "benedictine-mt-scholastica",
+   "to": "googl-2024-ai-principles-oversight",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf"
+  },
+  {
+   "from": "mercy",
+   "to": "googl-2024-ai-principles-oversight",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000121465924008582/e58244px14a6g.htm"
+  },
+  {
+   "from": "trillium",
+   "to": "googl-2024-ai-principles-oversight",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924008582/e58244px14a6g.htm"
+  },
+  {
+   "from": "arjuna",
+   "to": "googl-2024-genai-misinfo",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf"
+  },
+  {
+   "from": "arjuna",
+   "to": "googl-2024-genai-misinfo",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924008379/o532411px14a6g.htm"
+  },
+  {
+   "from": "open-mic",
+   "to": "googl-2024-genai-misinfo",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924008462/o56248px14a6g.htm"
+  },
+  {
+   "from": "open-mic",
+   "to": "googl-2024-genai-misinfo",
+   "relation": "co-filer",
+   "source_url": "https://openmic.org/news/2024/5/23/shareholders-prepare-to-vote-on-handling-of-generative-ai-by-meta-and-alphabet-amid-global-information-integrity-concerns"
+  },
+  {
+   "from": "share",
+   "to": "googl-2024-ai-targeted-ads-hr",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf"
+  },
+  {
+   "from": "ucc-pension",
+   "to": "googl-2024-ai-targeted-ads-hr",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf",
+   "note": "SHARE filed on behalf of the plan"
+  },
+  {
+   "from": "commonspirit",
+   "to": "googl-2024-ai-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924007961/o51248px14a6g.htm"
+  },
+  {
+   "from": "mercy",
+   "to": "googl-2024-ai-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924007961/o51248px14a6g.htm"
+  },
+  {
+   "from": "share",
+   "to": "googl-2024-ai-targeted-ads-hr",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924007961/o51248px14a6g.htm"
+  },
+  {
+   "from": "boston-common",
+   "to": "googl-2024-child-online-safety",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf"
+  },
+  {
+   "from": "zevin",
+   "to": "googl-2025-cahra-hrdd",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog_courtesy-pdf.pdf"
+  },
+  {
+   "from": "zevin",
+   "to": "googl-2025-cahra-hrdd",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925007295/p59255px14a6g.htm"
+  },
+  {
+   "from": "inspire",
+   "to": "googl-2025-genai-discrimination",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog_courtesy-pdf.pdf"
+  },
+  {
+   "from": "inspire",
+   "to": "googl-2025-genai-discrimination",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000109690625000830/insp_px14a6g.htm"
+  },
+  {
+   "from": "nlpc",
+   "to": "googl-2025-ai-data-usage",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog_courtesy-pdf.pdf"
+  },
+  {
+   "from": "nlpc",
+   "to": "googl-2025-ai-data-usage",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000109690625000841/nlpc_px14a6g.htm"
+  },
+  {
+   "from": "share",
+   "to": "googl-2025-ai-targeted-ads-hr",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog_courtesy-pdf.pdf"
+  },
+  {
+   "from": "ucc-pension",
+   "to": "googl-2025-ai-targeted-ads-hr",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog_courtesy-pdf.pdf",
+   "note": "SHARE filed on behalf of the plan"
+  },
+  {
+   "from": "akademikerpension",
+   "to": "googl-2025-ai-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm"
+  },
+  {
+   "from": "ap-pension",
+   "to": "googl-2025-ai-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm"
+  },
+  {
+   "from": "benedictine-mt-scholastica",
+   "to": "googl-2025-ai-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm"
+  },
+  {
+   "from": "commonspirit",
+   "to": "googl-2025-ai-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm"
+  },
+  {
+   "from": "klp",
+   "to": "googl-2025-ai-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm"
+  },
+  {
+   "from": "mn",
+   "to": "googl-2025-ai-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm"
+  },
+  {
+   "from": "mercy",
+   "to": "googl-2025-ai-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm"
+  },
+  {
+   "from": "omi-us",
+   "to": "googl-2025-ai-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm"
+  },
+  {
+   "from": "benedictine-cullman",
+   "to": "googl-2025-ai-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm"
+  },
+  {
+   "from": "scl",
+   "to": "googl-2025-ai-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm"
+  },
+  {
+   "from": "share",
+   "to": "googl-2025-ai-targeted-ads-hr",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm"
+  },
+  {
+   "from": "inspire",
+   "to": "googl-2026-ai-water",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf"
+  },
+  {
+   "from": "zevin",
+   "to": "googl-2026-data-privacy-cloud",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf"
+  },
+  {
+   "from": "zevin",
+   "to": "googl-2026-data-privacy-cloud",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465926005597/o55262px14a6g.htm"
+  },
+  {
+   "from": "eko",
+   "to": "googl-2026-data-privacy-cloud",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465926006524/d518261px14a6g.htm"
+  },
+  {
+   "from": "jlens",
+   "to": "googl-2026-data-privacy-cloud",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000092189526001098/px14a6g14098010_04282026.htm",
+   "stance": "oppose"
+  },
+  {
+   "from": "adl",
+   "to": "googl-2026-data-privacy-cloud",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000092189526001098/px14a6g14098010_04282026.htm",
+   "stance": "oppose"
+  },
+  {
+   "from": "share",
+   "to": "googl-2026-ai-board-oversight",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf"
+  },
+  {
+   "from": "ucc-pension",
+   "to": "googl-2026-ai-board-oversight",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf",
+   "note": "SHARE filed on behalf of the plan"
+  },
+  {
+   "from": "share",
+   "to": "googl-2026-ai-board-oversight",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465926005268/o429268px14a6g.htm"
+  },
+  {
+   "from": "vancity",
+   "to": "googl-2026-ai-misinfo",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf"
+  },
+  {
+   "from": "nlpc",
+   "to": "googl-2026-ai-data-usage",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf"
+  },
+  {
+   "from": "mercy",
+   "to": "meta-2023-targeted-ads-hr",
+   "relation": "lead filer",
+   "source_url": "https://collaborate.unpri.org/group/17361/home"
+  },
+  {
+   "from": "nei",
+   "to": "meta-2023-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://collaborate.unpri.org/group/17361/home"
+  },
+  {
+   "from": "omi-us",
+   "to": "meta-2023-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://collaborate.unpri.org/group/17361/home"
+  },
+  {
+   "from": "benedictine-mt-scholastica",
+   "to": "meta-2023-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://collaborate.unpri.org/group/17361/home"
+  },
+  {
+   "from": "commonspirit",
+   "to": "meta-2023-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://collaborate.unpri.org/group/17361/home"
+  },
+  {
+   "from": "axa-im",
+   "to": "meta-2023-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://collaborate.unpri.org/group/17361/home"
+  },
+  {
+   "from": "mercy",
+   "to": "meta-2023-targeted-ads-hr",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465923006155/b428231px14a6g.htm"
+  },
+  {
+   "from": "as-you-sow",
+   "to": "meta-2023-community-standards",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465923006039/g427230px14a6g.htm"
+  },
+  {
+   "from": "as-you-sow",
+   "to": "meta-2023-community-standards",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465923006039/g427230px14a6g.htm"
+  },
+  {
+   "from": "arjuna",
+   "to": "meta-2024-genai-misinfo",
+   "relation": "lead filer",
+   "source_url": "https://collaborate.unpri.org/group/23361/home"
+  },
+  {
+   "from": "open-mic",
+   "to": "meta-2024-genai-misinfo",
+   "relation": "co-filer",
+   "source_url": "https://www.boardroomalpha.com/meetings/meta-2024-annual-meeting"
+  },
+  {
+   "from": "eko",
+   "to": "meta-2024-genai-misinfo",
+   "relation": "co-filer",
+   "source_url": "https://openmic.org/news/2024/5/23/shareholders-prepare-to-vote-on-handling-of-generative-ai-by-meta-and-alphabet-amid-global-information-integrity-concerns"
+  },
+  {
+   "from": "arjuna",
+   "to": "meta-2024-genai-misinfo",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465924007454/o423247px14a6g.htm"
+  },
+  {
+   "from": "eko",
+   "to": "meta-2024-genai-misinfo",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465924009867/o523240px14a6g.htm"
+  },
+  {
+   "from": "mercy",
+   "to": "meta-2024-ai-targeted-ads-hr",
+   "relation": "lead filer",
+   "source_url": "https://collaborate.unpri.org/group/24941/home"
+  },
+  {
+   "from": "nei",
+   "to": "meta-2024-ai-targeted-ads-hr",
+   "relation": "co-filer",
+   "source_url": "https://collaborate.unpri.org/group/24941/home"
+  },
+  {
+   "from": "mercy",
+   "to": "meta-2024-ai-targeted-ads-hr",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465924007262/b422241px14a6g.htm"
+  },
+  {
+   "from": "nlpc",
+   "to": "meta-2025-ai-data-usage",
+   "relation": "lead filer",
+   "source_url": "https://collaborate.unpri.org/group/33341/home"
+  },
+  {
+   "from": "nlpc",
+   "to": "meta-2025-ai-data-usage",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000109690625000701/nlpc_px14a6g.htm"
+  },
+  {
+   "from": "bowyer",
+   "to": "meta-2025-deepfakes-child",
+   "relation": "lead filer",
+   "source_url": "https://collaborate.unpri.org/group/33336/home"
+  },
+  {
+   "from": "bowyer",
+   "to": "meta-2025-deepfakes-child",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000109690625000742/bowy_px14a6g.htm"
+  },
+  {
+   "from": "as-you-sow",
+   "to": "meta-2025-dc-ghg",
+   "relation": "lead filer",
+   "source_url": "https://www.boardroomalpha.com/meetings/meta-2025-annual-meeting"
+  },
+  {
+   "from": "as-you-sow",
+   "to": "meta-2025-dc-ghg",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465925006514/p428257px14a6g.htm"
+  },
+  {
+   "from": "proxy-impact",
+   "to": "meta-2025-child-safety",
+   "relation": "lead filer",
+   "source_url": "https://collaborate.unpri.org/group/33376/home"
+  },
+  {
+   "from": "proxy-impact",
+   "to": "meta-2025-child-safety",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465925007546/d514251px14a6g.htm"
+  },
+  {
+   "from": "nlpc",
+   "to": "meta-2026-ai-data-usage",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+  },
+  {
+   "from": "mercy",
+   "to": "meta-2026-genai-chatbot-dpia",
+   "relation": "lead filer",
+   "source_url": "https://collaborate.unpri.org/group/39201/home"
+  },
+  {
+   "from": "storebrand",
+   "to": "meta-2026-genai-chatbot-dpia",
+   "relation": "co-filer",
+   "source_url": "https://www.boardroomalpha.com/meetings/meta-2026-annual-meeting"
+  },
+  {
+   "from": "dana",
+   "to": "meta-2026-genai-chatbot-dpia",
+   "relation": "co-filer",
+   "source_url": "https://www.boardroomalpha.com/meetings/meta-2026-annual-meeting"
+  },
+  {
+   "from": "as-you-sow",
+   "to": "meta-2026-climate-ai-dc",
+   "relation": "lead filer",
+   "source_url": "https://www.boardroomalpha.com/meetings/meta-2026-annual-meeting"
+  },
+  {
+   "from": "pcusa",
+   "to": "meta-2026-climate-ai-dc",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465926005915/o511264px14a6g.htm"
+  },
+  {
+   "from": "portico",
+   "to": "meta-2026-climate-ai-dc",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465926005915/o511264px14a6g.htm"
+  },
+  {
+   "from": "adrian-dominican",
+   "to": "meta-2026-climate-ai-dc",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465926005915/o511264px14a6g.htm"
+  },
+  {
+   "from": "pcusa",
+   "to": "meta-2026-climate-ai-dc",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465926003974/o330262px14a6g.htm"
+  },
+  {
+   "from": "proxy-impact",
+   "to": "meta-2026-child-safety-pay",
+   "relation": "lead filer",
+   "source_url": "https://collaborate.unpri.org/group/38756/home"
+  },
+  {
+   "from": "ipjc",
+   "to": "meta-2026-child-safety-pay",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465926006412/o514269px14a6g.htm"
+  },
+  {
+   "from": "abhms",
+   "to": "amzn-2023-customer-dd",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923055145/tm2314311d1_defa14a.htm"
+  },
+  {
+   "from": "iasj",
+   "to": "amzn-2023-customer-dd",
+   "relation": "lead filer",
+   "source_url": "https://www.openmic.org/news/amazon-shareholder-proposals-highlight-the-seriousness-of-digital-rights-concerns",
+   "note": "filing representative for ABHMS"
+  },
+  {
+   "from": "abhms",
+   "to": "amzn-2024-customer-dd",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm"
+  },
+  {
+   "from": "iasj",
+   "to": "amzn-2024-customer-dd",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465924009029/o514240px14a6g.htm"
+  },
+  {
+   "from": "jlens",
+   "to": "amzn-2024-customer-dd",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000092189524000827/px14a6g14098002_04112024.htm",
+   "stance": "oppose"
+  },
+  {
+   "from": "adl",
+   "to": "amzn-2024-customer-dd",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000092189524000827/px14a6g14098002_04112024.htm",
+   "stance": "oppose"
+  },
+  {
+   "from": "afl-cio",
+   "to": "amzn-2024-ai-board-committee",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm"
+  },
+  {
+   "from": "afl-cio",
+   "to": "amzn-2025-ai-board-oversight",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm"
+  },
+  {
+   "from": "nlpc",
+   "to": "amzn-2025-ai-data-usage",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm"
+  },
+  {
+   "from": "nlpc",
+   "to": "amzn-2025-ai-data-usage",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000109690625000526/nlpc_px14a6g.htm"
+  },
+  {
+   "from": "as-you-sow",
+   "to": "amzn-2026-dc-climate",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
+   "note": "represented shareholder Brian Kariger"
+  },
+  {
+   "from": "mercy",
+   "to": "amzn-2026-dc-climate",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+  },
+  {
+   "from": "nlpc",
+   "to": "amzn-2026-climate-cost",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+  },
+  {
+   "from": "abhms",
+   "to": "amzn-2026-responsible-ai-sales",
+   "relation": "lead filer",
+   "source_url": "https://www.minerva.info/post/resolution-rejections-amazon-to-exclude-at-least-seven-shareholder-proposals"
+  },
+  {
+   "from": "iasj",
+   "to": "amzn-2026-responsible-ai-sales",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+  },
+  {
+   "from": "northstar",
+   "to": "amzn-2026-responsible-ai-sales",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "signatory of IASJ solicitation; co-filer status not confirmed"
+  },
+  {
+   "from": "zevin",
+   "to": "amzn-2026-responsible-ai-sales",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "signatory of IASJ solicitation; co-filer status not confirmed"
+  },
+  {
+   "from": "csjp",
+   "to": "amzn-2026-responsible-ai-sales",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "signatory of IASJ solicitation; co-filer status not confirmed"
+  },
+  {
+   "from": "scl",
+   "to": "amzn-2026-responsible-ai-sales",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "signatory of IASJ solicitation; co-filer status not confirmed"
+  },
+  {
+   "from": "omi-us",
+   "to": "amzn-2026-responsible-ai-sales",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "signatory of IASJ solicitation; co-filer status not confirmed"
+  },
+  {
+   "from": "united-for-respect",
+   "to": "amzn-2026-responsible-ai-sales",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "signatory of IASJ solicitation; co-filer status not confirmed"
+  },
+  {
+   "from": "united-for-respect",
+   "to": "amzn-2026-worker-ai-council",
+   "relation": "lead filer",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/05/Amazon-Floor-Proposal_-Memo-in-Support-.pdf"
+  },
+  {
+   "from": "afl-cio",
+   "to": "aapl-2024-ai-transparency",
+   "relation": "lead filer",
+   "source_url": "https://news.bloomberglaw.com/daily-labor-report/apple-investors-reject-bid-for-transparency-on-ai-risks-ethics"
+  },
+  {
+   "from": "bowyer",
+   "to": "aapl-2024-ai-transparency",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000109690624000156/bowy_px14a6g.htm",
+   "stance": "oppose"
+  },
+  {
+   "from": "nlpc",
+   "to": "aapl-2025-ai-data-ethics",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm"
+  },
+  {
+   "from": "nlpc",
+   "to": "aapl-2025-ai-data-ethics",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000109690625000100/nlpc_px14a6g.htm"
+  },
+  {
+   "from": "tulipshare",
+   "to": "aapl-2026-ai-energy",
+   "relation": "lead filer",
+   "source_url": "https://www.minerva.info/post/apple-shareholders-stunted-proposals-plummet-as-sec-shift-bites"
+  },
+  {
+   "from": "green-century",
+   "to": "nvda-2026-product-ghg",
+   "relation": "lead filer",
+   "source_url": "https://www.greencentury.com/shareholders-call-for-nvidia-to-report-carbon-costs-of-ai/"
+  },
+  {
+   "from": "mercy",
+   "to": "nvda-2026-product-ghg",
+   "relation": "co-filer",
+   "source_url": "https://www.greencentury.com/shareholders-call-for-nvidia-to-report-carbon-costs-of-ai/"
+  },
+  {
+   "from": "green-century",
+   "to": "nvda-2026-product-ghg",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000121465926006075/b513262px14a6g.htm"
+  },
+  {
+   "from": "open-mic",
+   "to": "nvda-2026-military-ai",
+   "relation": "lead filer",
+   "source_url": "https://collaborate.unpri.org/group/38826/home"
+  },
+  {
+   "from": "ttt-investments",
+   "to": "nvda-2026-military-ai",
+   "relation": "co-filer",
+   "source_url": "https://collaborate.unpri.org/group/38826/home"
+  },
+  {
+   "from": "arjuna",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "as-you-sow",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "trillium",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "open-mic",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "eko",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "proxy-impact",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "northstar",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "zevin",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "mercy",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "pcusa",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "iasj",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "azzad",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "share",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "green-century",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "boston-common",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "domini",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "afl-cio",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "parnassus",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "lgim",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://www.iccr.org/member-directory/"
+  },
+  {
+   "from": "trillium",
+   "to": "iahr",
+   "relation": "member of",
+   "source_url": "https://investorsforhumanrights.org/members"
+  },
+  {
+   "from": "open-mic",
+   "to": "iahr",
+   "relation": "member of",
+   "source_url": "https://investorsforhumanrights.org/members"
+  },
+  {
+   "from": "northstar",
+   "to": "iahr",
+   "relation": "member of",
+   "source_url": "https://investorsforhumanrights.org/members"
+  },
+  {
+   "from": "zevin",
+   "to": "iahr",
+   "relation": "member of",
+   "source_url": "https://investorsforhumanrights.org/members"
+  },
+  {
+   "from": "mercy",
+   "to": "iahr",
+   "relation": "member of",
+   "source_url": "https://investorsforhumanrights.org/members"
+  },
+  {
+   "from": "iasj",
+   "to": "iahr",
+   "relation": "member of",
+   "source_url": "https://investorsforhumanrights.org/members"
+  },
+  {
+   "from": "azzad",
+   "to": "iahr",
+   "relation": "member of",
+   "source_url": "https://investorsforhumanrights.org/members"
+  },
+  {
+   "from": "share",
+   "to": "iahr",
+   "relation": "member of",
+   "source_url": "https://investorsforhumanrights.org/members"
+  },
+  {
+   "from": "boston-common",
+   "to": "iahr",
+   "relation": "member of",
+   "source_url": "https://investorsforhumanrights.org/members"
+  },
+  {
+   "from": "domini",
+   "to": "iahr",
+   "relation": "member of",
+   "source_url": "https://investorsforhumanrights.org/members"
+  },
+  {
+   "from": "afl-cio",
+   "to": "iahr",
+   "relation": "member of",
+   "source_url": "https://investorsforhumanrights.org/members"
+  },
+  {
+   "from": "parnassus",
+   "to": "iahr",
+   "relation": "member of",
+   "source_url": "https://investorsforhumanrights.org/members"
+  },
+  {
+   "from": "fidelity-intl",
+   "to": "iahr",
+   "relation": "member of",
+   "source_url": "https://investorsforhumanrights.org/members"
+  },
+  {
+   "from": "lgim",
+   "to": "iahr",
+   "relation": "member of",
+   "source_url": "https://investorsforhumanrights.org/members"
+  },
+  {
+   "from": "zevin",
+   "to": "wba-cic-ethical-ai",
+   "relation": "member of",
+   "source_url": "https://www.worldbenchmarkingalliance.org/latest/2026-cic-ethical-ai-investor-statement"
+  },
+  {
+   "from": "mercy",
+   "to": "wba-cic-ethical-ai",
+   "relation": "member of",
+   "source_url": "https://www.worldbenchmarkingalliance.org/latest/2026-cic-ethical-ai-investor-statement"
+  },
+  {
+   "from": "share",
+   "to": "wba-cic-ethical-ai",
+   "relation": "member of",
+   "source_url": "https://www.worldbenchmarkingalliance.org/latest/2026-cic-ethical-ai-investor-statement"
+  },
+  {
+   "from": "boston-common",
+   "to": "wba-cic-ethical-ai",
+   "relation": "member of",
+   "source_url": "https://www.worldbenchmarkingalliance.org/latest/2026-cic-ethical-ai-investor-statement"
+  },
+  {
+   "from": "parnassus",
+   "to": "wba-cic-ethical-ai",
+   "relation": "member of",
+   "source_url": "https://www.worldbenchmarkingalliance.org/latest/2026-cic-ethical-ai-investor-statement"
+  },
+  {
+   "from": "fidelity-intl",
+   "to": "wba-cic-ethical-ai",
+   "relation": "member of",
+   "source_url": "https://www.worldbenchmarkingalliance.org/latest/2026-cic-ethical-ai-investor-statement"
+  },
+  {
+   "from": "candriam",
+   "to": "wba-cic-ethical-ai",
+   "relation": "member of",
+   "source_url": "https://www.worldbenchmarkingalliance.org/latest/2026-cic-ethical-ai-investor-statement"
+  },
+  {
+   "from": "amundi",
+   "to": "wba-cic-ethical-ai",
+   "relation": "member of",
+   "source_url": "https://www.worldbenchmarkingalliance.org/latest/2026-cic-ethical-ai-investor-statement"
+  },
+  {
+   "from": "vancity",
+   "to": "wba-cic-ethical-ai",
+   "relation": "member of",
+   "source_url": "https://www.worldbenchmarkingalliance.org/latest/2026-cic-ethical-ai-investor-statement"
+  },
+  {
+   "from": "storebrand",
+   "to": "wba-cic-ethical-ai",
+   "relation": "member of",
+   "source_url": "https://www.worldbenchmarkingalliance.org/latest/2026-cic-ethical-ai-investor-statement"
+  },
+  {
+   "from": "iahr",
+   "to": "iccr",
+   "relation": "member of",
+   "source_url": "https://investorsforhumanrights.org/investor-actions-ict-engagement",
+   "note": "IAHR is an initiative of ICCR"
+  },
+  {
+   "from": "aviva",
+   "to": "iahr",
+   "relation": "member of",
+   "source_url": "https://investorsforhumanrights.org/sites/default/files/attachments/2023-02/List%20of%20signatories%20-%20AI%20Act%20Investor%20Statement%2002152023.pdf",
+   "note": "signatory of IAHR EU AI Act investor statement 2023, not confirmed member"
+  }
+ ]
+}
