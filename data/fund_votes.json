@@ -801,6 +801,26 @@
    "reviewed": false
   },
   {
+   "family": "BlackRock (iShares)",
+   "proposal_id": "aapl-2024-7",
+   "company": "AAPL",
+   "meeting_date": "2024-02-28",
+   "vote": "AGAINST",
+   "counts": {
+    "AGAINST": 6
+   },
+   "fund_records": 6,
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/",
+    "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
+   ],
+   "npx_descriptions": [
+    "Report on Use of Artificial Intelligence"
+   ],
+   "min_confidence": 1.0,
+   "reviewed": false
+  },
+  {
    "family": "Calvert",
    "proposal_id": "aapl-2024-7",
    "company": "AAPL",
@@ -1498,7 +1518,7 @@
    "npx_descriptions": [
     "Report on Risks Related to AI Generated Misinformation and Disinformation"
    ],
-   "min_confidence": 0.67,
+   "min_confidence": 0.5,
    "reviewed": false
   },
   {
@@ -2083,7 +2103,7 @@
    "npx_descriptions": [
     "Report on Artificial Intelligence and Machine Learning Tools for Oil and Gas Development and Production."
    ],
-   "min_confidence": 0.78,
+   "min_confidence": 1.0,
    "reviewed": false
   },
   {
@@ -2103,7 +2123,7 @@
    "npx_descriptions": [
     "Report on Artificial Intelligence and Machine Learning Tools for Oil and Gas Development and Production"
    ],
-   "min_confidence": 0.78,
+   "min_confidence": 1.0,
    "reviewed": false
   },
   {
@@ -2122,7 +2142,7 @@
    "npx_descriptions": [
     "Report on Artificial Intelligence and Machine Learning Tools for Oil and Gas Development and Production."
    ],
-   "min_confidence": 0.78,
+   "min_confidence": 1.0,
    "reviewed": false
   },
   {
@@ -2141,7 +2161,7 @@
    "npx_descriptions": [
     "Report on Artificial Intelligence and Machine Learning Tools for Oil and Gas Development and Production."
    ],
-   "min_confidence": 0.78,
+   "min_confidence": 1.0,
    "reviewed": false
   },
   {
@@ -2161,7 +2181,7 @@
    "npx_descriptions": [
     "Report on Artificial Intelligence and Machine Learning Tools for Oil and Gas Development and Production"
    ],
-   "min_confidence": 0.78,
+   "min_confidence": 1.0,
    "reviewed": true
   },
   {
@@ -2180,7 +2200,7 @@
    "npx_descriptions": [
     "Report on Artificial Intelligence and Machine Learning Tools for Oil and Gas Development and Production"
    ],
-   "min_confidence": 0.78,
+   "min_confidence": 1.0,
    "reviewed": false
   },
   {
@@ -2200,7 +2220,7 @@
    "npx_descriptions": [
     "Report on Artificial Intelligence and Machine Learning Tools for Oil and Gas Development and Production"
    ],
-   "min_confidence": 0.78,
+   "min_confidence": 1.0,
    "reviewed": false
   },
   {
@@ -6354,58 +6374,25 @@
  ],
  "near_misses": [
   {
-   "family": "Parnassus",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.67,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/747546/000102140824002675/"
-  },
-  {
-   "family": "Parnassus",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.5,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/747546/000102140824002675/"
-  },
-  {
    "family": "BlackRock (iShares)",
    "company": "AMZN",
    "meeting_date": "2024-05-22",
    "npx_description": "Establish a Board Committee on Artificial Intelligence",
    "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.8,
+   "title_cover": 0.6,
+   "description_cover": 0.75,
    "runner_up_combined": 0.0,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
   },
   {
    "family": "BlackRock (iShares)",
-   "company": "META",
-   "meeting_date": "2024-05-29",
-   "npx_description": "Report on Human Rights Impact Assessment of Targeted Advertising",
-   "best_guess": "meta-2024-10",
-   "title_cover": 0.67,
-   "description_cover": 1.0,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
-  },
-  {
-   "family": "BlackRock (iShares)",
-   "company": "AAPL",
-   "meeting_date": "2024-02-28",
-   "npx_description": "Report on Use of Artificial Intelligence",
-   "best_guess": "aapl-2024-7",
+   "company": "GOOGL",
+   "meeting_date": "2024-06-07",
+   "npx_description": "Amend Audit and Compliance Committee Charter to Include Artificial Intelligence Oversight",
+   "best_guess": "googl-2024-11",
    "title_cover": 0.5,
-   "description_cover": 0.33,
-   "runner_up_combined": 0.0,
+   "description_cover": 0.25,
+   "runner_up_combined": 0.13,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
   },
   {
@@ -6414,31 +6401,20 @@
    "meeting_date": "2024-05-22",
    "npx_description": "Establish a Board Committee on Artificial Intelligence",
    "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.8,
+   "title_cover": 0.6,
+   "description_cover": 0.75,
    "runner_up_combined": 0.0,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
   },
   {
    "family": "BlackRock (iShares)",
-   "company": "META",
-   "meeting_date": "2024-05-29",
-   "npx_description": "Report on Human Rights Impact Assessment of Targeted Advertising",
-   "best_guess": "meta-2024-10",
-   "title_cover": 0.67,
-   "description_cover": 1.0,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
-  },
-  {
-   "family": "BlackRock (iShares)",
-   "company": "AAPL",
-   "meeting_date": "2024-02-28",
-   "npx_description": "Report on Use of Artificial Intelligence",
-   "best_guess": "aapl-2024-7",
+   "company": "GOOGL",
+   "meeting_date": "2024-06-07",
+   "npx_description": "Amend Audit and Compliance Committee Charter to Include Artificial Intelligence Oversight",
+   "best_guess": "googl-2024-11",
    "title_cover": 0.5,
-   "description_cover": 0.33,
-   "runner_up_combined": 0.0,
+   "description_cover": 0.25,
+   "runner_up_combined": 0.13,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
   },
   {
@@ -6447,52 +6423,30 @@
    "meeting_date": "2024-05-22",
    "npx_description": "Establish a Board Committee on Artificial Intelligence",
    "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.8,
+   "title_cover": 0.6,
+   "description_cover": 0.75,
    "runner_up_combined": 0.0,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
   },
   {
    "family": "BlackRock (iShares)",
-   "company": "META",
-   "meeting_date": "2024-05-29",
-   "npx_description": "Report on Human Rights Impact Assessment of Targeted Advertising",
-   "best_guess": "meta-2024-10",
-   "title_cover": 0.67,
-   "description_cover": 1.0,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
-  },
-  {
-   "family": "BlackRock (iShares)",
-   "company": "AAPL",
-   "meeting_date": "2024-02-28",
-   "npx_description": "Report on Use of Artificial Intelligence",
-   "best_guess": "aapl-2024-7",
+   "company": "GOOGL",
+   "meeting_date": "2024-06-07",
+   "npx_description": "Amend Audit and Compliance Committee Charter to Include Artificial Intelligence Oversight",
+   "best_guess": "googl-2024-11",
    "title_cover": 0.5,
-   "description_cover": 0.33,
-   "runner_up_combined": 0.0,
+   "description_cover": 0.25,
+   "runner_up_combined": 0.13,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
   },
   {
    "family": "BlackRock (iShares)",
-   "company": "AAPL",
-   "meeting_date": "2024-02-28",
-   "npx_description": "Report on Use of Artificial Intelligence",
-   "best_guess": "aapl-2024-7",
-   "title_cover": 0.5,
-   "description_cover": 0.33,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1100663/000102140824004976/"
-  },
-  {
-   "family": "BlackRock (iShares)",
-   "company": "AAPL",
-   "meeting_date": "2024-02-28",
-   "npx_description": "Report on Use of Artificial Intelligence",
-   "best_guess": "aapl-2024-7",
-   "title_cover": 0.5,
-   "description_cover": 0.33,
+   "company": "AMZN",
+   "meeting_date": "2024-05-22",
+   "npx_description": "Establish a Board Committee on Artificial Intelligence",
+   "best_guess": "amzn-2024-16",
+   "title_cover": 0.6,
+   "description_cover": 0.75,
    "runner_up_combined": 0.0,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
   },
@@ -6502,186 +6456,21 @@
    "meeting_date": "2024-05-22",
    "npx_description": "Establish a Board Committee on Artificial Intelligence",
    "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.8,
+   "title_cover": 0.6,
+   "description_cover": 0.75,
    "runner_up_combined": 0.0,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
   },
   {
    "family": "BlackRock (iShares)",
-   "company": "META",
-   "meeting_date": "2024-05-29",
-   "npx_description": "Report on Human Rights Impact Assessment of Targeted Advertising",
-   "best_guess": "meta-2024-10",
-   "title_cover": 0.67,
-   "description_cover": 1.0,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
-  },
-  {
-   "family": "BlackRock (iShares)",
-   "company": "AAPL",
-   "meeting_date": "2024-02-28",
-   "npx_description": "Report on Use of Artificial Intelligence",
-   "best_guess": "aapl-2024-7",
+   "company": "GOOGL",
+   "meeting_date": "2024-06-07",
+   "npx_description": "Amend Audit and Compliance Committee Charter to Include Artificial Intelligence Oversight",
+   "best_guess": "googl-2024-11",
    "title_cover": 0.5,
-   "description_cover": 0.33,
-   "runner_up_combined": 0.0,
+   "description_cover": 0.25,
+   "runner_up_combined": 0.13,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
-  },
-  {
-   "family": "BlackRock (iShares)",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "Establish a Board Committee on Artificial Intelligence",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.8,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
-  },
-  {
-   "family": "BlackRock (iShares)",
-   "company": "META",
-   "meeting_date": "2024-05-29",
-   "npx_description": "Report on Human Rights Impact Assessment of Targeted Advertising",
-   "best_guess": "meta-2024-10",
-   "title_cover": 0.67,
-   "description_cover": 1.0,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1524513/000102140824004930/"
-  },
-  {
-   "family": "Vanguard",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.67,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/36405/000110465924094482/"
-  },
-  {
-   "family": "Vanguard",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.5,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/36405/000110465924094482/"
-  },
-  {
-   "family": "Vanguard",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.67,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/862084/000110465924094269/"
-  },
-  {
-   "family": "Vanguard",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.5,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/862084/000110465924094269/"
-  },
-  {
-   "family": "Calvert",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.67,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/"
-  },
-  {
-   "family": "Calvert",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.5,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/"
-  },
-  {
-   "family": "Calvert",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.67,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/"
-  },
-  {
-   "family": "Calvert",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.5,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1105446/000114036124039144/"
-  },
-  {
-   "family": "Calvert",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.67,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/356682/000114036124038969/"
-  },
-  {
-   "family": "Calvert",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.5,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/356682/000114036124038969/"
-  },
-  {
-   "family": "Domini",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.67,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/851680/000102140824007381/"
-  },
-  {
-   "family": "Domini",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.5,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/851680/000102140824007381/"
   },
   {
    "family": "Impax (Pax)",
@@ -6737,116 +6526,6 @@
    "description_cover": 0.38,
    "runner_up_combined": 0.0,
    "source_url": "https://www.sec.gov/Archives/edgar/data/76721/000139834424017055/"
-  },
-  {
-   "family": "TIAA-CREF",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.67,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
-  },
-  {
-   "family": "TIAA-CREF",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.5,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
-  },
-  {
-   "family": "TIAA-CREF",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.67,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
-  },
-  {
-   "family": "TIAA-CREF",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.5,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
-  },
-  {
-   "family": "TIAA-CREF",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.67,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
-  },
-  {
-   "family": "TIAA-CREF",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.5,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
-  },
-  {
-   "family": "TIAA-CREF",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.67,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
-  },
-  {
-   "family": "TIAA-CREF",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.5,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
-  },
-  {
-   "family": "TIAA-CREF",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE PUBLIC POLICY",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.67,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
-  },
-  {
-   "family": "TIAA-CREF",
-   "company": "AMZN",
-   "meeting_date": "2024-05-22",
-   "npx_description": "SHAREHOLDER PROPOSAL REQUESTING AN ADDITIONAL BOARD COMMITTEE TO OVERSEE THE FINANCIAL IMPACT OF POLICY POSITIONS",
-   "best_guess": "amzn-2024-16",
-   "title_cover": 0.67,
-   "description_cover": 0.5,
-   "runner_up_combined": 0.0,
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1084380/000093041324002594/"
   }
  ],
  "notes": [
