@@ -4,7 +4,7 @@
 // Audience: shareholder-advocacy practitioners. Labels are plain; no definitions or explainers.
 
 const DATA = {};
-const FILES = ["site", "companies", "upcoming", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph", "scorecard", "fund_votes", "asks", "coverage", "value_chain"];
+const FILES = ["site", "companies", "upcoming", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph", "scorecard", "fund_votes", "asks", "coverage", "value_chain", "holdings"];
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
@@ -628,17 +628,22 @@ function renderStart() {
     const first = (document.querySelector(`#grp-${g} .panel`) || {}).id.slice(4);
     return `<li><a href="#${esc(first)}">${esc(b.textContent)}</a>: ${esc(q)}</li>`;
   }).join("");
+  const filings = `<p class="count-line">Checked ${esc(t.last_checked ? fmtDate(t.last_checked.slice(0, 10)) : "not yet")}${t.new_this_run != null ? `: ${plural(t.new_this_run, "new filing")} found` : ""}. Found automatically and not yet reviewed.</p>
+    ${items.length ? `<p><a href="#new">See the ${plural(items.length, "new filing")}</a></p>` : ""}`;
+  // The second pass (after the weekly SEC check has loaded) updates only the filings block, so the rest of the
+  // page, including its largest text, is painted once and not redrawn.
+  const box = document.getElementById("start-new");
+  if (box) { box.innerHTML = filings; return; }
   el.innerHTML = `
     <h2>Key dates and findings</h2>
     <p class="intro">Dates you can act on, three things the data shows, and what each section of the site is for.</p>
     <h3 class="sub-h">Coming up</h3>
     ${comingList ? `<ul class="steps coming-up">${comingList}</ul>` : `<p class="status-note">No ballots or open filing deadlines on file.</p>`}
-    <p><a href="#upcoming">All upcoming votes</a>${coming.length > shown.length ? ` · ${coming.length - shown.length} more open filing deadlines are on each company's profile` : ""}</p>
+    <p><a href="#upcoming">All upcoming votes</a> · <a href="#planner">Plan an engagement at any of these companies</a>${coming.length > shown.length ? ` · ${coming.length - shown.length} more open filing deadlines are on each company's profile` : ""}</p>
     <h3 class="sub-h">What the data shows</h3>
     ${findings ? `<ul class="findings">${findings}</ul>` : `<p class="status-note">No findings recorded.</p>`}
     <h3 class="sub-h">New SEC filings</h3>
-    <p class="count-line">Checked ${esc(t.last_checked ? fmtDate(t.last_checked.slice(0, 10)) : "not yet")}${t.new_this_run != null ? `: ${plural(t.new_this_run, "new filing")} found` : ""}. Found automatically and not yet reviewed.</p>
-    ${items.length ? `<p><a href="#new">See the ${plural(items.length, "new filing")}</a></p>` : ""}
+    <div id="start-new">${filings}</div>
     <h3 class="sub-h">How this site is organized</h3>
     <ul class="steps">${sections}</ul>`;
   wireCompanyLinks(el);
@@ -803,6 +808,7 @@ async function main() {
   renderPeople();
   renderNew();
   renderStart(); // again, now that the weekly SEC check (changes, tracking) has loaded
+  if (window.renderPlanner) window.renderPlanner(DATA);
   labelCounts();
   document.dispatchEvent(new Event("siteready"));
 }

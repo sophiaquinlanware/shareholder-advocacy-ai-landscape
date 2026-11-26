@@ -43,7 +43,7 @@
   {
    "id": "nlpc",
    "name": "National Legal and Policy Center",
-   "type": "other",
+   "type": "anti-ESG proponent",
    "website": "https://nlpc.org",
    "description": "Conservative watchdog filing anti-ESG proposals, including on AI data usage.",
    "source_url": "https://nlpc.org"
@@ -235,7 +235,7 @@
   {
    "id": "inspire",
    "name": "Inspire Investing",
-   "type": "other",
+   "type": "faith-based investor",
    "website": "https://www.inspireinvesting.com",
    "description": "Biblically responsible investment firm filing conservative AI proposals.",
    "source_url": "https://www.inspireinvesting.com"
@@ -832,7 +832,7 @@
   {
    "id": "ncppr",
    "name": "National Center for Public Policy Research",
-   "type": "advocacy nonprofit",
+   "type": "anti-ESG proponent",
    "website": "https://nationalcenter.org",
    "description": "Conservative policy group in Washington, DC that files shareholder proposals through its Free Enterprise Project.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
@@ -6084,6 +6084,132 @@
    "to": "crm-2026-dual-use-defense",
    "relation": "lead filer",
    "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/scottsalesforce21026.pdf"
+  },
+  {
+   "from": "parnassus",
+   "to": "vrsk-2024-responsible-ai",
+   "relation": "lead filer",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf"
+  },
+  {
+   "from": "segal-marco-advisors",
+   "to": "amzn-2024-16",
+   "relation": "filing representative",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm"
+  },
+  {
+   "from": "segal-marco-advisors",
+   "to": "amzn-2025-8",
+   "relation": "filing representative",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm"
+  },
+  {
+   "from": "as-you-sow",
+   "to": "amzn-2026-5",
+   "relation": "filing representative",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926054974/tm261382d4_defa14a.htm"
+  },
+  {
+   "from": "mercy",
+   "to": "amzn-2026-5",
+   "relation": "co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926054974/tm261382d4_defa14a.htm"
+  },
+  {
+   "from": "nlpc",
+   "to": "amzn-2026-climate-cost",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926054974/tm261382d4_defa14a.htm"
+  },
+  {
+   "from": "united-for-respect",
+   "to": "amzn-2026-floor",
+   "relation": "lead filer",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/05/Amazon-Floor-Proposal_-Memo-in-Support-.pdf"
+  },
+  {
+   "from": "green-century",
+   "to": "nvda-2026-7",
+   "relation": "lead filer",
+   "source_url": "https://www.greencentury.com/shareholders-call-for-nvidia-to-report-carbon-costs-of-ai/"
+  },
+  {
+   "from": "mercy",
+   "to": "nvda-2026-7",
+   "relation": "co-filer",
+   "source_url": "https://www.greencentury.com/shareholders-call-for-nvidia-to-report-carbon-costs-of-ai/"
+  },
+  {
+   "from": "ttt-investments",
+   "to": "nvda-2026-military-ai",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/tttnvidia31026.pdf"
+  },
+  {
+   "from": "open-mic",
+   "to": "nvda-2026-military-ai",
+   "relation": "filing representative",
+   "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/tttnvidia31026.pdf"
+  },
+  {
+   "from": "harrington",
+   "to": "googl-2023-audit-committee-review",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+  },
+  {
+   "from": "boston-common",
+   "to": "googl-2024-child-online-safety",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
+  },
+  {
+   "from": "as-you-sow",
+   "to": "meta-2023-community-standards",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
+  },
+  {
+   "from": "proxy-impact",
+   "to": "meta-2025-child-safety",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+  },
+  {
+   "from": "proxy-impact",
+   "to": "meta-2026-child-safety-pay",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+  },
+  {
+   "from": "eko",
+   "to": "msft-2025-9",
+   "relation": "exempt solicitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925010900/i725250px14a6g.htm"
+  },
+  {
+   "from": "abhms",
+   "to": "amzn-2023-7",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923055145/tm2314311d1_defa14a.htm"
+  },
+  {
+   "from": "abhms",
+   "to": "amzn-2024-6",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm"
+  },
+  {
+   "from": "afl-cio",
+   "to": "amzn-2024-16",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm"
+  },
+  {
+   "from": "afl-cio",
+   "to": "amzn-2025-8",
+   "relation": "lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm"
   }
  ]
 }
