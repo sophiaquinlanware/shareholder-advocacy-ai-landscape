@@ -1,6 +1,6 @@
 # Shareholder Advocacy AI Landscape — current state
 
-Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 (UI session: lens Phases 1–4, Value chain tab, categories filter, all live).
+Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 (UI session: Lab pathways rebuilt as routes to a lab).
 
 ## Sessions and branches (read this first)
 
@@ -8,154 +8,93 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 
 
 | Session | Owns | Branch | State |
 |---|---|---|---|
-| Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | none open | On `main`: 60 companies with tiers; rights maps for 29 US companies; value chain (44 ties, `per_tier`); 76 AI proposals at the 29 US-proxy companies (from 2023) with `plain_summary` (71), `ask_id` (12 recurring asks in `data/asks.json`), `vote_history` (16), filing deadlines and company `next_proposal_deadline` with open/passed status, recomputed weekly; fund votes (331 rows) with `pass_through_voting`; **`data/coverage.json`** (25 rows: how far causality-map policies already require each ask; 23 partial, 2 none, 0 full; every row `reviewed: false`); causality now has Colorado SB 26-189 (repeal and replace, signed 2026-05-14). `seeking` is empty: no public calls for co-filers found. |
-| UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, `graph.js`, `lenses.js`, `rules.js`, `valuechain.js`, the other view JS files incl. `votes.js`, `DESIGN.md`, `tests/` | none open (all merged to `main`) | Live: lens Phases 1–4; Value chain tab (12 tabs); Policy and causality as one map; the proposal categories filter and colour option (inert until the data session merges `category`). |
+| Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | `data/census-coalitions` (awaiting its data review) | On `main`: 60 companies with tiers; rights maps for 29 US companies; value chain (44 ties); 76 AI proposals at the 29 US-proxy companies (from 2023) with `ask_id` and `category`; fund votes (331 rows); coverage.json (25 rows, all `reviewed: false`); Ceres, VWFI and IIGCC. The census branch brings 289 organizations, 263 people, `proposal_links`, and a new "engaged directly" edge (Parnassus → 6 companies, with steps). |
+| UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, `graph.js`, `lenses.js`, `rules.js`, `roles.js`, `pathways.js`, `valuechain.js`, other view JS, `DESIGN.md`, `tests/` | `design/lab-routes` → merged to `main` when its check passes | Live: lens Phases 1–4, Value chain tab, proposal categories, company roles site-wide, "AI advocacy network". |
 | Protocol setup | `AGENTS.md`, `CLAUDE.md`, checks, `docs/` structure | `docs-session-onboarding` (local) | Idle. |
 
-**Data contract:** views read only `data/*.json`.
-- **Company fields:** `sectors`, `basis_type`, `engagement_basis` {text,url} (shown as "Why included"), `owner_choice_note`, `shareholder_route` + `route_source_url` or `route_note`, `rights_tracked`, `source_note`. Companies are keyed by `id`, because private companies have no ticker.
-- **Proposal fields:** `status_reason`, `status_source_url`, `proponent`, `proponent_source_url`, `meeting_date_source`, `results_note`, `support_note`.
+**Owner's standing instruction (2026-11-25):** "Don't ask me any questions about publishing or next steps. Just continue until you complete the project." Merge to `main` once the check and reviews pass.
 
-## Phase
+## Tabs (12)
 
-**Round 2 (structure, wording and look) is merged and live.** Plan: docs/plans/2026-11-25-round2-structure.md (revisions 2–3 quote the owner).
+Upcoming votes · Company lookup · Proposals · Fund votes · Rights map · AI advocacy network (`#network`, formerly Co-filer network) · Contacts · Lab pathways · Value chain · Policy and causality · Disclosure scorecard · New filings.
 
-**Tabs (11, task order):**
-1. Upcoming votes (`#upcoming`)
-2. Company lookup
-3. Proposals
-4. Fund votes (`#votes`, unchanged link)
-5. Rights map
-6. Co-filer network
-7. Contacts
-8. Lab pathways
-9. Policy and causality
-10. Disclosure scorecard
-11. New filings
+## Site-wide decisions in force
 
-**Owner decisions recorded (2026-11-25):**
-- Plain header ("Yes, plain header").
-- Why now folded into Policy and causality; How you can weigh in and Data center water removed ("Yes, as described"). Old links redirect.
-- Internal, scenario-led tool.
-- Look: "largely just black and white, but where necessary, there is blue … all the visuals should be blue", on plain white ("Have it plain white, not some off-white background").
-- The network uses saturated distinct colours per node type, a grouped 2D layout and an Obsidian-style Graph settings panel.
+- **Look:** black and white with blue for visuals, on plain white. The network graph alone has a dark Obsidian-style canvas.
+- **Company roles (roles.js):** one classification everywhere: Frontier labs; Chips and hardware; Data centers and power; Cloud and model platforms; Consumer products; Business and government products; Strategic investors. Plan docs/plans/2026-11-26-company-roles.md.
+- **Network legibility:** labels never overlap; the selected label sits on a blue pill; key "only" and "Show all" controls; year scrubber (`upto=`).
+- **Lenses:** Impact, Individual, Policymaker (phases 1–4). Plans are in docs/plans/2026-11-25-lens-phase1/2 and 2026-11-26-lens-phase3/4.
 
-**Protocol deviation:** this round mixes structure and colour/type (AGENTS.md rule 27.3), because the owner directed both during the build.
+## Lab pathways: routes to a lab (this round)
 
-## Latest check (2026-11-25, `design/round2-structure` before merge)
+Plan docs/plans/2026-11-26-lab-routes.md, with Revision 2. The owner's question: which public companies are routes to Lab X, what kind of pull each has, and whether you can act there this season.
 
-| Step | Result |
-|---|---|
-| Lint | pass: 0 errors |
-| Build | pass: 16 data files |
-| Tests: 11 tabs × 1440/390 px × light/dark, load errors, local links, script errors when a tab opens (new) | **24/24 pass**; also 24/24 with `data/company-universe`'s 60-company `companies.json` swapped in |
-| Lighthouse phone | accessibility 100, best practices 100, SEO 100, **performance 99** (bar 80) |
-| Lighthouse desktop | accessibility 100, best practices 100, SEO 100, **performance 76** (bar 80) |
-| Layout shift (CLS) | 0.04 phone, 0.01 desktop (was 0.44–0.81). Fix: `main` reserves a screen of height. |
-| Largest paint | about 6.8s simulated. The first tabs now draw from 4 small files, with d3 async and the site scripts deferred. What's left is the font and data request chain (queue 3). |
+- **Routes table:** one row per company tied to the chosen lab (OpenAI by default). Columns:
+  - Tie: group, type, as of, source, and flags;
+  - Strength: the site's rating, 1–3;
+  - US proxy rights and next filing deadline: open with days left, or passed, computed live;
+  - Filers with AI proposals here: filings only, no exempt solicitations;
+  - Related asks: the site's grouping by tie type;
+  - Past support on related asks.
 
-## Latest review scores (round 2)
+  Default sort is strongest tie, then open deadline. Phones get labelled cards with the deadline second.
+- **Tie groups (site's reading):**
+  - Owner = parent company.
+  - Major shareholder = equity rated 3.
+  - Board seat or observer.
+  - Compute.
+  - Chips.
+  - Co-investor = equity rated 1–2.
+  - Customer = distribution or commercial.
+- **Findings list:**
+  - "No AI proposals filed here yet", only for the 29 companies whose proposals are tracked;
+  - companies by number of filers on record;
+  - open deadlines.
+- **Other sections:**
+  - "Labs reached, by company" as blue HTML bars;
+  - "Gaps in the tie data";
+  - the map, below, with the filer column trimmed to the chosen lab and labels wrapped;
+  - the All ties table, collapsed.
+- **Labs that are listed themselves** (Anthropic as ANT; xAI inside SpaceX) show their own rights record.
+- **Links to recheck:** links the data's gaps list flags are marked "URL to recheck (see gaps)".
+- **Reviews:**
+  - Plan R1: UX 72, data 64.
+  - Result R1: UX 76, data 76.
+  - Result R2: UX 84 PASS, data 90 PASS. Their remaining points were fixed after R2 (round cap) and not re-reviewed: the tie-sort phrase was reversed; faded map labels now stay readable (circles fade, text stays --ink-soft); filer lines are thinner on phones; the sort phrase survives a lab change; board seats have their own group; the wording polish was applied.
 
-| Field | Plan R1 | Result R1 | Result R2 |
-|---|---|---|---|
-| UX / content | 76 REVISE | 74 REVISE | 80 PASS |
-| Visual design | 72 REVISE | 74 REVISE | 78 REVISE (round cap reached). After R2: causality axis bug fixed, chart opens at the latest events, lanes 70px; network label declutter added. Not re-reviewed. |
-| Accessibility | 72 REVISE | 86 PASS | not needed |
-| Data accuracy | 68 REVISE | 76 REVISE | 84 PASS. Its minor content fault ("company reports N on another basis") was reworded to "N with a basis note or caveat (see notes)" after R2; not re-reviewed. |
+## Latest check
 
-**Network node key by value-chain tier** (owner, after R2): "Instead of 'company,' have 'Frontier AI Labs,' 'hyperscalers,' 'chip builders' … coordinate with the other chat". Built to read `tier` from graph.json, with labels verbatim from the data session. It shows "Company (tier not yet assigned)" until `data/value-chain` merges. Tested with that branch's data: 24/24 pass.
-
-## Lens system (Co-filer network)
-
-The owner's spec has four phases, and each phase gets its own plan and reviews in docs/plans and docs/reviews. **The owner said on 2026-11-25: "Don't ask me any questions about publishing or next steps. Just continue until you complete the project."** So each phase merges to `main` once its check and reviews pass.
-
-- **Phase 1 (live since 4e96e7d):**
-  - "View as" lenses (`lenses.js`) and edge confidence (`rules.js`);
-  - "What you can do";
-  - keyboard nodes;
-  - labels off until a node is selected;
-  - the dark Obsidian-style canvas.
-- **Phase 2 (Impact investor; plan docs/plans/2026-11-25-lens-phase2.md, Revision 2 plus build notes):**
-  - **Deadline rings:** a countdown arc from company `next_proposal_deadline`, about 22 companies live. Proposal `filing_deadline` dates are past once a proposal is on the ballot.
-  - **Seeking asks:** no live data yet; "exempt solicitation" asks are hidden by design (Never claim 1).
-  - **Resubmission marks:** thresholds 5/15/25 in `rules.js`, flagged "verify". Vote chains are joined across nodes. 9 proposals are flagged live. Every line says the earlier votes are matched in this dataset.
-  - **My holdings:** kept in this browser only.
-  - **Topics not filed:** gap nodes scoped to companies with AI proposals in this dataset.
-  - **Find a path to…:** breadth-first search with labelled hops.
-- **Owner decision to confirm:** exempt-solicitation seeking asks, and the owner's example action "Write an exempt solicitation", are not shown. The site states "No exempt solicitation on file for this vote" instead.
-- **Performance:** desktop fell to 75 when the larger data merged; loading Inter without blocking brought it to 98.
-- **Phase 2 check (merged with main 64271e1):** 88 passed, 4 skipped (keyboard tests at desktop only); Lighthouse 100/100/100/100 phone, 100/100/100/98 desktop.
-- **Phase 2 reviews:**
-  - plan R1: UX 68, accessibility 74, data 62, all REVISE; Revision 2 followed.
-  - result R1: UX 74, accessibility 84 PASS, data 70.
-  - result R2: UX 84 PASS, data 86 PASS. Their remaining points were fixed after R2 and not re-reviewed: the ring reads as the threshold after the vote, "Close to the N% threshold", a refile goes to the meeting after the company's open deadline, and "at the threshold" covers a 0-point margin.
-
-- **Phase 3 (Individual investor; plan docs/plans/2026-11-26-lens-phase3.md, Revision 2 plus build notes):** a list first (`view=feed|graph`).
-  - **Input and list:** a tickers-or-fund input lists upcoming AI proposals with `plain_summary` (or the title), the meeting date, the proxy note and "Read the proxy statement".
-  - **Fund votes:** "How {Family} funds voted last year", using the Fund votes tab's join and wording (`window.FundVotes`).
-  - **Definitions:** plain-language definitions open on hover or tap, in this lens only. PRODUCT.md and DESIGN.md record the exception.
-  - **Bigger picture:** "See the bigger picture" opens the graph with holdings applied.
-  - **Change to the owner's spec:** fund nodes are not added to the graph, because fund_votes.json has no graph edges. Fund votes appear as feed lines.
-- **Legibility (owner, 2026-11-26):**
-  - graph labels never overlap; the browser tooltip is removed;
-  - column headers sit on an opaque strip that nodes can't enter;
-  - filer row labels are dropped. The owner asked whether the axes help. The answer given: the column headers do, the row labels didn't.
-- **Process slip (2026-11-26):** a command chain pushed Phase 2 to `main` while one test (a timing flake) was failing. Fixed 3 minutes later in 1bfef97, with the check passing. Pushes are now conditional on the check's exit code.
-- **Tests:** Playwright is capped at 3 workers, because the local python server dropped connections under full parallel load.
-
-- **Phase 4 (Policymaker; plan docs/plans/2026-11-26-lens-phase4.md):**
-  - **Asks:** the 12 recurring asks (asks.json) are nodes with their proposals.
-  - **Coverage marks** (coverage.json): partially covered, no rule in this map, or not yet assessed, each "this site's reading, not yet confirmed by a person".
-  - **Ask panel:** recurrence by status, then support by year with labelled averages (an exception to the no-average rule, by the owner's spec), then coverage lines.
-  - **Year scrubber** in all lenses (`upto=`).
-  - **Reviews:** UX R1 72, R2 78; accessibility R1 78, R2 88 PASS; data R1 80, R2 82. R2's fixes are in but not re-reviewed (round cap): the abstentions mark was dropped, computed-figure detection widened, the year-slider cap reset, and the scrubber moved under the graph.
-  - **Owner's "company commitments":** shown as "company actions in the Causality map that mention this ask" (companies and labs lanes only). No ask has one today: the data has no commitment field, and the asks' match terms miss e.g. ev-msft-community-first ("datacenter", "electricity"). That's for the data session.
-- **Owner asks during Phase 4 (2026-11-26):**
-  - every Proposals-chart mark is filled;
-  - Lab pathways is back on white;
-  - the network column is "Value chain, by tier";
-  - Lab pathways' middle column is "Value chain (companies tied to labs)", sorted by tier with tier tags, not "public companies" (some are private, and labs may list).
-
-- **Policy and causality (owner, via the data session, 2026-11-26):** "i dont want redundant information ... my favorite is the visual". The map is the view. The events table is a collapsed list view, the tab has a one-line intro, and the policy timeline is gone (site.json `why_now` is empty).
-- **Value chain tab (#value-chain, 12th tab; plan docs/plans/2026-11-26-value-chain-ui.md):**
-  - **Flow:** a layered flow of the 44 sourced ties by tier, blue on white.
-  - **Panels:** tier and company panels, structured by the owner's three parts (labs connected, asks made, who is active), plus shareholder routes.
-  - **Engagement by tier:** a heatmap of true totals only; capped lists in value_chain.json are listed, never counted.
-
-- **Value chain reviews:** R1 UX 72, accessibility 77, data 72; R2 UX 86, accessibility 88, data 86, all PASS.
-- **Proposal categories (owner, via the data session, 2026-11-26):**
-  - **Proposals tab:** a "What it asks about" filter, plus the categories note.
-  - **Network:** Graph settings → "Colour proposals by what they ask about".
-  - Both read asks.json `categories` and `category` on proposals or graph nodes, and show nothing until that data is on `main`.
-  - Not separately reviewed (small, data-driven, tested with test data).
+`npm run check` on `design/lab-routes` before the R2 polish: lint pass, build pass, Playwright 156 passed / 4 skipped, Lighthouse phone 100/100/100/100, desktop 100/100/100/98. Re-run after the polish: same result (156 passed, Lighthouse 100 / 98). Earlier rounds: Lighthouse 100 accessibility on both, performance 98 desktop / 99 phone.
 
 ## Next (UI session)
 
-1. **Phase 3 follow-up:** show `pass_through_voting` from `data/pass_through_voting.json` (`offered` null means no program found on the pages checked, never "no").
-2. **Lens Phase 4 (Policymaker):** clusters by topic, sized by how often an ask recurs; `coverage` on ask-to-policy edges. Data is live: `data/coverage.json` entries carry `ask_id`, `policy_id`, `graph_id` (the graph's `ev-` node id, null for "none"), `coverage`, `note`, `source_url`, `policy_status`, `reviewed`.
-3. **Value chain tab follow-ups:**
-   - per-tier outcomes (adopted, withdrawn after agreement) aren't in the data yet;
-   - `asks_made` and `active_filers` are capped at 12 in build_value_chain.py, and true totals would let the heatmap show them.
+1. **"Engaged directly" edge** (data session, branch `data/census-coalitions`): add a legend entry and list its steps (date, title, source) in the network panel. Wait for the branch to merge.
+2. **graph.json grows to 790 nodes / 735 KB** with the census branch. Check load time and label density after the merge.
+3. **Phase 3 follow-up:** show `pass_through_voting` (`offered` null means no program found on the pages checked, never "no").
+4. **Value chain follow-ups:** per-tier outcomes aren't in the data yet; `asks_made` and `active_filers` are capped at 12, and true totals would let the heatmap show them.
 
 ## Queue (found, not picked up)
 
-0. **Policy coverage rows need a person's sign-off** (`reviewed: false` on all 25). Data accuracy review R1 74, R2 90 PASS.
-1. **Fund votes follow-ups.** Fund votes now cover all 29 US-proxy companies (331 rows).
-   - (a) 18 near-miss votes sit in `data/fund_votes.json` `near_misses` for a person to confirm.
-   - (b) Meta 2026 Item 3 stays "Needs checking": the proxy shows Items 3 and 11 are distinct AI-data proposals that some fund filings describe the same way (reason in `held_back_reasons`).
-   - (c) Peer families are not reviewed row by row (shown with †).
-   - (d) Praxis and Domini 2025-26 file N-PX as text only.
-2. **Performance:** fixed for now: Inter loads without blocking (desktop 98). Self-hosting Inter, or splitting the 383 KB `graph.json`, would help if the data keeps growing.
-3. **Causality time scale:** most events fall in 2025–26. A piecewise time scale would give them more room.
-4. **Phone tables:** Company lookup's history and lab-tie tables are cramped at 390px. Stack or drop low-value columns on phones (UX R2).
-5. **Playwright still runs a "dark" project** although the site has one white theme. Drop the dark projects in `playwright.config.js` to halve test time.
-6. **Network link contrast:** links are `--blue-3` at 0.35 opacity (about 1.5:1). The dotted "inferred" lines are hard to tell from dashed membership lines at 1px. The panel and List view carry the same facts as text. Raising the opacity makes the graph busier, so it's for the owner (accessibility R1).
-7. **Proposals tab has no filer filter**, so the network can't offer "Open its filings in Proposals".
-
-12. **Ceres and the Valuing Water Finance Initiative (owner asked, 2026-11-26):** these aren't in data/ yet. Add them as coalitions, with member edges to filers already in the graph, the companies they engage (data-center water and energy) and any AI data-center events. The data session's research agent may have left results in its scratchpad (ceres.json); nothing has been merged. Data session.
+1. **Two-step routes to a lab** (owner, 2026-11-26) using `data/value_chain_ties.json`, e.g. TSMC → Nvidia → OpenAI. Show as "two-step route", with both ties sourced.
+2. **Investor side of Lab pathways** (owner, 2026-11-26) once 13F holdings are collected: which funds hold the route companies. Data session first.
+3. **Policy coverage rows need a person's sign-off** (`reviewed: false` on all 25).
+4. **Fund votes follow-ups:**
+   - 18 near-miss votes to confirm;
+   - Meta 2026 Item 3 is marked "Needs checking";
+   - peer families have not been reviewed row by row;
+   - Praxis and Domini 2025–26 N-PX filings are text only.
+5. **Performance:** self-host Inter, or split `graph.json`, if the data keeps growing (now more pressing; see Next 2).
+6. **Causality time scale:** most events are 2025–26; a piecewise scale would give them room.
+7. **Phone tables:** Company lookup's history and lab-tie tables are cramped at 390 px.
+8. **Playwright still runs "dark" projects** although the site has one theme; dropping them halves test time.
+9. **Network link contrast:** links are about 1.5:1 at 0.35 opacity. The panel and List view carry the same facts. This one is for the owner.
+10. **Proposals tab has no filer filter**, so the network can't offer "Open its filings in Proposals".
+11. **Sticky tab bar on phones** takes about 200 px and covers part of tall charts when scrolling (lab routes UX review R1 #9).
+12. **The shared `sortableTable` puts `aria-sort="none"` on every sortable column.** Lab pathways strips it; the other tables still have it.
+13. **Network "focus company of" edges** (data session) use the default line style, with no legend entry.
 
 ## Owner actions
 
 - Confirm or change the Lighthouse bar (ADR 0002).
-- Decide on queue items 3 and 7.
+- Decide on queue items 6 and 9.
 - Supply three positioning points with sources for PRODUCT.md, or say to drop that section.

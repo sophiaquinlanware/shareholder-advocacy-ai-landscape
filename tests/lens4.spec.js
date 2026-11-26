@@ -61,9 +61,10 @@ test("year scrubber caps proposals, keeps upto= in the URL, and gives way to a s
   await expect(page).toHaveURL(new RegExp(`upto=${min}`));
   await page.click('#tab-network .seg [data-view="list"]');
   const years = await page.$$eval("#net-list tbody tr", (rows) =>
+    // Match on the Type cell, not the whole row: organization rows can name proposals they solicited on.
     rows
-      .map((tr) => tr.textContent)
-      .filter((t) => /Proposal/.test(t))
+      .filter((tr) => /^\s*Proposal\b/.test((tr.children[1] || {}).textContent || ""))
+      .map((tr) => tr.children[0].textContent)
       .map((t) => Number((t.match(/ (20\d\d):/) || [])[1]))
       .filter(Boolean),
   );
@@ -119,4 +120,47 @@ test("Proposals: filter by what a proposal asks about (when the data has categor
   await page.selectOption("#feed-cat", "users");
   await expect(page.locator("#feed-count")).toContainText(`Showing ${n} proposal`);
   await expect(page.locator("#tab-feed")).toContainText("Test note.");
+});
+
+test("Lab pathways: routes to a lab, sorted by strongest tie, with findings, bars and gaps", async ({ page }, info) => {
+  await page.goto("/index.html#pathways");
+  await page.waitForLoadState("networkidle");
+  const routes = page.locator("#pw-routes tbody tr");
+  await expect(page.locator("#pw-routes-h")).toHaveText("Routes to OpenAI");
+  expect(await routes.count()).toBeGreaterThan(3);
+  // Default sort: strongest tie first.
+  const strengths = await page.$$eval("#pw-routes tbody tr td:nth-child(3) .pw-tie:first-child strong", (els) =>
+    els.map((e) => Number(e.textContent)),
+  );
+  expect([...strengths].sort((a, b) => b - a)).toEqual(strengths);
+  await expect(page.locator("#pw-status")).toContainText(/companies tied to OpenAI: \d+ with an open filing deadline/);
+  await expect(page.locator("#pw-findings")).toContainText("No AI proposals filed here yet");
+  // OpenAI has a company record with no ticker: no "listed itself" line.
+  await expect(page.locator("#pw-lab-about")).not.toContainText("listed itself");
+  // Phones: the rights-and-deadline cell comes right after the company on each card.
+  if (info.project.name.startsWith("phone")) {
+    const second = await page.$eval("#pw-routes tbody tr", (tr) => {
+      const cells = [...tr.children].sort(
+        (a, b) => Number(getComputedStyle(a).order) - Number(getComputedStyle(b).order),
+      );
+      return cells[1].dataset.col;
+    });
+    expect(second).toBe("US proxy rights and next filing deadline");
+  }
+  expect(await page.locator("#pw-bars li").count()).toBeGreaterThan(5);
+  expect(await page.locator(".pw-gaps li").count()).toBeGreaterThan(0);
+  // Choosing another lab rebuilds the table; sorting announces itself.
+  await page.click('#tab-pathways [data-lab="anthropic"]');
+  await expect(page.locator("#pw-routes-h")).toHaveText("Routes to Anthropic");
+  await expect(page.locator("#pw-lab-about")).toContainText("ANT");
+  await page.locator('#pw-routes .th-sort[data-sort="company"]').press("Enter");
+  await expect(page.locator("#pw-routes th[aria-sort='ascending']")).toHaveCount(1);
+  await expect(page.locator("#pw-status")).toContainText("tied to Anthropic");
+  await expect(page.locator("#pw-status")).toContainText("Sorted by company, A to Z");
+  // No sideways page scroll.
+  const over = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  expect(over).toBeLessThanOrEqual(0);
+  await page.screenshot({ path: `tests/screenshots/lab-routes-${info.project.name}.png`, fullPage: true });
+  await page.locator("#pw-graph").screenshot({ path: `tests/screenshots/lab-routes-map-${info.project.name}.png` });
+  await page.locator("#pw-routes").screenshot({ path: `tests/screenshots/lab-routes-table-${info.project.name}.png` });
 });

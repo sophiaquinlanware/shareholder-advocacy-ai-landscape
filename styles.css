@@ -360,3 +360,49 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
 .leg-item { display: inline-flex; align-items: center; gap: 2px; }
 .leg-only { font: 12px var(--sans); color: var(--accent); background: none; border: 0; padding: 2px 4px; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
 .leg-all { margin-right: 4px; }
+
+/* Lab pathways: routes to a lab (docs/plans/2026-11-26-lab-routes.md) */
+.pw-about p { margin: 6px 0; font-size: 14px; }
+.pw-routes-t td { vertical-align: top; font-size: 13px; }
+.pw-routes-t td:first-child { min-width: 120px; }
+.pw-routes-t td:nth-child(2) { min-width: 240px; }
+.pw-routes-t td:nth-child(3), .pw-routes-t td:nth-child(4) { min-width: 170px; }
+.pw-tie + .pw-tie { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); }
+.pw-flag { font-size: 11px; border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; color: var(--ink-soft); white-space: nowrap; }
+.pw-asks { margin: 0; padding-left: 16px; }
+.pw-findings { margin: 4px 0; padding-left: 18px; font-size: 14px; }
+.pw-findings li { margin: 4px 0; }
+.pw-gaps { font-size: 14px; padding-left: 18px; }
+.pw-gaps li { margin: 4px 0; }
+.pw-bars { list-style: none; margin: 8px 0; padding: 0; }
+.pw-bar { display: grid; grid-template-columns: 150px minmax(80px, 1fr) 2fr; gap: 10px; align-items: center; font-size: 13px; padding: 3px 0; }
+.pw-bar-track { display: flex; align-items: center; gap: 6px; }
+.pw-bar-fill { display: block; height: 14px; background: var(--blue-2); border-radius: 2px; min-width: 2px; }
+.pw-bar.on .pw-bar-fill { background: var(--blue-1); }
+.pw-bar.on .pw-bar-name { font-weight: 600; }
+.pw-bar-n { font-variant-numeric: tabular-nums; }
+.pw-bar-labs { color: var(--ink-soft); font-size: 12px; }
+.pw-cos { margin: 8px 0; }
+.pw-cos summary, .pw-all summary { cursor: pointer; font-weight: 600; font-size: 14px; }
+.pw-panel:empty { display: none; }
+.pw-panel { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 12px 14px; margin-top: 10px; font-size: 13px; }
+.pw-all { margin-top: 20px; }
+/* Phones: each route reads as a card, cells labelled with their column. */
+@media (max-width: 640px) {
+  .pw-routes { overflow-x: visible; }
+  .pw-routes-t, .pw-routes-t tbody, .pw-routes-t tr, .pw-routes-t td { display: block; width: auto; min-width: 0 !important; }
+  .pw-routes-t thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .pw-routes-t tr { border-bottom: 2px solid var(--line); padding: 8px 10px; }
+  .pw-routes-t td { border: 0; padding: 4px 0; overflow-wrap: anywhere; }
+  .pw-routes-t td::before { content: attr(data-col); display: block; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); }
+  .pw-bar { grid-template-columns: 110px 1fr; }
+  .pw-bar-labs { grid-column: 1 / -1; }
+}
+.pw-more { display: inline; }
+.pw-more summary { display: inline; cursor: pointer; color: var(--accent); text-decoration: underline; }
+.pw-more[open] summary { display: block; }
+@media (max-width: 640px) {
+  .pw-routes-t tr { display: flex; flex-direction: column; }
+  .pw-routes-t td:nth-child(4) { order: -1; }
+  .pw-routes-t td:first-child { order: -2; }
+}
