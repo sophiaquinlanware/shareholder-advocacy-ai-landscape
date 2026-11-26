@@ -108,7 +108,7 @@ function renderUpcoming() {
 
 // Earlier AI votes at a company: only proposals with a vote-results filing and a meeting date (the same
 // rule as the Proposals chart). Count, median and high at the stored precision, plus how many of them
-// the company reports on another basis (their notes are in the history table).
+// carry a basis note or caveat (their notes are listed under the history table).
 const pct = (x) => `${Math.round(x * 100) / 100}%`;
 function history(ticker) {
   const all = ((DATA.proposals && DATA.proposals.proposals) || []).filter((p) => p.company === ticker && p.status === "voted");
@@ -119,10 +119,11 @@ function history(ticker) {
   const median = v.length % 2 ? v[mid] : (v[mid - 1] + v[mid]) / 2;
   return { voted: v.length, total: all.length, median, max: v.at(-1), basis: rows.filter((p) => p.support_note && !/match/i.test(p.support_note)).length };
 }
-// "11 votes with a filing · median 21.2% · high 36.19%", flagging any the company reports on another basis.
+// "11 votes with a filing · median 21.17% · high 36.19%", flagging how many carry a basis note or caveat.
 function historyText(h) {
   if (!h.voted) return h.total ? `${h.total} voted, no vote-results filing recorded` : "";
-  return `${plural(h.voted, "vote")} with a filing${h.total > h.voted ? ` (of ${h.total})` : ""} · median ${pct(h.median)} · high ${pct(h.max)}${h.basis ? ` · company reports ${h.basis} on another basis` : ""}`;
+  const figures = h.voted === 1 ? pct(h.max) : `median ${pct(h.median)} · high ${pct(h.max)}`;
+  return `${plural(h.voted, "vote")} with a filing${h.total > h.voted ? ` (of ${h.total})` : ""} · ${figures}${h.basis ? ` · ${h.basis} with a basis note or caveat (see notes)` : ""}`;
 }
 // Support notes repeat across many rows (e.g. every dual-class vote), so each distinct note is listed
 // once under its table and rows carry its number.
@@ -297,7 +298,7 @@ function renderFeed() {
 
   el.innerHTML = `
     <h2>Proposals</h2>
-    <p class="intro">${plural(all.length, "proposal")}, meetings ${years[0]}–${years.at(-1)}. Support = for ÷ (for + against); where a company reports on a different basis, its note is shown.</p>
+    <p class="intro">${plural(all.length, "proposal")}, meetings ${years[0]}–${years.at(-1)}. Support = for ÷ (for + against); where a filing gives counts only or another basis applies, a numbered note says so.</p>
     <div class="status-filter" role="group" aria-label="Filter by status" id="feed-status"></div>
     <div class="net-controls">
       <select id="feed-co" aria-label="Company"><option value="">All companies</option>${companies.map((c) => `<option value="${esc(c)}">${esc(companyName(c))}</option>`).join("")}</select>
@@ -369,7 +370,7 @@ function renderFeed() {
     const votedHere = all.filter((p) => p.status === "voted" && filterOn(p));
     const skipped = votedHere.length - pts.length;
     const topicKeys = topics.map((t) => `<span class="leg static"><svg class="mark" viewBox="-6 -6 12 12" aria-hidden="true"><path d="${typeof d3 !== "undefined" ? d3.symbol(d3[symbolName(topicStyle(t).shape)], 60)() : ""}" fill="${topicColor(t)}"></path></svg>${esc(t)}</span>`).join("");
-    key.innerHTML = `${topicKeys}<span class="leg static"><svg class="mark" viewBox="-6 -6 12 12" aria-hidden="true"><circle r="4" fill="none" stroke="${cssVar("--ink-soft")}" stroke-width="1.6"></circle></svg>Company reports on another basis (see table)</span>
+    key.innerHTML = `${topicKeys}<span class="leg static"><svg class="mark" viewBox="-6 -6 12 12" aria-hidden="true"><circle r="4" fill="none" stroke="${cssVar("--ink-soft")}" stroke-width="1.6"></circle></svg>Basis note or caveat (see table)</span>
       <p class="note">${plural(pts.length, "voted proposal")} plotted.${skipped > 0 ? ` ${plural(skipped, "voted proposal has", "voted proposals have")} no meeting date or vote-results filing recorded and appear in the table only.` : ""} Upcoming, withdrawn and excluded proposals are in the table.</p>`;
     if (typeof d3 === "undefined") return;
     if (!pts.length) { box.innerHTML = `<p class="status-note">No voted proposals with a dated vote-results filing match these filters.</p>`; return; }
@@ -635,6 +636,8 @@ async function main() {
   // The Proposals chart may have been skipped if its tab opened before d3 arrived.
   const feed = document.getElementById("tab-feed");
   if (!feed.hidden) { delete feed.dataset.drawn; feed.hidden = true; feed.hidden = false; }
+  // Primary value-chain tier per listed company, for the network's node types.
+  window.companyTiers = new Map((DATA.companies || []).filter((c) => c.ticker && (c.tier || c.primary_tier)).map((c) => [c.ticker, c.tier || c.primary_tier]));
   window.renderNetwork(DATA.graph && DATA.graph.nodes ? DATA.graph : DATA.network, (DATA.people || {}).people);
   window.renderPathways(DATA.pathways, DATA.graph && DATA.graph.nodes ? DATA.graph : DATA.network);
   window.renderCausality(DATA.causality);

@@ -112,12 +112,12 @@ Every item below overrides the matching part of the plan above.
 
 **Proposals:**
 - **Order:** status filter (5 buttons with counts: All, Voted, Upcoming, Withdrawn, Excluded), company, topic and year selects, count line (`aria-live="polite"`), and a "Clear filters" button shown only while filtered. Then the dot plot, then the table.
-- **Method line, computed:** "{n} proposals, meetings {first year}–{last year}. Support = for ÷ (for + against); where a company reports on a different basis, its note is shown."
+- **Method line, computed:** "{n} proposals, meetings {first year}–{last year}. Support = for ÷ (for + against); where a filing gives counts only or another basis applies, a numbered note says so." (Wording corrected after result review R2 data accuracy: the 8-Ks give counts, so "company reports on another basis" was not supported.)
 - **Dot plot:**
   - Contents: voted proposals that have both a `meeting_date` and a `results_url`. The caption says how many are not plotted and why ("{k} voted proposals have no meeting date or vote-results filing recorded; they are in the table").
   - Axes and marks: x is meeting date. y is support, 0–60% (or max+5 if higher). One mark per proposal.
   - Topics: shape and colour per topic (circle, square, triangle) from a new topic palette `--tp-*`, kept apart from the status and accent colours. Proposals that share a date are spread 7px apart horizontally.
-  - Basis notes: a proposal with a `support_note` gets a hollow mark, keyed "company reports on another basis (see table)".
+  - Basis notes: a proposal with a `support_note` gets a hollow mark, keyed "basis note or caveat (see table)".
   - Reference line: labelled "50% of for + against", not "pass".
   - Interaction: clicking a mark scrolls to its table row and highlights it.
   - Accessibility: the svg has `role="img"` and an `aria-label` summarising n and range. The table plus filters are the full equivalent.

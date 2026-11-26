@@ -10,8 +10,19 @@
     const mx = (sx + tx) / 2 - (ty - sy) * 0.15, my = (sy + ty) / 2 + (tx - sx) * 0.15;
     return `M${sx},${sy}Q${mx},${my} ${tx},${ty}`;
   };
+  // Companies and labs are typed by their primary value-chain tier ("tier" on graph.json nodes, set by the
+  // data session from data/value_chain.json; labels verbatim from there). A company with no tier stays "Company".
+  const TIERS = [
+    { id: "chips", label: "Chip builders" },
+    { id: "datacenters", label: "Data centers and power" },
+    { id: "compute", label: "Hyperscalers and AI clouds" },
+    { id: "labs", label: "Frontier AI labs" },
+    { id: "capital", label: "Strategic investors" },
+    { id: "deployers", label: "AI deployers" },
+  ];
   const TYPE_LABEL = {
-    company: "Company",
+    ...Object.fromEntries(TIERS.map((t) => ["tier-" + t.id, t.label])),
+    company: "Company (tier not yet assigned)",
     proposal: "Proposal",
     "impact/ESG asset manager": "Impact or ESG asset manager",
     "advocacy nonprofit": "Advocacy nonprofit",
@@ -22,12 +33,13 @@
     coalition: "Coalition",
     other: "Other investor",
     person: "Engagement lead",
-    lab: "Frontier lab",
+    lab: "Frontier AI lab (tier not yet assigned)",
     policy: "Policy or rule",
     response: "Company or investor response",
     public: "Public engagement",
   };
   const TYPE_VAR = {
+    ...Object.fromEntries(TIERS.map((t) => ["tier-" + t.id, "--n-tier-" + t.id])),
     company: "--n-company",
     proposal: "--n-proposal",
     "impact/ESG asset manager": "--n-manager",
@@ -57,6 +69,10 @@
     const nodes = G.nodes.map((n) => {
       let kind = n.type;
       if (kind === "investor") kind = TYPE_VAR[n.org_type] ? n.org_type : "other";
+      if (kind === "company" || kind === "lab") {
+        const tier = n.tier || (window.companyTiers || new Map()).get(n.ticker);
+        if (tier && TYPE_LABEL["tier-" + tier]) kind = "tier-" + tier;
+      }
       return { ...n, kind, label: n.label };
     });
     const ids = new Set(nodes.map((n) => n.id));
@@ -110,8 +126,8 @@
     { x: 0.06, label: "People", kinds: ["person"] },
     { x: 0.25, label: "Filers", kinds: FILER_ROWS },
     { x: 0.5, label: "Proposals", kinds: ["proposal"] },
-    { x: 0.73, label: "Companies", kinds: ["company"] },
-    { x: 0.92, label: "Frontier labs", kinds: ["lab"] },
+    { x: 0.73, label: "Companies", kinds: ["company", ...TIERS.filter((t) => t.id !== "labs").map((t) => "tier-" + t.id)] },
+    { x: 0.92, label: "Frontier labs", kinds: ["lab", "tier-labs"] },
   ];
   const TOP_BAND = ["policy", "response", "public"];
   // Columns whose node types are all hidden give up their space; the rest spread across the width.
@@ -154,7 +170,11 @@
   const groupY = (d) => {
     if (TOP_BAND.includes(d.kind)) return 0.06;
     const i = FILER_ROWS.indexOf(d.kind);
-    return i >= 0 ? 0.16 + (i / (FILER_ROWS.length - 1)) * 0.76 : 0.55;
+    if (i >= 0) return 0.16 + (i / (FILER_ROWS.length - 1)) * 0.76;
+    // Companies: one band per value-chain tier, top to bottom in value-chain order.
+    const companyTiers = TIERS.filter((t) => t.id !== "labs");
+    const t = companyTiers.findIndex((x) => "tier-" + x.id === d.kind);
+    return t >= 0 ? 0.16 + (t / (companyTiers.length - 1)) * 0.76 : 0.55;
   };
   const SLIDERS = [
     { group: "Display", key: "textSize", label: "Text size", min: 8, max: 20, step: 1, fmt: (v) => v + "px" },
@@ -217,6 +237,7 @@
     state.node.attr("r", radius);
     state.labels.attr("font-size", (d) => (d.kind === "company" ? state.cfg.textSize + 2 : state.cfg.textSize)).attr("dx", (d) => radius(d) + 4);
     state.linkSel.attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.4 : 1) * state.cfg.linkScale);
+    if (!relayout) declutter();
     applyStyles();
     intro();
     if (state.view === "list") drawList();
@@ -269,7 +290,7 @@
   function intro() {
     refreshConnected();
     const shown = state.data.nodes.filter(visible).length;
-    document.getElementById("net-intro").textContent = `${shown} of ${state.data.nodes.length} nodes shown. Node size = number of connections.`;
+    document.getElementById("net-intro").textContent = `${shown} of ${state.data.nodes.length} nodes shown. Node size = number of connections. Company tiers are this site's reading of each company's main role in the AI value chain.`;
   }
 
   function neighbors(id) {
@@ -348,6 +369,25 @@
     return baseVisible(n) && (state.cfg.orphans || state.connected.has(n.id));
   }
 
+  // Default labels: companies, labs (all tiers) and nodes at or above the label threshold.
+  const isCompanyKind = (k) => k === "company" || k === "lab" || String(k).startsWith("tier-");
+  const labelCandidate = (d) => isCompanyKind(d.kind) || (d.degree || 0) >= state.cfg.labelMin;
+  // Hide default labels that would print over a higher-priority one (companies and labs first, then by
+  // connections). Hovering or selecting a node still shows its label.
+  function declutter() {
+    state.hiddenLabels = new Set();
+    if (!state.labels) return;
+    const kept = [];
+    const items = [];
+    state.labels.each(function (d) { if (visible(d) && labelCandidate(d)) items.push({ d, el: this }); });
+    items.sort((a, b) => (isCompanyKind(b.d.kind) - isCompanyKind(a.d.kind)) || (b.d.degree || 0) - (a.d.degree || 0));
+    for (const { d, el } of items) {
+      const b = el.getBBox();
+      if (kept.some((k) => b.x < k.x + k.width + 2 && k.x < b.x + b.width + 2 && b.y < k.y + k.height && k.y < b.y + b.height)) state.hiddenLabels.add(d.id);
+      else kept.push(b);
+    }
+  }
+
   function applyStyles() {
     refreshConnected();
     const focusId = state.hover || state.selected;
@@ -365,7 +405,7 @@
       .attr("opacity", (d) => {
         if (q) return d.label.toLowerCase().includes(q) ? 1 : 0;
         if (near) return near.has(d.id) ? 1 : 0;
-        return d.kind === "company" || d.kind === "lab" || (d.degree || 0) >= state.cfg.labelMin ? 1 : 0;
+        return labelCandidate(d) && !state.hiddenLabels.has(d.id) ? 1 : 0;
       });
   }
 
@@ -440,7 +480,8 @@
     };
     state.draw = draw;
     sim.on("tick", draw);
-    if (REDUCED_MOTION) { sim.stop(); sim.tick(300); draw(); }
+    sim.on("end", () => { declutter(); applyStyles(); });
+    if (REDUCED_MOTION) { sim.stop(); sim.tick(300); draw(); declutter(); }
     applyStyles();
   }
 
@@ -506,7 +547,7 @@
     // Default label threshold: the 12th-highest filer's connection count, so about a dozen filers are named.
     const twelfth = data.nodes.find((n) => n.id === [...topFilers].at(-1));
     const defaults = { ...DEFAULTS, labelMin: twelfth ? twelfth.degree || 0 : 0 };
-    state = { data, byId: new Map(data.nodes.map((n) => [n.id, n])), defaults, cfg: loadSettings(defaults), hiddenKinds: new Set(["person", "policy", "response", "public"]), query: "", topic: "", year: "", view: "graph", selected: null, hover: null };
+    state = { data, byId: new Map(data.nodes.map((n) => [n.id, n])), defaults, cfg: loadSettings(defaults), hiddenKinds: new Set(["person", "policy", "response", "public"]), hiddenLabels: new Set(), query: "", topic: "", year: "", view: "graph", selected: null, hover: null };
     refreshConnected();
     settingsPanel();
     legend(state.data);

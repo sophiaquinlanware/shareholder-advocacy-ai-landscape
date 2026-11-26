@@ -157,6 +157,9 @@ tr.hit td { background: var(--accent-soft); }
   --n-manager: #059669; --n-nonprofit: #e11d48; --n-faith: #c026d3; --n-pension: #ea580c;
   --n-labor: #b45309; --n-foundation: #4d7c0f; --n-coalition: #0f766e; --n-other: #64748b;
   --n-person: #4f46e5; --n-policy: #334155; --n-response: #0e7490; --n-public: #be185d;
+  /* Value-chain tiers (companies by primary tier). */
+  --n-tier-chips: #1e40af; --n-tier-datacenters: #155e75; --n-tier-compute: #4338ca;
+  --n-tier-labs: #6d28d9; --n-tier-capital: #a16207; --n-tier-deployers: #374151;
 }
 /* Graph settings panel (display, filters, forces), modelled on Obsidian's graph view settings. */
 .graph-settings { border: 1px solid var(--control-edge); border-radius: var(--radius); padding: 6px 12px; margin: 0 0 10px; font-size: 13px; }

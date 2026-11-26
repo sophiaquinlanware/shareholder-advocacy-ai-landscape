@@ -37,13 +37,13 @@
     const box = document.getElementById("cz-graph");
     box.innerHTML = "";
     const W = Math.max(box.clientWidth || 900, 720, C.events.length * 34);
-    const laneH = 120, top = 30, left = 150;
+    const laneH = 70, top = 30, left = 150;
     const ev = C.events.filter((e) => e.date && (!C.juris || e.jurisdiction === C.juris));
     // Only lanes that hold events in the current view take space.
     const lanes = LANES.filter((l) => ev.some((e) => e.lane === l.key));
     const H = top + lanes.length * laneH + 30;
     const dates = ev.map((e) => new Date(e.date));
-    // Time runs on a square-root scale so the crowded recent months get more room than quiet years.
+    // Time runs on a power scale (exponent 1.8) so the crowded recent months get more room than quiet years.
     const [t0, t1] = d3.extent(dates);
     const span = t1 - t0 || 1;
     const xr = (d) => left + 20 + (W - left - 60) * Math.pow((d - t0) / span, 1.8);
@@ -71,7 +71,7 @@
         .attr("font-size", 12).attr("font-weight", 600).attr("fill", cssVar("--ink-soft"));
     });
     // Month labels along the top, placed with the same stretched scale.
-    const months = d3.timeMonth.range(d3.timeMonth.floor(t0), t1, 1).filter((m, i, all) => i === 0 || xr(m) - xr(all[i - 1]) > 0);
+    const months = d3.timeMonth.range(d3.timeMonth.ceil(t0), t1, 1).filter((m, i, all) => i === 0 || xr(m) - xr(all[i - 1]) > 0);
     // The first label, and the first label after each change of year, carries the year.
     let lastX = -1e9, lastYear = null;
     months.forEach((m) => {
@@ -154,7 +154,7 @@
     const juris = [...new Set(C.events.map((e) => e.jurisdiction).filter(Boolean))].sort();
     const legend = Object.keys(LINK_VAR).map((k) => `<span class="leg static"><svg class="mark" viewBox="0 0 24 12" aria-hidden="true"><line x1="0" y1="6" x2="24" y2="6" stroke="${cssVar("--cz-link")}" stroke-width="2"${LINK_DASH[k] ? ` stroke-dasharray="${LINK_DASH[k]}"` : ""}></line></svg>${esc(k)}</span>`).join("");
     el.innerHTML = `
-      <h2>Causality</h2>
+      <h2>Causality map</h2>
       <p class="intro">${C.events.length} dated events in ${LANES.length} lanes, ${fmt(d3min(C.events))} to ${fmt(d3max(C.events))}, with ${C.links.length} sourced links between them.</p>
       <div class="net-controls">
         <div class="seg" role="group" aria-label="Trace">
@@ -181,7 +181,8 @@
     }));
     document.getElementById("cz-juris").addEventListener("change", (e) => { C.juris = e.target.value; C.highlight = null; draw(); });
     document.getElementById("cz-reset").addEventListener("click", () => { C.highlight = null; C.selected = null; apply(); });
-    const go = () => { if (!el.hidden && !C.drawn) { C.drawn = true; draw(); } };
+    // Open scrolled to the latest events, so the current season is in view.
+    const go = () => { if (!el.hidden && !C.drawn) { C.drawn = true; draw(); const sc = el.querySelector(".cz-scroll"); if (sc) sc.scrollLeft = sc.scrollWidth; } };
     new MutationObserver(go).observe(el, { attributes: true, attributeFilter: ["hidden"] });
     go();
   };

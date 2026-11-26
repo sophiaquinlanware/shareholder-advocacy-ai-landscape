@@ -49,8 +49,8 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 
 | Lint | pass: 0 errors |
 | Build | pass: 16 data files |
 | Tests: 11 tabs × 1440/390 px × light/dark, load errors, local links, script errors when a tab opens (new) | **24/24 pass**; also 24/24 with `data/company-universe`'s 60-company `companies.json` swapped in |
-| Lighthouse phone | accessibility 100, best practices 100, SEO 100, **performance 75** (bar 80) |
-| Lighthouse desktop | accessibility 100, best practices 100, SEO 100, **performance 64** (bar 80) |
+| Lighthouse phone | accessibility 100, best practices 100, SEO 100, **performance 99** (bar 80) |
+| Lighthouse desktop | accessibility 100, best practices 100, SEO 100, **performance 76** (bar 80) |
 | Layout shift (CLS) | 0.04 phone, 0.01 desktop (was 0.44–0.81). Fix: `main` reserves a screen of height. |
 | Largest paint | about 6.8s simulated. The first tabs now draw from 4 small files, with d3 async and the site scripts deferred. What's left is the font and data request chain (queue 3). |
 
@@ -58,10 +58,12 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 
 
 | Field | Plan R1 | Result R1 | Result R2 |
 |---|---|---|---|
-| UX / content | 76 REVISE | 74 REVISE | see docs/reviews/2026-11-25 round2 structure result R2 ux content.md |
-| Visual design | 72 REVISE | 74 REVISE | see …result R2 visual design.md |
+| UX / content | 76 REVISE | 74 REVISE | 80 PASS |
+| Visual design | 72 REVISE | 74 REVISE | 78 REVISE (round cap reached). After R2: causality axis bug fixed, chart opens at the latest events, lanes 70px; network label declutter added. Not re-reviewed. |
 | Accessibility | 72 REVISE | 86 PASS | not needed |
-| Data accuracy | 68 REVISE | 76 REVISE | see …result R2 data accuracy.md |
+| Data accuracy | 68 REVISE | 76 REVISE | 84 PASS. Its minor content fault ("company reports N on another basis") was reworded to "N with a basis note or caveat (see notes)" after R2; not re-reviewed. |
+
+**Network node key by value-chain tier** (owner, after R2): "Instead of 'company,' have 'Frontier AI Labs,' 'hyperscalers,' 'chip builders' … coordinate with the other chat". Built to read `tier` from graph.json, with labels verbatim from the data session. It shows "Company (tier not yet assigned)" until `data/value-chain` merges. Tested with that branch's data: 24/24 pass.
 
 ## Next (UI session)
 
@@ -84,7 +86,7 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 
 2. **Secondary sources for status reasons:** the Amazon and Apple withdrawal/exclusion reasons cite minerva.info. PRODUCT.md Never claim 4 prefers primary sources (SEC no-action letter or proxy).
 3. **Performance under 80:** the remaining cost is the Google Fonts and data request chain and the 306 KB `graph.json`. Options: self-host Inter, preload the first data files, split graph.json. These change how the page loads, so they're for the owner to decide.
 4. **Causality time scale:** most events fall in 2025–26. A piecewise time scale would give them more room.
-5. **Network label overlap** in dense clusters at default settings. The label threshold slider helps; a label-collision pass would fix it.
+5. **Phone tables:** Company lookup's history and lab-tie tables are cramped at 390px. Stack or drop low-value columns on phones (UX R2).
 6. **Outside links to check by hand:** an SEC comment PDF (`data/causality.json`); www.omiusa.org and www.harringtoninvestments.com (`data/graph.json`).
 7. **Deploy publishes the whole repo** (`path: .` in refresh.yml). It could publish `dist/` instead; this is the owner's call.
 8. **Playwright still runs a "dark" project** although the site has one white theme. Drop the dark projects in `playwright.config.js` to halve test time.
