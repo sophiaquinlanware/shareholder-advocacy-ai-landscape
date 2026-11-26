@@ -1,6 +1,6 @@
 # Shareholder Advocacy AI Landscape — current state
 
-Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 (UI session, lens Phase 2).
+Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 (data session, after policy coverage).
 
 ## Sessions and branches (read this first)
 
@@ -8,7 +8,7 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 
 
 | Session | Owns | Branch | State |
 |---|---|---|---|
-| Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | none open | On `main`: 60 companies with tiers; rights maps for 29 US companies; value chain (44 ties, `per_tier`); AI proposals at all 29 US-proxy companies (76, from 2023), `vote_history` (16 linked), filing deadlines (75 proposals) and `next_proposal_deadline` with open/passed status (27 companies), recomputed weekly by `scripts/build_proposal_links.py`. `seeking` is empty: no public calls for co-filers found. |
+| Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | none open | On `main`: 60 companies with tiers; rights maps for 29 US companies; value chain (44 ties, `per_tier`); 76 AI proposals at the 29 US-proxy companies (from 2023) with `plain_summary` (71), `ask_id` (12 recurring asks in `data/asks.json`), `vote_history` (16), filing deadlines and company `next_proposal_deadline` with open/passed status, recomputed weekly; fund votes (331 rows) with `pass_through_voting`; **`data/coverage.json`** (25 rows: how far causality-map policies already require each ask; 23 partial, 2 none, 0 full; every row `reviewed: false`); causality now has Colorado SB 26-189 (repeal and replace, signed 2026-05-14). `seeking` is empty: no public calls for co-filers found. |
 | UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, `graph.js`, `lenses.js`, `rules.js`, the other view JS files incl. `votes.js`, `DESIGN.md`, `tests/` | `design/lens-phase2` (merged to `main` when its reviews pass; the owner said to publish without asking) | Lens Phase 1 live; Phase 2 built (see "Lens system" below). Next: lens Phase 3 (Individual investor feed), Phase 4 (Policymaker), then the value-chain and engagement maps. |
 | Protocol setup | `AGENTS.md`, `CLAUDE.md`, checks, `docs/` structure | `docs-session-onboarding` (local) | Idle. |
 
@@ -97,11 +97,12 @@ The owner's spec has four phases, and each phase gets its own plan and reviews i
    - fund N-PX votes and `pass_through_voting` where the data has them;
    - "See the bigger picture" opens the graph with holdings applied;
    - hover definitions in this lens only.
-2. **Lens Phase 4 (Policymaker):** clusters by topic, sized by how often an ask recurs; `coverage` on topic-to-policy edges.
+2. **Lens Phase 4 (Policymaker):** clusters by topic, sized by how often an ask recurs; `coverage` on ask-to-policy edges. Data is live: `data/coverage.json` entries carry `ask_id`, `policy_id`, `graph_id` (the graph's `ev-` node id, null for "none"), `coverage`, `note`, `source_url`, `policy_status`, `reviewed`.
 3. **Value-chain map and engagement map** from `data/value_chain.json` (`ties`, `per_tier`).
 
 ## Queue (found, not picked up)
 
+0. **Policy coverage rows need a person's sign-off** (`reviewed: false` on all 25). Data accuracy review R1 74, R2 90 PASS.
 1. **Fund votes follow-ups.** Fund votes now cover all 29 US-proxy companies (331 rows).
    - (a) 18 near-miss votes sit in `data/fund_votes.json` `near_misses` for a person to confirm.
    - (b) Meta 2026 Item 3 stays "Needs checking": the proxy shows Items 3 and 11 are distinct AI-data proposals that some fund filings describe the same way (reason in `held_back_reasons`).
