@@ -304,15 +304,15 @@ def main():
                         })
                 print(f"  {family} / {trust} {f['filed']}: done")
 
-    # Where one fund (series) at one meeting appears in more than one filing for a period (an amendment
+    # Where one fund (same trust and series) at one meeting appears in more than one filing (an amendment
     # restating an earlier report), keep only the records from the latest filing. Records within one
     # filing are all kept, so duplicate ballot items there are still caught downstream.
     latest_for = {}
     for r in results:
-        k = (r["family"], tuple(r["series"]), r["company"], r["meeting_date"])
+        k = (r["family"], r["trust"], tuple(r["series"]), r["company"], r["meeting_date"])
         if k not in latest_for or r["filed"] > latest_for[k][0]:
             latest_for[k] = (r["filed"], r["source_url"])
-    results = [r for r in results if latest_for[(r["family"], tuple(r["series"]), r["company"], r["meeting_date"])][1] == r["source_url"]]
+    results = [r for r in results if latest_for[(r["family"], r["trust"], tuple(r["series"]), r["company"], r["meeting_date"])][1] == r["source_url"]]
 
     # One row per fund family per proposal. A family files for many funds, so "split"
     # means its funds did not all vote the same way.
