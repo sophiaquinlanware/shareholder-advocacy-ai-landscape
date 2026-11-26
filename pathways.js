@@ -161,11 +161,11 @@
   }
   function cellFilers(r) {
     if (!r.inScope) return `<span class="unverified">not tracked here (AI proposals are tracked at companies under US proxy rules)</span>`;
-    if (!r.props.length) return `<strong class="pw-none">No AI proposals filed here yet</strong><br><span class="ticker">in this site's records, meetings from 2023</span>`;
+    if (!r.props.length) return `<strong class="pw-none">No AI proposals filed here yet</strong><br><span class="ticker">in this site's records (meetings since 2023)</span>`;
     const names = r.filers.map((f) => {
       const p = f.proposals[0];
       const k = f.proposals.length;
-      return `${extLink(p.edge_source || p.source_url, f.org.name)}${k > 1 ? ` <span class="ticker">(${k}; link is the first)</span>` : ""}`;
+      return `${extLink(p.edge_source || p.source_url, f.org.name)}${k > 1 ? ` <span class="ticker">(${k} filings; first linked)</span>` : ""}`;
     });
     const n = r.props.length;
     const lead = `${n} AI proposal${n === 1 ? "" : "s"} on record`;

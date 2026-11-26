@@ -222,13 +222,13 @@ def main():
         node(co, type="company", layer="companies", label=TICKER_NAME.get(p["company"], p["company"]), ticker=p["company"])
         node(p["id"], type="proposal", layer="proposals", label=f'{TICKER_NAME.get(p["company"], p["company"])} {p["year"]}: {p["title"]}',
              company=p["company"], year=p["year"], topic=p.get("topic"), subtopic=p.get("subtopic"), status=p.get("status"),
-             support_pct=p.get("support_pct"), proponent=p.get("proponent"), source_url=p.get("proxy_url"))
-        edge(p["id"], co, "proposal at", "proposals", p.get("proxy_url"))
+             support_pct=p.get("support_pct"), proponent=p.get("proponent"), source_url=(p.get("proxy_url") or p.get("source_url")))
+        edge(p["id"], co, "proposal at", "proposals", (p.get("proxy_url") or p.get("source_url")))
         prop = (p.get("proponent") or "").lower()
         for oid, name in org_names.items():
             core = name.replace(" asset management", "").replace(" investments", "").replace(", inc.", "")
             if len(core) > 3 and core in prop:
-                edge(oid, p["id"], "filed (named in proxy)", "proposals", p.get("proxy_url"))
+                edge(oid, p["id"], "filed (named in proxy)", "proposals", (p.get("proxy_url") or p.get("source_url")))
     for x in load("proposals.json").get("exempt_solicitations", []):
         filer = (x.get("filer") or "").lower()
         for oid, name in org_names.items():

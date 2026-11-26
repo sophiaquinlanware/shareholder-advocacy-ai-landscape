@@ -13,7 +13,7 @@
   const pct = (x) => (x == null ? "" : `${Math.round(x * 10) / 10}%`);
   const money = (usd) => (usd < 1e6 ? "under $1M" : `$${Math.round(usd / 1e6).toLocaleString("en-US")}M`);
   // A deadline marked open when the data was built may have passed since.
-  const today = () => new Date().toISOString().slice(0, 10);
+  const today = () => (window.RULES ? window.RULES.todayISO() : new Date().toISOString().slice(0, 10)); // in the deadline time zone, not UTC
   const deadlineOpen = (c) => c.next_proposal_deadline_status === "open" && String(c.next_proposal_deadline || "") >= today();
 
   // Fund families (data/fund_votes.json) by their organization in the network.
@@ -106,7 +106,7 @@
     const best = voted.slice().sort((a, b) => b.support_pct - a.support_pct)[0];
     const cos = [...new Set(all.map((p) => p.company))];
     const thr = window.RULES && window.RULES.RESUBMISSION_THRESHOLDS;
-    const row = (p) => `<li><strong>${esc(p.company)}</strong> ${esc(p.year)}: ${esc(p.title)} · ${esc(p.status)}${p.support_pct != null ? ` · ${esc(p.support_pct)}%` : ""}${idx.critical.has(p.id) ? ` <span class="ticker">filed from a critical stance on ESG</span>` : ""}${src(p.results_url || p.proxy_url, p.results_url ? "results" : "proxy")}</li>`;
+    const row = (p) => `<li><strong>${esc(p.company)}</strong> ${esc(p.year)}: ${esc(p.title)} · ${esc(p.status)}${p.support_pct != null ? ` · ${esc(p.support_pct)}%` : ""}${idx.critical.has(p.id) ? ` <span class="ticker">filed by a filer critical of ESG</span>` : ""}${src(p.results_url || p.proxy_url || p.source_url, p.results_url ? "results" : p.proxy_url ? "proxy" : "source")}</li>`;
     const critNote = crit.length ? ` ${plural(crit.length, "filing")} came from ${crit.length === 1 ? "a filer" : "filers"} critical of ESG and ${crit.length === 1 ? "is" : "are"} left out of the support figures${voted.length ? "" : ", which leaves no vote to summarize"}.` : "";
     return `<section class="pl-card" aria-labelledby="pl-h-rec"><h3 id="pl-h-rec">How this ask has gone</h3>
       <p>${all.length ? `Filed ${plural(all.length, "time")} at ${plural(cos.length, "company", "companies")} in this dataset since ${Math.min(...all.map((p) => p.year))}${voted.length ? `; median support ${pct(med)} across ${plural(voted.length, "vote")}${best ? `, highest ${pct(best.support_pct)} at ${esc(best.company)} ${esc(best.year)}` : ""}` : ""}.${critNote}` : "Not filed at any company in this dataset."}</p>
@@ -122,14 +122,15 @@
     const upcoming = D.proposals.filter((p) => p.company === t && p.status === "upcoming");
     const route = c.route_status ? { open: "Still open", narrowing: "Narrowing", closed: "Closed" }[c.route_status] || c.route_status : null;
     const ties = ((D.valueChain && D.valueChain.all_ties) || []).filter((x) => x.from === c.id && x.kind === "lab tie").slice(0, 5);
-    const fact = (l, v) => `<div><dt>${esc(l)}</dt><dd>${v}</dd></div>`;
+    // Rule numbers keep their case under the uppercase label style ("Rule 14a-8", not "14A-8").
+    const fact = (l, v) => `<div><dt>${esc(l).replace(/\b(\d+[a-z]-\d+)\b/g, '<span class="nocaps">$1</span>')}</dt><dd>${v}</dd></div>`;
     const us = c.shareholder_route === "US proxy rules apply";
     const passed = c.next_proposal_deadline && !deadlineOpen(c) && (c.next_proposal_deadline_status === "passed" || String(c.next_proposal_deadline) < today());
     return `<section class="pl-card" aria-labelledby="pl-h-time"><h3 id="pl-h-time">Timing and rights at ${esc(c.name)}</h3>
       <dl class="summary">
         ${fact("Next filing deadline", c.next_proposal_deadline ? `${esc(fmt(c.next_proposal_deadline))}${passed ? " (passed)" : ""}${src(c.next_proposal_deadline_source, "proxy")}` : `<span class="ticker">not on file</span>`)}
         ${fact("AI proposals on the next ballot", upcoming.length ? upcoming.map((p) => `${esc(p.title)} (${esc(fmt(p.meeting_date))})${src(p.proxy_url, "proxy")}`).join("<br>") : `<span class="ticker">none on file</span>`)}
-        ${us ? fact("Proposal route if Rule 14a-8 ends", route ? `${esc(route)}${c.route_status_reason ? ` <span class="ticker">${esc(c.route_status_reason)}</span>` : ""}` : `<span class="ticker">not researched</span>`) : fact("Shareholder route", `${esc((c.shareholder_route || "not researched").replace(/^./, (m) => m.toUpperCase()))}. <span class="ticker">Filing deadlines and the grid above cover US-listed companies under the US proxy rules only.</span>`)}
+        ${us ? fact("Proposal route if Rule 14a-8 ends", route ? `${esc(route)}.${c.route_status_reason ? ` <span class="ticker">${esc(c.route_status_reason)}</span>` : ""}` : `<span class="ticker">not researched</span>`) : fact("Shareholder route", `${esc((c.shareholder_route || "not researched").replace(/^./, (m) => m.toUpperCase()))}. <span class="ticker">Filing deadlines and the grid above cover US-listed companies under the US proxy rules only.</span>`)}
         ${c.threshold && c.threshold.text ? fact("Ownership threshold", esc(c.threshold.text) + src(c.threshold.url)) : ""}
         ${c.director_voting && c.director_voting.text ? fact("Director elections", esc(c.director_voting.text) + src(c.director_voting.url)) : ""}
         ${ties.length ? fact("Ties to frontier labs", ties.map((x) => `${esc(x.to_label || x.to)}: ${esc(x.type)}${src(x.source_url)}`).join("<br>")) : ""}
@@ -155,7 +156,7 @@
     const untouched = usCos().filter((x) => x !== c && !filedAt.has(tick(x)) && deadlineOpen(x))
       .sort((a, b) => String(a.next_proposal_deadline).localeCompare(String(b.next_proposal_deadline))).slice(0, 8);
     return `<section class="pl-card" aria-labelledby="pl-h-ideas"><h3 id="pl-h-ideas">Ideas to explore</h3>
-      <h4>Asks filed at other ${esc(roleLabel(c).toLowerCase())} companies but not at ${esc(c.name)} (in this dataset)</h4>
+      <h4>Asks filed at other companies in the same role (${esc(roleLabel(c).toLowerCase())}) but not at ${esc(c.name)} (in this dataset)</h4>
       ${gaps.length ? `<ul class="steps tight">${gaps.map(([a, g]) => `<li><button type="button" class="linklike pl-ask" data-ask="${esc(a)}">${esc(askOf(a).label)}</button>: filed at ${esc([...g.cos].join(", "))}${g.sup.length ? `, median support ${pct(median(g.sup))}` : ""}</li>`).join("")}</ul>` : `<p class="status-note">None in this dataset.</p>`}
       <h4>Other US-listed companies with an open filing deadline and no filing of this ask in this dataset</h4>
       ${untouched.length ? `<ul class="steps tight">${untouched.map((x) => `<li><button type="button" class="linklike pl-co" data-co="${esc(x.id || x.ticker)}">${esc(x.name)}</button>: deadline ${esc(fmt(x.next_proposal_deadline))}${src(x.next_proposal_deadline_source, "proxy")}</li>`).join("")}</ul>` : `<p class="status-note">None on file.</p>`}
@@ -265,7 +266,7 @@
     const full = rows.filter((r) => r.coverage === "full").length;
     return `<section class="pl-card" aria-labelledby="pl-h-pol"><h3 id="pl-h-pol">What policy already requires</h3>
       <p>${covering.length ? `${plural(covering.length, "policy", "policies")} on the map cover part of this ask; ${full ? `${full} in full` : "none in full"}.` : "No policy on the map requires any part of this ask."} This site's reading of each text, not yet confirmed by a person.</p>
-      ${[...byRegion.entries()].map(([reg, list]) => `<details><summary>${esc(reg)} (${list.length})</summary><ul class="steps tight">${list.map(({ r, e }) => `<li><strong>${esc(e.title || "No policy found")}</strong>${e.status ? ` <span class="ticker">${esc(e.status)}</span>` : ""}: ${esc(r.note)}${src(r.source_url)}</li>`).join("")}</ul></details>`).join("")}
+      ${[...byRegion.entries()].map(([reg, list]) => `<details><summary>${esc(reg)} (${list.length})</summary><ul class="steps tight">${list.map(({ r, e }) => `<li><strong>${esc(e.title || "No policy found")}</strong>${e.status ? ` <span class="ticker">(${esc(e.status)})</span>` : ""}: ${esc(r.note)}${src(r.source_url)}</li>`).join("")}</ul></details>`).join("")}
     </section>`;
   }
 
@@ -372,7 +373,7 @@
     const soon = D.proposals.filter((p) => p.status === "upcoming" && p.meeting_date).sort((a, b) => a.meeting_date.localeCompare(b.meeting_date))[0];
     const askCount = new Map(); D.proposals.forEach((p) => p.ask_id && askCount.set(p.ask_id, (askCount.get(p.ask_id) || 0) + 1));
     const topAsk = [...askCount.entries()].sort((a, b) => b[1] - a[1])[0];
-    const fromUrl = (new URLSearchParams(location.search).get("plan") || "").split("~").map(decodeURIComponent);
+    const fromUrl = (new URLSearchParams(location.search).get("plan") || "").split("~").map((s) => { try { return decodeURIComponent(s); } catch (e) { return ""; } });
     const soonCo = soon ? coById(soon.company) : null;
     S = { co: fromUrl[0] || (soonCo && (soonCo.id || soonCo.ticker)) || (usCos()[0] || {}).id, ask: fromUrl[1] || (soon && soon.ask_id) || (topAsk && topAsk[0]),
       mine: fromUrl[2] || "", memory: [], showAll: false };
@@ -380,6 +381,7 @@
     if (!tick(coById(S.co))) S.co = (soonCo && (soonCo.id || soonCo.ticker)) || (usCos()[0] || {}).id;
     if (!D.asks.some((a) => a.id === S.ask)) S.ask = (soon && soon.ask_id) || (topAsk && topAsk[0]);
     if (S.mine && !idx.orgs.some((o) => o.id === S.mine)) S.mine = "";
+    S.co = (coById(S.co) || {}).id || S.co; // a ticker in a shared link selects the company by its id
     const cos = D.companies.filter((c) => tick(c)).sort((a, b) => a.name.localeCompare(b.name));
     const orgs = idx.orgs.slice().sort((a, b) => a.label.localeCompare(b.label));
     el.innerHTML = `
@@ -389,7 +391,7 @@
         <label>Company <select id="pl-co">${cos.map((c) => `<option value="${esc(c.id || c.ticker)}">${esc(c.name)} (${esc(c.ticker)})</option>`).join("")}</select></label>
         <label>Ask <select id="pl-ask">${D.asks.map((a) => `<option value="${esc(a.id)}">${esc(a.label)} (${askCount.get(a.id) || 0} filed)</option>`).join("")}</select></label>
         <label>Your organization (optional) <select id="pl-mine"><option value="">Not set</option>${orgs.map((o) => `<option value="${esc(o.id)}">${esc(o.label)}</option>`).join("")}</select></label>
-        <button type="button" class="chip" id="pl-copy">Copy a link to this plan</button>
+        <button type="button" class="chip" id="pl-copy">Copy a link to this plan</button> <span id="pl-copy-msg" class="ticker"></span>
       </div>
       <p id="pl-status" class="visually-hidden" role="status"></p>
       <div id="pl-out"></div>
@@ -400,7 +402,8 @@
     document.getElementById("pl-copy").addEventListener("click", async () => {
       const url = location.origin + planUrl();
       const st = document.getElementById("pl-status");
-      try { await navigator.clipboard.writeText(url); st.textContent = "Link copied."; } catch (e) { st.textContent = `Copy this link: ${url}`; }
+      const msg = document.getElementById("pl-copy-msg");
+      try { await navigator.clipboard.writeText(url); st.textContent = msg.textContent = "Link copied."; } catch (e) { st.textContent = msg.textContent = `Copy this link: ${url}`; }
     });
     sync(false, false);
   }

@@ -292,7 +292,7 @@
         ${group("Display")}
         <fieldset class="gs-group"><legend>Filters</legend>
           <label class="gs-check"><input type="checkbox" data-gs-check="labels"${state.cfg.labels ? " checked" : ""}> Labels (off: names show for the selected node and its connections)</label>
-          ${catList().length ? `<label class="gs-check"><input type="checkbox" data-gs-check="catColor"${state.cfg.catColor ? " checked" : ""}> Colour proposals by what they ask about</label>` : ""}
+          ${catList().length ? `<label class="gs-check"><input type="checkbox" data-gs-check="catColor"${state.cfg.catColor ? " checked" : ""}> Color proposals by what they ask about</label>` : ""}
           <label class="gs-check"><input type="checkbox" data-gs-check="pulse"${state.cfg.pulse ? " checked" : ""}> Pulse deadline rings (twice, then still; off with reduced motion)</label>
           <label class="gs-check"><input type="checkbox" data-gs-check="orphans"${state.cfg.orphans ? " checked" : ""}> Orphans (nodes with no visible links)</label>
         </fieldset>
@@ -350,7 +350,7 @@
   function shell(el) {
     el.innerHTML = `
       <h2>AI advocacy network</h2>
-      <p class="count-line">Two views: Connections (who is tied to whom) and Proposals (which companies AI proposals reach, active or past). For value-chain ties alone, see AI value chain › Ties to each frontier lab.</p>
+      <p class="count-line">Two views: Connections (who is tied to whom) and Proposals (which companies the AI proposals reach, active or past). For value-chain ties alone, see AI value chain › Ties to each frontier lab.</p>
       <fieldset class="lens-pick" id="net-lens"><legend>View as</legend>${Object.entries(window.LENSES || {}).map(([id, l]) =>
         `<label class="chip"><input type="radio" name="net-lens" value="${esc(id)}"${id === state.lens ? " checked" : ""}> ${esc(l.label)}</label>`).join("")}</fieldset>
       <p class="visually-hidden" id="net-lens-status" aria-live="polite"></p>
@@ -581,7 +581,7 @@
   function relabelLegend() {
     document.querySelectorAll("#net-legend .leg").forEach((b) => { const t = b.querySelector(".leg-text"); if (t) t.textContent = kindLabel(b.dataset.kind); });
   }
-  // Proposal categories (asks.json), used when "Colour proposals by what they ask about" is on.
+  // Proposal categories (asks.json), used when "Color proposals by what they ask about" is on.
   const catList = () => ((window.LENS_CTX && window.LENS_CTX.categories) || []).filter((c) => state.data.nodes.some((n) => n.kind === "proposal" && n.category === c.id));
   // Nodes in the site's one blue (#1f4e98) are only 2.1:1 on the dark canvas, so they get a thin light
   // outline that carries them to 3:1 or more (owner, 2026-11-26: "any blue you have … this color blue").
@@ -658,7 +658,7 @@
       if (l.relation === "missing") return `<li><button type="button" class="linklike" data-id="${esc(other.id)}">${esc(other.label)}</button> <span class="ticker">topic not filed</span> <span class="conf">· none in this dataset</span></li>`;
       // Direct engagements reported by the investor list their steps (date, what happened, source and page).
       const steps = Array.isArray(l.steps) && l.steps.length
-        ? `<ol class="eng-steps">${l.steps.map((st) => `<li><span class="nowrap">${esc(st.date || "")}</span>: ${esc(st.title || "")} ${link(st.source_url)}${st.source_page ? ` <span class="ticker">p. ${esc(st.source_page)}</span>` : ""}</li>`).join("")}</ol>${l.reported_by ? `<span class="ticker">Reported by ${esc(l.reported_by)}; not independently confirmed.</span>` : ""}`
+        ? `<ol class="eng-steps">${l.steps.map((st) => `<li><span class="nowrap">${esc(st.date || "")}</span>: ${esc(st.title || "")} ${link(st.source_url)}${st.source_page ? ` <span class="ticker">${/[,-]/.test(st.source_page) ? "pp." : "p."} ${esc(String(st.source_page).replace("-", "–"))}</span>` : ""}</li>`).join("")}</ol>${l.reported_by ? `<span class="ticker">Reported by ${esc(l.reported_by)}; not independently confirmed.</span>` : ""}`
         : "";
       return `<li><button type="button" class="linklike" data-id="${esc(other.id)}">${esc(other.label)}</button> <span class="ticker">${esc(dir)}</span> <span class="conf conf-${c.level}">· ${c.level === "inferred" ? "no source, " + esc(c.text) : "source: " + esc(c.text)}</span>${asOf}${l.source_url ? " " + link(l.source_url) : ""}${steps}</li>`;
     }).join("");
@@ -675,7 +675,7 @@
     } else if (["policy", "response", "public", "lab"].includes(n.kind)) {
       facts = `${n.date ? `<p class="ticker">${esc(n.date)}${n.actor ? " · " + esc(n.actor) : ""}</p>` : ""}<p>${esc(n.description || "")} ${link(n.source_url)}</p>`;
     } else if (n.kind === "company") {
-      facts = `<p>${esc(n.degree)} connections in this map.</p>`;
+      facts = `<p>${esc(n.degree)} ${n.degree === 1 ? "connection" : "connections"} in this map.</p>`;
     } else if (n.kind === "ask") {
       facts = `<p class="status-note">Grouped by this site from data/asks.json: proposals that make this ask, across companies and years.</p>`;
     } else if (n.kind === "gap") {
@@ -1254,7 +1254,7 @@
     } else if (l.relation === "member of") {
       const coal = state.byId.get(endId(l.target));
       const members = state.data.links.filter((x) => x.relation === "member of" && endId(x.target) === coal.id).length;
-      how = `${endId(l.source) === a.id ? "member of" : "has member"} <span class="conf">· coalition membership (${esc(coal.label)}, ${members} members)</span>${link(l.source_url)}`;
+      how = `${endId(l.source) === a.id ? "member of" : "has member"} <span class="conf">· coalition membership (${esc(coal.label)}, ${members} ${members === 1 ? "member" : "members"})</span>${link(l.source_url)}`;
     } else {
       const c = conf(l);
       const dir = endId(l.source) === a.id ? l.relation : `${l.relation} (from)`;
@@ -1321,7 +1321,7 @@
     placeFocusMark();
     const ring = rings(n).map((r) => r.text.toLowerCase()).join(", ");
     const holdTxt = !state.holdings.size ? "" : tickerOf(n) ? (isHeld(n) ? ", held" : ", not held") : ", faded: not a holding";
-    say(`${i + 1} of ${list.length}: ${n.label}, ${TYPE_LABEL[n.kind]}, ${n.degree || 0} connections${ring ? ", " + ring : ""}${holdTxt}`);
+    say(`${i + 1} of ${list.length}: ${n.label}, ${TYPE_LABEL[n.kind]}, ${n.degree || 0} ${n.degree === 1 ? "connection" : "connections"}${ring ? ", " + ring : ""}${holdTxt}`);
     panTo(n, false);
   }
   // Bring a node into view at the current zoom; jumps with no animation under reduced motion.

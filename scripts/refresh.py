@@ -125,10 +125,10 @@ def main():
                 if not topic:
                     continue  # not about AI; skip quietly
             kind = {
-                "DEF 14A": "Proxy statement filed",
-                "DEFA14A": "Additional proxy material filed",
-                "PX14A6G": "Investor exempt solicitation filed",
-                "8-K": "Annual meeting vote results filed" if "5.07" in items else "Bylaw or charter change filed (check Company profiles › Shareholder proposal rights)",
+                "DEF 14A": "Proxy statement",
+                "DEFA14A": "Additional proxy material",
+                "PX14A6G": "Investor exempt solicitation",
+                "8-K": "Annual meeting vote results" if "5.07" in items else "Bylaw or charter change (check Company profiles › Shareholder proposal rights)",
             }[form]
             new_items.append({
                 "accession": acc,

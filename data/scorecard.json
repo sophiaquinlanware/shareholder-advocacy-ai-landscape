@@ -840,7 +840,7 @@
     {
      "id": "P6",
      "score": "partial",
-     "evidence": "Trustworthy AI terms in product agreements ban illegal uses such as unlawful surveillance; NVIDIA investigates alleged misuse and may end business, but no ongoing monitoring is described.",
+     "evidence": "Trustworthy AI terms in product agreements ban illegal uses such as unlawful surveillance; Nvidia investigates alleged misuse and may end business, but no ongoing monitoring is described.",
      "url": "https://www.nvidia.com/content/dam/en-zz/Solutions/about-us/documents/HumanRightsPolicy.pdf",
      "doc_date": "2026-02"
     },
@@ -875,7 +875,7 @@
     {
      "id": "W1",
      "score": "silent",
-     "evidence": "Workforce sections cover learning hours and mentoring but say nothing about AI's effect on NVIDIA employees, workplace surveillance limits or AI reskilling.",
+     "evidence": "Workforce sections cover learning hours and mentoring but say nothing about AI's effect on Nvidia employees, workplace surveillance limits or AI reskilling.",
      "url": "https://images.nvidia.com/aem-dam/Solutions/documents/NVIDIA-Sustainability-Report-Fiscal-Year-2026.pdf",
      "doc_date": "2026-06"
     }
@@ -1362,17 +1362,17 @@
   },
   {
    "date": "2023-09",
-   "company": "NVIDIA",
-   "title": "Investor group organizes human rights engagement with NVIDIA",
-   "summary": "Parnassus joined an investor group that in September 2023 organized to strengthen NVIDIA's human rights risk management, including an independent assessment of potential AI harms.",
+   "company": "Nvidia",
+   "title": "Investor group organizes human rights engagement with Nvidia",
+   "summary": "Parnassus joined an investor group that in September 2023 organized to strengthen Nvidia's human rights risk management, including an independent assessment of potential AI harms.",
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
    "source_page": "16"
   },
   {
    "date": "2024-H1",
-   "company": "NVIDIA",
-   "title": "NVIDIA adds oversight, staff and first human rights assessment",
-   "summary": "NVIDIA formed an executive-level sustainability steering committee overseeing human rights, added staff and began its first human rights impact assessment, with Parnassus input on scope.",
+   "company": "Nvidia",
+   "title": "Nvidia adds oversight, staff and first human rights assessment",
+   "summary": "Nvidia formed an executive-level sustainability steering committee overseeing human rights, added staff and began its first human rights impact assessment, with Parnassus input on scope.",
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf",
    "source_page": "13"
   },
@@ -1380,7 +1380,7 @@
    "date": "2024-H1",
    "company": "Multiple companies",
    "title": "Responsible AI becomes a thematic engagement program",
-   "summary": "In the year to June 2024, Parnassus engaged eight companies on AI governance and risk, including Intuit, Microsoft, NVIDIA, Verisk and Workday, and supported AI-related shareholder proposals.",
+   "summary": "In the year to June 2024, Parnassus engaged eight companies on AI governance and risk, including Intuit, Microsoft, Nvidia, Verisk and Workday, and supported AI-related shareholder proposals.",
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf",
    "source_page": "9, 13, 20"
   },
@@ -1396,7 +1396,7 @@
    "date": "2025-04",
    "company": "Investor coalition",
    "title": "Parnassus-led investor recommendations for rights-based AI published",
-   "summary": "Parnassus led development of first-of-its-kind investor recommendations for a rights-based approach to AI with other investors, covering governance, policies and practices, and transparency.",
+   "summary": "Parnassus led the development of first-of-its-kind investor recommendations for a rights-based approach to AI with other investors, covering governance, policies and practices, and transparency.",
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/48568e45-a9b6-4fd3-b7dc-3c5655421f15/Responsible%20AI%20Framework_2025.pdf",
    "source_page": "1"
   },
@@ -1419,15 +1419,15 @@
   {
    "date": "2025-H1",
    "company": "Workday",
-   "title": "Workday completes NIST AI RMF assessment and ISO 42001",
+   "title": "Workday completes NIST AI RMF assessment and gets ISO 42001 accreditation",
    "summary": "After Parnassus engagement on AI and workers' rights, Workday completed a third-party assessment against the NIST AI RMF and achieved ISO 42001 accreditation.",
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
    "source_page": "26"
   },
   {
    "date": "2025-H1",
-   "company": "NVIDIA",
-   "title": "NVIDIA completes third-party human rights saliency assessment",
+   "company": "Nvidia",
+   "title": "Nvidia completes third-party human rights saliency assessment",
    "summary": "The engagement prompted a third-party saliency assessment identifying five salient risks, including responsible product development and use, plus plans to strengthen human rights policies.",
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
    "source_page": "16"
@@ -1452,7 +1452,7 @@
    "date": "2025-H1",
    "company": "Multiple companies",
    "title": "Responsible AI engagements and AI proposal votes reported",
-   "summary": "In 2024 to 2025 Parnassus held five responsible AI engagements, including Intuit, NVIDIA, Salesforce and Verisk, and supported AI-related proposals on human rights and user safety risks.",
+   "summary": "In 2024 to 2025 Parnassus held five responsible AI engagements, including Intuit, Nvidia, Salesforce and Verisk, and supported AI-related proposals on human rights and user safety risks.",
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
    "source_page": "7, 17, 18, 21"
   }

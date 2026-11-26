@@ -533,7 +533,7 @@
    "name": "IIGCC (Institutional Investors Group on Climate Change)",
    "type": "coalition",
    "website": "https://www.iigcc.org/insights/ai-data-centres-climate-and-nature-risks-for-investors",
-   "description": "European investor membership body on climate change. In February 2026 it published research on climate and nature risks of AI data centres, including water use, and said it plans data centre guidance, insights and engagement tools; in October 2026 it published bondholder stewardship research on hyperscaler and data centre debt.",
+   "description": "European investor membership body on climate change. In February 2026 it published research on climate and nature risks of AI data centers, including water use, and said it plans data center guidance, insights and engagement tools; in October 2026 it published bondholder stewardship research on hyperscaler and data center debt.",
    "source_url": "https://www.iigcc.org/insights/ai-data-centres-climate-and-nature-risks-for-investors"
   },
   {
@@ -1283,7 +1283,7 @@
    "name": "New York City Carpenters Pension Fund",
    "type": "labor fund",
    "website": "",
-   "description": "Union pension fund that files governance proposals, such as director resignation policies at Visa and Jabil (2024) and NVIDIA (2025).",
+   "description": "Union pension fund that files governance proposals, such as director resignation policies at Visa and Jabil (2024) and Nvidia (2025).",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000130817924000807/v4356611_def14.htm",
    "ai_related": false
   },
@@ -1625,7 +1625,7 @@
    "name": "Green America",
    "type": "advocacy nonprofit",
    "website": "https://www.greenamerica.org/",
-   "description": "Publishes an annual guide urging investors to vote on key shareholder resolutions; the 2026 list includes AI, data center and child safety proposals at Alphabet, Amazon, Meta, NVIDIA and others.",
+   "description": "Publishes an annual guide urging investors to vote on key shareholder resolutions; the 2026 list includes AI, data center and child safety proposals at Alphabet, Amazon, Meta, Nvidia and others.",
    "source_url": "https://greenamerica.org/node/19356",
    "ai_related": true
   },
@@ -1811,7 +1811,7 @@
    "name": "The Investor Forum",
    "type": "coalition",
    "website": "https://investorforum.org.uk",
-   "description": "UK body that organises collective engagement by institutional investors with UK-listed companies, led by a Stewardship Director.",
+   "description": "UK body that organizes collective engagement by institutional investors with UK-listed companies, led by a Stewardship Director.",
    "source_url": "https://investorforum.org.uk/who-we-are/",
    "country": "United Kingdom",
    "ai_related": false
@@ -2021,7 +2021,7 @@
    "name": "CCLA Investment Management",
    "type": "impact/ESG asset manager",
    "website": "https://www.ccla.co.uk",
-   "description": "Charity, church and public sector fund manager whose stewardship team runs engagement programmes on health, the environment and workplace labour practices, and sets its own proxy voting policy.",
+   "description": "Charity, church and public sector fund manager whose stewardship team runs engagement programs on health, the environment and workplace labour practices, and sets its own proxy voting policy.",
    "source_url": "https://www.ccla.co.uk/our-people/main-contacts/amy-browne",
    "country": "United Kingdom",
    "ai_related": false
@@ -2031,7 +2031,7 @@
    "name": "Royal London Asset Management",
    "type": "impact/ESG asset manager",
    "website": "https://www.rlam.com",
-   "description": "UK manager whose 2026-2028 engagement priorities include sustainable and ethical AI, covering AI governance and data centre footprints, with escalation where engagement stalls.",
+   "description": "UK manager whose 2026-2028 engagement priorities include sustainable and ethical AI, covering AI governance and data center footprints, with escalation where engagement stalls.",
    "source_url": "https://www.rlam.com/en-au/our-views/2026/company-engagement-priorities-for-2026-2028/",
    "country": "United Kingdom",
    "ai_related": true
@@ -2111,7 +2111,7 @@
    "name": "PKA",
    "type": "asset owner",
    "website": "https://www.pka.dk",
-   "description": "Danish pension fund that, with Sampension and PenSam, opened a 2022 investor dialogue with Amazon on workers' right to organise that later grew to several more Danish pension funds.",
+   "description": "Danish pension fund that, with Sampension and PenSam, opened a 2022 investor dialogue with Amazon on workers' right to organize that later grew to several more Danish pension funds.",
    "source_url": "https://ipe.com/news/danish-pension-funds-unite-to-press-amazon-on-labour-rights/10066719.article",
    "country": "Denmark",
    "ai_related": false
@@ -2181,7 +2181,7 @@
    "name": "Achmea Investment Management",
    "type": "impact/ESG asset manager",
    "website": "https://www.achmeainvestmentmanagement.nl",
-   "description": "Dutch manager whose engagement programme covers climate, biodiversity, human rights and health, and whose Q4 2025 voting report names responsible AI use as a focus area.",
+   "description": "Dutch manager whose engagement program covers climate, biodiversity, human rights and health, and whose Q4 2025 voting report names responsible AI use as a focus area.",
    "source_url": "https://www.achmeainvestmentmanagement.nl/-/media/Files/AchmeaIM/Documenten-Inst-en-Part/AIM-Corporate-Governance-en-Stemverslag-Q4-2025.pdf",
    "country": "Netherlands",
    "ai_related": true
@@ -2251,7 +2251,7 @@
    "name": "Australasian Centre for Corporate Responsibility (ACCR)",
    "type": "advocacy nonprofit",
    "website": "https://www.accr.org.au",
-   "description": "Shareholder advocacy organisation that files and co-files resolutions at Australian and global companies (for example a 2025 co-filed resolution at Shell on its LNG outlook) and engages investors on climate and corporate conduct.",
+   "description": "Shareholder advocacy organization that files and co-files resolutions at Australian and global companies (for example a 2025 co-filed resolution at Shell on its LNG outlook) and engages investors on climate and corporate conduct.",
    "source_url": "https://www.accr.org.au/downloads/ACCR_AnnualReview1_FY24-25.pdf",
    "country": "Australia",
    "ai_related": false
@@ -2331,7 +2331,7 @@
    "name": "Canadian Coalition for Good Governance (CCGG)",
    "type": "coalition",
    "website": "https://ccgg.ca",
-   "description": "Coalition of Canadian institutional investors that runs a board engagement programme with Canadian public companies on governance practices.",
+   "description": "Coalition of Canadian institutional investors that runs a board engagement program with Canadian public companies on governance practices.",
    "source_url": "https://ccgg.ca/engagement-program/",
    "country": "Canada",
    "ai_related": false
@@ -2371,7 +2371,7 @@
    "name": "Asia Research and Engagement (ARE)",
    "type": "coalition",
    "website": "https://asiareengage.com",
-   "description": "Runs collaborative engagement programmes that bring global institutional investors together to engage Asian companies on energy transition and protein transition.",
+   "description": "Runs collaborative engagement programs that bring global institutional investors together to engage Asian companies on energy transition and protein transition.",
    "source_url": "https://asiareengage.com/our-team/",
    "country": "Singapore",
    "ai_related": false

@@ -82,7 +82,10 @@ function wireSort(box, state, redraw) {
 // ---------- Upcoming votes ----------
 function renderUpcoming() {
   const up = DATA.upcoming || {};
-  const meetings = [...(up.meetings || [])].sort((a, b) => String(a.sort || "").localeCompare(String(b.sort || "")));
+  // Meetings already held drop off before the next data refresh, as on Key dates.
+  const todayIso = window.RULES ? window.RULES.todayISO() : new Date().toISOString().slice(0, 10);
+  const meetings = [...(up.meetings || [])].filter((m) => !/^\d{4}-\d{2}-\d{2}$/.test(m.sort || "") || m.sort >= todayIso)
+    .sort((a, b) => String(a.sort || "").localeCompare(String(b.sort || "")));
   const items = meetings.flatMap((m) => (m.items || []).map((i) => {
     const match = /^(.*?)\s*\(filed by (.*)\)\s*$/i.exec(i.title || "");
     return { m, i, title: match ? match[1] : i.title, filer: match ? match[2] : "" };
@@ -108,7 +111,7 @@ function renderUpcoming() {
     <p class="intro">${plural(items.length, "AI proposal")} on ${plural(meetings.filter((m) => (m.items || []).length).length, "ballot")}, by meeting date. Source: each company's proxy statement.</p>
     ${rows ? `<div class="table-wrap"><table><thead><tr><th scope="col">Meeting</th><th scope="col">Company</th><th scope="col">Item</th><th scope="col">Proposal</th><th scope="col">Filed by</th><th scope="col">What it asks about</th><th scope="col">Board</th><th scope="col">Earlier AI votes at this company</th></tr></thead><tbody>${rows}</tbody></table></div>` : `<p class="status-note">No AI proposals on announced ballots.</p>`}
     ${empty.length ? `<h3 class="sub-h">Meetings with no AI proposals on the ballot, or ballot not yet filed</h3>
-      <ul class="steps">${empty.map((m) => `<li><button type="button" class="linklike" data-co="${esc(m.ticker)}">${esc(m.company)}</button>, ${esc(m.meeting_label)}: ${esc(m.status_label || "")}${m.proxy_url ? src(m.proxy_url, "proxy") : ""}</li>`).join("")}</ul>` : ""}`;
+      <ul class="steps">${empty.map((m) => `<li><button type="button" class="linklike" data-co="${esc(m.ticker)}">${esc(m.company)}</button>, ${esc(m.meeting_label)}${m.status_label && !/^expected/i.test(m.meeting_label || "") ? `: ${esc(m.status_label)}` : ""}${m.proxy_url ? src(m.proxy_url, "proxy") : ""}</li>`).join("")}</ul>` : ""}`;
   wireCompanyLinks(document.getElementById("tab-upcoming"));
 }
 
@@ -256,7 +259,7 @@ function drawCompany(key) {
   };
   const propRows = props.map((p) => `<tr>
       <td class="nowrap">${p.meeting_date ? esc(fmtDate(p.meeting_date, true)) : `${esc(p.year)}`}</td>
-      <td>${esc(p.title)}${p.results_url ? src(p.results_url, "results") : p.proxy_url ? src(p.proxy_url, "proxy") : ""}${(p.status === "withdrawn" || p.status === "excluded") ? `<div class="reason"><strong>Reason:</strong> ${p.status_reason ? esc(p.status_reason) + src(p.status_source_url) : "Reason not yet recorded."}</div>` : ""}</td>
+      <td>${esc(p.title)}${p.results_url ? src(p.results_url, "results") : p.proxy_url ? src(p.proxy_url, "proxy") : p.source_url ? src(p.source_url) : ""}${(p.status === "withdrawn" || p.status === "excluded") ? `<div class="reason"><strong>Reason:</strong> ${p.status_reason ? esc(p.status_reason) + src(p.status_source_url) : "Reason not yet recorded."}</div>` : ""}</td>
       <td>${p.proponent && !/UNVERIFIED/.test(p.proponent) ? esc(p.proponent) : `<span class="ticker">not recorded</span>`}</td>
       <td><span class="pill st-${esc(p.status)}">${esc(PROPOSAL_STATUS[p.status] || p.status)}</span>${p.status === "upcoming" && boardRec(p) ? `<div class="ticker">Board: ${esc(boardRec(p))}</div>` : ""}</td>
       <td class="num">${p.support_pct != null ? `${esc(p.support_pct)}%${fnMark(notes, p)}${p.results_url ? "" : `<div class="note">Vote-results filing not recorded</div>`}` : ""}</td></tr>`).join("");
@@ -268,8 +271,8 @@ function drawCompany(key) {
       ${window.ROLES && window.ROLES.roleOf(c) ? `<div><dt>Role in AI</dt><dd>${esc(window.ROLES.label(window.ROLES.roleOf(c)))}${window.ROLES.alsoOf(c).length ? `; also ${esc(window.ROLES.alsoOf(c).map(window.ROLES.label).join(", ").toLowerCase())}` : ""} <span class="ticker">(this site's reading)</span></dd></div>` : ""}
       <div><dt>Proposal route</dt><dd>${c.rights_tracked === false ? `<span class="ticker">not yet tracked</span>` : `<span class="pill ${esc(c.route_status || "pending")}">${esc(STATUS_LABEL[c.route_status] || "Being verified")}</span>`}</dd></div>
       <div><dt>AI proposals on file</dt><dd>${props.length}${historyText(h) ? ` · ${esc(historyText(h))}` : ""}</dd></div>
-      <div><dt>Next meeting</dt><dd>${meeting ? `${esc(meeting.meeting_label)} · ${esc(meeting.status_label || "")}${meeting.proxy_url ? src(meeting.proxy_url, "proxy") : ""}` : `<span class="ticker">not listed</span>`}</dd></div>
-      <div><dt>Next filing deadline</dt><dd>${c.next_proposal_deadline ? `${esc(fmtDate(c.next_proposal_deadline))}${c.next_proposal_deadline_status === "passed" ? " (passed)" : ""}${src(c.next_proposal_deadline_source, "proxy")}` : `<span class="ticker">not on file</span>`}</dd></div>
+      <div><dt>Next meeting</dt><dd>${meeting ? `${esc(meeting.meeting_label)}${meeting.status_label && !/^expected/i.test(meeting.meeting_label || "") ? ` · ${esc(meeting.status_label)}` : ""}${meeting.proxy_url ? src(meeting.proxy_url, "proxy") : ""}` : `<span class="ticker">not listed</span>`}</dd></div>
+      <div><dt>Next filing deadline</dt><dd>${c.next_proposal_deadline ? `${esc(fmtDate(c.next_proposal_deadline))}${c.next_proposal_deadline_status === "passed" || c.next_proposal_deadline < (window.RULES ? window.RULES.todayISO() : new Date().toISOString().slice(0, 10)) ? " (passed)" : ""}${src(c.next_proposal_deadline_source, "proxy")}` : `<span class="ticker">not on file</span>`}</dd></div>
       <div><dt>Disclosure score</dt><dd>${sc ? `${scCount("met")} met · ${scCount("partial")} partial · ${scCount("silent")} silent of ${nCrit}` : `<span class="ticker">not scored</span>`}</dd></div>
     </dl>
     ${whyIncluded(c)}
@@ -355,7 +358,7 @@ function renderFeed() {
         if (p.status === "withdrawn" || p.status === "excluded") {
           reason = `<div class="reason"><strong>Reason:</strong> ${p.status_reason ? esc(p.status_reason) + src(p.status_source_url) : "Reason not yet recorded."}</div>`;
         }
-        const links = [p.proxy_url ? src(p.proxy_url, "proxy") : "", p.results_url ? src(p.results_url, "results") : ""].join("");
+        const links = [p.proxy_url ? src(p.proxy_url, "proxy") : p.source_url ? src(p.source_url) : "", p.results_url ? src(p.results_url, "results") : ""].join("");
         return `${esc(p.title)}${links}<div class="ticker">${filerOf(p)}</div><div>${topicTag(p.topic)}</div>${reason}`;
       } },
     { key: "status", label: "Status", render: (p) => `<span class="pill st-${esc(p.status)}">${esc(PROPOSAL_STATUS[p.status] || p.status)}</span>` },
@@ -432,7 +435,8 @@ function renderFeed() {
       })
       .append("title").text((p) => `${companyName(p.company)}, ${fmtDate(p.meeting_date, true)}: ${p.title}. ${p.support_pct}%${p.support_note ? ". " + p.support_note : ""}`);
   };
-  const redraw = () => { drawStatus(); drawTable(); if (!el.hidden) drawChart(); };
+  // A filter set while the view is hidden (for example from Company profiles) redraws the chart when it is next shown.
+  const redraw = () => { drawStatus(); drawTable(); if (!el.hidden) drawChart(); else delete el.dataset.drawn; };
 
   // Company lookup's "Open in Proposals" sets the company filter here.
   window.filterFeedCompany = (t) => {
@@ -578,8 +582,8 @@ function renderNew() {
         <div class="ticker">${esc(c.review_status || "")}</div></li>`).join("")}</ul></li>`).join("");
   document.getElementById("tab-new").innerHTML = `
     <h2>New SEC filings</h2>
-    <p class="intro">Every Monday the site checks SEC EDGAR for new proxy statements, investor exempt solicitations (PX14A6G), vote results and bylaw changes at the companies it tracks. Finds are listed here before anyone reviews them.</p>
-    <p class="count-line">Last check: ${esc(t.last_checked ? fmtDate(t.last_checked.slice(0, 10)) : "not run yet")}.${t.new_this_run != null ? ` ${esc(t.new_this_run)} new AI-related filings in that run.` : ""}</p>
+    <p class="intro">Every Monday the site checks SEC EDGAR for new proxy statements, investor exempt solicitations (PX14A6G), vote results and bylaw changes at the companies it tracks. Filings found are listed here before anyone reviews them.</p>
+    <p class="count-line">Last check: ${esc(t.last_checked ? fmtDate(t.last_checked.slice(0, 10)) : "not run yet")}.${t.new_this_run != null ? ` ${plural(t.new_this_run, "new AI-related filing")} in that run.` : ""}</p>
     ${groups ? `<ul class="timeline">${groups}</ul>` : `<p class="status-note">Nothing flagged yet.</p>`}`;
 }
 
@@ -605,7 +609,7 @@ function labelCounts() {
 function renderStart() {
   const el = document.getElementById("tab-start");
   const s = DATA.site || {};
-  const today = new Date().toISOString().slice(0, 10);
+  const today = (window.RULES ? window.RULES.todayISO() : new Date().toISOString().slice(0, 10));
   const findings = (s.findings || []).map((f) => `<li class="finding">
       <h4>${esc(f.title)}</h4><p>${esc(f.text)}</p>
       <p class="note">${esc(f.basis)}${f.link ? ` <a href="${esc(f.link)}" aria-label="See the data: ${esc(f.title)}">See the data</a>` : ""}</p></li>`).join("");
@@ -630,7 +634,7 @@ function renderStart() {
     return `<li><a href="#${esc(first)}">${esc(b.textContent)}</a>: ${esc(q)}</li>`;
   }).join("");
   const filings = `<p class="count-line">Checked ${esc(t.last_checked ? fmtDate(t.last_checked.slice(0, 10)) : "not yet")}${t.new_this_run != null ? `: ${plural(t.new_this_run, "new filing")} found` : ""}. Found automatically and not yet reviewed.</p>
-    ${items.length ? `<p><a href="#new">See the ${plural(items.length, "new filing")}</a></p>` : ""}`;
+    ${items.length ? `<p><a href="#new">See the ${plural(items.length, "filing")} found so far</a></p>` : ""}`;
   // The second pass (after the weekly SEC check has loaded) updates only the filings block, so the rest of the
   // page, including its largest text, is painted once and not redrawn.
   const box = document.getElementById("start-new");
@@ -640,7 +644,7 @@ function renderStart() {
     <p class="intro">Dates you can act on, three things the data shows, and what each section of the site is for.</p>
     <h3 class="sub-h">Coming up</h3>
     ${comingList ? `<ul class="steps coming-up">${comingList}</ul>` : `<p class="status-note">No ballots or open filing deadlines on file.</p>`}
-    <p><a href="#upcoming">All upcoming votes</a> · <a href="#planner">Plan an engagement at any of these companies</a>${coming.length > shown.length ? ` · ${coming.length - shown.length} more open filing deadlines are on each company's profile` : ""}</p>
+    <p><a href="#upcoming">All upcoming votes</a> · <a href="#planner">Plan an engagement at any of these companies</a>${coming.length > shown.length ? ` · ${coming.length - shown.length} more open filing deadlines are on the company profiles` : ""}</p>
     <h3 class="sub-h">What the data shows</h3>
     ${findings ? `<ul class="findings">${findings}</ul>` : `<p class="status-note">No findings recorded.</p>`}
     <h3 class="sub-h">New SEC filings</h3>

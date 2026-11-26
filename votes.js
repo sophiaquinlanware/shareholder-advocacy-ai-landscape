@@ -11,7 +11,7 @@
 (function () {
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const LABEL = { FOR: "For", AGAINST: "Against", ABSTAIN: "Abstain", WITHHOLD: "Withhold", NONE: "Did not vote", SPLIT_WITHIN_FUND: "split within a fund" };
-  const NAMES = { MSFT: "Microsoft", GOOGL: "Alphabet", META: "Meta", AMZN: "Amazon", NVDA: "Nvidia", AAPL: "Apple", TSLA: "Tesla" };
+  const NAMES = { AAPL: "Apple", AMZN: "Amazon", AXON: "Axon Enterprise", CMCSA: "Comcast", CRM: "Salesforce", CSCO: "Cisco Systems", DIS: "Walt Disney", DLR: "Digital Realty Trust", GOOGL: "Alphabet", IBM: "IBM", META: "Meta", MSFT: "Microsoft", NFLX: "Netflix", NVDA: "Nvidia", PLTR: "Palantir Technologies", SO: "Southern Company", TSLA: "Tesla", VRSK: "Verisk Analytics" };
   const NEW_TAB = ", opens in a new tab";
   let V = null;
 
@@ -96,7 +96,7 @@
     }).join("");
     document.getElementById("fv-table").innerHTML = `
       <table>
-        <caption class="fv-caption">Votes by fund family on ${rows.length} AI-related shareholder proposals, from SEC Form N-PX filings</caption>
+        <caption class="fv-caption">Votes by fund family on ${rows.length} AI-related shareholder ${rows.length === 1 ? "proposal" : "proposals"}, from SEC Form N-PX filings</caption>
         <thead><tr><th scope="col" class="sticky-col">Proposal</th>${head}</tr></thead>
         <tbody>${body || `<tr><td colspan="${fams.length + 1}">No proposals match these filters.</td></tr>`}</tbody>
       </table>`;
@@ -137,7 +137,7 @@
       byKey: new Map(data.summary.map((r) => [`${r.family}|${r.proposal_id}`, r])),
       company: window.innerWidth < 600 ? (props[0] || {}).company || "" : "", topic: "", family: "",
     };
-    const companies = [...new Set(props.map((p) => p.company))].sort();
+    const companies = [...new Set(props.map((p) => p.company))].sort((a, b) => (NAMES[a] || a).localeCompare(NAMES[b] || b));
     const topics = [...new Set(props.map((p) => p.topic).filter(Boolean))].sort();
     const longDate = (d) => new Date(`${d}T12:00:00`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
     const reviewedBy = (data.reviewed || []).map((r) => `${r.family}, ${r.proposal_ids.length} proposals (${longDate(r.date)})`).join("; ");

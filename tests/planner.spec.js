@@ -75,7 +75,7 @@ test("filings from filers critical of ESG are marked and left out of the support
   await open(page, "?plan=microsoft~ask-ai-training-data");
   const rec = page.locator("#pl-h-rec").locator("..");
   await expect(rec).toContainText("filers critical of ESG and are left out of the support figures");
-  await expect(rec.locator("li").first()).toContainText("filed from a critical stance on ESG");
+  await expect(rec.locator("li").first()).toContainText("filed by a filer critical of ESG");
   // The grid leaves them out too: a square filed only by such filers is dashed and shows no support number.
   const sq = page.locator('.pl-mx[data-co="microsoft"][data-ask="ask-ai-training-data"]');
   await expect(sq).toHaveClass(/crit/);

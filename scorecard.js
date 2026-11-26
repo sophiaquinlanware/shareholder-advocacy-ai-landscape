@@ -47,7 +47,10 @@
       <p><span class="pill ${s.score === "met" ? "open" : s.score === "partial" ? "narrowing" : "pending"}">${esc(LABEL[s.score] || s.score)}</span>${s.doc_date ? ` <span class="ticker">document dated ${esc(s.doc_date)}</span>` : ""}</p>
       <p>${esc(s.evidence || "")} ${s.url ? link(s.url, "company document") : ""}</p>
       <p class="status-note"><strong>What the recommendations ask:</strong> ${esc(crit.test)}</p>`;
+    // The matrix is rebuilt: keep keyboard focus on the chosen cell.
+    const had = document.activeElement && document.activeElement.classList.contains("sc-cell");
     draw();
+    if (had) { const b = document.querySelector(`#sc-matrix .sc-cell[data-t="${CSS.escape(t)}"][data-k="${CSS.escape(k)}"]`); if (b) b.focus(); }
   }
 
   window.renderScorecard = function (data) {
@@ -60,10 +63,10 @@
     const pillars = [...new Set(data.criteria.map((k) => k.pillar))];
     const docs = data.companies.map((c) => `<li><strong>${esc(c.name)}:</strong> ${(c.key_documents || []).map((d) => `<a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.title)}</a>${d.date ? ` (${esc(d.date)})` : ""}`).join(", ")}</li>`).join("");
     const tl = (data.parnassus_timeline || []).map((e) => `<li><div class="date">${esc(e.date)}${e.company ? " · " + esc(e.company) : ""}</div>
-      <div><strong>${esc(e.title)}.</strong> ${esc(e.summary)} ${link(e.source_url, e.source_page ? "source, p. " + e.source_page : "source")}</div></li>`).join("");
+      <div><strong>${esc(e.title)}.</strong> ${esc(e.summary)} ${link(e.source_url, e.source_page ? `source, ${/[,-]/.test(e.source_page) ? "pp." : "p."} ${String(e.source_page).replace("-", "–")}` : "source")}</div></li>`).join("");
     el.innerHTML = `
       <h2>AI disclosure scores</h2>
-      <p class="intro">${data.companies.length} companies × ${data.criteria.length} criteria from the <a href="${esc(data.framework_url)}" target="_blank" rel="noopener">Investor Recommendations for an Effective Rights-Based Approach to AI</a> (April 2025), scored on published disclosure only. Silent = no public disclosure found. Not affiliated with Parnassus Investments.</p>
+      <p class="intro">${data.companies.length} companies × ${data.criteria.length} criteria from the <a href="${esc(data.framework_url)}" target="_blank" rel="noopener">Investor Recommendations for an Effective Rights-Based Approach to AI</a> (April 2025), scored by this site against these published recommendations, on published disclosure only. Silent = no public disclosure found. Not affiliated with Parnassus Investments.</p>
       <div class="net-controls">
         <div class="seg" role="group" aria-label="Pillar">
           <button type="button" data-p="" aria-pressed="true">All</button>

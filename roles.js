@@ -16,7 +16,7 @@
     { id: "datacenters", label: "Data centers and power", about: "Build and power the physical capacity AI needs." },
     { id: "cloud", label: "Cloud and model platforms", about: "Rent out computing power and offer other companies' models." },
     { id: "consumer", label: "Consumer products", about: "Put AI in front of the public: feeds, devices, assistants, media, cars." },
-    { id: "business", label: "Business and government products", about: "Sell AI built into tools for organisations, including policing and defence." },
+    { id: "business", label: "Business and government products", about: "Sell AI built into tools for organizations, including policing and defense." },
     { id: "capital", label: "Strategic investors", about: "Fund frontier labs or AI infrastructure as a main role." },
   ];
   // Value-chain tier -> role. Deployers are split below.

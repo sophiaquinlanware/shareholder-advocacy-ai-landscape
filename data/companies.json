@@ -158,7 +158,7 @@
    "Voting control": {
     "level": "closed",
     "label": "Founder control",
-    "note": "~52.7% of votes with Page and Brin",
+    "note": "about 52.7% of votes with Page and Brin",
     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
    }
   },
@@ -227,7 +227,7 @@
    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000072/a2024910-exhibit31.htm"
   },
   "control": {
-   "text": "Class B shares carry 10 votes each. Zuckerberg holds 60.8% of voting power, and Meta is a 'controlled company' under Nasdaq rules. A new non-voting share class takes effect January 19, 2027.",
+   "text": "Class B shares carry 10 votes each. Zuckerberg holds 60.8% of voting power, and Meta is a 'controlled company' under Nasdaq rules.",
    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
   },
   "director_voting": {
@@ -494,7 +494,7 @@
   },
   "evidence": [
    {
-    "text": "Undated: Nvidia is listed among organisations added to the Frontier AI Safety Commitments signatories (gov.uk Frontier AI Safety Commitments page)",
+    "text": "Undated: Nvidia is listed among organizations added to the Frontier AI Safety Commitments signatories (gov.uk Frontier AI Safety Commitments page)",
     "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
    },
    {
@@ -756,7 +756,7 @@
    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/exhibit32-closing8xk.htm"
   },
   "control": {
-   "text": "Class A shares carry one vote each and Class N shares have no vote. One Class F share, held by Anthropic Founders, LLC, carries 50.1% of total voting power. One Class T share elects a majority of the board. No proxy statement yet; this is from the IPO closing filings of November 2026.",
+   "text": "Class A shares carry one vote each and Class N shares have no vote. One Class F share, held by Anthropic Founders, LLC, carries 50.1% of total voting power. Class T stock elects the Class T directors. No proxy statement yet; this is from the IPO closing filings of November 2026.",
    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/ant-20261119.htm"
   },
   "director_voting": {
@@ -1133,7 +1133,7 @@
   ],
   "basis_type": "safety commitment",
   "engagement_basis": {
-   "text": "Undated: Magic is named in the Frontier AI Safety Commitments signatory list as an organisation added to the original list (gov.uk Frontier AI Safety Commitments page)",
+   "text": "Undated: Magic is named in the Frontier AI Safety Commitments signatory list as an organization added to the original list (gov.uk Frontier AI Safety Commitments page)",
    "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
   },
   "evidence": [],
@@ -1378,7 +1378,7 @@
   "route_source_url": "https://reflection.ai/blog/frontier-open-intelligence",
   "source_note": "",
   "rights_tracked": false,
-  "route_note": "Privately held, venture-backed; its own post says it raised $2 billion from investors including NVIDIA, Sequoia, Lightspeed, DST and 1789, and press reports a further $2.5 billion round in 2026, with no acquisition or listing found.",
+  "route_note": "Privately held, venture-backed; its own post says it raised $2 billion from investors including Nvidia, Sequoia, Lightspeed, DST and 1789, and press reports a further $2.5 billion round in 2026, with no acquisition or listing found.",
   "tier": "labs",
   "tiers": [
    "labs"

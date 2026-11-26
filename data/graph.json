@@ -28,7 +28,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "SEC Rule 14a-8 ... No later than close of business (5:30 p.m. Pacific Time) on June 24, 2027",
-   "degree": 67
+   "degree": 66
   },
   {
    "id": "co-GOOGL",
@@ -60,7 +60,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "Corporate Secretary must receive the written proposal ... no later than Friday, December 25, 2026.",
-   "degree": 62
+   "degree": 61
   },
   {
    "id": "co-META",
@@ -89,7 +89,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "the proposal must be received by us ... no later than December 17, 2026.",
-   "degree": 38
+   "degree": 37
   },
   {
    "id": "co-AMZN",
@@ -120,7 +120,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "must be received no later than 6:00 p.m., Pacific Time, on Thursday, December 10, 2026",
-   "degree": 39
+   "degree": 38
   },
   {
    "id": "co-NVDA",
@@ -148,7 +148,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "must submit their proposals in writing ... on or before January 12, 2027.",
-   "degree": 37
+   "degree": 36
   },
   {
    "id": "co-AAPL",
@@ -173,7 +173,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm",
    "next_proposal_deadline_status": "passed",
    "next_proposal_deadline_quote": "must be received on or before the close of business on September 10, 2026.",
-   "degree": 29
+   "degree": 28
   },
   {
    "id": "co-TSLA",
@@ -201,7 +201,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "such a proposal would need to be received ... no later than June 21, 2027",
-   "degree": 18
+   "degree": 16
   },
   {
    "id": "co-ANT",
@@ -391,7 +391,7 @@
     "labs"
    ],
    "basis_type": "safety commitment",
-   "description": "Undated: Magic is named in the Frontier AI Safety Commitments signatory list as an organisation added to the original list (gov.uk Frontier AI Safety Commitments page)",
+   "description": "Undated: Magic is named in the Frontier AI Safety Commitments signatory list as an organization added to the original list (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "degree": 0
   },
@@ -633,7 +633,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
    "next_proposal_deadline_status": "passed",
    "next_proposal_deadline_quote": "must be received at our corporate headquarters no later than November 10, 2026",
-   "degree": 13
+   "degree": 12
   },
   {
    "id": "co-CRM",
@@ -658,7 +658,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "must be received at our principal executive offices not later than the close of business on December 17, 2026",
-   "degree": 19
+   "degree": 18
   },
   {
    "id": "co-ADBE",
@@ -682,7 +682,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000043/adbe-20260227.htm",
    "next_proposal_deadline_status": "passed",
    "next_proposal_deadline_quote": "we must receive the proposal at our principal executive offices, addressed to the Corporate Secretary, no later than October 30, 2026",
-   "degree": 12
+   "degree": 11
   },
   {
    "id": "co-INTU",
@@ -706,7 +706,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000053/intu-20261125.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "so that the Corporate Secretary receives it at our principal executive offices by the close of business ... on July 28, 2027",
-   "degree": 17
+   "degree": 2
   },
   {
    "id": "co-VRSK",
@@ -729,7 +729,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1442145/000119312526141398/d23242ddef14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "We must receive the proposal no later than December 4, 2026.",
-   "degree": 11
+   "degree": 10
   },
   {
    "id": "co-WDAY",
@@ -752,7 +752,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1327811/000110465926055687/tm261347-2_def14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "we must receive such proposals no later than January 5, 2027.",
-   "degree": 11
+   "degree": 10
   },
   {
    "id": "co-NOW",
@@ -777,7 +777,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000039/now-20260406.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "must be received by the Company not later than December 7, 2026",
-   "degree": 12
+   "degree": 11
   },
   {
    "id": "co-PLTR",
@@ -800,7 +800,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "the proposal must be received by our corporate secretary at our corporate headquarters on or before December 25, 2026",
-   "degree": 13
+   "degree": 12
   },
   {
    "id": "co-CSCO",
@@ -826,7 +826,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "such proposals must be received by Cisco no later than July 1, 2027.",
-   "degree": 18
+   "degree": 17
   },
   {
    "id": "co-AXON",
@@ -849,7 +849,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1069183/000162828026025521/axon-20260416.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "be received not later than December 17, 2026 by the Corporate Secretary of the Company",
-   "degree": 10
+   "degree": 9
   },
   {
    "id": "co-MSI",
@@ -872,7 +872,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/68505/000119312526139004/d50373ddef14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "must be received by the Secretary, Motorola Solutions, Inc. ... no later than December 3, 2026",
-   "degree": 9
+   "degree": 8
   },
   {
    "id": "co-HO",
@@ -1019,7 +1019,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1065280/000119312526159286/d20613ddef14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "must be received by our Secretary no later than December 17, 2026",
-   "degree": 18
+   "degree": 17
   },
   {
    "id": "co-warner-bros-discovery",
@@ -1061,7 +1061,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000013/dis-20260122.htm",
    "next_proposal_deadline_status": "passed",
    "next_proposal_deadline_quote": "shareholder proposals must be received by the Company's Secretary no later than the close of business on September 24, 2026",
-   "degree": 13
+   "degree": 12
   },
   {
    "id": "co-CMCSA",
@@ -1084,7 +1084,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1166691/000119312526177138/cmcsa-20260424.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "under Rule 14a-8 ... must be received no later than December 25, 2026",
-   "degree": 11
+   "degree": 10
   },
   {
    "id": "co-ORCL",
@@ -1111,7 +1111,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526402816/orcl-20260925.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "Proposals for inclusion in 2027 proxy statement ... No later than the close of business on May 28, 2027.",
-   "degree": 17
+   "degree": 16
   },
   {
    "id": "co-9984",
@@ -1176,7 +1176,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "submitted in writing ... and received by us on or before November 27, 2026",
-   "degree": 23
+   "degree": 22
   },
   {
    "id": "co-AVGO",
@@ -1201,7 +1201,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/d49254ddef14a.htm",
    "next_proposal_deadline_status": "passed",
    "next_proposal_deadline_quote": "must comply with ... Rule 14a-8 ... and be received no later than November 2, 2026",
-   "degree": 22
+   "degree": 21
   },
   {
    "id": "co-TSM",
@@ -1360,7 +1360,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "pursuant to Rule 14a-8 of the Exchange Act for the 2027 annual meeting is December 4, 2026",
-   "degree": 10
+   "degree": 9
   },
   {
    "id": "co-MU",
@@ -1446,7 +1446,7 @@
    "label": "xAI",
    "status": "in-house",
    "tier": "labs",
-   "description": "Grok maker; acquired by SpaceX in all-stock deal Feb 2026 (xAI valued ~$250B).",
+   "description": "Grok maker; acquired by SpaceX in all-stock deal Feb 2026 (xAI valued about $250B).",
    "source_url": "https://www.axios.com/2026/02/02/elon-musk-spacex-xai",
    "degree": 5
   },
@@ -1602,7 +1602,7 @@
    "description": "Islamic-values ethical asset manager active in human rights shareholder advocacy.",
    "website": "https://www.azzad.net",
    "source_url": "https://www.azzad.net",
-   "degree": 36
+   "degree": 35
   },
   {
    "id": "as-you-sow",
@@ -1701,7 +1701,7 @@
    "description": "ESG investment manager; files on AI principles and data center climate impacts.",
    "website": "https://www.trilliuminvest.com",
    "source_url": "https://www.trilliuminvest.com",
-   "degree": 46
+   "degree": 45
   },
   {
    "id": "csjp",
@@ -1822,7 +1822,7 @@
    "description": "California socially responsible manager and frequent shareholder activist.",
    "website": "https://www.harringtoninvestments.com",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923005962/b425233px14a6g.htm",
-   "degree": 19
+   "degree": 18
   },
   {
    "id": "aviva",
@@ -2174,7 +2174,7 @@
    "description": "ESG mutual fund manager; member of WBA ethical AI coalition.",
    "website": "https://www.parnassus.com",
    "source_url": "https://www.parnassus.com",
-   "degree": 29
+   "degree": 28
   },
   {
    "id": "fidelity-intl",
@@ -2218,7 +2218,7 @@
    "description": "UK asset manager with published AI expectations and Big Tech engagement.",
    "website": "https://www.lgim.com",
    "source_url": "https://group.legalandgeneral.com/en/newsroom/press-releases/lgim-dials-up-engagement-on-nature-health-and-ai-in-latest-active-ownership-report",
-   "degree": 31
+   "degree": 30
   },
   {
    "id": "nbim",
@@ -2240,7 +2240,7 @@
    "description": "Impact mutual fund firm; ICCR and Investor Alliance member.",
    "website": "https://www.domini.com",
    "source_url": "https://www.domini.com",
-   "degree": 5
+   "degree": 4
   },
   {
    "id": "northstar",
@@ -2251,7 +2251,7 @@
    "description": "Socially responsible manager; signed IASJ Amazon responsible-AI solicitation.",
    "website": "https://www.northstarasset.com",
    "source_url": "https://www.northstarasset.com",
-   "degree": 46
+   "degree": 45
   },
   {
    "id": "ceres",
@@ -2292,7 +2292,7 @@
    "layer": "investors",
    "label": "IIGCC (Institutional Investors Group on Climate Change)",
    "org_type": "coalition",
-   "description": "European investor membership body on climate change. In February 2026 it published research on climate and nature risks of AI data centres, including water use, and said it plans data centre guidance, insights and engagement tools; in October 2026 it published bondholder stewardship research on hyperscaler and data centre debt.",
+   "description": "European investor membership body on climate change. In February 2026 it published research on climate and nature risks of AI data centers, including water use, and said it plans data center guidance, insights and engagement tools; in October 2026 it published bondholder stewardship research on hyperscaler and data center debt.",
    "website": "https://www.iigcc.org/insights/ai-data-centres-climate-and-nature-risks-for-investors",
    "source_url": "https://www.iigcc.org/insights/ai-data-centres-climate-and-nature-risks-for-investors",
    "degree": 7
@@ -2306,7 +2306,7 @@
    "description": null,
    "website": null,
    "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
-   "degree": 34
+   "degree": 33
   },
   {
    "id": "calstrs",
@@ -2317,7 +2317,7 @@
    "description": null,
    "website": null,
    "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
-   "degree": 33
+   "degree": 32
   },
   {
    "id": "dws",
@@ -2383,7 +2383,7 @@
    "description": null,
    "website": null,
    "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
-   "degree": 33
+   "degree": 32
   },
   {
    "id": "calvert-research-and-management",
@@ -2427,7 +2427,7 @@
    "description": null,
    "website": null,
    "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
-   "degree": 30
+   "degree": 5
   },
   {
    "id": "state-street",
@@ -2504,7 +2504,7 @@
    "description": null,
    "website": null,
    "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
-   "degree": 29
+   "degree": 28
   },
   {
    "id": "maryknoll-sisters",
@@ -3087,7 +3087,7 @@
    "description": "US sustainable investment advisory firm.",
    "website": "https://firstaffirmative.com",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
-   "degree": 22
+   "degree": 21
   },
   {
    "id": "auris-gestion",
@@ -3197,7 +3197,7 @@
    "description": "Bank whose largest stockholder is a Workers United joint board; its LongView Funds engage companies and file shareholder resolutions on net-zero emissions, diversity, freedom of association and reproductive rights.",
    "website": "https://www.amalgamatedbank.com",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1823608/000182360824000104/amal-20240411.htm",
-   "degree": 28
+   "degree": 27
   },
   {
    "id": "bailard",
@@ -3208,7 +3208,7 @@
    "description": "California wealth and asset manager whose Sustainable, Responsible and Impact Investing group engages companies and co-files proposals with partners such as As You Sow and ICCR, for example at CVS Health in 2023.",
    "website": "https://www.bailard.com",
    "source_url": "https://www.bailard.com/impact/engagement-advocacy",
-   "degree": 21
+   "degree": 20
   },
   {
    "id": "capital-group",
@@ -3271,7 +3271,7 @@
    "layer": "investors",
    "label": "New York City Carpenters Pension Fund",
    "org_type": "labor fund",
-   "description": "Union pension fund that files governance proposals, such as director resignation policies at Visa and Jabil (2024) and NVIDIA (2025).",
+   "description": "Union pension fund that files governance proposals, such as director resignation policies at Visa and Jabil (2024) and Nvidia (2025).",
    "website": "",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000130817924000807/v4356611_def14.htm",
    "degree": 0
@@ -3689,7 +3689,7 @@
    "layer": "investors",
    "label": "Green America",
    "org_type": "advocacy nonprofit",
-   "description": "Publishes an annual guide urging investors to vote on key shareholder resolutions; the 2026 list includes AI, data center and child safety proposals at Alphabet, Amazon, Meta, NVIDIA and others.",
+   "description": "Publishes an annual guide urging investors to vote on key shareholder resolutions; the 2026 list includes AI, data center and child safety proposals at Alphabet, Amazon, Meta, Nvidia and others.",
    "website": "https://www.greenamerica.org/",
    "source_url": "https://greenamerica.org/node/19356",
    "degree": 0
@@ -3909,7 +3909,7 @@
    "layer": "investors",
    "label": "The Investor Forum",
    "org_type": "coalition",
-   "description": "UK body that organises collective engagement by institutional investors with UK-listed companies, led by a Stewardship Director.",
+   "description": "UK body that organizes collective engagement by institutional investors with UK-listed companies, led by a Stewardship Director.",
    "website": "https://investorforum.org.uk",
    "source_url": "https://investorforum.org.uk/who-we-are/",
    "degree": 2
@@ -4140,7 +4140,7 @@
    "layer": "investors",
    "label": "CCLA Investment Management",
    "org_type": "impact/ESG asset manager",
-   "description": "Charity, church and public sector fund manager whose stewardship team runs engagement programmes on health, the environment and workplace labour practices, and sets its own proxy voting policy.",
+   "description": "Charity, church and public sector fund manager whose stewardship team runs engagement programs on health, the environment and workplace labour practices, and sets its own proxy voting policy.",
    "website": "https://www.ccla.co.uk",
    "source_url": "https://www.ccla.co.uk/our-people/main-contacts/amy-browne",
    "degree": 2
@@ -4151,7 +4151,7 @@
    "layer": "investors",
    "label": "Royal London Asset Management",
    "org_type": "impact/ESG asset manager",
-   "description": "UK manager whose 2026-2028 engagement priorities include sustainable and ethical AI, covering AI governance and data centre footprints, with escalation where engagement stalls.",
+   "description": "UK manager whose 2026-2028 engagement priorities include sustainable and ethical AI, covering AI governance and data center footprints, with escalation where engagement stalls.",
    "website": "https://www.rlam.com",
    "source_url": "https://www.rlam.com/en-au/our-views/2026/company-engagement-priorities-for-2026-2028/",
    "degree": 2
@@ -4239,7 +4239,7 @@
    "layer": "investors",
    "label": "PKA",
    "org_type": "asset owner",
-   "description": "Danish pension fund that, with Sampension and PenSam, opened a 2022 investor dialogue with Amazon on workers' right to organise that later grew to several more Danish pension funds.",
+   "description": "Danish pension fund that, with Sampension and PenSam, opened a 2022 investor dialogue with Amazon on workers' right to organize that later grew to several more Danish pension funds.",
    "website": "https://www.pka.dk",
    "source_url": "https://ipe.com/news/danish-pension-funds-unite-to-press-amazon-on-labour-rights/10066719.article",
    "degree": 0
@@ -4316,7 +4316,7 @@
    "layer": "investors",
    "label": "Achmea Investment Management",
    "org_type": "impact/ESG asset manager",
-   "description": "Dutch manager whose engagement programme covers climate, biodiversity, human rights and health, and whose Q4 2025 voting report names responsible AI use as a focus area.",
+   "description": "Dutch manager whose engagement program covers climate, biodiversity, human rights and health, and whose Q4 2025 voting report names responsible AI use as a focus area.",
    "website": "https://www.achmeainvestmentmanagement.nl",
    "source_url": "https://www.achmeainvestmentmanagement.nl/-/media/Files/AchmeaIM/Documenten-Inst-en-Part/AIM-Corporate-Governance-en-Stemverslag-Q4-2025.pdf",
    "degree": 0
@@ -4393,7 +4393,7 @@
    "layer": "investors",
    "label": "Australasian Centre for Corporate Responsibility (ACCR)",
    "org_type": "advocacy nonprofit",
-   "description": "Shareholder advocacy organisation that files and co-files resolutions at Australian and global companies (for example a 2025 co-filed resolution at Shell on its LNG outlook) and engages investors on climate and corporate conduct.",
+   "description": "Shareholder advocacy organization that files and co-files resolutions at Australian and global companies (for example a 2025 co-filed resolution at Shell on its LNG outlook) and engages investors on climate and corporate conduct.",
    "website": "https://www.accr.org.au",
    "source_url": "https://www.accr.org.au/downloads/ACCR_AnnualReview1_FY24-25.pdf",
    "degree": 4
@@ -4481,7 +4481,7 @@
    "layer": "investors",
    "label": "Canadian Coalition for Good Governance (CCGG)",
    "org_type": "coalition",
-   "description": "Coalition of Canadian institutional investors that runs a board engagement programme with Canadian public companies on governance practices.",
+   "description": "Coalition of Canadian institutional investors that runs a board engagement program with Canadian public companies on governance practices.",
    "website": "https://ccgg.ca",
    "source_url": "https://ccgg.ca/engagement-program/",
    "degree": 2
@@ -4525,7 +4525,7 @@
    "layer": "investors",
    "label": "Asia Research and Engagement (ARE)",
    "org_type": "coalition",
-   "description": "Runs collaborative engagement programmes that bring global institutional investors together to engage Asian companies on energy transition and protein transition.",
+   "description": "Runs collaborative engagement programs that bring global institutional investors together to engage Asian companies on energy transition and protein transition.",
    "website": "https://asiareengage.com",
    "source_url": "https://asiareengage.com/our-team/",
    "degree": 2
@@ -5046,7 +5046,7 @@
    "filing_deadline": "2022-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm",
    "meeting_date": "2023-06-02",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks the board to commission a report on siting Google Cloud data centers in countries of \"significant human rights concern\" and how the company mitigates the related impacts.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "ask_id": "ask-dc-siting-rights",
@@ -5070,7 +5070,7 @@
    "filing_deadline": "2022-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm",
    "meeting_date": "2023-06-02",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks the board to publish an independent third-party human rights impact assessment of Google's targeted advertising policies and practices across its business.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "ask_id": "ask-targeted-ads-rights",
@@ -5094,7 +5094,7 @@
    "filing_deadline": "2022-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm",
    "meeting_date": "2023-06-02",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks Alphabet to disclose more quantitative and qualitative information on its algorithmic systems, such as how they target ads, their error rates, and effects on user speech.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "ask_id": "ask-ai-oversight-reporting",
@@ -5140,7 +5140,7 @@
    "filing_deadline": "2023-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "meeting_date": "2024-06-07",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks the board to amend the Audit and Compliance Committee charter to make it responsible for overseeing Alphabet's AI activities and implementation of its AI Principles.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "ask_id": "ask-ai-oversight-reporting",
@@ -5164,7 +5164,7 @@
    "filing_deadline": "2023-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "meeting_date": "2024-06-07",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks the board for an annual report on risks from Alphabet's role in generative AI misinformation and disinformation, its remediation steps, and how it measures their effectiveness.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "ask_id": "ask-ai-misinformation",
@@ -5197,7 +5197,7 @@
    "filing_deadline": "2023-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "meeting_date": "2024-06-07",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks the board to publish an independent third-party human rights impact assessment of Google's AI-driven targeted advertising policies and practices.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "ask_id": "ask-targeted-ads-rights",
@@ -5243,7 +5243,7 @@
    "filing_deadline": "2024-12-27",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "meeting_date": "2025-06-06",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks the board for an independent report on how Alphabet assesses whether customer use of its products for surveillance, censorship, or military purposes causes human rights harms in conflict areas.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "ask_id": "ask-customer-due-diligence",
@@ -5267,7 +5267,7 @@
    "filing_deadline": "2024-12-27",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "meeting_date": "2025-06-06",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks the board for a report on how it oversees risks of generative AI bias against religious or political views and whether such bias affects people's civil rights.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "ask_id": "ask-ai-bias",
@@ -5291,7 +5291,7 @@
    "filing_deadline": "2024-12-27",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "meeting_date": "2025-06-06",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks for an annual report on risks from unethical or improper use of external data in developing and deploying Alphabet's AI, how it mitigates them, and how it measures effectiveness.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "ask_id": "ask-ai-training-data",
@@ -5324,7 +5324,7 @@
    "filing_deadline": "2024-12-27",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "meeting_date": "2025-06-06",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks the board to publish an independent third-party human rights impact assessment of Google's AI-driven targeted advertising policies and practices.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "ask_id": "ask-targeted-ads-rights",
@@ -5348,7 +5348,7 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "meeting_date": "2026-06-05",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks Alphabet for a report on how its water usage policies and practices align with long-term shareholder value, particularly for brand growth and AI development.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-dc-water",
@@ -5372,7 +5372,7 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "meeting_date": "2026-06-05",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks the board for a report on risks from gaps in Alphabet's oversight of customer and user data that could let its services facilitate government surveillance, censorship, or profiling.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-ai-training-data",
@@ -5405,7 +5405,7 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "meeting_date": "2026-06-05",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks the board to update the Audit Committee charter to give it formal oversight of responsible AI development and deployment and of AI risks to users' human rights.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-ai-oversight-reporting",
@@ -5429,7 +5429,7 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "meeting_date": "2026-06-05",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks the board to commission a third-party assessment of further actions Alphabet could take to curb the spread of false information, including AI-generated falsehoods, and report the outcome.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-ai-misinformation",
@@ -5462,7 +5462,7 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "meeting_date": "2026-06-05",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks for an annual report on risks from unethical or improper use of external data in developing and deploying Alphabet's AI, how it mitigates them, and how it measures effectiveness.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-ai-training-data",
@@ -5486,7 +5486,7 @@
    "filing_deadline": "2022-12-09",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680122000043/meta2022definitiveproxysta.htm",
    "meeting_date": "2023-05-31",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks the board to publish an independent third-party human rights impact assessment of Facebook's targeted advertising policies and practices across its business.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
    "ask_id": "ask-targeted-ads-rights",
@@ -5531,7 +5531,7 @@
    "filing_deadline": "2023-12-16",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
    "meeting_date": "2024-05-29",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks the board for an annual report on risks from Meta's role in spreading generative AI misinformation and disinformation, its remediation steps, and how it measures their effectiveness.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "ask_id": "ask-ai-misinformation",
@@ -5564,7 +5564,7 @@
    "filing_deadline": "2023-12-16",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
    "meeting_date": "2024-05-29",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks the board to publish an independent third-party human rights impact assessment of the AI systems that drive Facebook's targeted advertising policies and practices.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "ask_id": "ask-targeted-ads-rights",
@@ -5588,7 +5588,7 @@
    "filing_deadline": "2024-12-20",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "meeting_date": "2025-05-28",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks for an annual report on risks from unethical or improper use of external data in developing and deploying Meta's AI, how it mitigates them, and how it measures effectiveness.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "ask_id": "ask-ai-training-data",
@@ -5612,7 +5612,7 @@
    "filing_deadline": "2024-12-20",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "meeting_date": "2025-05-28",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks Meta to publish a transparency report on its use of deepfake-identifying software to combat the risks of online child exploitation.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "ask_id": "ask-child-safety",
@@ -5636,7 +5636,7 @@
    "filing_deadline": "2024-12-20",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "meeting_date": "2025-05-28",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks Meta to disclose a transition plan for new renewable energy or other actions that cut emissions at least as much as its expanded data centers' added energy demand.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "ask_id": "ask-dc-climate-energy",
@@ -5691,7 +5691,7 @@
    "filing_deadline": "2025-12-18",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "meeting_date": "2026-05-27",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks for an annual report on risks from unethical or improper use of external data in developing and deploying Meta's AI, how it mitigates them, and how it measures effectiveness.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "ask_id": "ask-ai-training-data",
@@ -5715,7 +5715,7 @@
    "filing_deadline": "2025-12-18",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "meeting_date": "2026-05-27",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks the board to oversee a data protection impact assessment of Meta's use of AI chatbot conversations to personalize ads and content, including appropriate use and opt-out procedures.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "ask_id": "ask-ai-training-data",
@@ -5739,7 +5739,7 @@
    "filing_deadline": "2025-12-18",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "meeting_date": "2026-05-27",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks Meta for a report explaining how it will meet its greenhouse gas commitments given rising energy demand from its artificial intelligence work and planned data centers.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "ask_id": "ask-dc-climate-energy",
@@ -6172,7 +6172,7 @@
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000095/nvda-20250512.htm",
    "meeting_date": "2026-06-24",
    "support_note": "Majority of shares present, with abstentions counted as against: 17.44% For/(For+Against+Abstain). The 8-K gives no percentage.",
-   "plain_summary": "Asks for a report disclosing the greenhouse gas emissions from the use of NVIDIA's sold products.",
+   "plain_summary": "Asks for a report disclosing the greenhouse gas emissions from the use of Nvidia's sold products.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
    "ask_id": "ask-dc-climate-energy",
    "category": "data-centers",
@@ -6189,13 +6189,13 @@
    "subtopic": "military AI and humanitarian law",
    "status": "excluded",
    "support_pct": null,
-   "source_url": "https://collaborate.unpri.org/group/38826/home",
+   "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/tttnvidia31026.pdf",
    "filing_deadline": "2026-01-13",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000095/nvda-20250512.htm",
    "meeting_date": "2026-06-24",
-   "status_reason": "Excluded: NVIDIA notified the SEC (February 20, 2026) that it would omit the proposal as ordinary business under Rule 14a-8(i)(7), citing staff precedent on sales of products to military customers. Under the Division's November 17, 2025 statement, staff replied on March 10, 2026 that it would not object, based solely on the company's representation.",
+   "status_reason": "Excluded: Nvidia notified the SEC (February 20, 2026) that it would omit the proposal as ordinary business under Rule 14a-8(i)(7), citing staff precedent on sales of products to military customers. Under the Division's November 17, 2025 statement, staff replied on March 10, 2026 that it would not object, based solely on the company's representation.",
    "status_source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/tttnvidia31026.pdf",
-   "plain_summary": "Asks NVIDIA to publish a report explaining its strategic reason for military sales and contracts and how they add long-term shareholder value despite lower margins and legal and reputational risks.",
+   "plain_summary": "Asks Nvidia to publish a report explaining its strategic reason for military sales and contracts and how they add long-term shareholder value despite lower margins and legal and reputational risks.",
    "plain_summary_source": "https://www.sec.gov/files/corpfin/no-action/14a-8/tttnvidia31026.pdf",
    "plain_summary_note": "Resolution text from the proposal attached to NVIDIA's SEC notification letter.",
    "ask_id": "ask-customer-due-diligence",
@@ -6927,7 +6927,7 @@
    "label": "Giovanna Eichner",
    "title": "Shareholder Advocate",
    "org_name": "Green Century Capital Management",
-   "ai_focus": "Lead contact on Green Century's 2026 NVIDIA proposal asking for reporting of AI product-use emissions (18% support); spoke on data center impacts at Climate Week NYC 2026",
+   "ai_focus": "Lead contact on Green Century's 2026 Nvidia proposal asking for reporting of AI product-use emissions (18% support); spoke on data center impacts at Climate Week NYC 2026",
    "source_url": "https://www.greencentury.com/team/giovanna-eichner-shareholder-advocate/",
    "verified": "2026-11",
    "degree": 1
@@ -6939,7 +6939,7 @@
    "label": "Lisa Beauvilain",
    "title": "Global Head of Sustainability & Stewardship, Co-Head of the Impax Sustainability Centre",
    "org_name": "Impax Asset Management",
-   "ai_focus": "Heads Impax sustainability and stewardship; Impax's 2026 Stewardship and Advocacy Report, which she introduces, covers its 2025 AI governance engagement programme",
+   "ai_focus": "Heads Impax sustainability and stewardship; Impax's 2026 Stewardship and Advocacy Report, which she introduces, covers its 2025 AI governance engagement program",
    "source_url": "https://impaxam.com/about/team/lisa-beauvilain",
    "verified": "2026-11",
    "degree": 1
@@ -7646,7 +7646,7 @@
    "label": "Cambria Allen-Ratzlaff",
    "title": "Interim Chief Executive Officer",
    "org_name": "PRI",
-   "ai_focus": "general responsible investment leadership",
+   "ai_focus": "General responsible investment leadership",
    "source_url": "https://www.unpri.org/news-and-press/pri-appoints-cambria-allen-ratzlaff-interim-ceo/13521.article",
    "verified": "2026-11",
    "degree": 1
@@ -7806,7 +7806,7 @@
    "label": "Julia-Christine Rippel",
    "title": "Head of Sustainability & Stewardship Office",
    "org_name": "DWS",
-   "ai_focus": "Signs DWS's 2025 Stewardship Report, which records support for a proposal on meeting climate commitments given AI and data centre energy demand",
+   "ai_focus": "Signs DWS's 2025 Stewardship Report, which records support for a proposal on meeting climate commitments given AI and data center energy demand",
    "source_url": "https://download.dws.com/download/asset/1dc13fd9-5f5f-445e-a8e0-3064712725d7",
    "verified": "2026-11",
    "degree": 1
@@ -8091,7 +8091,7 @@
    "label": "Estelle Parker",
    "title": "Co-CEO",
    "org_name": "Responsible Investment Association Australasia (RIAA)",
-   "ai_focus": "Co-leads RIAA, whose Human Rights Working Group put AI and human rights on its 2026 programme; no AI work by her personally was sourced",
+   "ai_focus": "Co-leads RIAA, whose Human Rights Working Group put AI and human rights on its 2026 program; no AI work by her personally was sourced",
    "source_url": "https://www.responsibleinvestment.org/people/estelle-parker",
    "verified": "2026-11",
    "degree": 1
@@ -9418,7 +9418,7 @@
    "label": "Andre Shepley",
    "title": "Senior Director, Responsible Investing",
    "org_name": "Nuveen (TIAA)",
-   "ai_focus": "Speaker at PRI's December 2026 webinar on AI data centres and responsible investment",
+   "ai_focus": "Speaker at PRI's December 2026 webinar on AI data centers and responsible investment",
    "source_url": "https://www.unpri.org/events/webinar-ai-data-centres",
    "verified": "2026-11",
    "degree": 1
@@ -9430,7 +9430,7 @@
    "label": "Sherman Jewett",
    "title": "Corporate Governance Officer",
    "org_name": "New York State Common Retirement Fund",
-   "ai_focus": "Speaker at PRI's December 2026 webinar on AI data centres and responsible investment",
+   "ai_focus": "Speaker at PRI's December 2026 webinar on AI data centers and responsible investment",
    "source_url": "https://www.unpri.org/events/webinar-ai-data-centres",
    "verified": "2026-11",
    "degree": 1
@@ -9441,7 +9441,7 @@
    "layer": "investors",
    "label": "FMR LLC",
    "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
-   "degree": 27
+   "degree": 26
   },
   {
    "id": "ev-un-guiding-principles",
@@ -9691,7 +9691,7 @@
    "kind": "policy",
    "actor": "Government of China (Cyberspace Administration of China publication)",
    "jurisdiction": "China",
-   "description": "A diplomatic statement of principles for AI governance, including a people-centred approach, respect for other countries' sovereignty when supplying AI, risk testing and opposition to using AI to interfere in other countries. It sets no company duties.",
+   "description": "A diplomatic statement of principles for AI governance, including a people-centered approach, respect for other countries' sovereignty when supplying AI, risk testing and opposition to using AI to interfere in other countries. It sets no company duties.",
    "source_url": "https://www.cac.gov.cn/2023-10/18/c_1699291032884978.htm",
    "degree": 1
   },
@@ -9747,7 +9747,7 @@
    "kind": "policy",
    "actor": "G7 leaders",
    "jurisdiction": "Global",
-   "description": "Voluntary code asking organisations that build advanced AI to manage risks across the lifecycle, publish transparency reports on capabilities and limits, disclose governance and risk policies, and use content authentication.",
+   "description": "Voluntary code asking organizations that build advanced AI to manage risks across the lifecycle, publish transparency reports on capabilities and limits, disclose governance and risk policies, and use content authentication.",
    "source_url": "https://digital-strategy.ec.europa.eu/en/library/hiroshima-process-international-code-conduct-advanced-ai-systems",
    "degree": 2
   },
@@ -9839,13 +9839,13 @@
    "id": "ev-eu-eed-dc-reporting",
    "type": "policy",
    "layer": "policy",
-   "label": "EU requires data centres to report energy and water use",
+   "label": "EU requires data centers to report energy and water use",
    "date": "2024-03-14",
    "lane": "government",
    "kind": "rule",
    "actor": "European Commission",
    "jurisdiction": "EU",
-   "description": "Delegated Regulation 2024/1364 under the Energy Efficiency Directive makes operators of EU data centres of 500 kW or more report energy use, power usage effectiveness, water use, renewable energy share and waste heat reuse to a European database each year, first by September 15, 2024. The Commission publishes aggregated figures, not per-site data.",
+   "description": "Delegated Regulation 2024/1364 under the Energy Efficiency Directive makes operators of EU data centers of 500 kW or more report energy use, power usage effectiveness, water use, renewable energy share and waste heat reuse to a European database each year, first by September 15, 2024. The Commission publishes aggregated figures, not per-site data.",
    "source_url": "https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficiency-targets-directive-and-rules/energy-efficiency-directive/energy-performance-data-centres_en",
    "degree": 1
   },
@@ -10027,7 +10027,7 @@
    "kind": "policy",
    "actor": "NDRC; MIIT; National Energy Administration; National Data Administration",
    "jurisdiction": "China",
-   "description": "Targets an average national data center PUE below 1.5 by end of 2025, requires new and expanded large large and very large data centers to reach PUE of 1.25 or less and national hub projects 1.2 or less, sets stricter energy and water efficiency review for new projects, and aims for more than 80% green electricity at new hub data centers by end of 2025.",
+   "description": "Targets an average national data center PUE below 1.5 by end of 2025, requires new and expanded large and very large data centers to reach PUE of 1.25 or less and national hub projects 1.2 or less, sets stricter energy and water efficiency review for new projects, and aims for more than 80% green electricity at new hub data centers by end of 2025.",
    "source_url": "https://www.gov.cn/zhengce/zhengceku/202407/P020240724272072479001.pdf",
    "degree": 0
   },
@@ -10307,7 +10307,7 @@
    "kind": "rule",
    "actor": "Commerce Department, Bureau of Industry and Security",
    "jurisdiction": "US federal",
-   "description": "Interim final rule set worldwide licence requirements and country tiers for advanced AI chips and controlled some frontier model weights, with compliance due May 15, 2025.",
+   "description": "Interim final rule set worldwide license requirements and country tiers for advanced AI chips and controlled some frontier model weights, with compliance due May 15, 2025.",
    "source_url": "https://www.federalregister.gov/documents/2025/01/15/2025-00636/framework-for-artificial-intelligence-diffusion",
    "degree": 1
   },
@@ -10391,7 +10391,7 @@
    "kind": "policy",
    "actor": "OECD",
    "jurisdiction": "Global",
-   "description": "Voluntary framework for organisations to report publicly on how they apply the G7 Code of Conduct, covering risk assessment, transparency, governance, content provenance and data protection.",
+   "description": "Voluntary framework for organizations to report publicly on how they apply the G7 Code of Conduct, covering risk assessment, transparency, governance, content provenance and data protection.",
    "source_url": "https://oecd.org/en/about/news/press-releases/2025/02/oecd-launches-global-framework-to-monitor-application-of-g7-hiroshima-ai-code-of-conduct.html",
    "degree": 2
   },
@@ -10553,13 +10553,13 @@
    "id": "ev-nvidia-h20-license",
    "type": "policy",
    "layer": "policy",
-   "label": "US requires a licence for Nvidia H20 chip sales to China",
+   "label": "US requires a license for Nvidia H20 chip sales to China",
    "date": "2025-04-15",
    "lane": "government",
    "kind": "rule",
    "actor": "US government (Commerce)",
    "jurisdiction": "US federal",
-   "description": "Nvidia disclosed it was told on April 9 that H20 exports to China need a licence indefinitely and expected up to $5.5 billion in charges.",
+   "description": "Nvidia disclosed it was told on April 9 that H20 exports to China need a license indefinitely and expected up to $5.5 billion in charges.",
    "source_url": "https://techcrunch.com/2025/04/15/us-government-imposes-license-requirement-on-nvidia-h20-exports",
    "degree": 0
   },
@@ -10573,7 +10573,7 @@
    "kind": "milestone",
    "actor": "OECD; reporting companies",
    "jurisdiction": "Global",
-   "description": "OECD published the first round of voluntary reports from 19 organisations. From this site's company list: Google, Microsoft, OpenAI, Anthropic, Salesforce and SoftBank Corp. (a SoftBank Group subsidiary). Amazon reported in Q4 2025 and Cohere in Q3 2026.",
+   "description": "OECD published the first round of voluntary reports from 19 organizations. From this site's company list: Google, Microsoft, OpenAI, Anthropic, Salesforce and SoftBank Corp. (a SoftBank Group subsidiary). Amazon reported in Q4 2025 and Cohere in Q3 2026.",
    "source_url": "https://oecd.ai/en/wonk/initial-submissions-g7-hiroshima-ai-process-reporting-framework",
    "degree": 1
   },
@@ -11407,13 +11407,13 @@
    "id": "ev-uk-ofcom-x-grok-investigation",
    "type": "policy",
    "layer": "policy",
-   "label": "Ofcom investigates X over Grok sexualised images",
+   "label": "Ofcom investigates X over Grok sexualized images",
    "date": "2026-01-12",
    "lane": "government",
    "kind": "rule",
    "actor": "Ofcom",
    "jurisdiction": "UK",
-   "description": "Formal investigation into whether X met its Online Safety Act duties to remove illegal content and protect children after Grok was used to make sexualised images. On 3 February 2026 Ofcom said it cannot currently investigate the standalone Grok service's creation of illegal images; by October 2026 Grok had restricted pornographic content for UK children after Ofcom engagement.",
+   "description": "Formal investigation into whether X met its Online Safety Act duties to remove illegal content and protect children after Grok was used to make sexualized images. On 3 February 2026 Ofcom said it cannot currently investigate the standalone Grok service's creation of illegal images; by October 2026 Grok had restricted pornographic content for UK children after Ofcom engagement.",
    "source_url": "https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/ofcom-launches-investigation-into-x-over-grok-sexualised-imagery",
    "degree": 2
   },
@@ -11441,7 +11441,7 @@
    "kind": "rule",
    "actor": "Commerce Department, Bureau of Industry and Security",
    "jurisdiction": "US federal",
-   "description": "Following a December 2025 presidential announcement, licences for Nvidia H200, AMD MI325X and similar chips to China and Macau are reviewed case by case if exporters certify US supply, third-party testing and know-your-customer and remote-access safeguards.",
+   "description": "Following a December 2025 presidential announcement, licenses for Nvidia H200, AMD MI325X and similar chips to China and Macau are reviewed case by case if exporters certify US supply, third-party testing and know-your-customer and remote-access safeguards.",
    "source_url": "https://www.govinfo.gov/content/pkg/FR-2026-01-15/html/2026-00789.htm",
    "degree": 0
   },
@@ -11491,13 +11491,13 @@
    "id": "ev-iigcc-ai-data-centres-insight",
    "type": "response",
    "layer": "policy",
-   "label": "IIGCC publishes research on AI data centre climate and nature risks",
+   "label": "IIGCC publishes research on AI data center climate and nature risks",
    "date": "2026-02-05",
    "lane": "investors",
    "kind": "milestone",
    "actor": "IIGCC",
    "jurisdiction": "Europe / Global",
-   "description": "Insight covering data centre emissions, water use for cooling and physical risk; IIGCC said it plans guidance, insights and engagement tools on data centre operations, developed with members.",
+   "description": "Insight covering data center emissions, water use for cooling and physical risk; IIGCC said it plans guidance, insights and engagement tools on data center operations, developed with members.",
    "source_url": "https://www.iigcc.org/insights/ai-data-centres-climate-and-nature-risks-for-investors",
    "degree": 1
   },
@@ -11525,7 +11525,7 @@
    "kind": "policy",
    "actor": "Government of India",
    "jurisdiction": "Global",
-   "description": "About 88 countries and organisations, including the US, China, UK and EU, endorsed a nonbinding declaration (counts vary by source); frontier AI companies separately signed voluntary New Delhi Frontier AI Impact Commitments, including publishing aggregated data on AI's economic effects.",
+   "description": "About 88 countries and organizations, including the US, China, UK and EU, endorsed a nonbinding declaration (counts vary by source); frontier AI companies separately signed voluntary New Delhi Frontier AI Impact Commitments, including publishing aggregated data on AI's economic effects.",
    "source_url": "https://www.newsonair.gov.in/india-ai-impact-summit-2026-adopts-new-delhi-declaration/",
    "degree": 1
   },
@@ -11539,7 +11539,7 @@
    "kind": "rule",
    "actor": "European Union",
    "jurisdiction": "EU",
-   "description": "Directive 2026/470 limits CSRD reporting to companies with over 1,000 employees and 450 million euros turnover, and limits the CSDDD to EU companies with over 5,000 employees and 1.5 billion euros turnover and non-EU companies with over 1.5 billion euros EU turnover. It deletes the CSDDD climate transition plan duty and sets CSDDD application for July 26, 2029. In force March 18, 2026.",
+   "description": "The Omnibus I directive limits CSRD reporting to companies with over 1,000 employees and 450 million euros turnover, and limits the CSDDD to EU companies with over 5,000 employees and 1.5 billion euros turnover and non-EU companies with over 1.5 billion euros EU turnover. It deletes the CSDDD climate transition plan duty and sets CSDDD application for July 26, 2029. In force March 18, 2026.",
    "source_url": "https://www.lw.com/en/insights/EU-Sustainability-Omnibus-Published-in-the-Official-Journal",
    "degree": 3
   },
@@ -11847,7 +11847,7 @@
    "kind": "policy",
    "actor": "European Commission",
    "jurisdiction": "EU",
-   "description": "Proposed regulation COM(2026) 502 aims to triple EU data centre capacity in five to seven years with faster permits in acceleration zones and support for strategic data centre projects; the data centre rating scheme is meant to feed its sustainability assessments.",
+   "description": "Proposed regulation COM(2026) 502 aims to triple EU data center capacity in five to seven years with faster permits in acceleration zones and support for strategic data center projects; the data center rating scheme is meant to feed its sustainability assessments.",
    "source_url": "https://digital-strategy.ec.europa.eu/en/library/proposal-cloud-and-ai-development-act-cada",
    "degree": 1
   },
@@ -12079,13 +12079,13 @@
    "id": "ev-eu-dc-rating-scheme",
    "type": "policy",
    "layer": "policy",
-   "label": "Commission sets out EU sustainability rating scheme for data centres",
+   "label": "Commission sets out EU sustainability rating scheme for data centers",
    "date": "2026-09-21",
    "lane": "government",
    "kind": "rule",
    "actor": "European Commission",
    "jurisdiction": "EU",
-   "description": "A delegated regulation would give each EU data centre above 500 kW a sustainability label based on reported energy and water use, waste heat reuse, clean energy and grid flexibility, with first labels expected in 2027. Parliament and Council had a two-month scrutiny period after September 21, 2026; entry into force is not confirmed.",
+   "description": "A delegated regulation would give each EU data center above 500 kW a sustainability label based on reported energy and water use, waste heat reuse, clean energy and grid flexibility, with first labels expected in 2027. Parliament and Council had a two-month scrutiny period after September 21, 2026; entry into force is not confirmed.",
    "source_url": "https://commission.europa.eu/news-and-media/news/making-data-centres-energy-efficient-thanks-new-eu-rating-system-2026-09-21_en",
    "degree": 1
   },
@@ -12149,13 +12149,13 @@
    "id": "ev-iigcc-bondholder-data-centres",
    "type": "response",
    "layer": "policy",
-   "label": "IIGCC research on bondholder stewardship of data centre financing",
+   "label": "IIGCC research on bondholder stewardship of data center financing",
    "date": "2026-10-27",
    "lane": "investors",
    "kind": "milestone",
    "actor": "IIGCC",
    "jurisdiction": "Europe / Global",
-   "description": "Notes hyperscaler (Alphabet, Amazon, Meta, Microsoft, Oracle) bond issuance and sets out water and resilience questions bondholders can raise; mentions a forthcoming IIGCC data centre playbook.",
+   "description": "Notes hyperscaler (Alphabet, Amazon, Meta, Microsoft, Oracle) bond issuance and sets out water and resilience questions bondholders can raise; mentions a forthcoming IIGCC data center playbook.",
    "source_url": "https://www.iigcc.org/insights/financing-ai-what-the-data-centre-boom-means-for-bondholder-stewardship",
    "degree": 1
   },
@@ -12169,7 +12169,7 @@
    "kind": "milestone",
    "actor": "Public commenters",
    "jurisdiction": "US federal",
-   "description": "The docket for the proposal to rescind Rule 14a-8 shows 394 entries when comments closed. Letters on file include TIAA and Nuveen, L&G Asset Management, Wespath, the Washington State Investment Board, the Investment Adviser Association, the AJL Foundation with Oxfam America, the State Financial Officers Foundation and a staff memo of a meeting with CII. This site has not reviewed each letter's position.",
+   "description": "The docket for the proposal to rescind Rule 14a-8 showed 394 entries on November 24, 2026; comments closed November 20. Letters on file include TIAA and Nuveen, L&G Asset Management, Wespath, the Washington State Investment Board, the Investment Adviser Association, the AJL Foundation with Oxfam America, the State Financial Officers Foundation and a staff memo of a meeting with CII. This site has not reviewed each letter's position.",
    "source_url": "https://www.sec.gov/rules-regulations/public-comments/s7-2026-32",
    "degree": 1
   },
@@ -12190,7 +12190,7 @@
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "meeting_date": "2025-06-06",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks Alphabet to disclose additional information each year showing if and how it will meet its 2030 climate goals, given its growing greenhouse gas emissions.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "ask_id": "ask-dc-climate-energy",
@@ -12247,7 +12247,7 @@
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "meeting_date": "2026-06-05",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
-   "support_note": "Not stated in the 8-K. Counts are votes cast under dual-class voting (Class B = 10 votes per share), so support from outside holders is higher than this figure.",
+   "support_note": "Not stated in the 8-K; this site computed it from the vote counts. The counts are votes cast under dual-class voting (Class B = 10 votes per share), so this site infers that support among holders without the 10-vote shares was higher than this figure.",
    "plain_summary": "Asks Alphabet for a report explaining how it will meet its greenhouse gas commitments given rising energy demand from artificial intelligence and its planned data centers.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-dc-climate-energy",
@@ -12620,7 +12620,7 @@
    "type": "equity stake",
    "layer": "companies",
    "source_url": "https://blogs.microsoft.com/blog/2025/10/28/the-next-chapter-of-the-microsoft-openai-partnership/",
-   "description": "~27% diluted stake (~$135B) after Oct 2025 recapitalization; joined 2026 round; current % after dilution UNVERIFIED.",
+   "description": "about 27% diluted stake (about $135B) after Oct 2025 recapitalization; joined 2026 round; current % after dilution UNVERIFIED.",
    "strength": 3,
    "as_of": "2025-10"
   },
@@ -12720,7 +12720,7 @@
    "type": "equity stake",
    "layer": "companies",
    "source_url": "https://techcrunch.com/2026/11/17/amazon-and-google-will-together-own-nearly-30-of-anthropic-after-its-ipo/",
-   "description": "~13.7% of all stock post-IPO (non-voting Class N), incl. ~$10B bought in IPO private placement.",
+   "description": "about 13.7% of all stock post-IPO (non-voting Class N), incl. about $10B bought in IPO private placement.",
    "strength": 3,
    "as_of": "2026-11"
   },
@@ -12780,7 +12780,7 @@
    "type": "equity stake",
    "layer": "companies",
    "source_url": "https://techcrunch.com/2026/11/17/amazon-and-google-will-together-own-nearly-30-of-anthropic-after-its-ipo/",
-   "description": "~14.7% of all stock post-IPO (non-voting); $8B + $5B invested, up to $20B more on milestones.",
+   "description": "about 14.7% of all stock post-IPO (non-voting); $8B + $5B invested, up to $20B more on milestones.",
    "strength": 3,
    "as_of": "2026-11"
   },
@@ -12900,7 +12900,7 @@
    "type": "chip supplier",
    "layer": "companies",
    "source_url": "https://siliconangle.com/2026/07/21/mistral-ai-strikes-multibillion-deal-microsoft-build-azure-infrastructure-europe/",
-   "description": "Mistral adding thousands of Vera Rubin GPUs to French data centres.",
+   "description": "Mistral adding thousands of Vera Rubin GPUs to French data centers.",
    "strength": 2,
    "as_of": "2026-07"
   },
@@ -12910,7 +12910,7 @@
    "type": "equity stake",
    "layer": "companies",
    "source_url": "https://techcrunch.com/2026/07/27/ilya-sutskevers-safe-superintelligence-partners-with-nvidia-to-scale-its-ai-research/",
-   "description": "Long-term partnership with undisclosed investment (reported ~$5B, UNVERIFIED); also in Apr 2025 round.",
+   "description": "Long-term partnership with undisclosed investment (reported about $5B, UNVERIFIED); also in Apr 2025 round.",
    "strength": 2,
    "as_of": "2026-07"
   },
@@ -12970,7 +12970,7 @@
    "type": "equity stake",
    "layer": "companies",
    "source_url": "https://siliconangle.com/2026/08/24/nvidia-reportedly-eyes-another-investment-in-perplexity-ai-at-a-30b-valuation/",
-   "description": "Existing investor; reportedly considering more at ~$30B valuation.",
+   "description": "Existing investor; reportedly considering more at about $30B valuation.",
    "strength": 1,
    "as_of": "2026-08"
   },
@@ -13000,7 +13000,7 @@
    "type": "revenue share/commercial agreement",
    "layer": "companies",
    "source_url": "https://blog.google/company-news/inside-google/company-announcements/joint-statement-google-apple/",
-   "description": "Multi-year deal: next Apple Foundation Models based on Gemini; terms undisclosed (~$1B/yr reported, UNVERIFIED).",
+   "description": "Multi-year deal: next Apple Foundation Models based on Gemini; terms undisclosed (about $1B/yr reported, UNVERIFIED).",
    "strength": 2,
    "as_of": "2026-01"
   },
@@ -13010,7 +13010,7 @@
    "type": "equity stake",
    "layer": "companies",
    "source_url": "https://techcrunch.com/2026/01/28/tesla-invested-2b-in-elon-musks-xai",
-   "description": "~$2B of xAI Series E preferred (Jan 2026), despite failed shareholder vote; now SpaceX stock.",
+   "description": "about $2B of xAI Series E preferred (Jan 2026), despite failed shareholder vote; now SpaceX stock.",
    "strength": 2,
    "as_of": "2026-01"
   },
@@ -13040,7 +13040,7 @@
    "type": "cloud/compute provider",
    "layer": "companies",
    "source_url": "https://thenextweb.com/news/spacex-reflection-ai-6-3bn-compute-deal",
-   "description": "~$6.3B ($150M/month) for Nvidia GB300 capacity at Colossus 2, Jul 2026-2029.",
+   "description": "about $6.3B ($150M/month) for Nvidia GB300 capacity at Colossus 2, Jul 2026-2029.",
    "strength": 3,
    "as_of": "2026-06"
   },
@@ -13050,7 +13050,7 @@
    "type": "cloud/compute provider",
    "layer": "companies",
    "source_url": "https://openai.com/index/stargate-advances-with-partnership-with-oracle/",
-   "description": "Stargate partner: 4.5 GW of US capacity (Jul 2025); ~$300B five-year deal reported.",
+   "description": "Stargate partner: 4.5 GW of US capacity (Jul 2025); about $300B five-year deal reported.",
    "strength": 3,
    "as_of": "2025-07"
   },
@@ -13060,7 +13060,7 @@
    "type": "cloud/compute provider",
    "layer": "companies",
    "source_url": "https://www.coreweave.com/news/coreweave-expands-agreement-with-openai-by-up-to-6-5b",
-   "description": "Contracts expanded by up to $6.5B, totaling ~$22.4B (Sept 2025).",
+   "description": "Contracts expanded by up to $6.5B, totaling about $22.4B (Sept 2025).",
    "strength": 2,
    "as_of": "2025-09"
   },
@@ -13080,7 +13080,7 @@
    "type": "equity stake",
    "layer": "companies",
    "source_url": "https://group.softbank/en/news/press/20260227",
-   "description": "~$64.6B cumulative invested, ~13% stake after $30B follow-on completed Oct 2026 (stake % press-reported).",
+   "description": "about $64.6B cumulative invested, about 13% stake after $30B follow-on completed Oct 2026 (stake % press-reported).",
    "strength": 3,
    "as_of": "2026-10"
   },
@@ -13100,7 +13100,7 @@
    "type": "chip supplier",
    "layer": "companies",
    "source_url": "https://openai.com/index/openai-amd-strategic-partnership/",
-   "description": "6 GW of AMD Instinct GPUs; OpenAI got warrant for up to 160M AMD shares.",
+   "description": "6 GW of AMD Instinct GPUs; OpenAI got a warrant for up to 160M AMD shares.",
    "strength": 3,
    "as_of": "2025-10"
   },
@@ -13340,7 +13340,7 @@
    "type": "equity stake",
    "layer": "companies",
    "source_url": "https://www.asml.com/en/news/press-releases/2025/asml-mistral-ai-enter-strategic-partnership",
-   "description": "Led Series C with €1.3B for ~11% fully diluted stake; became largest shareholder.",
+   "description": "Led Series C with €1.3B for about 11% fully diluted stake; became largest shareholder.",
    "strength": 3,
    "as_of": "2025-09"
   },
@@ -13772,7 +13772,7 @@
    "target": "co-NVDA",
    "type": "proposal at",
    "layer": "proposals",
-   "source_url": "https://collaborate.unpri.org/group/38826/home"
+   "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/tttnvidia31026.pdf"
   },
   {
    "source": "tsla-2025-xai-investment",
@@ -19925,15 +19925,6 @@
   },
   {
    "source": "parnassus",
-   "target": "co-INTU",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/",
-   "value_usd": 2039656.0,
-   "pct_of_portfolio": 0.01
-  },
-  {
-   "source": "parnassus",
    "target": "co-NFLX",
    "type": "holds shares in",
    "layer": "companies",
@@ -20048,15 +20039,6 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
    "value_usd": 1304339.0,
    "pct_of_portfolio": 0.04
-  },
-  {
-   "source": "trillium",
-   "target": "co-INTU",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
-   "value_usd": 24501154.0,
-   "pct_of_portfolio": 0.77
   },
   {
    "source": "trillium",
@@ -20284,15 +20266,6 @@
    "pct_of_portfolio": 0.03
   },
   {
-   "source": "domini",
-   "target": "co-TSLA",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1399069/000095012320002357/",
-   "value_usd": 288.0,
-   "pct_of_portfolio": 3.79
-  },
-  {
    "source": "arjuna",
    "target": "co-MSFT",
    "type": "holds shares in",
@@ -20510,15 +20483,6 @@
   },
   {
    "source": "northstar",
-   "target": "co-INTU",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
-   "value_usd": 385308.0,
-   "pct_of_portfolio": 0.07
-  },
-  {
-   "source": "northstar",
    "target": "co-NOW",
    "type": "holds shares in",
    "layer": "companies",
@@ -20586,7 +20550,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 710181.0,
+   "value_usd": 710181000.0,
    "pct_of_portfolio": 4.97
   },
   {
@@ -20595,7 +20559,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 724802.0,
+   "value_usd": 724802000.0,
    "pct_of_portfolio": 5.08
   },
   {
@@ -20604,7 +20568,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 307829.0,
+   "value_usd": 307829000.0,
    "pct_of_portfolio": 2.16
   },
   {
@@ -20613,7 +20577,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 419796.0,
+   "value_usd": 419796000.0,
    "pct_of_portfolio": 2.94
   },
   {
@@ -20622,7 +20586,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 1080047.0,
+   "value_usd": 1080047000.0,
    "pct_of_portfolio": 7.56
   },
   {
@@ -20631,7 +20595,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 910923.0,
+   "value_usd": 910923000.0,
    "pct_of_portfolio": 6.38
   },
   {
@@ -20640,7 +20604,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 198870.0,
+   "value_usd": 198870000.0,
    "pct_of_portfolio": 1.39
   },
   {
@@ -20649,7 +20613,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 46155.0,
+   "value_usd": 46155000.0,
    "pct_of_portfolio": 0.32
   },
   {
@@ -20658,7 +20622,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 1891.0,
+   "value_usd": 1891000.0,
    "pct_of_portfolio": 0.01
   },
   {
@@ -20667,7 +20631,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 196601.0,
+   "value_usd": 196601000.0,
    "pct_of_portfolio": 1.38
   },
   {
@@ -20676,7 +20640,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 325769.0,
+   "value_usd": 325769000.0,
    "pct_of_portfolio": 2.28
   },
   {
@@ -20685,7 +20649,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 34748.0,
+   "value_usd": 34748000.0,
    "pct_of_portfolio": 0.24
   },
   {
@@ -20694,7 +20658,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 32105.0,
+   "value_usd": 32105000.0,
    "pct_of_portfolio": 0.22
   },
   {
@@ -20703,17 +20667,8 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 18727.0,
+   "value_usd": 18727000.0,
    "pct_of_portfolio": 0.13
-  },
-  {
-   "source": "amalgamated-bank",
-   "target": "co-INTU",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 43781.0,
-   "pct_of_portfolio": 0.31
   },
   {
    "source": "amalgamated-bank",
@@ -20721,7 +20676,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 3914.0,
+   "value_usd": 3914000.0,
    "pct_of_portfolio": 0.03
   },
   {
@@ -20730,7 +20685,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 6702.0,
+   "value_usd": 6702000.0,
    "pct_of_portfolio": 0.05
   },
   {
@@ -20739,7 +20694,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 27198.0,
+   "value_usd": 27198000.0,
    "pct_of_portfolio": 0.19
   },
   {
@@ -20748,7 +20703,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 83128.0,
+   "value_usd": 83128000.0,
    "pct_of_portfolio": 0.58
   },
   {
@@ -20757,7 +20712,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 75659.0,
+   "value_usd": 75659000.0,
    "pct_of_portfolio": 0.53
   },
   {
@@ -20766,7 +20721,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 6579.0,
+   "value_usd": 6579000.0,
    "pct_of_portfolio": 0.05
   },
   {
@@ -20775,7 +20730,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 13218.0,
+   "value_usd": 13218000.0,
    "pct_of_portfolio": 0.09
   },
   {
@@ -20784,7 +20739,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 58228.0,
+   "value_usd": 58228000.0,
    "pct_of_portfolio": 0.41
   },
   {
@@ -20793,7 +20748,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 30863.0,
+   "value_usd": 30863000.0,
    "pct_of_portfolio": 0.22
   },
   {
@@ -20802,7 +20757,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 13163.0,
+   "value_usd": 13163000.0,
    "pct_of_portfolio": 0.09
   },
   {
@@ -20811,7 +20766,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 10508.0,
+   "value_usd": 10508000.0,
    "pct_of_portfolio": 0.07
   },
   {
@@ -20820,7 +20775,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 16284.0,
+   "value_usd": 16284000.0,
    "pct_of_portfolio": 0.11
   },
   {
@@ -20829,7 +20784,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
-   "value_usd": 6400.0,
+   "value_usd": 6400000.0,
    "pct_of_portfolio": 0.04
   },
   {
@@ -20948,15 +20903,6 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
    "value_usd": 88975271.0,
    "pct_of_portfolio": 0.12
-  },
-  {
-   "source": "federated-hermes-eos",
-   "target": "co-INTU",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
-   "value_usd": 442389637.0,
-   "pct_of_portfolio": 0.62
   },
   {
    "source": "federated-hermes-eos",
@@ -21194,15 +21140,6 @@
   },
   {
    "source": "lgim",
-   "target": "co-INTU",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
-   "value_usd": 1533102407.0,
-   "pct_of_portfolio": 0.32
-  },
-  {
-   "source": "lgim",
    "target": "co-VRSK",
    "type": "holds shares in",
    "layer": "companies",
@@ -21425,15 +21362,6 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
    "value_usd": 109028256.0,
    "pct_of_portfolio": 0.15
-  },
-  {
-   "source": "new-york-state-common-retirement-fund",
-   "target": "co-INTU",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
-   "value_usd": 235899327.0,
-   "pct_of_portfolio": 0.33
   },
   {
    "source": "new-york-state-common-retirement-fund",
@@ -21671,15 +21599,6 @@
   },
   {
    "source": "calpers",
-   "target": "co-INTU",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
-   "value_usd": 530576847.0,
-   "pct_of_portfolio": 0.28
-  },
-  {
-   "source": "calpers",
    "target": "co-VRSK",
    "type": "holds shares in",
    "layer": "companies",
@@ -21905,15 +21824,6 @@
   },
   {
    "source": "calstrs",
-   "target": "co-INTU",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
-   "value_usd": 329220544.0,
-   "pct_of_portfolio": 0.3
-  },
-  {
-   "source": "calstrs",
    "target": "co-VRSK",
    "type": "holds shares in",
    "layer": "companies",
@@ -22030,231 +21940,6 @@
    "pct_of_portfolio": 0.1
   },
   {
-   "source": "blackrock",
-   "target": "co-MSFT",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 247736163987.0,
-   "pct_of_portfolio": 5.61
-  },
-  {
-   "source": "blackrock",
-   "target": "co-GOOGL",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 141875011591.0,
-   "pct_of_portfolio": 3.21
-  },
-  {
-   "source": "blackrock",
-   "target": "co-META",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 81262293039.0,
-   "pct_of_portfolio": 1.84
-  },
-  {
-   "source": "blackrock",
-   "target": "co-AMZN",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 125360342023.0,
-   "pct_of_portfolio": 2.84
-  },
-  {
-   "source": "blackrock",
-   "target": "co-NVDA",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 227480902640.0,
-   "pct_of_portfolio": 5.15
-  },
-  {
-   "source": "blackrock",
-   "target": "co-AAPL",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 222363339623.0,
-   "pct_of_portfolio": 5.03
-  },
-  {
-   "source": "blackrock",
-   "target": "co-TSLA",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 37613903389.0,
-   "pct_of_portfolio": 0.85
-  },
-  {
-   "source": "blackrock",
-   "target": "co-ORCL",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 18158966218.0,
-   "pct_of_portfolio": 0.41
-  },
-  {
-   "source": "blackrock",
-   "target": "co-AMD",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 21239684543.0,
-   "pct_of_portfolio": 0.48
-  },
-  {
-   "source": "blackrock",
-   "target": "co-AVGO",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 54909661593.0,
-   "pct_of_portfolio": 1.24
-  },
-  {
-   "source": "blackrock",
-   "target": "co-IBM",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 13035173782.0,
-   "pct_of_portfolio": 0.3
-  },
-  {
-   "source": "blackrock",
-   "target": "co-CRM",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 19173802872.0,
-   "pct_of_portfolio": 0.43
-  },
-  {
-   "source": "blackrock",
-   "target": "co-ADBE",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 21520676761.0,
-   "pct_of_portfolio": 0.49
-  },
-  {
-   "source": "blackrock",
-   "target": "co-INTU",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 29436519657.0,
-   "pct_of_portfolio": 0.67
-  },
-  {
-   "source": "blackrock",
-   "target": "co-VRSK",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 3144551425.0,
-   "pct_of_portfolio": 0.07
-  },
-  {
-   "source": "blackrock",
-   "target": "co-WDAY",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 3106084497.0,
-   "pct_of_portfolio": 0.07
-  },
-  {
-   "source": "blackrock",
-   "target": "co-NOW",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 13419898541.0,
-   "pct_of_portfolio": 0.3
-  },
-  {
-   "source": "blackrock",
-   "target": "co-PLTR",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 3033406570.0,
-   "pct_of_portfolio": 0.07
-  },
-  {
-   "source": "blackrock",
-   "target": "co-CSCO",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 16858151156.0,
-   "pct_of_portfolio": 0.38
-  },
-  {
-   "source": "blackrock",
-   "target": "co-AXON",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 2455555934.0,
-   "pct_of_portfolio": 0.06
-  },
-  {
-   "source": "blackrock",
-   "target": "co-MSI",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 5202999259.0,
-   "pct_of_portfolio": 0.12
-  },
-  {
-   "source": "blackrock",
-   "target": "co-NFLX",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 21328757393.0,
-   "pct_of_portfolio": 0.48
-  },
-  {
-   "source": "blackrock",
-   "target": "co-DIS",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 12257515824.0,
-   "pct_of_portfolio": 0.28
-  },
-  {
-   "source": "blackrock",
-   "target": "co-CMCSA",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 12575935640.0,
-   "pct_of_portfolio": 0.28
-  },
-  {
-   "source": "blackrock",
-   "target": "co-SO",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
-   "value_usd": 6077338734.0,
-   "pct_of_portfolio": 0.14
-  },
-  {
    "source": "harrington",
    "target": "co-MSFT",
    "type": "holds shares in",
@@ -22325,15 +22010,6 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/",
    "value_usd": 551368.0,
    "pct_of_portfolio": 0.26
-  },
-  {
-   "source": "harrington",
-   "target": "co-INTU",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1386364/000138636426000006/",
-   "value_usd": 1714676.0,
-   "pct_of_portfolio": 0.82
   },
   {
    "source": "harrington",
@@ -22460,15 +22136,6 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
    "value_usd": 596484.0,
    "pct_of_portfolio": 0.13
-  },
-  {
-   "source": "first-affirmative",
-   "target": "co-INTU",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1656282/000165628226000008/",
-   "value_usd": 1864252.0,
-   "pct_of_portfolio": 0.41
   },
   {
    "source": "first-affirmative",
@@ -22652,15 +22319,6 @@
   },
   {
    "source": "bailard",
-   "target": "co-INTU",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/750641/000117266126004508/",
-   "value_usd": 5631200.0,
-   "pct_of_portfolio": 0.11
-  },
-  {
-   "source": "bailard",
    "target": "co-NOW",
    "type": "holds shares in",
    "layer": "companies",
@@ -22811,15 +22469,6 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
    "value_usd": 3416651.0,
    "pct_of_portfolio": 0.31
-  },
-  {
-   "source": "azzad",
-   "target": "co-INTU",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1121914/000112191426000009/",
-   "value_usd": 2128673.0,
-   "pct_of_portfolio": 0.19
   },
   {
    "source": "azzad",
@@ -22982,15 +22631,6 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
    "value_usd": 672140567.0,
    "pct_of_portfolio": 0.03
-  },
-  {
-   "source": "fidelity",
-   "target": "co-INTU",
-   "type": "holds shares in",
-   "layer": "companies",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
-   "value_usd": 1578699948.0,
-   "pct_of_portfolio": 0.07
   },
   {
    "source": "fidelity",
@@ -23696,7 +23336,7 @@
    "type": "led to",
    "layer": "policy",
    "source_url": "https://oecd.org/en/about/news/press-releases/2025/02/oecd-launches-global-framework-to-monitor-application-of-g7-hiroshima-ai-code-of-conduct.html",
-   "explanation": "OECD built the reporting framework to monitor how organisations apply the G7 Code."
+   "explanation": "OECD built the reporting framework to monitor how organizations apply the G7 Code."
   },
   {
    "source": "ev-haip-reporting-framework",
@@ -23888,7 +23528,7 @@
    "type": "led to",
    "layer": "policy",
    "source_url": "https://commission.europa.eu/news-and-media/news/making-data-centres-energy-efficient-thanks-new-eu-rating-system-2026-09-21_en",
-   "explanation": "The rating scheme builds on the data centre data reported under Delegated Regulation 2024/1364."
+   "explanation": "The rating scheme builds on the data center data reported under Delegated Regulation 2024/1364."
   },
   {
    "source": "ev-eu-ai-continent-plan",
@@ -26348,19 +25988,19 @@
    "steps": [
     {
      "date": "2023-09",
-     "title": "Investor group organizes human rights engagement with NVIDIA",
+     "title": "Investor group organizes human rights engagement with Nvidia",
      "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
      "source_page": "16"
     },
     {
      "date": "2024-H1",
-     "title": "NVIDIA adds oversight, staff and first human rights assessment",
+     "title": "Nvidia adds oversight, staff and first human rights assessment",
      "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf",
      "source_page": "13"
     },
     {
      "date": "2025-H1",
-     "title": "NVIDIA completes third-party human rights saliency assessment",
+     "title": "Nvidia completes third-party human rights saliency assessment",
      "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
      "source_page": "16"
     }
@@ -26376,7 +26016,7 @@
    "steps": [
     {
      "date": "2025-H1",
-     "title": "Workday completes NIST AI RMF assessment and ISO 42001",
+     "title": "Workday completes NIST AI RMF assessment and gets ISO 42001 accreditation",
      "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
      "source_page": "26"
     }

@@ -697,7 +697,7 @@
    "policy_id": "eu-eed-dc-reporting",
    "graph_id": "ev-eu-eed-dc-reporting",
    "coverage": "partial",
-   "note": "EU data centres of 500 kW or more must report energy use, efficiency, renewable share and waste heat each year to an EU database; per-site data is not published and no company climate goals are required.",
+   "note": "EU data centers of 500 kW or more must report energy use, efficiency, renewable share and waste heat each year to an EU database; per-site data is not published and no company climate goals are required.",
    "source_url": "https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficiency-targets-directive-and-rules/energy-efficiency-directive/energy-performance-data-centres_en",
    "policy_status": "in force",
    "reviewed": false
@@ -707,7 +707,7 @@
    "policy_id": "eu-csrd-in-force",
    "graph_id": "ev-eu-csrd-in-force",
    "coverage": "partial",
-   "note": "Companies in CSRD scope must report scope 1 to 3 emissions and energy use where material, which takes in data centres; it is not data centre specific and Omnibus I narrowed who reports.",
+   "note": "Companies in CSRD scope must report scope 1 to 3 emissions and energy use where material, which takes in data centers; it is not data center specific and Omnibus I narrowed who reports.",
    "source_url": "https://eur-lex.europa.eu/eli/dir/2022/2464/oj",
    "policy_status": "in force; scope narrowed by Omnibus I",
    "reviewed": false
@@ -717,7 +717,7 @@
    "policy_id": "eu-eed-dc-reporting",
    "graph_id": "ev-eu-eed-dc-reporting",
    "coverage": "partial",
-   "note": "EU data centres of 500 kW or more must report water input each year to an EU database; there is no public per-site data or water-stress analysis.",
+   "note": "EU data centers of 500 kW or more must report water input each year to an EU database; there is no public per-site data or water-stress analysis.",
    "source_url": "https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficiency-targets-directive-and-rules/energy-efficiency-directive/energy-performance-data-centres_en",
    "policy_status": "in force",
    "reviewed": false
@@ -727,7 +727,7 @@
    "policy_id": "eu-csrd-in-force",
    "graph_id": "ev-eu-csrd-in-force",
    "coverage": "partial",
-   "note": "Companies in CSRD scope must report water use and impacts if material under the water standard; it is not data centre specific.",
+   "note": "Companies in CSRD scope must report water use and impacts if material under the water standard; it is not data center specific.",
    "source_url": "https://eur-lex.europa.eu/eli/dir/2022/2464/oj",
    "policy_status": "in force; scope narrowed by Omnibus I",
    "reviewed": false
@@ -747,7 +747,7 @@
    "policy_id": "eu-csddd-in-force",
    "graph_id": "ev-eu-csddd-in-force",
    "coverage": "partial",
-   "note": "Due diligence on adverse human rights and environmental impacts of own operations would cover data centre sites of in-scope companies from 2029; it names no siting review.",
+   "note": "Due diligence on adverse human rights and environmental impacts of own operations would cover data center sites of in-scope companies from 2029; it names no siting review.",
    "source_url": "https://eur-lex.europa.eu/eli/dir/2024/1760/oj",
    "policy_status": "in force; application from July 26, 2029",
    "reviewed": false

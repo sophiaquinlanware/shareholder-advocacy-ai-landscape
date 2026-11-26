@@ -167,7 +167,7 @@ def main():
             "median_support_pct": round(statistics.median(supports), 1) if supports else None,
             "median_support_base": {"with_recorded_support": len(supports), "proposals": len(props)},
             "asks_made": [{"company": p["company"], "year": p.get("year"), "title": p["title"],
-                           "url": p.get("proxy_url")} for p in sorted(props, key=lambda p: (-(p.get("year") or 0), p["company"]))][:12],
+                           "url": p.get("proxy_url") or p.get("source_url")} for p in sorted(props, key=lambda p: (-(p.get("year") or 0), p["company"]))][:12],
             "investor_engagements": [c["id"] for c in sorted(cos, key=lambda c: c["id"]) if c.get("basis_type") == "investor engagement"],
             "safety_commitments": [c["id"] for c in sorted(cos, key=lambda c: c["id"]) if c.get("basis_type") == "safety commitment"],
             "fund_vote_rows": sum(1 for r in fund_votes if r.get("proposal_id") in prop_ids),

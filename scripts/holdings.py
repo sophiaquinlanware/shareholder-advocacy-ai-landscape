@@ -64,13 +64,13 @@ ISSUERS = {
     "NVDA": r"^NVIDIA", "AAPL": r"^APPLE INC", "TSLA": r"^TESLA", "ORCL": r"^ORACLE",
     "CRWV": r"^COREWEAVE", "AMD": r"^ADVANCED MICRO", "AVGO": r"^BROADCOM",
     # Added 2026-11-26: every company in data/companies.json under US proxy rules.
-    "IBM": r"^INTERNATIONAL BUSINESS MACH", "CRM": r"^SALESFORCE", "ADBE": r"^ADOBE", "INTU": r"^INTUIT",
+    "IBM": r"^INTERNATIONAL BUSINESS MACH", "CRM": r"^SALESFORCE", "ADBE": r"^ADOBE", "INTU": r"^INTUIT(\s+INC\.?)?$",  # not Intuitive Surgical or Intuitive Machines
     "VRSK": r"^VERISK", "WDAY": r"^WORKDAY", "NOW": r"^SERVICENOW", "PLTR": r"^PALANTIR", "CSCO": r"^CISCO",
     "AXON": r"^AXON ENTERPRISE", "MSI": r"^MOTOROLA SOLUTIONS", "NFLX": r"^NETFLIX", "DIS": r"^(WALT )?DISNEY",
     "CMCSA": r"^COMCAST", "DLR": r"^DIGITAL REALTY", "SO": r"^SOUTHERN CO\b", "ANT": r"^ANTHROPIC", "SPCX": r"^SPACE EXPLORATION|^SPACEX",
 }
 # When the company list changes, every investor's latest 13F is read again, not only newer filings.
-ISSUERS_VERSION = "2026-11-26"
+ISSUERS_VERSION = "2026-11-26b"  # b: exact Intuit match, options left out, values in dollars, stale filers dropped
 
 
 def get(url):
@@ -108,7 +108,15 @@ def read_table(cik, acc):
     for el in root.iter():
         if el.tag.endswith("infoTable"):
             v = {c.tag.split("}")[-1]: (c.text or "") for c in el.iter()}
-            rows.append({"issuer": v.get("nameOfIssuer", "").upper(), "value": float(v.get("value") or 0), "shares": float(v.get("sshPrnamt") or 0)})
+            if (v.get("putCall") or "").strip():
+                continue  # options (puts and calls) are not shares held
+            rows.append({"issuer": v.get("nameOfIssuer", "").strip().upper(), "value": float(v.get("value") or 0), "shares": float(v.get("sshPrnamt") or 0)})
+    # 13F values were in thousands of dollars before 2023, and some filers still report that way. A median
+    # implied price under $2 a share means the table is in thousands.
+    prices = sorted(r["value"] / r["shares"] for r in rows if r["shares"] > 0 and r["value"] > 0)
+    if prices and prices[len(prices) // 2] < 2:
+        for r in rows:
+            r["value"] *= 1000
     return rows, base
 
 
@@ -147,6 +155,22 @@ def main():
             print(f"  {name}: 13F for {period}")
         except Exception as e:
             print(f"  {name}: skipped ({e})")
+
+    # Only current filings: a filer whose latest 13F is more than two quarters older than the newest one
+    # (it stopped filing under that CIK, or files under another) is listed as not current, with no positions.
+    periods = sorted(i.get("report_period") or "" for i in inv.values() if i.get("cik"))
+    newest = periods[-1] if periods else ""
+    if newest:
+        y, m = int(newest[:4]), int(newest[5:7]) - 6
+        cutoff = f"{y + (m - 1) // 12}-{(m - 1) % 12 + 1:02d}-01"
+        stale = {k for k, i in inv.items() if i.get("cik") and (i.get("report_period") or "") < cutoff}
+        h["holdings"] = [x for x in h["holdings"] if x["investor"] not in stale]
+        for k, i in inv.items():
+            i.pop("not_current", None)
+            if k in stale:
+                i["not_current"] = True
+        h["as_of_quarter"] = f"{newest[:4]}Q{(int(newest[5:7]) + 2) // 3}"
+        print(f"  not current (latest 13F before {cutoff}): {sorted(stale)}")
 
     h["investors"] = list(inv.values())
     h["issuers_version"] = ISSUERS_VERSION

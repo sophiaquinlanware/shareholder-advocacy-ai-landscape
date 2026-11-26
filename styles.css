@@ -159,6 +159,8 @@ tr.hit td { background: var(--accent-soft); }
 .net-controls input { flex: 1 1 220px; }
 .net-controls select { max-width: 100%; }
 .seg { display: inline-flex; border: 1px solid var(--control-edge); border-radius: var(--radius); overflow: hidden; }
+/* Phones: a long segmented control wraps instead of cutting off its last buttons. */
+@media (max-width: 640px) { .seg { flex-wrap: wrap; max-width: 100%; } }
 .seg button { font: 500 13px var(--sans); background: var(--surface); color: var(--ink); border: 0; padding: 6px 12px; cursor: pointer; }
 .seg button[aria-pressed="true"] { background: var(--accent); color: #ffffff; }
 .status-filter { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
@@ -576,6 +578,7 @@ select { -webkit-appearance: none; appearance: none; background-image: url("data
 /* Row labels are ask names, read as text: no uppercase table-header styling. */
 .pl-mx-row { text-transform: none; letter-spacing: normal; color: var(--ink); }
 .pl-mx-row .pl-short { display: none; }
+.nocaps { text-transform: none; }
 .pl-mx-row .ticker { display: block; }
 .pl-mx[aria-current="true"] { background: var(--accent); color: var(--surface); border-color: var(--accent); }
 .pl-mx:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }

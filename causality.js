@@ -190,8 +190,8 @@
       <h3>${esc(e.title)}</h3>
       ${e.status ? `<p><strong>Status:</strong> ${esc(e.status)}</p>` : ""}
       <p>${esc(e.summary || "")} ${link(e.source_url)}${isSecondary(e) ? ` <span class="unverified">secondary source</span>` : ""}${e.suspension_source_url ? ` ${link(e.suspension_source_url, "suspension")}` : ""}</p>
-      <h4 class="pw-h4">What led to this (${up.size - 1} steps upstream)</h4><ul class="conn">${ins || "<li>No sourced causes yet.</li>"}</ul>
-      <h4 class="pw-h4">What this led to (${down.size - 1} steps downstream)</h4><ul class="conn">${outs || "<li>No sourced effects yet.</li>"}</ul>`;
+      <h4 class="pw-h4">What led to this (${up.size - 1} ${up.size - 1 === 1 ? "step" : "steps"} upstream)</h4><ul class="conn">${ins || "<li>No sourced causes yet.</li>"}</ul>
+      <h4 class="pw-h4">What this led to (${down.size - 1} ${down.size - 1 === 1 ? "step" : "steps"} downstream)</h4><ul class="conn">${outs || "<li>No sourced effects yet.</li>"}</ul>`;
     document.querySelectorAll("#cz-panel [data-ev]").forEach((b) => b.addEventListener("click", () => select(b.dataset.ev)));
     C.selected = id;
   }
@@ -259,6 +259,9 @@
     };
     const redraw = () => {
       C.highlight = null;
+      // A selected event that the filters now hide (or "Show everything") clears the side panel and the trace.
+      const cur = C.selected && C.events.find((x) => x.id === C.selected);
+      if (!cur || !inView(cur)) { C.selected = null; document.getElementById("cz-panel").innerHTML = ""; }
       draw();
       statusKey();
       const n = C.events.filter(inView).length;

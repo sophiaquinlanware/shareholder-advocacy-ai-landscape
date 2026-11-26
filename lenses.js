@@ -502,7 +502,7 @@
         const cos = new Set(same.map((p) => p.company));
         const years = same.map((p) => p.year).filter(Boolean).sort();
         const span = years.length ? (years[0] === years.at(-1) ? `${years[0]}` : `${years[0]}–${years.at(-1)}`) : "";
-        const out = [{ text: `${n.topic}: ${same.length} proposals at ${cos.size} ${cos.size === 1 ? "company" : "companies"}${span ? ", " + span : ""}` }];
+        const out = [{ text: `${n.topic}: ${plural(same.length, "proposal", "proposals")} at ${cos.size} ${cos.size === 1 ? "company" : "companies"}${span ? ", " + span : ""}` }];
         const voted = same.filter((p) => p.support_pct != null && p.results_url && !isFloor(p)).map((p) => p.support_pct).sort((a, b) => a - b);
         const note = "Some figures are computed from the 8-K's vote counts; notes are in Proposals.";
         if (voted.length === 1) out.push({ text: `Support where an 8-K reports the vote: ${voted[0]}% (1 proposal). ${note}` });

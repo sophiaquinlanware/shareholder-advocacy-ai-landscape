@@ -21,7 +21,8 @@
       if (btn && view) out.push({ kind: "Section", label: btn.textContent.trim(), go: () => window.showTab && window.showTab(view) });
     });
     // Companies: open their profile.
-    (D.companies || []).forEach((c) => out.push({ kind: "Company", label: c.name, sub: c.ticker || "", go: () => window.LENS_CTX && window.LENS_CTX.openCompany && c.ticker ? window.LENS_CTX.openCompany(c.ticker) : window.showTab && window.showTab("company") }));
+    (D.companies || []).forEach((c) => out.push({ kind: "Company", label: c.name, sub: c.ticker || "", // Companies without a ticker (private labs) open by id; openCompany accepts either.
+      go: () => (window.LENS_CTX && window.LENS_CTX.openCompany ? window.LENS_CTX.openCompany(c.ticker || c.id) : window.showTab && window.showTab("company")) }));
     // Investors, coalitions, people and labs: show them in the network.
     const G = D.graph && D.graph.nodes ? D.graph : null;
     if (G) {
