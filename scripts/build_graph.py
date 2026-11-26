@@ -74,18 +74,22 @@ def main():
             node("co-" + (c["ticker"].upper() if listed else c["id"]), type="company", layer="companies", label=c["name"],
                  ticker=c["ticker"] if listed else None,
                  sectors=c.get("sectors"), shareholder_route=c.get("shareholder_route"),
+                 tier=c.get("tier"), tiers=c.get("tiers"),
                  basis_type=c.get("basis_type"), description=(c.get("engagement_basis") or {}).get("text"),
                  source_url=(c.get("engagement_basis") or {}).get("url"))
     pw = load("pathways.json")
+    # Pathway-only companies (not in companies.json) still get a tier, so every company node has one.
+    PATHWAY_TIERS = {"MU": "chips", "ASML": "chips", "INTC": "chips", "DELL": "chips", "SNOW": "deployers"}
     for c in pw.get("public_companies", []):
-        node("co-" + c.get("ticker", c["id"]).upper(), type="company", layer="companies", label=c["name"],
+        c["ticker"] = c.get("ticker", c["id"]).split("/")[-1].strip()
+        node("co-" + c["ticker"].upper(), tier=PATHWAY_TIERS.get(c["ticker"].upper()), type="company", layer="companies", label=c["name"],
              ticker=c.get("ticker"), exchange=c.get("exchange"), country=c.get("country"))
     for t, name in TICKER_NAME.items():
         node("co-" + t, type="company", layer="companies", label=name, ticker=t)
     company_id = {c["id"]: "co-" + c.get("ticker", c["id"]).upper() for c in pw.get("public_companies", [])}
 
     for lab in pw.get("labs", []):
-        node("lab-" + lab["id"], type="lab", layer="companies", label=lab["name"], status=lab.get("status"),
+        node("lab-" + lab["id"], type="lab", layer="companies", label=lab["name"], status=lab.get("status"), tier="labs",
              description=lab.get("description"), source_url=lab.get("source_url"))
     for t in pw.get("ties", []):
         a = company_id.get(t["from"], "co-" + t["from"].upper())
