@@ -230,7 +230,7 @@
         ${F.here.length ? `<h5 class="pd-sec">Past proposals on this subject at ${co}</h5><ul>${F.here.map((p) => `<li>${esc(p.year)}: ${esc(p.title)} · ${esc(p.status)}${p.support_pct != null ? `, ${pct(p.support_pct)}` : ""}${cite(p.results_url || p.proxy_url, `${F.c.name} ${p.year}`)}</li>`).join("")}</ul>` : ""}`;
     }
     const sources = src.length ? `<section class="pd-sources"><h5 class="pd-sec">Sources</h5><ol>${src.map((s) => `<li>${esc(s.label)}: <a href="${esc(s.url)}">${esc(s.url)}</a></li>`).join("")}</ol></section>` : "";
-    const foot = `<p class="pd-foot">Draft prepared from public data on Shareholder advocacy on AI. Check every fact against its source before sending. Not legal or investment advice.</p>`;
+    const foot = `<p class="pd-foot">Draft prepared from public data on Shareholder advocacy towards responsible AI. Check every fact against its source before sending. Not legal or investment advice.</p>`;
     return { title, html: body + sources + foot };
   }
 

@@ -1091,7 +1091,7 @@
   const MARK_KEY = {
     upcoming: { label: "On a ballot not yet held", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.ring}" stroke-width="1.5" stroke-dasharray="3 2"/>` },
     deadline: { label: "Proposal filing deadline open; the arc shows the time left", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.win}" stroke-width="1.2"/><path d="M12,3A6,6 0 0 1 18,9" fill="none" stroke="${c.win}" stroke-width="2.5" stroke-linecap="round"/>` },
-    risk: { label: "Vote support near or below the level needed to refile a similar proposal (SEC resubmission threshold; this site's reading)", svg: (c) => `<circle cx="12" cy="9" r="3" fill="#facc15"/><circle cx="12" cy="9" r="6.5" fill="none" stroke="${c.risk}" stroke-width="1.6" stroke-dasharray="2.5 1.6"/>` },
+    risk: { label: "Support near or below the SEC refiling threshold (this site's reading)", svg: (c) => `<circle cx="12" cy="9" r="3" fill="#facc15"/><circle cx="12" cy="9" r="6.5" fill="none" stroke="${c.risk}" stroke-width="1.6" stroke-dasharray="2.5 1.6"/>` },
     seeking: { label: "Filer seeking co-filers or support", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.seek}" stroke-width="1.5" stroke-dasharray="1 2.5" stroke-linecap="round"/>` },
     "cov-covered": { label: "Ask already required by a rule in this map", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.ring}" stroke-width="2"/>` },
     "cov-partial": { label: "Ask partly covered by a rule", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.ring}" stroke-width="1.6" stroke-dasharray="5 2"/>` },
@@ -1527,19 +1527,15 @@
   // The graph is a full-width black strip of fixed height (owner, 2026-11-26: "one black thick stripe in the page
   // that connects to the end of the page", the same size for every lens). On wide screens the details panel floats
   // over its right side, so the layout uses the strip minus that panel.
-  const panelOverlays = () => window.innerWidth >= 900;
   function drawGraph() {
     const el = document.getElementById("net-graph");
     el.innerHTML = "";
     el.style.height = "";
     const fullW = el.clientWidth || 800;
     // With the panel floating over the strip, lay the graph out only to the left of where the panel starts.
-    let width = fullW;
-    const panel = document.getElementById("net-panel");
-    if (panelOverlays() && panel && panel.offsetParent) {
-      const left = panel.getBoundingClientRect().left - el.getBoundingClientRect().left;
-      width = Math.max(320, Math.min(fullW, Math.round(left - 16)));
-    }
+    // Owner, 2026-11-26: centre the whole diagram and its column headings on the black band; the details panel
+    // floats over the right side only once something is chosen.
+    const width = fullW;
     const height = el.clientHeight || 560;
     state.size = { width, height, fullW };
     state.fitH = null;

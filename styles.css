@@ -717,6 +717,12 @@ button:active:not([disabled]) { transform: scale(.98); }
 /* Network panel before anything is chosen (owner, 2026-11-26: no white box, "pure black all the way through"):
    the hint is plain grey text on the black canvas, and clicks pass through it to the graph. */
 @media (min-width: 900px) {
-  .net-body.is-graph .net-panel:has(> .status-note:only-child) { background: transparent; box-shadow: none; border-color: transparent; padding: 0 14px; pointer-events: none; text-align: right; }
+  .net-body.is-graph .net-panel:has(> .status-note:only-child) { background: transparent; box-shadow: none; border-color: transparent; padding: 0 14px; pointer-events: none; text-align: right; top: calc(var(--strip-h) - 60px); }
   .net-body.is-graph .net-panel:has(> .status-note:only-child) .status-note { color: var(--g-label-soft); font-size: 13px; }
+}
+/* Marks key on one line on wide screens (owner, 2026-11-26: "make these marks all on the same plane"). */
+.net-marks { align-items: center; }
+@media (min-width: 900px) {
+  .net-marks { flex-wrap: nowrap; }
+  .net-marks .leg.static { white-space: nowrap; }
 }
