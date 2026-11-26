@@ -980,7 +980,7 @@
    "safety_commitments": [
     "spacex"
    ],
-   "fund_vote_rows": 39,
+   "fund_vote_rows": 54,
    "shareholder_routes": {
     "US proxy rules apply": 6
    },
@@ -1565,7 +1565,7 @@
     "writer",
     "zhipu-ai"
    ],
-   "fund_vote_rows": 142,
+   "fund_vote_rows": 147,
    "shareholder_routes": {
     "US proxy rules apply": 6,
     "US-listed foreign issuer": 1,
@@ -2165,7 +2165,7 @@
     "stability-ai",
     "tencent-holdings"
    ],
-   "fund_vote_rows": 291,
+   "fund_vote_rows": 309,
    "shareholder_routes": {
     "US proxy rules apply": 19,
     "US-listed foreign issuer": 1,

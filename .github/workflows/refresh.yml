@@ -91,9 +91,15 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
+      # Publish only the built site (index.html, the files it links and data/), not docs, tests or scripts.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Build the public site into dist/
+        run: node scripts/build.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: dist
       - id: deploy
         uses: actions/deploy-pages@v4

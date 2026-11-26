@@ -18,7 +18,7 @@
   },
   {
    "id": "eko",
-   "name": "Ek\u014d (formerly SumOfUs)",
+   "name": "Ekō (formerly SumOfUs)",
    "type": "advocacy nonprofit",
    "website": "https://www.eko.org",
    "description": "Online campaigning group that files and backs shareholder proposals against corporate abuses.",
@@ -148,7 +148,7 @@
    "id": "omi-us",
    "name": "Missionary Oblates of Mary Immaculate, US Province",
    "type": "faith-based investor",
-   "website": "https://www.omiusa.org",
+   "website": "https://oblatesusa.org/",
    "description": "Catholic missionary order active in ICCR shareholder advocacy.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923007656/s522230px14a6g.htm"
   },
