@@ -53,7 +53,9 @@ ISSUERS = {
 }
 
 STOP = {"the", "of", "on", "and", "for", "a", "an", "to", "in", "report", "shareholder", "proposal", "regarding",
-        "stockholder", "requesting", "request", "adopt", "issue", "publish", "prepare", "s", "its", "our", "with"}
+        "stockholder", "requesting", "request", "adopt", "issue", "publish", "prepare", "s", "its", "our", "with",
+        "non", "binding", "approval", "entitled"}
+MIN_MATCH = 0.75
 
 
 def get(url, stream_to=None):
@@ -99,12 +101,15 @@ def npx_filings(cik, since_year=2024):
 
 
 def words(text):
-    return {w for w in re.findall(r"[a-z0-9]+", (text or "").lower()) if w not in STOP and len(w) > 2}
+    t = re.sub(r"\bal\b", "ai", (text or "").lower())          # filings often OCR "AI" as "Al"
+    t = re.sub(r"genal\b", "genai", t)
+    return {w for w in re.findall(r"[a-z0-9]+", t) if w not in STOP and len(w) > 2}
 
 
-def score(a, b):
-    A, B = words(a), words(b)
-    return len(A & B) / min(len(A), len(B)) if A and B else 0
+def score(title, description):
+    """Share of the proposal title's key words found in the filing's description."""
+    A, B = words(title), words(description)
+    return len(A & B) / len(A) if A else 0
 
 
 def tag(el):
@@ -199,22 +204,37 @@ def main():
                             continue
                         best = max(cands, key=lambda p: score(p["title"], rec.get("voteDescription", "")))
                         s = score(best["title"], rec.get("voteDescription", ""))
-                        if s < 0.34 and "security holder" not in (rec.get("proposedBy", "").lower()):
+                        if s < MIN_MATCH:
                             continue
                         hows = sorted({v.get("howVoted", "").upper() for v in rec["votes"] if v.get("howVoted")})
-                        mgmt = sorted({v.get("managementRecommendation", "").upper() for v in rec["votes"] if v.get("managementRecommendation")})
                         shares = sum(float(v.get("sharesVoted") or 0) for v in rec["votes"])
                         results.append({
                             "family": family, "trust": f["trust"], "proposal_id": best["id"], "company": rec["ticker"],
                             "meeting_date": md, "npx_description": rec.get("voteDescription"),
-                            "match_confidence": round(s, 2), "how_voted": hows, "management_rec": mgmt,
+                            "match_confidence": round(s, 2), "how_voted": hows,
                             "shares_voted": shares, "series_count": len(set(rec["series"])) or None,
                             "source_url": base, "filed": f["filed"],
                         })
                 print(f"  {family} / {trust} {f['filed']}: done")
 
-    out = {"generated": dt.date.today().isoformat(), "status": "PRIVATE REVIEW: not for publication until Sophia approves",
-           "filings": filings_used, "votes": results, "notes": notes}
+    # One row per fund family per proposal. A family files for many funds, so "split"
+    # means its funds did not all vote the same way.
+    summary = {}
+    for r in results:
+        k = (r["family"], r["proposal_id"])
+        e = summary.setdefault(k, {"family": r["family"], "proposal_id": r["proposal_id"], "company": r["company"],
+                                   "meeting_date": r["meeting_date"], "counts": {}, "sources": set()})
+        for h in r["how_voted"]:
+            e["counts"][h] = e["counts"].get(h, 0) + 1
+        e["sources"].add(r["source_url"])
+    rows = []
+    for e in summary.values():
+        c = e["counts"]
+        vote = next(iter(c)) if len(c) == 1 else "SPLIT"
+        rows.append({**e, "vote": vote, "fund_records": sum(c.values()), "sources": sorted(e["sources"])})
+    rows.sort(key=lambda r: (r["meeting_date"], r["proposal_id"], r["family"]))
+    out = {"generated": dt.date.today().isoformat(), "method": "SEC Form N-PX structured filings; a vote is matched to a proposal by company, meeting date and at least 75% of the proposal title's key words.",
+           "families": list(FAMILIES), "filings": filings_used, "summary": rows, "notes": notes}
     Path(args.out).write_text(json.dumps(out, indent=1) + "\n")
     print(f"{len(results)} AI-proposal votes matched across {len(filings_used)} filings. Notes: {len(notes)}")
 
