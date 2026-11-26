@@ -22738,7 +22738,7 @@
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
    "value_usd": 104520177799.0,
-   "pct_of_portfolio": 4.51
+   "pct_of_portfolio": 4.52
   },
   {
    "source": "fidelity",
@@ -22747,7 +22747,7 @@
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
    "value_usd": 125345370941.0,
-   "pct_of_portfolio": 5.41
+   "pct_of_portfolio": 5.42
   },
   {
    "source": "fidelity",
@@ -22774,7 +22774,7 @@
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
    "value_usd": 213034649836.0,
-   "pct_of_portfolio": 9.2
+   "pct_of_portfolio": 9.21
   },
   {
    "source": "fidelity",
@@ -22783,7 +22783,7 @@
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
    "value_usd": 123213667912.0,
-   "pct_of_portfolio": 5.32
+   "pct_of_portfolio": 5.33
   },
   {
    "source": "fidelity",
@@ -22792,7 +22792,7 @@
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
    "value_usd": 13773938962.0,
-   "pct_of_portfolio": 0.59
+   "pct_of_portfolio": 0.6
   },
   {
    "source": "fidelity",
@@ -22909,7 +22909,7 @@
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
    "value_usd": 4280906706.0,
-   "pct_of_portfolio": 0.18
+   "pct_of_portfolio": 0.19
   },
   {
    "source": "fidelity",

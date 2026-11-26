@@ -2884,7 +2884,7 @@
       "company": "MSFT",
       "value_usd": 104520177799.0,
       "shares": 203782761.0,
-      "pct_of_portfolio": 4.51,
+      "pct_of_portfolio": 4.52,
       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
     },
     {
@@ -2892,7 +2892,7 @@
       "company": "GOOGL",
       "value_usd": 125345370941.0,
       "shares": 370736123.0,
-      "pct_of_portfolio": 5.41,
+      "pct_of_portfolio": 5.42,
       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
     },
     {
@@ -2916,7 +2916,7 @@
       "company": "NVDA",
       "value_usd": 213034649836.0,
       "shares": 932807820.0,
-      "pct_of_portfolio": 9.2,
+      "pct_of_portfolio": 9.21,
       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
     },
     {
@@ -2924,7 +2924,7 @@
       "company": "AAPL",
       "value_usd": 123213667912.0,
       "shares": 369988793.0,
-      "pct_of_portfolio": 5.32,
+      "pct_of_portfolio": 5.33,
       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
     },
     {
@@ -2932,7 +2932,7 @@
       "company": "TSLA",
       "value_usd": 13773938962.0,
       "shares": 38820605.0,
-      "pct_of_portfolio": 0.59,
+      "pct_of_portfolio": 0.6,
       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
     },
     {
@@ -3036,7 +3036,7 @@
       "company": "CSCO",
       "value_usd": 4280906706.0,
       "shares": 39774288.0,
-      "pct_of_portfolio": 0.18,
+      "pct_of_portfolio": 0.19,
       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
     },
     {
@@ -3096,5 +3096,5 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
     }
   ],
-  "issuers_version": "2026-11-26b"
+  "issuers_version": "2026-11-26c"
 }
