@@ -1,0 +1,22 @@
+{
+  "name": "shareholder-advocacy-ai-landscape",
+  "private": true,
+  "description": "Static site: a sourced map of investor engagement on AI. No server; GitHub Pages hosts it.",
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 8765",
+    "lint": "biome check . && python3 -m compileall -q scripts",
+    "format": "biome format --write .",
+    "build": "node scripts/build.mjs",
+    "test": "playwright test",
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "check": "npm run lint && npm run build && npm run test && npm run lighthouse",
+    "check:links": "node --env-file-if-exists=.env scripts/external-links.mjs"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.9",
+    "@playwright/test": "1.65.1",
+    "chrome-launcher": "1.2.3",
+    "lighthouse": "13.6.0"
+  }
+}

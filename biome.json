@@ -1,0 +1,31 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "files": {
+    "includes": [
+      "**",
+      "!node_modules",
+      "!dist",
+      "!data",
+      "!package-lock.json",
+      "!test-results",
+      "!playwright-report",
+      "!reports",
+      "!.claude"
+    ]
+  },
+  "formatter": {
+    "includes": ["tests/**", "scripts/*.mjs", "playwright.config.js", "biome.json", "package.json"],
+    "indentStyle": "space",
+    "lineWidth": 120
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "recommended",
+      "suspicious": { "useIterableCallbackReturn": "off" },
+      "style": { "useTemplate": "off" },
+      "a11y": { "useButtonType": "warn" }
+    }
+  },
+  "assist": { "enabled": false }
+}
