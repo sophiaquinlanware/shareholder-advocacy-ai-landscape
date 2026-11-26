@@ -161,6 +161,19 @@ tr.hit td { background: var(--accent-soft); }
   --n-tier-chips: #1e40af; --n-tier-datacenters: #155e75; --n-tier-compute: #4338ca;
   --n-tier-labs: #6d28d9; --n-tier-capital: #a16207; --n-tier-deployers: #374151;
 }
+/* Co-filer network canvas: dark, like Obsidian's graph view (owner, 2026-11-25: "for the graph view i want
+   the black background and colors like this so that the graph looks similar to an Obsidian graph").
+   Only the graph box is dark; the page, panel, key and List view stay white. Node colours are bright and
+   distinct on the dark canvas; links are thin grey-blue. Every node colour reaches 4.5:1 or more on --g-bg. */
+:root {
+  --g-bg: #1e1e1e; --g-link: #7a8199; --g-label: #dcddde; --g-label-soft: #a1a1aa; --g-ring: #7dd3fc; --g-focus: #ffffff;
+  --gn-company: #93c5fd; --gn-lab: #c4b5fd; --gn-proposal: #38bdf8;
+  --gn-manager: #4ade80; --gn-nonprofit: #f472b6; --gn-faith: #e879f9; --gn-pension: #fb923c;
+  --gn-labor: #facc15; --gn-foundation: #bef264; --gn-coalition: #2dd4bf; --gn-other: #a1a1aa;
+  --gn-person: #e2e8f0; --gn-policy: #fca5a5; --gn-response: #67e8f9; --gn-public: #f9a8d4;
+  --gn-tier-chips: #fbbf24; --gn-tier-datacenters: #22d3ee; --gn-tier-compute: #60a5fa;
+  --gn-tier-labs: #a78bfa; --gn-tier-capital: #f87171; --gn-tier-deployers: #d4d4d8;
+}
 /* Graph settings panel (display, filters, forces), modelled on Obsidian's graph view settings. */
 .graph-settings { border: 1px solid var(--control-edge); border-radius: var(--radius); padding: 6px 12px; margin: 0 0 10px; font-size: 13px; }
 .graph-settings summary { cursor: pointer; font-weight: 600; padding: 2px 0; }
@@ -174,7 +187,7 @@ tr.hit td { background: var(--accent-soft); }
 .gs-check { display: flex; gap: 6px; align-items: center; }
 .gs-check input { accent-color: var(--accent); }
 .net-body { display: grid; grid-template-columns: 1fr 300px; gap: 12px; }
-.net-graph { height: 600px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; touch-action: none; }
+.net-graph { height: 600px; background: var(--g-bg); border: 1px solid var(--g-bg); border-radius: var(--radius); overflow: hidden; touch-action: none; }
 .net-graph svg { display: block; }
 .net-list { min-width: 0; }
 .net-list .table-wrap { margin-top: 0; }
@@ -190,6 +203,9 @@ tr.hit td { background: var(--accent-soft); }
 .net-actions ul { margin: 0; padding-left: 18px; }
 .net-actions li { margin: 4px 0; }
 .net-actions .chip { margin-top: 2px; }
+.net-actions .act-links { list-style: none; padding: 0; margin: 2px 0 0; }
+.net-actions .act-links li { margin: 2px 0; overflow-wrap: anywhere; }
+.net-actions .act-links .src { white-space: normal; }
 .ring-note { font-size: 12px; font-weight: 600; color: var(--accent); }
 .ring-note::before { content: "◌ " / ""; }
 .conf { font-size: 12px; color: var(--ink-soft); }

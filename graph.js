@@ -60,6 +60,8 @@
 
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const link = (url, label = "source") => url ? `<a class="src" href="${esc(url)}" target="_blank" rel="noopener">[${esc(label)}]</a>` : `<span class="unverified">source pending</span>`;
+  // Node colours on the dark graph canvas: the --gn-* set (styles.css), one per --n-* type token.
+  const nodeColor = (kind) => cssVar(String(TYPE_VAR[kind] || "--n-other").replace("--n-", "--gn-"));
   const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim() || "#888";
 
   let state = null;
@@ -317,7 +319,7 @@
     const order = Object.keys(TYPE_LABEL);
     kinds.sort((a, b) => order.indexOf(a) - order.indexOf(b));
     document.getElementById("net-legend").innerHTML = kinds.map((k) =>
-      `<button type="button" class="leg" data-kind="${esc(k)}" aria-pressed="${!state.hiddenKinds.has(k)}"><span class="dot" style="background:${cssVar(TYPE_VAR[k])}"></span>${esc(TYPE_LABEL[k])}</button>`).join("");
+      `<button type="button" class="leg" data-kind="${esc(k)}" aria-pressed="${!state.hiddenKinds.has(k)}"><span class="dot" style="background:${nodeColor(k)}"></span>${esc(TYPE_LABEL[k])}</button>`).join("");
   }
 
   // One plain line: how much is shown, and what node size means. Recomputed when layers change.
@@ -372,7 +374,7 @@
   // One action item: its text, its links and, for a button, a real control (panel and List view alike).
   function actionHtml(a, id, i) {
     const lk = (href, label) => ` <a class="src" href="${esc(href)}" target="_blank" rel="noopener">[${esc(label)}]</a>`;
-    return `${a.text ? esc(a.text) : ""}${a.href ? lk(a.href, a.hrefLabel || "source") : ""}${(a.links || []).map((l) => lk(l.href, l.label)).join("")}${a.button ? `<button type="button" class="chip" data-act-node="${esc(id)}" data-act="${i}">${esc(a.button.label)}</button>` : ""}`;
+    return `${a.text ? esc(a.text) : ""}${a.href ? lk(a.href, a.hrefLabel || "source") : ""}${a.links && a.links.length ? `<ul class="act-links">${a.links.map((l) => `<li>${lk(l.href, l.label)}</li>`).join("")}</ul>` : ""}${a.button ? `<button type="button" class="chip" data-act-node="${esc(id)}" data-act="${i}">${esc(a.button.label)}</button>` : ""}`;
   }
   function wireActions(root) {
     root.querySelectorAll("[data-act]").forEach((b) => b.addEventListener("click", () => {
@@ -451,10 +453,11 @@
         if (q) return d.label.toLowerCase().includes(q) ? 1 : 0.12;
         return near && !near.has(d.id) ? 0.12 : 1;
       })
-      .attr("stroke-width", (d) => (d.id === state.selected ? 3 : 1.2));
+      .attr("stroke", (d) => (d.id === state.selected ? cssVar("--g-focus") : cssVar("--g-bg")))
+      .attr("stroke-width", (d) => (d.id === state.selected ? 2.5 : 1));
     if (state.ringSel) state.ringSel.attr("display", (d) => (visible(d) ? null : "none"));
     state.linkSel.attr("display", (l) => (visible(l.source) && visible(l.target) ? null : "none"))
-      .attr("stroke-opacity", (l) => (near ? (l.source.id === focusId || l.target.id === focusId ? 0.9 : 0.04) : q ? 0.08 : 0.35));
+      .attr("stroke-opacity", (l) => (near ? (l.source.id === focusId || l.target.id === focusId ? 0.9 : 0.04) : q ? 0.08 : 0.45));
     state.labels.attr("display", (d) => (visible(d) ? null : "none"))
       .attr("opacity", (d) => {
         if (q) return d.label.toLowerCase().includes(q) ? 1 : 0;
@@ -468,7 +471,7 @@
     if (!state.ringLayer) return;
     state.ringLayer.selectAll("*").remove();
     state.ringSel = state.ringLayer.selectAll("circle").data(state.data.nodes.filter((n) => rings(n).length)).join("circle")
-      .attr("r", (d) => radius(d) + 4).attr("fill", "none").attr("stroke", cssVar("--accent")).attr("stroke-width", 2).attr("stroke-dasharray", "4 2")
+      .attr("r", (d) => radius(d) + 4).attr("fill", "none").attr("stroke", cssVar("--g-ring")).attr("stroke-width", 1.5).attr("stroke-dasharray", "4 2")
       .attr("cx", (d) => d.x).attr("cy", (d) => d.y);
   }
   function placeFocusMark() {
@@ -559,18 +562,18 @@
       .force("gy", d3.forceY((d) => groupY(d) * height).strength(state.cfg.group * 0.8));
     state.sim = sim;
     // Column labels for the grouped layout; they move and zoom with the graph.
-    state.axis = g.append("g").attr("font-size", 11).attr("font-weight", 600).attr("fill", cssVar("--ink-soft"))
+    state.axis = g.append("g").attr("font-size", 11).attr("font-weight", 600).attr("fill", cssVar("--g-label-soft"))
       .attr("display", state.cfg.group > 0 ? null : "none");
     drawAxis();
-    state.linkSel = g.append("g").attr("stroke", cssVar("--blue-3")).attr("fill", "none").selectAll("path").data(data.links).join("path")
+    state.linkSel = g.append("g").attr("stroke", cssVar("--g-link")).attr("fill", "none").selectAll("path").data(data.links).join("path")
       .attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.4 : 1) * state.cfg.linkScale)
       // Membership links are dashed; links with no source (inferred) are dotted, so the two never look alike.
       .attr("stroke-dasharray", (l) => (conf(l).level === "inferred" ? "1 3" : l.relation === "member of" ? "3 3" : null));
 
     state.node = g.append("g").selectAll("circle").data(data.nodes).join("circle")
       .attr("r", radius)
-      .attr("fill", (d) => cssVar(TYPE_VAR[d.kind]))
-      .attr("stroke", cssVar("--surface"))
+      .attr("fill", (d) => nodeColor(d.kind))
+      .attr("stroke", cssVar("--g-bg"))
       .style("cursor", "pointer")
       .on("mouseenter", (ev, d) => { state.hover = d.id; applyStyles(); })
       .on("mouseleave", () => { state.hover = null; applyStyles(); })
@@ -583,15 +586,15 @@
     // Lens rings (dashed, accent) and the keyboard focus mark (solid ink ring with a white gap) sit on top.
     state.ringLayer = g.append("g").attr("pointer-events", "none");
     state.focusMark = g.append("g").attr("pointer-events", "none").attr("display", "none");
-    state.focusMark.append("circle").attr("class", "fm-gap").attr("fill", "none").attr("stroke", cssVar("--bg")).attr("stroke-width", 3);
-    state.focusMark.append("circle").attr("class", "fm-ring").attr("fill", "none").attr("stroke", cssVar("--ink")).attr("stroke-width", 2);
+    state.focusMark.append("circle").attr("class", "fm-gap").attr("fill", "none").attr("stroke", cssVar("--g-bg")).attr("stroke-width", 3);
+    state.focusMark.append("circle").attr("class", "fm-ring").attr("fill", "none").attr("stroke", cssVar("--g-focus")).attr("stroke-width", 2);
     drawRings();
 
     state.labels = g.append("g").selectAll("text").data(data.nodes).join("text")
       .text((d) => (d.label.length > 42 ? d.label.slice(0, 40) + "…" : d.label))
       .attr("font-size", (d) => (d.kind === "company" ? state.cfg.textSize + 2 : state.cfg.textSize))
       .attr("font-weight", (d) => (d.kind === "company" ? 600 : 400))
-      .attr("fill", cssVar("--ink"))
+      .attr("fill", cssVar("--g-label"))
       .attr("pointer-events", "none")
       .attr("dx", (d) => radius(d) + 4).attr("dy", 4);
 
@@ -627,7 +630,7 @@
       .sort((a, b) => ((dir === "descending" ? -1 : 1) * ((val(a) ?? -1) - (val(b) ?? -1))) || a.label.localeCompare(b.label));
     const body = rows.map((n) => {
       const acts = actions(n).map((x, i) => actionHtml(x, n.id, i));
-      return `<tr><td><button type="button" class="linklike" data-id="${esc(n.id)}">${esc(n.label)}</button></td><td>${esc(TYPE_LABEL[n.kind])}</td>${m ? `<td class="num">${val(n) ?? ""}</td>` : ""}<td class="num">${n.degree || 0}</td><td>${esc(rings(n).map((r) => r.text).join(", "))}</td><td>${acts.join("<br>")}</td></tr>`;
+      return `<tr><td><button type="button" class="linklike" data-id="${esc(n.id)}">${esc(n.label)}</button></td><td>${esc(TYPE_LABEL[n.kind])}</td>${m ? `<td class="num">${val(n) ?? "–"}</td>` : ""}<td class="num">${n.degree || 0}</td><td>${esc(rings(n).map((r) => r.text).join(", "))}</td><td>${acts.join("<br>")}</td></tr>`;
     }).join("");
     const el = document.getElementById("net-list");
     const sortLabel = m ? m.label : "Connections";

@@ -1,6 +1,6 @@
 # Shareholder Advocacy AI Landscape — current state
 
-Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 (UI session, round 2 merge).
+Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 (UI session, lens Phase 1 on branch, not merged).
 
 ## Sessions and branches (read this first)
 
@@ -9,7 +9,7 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 
 | Session | Owns | Branch | State |
 |---|---|---|---|
 | Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | `data/value-chain` (open) | On `main` since this merge: 60 companies (`data/companies.json`, owner kept all), value-chain tiers (`data/value_chain.json`, `tier`/`tiers` on companies and graph nodes), ownership for 9 private labs. Open on `data/value-chain`: rights maps for 22 more US companies (commit a1f5649, in data accuracy review) and value-chain ties plus per-tier facts (in research). |
-| UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, the view JS files incl. `votes.js`, `DESIGN.md`, `tests/` | `design/round2-structure` (merged with this update) | Round 2 live. Next: lens Phase 1 (owner approved), then the value-chain and engagement-map visuals once `data/value_chain.json` lands. |
+| UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, the view JS files incl. `votes.js`, `DESIGN.md`, `tests/` | `design/lens-phase1` (pushed, **not merged**; waits for the owner's go-ahead) | Round 2 live. Lens Phase 1 built and checked on the branch; see "Lens Phase 1" below. Next: lens Phase 2 after the owner's go-ahead, and the value-chain and engagement maps (data now on `data/value-chain`). |
 | Protocol setup | `AGENTS.md`, `CLAUDE.md`, checks, `docs/` structure | `docs-session-onboarding` (local) | Idle. |
 
 **Data contract:** views read only `data/*.json`.
@@ -65,15 +65,22 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 
 
 **Network node key by value-chain tier** (owner, after R2): "Instead of 'company,' have 'Frontier AI Labs,' 'hyperscalers,' 'chip builders' … coordinate with the other chat". Built to read `tier` from graph.json, with labels verbatim from the data session. It shows "Company (tier not yet assigned)" until `data/value-chain` merges. Tested with that branch's data: 24/24 pass.
 
+## Lens Phase 1 (branch `design/lens-phase1`)
+
+Plan: docs/plans/2026-11-25-lens-phase1.md (Revision 2, plus Build notes).
+- Co-filer network: a "View as" choice of Impact investor, Individual investor or Policymaker, kept in `?lens=` and in localStorage.
+- `lenses.js` holds each lens's layers, size, rings, actions and measure. `rules.js` holds the edge-confidence domain list.
+- The "What you can do" block; edge confidence (verified / reported / inferred); keyboard node navigation; a List view of every visible node.
+- Labels are off by default and show on select (owner, mid-build).
+- **Dark Obsidian-style graph canvas** (owner, mid-build): `--g-bg` #1e1e1e, bright `--gn-*` node colours (6:1 or more), grey-blue links. The page stays white; Lab pathways keeps `--n-*`.
+- **Bug fixed:** since round 2, tabs no longer wrote `#hash` to the address bar, because `app.js`'s `history()` replaced `window.history`. It is now `voteHistory()`, with a test.
+- **Check (merged with origin/main):** lint 0 errors; 54 passed, 2 skipped (keyboard test at desktop only); Lighthouse 100/100/100 for accessibility, best practices and SEO, performance 100 phone / 90 desktop.
+- **Reviews:** R1 UX 72, accessibility 83 PASS, data 76. R2 UX 86 PASS, data 88 PASS. The dark canvas came after R2 and has not been reviewed.
+
 ## Next (UI session)
 
-1. **Lens Phase 1** (owner approved with defaults: plain-language definitions only in the Individual investor lens; static rings plus countdown, pulse optional):
-   - Impact investor / Individual investor / Policymaker toggle, `?lens=`;
-   - `lenses.js` and `rules.js` config files;
-   - "What you can do" panel block;
-   - edge confidence markers (verified / reported / inferred);
-   - keyboard focus on graph nodes.
-2. **Value chain map and engagement map** (owner request via the data session): build when `data/value_chain.json` is merged.
+1. **Lens Phase 2** after the owner's go-ahead: open-window aura, seeking aura, resubmission flags (thresholds in `rules.js`), holdings overlay, gap finder, warm path.
+2. **Value-chain map and engagement map:** `data/value_chain.json` `ties` and `per_tier` exist on `data/value-chain`. Show its `derived_note` caveat: proposal counts cover the original 7 companies only.
 
 ## Queue (found, not picked up)
 
@@ -90,6 +97,9 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 
 6. **Outside links to check by hand:** an SEC comment PDF (`data/causality.json`); www.omiusa.org and www.harringtoninvestments.com (`data/graph.json`).
 7. **Deploy publishes the whole repo** (`path: .` in refresh.yml). It could publish `dist/` instead; this is the owner's call.
 8. **Playwright still runs a "dark" project** although the site has one white theme. Drop the dark projects in `playwright.config.js` to halve test time.
+9. **Network link contrast:** links are `--blue-3` at 0.35 opacity (about 1.5:1). The dotted "inferred" lines are hard to tell from dashed membership lines at 1px. The panel and List view carry the same facts as text. Raising the opacity makes the graph busier, so it's for the owner (accessibility R1).
+10. **Data, for the data session:** graph.json and proposals.json support values differ slightly (33.57 vs 33.58). Item 6 at Microsoft 2026 is "Social & economic impacts" in graph.json but "Data center impacts" in upcoming.json.
+11. **Proposals tab has no filer filter**, so the network can't offer "Open its filings in Proposals".
 
 ## Owner actions
 

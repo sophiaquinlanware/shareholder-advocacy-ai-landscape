@@ -94,8 +94,19 @@
     people.forEach((p) => out.push({ text: `Public profile: ${p.label}${p.title ? ", " + p.title : ""}`, href: p.profile_url || p.source_url, hrefLabel: "profile" }));
     // Exempt solicitations filed by this organisation: distinct filings, not graph edges (one filing can
     // appear on both the proposal and the company). "support" edges are statements, not filings.
-    const filings = new Set(ctx.links.filter((l) => end(l.source) === n.id && /^exempt solicitation/.test(l.relation) && !/support/.test(l.relation) && l.source_url).map((l) => l.source_url));
-    if (filings.size) out.push({ text: `Exempt solicitations on file: ${filings.size}`, links: [...filings].map((href, i) => ({ href, label: String(i + 1) })) });
+    // Each link is named by what the filing is about (its proposal or company), so links can be told apart.
+    const filings = new Map();
+    ctx.links.filter((l) => end(l.source) === n.id && /^exempt solicitation/.test(l.relation) && !/support/.test(l.relation) && l.source_url)
+      .forEach((l) => {
+        const t = ctx.byId.get(end(l.target));
+        // A filing tied only to a company is named by company and filing year; the year is the two digits
+        // after the filer ID in an SEC accession number (…/000121465925006528/ is a 2025 filing).
+        const yr = (String(l.source_url).match(/\/\d{10}(\d{2})\d{6}\//) || [])[1];
+        const name = t ? (t.kind === "proposal" || !yr ? t.label : `${t.label}, 20${yr} filing`) : "filing";
+        // Prefer the proposal's name over the company's when the same filing is on both.
+        if (!filings.has(l.source_url) || (t && t.kind === "proposal")) filings.set(l.source_url, name.length > 48 ? name.slice(0, 46) + "…" : name);
+      });
+    if (filings.size) out.push({ text: `Exempt solicitations on file: ${filings.size}`, links: [...filings].map(([href, label]) => ({ href, label })) });
     return out;
   }
 
@@ -155,8 +166,7 @@
         const cos = new Set(same.map((p) => p.company));
         const years = same.map((p) => p.year).filter(Boolean).sort();
         const span = years.length ? (years[0] === years.at(-1) ? `${years[0]}` : `${years[0]}–${years.at(-1)}`) : "";
-        const out = [{ text: `Same topic (${n.topic}): ${same.length} proposals at ${cos.size} ${cos.size === 1 ? "company" : "companies"}${span ? ", " + span : ""}` }];
-        // Only figures stated in a vote-results filing; no average is computed.
+        const out = [{ text: `${n.topic}: ${same.length} proposals at ${cos.size} ${cos.size === 1 ? "company" : "companies"}${span ? ", " + span : ""}` }];
         // Lowest and highest support where an 8-K reports the vote; no average. Many of these figures are
         // computed by this site from the 8-K's vote counts (see support_note in data/proposals.json), so the
         // text points to the notes. Floor proposals (raised at the meeting, so proxy votes could not be cast on

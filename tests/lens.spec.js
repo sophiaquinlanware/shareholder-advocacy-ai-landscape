@@ -72,7 +72,12 @@ test("opening a tab puts its name in the address (#hash)", async ({ page }) => {
 test("labels are off until a node is selected, then name it and its connections", async ({ page }) => {
   await openNetwork(page, "?lens=impact");
   await page.waitForTimeout(800);
-  const shown = () => page.$$eval("#net-graph text", (ts) => ts.filter((t) => t.getAttribute("display") !== "none" && t.getAttribute("opacity") === "1").map((t) => t.textContent));
+  const shown = () =>
+    page.$$eval("#net-graph text", (ts) =>
+      ts
+        .filter((t) => t.getAttribute("display") !== "none" && t.getAttribute("opacity") === "1")
+        .map((t) => t.textContent),
+    );
   expect(await shown()).toEqual([]);
   await page.evaluate(() => window.focusNetworkNode("co-MSFT"));
   const after = await shown();
