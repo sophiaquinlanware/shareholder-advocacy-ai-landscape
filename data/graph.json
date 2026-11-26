@@ -5043,8 +5043,22 @@
    "kind": "policy",
    "actor": "Colorado Governor Jared Polis",
    "jurisdiction": "Colorado",
-   "description": "Special-session bill SB 25B-004 moved the effective date from February 1, 2026. Status after the 2026 session UNVERIFIED.",
+   "description": "Special-session bill SB 25B-004 moved the effective date from February 1, 2026. The 2026 session then repealed and replaced the act with SB 26-189 (see next event).",
    "source_url": "https://www.akingump.com/en/insights/ai-law-and-regulation-tracker/colorado-postpones-implementation-of-colorado-ai-act-sb-24-205",
+   "degree": 2
+  },
+  {
+   "id": "ev-colorado-sb26-189",
+   "type": "policy",
+   "layer": "policy",
+   "label": "Colorado repeals and replaces its AI Act with SB 26-189",
+   "date": "2026-05-14",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "Colorado Governor Jared Polis",
+   "jurisdiction": "Colorado",
+   "description": "SB 26-189 repeals and reenacts SB 24-205 as a law on automated decision-making technology used in consequential decisions (jobs, education, housing, lending, insurance, health care, government services). It drops the impact assessment duty, keeps consumer notices, explanations and human review, and takes effect January 1, 2027. The Attorney General enforces it; there is no private right of action.",
+   "source_url": "https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189",
    "degree": 1
   },
   {
@@ -11463,6 +11477,14 @@
    "layer": "policy",
    "source_url": "https://www.parnassus.com/updates/article/the_new_imperative_of_responsible_ai",
    "explanation": "Parnassus says Intuit published AI governance disclosure following its engagement."
+  },
+  {
+   "source": "ev-colorado-ai-delay",
+   "target": "ev-colorado-sb26-189",
+   "type": "led to",
+   "layer": "policy",
+   "source_url": "https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189",
+   "explanation": "In its next regular session Colorado repealed and replaced the delayed act. The source gives the federal executive order and a federal lawsuit by a large AI developer as the background."
   },
   {
    "source": "googl-2025-7",

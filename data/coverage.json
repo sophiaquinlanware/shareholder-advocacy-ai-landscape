@@ -1,0 +1,323 @@
+{
+ "about": "How far each recurring shareholder ask (data/asks.json) is already required by a policy in data/causality.json. full = the policy requires what the ask requests, for the companies asked; partial = it requires part of it, or only in one place or for some companies; none = no listed policy requires it (the note lists what was checked). This site's reading of the policy text, not legal advice. reviewed=false until a person confirms each row.",
+ "checked": "2026-11-25",
+ "entries": [
+  {
+   "ask_id": "ask-dc-water",
+   "policy_id": "utah-hb76",
+   "graph_id": "ev-utah-hb76",
+   "coverage": "partial",
+   "note": "Utah HB 76 makes new large data centers in Utah report annual water withdrawals, published per facility; it does not require region-level water-stress metrics or a human right to water policy.",
+   "source_url": "https://le.utah.gov/Session/2026/bills/enrolled/HB0076.pdf",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-dc-water",
+   "policy_id": "ca-ab2619",
+   "graph_id": "ev-ca-ab2619",
+   "coverage": "partial",
+   "note": "AB 2619 makes California data centers report expected and prior-year water use to local licensing bodies from 2027; it covers one state and does not require water-stress analysis or public company reports.",
+   "source_url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB2619",
+   "policy_status": "enacted, not yet in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-dc-siting-rights",
+   "policy_id": null,
+   "graph_id": null,
+   "coverage": "none",
+   "note": "Checked Utah HB 76, California AB 2619, the EU AI Act, EO 14365 and the AI Action Plan; none requires a human rights review of where data centers are built.",
+   "source_url": null,
+   "policy_status": null,
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-fossil-fuels",
+   "policy_id": null,
+   "graph_id": null,
+   "coverage": "none",
+   "note": "Checked the EU AI Act, GPAI Code, SB 53, RAISE Act, Colorado SB 26-189, EO 14365 and the AI Action Plan; none requires reporting on AI tools sold for oil and gas work.",
+   "source_url": null,
+   "policy_status": null,
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-dc-climate-energy",
+   "policy_id": "eu-gpai-obligations",
+   "graph_id": "ev-eu-gpai-obligations",
+   "coverage": "partial",
+   "note": "The EU AI Act makes general-purpose model providers document a model's known or estimated energy use for regulators on request; it requires no public data center emissions, energy or climate-goal reporting.",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "policy_id": "eu-ai-act-in-force",
+   "graph_id": "ev-eu-ai-act-in-force",
+   "coverage": "partial",
+   "note": "The EU AI Act requires synthetic content to be machine-marked and deepfakes disclosed from August 2026; it requires no child safety targets, metrics or reports on detection software.",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "policy_id": "eu-omnibus-adopted",
+   "graph_id": "ev-eu-omnibus-adopted",
+   "coverage": "partial",
+   "note": "The omnibus adds an EU ban on AI that generates child sexual abuse material or non-consensual intimate images, applying from December 2026; it requires no company child safety reporting.",
+   "source_url": "https://www.cuatrecasas.com/en/global/intellectual-property/art/council-eu-approves-digital-omnibus-ai",
+   "policy_status": "in force, ban applies December 2026",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "policy_id": "eu-gpai-code",
+   "graph_id": "ev-eu-gpai-code",
+   "coverage": "partial",
+   "note": "The voluntary GPAI Code lists child sexual abuse material among risks signatory model providers should consider; it requires no public child safety targets or reports.",
+   "source_url": "https://ec.europa.eu/newsroom/dae/redirection/document/118119",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-targeted-ads-rights",
+   "policy_id": "eu-ai-act-in-force",
+   "graph_id": "ev-eu-ai-act-in-force",
+   "coverage": "partial",
+   "note": "The EU AI Act bans AI that manipulates people or exploits vulnerabilities to cause significant harm; it does not require a human rights impact assessment of targeted advertising. This reading is uncertain.",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-customer-due-diligence",
+   "policy_id": "eu-ai-act-in-force",
+   "graph_id": "ev-eu-ai-act-in-force",
+   "coverage": "partial",
+   "note": "The EU AI Act bans some uses such as untargeted facial image scraping and most live police face recognition in public; it excludes military uses and requires no customer human rights due diligence report.",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-customer-due-diligence",
+   "policy_id": "eu-omnibus-adopted",
+   "graph_id": "ev-eu-omnibus-adopted",
+   "coverage": "partial",
+   "note": "EU fundamental rights impact assessments for some high-risk AI deployers now start December 2027; they bind deployers, not the vendors investors ask, and exclude military and national security.",
+   "source_url": "https://www.cuatrecasas.com/en/global/intellectual-property/art/council-eu-approves-digital-omnibus-ai",
+   "policy_status": "in force, duties delayed",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-misinformation",
+   "policy_id": "eu-ai-act-in-force",
+   "graph_id": "ev-eu-ai-act-in-force",
+   "coverage": "partial",
+   "note": "The EU AI Act requires AI-generated content to be machine-marked and deepfakes labeled from August 2026; it requires no report on misinformation risks or remediation effectiveness.",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-misinformation",
+   "policy_id": "eu-gpai-obligations",
+   "graph_id": "ev-eu-gpai-obligations",
+   "coverage": "partial",
+   "note": "Providers of EU systemic-risk models must assess and mitigate systemic risks and report serious incidents to the AI Office; the Act's recitals name disinformation as a possible systemic risk, but its articles require no public misinformation report.",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-misinformation",
+   "policy_id": "eu-gpai-code",
+   "graph_id": "ev-eu-gpai-code",
+   "coverage": "partial",
+   "note": "The voluntary GPAI Code names harmful manipulation as a systemic risk and lists a tendency to produce misinformation, and false content, among risk sources to consider; it binds only signatories and requires no public misinformation report.",
+   "source_url": "https://ec.europa.eu/newsroom/dae/redirection/document/118119",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-bias",
+   "policy_id": "eu-omnibus-adopted",
+   "graph_id": "ev-eu-omnibus-adopted",
+   "coverage": "partial",
+   "note": "The EU AI Act requires bias checks on high-risk systems' training data, now delayed to December 2027; it does not cover chatbot viewpoint bias or require a public report.",
+   "source_url": "https://www.cuatrecasas.com/en/global/intellectual-property/art/council-eu-approves-digital-omnibus-ai",
+   "policy_status": "in force, duties delayed",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-bias",
+   "policy_id": "colorado-sb26-189",
+   "graph_id": "ev-colorado-sb26-189",
+   "coverage": "partial",
+   "note": "Colorado SB 26-189 requires notices, explanations and human review for automated decisions in jobs, lending, housing and other consequential areas from 2027, and drops the 2024 act's duty of reasonable care against algorithmic discrimination; it does not cover viewpoint bias or require public reports to investors.",
+   "source_url": "https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189",
+   "policy_status": "enacted, not yet in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-bias",
+   "policy_id": "eu-gpai-code",
+   "graph_id": "ev-eu-gpai-code",
+   "coverage": "partial",
+   "note": "The voluntary GPAI Code lists non-discrimination among risks signatory model providers should consider; it requires no public bias report.",
+   "source_url": "https://ec.europa.eu/newsroom/dae/redirection/document/118119",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-training-data",
+   "policy_id": "eu-gpai-obligations",
+   "graph_id": "ev-eu-gpai-obligations",
+   "coverage": "partial",
+   "note": "The EU AI Act makes general-purpose model providers publish a training-content summary and keep a copyright policy; it does not require a report on data-misuse risks or how well mitigations work.",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-training-data",
+   "policy_id": "eu-gpai-code",
+   "graph_id": "ev-eu-gpai-code",
+   "coverage": "partial",
+   "note": "The voluntary GPAI Code's copyright chapter commits signatories to respect web crawling opt-outs and handle complaints; it does not cover user data or require a risk report.",
+   "source_url": "https://ec.europa.eu/newsroom/dae/redirection/document/118115",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-training-data",
+   "policy_id": "colorado-sb26-189",
+   "graph_id": "ev-colorado-sb26-189",
+   "coverage": "partial",
+   "note": "Colorado SB 26-189 makes developers give deployers the categories of training data used, to the extent known, from 2027; nothing is published to investors.",
+   "source_url": "https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189",
+   "policy_status": "enacted, not yet in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-workforce",
+   "policy_id": "eu-omnibus-adopted",
+   "graph_id": "ev-eu-omnibus-adopted",
+   "coverage": "partial",
+   "note": "The EU AI Act requires employers to inform workers before using high-risk workplace AI, now delayed to December 2027; it does not require a worker AI advisory council.",
+   "source_url": "https://www.cuatrecasas.com/en/global/intellectual-property/art/council-eu-approves-digital-omnibus-ai",
+   "policy_status": "in force, duties delayed",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-workforce",
+   "policy_id": "colorado-sb26-189",
+   "graph_id": "ev-colorado-sb26-189",
+   "coverage": "partial",
+   "note": "Colorado SB 26-189 requires notice to people when automated systems materially influence job decisions from 2027; it does not require worker input bodies.",
+   "source_url": "https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189",
+   "policy_status": "enacted, not yet in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-oversight-reporting",
+   "policy_id": "ca-sb53-signed",
+   "graph_id": "ev-ca-sb53-signed",
+   "coverage": "partial",
+   "note": "SB 53 makes large frontier developers publish safety frameworks, including internal governance, and model transparency reports; it covers catastrophic risk only and does not require board committee oversight.",
+   "source_url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-oversight-reporting",
+   "policy_id": "ny-raise-amended",
+   "graph_id": "ev-ny-raise-amended",
+   "coverage": "partial",
+   "note": "The amended RAISE Act makes large frontier developers publish safety frameworks and report incidents, with enforcement delayed until January 2027 (law firm summary); it covers catastrophic risk only, not board oversight.",
+   "source_url": "https://www.mofo.com/resources/insights/260403-new-york-amends-the-raise-act-to-align-more-closely",
+   "policy_status": "enacted, not yet in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-oversight-reporting",
+   "policy_id": "eu-gpai-obligations",
+   "graph_id": "ev-eu-gpai-obligations",
+   "coverage": "partial",
+   "note": "The EU AI Act makes general-purpose model providers keep documentation for regulators and, for systemic-risk models, assess risks and report incidents; it requires no board oversight or public AI report.",
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+   "policy_status": "in force",
+   "reviewed": false
+  }
+ ],
+ "checks": [
+  {
+   "source_url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53",
+   "checked": "SB 53 enrolled text, section 22757.12",
+   "finding": "Framework must cover catastrophic risk thresholds, mitigations, third-party assessment, internal governance; transparency report on model release; no training data, bias, child safety or workforce duties."
+  },
+  {
+   "source_url": "https://le.utah.gov/Session/2026/bills/enrolled/HB0076.pdf",
+   "checked": "Utah HB 76 enrolled text",
+   "finding": "Large data centers (75+ acre feet a year) report estimated and annual water withdrawals; per-facility withdrawals published; effective May 6, 2026; new large data centers from July 1, 2026."
+  },
+  {
+   "source_url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB2619",
+   "checked": "California AB 2619 chaptered text and digest",
+   "finding": "Approved September 21, 2026; data centers report expected water use and prior-year annual water use on business license applications. Effective January 1, 2027 per Holland & Knight."
+  },
+  {
+   "source_url": "https://www.hklaw.com/en/insights/publications/2026/10/californias-2026-data-center-laws-what-you-need-to-know",
+   "checked": "Holland & Knight summary of 2026 California data center laws",
+   "finding": "AB 1577 separately requires energy reporting by 10 MW+ data centers to the CEC from 2027; it is not a listed policy event, so not scored."
+  },
+  {
+   "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+   "checked": "EU AI Act OJ text: Articles 5, 10, 26(7), 27, 50, 53, 55, Annex XI",
+   "finding": "Art 53(1)(d) public training content summary; Annex XI energy consumption; Art 55 systemic risk duties; Art 50 marking and deepfake disclosure; Art 10, 26(7), 27 high-risk duties."
+  },
+  {
+   "source_url": "https://www.cuatrecasas.com/en/global/intellectual-property/art/council-eu-approves-digital-omnibus-ai",
+   "checked": "Digital omnibus on AI as approved by Council",
+   "finding": "Annex III high-risk duties to December 2, 2027; Annex I to August 2, 2028; new ban on AI generating CSAM and non-consensual intimate images from December 2026; content-marking grace to December 2, 2026."
+  },
+  {
+   "source_url": "https://code-of-practice.ai/?section=safety-security",
+   "checked": "GPAI Code of Practice Safety and Security chapter appendices (unofficial mirror)",
+   "finding": "Specified systemic risks: CBRN, loss of control, cyber offence, harmful manipulation; example risks include misinformation, non-discrimination, CSAM and NCII. Code is voluntary."
+  },
+  {
+   "source_url": "https://leg.colorado.gov/bills/sb26-189",
+   "checked": "Colorado SB 26-189 bill page",
+   "finding": "Signed May 14, 2026; repeals and reenacts SB 24-205 for automated decision-making technology; developer and deployer duties from January 1, 2027."
+  },
+  {
+   "source_url": "https://www.troutmanprivacy.com/2026/04/colorado-attorney-general-delays-enforcement-of-colorado-ai-act/",
+   "checked": "Search results on Colorado litigation",
+   "finding": "xAI suit (joined by DOJ) led to a stipulated order barring enforcement of SB 24-205; whether the stay reaches SB 26-189 is unverified."
+  },
+  {
+   "source_url": "https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence/",
+   "checked": "Executive Order 14365 text",
+   "finding": "Imposes no company disclosure duties; directs litigation and agency actions against state AI laws; carves out child safety and data center infrastructure laws from proposed preemption. Not scored as covering any ask."
+  },
+  {
+   "source_url": "https://www.whitehouse.gov/releases/2025/07/white-house-unveils-americas-ai-action-plan",
+   "checked": "America's AI Action Plan (from causality summary)",
+   "finding": "Nonbinding federal actions; no company requirements, so not scored."
+  },
+  {
+   "source_url": null,
+   "checked": "SEC proxy-process events, Delaware SB 21, Texas SB 29 and SB 1057, Senate moratorium vote, Great American AI Act",
+   "finding": "Govern proposal process or preemption, or are pending/UNVERIFIED; not scored as covering any ask."
+  },
+  {
+   "source_url": "https://www.governor.ny.gov/news/governor-hochul-signs-nation-leading-legislation-require-ai-frameworks-ai-frontier-models",
+   "checked": "New York RAISE Act (governor release; amendment per MoFo)",
+   "finding": "Frontier developers publish safety frameworks and report incidents; amendment aligns with SB 53; January 1, 2027 effective date is per law firm, not verified on primary text."
+  }
+ ]
+}
