@@ -1,60 +1,7 @@
 {
   "last_updated": "2026-11-25",
   "why_intro": "In fourteen months the federal route for putting a proposal on a company's ballot has gone from routine to uncertain. Interest in how companies handle AI has kept growing anyway.",
-  "why_now": [
-    {
-      "date_label": "September 1, 2025",
-      "text": "Texas SB 1057 takes effect. Listed Texas companies that opt in can require proposal filers to hold at least $1 million or 3% of voting shares for six months, and to solicit holders of at least 67% of the vote.",
-      "sources": [
-        { "label": "bill text", "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB01057F.htm" }
-      ]
-    },
-    {
-      "date_label": "November 17, 2025",
-      "text": "SEC staff say they will not respond to most shareholder proposal no-action requests for the 2025 to 2026 season.",
-      "sources": [
-        { "label": "SEC statement", "url": "https://www.sec.gov/newsroom/speeches-statements/statement-regarding-division-corporation-finances-role-exchange-act-rule-14a-8-process-current-proxy-season" }
-      ]
-    },
-    {
-      "date_label": "August 14, 2026",
-      "text": "SEC staff stop responding to all Rule 14a-8 no-action requests, with no end date. Companies still notify the SEC when they exclude a proposal, but they now decide exclusions on their own.",
-      "sources": [
-        { "label": "SEC statement", "url": "https://www.sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426" },
-        { "label": "Cleary Gottlieb", "url": "https://corpgov.law.harvard.edu/2026/09/03/sec-further-modifies-its-rule-14a-8-response-process/" }
-      ]
-    },
-    {
-      "date_label": "August 31, 2026",
-      "text": "D.F. King reports 2026 shareholder proposal submissions were down nearly 25% from 2025, the lowest level in a decade.",
-      "sources": [
-        { "label": "D.F. King", "url": "https://corpgov.law.harvard.edu/2026/08/31/2026-proxy-season-shareholder-proposals/" }
-      ]
-    },
-    {
-      "date_label": "September 16, 2026",
-      "text": "The SEC proposes rescinding Rule 14a-8 entirely, which would leave shareholder proposals to state law and company bylaws. Comments closed November 20, 2026. It is still a proposal, not a final rule.",
-      "sources": [
-        { "label": "SEC press release", "url": "https://www.sec.gov/newsroom/press-releases/2026-89-sec-proposes-rescission-shareholder-proposal-rule-reforms-proxy-solicitation-process" },
-        { "label": "rule page", "url": "https://www.sec.gov/rules-regulations/2026/09/s7-2026-32" }
-      ]
-    },
-    {
-      "date_label": "September 29, 2026",
-      "text": "Vanguard Investor Choice passes 500,000 participants. Vanguard says the program extends to all of its U.S. equity index funds in early 2027, about $8 trillion in eligible assets.",
-      "sources": [
-        { "label": "Vanguard release", "url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/who-we-are/pressroom/press-release-vanguard-investor-choice-participation-grows-more-than-sixfold-surpassing-half-a-million-investors-092926.html" },
-        { "label": "Vanguard program page", "url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/articles/get-to-know-vanguard-investor-choice.html" }
-      ]
-    },
-    {
-      "date_label": "October 6, 2026",
-      "text": "ISS STOXX finds AI-related shareholder proposals at U.S. companies have grown over five years, to 29 in 2026, while environmental and social proposals fell more than 60%. Average support for AI proposals fell to 10.3%.",
-      "sources": [
-        { "label": "ISS STOXX", "url": "https://corpgov.law.harvard.edu/2026/10/06/governing-ai-corporate-oversight-and-shareholder-engagement/" }
-      ]
-    }
-  ],
+  "why_now": [],
   "levers_intro": "If the ballot route narrows further, investor influence on AI moves to these channels. The rights map shows how open each one is at each company.",
   "levers": [
     {
@@ -66,7 +13,10 @@
       "name": "Exempt solicitations",
       "text": "Investors who are not seeking proxy authority can publish their case to other shareholders by filing it with the SEC. These filings show up as form PX14A6G.",
       "sources": [
-        { "label": "Rule 14a-6(g)", "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6" }
+        {
+          "label": "Rule 14a-6(g)",
+          "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+        }
       ]
     },
     {
@@ -78,11 +28,18 @@
       "name": "Fund holders voting directly",
       "text": "Pass-through voting programs let people who own index funds choose how their share of the fund's votes is cast.",
       "sources": [
-        { "label": "Vanguard", "url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/articles/get-to-know-vanguard-investor-choice.html" },
-        { "label": "BlackRock", "url": "https://www.blackrock.com/corporate/about-us/investment-stewardship/blackrock-voting-choice" }
+        {
+          "label": "Vanguard",
+          "url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/articles/get-to-know-vanguard-investor-choice.html"
+        },
+        {
+          "label": "BlackRock",
+          "url": "https://www.blackrock.com/corporate/about-us/investment-stewardship/blackrock-voting-choice"
+        }
       ]
     }
   ],
   "rights_intro": "For each company: where it is incorporated, what its bylaws require to bring a proposal, and how much room investors would have if the SEC rescinds Rule 14a-8.",
-  "status_key": "Still open means the company's own rules leave a workable path for proposals even without Rule 14a-8. Narrowing means higher thresholds, a controlling shareholder or similar limits make that path harder. Closed means the company has adopted rules that shut out most proposal filers. These ratings are this site's reading of the cited documents, not a legal opinion."
+  "status_key": "Still open means the company's own rules leave a workable path for proposals even without Rule 14a-8. Narrowing means higher thresholds, a controlling shareholder or similar limits make that path harder. Closed means the company has adopted rules that shut out most proposal filers. These ratings are this site's reading of the cited documents, not a legal opinion.",
+  "why_now_note": "Emptied 2026-11-25 at the owner's request: every item is now an event in data/causality.json (texas-sb1057, sec-noaction-pause, sec-aug14-statement, dfking-2026-season, sec-14a8-rescission-proposal, vanguard-investor-choice-2026, iss-ai-proposals-2026), so the separate Policy timeline would repeat the map."
 }

@@ -4485,7 +4485,7 @@
    "jurisdiction": "US federal",
    "description": "For the 2025-2026 season, staff said it would not respond to no-action requests except under Rule 14a-8(i)(1), citing post-shutdown resource limits. Companies still file notices.",
    "source_url": "https://www.sec.gov/newsroom/speeches-statements/statement-regarding-division-corporation-finances-role-exchange-act-rule-14a-8-process-current-proxy-season",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "ev-proponent-lawsuits-2026",
@@ -4530,6 +4530,20 @@
    "degree": 1
   },
   {
+   "id": "ev-dfking-2026-season",
+   "type": "response",
+   "layer": "policy",
+   "label": "Shareholder proposal submissions fall nearly 25% in 2026",
+   "date": "2026-08-31",
+   "lane": "investors",
+   "kind": "milestone",
+   "actor": "D.F. King",
+   "jurisdiction": "US federal",
+   "description": "D.F. King reports 2026 shareholder proposal submissions were down nearly 25% from 2025, the lowest level in a decade.",
+   "source_url": "https://corpgov.law.harvard.edu/2026/08/31/2026-proxy-season-shareholder-proposals/",
+   "degree": 1
+  },
+  {
    "id": "ev-sec-aug14-statement",
    "type": "policy",
    "layer": "policy",
@@ -4569,7 +4583,7 @@
    "jurisdiction": "US federal",
    "description": "Release 34-106383, File S7-2026-32, would end the federal shareholder proposal rule and leave proposals to state law and company governing documents. 60-day comment period.",
    "source_url": "https://www.sec.gov/rules/proposed/2026/34-106383.pdf",
-   "degree": 14
+   "degree": 5
   },
   {
    "id": "ev-cii-statement-rescission",
@@ -4600,132 +4614,6 @@
    "degree": 2
   },
   {
-   "id": "ev-steinberg-comment",
-   "type": "public",
-   "layer": "public",
-   "label": "Law professor Marc Steinberg files comment opposing rescission",
-   "date": "2026-10-01",
-   "lane": "public",
-   "kind": "comment letter",
-   "actor": "Marc I. Steinberg",
-   "jurisdiction": "US federal",
-   "description": "Individual academic comment on File S7-2026-32 objecting to the proposed rescission.",
-   "source_url": "https://www.sec.gov/comments/S7-2026-32/s7202632-3753126.htm",
-   "degree": 1
-  },
-  {
-   "id": "ev-tiaa-nuveen-comment",
-   "type": "response",
-   "layer": "policy",
-   "label": "TIAA and Nuveen file comment on 14a-8 rescission",
-   "date": "2026-11-20",
-   "lane": "investors",
-   "kind": "comment letter",
-   "actor": "TIAA; Nuveen",
-   "jurisdiction": "US federal",
-   "description": "Letter on file in S7-2026-32. Position not verified by this research; letter text not reviewed.",
-   "source_url": "https://www.sec.gov/comments/S7-2026-32/s7202632-1155359-4091646.pdf",
-   "degree": 1
-  },
-  {
-   "id": "ev-wespath-comment",
-   "type": "response",
-   "layer": "policy",
-   "label": "Wespath files comment on 14a-8 rescission",
-   "date": "2026-11-20",
-   "lane": "investors",
-   "kind": "comment letter",
-   "actor": "Wespath Benefits and Investments",
-   "jurisdiction": "US federal",
-   "description": "Faith-based pension investor letter on file in S7-2026-32. Position not verified; letter text not reviewed.",
-   "source_url": "https://www.sec.gov/comments/S7-2026-32/s7202632-1158799-4094466.pdf",
-   "degree": 1
-  },
-  {
-   "id": "ev-wsib-comment",
-   "type": "response",
-   "layer": "policy",
-   "label": "Washington State Investment Board comments on rescission",
-   "date": "2026-11-20",
-   "lane": "investors",
-   "kind": "comment letter",
-   "actor": "Washington State Investment Board",
-   "jurisdiction": "Washington",
-   "description": "Public pension letter on file in S7-2026-32. Position not verified; letter text not reviewed.",
-   "source_url": "https://www.sec.gov/system/files/filefield_paths/s7202632-1152659-4087566.pdf",
-   "degree": 1
-  },
-  {
-   "id": "ev-sfof-comment",
-   "type": "policy",
-   "layer": "policy",
-   "label": "State Financial Officers Foundation files rescission comment",
-   "date": "2026-11-20",
-   "lane": "government",
-   "kind": "comment letter",
-   "actor": "State Financial Officers Foundation and state officials",
-   "jurisdiction": "US federal",
-   "description": "Letter signed with state treasurers and auditors, on file in S7-2026-32. Position not verified; letter text not reviewed.",
-   "source_url": "https://www.sec.gov/comments/S7-2026-32/s7202632-1158299-4093906.pdf",
-   "degree": 1
-  },
-  {
-   "id": "ev-ajl-oxfam-comment",
-   "type": "response",
-   "layer": "policy",
-   "label": "AJL Foundation and Oxfam America comment on rescission",
-   "date": "2026-11-20",
-   "lane": "investors",
-   "kind": "comment letter",
-   "actor": "AJL Foundation; Oxfam America",
-   "jurisdiction": "US federal",
-   "description": "Joint letter on file in S7-2026-32. Position not verified; letter text not reviewed.",
-   "source_url": "https://www.sec.gov/comments/S7-2026-32/s7202632-1155379-4091687.pdf",
-   "degree": 1
-  },
-  {
-   "id": "ev-lgim-comment",
-   "type": "response",
-   "layer": "policy",
-   "label": "L&G Asset Management comments on 14a-8 rescission",
-   "date": "2026-11-23",
-   "lane": "investors",
-   "kind": "comment letter",
-   "actor": "L&G Asset Management",
-   "jurisdiction": "US federal",
-   "description": "Asset manager letter on file in S7-2026-32 (a second letter dated Nov 20 also listed). Position not verified.",
-   "source_url": "https://www.sec.gov/comments/S7-2026-32/s7202632-1161179-4107489.pdf",
-   "degree": 1
-  },
-  {
-   "id": "ev-iaa-comment",
-   "type": "response",
-   "layer": "policy",
-   "label": "Investment Adviser Association comments on rescission",
-   "date": "2026-11-24",
-   "lane": "investors",
-   "kind": "comment letter",
-   "actor": "Investment Adviser Association",
-   "jurisdiction": "US federal",
-   "description": "Trade group for advisers filed a letter in S7-2026-32. Position not verified; letter text not reviewed.",
-   "source_url": "https://www.sec.gov/comments/S7-2026-32/s7202632-1162320-4114869.pdf",
-   "degree": 1
-  },
-  {
-   "id": "ev-cii-sec-meeting",
-   "type": "response",
-   "layer": "policy",
-   "label": "CII meets SEC staff on 14a-8 rescission",
-   "date": "2026-11-24",
-   "lane": "investors",
-   "kind": "comment letter",
-   "actor": "Council of Institutional Investors",
-   "jurisdiction": "US federal",
-   "description": "SEC staff memo records a meeting with CII representatives about the proposal, filed to the docket.",
-   "source_url": "https://www.sec.gov/comments/S7-2026-32/s7202632-1163039-4117507.pdf",
-   "degree": 1
-  },
-  {
    "id": "ev-s7-2026-32-comment-count",
    "type": "public",
    "layer": "public",
@@ -4735,7 +4623,7 @@
    "kind": "milestone",
    "actor": "Public commenters",
    "jurisdiction": "US federal",
-   "description": "Docket shows 394 entries (types A 14, B 190, C 188, D 2). Roughly half of sampled entries are individuals. No Big Tech company letters seen on page 1.",
+   "description": "The docket for the proposal to rescind Rule 14a-8 shows 394 entries when comments closed. Letters on file include TIAA and Nuveen, L&G Asset Management, Wespath, the Washington State Investment Board, the Investment Adviser Association, the AJL Foundation with Oxfam America, the State Financial Officers Foundation and a staff memo of a meeting with CII. This site has not reviewed each letter's position.",
    "source_url": "https://www.sec.gov/rules-regulations/public-comments/s7-2026-32",
    "degree": 1
   },
@@ -4763,7 +4651,7 @@
    "kind": "milestone",
    "actor": "Tesla, SpaceX, Tripadvisor, Dropbox and others",
    "jurisdiction": "Nevada; Texas",
-   "description": "Memo lists firms moving to Nevada and Texas after Chancery rulings. Later reports say the pace did not slow after SB 21 (share figures UNVERIFIED).",
+   "description": "Memo lists firms moving to Nevada and Texas after Chancery rulings. Later reports say the pace did not slow after SB 21 (this site has not confirmed the share figures).",
    "source_url": "https://corpgov.law.harvard.edu/2025/04/06/delaware-revamps-its-general-corporation-law-will-it-stop-companies-from-leaving",
    "degree": 2
   },
@@ -4805,7 +4693,7 @@
    "kind": "milestone",
    "actor": "ExxonMobil",
    "jurisdiction": "US federal",
-   "description": "After an SEC no-action letter in September 2025, Exxon let retail holders give standing voting instructions. Exact day UNVERIFIED.",
+   "description": "After an SEC no-action letter in September 2025, Exxon let retail holders give standing voting instructions. The day shown is approximate.",
    "source_url": "https://www.broadridge.com/insights/standing-voting-instructions-lessons-from-the-first-year-experiences-of-exxonmobil-and-bigbear-ai",
    "degree": 0
   },
@@ -4987,7 +4875,7 @@
    "kind": "policy",
    "actor": "Council of the EU",
    "jurisdiction": "EU",
-   "description": "Annex III high-risk duties move to December 2, 2027 and Annex I to August 2, 2028; adds explicit deepfake ban. Entry into force date UNVERIFIED.",
+   "description": "Annex III high-risk duties move to December 2, 2027 and Annex I to August 2, 2028; adds explicit deepfake ban. This site has not confirmed the entry-into-force date.",
    "source_url": "https://www.cuatrecasas.com/en/global/intellectual-property/art/council-eu-approves-digital-omnibus-ai",
    "degree": 2
   },
@@ -5003,7 +4891,7 @@
    "jurisdiction": "US federal",
    "description": "Proposed moratorium on state AI laws was removed from the budget reconciliation bill before passage.",
    "source_url": "https://www.ncsl.org/press-room/details/partnership-not-preemption-state-legislators-stand-against-federal-ai-overreach",
-   "degree": 1
+   "degree": 0
   },
   {
    "id": "ev-us-ai-action-plan",
@@ -5135,15 +5023,15 @@
    "id": "ev-great-american-ai-act",
    "type": "policy",
    "layer": "policy",
-   "label": "UNVERIFIED: Great American AI Act proposes state law preemption",
-   "date": "2026-06-01",
+   "label": "Great American AI Act discussion draft would preempt state AI model laws",
+   "date": "2026-06-04",
    "lane": "government",
    "kind": "policy",
-   "actor": "US Congress",
+   "actor": "Reps. Jay Obernolte and Lori Trahan",
    "jurisdiction": "US federal",
-   "description": "Pending bill would override state AI model development laws; over 200 state lawmakers opposed. Not enacted as of reports found. Exact date UNVERIFIED.",
-   "source_url": "https://www.route-fifty.com/artificial-intelligence/2026/06/worries-mount-about-another-state-ai-law-preemption/414244/",
-   "degree": 1
+   "description": "A bipartisan House discussion draft, not yet introduced, would bar state laws specifically regulating AI model development for three years and add federal frontier-model duties similar to California SB 53 and New York's RAISE Act.",
+   "source_url": "https://fpf.org/blog/frontier-ai-goes-federal-how-the-great-american-ai-act-compares-to-state-laws/",
+   "degree": 0
   },
   {
    "id": "ev-utah-hb76",
@@ -5197,8 +5085,8 @@
    "kind": "campaign",
    "actor": "AFL-CIO Equity Index Funds; Apple",
    "jurisdiction": "US federal",
-   "description": "Proposal sought a report on Apple's AI use and ethics. Apple said it already provides AI transparency. Vote share (about 37%) UNVERIFIED.",
-   "source_url": "https://www.bloomberg.com/news/articles/2024-02-28/apple-shareholders-vote-down-request-for-ai-transparency-report",
+   "description": "Proposal sought a report on Apple's AI use and ethics. Apple said it already provides AI transparency. It received 37.5% of votes cast for and against, per Apple's 8-K.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124010155/ny20022580x1_8k.htm",
    "degree": 1
   },
   {
@@ -5281,7 +5169,7 @@
    "kind": "disclosure",
    "actor": "Intuit",
    "jurisdiction": "US federal",
-   "description": "Per Parnassus, Intuit released public AI governance and risk management disclosure in the first half of 2025. Exact date UNVERIFIED.",
+   "description": "Per Parnassus, Intuit released public AI governance and risk management disclosure in the first half of 2025. The date shown is approximate.",
    "source_url": "https://www.parnassus.com/updates/article/the_new_imperative_of_responsible_ai",
    "degree": 2
   },
@@ -5351,8 +5239,22 @@
    "kind": "milestone",
    "actor": "Glass Lewis",
    "jurisdiction": "US federal",
-   "description": "AI proposals at Alphabet, Amazon and Meta averaged 7.6% in 2026, down from 9.8% in 2025 and 21.4% in 2024. Publication date UNVERIFIED.",
+   "description": "AI proposals at Alphabet, Amazon and Meta averaged 7.6% in 2026, down from 9.8% in 2025 and 21.4% in 2024. The date shown is approximate.",
    "source_url": "https://www.glasslewis.com/article/a-look-at-2026-big-tech-shareholder-proposals",
+   "degree": 0
+  },
+  {
+   "id": "ev-iss-ai-proposals-2026",
+   "type": "response",
+   "layer": "policy",
+   "label": "ISS STOXX: AI proposals grow while other E&S proposals fall",
+   "date": "2026-10-06",
+   "lane": "investors",
+   "kind": "milestone",
+   "actor": "ISS STOXX",
+   "jurisdiction": "US federal",
+   "description": "AI-related shareholder proposals at US companies grew over five years to 29 in 2026, while environmental and social proposals fell more than 60%. Average support for AI proposals fell to 10.3%.",
+   "source_url": "https://corpgov.law.harvard.edu/2026/10/06/governing-ai-corporate-oversight-and-shareholder-engagement/",
    "degree": 0
   },
   {
@@ -11070,7 +10972,7 @@
    "target": "ev-apple-aflcio-vote-2024",
    "type": "acted in",
    "layer": "policy",
-   "source_url": "https://www.bloomberg.com/news/articles/2024-02-28/apple-shareholders-vote-down-request-for-ai-transparency-report"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124010155/ny20022580x1_8k.htm"
   },
   {
    "source": "co-MSFT",
@@ -11221,78 +11123,6 @@
    "layer": "policy",
    "source_url": "https://www.osc.ny.gov/press/releases/2026/09/nys-comptroller-dinapoli-and-nyc-comptroller-levine-statement-secs-plan-silence-shareholders-public",
    "explanation": "Joint statement opposing the rescission proposal."
-  },
-  {
-   "source": "ev-steinberg-comment",
-   "target": "ev-sec-14a8-rescission-proposal",
-   "type": "responded to",
-   "layer": "policy",
-   "source_url": "https://www.sec.gov/comments/S7-2026-32/s7202632-3753126.htm",
-   "explanation": "Comment filed on File S7-2026-32 objecting to the proposal."
-  },
-  {
-   "source": "ev-tiaa-nuveen-comment",
-   "target": "ev-sec-14a8-rescission-proposal",
-   "type": "responded to",
-   "layer": "policy",
-   "source_url": "https://www.sec.gov/comments/S7-2026-32/s7202632-1155359-4091646.pdf",
-   "explanation": "Comment letter filed on File S7-2026-32."
-  },
-  {
-   "source": "ev-wespath-comment",
-   "target": "ev-sec-14a8-rescission-proposal",
-   "type": "responded to",
-   "layer": "policy",
-   "source_url": "https://www.sec.gov/comments/S7-2026-32/s7202632-1158799-4094466.pdf",
-   "explanation": "Comment letter filed on File S7-2026-32."
-  },
-  {
-   "source": "ev-wsib-comment",
-   "target": "ev-sec-14a8-rescission-proposal",
-   "type": "responded to",
-   "layer": "policy",
-   "source_url": "https://www.sec.gov/system/files/filefield_paths/s7202632-1152659-4087566.pdf",
-   "explanation": "Comment letter filed on File S7-2026-32."
-  },
-  {
-   "source": "ev-sfof-comment",
-   "target": "ev-sec-14a8-rescission-proposal",
-   "type": "responded to",
-   "layer": "policy",
-   "source_url": "https://www.sec.gov/comments/S7-2026-32/s7202632-1158299-4093906.pdf",
-   "explanation": "Comment letter filed on File S7-2026-32."
-  },
-  {
-   "source": "ev-ajl-oxfam-comment",
-   "target": "ev-sec-14a8-rescission-proposal",
-   "type": "responded to",
-   "layer": "policy",
-   "source_url": "https://www.sec.gov/comments/S7-2026-32/s7202632-1155379-4091687.pdf",
-   "explanation": "Comment letter filed on File S7-2026-32."
-  },
-  {
-   "source": "ev-lgim-comment",
-   "target": "ev-sec-14a8-rescission-proposal",
-   "type": "responded to",
-   "layer": "policy",
-   "source_url": "https://www.sec.gov/comments/S7-2026-32/s7202632-1161179-4107489.pdf",
-   "explanation": "Comment letter filed on File S7-2026-32."
-  },
-  {
-   "source": "ev-iaa-comment",
-   "target": "ev-sec-14a8-rescission-proposal",
-   "type": "responded to",
-   "layer": "policy",
-   "source_url": "https://www.sec.gov/comments/S7-2026-32/s7202632-1162320-4114869.pdf",
-   "explanation": "Comment letter filed on File S7-2026-32."
-  },
-  {
-   "source": "ev-cii-sec-meeting",
-   "target": "ev-sec-14a8-rescission-proposal",
-   "type": "responded to",
-   "layer": "policy",
-   "source_url": "https://www.sec.gov/comments/S7-2026-32/s7202632-1163039-4117507.pdf",
-   "explanation": "Staff memo of CII meeting on the proposal, filed to the docket."
   },
   {
    "source": "ev-reincorporation-trend",
@@ -11447,14 +11277,6 @@
    "explanation": "Amendments adopted SB 53's revenue threshold to align New York with California."
   },
   {
-   "source": "ev-senate-strikes-moratorium",
-   "target": "ev-great-american-ai-act",
-   "type": "led to",
-   "layer": "policy",
-   "source_url": "https://www.ncsl.org/press-room/details/partnership-not-preemption-state-legislators-stand-against-federal-ai-overreach",
-   "explanation": "After the 2025 moratorium failed, preemption backers tried new legislative vehicles. UNVERIFIED causal framing."
-  },
-  {
    "source": "ev-arjuna-msft-vote-2023",
    "target": "ev-msft-rai-report-2024",
    "type": "led to",
@@ -11485,6 +11307,14 @@
    "layer": "policy",
    "source_url": "https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189",
    "explanation": "In its next regular session Colorado repealed and replaced the delayed act. The source gives the federal executive order and a federal lawsuit by a large AI developer as the background."
+  },
+  {
+   "source": "ev-sec-noaction-pause",
+   "target": "ev-dfking-2026-season",
+   "type": "cited by",
+   "layer": "policy",
+   "source_url": "https://corpgov.law.harvard.edu/2026/08/31/2026-proxy-season-shareholder-proposals/",
+   "explanation": "D.F. King says that, in light of the SEC's updated no-action process, most companies made conservative exclusion decisions, so more proposals reached ballots than first estimated."
   },
   {
    "source": "googl-2025-7",
