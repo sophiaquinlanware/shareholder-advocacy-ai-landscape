@@ -1,0 +1,236 @@
+{
+ "about": "Rule 14a-8 proposal deadlines stated in each company's DEF 14A, by the meeting they apply to. Read 2026-11-25.",
+ "companies": [
+  {
+   "ticker": "MSFT",
+   "next_proposal_deadline": "2027-06-24",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+   "deadline_quote": "SEC Rule 14a-8 ... No later than close of business (5:30 p.m. Pacific Time) on June 24, 2027",
+   "deadlines_by_year": [
+    {
+     "for_meeting_year": 2023,
+     "deadline": "2023-06-29",
+     "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312522270484/d318171ddef14a.htm"
+    },
+    {
+     "for_meeting_year": 2024,
+     "deadline": "2024-06-26",
+     "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm"
+    },
+    {
+     "for_meeting_year": 2025,
+     "deadline": "2025-07-01",
+     "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
+    },
+    {
+     "for_meeting_year": 2026,
+     "deadline": "2026-06-23",
+     "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
+    },
+    {
+     "for_meeting_year": 2027,
+     "deadline": "2027-06-24",
+     "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+    }
+   ]
+  },
+  {
+   "ticker": "GOOGL",
+   "next_proposal_deadline": "2026-12-25",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+   "deadline_quote": "Corporate Secretary must receive the written proposal ... no later than Friday, December 25, 2026.",
+   "deadlines_by_year": [
+    {
+     "for_meeting_year": 2023,
+     "deadline": "2022-12-23",
+     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm"
+    },
+    {
+     "for_meeting_year": 2024,
+     "deadline": "2023-12-23",
+     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+    },
+    {
+     "for_meeting_year": 2025,
+     "deadline": "2024-12-27",
+     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
+    },
+    {
+     "for_meeting_year": 2026,
+     "deadline": "2025-12-26",
+     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+    },
+    {
+     "for_meeting_year": 2027,
+     "deadline": "2026-12-25",
+     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    }
+   ]
+  },
+  {
+   "ticker": "META",
+   "next_proposal_deadline": "2026-12-17",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
+   "deadline_quote": "the proposal must be received by us ... no later than December 17, 2026.",
+   "deadlines_by_year": [
+    {
+     "for_meeting_year": 2023,
+     "deadline": "2022-12-09",
+     "source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680122000043/meta2022definitiveproxysta.htm"
+    },
+    {
+     "for_meeting_year": 2024,
+     "deadline": "2023-12-16",
+     "source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
+    },
+    {
+     "for_meeting_year": 2025,
+     "deadline": "2024-12-20",
+     "source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+    },
+    {
+     "for_meeting_year": 2026,
+     "deadline": "2025-12-18",
+     "source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+    },
+    {
+     "for_meeting_year": 2027,
+     "deadline": "2026-12-17",
+     "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+    }
+   ]
+  },
+  {
+   "ticker": "AMZN",
+   "next_proposal_deadline": "2026-12-10",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
+   "deadline_quote": "must be received no later than 6:00 p.m., Pacific Time, on Thursday, December 10, 2026",
+   "deadlines_by_year": [
+    {
+     "for_meeting_year": 2023,
+     "deadline": "2022-12-15",
+     "source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465922045572/tm223357-5_def14a.htm"
+    },
+    {
+     "for_meeting_year": 2024,
+     "deadline": "2023-12-15",
+     "source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm"
+    },
+    {
+     "for_meeting_year": 2025,
+     "deadline": "2024-12-12",
+     "source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm"
+    },
+    {
+     "for_meeting_year": 2026,
+     "deadline": "2025-12-11",
+     "source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm"
+    },
+    {
+     "for_meeting_year": 2027,
+     "deadline": "2026-12-10",
+     "source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    }
+   ]
+  },
+  {
+   "ticker": "NVDA",
+   "next_proposal_deadline": "2027-01-12",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+   "deadline_quote": "must submit their proposals in writing ... on or before January 12, 2027.",
+   "deadlines_by_year": [
+    {
+     "for_meeting_year": 2023,
+     "deadline": "2022-12-20",
+     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581022000067/nvda2022definitiveproxysta.htm"
+    },
+    {
+     "for_meeting_year": 2024,
+     "deadline": "2024-01-09",
+     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581023000080/nvda-20230508.htm"
+    },
+    {
+     "for_meeting_year": 2025,
+     "deadline": "2025-01-14",
+     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000104/nvda-20240514.htm"
+    },
+    {
+     "for_meeting_year": 2026,
+     "deadline": "2026-01-13",
+     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000095/nvda-20250512.htm"
+    },
+    {
+     "for_meeting_year": 2027,
+     "deadline": "2027-01-12",
+     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm"
+    }
+   ]
+  },
+  {
+   "ticker": "AAPL",
+   "next_proposal_deadline": "2026-09-10",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm",
+   "deadline_quote": "must be received on or before the close of business on September 10, 2026.",
+   "deadlines_by_year": [
+    {
+     "for_meeting_year": 2023,
+     "deadline": "2022-09-08",
+     "source": "https://www.sec.gov/Archives/edgar/data/320193/000119312522003583/d222670ddef14a.htm"
+    },
+    {
+     "for_meeting_year": 2024,
+     "deadline": "2023-09-14",
+     "source": "https://www.sec.gov/Archives/edgar/data/320193/000130817923000019/laap2023_def14a.htm"
+    },
+    {
+     "for_meeting_year": 2025,
+     "deadline": "2024-09-13",
+     "source": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm"
+    },
+    {
+     "for_meeting_year": 2026,
+     "deadline": "2025-09-12",
+     "source": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm"
+    },
+    {
+     "for_meeting_year": 2027,
+     "deadline": "2026-09-10",
+     "source": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm"
+    }
+   ]
+  },
+  {
+   "ticker": "TSLA",
+   "next_proposal_deadline": "2027-06-21",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm",
+   "deadline_quote": "such a proposal would need to be received ... no later than June 21, 2027",
+   "deadlines_by_year": [
+    {
+     "for_meeting_year": 2023,
+     "deadline": "2023-02-23",
+     "source": "https://www.sec.gov/Archives/edgar/data/1318605/000156459022024064/tsla-def14a_20220804.htm"
+    },
+    {
+     "for_meeting_year": 2024,
+     "deadline": "2023-12-08",
+     "source": "https://www.sec.gov/Archives/edgar/data/1318605/000119312523094075/d451342ddef14a.htm"
+    },
+    {
+     "for_meeting_year": 2025,
+     "deadline": "2024-12-17",
+     "source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465924053333/tm2326076d15_def14a.htm"
+    },
+    {
+     "for_meeting_year": 2026,
+     "deadline": "2026-05-20",
+     "source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925090866/tm252289-12_def14a.htm"
+    },
+    {
+     "for_meeting_year": 2027,
+     "deadline": "2027-06-21",
+     "source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm"
+    }
+   ]
+  }
+ ]
+}

@@ -8,7 +8,9 @@ The tracker has two phases.
 
 | What | Main source of truth | How it is checked | How often |
 |---|---|---|---|
-| Proposals that reach the ballot, board responses | SEC EDGAR proxy statements (DEF 14A) | Automatic: `scripts/refresh.py` | Weekly |
+| Proposals that reach the ballot, board responses | SEC EDGAR proxy statements (DEF 14A), for the 29 companies subject to US proxy rules, meetings from 2023 | Automatic flag: `scripts/refresh.py`; a person adds each new AI proposal to `data/proposals.json` | Weekly flag |
+| Filing deadlines (Rule 14a-8) | The "shareholder proposals for next year's meeting" sentence in each DEF 14A (`data/proposal_deadlines.json`; `next_proposal_deadline` in `data/companies.json`) | Read by hand when each new proxy is filed | Each proxy season |
+| Earlier votes on the same subject (`vote_history`) | Derived by `scripts/build_proposal_links.py` from `data/proposals.json`: same company and topic, titles sharing most key words; each link carries its 8-K | Automatic | Weekly |
 | Vote results | SEC EDGAR 8-K, Item 5.07 | Automatic | Weekly |
 | Investor letters to other shareholders | SEC EDGAR exempt solicitations (PX14A6G) | Automatic | Weekly |
 | Proposals filed and later withdrawn (these never reach the proxy) | As You Sow's shareholder resolution tracker and the annual *Proxy Preview* report; ICCR's annual proxy resolutions guide | Checked by hand when each is published | Each proxy season (roughly January to March) |

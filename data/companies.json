@@ -96,7 +96,9 @@
    "compute",
    "capital",
    "deployers"
-  ]
+  ],
+  "next_proposal_deadline": "2027-06-24",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
  },
  {
   "ticker": "GOOGL",
@@ -197,7 +199,9 @@
    "chips",
    "capital",
    "deployers"
-  ]
+  ],
+  "next_proposal_deadline": "2026-12-25",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
  },
  {
   "ticker": "META",
@@ -297,7 +301,9 @@
    "labs",
    "deployers",
    "datacenters"
-  ]
+  ],
+  "next_proposal_deadline": "2026-12-17",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
  },
  {
   "ticker": "AMZN",
@@ -397,7 +403,9 @@
    "chips",
    "capital",
    "deployers"
-  ]
+  ],
+  "next_proposal_deadline": "2026-12-10",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
  },
  {
   "ticker": "NVDA",
@@ -490,7 +498,9 @@
   "tiers": [
    "chips",
    "capital"
-  ]
+  ],
+  "next_proposal_deadline": "2027-01-12",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm"
  },
  {
   "ticker": "AAPL",
@@ -576,7 +586,9 @@
   "tier": "deployers",
   "tiers": [
    "deployers"
-  ]
+  ],
+  "next_proposal_deadline": "2026-09-10",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm"
  },
  {
   "ticker": "TSLA",
@@ -670,7 +682,9 @@
    "capital",
    "deployers",
    "datacenters"
-  ]
+  ],
+  "next_proposal_deadline": "2027-06-21",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm"
  },
  {
   "id": "anthropic",
@@ -777,7 +791,10 @@
     "text": "Newly listed November 2026; no annual proxy statement filed yet.",
     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/ant-20261119.htm"
    }
-  ]
+  ],
+  "next_proposal_deadline": null,
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm",
+  "next_proposal_deadline_note": "No annual meeting held yet as a public company, so no Rule 14a-8 date is set; the deadline is a reasonable time before the first proxy is sent."
  },
  {
   "id": "spacex",
@@ -822,11 +839,11 @@
   },
   "bylaw": {
    "text": "A shareholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last annual meeting; the bylaws treat June 19, 2026 as the date of the 2026 meeting. Proposals other than nominations also need the Texas Section 21.373 ownership stake, and the notice must say whether the shareholder will solicit holders of at least 67% of the voting power. Musk and his permitted transferees are exempt from these notice rules.",
-   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026043288/exhibit32-8xk.htm"
+   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052535/a32-amendedandrestatedbyla.htm"
   },
   "threshold": {
-   "text": "$1 million in market value or 3% of voting shares, held for at least six months, under Texas Section 21.373, which the bylaws adopt (Section 9.5).",
-   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026043288/exhibit32-8xk.htm"
+   "text": "At least $1 million in market value or 3% of voting shares, held for six months before and through the meeting (bylaws Section 2.5, adopted June 15, 2026, under Texas Section 21.373).",
+   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052535/a32-amendedandrestatedbyla.htm"
   },
   "control": {
    "text": "Class A shares carry one vote and Class B shares carry ten. Musk reported sole voting power over 6.42 billion shares (48.4% of Class A counted as converted), of which 5.22 billion are Class B, as of June 30, 2026. 5.33 billion Class B shares were outstanding on October 15, 2026. No proxy statement yet. Calculated from these share counts, Musk holds about 87% of total votes (this site's calculation; the filings do not state a percentage).",
@@ -885,7 +902,10 @@
     "text": "Newly listed June 2026; no annual proxy statement filed yet.",
     "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026066880/spcx-20260930.htm"
    }
-  ]
+  ],
+  "next_proposal_deadline": null,
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm",
+  "next_proposal_deadline_note": "No annual meeting held yet as a public company, so no Rule 14a-8 date is set; the deadline is a reasonable time before the first proxy is sent."
  },
  {
   "id": "openai",
@@ -1522,7 +1542,9 @@
     "text": "Proxy access: 3% held for three years. Holders of 25% can call a special meeting.",
     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000086/finalbylawsoctober12026.htm"
    }
-  ]
+  ],
+  "next_proposal_deadline": "2026-11-10",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm"
  },
  {
   "id": "salesforce",
@@ -1614,7 +1636,9 @@
     "text": "Marc Benioff, Chair and CEO, holds 2.8%.",
     "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm"
    }
-  ]
+  ],
+  "next_proposal_deadline": "2026-12-17",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm"
  },
  {
   "id": "adobe",
@@ -1696,7 +1720,9 @@
    }
   },
   "route_status": "open",
-  "route_status_reason": "Any stockholder of record can give notice of a floor proposal with no stake minimum, directors face majority voting, and no holder controls the vote; Vanguard's 10.17% is the largest stake."
+  "route_status_reason": "Any stockholder of record can give notice of a floor proposal with no stake minimum, directors face majority voting, and no holder controls the vote; Vanguard's 10.17% is the largest stake.",
+  "next_proposal_deadline": "2026-10-30",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000043/adbe-20260227.htm"
  },
  {
   "id": "intuit",
@@ -1789,7 +1815,9 @@
     "text": "Stockholders may act by written consent, and proxy access is 3% held for three years.",
     "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000053/intu-20261125.htm"
    }
-  ]
+  ],
+  "next_proposal_deadline": "2027-07-28",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000053/intu-20261125.htm"
  },
  {
   "id": "verisk-analytics",
@@ -1875,7 +1903,9 @@
    }
   },
   "route_status": "open",
-  "route_status_reason": "Any record holder can give notice of a floor proposal, directors face majority voting and are elected every year, and no holder controls the vote; Vanguard is the largest at 12.3%."
+  "route_status_reason": "Any record holder can give notice of a floor proposal, directors face majority voting and are elected every year, and no holder controls the vote; Vanguard is the largest at 12.3%.",
+  "next_proposal_deadline": "2026-12-04",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1442145/000119312526141398/d23242ddef14a.htm"
  },
  {
   "id": "workday",
@@ -1961,7 +1991,9 @@
    }
   },
   "route_status": "narrowing",
-  "route_status_reason": "The notice route stays open, but Bhusri and Duffield hold 69% of the vote and the board is classified, so outside votes signal views without deciding outcomes."
+  "route_status_reason": "The notice route stays open, but Bhusri and Duffield hold 69% of the vote and the board is classified, so outside votes signal views without deciding outcomes.",
+  "next_proposal_deadline": "2027-01-05",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1327811/000110465926055687/tm261347-2_def14a.htm"
  },
  {
   "id": "servicenow",
@@ -2044,7 +2076,9 @@
    }
   },
   "route_status": "open",
-  "route_status_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting."
+  "route_status_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+  "next_proposal_deadline": "2026-12-07",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000039/now-20260406.htm"
  },
  {
   "id": "palantir-technologies",
@@ -2130,7 +2164,9 @@
    }
   },
   "route_status": "narrowing",
-  "route_status_reason": "The notice route stays open, but directors are elected by plurality and the founders hold just under half of the vote through Class F shares, so outside votes signal views without deciding outcomes."
+  "route_status_reason": "The notice route stays open, but directors are elected by plurality and the founders hold just under half of the vote through Class F shares, so outside votes signal views without deciding outcomes.",
+  "next_proposal_deadline": "2026-12-25",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm"
  },
  {
   "id": "cisco-systems",
@@ -2212,7 +2248,9 @@
    }
   },
   "route_status": "open",
-  "route_status_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting."
+  "route_status_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+  "next_proposal_deadline": "2027-07-01",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm"
  },
  {
   "id": "axon-enterprise",
@@ -2293,7 +2331,9 @@
    }
   },
   "route_status": "open",
-  "route_status_reason": "Any record holder can give notice of a floor proposal, directors face majority voting and are elected every year, and no holder controls the vote; Vanguard is the largest at 11.6%."
+  "route_status_reason": "Any record holder can give notice of a floor proposal, directors face majority voting and are elected every year, and no holder controls the vote; Vanguard is the largest at 11.6%.",
+  "next_proposal_deadline": "2026-12-17",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1069183/000162828026025521/axon-20260416.htm"
  },
  {
   "id": "motorola-solutions",
@@ -2374,7 +2414,9 @@
    }
   },
   "route_status": "open",
-  "route_status_reason": "Any record holder can give notice of a floor proposal, directors face majority voting and are elected every year, and no holder controls the vote; Vanguard is the largest at 13.34%."
+  "route_status_reason": "Any record holder can give notice of a floor proposal, directors face majority voting and are elected every year, and no holder controls the vote; Vanguard is the largest at 13.34%.",
+  "next_proposal_deadline": "2026-12-03",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/68505/000119312526139004/d50373ddef14a.htm"
  },
  {
   "id": "thales",
@@ -2646,7 +2688,9 @@
     "text": "For the 2027 meeting, notice of floor proposals and nominations is due between January 31, 2027 and March 2, 2027.",
     "url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312526159286/d20613ddef14a.htm"
    }
-  ]
+  ],
+  "next_proposal_deadline": "2026-12-17",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1065280/000119312526159286/d20613ddef14a.htm"
  },
  {
   "id": "warner-bros-discovery",
@@ -2769,7 +2813,9 @@
     "text": "For the 2027 meeting, notice of floor proposals and nominations is due between November 18, 2026 and December 18, 2026.",
     "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000013/dis-20260122.htm"
    }
-  ]
+  ],
+  "next_proposal_deadline": "2026-09-24",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000013/dis-20260122.htm"
  },
  {
   "id": "comcast",
@@ -2856,7 +2902,9 @@
     "text": "For the 2027 meeting, notice of floor proposals is due between February 10, 2027 and March 12, 2027 if the meeting is held between May 11 and July 10, 2027.",
     "url": "https://www.sec.gov/Archives/edgar/data/1166691/000119312526177138/cmcsa-20260424.htm"
    }
-  ]
+  ],
+  "next_proposal_deadline": "2026-12-25",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1166691/000119312526177138/cmcsa-20260424.htm"
  },
  {
   "id": "oracle",
@@ -2954,7 +3002,9 @@
     "text": "413,000,000 of Ellison's shares are pledged as collateral for personal loans.",
     "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526402816/orcl-20260925.htm"
    }
-  ]
+  ],
+  "next_proposal_deadline": "2027-05-28",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526402816/orcl-20260925.htm"
  },
  {
   "id": "softbank-group",
@@ -3100,7 +3150,9 @@
     "text": "For the 2027 meeting, notice of floor proposals and nominations is due between January 13, 2027 and February 12, 2027.",
     "url": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm"
    }
-  ]
+  ],
+  "next_proposal_deadline": "2026-11-27",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm"
  },
  {
   "id": "broadcom",
@@ -3181,7 +3233,9 @@
    }
   },
   "route_status": "open",
-  "route_status_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting."
+  "route_status_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
+  "next_proposal_deadline": "2026-11-02",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/d49254ddef14a.htm"
  },
  {
   "id": "tsmc",
@@ -3347,7 +3401,9 @@
    }
   },
   "route_status": "narrowing",
-  "route_status_reason": "The notice route stays open, but directors and officers hold 72.32% of the vote through Class B shares and directors are elected by plurality on a classified board."
+  "route_status_reason": "The notice route stays open, but directors and officers hold 72.32% of the vote through Class B shares and directors are elected by plurality on a classified board.",
+  "next_proposal_deadline": "2026-12-23",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000191/crwv-20260422.htm"
  },
  {
   "id": "nebius-group",
@@ -3468,7 +3524,9 @@
     "text": "Proxy access allows nominees for up to 20% of the board.",
     "url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm"
    }
-  ]
+  ],
+  "next_proposal_deadline": "2026-12-18",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm"
  },
  {
   "id": "southern-company",
@@ -3561,6 +3619,8 @@
     "text": "Holders of 10% can request a special meeting; proxy access is 3% held for three years.",
     "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm"
    }
-  ]
+  ],
+  "next_proposal_deadline": "2026-12-04",
+  "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm"
  }
 ]

@@ -24,6 +24,8 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "exchange": "Nasdaq",
    "country": "US",
+   "next_proposal_deadline": "2027-06-24",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "degree": 47
   },
   {
@@ -52,6 +54,8 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "exchange": "Nasdaq",
    "country": "US",
+   "next_proposal_deadline": "2026-12-25",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "degree": 42
   },
   {
@@ -77,6 +81,8 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "exchange": "Nasdaq",
    "country": "US",
+   "next_proposal_deadline": "2026-12-17",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "degree": 24
   },
   {
@@ -104,6 +110,8 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "exchange": "Nasdaq",
    "country": "US",
+   "next_proposal_deadline": "2026-12-10",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
    "degree": 21
   },
   {
@@ -128,6 +136,8 @@
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
    "exchange": "Nasdaq",
    "country": "US",
+   "next_proposal_deadline": "2027-01-12",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
    "degree": 18
   },
   {
@@ -149,6 +159,8 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
    "exchange": "Nasdaq",
    "country": "US",
+   "next_proposal_deadline": "2026-09-10",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm",
    "degree": 11
   },
   {
@@ -173,6 +185,8 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925090866/tm252289-12_def14a.htm",
    "exchange": "Nasdaq",
    "country": "US",
+   "next_proposal_deadline": "2027-06-21",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm",
    "degree": 4
   },
   {
@@ -194,6 +208,7 @@
    "basis_type": "safety commitment",
    "description": "2024: Anthropic signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm",
    "degree": 2
   },
   {
@@ -218,6 +233,7 @@
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "exchange": "Nasdaq",
    "country": "US",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm",
    "degree": 4
   },
   {
@@ -597,7 +613,9 @@
    "basis_type": "shareholder proposal",
    "description": "2026: IBM's proxy ballot included Proposal 7 asking for a report on AI bias (IBM proxy statement)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
-   "degree": 0
+   "next_proposal_deadline": "2026-11-10",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
+   "degree": 1
   },
   {
    "id": "co-CRM",
@@ -618,6 +636,8 @@
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
    "exchange": "NYSE",
    "country": "US",
+   "next_proposal_deadline": "2026-12-17",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm",
    "degree": 3
   },
   {
@@ -638,6 +658,8 @@
    "basis_type": "safety commitment",
    "description": "2023: Adobe signed the US voluntary AI commitments in the second round of eight companies (White House fact sheet, September 2023)",
    "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "next_proposal_deadline": "2026-10-30",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000043/adbe-20260227.htm",
    "degree": 0
   },
   {
@@ -658,6 +680,8 @@
    "basis_type": "investor engagement",
    "description": "2023 to 2024: Intuit was engaged by Parnassus on AI governance and risk management and planned public AI governance disclosure in early 2025 (Parnassus Investments; 2024 Stewardship Report)",
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf",
+   "next_proposal_deadline": "2027-07-28",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000053/intu-20261125.htm",
    "degree": 1
   },
   {
@@ -677,6 +701,8 @@
    "basis_type": "investor engagement",
    "description": "2023 to 2024: Verisk was engaged by Parnassus for almost two years on responsible AI; a filed proposal was withdrawn after Verisk agreed to disclosures (Parnassus Investments; 2024 Stewardship Report)",
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf",
+   "next_proposal_deadline": "2026-12-04",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1442145/000119312526141398/d23242ddef14a.htm",
    "degree": 0
   },
   {
@@ -696,6 +722,8 @@
    "basis_type": "investor engagement",
    "description": "2024 to 2025: Workday was engaged by Parnassus on the impacts of its AI-driven human-capital management software on workers' rights and protections (Parnassus Investments; 2025 Stewardship Report)",
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "next_proposal_deadline": "2027-01-05",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1327811/000110465926055687/tm261347-2_def14a.htm",
    "degree": 0
   },
   {
@@ -717,6 +745,8 @@
    "basis_type": "safety commitment",
    "description": "Undated: ServiceNow is listed as a signatory of the EU General-Purpose AI Code of Practice for providers of general-purpose AI models (European Commission signatory list)",
    "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+   "next_proposal_deadline": "2026-12-07",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000039/now-20260406.htm",
    "degree": 0
   },
   {
@@ -736,7 +766,9 @@
    "basis_type": "shareholder proposal",
    "description": "2026: Palantir's proxy ballot included Proposals 4 and 5 asking for due diligence and human rights reports, citing its AI (Sisters of St. Joseph of Peace; proxy statement)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
-   "degree": 0
+   "next_proposal_deadline": "2026-12-25",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
+   "degree": 2
   },
   {
    "id": "co-CSCO",
@@ -758,7 +790,9 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/858877/000121465926014472/x1116261px14a6g.htm",
    "exchange": "Nasdaq",
    "country": "US",
-   "degree": 2
+   "next_proposal_deadline": "2027-07-01",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm",
+   "degree": 3
   },
   {
    "id": "co-AXON",
@@ -777,7 +811,9 @@
    "basis_type": "shareholder proposal",
    "description": "2023: Axon was asked in Proposal 6 to discontinue a remotely operated TASER drone system, citing concerns raised by its AI Ethics Board (Open MIC; SEC exempt solicitation)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1069183/000121465923006485/s53230px14a6g.htm",
-   "degree": 0
+   "next_proposal_deadline": "2026-12-17",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1069183/000162828026025521/axon-20260416.htm",
+   "degree": 1
   },
   {
    "id": "co-MSI",
@@ -796,6 +832,8 @@
    "basis_type": "investor engagement",
    "description": "2022: Motorola Solutions was included in Candriam's investor review of 15 facial recognition companies (Candriam)",
    "source_url": "https://www.candriam.com/en/professional/SysSiteAssets/presspage/press/pressrelease/2022/10-2022/frt-interim-report-press-release_final.pdf",
+   "next_proposal_deadline": "2026-12-03",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/68505/000119312526139004/d50373ddef14a.htm",
    "degree": 0
   },
   {
@@ -939,7 +977,9 @@
    "basis_type": "shareholder proposal",
    "description": "2024: Netflix's proxy ballot included Proposal 4 asking for a report on Netflix's use of AI (AFL-CIO Equity Index Funds; Netflix proxy statement)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312524100913/d521836ddef14a.htm",
-   "degree": 0
+   "next_proposal_deadline": "2026-12-17",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1065280/000119312526159286/d20613ddef14a.htm",
+   "degree": 1
   },
   {
    "id": "co-warner-bros-discovery",
@@ -977,7 +1017,9 @@
    "basis_type": "shareholder proposal",
    "description": "2024: SEC staff declined Disney's request to leave the proposal off the ballot; the proposal sought an AI transparency report (AFL-CIO Equity Index Funds and co-filers; SEC staff letter)",
    "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/aflciodisney010324-14a8.pdf",
-   "degree": 0
+   "next_proposal_deadline": "2026-09-24",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000013/dis-20260122.htm",
+   "degree": 1
   },
   {
    "id": "co-CMCSA",
@@ -996,7 +1038,9 @@
    "basis_type": "shareholder proposal",
    "description": "2024: Comcast committed to enhance its AI disclosures and a proposal on AI usage was withdrawn (AFL-CIO; Responsible Investor, via Harvard Law School Forum on Corporate Governance)",
    "source_url": "https://corpgov.law.harvard.edu/?p=168201",
-   "degree": 0
+   "next_proposal_deadline": "2026-12-25",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1166691/000119312526177138/cmcsa-20260424.htm",
+   "degree": 1
   },
   {
    "id": "co-ORCL",
@@ -1019,6 +1063,8 @@
    "source_url": "https://openai.com/index/announcing-the-stargate-project/",
    "exchange": "NYSE",
    "country": "US",
+   "next_proposal_deadline": "2027-05-28",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526402816/orcl-20260925.htm",
    "degree": 2
   },
   {
@@ -1080,6 +1126,8 @@
    "source_url": "https://openai.com/index/openai-amd-strategic-partnership/",
    "exchange": "Nasdaq",
    "country": "US",
+   "next_proposal_deadline": "2026-11-27",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm",
    "degree": 5
   },
   {
@@ -1101,6 +1149,8 @@
    "source_url": "https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration/",
    "exchange": "Nasdaq",
    "country": "US",
+   "next_proposal_deadline": "2026-11-02",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/d49254ddef14a.htm",
    "degree": 4
   },
   {
@@ -1189,6 +1239,8 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000119312525216497/d17274d8k.htm",
    "exchange": "Nasdaq",
    "country": "US",
+   "next_proposal_deadline": "2026-12-23",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000191/crwv-20260422.htm",
    "degree": 3
   },
   {
@@ -1229,7 +1281,9 @@
    "basis_type": "shareholder proposal",
    "description": "2026: Digital Realty's proxy ballot included a stockholder proposal on enhanced water risk disclosure (Digital Realty proxy statement)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm",
-   "degree": 0
+   "next_proposal_deadline": "2026-12-18",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm",
+   "degree": 2
   },
   {
    "id": "co-SO",
@@ -1248,7 +1302,9 @@
    "basis_type": "shareholder proposal",
    "description": "2026: Southern Company's proxy included Item 9 asking for a report on data center costs, citing AI data center demand and residential bills (As You Sow; Southern proxy statement)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm",
-   "degree": 0
+   "next_proposal_deadline": "2026-12-04",
+   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm",
+   "degree": 1
   },
   {
    "id": "co-MU",
@@ -1490,7 +1546,7 @@
    "description": "Islamic-values ethical asset manager active in human rights shareholder advocacy.",
    "website": "https://www.azzad.net",
    "source_url": "https://www.azzad.net",
-   "degree": 16
+   "degree": 17
   },
   {
    "id": "as-you-sow",
@@ -1501,7 +1557,7 @@
    "description": "Shareholder advocacy nonprofit filing environmental and social resolutions.",
    "website": "https://www.asyousow.org",
    "source_url": "https://www.asyousow.org",
-   "degree": 22
+   "degree": 23
   },
   {
    "id": "nlpc",
@@ -1886,7 +1942,7 @@
    "description": "Shareholder advisory firm leading child online safety proposals.",
    "website": "https://www.proxyimpact.com",
    "source_url": "https://www.proxyimpact.com",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "bowyer",
@@ -1908,7 +1964,7 @@
    "description": "Denomination whose MRTI committee runs shareholder engagement.",
    "website": "https://www.presbyterianmission.org",
    "source_url": "https://www.presbyterianmission.org",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "portico",
@@ -2139,7 +2195,7 @@
    "description": "Socially responsible manager; signed IASJ Amazon responsible-AI solicitation.",
    "website": "https://www.northstarasset.com",
    "source_url": "https://www.northstarasset.com",
-   "degree": 13
+   "degree": 15
   },
   {
    "id": "msft-2023-hr-hotspots",
@@ -2154,6 +2210,8 @@
    "support_pct": 33.58,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a1.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm",
+   "filing_deadline": "2023-06-29",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312522270484/d318171ddef14a.htm",
    "meeting_date": "2023-12-07",
    "degree": 2
   },
@@ -2170,6 +2228,8 @@
    "support_pct": 21.17,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a1.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm",
+   "filing_deadline": "2023-06-29",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312522270484/d318171ddef14a.htm",
    "meeting_date": "2023-12-07",
    "degree": 6
   },
@@ -2195,6 +2255,8 @@
      "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm"
     }
    ],
+   "filing_deadline": "2024-06-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "meeting_date": "2024-12-10",
    "degree": 1
   },
@@ -2211,6 +2273,8 @@
    "support_pct": 9.71,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a1.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm",
+   "filing_deadline": "2024-06-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "meeting_date": "2024-12-10",
    "degree": 3
   },
@@ -2236,6 +2300,8 @@
      "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm"
     }
    ],
+   "filing_deadline": "2024-06-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "meeting_date": "2024-12-10",
    "degree": 6
   },
@@ -2252,6 +2318,8 @@
    "support_pct": 36.19,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a1.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm",
+   "filing_deadline": "2024-06-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "meeting_date": "2024-12-10",
    "degree": 3
   },
@@ -2268,6 +2336,8 @@
    "support_pct": 0.69,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
+   "filing_deadline": "2025-07-01",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "meeting_date": "2025-12-05",
    "degree": 2
   },
@@ -2284,6 +2354,8 @@
    "support_pct": 13.36,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
+   "filing_deadline": "2025-07-01",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "meeting_date": "2025-12-05",
    "degree": 3
   },
@@ -2316,6 +2388,8 @@
      "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
     }
    ],
+   "filing_deadline": "2025-07-01",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "meeting_date": "2025-12-05",
    "degree": 1
   },
@@ -2332,6 +2406,8 @@
    "support_pct": 26.34,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
+   "filing_deadline": "2025-07-01",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "meeting_date": "2025-12-05",
    "degree": 8
   },
@@ -2357,6 +2433,8 @@
      "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
     }
    ],
+   "filing_deadline": "2025-07-01",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "meeting_date": "2025-12-05",
    "degree": 3
   },
@@ -2373,6 +2451,8 @@
    "support_pct": null,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a1.pdf",
    "results_url": null,
+   "filing_deadline": "2026-06-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "meeting_date": "2026-12-08",
    "degree": 2
   },
@@ -2398,6 +2478,8 @@
      "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
     }
    ],
+   "filing_deadline": "2026-06-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "meeting_date": "2026-12-08",
    "degree": 6
   },
@@ -2437,6 +2519,8 @@
      "results_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
     }
    ],
+   "filing_deadline": "2026-06-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "meeting_date": "2026-12-08",
    "degree": 3
   },
@@ -2453,6 +2537,8 @@
    "support_pct": 13.11,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm",
+   "filing_deadline": "2022-12-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm",
    "meeting_date": "2023-06-02",
    "degree": 6
   },
@@ -2469,6 +2555,8 @@
    "support_pct": 18.02,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm",
+   "filing_deadline": "2022-12-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm",
    "meeting_date": "2023-06-02",
    "degree": 4
   },
@@ -2485,6 +2573,8 @@
    "support_pct": 17.02,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm",
+   "filing_deadline": "2022-12-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm",
    "meeting_date": "2023-06-02",
    "degree": 3
   },
@@ -2500,6 +2590,8 @@
    "status": "voted",
    "support_pct": 8.37,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
+   "filing_deadline": "2022-12-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm",
    "degree": 5
   },
   {
@@ -2515,6 +2607,8 @@
    "support_pct": 7.4,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm",
+   "filing_deadline": "2023-12-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "meeting_date": "2024-06-07",
    "degree": 6
   },
@@ -2531,6 +2625,8 @@
    "support_pct": 17.61,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm",
+   "filing_deadline": "2023-12-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "meeting_date": "2024-06-07",
    "degree": 5
   },
@@ -2556,6 +2652,8 @@
      "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm"
     }
    ],
+   "filing_deadline": "2023-12-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "meeting_date": "2024-06-07",
    "degree": 6
   },
@@ -2571,6 +2669,8 @@
    "status": "voted",
    "support_pct": 14.24,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf",
+   "filing_deadline": "2023-12-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "meeting_date": "2024-06-07",
    "degree": 2
   },
@@ -2587,6 +2687,8 @@
    "support_pct": 4.51,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog_courtesy-pdf.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
+   "filing_deadline": "2024-12-27",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "meeting_date": "2025-06-06",
    "degree": 3
   },
@@ -2603,6 +2705,8 @@
    "support_pct": 0.46,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog_courtesy-pdf.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
+   "filing_deadline": "2024-12-27",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "meeting_date": "2025-06-06",
    "degree": 3
   },
@@ -2619,6 +2723,8 @@
    "support_pct": 12.38,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog_courtesy-pdf.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
+   "filing_deadline": "2024-12-27",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "meeting_date": "2025-06-06",
    "degree": 3
   },
@@ -2644,6 +2750,8 @@
      "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm"
     }
    ],
+   "filing_deadline": "2024-12-27",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "meeting_date": "2025-06-06",
    "degree": 14
   },
@@ -2660,6 +2768,8 @@
    "support_pct": 1.5,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
+   "filing_deadline": "2025-12-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "meeting_date": "2026-06-05",
    "degree": 2
   },
@@ -2676,6 +2786,8 @@
    "support_pct": 6.03,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
+   "filing_deadline": "2025-12-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "meeting_date": "2026-06-05",
    "degree": 6
   },
@@ -2701,6 +2813,8 @@
      "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm"
     }
    ],
+   "filing_deadline": "2025-12-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "meeting_date": "2026-06-05",
    "degree": 4
   },
@@ -2717,6 +2831,8 @@
    "support_pct": 9.3,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm",
+   "filing_deadline": "2025-12-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "meeting_date": "2026-06-05",
    "degree": 2
   },
@@ -2742,6 +2858,8 @@
      "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
     }
    ],
+   "filing_deadline": "2025-12-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "meeting_date": "2026-06-05",
    "degree": 2
   },
@@ -2758,6 +2876,8 @@
    "support_pct": 17.02,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000083/meta-20230531.htm",
+   "filing_deadline": "2022-12-09",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680122000043/meta2022definitiveproxysta.htm",
    "meeting_date": "2023-05-31",
    "degree": 8
   },
@@ -2773,6 +2893,8 @@
    "status": "voted",
    "support_pct": 7.16,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
+   "filing_deadline": "2022-12-09",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680122000043/meta2022definitiveproxysta.htm",
    "degree": 3
   },
   {
@@ -2788,6 +2910,8 @@
    "support_pct": 16.73,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000057/meta-20240529.htm",
+   "filing_deadline": "2023-12-16",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
    "meeting_date": "2024-05-29",
    "degree": 6
   },
@@ -2813,6 +2937,8 @@
      "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000083/meta-20230531.htm"
     }
    ],
+   "filing_deadline": "2023-12-16",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
    "meeting_date": "2024-05-29",
    "degree": 4
   },
@@ -2829,6 +2955,8 @@
    "support_pct": 9.93,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm",
+   "filing_deadline": "2024-12-20",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "meeting_date": "2025-05-28",
    "degree": 3
   },
@@ -2845,6 +2973,8 @@
    "support_pct": 6.45,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm",
+   "filing_deadline": "2024-12-20",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "meeting_date": "2025-05-28",
    "degree": 3
   },
@@ -2861,6 +2991,8 @@
    "support_pct": 3.25,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm",
+   "filing_deadline": "2024-12-20",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "meeting_date": "2025-05-28",
    "degree": 3
   },
@@ -2876,6 +3008,8 @@
    "status": "voted",
    "support_pct": 13.43,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
+   "filing_deadline": "2024-12-20",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "meeting_date": "2025-05-28",
    "degree": 3
   },
@@ -2901,6 +3035,8 @@
      "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm"
     }
    ],
+   "filing_deadline": "2025-12-18",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "meeting_date": "2026-05-27",
    "degree": 2
   },
@@ -2917,6 +3053,8 @@
    "support_pct": 6.61,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm",
+   "filing_deadline": "2025-12-18",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "meeting_date": "2026-05-27",
    "degree": 4
   },
@@ -2933,6 +3071,8 @@
    "support_pct": 6.91,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm",
+   "filing_deadline": "2025-12-18",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "meeting_date": "2026-05-27",
    "degree": 6
   },
@@ -2948,6 +3088,8 @@
    "status": "voted",
    "support_pct": 3.42,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
+   "filing_deadline": "2025-12-18",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "meeting_date": "2026-05-27",
    "degree": 3
   },
@@ -2964,6 +3106,8 @@
    "support_pct": 34.18,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923055145/tm2314311d1_defa14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923065457/tm2315877d1_8k.htm",
+   "filing_deadline": "2022-12-15",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465922045572/tm223357-5_def14a.htm",
    "meeting_date": "2023-05-24",
    "degree": 3
   },
@@ -2980,6 +3124,8 @@
    "support_pct": 37.48,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923055145/tm2314311d1_defa14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923065457/tm2315877d1_8k.htm",
+   "filing_deadline": "2022-12-15",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465922045572/tm223357-5_def14a.htm",
    "meeting_date": "2023-05-24",
    "degree": 1
   },
@@ -3005,6 +3151,8 @@
      "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923065457/tm2315877d1_8k.htm"
     }
    ],
+   "filing_deadline": "2023-12-15",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
    "meeting_date": "2024-05-22",
    "degree": 5
   },
@@ -3030,6 +3178,8 @@
      "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923065457/tm2315877d1_8k.htm"
     }
    ],
+   "filing_deadline": "2023-12-15",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
    "meeting_date": "2024-05-22",
    "degree": 1
   },
@@ -3046,6 +3196,8 @@
    "support_pct": 9.7,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924065117/tm2414140d1_8k.htm",
+   "filing_deadline": "2023-12-15",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
    "meeting_date": "2024-05-22",
    "degree": 2
   },
@@ -3062,6 +3214,8 @@
    "support_pct": 20.11,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm",
+   "filing_deadline": "2024-12-12",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "meeting_date": "2025-05-21",
    "degree": 1
   },
@@ -3078,6 +3232,8 @@
    "support_pct": 10.27,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm",
+   "filing_deadline": "2024-12-12",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "meeting_date": "2025-05-21",
    "degree": 2
   },
@@ -3094,6 +3250,8 @@
    "support_pct": 10.79,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm",
+   "filing_deadline": "2024-12-12",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "meeting_date": "2025-05-21",
    "degree": 3
   },
@@ -3119,6 +3277,8 @@
      "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm"
     }
    ],
+   "filing_deadline": "2025-12-11",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "meeting_date": "2026-05-20",
    "degree": 3
   },
@@ -3134,6 +3294,8 @@
    "status": "voted",
    "support_pct": 1.2,
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
+   "filing_deadline": "2025-12-11",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "meeting_date": "2026-05-20",
    "degree": 2
   },
@@ -3149,6 +3311,8 @@
    "status": "excluded",
    "support_pct": null,
    "source_url": "https://news.bloomberglaw.com/esg/amazon-to-block-investor-vote-on-ai-services-for-israel-dhs",
+   "filing_deadline": "2025-12-11",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "degree": 9
   },
   {
@@ -3164,6 +3328,8 @@
    "support_pct": null,
    "source_url": "https://united4respect.org/wp-content/uploads/2026/03/AI-Advisory-Council_-Amazon-Floor-Resolution-2026-FINAL.pdf",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926065717/tm2614288d1_8k.htm",
+   "filing_deadline": "2025-12-11",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "meeting_date": "2026-05-20",
    "degree": 2
   },
@@ -3180,6 +3346,8 @@
    "support_pct": 37.53,
    "source_url": "https://news.bloomberglaw.com/daily-labor-report/apple-investors-reject-bid-for-transparency-on-ai-risks-ethics",
    "results_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124010155/ny20022580x1_8k.htm",
+   "filing_deadline": "2023-09-14",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817923000019/laap2023_def14a.htm",
    "meeting_date": "2024-02-28",
    "degree": 3
   },
@@ -3196,6 +3364,8 @@
    "support_pct": 11.57,
    "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
    "results_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125005876/ef20044022_8k.htm",
+   "filing_deadline": "2024-09-13",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm",
    "meeting_date": "2025-02-25",
    "degree": 3
   },
@@ -3211,6 +3381,8 @@
    "status": "withdrawn",
    "support_pct": null,
    "source_url": "https://www.minerva.info/post/apple-shareholders-stunted-proposals-plummet-as-sec-shift-bites",
+   "filing_deadline": "2025-09-12",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
    "degree": 2
   },
   {
@@ -3226,6 +3398,8 @@
    "support_pct": 17.57,
    "source_url": "https://www.greencentury.com/shareholders-call-for-nvidia-to-report-carbon-costs-of-ai/",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm",
+   "filing_deadline": "2026-01-13",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000095/nvda-20250512.htm",
    "meeting_date": "2026-06-24",
    "degree": 4
   },
@@ -3241,6 +3415,8 @@
    "status": "excluded",
    "support_pct": null,
    "source_url": "https://collaborate.unpri.org/group/38826/home",
+   "filing_deadline": "2026-01-13",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000095/nvda-20250512.htm",
    "degree": 3
   },
   {
@@ -3256,6 +3432,8 @@
    "support_pct": 53.61,
    "source_url": "https://techcrunch.com/2025/09/05/tesla-shareholders-to-vote-on-investing-in-musks-ai-startup-xai",
    "results_url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925108507/tm2530590d1_8k.htm",
+   "filing_deadline": "2024-12-17",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465924053333/tm2326076d15_def14a.htm",
    "meeting_date": "2025-11-06",
    "degree": 1
   },
@@ -4883,6 +5061,8 @@
    "support_pct": 8.21,
    "proponent": "Trillium ESG Global Equity Fund (lead) and co-filers",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
+   "filing_deadline": "2024-12-27",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "meeting_date": "2025-06-06",
    "degree": 2
   },
@@ -4899,6 +5079,8 @@
    "support_pct": null,
    "proponent": "UNVERIFIED (the 8-K does not name the proponent)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
+   "filing_deadline": "2024-12-27",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "meeting_date": "2025-06-06",
    "degree": 1
   },
@@ -4924,6 +5106,8 @@
      "results_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
     }
    ],
+   "filing_deadline": "2025-12-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "meeting_date": "2026-06-05",
    "degree": 2
   },
@@ -4940,7 +5124,205 @@
    "support_pct": 8.91,
    "proponent": "American Family Association, represented by Bowyer Research",
    "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
+   "filing_deadline": "2024-09-13",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm",
    "meeting_date": "2025-02-25",
+   "degree": 2
+  },
+  {
+   "id": "ibm-2026-7",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "IBM 2026: Stockholder proposal requesting a report on AI bias",
+   "company": "IBM",
+   "year": 2026,
+   "topic": "AI governance & oversight",
+   "subtopic": "Report on methods used to remove bias from AI models, and whether avoiding disparate impact undermines accuracy (anti-ESG framing)",
+   "status": "voted",
+   "support_pct": 2.45,
+   "proponent": "National Center for Public Policy Research",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
+   "filing_deadline": "2025-11-10",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/51143/000110465925022186/tm2430706-6_def14aseq1.htm",
+   "meeting_date": "2026-04-28",
+   "degree": 1
+  },
+  {
+   "id": "axon-2023-6",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "AXON 2023: Shareholder Proposal to Discontinue the Development of a Non-Lethal TASER Drone System",
+   "company": "AXON",
+   "year": 2023,
+   "topic": "Social & economic impacts",
+   "subtopic": "Taser-equipped drones and AI surveillance in schools and public spaces; civil rights concerns raised by former members of Axon's AI Ethics Board",
+   "status": "voted",
+   "support_pct": 13.67,
+   "proponent": "the Jubitz Foundation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1069183/000106918323000019/axon-20230531xdef14a.htm",
+   "filing_deadline": "2022-12-09",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1069183/000155837022005230/tmb-20220520xdef14a.htm",
+   "meeting_date": "2023-05-31",
+   "degree": 1
+  },
+  {
+   "id": "pltr-2026-4",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "PLTR 2026: Independent Report on Due Diligence Process",
+   "company": "PLTR",
+   "year": 2026,
+   "topic": "Social & economic impacts",
+   "subtopic": "Due diligence on customer use of defense-related products (including AI targeting such as Project Maven) in conflict-affected and high-risk areas; human rights and humanitarian law",
+   "status": "voted",
+   "support_pct": 8.28,
+   "proponent": "The Presbyterian Church (U.S.A.), as lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
+   "filing_deadline": "2025-12-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165525000057/pltr-20250424.htm",
+   "meeting_date": "2026-06-03",
+   "degree": 2
+  },
+  {
+   "id": "pltr-2026-5",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "PLTR 2026: Human Rights Impact Assessment",
+   "company": "PLTR",
+   "year": 2026,
+   "topic": "Social & economic impacts",
+   "subtopic": "Human rights impact assessment of Palantir products, including government use of Palantir AI for immigration surveillance and enforcement",
+   "status": "voted",
+   "support_pct": 12.47,
+   "proponent": "Sisters of St. Joseph of Peace, as lead filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
+   "filing_deadline": "2025-12-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165525000057/pltr-20250424.htm",
+   "meeting_date": "2026-06-03",
+   "degree": 1
+  },
+  {
+   "id": "nflx-2024-4",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "NFLX 2024: Report on Netflix's Use of Artificial Intelligence",
+   "company": "NFLX",
+   "year": 2024,
+   "topic": "AI governance & oversight",
+   "subtopic": "AI transparency report: use of AI in operations, board oversight role, and ethical guidelines",
+   "status": "voted",
+   "support_pct": 43.29,
+   "proponent": "AFL-CIO Equity Index Funds and co-filers (represented by Segal Marco Advisors)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312524100913/d521836ddef14a.htm",
+   "filing_deadline": "2023-12-23",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1065280/000119312523110513/d405125ddef14a.htm",
+   "meeting_date": "2024-06-06",
+   "degree": 1
+  },
+  {
+   "id": "dis-2024-afl-ai",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "DIS 2024: AI transparency report (AFL-CIO Equity Index Funds)",
+   "company": "DIS",
+   "year": 2024,
+   "topic": "AI governance & oversight",
+   "subtopic": "AI transparency report: use of AI in operations, board oversight role, and ethical guidelines",
+   "status": "withdrawn",
+   "support_pct": null,
+   "proponent": "AFL-CIO Equity Index Funds and co-filers",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448924000073/dis-20240201.htm",
+   "filing_deadline": "2023-10-12",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1744489/000119312523025766/d354565ddefc14a.htm",
+   "meeting_date": "2024-04-03",
+   "degree": 1
+  },
+  {
+   "id": "cmcsa-2024-afl-ai",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "CMCSA 2024: AI Transparency Report",
+   "company": "CMCSA",
+   "year": 2024,
+   "topic": "AI governance & oversight",
+   "subtopic": "AI transparency report: use of AI in operations, board oversight role, and ethical guidelines",
+   "status": "withdrawn",
+   "support_pct": null,
+   "proponent": "AFL-CIO",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1166691/000130817924000600/cmcsa4226581-def14a.htm",
+   "filing_deadline": "2023-12-30",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1166691/000130817923000809/cmcsa4130111-def14a.htm",
+   "meeting_date": "2024-06-10",
+   "degree": 1
+  },
+  {
+   "id": "so-2026-9",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "SO 2026: Report on Data Center Costs",
+   "company": "SO",
+   "year": 2026,
+   "topic": "Data center impacts",
+   "subtopic": "Safeguards against shifting the cost of new AI data center infrastructure to residential and small business customers",
+   "status": "voted",
+   "support_pct": 9.74,
+   "proponent": "As You Sow, on behalf of the As You Sow Foundation Fund",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm",
+   "filing_deadline": "2025-12-12",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/92122/000009212225000036/so-20250410.htm",
+   "meeting_date": "2026-05-13",
+   "degree": 2
+  },
+  {
+   "id": "dlr-2026-4",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "DLR 2026: Stockholder Proposal Regarding Enhanced Water Risk Disclosure",
+   "company": "DLR",
+   "year": 2026,
+   "topic": "Data center impacts",
+   "subtopic": "WATER: region-level water risk and water intensity metrics for data centers in water-stressed areas",
+   "status": "voted",
+   "support_pct": 22.47,
+   "proponent": "The NorthStar Asset Management, Inc. Funded Pension Plan and Proxy Impact, on behalf of Broz Family Investments LLC",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm",
+   "filing_deadline": "2025-12-26",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817925000509/dlr000000-def14a.htm",
+   "meeting_date": "2026-05-29",
+   "degree": 3
+  },
+  {
+   "id": "dlr-2025-5",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "DLR 2025: Stockholder Proposal Regarding Human Right to Water",
+   "company": "DLR",
+   "year": 2025,
+   "topic": "Data center impacts",
+   "subtopic": "WATER: human right to water policy and minimizing data center water use in high water stress regions",
+   "status": "voted",
+   "support_pct": 10.37,
+   "proponent": "The NorthStar Asset Management, Inc. Funded Pension Plan",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817925000509/dlr000000-def14a.htm",
+   "filing_deadline": "2024-12-27",
+   "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817924000607/ldlr2024_def14a.htm",
+   "meeting_date": "2025-06-06",
+   "degree": 2
+  },
+  {
+   "id": "csco-2026-5",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "CSCO 2026: Human rights impact assessment of high-risk customers and end uses",
+   "company": "CSCO",
+   "year": 2026,
+   "topic": "Social & economic impacts",
+   "subtopic": "Surveillance, military and immigration enforcement uses of Cisco products",
+   "status": "upcoming",
+   "support_pct": null,
+   "proponent": "Azzad Asset Management (lead filer)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm",
+   "meeting_date": "2026-12-15",
    "degree": 2
   }
  ],
@@ -10772,6 +11154,125 @@
    "type": "filed (named in proxy)",
    "layer": "proposals",
    "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm"
+  },
+  {
+   "source": "ibm-2026-7",
+   "target": "co-IBM",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm"
+  },
+  {
+   "source": "axon-2023-6",
+   "target": "co-AXON",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1069183/000106918323000019/axon-20230531xdef14a.htm"
+  },
+  {
+   "source": "pltr-2026-4",
+   "target": "co-PLTR",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm"
+  },
+  {
+   "source": "pcusa",
+   "target": "pltr-2026-4",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm"
+  },
+  {
+   "source": "pltr-2026-5",
+   "target": "co-PLTR",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm"
+  },
+  {
+   "source": "nflx-2024-4",
+   "target": "co-NFLX",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312524100913/d521836ddef14a.htm"
+  },
+  {
+   "source": "dis-2024-afl-ai",
+   "target": "co-DIS",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448924000073/dis-20240201.htm"
+  },
+  {
+   "source": "cmcsa-2024-afl-ai",
+   "target": "co-CMCSA",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1166691/000130817924000600/cmcsa4226581-def14a.htm"
+  },
+  {
+   "source": "so-2026-9",
+   "target": "co-SO",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm"
+  },
+  {
+   "source": "as-you-sow",
+   "target": "so-2026-9",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm"
+  },
+  {
+   "source": "dlr-2026-4",
+   "target": "co-DLR",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm"
+  },
+  {
+   "source": "proxy-impact",
+   "target": "dlr-2026-4",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm"
+  },
+  {
+   "source": "northstar",
+   "target": "dlr-2026-4",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm"
+  },
+  {
+   "source": "dlr-2025-5",
+   "target": "co-DLR",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817925000509/dlr000000-def14a.htm"
+  },
+  {
+   "source": "northstar",
+   "target": "dlr-2025-5",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817925000509/dlr000000-def14a.htm"
+  },
+  {
+   "source": "csco-2026-5",
+   "target": "co-CSCO",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm"
+  },
+  {
+   "source": "azzad",
+   "target": "csco-2026-5",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm"
   },
   {
    "source": "arjuna",
