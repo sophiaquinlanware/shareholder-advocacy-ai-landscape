@@ -9,6 +9,118 @@
       "filing_url": "https://www.nbim.no/en/investments/all-investments/",
       "data_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf",
       "report_period": "2026-06-30"
+    },
+    {
+      "id": "parnassus-investments",
+      "name": "Parnassus Investments",
+      "cik": 948669,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/",
+      "report_period": "2026-09-30",
+      "accession": "0001172661-26-004635"
+    },
+    {
+      "id": "trillium-asset-management",
+      "name": "Trillium Asset Management",
+      "cik": 884541,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
+      "report_period": "2026-09-30",
+      "accession": "0000884541-26-000005"
+    },
+    {
+      "id": "boston-common-asset-management",
+      "name": "Boston Common Asset Management",
+      "cik": 1409427,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/",
+      "report_period": "2026-09-30",
+      "accession": "0001409427-26-000014"
+    },
+    {
+      "id": "zevin-asset-management",
+      "name": "Zevin Asset Management",
+      "cik": 1394096,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/",
+      "report_period": "2026-09-30",
+      "accession": "0001394096-26-000004"
+    },
+    {
+      "id": "domini-impact-investments",
+      "name": "Domini Impact Investments",
+      "cik": 1399069,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1399069/000095012320002357/",
+      "report_period": "2019-12-31",
+      "accession": "0000950123-20-002357"
+    },
+    {
+      "id": "arjuna-capital",
+      "name": "Arjuna Capital",
+      "cik": 1703208,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/",
+      "report_period": "2026-09-30",
+      "accession": "0001398344-26-019466"
+    },
+    {
+      "id": "northstar-asset-management",
+      "name": "NorthStar Asset Management",
+      "cik": 1132708,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
+      "report_period": "2026-09-30",
+      "accession": "0001132708-26-000004"
+    },
+    {
+      "id": "amalgamated-bank",
+      "name": "Amalgamated Bank",
+      "cik": 919192,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/",
+      "report_period": "2026-09-30",
+      "accession": "0000919192-26-000006"
+    },
+    {
+      "id": "federated-hermes",
+      "name": "Federated Hermes",
+      "cik": 1056288,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
+      "report_period": "2026-09-30",
+      "accession": "0001623632-26-001675"
+    },
+    {
+      "id": "legal-general",
+      "name": "Legal & General Group",
+      "cik": 764068,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
+      "report_period": "2026-09-30",
+      "accession": "0001495115-26-000075"
+    },
+    {
+      "id": "nys-common-retirement-fund",
+      "name": "New York State Common Retirement Fund",
+      "cik": 810265,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
+      "report_period": "2026-09-30",
+      "accession": "0000810265-26-000008"
+    },
+    {
+      "id": "calpers",
+      "name": "California Public Employees Retirement System",
+      "cik": 919079,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/",
+      "report_period": "2026-09-30",
+      "accession": "0000919079-26-000013"
+    },
+    {
+      "id": "calstrs",
+      "name": "California State Teachers Retirement System",
+      "cik": 1081019,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/",
+      "report_period": "2026-09-30",
+      "accession": "0001081019-26-000023"
+    },
+    {
+      "id": "blackrock",
+      "name": "BlackRock, Inc.",
+      "cik": 1364742,
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/",
+      "report_period": "2024-06-30",
+      "accession": "0001086364-24-008417"
     }
   ],
   "holdings": [
@@ -121,6 +233,1006 @@
       "ownership_pct": 1,
       "pct_basis": "share of NBIM total equity holdings (all markets) as of 2026-06-30; not a 13F total",
       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+    },
+    {
+      "investor": "parnassus-investments",
+      "company": "MSFT",
+      "value_usd": 2149953704.0,
+      "shares": 4191760.0,
+      "pct_of_portfolio": 6.36,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/"
+    },
+    {
+      "investor": "parnassus-investments",
+      "company": "GOOGL",
+      "value_usd": 1535824822.0,
+      "shares": 4463569.0,
+      "pct_of_portfolio": 4.54,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/"
+    },
+    {
+      "investor": "parnassus-investments",
+      "company": "META",
+      "value_usd": 678946874.0,
+      "shares": 936246.0,
+      "pct_of_portfolio": 2.01,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/"
+    },
+    {
+      "investor": "parnassus-investments",
+      "company": "AMZN",
+      "value_usd": 1862960325.0,
+      "shares": 7477264.0,
+      "pct_of_portfolio": 5.51,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/"
+    },
+    {
+      "investor": "parnassus-investments",
+      "company": "NVDA",
+      "value_usd": 1750078452.0,
+      "shares": 7663011.0,
+      "pct_of_portfolio": 5.18,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/"
+    },
+    {
+      "investor": "parnassus-investments",
+      "company": "AAPL",
+      "value_usd": 1139902484.0,
+      "shares": 3422925.0,
+      "pct_of_portfolio": 3.37,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/"
+    },
+    {
+      "investor": "parnassus-investments",
+      "company": "ORCL",
+      "value_usd": 60298041.0,
+      "shares": 439170.0,
+      "pct_of_portfolio": 0.18,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/"
+    },
+    {
+      "investor": "parnassus-investments",
+      "company": "AMD",
+      "value_usd": 885195920.0,
+      "shares": 1446966.0,
+      "pct_of_portfolio": 2.62,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/"
+    },
+    {
+      "investor": "parnassus-investments",
+      "company": "AVGO",
+      "value_usd": 848150540.0,
+      "shares": 2415076.0,
+      "pct_of_portfolio": 2.51,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/"
+    },
+    {
+      "investor": "trillium-asset-management",
+      "company": "MSFT",
+      "value_usd": 200650499.0,
+      "shares": 391205.0,
+      "pct_of_portfolio": 6.29,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
+      "investor": "trillium-asset-management",
+      "company": "GOOGL",
+      "value_usd": 192148189.0,
+      "shares": 558537.0,
+      "pct_of_portfolio": 6.02,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
+      "investor": "trillium-asset-management",
+      "company": "META",
+      "value_usd": 453238.0,
+      "shares": 625.0,
+      "pct_of_portfolio": 0.01,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
+      "investor": "trillium-asset-management",
+      "company": "AMZN",
+      "value_usd": 883735.0,
+      "shares": 3547.0,
+      "pct_of_portfolio": 0.03,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
+      "investor": "trillium-asset-management",
+      "company": "NVDA",
+      "value_usd": 263614856.0,
+      "shares": 1154280.0,
+      "pct_of_portfolio": 8.26,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
+      "investor": "trillium-asset-management",
+      "company": "AAPL",
+      "value_usd": 168094820.0,
+      "shares": 504757.0,
+      "pct_of_portfolio": 5.27,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
+      "investor": "trillium-asset-management",
+      "company": "ORCL",
+      "value_usd": 1081649.0,
+      "shares": 7878.0,
+      "pct_of_portfolio": 0.03,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
+      "investor": "trillium-asset-management",
+      "company": "AMD",
+      "value_usd": 1858527.0,
+      "shares": 3038.0,
+      "pct_of_portfolio": 0.06,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
+      "investor": "trillium-asset-management",
+      "company": "AVGO",
+      "value_usd": 61090267.0,
+      "shares": 173950.0,
+      "pct_of_portfolio": 1.91,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/"
+    },
+    {
+      "investor": "boston-common-asset-management",
+      "company": "MSFT",
+      "value_usd": 86025127.0,
+      "shares": 167723.0,
+      "pct_of_portfolio": 4.99,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/"
+    },
+    {
+      "investor": "boston-common-asset-management",
+      "company": "GOOGL",
+      "value_usd": 87263170.0,
+      "shares": 254646.0,
+      "pct_of_portfolio": 5.06,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/"
+    },
+    {
+      "investor": "boston-common-asset-management",
+      "company": "NVDA",
+      "value_usd": 82404300.0,
+      "shares": 360821.0,
+      "pct_of_portfolio": 4.78,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/"
+    },
+    {
+      "investor": "boston-common-asset-management",
+      "company": "AAPL",
+      "value_usd": 77811122.0,
+      "shares": 233653.0,
+      "pct_of_portfolio": 4.51,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/"
+    },
+    {
+      "investor": "boston-common-asset-management",
+      "company": "AMD",
+      "value_usd": 9634608.0,
+      "shares": 15749.0,
+      "pct_of_portfolio": 0.56,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/"
+    },
+    {
+      "investor": "boston-common-asset-management",
+      "company": "AVGO",
+      "value_usd": 42668531.0,
+      "shares": 121497.0,
+      "pct_of_portfolio": 2.47,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/"
+    },
+    {
+      "investor": "zevin-asset-management",
+      "company": "MSFT",
+      "value_usd": 34447176.0,
+      "shares": 67162.0,
+      "pct_of_portfolio": 4.93,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/"
+    },
+    {
+      "investor": "zevin-asset-management",
+      "company": "GOOGL",
+      "value_usd": 47644657.0,
+      "shares": 139373.0,
+      "pct_of_portfolio": 6.82,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/"
+    },
+    {
+      "investor": "zevin-asset-management",
+      "company": "AMZN",
+      "value_usd": 23498002.0,
+      "shares": 94313.0,
+      "pct_of_portfolio": 3.36,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/"
+    },
+    {
+      "investor": "zevin-asset-management",
+      "company": "NVDA",
+      "value_usd": 32184385.0,
+      "shares": 140925.0,
+      "pct_of_portfolio": 4.6,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/"
+    },
+    {
+      "investor": "zevin-asset-management",
+      "company": "TSLA",
+      "value_usd": 366519.0,
+      "shares": 1033.0,
+      "pct_of_portfolio": 0.05,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/"
+    },
+    {
+      "investor": "zevin-asset-management",
+      "company": "AMD",
+      "value_usd": 255716.0,
+      "shares": 418.0,
+      "pct_of_portfolio": 0.04,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/"
+    },
+    {
+      "investor": "zevin-asset-management",
+      "company": "AVGO",
+      "value_usd": 11511539.0,
+      "shares": 32779.0,
+      "pct_of_portfolio": 1.65,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/"
+    },
+    {
+      "investor": "domini-impact-investments",
+      "company": "TSLA",
+      "value_usd": 288.0,
+      "shares": 689.0,
+      "pct_of_portfolio": 3.79,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1399069/000095012320002357/"
+    },
+    {
+      "investor": "arjuna-capital",
+      "company": "MSFT",
+      "value_usd": 25065936.0,
+      "shares": 48871.0,
+      "pct_of_portfolio": 5.6,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/"
+    },
+    {
+      "investor": "arjuna-capital",
+      "company": "GOOGL",
+      "value_usd": 27827124.0,
+      "shares": 80893.0,
+      "pct_of_portfolio": 6.21,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/"
+    },
+    {
+      "investor": "arjuna-capital",
+      "company": "AMZN",
+      "value_usd": 12313492.0,
+      "shares": 49422.0,
+      "pct_of_portfolio": 2.75,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/"
+    },
+    {
+      "investor": "arjuna-capital",
+      "company": "NVDA",
+      "value_usd": 34609473.0,
+      "shares": 151543.0,
+      "pct_of_portfolio": 7.73,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/"
+    },
+    {
+      "investor": "arjuna-capital",
+      "company": "AAPL",
+      "value_usd": 35707336.0,
+      "shares": 107223.0,
+      "pct_of_portfolio": 7.97,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/"
+    },
+    {
+      "investor": "arjuna-capital",
+      "company": "ORCL",
+      "value_usd": 1361193.0,
+      "shares": 9914.0,
+      "pct_of_portfolio": 0.3,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/"
+    },
+    {
+      "investor": "arjuna-capital",
+      "company": "AMD",
+      "value_usd": 4470743.0,
+      "shares": 7308.0,
+      "pct_of_portfolio": 1.0,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/"
+    },
+    {
+      "investor": "arjuna-capital",
+      "company": "AVGO",
+      "value_usd": 10109005.0,
+      "shares": 28785.0,
+      "pct_of_portfolio": 2.26,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "MSFT",
+      "value_usd": 14977496.0,
+      "shares": 28103.0,
+      "pct_of_portfolio": 2.71,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "GOOGL",
+      "value_usd": 6559268.0,
+      "shares": 19765.0,
+      "pct_of_portfolio": 1.19,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "META",
+      "value_usd": 55802.0,
+      "shares": 80.0,
+      "pct_of_portfolio": 0.01,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "AMZN",
+      "value_usd": 3151327.0,
+      "shares": 12011.0,
+      "pct_of_portfolio": 0.57,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "NVDA",
+      "value_usd": 8298407.0,
+      "shares": 37385.0,
+      "pct_of_portfolio": 1.5,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "AAPL",
+      "value_usd": 51869823.0,
+      "shares": 150789.0,
+      "pct_of_portfolio": 9.38,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "TSLA",
+      "value_usd": 28986.0,
+      "shares": 75.0,
+      "pct_of_portfolio": 0.01,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "ORCL",
+      "value_usd": 374477.0,
+      "shares": 2900.0,
+      "pct_of_portfolio": 0.07,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "AMD",
+      "value_usd": 3857986.0,
+      "shares": 6980.0,
+      "pct_of_portfolio": 0.7,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "northstar-asset-management",
+      "company": "AVGO",
+      "value_usd": 1884924.0,
+      "shares": 5580.0,
+      "pct_of_portfolio": 0.34,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "MSFT",
+      "value_usd": 710181.0,
+      "shares": 1384639.0,
+      "pct_of_portfolio": 4.97,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "GOOGL",
+      "value_usd": 724802.0,
+      "shares": 2115700.0,
+      "pct_of_portfolio": 5.08,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "META",
+      "value_usd": 307829.0,
+      "shares": 424487.0,
+      "pct_of_portfolio": 2.16,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "AMZN",
+      "value_usd": 419796.0,
+      "shares": 1684911.0,
+      "pct_of_portfolio": 2.94,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "NVDA",
+      "value_usd": 1080047.0,
+      "shares": 4729165.0,
+      "pct_of_portfolio": 7.56,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "AAPL",
+      "value_usd": 910923.0,
+      "shares": 2735339.0,
+      "pct_of_portfolio": 6.38,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "TSLA",
+      "value_usd": 198870.0,
+      "shares": 560498.0,
+      "pct_of_portfolio": 1.39,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "ORCL",
+      "value_usd": 46155.0,
+      "shares": 336160.0,
+      "pct_of_portfolio": 0.32,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "CRWV",
+      "value_usd": 1891.0,
+      "shares": 21704.0,
+      "pct_of_portfolio": 0.01,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "AMD",
+      "value_usd": 196601.0,
+      "shares": 321370.0,
+      "pct_of_portfolio": 1.38,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "amalgamated-bank",
+      "company": "AVGO",
+      "value_usd": 325769.0,
+      "shares": 927615.0,
+      "pct_of_portfolio": 2.28,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "MSFT",
+      "value_usd": 1319896132.0,
+      "shares": 2573399.0,
+      "pct_of_portfolio": 1.85,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "GOOGL",
+      "value_usd": 1476540637.0,
+      "shares": 4406554.0,
+      "pct_of_portfolio": 2.07,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "META",
+      "value_usd": 455525443.0,
+      "shares": 628155.0,
+      "pct_of_portfolio": 0.64,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "AMZN",
+      "value_usd": 1044448472.0,
+      "shares": 4192047.0,
+      "pct_of_portfolio": 1.46,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "NVDA",
+      "value_usd": 2317611887.0,
+      "shares": 10148051.0,
+      "pct_of_portfolio": 3.25,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "AAPL",
+      "value_usd": 1979194466.0,
+      "shares": 5943170.0,
+      "pct_of_portfolio": 2.77,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "TSLA",
+      "value_usd": 298028336.0,
+      "shares": 839966.0,
+      "pct_of_portfolio": 0.42,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "ORCL",
+      "value_usd": 13878283.0,
+      "shares": 101080.0,
+      "pct_of_portfolio": 0.02,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "AMD",
+      "value_usd": 437711221.0,
+      "shares": 715495.0,
+      "pct_of_portfolio": 0.61,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "federated-hermes",
+      "company": "AVGO",
+      "value_usd": 764218356.0,
+      "shares": 2176082.0,
+      "pct_of_portfolio": 1.07,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "MSFT",
+      "value_usd": 24871054423.0,
+      "shares": 48491040.0,
+      "pct_of_portfolio": 5.12,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "GOOGL",
+      "value_usd": 23118465179.0,
+      "shares": 67481156.0,
+      "pct_of_portfolio": 4.76,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "META",
+      "value_usd": 9777841976.0,
+      "shares": 13483331.0,
+      "pct_of_portfolio": 2.01,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "AMZN",
+      "value_usd": 13617165946.0,
+      "shares": 54654489.0,
+      "pct_of_portfolio": 2.8,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "NVDA",
+      "value_usd": 36095831027.0,
+      "shares": 158051629.0,
+      "pct_of_portfolio": 7.44,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "AAPL",
+      "value_usd": 35205747796.0,
+      "shares": 105716617.0,
+      "pct_of_portfolio": 7.25,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "TSLA",
+      "value_usd": 7283599640.0,
+      "shares": 20528169.0,
+      "pct_of_portfolio": 1.5,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "ORCL",
+      "value_usd": 1357532604.0,
+      "shares": 9887346.0,
+      "pct_of_portfolio": 0.28,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "CRWV",
+      "value_usd": 116958255.0,
+      "shares": 1342496.0,
+      "pct_of_portfolio": 0.02,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "AMD",
+      "value_usd": 6789022504.0,
+      "shares": 11097526.0,
+      "pct_of_portfolio": 1.4,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "legal-general",
+      "company": "AVGO",
+      "value_usd": 11211482631.0,
+      "shares": 31924265.0,
+      "pct_of_portfolio": 2.31,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "MSFT",
+      "value_usd": 4338861137.0,
+      "shares": 8459468.0,
+      "pct_of_portfolio": 6.08,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "GOOGL",
+      "value_usd": 4142859151.0,
+      "shares": 12093154.0,
+      "pct_of_portfolio": 5.81,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "META",
+      "value_usd": 1687188559.0,
+      "shares": 2326579.0,
+      "pct_of_portfolio": 2.36,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "AMZN",
+      "value_usd": 2780394159.0,
+      "shares": 11159519.0,
+      "pct_of_portfolio": 3.9,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "NVDA",
+      "value_usd": 5688837091.0,
+      "shares": 24909524.0,
+      "pct_of_portfolio": 7.97,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "AAPL",
+      "value_usd": 5476118605.0,
+      "shares": 16443813.0,
+      "pct_of_portfolio": 7.68,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "TSLA",
+      "value_usd": 1079396595.0,
+      "shares": 3042182.0,
+      "pct_of_portfolio": 1.51,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "ORCL",
+      "value_usd": 249272681.0,
+      "shares": 1815533.0,
+      "pct_of_portfolio": 0.35,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "CRWV",
+      "value_usd": 16143336.0,
+      "shares": 185300.0,
+      "pct_of_portfolio": 0.02,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "AMD",
+      "value_usd": 1131297180.0,
+      "shares": 1849250.0,
+      "pct_of_portfolio": 1.59,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "nys-common-retirement-fund",
+      "company": "AVGO",
+      "value_usd": 1740947163.0,
+      "shares": 4957280.0,
+      "pct_of_portfolio": 2.44,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+    },
+    {
+      "investor": "calpers",
+      "company": "MSFT",
+      "value_usd": 9885468420.0,
+      "shares": 19273676.0,
+      "pct_of_portfolio": 5.18,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "GOOGL",
+      "value_usd": 9523177924.0,
+      "shares": 27785713.0,
+      "pct_of_portfolio": 4.99,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "META",
+      "value_usd": 4407001531.0,
+      "shares": 6077114.0,
+      "pct_of_portfolio": 2.31,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "AMZN",
+      "value_usd": 5132909070.0,
+      "shares": 20601682.0,
+      "pct_of_portfolio": 2.69,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "NVDA",
+      "value_usd": 12738573702.0,
+      "shares": 55777974.0,
+      "pct_of_portfolio": 6.68,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "AAPL",
+      "value_usd": 12043322625.0,
+      "shares": 36163962.0,
+      "pct_of_portfolio": 6.31,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "TSLA",
+      "value_usd": 1820700774.0,
+      "shares": 5131481.0,
+      "pct_of_portfolio": 0.95,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "ORCL",
+      "value_usd": 457025705.0,
+      "shares": 3328665.0,
+      "pct_of_portfolio": 0.24,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "CRWV",
+      "value_usd": 42737674.0,
+      "shares": 490561.0,
+      "pct_of_portfolio": 0.02,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "AMD",
+      "value_usd": 1979797900.0,
+      "shares": 3236233.0,
+      "pct_of_portfolio": 1.04,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calpers",
+      "company": "AVGO",
+      "value_usd": 4530595077.0,
+      "shares": 12900695.0,
+      "pct_of_portfolio": 2.37,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "MSFT",
+      "value_usd": 5413077359.0,
+      "shares": 10553865.0,
+      "pct_of_portfolio": 4.96,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "GOOGL",
+      "value_usd": 5402837736.0,
+      "shares": 15770077.0,
+      "pct_of_portfolio": 4.95,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "META",
+      "value_usd": 2386246850.0,
+      "shares": 3290558.0,
+      "pct_of_portfolio": 2.19,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "AMZN",
+      "value_usd": 3600566559.0,
+      "shares": 14451401.0,
+      "pct_of_portfolio": 3.3,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "NVDA",
+      "value_usd": 7876756544.0,
+      "shares": 34489695.0,
+      "pct_of_portfolio": 7.22,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "AAPL",
+      "value_usd": 7313330668.0,
+      "shares": 21960635.0,
+      "pct_of_portfolio": 6.7,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "TSLA",
+      "value_usd": 1516329144.0,
+      "shares": 4273637.0,
+      "pct_of_portfolio": 1.39,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "ORCL",
+      "value_usd": 354338760.0,
+      "shares": 2580763.0,
+      "pct_of_portfolio": 0.32,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "CRWV",
+      "value_usd": 39449853.0,
+      "shares": 452822.0,
+      "pct_of_portfolio": 0.04,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "AMD",
+      "value_usd": 1494462998.0,
+      "shares": 2442891.0,
+      "pct_of_portfolio": 1.37,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "calstrs",
+      "company": "AVGO",
+      "value_usd": 2377126443.0,
+      "shares": 6768776.0,
+      "pct_of_portfolio": 2.18,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "MSFT",
+      "value_usd": 247736163987.0,
+      "shares": 554281607.0,
+      "pct_of_portfolio": 5.61,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "GOOGL",
+      "value_usd": 141875011591.0,
+      "shares": 776413627.0,
+      "pct_of_portfolio": 3.21,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "META",
+      "value_usd": 81262293039.0,
+      "shares": 161164359.0,
+      "pct_of_portfolio": 1.84,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "AMZN",
+      "value_usd": 125360342023.0,
+      "shares": 648695172.0,
+      "pct_of_portfolio": 2.84,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "NVDA",
+      "value_usd": 227480902640.0,
+      "shares": 1841354238.0,
+      "pct_of_portfolio": 5.15,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "AAPL",
+      "value_usd": 222363339623.0,
+      "shares": 1055756052.0,
+      "pct_of_portfolio": 5.03,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "TSLA",
+      "value_usd": 37613903389.0,
+      "shares": 190084412.0,
+      "pct_of_portfolio": 0.85,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "ORCL",
+      "value_usd": 18158966218.0,
+      "shares": 128604577.0,
+      "pct_of_portfolio": 0.41,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "AMD",
+      "value_usd": 21239684543.0,
+      "shares": 130939428.0,
+      "pct_of_portfolio": 0.48,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+    },
+    {
+      "investor": "blackrock",
+      "company": "AVGO",
+      "value_usd": 54909661593.0,
+      "shares": 34200333.0,
+      "pct_of_portfolio": 1.24,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
     }
   ]
 }

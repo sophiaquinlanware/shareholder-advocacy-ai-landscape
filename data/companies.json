@@ -101,7 +101,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
   "next_proposal_deadline_quote": "SEC Rule 14a-8 ... No later than close of business (5:30 p.m. Pacific Time) on June 24, 2027",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "ticker": "GOOGL",
@@ -207,7 +207,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
   "next_proposal_deadline_quote": "Corporate Secretary must receive the written proposal ... no later than Friday, December 25, 2026.",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "ticker": "META",
@@ -312,7 +312,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
   "next_proposal_deadline_quote": "the proposal must be received by us ... no later than December 17, 2026.",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "ticker": "AMZN",
@@ -417,7 +417,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
   "next_proposal_deadline_quote": "must be received no later than 6:00 p.m., Pacific Time, on Thursday, December 10, 2026",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "ticker": "NVDA",
@@ -515,7 +515,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
   "next_proposal_deadline_quote": "must submit their proposals in writing ... on or before January 12, 2027.",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "ticker": "AAPL",
@@ -606,7 +606,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm",
   "next_proposal_deadline_quote": "must be received on or before the close of business on September 10, 2026.",
   "next_proposal_deadline_status": "passed",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "ticker": "TSLA",
@@ -705,7 +705,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm",
   "next_proposal_deadline_quote": "such a proposal would need to be received ... no later than June 21, 2027",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "anthropic",
@@ -1568,7 +1568,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
   "next_proposal_deadline_quote": "must be received at our corporate headquarters no later than November 10, 2026",
   "next_proposal_deadline_status": "passed",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "salesforce",
@@ -1665,7 +1665,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm",
   "next_proposal_deadline_quote": "must be received at our principal executive offices not later than the close of business on December 17, 2026",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "adobe",
@@ -1752,7 +1752,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000043/adbe-20260227.htm",
   "next_proposal_deadline_quote": "we must receive the proposal at our principal executive offices, addressed to the Corporate Secretary, no later than October 30, 2026",
   "next_proposal_deadline_status": "passed",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "intuit",
@@ -1850,7 +1850,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000053/intu-20261125.htm",
   "next_proposal_deadline_quote": "so that the Corporate Secretary receives it at our principal executive offices by the close of business ... on July 28, 2027",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "verisk-analytics",
@@ -1941,7 +1941,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1442145/000119312526141398/d23242ddef14a.htm",
   "next_proposal_deadline_quote": "We must receive the proposal no later than December 4, 2026.",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "workday",
@@ -2032,7 +2032,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1327811/000110465926055687/tm261347-2_def14a.htm",
   "next_proposal_deadline_quote": "we must receive such proposals no later than January 5, 2027.",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "servicenow",
@@ -2120,7 +2120,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000039/now-20260406.htm",
   "next_proposal_deadline_quote": "must be received by the Company not later than December 7, 2026",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "palantir-technologies",
@@ -2211,7 +2211,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
   "next_proposal_deadline_quote": "the proposal must be received by our corporate secretary at our corporate headquarters on or before December 25, 2026",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "cisco-systems",
@@ -2298,7 +2298,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm",
   "next_proposal_deadline_quote": "such proposals must be received by Cisco no later than July 1, 2027.",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "axon-enterprise",
@@ -2384,7 +2384,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1069183/000162828026025521/axon-20260416.htm",
   "next_proposal_deadline_quote": "be received not later than December 17, 2026 by the Corporate Secretary of the Company",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "motorola-solutions",
@@ -2470,7 +2470,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/68505/000119312526139004/d50373ddef14a.htm",
   "next_proposal_deadline_quote": "must be received by the Secretary, Motorola Solutions, Inc. ... no later than December 3, 2026",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "thales",
@@ -2747,7 +2747,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1065280/000119312526159286/d20613ddef14a.htm",
   "next_proposal_deadline_quote": "must be received by our Secretary no later than December 17, 2026",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "warner-bros-discovery",
@@ -2875,7 +2875,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000013/dis-20260122.htm",
   "next_proposal_deadline_quote": "shareholder proposals must be received by the Company's Secretary no later than the close of business on September 24, 2026",
   "next_proposal_deadline_status": "passed",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "comcast",
@@ -2967,7 +2967,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1166691/000119312526177138/cmcsa-20260424.htm",
   "next_proposal_deadline_quote": "under Rule 14a-8 ... must be received no later than December 25, 2026",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "oracle",
@@ -3070,7 +3070,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526402816/orcl-20260925.htm",
   "next_proposal_deadline_quote": "Proposals for inclusion in 2027 proxy statement ... No later than the close of business on May 28, 2027.",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "softbank-group",
@@ -3221,7 +3221,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm",
   "next_proposal_deadline_quote": "submitted in writing ... and received by us on or before November 27, 2026",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "broadcom",
@@ -3307,7 +3307,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/d49254ddef14a.htm",
   "next_proposal_deadline_quote": "must comply with ... Rule 14a-8 ... and be received no later than November 2, 2026",
   "next_proposal_deadline_status": "passed",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "tsmc",
@@ -3478,7 +3478,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000191/crwv-20260422.htm",
   "next_proposal_deadline_quote": "our Corporate Secretary must receive the written proposal ... not later than December 23, 2026",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "nebius-group",
@@ -3604,7 +3604,7 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm",
   "next_proposal_deadline_quote": "your proposal must be received in writing not later than December 18, 2026",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  },
  {
   "id": "southern-company",
@@ -3702,6 +3702,6 @@
   "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm",
   "next_proposal_deadline_quote": "pursuant to Rule 14a-8 of the Exchange Act for the 2027 annual meeting is December 4, 2026",
   "next_proposal_deadline_status": "open",
-  "next_proposal_deadline_checked": "2026-11-25"
+  "next_proposal_deadline_checked": "2026-11-26"
  }
 ]
