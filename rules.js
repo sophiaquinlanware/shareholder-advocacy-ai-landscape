@@ -65,6 +65,7 @@
     const type = e.type || e.relation || "";
     const said = `${type} ${e.description || ""} ${e.position || ""}`;
     if (type === "missing") return { level: "inferred", text: "none in this dataset" };
+    if (type === "asks for") return { level: "inferred", text: "grouped by this site (asks.json)" };
     if (!e.source_url) return { level: "inferred", text: type === "co-filed with" ? "inferred from co-filing" : "inferred" };
     if (/UNVERIFIED/i.test(said) || isSecondary(e.source_url)) return { level: "reported", text: "reported" };
     return { level: "verified", text: "verified" };

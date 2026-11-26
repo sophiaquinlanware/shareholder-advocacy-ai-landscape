@@ -103,6 +103,19 @@ The owner's spec has four phases, and each phase gets its own plan and reviews i
 - **Process slip (2026-11-26):** a command chain pushed Phase 2 to `main` while one test (a timing flake) was failing. Fixed 3 minutes later in 1bfef97, with the check passing. Pushes are now conditional on the check's exit code.
 - **Tests:** Playwright is capped at 3 workers, because the local python server dropped connections under full parallel load.
 
+- **Phase 4 (Policymaker; plan docs/plans/2026-11-26-lens-phase4.md):**
+  - **Asks:** the 12 recurring asks (asks.json) are nodes with their proposals.
+  - **Coverage marks** (coverage.json): partially covered, no rule in this map, or not yet assessed, each "this site's reading, not yet confirmed by a person".
+  - **Ask panel:** recurrence by status, then support by year with labelled averages (an exception to the no-average rule, by the owner's spec), then coverage lines.
+  - **Year scrubber** in all lenses (`upto=`).
+  - **Reviews:** UX R1 72, R2 78; accessibility R1 78, R2 88 PASS; data R1 80, R2 82. R2's fixes are in but not re-reviewed (round cap): the abstentions mark was dropped, computed-figure detection widened, the year-slider cap reset, and the scrubber moved under the graph.
+  - **Owner's "company commitments":** shown as "company actions in the Causality map that mention this ask" (companies and labs lanes only). No ask has one today: the data has no commitment field, and the asks' match terms miss e.g. ev-msft-community-first ("datacenter", "electricity"). That's for the data session.
+- **Owner asks during Phase 4 (2026-11-26):**
+  - every Proposals-chart mark is filled;
+  - Lab pathways is back on white;
+  - the network column is "Value chain, by tier";
+  - Lab pathways' middle column is "Value chain (companies tied to labs)", sorted by tier with tier tags, not "public companies" (some are private, and labs may list).
+
 ## Next (UI session)
 
 1. **Phase 3 follow-up:** show `pass_through_voting` from `data/pass_through_voting.json` (`offered` null means no program found on the pages checked, never "no").

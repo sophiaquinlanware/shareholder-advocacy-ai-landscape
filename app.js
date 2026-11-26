@@ -4,7 +4,7 @@
 // Audience: shareholder-advocacy practitioners. Labels are plain; no definitions or explainers.
 
 const DATA = {};
-const FILES = ["site", "companies", "upcoming", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph", "scorecard", "fund_votes"];
+const FILES = ["site", "companies", "upcoming", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph", "scorecard", "fund_votes", "asks", "coverage"];
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
@@ -370,8 +370,11 @@ function renderFeed() {
     const votedHere = all.filter((p) => p.status === "voted" && filterOn(p));
     const skipped = votedHere.length - pts.length;
     const topicKeys = topics.map((t) => `<span class="leg static"><svg class="mark" viewBox="-6 -6 12 12" aria-hidden="true"><path d="${typeof d3 !== "undefined" ? d3.symbol(d3[symbolName(topicStyle(t).shape)], 60)() : ""}" fill="${topicColor(t)}"></path></svg>${esc(t)}</span>`).join("");
-    key.innerHTML = `${topicKeys}<span class="leg static"><svg class="mark" viewBox="-6 -6 12 12" aria-hidden="true"><circle r="4" fill="none" stroke="${cssVar("--ink-soft")}" stroke-width="1.6"></circle></svg>Basis note or caveat (see table)</span>
-      <p class="note">${plural(pts.length, "voted proposal")} plotted.${skipped > 0 ? ` ${plural(skipped, "voted proposal has", "voted proposals have")} no meeting date or vote-results filing recorded and appear in the table only.` : ""} Upcoming, withdrawn and excluded proposals are in the table.</p>`;
+    // Every mark is filled (owner, 2026-11-26: "Be consistent with the circles"). Hollow marks once flagged a
+    // basis note, but nearly every figure now has one, so the split no longer told anything apart.
+    const noted = pts.filter((p) => p.support_note).length;
+    key.innerHTML = `${topicKeys}
+      <p class="note">${plural(pts.length, "voted proposal")} plotted. Shape and shade show the topic; every mark is filled.${noted ? ` ${noted} of these figures have a basis note (for example, computed from 8-K vote counts or dual-class voting), listed in the table.` : ""}${skipped > 0 ? ` ${plural(skipped, "voted proposal has", "voted proposals have")} no meeting date or vote-results filing recorded and appear in the table only.` : ""} Upcoming, withdrawn and excluded proposals are in the table.</p>`;
     if (typeof d3 === "undefined") return;
     if (!pts.length) { box.innerHTML = `<p class="status-note">No voted proposals with a dated vote-results filing match these filters.</p>`; return; }
     const all_pts = all.filter(plottable);
@@ -394,8 +397,8 @@ function renderFeed() {
     svg.append("g").selectAll("path").data(pts).join("path")
       .attr("transform", (p) => `translate(${x(new Date(p.meeting_date + "T12:00:00")) + spread.get(p.id)},${y(p.support_pct)})`)
       .attr("d", (p) => d3.symbol(d3[symbolName(topicStyle(p.topic).shape)], 64)())
-      .attr("fill", (p) => (p.support_note ? cssVar("--surface") : topicColor(p.topic)))
-      .attr("stroke", (p) => topicColor(p.topic)).attr("stroke-width", (p) => (p.support_note ? 1.8 : 0.8))
+      .attr("fill", (p) => topicColor(p.topic))
+      .attr("stroke", cssVar("--surface")).attr("stroke-width", 0.8)
       .style("cursor", "pointer")
       .on("click", (ev, p) => {
         const row = document.getElementById("prop-" + p.id);
@@ -645,6 +648,9 @@ async function main() {
     proposals: (DATA.proposals && DATA.proposals.proposals) || [],
     companies: DATA.companies || [],
     fundVotes: DATA.fund_votes || null,
+    asks: (DATA.asks && DATA.asks.asks) || [],
+    coverage: DATA.coverage || null,
+    causality: DATA.causality || null,
     hasCompany: (t) => companyEntries().some((e) => e.key === keyForTicker(t)),
     openCompany,
   };

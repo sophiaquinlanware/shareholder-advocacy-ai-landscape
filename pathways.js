@@ -1,4 +1,6 @@
-// Influence pathways: investors -> public companies -> frontier AI labs.
+// Influence pathways: investors -> companies in the AI value chain -> frontier AI labs.
+// Companies are labelled by their value-chain tier, not "public": some are private, and labs may list
+// (owner, 2026-11-26: "maybe you can have different qualifiers other than public company").
 // Investors cannot file proposals at private labs, but they can engage the public
 // companies that fund, host, supply or distribute those labs. This view lays that out.
 // Reads data/pathways.json (company-to-lab ties) and data/network.json (who engages which company).
@@ -53,13 +55,13 @@
 
   function shell(el, data) {
     const labs = data.labs.map((l) => `<button type="button" class="chip" data-lab="${esc(l.id)}" aria-pressed="false">${esc(l.name)}</button>`).join("");
-    const cos = data.public_companies.map((c) => `<label class="chip"><input type="checkbox" value="${esc(c.id)}"> ${esc(c.name)}</label>`).join("");
+    const cos = byTier(data.public_companies).map((c) => `<label class="chip"><input type="checkbox" value="${esc(c.id)}"> ${esc(c.name)}${tierOf(c)[1] ? `<span class="ticker"> · ${esc(tierOf(c)[1])}</span>` : ""}</label>`).join("");
     // Two line kinds, both blue: company → lab ties (navy) and filer → company links (light blue).
     // Tie type is named in the tie table and the side panel.
     const legend = `<span class="leg static"><span class="dot" style="background:${cssVar("--t-equity")}"></span>company → lab tie (width = strength)</span>`;
     el.innerHTML = `
       <h2>Lab pathways</h2>
-      <p class="intro">${data.ties.length} ties between ${data.public_companies.length} public companies and ${data.labs.length} frontier labs, with the filers active at each company. Line width = tie strength (1–3) or proposals filed.</p>
+      <p class="intro">${data.ties.length} ties between ${data.public_companies.length} companies in the AI value chain and ${data.labs.length} frontier labs, with the filers active at each company. Line width = tie strength (1–3) or proposals filed.</p>
       <div class="pw-modes">
         <div><p class="pw-label">Labs</p><div class="chips">${labs}</div></div>
         <div><p class="pw-label">Companies</p><div class="chips">${cos}</div></div>
@@ -74,6 +76,11 @@
       <div class="table-wrap" id="pw-ties"></div>`;
   }
 
+  // Value-chain tier per company (companies.json tier, by ticker), in value-chain order.
+  const TIER = { chips: [1, "Chip builder"], datacenters: [2, "Data centers and power"], compute: [3, "Hyperscaler or AI cloud"], labs: [4, "Frontier AI lab"], capital: [5, "Strategic investor"], deployers: [6, "AI deployer"] };
+  const tierOf = (c) => TIER[(window.companyTiers || new Map()).get(c.ticker)] || [9, ""];
+  const byTier = (list) => [...list].sort((a, b) => tierOf(a)[0] - tierOf(b)[0] || a.name.localeCompare(b.name));
+
   function layout() {
     const el = document.getElementById("pw-graph");
     const W = el.clientWidth || 800;
@@ -82,7 +89,7 @@
       .sort((a, b) => S.inv.filter((p) => p.org.id === b.id).length - S.inv.filter((p) => p.org.id === a.id).length);
     const cols = [
       { key: "inv", title: "Investors and advocates", items: investors.map((o) => ({ id: "o:" + o.id, label: o.name, ref: o })) },
-      { key: "co", title: "Public companies", items: S.data.public_companies.map((c) => ({ id: "c:" + c.id, label: c.name.replace(/\s*\(.*\)/, ""), ref: c })) },
+      { key: "co", title: narrow ? "Value chain" : "Value chain (companies tied to labs)", items: byTier(S.data.public_companies).map((c) => ({ id: "c:" + c.id, label: c.name.replace(/\s*\(.*\)/, ""), ref: c })) },
       { key: "lab", title: "Frontier labs", items: S.data.labs.map((l) => ({ id: "l:" + l.id, label: l.name.replace(/\s*\(.*\)/, ""), ref: l })) },
     ];
     const rowH = narrow ? 20 : 24;
@@ -160,7 +167,7 @@
     document.getElementById("pw-panel").innerHTML = `
       <p class="eyebrow tight">Frontier lab</p><h3>${esc(lab.name)}</h3>
       <p>${esc(lab.description || "")} ${link(lab.source_url)}</p>
-      <h4 class="pw-h4">Public companies with leverage (${ties.length})</h4><ul class="conn">${tieRows || "<li>None sourced yet.</li>"}</ul>
+      <h4 class="pw-h4">Companies tied to this lab (${ties.length})</h4><ul class="conn">${tieRows || "<li>None sourced yet.</li>"}</ul>
       <h4 class="pw-h4">Investors already engaging those companies on AI</h4>
       <ul class="conn">${invByCo || "<li>None in the map yet.</li>"}</ul>`;
     tieTable(ties);
