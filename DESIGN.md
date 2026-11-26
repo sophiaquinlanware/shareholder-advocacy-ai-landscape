@@ -94,6 +94,25 @@ A new lens is one more entry. `rules.js` holds rule-based settings with comments
 - **Rings:** dashed `--accent` ring for "Upcoming vote", always also stated as text (`.ring-note`, List view Status column). The keyboard focus ring is solid `--ink` with a white gap, so the two differ by shape.
 - **Keyboard:** the graph is one tab stop (`role="application"`). ↑/↓ (and ←/→) step through visible nodes, companies and labs first, then by connections. Home and End jump to the first and last. Enter opens the panel and Esc clears it. `#net-kb` announces each step.
 - **Labels:** off by default (owner, 2026-11-25: "don't label the nodes until you click on a node, and then … label all the connection nodes"). Selecting, hovering or keyboard-focusing a node names it and its connections. Graph settings → Filters → Labels turns all labels on (saved per viewer).
+- **Impact investor marks (Phase 2):** each is drawn on the node and stated in text: panel, List view Status column and the keyboard announcement.
+
+  | Mark | Radius | Stroke | Token |
+  |---|---|---|---|
+  | Keyboard focus | gap r+1.5, ring r+3 | solid 2px | `--g-focus`, gap `--g-bg` |
+  | Upcoming vote | r+6 | dashed `4 2` | `--g-ring` |
+  | Proposal deadline | r+9 | solid, plus a 3px countdown arc (full at 90+ days) | `--g-window` |
+  | Seeking | r+12 | dotted `1 3` | `--g-seeking` |
+  | Resubmission | bar under the node, plus "!" | 3px | `--g-risk` |
+
+  - The deadline ring pulses twice (5s) and then stays still. It never pulses under reduced motion, and Graph settings can turn the pulse off.
+  - Deadlines and thresholds come from `rules.js`, never from page copy.
+- **My holdings:** a button with `aria-expanded` opens an inline region (a labelled textarea, Apply, Clear). Tickers are kept in `localStorage["holdings"]` only. Unheld nodes fade to 15% and their labels hide. A persistent live line reports what was found.
+- **Topics not filed** (Impact lens toggle, `aria-pressed`):
+  - Ghost nodes (kind `gap`) are hollow with a dashed `--g-label-soft` outline, joined to their company by a dashed `5 3` line.
+  - Every line states the scope: "in this dataset (N companies with AI proposals tracked)".
+- **Find a path to…** (person and filer panels): a breadth-first search over people, coalition, co-filing and filing edges.
+  - Every hop is labelled with its source; inferred co-filing and shared coalition membership are named as such.
+  - Focus goes to the summary. Esc in the panel clears the path.
 - **List view:** every visible node, with Name, Type, Connections (sortable), Status and What you can do. It is the text equivalent of the graph.
 
 ## Focus and motion

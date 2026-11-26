@@ -118,17 +118,82 @@
 
   const upcomingRing = (n) => (n.kind === "proposal" && n.status === "upcoming" ? [{ kind: "upcoming", text: "Upcoming vote" }] : []);
 
+  // ---------- Impact investor marks (Phase 2): deadline, seeking, resubmission ----------
+  const R = () => window.RULES || {};
+  const fmtDate = (iso) => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
+  const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+  // Seeking types shown. "exempt solicitation" asks are left out: asking others to campaign on a vote is close
+  // to organising investors to vote (PRODUCT.md Never claim 1). Owner decision recorded in docs/STATE.md.
+  const SEEKING_LABEL = { "co-filer": "a co-filer", data: "data", "company relationship": "a company relationship", other: "other help" };
+  const seekingOf = (n) => (n.seeking || []).filter((s) => s && SEEKING_LABEL[s.type]);
+  const RESUB_NOTE = "this site's reading; thresholds may change";
+
+  function impactRings(n) {
+    const out = upcomingRing(n);
+    const d = R().deadlineInfo && R().deadlineInfo(n);
+    if (d) out.push({ kind: "deadline", text: `Proposal deadline: ${plural(d.days, "day", "days")} left`, frac: d.frac });
+    const sk = seekingOf(n);
+    if (sk.length) out.push({ kind: "seeking", text: `Seeking ${[...new Set(sk.map((s) => SEEKING_LABEL[s.type]))].join(", ")}` });
+    const r = n.kind === "proposal" && R().resubmission && R().resubmission(n);
+    if (r) out.push({ kind: "risk", text: r.state === "below" ? "Below this site's reading of the resubmission threshold" : "At risk of losing resubmission eligibility" });
+    return out;
+  }
+
+  function impactMarkActions(n, ctx) {
+    const out = [];
+    const d = R().deadlineInfo && R().deadlineInfo(n);
+    if (d) {
+      const what = d.company ? "Proposal deadline for the next annual meeting" : "Co-file before";
+      out.push({ text: `${what} ${fmtDate(d.date)} (${plural(d.days, "day", "days")} left, from the proxy statement)`, href: d.source, hrefLabel: "source" });
+    }
+    seekingOf(n).forEach((s) => out.push({
+      text: `Needs ${SEEKING_LABEL[s.type]}${s.note ? ": " + s.note : ""} · posted by ${s.posted_by || "unknown"}${s.posted_at ? ", " + fmtDate(String(s.posted_at).slice(0, 10)) : ""} · ${s.verified ? "reviewed" : "auto-detected, not yet reviewed"}`,
+      href: s.contact_url, hrefLabel: "contact",
+    }));
+    const r = n.kind === "proposal" && R().resubmission && R().resubmission(n);
+    if (r) {
+      const matched = n.vote_history_source || (n.vote_history || []).some((v) => v.source || v.match) ? " Earlier votes matched by this site (same company and topic, similar title)." : "";
+      out.push({ text: `Last vote: ${r.last.pct}% (${r.last.year}). Needs ${r.needs}% to stay eligible (vote ${r.count} on this subject in ${R().LOOKBACK_YEARS} years; ${RESUB_NOTE}).${r.basisNote ? " Support basis note on file: the rule counts For ÷ (For + Against); see Proposals." : ""}${matched}`,
+        links: (n.vote_history || []).filter((v) => v.results_url).map((v) => ({ href: v.results_url, label: `${v.year} vote` })) });
+    }
+    return out;
+  }
+
+  // Proposal-level facts for the Impact lens: lead filer contacts, and whether an exempt solicitation is on file.
+  function proposalFacts(n, ctx) {
+    const out = [];
+    const leads = ctx.links.filter((l) => l.relation === "lead filer" && end(l.target) === n.id).map((l) => ctx.byId.get(end(l.source))).filter(Boolean);
+    leads.forEach((org) => {
+      const people = ctx.links.filter((l) => l.relation === "works at" && end(l.target) === org.id).map((l) => ctx.byId.get(end(l.source))).filter(Boolean)
+        .sort((a, b) => a.label.localeCompare(b.label)).slice(0, 2);
+      out.push({ text: `Contact lead filer: ${org.label}`, links: people.map((p) => ({ href: p.profile_url || p.source_url, label: `${p.label} (profile)` })).filter((x) => x.href) });
+    });
+    if (n.status === "upcoming") {
+      const has = ctx.links.some((l) => end(l.target) === n.id && /^exempt solicitation/.test(l.relation) && !/support/.test(l.relation));
+      if (!has) out.push({ text: "No exempt solicitation on file for this vote" });
+    }
+    return out;
+  }
+
+  // Gap nodes (graph.js adds them while "Show topics not filed" is on): the scope is stated in the line itself.
+  function gapActions(n, ctx) {
+    const filed = (n.filedAt || []).map((f) => `${f.label} (${f.count})`).join(", ");
+    return [{ text: `No ${n.topic} proposal at ${n.companyLabel} in this dataset (${plural(n.covered, "company", "companies")} with AI proposals tracked). Filed at ${n.filedAt.length} of them: ${filed}.` }];
+  }
+
   window.LENSES = {
     impact: {
       label: "Impact investor",
+      gaps: true,
       sizeLabel: "number of connections",
       defaults: { hiddenKinds: ["person", "policy", "response", "public"], orphans: true },
       size: () => null,
-      rings: upcomingRing,
+      rings: impactRings,
       actions(n, ctx) {
-        if (n.kind === "proposal") return proposalMeeting(n, ctx);
-        if (isCompany(n)) return companyActions(n, ctx, true);
-        if (FILERS.includes(n.kind)) return filerActions(n, ctx);
+        if (n.kind === "proposal") return [...impactMarkActions(n, ctx), ...proposalMeeting(n, ctx), ...proposalFacts(n, ctx)];
+        if (isCompany(n)) return [...impactMarkActions(n, ctx), ...companyActions(n, ctx, true)];
+        if (n.kind === "gap") return gapActions(n, ctx);
+        if (FILERS.includes(n.kind)) return [...impactMarkActions(n, ctx), ...filerActions(n, ctx)];
         return [];
       },
     },

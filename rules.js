@@ -64,10 +64,80 @@
   function edgeConfidence(e) {
     const type = e.type || e.relation || "";
     const said = `${type} ${e.description || ""} ${e.position || ""}`;
+    if (type === "missing") return { level: "inferred", text: "none in this dataset" };
     if (!e.source_url) return { level: "inferred", text: type === "co-filed with" ? "inferred from co-filing" : "inferred" };
     if (/UNVERIFIED/i.test(said) || isSecondary(e.source_url)) return { level: "reported", text: "reported" };
     return { level: "verified", text: "verified" };
   }
 
-  window.RULES = { SECONDARY_DOMAINS, edgeConfidence };
+  // ---------- Proposal deadlines ----------
+  // Deadlines are read from the proxy statement's own sentence (filing_deadline on proposals,
+  // next_proposal_deadline on companies, each with a _source URL). Nothing here computes a deadline.
+  // "Today" is the calendar date in US Eastern time, the zone SEC filing deadlines are stated in.
+  const DEADLINE_TZ = "America/New_York";
+  // The countdown arc is full at this many days left or more, and empty at 0.
+  const WINDOW_FULL_DAYS = 90;
+
+  function todayISO(now = new Date()) {
+    // en-CA formats as YYYY-MM-DD.
+    return new Intl.DateTimeFormat("en-CA", { timeZone: DEADLINE_TZ, year: "numeric", month: "2-digit", day: "2-digit" }).format(now);
+  }
+  const dayNum = (iso) => {
+    const [y, m, d] = String(iso).slice(0, 10).split("-").map(Number);
+    return Date.UTC(y, m - 1, d) / 86400000;
+  };
+  // { date, days, frac, source } while the deadline is today or later; otherwise null.
+  function deadlineInfo(node) {
+    const date = node.filing_deadline || node.next_proposal_deadline;
+    if (!date || !/^\d{4}-\d{2}-\d{2}/.test(date)) return null;
+    const days = dayNum(date) - dayNum(todayISO());
+    if (days < 0) return null;
+    return { date: date.slice(0, 10), days, frac: Math.min(1, days / WINDOW_FULL_DAYS), source: node.filing_deadline_source || node.next_proposal_deadline_source || null, company: !node.filing_deadline };
+  }
+
+  // ---------- Resubmission thresholds ----------
+  // This site's reading of SEC Rule 14a-8(i)(12) as amended in 2020 (17 CFR 240.14a-8(i)(12);
+  // https://www.ecfr.gov/current/title-17/section-240.14a-8). VERIFY against the current rule before relying
+  // on it: the thresholds can change, and changes to Rule 14a-8 have been proposed.
+  // A company may exclude a proposal on substantially the same subject as earlier proposals voted on in the
+  // preceding 5 calendar years, if the most recent vote was within the preceding 3 calendar years and got
+  // less than 5% (voted once in those 5 years), 15% (twice) or 25% (three or more times).
+  // The rule counts support as For / (For + Against); a support_note on the data flags a different basis.
+  const RESUBMISSION_THRESHOLDS = [5, 15, 25];
+  const LOOKBACK_YEARS = 5;
+  const RECENT_YEARS = 3;
+  // "At risk" covers support at the threshold or up to this many points above it (owner's spec: 3 points).
+  const AT_RISK_MARGIN = 3;
+
+  // For a proposal node with vote_history (earlier votes on the same subject at the same company, from the
+  // data). Never inferred here. Returns null, or { state: "at-risk" | "below", last, needs, count, basisNote }.
+  function resubmission(node, now = new Date()) {
+    const hist = (node.vote_history || []).filter((v) => v && v.year && v.support_pct != null);
+    if (!hist.length) return null;
+    const voted = node.status === "voted" && node.support_pct != null && node.year;
+    const votes = [...hist, ...(voted ? [{ year: node.year, support_pct: node.support_pct, support_note: node.support_note }] : [])]
+      .sort((a, b) => a.year - b.year);
+    const last = votes.at(-1);
+    // The meeting the question is about: this proposal's own (still to vote) or the next one after the last vote.
+    const pending = !voted && node.status === "upcoming";
+    const meetingYear = pending ? node.year : Math.max(last.year + 1, Number(todayISO(now).slice(0, 4)));
+    if (meetingYear - last.year > RECENT_YEARS) return null;
+    const inWindow = votes.filter((v) => v.year >= meetingYear - LOOKBACK_YEARS && v.year < meetingYear);
+    // For a proposal still to be voted on, its own vote is the next one counted, so the bar it must clear
+    // is set by the votes before it plus itself.
+    const count = inWindow.length + (pending ? 1 : 0);
+    const needs = RESUBMISSION_THRESHOLDS[Math.min(count, RESUBMISSION_THRESHOLDS.length) - 1];
+    const pct = Number(last.support_pct);
+    let state = null;
+    if (pct < needs) state = "below";
+    else if (pct <= needs + AT_RISK_MARGIN) state = "at-risk";
+    if (!state) return null;
+    return { state, last: { year: last.year, pct }, needs, count, basisNote: !!(last.support_note || last.basis_note) };
+  }
+
+  window.RULES = {
+    SECONDARY_DOMAINS, edgeConfidence,
+    DEADLINE_TZ, WINDOW_FULL_DAYS, todayISO, deadlineInfo,
+    RESUBMISSION_THRESHOLDS, LOOKBACK_YEARS, RECENT_YEARS, AT_RISK_MARGIN, resubmission,
+  };
 })();

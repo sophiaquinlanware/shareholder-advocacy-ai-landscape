@@ -135,6 +135,7 @@ tr.hit td { background: var(--accent-soft); }
 .chip { display: inline-flex; align-items: center; gap: 6px; font: 13px var(--sans); color: var(--ink); background: var(--surface); border: 1px solid var(--control-edge); border-radius: 999px; padding: 4px 10px; cursor: pointer; }
 .chip[aria-pressed="true"], .chip:has(input:checked) { background: var(--accent); color: #ffffff; border-color: var(--accent); }
 .chip input { margin: 0; accent-color: var(--accent); }
+.chip[hidden] { display: none; }
 
 /* Proposals dot plot */
 .chart-card { margin: 10px 0 0; padding: 8px 12px; }
@@ -167,6 +168,8 @@ tr.hit td { background: var(--accent-soft); }
    distinct on the dark canvas; links are thin grey-blue. Every node colour reaches 4.5:1 or more on --g-bg. */
 :root {
   --g-bg: #1e1e1e; --g-link: #7a8199; --g-label: #dcddde; --g-label-soft: #a1a1aa; --g-ring: #7dd3fc; --g-focus: #ffffff;
+  /* Phase 2 marks: deadline ring, seeking ring, resubmission bar. Each 4.5:1 or more on --g-bg. */
+  --g-window: #86efac; --g-seeking: #fda4af; --g-risk: #fdba74; --gn-gap: #1e1e1e;
   --gn-company: #93c5fd; --gn-lab: #c4b5fd; --gn-proposal: #38bdf8;
   --gn-manager: #4ade80; --gn-nonprofit: #f472b6; --gn-faith: #e879f9; --gn-pension: #fb923c;
   --gn-labor: #facc15; --gn-foundation: #bef264; --gn-coalition: #2dd4bf; --gn-other: #a1a1aa;
@@ -206,6 +209,23 @@ tr.hit td { background: var(--accent-soft); }
 .net-actions .act-links { list-style: none; padding: 0; margin: 2px 0 0; }
 .net-actions .act-links li { margin: 2px 0; overflow-wrap: anywhere; }
 .net-actions .act-links .src { white-space: normal; }
+/* Phase 2: holdings, topics not filed, warm path, deadline pulse */
+.net-tools { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 6px; }
+.net-tools .chip[aria-expanded="true"] { background: var(--accent); color: #ffffff; border-color: var(--accent); }
+.net-hold { border: 1px solid var(--line); border-radius: var(--radius); padding: 8px 10px; margin: 0 0 8px; max-width: 520px; font-size: 13px; }
+.net-hold label { display: block; font-weight: 600; margin-bottom: 4px; }
+.net-hold textarea { width: 100%; box-sizing: border-box; font: 13px var(--sans); color: var(--ink); background: var(--surface); border: 1px solid var(--control-edge); border-radius: 4px; padding: 6px; }
+.net-hold-row { display: flex; gap: 6px; margin-top: 6px; }
+.net-path { border-top: 1px solid var(--line); margin-top: 12px; padding-top: 8px; }
+.net-path h4 { margin: 0 0 6px; font-size: 13px; }
+.net-path select { max-width: 100%; margin-right: 6px; }
+.path-steps { padding-left: 18px; margin: 6px 0; }
+.path-steps li { margin: 4px 0; overflow-wrap: anywhere; }
+.net-path .src { white-space: normal; }
+@media (prefers-reduced-motion: no-preference) {
+  .g-pulse { animation: g-pulse 2.5s ease-in-out 2; }
+}
+@keyframes g-pulse { 0%, 100% { stroke-opacity: 1; } 50% { stroke-opacity: 0.25; } }
 .ring-note { font-size: 12px; font-weight: 600; color: var(--accent); }
 .ring-note::before { content: "◌ " / ""; }
 .conf { font-size: 12px; color: var(--ink-soft); }

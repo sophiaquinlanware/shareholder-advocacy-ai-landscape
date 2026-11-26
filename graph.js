@@ -37,6 +37,7 @@
     policy: "Policy or rule",
     response: "Company or investor response",
     public: "Public engagement",
+    gap: "Topic not filed (this dataset)",
   };
   const TYPE_VAR = {
     ...Object.fromEntries(TIERS.map((t) => ["tier-" + t.id, "--n-tier-" + t.id])),
@@ -55,6 +56,7 @@
     policy: "--n-policy",
     response: "--n-response",
     public: "--n-public",
+    gap: "--n-gap",
   };
   const COMPANY_NAMES = { MSFT: "Microsoft", GOOGL: "Alphabet", META: "Meta", AMZN: "Amazon", NVDA: "Nvidia", AAPL: "Apple", TSLA: "Tesla" };
 
@@ -134,6 +136,7 @@
     if (n.kind === "person") return 4;
     if (["policy", "response", "public"].includes(n.kind)) return 4 + Math.min(6, Math.sqrt(n.degree) * 1.5);
     if (n.kind === "lab") return 10;
+    if (n.kind === "gap") return 6;
     return 6 + Math.min(10, Math.sqrt(n.degree) * 2.4);
   }
   const radius = (n) => {
@@ -144,7 +147,7 @@
   // ---------- Graph settings (like Obsidian's graph view): display, filters and forces ----------
   // Kept per viewer in localStorage; the page works the same without it.
   const SETTINGS_KEY = "net-settings-v1";
-  const DEFAULTS = { textSize: 11, labelMin: 0, nodeScale: 1, linkScale: 1, labels: false, orphans: true, center: 0.05, repel: 1, linkStrength: 0.6, linkDist: 1, group: 0.5 };
+  const DEFAULTS = { textSize: 11, labelMin: 0, nodeScale: 1, linkScale: 1, labels: false, pulse: true, orphans: true, center: 0.05, repel: 1, linkStrength: 0.6, linkDist: 1, group: 0.5 };
 
   // ---------- Grouped layout: a 2D frame so each kind of node has its own region ----------
   // Left to right follows the filing chain: people → filer organizations → proposals → companies → labs.
@@ -166,6 +169,8 @@
   }
   const groupX = (d) => {
     if (TOP_BAND.includes(d.kind)) return 0.5;
+    // A "topic not filed" node sits just left of its company.
+    if (d.kind === "gap") { const c = state.byId.get(d.gapFor); return c ? groupX(c) - 0.09 : 0.6; }
     const col = (state.cols || COLUMNS).find((c) => c.kinds.includes(d.kind));
     return col ? col.x : 0.5;
   };
@@ -197,6 +202,7 @@
   }
   const groupY = (d) => {
     if (TOP_BAND.includes(d.kind)) return 0.06;
+    if (d.kind === "gap") { const c = state.byId.get(d.gapFor); return c ? groupY(c) : 0.55; }
     const i = FILER_ROWS.indexOf(d.kind);
     if (i >= 0) return 0.16 + (i / (FILER_ROWS.length - 1)) * 0.76;
     // Companies: one band per value-chain tier, top to bottom in value-chain order.
@@ -235,6 +241,7 @@
         ${group("Display")}
         <fieldset class="gs-group"><legend>Filters</legend>
           <label class="gs-check"><input type="checkbox" data-gs-check="labels"${state.cfg.labels ? " checked" : ""}> Labels (off: names show for the selected node and its connections)</label>
+          <label class="gs-check"><input type="checkbox" data-gs-check="pulse"${state.cfg.pulse ? " checked" : ""}> Pulse deadline rings (twice, then still; off with reduced motion)</label>
           <label class="gs-check"><input type="checkbox" data-gs-check="orphans"${state.cfg.orphans ? " checked" : ""}> Orphans (nodes with no visible links)</label>
         </fieldset>
         ${group("Forces")}
@@ -264,6 +271,7 @@
   function applySettings(relayout) {
     if (!state.node) { intro(); return; }
     state.node.attr("r", radius);
+    drawRings();
     state.labels.attr("font-size", (d) => (d.kind === "company" ? state.cfg.textSize + 2 : state.cfg.textSize)).attr("dx", (d) => radius(d) + 4);
     state.linkSel.attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.4 : 1) * state.cfg.linkScale);
     if (!relayout) declutter();
@@ -301,6 +309,17 @@
           <button type="button" data-view="list" aria-pressed="false">List</button>
         </div>
       </div>
+      <div class="net-tools">
+        <button type="button" class="chip" id="net-hold-btn" aria-expanded="false" aria-controls="net-hold">My holdings</button>
+        <button type="button" class="chip" id="net-gaps" aria-pressed="false">Show topics not filed</button>
+      </div>
+      <div id="net-hold" class="net-hold" hidden>
+        <label for="net-hold-input">Tickers, separated by commas or new lines</label>
+        <textarea id="net-hold-input" rows="3" spellcheck="false" autocapitalize="characters"></textarea>
+        <div class="net-hold-row"><button type="button" class="chip" id="net-hold-apply">Apply</button> <button type="button" class="chip" id="net-hold-clear">Clear</button></div>
+        <p class="status-note">Stored in this browser only; nothing is sent anywhere.</p>
+      </div>
+      <p class="count-line" id="net-hold-status" aria-live="polite"></p>
       <div id="net-legend" class="net-legend"></div>
       <details id="net-settings" class="graph-settings"></details>
       <div class="net-body">
@@ -339,10 +358,12 @@
   }
 
   function showPanel(n) {
+    if (state.path && state.path.from !== n.id) state.path = null;
     const rel = state.data.links.filter((l) => l.source.id === n.id || l.target.id === n.id).map((l) => {
       const other = l.source.id === n.id ? l.target : l.source;
       const dir = l.source.id === n.id ? l.relation : `${l.relation} (from)`;
       const c = conf(l);
+      if (l.relation === "missing") return `<li><button type="button" class="linklike" data-id="${esc(other.id)}">${esc(other.label)}</button> <span class="ticker">topic not filed</span> <span class="conf">· none in this dataset</span></li>`;
       return `<li><button type="button" class="linklike" data-id="${esc(other.id)}">${esc(other.label)}</button> <span class="ticker">${esc(dir)}</span> <span class="conf conf-${c.level}">· ${c.level === "inferred" ? "no source, " + esc(c.text) : "source: " + esc(c.text)}</span>${l.source_url ? " " + link(l.source_url) : ""}</li>`;
     }).join("");
     // "What you can do": from the active lens; left out when the lens has nothing for this node.
@@ -359,6 +380,8 @@
       facts = `${n.date ? `<p class="ticker">${esc(n.date)}${n.actor ? " · " + esc(n.actor) : ""}</p>` : ""}<p>${esc(n.description || "")} ${link(n.source_url)}</p>`;
     } else if (n.kind === "company") {
       facts = `<p>${esc(n.degree)} connections in this map.</p>`;
+    } else if (n.kind === "gap") {
+      facts = `<p class="status-note">Computed by this site from the proposals in this dataset; not a statement about filings outside it.</p>`;
     } else {
       facts = `<p>${esc(n.description || "")} ${link(n.source_url)}</p>${n.website ? `<p><a href="${esc(n.website)}" target="_blank" rel="noopener">Website</a></p>` : ""}`;
     }
@@ -366,9 +389,11 @@
       ${actHtml}
       <p class="eyebrow" style="margin:0 0 4px">${esc(TYPE_LABEL[n.kind])}</p>
       <h3>${esc(n.label)}</h3>${ringHtml}${facts}
+      ${pathFinderHtml(n)}
       <h4 style="margin:14px 0 4px;font-size:14px">Connections</h4><ul class="conn">${rel || "<li>None yet</li>"}</ul>`;
-    document.querySelectorAll("#net-panel .linklike").forEach((b) => b.addEventListener("click", () => focus(b.dataset.id)));
+    document.querySelectorAll("#net-panel .conn .linklike").forEach((b) => b.addEventListener("click", () => focus(b.dataset.id)));
     wireActions(document.getElementById("net-panel"));
+    wirePathFinder(n);
   }
 
   // One action item: its text, its links and, for a button, a real control (panel and List view alike).
@@ -404,6 +429,7 @@
   }
 
   function baseVisible(n) {
+    if (n.kind === "gap") { const c = state.byId.get(n.gapFor); return !!c && baseVisible(c); }
     if (state.hiddenKinds.has(n.kind)) return false;
     if (n.kind === "proposal") {
       if (state.topic && n.topic !== state.topic) return false;
@@ -448,18 +474,31 @@
     const focusId = state.hover || state.selected;
     const near = focusId ? neighbors(focusId) : null;
     const q = state.query;
+    const P = state.path;
+    const held = (d) => !state.holdings.size || isHeld(d);
+    const nodeOpacity = (d) => {
+      if (P) return P.nodes.has(d.id) ? 1 : 0.12;
+      let o = 1;
+      if (q) o = d.label.toLowerCase().includes(q) ? 1 : 0.12;
+      else if (near && !near.has(d.id)) o = 0.12;
+      // Holdings overlay: what the viewer doesn't hold fades to 15%.
+      return held(d) || d.id === focusId ? o : Math.min(o, 0.15);
+    };
     state.node.attr("display", (d) => (visible(d) ? null : "none"))
-      .attr("opacity", (d) => {
-        if (q) return d.label.toLowerCase().includes(q) ? 1 : 0.12;
-        return near && !near.has(d.id) ? 0.12 : 1;
-      })
-      .attr("stroke", (d) => (d.id === state.selected ? cssVar("--g-focus") : cssVar("--g-bg")))
-      .attr("stroke-width", (d) => (d.id === state.selected ? 2.5 : 1));
-    if (state.ringSel) state.ringSel.attr("display", (d) => (visible(d) ? null : "none"));
+      .attr("opacity", nodeOpacity)
+      .attr("stroke", (d) => (d.id === state.selected ? cssVar("--g-focus") : d.kind === "gap" ? cssVar("--g-label-soft") : cssVar("--g-bg")))
+      .attr("stroke-width", (d) => (d.id === state.selected ? 2.5 : d.kind === "gap" ? 1.5 : 1));
+    if (state.ringSel) state.ringSel.attr("display", (d) => (visible(d) ? null : "none")).attr("opacity", nodeOpacity);
     state.linkSel.attr("display", (l) => (visible(l.source) && visible(l.target) ? null : "none"))
-      .attr("stroke-opacity", (l) => (near ? (l.source.id === focusId || l.target.id === focusId ? 0.9 : 0.04) : q ? 0.08 : 0.45));
+      .attr("stroke-opacity", (l) => {
+        if (P) return P.links.has(l) ? 0.95 : 0.03;
+        return near ? (l.source.id === focusId || l.target.id === focusId ? 0.9 : 0.04) : q ? 0.08 : 0.45;
+      })
+      .attr("stroke-width", (l) => (P && P.links.has(l) ? 2.5 : (l.relation === "lead filer" ? 1.4 : 1)) * state.cfg.linkScale);
     state.labels.attr("display", (d) => (visible(d) ? null : "none"))
       .attr("opacity", (d) => {
+        if (P) return P.nodes.has(d.id) ? 1 : 0;
+        if (!held(d) && d.id !== focusId) return 0;
         if (q) return d.label.toLowerCase().includes(q) ? 1 : 0;
         if (near) return near.has(d.id) ? 1 : 0;
         // Labels are off by default; selecting a node (or hovering, or keyboard focus) names it and its connections.
@@ -467,12 +506,39 @@
       });
   }
 
+  // Marks on a node, one group per node, all from the lens's rings(). One table (DESIGN.md "Lenses"):
+  // focus r+1.5/r+3 solid white · upcoming r+6 dashed · deadline r+9 solid + countdown arc ·
+  // seeking r+12 dotted · resubmission: a bar under the node plus "!".
   function drawRings() {
     if (!state.ringLayer) return;
     state.ringLayer.selectAll("*").remove();
-    state.ringSel = state.ringLayer.selectAll("circle").data(state.data.nodes.filter((n) => rings(n).length)).join("circle")
-      .attr("r", (d) => radius(d) + 4).attr("fill", "none").attr("stroke", cssVar("--g-ring")).attr("stroke-width", 1.5).attr("stroke-dasharray", "4 2")
-      .attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+    const marked = state.data.nodes.filter((n) => rings(n).length);
+    state.ringSel = state.ringLayer.selectAll("g").data(marked).join("g")
+      .attr("transform", (d) => `translate(${d.x || 0},${d.y || 0})`);
+    const pulse = state.cfg.pulse;
+    state.ringSel.each(function (d) {
+      const g = d3.select(this);
+      const r = radius(d);
+      for (const m of rings(d)) {
+        if (m.kind === "upcoming") g.append("circle").attr("r", r + 6).attr("fill", "none").attr("stroke", cssVar("--g-ring")).attr("stroke-width", 1.5).attr("stroke-dasharray", "4 2");
+        else if (m.kind === "deadline") {
+          const R = r + 9;
+          g.append("circle").attr("r", R).attr("fill", "none").attr("stroke", cssVar("--g-window")).attr("stroke-width", 1.5).attr("class", pulse ? "g-pulse" : null);
+          // Countdown arc from 12 o'clock, clockwise; full at WINDOW_FULL_DAYS or more, empty at 0.
+          const f = Math.max(0, Math.min(1, m.frac ?? 0));
+          if (f >= 1) g.append("circle").attr("r", R).attr("fill", "none").attr("stroke", cssVar("--g-window")).attr("stroke-width", 3);
+          else if (f > 0) {
+            const t = f * 2 * Math.PI;
+            g.append("path").attr("d", `M0,${-R}A${R},${R} 0 ${t > Math.PI ? 1 : 0} 1 ${R * Math.sin(t)},${-R * Math.cos(t)}`)
+              .attr("fill", "none").attr("stroke", cssVar("--g-window")).attr("stroke-width", 3).attr("stroke-linecap", "round");
+          }
+        } else if (m.kind === "seeking") g.append("circle").attr("r", r + 12).attr("fill", "none").attr("stroke", cssVar("--g-seeking")).attr("stroke-width", 2).attr("stroke-dasharray", "1 3").attr("stroke-linecap", "round");
+        else if (m.kind === "risk") {
+          g.append("rect").attr("x", -Math.max(r, 5)).attr("y", r + 3).attr("width", Math.max(r, 5) * 2).attr("height", 3).attr("fill", cssVar("--g-risk"));
+          g.append("text").attr("x", Math.max(r, 5) + 3).attr("y", r + 9).attr("font-size", 11).attr("font-weight", 700).attr("fill", cssVar("--g-risk")).text("!");
+        }
+      }
+    });
   }
   function placeFocusMark() {
     if (!state.focusMark) return;
@@ -480,8 +546,197 @@
     if (!n || !visible(n) || n.x == null) { state.focusMark.attr("display", "none"); return; }
     const r = radius(n);
     state.focusMark.attr("display", null);
-    state.focusMark.select(".fm-gap").attr("cx", n.x).attr("cy", n.y).attr("r", r + 2.5);
-    state.focusMark.select(".fm-ring").attr("cx", n.x).attr("cy", n.y).attr("r", r + 4.5);
+    state.focusMark.select(".fm-gap").attr("cx", n.x).attr("cy", n.y).attr("r", r + 1.5);
+    state.focusMark.select(".fm-ring").attr("cx", n.x).attr("cy", n.y).attr("r", r + 3);
+  }
+
+  // ---------- Holdings overlay (all lenses): tickers kept in this browser only ----------
+  const HOLD_KEY = "holdings";
+  function loadHoldings() {
+    try { return new Set(JSON.parse(localStorage.getItem(HOLD_KEY) || "[]")); } catch (e) { return new Set(); }
+  }
+  function saveHoldings() {
+    try { if (state.holdings.size) localStorage.setItem(HOLD_KEY, JSON.stringify([...state.holdings])); else localStorage.removeItem(HOLD_KEY); } catch (e) {}
+  }
+  const tickerOf = (n) => (isCompanyKind(n.kind) ? n.ticker : n.kind === "proposal" ? n.company : null);
+  const isHeld = (n) => {
+    const t = tickerOf(n);
+    return !!t && state.holdings.has(String(t).toUpperCase());
+  };
+  function holdStatus() {
+    const el = document.getElementById("net-hold-status");
+    if (!el) return;
+    if (!state.holdings.size) { el.textContent = ""; return; }
+    const inMap = new Set(state.data.nodes.filter((n) => isCompanyKind(n.kind) && n.ticker).map((n) => String(n.ticker).toUpperCase()));
+    const found = [...state.holdings].filter((t) => inMap.has(t));
+    const missing = [...state.holdings].filter((t) => !inMap.has(t));
+    el.textContent = `Holdings: ${state.holdings.size} ${state.holdings.size === 1 ? "ticker" : "tickers"}, ${found.length} in this map${found.length ? " (" + found.join(", ") + ")" : ""}.${missing.length ? " Not in this map: " + missing.join(", ") + "." : ""} Other nodes are faded.`;
+  }
+  function wireHoldings() {
+    const btn = document.getElementById("net-hold-btn");
+    const box = document.getElementById("net-hold");
+    const input = document.getElementById("net-hold-input");
+    input.value = [...state.holdings].join(", ");
+    const close = () => { box.hidden = true; btn.setAttribute("aria-expanded", "false"); btn.focus(); };
+    btn.addEventListener("click", () => {
+      const open = box.hidden;
+      box.hidden = !open;
+      btn.setAttribute("aria-expanded", String(open));
+      if (open) input.focus();
+    });
+    box.addEventListener("keydown", (e) => { if (e.key === "Escape") { e.stopPropagation(); close(); } });
+    const apply = () => {
+      state.holdings = new Set(input.value.split(/[\s,;]+/).map((t) => t.trim().toUpperCase()).filter(Boolean));
+      saveHoldings(); holdStatus(); applyStyles(); if (state.view === "list") drawList();
+    };
+    document.getElementById("net-hold-apply").addEventListener("click", apply);
+    document.getElementById("net-hold-clear").addEventListener("click", () => { input.value = ""; apply(); input.focus(); });
+  }
+
+  // ---------- Topics not filed (Impact investor lens): gap nodes, scoped to this dataset ----------
+  // Comparable = the same node type (a company), among companies with at least one AI proposal in this
+  // dataset. A gap is a topic filed at another such company and at none of this one's proposals.
+  function gapData() {
+    const at = new Map();
+    state.data.links.forEach((l) => {
+      if (l.relation !== "proposal at") return;
+      const p = state.byId.get(endId(l.source)), c = state.byId.get(endId(l.target));
+      if (!p || !c || !p.topic) return;
+      if (!at.has(c.id)) at.set(c.id, new Map());
+      at.get(c.id).set(p.topic, (at.get(c.id).get(p.topic) || 0) + 1);
+    });
+    const topics = [...new Set([...at.values()].flatMap((m) => [...m.keys()]))].sort();
+    const nodes = [], links = [];
+    for (const [cid, m] of at) {
+      const c = state.byId.get(cid);
+      for (const t of topics) {
+        if (m.has(t)) continue;
+        const filedAt = [...at].filter(([, mm]) => mm.has(t)).map(([id, mm]) => ({ label: state.byId.get(id).label, count: mm.get(t) }))
+          .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+        const id = `gap:${cid}:${t}`;
+        nodes.push({ id, kind: "gap", label: `${t}: none in this dataset`, topic: t, gapFor: cid, companyLabel: c.label, company: c.ticker, covered: at.size, filedAt, degree: 1 });
+        links.push({ source: id, target: cid, relation: "missing", type: "missing", source_url: null, derived: true });
+      }
+    }
+    return { nodes, links };
+  }
+  function setGaps(on) {
+    const btn = document.getElementById("net-gaps");
+    const d = state.data;
+    d.nodes.splice(0, d.nodes.length, ...d.nodes.filter((n) => n.kind !== "gap"));
+    d.links.splice(0, d.links.length, ...d.links.filter((l) => l.relation !== "missing"));
+    let n = 0;
+    if (on) {
+      const g = gapData();
+      n = g.nodes.length;
+      d.nodes.push(...g.nodes);
+      d.links.push(...g.links);
+    }
+    state.byId = new Map(d.nodes.map((x) => [x.id, x]));
+    state.ctx.byId = state.byId;
+    state.ctx.cache = {};
+    state.gaps = on;
+    if (btn) btn.setAttribute("aria-pressed", String(on));
+    if (state.drawn) { state.sim.stop(); drawGraph(); }
+    intro();
+    if (state.view === "list") drawList();
+    document.getElementById("net-lens-status").textContent = on ? `Topics not filed shown: ${n} ${n === 1 ? "node" : "nodes"}, among companies with AI proposals in this dataset.` : "Topics not filed hidden.";
+  }
+
+  // ---------- Warm path: shortest chain through people, coalitions, co-filing and filings ----------
+  const PATH_EDGES = {
+    people: ["works at", "colleague", "co-authored", "co-presented"],
+    coalition: ["member of", "coalition role"],
+    cofiling: ["co-filed with"],
+    filing: ["lead filer", "co-filer", "filed (named in proxy)", "proposal at"],
+  };
+  const PATH_REL = new Set(Object.values(PATH_EDGES).flat());
+  const canStartPath = (n) => n.kind === "person" || FILER_ROWS.includes(n.kind);
+  function findPath(from, to) {
+    const adj = new Map();
+    const add = (a, b, l) => { if (!adj.has(a)) adj.set(a, []); adj.get(a).push({ to: b, l }); };
+    state.data.links.forEach((l) => {
+      if (!PATH_REL.has(l.relation)) return;
+      add(endId(l.source), endId(l.target), l);
+      add(endId(l.target), endId(l.source), l);
+    });
+    // Sourced edges first, so among equally short paths the better-sourced one wins.
+    adj.forEach((v) => v.sort((a, b) => (a.l.source_url ? 0 : 1) - (b.l.source_url ? 0 : 1)));
+    const prev = new Map([[from, null]]);
+    const queue = [from];
+    while (queue.length) {
+      const cur = queue.shift();
+      if (cur === to) break;
+      for (const { to: nx, l } of adj.get(cur) || []) {
+        if (prev.has(nx)) continue;
+        prev.set(nx, { from: cur, l });
+        queue.push(nx);
+      }
+    }
+    if (!prev.has(to)) return null;
+    const steps = [];
+    for (let cur = to; prev.get(cur); cur = prev.get(cur).from) steps.unshift({ a: prev.get(cur).from, b: cur, l: prev.get(cur).l });
+    return steps;
+  }
+  function pathFinderHtml(n) {
+    if (!canStartPath(n)) return "";
+    const targets = state.data.nodes.filter((x) => x.id !== n.id && (isCompanyKind(x.kind) || FILER_ROWS.includes(x.kind)))
+      .sort((a, b) => a.label.localeCompare(b.label));
+    const opt = (x) => `<option value="${esc(x.id)}">${esc(x.label)}</option>`;
+    return `<section class="net-path" aria-labelledby="net-path-h"><h4 id="net-path-h">Find a path to…</h4>
+      <label class="sr-label" for="net-path-to">Target</label>
+      <select id="net-path-to"><optgroup label="Companies">${targets.filter((x) => isCompanyKind(x.kind)).map(opt).join("")}</optgroup>
+      <optgroup label="Organizations">${targets.filter((x) => !isCompanyKind(x.kind)).map(opt).join("")}</optgroup></select>
+      <button type="button" class="chip" id="net-path-go">Find</button>
+      <div id="net-path-result"></div></section>`;
+  }
+  function hopHtml(st) {
+    const a = state.byId.get(st.a), b = state.byId.get(st.b), l = st.l;
+    let how;
+    if (l.relation === "co-filed with") {
+      const props = (l.proposals || []).map((id) => state.byId.get(id)).filter(Boolean);
+      how = `co-filed with <span class="conf">· inferred from co-filing</span>${props.map((p) => link(p.source_url, p.label.length > 40 ? p.label.slice(0, 38) + "…" : p.label)).join("")}`;
+    } else if (l.relation === "member of") {
+      const coal = state.byId.get(endId(l.target));
+      const members = state.data.links.filter((x) => x.relation === "member of" && endId(x.target) === coal.id).length;
+      how = `${endId(l.source) === a.id ? "member of" : "has member"} <span class="conf">· shared coalition membership (${esc(coal.label)}, ${members} members)</span>${link(l.source_url)}`;
+    } else {
+      const c = conf(l);
+      const dir = endId(l.source) === a.id ? l.relation : `${l.relation} (from)`;
+      how = `${esc(dir)} <span class="conf">· ${c.level === "inferred" ? "no source, " + esc(c.text) : "source: " + esc(c.text)}</span>${l.source_url ? link(l.source_url) : ""}`;
+    }
+    return `<li>${esc(a.label)} → ${how} → ${esc(b.label)}</li>`;
+  }
+  function wirePathFinder(n) {
+    const go = document.getElementById("net-path-go");
+    if (!go) return;
+    const out = document.getElementById("net-path-result");
+    const clear = () => {
+      state.path = null; out.innerHTML = ""; applyStyles(); go.focus(); say("Path cleared");
+    };
+    go.addEventListener("click", () => {
+      const to = document.getElementById("net-path-to").value;
+      const steps = findPath(n.id, to);
+      if (!steps) {
+        state.path = null; applyStyles();
+        out.innerHTML = `<p id="net-path-sum" tabindex="-1"><strong>No path in this map</strong> from ${esc(n.label)} to ${esc(state.byId.get(to).label)} through people, coalitions, co-filing or filings.</p>`;
+        say("No path in this map");
+      } else {
+        state.path = { from: n.id, nodes: new Set([n.id, ...steps.map((x) => x.b)]), links: new Set(steps.map((x) => x.l)) };
+        steps.forEach((x) => state.byId.get(x.b) && state.hiddenKinds.delete(state.byId.get(x.b).kind));
+        const inferred = steps.filter((x) => x.l.relation === "co-filed with").length;
+        const coalitions = new Set(steps.filter((x) => x.l.relation === "member of").map((x) => endId(x.l.target))).size;
+        const parts = [inferred && `${inferred} inferred from co-filing`, coalitions && `${coalitions} shared coalition membership`].filter(Boolean);
+        const sum = `Path found: ${steps.length} ${steps.length === 1 ? "hop" : "hops"}${parts.length ? " (" + parts.join(", ") + ")" : ""}`;
+        out.innerHTML = `<p id="net-path-sum" tabindex="-1"><strong>${sum}</strong></p><ol class="path-steps">${steps.map(hopHtml).join("")}</ol>
+          <button type="button" class="chip" id="net-path-clear">Clear path</button>`;
+        document.getElementById("net-path-clear").addEventListener("click", clear);
+        refreshConnected(); applyStyles();
+        say(sum);
+      }
+      document.getElementById("net-path-sum").focus();
+    });
+    document.getElementById("net-panel").onkeydown = (e) => { if (e.key === "Escape" && state.path) { e.stopPropagation(); clear(); } };
   }
 
   // ---------- Keyboard: the graph is one tab stop; Up/Down step through visible nodes ----------
@@ -502,7 +757,8 @@
     applyStyles();
     placeFocusMark();
     const ring = rings(n).map((r) => r.text.toLowerCase()).join(", ");
-    say(`${i + 1} of ${list.length}: ${n.label}, ${TYPE_LABEL[n.kind]}, ${n.degree || 0} connections${ring ? ", " + ring : ""}`);
+    const holdTxt = state.holdings.size && (isCompanyKind(n.kind) || n.kind === "proposal") ? (isHeld(n) ? ", held" : ", not held") : "";
+    say(`${i + 1} of ${list.length}: ${n.label}, ${TYPE_LABEL[n.kind]}, ${n.degree || 0} connections${ring ? ", " + ring : ""}${holdTxt}`);
     panTo(n, false);
   }
   // Bring a node into view at the current zoom; jumps with no animation under reduced motion.
@@ -568,12 +824,13 @@
     state.linkSel = g.append("g").attr("stroke", cssVar("--g-link")).attr("fill", "none").selectAll("path").data(data.links).join("path")
       .attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.4 : 1) * state.cfg.linkScale)
       // Membership links are dashed; links with no source (inferred) are dotted, so the two never look alike.
-      .attr("stroke-dasharray", (l) => (conf(l).level === "inferred" ? "1 3" : l.relation === "member of" ? "3 3" : null));
+      .attr("stroke-dasharray", (l) => (l.relation === "missing" ? "5 3" : conf(l).level === "inferred" ? "1 3" : l.relation === "member of" ? "3 3" : null));
 
     state.node = g.append("g").selectAll("circle").data(data.nodes).join("circle")
       .attr("r", radius)
-      .attr("fill", (d) => nodeColor(d.kind))
-      .attr("stroke", cssVar("--g-bg"))
+      .attr("fill", (d) => (d.kind === "gap" ? cssVar("--g-bg") : nodeColor(d.kind)))
+      .attr("stroke", (d) => (d.kind === "gap" ? cssVar("--g-label-soft") : cssVar("--g-bg")))
+      .attr("stroke-dasharray", (d) => (d.kind === "gap" ? "3 2" : null))
       .style("cursor", "pointer")
       .on("mouseenter", (ev, d) => { state.hover = d.id; applyStyles(); })
       .on("mouseleave", () => { state.hover = null; applyStyles(); })
@@ -607,7 +864,7 @@
       });
       state.linkSel.attr("d", arc);
       state.node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
-      if (state.ringSel) state.ringSel.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+      if (state.ringSel) state.ringSel.attr("transform", (d) => `translate(${d.x},${d.y})`);
       placeFocusMark();
       state.labels.attr("x", (d) => d.x).attr("y", (d) => d.y)
         .attr("text-anchor", (d) => (d.x > width * 0.72 ? "end" : "start"))
@@ -630,7 +887,8 @@
       .sort((a, b) => ((dir === "descending" ? -1 : 1) * ((val(a) ?? -1) - (val(b) ?? -1))) || a.label.localeCompare(b.label));
     const body = rows.map((n) => {
       const acts = actions(n).map((x, i) => actionHtml(x, n.id, i));
-      return `<tr><td><button type="button" class="linklike" data-id="${esc(n.id)}">${esc(n.label)}</button></td><td>${esc(TYPE_LABEL[n.kind])}</td>${m ? `<td class="num">${val(n) ?? "–"}</td>` : ""}<td class="num">${n.degree || 0}</td><td>${esc(rings(n).map((r) => r.text).join(", "))}</td><td>${acts.join("<br>")}</td></tr>`;
+      const heldCell = state.holdings.size ? `<td>${tickerOf(n) ? (isHeld(n) ? "Held" : "Not held") : "–"}</td>` : "";
+      return `<tr><td><button type="button" class="linklike" data-id="${esc(n.id)}">${esc(n.label)}</button></td><td>${esc(TYPE_LABEL[n.kind])}</td>${m ? `<td class="num">${val(n) ?? "–"}</td>` : ""}<td class="num">${n.degree || 0}</td>${heldCell}<td>${esc(rings(n).map((r) => r.text).join(", "))}</td><td>${acts.join("<br>")}</td></tr>`;
     }).join("");
     const el = document.getElementById("net-list");
     const sortLabel = m ? m.label : "Connections";
@@ -638,8 +896,8 @@
     document.getElementById("net-list-table").innerHTML = `<div class="table-wrap"><table><thead><tr><th scope="col">Name</th><th scope="col">Type</th>
       ${m ? `<th scope="col" aria-sort="${dir}"><button type="button" class="th-sort" id="net-list-sort">${esc(sortLabel)} ${dir === "descending" ? "↓" : "↑"}</button></th><th scope="col">Connections</th>`
         : `<th scope="col" aria-sort="${dir}"><button type="button" class="th-sort" id="net-list-sort">Connections ${dir === "descending" ? "↓" : "↑"}</button></th>`}
-      <th scope="col">Status</th><th scope="col">${esc(lens().actionsHeading || "What you can do")}</th></tr></thead>
-      <tbody>${body || `<tr><td colspan="${m ? 6 : 5}">No matches.</td></tr>`}</tbody></table></div>`;
+      ${state.holdings.size ? `<th scope="col">Held</th>` : ""}<th scope="col">Status</th><th scope="col">${esc(lens().actionsHeading || "What you can do")}</th></tr></thead>
+      <tbody>${body || `<tr><td colspan="${(m ? 6 : 5) + (state.holdings.size ? 1 : 0)}">No matches.</td></tr>`}</tbody></table></div>`;
     document.getElementById("net-list-count").textContent = `${rows.length} nodes in this view (${lens().label}), sorted by ${sortLabel.toLowerCase()}.`;
     document.getElementById("net-list-sort").addEventListener("click", () => {
       state.listSort = dir === "descending" ? "ascending" : "descending";
@@ -656,6 +914,9 @@
   // Switching lens applies that lens's defaults: layers, orphans; topic and year reset.
   function setLens(id, announce) {
     state.lens = id;
+    state.path = null;
+    gapButton();
+    if (state.gaps && !lens().gaps) setGaps(false);
     const d = lens().defaults || {};
     state.hiddenKinds = new Set(d.hiddenKinds || []);
     state.topic = ""; state.year = "";
@@ -677,6 +938,12 @@
       const shown = state.data.nodes.filter(visible).length;
       document.getElementById("net-lens-status").textContent = `${lens().label} view${hidden.length ? ": " + hidden.join(", ") + " hidden" : ""}. ${shown} of ${state.data.nodes.length} nodes shown.`;
     }
+  }
+
+  // "Show topics not filed" belongs to lenses that set gaps: true (the Impact investor lens).
+  function gapButton() {
+    const b = document.getElementById("net-gaps");
+    if (b) b.hidden = !lens().gaps;
   }
 
   function wire() {
@@ -701,6 +968,9 @@
     }));
     document.querySelectorAll("#net-lens input").forEach((r) => r.addEventListener("change", () => { if (r.checked) setLens(r.value, true); }));
     wireKeys();
+    wireHoldings();
+    gapButton();
+    document.getElementById("net-gaps").addEventListener("click", () => setGaps(!state.gaps));
     document.querySelectorAll("#tab-network .seg button").forEach((b) => b.addEventListener("click", () => {
       state.view = b.dataset.view;
       document.querySelectorAll("#tab-network .seg button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
@@ -726,7 +996,8 @@
     // Default label threshold: the 12th-highest filer's connection count, so about a dozen filers are named.
     const twelfth = data.nodes.find((n) => n.id === [...topFilers].at(-1));
     const defaults = { ...DEFAULTS, labelMin: twelfth ? twelfth.degree || 0 : 0 };
-    state = { data, byId: new Map(data.nodes.map((n) => [n.id, n])), defaults, cfg: loadSettings(defaults), hiddenKinds: new Set(["person", "policy", "response", "public"]), hiddenLabels: new Set(), query: "", topic: "", year: "", view: "graph", selected: null, hover: null, kbId: null };
+    state = { data, byId: new Map(data.nodes.map((n) => [n.id, n])), defaults, cfg: loadSettings(defaults), hiddenKinds: new Set(["person", "policy", "response", "public"]), hiddenLabels: new Set(), query: "", topic: "", year: "", view: "graph", selected: null, hover: null, kbId: null, path: null, gaps: false };
+    state.holdings = loadHoldings();
     state.lens = initialLens();
     state.hiddenKinds = new Set(lens().defaults.hiddenKinds || [...state.hiddenKinds]);
     // Shared inputs for lens functions (lenses.js). app.js supplies upcoming meetings and Company lookup.
@@ -740,6 +1011,7 @@
     legend(state.data);
     intro();
     wire();
+    holdStatus();
     // The graph needs a visible container to measure, so draw it the first time its tab opens.
     const draw = () => { if (!state.drawn && !el.hidden) { state.drawn = true; drawGraph(); } };
     new MutationObserver(draw).observe(el, { attributes: true, attributeFilter: ["hidden"] });
