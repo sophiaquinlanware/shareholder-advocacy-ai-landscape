@@ -690,7 +690,7 @@
     "listed outside the US": 1,
     "private": 1
    },
-   "active_filers_count": 75,
+   "active_filers_count": 74,
    "active_filers": [
     {
      "id": "trillium",
@@ -1324,7 +1324,7 @@
    "shareholder_routes": {
     "US proxy rules apply": 6
    },
-   "active_filers_count": 47,
+   "active_filers_count": 46,
    "active_filers": [
     {
      "id": "as-you-sow",
@@ -1715,7 +1715,7 @@
     "US-listed foreign issuer": 2,
     "private": 1
    },
-   "active_filers_count": 81,
+   "active_filers_count": 80,
    "active_filers": [
     {
      "id": "trillium",
@@ -2380,7 +2380,7 @@
     "not determined": 3,
     "private": 9
    },
-   "active_filers_count": 74,
+   "active_filers_count": 73,
    "active_filers": [
     {
      "id": "trillium",
@@ -2981,7 +2981,7 @@
     "US proxy rules apply": 5,
     "listed outside the US": 1
    },
-   "active_filers_count": 83,
+   "active_filers_count": 82,
    "active_filers": [
     {
      "id": "trillium",
@@ -3646,7 +3646,7 @@
     "listed outside the US": 4,
     "not determined": 6
    },
-   "active_filers_count": 123,
+   "active_filers_count": 121,
    "active_filers": [
     {
      "id": "nlpc",

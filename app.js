@@ -4,7 +4,7 @@
 // Audience: shareholder-advocacy practitioners. Labels are plain; no definitions or explainers.
 
 const DATA = {};
-const FILES = ["site", "companies", "upcoming", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph", "scorecard", "fund_votes", "asks", "coverage", "value_chain"];
+const FILES = ["site", "companies", "upcoming", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph", "scorecard", "fund_votes", "asks", "coverage", "value_chain", "holdings"];
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
@@ -619,7 +619,7 @@ function renderStart() {
     .map((c) => ({ date: c.next_proposal_deadline, html: `<strong>${esc(c.name)}</strong>: last day to submit a proposal for the next meeting, ${esc(fmtDate(c.next_proposal_deadline))}${src(c.next_proposal_deadline_source, "proxy")}`, ticker: realTicker(c.ticker), kind: "Filing deadline" }));
   const coming = [...ballots, ...deadlines].sort((a, b) => String(a.date).localeCompare(String(b.date)));
   const shown = coming.slice(0, 8);
-  const comingList = shown.map((x) => `<li><span class="kind">${esc(x.kind)}</span> ${x.html}${x.ticker ? ` <button type="button" class="linklike" data-co="${esc(x.ticker)}">${esc(companyName(x.ticker))} profile</button>` : ""}</li>`).join("");
+  const comingList = shown.map((x) => `<li><span class="kind">${esc(x.kind)}</span> ${x.html}${x.ticker ? ` <button type="button" class="linklike" data-co="${esc(x.ticker)}">${esc(companyName(x.ticker))} profile</button> · <a href="?plan=${encodeURIComponent(keyForTicker(x.ticker))}#planner">Plan an engagement here</a>` : ""}</li>`).join("");
   const items = ((DATA.changes && DATA.changes.items) || []).slice().sort((a, b) => String(b.filed).localeCompare(String(a.filed)));
   const t = DATA.tracking || {};
   const sections = [...document.querySelectorAll('.tabs [role="tab"][data-group]')].slice(1).map((b) => {
@@ -803,6 +803,7 @@ async function main() {
   renderPeople();
   renderNew();
   renderStart(); // again, now that the weekly SEC check (changes, tracking) has loaded
+  if (window.renderPlanner) window.renderPlanner(DATA);
   labelCounts();
   document.dispatchEvent(new Event("siteready"));
 }

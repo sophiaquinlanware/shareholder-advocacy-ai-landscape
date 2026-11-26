@@ -43,7 +43,7 @@
   {
    "id": "nlpc",
    "name": "National Legal and Policy Center",
-   "type": "other",
+   "type": "anti-ESG proponent",
    "website": "https://nlpc.org",
    "description": "Conservative watchdog filing anti-ESG proposals, including on AI data usage.",
    "source_url": "https://nlpc.org"
@@ -235,7 +235,7 @@
   {
    "id": "inspire",
    "name": "Inspire Investing",
-   "type": "other",
+   "type": "anti-ESG proponent",
    "website": "https://www.inspireinvesting.com",
    "description": "Biblically responsible investment firm filing conservative AI proposals.",
    "source_url": "https://www.inspireinvesting.com"
@@ -323,7 +323,7 @@
   {
    "id": "bowyer",
    "name": "Bowyer Research",
-   "type": "other",
+   "type": "anti-ESG proponent",
    "website": "https://www.bowyerresearch.com",
    "description": "Conservative proxy adviser filing and opposing proposals for faith clients.",
    "source_url": "https://www.bowyerresearch.com"
@@ -832,7 +832,7 @@
   {
    "id": "ncppr",
    "name": "National Center for Public Policy Research",
-   "type": "advocacy nonprofit",
+   "type": "anti-ESG proponent",
    "website": "https://nationalcenter.org",
    "description": "Conservative policy group in Washington, DC that files shareholder proposals through its Free Enterprise Project.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",

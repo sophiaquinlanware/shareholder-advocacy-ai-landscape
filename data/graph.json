@@ -28,7 +28,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "SEC Rule 14a-8 ... No later than close of business (5:30 p.m. Pacific Time) on June 24, 2027",
-   "degree": 66
+   "degree": 62
   },
   {
    "id": "co-GOOGL",
@@ -60,7 +60,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "Corporate Secretary must receive the written proposal ... no later than Friday, December 25, 2026.",
-   "degree": 64
+   "degree": 57
   },
   {
    "id": "co-META",
@@ -89,7 +89,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "the proposal must be received by us ... no later than December 17, 2026.",
-   "degree": 35
+   "degree": 34
   },
   {
    "id": "co-AMZN",
@@ -1569,7 +1569,7 @@
    "description": "Sustainable wealth manager; lead filer of generative-AI misinformation proposals.",
    "website": "https://arjuna-capital.com",
    "source_url": "https://arjuna-capital.com",
-   "degree": 23
+   "degree": 31
   },
   {
    "id": "open-mic",
@@ -1620,7 +1620,7 @@
    "type": "investor",
    "layer": "investors",
    "label": "National Legal and Policy Center",
-   "org_type": "other",
+   "org_type": "anti-ESG proponent",
    "description": "Conservative watchdog filing anti-ESG proposals, including on AI data usage.",
    "website": "https://nlpc.org",
    "source_url": "https://nlpc.org",
@@ -1701,7 +1701,7 @@
    "description": "ESG investment manager; files on AI principles and data center climate impacts.",
    "website": "https://www.trilliuminvest.com",
    "source_url": "https://www.trilliuminvest.com",
-   "degree": 28
+   "degree": 37
   },
   {
    "id": "csjp",
@@ -1723,7 +1723,7 @@
    "description": "Boston socially responsible manager filing on AI, cloud and human rights.",
    "website": "https://www.zevin.com",
    "source_url": "https://www.zevin.com",
-   "degree": 27
+   "degree": 34
   },
   {
    "id": "jewish-investor-network",
@@ -1811,7 +1811,7 @@
    "description": "Sustainable manager; co-founder and co-lead of WBA ethical AI coalition.",
    "website": "https://www.bostoncommonasset.com",
    "source_url": "https://www.bostoncommonasset.com",
-   "degree": 9
+   "degree": 15
   },
   {
    "id": "harrington",
@@ -1884,7 +1884,7 @@
    "type": "investor",
    "layer": "investors",
    "label": "Inspire Investing",
-   "org_type": "other",
+   "org_type": "anti-ESG proponent",
    "description": "Biblically responsible investment firm filing conservative AI proposals.",
    "website": "https://www.inspireinvesting.com",
    "source_url": "https://www.inspireinvesting.com",
@@ -2005,7 +2005,7 @@
    "type": "investor",
    "layer": "investors",
    "label": "Bowyer Research",
-   "org_type": "other",
+   "org_type": "anti-ESG proponent",
    "description": "Conservative proxy adviser filing and opposing proposals for faith clients.",
    "website": "https://www.bowyerresearch.com",
    "source_url": "https://www.bowyerresearch.com",
@@ -2174,7 +2174,7 @@
    "description": "ESG mutual fund manager; member of WBA ethical AI coalition.",
    "website": "https://www.parnassus.com",
    "source_url": "https://www.parnassus.com",
-   "degree": 16
+   "degree": 25
   },
   {
    "id": "fidelity-intl",
@@ -2218,7 +2218,7 @@
    "description": "UK asset manager with published AI expectations and Big Tech engagement.",
    "website": "https://www.lgim.com",
    "source_url": "https://group.legalandgeneral.com/en/newsroom/press-releases/lgim-dials-up-engagement-on-nature-health-and-ai-in-latest-active-ownership-report",
-   "degree": 4
+   "degree": 15
   },
   {
    "id": "nbim",
@@ -2240,7 +2240,7 @@
    "description": "Impact mutual fund firm; ICCR and Investor Alliance member.",
    "website": "https://www.domini.com",
    "source_url": "https://www.domini.com",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "northstar",
@@ -2251,7 +2251,7 @@
    "description": "Socially responsible manager; signed IASJ Amazon responsible-AI solicitation.",
    "website": "https://www.northstarasset.com",
    "source_url": "https://www.northstarasset.com",
-   "degree": 25
+   "degree": 35
   },
   {
    "id": "ceres",
@@ -2383,7 +2383,7 @@
    "description": null,
    "website": null,
    "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
-   "degree": 7
+   "degree": 17
   },
   {
    "id": "calvert-research-and-management",
@@ -2504,7 +2504,7 @@
    "description": null,
    "website": null,
    "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
-   "degree": 3
+   "degree": 14
   },
   {
    "id": "maryknoll-sisters",
@@ -2687,7 +2687,7 @@
    "type": "investor",
    "layer": "investors",
    "label": "National Center for Public Policy Research",
-   "org_type": "advocacy nonprofit",
+   "org_type": "anti-ESG proponent",
    "description": "Conservative policy group in Washington, DC that files shareholder proposals through its Free Enterprise Project.",
    "website": "https://nationalcenter.org",
    "source_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
@@ -9367,86 +9367,6 @@
    "degree": 1
   },
   {
-   "id": "parnassus-investments",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Parnassus Investments",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/948669/000117266126004635/",
-   "degree": 9
-  },
-  {
-   "id": "trillium-asset-management",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Trillium Asset Management",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/884541/000088454126000005/",
-   "degree": 16
-  },
-  {
-   "id": "boston-common-asset-management",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Boston Common Asset Management",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1409427/000140942726000014/",
-   "degree": 6
-  },
-  {
-   "id": "zevin-asset-management",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Zevin Asset Management",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1394096/000139409626000004/",
-   "degree": 9
-  },
-  {
-   "id": "domini-impact-investments",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Domini Impact Investments",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1399069/000095012320002357/",
-   "degree": 1
-  },
-  {
-   "id": "arjuna-capital",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Arjuna Capital",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1703208/000139834426019466/",
-   "degree": 12
-  },
-  {
-   "id": "northstar-asset-management",
-   "type": "investor",
-   "layer": "investors",
-   "label": "NorthStar Asset Management",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1132708/000113270826000004/",
-   "degree": 14
-  },
-  {
-   "id": "federated-hermes",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Federated Hermes",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/",
-   "degree": 10
-  },
-  {
-   "id": "legal-general",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Legal & General Group",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/",
-   "degree": 11
-  },
-  {
-   "id": "nys-common-retirement-fund",
-   "type": "investor",
-   "layer": "investors",
-   "label": "New York State Common Retirement Fund",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/",
-   "degree": 11
-  },
-  {
    "id": "ev-un-guiding-principles",
    "type": "policy",
    "layer": "policy",
@@ -12198,7 +12118,7 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "ask_id": "ask-dc-climate-energy",
    "category": "data-centers",
-   "degree": 7
+   "degree": 6
   },
   {
    "id": "googl-2025-15(floor)",
@@ -12253,7 +12173,7 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-dc-climate-energy",
    "category": "data-centers",
-   "degree": 7
+   "degree": 6
   },
   {
    "id": "aapl-2025-5",
@@ -12487,7 +12407,7 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm",
    "ask_id": "ask-dc-water",
    "category": "data-centers",
-   "degree": 7
+   "degree": 6
   },
   {
    "id": "dlr-2025-5",
@@ -12511,7 +12431,7 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817925000509/dlr000000-def14a.htm",
    "ask_id": "ask-dc-water",
    "category": "data-centers",
-   "degree": 5
+   "degree": 4
   },
   {
    "id": "csco-2026-5",
@@ -12556,7 +12476,7 @@
    "plain_summary_note": "Secondary source: the resolution was not in a proxy statement. Text from the ICCR guide.",
    "ask_id": "ask-ai-oversight-reporting",
    "category": "governance-safety",
-   "degree": 4
+   "degree": 3
   },
   {
    "id": "crm-2026-dual-use-defense",
@@ -19814,7 +19734,7 @@
    "pct_of_portfolio": 0.9465
   },
   {
-   "source": "parnassus-investments",
+   "source": "parnassus",
    "target": "co-MSFT",
    "type": "holds shares in",
    "layer": "companies",
@@ -19823,7 +19743,7 @@
    "pct_of_portfolio": 6.36
   },
   {
-   "source": "parnassus-investments",
+   "source": "parnassus",
    "target": "co-GOOGL",
    "type": "holds shares in",
    "layer": "companies",
@@ -19832,7 +19752,7 @@
    "pct_of_portfolio": 4.54
   },
   {
-   "source": "parnassus-investments",
+   "source": "parnassus",
    "target": "co-META",
    "type": "holds shares in",
    "layer": "companies",
@@ -19841,7 +19761,7 @@
    "pct_of_portfolio": 2.01
   },
   {
-   "source": "parnassus-investments",
+   "source": "parnassus",
    "target": "co-AMZN",
    "type": "holds shares in",
    "layer": "companies",
@@ -19850,7 +19770,7 @@
    "pct_of_portfolio": 5.51
   },
   {
-   "source": "parnassus-investments",
+   "source": "parnassus",
    "target": "co-NVDA",
    "type": "holds shares in",
    "layer": "companies",
@@ -19859,7 +19779,7 @@
    "pct_of_portfolio": 5.18
   },
   {
-   "source": "parnassus-investments",
+   "source": "parnassus",
    "target": "co-AAPL",
    "type": "holds shares in",
    "layer": "companies",
@@ -19868,7 +19788,7 @@
    "pct_of_portfolio": 3.37
   },
   {
-   "source": "parnassus-investments",
+   "source": "parnassus",
    "target": "co-ORCL",
    "type": "holds shares in",
    "layer": "companies",
@@ -19877,7 +19797,7 @@
    "pct_of_portfolio": 0.18
   },
   {
-   "source": "parnassus-investments",
+   "source": "parnassus",
    "target": "co-AMD",
    "type": "holds shares in",
    "layer": "companies",
@@ -19886,7 +19806,7 @@
    "pct_of_portfolio": 2.62
   },
   {
-   "source": "parnassus-investments",
+   "source": "parnassus",
    "target": "co-AVGO",
    "type": "holds shares in",
    "layer": "companies",
@@ -19895,7 +19815,7 @@
    "pct_of_portfolio": 2.51
   },
   {
-   "source": "trillium-asset-management",
+   "source": "trillium",
    "target": "co-MSFT",
    "type": "holds shares in",
    "layer": "companies",
@@ -19904,7 +19824,7 @@
    "pct_of_portfolio": 6.29
   },
   {
-   "source": "trillium-asset-management",
+   "source": "trillium",
    "target": "co-GOOGL",
    "type": "holds shares in",
    "layer": "companies",
@@ -19913,7 +19833,7 @@
    "pct_of_portfolio": 6.02
   },
   {
-   "source": "trillium-asset-management",
+   "source": "trillium",
    "target": "co-META",
    "type": "holds shares in",
    "layer": "companies",
@@ -19922,7 +19842,7 @@
    "pct_of_portfolio": 0.01
   },
   {
-   "source": "trillium-asset-management",
+   "source": "trillium",
    "target": "co-AMZN",
    "type": "holds shares in",
    "layer": "companies",
@@ -19931,7 +19851,7 @@
    "pct_of_portfolio": 0.03
   },
   {
-   "source": "trillium-asset-management",
+   "source": "trillium",
    "target": "co-NVDA",
    "type": "holds shares in",
    "layer": "companies",
@@ -19940,7 +19860,7 @@
    "pct_of_portfolio": 8.26
   },
   {
-   "source": "trillium-asset-management",
+   "source": "trillium",
    "target": "co-AAPL",
    "type": "holds shares in",
    "layer": "companies",
@@ -19949,7 +19869,7 @@
    "pct_of_portfolio": 5.27
   },
   {
-   "source": "trillium-asset-management",
+   "source": "trillium",
    "target": "co-ORCL",
    "type": "holds shares in",
    "layer": "companies",
@@ -19958,7 +19878,7 @@
    "pct_of_portfolio": 0.03
   },
   {
-   "source": "trillium-asset-management",
+   "source": "trillium",
    "target": "co-AMD",
    "type": "holds shares in",
    "layer": "companies",
@@ -19967,7 +19887,7 @@
    "pct_of_portfolio": 0.06
   },
   {
-   "source": "trillium-asset-management",
+   "source": "trillium",
    "target": "co-AVGO",
    "type": "holds shares in",
    "layer": "companies",
@@ -19976,7 +19896,7 @@
    "pct_of_portfolio": 1.91
   },
   {
-   "source": "boston-common-asset-management",
+   "source": "boston-common",
    "target": "co-MSFT",
    "type": "holds shares in",
    "layer": "companies",
@@ -19985,7 +19905,7 @@
    "pct_of_portfolio": 4.99
   },
   {
-   "source": "boston-common-asset-management",
+   "source": "boston-common",
    "target": "co-GOOGL",
    "type": "holds shares in",
    "layer": "companies",
@@ -19994,7 +19914,7 @@
    "pct_of_portfolio": 5.06
   },
   {
-   "source": "boston-common-asset-management",
+   "source": "boston-common",
    "target": "co-NVDA",
    "type": "holds shares in",
    "layer": "companies",
@@ -20003,7 +19923,7 @@
    "pct_of_portfolio": 4.78
   },
   {
-   "source": "boston-common-asset-management",
+   "source": "boston-common",
    "target": "co-AAPL",
    "type": "holds shares in",
    "layer": "companies",
@@ -20012,7 +19932,7 @@
    "pct_of_portfolio": 4.51
   },
   {
-   "source": "boston-common-asset-management",
+   "source": "boston-common",
    "target": "co-AMD",
    "type": "holds shares in",
    "layer": "companies",
@@ -20021,7 +19941,7 @@
    "pct_of_portfolio": 0.56
   },
   {
-   "source": "boston-common-asset-management",
+   "source": "boston-common",
    "target": "co-AVGO",
    "type": "holds shares in",
    "layer": "companies",
@@ -20030,7 +19950,7 @@
    "pct_of_portfolio": 2.47
   },
   {
-   "source": "zevin-asset-management",
+   "source": "zevin",
    "target": "co-MSFT",
    "type": "holds shares in",
    "layer": "companies",
@@ -20039,7 +19959,7 @@
    "pct_of_portfolio": 4.93
   },
   {
-   "source": "zevin-asset-management",
+   "source": "zevin",
    "target": "co-GOOGL",
    "type": "holds shares in",
    "layer": "companies",
@@ -20048,7 +19968,7 @@
    "pct_of_portfolio": 6.82
   },
   {
-   "source": "zevin-asset-management",
+   "source": "zevin",
    "target": "co-AMZN",
    "type": "holds shares in",
    "layer": "companies",
@@ -20057,7 +19977,7 @@
    "pct_of_portfolio": 3.36
   },
   {
-   "source": "zevin-asset-management",
+   "source": "zevin",
    "target": "co-NVDA",
    "type": "holds shares in",
    "layer": "companies",
@@ -20066,7 +19986,7 @@
    "pct_of_portfolio": 4.6
   },
   {
-   "source": "zevin-asset-management",
+   "source": "zevin",
    "target": "co-TSLA",
    "type": "holds shares in",
    "layer": "companies",
@@ -20075,7 +19995,7 @@
    "pct_of_portfolio": 0.05
   },
   {
-   "source": "zevin-asset-management",
+   "source": "zevin",
    "target": "co-AMD",
    "type": "holds shares in",
    "layer": "companies",
@@ -20084,7 +20004,7 @@
    "pct_of_portfolio": 0.04
   },
   {
-   "source": "zevin-asset-management",
+   "source": "zevin",
    "target": "co-AVGO",
    "type": "holds shares in",
    "layer": "companies",
@@ -20093,7 +20013,7 @@
    "pct_of_portfolio": 1.65
   },
   {
-   "source": "domini-impact-investments",
+   "source": "domini",
    "target": "co-TSLA",
    "type": "holds shares in",
    "layer": "companies",
@@ -20102,7 +20022,7 @@
    "pct_of_portfolio": 3.79
   },
   {
-   "source": "arjuna-capital",
+   "source": "arjuna",
    "target": "co-MSFT",
    "type": "holds shares in",
    "layer": "companies",
@@ -20111,7 +20031,7 @@
    "pct_of_portfolio": 5.6
   },
   {
-   "source": "arjuna-capital",
+   "source": "arjuna",
    "target": "co-GOOGL",
    "type": "holds shares in",
    "layer": "companies",
@@ -20120,7 +20040,7 @@
    "pct_of_portfolio": 6.21
   },
   {
-   "source": "arjuna-capital",
+   "source": "arjuna",
    "target": "co-AMZN",
    "type": "holds shares in",
    "layer": "companies",
@@ -20129,7 +20049,7 @@
    "pct_of_portfolio": 2.75
   },
   {
-   "source": "arjuna-capital",
+   "source": "arjuna",
    "target": "co-NVDA",
    "type": "holds shares in",
    "layer": "companies",
@@ -20138,7 +20058,7 @@
    "pct_of_portfolio": 7.73
   },
   {
-   "source": "arjuna-capital",
+   "source": "arjuna",
    "target": "co-AAPL",
    "type": "holds shares in",
    "layer": "companies",
@@ -20147,7 +20067,7 @@
    "pct_of_portfolio": 7.97
   },
   {
-   "source": "arjuna-capital",
+   "source": "arjuna",
    "target": "co-ORCL",
    "type": "holds shares in",
    "layer": "companies",
@@ -20156,7 +20076,7 @@
    "pct_of_portfolio": 0.3
   },
   {
-   "source": "arjuna-capital",
+   "source": "arjuna",
    "target": "co-AMD",
    "type": "holds shares in",
    "layer": "companies",
@@ -20165,7 +20085,7 @@
    "pct_of_portfolio": 1.0
   },
   {
-   "source": "arjuna-capital",
+   "source": "arjuna",
    "target": "co-AVGO",
    "type": "holds shares in",
    "layer": "companies",
@@ -20174,7 +20094,7 @@
    "pct_of_portfolio": 2.26
   },
   {
-   "source": "northstar-asset-management",
+   "source": "northstar",
    "target": "co-MSFT",
    "type": "holds shares in",
    "layer": "companies",
@@ -20183,7 +20103,7 @@
    "pct_of_portfolio": 2.71
   },
   {
-   "source": "northstar-asset-management",
+   "source": "northstar",
    "target": "co-GOOGL",
    "type": "holds shares in",
    "layer": "companies",
@@ -20192,7 +20112,7 @@
    "pct_of_portfolio": 1.19
   },
   {
-   "source": "northstar-asset-management",
+   "source": "northstar",
    "target": "co-META",
    "type": "holds shares in",
    "layer": "companies",
@@ -20201,7 +20121,7 @@
    "pct_of_portfolio": 0.01
   },
   {
-   "source": "northstar-asset-management",
+   "source": "northstar",
    "target": "co-AMZN",
    "type": "holds shares in",
    "layer": "companies",
@@ -20210,7 +20130,7 @@
    "pct_of_portfolio": 0.57
   },
   {
-   "source": "northstar-asset-management",
+   "source": "northstar",
    "target": "co-NVDA",
    "type": "holds shares in",
    "layer": "companies",
@@ -20219,7 +20139,7 @@
    "pct_of_portfolio": 1.5
   },
   {
-   "source": "northstar-asset-management",
+   "source": "northstar",
    "target": "co-AAPL",
    "type": "holds shares in",
    "layer": "companies",
@@ -20228,7 +20148,7 @@
    "pct_of_portfolio": 9.38
   },
   {
-   "source": "northstar-asset-management",
+   "source": "northstar",
    "target": "co-TSLA",
    "type": "holds shares in",
    "layer": "companies",
@@ -20237,7 +20157,7 @@
    "pct_of_portfolio": 0.01
   },
   {
-   "source": "northstar-asset-management",
+   "source": "northstar",
    "target": "co-ORCL",
    "type": "holds shares in",
    "layer": "companies",
@@ -20246,7 +20166,7 @@
    "pct_of_portfolio": 0.07
   },
   {
-   "source": "northstar-asset-management",
+   "source": "northstar",
    "target": "co-AMD",
    "type": "holds shares in",
    "layer": "companies",
@@ -20255,7 +20175,7 @@
    "pct_of_portfolio": 0.7
   },
   {
-   "source": "northstar-asset-management",
+   "source": "northstar",
    "target": "co-AVGO",
    "type": "holds shares in",
    "layer": "companies",
@@ -20363,7 +20283,7 @@
    "pct_of_portfolio": 2.28
   },
   {
-   "source": "federated-hermes",
+   "source": "federated-hermes-eos",
    "target": "co-MSFT",
    "type": "holds shares in",
    "layer": "companies",
@@ -20372,7 +20292,7 @@
    "pct_of_portfolio": 1.85
   },
   {
-   "source": "federated-hermes",
+   "source": "federated-hermes-eos",
    "target": "co-GOOGL",
    "type": "holds shares in",
    "layer": "companies",
@@ -20381,7 +20301,7 @@
    "pct_of_portfolio": 2.07
   },
   {
-   "source": "federated-hermes",
+   "source": "federated-hermes-eos",
    "target": "co-META",
    "type": "holds shares in",
    "layer": "companies",
@@ -20390,7 +20310,7 @@
    "pct_of_portfolio": 0.64
   },
   {
-   "source": "federated-hermes",
+   "source": "federated-hermes-eos",
    "target": "co-AMZN",
    "type": "holds shares in",
    "layer": "companies",
@@ -20399,7 +20319,7 @@
    "pct_of_portfolio": 1.46
   },
   {
-   "source": "federated-hermes",
+   "source": "federated-hermes-eos",
    "target": "co-NVDA",
    "type": "holds shares in",
    "layer": "companies",
@@ -20408,7 +20328,7 @@
    "pct_of_portfolio": 3.25
   },
   {
-   "source": "federated-hermes",
+   "source": "federated-hermes-eos",
    "target": "co-AAPL",
    "type": "holds shares in",
    "layer": "companies",
@@ -20417,7 +20337,7 @@
    "pct_of_portfolio": 2.77
   },
   {
-   "source": "federated-hermes",
+   "source": "federated-hermes-eos",
    "target": "co-TSLA",
    "type": "holds shares in",
    "layer": "companies",
@@ -20426,7 +20346,7 @@
    "pct_of_portfolio": 0.42
   },
   {
-   "source": "federated-hermes",
+   "source": "federated-hermes-eos",
    "target": "co-ORCL",
    "type": "holds shares in",
    "layer": "companies",
@@ -20435,7 +20355,7 @@
    "pct_of_portfolio": 0.02
   },
   {
-   "source": "federated-hermes",
+   "source": "federated-hermes-eos",
    "target": "co-AMD",
    "type": "holds shares in",
    "layer": "companies",
@@ -20444,7 +20364,7 @@
    "pct_of_portfolio": 0.61
   },
   {
-   "source": "federated-hermes",
+   "source": "federated-hermes-eos",
    "target": "co-AVGO",
    "type": "holds shares in",
    "layer": "companies",
@@ -20453,7 +20373,7 @@
    "pct_of_portfolio": 1.07
   },
   {
-   "source": "legal-general",
+   "source": "lgim",
    "target": "co-MSFT",
    "type": "holds shares in",
    "layer": "companies",
@@ -20462,7 +20382,7 @@
    "pct_of_portfolio": 5.12
   },
   {
-   "source": "legal-general",
+   "source": "lgim",
    "target": "co-GOOGL",
    "type": "holds shares in",
    "layer": "companies",
@@ -20471,7 +20391,7 @@
    "pct_of_portfolio": 4.76
   },
   {
-   "source": "legal-general",
+   "source": "lgim",
    "target": "co-META",
    "type": "holds shares in",
    "layer": "companies",
@@ -20480,7 +20400,7 @@
    "pct_of_portfolio": 2.01
   },
   {
-   "source": "legal-general",
+   "source": "lgim",
    "target": "co-AMZN",
    "type": "holds shares in",
    "layer": "companies",
@@ -20489,7 +20409,7 @@
    "pct_of_portfolio": 2.8
   },
   {
-   "source": "legal-general",
+   "source": "lgim",
    "target": "co-NVDA",
    "type": "holds shares in",
    "layer": "companies",
@@ -20498,7 +20418,7 @@
    "pct_of_portfolio": 7.44
   },
   {
-   "source": "legal-general",
+   "source": "lgim",
    "target": "co-AAPL",
    "type": "holds shares in",
    "layer": "companies",
@@ -20507,7 +20427,7 @@
    "pct_of_portfolio": 7.25
   },
   {
-   "source": "legal-general",
+   "source": "lgim",
    "target": "co-TSLA",
    "type": "holds shares in",
    "layer": "companies",
@@ -20516,7 +20436,7 @@
    "pct_of_portfolio": 1.5
   },
   {
-   "source": "legal-general",
+   "source": "lgim",
    "target": "co-ORCL",
    "type": "holds shares in",
    "layer": "companies",
@@ -20525,7 +20445,7 @@
    "pct_of_portfolio": 0.28
   },
   {
-   "source": "legal-general",
+   "source": "lgim",
    "target": "co-CRWV",
    "type": "holds shares in",
    "layer": "companies",
@@ -20534,7 +20454,7 @@
    "pct_of_portfolio": 0.02
   },
   {
-   "source": "legal-general",
+   "source": "lgim",
    "target": "co-AMD",
    "type": "holds shares in",
    "layer": "companies",
@@ -20543,7 +20463,7 @@
    "pct_of_portfolio": 1.4
   },
   {
-   "source": "legal-general",
+   "source": "lgim",
    "target": "co-AVGO",
    "type": "holds shares in",
    "layer": "companies",
@@ -20552,7 +20472,7 @@
    "pct_of_portfolio": 2.31
   },
   {
-   "source": "nys-common-retirement-fund",
+   "source": "new-york-state-common-retirement-fund",
    "target": "co-MSFT",
    "type": "holds shares in",
    "layer": "companies",
@@ -20561,7 +20481,7 @@
    "pct_of_portfolio": 6.08
   },
   {
-   "source": "nys-common-retirement-fund",
+   "source": "new-york-state-common-retirement-fund",
    "target": "co-GOOGL",
    "type": "holds shares in",
    "layer": "companies",
@@ -20570,7 +20490,7 @@
    "pct_of_portfolio": 5.81
   },
   {
-   "source": "nys-common-retirement-fund",
+   "source": "new-york-state-common-retirement-fund",
    "target": "co-META",
    "type": "holds shares in",
    "layer": "companies",
@@ -20579,7 +20499,7 @@
    "pct_of_portfolio": 2.36
   },
   {
-   "source": "nys-common-retirement-fund",
+   "source": "new-york-state-common-retirement-fund",
    "target": "co-AMZN",
    "type": "holds shares in",
    "layer": "companies",
@@ -20588,7 +20508,7 @@
    "pct_of_portfolio": 3.9
   },
   {
-   "source": "nys-common-retirement-fund",
+   "source": "new-york-state-common-retirement-fund",
    "target": "co-NVDA",
    "type": "holds shares in",
    "layer": "companies",
@@ -20597,7 +20517,7 @@
    "pct_of_portfolio": 7.97
   },
   {
-   "source": "nys-common-retirement-fund",
+   "source": "new-york-state-common-retirement-fund",
    "target": "co-AAPL",
    "type": "holds shares in",
    "layer": "companies",
@@ -20606,7 +20526,7 @@
    "pct_of_portfolio": 7.68
   },
   {
-   "source": "nys-common-retirement-fund",
+   "source": "new-york-state-common-retirement-fund",
    "target": "co-TSLA",
    "type": "holds shares in",
    "layer": "companies",
@@ -20615,7 +20535,7 @@
    "pct_of_portfolio": 1.51
   },
   {
-   "source": "nys-common-retirement-fund",
+   "source": "new-york-state-common-retirement-fund",
    "target": "co-ORCL",
    "type": "holds shares in",
    "layer": "companies",
@@ -20624,7 +20544,7 @@
    "pct_of_portfolio": 0.35
   },
   {
-   "source": "nys-common-retirement-fund",
+   "source": "new-york-state-common-retirement-fund",
    "target": "co-CRWV",
    "type": "holds shares in",
    "layer": "companies",
@@ -20633,7 +20553,7 @@
    "pct_of_portfolio": 0.02
   },
   {
-   "source": "nys-common-retirement-fund",
+   "source": "new-york-state-common-retirement-fund",
    "target": "co-AMD",
    "type": "holds shares in",
    "layer": "companies",
@@ -20642,7 +20562,7 @@
    "pct_of_portfolio": 1.59
   },
   {
-   "source": "nys-common-retirement-fund",
+   "source": "new-york-state-common-retirement-fund",
    "target": "co-AVGO",
    "type": "holds shares in",
    "layer": "companies",
@@ -21999,13 +21919,6 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
   },
   {
-   "source": "trillium-asset-management",
-   "target": "googl-2025-7",
-   "type": "filed (named in proxy)",
-   "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
-  },
-  {
    "source": "googl-2025-15(floor)",
    "target": "co-GOOGL",
    "type": "proposal at",
@@ -22021,13 +21934,6 @@
   },
   {
    "source": "trillium",
-   "target": "googl-2026-5",
-   "type": "filed (named in proxy)",
-   "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
-  },
-  {
-   "source": "trillium-asset-management",
    "target": "googl-2026-5",
    "type": "filed (named in proxy)",
    "layer": "proposals",
@@ -22160,13 +22066,6 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm"
   },
   {
-   "source": "northstar-asset-management",
-   "target": "dlr-2026-4",
-   "type": "filed (named in proxy)",
-   "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm"
-  },
-  {
    "source": "dlr-2025-5",
    "target": "co-DLR",
    "type": "proposal at",
@@ -22175,13 +22074,6 @@
   },
   {
    "source": "northstar",
-   "target": "dlr-2025-5",
-   "type": "filed (named in proxy)",
-   "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817925000509/dlr000000-def14a.htm"
-  },
-  {
-   "source": "northstar-asset-management",
    "target": "dlr-2025-5",
    "type": "filed (named in proxy)",
    "layer": "proposals",
@@ -22216,13 +22108,6 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm"
   },
   {
-   "source": "northstar-asset-management",
-   "target": "crm-2026-ai-human-rights",
-   "type": "filed (named in proxy)",
-   "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm"
-  },
-  {
    "source": "crm-2026-dual-use-defense",
    "target": "co-CRM",
    "type": "proposal at",
@@ -22237,13 +22122,6 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465923014650/o117232px14a6g.htm"
   },
   {
-   "source": "arjuna-capital",
-   "target": "co-MSFT",
-   "type": "exempt solicitation for",
-   "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465923014650/o117232px14a6g.htm"
-  },
-  {
    "source": "as-you-sow",
    "target": "co-MSFT",
    "type": "exempt solicitation for",
@@ -22252,13 +22130,6 @@
   },
   {
    "source": "arjuna",
-   "target": "co-MSFT",
-   "type": "exempt solicitation for",
-   "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465924018068/j1030243px14a6g.htm"
-  },
-  {
-   "source": "arjuna-capital",
    "target": "co-MSFT",
    "type": "exempt solicitation for",
    "layer": "proposals",
@@ -22280,13 +22151,6 @@
   },
   {
    "source": "northstar",
-   "target": "co-MSFT",
-   "type": "exempt solicitation support",
-   "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925013664/z911251px14a6g.htm"
-  },
-  {
-   "source": "northstar-asset-management",
    "target": "co-MSFT",
    "type": "exempt solicitation support",
    "layer": "proposals",
@@ -22356,13 +22220,6 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465926013276/y1027263px14a6g.htm"
   },
   {
-   "source": "trillium-asset-management",
-   "target": "co-MSFT",
-   "type": "exempt solicitation for",
-   "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465926013276/y1027263px14a6g.htm"
-  },
-  {
    "source": "jlens",
    "target": "co-MSFT",
    "type": "exempt solicitation against",
@@ -22399,13 +22256,6 @@
   },
   {
    "source": "arjuna",
-   "target": "co-META",
-   "type": "exempt solicitation for",
-   "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465924007454/o423247px14a6g.htm"
-  },
-  {
-   "source": "arjuna-capital",
    "target": "co-META",
    "type": "exempt solicitation for",
    "layer": "proposals",
@@ -22461,13 +22311,6 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923006504/r54230px14a6g.htm"
   },
   {
-   "source": "trillium-asset-management",
-   "target": "co-GOOGL",
-   "type": "exempt solicitation for",
-   "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923006504/r54230px14a6g.htm"
-  },
-  {
    "source": "arjuna",
    "target": "co-GOOGL",
    "type": "exempt solicitation for",
@@ -22475,13 +22318,6 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924008379/o532411px14a6g.htm"
   },
   {
-   "source": "arjuna-capital",
-   "target": "co-GOOGL",
-   "type": "exempt solicitation for",
-   "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924008379/o532411px14a6g.htm"
-  },
-  {
    "source": "trillium",
    "target": "co-GOOGL",
    "type": "exempt solicitation for",
@@ -22489,21 +22325,7 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924008582/e58244px14a6g.htm"
   },
   {
-   "source": "trillium-asset-management",
-   "target": "co-GOOGL",
-   "type": "exempt solicitation for",
-   "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924008582/e58244px14a6g.htm"
-  },
-  {
    "source": "trillium",
-   "target": "co-GOOGL",
-   "type": "exempt solicitation for",
-   "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006528/w429250px14a6g.htm"
-  },
-  {
-   "source": "trillium-asset-management",
    "target": "co-GOOGL",
    "type": "exempt solicitation for",
    "layer": "proposals",
@@ -22525,13 +22347,6 @@
   },
   {
    "source": "zevin",
-   "target": "co-GOOGL",
-   "type": "exempt solicitation for",
-   "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925007295/p59255px14a6g.htm"
-  },
-  {
-   "source": "zevin-asset-management",
    "target": "co-GOOGL",
    "type": "exempt solicitation for",
    "layer": "proposals",
@@ -22559,13 +22374,6 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465926005129/o427262px14a6g.htm"
   },
   {
-   "source": "trillium-asset-management",
-   "target": "co-GOOGL",
-   "type": "exempt solicitation for",
-   "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465926005129/o427262px14a6g.htm"
-  },
-  {
    "source": "jlens",
    "target": "co-GOOGL",
    "type": "exempt solicitation against",
@@ -22581,13 +22389,6 @@
   },
   {
    "source": "zevin",
-   "target": "co-GOOGL",
-   "type": "exempt solicitation for",
-   "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465926005597/o55262px14a6g.htm"
-  },
-  {
-   "source": "zevin-asset-management",
    "target": "co-GOOGL",
    "type": "exempt solicitation for",
    "layer": "proposals",

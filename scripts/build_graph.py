@@ -157,13 +157,26 @@ def main():
 
     # Holdings: which investors own which companies (portfolio layer).
     h = load("holdings.json")
-    inv_ids = {i["id"] for i in h.get("investors", [])}
+    # A 13F filer that is already in the network (same name, or a listed alias) is the same organization, so its
+    # holdings attach to that node instead of creating a second one.
+    def hnorm(s):
+        s = re.sub(r"\(.*?\)", "", (s or "").lower())
+        s = re.sub(r"\b(the|inc|llc|lp|corp|co|group|plc)\b", "", s)
+        return re.sub(r"[^a-z0-9]", "", s)
+    HOLDER_ALIAS = {"nbim": "nbim", "federated-hermes": "federated-hermes-eos", "legal-general": "lgim",
+                    "nys-common-retirement-fund": "new-york-state-common-retirement-fund", "calpers": "calpers", "calstrs": "calstrs"}
+    by_norm = {hnorm(n["label"]): n["id"] for n in nodes.values() if n["type"] in ("investor", "coalition")}
+    holder_node = {}
     for i in h.get("investors", []):
-        node(i["id"], type="investor", layer="investors", label=i["name"], source_url=i.get("filing_url"))
+        hid = HOLDER_ALIAS.get(i["id"]) if HOLDER_ALIAS.get(i["id"]) in nodes else by_norm.get(hnorm(i["name"]))
+        if not hid:
+            hid = i["id"]
+            node(hid, type="investor", layer="investors", label=i["name"], source_url=i.get("filing_url"))
+        holder_node[i["id"]] = hid
     for x in h.get("holdings", []):
         co = "co-" + x["company"].upper()
-        if x["investor"] in inv_ids and co in nodes:
-            edge(x["investor"], co, "holds shares in", "companies", x.get("source_url"),
+        if x["investor"] in holder_node and co in nodes:
+            edge(holder_node[x["investor"]], co, "holds shares in", "companies", x.get("source_url"),
                  value_usd=x.get("value_usd"), pct_of_portfolio=x.get("pct_of_portfolio"))
 
     # Policy, responses and the public: events, and what led to what.
