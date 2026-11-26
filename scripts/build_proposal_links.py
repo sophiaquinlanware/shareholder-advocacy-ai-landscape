@@ -68,6 +68,18 @@ def main():
             p["filing_deadline_source"] = d["source"]
 
     path.write_text(json.dumps(doc, indent=1, ensure_ascii=False) + "\n")
+
+    # Deadline status on each company, recomputed every run so "open" never goes stale.
+    import datetime as dt
+    today = dt.date.today().isoformat()
+    cpath = DATA / "companies.json"
+    companies = json.loads(cpath.read_text())
+    for c in companies:
+        d = c.get("next_proposal_deadline")
+        if d:
+            c["next_proposal_deadline_status"] = "passed" if d < today else "open"
+            c["next_proposal_deadline_checked"] = today
+    cpath.write_text(json.dumps(companies, indent=1, ensure_ascii=False) + "\n")
     print(f"proposals.json: {linked} proposals with vote history; "
           f"{sum(1 for p in props if p.get('filing_deadline'))} with a filing deadline")
 

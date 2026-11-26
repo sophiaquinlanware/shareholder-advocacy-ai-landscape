@@ -250,7 +250,7 @@ def main():
     for c in load("companies.json") or []:
         key = "co-" + (c["ticker"].upper() if c.get("ticker") and c["ticker"] not in ("private", "UNVERIFIED") else c.get("id", ""))
         if key in nodes:
-            for k in ("next_proposal_deadline", "next_proposal_deadline_source"):
+            for k in ("next_proposal_deadline", "next_proposal_deadline_source", "next_proposal_deadline_status", "next_proposal_deadline_quote", "next_proposal_deadline_note"):
                 if c.get(k):
                     nodes[key][k] = c[k]
 

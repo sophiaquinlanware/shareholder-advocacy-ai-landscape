@@ -1672,7 +1672,8 @@
    "results_url": null,
    "notes": "Title paraphrased from the proxy item. The resolution text does not mention AI; it is included because the filer's exempt solicitation cites Cisco's AI infrastructure sales to government and military.",
    "evidence_url": "https://www.sec.gov/Archives/edgar/data/858877/000121465926014472/x1116261px14a6g.htm",
-   "source": "SEC filings (round 29)"
+   "source": "SEC filings (round 29)",
+   "filing_deadline_note": "Not recorded: the 2025 proxy deadline sentence was not read for this proposal."
   }
  ],
  "exempt_solicitations": [
@@ -2195,6 +2196,16 @@
    "item": "7 GHG Emissions Disclosure (sold products / AI data centers)",
    "position": "FOR (UNVERIFIED wording)",
    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000121465926006075/b513262px14a6g.htm"
+  }
+ ],
+ "about": "AI-related shareholder proposals at the 29 companies subject to US proxy rules, meetings from 2023. AI test: a proposal is included when its resolution, or the filer's own published case for it (proxy supporting statement or exempt solicitation), is about AI governance, safety, AI's social or economic effects, or AI data centers. A passing mention of data center demand in background text is not enough. Support = For / (For + Against) from the 8-K Item 5.07 counts.",
+ "excluded": [
+  {
+   "company": "SO",
+   "year": 2025,
+   "title": "Disclose Assumptions Underlying Continued Reliance on Fossil Fuel-Based Energy",
+   "reason": "The resolution asks about fossil fuel assumptions; data centers appear only in passing in the background text.",
+   "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000092122&type=DEF%2014A"
   }
  ]
 }
