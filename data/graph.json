@@ -14,7 +14,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "shareholder proposal",
-   "description": "2024: Proposals for reports on AI misinformation and AI data sourcing were on the proxy ballot (Arjuna Capital and co-filers; National Legal and Policy Center)",
+   "description": "2024: Microsoft's proxy ballot included proposals on AI misinformation and AI data sourcing (Arjuna Capital and co-filers; National Legal and Policy Center; Microsoft proxy statement)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "exchange": "Nasdaq",
    "country": "US",
@@ -34,7 +34,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "shareholder proposal",
-   "description": "2026: The proxy listed shareholder proposals on AI board oversight, AI data usage oversight, AI-generated misinformation and water use in AI development (Alphabet proxy statement)",
+   "description": "2026: Alphabet's proxy listed shareholder proposals on AI board oversight, AI data usage oversight, AI-generated misinformation and water use in AI development (Alphabet proxy statement)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "exchange": "Nasdaq",
    "country": "US",
@@ -53,7 +53,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "shareholder proposal",
-   "description": "2026: Proposals on AI data usage oversight and a data protection impact assessment of generative AI chatbots were on the proxy ballot (Meta proxy statement)",
+   "description": "2026: Meta's proxy ballot included proposals on AI data usage oversight and a data protection impact assessment of generative AI chatbots (Meta proxy statement)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "exchange": "Nasdaq",
    "country": "US",
@@ -73,7 +73,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "shareholder proposal",
-   "description": "2025: Proposals asked for an assessment of board oversight of AI and a report on data usage oversight in AI offerings (Amazon proxy statement)",
+   "description": "2025: Amazon's proxy ballot included proposals on board oversight of AI and data usage oversight in AI offerings (Amazon proxy statement)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "exchange": "Nasdaq",
    "country": "US",
@@ -92,7 +92,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "investor engagement",
-   "description": "2024 to 2025: Parnassus engaged Nvidia with an investor group \"to disclose its human-rights policies and risk-management processes\" (Parnassus stewardship report)",
+   "description": "2024 to 2025: Nvidia was engaged by Parnassus with an investor group \"to disclose its human-rights policies and risk-management processes\" (Parnassus Investments; 2025 Stewardship Report)",
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
    "exchange": "Nasdaq",
    "country": "US",
@@ -109,7 +109,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "shareholder proposal",
-   "description": "2025: Proposal No. 4 asked for a report on ethical AI data acquisition and usage (Apple proxy statement)",
+   "description": "2025: Apple's proxy ballot included Proposal No. 4 asking for a report on ethical AI data acquisition and usage (Apple proxy statement)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
    "exchange": "Nasdaq",
    "country": "US",
@@ -127,7 +127,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "shareholder proposal",
-   "description": "2025: Proposal Seven asked about board authorization of an investment in xAI (Tesla proxy statement)",
+   "description": "2025: Tesla's proxy ballot included Proposal Seven asking about board authorization of an investment in xAI (Tesla proxy statement)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925090866/tm252289-12_def14a.htm",
    "exchange": "Nasdaq",
    "country": "US",
@@ -146,7 +146,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "safety commitment",
-   "description": "2024: Signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "description": "2024: Anthropic signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "degree": 2
   },
@@ -163,7 +163,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "safety commitment",
-   "description": "2024: xAI signed the Frontier AI Safety Commitments (UK and Korean governments)",
+   "description": "2024: xAI signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "exchange": "Nasdaq",
    "country": "US",
@@ -180,9 +180,9 @@
     "consumer AI",
     "enterprise AI"
    ],
-   "shareholder_route": "private",
+   "shareholder_route": null,
    "basis_type": "safety commitment",
-   "description": "2024: Signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "description": "2024: OpenAI signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "degree": 2
   },
@@ -197,9 +197,9 @@
     "enterprise AI",
     "consumer AI"
    ],
-   "shareholder_route": "private",
+   "shareholder_route": null,
    "basis_type": "safety commitment",
-   "description": "2024: Signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "description": "2024: Mistral AI signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "degree": 0
   },
@@ -213,9 +213,9 @@
     "frontier lab",
     "enterprise AI"
    ],
-   "shareholder_route": "private",
+   "shareholder_route": null,
    "basis_type": "safety commitment",
-   "description": "2024: Signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "description": "2024: Cohere signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "degree": 0
   },
@@ -230,9 +230,9 @@
     "enterprise AI",
     "data centers & compute"
    ],
-   "shareholder_route": "private",
+   "shareholder_route": null,
    "basis_type": "safety commitment",
-   "description": "2024: Signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "description": "2024: G42 signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "degree": 0
   },
@@ -246,9 +246,9 @@
     "frontier lab",
     "enterprise AI"
    ],
-   "shareholder_route": "private",
+   "shareholder_route": null,
    "basis_type": "safety commitment",
-   "description": "2024: Signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "description": "2024: Inflection AI signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "degree": 0
   },
@@ -264,7 +264,7 @@
    ],
    "shareholder_route": "listed outside the US",
    "basis_type": "safety commitment",
-   "description": "2024: Signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "description": "2024: Naver signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "degree": 0
   },
@@ -277,25 +277,25 @@
    "sectors": [
     "frontier lab"
    ],
-   "shareholder_route": "private",
+   "shareholder_route": null,
    "basis_type": "safety commitment",
-   "description": "2024: Named in the signatory list of the Frontier AI Safety Commitments as an organisation added to the original list (UK and Korean governments)",
+   "description": "Undated: Magic is named in the Frontier AI Safety Commitments signatory list as an organisation added to the original list (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "degree": 0
   },
   {
-   "id": "co-0100",
+   "id": "co-00100",
    "type": "company",
    "layer": "companies",
    "label": "MiniMax (Shanghai Xiyu Technology)",
-   "ticker": "0100",
+   "ticker": "00100",
    "sectors": [
     "frontier lab",
     "consumer AI"
    ],
    "shareholder_route": "listed outside the US",
    "basis_type": "safety commitment",
-   "description": "2024: Signed the Frontier AI Safety Commitments as an added signatory (UK and Korean governments)",
+   "description": "Undated: MiniMax signed the Frontier AI Safety Commitments as an added signatory (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "degree": 0
   },
@@ -311,7 +311,7 @@
    ],
    "shareholder_route": "listed outside the US",
    "basis_type": "safety commitment",
-   "description": "2024: Zhipu.ai signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "description": "2024: Zhipu.ai signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "degree": 0
   },
@@ -324,9 +324,9 @@
    "sectors": [
     "frontier lab"
    ],
-   "shareholder_route": "private",
+   "shareholder_route": null,
    "basis_type": "safety commitment",
-   "description": "2024: Signed the Frontier AI Safety Commitments as an added signatory, listed as 01.ai (UK and Korean governments)",
+   "description": "Undated: 01.ai signed the Frontier AI Safety Commitments as an added signatory (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "degree": 0
   },
@@ -340,7 +340,7 @@
     "frontier lab",
     "consumer AI"
    ],
-   "shareholder_route": "private",
+   "shareholder_route": null,
    "basis_type": "safety commitment",
    "description": "2024: DeepSeek joined sixteen other Chinese companies in signing China's AI Safety Commitments (Carnegie Endowment analysis)",
    "source_url": "https://carnegieendowment.org/research/2025/01/deepseek-and-other-chinese-firms-converge-with-western-companies-on-ai-promises",
@@ -355,9 +355,9 @@
    "sectors": [
     "enterprise AI"
    ],
-   "shareholder_route": "UNVERIFIED",
+   "shareholder_route": null,
    "basis_type": "safety commitment",
-   "description": "2024: Signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance, via ETO AGORA)",
+   "description": "2024: Beijing Volcano Engine Technology signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance; ETO AGORA)",
    "source_url": "https://agora.eto.tech/instrument/1831",
    "degree": 0
   },
@@ -371,9 +371,9 @@
     "frontier lab",
     "enterprise AI"
    ],
-   "shareholder_route": "private",
+   "shareholder_route": null,
    "basis_type": "safety commitment",
-   "description": "2025: Listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission)",
+   "description": "Undated: Aleph Alpha is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
    "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
    "degree": 0
   },
@@ -387,9 +387,9 @@
     "frontier lab",
     "consumer AI"
    ],
-   "shareholder_route": "private",
+   "shareholder_route": null,
    "basis_type": "safety commitment",
-   "description": "2025: Listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission)",
+   "description": "Undated: Black Forest Labs is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
    "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
    "degree": 0
   },
@@ -402,9 +402,9 @@
    "sectors": [
     "frontier lab"
    ],
-   "shareholder_route": "private",
+   "shareholder_route": null,
    "basis_type": "safety commitment",
-   "description": "2025: Listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission)",
+   "description": "Undated: Reflection AI is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
    "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
    "degree": 0
   },
@@ -418,9 +418,9 @@
     "enterprise AI",
     "frontier lab"
    ],
-   "shareholder_route": "private",
+   "shareholder_route": null,
    "basis_type": "safety commitment",
-   "description": "2025: Listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission)",
+   "description": "Undated: Writer is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
    "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
    "degree": 0
   },
@@ -433,9 +433,9 @@
    "sectors": [
     "consumer AI"
    ],
-   "shareholder_route": "private",
+   "shareholder_route": null,
    "basis_type": "safety commitment",
-   "description": "2023: Signed the US voluntary AI commitments in the second round of eight companies (White House fact sheet, September 2023)",
+   "description": "2023: Stability AI signed the US voluntary AI commitments in the second round of eight companies (White House fact sheet, September 2023)",
    "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
    "degree": 0
   },
@@ -448,9 +448,9 @@
    "sectors": [
     "enterprise AI"
    ],
-   "shareholder_route": "private",
+   "shareholder_route": null,
    "basis_type": "safety commitment",
-   "description": "2023: Signed the US voluntary AI commitments in the second round of eight companies (White House fact sheet, September 2023)",
+   "description": "2023: Scale AI signed the US voluntary AI commitments in the second round of eight companies (White House fact sheet, September 2023)",
    "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
    "degree": 0
   },
@@ -466,7 +466,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "shareholder proposal",
-   "description": "2026: Proposal 7 asked for a report on AI bias (IBM proxy statement)",
+   "description": "2026: IBM's proxy ballot included Proposal 7 asking for a report on AI bias (IBM proxy statement)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
    "degree": 0
   },
@@ -481,7 +481,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "investor engagement",
-   "description": "2024 to 2025: Parnassus lists Salesforce among its Responsible AI engagements (Parnassus stewardship report)",
+   "description": "2024 to 2025: Salesforce is listed among Parnassus's Responsible AI engagements (Parnassus Investments; 2025 Stewardship Report)",
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
    "exchange": "NYSE",
    "country": "US",
@@ -499,7 +499,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "safety commitment",
-   "description": "2023: Signed the US voluntary AI commitments in the second round of eight companies (White House fact sheet, September 2023)",
+   "description": "2023: Adobe signed the US voluntary AI commitments in the second round of eight companies (White House fact sheet, September 2023)",
    "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
    "degree": 0
   },
@@ -515,7 +515,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "investor engagement",
-   "description": "2023 to 2024: Parnassus \"engaged the company on AI governance and risk management\"; Intuit planned public AI governance disclosure in early 2025 (Parnassus stewardship report)",
+   "description": "2023 to 2024: Intuit was engaged by Parnassus on AI governance and risk management and planned public AI governance disclosure in early 2025 (Parnassus Investments; 2024 Stewardship Report)",
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf",
    "degree": 1
   },
@@ -530,7 +530,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "investor engagement",
-   "description": "2023 to 2024: Parnassus spent \"almost two years engaging\" Verisk \"on various aspects of responsible AI\" and later withdrew a filed proposal after Verisk agreed to disclosures (Parnassus)",
+   "description": "2023 to 2024: Verisk was engaged by Parnassus for almost two years on responsible AI; a filed proposal was withdrawn after Verisk agreed to disclosures (Parnassus Investments; 2024 Stewardship Report)",
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf",
    "degree": 0
   },
@@ -545,7 +545,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "investor engagement",
-   "description": "2024 to 2025: Parnassus \"engaged Workday on the potential impacts of its AI-driven human-capital management software\" on workers' rights and protections (Parnassus stewardship report)",
+   "description": "2024 to 2025: Workday was engaged by Parnassus on the impacts of its AI-driven human-capital management software on workers' rights and protections (Parnassus Investments; 2025 Stewardship Report)",
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
    "degree": 0
   },
@@ -561,7 +561,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "safety commitment",
-   "description": "2025: Listed as a signatory of the EU General-Purpose AI Code of Practice for providers of general-purpose AI models (European Commission)",
+   "description": "Undated: ServiceNow is listed as a signatory of the EU General-Purpose AI Code of Practice for providers of general-purpose AI models (European Commission signatory list)",
    "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
    "degree": 0
   },
@@ -576,7 +576,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "shareholder proposal",
-   "description": "2026: Proposals 4 and 5 asked for a due diligence report and a human rights impact assessment, citing Palantir's AI (proxy statement; lead filer Sisters of St. Joseph of Peace)",
+   "description": "2026: Palantir's proxy ballot included Proposals 4 and 5 asking for due diligence and human rights reports, citing its AI (Sisters of St. Joseph of Peace; proxy statement)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
    "degree": 0
   },
@@ -592,7 +592,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "shareholder proposal",
-   "description": "2026: Proposal 5 asked for a human rights impact assessment of high-risk customers; the exempt solicitation cites AI infrastructure sales to government and military (filer's SEC solicitation)",
+   "description": "2026: Cisco's proxy ballot included Proposal 5 asking for a human rights impact assessment of high-risk customers; the solicitation cites AI infrastructure sales to government and military (SEC exempt solicitation)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/858877/000121465926014472/x1116261px14a6g.htm",
    "exchange": "Nasdaq",
    "country": "US",
@@ -609,7 +609,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "shareholder proposal",
-   "description": "2023: Proposal 6 asked Axon to discontinue a remotely operated TASER drone system, citing concerns raised by its AI Ethics Board (Open MIC exempt solicitation)",
+   "description": "2023: Axon was asked in Proposal 6 to discontinue a remotely operated TASER drone system, citing concerns raised by its AI Ethics Board (Open MIC; SEC exempt solicitation)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1069183/000121465923006485/s53230px14a6g.htm",
    "degree": 0
   },
@@ -624,7 +624,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "investor engagement",
-   "description": "2022: Candriam and 20 other investors reviewed 15 facial recognition companies and named Motorola Solutions for mitigating human rights risks in its use of AI and the technology (Candriam)",
+   "description": "2022: Motorola Solutions was included in Candriam's investor review of 15 facial recognition companies (Candriam)",
    "source_url": "https://www.candriam.com/en/professional/SysSiteAssets/presspage/press/pressrelease/2022/10-2022/frt-interim-report-press-release_final.pdf",
    "degree": 0
   },
@@ -639,7 +639,7 @@
    ],
    "shareholder_route": "listed outside the US",
    "basis_type": "investor engagement",
-   "description": "2022: Candriam and 20 other investors reviewed 15 facial recognition companies and named Thales for mitigating human rights risks in its use of AI and the technology (Candriam)",
+   "description": "2022: Thales was included in Candriam's investor review of 15 facial recognition companies (Candriam)",
    "source_url": "https://www.candriam.com/en/professional/SysSiteAssets/presspage/press/pressrelease/2022/10-2022/frt-interim-report-press-release_final.pdf",
    "degree": 0
   },
@@ -653,9 +653,9 @@
     "consumer AI",
     "enterprise AI"
    ],
-   "shareholder_route": "UNVERIFIED",
+   "shareholder_route": null,
    "basis_type": "safety commitment",
-   "description": "2024: Signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance, via ETO AGORA)",
+   "description": "2024: Beijing Baidu Network Technology signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance; ETO AGORA)",
    "source_url": "https://agora.eto.tech/instrument/1831",
    "degree": 0
   },
@@ -673,7 +673,7 @@
    ],
    "shareholder_route": "US-listed foreign issuer",
    "basis_type": "safety commitment",
-   "description": "2024: Alibaba (China) Co., Ltd. signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance, via ETO AGORA)",
+   "description": "2024: Alibaba (China) Co., Ltd. signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance; ETO AGORA)",
    "source_url": "https://agora.eto.tech/instrument/1831",
    "degree": 0
   },
@@ -690,7 +690,7 @@
    ],
    "shareholder_route": "listed outside the US",
    "basis_type": "safety commitment",
-   "description": "2024: Shenzhen Tencent Computer Systems Co., Ltd. signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance, via ETO AGORA)",
+   "description": "2024: Shenzhen Tencent Computer Systems Co., Ltd. signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance; ETO AGORA)",
    "source_url": "https://agora.eto.tech/instrument/1831",
    "degree": 0
   },
@@ -706,7 +706,7 @@
    ],
    "shareholder_route": "private",
    "basis_type": "safety commitment",
-   "description": "2024: Huawei Technologies Co., Ltd. signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance, via ETO AGORA)",
+   "description": "2024: Huawei Technologies Co., Ltd. signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance; ETO AGORA)",
    "source_url": "https://agora.eto.tech/instrument/1831",
    "degree": 0
   },
@@ -719,9 +719,9 @@
    "sectors": [
     "enterprise AI"
    ],
-   "shareholder_route": "UNVERIFIED",
+   "shareholder_route": null,
    "basis_type": "safety commitment",
-   "description": "2024: Signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance, via ETO AGORA)",
+   "description": "2024: Shanghai SenseTime Intelligent Technology signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance; ETO AGORA)",
    "source_url": "https://agora.eto.tech/instrument/1831",
    "degree": 0
   },
@@ -736,7 +736,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "shareholder proposal",
-   "description": "2024: Proposal 4 asked for a report on Netflix's use of AI (AFL-CIO Equity Index Funds)",
+   "description": "2024: Netflix's proxy ballot included Proposal 4 asking for a report on Netflix's use of AI (AFL-CIO Equity Index Funds; Netflix proxy statement)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312524100913/d521836ddef14a.htm",
    "degree": 0
   },
@@ -749,9 +749,9 @@
    "sectors": [
     "consumer AI"
    ],
-   "shareholder_route": "UNVERIFIED",
+   "shareholder_route": null,
    "basis_type": "shareholder proposal",
-   "description": "2024: Proposal 5 asked for a report on use of AI (AFL-CIO Equity Index Funds and New York City Employees' Retirement System)",
+   "description": "2024: Warner Bros. Discovery's proxy ballot included Proposal 5 asking for a report on use of AI (AFL-CIO Equity Index Funds and NYC Employees' Retirement System; WBD proxy statement)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1437107/000143710724000102/wbd-20240419.htm",
    "degree": 0
   },
@@ -766,7 +766,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "shareholder proposal",
-   "description": "2024: AFL-CIO Equity Index Funds and co-filers proposed a transparency report on AI use; SEC staff did not concur with exclusion (SEC staff letter, 3 January 2024)",
+   "description": "2024: SEC staff declined Disney's request to leave the proposal off the ballot; the proposal sought an AI transparency report (AFL-CIO Equity Index Funds and co-filers; SEC staff letter)",
    "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/aflciodisney010324-14a8.pdf",
    "degree": 0
   },
@@ -781,7 +781,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "shareholder proposal",
-   "description": "2024: AFL-CIO agreed to withdraw an AI usage proposal after Comcast committed to enhance its AI disclosures (Harvard Law School Forum, citing Responsible Investor)",
+   "description": "2024: Comcast committed to enhance its AI disclosures and a proposal on AI usage was withdrawn (AFL-CIO; Responsible Investor, via Harvard Law School Forum on Corporate Governance)",
    "source_url": "https://corpgov.law.harvard.edu/?p=168201",
    "degree": 0
   },
@@ -797,7 +797,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "compute agreement",
-   "description": "2025: Named by OpenAI as an initial equity funder of the Stargate AI infrastructure project (OpenAI)",
+   "description": "2025: Oracle was named an initial equity funder of the Stargate AI infrastructure project (OpenAI)",
    "source_url": "https://openai.com/index/announcing-the-stargate-project/",
    "exchange": "NYSE",
    "country": "US",
@@ -814,7 +814,7 @@
    ],
    "shareholder_route": "listed outside the US",
    "basis_type": "compute agreement",
-   "description": "2025: Named by OpenAI as an initial equity funder and lead partner of the Stargate AI infrastructure project (OpenAI)",
+   "description": "2025: SoftBank Group was named an initial equity funder and lead partner of the Stargate AI infrastructure project (OpenAI)",
    "source_url": "https://openai.com/index/announcing-the-stargate-project/",
    "exchange": "Tokyo Stock Exchange",
    "country": "Japan",
@@ -831,7 +831,7 @@
    ],
    "shareholder_route": "US-listed foreign issuer",
    "basis_type": "compute agreement",
-   "description": "2025: Named by OpenAI as a key initial technology partner of the Stargate AI infrastructure project (OpenAI)",
+   "description": "2025: Arm was named a key initial technology partner of the Stargate AI infrastructure project (OpenAI)",
    "source_url": "https://openai.com/index/announcing-the-stargate-project/",
    "degree": 0
   },
@@ -846,7 +846,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "compute agreement",
-   "description": "2025: OpenAI announced a multi-year agreement to deploy 6 gigawatts of AMD GPUs (OpenAI)",
+   "description": "2025: AMD entered a multi-year agreement with OpenAI to deploy 6 gigawatts of AMD GPUs (OpenAI)",
    "source_url": "https://openai.com/index/openai-amd-strategic-partnership/",
    "exchange": "Nasdaq",
    "country": "US",
@@ -863,7 +863,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "compute agreement",
-   "description": "2025: OpenAI announced a collaboration with Broadcom to deploy 10 gigawatts of OpenAI-designed AI accelerators, to complete by the end of 2029 (OpenAI)",
+   "description": "2025: Broadcom announced a collaboration with OpenAI to deploy 10 gigawatts of OpenAI-designed AI accelerators, to complete by the end of 2029 (OpenAI)",
    "source_url": "https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration/",
    "exchange": "Nasdaq",
    "country": "US",
@@ -880,7 +880,7 @@
    ],
    "shareholder_route": "US-listed foreign issuer",
    "basis_type": "investor engagement",
-   "description": "2024 to 2025: Parnassus engaged TSMC on \"water quantity and quality risks\" and renewable energy, citing AI's effect on \"computing demands\" (Parnassus stewardship report)",
+   "description": "2024 to 2025: TSMC engaged by Parnassus on water and renewable energy (Parnassus Investments; 2025 Stewardship Report)",
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
    "degree": 0
   },
@@ -897,7 +897,7 @@
    ],
    "shareholder_route": "listed outside the US",
    "basis_type": "safety commitment",
-   "description": "2024: Signed the Frontier AI Safety Commitments at the AI Seoul Summit (UK and Korean governments)",
+   "description": "2024: Samsung Electronics signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "exchange": "Korea Exchange",
    "country": "South Korea",
@@ -931,7 +931,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "compute agreement",
-   "description": "2025: CoreWeave disclosed a material master services agreement with OpenAI for cloud computing capacity, with a September 2025 order form (CoreWeave 8-K)",
+   "description": "2025: CoreWeave disclosed a material master services agreement with OpenAI for cloud computing capacity, with a September 2025 order form (CoreWeave Form 8-K)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000119312525216497/d17274d8k.htm",
    "exchange": "Nasdaq",
    "country": "US",
@@ -948,7 +948,7 @@
    ],
    "shareholder_route": "US-listed foreign issuer",
    "basis_type": "compute agreement",
-   "description": "2025: Nebius agreed to provide Microsoft dedicated GPU capacity, a contract value of about 17.4 billion dollars through 2031 (Nebius 6-K)",
+   "description": "2025: Nebius agreed to provide Microsoft dedicated GPU capacity, with a contract value of about 17.4 billion dollars through 2031 (Nebius Form 6-K)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465925088312/tm2525580d1_6k.htm",
    "exchange": "Nasdaq",
    "country": "Netherlands",
@@ -965,7 +965,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "shareholder proposal",
-   "description": "2026: A stockholder proposal on enhanced water risk disclosure was on the proxy ballot (Digital Realty proxy statement)",
+   "description": "2026: Digital Realty's proxy ballot included a stockholder proposal on enhanced water risk disclosure (Digital Realty proxy statement)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm",
    "degree": 0
   },
@@ -980,7 +980,7 @@
    ],
    "shareholder_route": "US proxy rules apply",
    "basis_type": "shareholder proposal",
-   "description": "2026: Item 9 asked for a report on data center costs, citing AI data center demand and bills for residential customers (As You Sow)",
+   "description": "2026: Southern Company's proxy included Item 9 asking for a report on data center costs, citing AI data center demand and residential bills (As You Sow; Southern proxy statement)",
    "source_url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm",
    "degree": 0
   },
