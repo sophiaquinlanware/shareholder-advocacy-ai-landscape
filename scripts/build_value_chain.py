@@ -70,11 +70,19 @@ def main():
         if c:
             labs_of[c["id"]].add(t["to"])
 
-    # Two-step reach: a company tied (either direction) to a company with lab ties.
-    neighbours = defaultdict(set)
+    # A tie pointing at a frontier-lab company (e.g. power supplied to OpenAI's data center) is direct reach too.
+    lab_company = {c["id"]: c["name"] for c in companies if c.get("tier") == "labs"}
     for t in ties:
-        neighbours[t["from"]].add(t["to"])
-        neighbours[t["to"]].add(t["from"])
+        if t["to"] in lab_company:
+            labs_of[t["from"]].add("company:" + t["to"])
+    for cid, name in lab_company.items():
+        lab_name["company:" + cid] = name
+
+    # Two-step reach follows the direction of the tie: a supplier X reaches the labs its customer Y is tied to
+    # (X -> Y -> lab). Being a customer of a supplier is not a route to that supplier's investees.
+    downstream = defaultdict(list)
+    for t in ties:
+        downstream[t["from"]].append(t)
 
     # Who files where, from the shared graph.
     node = {n["id"]: n for n in graph["nodes"]}
@@ -93,16 +101,23 @@ def main():
 
     per_tier = {}
     for tier in vc.get("tiers", []):
-        ids = [c["id"] for c in companies if c.get("tier") == tier["id"]]
+        # All companies in the tier (primary or secondary), so e.g. Meta and Oracle count under data centers.
+        ids = sorted(c["id"] for c in companies if tier["id"] in (c.get("tiers") or [c.get("tier")]))
         cos = [c for c in companies if c["id"] in ids]
         tickers = {(c.get("ticker") or "").upper() for c in cos}
         direct = set().union(*[labs_of[i] for i in ids]) if ids else set()
         # Companies in the "labs" tier are labs themselves; reach counts the labs they are.
-        two_step = set()
+        def norm(l):  # the same lab can appear as a pathways lab id and as a labs-tier company
+            return (lab_name.get(l, l) or "").lower().split(" (")[0]
+        direct_names = {norm(l) for l in direct}
+        routes = {}
         for i in ids:
-            for n in neighbours[i]:
-                two_step |= labs_of[n]
-        two_step -= direct
+            for t in downstream[i]:
+                for l in labs_of[t["to"]]:
+                    if norm(l) in direct_names or t["to"] in ids:
+                        continue
+                    routes.setdefault(lab_name.get(l, l), []).append(
+                        {"from": i, "via": t["to"], "tie": t["type"], "source_url": t["source_url"]})
         props = [p for p in proposals if (p.get("company") or "").upper() in tickers]
         supports = [p["support_pct"] for p in props if isinstance(p.get("support_pct"), (int, float))]
         prop_ids = {p["id"] for p in props}
@@ -114,22 +129,25 @@ def main():
             coalitions.update(member_of[o])
         people = sorted({p for o in orgs for p in works_at[o]})
         per_tier[tier["id"]] = {
+            "scope": "all companies in this tier, primary or secondary",
             "companies": len(ids),
-            "labs_reached_directly": sorted(lab_name.get(l, l) for l in direct),
-            "labs_reached_in_two_steps": sorted(lab_name.get(l, l) for l in two_step),
+            "companies_primary": sum(1 for c in cos if c.get("tier") == tier["id"]),
+            "labs_reached_directly": sorted({lab_name.get(l, l) for l in direct}),
+            "labs_reached_in_two_steps": [{"lab": lab, "routes": sorted(r, key=lambda x: (x["from"], x["via"]))}
+                                          for lab, r in sorted(routes.items())],
             "ties_from_tier": sum(1 for t in ties if t["from"] in ids),
             "ties_into_tier": sum(1 for t in ties if t["to"] in ids),
             "ai_proposals": len(props),
-            "proposal_topics": dict(Counter(p.get("topic") or "Other" for p in props).most_common()),
+            "proposal_topics": dict(sorted(Counter(p.get("topic") or "Other" for p in props).items(), key=lambda x: (-x[1], x[0]))),
             "median_support_pct": round(statistics.median(supports), 1) if supports else None,
             "asks_made": [{"company": p["company"], "year": p.get("year"), "title": p["title"],
                            "url": p.get("proxy_url")} for p in sorted(props, key=lambda p: (-(p.get("year") or 0), p["company"]))][:12],
-            "investor_engagements": [c["id"] for c in cos if c.get("basis_type") == "investor engagement"],
-            "safety_commitments": [c["id"] for c in cos if c.get("basis_type") == "safety commitment"],
+            "investor_engagements": [c["id"] for c in sorted(cos, key=lambda c: c["id"]) if c.get("basis_type") == "investor engagement"],
+            "safety_commitments": [c["id"] for c in sorted(cos, key=lambda c: c["id"]) if c.get("basis_type") == "safety commitment"],
             "fund_vote_rows": sum(1 for r in fund_votes if r.get("proposal_id") in prop_ids),
-            "shareholder_routes": dict(Counter(c.get("shareholder_route") or "not determined" for c in cos)),
-            "active_filers": [{"id": o, "name": node[o]["label"], "proposals": n} for o, n in orgs.most_common(12) if o in node],
-            "coalitions": [{"id": c, "name": node[c]["label"], "members_active_here": n} for c, n in coalitions.most_common() if c in node],
+            "shareholder_routes": dict(sorted(Counter(c.get("shareholder_route") or "not determined" for c in cos).items())),
+            "active_filers": [{"id": o, "name": node[o]["label"], "proposals": n} for o, n in sorted(orgs.items(), key=lambda x: (-x[1], x[0]))[:12] if o in node],
+            "coalitions": [{"id": c, "name": node[c]["label"], "members_active_here": n} for c, n in sorted(coalitions.items(), key=lambda x: (-x[1], x[0])) if c in node],
             "people": [{"id": p, "name": node[p]["label"], "org": node[p].get("org_name")} for p in people if p in node],
         }
 

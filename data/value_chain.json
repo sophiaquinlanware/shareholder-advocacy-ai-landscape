@@ -534,11 +534,15 @@
  ],
  "per_tier": {
   "chips": {
-   "companies": 9,
+   "scope": "all companies in this tier, primary or secondary",
+   "companies": 11,
+   "companies_primary": 9,
    "labs_reached_directly": [
+    "Amazon AGI / Nova",
     "Anthropic",
     "Cohere",
     "Google DeepMind",
+    "Meta",
     "Meta Superintelligence Labs (incl. FAIR)",
     "Mistral AI",
     "OpenAI",
@@ -549,18 +553,106 @@
     "xAI"
    ],
    "labs_reached_in_two_steps": [
-    "Amazon AGI / Nova",
-    "Microsoft AI (MAI Superintelligence Team)"
+    {
+     "lab": "Microsoft AI (MAI Superintelligence Team)",
+     "routes": [
+      {
+       "from": "amd",
+       "via": "microsoft",
+       "tie": "supplies chips",
+       "source_url": "https://blogs.microsoft.com/blog/2026/07/20/microsoft-expands-azure-ai-and-hpc-infrastructure-with-amd/"
+      },
+      {
+       "from": "arm-holdings",
+       "via": "microsoft",
+       "tie": "supplies chips",
+       "source_url": "https://newsroom.arm.com/blog/inside-arms-hyperscale-surge"
+      },
+      {
+       "from": "nvidia",
+       "via": "microsoft",
+       "tie": "supplies chips",
+       "source_url": "https://azure.microsoft.com/en-us/blog/microsofts-strategic-ai-datacenter-planning-enables-seamless-large-scale-nvidia-rubin-deployments/"
+      },
+      {
+       "from": "nvidia",
+       "via": "nebius-group",
+       "tie": "supplies chips",
+       "source_url": "https://nebius.com/newsroom/nebius-to-offer-nvidia-vera-rubin-nvl-72-in-us-and-europe-from-h2-2026"
+      }
+     ]
+    }
    ],
    "ties_from_tier": 27,
-   "ties_into_tier": 6,
-   "ai_proposals": 2,
+   "ties_into_tier": 11,
+   "ai_proposals": 34,
    "proposal_topics": {
-    "Data center impacts": 1,
-    "Social & economic impacts": 1
+    "Social & economic impacts": 19,
+    "Data center impacts": 8,
+    "AI governance & oversight": 7
    },
-   "median_support_pct": 17.6,
+   "median_support_pct": 12.3,
    "asks_made": [
+    {
+     "company": "AMZN",
+     "year": 2026,
+     "title": "Additional Reporting on Impact of Data Centers on Climate Commitments",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    },
+    {
+     "company": "AMZN",
+     "year": 2026,
+     "title": "Establish and maintain a worker-oriented AI advisory council (presented at the meeting under the bylaws; not in the proxy)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    },
+    {
+     "company": "AMZN",
+     "year": 2026,
+     "title": "Responsible AI policies vs sales of AI/cloud to militaries and DHS",
+     "url": "https://news.bloomberglaw.com/esg/amazon-to-block-investor-vote-on-ai-services-for-israel-dhs"
+    },
+    {
+     "company": "AMZN",
+     "year": 2026,
+     "title": "Report on Impact of Climate Commitments",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Enhanced Disclosure on Climate Goals",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on Water Usage and AI Development",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on Data Privacy",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "AI Board Oversight",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on AI-Generated Misinformation",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on AI Data Usage Oversight",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
     {
      "company": "NVDA",
      "year": 2026,
@@ -582,32 +674,376 @@
     "huawei-technologies",
     "samsung-electronics"
    ],
-   "fund_vote_rows": 7,
+   "fund_vote_rows": 160,
    "shareholder_routes": {
-    "US proxy rules apply": 4,
-    "private": 1,
+    "US proxy rules apply": 6,
     "US-listed foreign issuer": 3,
-    "listed outside the US": 1
+    "listed outside the US": 1,
+    "private": 1
    },
    "active_filers": [
     {
-     "id": "green-century",
-     "name": "Green Century Capital Management",
-     "proposals": 2
+     "id": "share",
+     "name": "SHARE (Shareholder Association for Research and Education)",
+     "proposals": 7
+    },
+    {
+     "id": "nlpc",
+     "name": "National Legal and Policy Center",
+     "proposals": 6
+    },
+    {
+     "id": "trillium",
+     "name": "Trillium Asset Management",
+     "proposals": 6
     },
     {
      "id": "mercy",
      "name": "Mercy Investment Services",
+     "proposals": 5
+    },
+    {
+     "id": "zevin",
+     "name": "Zevin Asset Management",
+     "proposals": 5
+    },
+    {
+     "id": "ucc-pension",
+     "name": "Pension Plan of The United Church of Canada",
+     "proposals": 4
+    },
+    {
+     "id": "abhms",
+     "name": "American Baptist Home Mission Societies",
+     "proposals": 3
+    },
+    {
+     "id": "commonspirit",
+     "name": "CommonSpirit Health",
+     "proposals": 3
+    },
+    {
+     "id": "eko",
+     "name": "Ekō (formerly SumOfUs)",
+     "proposals": 3
+    },
+    {
+     "id": "iasj",
+     "name": "Investor Advocates for Social Justice",
+     "proposals": 3
+    },
+    {
+     "id": "inspire",
+     "name": "Inspire Investing",
+     "proposals": 3
+    },
+    {
+     "id": "omi-us",
+     "name": "Missionary Oblates of Mary Immaculate, US Province",
+     "proposals": 3
+    }
+   ],
+   "coalitions": [
+    {
+     "id": "iccr",
+     "name": "Interfaith Center on Corporate Responsibility (ICCR)",
+     "members_active_here": 13
+    },
+    {
+     "id": "iahr",
+     "name": "Investor Alliance for Human Rights",
+     "members_active_here": 10
+    },
+    {
+     "id": "wba-cic-ethical-ai",
+     "name": "WBA Collective Impact Coalition for Ethical AI",
+     "members_active_here": 5
+    }
+   ],
+   "people": [
+    {
+     "id": "person-amy-orr",
+     "name": "Amy Orr",
+     "org": "Boston Common Asset Management"
+    },
+    {
+     "id": "person-andrea-ranger",
+     "name": "Andrea Ranger",
+     "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-andrew-behar",
+     "name": "Andrew Behar",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-audrey-mocle",
+     "name": "Audrey Mocle",
+     "org": "Open MIC"
+    },
+    {
+     "id": "person-brandon-rees",
+     "name": "Brandon Rees",
+     "org": "AFL-CIO Office of Investment"
+    },
+    {
+     "id": "person-christina-oconnell",
+     "name": "Christina O'Connell",
+     "org": "Ekō"
+    },
+    {
+     "id": "person-danielle-fugere",
+     "name": "Danielle Fugere",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-emma-ruby-sachs",
+     "name": "Emma Ruby-Sachs",
+     "org": "Ekō"
+    },
+    {
+     "id": "person-jonas-kron",
+     "name": "Jonas Kron",
+     "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-julia-cedarholm",
+     "name": "Julia Cedarholm",
+     "org": "Arjuna Capital"
+    },
+    {
+     "id": "person-julie-goodridge",
+     "name": "Julie N.W. Goodridge",
+     "org": "NorthStar Asset Management"
+    },
+    {
+     "id": "person-lauren-compere",
+     "name": "Lauren Compere",
+     "org": "Boston Common Asset Management"
+    },
+    {
+     "id": "person-lydia-kuykendal",
+     "name": "Lydia Kuykendal",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-marcela-pinilla",
+     "name": "Marcela Pinilla",
+     "org": "Zevin Asset Management"
+    },
+    {
+     "id": "person-mary-minette",
+     "name": "Mary Minette",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-michael-connor",
+     "name": "Michael Connor",
+     "org": "Open MIC"
+    },
+    {
+     "id": "person-natasha-lamb",
+     "name": "Natasha Lamb",
+     "org": "Arjuna Capital"
+    },
+    {
+     "id": "person-richard-butters",
+     "name": "Richard Butters",
+     "org": "Aviva Investors"
+    },
+    {
+     "id": "person-whitney-nguyen",
+     "name": "Whitney Nguyen",
+     "org": "NorthStar Asset Management"
+    }
+   ]
+  },
+  "datacenters": {
+   "scope": "all companies in this tier, primary or secondary",
+   "companies": 6,
+   "companies_primary": 2,
+   "labs_reached_directly": [
+    "Anthropic",
+    "Meta",
+    "Meta Superintelligence Labs (incl. FAIR)",
+    "OpenAI",
+    "Reflection AI",
+    "xAI"
+   ],
+   "labs_reached_in_two_steps": [
+    {
+     "lab": "Microsoft AI (MAI Superintelligence Team)",
+     "routes": [
+      {
+       "from": "digital-realty-trust",
+       "via": "microsoft",
+       "tie": "leases capacity to",
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm"
+      }
+     ]
+    },
+    {
+     "lab": "Mistral AI",
+     "routes": [
+      {
+       "from": "digital-realty-trust",
+       "via": "microsoft",
+       "tie": "leases capacity to",
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm"
+      }
+     ]
+    }
+   ],
+   "ties_from_tier": 6,
+   "ties_into_tier": 11,
+   "ai_proposals": 13,
+   "proposal_topics": {
+    "Social & economic impacts": 10,
+    "Data center impacts": 2,
+    "AI governance & oversight": 1
+   },
+   "median_support_pct": 9.9,
+   "asks_made": [
+    {
+     "company": "META",
+     "year": 2026,
+     "title": "Report on AI Data Usage Oversight",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+    },
+    {
+     "company": "META",
+     "year": 2026,
+     "title": "Report on Climate Change-Related Commitments",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+    },
+    {
+     "company": "META",
+     "year": 2026,
+     "title": "Data Protection Impact Assessment on Generative AI Chatbots",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+    },
+    {
+     "company": "META",
+     "year": 2026,
+     "title": "Integrate Child Safety into Executive Compensation",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+    },
+    {
+     "company": "META",
+     "year": 2025,
+     "title": "Report on Risks of Deepfakes in Online Child Exploitation",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+    },
+    {
+     "company": "META",
+     "year": 2025,
+     "title": "Report on AI Data Usage Oversight",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+    },
+    {
+     "company": "META",
+     "year": 2025,
+     "title": "GHG Emissions Reduction Actions",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+    },
+    {
+     "company": "META",
+     "year": 2025,
+     "title": "Report on Child Safety Impacts and Harm Reduction",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+    },
+    {
+     "company": "TSLA",
+     "year": 2025,
+     "title": "Board Authorization of an Investment in xAI",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925090866/tm252289-12_def14a.htm"
+    },
+    {
+     "company": "META",
+     "year": 2024,
+     "title": "Report on Generative AI Misinformation and Disinformation Risks",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+    },
+    {
+     "company": "META",
+     "year": 2024,
+     "title": "Human Rights Impact Assessment on AI Systems Driving Targeted Advertising",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+    },
+    {
+     "company": "META",
+     "year": 2023,
+     "title": "Human Rights Impact Assessment of Targeted Advertising",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
+    }
+   ],
+   "investor_engagements": [],
+   "safety_commitments": [
+    "spacex"
+   ],
+   "fund_vote_rows": 39,
+   "shareholder_routes": {
+    "US proxy rules apply": 6
+   },
+   "active_filers": [
+    {
+     "id": "as-you-sow",
+     "name": "As You Sow",
+     "proposals": 5
+    },
+    {
+     "id": "mercy",
+     "name": "Mercy Investment Services",
+     "proposals": 5
+    },
+    {
+     "id": "nlpc",
+     "name": "National Legal and Policy Center",
+     "proposals": 3
+    },
+    {
+     "id": "proxy-impact",
+     "name": "Proxy Impact",
+     "proposals": 3
+    },
+    {
+     "id": "arjuna",
+     "name": "Arjuna Capital",
+     "proposals": 2
+    },
+    {
+     "id": "bowyer",
+     "name": "Bowyer Research",
+     "proposals": 2
+    },
+    {
+     "id": "eko",
+     "name": "Ekō (formerly SumOfUs)",
+     "proposals": 2
+    },
+    {
+     "id": "nei",
+     "name": "NEI Investments",
+     "proposals": 2
+    },
+    {
+     "id": "pcusa",
+     "name": "Presbyterian Church (U.S.A.)",
+     "proposals": 2
+    },
+    {
+     "id": "adrian-dominican",
+     "name": "Adrian Dominican Sisters",
      "proposals": 1
     },
     {
-     "id": "open-mic",
-     "name": "Open MIC (Open Media and Information Companies Initiative)",
+     "id": "axa-im",
+     "name": "AXA Investment Managers",
      "proposals": 1
     },
     {
-     "id": "ttt-investments",
-     "name": "TTT Investments LLC",
+     "id": "benedictine-mt-scholastica",
+     "name": "Benedictine Sisters of Mount St. Scholastica",
      "proposals": 1
     }
    ],
@@ -615,7 +1051,7 @@
     {
      "id": "iccr",
      "name": "Interfaith Center on Corporate Responsibility (ICCR)",
-     "members_active_here": 3
+     "members_active_here": 7
     },
     {
      "id": "iahr",
@@ -625,14 +1061,44 @@
     {
      "id": "wba-cic-ethical-ai",
      "name": "WBA Collective Impact Coalition for Ethical AI",
-     "members_active_here": 1
+     "members_active_here": 2
     }
    ],
    "people": [
     {
+     "id": "person-andrew-behar",
+     "name": "Andrew Behar",
+     "org": "As You Sow"
+    },
+    {
      "id": "person-audrey-mocle",
      "name": "Audrey Mocle",
      "org": "Open MIC"
+    },
+    {
+     "id": "person-christina-oconnell",
+     "name": "Christina O'Connell",
+     "org": "Ekō"
+    },
+    {
+     "id": "person-danielle-fugere",
+     "name": "Danielle Fugere",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-emma-ruby-sachs",
+     "name": "Emma Ruby-Sachs",
+     "org": "Ekō"
+    },
+    {
+     "id": "person-julia-cedarholm",
+     "name": "Julia Cedarholm",
+     "org": "Arjuna Capital"
+    },
+    {
+     "id": "person-kamil-zabielski",
+     "name": "Kamil Zabielski",
+     "org": "Storebrand Asset Management"
     },
     {
      "id": "person-lydia-kuykendal",
@@ -648,41 +1114,29 @@
      "id": "person-michael-connor",
      "name": "Michael Connor",
      "org": "Open MIC"
+    },
+    {
+     "id": "person-michael-passoff",
+     "name": "Michael Passoff",
+     "org": "Proxy Impact"
+    },
+    {
+     "id": "person-natasha-lamb",
+     "name": "Natasha Lamb",
+     "org": "Arjuna Capital"
     }
    ]
   },
-  "datacenters": {
-   "companies": 2,
-   "labs_reached_directly": [],
-   "labs_reached_in_two_steps": [
-    "Anthropic",
-    "Meta Superintelligence Labs (incl. FAIR)",
-    "Microsoft AI (MAI Superintelligence Team)",
-    "Mistral AI",
-    "OpenAI"
-   ],
-   "ties_from_tier": 5,
-   "ties_into_tier": 0,
-   "ai_proposals": 0,
-   "proposal_topics": {},
-   "median_support_pct": null,
-   "asks_made": [],
-   "investor_engagements": [],
-   "safety_commitments": [],
-   "fund_vote_rows": 0,
-   "shareholder_routes": {
-    "US proxy rules apply": 2
-   },
-   "active_filers": [],
-   "coalitions": [],
-   "people": []
-  },
   "compute": {
+   "scope": "all companies in this tier, primary or secondary",
    "companies": 8,
+   "companies_primary": 8,
    "labs_reached_directly": [
     "Amazon AGI / Nova",
     "Anthropic",
+    "DeepSeek",
     "Google DeepMind",
+    "Meta",
     "Meta Superintelligence Labs (incl. FAIR)",
     "Microsoft AI (MAI Superintelligence Team)",
     "Mistral AI",
@@ -691,11 +1145,7 @@
     "Safe Superintelligence (SSI)",
     "Thinking Machines Lab"
    ],
-   "labs_reached_in_two_steps": [
-    "Cohere",
-    "Perplexity",
-    "xAI"
-   ],
+   "labs_reached_in_two_steps": [],
    "ties_from_tier": 6,
    "ties_into_tier": 18,
    "ai_proposals": 46,
@@ -704,7 +1154,7 @@
     "Data center impacts": 12,
     "AI governance & oversight": 9
    },
-   "median_support_pct": 12.7,
+   "median_support_pct": 13.2,
    "asks_made": [
     {
      "company": "AMZN",
@@ -781,14 +1231,14 @@
    ],
    "investor_engagements": [],
    "safety_commitments": [
-    "g42",
-    "alibaba-group"
+    "alibaba-group",
+    "g42"
    ],
    "fund_vote_rows": 230,
    "shareholder_routes": {
     "US proxy rules apply": 5,
-    "private": 1,
-    "US-listed foreign issuer": 2
+    "US-listed foreign issuer": 2,
+    "private": 1
    },
    "active_filers": [
     {
@@ -802,13 +1252,13 @@
      "proposals": 7
     },
     {
-     "id": "trillium",
-     "name": "Trillium Asset Management",
+     "id": "share",
+     "name": "SHARE (Shareholder Association for Research and Education)",
      "proposals": 7
     },
     {
-     "id": "share",
-     "name": "SHARE (Shareholder Association for Research and Education)",
+     "id": "trillium",
+     "name": "Trillium Asset Management",
      "proposals": 7
     },
     {
@@ -822,11 +1272,6 @@
      "proposals": 6
     },
     {
-     "id": "open-mic",
-     "name": "Open MIC (Open Media and Information Companies Initiative)",
-     "proposals": 5
-    },
-    {
      "id": "as-you-sow",
      "name": "As You Sow",
      "proposals": 5
@@ -837,18 +1282,23 @@
      "proposals": 5
     },
     {
+     "id": "open-mic",
+     "name": "Open MIC (Open Media and Information Companies Initiative)",
+     "proposals": 5
+    },
+    {
      "id": "azzad",
      "name": "Azzad Asset Management",
      "proposals": 4
     },
     {
-     "id": "ucc-pension",
-     "name": "Pension Plan of The United Church of Canada",
+     "id": "mercy",
+     "name": "Mercy Investment Services",
      "proposals": 4
     },
     {
-     "id": "mercy",
-     "name": "Mercy Investment Services",
+     "id": "ucc-pension",
+     "name": "Pension Plan of The United Church of Canada",
      "proposals": 4
     }
    ],
@@ -973,32 +1423,104 @@
    ]
   },
   "labs": {
-   "companies": 16,
+   "scope": "all companies in this tier, primary or secondary",
+   "companies": 23,
+   "companies_primary": 16,
    "labs_reached_directly": [
     "Anthropic",
-    "Meta Superintelligence Labs (incl. FAIR)",
-    "Reflection AI",
-    "xAI"
-   ],
-   "labs_reached_in_two_steps": [
-    "Cohere",
+    "DeepSeek",
     "Google DeepMind",
-    "Microsoft AI (MAI Superintelligence Team)",
+    "Meta Superintelligence Labs (incl. FAIR)",
     "Mistral AI",
     "OpenAI",
     "Perplexity",
+    "Reflection AI",
     "Safe Superintelligence (SSI)",
-    "Thinking Machines Lab"
+    "Thinking Machines Lab",
+    "xAI"
    ],
-   "ties_from_tier": 0,
-   "ties_into_tier": 14,
-   "ai_proposals": 12,
+   "labs_reached_in_two_steps": [
+    {
+     "lab": "Cohere",
+     "routes": [
+      {
+       "from": "samsung-electronics",
+       "via": "nvidia",
+       "tie": "supplies chips",
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+      },
+      {
+       "from": "samsung-electronics",
+       "via": "nvidia",
+       "tie": "manufactures for",
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+      }
+     ]
+    },
+    {
+     "lab": "Meta",
+     "routes": [
+      {
+       "from": "samsung-electronics",
+       "via": "nvidia",
+       "tie": "supplies chips",
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+      },
+      {
+       "from": "samsung-electronics",
+       "via": "nvidia",
+       "tie": "manufactures for",
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+      }
+     ]
+    }
+   ],
+   "ties_from_tier": 6,
+   "ties_into_tier": 21,
+   "ai_proposals": 32,
    "proposal_topics": {
-    "Social & economic impacts": 10,
-    "Data center impacts": 2
+    "Social & economic impacts": 21,
+    "Data center impacts": 6,
+    "AI governance & oversight": 5
    },
-   "median_support_pct": 8.5,
+   "median_support_pct": 9.3,
    "asks_made": [
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Enhanced Disclosure on Climate Goals",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on Water Usage and AI Development",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on Data Privacy",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "AI Board Oversight",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on AI-Generated Misinformation",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on AI Data Usage Oversight",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
     {
      "company": "META",
      "year": 2026,
@@ -1024,84 +1546,69 @@
      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
     },
     {
-     "company": "META",
+     "company": "GOOGL",
      "year": 2025,
-     "title": "Report on Risks of Deepfakes in Online Child Exploitation",
-     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+     "title": "Enhanced Disclosure on Climate Goals",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
     },
     {
-     "company": "META",
+     "company": "GOOGL",
      "year": 2025,
-     "title": "Report on AI Data Usage Oversight",
-     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
-    },
-    {
-     "company": "META",
-     "year": 2025,
-     "title": "GHG Emissions Reduction Actions",
-     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
-    },
-    {
-     "company": "META",
-     "year": 2025,
-     "title": "Report on Child Safety Impacts and Harm Reduction",
-     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
-    },
-    {
-     "company": "META",
-     "year": 2024,
-     "title": "Report on Generative AI Misinformation and Disinformation Risks",
-     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
-    },
-    {
-     "company": "META",
-     "year": 2024,
-     "title": "Human Rights Impact Assessment on AI Systems Driving Targeted Advertising",
-     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
-    },
-    {
-     "company": "META",
-     "year": 2023,
-     "title": "Human Rights Impact Assessment of Targeted Advertising",
-     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
-    },
-    {
-     "company": "META",
-     "year": 2023,
-     "title": "Report on Enforcement of Community Standards",
-     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
+     "title": "Report on Due Diligence Process to Assess Human Rights Risks in CAHRA",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
     }
    ],
    "investor_engagements": [],
    "safety_commitments": [
+    "01-ai",
+    "aleph-alpha",
+    "alibaba-group",
     "anthropic",
-    "spacex",
-    "openai",
-    "mistral-ai",
+    "black-forest-labs",
     "cohere",
+    "deepseek",
+    "g42",
     "inflection-ai",
     "magic",
     "minimax",
-    "zhipu-ai",
-    "01-ai",
-    "deepseek",
-    "aleph-alpha",
-    "black-forest-labs",
+    "mistral-ai",
+    "openai",
     "reflection-ai",
-    "writer"
+    "samsung-electronics",
+    "servicenow",
+    "spacex",
+    "tencent-holdings",
+    "writer",
+    "zhipu-ai"
    ],
-   "fund_vote_rows": 35,
+   "fund_vote_rows": 142,
    "shareholder_routes": {
-    "US proxy rules apply": 3,
+    "US proxy rules apply": 6,
+    "US-listed foreign issuer": 1,
+    "listed outside the US": 4,
     "not determined": 3,
-    "private": 8,
-    "listed outside the US": 2
+    "private": 9
    },
    "active_filers": [
     {
      "id": "mercy",
      "name": "Mercy Investment Services",
-     "proposals": 5
+     "proposals": 8
+    },
+    {
+     "id": "share",
+     "name": "SHARE (Shareholder Association for Research and Education)",
+     "proposals": 7
+    },
+    {
+     "id": "nlpc",
+     "name": "National Legal and Policy Center",
+     "proposals": 6
+    },
+    {
+     "id": "trillium",
+     "name": "Trillium Asset Management",
+     "proposals": 6
     },
     {
      "id": "as-you-sow",
@@ -1109,74 +1616,69 @@
      "proposals": 5
     },
     {
-     "id": "nlpc",
-     "name": "National Legal and Policy Center",
-     "proposals": 3
-    },
-    {
-     "id": "proxy-impact",
-     "name": "Proxy Impact",
-     "proposals": 3
-    },
-    {
-     "id": "nei",
-     "name": "NEI Investments",
-     "proposals": 2
+     "id": "eko",
+     "name": "Ekō (formerly SumOfUs)",
+     "proposals": 5
     },
     {
      "id": "arjuna",
      "name": "Arjuna Capital",
-     "proposals": 2
-    },
-    {
-     "id": "eko",
-     "name": "Ekō (formerly SumOfUs)",
-     "proposals": 2
-    },
-    {
-     "id": "bowyer",
-     "name": "Bowyer Research",
-     "proposals": 2
-    },
-    {
-     "id": "pcusa",
-     "name": "Presbyterian Church (U.S.A.)",
-     "proposals": 2
-    },
-    {
-     "id": "omi-us",
-     "name": "Missionary Oblates of Mary Immaculate, US Province",
-     "proposals": 1
-    },
-    {
-     "id": "benedictine-mt-scholastica",
-     "name": "Benedictine Sisters of Mount St. Scholastica",
-     "proposals": 1
+     "proposals": 4
     },
     {
      "id": "commonspirit",
      "name": "CommonSpirit Health",
-     "proposals": 1
+     "proposals": 4
+    },
+    {
+     "id": "ucc-pension",
+     "name": "Pension Plan of The United Church of Canada",
+     "proposals": 4
+    },
+    {
+     "id": "zevin",
+     "name": "Zevin Asset Management",
+     "proposals": 4
+    },
+    {
+     "id": "benedictine-mt-scholastica",
+     "name": "Benedictine Sisters of Mount St. Scholastica",
+     "proposals": 3
+    },
+    {
+     "id": "inspire",
+     "name": "Inspire Investing",
+     "proposals": 3
     }
    ],
    "coalitions": [
     {
      "id": "iccr",
      "name": "Interfaith Center on Corporate Responsibility (ICCR)",
-     "members_active_here": 7
+     "members_active_here": 11
     },
     {
      "id": "iahr",
      "name": "Investor Alliance for Human Rights",
-     "members_active_here": 2
+     "members_active_here": 7
     },
     {
      "id": "wba-cic-ethical-ai",
      "name": "WBA Collective Impact Coalition for Ethical AI",
-     "members_active_here": 2
+     "members_active_here": 6
     }
    ],
    "people": [
+    {
+     "id": "person-amy-orr",
+     "name": "Amy Orr",
+     "org": "Boston Common Asset Management"
+    },
+    {
+     "id": "person-andrea-ranger",
+     "name": "Andrea Ranger",
+     "org": "Trillium Asset Management"
+    },
     {
      "id": "person-andrew-behar",
      "name": "Andrew Behar",
@@ -1203,6 +1705,11 @@
      "org": "Ekō"
     },
     {
+     "id": "person-jonas-kron",
+     "name": "Jonas Kron",
+     "org": "Trillium Asset Management"
+    },
+    {
      "id": "person-julia-cedarholm",
      "name": "Julia Cedarholm",
      "org": "Arjuna Capital"
@@ -1213,9 +1720,19 @@
      "org": "Storebrand Asset Management"
     },
     {
+     "id": "person-lauren-compere",
+     "name": "Lauren Compere",
+     "org": "Boston Common Asset Management"
+    },
+    {
      "id": "person-lydia-kuykendal",
      "name": "Lydia Kuykendal",
      "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-marcela-pinilla",
+     "name": "Marcela Pinilla",
+     "org": "Zevin Asset Management"
     },
     {
      "id": "person-mary-minette",
@@ -1236,73 +1753,373 @@
      "id": "person-natasha-lamb",
      "name": "Natasha Lamb",
      "org": "Arjuna Capital"
+    },
+    {
+     "id": "person-richard-butters",
+     "name": "Richard Butters",
+     "org": "Aviva Investors"
     }
    ]
   },
   "capital": {
-   "companies": 2,
+   "scope": "all companies in this tier, primary or secondary",
+   "companies": 6,
+   "companies_primary": 2,
    "labs_reached_directly": [
-    "OpenAI",
-    "Perplexity",
-    "xAI"
-   ],
-   "labs_reached_in_two_steps": [
-    "Anthropic",
-    "Cohere",
-    "Mistral AI",
-    "Reflection AI",
-    "Safe Superintelligence (SSI)",
-    "Thinking Machines Lab"
-   ],
-   "ties_from_tier": 0,
-   "ties_into_tier": 2,
-   "ai_proposals": 1,
-   "proposal_topics": {
-    "AI governance & oversight": 1
-   },
-   "median_support_pct": 53.6,
-   "asks_made": [
-    {
-     "company": "TSLA",
-     "year": 2025,
-     "title": "Board Authorization of an Investment in xAI",
-     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925090866/tm252289-12_def14a.htm"
-    }
-   ],
-   "investor_engagements": [],
-   "safety_commitments": [],
-   "fund_vote_rows": 4,
-   "shareholder_routes": {
-    "US proxy rules apply": 1,
-    "listed outside the US": 1
-   },
-   "active_filers": [],
-   "coalitions": [],
-   "people": []
-  },
-  "deployers": {
-   "companies": 23,
-   "labs_reached_directly": [
+    "Amazon AGI / Nova",
     "Anthropic",
     "Cohere",
     "Google DeepMind",
+    "Meta",
+    "Meta Superintelligence Labs (incl. FAIR)",
+    "Microsoft AI (MAI Superintelligence Team)",
     "Mistral AI",
-    "OpenAI"
+    "OpenAI",
+    "Perplexity",
+    "Reflection AI",
+    "Safe Superintelligence (SSI)",
+    "Thinking Machines Lab",
+    "xAI"
+   ],
+   "labs_reached_in_two_steps": [],
+   "ties_from_tier": 8,
+   "ties_into_tier": 17,
+   "ai_proposals": 49,
+   "proposal_topics": {
+    "Social & economic impacts": 26,
+    "Data center impacts": 13,
+    "AI governance & oversight": 10
+   },
+   "median_support_pct": 13.8,
+   "asks_made": [
+    {
+     "company": "AMZN",
+     "year": 2026,
+     "title": "Additional Reporting on Impact of Data Centers on Climate Commitments",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    },
+    {
+     "company": "AMZN",
+     "year": 2026,
+     "title": "Establish and maintain a worker-oriented AI advisory council (presented at the meeting under the bylaws; not in the proxy)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    },
+    {
+     "company": "AMZN",
+     "year": 2026,
+     "title": "Responsible AI policies vs sales of AI/cloud to militaries and DHS",
+     "url": "https://news.bloomberglaw.com/esg/amazon-to-block-investor-vote-on-ai-services-for-israel-dhs"
+    },
+    {
+     "company": "AMZN",
+     "year": 2026,
+     "title": "Report on Impact of Climate Commitments",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Enhanced Disclosure on Climate Goals",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on Water Usage and AI Development",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on Data Privacy",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "AI Board Oversight",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on AI-Generated Misinformation",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on AI Data Usage Oversight",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "MSFT",
+     "year": 2026,
+     "title": "Additional Disclosures Meeting Climate Commitments",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+    },
+    {
+     "company": "MSFT",
+     "year": 2026,
+     "title": "Report on Human Rights Due Diligence",
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+    }
+   ],
+   "investor_engagements": [
+    "nvidia"
+   ],
+   "safety_commitments": [],
+   "fund_vote_rows": 241,
+   "shareholder_routes": {
+    "US proxy rules apply": 5,
+    "listed outside the US": 1
+   },
+   "active_filers": [
+    {
+     "id": "nlpc",
+     "name": "National Legal and Policy Center",
+     "proposals": 10
+    },
+    {
+     "id": "eko",
+     "name": "Ekō (formerly SumOfUs)",
+     "proposals": 7
+    },
+    {
+     "id": "share",
+     "name": "SHARE (Shareholder Association for Research and Education)",
+     "proposals": 7
+    },
+    {
+     "id": "trillium",
+     "name": "Trillium Asset Management",
+     "proposals": 7
+    },
+    {
+     "id": "arjuna",
+     "name": "Arjuna Capital",
+     "proposals": 6
+    },
+    {
+     "id": "open-mic",
+     "name": "Open MIC (Open Media and Information Companies Initiative)",
+     "proposals": 6
+    },
+    {
+     "id": "zevin",
+     "name": "Zevin Asset Management",
+     "proposals": 6
+    },
+    {
+     "id": "as-you-sow",
+     "name": "As You Sow",
+     "proposals": 5
+    },
+    {
+     "id": "iasj",
+     "name": "Investor Advocates for Social Justice",
+     "proposals": 5
+    },
+    {
+     "id": "mercy",
+     "name": "Mercy Investment Services",
+     "proposals": 5
+    },
+    {
+     "id": "azzad",
+     "name": "Azzad Asset Management",
+     "proposals": 4
+    },
+    {
+     "id": "ucc-pension",
+     "name": "Pension Plan of The United Church of Canada",
+     "proposals": 4
+    }
+   ],
+   "coalitions": [
+    {
+     "id": "iccr",
+     "name": "Interfaith Center on Corporate Responsibility (ICCR)",
+     "members_active_here": 14
+    },
+    {
+     "id": "iahr",
+     "name": "Investor Alliance for Human Rights",
+     "members_active_here": 11
+    },
+    {
+     "id": "wba-cic-ethical-ai",
+     "name": "WBA Collective Impact Coalition for Ethical AI",
+     "members_active_here": 5
+    }
+   ],
+   "people": [
+    {
+     "id": "person-amy-orr",
+     "name": "Amy Orr",
+     "org": "Boston Common Asset Management"
+    },
+    {
+     "id": "person-andrea-ranger",
+     "name": "Andrea Ranger",
+     "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-andrew-behar",
+     "name": "Andrew Behar",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-audrey-mocle",
+     "name": "Audrey Mocle",
+     "org": "Open MIC"
+    },
+    {
+     "id": "person-brandon-rees",
+     "name": "Brandon Rees",
+     "org": "AFL-CIO Office of Investment"
+    },
+    {
+     "id": "person-christina-oconnell",
+     "name": "Christina O'Connell",
+     "org": "Ekō"
+    },
+    {
+     "id": "person-danielle-fugere",
+     "name": "Danielle Fugere",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-emma-ruby-sachs",
+     "name": "Emma Ruby-Sachs",
+     "org": "Ekō"
+    },
+    {
+     "id": "person-jonas-kron",
+     "name": "Jonas Kron",
+     "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-joshua-brockwell",
+     "name": "Joshua Brockwell",
+     "org": "Azzad Asset Management"
+    },
+    {
+     "id": "person-julia-cedarholm",
+     "name": "Julia Cedarholm",
+     "org": "Arjuna Capital"
+    },
+    {
+     "id": "person-julie-goodridge",
+     "name": "Julie N.W. Goodridge",
+     "org": "NorthStar Asset Management"
+    },
+    {
+     "id": "person-lauren-compere",
+     "name": "Lauren Compere",
+     "org": "Boston Common Asset Management"
+    },
+    {
+     "id": "person-lydia-kuykendal",
+     "name": "Lydia Kuykendal",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-marcela-pinilla",
+     "name": "Marcela Pinilla",
+     "org": "Zevin Asset Management"
+    },
+    {
+     "id": "person-mary-minette",
+     "name": "Mary Minette",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-michael-connor",
+     "name": "Michael Connor",
+     "org": "Open MIC"
+    },
+    {
+     "id": "person-natasha-lamb",
+     "name": "Natasha Lamb",
+     "org": "Arjuna Capital"
+    },
+    {
+     "id": "person-richard-butters",
+     "name": "Richard Butters",
+     "org": "Aviva Investors"
+    },
+    {
+     "id": "person-whitney-nguyen",
+     "name": "Whitney Nguyen",
+     "org": "NorthStar Asset Management"
+    }
+   ]
+  },
+  "deployers": {
+   "scope": "all companies in this tier, primary or secondary",
+   "companies": 30,
+   "companies_primary": 23,
+   "labs_reached_directly": [
+    "Amazon AGI / Nova",
+    "Anthropic",
+    "Cohere",
+    "DeepSeek",
+    "Google DeepMind",
+    "Meta Superintelligence Labs (incl. FAIR)",
+    "Microsoft AI (MAI Superintelligence Team)",
+    "Mistral AI",
+    "OpenAI",
+    "Perplexity",
+    "Safe Superintelligence (SSI)",
+    "Thinking Machines Lab",
+    "xAI"
    ],
    "labs_reached_in_two_steps": [
-    "Meta Superintelligence Labs (incl. FAIR)",
-    "Safe Superintelligence (SSI)",
-    "Thinking Machines Lab"
+    {
+     "lab": "Meta",
+     "routes": [
+      {
+       "from": "samsung-electronics",
+       "via": "nvidia",
+       "tie": "supplies chips",
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+      },
+      {
+       "from": "samsung-electronics",
+       "via": "nvidia",
+       "tie": "manufactures for",
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+      }
+     ]
+    },
+    {
+     "lab": "Reflection AI",
+     "routes": [
+      {
+       "from": "samsung-electronics",
+       "via": "nvidia",
+       "tie": "supplies chips",
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+      },
+      {
+       "from": "samsung-electronics",
+       "via": "nvidia",
+       "tie": "manufactures for",
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+      }
+     ]
+    }
    ],
-   "ties_from_tier": 6,
-   "ties_into_tier": 4,
-   "ai_proposals": 4,
+   "ties_from_tier": 10,
+   "ties_into_tier": 23,
+   "ai_proposals": 63,
    "proposal_topics": {
-    "Social & economic impacts": 2,
-    "AI governance & oversight": 1,
-    "Data center impacts": 1
+    "Social & economic impacts": 37,
+    "Data center impacts": 15,
+    "AI governance & oversight": 11
    },
-   "median_support_pct": 11.6,
+   "median_support_pct": 12.3,
    "asks_made": [
     {
      "company": "AAPL",
@@ -1311,88 +2128,289 @@
      "url": "https://www.minerva.info/post/apple-shareholders-stunted-proposals-plummet-as-sec-shift-bites"
     },
     {
-     "company": "AAPL",
-     "year": 2025,
-     "title": "Report on Ethical AI Data Acquisition and Usage",
-     "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm"
+     "company": "AMZN",
+     "year": 2026,
+     "title": "Additional Reporting on Impact of Data Centers on Climate Commitments",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
     },
     {
-     "company": "AAPL",
-     "year": 2025,
-     "title": "Report on Costs and Benefits of Child Sex Abuse Material-Identifying Software & User Privacy",
-     "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm"
+     "company": "AMZN",
+     "year": 2026,
+     "title": "Establish and maintain a worker-oriented AI advisory council (presented at the meeting under the bylaws; not in the proxy)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
     },
     {
-     "company": "AAPL",
-     "year": 2024,
-     "title": "Report on Use of AI",
-     "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm"
+     "company": "AMZN",
+     "year": 2026,
+     "title": "Responsible AI policies vs sales of AI/cloud to militaries and DHS",
+     "url": "https://news.bloomberglaw.com/esg/amazon-to-block-investor-vote-on-ai-services-for-israel-dhs"
+    },
+    {
+     "company": "AMZN",
+     "year": 2026,
+     "title": "Report on Impact of Climate Commitments",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Enhanced Disclosure on Climate Goals",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on Water Usage and AI Development",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on Data Privacy",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "AI Board Oversight",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on AI-Generated Misinformation",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "GOOGL",
+     "year": 2026,
+     "title": "Report on AI Data Usage Oversight",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "META",
+     "year": 2026,
+     "title": "Report on AI Data Usage Oversight",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
     }
    ],
    "investor_engagements": [
-    "salesforce",
     "intuit",
-    "verisk-analytics",
-    "workday",
     "motorola-solutions",
-    "thales"
+    "salesforce",
+    "thales",
+    "verisk-analytics",
+    "workday"
    ],
    "safety_commitments": [
-    "naver",
-    "beijing-volcano-engine-technology",
-    "stability-ai",
-    "scale-ai",
     "adobe",
-    "servicenow",
+    "alibaba-group",
     "beijing-baidu-network-technology",
-    "tencent-holdings",
-    "shanghai-sensetime-intelligent-technology"
+    "beijing-volcano-engine-technology",
+    "naver",
+    "samsung-electronics",
+    "scale-ai",
+    "servicenow",
+    "shanghai-sensetime-intelligent-technology",
+    "stability-ai",
+    "tencent-holdings"
    ],
-   "fund_vote_rows": 22,
+   "fund_vote_rows": 291,
    "shareholder_routes": {
-    "US proxy rules apply": 14,
-    "listed outside the US": 3,
+    "US proxy rules apply": 19,
+    "US-listed foreign issuer": 1,
+    "listed outside the US": 4,
     "not determined": 6
    },
    "active_filers": [
     {
-     "id": "bowyer",
-     "name": "Bowyer Research",
-     "proposals": 2
-    },
-    {
      "id": "nlpc",
      "name": "National Legal and Policy Center",
-     "proposals": 2
+     "proposals": 15
     },
     {
-     "id": "afl-cio",
-     "name": "AFL-CIO (Equity Index Funds)",
-     "proposals": 1
+     "id": "as-you-sow",
+     "name": "As You Sow",
+     "proposals": 10
     },
     {
-     "id": "tulipshare",
-     "name": "Tulipshare",
-     "proposals": 1
+     "id": "eko",
+     "name": "Ekō (formerly SumOfUs)",
+     "proposals": 9
+    },
+    {
+     "id": "mercy",
+     "name": "Mercy Investment Services",
+     "proposals": 9
+    },
+    {
+     "id": "arjuna",
+     "name": "Arjuna Capital",
+     "proposals": 8
+    },
+    {
+     "id": "share",
+     "name": "SHARE (Shareholder Association for Research and Education)",
+     "proposals": 7
+    },
+    {
+     "id": "trillium",
+     "name": "Trillium Asset Management",
+     "proposals": 7
+    },
+    {
+     "id": "open-mic",
+     "name": "Open MIC (Open Media and Information Companies Initiative)",
+     "proposals": 6
+    },
+    {
+     "id": "zevin",
+     "name": "Zevin Asset Management",
+     "proposals": 6
+    },
+    {
+     "id": "iasj",
+     "name": "Investor Advocates for Social Justice",
+     "proposals": 5
+    },
+    {
+     "id": "azzad",
+     "name": "Azzad Asset Management",
+     "proposals": 4
+    },
+    {
+     "id": "bowyer",
+     "name": "Bowyer Research",
+     "proposals": 4
     }
    ],
    "coalitions": [
     {
      "id": "iccr",
      "name": "Interfaith Center on Corporate Responsibility (ICCR)",
-     "members_active_here": 1
+     "members_active_here": 15
     },
     {
      "id": "iahr",
      "name": "Investor Alliance for Human Rights",
-     "members_active_here": 1
+     "members_active_here": 11
+    },
+    {
+     "id": "wba-cic-ethical-ai",
+     "name": "WBA Collective Impact Coalition for Ethical AI",
+     "members_active_here": 6
     }
    ],
    "people": [
     {
+     "id": "person-amy-orr",
+     "name": "Amy Orr",
+     "org": "Boston Common Asset Management"
+    },
+    {
+     "id": "person-andrea-ranger",
+     "name": "Andrea Ranger",
+     "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-andrew-behar",
+     "name": "Andrew Behar",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-audrey-mocle",
+     "name": "Audrey Mocle",
+     "org": "Open MIC"
+    },
+    {
      "id": "person-brandon-rees",
      "name": "Brandon Rees",
      "org": "AFL-CIO Office of Investment"
+    },
+    {
+     "id": "person-christina-oconnell",
+     "name": "Christina O'Connell",
+     "org": "Ekō"
+    },
+    {
+     "id": "person-danielle-fugere",
+     "name": "Danielle Fugere",
+     "org": "As You Sow"
+    },
+    {
+     "id": "person-emma-ruby-sachs",
+     "name": "Emma Ruby-Sachs",
+     "org": "Ekō"
+    },
+    {
+     "id": "person-jonas-kron",
+     "name": "Jonas Kron",
+     "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-joshua-brockwell",
+     "name": "Joshua Brockwell",
+     "org": "Azzad Asset Management"
+    },
+    {
+     "id": "person-julia-cedarholm",
+     "name": "Julia Cedarholm",
+     "org": "Arjuna Capital"
+    },
+    {
+     "id": "person-julie-goodridge",
+     "name": "Julie N.W. Goodridge",
+     "org": "NorthStar Asset Management"
+    },
+    {
+     "id": "person-kamil-zabielski",
+     "name": "Kamil Zabielski",
+     "org": "Storebrand Asset Management"
+    },
+    {
+     "id": "person-lauren-compere",
+     "name": "Lauren Compere",
+     "org": "Boston Common Asset Management"
+    },
+    {
+     "id": "person-lydia-kuykendal",
+     "name": "Lydia Kuykendal",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-marcela-pinilla",
+     "name": "Marcela Pinilla",
+     "org": "Zevin Asset Management"
+    },
+    {
+     "id": "person-mary-minette",
+     "name": "Mary Minette",
+     "org": "Mercy Investment Services"
+    },
+    {
+     "id": "person-michael-connor",
+     "name": "Michael Connor",
+     "org": "Open MIC"
+    },
+    {
+     "id": "person-michael-passoff",
+     "name": "Michael Passoff",
+     "org": "Proxy Impact"
+    },
+    {
+     "id": "person-natasha-lamb",
+     "name": "Natasha Lamb",
+     "org": "Arjuna Capital"
+    },
+    {
+     "id": "person-richard-butters",
+     "name": "Richard Butters",
+     "org": "Aviva Investors"
+    },
+    {
+     "id": "person-whitney-nguyen",
+     "name": "Whitney Nguyen",
+     "org": "NorthStar Asset Management"
     }
    ]
   }
