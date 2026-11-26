@@ -7,7 +7,7 @@
 <meta name="description" content="A public, sourced map of where investors still have leverage on AI governance at the largest AI companies.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -15,42 +15,39 @@
 <header class="site-header">
   <div class="wrap">
     <p class="eyebrow">Shareholder Advocacy AI Landscape</p>
-    <h1>A shared map of investor engagement on AI</h1>
-    <p class="lede">Investors are pressing the largest AI companies on safety, data center impacts, and what AI means for workers and society. This map shows every AI shareholder proposal, who filed it, who leads engagement at each organization, and which routes for investor influence are still open as proposal rights narrow. It is built so stewardship teams can find each other and see the whole field at once. Every fact links to its source.</p>
+    <h1>AI shareholder proposals, filers, rights and lab ties</h1>
     <p class="meta" id="last-updated"></p>
   </div>
 </header>
 
 <nav class="tabs" aria-label="Sections">
   <div class="wrap tab-row" role="tablist">
-    <button type="button" role="tab" data-tab="why" aria-selected="true">Why now</button>
-    <button type="button" role="tab" data-tab="new">What's new</button>
-    <button type="button" role="tab" data-tab="rights">Rights map</button>
-    <button type="button" role="tab" data-tab="weigh-in">How you can weigh in</button>
-    <button type="button" role="tab" data-tab="network">Advocacy network</button>
-    <button type="button" role="tab" data-tab="pathways">Influence pathways</button>
-    <button type="button" role="tab" data-tab="people">People</button>
-    <button type="button" role="tab" data-tab="causality">Causality map</button>
-    <button type="button" role="tab" data-tab="parnassus">Disclosure scorecard</button>
-    <button type="button" role="tab" data-tab="feed">Proposal feed</button>
-    <button type="button" role="tab" data-tab="votes">Fund votes</button>
-    <button type="button" role="tab" data-tab="water">Data center water</button>
+    <button type="button" role="tab" id="tabbtn-upcoming" aria-controls="tab-upcoming" data-tab="upcoming" aria-selected="true">Upcoming votes</button>
+    <button type="button" role="tab" id="tabbtn-company" aria-controls="tab-company" data-tab="company" aria-selected="false" tabindex="-1">Company lookup</button>
+    <button type="button" role="tab" id="tabbtn-feed" aria-controls="tab-feed" data-tab="feed" aria-selected="false" tabindex="-1">Proposals</button>
+    <button type="button" role="tab" id="tabbtn-votes" aria-controls="tab-votes" data-tab="votes" aria-selected="false" tabindex="-1">Fund votes</button>
+    <button type="button" role="tab" id="tabbtn-rights" aria-controls="tab-rights" data-tab="rights" aria-selected="false" tabindex="-1">Rights map</button>
+    <button type="button" role="tab" id="tabbtn-network" aria-controls="tab-network" data-tab="network" aria-selected="false" tabindex="-1">Co-filer network</button>
+    <button type="button" role="tab" id="tabbtn-people" aria-controls="tab-people" data-tab="people" aria-selected="false" tabindex="-1">Contacts</button>
+    <button type="button" role="tab" id="tabbtn-pathways" aria-controls="tab-pathways" data-tab="pathways" aria-selected="false" tabindex="-1">Lab pathways</button>
+    <button type="button" role="tab" id="tabbtn-causality" aria-controls="tab-causality" data-tab="causality" aria-selected="false" tabindex="-1">Policy and causality</button>
+    <button type="button" role="tab" id="tabbtn-parnassus" aria-controls="tab-parnassus" data-tab="parnassus" aria-selected="false" tabindex="-1">Disclosure scorecard</button>
+    <button type="button" role="tab" id="tabbtn-new" aria-controls="tab-new" data-tab="new" aria-selected="false" tabindex="-1">New filings</button>
   </div>
 </nav>
 
 <main class="wrap">
-  <section id="tab-why" class="panel" role="tabpanel"></section>
-  <section id="tab-new" class="panel" role="tabpanel" hidden></section>
-  <section id="tab-rights" class="panel" role="tabpanel" hidden></section>
-  <section id="tab-weigh-in" class="panel" role="tabpanel" hidden></section>
-  <section id="tab-network" class="panel" role="tabpanel" hidden></section>
-  <section id="tab-pathways" class="panel" role="tabpanel" hidden></section>
-  <section id="tab-people" class="panel" role="tabpanel" hidden></section>
-  <section id="tab-causality" class="panel" role="tabpanel" hidden></section>
-  <section id="tab-parnassus" class="panel" role="tabpanel" hidden></section>
-  <section id="tab-feed" class="panel" role="tabpanel" hidden></section>
-  <section id="tab-votes" class="panel" role="tabpanel" hidden></section>
-  <section id="tab-water" class="panel" role="tabpanel" hidden></section>
+  <section id="tab-upcoming" class="panel" role="tabpanel" aria-labelledby="tabbtn-upcoming"></section>
+  <section id="tab-company" class="panel" role="tabpanel" aria-labelledby="tabbtn-company" hidden></section>
+  <section id="tab-feed" class="panel" role="tabpanel" aria-labelledby="tabbtn-feed" hidden></section>
+  <section id="tab-votes" class="panel" role="tabpanel" aria-labelledby="tabbtn-votes" hidden></section>
+  <section id="tab-rights" class="panel" role="tabpanel" aria-labelledby="tabbtn-rights" hidden></section>
+  <section id="tab-network" class="panel" role="tabpanel" aria-labelledby="tabbtn-network" hidden></section>
+  <section id="tab-people" class="panel" role="tabpanel" aria-labelledby="tabbtn-people" hidden></section>
+  <section id="tab-pathways" class="panel" role="tabpanel" aria-labelledby="tabbtn-pathways" hidden></section>
+  <section id="tab-causality" class="panel" role="tabpanel" aria-labelledby="tabbtn-causality" hidden></section>
+  <section id="tab-parnassus" class="panel" role="tabpanel" aria-labelledby="tabbtn-parnassus" hidden></section>
+  <section id="tab-new" class="panel" role="tabpanel" aria-labelledby="tabbtn-new" hidden></section>
 </main>
 
 <footer class="site-footer">
@@ -61,12 +58,13 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script src="graph.js"></script>
-<script src="pathways.js"></script>
-<script src="causality.js"></script>
-<script src="scorecard.js"></script>
-<script src="votes.js"></script>
-<script src="app.js"></script>
+<!-- d3 loads in parallel and never blocks the first tables; app.js waits for it before drawing graphs. -->
+<script id="d3js" async src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script defer src="graph.js"></script>
+<script defer src="pathways.js"></script>
+<script defer src="causality.js"></script>
+<script defer src="scorecard.js"></script>
+<script defer src="votes.js"></script>
+<script defer src="app.js"></script>
 </body>
 </html>

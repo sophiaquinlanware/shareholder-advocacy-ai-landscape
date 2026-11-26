@@ -1,93 +1,91 @@
 # Design system
 
-A description of the site as of the blue-green restyle (2026-11-25, branch `design/blue-green-restyle`; plan in docs/plans/2026-11-25-blue-green-restyle.md). It records the design. When the design changes, update this file in the same commit.
+A description of the site as of round 2 (2026-11-25, branch `design/round2-structure`; plan in docs/plans/2026-11-25-round2-structure.md). It records the design. When the design changes, update this file in the same commit.
 
-Direction from the owner: simple and readable; a blue-green, light-blue palette; thin, curved lines inside graphs that show real relations; no decorative visuals. A chart appears only if it's built from `data/` and updates with it.
+Owner direction, 2026-11-25:
+- An internal working tool organised by the tasks a stewardship team does. Not a public showcase, and not flashy.
+- "Largely just black and white, but where necessary, there is blue. For example, all the visuals should be blue."
+- No decorative visuals. A chart appears only if it's drawn from `data/` and updates with it, and its type is chosen for what best shows how the data relates.
+- Audience: practitioners. Plain labels, no definitions, no slogans.
+
+This replaces the blue-green dark/light restyle of round 1 (d627574).
 
 ## Colours
 
-All colours are CSS custom properties ("tokens") on `:root` in `styles.css`, each with a dark value set twice: under `@media (prefers-color-scheme: dark)` (guarded by `:root:not([data-theme="light"])`) and under `:root[data-theme="dark"]`. Contrast figures are measured WCAG ratios against `--surface`.
+One white theme (`color-scheme: light`). All colours are tokens on `:root` in `styles.css`. Contrast figures are measured on white.
 
-### Base
+| Token | Value | Role |
+|---|---|---|
+| `--bg`, `--surface` | #ffffff | page, cards, tables |
+| `--ink` | #111111 | text (18.9) |
+| `--ink-soft` | #555555 | secondary text, headers (7.5) |
+| `--line` | #e0e0e0 | dividers (non-interactive) |
+| `--control-edge` | #8a8a8a | borders of inputs, selects, buttons, chips (3.45, WCAG 1.4.11) |
+| `--head-bg` | #f6f6f6 | table header row, reason box |
+| `--accent` | #1f5f99 | links, selected tab, selected controls (6.7) |
+| `--accent-soft` | #e8f0f9 | highlighted table row, upcoming pill |
+| `--blue-1` | #0b2545 | data: navy (15.4) |
+| `--blue-2` | #2f6fb0 | data: mid blue (5.2) |
+| `--blue-3` | #4f8fcf | data: light blue (3.4) |
 
-| Token | Light | Dark | Role |
-|---|---|---|---|
-| `--bg` | #f2f7f7 | #04161c | page background |
-| `--surface` | #ffffff | #071e25 | cards, tables, panels |
-| `--ink` | #0e2a30 | #e6faf7 | body text (15.1 / 15.9) |
-| `--ink-soft` | #46616a | #9dbfc0 | secondary text, table headers (6.6 / 8.7) |
-| `--line` | #d3e2e3 | #1e4b53 | borders, dividers |
-| `--accent` | #1b5e8c | #8cc8f0 | light blue: links, active tab, eyebrow, selected controls (6.9 / 9.5) |
-| `--accent-soft` | #e3eef7 | #0c2838 | lever tiles |
+**Status pills** carry a text label and use shape and fill, not colour, to separate states.
+- Route: open = solid blue · narrowing = dashed outline · closed = solid black · pending = grey outline.
+- Proposal status: voted = grey outline · upcoming = light blue · withdrawn = dashed outline · excluded = solid black.
 
-### Status (rights map pills)
+## Data visuals: all blue
 
-The open status is teal-green and the accent is blue, so an "open" pill isn't mistaken for a link or selected control. Pills always carry their text label.
+| Visual | Encoding |
+|---|---|
+| Proposals dot plot | x = meeting date; y = support (0–60%, or higher if the data needs it); one mark per voted proposal with a dated vote-results filing. Topic = shade **and** shape: data centres navy circle, social and economic mid-blue square, governance light-blue triangle. Hollow mark = the figure carries a basis note or caveat (numbered note under the table). Dashed line "50% of for + against". Marks sharing a date are spread 7px apart. |
+| Co-filer network | **Exception to all-blue, by the owner's direction:** one saturated, distinct colour per node type (`--n-*`, each 3:1 or more on white), so types read straight off the key. **Companies are typed by value-chain tier** (the `tier` field on graph.json nodes, from the data session): Chip builders, Data centers and power, Hyperscalers and AI clouds, Frontier AI labs, Strategic investors, AI deployers. Each tier has its own `--n-tier-*` colour, and companies sit in tier bands within the Companies column. A company with no tier shows as "Company (tier not yet assigned)". The intro says the tiers are this site's reading. Overlapping default labels are hidden, keeping companies and labs first and then the most connected nodes; hover or select a node to show its label. **Grouped 2D layout:** x follows the filing chain (people → filers → proposals → companies → frontier labs); filer types each get a horizontal band; policy, responses and public engagement sit in a top band. Size = number of connections. Links light blue, thin quadratic arcs. **Graph settings** panel (like Obsidian's): text size, label threshold, node size and link thickness (Display); orphans (Filters); grouping, centre, repel and link force, and link distance (Forces). Saved per viewer in localStorage, with "Reset to defaults". |
+| Lab pathways | Company → lab ties navy, width = tie strength. Filer → company links light blue, width = proposals filed. |
+| Policy and causality | Event nodes mid blue. Link type by dash pattern: led to solid · responded to dashed · restricts dotted · enables dash-dot · cited by sparse dots. |
+| Disclosure scorecard | Met = solid blue, partial = hatched blue, silent = grey outline. |
 
-| Token | Light | Dark | Meaning |
-|---|---|---|---|
-| `--open` / `--open-bg` | #1e6e5a / #ddf1ea | #7fe3d6 / #0d3236 | route open |
-| `--narrow` / `--narrow-bg` | #965a12 / #f8ecd9 | #ffc36b / #33270f | route narrowing; also "source pending" text |
-| `--closed` / `--closed-bg` | #a33a32 / #f7e1de | #f29a90 / #3a1f1e | route closed |
-| `--pending-bg` | #e8efef | #10282e | status not yet known |
+**Fund votes** (from main, data session) use no palette on purpose: every vote is the neutral `.pill.pending` label, so no vote reads as right or wrong (PRODUCT.md "Never claim" 1). The table has a sticky first column (`.sticky-col`, with `scroll-padding-left` 330px on its box so a focused cell never hides under it), a left-aligned caption (`.fv-caption`), labelled filters (`.sr-label`) and a focus outline on the scroll box (`.table-wrap:focus-visible`).
 
-### Data-graphic palettes (one per visual, defined next to its styles)
-
-- **Advocacy network node types** `--n-*`: company (= `--ink`), proposal, manager, nonprofit, faith, pension, labor, foundation, coalition, other, person.
-- **Influence pathway tie types** `--t-*`: equity, compute, chips, dist(ribution), board, commercial, parent (= `--ink-soft`), lab.
-- **Disclosure scorecard** `--sc-*`: met (solid), partial (hatched), silent (outlined with `--sc-silent-edge`). The fill pattern carries the state as well as the hue (WCAG 1.4.1).
-- **Fund votes** use no palette on purpose: every vote is the neutral `.pill.pending` label, so no vote reads as right or wrong (PRODUCT.md "Never claim" 1).
-
-Every graph colour reaches 3:1 against `--surface` in both themes. Neighbouring categories that share a hue family also differ in lightness: proposal and other at 2.3:1, person and foundation at 1.7–2.0:1. The site uses one green: asset managers (`--n-manager`) and equity ties (`--t-equity`) use the same teal-green as `--open` and `--sc-met`. Values are in `styles.css` and not repeated here, so there's one source. The network legend has 15 entries sharing 11 colours. Frontier lab reuses labor fund's pink (`--t-lab` = `--n-labor`), and policy, response and public reuse the pension, foundation and nonprofit colours (graph.js:37-45). Those pairs are told apart only by their legend labels. That's past what colour alone can separate, and the round 2 chart audit revisits it.
+Every visual has a text equivalent on the same tab: the proposals table, the network list view, the pathways tie table, the causality event table, and the scorecard evidence panel.
 
 ## Typography
 
-- **Families:** headings `--display` = Inter Tight (Google Fonts), then a local "Inter Tight Fallback" (Arial with size-adjust and ascent/descent overrides, to limit layout shift while the web font loads), then system-ui. Body and UI `--sans` = Inter (Google Fonts), fallback system-ui.
-- **Weights:** h1 300 with -0.02em tracking, a light display line set apart by size · h2 600 · h3 600 · labels (eyebrow, `dt`, pill, timeline date) 600. Below the h1, size alone sets the hierarchy (26 → 20 → 12–14px), so no smaller heading or label is heavier than the one above it.
-- **Scale:** h1 `clamp(30px, 5vw, 46px)` / line-height 1.1 · h2 26px · h3 20px · lede 18px (16px under 600 px) · body 16px / line-height 1.6 · tables and tabs 14px · meta, sources, pills 12–13px · eyebrow and table headers 12px uppercase, letter-spaced.
-- **Weight on the wire (measured 2026-11-25):** Latin woff2 for the two families is 93.3 KB, down from 170.6 KB with Source Serif 4.
+- One family: Inter (Google Fonts, 400/500/600/700), fallback system-ui. No display face.
+- Sizes: h1 22px/600 · h2 19px/600 · h3 16px/600 · sub-headings 15px · body 15px/1.55 · tables 13px · meta, notes, pills 12–13px.
 
 ## Layout
 
-- One column of content in `.wrap`: max width 1080px, 16px side padding.
-- Breakpoints: 800px (network and pathway layouts go to one column) and 600px (smaller header and card padding).
-- Spacing in use: 4, 6, 8, 10, 12, 14, 16, 20, 22, 28, 32, 48px. There is no formal spacing scale yet.
-- Radii: `--radius` 14px for cards, tables and graph boxes · 8px for levers, callouts and controls · 999px for pills and chips.
+- `.wrap` max width 1200px, 16px side padding. Dense: tables at 7px × 10px cell padding.
+- Breakpoints: 800px (graph side panels drop below) and 600px.
+- Radius `--radius` 6px; pills 999px.
+- Wide tables and charts scroll inside their own box (`.table-wrap` and `.chart-scroll`, both positioned so nothing escapes); the page never scrolls sideways.
 
-## Lines in graphs
+## Tabs (task order)
 
-Lines show relations, so they follow one style: thin and curved, with width still encoding the data.
+Upcoming votes (`#upcoming`) · Company lookup · Proposals · Fund votes (`#votes`, unchanged from main) · Rights map · Co-filer network · Contacts · Lab pathways · Policy and causality · Disclosure scorecard · New filings.
 
-- **Advocacy network** (`graph.js`): quadratic arcs, control point 15% of the link length off the midpoint. Width 1, lead filer 1.4, dashed for membership and derived co-filing. Resting opacity 0.35 is below 3:1 on purpose, so the graph stays readable. The focused node's links go to 0.9. **The network list view is the text equivalent of the resting lines.**
-- **Influence pathways** (`pathways.js`): cubic curves. Width = 0.8 × (proposal count or tie strength), minimum 0.8px. Resting opacity 0.35 is below 3:1. **The side panel is the text equivalent:** selecting a lab or company lists every tie with its type, date and source.
-- **Causality map** (`causality.js`): cubic curves, width 1.3, arrowheads by link type. Resting opacity 0.55 is below 3:1. **The side panel is the text equivalent:** selecting an event lists what led to it and what it led to, each with its source.
-- Round 2 should give these two graphs an always-visible table equivalent, as the network already has, so a reader doesn't have to select a node first.
-
-## Focus and motion
-
-- `:focus-visible` draws a 2px `--accent` outline, offset 2px. On accent-filled controls (`.seg`, `.chip` when pressed) the outline is `--ink`.
-- `prefers-reduced-motion: reduce` turns off transitions and the scorecard hover scale. The network layout settles before it's drawn, and focusing a node jumps instead of animating.
+They follow the WAI-ARIA tabs pattern: `aria-controls` and `aria-labelledby`, a roving tabindex, and Left/Right/Home/End keys. Old links redirect: `#why` goes to Policy and causality, which holds the policy timeline; `#weigh-in` and `#water` go to Upcoming votes. Any other unknown hash opens the first tab.
 
 ## Components
 
-- **Header:** eyebrow (site name), h1, lede, "last updated" meta line.
-- **Tabs:** sticky row of `type="button" role="tab"` buttons, scrolls sideways on phones; the active tab has an accent underline. Each tab is one `section.panel`.
-- **Card** (`.card`) in an auto-fill `.grid` (min 300px).
-- **Pill** (`.pill.open | .narrowing | .closed | .pending`).
-- **Table** in `.table-wrap` (scrolls sideways inside its own box, never the page).
-- **Callout** (accent left border), **timeline**, **levers** tiles, **steps** list.
-- **Graph controls:** search input and select (`.net-controls`), segmented toggle (`.seg`), legend chips (`.leg`, `.chip`), side detail panel (`.net-panel`).
-- **Source link** (`.src`) after each fact; **"source pending"** (`.unverified`) when the source is missing.
-- **Sticky first column** (`.sticky-col`): the row header of a wide table stays in view while the table scrolls sideways inside its box (fund votes tab). In the body it reads as normal 14px text, not the uppercase table-header style. Its table box gets `scroll-padding-left` at least as wide as the column (330px), so a keyboard-focused cell never hides under it. The table caption is left-aligned (`.fv-caption`) so it is not cut off on phones.
-- **Focus outline on scroll boxes** (`.table-wrap:focus-visible`): 2px `--accent` outline, so keyboard users can see and scroll a wide table.
-- **Labelled filter** (`.sr-label`): a visible text label wrapping a select in `.net-controls`, 13px `--ink-soft`.
-- **Coming soon** placeholder (`.coming`) for tabs not built yet.
-- **Footer:** the informs-not-coordinates statement, PRI link, credit and "open an issue" link.
+- **Header:** site name (eyebrow), h1, and a meta line of computed counts.
+- **Sortable table:** `<th aria-sort>` with a `<button class="th-sort">`; the active column shows ↑ or ↓.
+- **Status filter:** buttons with counts (`.status-btn`, `aria-pressed`).
+- **Count line:** `.count-line`, `aria-live="polite"`; it states what the filters show.
+- **Company detail:** `<details class="co-detail">`, with summary "Company TICKER: status".
+- **Summary list:** `dl.summary` on Company lookup.
+- **Reason box:** `.reason`, on withdrawn and excluded proposals, with the reason and source or "Reason not yet recorded".
+- **Legend chip:** `.leg`. When switched off: struck through, dashed border, hollow dot.
+- **Source link:** `.src`. Missing sources show "source pending" (`.unverified`).
 
-## Named rules (already true of the site)
+## Focus and motion
 
-1. **Colours only through tokens, with a dark value for each,** because both themes have to stay readable.
-2. **Every fact carries a source link or "source pending",** because accuracy is the product (PRODUCT.md, Never claim 4).
-3. **Wide content scrolls inside its own box, never the page,** because phones must not scroll sideways (checked by `tests/site.spec.js`).
-4. **Graph colours live next to the graph's styles,** because each palette belongs to one visual.
-5. **No decorative visuals.** A chart, graph or model appears only if it's drawn from `data/` and changes when the data does.
+- `:focus-visible` draws a 2px `--accent` outline. On accent-filled controls the outline is `--ink`.
+- `prefers-reduced-motion`: no transitions, the network settles before drawing, and focus jumps instead of animating.
+
+## Named rules
+
+1. Colours only through tokens.
+2. Every fact carries a source link or "source pending".
+3. Wide content scrolls inside its own box, never the page.
+4. No decorative visuals; every visual is blue and has a text equivalent.
+5. Counts, ranges and lists come from the data, never typed into copy.
+6. Plain labels; no definitions, explainers or slogans.

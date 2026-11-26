@@ -10,7 +10,11 @@ Stewardship and engagement teams: asset managers, faith-based investors, pension
 
 A public, sourced map of investor engagement on AI at the largest AI companies: every AI-related shareholder proposal at the companies tracked, who filed it, who leads engagement at each organization, how public companies tie to the private frontier labs, which routes for investor influence remain as proposal rights narrow, and how policy changes ripple through.
 
-**First ten seconds:** the header. "A shared map of investor engagement on AI", then the lede ending "Every fact links to its source."
+**How it is used (owner, 2026-11-25):** an internal working tool for stewardship teams, not a public showcase. "Make this site like an internal site, so it has a use case for a company … It should be pure using scenarios." The audience is practitioners, so there are no definitions, primers or catchy headings, just "simple data matching". Tabs follow the tasks: upcoming votes, company lookup, proposals, rights map, co-filer network, contacts, lab pathways, policy and causality, disclosure scorecard, new filings.
+
+**First ten seconds:** the header. "AI shareholder proposals, filers, rights and lab ties", then a meta line of counts ending "every fact links to its source". The owner approved this plain header on 2026-11-25 ("Yes, plain header"), replacing "A shared map of investor engagement on AI" and its lede.
+
+**Look (owner, 2026-11-25):** "largely just black and white, but where necessary, there is blue. For example, all the visuals should be blue." Nothing decorative; a chart appears only if it's drawn from `data/` and updates with it.
 
 ## Positioning
 
@@ -35,4 +39,4 @@ Plain, neutral, sourced, specific. Example from the site: "It is still a proposa
 
 ## Accessibility
 
-WCAG 2.1 AA in light and dark themes: text contrast, visible focus outlines, labelled controls, alt text or text equivalents for graphs, reduced motion respected, one column at phone width (390 px) with no sideways scrolling.
+WCAG 2.1 AA (one white theme since 2026-11-25): text contrast, visible focus outlines, labelled controls, alt text or text equivalents for graphs, reduced motion respected, one column at phone width (390 px) with no sideways scrolling.

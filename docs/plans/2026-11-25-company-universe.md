@@ -84,3 +84,13 @@ Companies that use AI in their own operations without selling or deploying it to
 - **Routes:** `shareholder_route` is "US proxy rules apply", "US-listed foreign issuer", "listed outside the US", "private", or null. Every non-null value has `route_source_url`. Null means not determined, and `route_note` says why, starting "source pending:" unless a sourced fact explains it (e.g. a Form 15 deregistration). `route_note` may also qualify a non-null value (newly listed domestic issuers).
 - **owner_choice_note**: on entries kept by the owner's decision where the AI link is indirect (TSMC, Southern Company).
 - **Queued:** 9 private labs with "ownership not yet checked" (G42, Inflection, Magic, 01.ai, DeepSeek, Aleph Alpha, Black Forest Labs, Reflection AI, WRITER); rights-map research for the 53 untracked companies.
+
+## Round 3: rights maps for 22 US companies and ownership for 9 private labs
+
+> Owner: "why cant you do those now" (2026-11-25), on the queued rights maps and ownership checks.
+
+- Scope of rights maps: the 22 new companies where `shareholder_route` is "US proxy rules apply" (rights maps describe Rule 14a-8 and state-law routes, so they don't apply to foreign issuers, non-US listings or private companies).
+- Same fields and rating rules as the original seven: `state`, `bylaw`, `threshold`, `control`, `director_voting` (each {text, url}), `matrix` (three columns: "Proposals if Rule 14a-8 ends", "Votes against directors", "Voting control", each {level: open|narrowing|closed, label, note, url}), `levers`, `route_status` and `route_status_reason`, optional `notes`. Sources: the company's current bylaws exhibit, latest 10-K cover and latest DEF 14A on EDGAR.
+- Rating rules: proposals open = record holders can give advance notice, no stake minimum; narrowing = ownership threshold, a Texas-style opt-in available to the board, or unusually short window; closed = proposals effectively barred. Director votes open = majority voting and no controller; narrowing = classified board or a controller over 30%; closed = plurality voting or a controller over 50%. Voting control open = no holder over 10%; narrowing = a holder 10 to 50%; closed = over 50% of votes.
+- Ownership for 9 private labs: a company or registry page stating ownership, or a "no public statement found after search" note listing what was searched.
+- Five researchers in parallel, then a data accuracy result review.
