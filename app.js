@@ -541,8 +541,8 @@ function renderPeople() {
     { key: "links", label: "Links", render: (p) => `${src(p.profile_url, "profile")} <button type="button" class="linklike" data-person="person-${esc(p.id)}">Show in network</button>` },
   ];
   el.innerHTML = `
-    <h2>Engagement leads</h2>
-    <p class="intro">Stewardship, engagement and shareholder advocacy leads at the organizations in the network, each with a public profile page. Public professional details only.</p>
+    <h2>Heads of stewardship and engagement</h2>
+    <p class="intro">The people who lead stewardship, shareholder engagement and shareholder advocacy at the organizations in the network (most hold titles such as Head of Stewardship or Director of Shareholder Engagement), each with a public profile page. Public professional details only.</p>
     <div class="net-controls"><input type="search" id="people-search" placeholder="Search name, organization or AI work" aria-label="Search people"></div>
     <p class="count-line" id="people-count" aria-live="polite"></p>
     <div class="table-wrap" id="people-table"></div>`;

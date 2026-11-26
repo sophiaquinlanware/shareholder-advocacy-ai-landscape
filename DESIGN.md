@@ -93,7 +93,7 @@ Six sections, in the order of an engagement cycle (owner, 2026-11-26: "like you 
 - **AI value chain:** Chips to AI products (`#value-chain`) · Ties to each frontier lab (`#pathways`)
 - **Company profiles:** One company in full (`#company`) · AI disclosure scores (`#parnassus`) · Shareholder proposal rights (`#rights`)
 - **Proposals and results:** All AI proposals (`#feed`) · How fund families voted (`#votes`) · Results of private engagement (`#outcomes`; moved here from Network and contacts, owner 2026-11-26: that section maps the network and players)
-- **Network and contacts** (owner, 2026-11-26; was "Investors and contacts"): Network of investors, proposals and companies (`#network`) · Engagement leads (`#people`)
+- **Network and contacts** (owner, 2026-11-26; was "Investors and contacts"): Network of investors, proposals and companies (`#network`) · Heads of stewardship and engagement (`#people`; owner: no count in the tab, name them by their job titles)
 - **Laws and rules:** AI laws and rule changes (`#causality`)
 
 Labels say what each view holds (owner, 2026-11-26: titles "not enough information that is precise about the actual information stored in each tab"). The line under each section tab lists its contents. View buttons with a count (`data-count-label`) are filled from the data by `labelCounts()` in app.js.

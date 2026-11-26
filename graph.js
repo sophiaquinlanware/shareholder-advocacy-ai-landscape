@@ -26,7 +26,7 @@
     foundation: "Foundation",
     coalition: "Coalition",
     other: "Other investor",
-    person: "Engagement lead",
+    person: "Head of stewardship or engagement",
     lab: "Frontier AI lab (tier not yet assigned)",
     policy: "Policy or rule",
     response: "Company or investor response",
