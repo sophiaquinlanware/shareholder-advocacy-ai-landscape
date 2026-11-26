@@ -4,7 +4,7 @@
 // Audience: shareholder-advocacy practitioners. Labels are plain; no definitions or explainers.
 
 const DATA = {};
-const FILES = ["site", "companies", "upcoming", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph", "scorecard", "fund_votes", "asks", "coverage"];
+const FILES = ["site", "companies", "upcoming", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph", "scorecard", "fund_votes", "asks", "coverage", "value_chain"];
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
@@ -648,6 +648,7 @@ async function main() {
   window.renderNetwork(DATA.graph && DATA.graph.nodes ? DATA.graph : DATA.network, (DATA.people || {}).people);
   window.renderPathways(DATA.pathways, DATA.graph && DATA.graph.nodes ? DATA.graph : DATA.network);
   window.renderCausality(DATA.causality);
+  if (window.renderValueChain) window.renderValueChain(DATA.value_chain, DATA.companies);
   window.renderScorecard(DATA.scorecard);
   window.renderVotes(DATA.fund_votes, DATA.proposals);
   renderPeople();

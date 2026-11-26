@@ -334,3 +334,15 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
    "i dont want redundant information ... my favorite is the visual"). */
 .cz-list { margin: 12px 0 0; }
 .cz-list > summary { cursor: pointer; font-weight: 600; font-size: 14px; padding: 6px 0; }
+
+/* Value chain tab: layered flow (blue on white) and the engagement-by-tier table */
+.vc-tiers { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
+.vc-flow svg { display: block; }
+.vc-flow g[role="button"]:focus { outline: none; }
+.vc-flow g[role="button"]:focus-visible circle { stroke: var(--ink); stroke-width: 2.5; }
+.vc-panel { margin-top: 10px; max-height: none; }
+.vc-panel h4 { margin: 14px 0 4px; font-size: 14px; }
+.vc-heat td.num, .vc-heat th.num { text-align: right; }
+.vc-heat .vc-zero { color: var(--ink-soft); }
+.vc-num { font: inherit; font-weight: 600; background: none; border: 0; padding: 2px 4px; color: var(--ink); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.vc-num.on-dark { color: #ffffff; }

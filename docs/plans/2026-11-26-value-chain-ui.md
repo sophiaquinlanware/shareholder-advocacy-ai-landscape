@@ -53,3 +53,12 @@ Plain labels with no "target" or "influence" (PRODUCT.md Never claim 1–2). "Wh
 ## Checks
 
 `npm run check`; plan and result reviews (UX/content, accessibility, data accuracy).
+
+## Revision 2 (after plan review R1: UX 68, accessibility 72, data accuracy 58; built with these changes)
+
+- **Heatmap columns:** only true totals: AI proposals, companies included for a named investor engagement, companies included for a safety commitment, fund votes on file. The data's `asks_made`, `active_filers`, `coalitions` and `people` are capped lists, so they're listed in the panel ("Showing 12 of 46 proposals", "the 12 most active", "up to 20") and never counted.
+- **Overlap:** the caption says rows overlap and must not be added up, because a company sits in several tiers.
+- **Panel headings follow the owner's three parts:** "Labs connected by sourced ties" (the labs tier is marked "this tier's own labs included"), "Asks made here" (median "computed by this site from the recorded figures"), and "Investors, coalitions and people active here". Then "Shareholder routes" as plain counts.
+- **Flow:** ties read "{from} {tie} {to}", with no supplier or customer claim. Same-tier ties loop. Choosing a tier or company fades the other ties. Equity stakes stay in Lab pathways (said in the key). Dash patterns are more distinct. Secondary-source ties are marked "reported" in the list view.
+- **Keyboard and focus:** tier buttons sit in an HTML row (`aria-pressed`). Companies in the chart are focusable buttons. Focus moves to the panel heading, or to the section heading for a heatmap cell, and a one-line live status announces the change; the panel itself isn't live. The ties table is a collapsed List view.
+- **Heatmap colours:** five blue steps, with white text on the two darkest. Every pair is 4.5:1 or more. Zero cells are plain text.

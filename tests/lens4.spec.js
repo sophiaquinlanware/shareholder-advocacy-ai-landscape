@@ -84,3 +84,18 @@ test("Play changes its name to Pause and back (no aria-pressed)", async ({ page 
   await expect(b).toHaveText("Play");
   await expect(page.locator("#net-scrub-status")).toContainText("Stopped at");
 });
+
+test("Value chain: a tier opens its details; zero cells are not buttons; capped lists aren't counted", async ({
+  page,
+}) => {
+  await page.goto("/index.html#value-chain");
+  await page.waitForLoadState("networkidle");
+  await page.click('.vc-tiers .chip[data-tier="compute"]');
+  await expect(page.locator("#vc-panel-h")).toHaveText("Hyperscalers and AI clouds");
+  await expect(page.locator("#vc-panel-h")).toBeFocused();
+  await expect(page.locator("#vc-panel")).toContainText("Labs connected by sourced ties");
+  await expect(page.locator(".vc-heat .vc-zero button")).toHaveCount(0);
+  await expect(page.locator(".vc-heat thead")).not.toContainText("Active filers");
+  await page.locator(".vc-heat .vc-num").first().click();
+  await expect(page.locator("#vc-panel h4:focus")).toHaveCount(1);
+});
