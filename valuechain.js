@@ -9,7 +9,7 @@
 
 (function () {
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-  const cssVar = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim() || "#1f5f99";
+  const cssVar = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim() || "#1f4e98";
   const plural = (n, one, many) => `${n} ${n === 1 ? one : many || one + "s"}`;
   const src = (u, label = "source") => (u ? ` <a class="src" href="${esc(u)}" target="_blank" rel="noopener">[${esc(label)}]</a>` : ` <span class="unverified">source pending</span>`);
   // Tie types differ by dash pattern, not colour (all marks are blue on white).
@@ -72,7 +72,7 @@
     V.ties.forEach((t) => { deg.set(t.from, (deg.get(t.from) || 0) + 1); deg.set(t.to, (deg.get(t.to) || 0) + 1); });
     const svg = d3.select(box).append("svg").attr("viewBox", [0, 0, W, H]).attr("width", W).attr("height", H)
       .attr("role", "group").attr("aria-label", `Value chain: ${V.ties.length} sourced ties between companies, by tier. Each company is a button; the same ties are in the list view below.`);
-    cols.forEach((c) => svg.append("text").attr("x", c.x).attr("y", 24).attr("text-anchor", "middle").attr("font-size", 11).attr("font-weight", 600).attr("fill", cssVar("--ink-soft"))
+    cols.forEach((c) => svg.append("text").attr("x", c.x).attr("y", 24).attr("text-anchor", "middle").attr("font-size", 12).attr("font-weight", 400).attr("fill", cssVar("--ink-soft"))
       .text((narrow ? SHORT_TIER[c.tid] || tierLabel(c.tid) : tierLabel(c.tid)).toUpperCase()));
     const ink = cssVar("--blue-2");
     svg.append("g").attr("fill", "none").selectAll("path").data(V.ties.filter((t) => pos.has(t.from) && pos.has(t.to))).join("path")
@@ -84,7 +84,7 @@
       .attr("class", "vc-tie").attr("stroke", ink).attr("stroke-opacity", 0.55).attr("stroke-width", 1.4).attr("stroke-dasharray", (t) => DASH[t.type] || null)
       .append("title").text((t) => `${name(t.from)} ${phrase(t.type)} ${name(t.to)}`);
     const nodes = svg.append("g").selectAll("g").data([...pos.entries()]).join("g").attr("transform", ([, p]) => `translate(${p.x},${p.y})`);
-    nodes.filter(([id]) => id === "__capital__").append("text").attr("x", -6).attr("y", 4).attr("font-size", 10).attr("font-weight", 600).attr("fill", cssVar("--ink-soft")).text(`${tierLabel("capital").toUpperCase()}`);
+    nodes.filter(([id]) => id === "__capital__").append("text").attr("x", -6).attr("y", 4).attr("font-size", 10).attr("font-weight", 400).attr("fill", cssVar("--ink-soft")).text(`${tierLabel("capital").toUpperCase()}`);
     const co = nodes.filter(([id]) => id !== "__capital__")
       .attr("tabindex", 0).attr("role", "button").attr("aria-label", ([id]) => `${name(id)}: ${plural(deg.get(id) || 0, "tie")}`).style("cursor", "pointer")
       .on("click", (ev, [id]) => showCompany(id))
@@ -203,8 +203,9 @@
   function drawHeat() {
     const tiers = V.tiers.slice().sort((a, b) => a.order - b.order);
     const max = new Map(COLS.map((c) => [c.key, Math.max(1, ...tiers.map((t) => c.n(V.per_tier[t.id] || {})))]));
-    // Five steps of blue; text turns white on the two darkest, so every cell keeps 4.5:1.
-    const STEPS = ["#eef4fb", "#d3e3f4", "#a9c8ea", "#2f6fb0", "#0b2545"];
+    // Five tints of the site's one blue (tokens --heat-1..5: 10, 30, 55, 80 and 100%); text turns white on
+    // the two darkest, so every cell keeps 4.5:1 (4.9:1 and 8.1:1 there).
+    const STEPS = [1, 2, 3, 4, 5].map((i) => cssVar(`--heat-${i}`));
     const cell = (c, t) => {
       const n = c.n(V.per_tier[t.id] || {});
       if (!n) return `<td class="num vc-zero">0</td>`;

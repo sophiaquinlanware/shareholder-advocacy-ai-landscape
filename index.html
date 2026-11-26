@@ -7,9 +7,9 @@
 <meta name="description" content="A public, sourced map of where investors still have leverage on AI governance at the largest AI companies.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Inter loads without blocking the first paint: text draws in the fallback font, then swaps (display=swap). -->
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+<!-- Schibsted Grotesk loads without blocking the first paint: text draws in the fallback font, then swaps (display=swap). -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500&display=swap" rel="stylesheet"></noscript>
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -23,6 +23,9 @@
 </header>
 
 <nav class="tabs" aria-label="Sections">
+  <!-- Owner (2026-11-26): "when you scroll you still see the title header so you always know which page you are on".
+       Shown once the page header scrolls away; the selected tab already tells screen readers, so it is hidden from them. -->
+  <div class="wrap sticky-title" aria-hidden="true"><span class="st-site">Shareholder Advocacy AI Landscape</span><span class="st-page" id="sticky-page"></span></div>
   <div class="wrap tab-row" role="tablist">
     <button type="button" role="tab" id="tabbtn-upcoming" aria-controls="tab-upcoming" data-tab="upcoming" aria-selected="true">Upcoming votes</button>
     <button type="button" role="tab" id="tabbtn-company" aria-controls="tab-company" data-tab="company" aria-selected="false" tabindex="-1">Company lookup</button>

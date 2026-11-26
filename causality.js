@@ -70,7 +70,7 @@
       svg.append("rect").attr("x", 0).attr("y", top + i * laneH).attr("width", W).attr("height", laneH)
         .attr("fill", i % 2 ? cssVar("--bg") : cssVar("--surface"));
       svg.append("text").text(l.label).attr("x", 10).attr("y", top + i * laneH + laneH / 2 + 4)
-        .attr("font-size", 12).attr("font-weight", 600).attr("fill", cssVar("--ink-soft"));
+        .attr("font-size", 12).attr("font-weight", 400).attr("fill", cssVar("--ink-soft"));
     });
     // Month labels along the top, placed with the same stretched scale.
     const months = d3.timeMonth.range(d3.timeMonth.ceil(t0), t1, 1).filter((m, i, all) => i === 0 || xr(m) - xr(all[i - 1]) > 0);

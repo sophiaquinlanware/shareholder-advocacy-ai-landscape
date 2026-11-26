@@ -6,24 +6,33 @@
   --bg: #ffffff;
   --surface: #ffffff;
   --ink: #111111;
-  --ink-soft: #555555;
+  --ink-soft: #6b6b6b;
   --line: #e0e0e0;
   --control-edge: #8a8a8a;
   --head-bg: #ffffff;
-  --accent: #1f5f99;
-  --accent-soft: #e8f0f9;
-  /* Blue scale for data visuals: navy, mid and light all reach 3:1 or more on white. */
-  --blue-1: #0b2545;
-  --blue-2: #2f6fb0;
-  --blue-3: #4f8fcf;
-  --sans: "Inter", system-ui, -apple-system, sans-serif;
+  /* One blue, the owner's (2026-11-26: "any blue you have can you have it be this color blue"), sampled
+     from their image: #1f4e98, 8.1:1 on white. Where two blues once told things apart, the second is a
+     tint of the same blue (mixed with white), never another hue. */
+  --blue: #1f4e98;
+  --blue-mid: #7995c1; /* 60% tint, 3:1 on white: marks that must still show */
+  --blue-light: #a5b8d6; /* 40% tint: lines and fills that sit behind something stronger */
+  --heat-1: #e9edf5; --heat-2: #bccae0; --heat-3: #849ec6; --heat-4: #4c71ad; --heat-5: #1f4e98;
+  --accent: var(--blue);
+  --accent-soft: #e9edf5;
+  --blue-1: var(--blue);
+  --blue-2: var(--blue);
+  --blue-3: var(--blue);
+  /* Owner (2026-11-26): the typeface and type style of a museum site: a neutral grotesque, regular weight
+     throughout, small grey uppercase labels. Schibsted Grotesk is the closest free match. */
+  --sans: "Schibsted Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --label: 400 12px/1.4 var(--sans);
   --radius: 6px;
   color-scheme: light;
 }
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: 120px; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans); }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans); font-synthesis-weight: none; }
 a { color: var(--accent); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .seg button[aria-pressed="true"]:focus-visible, .chip[aria-pressed="true"]:focus-visible, .status-btn[aria-pressed="true"]:focus-visible { outline-color: var(--ink); }
@@ -34,20 +43,28 @@ a { color: var(--accent); }
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
 
 .site-header { padding: 20px 0 12px; border-bottom: 1px solid var(--line); }
-.eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: 12px; font-weight: 600; color: var(--ink-soft); margin: 0 0 4px; }
+.eyebrow { text-transform: uppercase; letter-spacing: .04em; font-size: 12px; font-weight: 400; color: var(--ink-soft); margin: 0 0 4px; }
 .eyebrow.tight { margin: 0 0 4px; }
-h1 { font-weight: 600; font-size: 22px; line-height: 1.25; margin: 0 0 4px; }
-h2 { font-weight: 600; font-size: 19px; margin: 24px 0 6px; }
-h3 { font-weight: 600; font-size: 16px; margin: 0 0 6px; }
-h3.sub-h, h4.sub-h { font-size: 15px; margin: 24px 0 6px; }
+h1 { font-weight: 400; font-size: 26px; line-height: 1.2; letter-spacing: -.01em; margin: 0 0 4px; }
+h2 { font-weight: 400; font-size: 22px; line-height: 1.25; letter-spacing: -.005em; margin: 28px 0 8px; }
+h3 { font-weight: 400; font-size: 17px; margin: 0 0 6px; }
+h4 { font-weight: 400; }
+h3.sub-h, h4.sub-h { font-size: 17px; margin: 32px 0 6px; }
+strong, b { font-weight: 500; }
 .meta { font-size: 13px; color: var(--ink-soft); margin: 0; }
 
 .tabs { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
 /* Tabs wrap onto a second line rather than hide off-screen, so every task is visible. */
 .tab-row { display: flex; flex-wrap: wrap; gap: 0 2px; }
-.tabs button { font: 500 14px var(--sans); color: var(--ink-soft); background: none; border: 0; border-bottom: 2px solid transparent; padding: 12px 10px; cursor: pointer; white-space: nowrap; }
-.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.tabs button { position: relative; font: 400 13px var(--sans); text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); background: none; border: 0; padding: 12px 10px; cursor: pointer; white-space: nowrap; transition: color .2s ease; }
+/* Owner (2026-11-26): hovering a tab draws a thin blue underline, no click needed. It grows from the left;
+   the selected tab keeps a slightly heavier one. */
+.tabs button::after { content: ""; position: absolute; left: 10px; right: 10px; bottom: 6px; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: left center; transition: transform .25s ease; }
+.tabs button:hover::after, .tabs button:focus-visible::after { transform: scaleX(1); }
+.tabs button[aria-selected="true"] { color: var(--ink); }
+.tabs button[aria-selected="true"]::after { transform: scaleX(1); height: 2px; }
 .tabs button:hover { color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .tabs button::after, .tabs button { transition: none; } }
 
 /* Reserve a screen of height so the footer doesn't jump up and back down while the data loads (layout shift). */
 main.wrap { min-height: 100vh; }
@@ -58,7 +75,7 @@ main.wrap { min-height: 100vh; }
 .nowrap { white-space: nowrap; }
 td.num { min-width: 120px; max-width: 300px; }
 /* Repeated notes are shown once below a table and referenced by number. */
-sup.fn { font-size: 11px; font-weight: 600; color: var(--accent); margin-left: 2px; }
+sup.fn { font-size: 11px; font-weight: 500; color: var(--accent); margin-left: 2px; }
 ol.fn-list { margin: 6px 0 0; padding-left: 22px; font-size: 12px; color: var(--ink-soft); }
 ol.fn-list li { margin-bottom: 3px; }
 td.wide { min-width: 300px; }
@@ -68,11 +85,11 @@ td.wide { min-width: 300px; }
 .timeline { list-style: none; padding: 0; margin: 12px 0 0; border-left: 2px solid var(--line); }
 .timeline li { position: relative; padding: 0 0 16px 18px; max-width: 820px; }
 .timeline li::before { content: ""; position: absolute; left: -6px; top: 7px; width: 10px; height: 10px; border-radius: 50%; background: var(--blue-2); }
-.timeline .date { font-size: 13px; font-weight: 600; }
+.timeline .date { font-size: 13px; font-weight: 500; }
 
 .ticker { font-size: 12px; color: var(--ink-soft); }
 /* Status pills: always a text label; shape and fill, not hue, separate the states. */
-.pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; border: 1px solid var(--ink); color: var(--ink); background: var(--surface); }
+.pill { display: inline-block; font-size: 12px; font-weight: 500; padding: 2px 8px; border-radius: 999px; white-space: nowrap; border: 1px solid var(--ink); color: var(--ink); background: var(--surface); }
 .pill.open { background: var(--accent); border-color: var(--accent); color: #ffffff; }
 .pill.narrowing { border-style: dashed; }
 .pill.closed { background: var(--ink); color: #ffffff; }
@@ -83,7 +100,7 @@ td.wide { min-width: 300px; }
 .pill.st-excluded { background: var(--ink); color: #ffffff; }
 
 dl.facts { margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px 20px; }
-dl.facts dt, dl.summary dt { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-soft); font-weight: 600; }
+dl.facts dt, dl.summary dt { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); font-weight: 400; }
 dl.facts dd, dl.summary dd { margin: 2px 0 0; font-size: 14px; }
 dl.summary { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px 20px; margin: 8px 0 12px; padding: 12px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .co-title { font-size: 18px; margin: 16px 0 0; }
@@ -96,7 +113,7 @@ dl.summary { display: grid; grid-template-columns: repeat(auto-fill, minmax(220p
 .table-wrap { position: relative; overflow-x: auto; margin-top: 8px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
 table { border-collapse: collapse; width: 100%; font-size: 13px; }
 th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
-th { font-size: 12px; font-weight: 600; color: var(--ink-soft); background: var(--head-bg); border-bottom: 1px solid var(--control-edge); }
+th { font-size: 12px; font-weight: 400; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); background: var(--head-bg); border-bottom: 1px solid var(--control-edge); }
 tr:last-child td { border-bottom: 0; }
 tr.hit td { background: var(--accent-soft); }
 .th-sort { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
@@ -121,7 +138,7 @@ tr.hit td { background: var(--accent-soft); }
 .seg button[aria-pressed="true"] { background: var(--accent); color: #ffffff; }
 .status-filter { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
 .status-btn { font: 500 13px var(--sans); color: var(--ink); background: var(--surface); border: 1px solid var(--control-edge); border-radius: var(--radius); padding: 6px 12px; cursor: pointer; display: inline-flex; gap: 6px; align-items: baseline; }
-.status-btn .status-n { font-weight: 700; }
+.status-btn .status-n { font-weight: 500; }
 .status-btn[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #ffffff; }
 .net-legend { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
 .leg { display: inline-flex; align-items: center; gap: 6px; font: 13px var(--sans); color: var(--ink); background: var(--surface); border: 1px solid var(--control-edge); border-radius: 999px; padding: 3px 9px; cursor: pointer; }
@@ -154,42 +171,42 @@ tr.hit td { background: var(--accent-soft); }
    colors … distinctly different from each other, so it's easy to identify different nodes in the key").
    Every value reaches 3:1 or more on white; similar hues sit in different regions of the grouped layout. */
 :root {
-  --n-company: #1e40af; --n-lab: #6d28d9; --n-proposal: #0284c7;
+  --n-company: var(--blue); --n-lab: #6d28d9; --n-proposal: var(--blue);
   --n-manager: #059669; --n-nonprofit: #e11d48; --n-faith: #c026d3; --n-pension: #ea580c;
   --n-labor: #b45309; --n-foundation: #4d7c0f; --n-coalition: #0f766e; --n-other: #64748b;
   --n-person: #4f46e5; --n-policy: #334155; --n-response: #0e7490; --n-public: #be185d;
   /* Value-chain tiers (companies by primary tier). */
-  --n-tier-chips: #1e40af; --n-tier-datacenters: #155e75; --n-tier-compute: #4338ca;
+  --n-tier-chips: var(--blue); --n-tier-datacenters: #155e75; --n-tier-compute: var(--blue);
   --n-tier-labs: #6d28d9; --n-tier-capital: #a16207; --n-tier-deployers: #374151;
-  --n-tier-cloud: #4338ca; --n-tier-consumer: #374151; --n-tier-business: #047857;
+  --n-tier-cloud: var(--blue); --n-tier-consumer: #374151; --n-tier-business: #047857;
 }
 /* Co-filer network canvas: dark, like Obsidian's graph view (owner, 2026-11-25: "for the graph view i want
    the black background and colors like this so that the graph looks similar to an Obsidian graph").
    Only the graph box is dark; the page, panel, key and List view stay white. Node colours are bright and
    distinct on the dark canvas; links are thin grey-blue. Every node colour reaches 4.5:1 or more on --g-bg. */
 :root {
-  --g-bg: #1e1e1e; --g-link: #7a8199; --g-label: #dcddde; --g-label-soft: #a1a1aa; --g-ring: #7dd3fc; --g-focus: #ffffff;
+  --g-bg: #1e1e1e; --g-link: #7a8199; --g-label: #dcddde; --g-label-soft: #a1a1aa; --g-ring: var(--blue-light); --g-focus: #ffffff;
   /* Phase 2 marks: deadline ring, seeking ring, resubmission bar. Each 4.5:1 or more on --g-bg. */
   --g-window: #86efac; --g-seeking: #fda4af; --g-risk: #fdba74; --gn-gap: #1e1e1e;
   /* Phase 4: recurring asks (Policymaker lens). */
-  --gn-ask: #c7d2fe;
+  --gn-ask: #d2dcea;
   /* Proposal categories (asks.json), used when "Colour proposals by what they ask about" is on. */
-  --gn-cat-governance-safety: #fde68a; --gn-cat-data-centers: #5eead4; --gn-cat-users: #fda4af; --gn-cat-downstream-use: #a5b4fc;
-  --gn-company: #93c5fd; --gn-lab: #c4b5fd; --gn-proposal: #38bdf8;
+  --gn-cat-governance-safety: #fde68a; --gn-cat-data-centers: #5eead4; --gn-cat-users: #fda4af; --gn-cat-downstream-use: var(--blue-light);
+  --gn-company: var(--blue); --gn-lab: #c4b5fd; --gn-proposal: var(--blue);
   --gn-manager: #4ade80; --gn-nonprofit: #f472b6; --gn-faith: #e879f9; --gn-pension: #fb923c;
   --gn-labor: #facc15; --gn-foundation: #bef264; --gn-coalition: #2dd4bf; --gn-other: #a1a1aa;
   --gn-person: #e2e8f0; --gn-policy: #fca5a5; --gn-response: #67e8f9; --gn-public: #f9a8d4;
-  --gn-tier-chips: #fbbf24; --gn-tier-datacenters: #22d3ee; --gn-tier-compute: #60a5fa;
+  --gn-tier-chips: #fbbf24; --gn-tier-datacenters: #22d3ee; --gn-tier-compute: var(--blue);
   --gn-tier-labs: #a78bfa; --gn-tier-capital: #f87171; --gn-tier-deployers: #d4d4d8;
   /* Company roles (roles.js): cloud and model platforms, consumer products, business and government products. */
-  --gn-tier-cloud: #60a5fa; --gn-tier-consumer: #e5e7eb; --gn-tier-business: #c08457;
+  --gn-tier-cloud: var(--blue); --gn-tier-consumer: #e5e7eb; --gn-tier-business: #c08457;
 }
 /* Graph settings panel (display, filters, forces), modelled on Obsidian's graph view settings. */
 .graph-settings { border: 1px solid var(--control-edge); border-radius: var(--radius); padding: 6px 12px; margin: 0 0 10px; font-size: 13px; }
-.graph-settings summary { cursor: pointer; font-weight: 600; padding: 2px 0; }
+.graph-settings summary { cursor: pointer; font-weight: 500; padding: 2px 0; }
 .gs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 20px; margin: 8px 0; }
 .gs-group { border: 0; padding: 0; margin: 0; min-width: 0; }
-.gs-group legend { font-size: 12px; font-weight: 600; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .05em; padding: 0; margin-bottom: 4px; }
+.gs-group legend { font-size: 12px; font-weight: 400; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .04em; padding: 0; margin-bottom: 4px; }
 .gs-row { display: grid; gap: 2px; margin-bottom: 8px; }
 .gs-row span { display: flex; justify-content: space-between; gap: 8px; }
 .gs-row output { color: var(--ink-soft); font-variant-numeric: tabular-nums; }
@@ -206,7 +223,7 @@ tr.hit td { background: var(--accent-soft); }
 .net-panel p { margin: 6px 0; }
 /* Lenses: "View as" control, "What you can do" block, ring and confidence text */
 .lens-pick { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; border: 0; padding: 0; margin: 0 0 8px; }
-.lens-pick legend { float: left; font-size: 13px; font-weight: 600; margin-right: 6px; padding: 0; }
+.lens-pick legend { float: left; font-size: 13px; font-weight: 500; margin-right: 6px; padding: 0; }
 .lens-pick .chip:has(input:focus-visible) { outline: 2px solid var(--ink); outline-offset: 2px; }
 .net-actions { border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--radius); padding: 8px 10px; margin: 0 0 12px; }
 .net-actions h4 { margin: 0 0 4px; font-size: 13px; }
@@ -220,7 +237,7 @@ tr.hit td { background: var(--accent-soft); }
 .net-tools { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 6px; }
 .net-tools .chip[aria-expanded="true"] { background: var(--accent); color: #ffffff; border-color: var(--accent); }
 .net-hold { border: 1px solid var(--line); border-radius: var(--radius); padding: 8px 10px; margin: 0 0 8px; max-width: 520px; font-size: 13px; }
-.net-hold label { display: block; font-weight: 600; margin-bottom: 4px; }
+.net-hold label { display: block; font-weight: 500; margin-bottom: 4px; }
 .net-hold textarea { width: 100%; box-sizing: border-box; font: 13px var(--sans); color: var(--ink); background: var(--surface); border: 1px solid var(--control-edge); border-radius: 4px; padding: 6px; }
 .net-hold-row { display: flex; gap: 6px; margin-top: 6px; }
 .net-path { border-top: 1px solid var(--line); margin-top: 12px; padding-top: 8px; }
@@ -236,7 +253,7 @@ tr.hit td { background: var(--accent-soft); }
 /* Phase 3: Individual investor feed and plain-language terms */
 .net-feed { max-width: 760px; }
 .net-feed h3 { margin: 4px 0 6px; font-size: 17px; }
-.feed-form label { display: block; font-weight: 600; font-size: 14px; margin: 8px 0 4px; }
+.feed-form label { display: block; font-weight: 500; font-size: 14px; margin: 8px 0 4px; }
 .feed-row { display: flex; gap: 6px; flex-wrap: wrap; }
 .feed-row input { flex: 1 1 220px; min-width: 0; font: 14px var(--sans); color: var(--ink); background: var(--surface); border: 1px solid var(--control-edge); border-radius: 4px; padding: 6px 8px; }
 .feed-list { list-style: none; padding: 0; margin: 8px 0 12px; }
@@ -255,12 +272,12 @@ tr.hit td { background: var(--accent-soft); }
 #lf-back[hidden] { display: none; }
 /* Phase 4: year scrubber under the graph */
 .scrub { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 8px 0 0; font-size: 13px; }
-.scrub label { font-weight: 600; }
+.scrub label { font-weight: 500; }
 .scrub input[type="range"] { flex: 1 1 200px; min-width: 0; accent-color: var(--accent); }
 .scrub .status-note { flex-basis: 100%; margin: 0; }
 .scrub .status-note:empty { display: none; }
 @keyframes g-pulse { 0%, 100% { stroke-opacity: 1; } 50% { stroke-opacity: 0.25; } }
-.ring-note { font-size: 12px; font-weight: 600; color: var(--accent); }
+.ring-note { font-size: 12px; font-weight: 500; color: var(--accent); }
 .ring-note::before { content: "◌ " / ""; }
 .ring-deadline::before { content: "◷ " / ""; }
 .ring-seeking::before { content: "⋯ " / ""; }
@@ -280,9 +297,9 @@ tr.hit td { background: var(--accent-soft); }
 }
 
 /* Lab pathways: ties in navy, filer links in light blue; width encodes strength. */
-:root { --t-equity: var(--blue-1); --t-compute: var(--blue-1); --t-chips: var(--blue-1); --t-dist: var(--blue-1); --t-board: var(--blue-1); --t-commercial: var(--blue-1); --t-parent: var(--blue-1); --t-lab: var(--blue-1); --t-filer: var(--blue-3); }
+:root { --t-equity: var(--blue-1); --t-compute: var(--blue-1); --t-chips: var(--blue-1); --t-dist: var(--blue-1); --t-board: var(--blue-1); --t-commercial: var(--blue-1); --t-parent: var(--blue-1); --t-lab: var(--blue-1); --t-filer: var(--blue-mid); }
 .pw-modes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 10px 0 6px; }
-.pw-label { font-size: 13px; font-weight: 600; margin: 0 0 6px; }
+.pw-label { font-size: 12px; font-weight: 400; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); margin: 0 0 6px; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .pw-graph { height: auto; min-height: 420px; }
 .pw-h4 { margin: 12px 0 4px; font-size: 14px; }
@@ -338,7 +355,7 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
 /* Policy and causality: the map is the view; its text equivalent is one collapsed list (owner, 2026-11-26:
    "i dont want redundant information ... my favorite is the visual"). */
 .cz-list { margin: 12px 0 0; }
-.cz-list > summary { cursor: pointer; font-weight: 600; font-size: 14px; padding: 6px 0; }
+.cz-list > summary { cursor: pointer; font-weight: 500; font-size: 14px; padding: 6px 0; }
 
 /* Value chain tab: layered flow (blue on white) and the engagement-by-tier table */
 .vc-tiers { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
@@ -349,7 +366,7 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
 .vc-panel h4 { margin: 14px 0 4px; font-size: 14px; }
 .vc-heat td.num, .vc-heat th.num { text-align: right; }
 .vc-heat .vc-zero { color: var(--ink-soft); }
-.vc-num { font: inherit; font-weight: 600; background: none; border: 0; padding: 2px 4px; color: var(--ink); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.vc-num { font: inherit; font-weight: 500; background: none; border: 0; padding: 2px 4px; color: var(--ink); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
 .vc-num.on-dark { color: #ffffff; }
 .vc-summary { padding-left: 18px; margin: 6px 0 10px; }
 .vc-summary li { margin: 3px 0; }
@@ -377,13 +394,13 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
 .pw-bars { list-style: none; margin: 8px 0; padding: 0; }
 .pw-bar { display: grid; grid-template-columns: 150px minmax(80px, 1fr) 2fr; gap: 10px; align-items: center; font-size: 13px; padding: 3px 0; }
 .pw-bar-track { display: flex; align-items: center; gap: 6px; }
-.pw-bar-fill { display: block; height: 14px; background: var(--blue-2); border-radius: 2px; min-width: 2px; }
+.pw-bar-fill { display: block; height: 14px; background: var(--blue-mid); border-radius: 2px; min-width: 2px; }
 .pw-bar.on .pw-bar-fill { background: var(--blue-1); }
-.pw-bar.on .pw-bar-name { font-weight: 600; }
+.pw-bar.on .pw-bar-name { font-weight: 500; }
 .pw-bar-n { font-variant-numeric: tabular-nums; }
 .pw-bar-labs { color: var(--ink-soft); font-size: 12px; }
 .pw-cos { margin: 8px 0; }
-.pw-cos summary, .pw-all summary { cursor: pointer; font-weight: 600; font-size: 14px; }
+.pw-cos summary, .pw-all summary { cursor: pointer; font-weight: 500; font-size: 14px; }
 .pw-panel:empty { display: none; }
 .pw-panel { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 12px 14px; margin-top: 10px; font-size: 13px; }
 .pw-all { margin-top: 20px; }
@@ -394,7 +411,7 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
   .pw-routes-t thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .pw-routes-t tr { border-bottom: 2px solid var(--line); padding: 8px 10px; }
   .pw-routes-t td { border: 0; padding: 4px 0; overflow-wrap: anywhere; }
-  .pw-routes-t td::before { content: attr(data-col); display: block; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); }
+  .pw-routes-t td::before { content: attr(data-col); display: block; font-size: 11px; font-weight: 400; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); }
   .pw-bar { grid-template-columns: 110px 1fr; }
   .pw-bar-labs { grid-column: 1 / -1; }
 }
@@ -406,3 +423,12 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
   .pw-routes-t td:nth-child(4) { order: -1; }
   .pw-routes-t td:first-child { order: -2; }
 }
+
+/* Sticky page title (owner, 2026-11-26): site name and the current page, in the sticky bar once the header
+   scrolls away. Same type as the header: grey uppercase label, then the page name in regular weight. */
+.sticky-title { display: flex; align-items: baseline; gap: 12px; max-height: 0; overflow: hidden; opacity: 0; transition: max-height .25s ease, opacity .2s ease, padding .25s ease; }
+.tabs.is-stuck .sticky-title { max-height: 48px; opacity: 1; padding-top: 10px; }
+.st-site { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.st-page { font-size: 18px; color: var(--ink); white-space: nowrap; }
+@media (max-width: 640px) { .st-site { display: none; } .st-page { font-size: 16px; } }
+@media (prefers-reduced-motion: reduce) { .sticky-title { transition: none; } }

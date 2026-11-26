@@ -339,7 +339,7 @@
     const svg = d3.select(el).append("svg").attr("viewBox", [0, 0, L.W, L.H]).attr("width", L.W).attr("height", L.H)
       .attr("role", "img").attr("aria-label", "Map of filers, companies and frontier labs; the routes table above has the same ties.");
     L.cols.forEach((c, i) => svg.append("text").attr("x", i === 0 ? 8 : L.xs[i]).attr("y", 20)
-      .attr("font-size", 11).attr("font-weight", 600).attr("letter-spacing", ".06em").attr("fill", cssVar("--ink-soft")).text(c.title.toUpperCase()));
+      .attr("font-size", 12).attr("font-weight", 400).attr("letter-spacing", ".04em").attr("fill", cssVar("--ink-soft")).text(c.title.toUpperCase()));
 
     const curve = (a, b) => { const mx = (a.x + b.x) / 2; return `M${a.x},${a.y} C${mx},${a.y} ${mx},${b.y} ${b.x},${b.y}`; };
     const linkData = [];
@@ -358,7 +358,7 @@
     S.nodes = svg.append("g").selectAll("g").data([...L.pos.values()]).join("g")
       .attr("transform", (d) => `translate(${d.x},${d.y})`).style("cursor", "pointer")
       .on("click", (ev, d) => onNode(d));
-    S.nodes.append("circle").attr("r", 4).attr("fill", (d) => cssVar(d.col === 0 ? "--blue-3" : d.col === 1 ? "--blue-2" : "--blue-1"));
+    S.nodes.append("circle").attr("r", 4).attr("fill", (d) => cssVar(d.col === 0 ? "--blue-mid" : "--blue"));
     S.nodes.append("text").attr("y", 0).attr("font-size", L.narrow ? 10 : 11.5).attr("fill", cssVar("--ink"))
       .attr("stroke", cssVar("--surface") || "#fff").attr("stroke-width", 3).attr("paint-order", "stroke").attr("stroke-linejoin", "round")
       .attr("text-anchor", (d) => (d.col === 0 ? "end" : "start"))

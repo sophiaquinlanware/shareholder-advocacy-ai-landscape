@@ -526,6 +526,12 @@
   }
   // Proposal categories (asks.json), used when "Colour proposals by what they ask about" is on.
   const catList = () => ((window.LENS_CTX && window.LENS_CTX.categories) || []).filter((c) => state.data.nodes.some((n) => n.kind === "proposal" && n.category === c.id));
+  // Nodes in the site's one blue (#1f4e98) are only 2.1:1 on the dark canvas, so they get a thin light
+  // outline that carries them to 3:1 or more (owner, 2026-11-26: "any blue you have … this color blue").
+  const edgeOf = (d) => {
+    const f = String(fillOf(d)).toLowerCase().replace(/\s/g, "");
+    return f === cssVar("--blue").toLowerCase() ? cssVar("--g-label-soft") : cssVar("--g-bg");
+  };
   function fillOf(d) {
     if (d.kind === "gap") return cssVar("--g-bg");
     if (d.kind === "proposal" && state.cfg.catColor && d.category) return cssVar(`--gn-cat-${d.category}`) || nodeColor(d.kind);
@@ -711,7 +717,7 @@
     };
     state.node.attr("display", (d) => (visible(d) ? null : "none"))
       .attr("opacity", nodeOpacity)
-      .attr("stroke", (d) => (d.id === state.selected ? cssVar("--g-focus") : d.kind === "gap" ? cssVar("--g-label-soft") : cssVar("--g-bg")))
+      .attr("stroke", (d) => (d.id === state.selected ? cssVar("--g-focus") : d.kind === "gap" ? cssVar("--g-label-soft") : edgeOf(d)))
       .attr("stroke-width", (d) => (d.id === state.selected ? 2.5 : d.kind === "gap" ? 1.5 : 1));
     if (state.ringSel) state.ringSel.attr("display", (d) => (visible(d) ? null : "none")).attr("opacity", nodeOpacity);
     state.linkSel.attr("display", (l) => (visible(l.source) && visible(l.target) ? null : "none"))
@@ -737,7 +743,7 @@
       // The clicked (or hovered, or keyboard-focused) node's own label stands out from its neighbours' labels
       // (owner, 2026-11-26): larger, bold, white on a blue pill; the neighbours' labels go a softer grey.
       .attr("font-size", (d) => (d.kind === "company" ? state.cfg.textSize + 2 : state.cfg.textSize) + (d.id === focusId ? 3 : 0))
-      .attr("font-weight", (d) => (d.id === focusId ? 700 : d.kind === "company" ? 600 : 400))
+      .attr("font-weight", (d) => (d.id === focusId ? 500 : d.kind === "company" ? 500 : 400))
       .attr("fill", (d) => (d.id === focusId ? cssVar("--g-focus") : near ? cssVar("--g-label-soft") : cssVar("--g-label")));
     layoutLabels();
     placeSelectedPill(focusId);
@@ -862,7 +868,7 @@
         else if (m.kind === "seeking") g.append("circle").attr("r", r + 12).attr("fill", "none").attr("stroke", cssVar("--g-seeking")).attr("stroke-width", 2).attr("stroke-dasharray", "1 3").attr("stroke-linecap", "round");
         else if (m.kind === "risk") {
           g.append("rect").attr("x", -Math.max(r, 5)).attr("y", r + 3).attr("width", Math.max(r, 5) * 2).attr("height", 3).attr("fill", cssVar("--g-risk"));
-          g.append("text").attr("x", Math.max(r, 5) + 3).attr("y", r + 9).attr("font-size", 11).attr("font-weight", 700).attr("fill", cssVar("--g-risk")).text("!");
+          g.append("text").attr("x", Math.max(r, 5) + 3).attr("y", r + 9).attr("font-size", 11).attr("font-weight", 500).attr("fill", cssVar("--g-risk")).text("!");
         }
       }
     });
@@ -1152,7 +1158,7 @@
     state.node = g.append("g").selectAll("circle").data(data.nodes).join("circle")
       .attr("r", radius)
       .attr("fill", fillOf)
-      .attr("stroke", (d) => (d.kind === "gap" ? cssVar("--g-label-soft") : cssVar("--g-bg")))
+      .attr("stroke", (d) => (d.kind === "gap" ? cssVar("--g-label-soft") : edgeOf(d)))
       .attr("stroke-dasharray", (d) => (d.kind === "gap" ? "3 2" : null))
       .style("cursor", "pointer")
       .on("mouseenter", (ev, d) => { state.hover = d.id; applyStyles(); })
@@ -1174,14 +1180,14 @@
     state.labels = g.append("g").selectAll("text").data(data.nodes).join("text")
       .text((d) => (d.label.length > 42 ? d.label.slice(0, 40) + "…" : d.label))
       .attr("font-size", (d) => (d.kind === "company" ? state.cfg.textSize + 2 : state.cfg.textSize))
-      .attr("font-weight", (d) => (d.kind === "company" ? 600 : 400))
+      .attr("font-weight", (d) => (d.kind === "company" ? 500 : 400))
       .attr("fill", cssVar("--g-label"))
       .attr("pointer-events", "none")
       // A dark outline under each label keeps it legible over lines and nodes.
       .attr("stroke", cssVar("--g-bg")).attr("stroke-width", 3).attr("stroke-linejoin", "round").attr("paint-order", "stroke")
       .attr("dx", 0).attr("dy", 0);
     // Column labels for the grouped layout, on top of everything; they move and zoom with the graph.
-    state.axis = g.append("g").attr("font-size", 11).attr("font-weight", 600).attr("fill", cssVar("--g-label-soft"))
+    state.axis = g.append("g").attr("font-size", 11).attr("font-weight", 400).attr("fill", cssVar("--g-label-soft"))
       .attr("pointer-events", "none").attr("display", state.cfg.group > 0 ? null : "none");
     drawAxis();
 

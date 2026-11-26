@@ -584,9 +584,17 @@ function showTab(name, focus = false) {
     if (on && focus) b.focus();
   });
   document.querySelectorAll(".panel").forEach((p) => { p.hidden = p.id !== "tab-" + name; });
+  const stuck = document.getElementById("sticky-page");
+  const sel = buttons.find((b) => b.dataset.tab === name);
+  if (stuck && sel) stuck.textContent = sel.textContent;
   try { window.history.replaceState(null, "", "#" + name); } catch (e) {}
 }
 function setupTabs() {
+  // The page title joins the sticky tab bar once the site header has scrolled out of view.
+  const head = document.querySelector(".site-header"), nav = document.querySelector(".tabs");
+  if (head && nav && "IntersectionObserver" in window) {
+    new IntersectionObserver(([e]) => nav.classList.toggle("is-stuck", !e.isIntersecting)).observe(head);
+  }
   const buttons = [...document.querySelectorAll('.tabs [role="tab"]')];
   buttons.forEach((b, i) => {
     b.addEventListener("click", () => showTab(b.dataset.tab));
