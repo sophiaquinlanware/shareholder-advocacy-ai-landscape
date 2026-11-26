@@ -24,7 +24,7 @@
       "preset": "recommended",
       "suspicious": { "useIterableCallbackReturn": "off" },
       "style": { "useTemplate": "off" },
-      "a11y": { "useButtonType": "warn" }
+      "a11y": { "useButtonType": "error" }
     }
   },
   "assist": { "enabled": false }

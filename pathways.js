@@ -116,7 +116,8 @@
     const labelW = L.narrow ? 70 : 150;
     S.links = svg.append("g").attr("fill", "none").selectAll("path").data(linkData).join("path")
       .attr("d", (d) => curve({ x: d.a.x + (d.a.col === 0 ? labelW + 40 : d.a.col === 1 ? labelW : 0), y: d.a.y }, { x: d.b.x - 6, y: d.b.y }))
-      .attr("stroke", (d) => d.color).attr("stroke-width", (d) => d.w);
+      // Thin-line style: widths scaled by 0.8 with a 0.8px floor, so width still encodes count and tie strength.
+      .attr("stroke", (d) => d.color).attr("stroke-width", (d) => Math.max(0.8, d.w * 0.8));
     S.nodes = svg.append("g").selectAll("g").data([...L.pos.values()]).join("g")
       .attr("transform", (d) => `translate(${d.x},${d.y})`).style("cursor", "pointer")
       .on("click", (ev, d) => onNode(d));

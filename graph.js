@@ -2,6 +2,14 @@
 // Reads data/network.json. Nodes: organizations, proposals, companies. Every node and edge carries a source.
 
 (function () {
+  // Respect the reader's reduced-motion setting: no animated zoom, and the layout settles before it is drawn.
+  const REDUCED_MOTION = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+  // Links are drawn as gentle quadratic arcs (control point 15% of the link length off the midpoint).
+  const arc = (d) => {
+    const sx = d.source.x, sy = d.source.y, tx = d.target.x, ty = d.target.y;
+    const mx = (sx + tx) / 2 - (ty - sy) * 0.15, my = (sy + ty) / 2 + (tx - sx) * 0.15;
+    return `M${sx},${sy}Q${mx},${my} ${tx},${ty}`;
+  };
   const TYPE_LABEL = {
     company: "Company",
     proposal: "Proposal",
@@ -160,7 +168,7 @@
     applyStyles();
     if (state.zoom && n.x != null) {
       const { width, height } = state.size;
-      state.svg.transition().duration(500).call(state.zoom.transform, d3.zoomIdentity.translate(width / 2, height / 2).scale(1.6).translate(-n.x, -n.y));
+      state.svg.transition().duration(REDUCED_MOTION ? 0 : 500).call(state.zoom.transform, d3.zoomIdentity.translate(width / 2, height / 2).scale(1.6).translate(-n.x, -n.y));
     }
   }
 
@@ -217,8 +225,8 @@
       .force("y", d3.forceY(height / 2).strength(0.05));
     state.sim = sim;
 
-    state.linkSel = g.append("g").attr("stroke", cssVar("--ink-soft")).selectAll("line").data(data.links).join("line")
-      .attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.6 : 1))
+    state.linkSel = g.append("g").attr("stroke", cssVar("--ink-soft")).attr("fill", "none").selectAll("path").data(data.links).join("path")
+      .attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.4 : 1))
       .attr("stroke-dasharray", (l) => (l.relation === "member of" || l.derived ? "3 3" : null));
 
     state.node = g.append("g").selectAll("circle").data(data.nodes).join("circle")
@@ -243,11 +251,13 @@
       .attr("pointer-events", "none")
       .attr("dx", (d) => radius(d) + 4).attr("dy", 4);
 
-    sim.on("tick", () => {
-      state.linkSel.attr("x1", (d) => d.source.x).attr("y1", (d) => d.source.y).attr("x2", (d) => d.target.x).attr("y2", (d) => d.target.y);
+    const draw = () => {
+      state.linkSel.attr("d", arc);
       state.node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
       state.labels.attr("x", (d) => d.x).attr("y", (d) => d.y);
-    });
+    };
+    sim.on("tick", draw);
+    if (REDUCED_MOTION) { sim.stop(); sim.tick(300); draw(); }
     applyStyles();
   }
 

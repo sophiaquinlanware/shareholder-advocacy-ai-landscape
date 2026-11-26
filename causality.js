@@ -85,7 +85,7 @@
         const dx = b._x - a._x, bend = Math.max(30, Math.abs(dx) * 0.3);
         return `M${a._x},${a._y} C${a._x + bend},${a._y} ${b._x - bend},${b._y} ${b._x},${b._y}`;
       })
-      .attr("stroke", (l) => cssVar(LINK_VAR[l.type] || "--ink-soft")).attr("stroke-width", 1.6)
+      .attr("stroke", (l) => cssVar(LINK_VAR[l.type] || "--ink-soft")).attr("stroke-width", 1.3)
       .attr("marker-end", (l) => `url(#arr-${(LINK_VAR[l.type] ? l.type : "cited by").replace(/\W/g, "")})`);
     C.linkSel.append("title").text((l) => `${l.type}: ${l.explanation || ""}`);
 
