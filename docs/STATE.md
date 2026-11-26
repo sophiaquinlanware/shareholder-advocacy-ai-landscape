@@ -1,6 +1,6 @@
 # Shareholder Advocacy AI Landscape — current state
 
-Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 (data session: planner walk-through fixes a096592 and grid fixes; before that the UI session's "finish everything" round).
+Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 (data session: full sweep for data accuracy, spelling and bugs, 96a309b and 923d57d; UI session fixed the sweep leftovers e1cac0f).
 
 ## Sessions and branches (read this first)
 
@@ -8,7 +8,7 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 
 
 | Session | Owns | Branch | State |
 |---|---|---|---|
-| Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/`, `planner.js` | none known | On `main`: 60 companies; rights maps for 29 US companies; 79 AI proposals; fund votes 414 rows; causality.json 195 events with `region` and optional `status`/`source_kind`; coverage.json 107 rows; 277 organizations, 257 people; 13F holdings (373 positions, 23 investors, 28 companies); pass-through voting by family. `graph.json` proposals merged from proposals.json carry `sec_id` (their proposals.json id). Planner walk-through fixes merged (a096592): filings from filers critical of ESG are marked and left out of support figures, non-US companies show their shareholder route, past deadlines no longer count as open. Grid support numbers leave them out too; `asks.json` asks carry `short_label` (shown on phones). |
+| Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/`, `planner.js` | none known | On `main`: 60 companies; rights maps for 29 US companies; 79 AI proposals; fund votes 414 rows; causality.json 195 events with `region` and optional `status`/`source_kind`; coverage.json 107 rows; 277 organizations, 257 people; 13F holdings (359 positions from 18 current 13F filers plus NBIM; 5 filers marked `not_current`; shares only, no options or notes; values in dollars; a price check prints outliers in the job log); pass-through voting by family. `graph.json` proposals merged from proposals.json carry `sec_id` (their proposals.json id). Planner walk-through fixes merged (a096592): filings from filers critical of ESG are marked and left out of support figures, non-US companies show their shareholder route, past deadlines no longer count as open. Grid support numbers leave them out too; `asks.json` asks carry `short_label` (shown on phones). |
 | UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, `graph.js`, `lenses.js`, `rules.js`, `roles.js`, `pathways.js`, `valuechain.js`, `causality.js`, `votes.js`, `scorecard.js`, `motion.js`, `motion-layer.js`, `quicksearch.js`, `DESIGN.md`, `tests/` | none open | Everything below is live. |
 | Protocol setup | `AGENTS.md`, `CLAUDE.md`, checks, `docs/` structure | `docs-session-onboarding` (local) | Idle. |
 
@@ -46,7 +46,7 @@ Routes table per lab (tie, strength, rights and deadline, filers, related asks, 
 
 ## Latest check
 
-`npm run check` after the sweep leftovers (UI): Playwright 244 passed, 4 skipped; Lighthouse phone 100/100/100/99, desktop 100/100/100/93. Fixed from the data session's full-sweep review: the Back button now returns to the previous view (pushState, popstate); the network shows one total (906) and counts site-added asks separately; phone card tables keep a "Sort by" row.
+`npm run check` on `fix/full-sweep` after rebasing on the UI leftovers (923d57d): lint pass, build pass, Playwright 244 passed; Lighthouse phone 100/100/100/98, desktop 100/100/100/86 (desktop varies between runs on this machine). Full sweep reviews (docs/reviews/2026-11-26 full sweep result R1/R2 *): proposals data 91 PASS; companies, policy, holdings and people data R1 72, R2 79 REVISE (its one R2 failure, convertible notes counted as shares, is fixed and confirmed by a fresh SEC read, but not re-reviewed: round cap); spelling and grammar R1 78, R2 88 PASS; bugs R1 74, R2 88 PASS.
 
 ## Queue (found, not picked up)
 
@@ -60,8 +60,9 @@ Routes table per lab (tie, strength, rights and deadline, filers, related asks, 
 8. **Network link contrast** (about 1.5:1); the panel and List view carry the same facts. For the owner.
 9. **Playwright still runs "dark" projects** although the site has one theme; dropping them halves test time.
 10. **Network "focus company of" edges** use the default line style, with no key entry.
-11. **Publishing quirk:** a deploy that fails with "No artifacts named github-pages" or "Multiple artifacts" succeeds when the whole workflow run is re-run (not only the failed job).
-12. **Reviews owed:** this round's motion stages 3–10, Lab pathways two-step routes and holders, and the Laws and rules filters were checked by tests and screenshots but not by review agents.
+11. **Sweep leftovers (owner or either session):** one date format site-wide; "Alphabet (Google)" in the scorecard; people `ai_focus` "no AI work found" phrasing varies; causality `jurisdiction` labels; percentage precision; the type label "anti-ESG proponent" (network.json) vs the planner's "critical of ESG" (owner to choose); site.json levers sentence "vote against the directors" sits near the no-vote-recommendation rule (owner to glance); value-chain tier names (three variants); Warner Bros. Discovery has no ticker or route; Zhipu ticker "2513" vs MiniMax "00100"; Pathways says "as of 2026Q3" while NBIM is June 30, 2026; sources that would not load for checking: it-rome-court-annuls-openai-fine, coe-ai-convention-eu-ratifies, au-guardrails-proposal, cn-rare-earth-chip-controls suspension, 3 people pages.
+12. **Publishing quirk:** a deploy that fails with "No artifacts named github-pages" or "Multiple artifacts" succeeds when the whole workflow run is re-run (not only the failed job).
+13. **Reviews owed:** this round's motion stages 3–10, Lab pathways two-step routes and holders, and the Laws and rules filters were checked by tests and screenshots but not by review agents.
 
 ## Owner actions
 
