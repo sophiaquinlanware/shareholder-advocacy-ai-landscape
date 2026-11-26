@@ -89,12 +89,14 @@ Site name: **"Shareholder advocacy on AI"** (owner request, 2026-11-26, commit 7
 
 Six sections, in the order of an engagement cycle (owner, 2026-11-26: "like you are an analyst from [Parnassus] ... eliminate any redundancies ... It feels chronological ... clear why each thing is there"; plan docs/plans/2026-11-26-analyst-restructure.md). Each section opens with the question it answers, then a row of views:
 
-- **Start here:** Overview (`#start`) · Upcoming votes (`#upcoming`) · New SEC filings (`#new`)
-- **AI value chain:** Chips to AI products (`#value-chain`, heading "AI value chain, from chips to AI products: companies by tier"; owner: never just "the chain", always say which chain) · Routes to a lab (`#pathways`)
-- **Companies:** Company profile (`#company`) · Compare disclosure (`#parnassus`) · Compare proposal rights (`#rights`)
-- **Proposals and votes:** All proposals (`#feed`) · How funds voted (`#votes`)
-- **Who's engaging:** Network (`#network`) · Contacts (`#people`) · Engagement outcomes (`#outcomes`)
-- **Policy:** Policy map (`#causality`)
+- **Deadlines and votes:** Key dates and findings (`#start`) · AI proposals on upcoming ballots (`#upcoming`) · New SEC filings (`#new`)
+- **AI value chain:** Chips to AI products (`#value-chain`) · Ties to each frontier lab (`#pathways`)
+- **Company profiles:** One company in full (`#company`) · AI disclosure scores (`#parnassus`) · Shareholder proposal rights (`#rights`)
+- **Proposals and results:** All AI proposals (`#feed`) · How fund families voted (`#votes`)
+- **Investors and contacts:** Network of investors, proposals and companies (`#network`) · Engagement leads (`#people`) · Results of private engagement (`#outcomes`)
+- **Laws and rules:** AI laws and rule changes (`#causality`)
+
+Labels say what each view holds (owner, 2026-11-26: titles "not enough information that is precise about the actual information stored in each tab"). The line under each section tab lists its contents. View buttons with a count (`data-count-label`) are filled from the data by `labelCounts()` in app.js.
 
 Both rows follow the WAI-ARIA tabs pattern (`aria-controls`, `aria-labelledby`, roving tabindex, Left/Right/Home/End). Every view keeps its own address, so old links open the right place; `#why` goes to the Policy map, `#weigh-in` and `#water` to Upcoming votes, and any unknown hash to the Overview. On phones the section row scrolls sideways on one line.
 

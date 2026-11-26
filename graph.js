@@ -318,7 +318,7 @@
   function shell(el) {
     el.innerHTML = `
       <h2>AI advocacy network</h2>
-      <p class="count-line">Two views: Connections (who is tied to whom) and Proposals (which companies AI proposals reach, active or past). For value-chain ties alone, see Value chain › Routes to a lab.</p>
+      <p class="count-line">Two views: Connections (who is tied to whom) and Proposals (which companies AI proposals reach, active or past). For value-chain ties alone, see AI value chain › Ties to each frontier lab.</p>
       <fieldset class="lens-pick" id="net-lens"><legend>View as</legend>${Object.entries(window.LENSES || {}).map(([id, l]) =>
         `<label class="chip"><input type="radio" name="net-lens" value="${esc(id)}"${id === state.lens ? " checked" : ""}> ${esc(l.label)}</label>`).join("")}</fieldset>
       <p class="visually-hidden" id="net-lens-status" aria-live="polite"></p>

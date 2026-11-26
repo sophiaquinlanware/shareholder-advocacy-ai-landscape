@@ -53,7 +53,7 @@
   window.renderScorecard = function (data) {
     const el = document.getElementById("tab-parnassus");
     if (!data || !data.companies || !data.companies.length) {
-      el.innerHTML = `<div class="coming"><h2>Compare disclosure</h2><p>Being scored now.</p></div>`;
+      el.innerHTML = `<div class="coming"><h2>AI disclosure scores</h2><p>Being scored now.</p></div>`;
       return;
     }
     S = { criteria: data.criteria, companies: data.companies, pillar: "", sort: "score", sel: null };
@@ -62,7 +62,7 @@
     const tl = (data.parnassus_timeline || []).map((e) => `<li><div class="date">${esc(e.date)}${e.company ? " · " + esc(e.company) : ""}</div>
       <div><strong>${esc(e.title)}.</strong> ${esc(e.summary)} ${link(e.source_url, e.source_page ? "source, p. " + e.source_page : "source")}</div></li>`).join("");
     el.innerHTML = `
-      <h2>Compare disclosure</h2>
+      <h2>AI disclosure scores</h2>
       <p class="intro">${data.companies.length} companies × ${data.criteria.length} criteria from the <a href="${esc(data.framework_url)}" target="_blank" rel="noopener">Investor Recommendations for an Effective Rights-Based Approach to AI</a> (April 2025), scored on published disclosure only. Silent = no public disclosure found. Not affiliated with Parnassus Investments.</p>
       <div class="net-controls">
         <div class="seg" role="group" aria-label="Pillar">
@@ -84,8 +84,8 @@
       <h2>Documents reviewed</h2><ul class="steps">${docs}</ul>`;
     const out = document.getElementById("tab-outcomes");
     if (out) out.innerHTML = tl
-      ? `<h2>Engagement outcomes</h2><p class="intro">What changed at companies after private engagement on AI, as the investor itself has reported it. Today this covers Parnassus Investments, from its stewardship reports; each step links to the page. The same engagements show in the Network as "engaged directly" links.</p><ul class="timeline">${tl}</ul>`
-      : `<h2>Engagement outcomes</h2><p class="status-note">No reported engagement outcomes on file.</p>`;
+      ? `<h2>Results of private engagement</h2><p class="intro">What changed at companies after private engagement on AI, as the investor itself has reported it. Today this covers Parnassus Investments, from its stewardship reports; each step links to the page. The same engagements show in the Network as "engaged directly" links.</p><ul class="timeline">${tl}</ul>`
+      : `<h2>Results of private engagement</h2><p class="status-note">No reported engagement outcomes on file.</p>`;
     el.querySelectorAll("[data-p]").forEach((b) => b.addEventListener("click", () => {
       S.pillar = b.dataset.p;
       el.querySelectorAll("[data-p]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));

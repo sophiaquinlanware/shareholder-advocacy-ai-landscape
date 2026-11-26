@@ -103,7 +103,7 @@ function renderUpcoming() {
       <td class="num">${!firstForCo ? `<span class="ticker">as above</span>` : historyText(h) ? `<button type="button" class="linklike" data-co="${esc(m.ticker)}">${esc(historyText(h))}</button>` : `<span class="ticker">none on file</span>`}</td></tr>`;
   }).join("");
   document.getElementById("tab-upcoming").innerHTML = `
-    <h2>Upcoming votes</h2>
+    <h2>AI proposals on upcoming ballots</h2>
     <p class="intro">${plural(items.length, "AI proposal")} on ${plural(meetings.filter((m) => (m.items || []).length).length, "ballot")}, by meeting date. Source: each company's proxy statement.</p>
     ${rows ? `<div class="table-wrap"><table><thead><tr><th scope="col">Meeting</th><th scope="col">Company</th><th scope="col">Item</th><th scope="col">Proposal</th><th scope="col">Filed by</th><th scope="col">What it asks about</th><th scope="col">Board</th><th scope="col">Earlier AI votes at this company</th></tr></thead><tbody>${rows}</tbody></table></div>` : `<p class="status-note">No AI proposals on announced ballots.</p>`}
     ${empty.length ? `<h3 class="sub-h">Meetings with no AI proposals on the ballot, or ballot not yet filed</h3>
@@ -186,7 +186,7 @@ function renderCompany() {
   const bases = [...new Set(cos.map((c) => c.basis_type).filter(Boolean))].sort();
   const F = { sector: "", basis: "" };
   el.innerHTML = `
-    <h2>Company profile</h2>
+    <h2>One company in full</h2>
     <p class="intro">Everything on file for one company: why it is included, its next ballot and filing deadline, its AI proposals and how they did, who filed them, its ties to frontier labs, and the proposal rights investors have there.</p>
     <div class="net-controls">
       ${roleIds.length ? `<select id="co-role" aria-label="Main role in AI"><option value="">All roles</option>${roleIds.map((r) => `<option value="${esc(r)}">${esc(R.label(r))}</option>`).join("")}</select>` : ""}
@@ -506,7 +506,7 @@ function renderRights() {
     </details>`;
   };
   el.innerHTML = `
-    <h2>Compare proposal rights</h2>
+    <h2>Shareholder proposal rights</h2>
     <p class="intro">If the SEC rescinds Rule 14a-8, which companies still let investors put a proposal on the ballot, and how much say they have over directors? From each company's bylaws, state of incorporation and share structure. This site's reading of the cited documents, not a legal opinion.</p>
     ${roleIds.length ? `<div class="net-controls"><select id="rights-sector" aria-label="Main role in AI"><option value="">All roles</option>${roleIds.map((r) => `<option value="${esc(r)}">${esc(R.label(r))}</option>`).join("")}</select></div>` : ""}
     <p class="count-line" id="rights-count" aria-live="polite"></p>
@@ -541,7 +541,7 @@ function renderPeople() {
     { key: "links", label: "Links", render: (p) => `${src(p.profile_url, "profile")} <button type="button" class="linklike" data-person="person-${esc(p.id)}">Show in network</button>` },
   ];
   el.innerHTML = `
-    <h2>Contacts</h2>
+    <h2>Engagement leads</h2>
     <p class="intro">Stewardship, engagement and shareholder advocacy leads at the organizations in the network, each with a public profile page. Public professional details only.</p>
     <div class="net-controls"><input type="search" id="people-search" placeholder="Search name, organization or AI work" aria-label="Search people"></div>
     <p class="count-line" id="people-count" aria-live="polite"></p>
@@ -582,6 +582,22 @@ function renderNew() {
     ${groups ? `<ul class="timeline">${groups}</ul>` : `<p class="status-note">Nothing flagged yet.</p>`}`;
 }
 
+// View buttons that carry a count (data-count-label="All {proposals} AI proposals") are filled in from the data,
+// so the numbers never go stale.
+function labelCounts() {
+  const n = {
+    proposals: ((DATA.proposals && DATA.proposals.proposals) || []).length,
+    families: new Set(((DATA.fund_votes && DATA.fund_votes.summary) || []).map((r) => r.family)).size,
+    scored: ((DATA.scorecard && DATA.scorecard.companies) || []).length,
+    rights: (DATA.companies || []).filter((c) => c.rights_tracked !== false && c.matrix).length,
+    people: ((DATA.people && DATA.people.people) || []).length,
+  };
+  document.querySelectorAll("[data-count-label]").forEach((b) => {
+    const text = b.dataset.countLabel.replace(/\{(\w+)\}/g, (_, k) => (n[k] ? String(n[k]) : ""));
+    if (!/\s\s|\s,|^\s/.test(text)) b.textContent = text.replace(/\s+/g, " ").trim();
+  });
+}
+
 // ---------- Start here: Overview ----------
 // What an analyst can act on now (ballots out, open filing deadlines, this week's SEC finds), three findings
 // from the data with their basis, and what each section of the site is for.
@@ -613,7 +629,7 @@ function renderStart() {
     return `<li><a href="#${esc(first)}">${esc(b.textContent)}</a>: ${esc(q)}</li>`;
   }).join("");
   el.innerHTML = `
-    <h2>Next few weeks</h2>
+    <h2>Key dates and findings</h2>
     <p class="intro">Dates you can act on, three things the data shows, and what each section of the site is for.</p>
     <h3 class="sub-h">Coming up</h3>
     ${comingList ? `<ul class="steps coming-up">${comingList}</ul>` : `<p class="status-note">No ballots or open filing deadlines on file.</p>`}
@@ -800,6 +816,7 @@ async function main() {
   renderPeople();
   renderNew();
   renderStart(); // again, now that the weekly SEC check (changes, tracking) has loaded
+  labelCounts();
   document.dispatchEvent(new Event("siteready"));
 }
 main();
