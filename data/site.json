@@ -41,7 +41,7 @@
   ],
   "rights_intro": "For each company: where it is incorporated, what its bylaws require to bring a proposal, and how much room investors would have if the SEC rescinds Rule 14a-8.",
   "status_key": "Still open means the company's own rules leave a workable path for proposals even without Rule 14a-8. Narrowing means higher thresholds, a controlling shareholder or similar limits make that path harder. Closed means the company has adopted rules that shut out most proposal filers. These ratings are this site's reading of the cited documents, not a legal opinion.",
-  "why_now_note": "Emptied 2026-11-25 at the owner's request: every item is now an event in data/causality.json (texas-sb1057, sec-noaction-pause, sec-aug14-statement, dfking-2026-season, sec-14a8-rescission-proposal, vanguard-investor-choice-2026, iss-ai-proposals-2026), so the separate Policy timeline would repeat the map.",
+  "why_now_note": "Emptied November 25, 2026 at the owner's request: every item is now an event in data/causality.json (texas-sb1057, sec-noaction-pause, sec-aug14-statement, dfking-2026-season, sec-14a8-rescission-proposal, vanguard-investor-choice-2026, iss-ai-proposals-2026), so the separate Policy timeline would repeat the map.",
   "findings": [
     {
       "id": "no-alignment-asks",

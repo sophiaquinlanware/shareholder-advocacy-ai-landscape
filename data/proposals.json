@@ -1499,7 +1499,7 @@
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "results_url": null,
    "notes": null,
-   "results_note": "Not yet filed (meeting 2026-12-08)",
+   "results_note": "Not yet filed (meeting December 8, 2026)",
    "filing_deadline": "2026-06-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "plain_summary": "Asks Microsoft to disclose additional information each year, beyond current disclosures, showing how it will manage its climate commitments as its emissions grow.",
@@ -1525,7 +1525,7 @@
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "results_url": null,
    "notes": null,
-   "results_note": "Not yet filed (meeting 2026-12-08)",
+   "results_note": "Not yet filed (meeting December 8, 2026)",
    "vote_history": [
     {
      "year": 2025,
@@ -1561,7 +1561,7 @@
    "proxy_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "results_url": null,
    "notes": null,
-   "results_note": "Not yet filed (meeting 2026-12-08)",
+   "results_note": "Not yet filed (meeting December 8, 2026)",
    "vote_history": [
     {
      "year": 2023,
@@ -2000,7 +2000,7 @@
    "results_url": null,
    "filing_deadline": "2023-10-12",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1744489/000119312523025766/d354565ddefc14a.htm",
-   "notes": "SEC staff denied Disney's request to exclude the proposal under Rule 14a-8(i)(7) on January 3, 2024 (letter: https://business.cch.com/srd/TheWaltDisneyCompany.pdf; SEC index: https://www.sec.gov/corpfin/2023-2024-shareholder-proposals-no-action). The proposal does not appear in Disney's 2024 proxy (a contested DEFC14A); FTI Consulting on the Harvard Law School Forum (2024-09-29) reports the AFL-CIO withdrew it following commitments from Disney: https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/. Withdrawal date not found.",
+   "notes": "SEC staff denied Disney's request to exclude the proposal under Rule 14a-8(i)(7) on January 3, 2024 (letter: https://business.cch.com/srd/TheWaltDisneyCompany.pdf; SEC index: https://www.sec.gov/corpfin/2023-2024-shareholder-proposals-no-action). The proposal does not appear in Disney's 2024 proxy (a contested DEFC14A); FTI Consulting on the Harvard Law School Forum (September 29, 2024) reports the AFL-CIO withdrew it following commitments from Disney: https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/. Withdrawal date not found.",
    "source": "SEC filings (round 29)",
    "plain_summary": "Asks Disney to publish a report on how it uses AI in its business, how the board oversees that use, and any ethical guidelines it has adopted for AI.",
    "plain_summary_note": "Resolution text from Disney's no-action request and the SEC staff reply (January 3, 2024).",

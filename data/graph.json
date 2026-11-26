@@ -1435,7 +1435,7 @@
    "label": "Anthropic",
    "status": "public",
    "tier": "labs",
-   "description": "Claude maker; IPO priced $83/share on Nasdaq (ANT) 2026-11-19; founders keep voting control via Class F share.",
+   "description": "Claude maker; IPO priced $83/share on Nasdaq (ANT) November 19, 2026; founders keep voting control via Class F share.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/0001628280-26-074944-index.htm",
    "degree": 16
   },
@@ -4942,7 +4942,7 @@
    "filing_deadline": "2026-06-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "meeting_date": "2026-12-08",
-   "results_note": "Not yet filed (meeting 2026-12-08)",
+   "results_note": "Not yet filed (meeting December 8, 2026)",
    "plain_summary": "Asks Microsoft to disclose additional information each year, beyond current disclosures, showing how it will manage its climate commitments as its emissions grow.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "ask_id": "ask-dc-climate-energy",
@@ -4975,7 +4975,7 @@
    "filing_deadline": "2026-06-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "meeting_date": "2026-12-08",
-   "results_note": "Not yet filed (meeting 2026-12-08)",
+   "results_note": "Not yet filed (meeting December 8, 2026)",
    "plain_summary": "Asks for a report assessing how well Microsoft's human rights due diligence prevents and addresses customer misuse of its AI and cloud products that violates human rights or humanitarian law.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "ask_id": "ask-customer-due-diligence",
@@ -5022,7 +5022,7 @@
    "filing_deadline": "2026-06-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "meeting_date": "2026-12-08",
-   "results_note": "Not yet filed (meeting 2026-12-08)",
+   "results_note": "Not yet filed (meeting December 8, 2026)",
    "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud data centers in countries of \"significant human rights concern\" and how it mitigates them.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "ask_id": "ask-dc-siting-rights",
@@ -6525,7 +6525,7 @@
    "type": "person",
    "layer": "people",
    "label": "Carine Smith Ihenacho",
-   "title": "Chief Governance and Compliance Officer (stepping down; area reorganized from 1 January 2027)",
+   "title": "Chief Governance and Compliance Officer (stepping down; area reorganized from January 1, 2027)",
    "org_name": "Norges Bank Investment Management",
    "ai_focus": "",
    "source_url": "https://www.nbim.no/en/news-and-insights/the-press/press-releases/2026/integrates-ownership-work-into-active-management/",
@@ -7739,7 +7739,7 @@
    "label": "Caroline Eriksen",
    "title": "Global Head of Active Ownership",
    "org_name": "Norges Bank Investment Management",
-   "ai_focus": "Leads NBIM's Active Ownership teams for voting and sustainability, which move into Active Strategies from 1 January 2027; no AI work by her personally was sourced",
+   "ai_focus": "Leads NBIM's Active Ownership teams for voting and sustainability, which move into Active Strategies from January 1, 2027; no AI work by her personally was sourced",
    "source_url": "https://www.nbim.no/en/news-and-insights/the-press/press-releases/2026/integrates-ownership-work-into-active-management/",
    "verified": "2026-11",
    "degree": 1
@@ -8067,7 +8067,7 @@
    "label": "Antonia Parkes",
    "title": "Co-Chair, RIAA Human Rights Working Group",
    "org_name": "AustralianSuper",
-   "ai_focus": "Co-chairs RIAA's Human Rights Working Group, whose first 2026 meeting (4 March 2026) was on AI and human rights",
+   "ai_focus": "Co-chairs RIAA's Human Rights Working Group, whose first 2026 meeting (March 4, 2026) was on AI and human rights",
    "source_url": "https://www.responsibleinvestment.org/membership/working-groups/human-rights",
    "verified": "2026-11",
    "degree": 1
@@ -8079,7 +8079,7 @@
    "label": "Ashley Kopczynski",
    "title": "Co-Chair, RIAA Human Rights Working Group",
    "org_name": "IFM Investors",
-   "ai_focus": "Co-chairs RIAA's Human Rights Working Group, whose first 2026 meeting (4 March 2026) was on AI and human rights",
+   "ai_focus": "Co-chairs RIAA's Human Rights Working Group, whose first 2026 meeting (March 4, 2026) was on AI and human rights",
    "source_url": "https://www.responsibleinvestment.org/membership/working-groups/human-rights",
    "verified": "2026-11",
    "degree": 1
@@ -9467,7 +9467,7 @@
    "kind": "rule",
    "actor": "National People's Congress Standing Committee",
    "jurisdiction": "China",
-   "description": "In force from 2021-11-01, it requires any company that uses personal data for automated decisions in China to keep those decisions transparent and fair, bars unreasonable price discrimination, and requires a non-personalized option or easy opt-out for automated content pushes and marketing (Article 24). People can demand an explanation of, and refuse, decisions made solely by automated means that significantly affect them.",
+   "description": "In force from November 1, 2021, it requires any company that uses personal data for automated decisions in China to keep those decisions transparent and fair, bars unreasonable price discrimination, and requires a non-personalized option or easy opt-out for automated content pushes and marketing (Article 24). People can demand an explanation of, and refuse, decisions made solely by automated means that significantly affect them.",
    "source_url": "http://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
    "degree": 1
   },
@@ -9509,7 +9509,7 @@
    "kind": "rule",
    "actor": "Cyberspace Administration of China; MIIT; Ministry of Public Security; SAMR",
    "jurisdiction": "China",
-   "description": "In force from 2022-03-01 for any company using recommendation algorithms in Chinese internet services: users must be able to switch off personalization or delete profile tags, minors must not be pushed harmful content or induced into addiction, scheduling algorithms must protect gig workers' pay and rest, and unfair algorithmic price discrimination is banned. Services with public-opinion or social-mobilization capacity must file their algorithms with the CAC within 10 working days and undergo security assessments.",
+   "description": "In force from March 1, 2022 for any company using recommendation algorithms in Chinese internet services: users must be able to switch off personalization or delete profile tags, minors must not be pushed harmful content or induced into addiction, scheduling algorithms must protect gig workers' pay and rest, and unfair algorithmic price discrimination is banned. Services with public-opinion or social-mobilization capacity must file their algorithms with the CAC within 10 working days and undergo security assessments.",
    "source_url": "https://www.cac.gov.cn/2022-01/04/c_1642894606364259.htm",
    "degree": 3
   },
@@ -9551,7 +9551,7 @@
    "kind": "rule",
    "actor": "Cyberspace Administration of China; MIIT; Ministry of Public Security",
    "jurisdiction": "China",
-   "description": "In force from 2023-01-10, providers of deepfake and other synthetic text, voice, image and video services must label generated content, keep logs, manage training data security, get separate consent before editing a person's face or voice, and not produce fake news. Providers with public-opinion capacity, and their technical supporters, must file under the algorithm registry.",
+   "description": "In force from January 10, 2023, providers of deepfake and other synthetic text, voice, image and video services must label generated content, keep logs, manage training data security, get separate consent before editing a person's face or voice, and not produce fake news. Providers with public-opinion capacity, and their technical supporters, must file under the algorithm registry.",
    "source_url": "https://www.cac.gov.cn/2022-12/11/c_1672221949354811.htm",
    "degree": 1
   },
@@ -9621,7 +9621,7 @@
    "kind": "rule",
    "actor": "Ministry of Commerce; General Administration of Customs",
    "jurisdiction": "China",
-   "description": "From 2023-08-01, exporters need a dual-use export license to ship listed gallium and germanium items, materials used in chipmaking.",
+   "description": "From August 1, 2023, exporters need a dual-use export license to ship listed gallium and germanium items, materials used in chipmaking.",
    "source_url": "https://www.mofcom.gov.cn/zcfb/dwmygl/art/2023/art_52b9a321087f402bb3d310d18b07967e.html",
    "degree": 0
   },
@@ -9649,7 +9649,7 @@
    "kind": "rule",
    "actor": "Cyberspace Administration of China; NDRC; Ministry of Education; MOST; MIIT; Ministry of Public Security; NRTA",
    "jurisdiction": "China",
-   "description": "In force from 2023-08-15 for anyone, Chinese or foreign, offering generative AI to the public in China, including through APIs: training data must come from lawful sources, respect IP and have consent for personal data; providers must prevent discrimination in design and training data, label generated images and video, guard against minors' over-reliance, and report illegal content. Services with public-opinion capacity need a security assessment and algorithm filing, and overseas services that break the rules can be blocked.",
+   "description": "In force from August 15, 2023 for anyone, Chinese or foreign, offering generative AI to the public in China, including through APIs: training data must come from lawful sources, respect IP and have consent for personal data; providers must prevent discrimination in design and training data, label generated images and video, guard against minors' over-reliance, and report illegal content. Services with public-opinion capacity need a security assessment and algorithm filing, and overseas services that break the rules can be blocked.",
    "source_url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
    "degree": 3
   },
@@ -9677,7 +9677,7 @@
    "kind": "rule",
    "actor": "Ministry of Science and Technology and nine other bodies",
    "jurisdiction": "China",
-   "description": "In force from 2023-12-01, companies and institutions doing AI research in ethically sensitive areas must set up ethics review committees, and research on algorithm models with public-opinion mobilization capacity or highly autonomous decision systems in risky settings needs additional expert review.",
+   "description": "In force from December 1, 2023, companies and institutions doing AI research in ethically sensitive areas must set up ethics review committees, and research on algorithm models with public-opinion mobilization capacity or highly autonomous decision systems in risky settings needs additional expert review.",
    "source_url": "https://www.gov.cn/zhengce/zhengceku/202310/content_6908045.htm",
    "degree": 0
   },
@@ -9705,7 +9705,7 @@
    "kind": "rule",
    "actor": "State Council",
    "jurisdiction": "China",
-   "description": "In force from 2024-01-01, platforms with very large numbers of minor users or major influence on minors must run regular minors' protection impact assessments, offer a minors' mode, set up an independent oversight body mostly of outside members, and publish a yearly minors' online protection social responsibility report. Fines for some breaches reach 50 million yuan.",
+   "description": "In force from January 1, 2024, platforms with very large numbers of minor users or major influence on minors must run regular minors' protection impact assessments, offer a minors' mode, set up an independent oversight body mostly of outside members, and publish a yearly minors' online protection social responsibility report. Fines for some breaches reach 50 million yuan.",
    "source_url": "https://www.gov.cn/zhengce/content/202310/content_6911288.htm",
    "degree": 1
   },
@@ -9887,7 +9887,7 @@
    "kind": "rule",
    "actor": "Cyberspace Administration of China",
    "jurisdiction": "China",
-   "description": "Lists generative AI services that completed filing under the 2023 Interim Measures and requires apps built on them to show the model name and filing number; by 2026-04-30, 868 services had been filed and 530 apps or features registered.",
+   "description": "Lists generative AI services that completed filing under the 2023 Interim Measures and requires apps built on them to show the model name and filing number; by April 30, 2026, 868 services had been filed and 530 apps or features registered.",
    "source_url": "https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm",
    "degree": 1
   },
@@ -10139,7 +10139,7 @@
    "kind": "rule",
    "actor": "State Council",
    "jurisdiction": "China",
-   "description": "In force from 2025-01-01, Article 19 requires data handlers that provide generative AI services to strengthen security management of training data and its processing and to prevent and handle data security risks.",
+   "description": "In force from January 1, 2025, Article 19 requires data handlers that provide generative AI services to strengthen security management of training data and its processing and to prevent and handle data security risks.",
    "source_url": "https://www.gov.cn/zhengce/content/202409/content_6977766.htm",
    "degree": 0
   },
@@ -10209,7 +10209,7 @@
    "kind": "rule",
    "actor": "Ministry of Commerce",
    "jurisdiction": "China",
-   "description": "Bans dual-use exports to US military users or uses and in principle denies licenses for gallium, germanium, antimony and superhard materials to the US, with stricter review for graphite. MOFCOM suspended the second clause from 2025-11-09 to 2026-11-27 (Announcement 2025 No. 72) and again from 2026-11-28 to 2027-01-27 (Announcement 2026 No. 59); the ban on military users stays in force.",
+   "description": "Bans dual-use exports to US military users or uses and in principle denies licenses for gallium, germanium, antimony and superhard materials to the US, with stricter review for graphite. MOFCOM suspended the second clause from November 9, 2025 to November 27, 2026 (Announcement 2025 No. 72) and again from November 28, 2026 to January 27, 2027 (Announcement 2026 No. 59); the ban on military users stays in force.",
    "source_url": "https://www.mofcom.gov.cn/zfxxgk/gkml/art/2024/art_99f5d51bbe6a412ca309d5818c4dee52.html",
    "degree": 0
   },
@@ -10461,7 +10461,7 @@
    "kind": "rule",
    "actor": "Cyberspace Administration of China; MIIT; Ministry of Public Security; NRTA",
    "jurisdiction": "China",
-   "description": "In force from 2025-09-01 with a mandatory national standard: providers covered by the algorithm, deep synthesis and generative AI rules must add hidden labels in file metadata, and visible labels to text, audio, images, video and virtual scenes where content may confuse the public; platforms that distribute content must check for and display labels. Removing or forging labels is banned.",
+   "description": "In force from September 1, 2025 with a mandatory national standard: providers covered by the algorithm, deep synthesis and generative AI rules must add hidden labels in file metadata, and visible labels to text, audio, images, video and virtual scenes where content may confuse the public; platforms that distribute content must check for and display labels. Removing or forging labels is banned.",
    "source_url": "https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm",
    "degree": 4
   },
@@ -11217,7 +11217,7 @@
    "kind": "rule",
    "actor": "Ministry of Commerce",
    "jurisdiction": "China",
-   "description": "Requires foreign exporters of items containing Chinese rare earths to get Chinese licenses, with case-by-case review for uses in 14nm-and-below logic chips, 256-layer-and-above memory, related equipment and AI research with potential military use. Suspended from 2025-11-07 to 2026-11-10 (Announcement 2025 No. 70) and again from 2026-11-11 to 2027-01-10 (MOFCOM/GAC Announcement 2026 No. 58).",
+   "description": "Requires foreign exporters of items containing Chinese rare earths to get Chinese licenses, with case-by-case review for uses in 14nm-and-below logic chips, 256-layer-and-above memory, related equipment and AI research with potential military use. Suspended from November 7, 2025 to November 10, 2026 (Announcement 2025 No. 70) and again from November 11, 2026 to January 10, 2027 (MOFCOM/GAC Announcement 2026 No. 58).",
    "source_url": "https://www.mofcom.gov.cn/zwgk/zcfb/art/2025/art_7fc9bff0fb4546ecb02f66ee77d0e5f6.html",
    "degree": 0
   },
@@ -11273,7 +11273,7 @@
    "kind": "rule",
    "actor": "National People's Congress Standing Committee",
    "jurisdiction": "China",
-   "description": "In force from 2026-01-01, a new Article 20 commits the state to AI research, training data and computing infrastructure, AI ethics rules, and risk monitoring, assessment and safety supervision; the amendment also raises penalties for network operators.",
+   "description": "In force from January 1, 2026, a new Article 20 commits the state to AI research, training data and computing infrastructure, AI ethics rules, and risk monitoring, assessment and safety supervision; the amendment also raises penalties for network operators.",
    "source_url": "http://www.npc.gov.cn/npc/c2/c30834/202510/t20251028_449048.html",
    "degree": 0
   },
@@ -11413,7 +11413,7 @@
    "kind": "rule",
    "actor": "Ofcom",
    "jurisdiction": "UK",
-   "description": "Formal investigation into whether X met its Online Safety Act duties to remove illegal content and protect children after Grok was used to make sexualized images. On 3 February 2026 Ofcom said it cannot currently investigate the standalone Grok service's creation of illegal images; by October 2026 Grok had restricted pornographic content for UK children after Ofcom engagement.",
+   "description": "Formal investigation into whether X met its Online Safety Act duties to remove illegal content and protect children after Grok was used to make sexualized images. On February 3, 2026 Ofcom said it cannot currently investigate the standalone Grok service's creation of illegal images; by October 2026 Grok had restricted pornographic content for UK children after Ofcom engagement.",
    "source_url": "https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/ofcom-launches-investigation-into-x-over-grok-sexualised-imagery",
    "degree": 2
   },
@@ -11679,7 +11679,7 @@
    "kind": "rule",
    "actor": "Cyberspace Administration of China; NDRC; MIIT; Ministry of Public Security; SAMR",
    "jurisdiction": "China",
-   "description": "In force from 2026-07-15 for AI companion and emotional interaction services: providers may not offer virtual partner or relative services to minors, need guardian consent for users under 14, must offer a minors' mode, intervene when users signal self-harm, avoid fostering dependence, and manage training data. Services with 1 million registered or 100,000 monthly active users must file security assessments with provincial regulators and complete algorithm filing.",
+   "description": "In force from July 15, 2026 for AI companion and emotional interaction services: providers may not offer virtual partner or relative services to minors, need guardian consent for users under 14, must offer a minors' mode, intervene when users signal self-harm, avoid fostering dependence, and manage training data. Services with 1 million registered or 100,000 monthly active users must file security assessments with provincial regulators and complete algorithm filing.",
    "source_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm",
    "degree": 2
   },
@@ -23594,7 +23594,7 @@
    "type": "cited by",
    "layer": "policy",
    "source_url": "https://digitallibrary.un.org/record/4054005/files/A_RES_78_311-EN.pdf",
-   "explanation": "The July 2024 resolution reaffirms resolution 78/265 of 21 March 2024."
+   "explanation": "The July 2024 resolution reaffirms resolution 78/265 of March 21, 2024."
   },
   {
    "source": "ev-coe-ai-convention-opens",
@@ -24802,7 +24802,7 @@
    "type": "coordinated by",
    "layer": "proposals",
    "source_url": "https://openmic.org/news/open-mic-pressures-axon-to-abandon-plan-to-deploy-ai-powered-taser-drones-in-schools",
-   "note": "Open MIC release (Apr 11, 2023) says Open MIC submitted the proposal; the proxy names the Jubitz Foundation as proponent"
+   "note": "Open MIC release (April 11, 2023) says Open MIC submitted the proposal; the proxy names the Jubitz Foundation as proponent"
   },
   {
    "source": "afl-cio",
@@ -24866,7 +24866,7 @@
    "type": "supported by",
    "layer": "proposals",
    "source_url": "https://investorsforhumanrights.org/2023-meta-and-alphabet-shareholder-resolutions",
-   "note": "IAHR page (Jan 31, 2023) says the proposal was announced by members of the Investor Alliance for Human Rights"
+   "note": "IAHR page (January 31, 2023) says the proposal was announced by members of the Investor Alliance for Human Rights"
   },
   {
    "source": "iahr",
@@ -24874,7 +24874,7 @@
    "type": "supported by",
    "layer": "proposals",
    "source_url": "https://investorsforhumanrights.org/2023-meta-and-alphabet-shareholder-resolutions",
-   "note": "IAHR page (Jan 31, 2023) says the proposal was announced by members of the Investor Alliance for Human Rights"
+   "note": "IAHR page (January 31, 2023) says the proposal was announced by members of the Investor Alliance for Human Rights"
   },
   {
    "source": "iahr",
@@ -24882,7 +24882,7 @@
    "type": "supported by",
    "layer": "proposals",
    "source_url": "https://investorsforhumanrights.org/2023-meta-and-alphabet-shareholder-resolutions",
-   "note": "IAHR page (Jan 31, 2023) says the proposal was announced by members of the Investor Alliance for Human Rights"
+   "note": "IAHR page (January 31, 2023) says the proposal was announced by members of the Investor Alliance for Human Rights"
   },
   {
    "source": "calpers",
@@ -24922,7 +24922,7 @@
    "type": "supported by",
    "layer": "proposals",
    "source_url": "https://investorsforhumanrights.org/news/2024-tech-proposals",
-   "note": "Listed in the IAHR press release of 2024 tech proposals (Feb 1, 2024); release does not say IAHR coordinated"
+   "note": "Listed in the IAHR press release of 2024 tech proposals (February 1, 2024); release does not say IAHR coordinated"
   },
   {
    "source": "iahr",
@@ -24930,7 +24930,7 @@
    "type": "supported by",
    "layer": "proposals",
    "source_url": "https://investorsforhumanrights.org/news/2024-tech-proposals",
-   "note": "Listed in the IAHR press release of 2024 tech proposals (Feb 1, 2024); release does not say IAHR coordinated"
+   "note": "Listed in the IAHR press release of 2024 tech proposals (February 1, 2024); release does not say IAHR coordinated"
   },
   {
    "source": "iahr",
@@ -24938,7 +24938,7 @@
    "type": "supported by",
    "layer": "proposals",
    "source_url": "https://investorsforhumanrights.org/news/2024-tech-proposals",
-   "note": "Listed in the IAHR press release of 2024 tech proposals (Feb 1, 2024); release does not say IAHR coordinated"
+   "note": "Listed in the IAHR press release of 2024 tech proposals (February 1, 2024); release does not say IAHR coordinated"
   },
   {
    "source": "iahr",
@@ -24946,7 +24946,7 @@
    "type": "supported by",
    "layer": "proposals",
    "source_url": "https://investorsforhumanrights.org/news/2024-tech-proposals",
-   "note": "Listed in the IAHR press release of 2024 tech proposals (Feb 1, 2024); release does not say IAHR coordinated"
+   "note": "Listed in the IAHR press release of 2024 tech proposals (February 1, 2024); release does not say IAHR coordinated"
   },
   {
    "source": "eko",

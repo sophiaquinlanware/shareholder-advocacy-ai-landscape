@@ -148,7 +148,7 @@
   const RECHECK_TIES = new Set(["aapl|openai", "googl|openai|cloud/compute provider"]);
   const recheck = (t) => RECHECK_TIES.has(`${t.from}|${t.to}`) || RECHECK_TIES.has(`${t.from}|${t.to}|${t.type}`);
   const recheckTag = ` <span class="pw-flag">URL to recheck (see gaps)</span>`;
-  const cellTie = (r) => r.ties.map((t) => `<div class="pw-tie"><strong>${esc(GROUPS[groupOf(t)].label)}</strong>: ${esc(t.type)}${t.as_of ? `, as of ${esc(t.as_of)}` : ""}.${flagged(t) ? ` <span class="pw-flag">reported or unverified</span>` : ""} ${esc(t.description || "")} ${link(t.source_url)}${recheck(t) ? recheckTag : ""}</div>`).join("");
+  const cellTie = (r) => r.ties.map((t) => `<div class="pw-tie"><strong>${esc(GROUPS[groupOf(t)].label)}</strong>: ${esc(t.type)}${t.as_of ? `, as of ${esc(window.DATES.long(t.as_of))}` : ""}.${flagged(t) ? ` <span class="pw-flag">reported or unverified</span>` : ""} ${esc(t.description || "")} ${link(t.source_url)}${recheck(t) ? recheckTag : ""}</div>`).join("");
   const cellStrength = (r) => r.ties.map((t) => `<div class="pw-tie"><strong>${esc(t.strength ?? "?")}</strong>${t.strength_reason ? ` ${esc(t.strength_reason)}` : ""} ${link(t.source_url)}</div>`).join("");
   // US proxy rights and the next filing deadline in one cell.
   function cellRights(r) {
@@ -157,7 +157,7 @@
     const d = r.deadline;
     if (!d) return `${route}<br>Deadline: none on record`;
     const when = d.open ? `<strong>open</strong>, ${d.days} day${d.days === 1 ? "" : "s"} left` : "passed";
-    return `${route}<br>Deadline <span class="nowrap">${esc(d.date)}</span>: ${when} ${link(d.source)}`;
+    return `${route}<br>Deadline <span class="nowrap">${esc(window.DATES.long(d.date))}</span>: ${when} ${link(d.source)}`;
   }
   function cellFilers(r) {
     if (!r.inScope) return `<span class="unverified">not tracked here (AI proposals are tracked at companies under US proxy rules)</span>`;
@@ -236,7 +236,7 @@
       <ul class="pw-findings">
         <li><strong>No AI proposals filed here yet</strong> (${none.length} of the ${tracked} tracked for proposals; meetings from 2023): ${none.map((r) => esc(r.pc.name)).join(", ") || "none"}.</li>
         <li><strong>Companies by number of filers on record</strong>: ${crowded.map((r) => `${esc(r.pc.name)} (${r.filers.length})`).join(", ") || "no named filers at these companies"}.</li>
-        <li><strong>Filing deadline open</strong> (${open.length} of ${rows.length}): ${open.map((r) => `${esc(r.pc.name)} (${esc(r.deadline.date)}) ${link(r.deadline.source)}`).join(", ") || "none on record"}.</li>
+        <li><strong>Filing deadline open</strong> (${open.length} of ${rows.length}): ${open.map((r) => `${esc(r.pc.name)} (${esc(window.DATES.long(r.deadline.date))}) ${link(r.deadline.source)}`).join(", ") || "none on record"}.</li>
       </ul>`;
     return { none, open };
   }
@@ -266,7 +266,7 @@
       <h3 class="sub-h">Two-step routes to ${esc(lab.name)}</h3>
       <p class="count-line">${out.length} tie${out.length === 1 ? "" : "s"} from companies not tied to ${esc(lab.name)} directly to a company that is. Both ties are sourced.</p>
       <div class="table-wrap"><table><thead><tr><th scope="col">Company</th><th scope="col">Tie</th><th scope="col">Via</th><th scope="col">Tie to ${esc(lab.name)}</th></tr></thead><tbody>
-      ${out.map(({ a, b, t, r }) => `<tr><td>${esc(a.name)}${a.ticker ? ` <span class="ticker">${esc(a.ticker)}</span>` : ""}</td><td>${esc(t.type)}${t.as_of ? `, as of ${esc(t.as_of)}` : ""} ${link(t.source_url)}</td><td>${esc(b.name)}</td><td>${r.ties.map((x) => `${esc(x.type)} ${link(x.source_url)}`).join("<br>")}</td></tr>`).join("")}
+      ${out.map(({ a, b, t, r }) => `<tr><td>${esc(a.name)}${a.ticker ? ` <span class="ticker">${esc(a.ticker)}</span>` : ""}</td><td>${esc(t.type)}${t.as_of ? `, as of ${esc(window.DATES.long(t.as_of))}` : ""} ${link(t.source_url)}</td><td>${esc(b.name)}</td><td>${r.ties.map((x) => `${esc(x.type)} ${link(x.source_url)}`).join("<br>")}</td></tr>`).join("")}
       </tbody></table></div>`;
   }
 
@@ -296,7 +296,7 @@
     const nCos = new Set([...per.values()].flat().map((x) => x.r.pc.id)).size;
     box.innerHTML = `
       <h3 class="sub-h">Investors holding the companies tied to ${esc(lab.name)}</h3>
-      <p class="count-line">${list.length} investors with reported positions in ${nCos} of these companies, as of ${esc(H.as_of_quarter || "the latest filing")}. Positions come from each investor's latest Form 13F (Norges Bank: its own published list). A holding is not a vote or a filing.</p>
+      <p class="count-line">${list.length} investors with reported positions in ${nCos} of these companies, as of ${esc(H.as_of_quarter ? `the ${window.DATES.long(H.as_of_quarter)}` : "the latest filing")}. Positions come from each investor's latest Form 13F (Norges Bank: its own published list). A holding is not a vote or a filing.</p>
       <div class="table-wrap"><table><thead><tr><th scope="col">Investor</th><th scope="col" class="num">Value held</th><th scope="col">Companies held (value; share of the company where reported)</th><th scope="col">Filed AI proposals at these companies</th></tr></thead><tbody>
       ${list.map(({ id, i, hs, total }) => {
         const filed = hs.filter((x) => filedAt(id, x.r)).map((x) => x.r.pc.name);
@@ -485,7 +485,7 @@
     const labName = (id) => (S.data.labs.find((l) => l.id === id) || {}).name || id;
     const rows = [...ties].sort((a, b) => coName(a.from).localeCompare(coName(b.from)) || (b.strength || 0) - (a.strength || 0));
     document.getElementById("pw-count").textContent = `${rows.length} of ${S.data.ties.length} ties${rows.length < S.data.ties.length ? " (companies chosen in the map)" : ""}.`;
-    document.getElementById("pw-ties").innerHTML = `<table><thead><tr><th scope="col">Company</th><th scope="col">Lab</th><th scope="col">Tie</th><th scope="col">Strength</th><th scope="col">Detail</th><th scope="col">As of</th></tr></thead><tbody>${rows.map((t) => `<tr><td>${esc(coName(t.from))}</td><td>${esc(labName(t.to))}</td><td>${esc(t.type)}</td><td>${esc(t.strength ?? "")}</td><td>${esc(t.description || "")} ${link(t.source_url)}</td><td class="nowrap">${esc(t.as_of || "")}</td></tr>`).join("")}</tbody></table>`;
+    document.getElementById("pw-ties").innerHTML = `<table><thead><tr><th scope="col">Company</th><th scope="col">Lab</th><th scope="col">Tie</th><th scope="col">Strength</th><th scope="col">Detail</th><th scope="col">As of</th></tr></thead><tbody>${rows.map((t) => `<tr><td>${esc(coName(t.from))}</td><td>${esc(labName(t.to))}</td><td>${esc(t.type)}</td><td>${esc(t.strength ?? "")}</td><td>${esc(t.description || "")} ${link(t.source_url)}</td><td class="nowrap">${esc(window.DATES.long(t.as_of || ""))}</td></tr>`).join("")}</tbody></table>`;
   }
 
   // Secondary filter: companies chosen in the map, and the labs they reach together.
