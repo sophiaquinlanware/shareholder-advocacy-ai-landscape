@@ -59,6 +59,18 @@ Owner (2026-11-26), with a museum site's screenshot: "make it this font and this
 - **Tabs:** hovering (on devices with a mouse) draws a thin (1px) blue underline that grows from the left; hovered text stays grey, so only the selected tab is black with a 2px underline. No motion under reduced motion.
 - **Sticky page title:** once the header scrolls away, the sticky bar gains one line: the site name as a grey label, then the current page name (18px). Phones show the page name only. Hidden from screen readers (the selected tab already says it). Once stuck, the tab rows tuck away on scroll down and return on scroll up or on keyboard focus (owner's choice, 2026-11-26: the title stays). Scroll padding follows the bar's real height.
 
+## Motion foundation
+
+Owner's motion brief (2026-11-26; plan docs/plans/2026-11-26-motion.md, staged). Stage 1:
+- Lenis smooth scroll, synced with GSAP ScrollTrigger (`motion.js`). It is off under reduced motion, and the graph boxes keep native wheel zoom.
+- One easing curve, `--ease` cubic-bezier(0.16, 1, 0.3, 1), also used as expo-out in GSAP, d3 and Lenis.
+- Durations: `--dur-micro` 200ms, `--dur-reveal` 500ms, `--dur-trans` 800ms.
+- An 8px spacing scale, `--s-1`…`--s-8`.
+- Text #1a1a1a, with tabular numerals everywhere.
+- Only transform and opacity animate.
+
+The owner kept plain white, the grotesque and the always-visible page title over the brief's off-white, serif and hide-everything nav.
+
 ## Layout
 
 - `.wrap` max width 1200px, 16px side padding. Dense: tables at 7px × 10px cell padding.

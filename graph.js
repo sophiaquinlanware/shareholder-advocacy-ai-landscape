@@ -647,7 +647,7 @@
     applyStyles();
     if (state.zoom && n.x != null) {
       const { width, height } = state.size;
-      state.svg.transition().duration(REDUCED_MOTION ? 0 : 500).call(state.zoom.transform, d3.zoomIdentity.translate(width / 2, height / 2).scale(1.6).translate(-n.x, -n.y));
+      state.svg.transition().duration(REDUCED_MOTION ? 0 : 500).ease(d3.easeExpOut).call(state.zoom.transform, d3.zoomIdentity.translate(width / 2, height / 2).scale(1.6).translate(-n.x, -n.y));
     }
   }
 
@@ -1099,7 +1099,7 @@
     if (!state.zoom || n.x == null) return;
     const { width, height } = state.size;
     const k = zoomIn ? 1.6 : d3.zoomTransform(state.svg.node()).k;
-    state.svg.transition().duration(REDUCED_MOTION ? 0 : 300).call(state.zoom.transform, d3.zoomIdentity.translate(width / 2, height / 2).scale(k).translate(-n.x, -n.y));
+    state.svg.transition().duration(REDUCED_MOTION ? 0 : 200).ease(d3.easeExpOut).call(state.zoom.transform, d3.zoomIdentity.translate(width / 2, height / 2).scale(k).translate(-n.x, -n.y));
   }
   function wireKeys() {
     const el = document.getElementById("net-graph");

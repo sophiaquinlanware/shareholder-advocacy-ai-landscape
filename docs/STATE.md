@@ -26,6 +26,12 @@ Upcoming votes · Company lookup · Proposals · Fund votes · Rights map · AI 
 - **Network legibility:** labels never overlap; the selected label sits on a blue pill; key "only" and "Show all" controls; year scrubber (`upto=`).
 - **Lenses:** Impact, Individual, Policymaker (phases 1–4). Plans are in docs/plans/2026-11-25-lens-phase1/2 and 2026-11-26-lens-phase3/4.
 
+## Motion brief (owner, 2026-11-26; staged, plan docs/plans/2026-11-26-motion.md)
+
+- **Stage 1, foundation: live.** Lenis with GSAP ScrollTrigger, one easing, the duration and spacing tokens, and tabular numerals. The check passed (156; Lighthouse phone 90, desktop 97). It was not separately reviewed: it is a small infrastructure stage, and the owner reviews each stage.
+- **Owner's choices against the brief:** plain white, the grotesque headings, and the title always visible.
+- **Stages 2–10** follow one at a time, each shown to the owner: headline reveal, count-ups, charts drawing in, row stagger, timelines, view transitions and skeletons, micro-interactions, Cmd+K, and mobile cards.
+
 ## Lab pathways: routes to a lab (this round)
 
 Plan docs/plans/2026-11-26-lab-routes.md, with Revision 2. The owner's question: which public companies are routes to Lab X, what kind of pull each has, and whether you can act there this season.
