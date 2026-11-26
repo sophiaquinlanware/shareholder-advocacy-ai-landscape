@@ -35,9 +35,9 @@ UA = os.environ.get("SEC_USER_AGENT", "").strip()
 
 # Fund families to check, by the trust names they file under. Parnassus first.
 FAMILIES = {
-    "Parnassus": ["Parnassus Funds", "Parnassus Income Funds"],
-    "BlackRock (iShares)": ["iShares Trust"],
-    "Vanguard": ["Vanguard Index Funds"],
+    "Parnassus": ["Parnassus Funds", "Parnassus Funds II"],
+    "BlackRock (iShares)": ["iShares Trust", "iShares U.S. ETF Trust"],
+    "Vanguard": ["Vanguard Index Funds", "Vanguard World Fund", "Vanguard Institutional Index Funds"],
     "Calvert": ["Calvert Responsible Index Series", "Calvert Social Investment Fund"],
     "Domini": ["Domini Investment Trust"],
     "Green Century": ["Green Century Funds"],
@@ -55,7 +55,9 @@ ISSUERS = {
 STOP = {"the", "of", "on", "and", "for", "a", "an", "to", "in", "report", "shareholder", "proposal", "regarding",
         "stockholder", "requesting", "request", "adopt", "issue", "publish", "prepare", "s", "its", "our", "with",
         "non", "binding", "approval", "entitled"}
-MIN_MATCH = 0.75
+MIN_MATCH = 0.75      # share of the proposal title's key words that must appear in the filing's description
+MIN_REVERSE = 0.5     # share of the description's key words that must appear in the title
+MIN_MARGIN = 0.15     # best candidate must beat the runner-up at the same meeting by this much
 
 
 def get(url, stream_to=None):
@@ -103,13 +105,17 @@ def npx_filings(cik, since_year=2024):
 def words(text):
     t = re.sub(r"\bal\b", "ai", (text or "").lower())          # filings often OCR "AI" as "Al"
     t = re.sub(r"genal\b", "genai", t)
-    return {w for w in re.findall(r"[a-z0-9]+", t) if w not in STOP and len(w) > 2}
+    # "ai" is only two letters but is the most important word here, so it is kept.
+    return {w for w in re.findall(r"[a-z0-9]+", t) if w not in STOP and (len(w) > 2 or w == "ai")}
 
 
 def score(title, description):
-    """Share of the proposal title's key words found in the filing's description."""
+    """(share of title words found in the description, share of description words found in the title)."""
     A, B = words(title), words(description)
-    return len(A & B) / len(A) if A else 0
+    if not A or not B:
+        return 0.0, 0.0
+    both = len(A & B)
+    return both / len(A), both / len(B)
 
 
 def tag(el):
@@ -162,11 +168,15 @@ def main():
     if "@" not in UA:
         sys.exit("SEC_USER_AGENT is not set; the SEC requires a contact. Skipping.")
 
-    proposals = json.loads((DATA / "proposals.json").read_text())["proposals"]
-    by_key = {}
+    proposals = [p for p in json.loads((DATA / "proposals.json").read_text())["proposals"]
+                 if (p.get("status") or "").lower() in ("voted", "")]
+    by_key, by_year = {}, {}
     for p in proposals:
         if p.get("meeting_date"):
             by_key.setdefault((p["company"], p["meeting_date"]), []).append(p)
+        else:  # no meeting date on file: match within the company's meetings that year
+            by_year.setdefault((p["company"], int(p.get("year") or 0)), []).append(p)
+    review = []  # near misses and ties, for a person to check
 
     want = [f.strip() for f in args.families.split(",") if f.strip()]
     results, filings_used, notes = [], [], []
@@ -182,7 +192,12 @@ def main():
             if not ciks:
                 notes.append(f"{trust}: no N-PX filer found")
                 continue
-            for f in npx_filings(ciks[0]):
+            filings = npx_filings(ciks[0])
+            # An amendment (N-PX/A) restates a period; keep only the latest filing per period.
+            latest = {}
+            for f in sorted(filings, key=lambda f: f["filed"]):
+                latest[f["period"]] = f
+            for f in latest.values():
                 base = f"https://www.sec.gov/Archives/edgar/data/{ciks[0]}/{f['accession'].replace('-', '')}/"
                 try:
                     idx = json.loads(get(base + "index.json"))
@@ -194,24 +209,33 @@ def main():
                     notes.append(f"{trust} {f['accession']}: no structured vote table (older text format)")
                     continue
                 filings_used.append({**f, "family": family, "cik": ciks[0], "url": base})
-                with tempfile.NamedTemporaryFile(suffix=".xml") as tmp:
-                    get(base + xmls[0], stream_to=tmp)
+                for xname in xmls:
+                  with tempfile.NamedTemporaryFile(suffix=".xml") as tmp:
+                    get(base + xname, stream_to=tmp)
                     tmp.flush()
                     for rec in parse_votes(tmp.name, None):
+                        if "issuer" in (rec.get("proposedBy") or "").lower():
+                            continue  # only shareholder proposals are tracked
                         md = to_iso(rec.get("meetingDate", ""))
-                        cands = by_key.get((rec["ticker"], md), [])
+                        cands = by_key.get((rec["ticker"], md), []) + by_year.get((rec["ticker"], int(md[:4]) if md[:4].isdigit() else 0), [])
                         if not cands:
                             continue
-                        best = max(cands, key=lambda p: score(p["title"], rec.get("voteDescription", "")))
-                        s = score(best["title"], rec.get("voteDescription", ""))
-                        if s < MIN_MATCH:
+                        desc = rec.get("voteDescription", "")
+                        scored = sorted(((score(p["title"], desc), p) for p in cands), key=lambda x: (x[0][0], x[0][1]), reverse=True)
+                        (s, rev), best = scored[0]
+                        runner = scored[1][0][0] if len(scored) > 1 else 0.0
+                        if s < MIN_MATCH or rev < MIN_REVERSE or s - runner < MIN_MARGIN:
+                            if s >= 0.5:
+                                review.append({"family": family, "company": rec["ticker"], "meeting_date": md, "npx_description": desc,
+                                               "best_guess": best["id"], "title_cover": round(s, 2), "description_cover": round(rev, 2),
+                                               "runner_up": round(runner, 2), "source_url": base})
                             continue
                         hows = sorted({v.get("howVoted", "").upper() for v in rec["votes"] if v.get("howVoted")})
                         shares = sum(float(v.get("sharesVoted") or 0) for v in rec["votes"])
                         results.append({
                             "family": family, "trust": f["trust"], "proposal_id": best["id"], "company": rec["ticker"],
                             "meeting_date": md, "npx_description": rec.get("voteDescription"),
-                            "match_confidence": round(s, 2), "how_voted": hows,
+                            "match_confidence": round(s, 2), "description_cover": round(rev, 2), "how_voted": hows,
                             "shares_voted": shares, "series_count": len(set(rec["series"])) or None,
                             "source_url": base, "filed": f["filed"],
                         })
@@ -231,12 +255,18 @@ def main():
     for e in summary.values():
         c = e["counts"]
         vote = next(iter(c)) if len(c) == 1 else "SPLIT"
-        rows.append({**e, "vote": vote, "fund_records": sum(c.values()), "sources": sorted(e["sources"])})
+        rows.append({**e, "vote": vote, "vote_records": sum(c.values()), "sources": sorted(e["sources"])})
     rows.sort(key=lambda r: (r["meeting_date"], r["proposal_id"], r["family"]))
-    out = {"generated": dt.date.today().isoformat(), "method": "SEC Form N-PX structured filings; a vote is matched to a proposal by company, meeting date and at least 75% of the proposal title's key words.",
-           "families": list(FAMILIES), "filings": filings_used, "summary": rows, "notes": notes}
+    checked = sorted({p["id"] for p in proposals})
+    out = {"generated": dt.date.today().isoformat(),
+           "method": ("SEC Form N-PX structured filings (latest filing per period). Only shareholder proposals. A vote matches a proposal "
+                      "at the same company and meeting (or the same year when the meeting date is not on file) when at least 75% of the "
+                      "title's key words appear in the filing's description, at least 50% the other way, and it beats the next-best "
+                      "proposal at that meeting by 0.15. Anything close but not certain goes to the review list."),
+           "families": {k: v for k, v in FAMILIES.items() if not want or k in want},
+           "proposals_checked": checked, "filings": filings_used, "summary": rows, "review": review, "notes": notes}
     Path(args.out).write_text(json.dumps(out, indent=1) + "\n")
-    print(f"{len(results)} AI-proposal votes matched across {len(filings_used)} filings. Notes: {len(notes)}")
+    print(f"{len(results)} votes matched across {len(filings_used)} filings; {len(review)} sent to review. Notes: {len(notes)}")
 
 
 if __name__ == "__main__":
