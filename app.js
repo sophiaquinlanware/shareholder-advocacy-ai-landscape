@@ -2,7 +2,7 @@
 // Every fact on the page comes from a data file, and every data file row carries its source link.
 
 const DATA = {};
-const FILES = ["site", "companies", "upcoming", "voting_paths", "network", "people", "pathways", "changes", "tracking", "proposals"];
+const FILES = ["site", "companies", "upcoming", "voting_paths", "network", "people", "pathways", "changes", "tracking", "proposals", "causality"];
 
 // People tab: heads of engagement, grouped by organization. Public professional info only.
 function renderPeople() {
@@ -277,6 +277,7 @@ async function main() {
   renderPeople();
   window.renderPathways(DATA.pathways, DATA.network);
   renderNew();
+  window.renderCausality(DATA.causality);
   renderComing("tab-parnassus", "Disclosure scorecard", "Coming next: each company's public AI disclosure scored against Parnassus Investments' Responsible AI investor recommendations, with sources for every score.");
   renderFeed();
   renderComing("tab-water", "Data center water", "Coming soon: proposals and company disclosures on data center water use.");
