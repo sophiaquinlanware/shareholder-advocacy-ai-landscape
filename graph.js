@@ -332,13 +332,6 @@
       <p class="count-line" id="net-hold-status" aria-live="polite"></p>
       <div id="net-legend" class="net-legend"></div>
       <details id="net-settings" class="graph-settings"></details>
-      <div class="scrub" id="net-scrub">
-        <label for="net-upto">Show the network up to <span id="net-upto-val"></span></label>
-        <input type="range" id="net-upto" step="1">
-        <button type="button" class="chip" id="net-play">Play</button>
-        <p class="status-note" id="net-scrub-note"></p>
-        <p class="visually-hidden" id="net-scrub-status" aria-live="polite"></p>
-      </div>
       <div class="net-body">
         <div class="net-graph-wrap">
           <div id="net-graph" class="net-graph" tabindex="0" role="application" aria-roledescription="network graph" aria-describedby="net-kb-hint" aria-label="Co-filer network graph. Up and Down arrows move between nodes, Enter opens one, Escape clears. The List view has the same data as a table."></div>
@@ -347,6 +340,13 @@
         </div>
         <div id="net-list" class="net-list" hidden></div>
         <aside id="net-panel" class="net-panel" aria-label="Selected node"><p class="status-note">Select a node for its connections and sources.</p></aside>
+      </div>
+      <div class="scrub" id="net-scrub">
+        <label for="net-upto">Show the network up to <span id="net-upto-val"></span></label>
+        <input type="range" id="net-upto" step="1">
+        <button type="button" class="chip" id="net-play">Play</button>
+        <p class="status-note" id="net-scrub-note"></p>
+        <p class="visually-hidden" id="net-scrub-status" aria-live="polite"></p>
       </div>
       </div>`;
   }
@@ -1212,6 +1212,7 @@
     if (state.gaps && !lens().gaps) setGaps(false);
     stopPlay();
     state.upto = null;
+    state.ctx.upto = null;
     setAsks(!!lens().asks);
     const d = lens().defaults || {};
     state.hiddenKinds = new Set(d.hiddenKinds || []);
@@ -1281,6 +1282,7 @@
     playTimer = null;
     const b = document.getElementById("net-play");
     if (b) b.textContent = "Play";
+    if (state.selected && state.byId.get(state.selected)) showPanel(state.byId.get(state.selected));
     if (announce) document.getElementById("net-scrub-status").textContent = `Stopped at ${state.upto || yearRange()[1]}.`;
   }
   function saveUpto() {
@@ -1324,7 +1326,8 @@
     }
     refresh();
     if (state.ringSel) placeFocusMark();
-    if (state.selected && state.byId.get(state.selected)) showPanel(state.byId.get(state.selected));
+    // The panel is refreshed when the user moves the slider or Play stops, not on every Play step (focus safety).
+    if (!playTimer && state.selected && state.byId.get(state.selected)) showPanel(state.byId.get(state.selected));
     if (announce) {
       const n = state.data.nodes.filter((x) => x.kind === "proposal" && visible(x)).length;
       document.getElementById("net-scrub-status").textContent = `Up to ${y}: ${n} ${n === 1 ? "proposal" : "proposals"} shown.${cleared ? " The selected node is after that year, so the panel was cleared." : ""}`;
@@ -1366,7 +1369,7 @@
       if (hit && state.view === "graph") { state.selected = hit.id; showPanel(hit); }
     });
     document.getElementById("net-topic").addEventListener("change", (e) => { state.topic = e.target.value; refresh(); });
-    document.getElementById("net-year").addEventListener("change", (e) => { state.year = e.target.value; stopPlay(); state.upto = null; scrubSync(); refresh(); });
+    document.getElementById("net-year").addEventListener("change", (e) => { state.year = e.target.value; stopPlay(); state.upto = null; state.ctx.upto = null; state.ctx.cache = {}; scrubSync(); refresh(); });
     document.getElementById("net-legend").addEventListener("click", (e) => {
       const b = e.target.closest(".leg");
       if (!b) return;

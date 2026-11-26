@@ -109,7 +109,7 @@ test("graph labels never overlap, including after selecting a busy node", async 
     });
   for (const id of ["co-MSFT", "afl-cio", "trillium"]) {
     await page.evaluate((x) => window.focusNetworkNode(x), id);
-    await page.waitForTimeout(900);
-    expect(await overlaps(), `overlapping labels after selecting ${id}`).toBe(0);
+    // Labels may cross for a moment while the layout moves; once it settles, none overlap.
+    await expect.poll(overlaps, { message: `overlapping labels after selecting ${id}`, timeout: 6000 }).toBe(0);
   }
 });

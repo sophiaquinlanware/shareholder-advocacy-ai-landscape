@@ -351,8 +351,13 @@
   // Dual-class figures: notes that mention dual/multi-class voting or class B shares ("single class" isn't).
   const isDualClass = (p) => /dual|multi-class|class b/i.test(p.support_note || "") && !/single class/i.test(p.support_note || "");
   // Figures this site computed from 8-K vote counts (the 8-K states no percentage).
-  const isComputed = (p) => /not stated|raw counts|8-k counts|computed/i.test(p.support_note || "");
-  const isAbstainBasis = (p) => /abstain|abstention/i.test(p.support_note || "");
+  // Also when the company states a percentage that differs from the figure recorded here (e.g. 2.4% vs 2.45).
+  const isComputed = (p) => {
+    const note = p.support_note || "";
+    if (/not stated|raw counts|counts only|no company percentage|gives no percentage|no percentage|8-k counts|item 5\.07|computed/i.test(note)) return true;
+    const m = note.match(/reports ([\d.]+)%/i);
+    return !!m && Math.abs(Number(m[1]) - Number(p.support_pct)) > 0.01;
+  };
   function askActions(n, ctx) {
     const out = [];
     const props = askProposals(n, ctx);
@@ -374,15 +379,14 @@
       const ps = linked.filter((p) => Number(p.year) === y).sort((a, b) => a.support_pct - b.support_pct);
       out.push({
         text: v.length === 1 ? `${y}: 1 vote, ${v[0]}%` : `${y}: ${v.length} votes, ${v[0]}%–${v.at(-1)}%, average ${avg}%`,
-        links: ps.map((p) => ({ href: p.results_url, label: `${p.company} ${p.support_pct}%${isDualClass(p) ? " (dual-class)" : isAbstainBasis(p) ? " (abstentions counted)" : ""}` })),
+        links: ps.map((p) => ({ href: p.results_url, label: `${p.company} ${p.support_pct}%${isDualClass(p) ? " (dual-class)" : ""}` })),
       });
     }
     if (linked.length) {
       const dual = linked.filter(isDualClass).length;
-      const abst = linked.filter((p) => !isDualClass(p) && isAbstainBasis(p)).length;
       const left = voted.length - linked.length;
       const comp = linked.filter(isComputed).length;
-      out.push({ text: `Averages are computed by this site from the figures as recorded${comp ? `; ${comp} of ${linked.length} figures were computed from 8-K vote counts (the 8-K states no percentage)` : "; each figure is the percentage the company states"}. Notes are in Proposals.${dual ? ` ${dual} of these figures ${dual === 1 ? "is" : "are"} dual-class (counted by votes cast).` : ""}${abst ? ` ${abst} ${abst === 1 ? "counts" : "count"} abstentions with votes against, as the company's bylaw does.` : ""}${left ? ` ${plural(left, "vote", "votes")} without a linked results filing ${left === 1 ? "is" : "are"} left out.` : ""}` });
+      out.push({ text: `Averages are computed by this site from the figures as recorded${comp ? `; ${comp} of ${linked.length} ${linked.length === 1 ? "figure" : "figures"} ${comp === 1 ? "was" : "were"} computed from 8-K vote counts` : ""}. Notes are in Proposals.${dual ? ` ${dual} of these figures ${dual === 1 ? "is" : "are"} dual-class (counted by votes cast).` : ""}${left ? ` ${plural(left, "vote", "votes")} without a linked results filing ${left === 1 ? "is" : "are"} left out.` : ""}` });
     }
     // Coverage, one line per entry.
     const c = askCoverage(n, ctx);

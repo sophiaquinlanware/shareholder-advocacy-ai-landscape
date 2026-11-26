@@ -128,7 +128,7 @@ A new lens is one more entry. `rules.js` holds rule-based settings with comments
     - support by year: range and average. The average is an exception to the site's no-average rule, by the owner's spec; it is labelled as computed by this site, with dual-class and unlinked figures stated;
     - coverage lines;
     - company actions in the Causality map that mention the ask (by the ask's match terms). Nothing is called a "commitment", because the data has no such field.
-- **Year scrubber (all lenses):** "Show the network up to {year}" sits under the graph, with Play/Pause (`aria-pressed`) stepping one year every 1.5 s.
+- **Year scrubber (all lenses):** "Show the network up to {year}" sits under the graph and its panel, outside the graph box, so List view shows it too (owner's spec: "under the graph"), with one button that renames itself between Play and Pause, stepping one year every 1.5 s. The open panel refreshes when Play stops, not on every step, so focus inside it is never lost.
   - **What it caps:** proposals by year, and `ev-` events by date. Companies, filers and labs stay.
   - **Single year:** with one year chosen in the year select, the slider is disabled, with the reason given.
   - **URL:** `upto=` in the URL; a lens switch resets it.
