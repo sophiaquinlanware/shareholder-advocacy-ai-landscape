@@ -263,6 +263,7 @@
       const cur = C.selected && C.events.find((x) => x.id === C.selected);
       if (!cur || !inView(cur)) { C.selected = null; document.getElementById("cz-panel").innerHTML = ""; }
       draw();
+      if (C.selected) select(C.selected); // an event still in view keeps its trace on the map
       statusKey();
       const n = C.events.filter(inView).length;
       document.getElementById("cz-count").textContent = `${n} of ${C.events.length} events shown.`;

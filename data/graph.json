@@ -6525,7 +6525,7 @@
    "type": "person",
    "layer": "people",
    "label": "Carine Smith Ihenacho",
-   "title": "Chief Governance and Compliance Officer (stepping down; area reorganised from 1 January 2027)",
+   "title": "Chief Governance and Compliance Officer (stepping down; area reorganized from 1 January 2027)",
    "org_name": "Norges Bank Investment Management",
    "ai_focus": "",
    "source_url": "https://www.nbim.no/en/news-and-insights/the-press/press-releases/2026/integrates-ownership-work-into-active-management/",
@@ -12169,7 +12169,7 @@
    "kind": "milestone",
    "actor": "Public commenters",
    "jurisdiction": "US federal",
-   "description": "The docket for the proposal to rescind Rule 14a-8 showed 394 entries on November 24, 2026; comments closed November 20. Letters on file include TIAA and Nuveen, L&G Asset Management, Wespath, the Washington State Investment Board, the Investment Adviser Association, the AJL Foundation with Oxfam America, the State Financial Officers Foundation and a staff memo of a meeting with CII. This site has not reviewed each letter's position.",
+   "description": "The docket for the proposal to rescind Rule 14a-8 showed 394 entries on November 25, 2026, the newest dated November 24; comments closed November 20. Letters on file include TIAA and Nuveen, L&G Asset Management, Wespath, the Washington State Investment Board, the Investment Adviser Association, the AJL Foundation with Oxfam America, the State Financial Officers Foundation and a staff memo of a meeting with CII. This site has not reviewed each letter's position.",
    "source_url": "https://www.sec.gov/rules-regulations/public-comments/s7-2026-32",
    "degree": 1
   },
@@ -22917,7 +22917,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
-   "value_usd": 937855626.0,
+   "value_usd": 913824635.0,
    "pct_of_portfolio": 0.04
   },
   {
@@ -22962,7 +22962,7 @@
    "type": "holds shares in",
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/",
-   "value_usd": 1872419199.0,
+   "value_usd": 1862675715.0,
    "pct_of_portfolio": 0.08
   },
   {

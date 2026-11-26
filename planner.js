@@ -266,7 +266,7 @@
     const full = rows.filter((r) => r.coverage === "full").length;
     return `<section class="pl-card" aria-labelledby="pl-h-pol"><h3 id="pl-h-pol">What policy already requires</h3>
       <p>${covering.length ? `${plural(covering.length, "policy", "policies")} on the map cover part of this ask; ${full ? `${full} in full` : "none in full"}.` : "No policy on the map requires any part of this ask."} This site's reading of each text, not yet confirmed by a person.</p>
-      ${[...byRegion.entries()].map(([reg, list]) => `<details><summary>${esc(reg)} (${list.length})</summary><ul class="steps tight">${list.map(({ r, e }) => `<li><strong>${esc(e.title || "No policy found")}</strong>${e.status ? ` <span class="ticker">(${esc(e.status)})</span>` : ""}: ${esc(r.note)}${src(r.source_url)}</li>`).join("")}</ul></details>`).join("")}
+      ${[...byRegion.entries()].map(([reg, list]) => `<details><summary>${esc(reg)} (${list.length})</summary><ul class="steps tight">${list.map(({ r, e }) => `<li><strong>${esc(e.title || "No policy found")}</strong>${e.status && !String(r.note || "").toLowerCase().startsWith(String(e.status).toLowerCase()) ? ` <span class="ticker">(${esc(e.status)})</span>` : ""}: ${esc(r.note)}${src(r.source_url)}</li>`).join("")}</ul></details>`).join("")}
     </section>`;
   }
 
@@ -343,6 +343,8 @@
     if (status) status.textContent = `Plan for ${c.name}, ${askOf(S.ask).label}: ${plural(filings, "filing")} of this ask in this dataset.`;
   }
   function sync(focus, write = true) {
+    const cm = document.getElementById("pl-copy-msg");
+    if (cm) cm.textContent = ""; // a copied link belongs to the previous plan
     ["pl-co", "pl-ask", "pl-mine"].forEach((id) => { const el = document.getElementById(id); if (el) el.value = { "pl-co": S.co, "pl-ask": S.ask, "pl-mine": S.mine }[id] || ""; });
     if (write) try {
       const q = new URLSearchParams(location.search);

@@ -3042,8 +3042,8 @@
     {
       "investor": "fidelity",
       "company": "AXON",
-      "value_usd": 937855626.0,
-      "shares": 26598796.0,
+      "value_usd": 913824635.0,
+      "shares": 2162796.0,
       "pct_of_portfolio": 0.04,
       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
     },
@@ -3082,8 +3082,8 @@
     {
       "investor": "fidelity",
       "company": "SO",
-      "value_usd": 1872419199.0,
-      "shares": 32519829.0,
+      "value_usd": 1862675715.0,
+      "shares": 22666829.0,
       "pct_of_portfolio": 0.08,
       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
     },

@@ -70,7 +70,7 @@ ISSUERS = {
     "CMCSA": r"^COMCAST", "DLR": r"^DIGITAL REALTY", "SO": r"^SOUTHERN CO\b", "ANT": r"^ANTHROPIC", "SPCX": r"^SPACE EXPLORATION|^SPACEX",
 }
 # When the company list changes, every investor's latest 13F is read again, not only newer filings.
-ISSUERS_VERSION = "2026-11-26b"  # b: exact Intuit match, options left out, values in dollars, stale filers dropped
+ISSUERS_VERSION = "2026-11-26c"  # b: exact Intuit match, options left out, values in dollars, stale filers dropped; c: shares only (no notes)
 
 
 def get(url):
@@ -110,6 +110,8 @@ def read_table(cik, acc):
             v = {c.tag.split("}")[-1]: (c.text or "") for c in el.iter()}
             if (v.get("putCall") or "").strip():
                 continue  # options (puts and calls) are not shares held
+            if (v.get("sshPrnamtType") or "SH").strip().upper() != "SH":
+                continue  # principal amounts (convertible notes and other debt) are not shares
             rows.append({"issuer": v.get("nameOfIssuer", "").strip().upper(), "value": float(v.get("value") or 0), "shares": float(v.get("sshPrnamt") or 0)})
     # 13F values were in thousands of dollars before 2023, and some filers still report that way. A median
     # implied price under $2 a share means the table is in thousands.
@@ -171,6 +173,18 @@ def main():
                 i["not_current"] = True
         h["as_of_quarter"] = f"{newest[:4]}Q{(int(newest[5:7]) + 2) // 3}"
         print(f"  not current (latest 13F before {cutoff}): {sorted(stale)}")
+    # Check: a position whose implied price is far from the other holders' for that company is printed for review.
+    by = {}
+    for x in h["holdings"]:
+        if x.get("shares") and x.get("value_usd") and x["investor"] != "nbim":
+            by.setdefault(x["company"], []).append(x)
+    for tic, xs in by.items():
+        ps = sorted(x["value_usd"] / x["shares"] for x in xs)
+        med = ps[len(ps) // 2]
+        for x in xs:
+            p = x["value_usd"] / x["shares"]
+            if abs(p - med) > 0.2 * med:
+                print(f"  CHECK {x['investor']} {tic}: ${p:,.2f} a share against a median of ${med:,.2f}")
 
     h["investors"] = list(inv.values())
     h["issuers_version"] = ISSUERS_VERSION

@@ -400,7 +400,7 @@ function renderFeed() {
     // basis note, but nearly every figure now has one, so the split no longer told anything apart.
     const noted = pts.filter((p) => p.support_note).length;
     key.innerHTML = `${topicKeys}
-      <p class="note">${plural(pts.length, "voted proposal")} plotted. Shape and shade show what each proposal asks about; every mark is filled.${noted ? ` ${noted} of these figures have a basis note (for example, computed from 8-K vote counts or dual-class voting), listed in the table.` : ""}${skipped > 0 ? ` ${plural(skipped, "voted proposal has", "voted proposals have")} no meeting date or vote-results filing recorded and appear in the table only.` : ""} Upcoming, withdrawn and excluded proposals are in the table.</p>`;
+      <p class="note">${plural(pts.length, "voted proposal")} plotted. Shape and shade show what each proposal asks about; every mark is filled.${noted ? ` ${noted} of these figures ${noted === 1 ? "has" : "have"} a basis note (for example, computed from 8-K vote counts or dual-class voting), listed in the table.` : ""}${skipped > 0 ? ` ${plural(skipped, "voted proposal has", "voted proposals have")} no meeting date or vote-results filing recorded and appear in the table only.` : ""} Upcoming, withdrawn and excluded proposals are in the table.</p>`;
     if (typeof d3 === "undefined") return;
     if (!pts.length) { box.innerHTML = `<p class="status-note">No voted proposals with a dated vote-results filing match these filters.</p>`; return; }
     const all_pts = all.filter(plottable);
@@ -583,7 +583,7 @@ function renderNew() {
   document.getElementById("tab-new").innerHTML = `
     <h2>New SEC filings</h2>
     <p class="intro">Every Monday the site checks SEC EDGAR for new proxy statements, investor exempt solicitations (PX14A6G), vote results and bylaw changes at the companies it tracks. Filings found are listed here before anyone reviews them.</p>
-    <p class="count-line">Last check: ${esc(t.last_checked ? fmtDate(t.last_checked.slice(0, 10)) : "not run yet")}.${t.new_this_run != null ? ` ${plural(t.new_this_run, "new AI-related filing")} in that run.` : ""}</p>
+    <p class="count-line">Last check: ${esc(t.last_checked ? fmtDate(t.last_checked.slice(0, 10)) : "not run yet")}.${t.new_this_run != null ? ` ${plural(t.new_this_run, "new filing")} found in that run.` : ""}</p>
     ${groups ? `<ul class="timeline">${groups}</ul>` : `<p class="status-note">Nothing flagged yet.</p>`}`;
 }
 
