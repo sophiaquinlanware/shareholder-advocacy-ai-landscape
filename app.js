@@ -664,6 +664,7 @@ const lastView = {}; // per section, the view last open in it
 // under reduced motion, on the first paint, and in automated test browsers (navigator.webdriver), where the
 // switch must be synchronous.
 let tabsReady = false;
+let historyReady = false;
 function showTab(name, focus = false) {
   const vt = tabsReady && document.startViewTransition && !navigator.webdriver && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   tabsReady = true;
@@ -699,7 +700,15 @@ function applyTab(name, focus = false) {
   // Phones: the view tabs scroll sideways; bring the open one into sight.
   if (vBtn && vBtn.parentElement && vBtn.parentElement.scrollWidth > vBtn.parentElement.clientWidth) vBtn.parentElement.scrollLeft = Math.max(0, vBtn.offsetLeft - 16);
   if (stuck && gBtn) stuck.textContent = gBtn.textContent + (vBtn ? ` · ${vBtn.textContent}` : "");
-  try { if (location.hash.slice(1) !== name) window.history.replaceState(null, "", "#" + name); } catch (e) {}
+  // A view opened from the page adds a history entry, so the browser's Back button returns to the previous view;
+  // the first view of a visit replaces (no empty step), and Back/Forward arrive with the hash already set.
+  try {
+    if (location.hash.slice(1) !== name) {
+      if (historyReady) window.history.pushState(null, "", "#" + name);
+      else window.history.replaceState(null, "", "#" + name);
+    }
+  } catch (e) {}
+  historyReady = true;
   // Motion stage 2 (motion.js): the newly shown page's heading reveals line by line.
   document.dispatchEvent(new CustomEvent("tabshown", { detail: { panel } }));
 }
@@ -746,6 +755,8 @@ function setupTabs() {
   });
   // In-page links such as href="#feed" (Start here) open their view.
   window.addEventListener("hashchange", () => showTab(location.hash.slice(1), true));
+  // pushState doesn't fire hashchange on Back/Forward in every browser; popstate covers it.
+  window.addEventListener("popstate", () => showTab(location.hash.slice(1), true));
   showTab(location.hash.slice(1));
 }
 

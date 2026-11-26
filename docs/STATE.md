@@ -46,7 +46,7 @@ Routes table per lab (tie, strength, rights and deadline, filers, related asks, 
 
 ## Latest check
 
-`npm run check` on `fix/planner-grid` (ceb66f3): lint pass, build pass, Playwright 228 passed; Lighthouse phone 100/100/100/99, desktop 100/100/100/87. Desktop performance varies between runs on this machine for the same build (the data session saw 53–98); rerun before chasing a low score.
+`npm run check` after the sweep leftovers (UI): Playwright 244 passed, 4 skipped; Lighthouse phone 100/100/100/99, desktop 100/100/100/93. Fixed from the data session's full-sweep review: the Back button now returns to the previous view (pushState, popstate); the network shows one total (906) and counts site-added asks separately; phone card tables keep a "Sort by" row.
 
 ## Queue (found, not picked up)
 

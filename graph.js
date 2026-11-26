@@ -629,12 +629,24 @@
   }
 
   // One plain line: how much is shown, and what node size means. Recomputed when layers change.
+  // Counts for the intro and status lines. The total is the data's own nodes; recurring asks (Policymaker lens)
+  // and "asks not yet filed" are added by the site, so they are counted on their own instead of changing the
+  // total (a reviewer saw 906 in one line and 918 in another).
+  const ADDED = new Set(["ask", "gap"]);
+  function counts() {
+    const base = state.data.nodes.filter((n) => !ADDED.has(n.kind));
+    const shown = base.filter(visible).length;
+    const asks = state.data.nodes.filter((n) => n.kind === "ask" && visible(n)).length;
+    const gaps = state.data.nodes.filter((n) => n.kind === "gap" && visible(n)).length;
+    const extra = [asks && `${asks} recurring ask${asks === 1 ? "" : "s"}`, gaps && `${gaps} ask${gaps === 1 ? "" : "s"} not yet filed`].filter(Boolean);
+    return { shown, total: base.length, extra: extra.length ? `, plus ${extra.join(" and ")}` : "" };
+  }
   function intro() {
     refreshConnected();
-    const shown = state.data.nodes.filter(visible).length;
+    const c = counts();
     document.getElementById("net-intro").textContent = lens().plainIntro
-      ? lens().plainIntro(shown, state.data.nodes.length)
-      : `${shown} of ${state.data.nodes.length} organizations, people, proposals and companies shown. Circle size = ${lens().sizeLabel}. Company roles are this site's reading of each company's main role in AI.`;
+      ? lens().plainIntro(c.shown, c.total)
+      : `${c.shown} of ${c.total} organizations, people, proposals and companies shown${c.extra}. Circle size = ${lens().sizeLabel}. Company roles are this site's reading of each company's main role in AI.`;
   }
 
   function neighbors(id) {
@@ -828,7 +840,7 @@
     intro();
     holdStatus();
     markKey();
-    if (announce) document.getElementById("net-lens-status").textContent = `${mode().label} view: ${state.data.nodes.filter(visible).length} nodes shown.`;
+    if (announce) document.getElementById("net-lens-status").textContent = `${mode().label} view: ${counts().shown} of ${counts().total} nodes shown${counts().extra}.`;
   }
   function baseVisible(n) {
     if (n.kind === "gap") { const c = state.byId.get(n.gapFor); return !!c && baseVisible(c); }
@@ -1574,10 +1586,10 @@
     if (announce) {
       refreshConnected();
       const hidden = [...new Set([...state.hiddenKinds].map((k) => (FILER_ROWS.includes(k) ? "filers" : { person: "people", policy: "policy", response: "responses", public: "public engagement" }[k] || TYPE_LABEL[k])))];
-      const shown = state.data.nodes.filter(visible).length;
+      const c = counts();
       document.getElementById("net-lens-status").textContent = lens().feed && state.feedView === "feed"
         ? `${lens().label} view: a list of upcoming AI proposals. See the bigger picture opens the graph.`
-        : `${lens().label} view${hidden.length ? ": " + hidden.join(", ") + " hidden" : ""}. ${shown} of ${state.data.nodes.length} ${lens().plainIntro ? "circles" : "nodes"} shown.`;
+        : `${lens().label} view${hidden.length ? ": " + hidden.join(", ") + " hidden" : ""}. ${c.shown} of ${c.total} ${lens().plainIntro ? "circles" : "nodes"} shown${c.extra}.`;
     }
   }
 
@@ -1710,7 +1722,7 @@
       if (state.drawn) { state.sim.stop(); drawGraph(); }
       if (state.view === "list") drawList();
       intro();
-      document.getElementById("net-lens-status").textContent = `${{ all: "All", active: "Active", past: "Past" }[state.pstatus]} proposals: ${state.data.nodes.filter(visible).length} nodes shown.`;
+      document.getElementById("net-lens-status").textContent = `${{ all: "All", active: "Active", past: "Past" }[state.pstatus]} proposals: ${counts().shown} of ${counts().total} nodes shown${counts().extra}.`;
     });
     const topics = [...new Set(state.data.nodes.filter((n) => n.kind === "proposal").map((n) => n.topic).filter(Boolean))].sort();
     const years = [...new Set(state.data.nodes.filter((n) => n.kind === "proposal").map((n) => String(n.year)))].sort();
@@ -1745,7 +1757,7 @@
       refresh();
       regroup();
       refreshConnected();
-      document.getElementById("net-lens-status").textContent = `${msg} ${state.data.nodes.filter(visible).length} of ${state.data.nodes.length} organizations, people, proposals and companies shown.`;
+      document.getElementById("net-lens-status").textContent = `${msg} ${counts().shown} of ${counts().total} organizations, people, proposals and companies shown${counts().extra}.`;
     });
     // Proposal categories (when colour by category is on): the same toggle, only and show-all controls.
     document.getElementById("net-catkey").addEventListener("click", (e) => {

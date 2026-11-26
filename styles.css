@@ -653,3 +653,13 @@ button:active:not([disabled]) { transform: scale(.98); }
   button:active:not([disabled]) { transform: none; }
 }
 @media (hover: none) { .qs-open kbd { display: none; } }
+
+/* Phone card tables keep their sort buttons (a reviewer found them hidden): the header becomes a "Sort by" row. */
+@media (max-width: 640px) {
+  table.as-cards thead:has(.th-sort) { position: static; width: auto; height: auto; overflow: visible; clip: auto; display: block; }
+  table.as-cards thead:has(.th-sort) tr { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 4px 0 10px; border: 0; }
+  table.as-cards thead:has(.th-sort) tr::before { content: "Sort by"; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); }
+  table.as-cards thead:has(.th-sort) th { display: none; border: 0; background: none; padding: 0; }
+  table.as-cards thead:has(.th-sort) th:has(.th-sort) { display: block; }
+  table.as-cards .th-sort { border: 1px solid var(--control-edge); border-radius: 999px; padding: 3px 10px; text-transform: none; letter-spacing: 0; }
+}
