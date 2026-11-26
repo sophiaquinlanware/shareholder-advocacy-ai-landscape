@@ -14,6 +14,10 @@
     coalition: "Coalition",
     other: "Other investor",
     person: "Engagement lead",
+    lab: "Frontier lab",
+    policy: "Policy or rule",
+    response: "Company or investor response",
+    public: "Public engagement",
   };
   const TYPE_VAR = {
     company: "--n-company",
@@ -27,6 +31,10 @@
     coalition: "--n-coalition",
     other: "--n-other",
     person: "--n-person",
+    lab: "--t-lab",
+    policy: "--n-pension",
+    response: "--n-foundation",
+    public: "--n-nonprofit",
   };
   const COMPANY_NAMES = { MSFT: "Microsoft", GOOGL: "Alphabet", META: "Meta", AMZN: "Amazon", NVDA: "Nvidia", AAPL: "Apple", TSLA: "Tesla" };
 
@@ -35,6 +43,19 @@
   const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim() || "#888";
 
   let state = null;
+
+  // The shared relationship store (data/graph.json): every tab's facts in one graph.
+  function buildFromGraph(G) {
+    const nodes = G.nodes.map((n) => {
+      let kind = n.type;
+      if (kind === "investor") kind = TYPE_VAR[n.org_type] ? n.org_type : "other";
+      return { ...n, kind, label: n.label };
+    });
+    const ids = new Set(nodes.map((n) => n.id));
+    const links = G.edges.filter((e) => ids.has(e.source) && ids.has(e.target))
+      .map((e) => ({ ...e, relation: e.type }));
+    return { nodes, links };
+  }
 
   function build(raw, people) {
     const nodes = new Map();
@@ -62,13 +83,15 @@
     if (n.kind === "company") return 16;
     if (n.kind === "proposal") return 5;
     if (n.kind === "person") return 4;
+    if (["policy", "response", "public"].includes(n.kind)) return 4 + Math.min(6, Math.sqrt(n.degree) * 1.5);
+    if (n.kind === "lab") return 10;
     return 6 + Math.min(10, Math.sqrt(n.degree) * 2.4);
   }
 
   function shell(el) {
     el.innerHTML = `
       <h2>Advocacy network</h2>
-      <p class="intro">Who is engaging these companies on AI, and how they connect. Each dot is an organization, a person, a proposal or a company. Lines show who filed or co-filed a proposal, which company it went to, which coalitions an organization belongs to, and who leads engagement there. Drag to move, scroll or pinch to zoom, and click any dot for details and sources.</p>
+      <p class="intro">Who is engaging these companies on AI, and how they connect. Everything on this site in one map: companies and the labs they fund or supply, the funds that hold and engage them, the people who lead that engagement, the proposals they filed, and the policies and responses around them. Dashed lines between organizations are worked out from the filings: two groups that filed the same proposal are connected. Click a type in the legend to hide or show it. Drag to move, scroll or pinch to zoom, and click any dot for details and sources.</p>
       <div class="net-controls">
         <input type="search" id="net-search" placeholder="Search an organization or company" aria-label="Search the network">
         <select id="net-topic" aria-label="Filter by topic"><option value="">All topics</option></select>
@@ -115,8 +138,10 @@
                <p><strong>Topic:</strong> ${esc(n.topic)} ${link(n.source_url, "filing")}</p>`;
     } else if (n.kind === "person") {
       facts = `<p>${esc(n.title)}, ${esc(n.org_name)}</p>${n.ai_focus ? `<p><strong>AI work:</strong> ${esc(n.ai_focus)}</p>` : ""}<p>${link(n.profile_url, "public profile")}</p>`;
+    } else if (["policy", "response", "public", "lab"].includes(n.kind)) {
+      facts = `${n.date ? `<p class="ticker">${esc(n.date)}${n.actor ? " · " + esc(n.actor) : ""}</p>` : ""}<p>${esc(n.description || "")} ${link(n.source_url)}</p>`;
     } else if (n.kind === "company") {
-      facts = `<p>${esc(n.degree)} AI proposals in this map.</p>`;
+      facts = `<p>${esc(n.degree)} connections in this map.</p>`;
     } else {
       facts = `<p>${esc(n.description || "")} ${link(n.source_url)}</p>${n.website ? `<p><a href="${esc(n.website)}" target="_blank" rel="noopener">Website</a></p>` : ""}`;
     }
@@ -164,7 +189,7 @@
       .attr("opacity", (d) => {
         if (q) return d.label.toLowerCase().includes(q) ? 1 : 0;
         if (near) return near.has(d.id) ? 1 : 0;
-        return d.kind === "proposal" || d.kind === "person" ? 0 : 1;
+        return ["proposal", "person", "policy", "response", "public"].includes(d.kind) ? 0 : 1;
       });
   }
 
@@ -194,7 +219,7 @@
 
     state.linkSel = g.append("g").attr("stroke", cssVar("--ink-soft")).selectAll("line").data(data.links).join("line")
       .attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.6 : 1))
-      .attr("stroke-dasharray", (l) => (l.relation === "member of" ? "3 3" : null));
+      .attr("stroke-dasharray", (l) => (l.relation === "member of" || l.derived ? "3 3" : null));
 
     state.node = g.append("g").selectAll("circle").data(data.nodes).join("circle")
       .attr("r", radius)
@@ -279,7 +304,7 @@
       document.getElementById("net-graph").innerHTML = `<p class="coming">The graph library did not load. Try reloading the page.</p>`;
       return;
     }
-    state = { data: build(raw, people), hiddenKinds: new Set(), query: "", topic: "", year: "", view: "graph", selected: null, hover: null };
+    state = { data: raw && raw.nodes ? buildFromGraph(raw) : build(raw, people), hiddenKinds: new Set(), query: "", topic: "", year: "", view: "graph", selected: null, hover: null };
     legend(state.data);
     wire();
     // The graph needs a visible container to measure, so draw it the first time its tab opens.

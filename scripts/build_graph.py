@@ -107,7 +107,8 @@ def main():
         pid = "person-" + pp["id"]
         node(pid, type="person", layer="people", label=pp["name"], title=pp.get("title"), org_name=pp.get("org_name"),
              ai_focus=pp.get("ai_focus"), source_url=pp.get("profile_url"), verified=pp.get("verified_date"))
-        if pp.get("org_id") in nodes:
+        if pp.get("org_id"):
+            node(pp["org_id"], type="investor", layer="investors", label=pp.get("org_name") or pp["org_id"])
             edge(pid, pp["org_id"], "works at", "people", pp.get("profile_url"))
     for r in ppl.get("relations", []):
         a = "person-" + r["from"]
@@ -137,6 +138,29 @@ def main():
         a, b = "ev-" + l["from"], "ev-" + l["to"]
         if a in nodes and b in nodes:
             edge(a, b, l["type"], "policy", l.get("source_url"), explanation=l.get("explanation"))
+
+    # Proposals from the SEC research that the network file does not have yet.
+    org_names = {n["id"]: n["label"].lower() for n in nodes.values() if n["type"] in ("investor", "coalition")}
+    for p in load("proposals.json").get("proposals", []):
+        if p["id"] in nodes:
+            continue
+        co = "co-" + p["company"].upper()
+        node(co, type="company", layer="companies", label=TICKER_NAME.get(p["company"], p["company"]), ticker=p["company"])
+        node(p["id"], type="proposal", layer="proposals", label=f'{TICKER_NAME.get(p["company"], p["company"])} {p["year"]}: {p["title"]}',
+             company=p["company"], year=p["year"], topic=p.get("topic"), subtopic=p.get("subtopic"), status=p.get("status"),
+             support_pct=p.get("support_pct"), proponent=p.get("proponent"), source_url=p.get("proxy_url"))
+        edge(p["id"], co, "proposal at", "proposals", p.get("proxy_url"))
+        prop = (p.get("proponent") or "").lower()
+        for oid, name in org_names.items():
+            core = name.replace(" asset management", "").replace(" investments", "").replace(", inc.", "")
+            if len(core) > 3 and core in prop:
+                edge(oid, p["id"], "filed (named in proxy)", "proposals", p.get("proxy_url"))
+    for x in load("proposals.json").get("exempt_solicitations", []):
+        filer = (x.get("filer") or "").lower()
+        for oid, name in org_names.items():
+            core = name.replace(" asset management", "").replace(" investments", "")
+            if len(core) > 3 and core in filer:
+                edge(oid, "co-" + (x.get("ticker") or "").upper(), "exempt solicitation " + (x.get("position") or "").lower(), "proposals", x.get("url"))
 
     # Degree, for sizing dots.
     deg = defaultdict(int)

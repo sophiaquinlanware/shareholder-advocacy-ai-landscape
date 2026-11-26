@@ -8,7 +8,7 @@
    "ticker": "MSFT",
    "exchange": "Nasdaq",
    "country": "US",
-   "degree": 10
+   "degree": 32
   },
   {
    "id": "co-GOOGL",
@@ -18,7 +18,7 @@
    "ticker": "GOOGL",
    "exchange": "Nasdaq",
    "country": "US",
-   "degree": 9
+   "degree": 35
   },
   {
    "id": "co-AMZN",
@@ -28,7 +28,7 @@
    "ticker": "AMZN",
    "exchange": "Nasdaq",
    "country": "US",
-   "degree": 6
+   "degree": 16
   },
   {
    "id": "co-NVDA",
@@ -38,7 +38,7 @@
    "ticker": "NVDA",
    "exchange": "Nasdaq",
    "country": "US",
-   "degree": 16
+   "degree": 17
   },
   {
    "id": "co-META",
@@ -48,7 +48,7 @@
    "ticker": "META",
    "exchange": "Nasdaq",
    "country": "US",
-   "degree": 2
+   "degree": 16
   },
   {
    "id": "co-AAPL",
@@ -58,7 +58,7 @@
    "ticker": "AAPL",
    "exchange": "Nasdaq",
    "country": "US",
-   "degree": 3
+   "degree": 6
   },
   {
    "id": "co-TSLA",
@@ -68,7 +68,7 @@
    "ticker": "TSLA",
    "exchange": "Nasdaq",
    "country": "US",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "co-SPCX",
@@ -369,6 +369,868 @@
    "description": "Amazon's in-house foundation model group (Nova models).",
    "source_url": "https://www.aboutamazon.com/news/aws/amazon-nova-artificial-intelligence-bedrock-aws",
    "degree": 1
+  },
+  {
+   "id": "person-natasha-lamb",
+   "type": "person",
+   "layer": "people",
+   "label": "Natasha Lamb",
+   "title": "Chief Executive Officer / Chief Investment Officer / Portfolio Manager",
+   "org_name": "Arjuna Capital",
+   "ai_focus": "Lead filer, AI misinformation proposals at Microsoft, Alphabet, Meta (2023-24)",
+   "source_url": "https://arjuna-capital.com/natasha-lamb-mba",
+   "verified": "2026-11",
+   "degree": 2
+  },
+  {
+   "id": "arjuna-capital",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Arjuna Capital",
+   "degree": 10
+  },
+  {
+   "id": "person-julia-cedarholm",
+   "type": "person",
+   "layer": "people",
+   "label": "Julia Cedarholm",
+   "title": "Senior Analyst, Sustainability Research & Shareholder Engagement",
+   "org_name": "Arjuna Capital",
+   "ai_focus": "",
+   "source_url": "https://arjuna-capital.com/julia-cedarholm-mpa",
+   "verified": "2026-11",
+   "degree": 2
+  },
+  {
+   "id": "person-andrew-behar",
+   "type": "person",
+   "layer": "people",
+   "label": "Andrew Behar",
+   "title": "CEO",
+   "org_name": "As You Sow",
+   "ai_focus": "",
+   "source_url": "https://www.asyousow.org/staff/andrew-behar",
+   "verified": "2026-11",
+   "degree": 3
+  },
+  {
+   "id": "as-you-sow",
+   "type": "investor",
+   "layer": "investors",
+   "label": "As You Sow",
+   "degree": 10
+  },
+  {
+   "id": "person-danielle-fugere",
+   "type": "person",
+   "layer": "people",
+   "label": "Danielle Fugere",
+   "title": "President and Chief Counsel",
+   "org_name": "As You Sow",
+   "ai_focus": "Quoted on Microsoft AI-for-fossil-fuels proposal (Dec 2025 AGM)",
+   "source_url": "https://www.asyousow.org/staff/danielle-fugere",
+   "verified": "2026-11",
+   "degree": 2
+  },
+  {
+   "id": "person-jonas-kron",
+   "type": "person",
+   "layer": "people",
+   "label": "Jonas Kron",
+   "title": "Chief Advocacy Officer",
+   "org_name": "Trillium Asset Management",
+   "ai_focus": "Spokesperson on Trillium AI governance proposal at Alphabet",
+   "source_url": "https://www.trilliuminvest.com/team/jonas-kron",
+   "verified": "2026-11",
+   "degree": 2
+  },
+  {
+   "id": "trillium-asset-management",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Trillium Asset Management",
+   "degree": 12
+  },
+  {
+   "id": "person-andrea-ranger",
+   "type": "person",
+   "layer": "people",
+   "label": "Andrea Ranger",
+   "title": "Director of Shareholder Advocacy",
+   "org_name": "Trillium Asset Management",
+   "ai_focus": "Alphabet proposal on AI power demand vs. climate goals (2026)",
+   "source_url": "https://www.trilliuminvest.com/team/andrea-ranger",
+   "verified": "2026-11",
+   "degree": 2
+  },
+  {
+   "id": "person-audrey-mocle",
+   "type": "person",
+   "layer": "people",
+   "label": "Audrey Mocle",
+   "title": "Executive Director",
+   "org_name": "Open MIC",
+   "ai_focus": "Media contact, 2026 Alphabet AI-misinformation proposal (with Vancity)",
+   "source_url": "https://www.openmic.org/staff",
+   "verified": "2026-11",
+   "degree": 2
+  },
+  {
+   "id": "open-mic",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Open MIC",
+   "degree": 5
+  },
+  {
+   "id": "person-michael-connor",
+   "type": "person",
+   "layer": "people",
+   "label": "Michael Connor",
+   "title": "Senior Adviser and Project Director (founding Executive Director to late 2025)",
+   "org_name": "Open MIC",
+   "ai_focus": "Led AI misinformation proposals at Alphabet, Meta, Microsoft (2023-24)",
+   "source_url": "https://www.openmic.org/staff",
+   "verified": "2026-11",
+   "degree": 2
+  },
+  {
+   "id": "person-emma-ruby-sachs",
+   "type": "person",
+   "layer": "people",
+   "label": "Emma Ruby-Sachs",
+   "title": "Executive Director",
+   "org_name": "Ekō",
+   "ai_focus": "",
+   "source_url": "https://www.eko.org/about",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "eko",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Ekō",
+   "degree": 2
+  },
+  {
+   "id": "person-christina-oconnell",
+   "type": "person",
+   "layer": "people",
+   "label": "Christina O'Connell",
+   "title": "Senior Manager for Shareholder Engagement and Investments (role not confirmed since 2024-06)",
+   "org_name": "Ekō",
+   "ai_focus": "Co-filer voice, 2024 generative-AI proposals at Meta and Alphabet",
+   "source_url": "https://techpolicy.press/the-role-of-shareholder-activism-in-tech-accountability",
+   "verified": "UNVERIFIED (last seen 2024-06)",
+   "degree": 1
+  },
+  {
+   "id": "person-michael-passoff",
+   "type": "person",
+   "layer": "people",
+   "label": "Michael Passoff",
+   "title": "Founder & CEO",
+   "org_name": "Proxy Impact",
+   "ai_focus": "Meta child-safety proposals citing generative-AI exploitation risk (2025-26)",
+   "source_url": "https://www.proxyimpact.com/about",
+   "verified": "2026-05",
+   "degree": 1
+  },
+  {
+   "id": "proxy-impact",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Proxy Impact",
+   "degree": 2
+  },
+  {
+   "id": "person-julie-goodridge",
+   "type": "person",
+   "layer": "people",
+   "label": "Julie N.W. Goodridge",
+   "title": "Founder & Chief Executive Officer",
+   "org_name": "NorthStar Asset Management",
+   "ai_focus": "",
+   "source_url": "https://northstarasset.com/team/",
+   "verified": "2026-08",
+   "degree": 2
+  },
+  {
+   "id": "northstar-asset-management",
+   "type": "investor",
+   "layer": "investors",
+   "label": "NorthStar Asset Management",
+   "degree": 3
+  },
+  {
+   "id": "person-whitney-nguyen",
+   "type": "person",
+   "layer": "people",
+   "label": "Whitney Nguyen",
+   "title": "Director of Impact Research (leads shareholder activism and corporate engagement program)",
+   "org_name": "NorthStar Asset Management",
+   "ai_focus": "",
+   "source_url": "https://northstarasset.com/team/",
+   "verified": "2026-11",
+   "degree": 2
+  },
+  {
+   "id": "person-dan-osusky",
+   "type": "person",
+   "layer": "people",
+   "label": "Dan Osusky",
+   "title": "Chief Executive Officer",
+   "org_name": "The Shareholder Commons",
+   "ai_focus": "",
+   "source_url": "https://theshareholdercommons.com/about/",
+   "verified": "2026-11",
+   "degree": 2
+  },
+  {
+   "id": "the-shareholder-commons",
+   "type": "investor",
+   "layer": "investors",
+   "label": "The Shareholder Commons",
+   "degree": 2
+  },
+  {
+   "id": "person-mari-schwartzer",
+   "type": "person",
+   "layer": "people",
+   "label": "Mari Schwartzer",
+   "title": "Director of Investor Engagement",
+   "org_name": "The Shareholder Commons",
+   "ai_focus": "",
+   "source_url": "https://theshareholdercommons.com/about/",
+   "verified": "2026-11",
+   "degree": 2
+  },
+  {
+   "id": "person-lydia-kuykendal",
+   "type": "person",
+   "layer": "people",
+   "label": "Lydia Kuykendal",
+   "title": "Director of Shareholder Advocacy",
+   "org_name": "Mercy Investment Services",
+   "ai_focus": "Co-authored case for Alphabet AI user-data risk proposal (June 2026)",
+   "source_url": "https://mercyinvestmentservices.org/our-people/staff/",
+   "verified": "2026-11",
+   "degree": 3
+  },
+  {
+   "id": "mercy-investment-services",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Mercy Investment Services",
+   "degree": 7
+  },
+  {
+   "id": "person-mary-minette",
+   "type": "person",
+   "layer": "people",
+   "label": "Mary Minette",
+   "title": "Senior Director of Shareholder Advocacy",
+   "org_name": "Mercy Investment Services",
+   "ai_focus": "",
+   "source_url": "https://mercyinvestmentservices.org/our-people/staff/",
+   "verified": "2026-11",
+   "degree": 2
+  },
+  {
+   "id": "person-mary-beth-gallagher",
+   "type": "person",
+   "layer": "people",
+   "label": "Mary Beth Gallagher",
+   "title": "Director of Engagement",
+   "org_name": "Domini Impact Investments",
+   "ai_focus": "",
+   "source_url": "https://domini.com/investing-for-impact/strategies/engagement/",
+   "verified": "2025-07",
+   "degree": 1
+  },
+  {
+   "id": "domini-impact-investments",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Domini Impact Investments",
+   "degree": 1
+  },
+  {
+   "id": "person-marcela-pinilla",
+   "type": "person",
+   "layer": "people",
+   "label": "Marcela Pinilla",
+   "title": "Director of Sustainable Investing",
+   "org_name": "Zevin Asset Management",
+   "ai_focus": "Led 40+ investor coalition on Alphabet government AI contracts proposal (2026)",
+   "source_url": "https://www.zevin.com/who-we-are",
+   "verified": "2026-06",
+   "degree": 2
+  },
+  {
+   "id": "zevin-asset-management",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Zevin Asset Management",
+   "degree": 7
+  },
+  {
+   "id": "person-lauren-compere",
+   "type": "person",
+   "layer": "people",
+   "label": "Lauren Compere",
+   "title": "Managing Director / Head of Stewardship & Engagement",
+   "org_name": "Boston Common Asset Management",
+   "ai_focus": "Firm co-leads WBA Collective Impact Coalition for Ethical AI",
+   "source_url": "https://bostoncommonasset.com/team/lauren-compere/",
+   "verified": "2026-11",
+   "degree": 3
+  },
+  {
+   "id": "boston-common-asset-management",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Boston Common Asset Management",
+   "degree": 2
+  },
+  {
+   "id": "person-amy-orr",
+   "type": "person",
+   "layer": "people",
+   "label": "Amy Orr",
+   "title": "Director of US Shareholder Engagement",
+   "org_name": "Boston Common Asset Management",
+   "ai_focus": "",
+   "source_url": "https://bostoncommonasset.com/team/amy-orr/",
+   "verified": "2026-11",
+   "degree": 2
+  },
+  {
+   "id": "person-marcy-mccullaugh",
+   "type": "person",
+   "layer": "people",
+   "label": "Marcy McCullaugh",
+   "title": "Director, Sustainability Research and Director, Sustainability and Stewardship",
+   "org_name": "Parnassus Investments",
+   "ai_focus": "",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/7e134dc4-7e17-4044-bdc3-114f5895bc54/Sustainable%20Insights_Creating%20Confidence%20in%20Clean%20Products.pdf",
+   "verified": "2026-02",
+   "degree": 1
+  },
+  {
+   "id": "parnassus-investments",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Parnassus Investments",
+   "degree": 2
+  },
+  {
+   "id": "person-marian-macindoe",
+   "type": "person",
+   "layer": "people",
+   "label": "Marian Macindoe",
+   "title": "Managing Director (oversees corporate engagement and proxy voting; formerly Head of ESG Stewardship) (role not confirmed since 2025)",
+   "org_name": "Parnassus Investments",
+   "ai_focus": "",
+   "source_url": "https://greenmoney.com/?p=46104",
+   "verified": "UNVERIFIED (last seen 2025)",
+   "degree": 1
+  },
+  {
+   "id": "person-michael-marks",
+   "type": "person",
+   "layer": "people",
+   "label": "Michael Marks",
+   "title": "Head of Investment Stewardship (role not confirmed since 2024-04)",
+   "org_name": "Legal & General Investment Management (L&G Asset Management)",
+   "ai_focus": "Fronted LGIM AI-governance expectations for tech companies",
+   "source_url": "https://group.legalandgeneral.com/en/newsroom/press-releases/lgim-dials-up-engagement-on-nature-health-and-ai-in-latest-active-ownership-report",
+   "verified": "UNVERIFIED (last seen 2024-04)",
+   "degree": 1
+  },
+  {
+   "id": "legal-general-investment-management",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Legal & General Investment Management (L&G Asset Management)",
+   "degree": 1
+  },
+  {
+   "id": "person-carine-smith-ihenacho",
+   "type": "person",
+   "layer": "people",
+   "label": "Carine Smith Ihenacho",
+   "title": "Chief Governance and Compliance Officer (stepping down end-2026)",
+   "org_name": "Norges Bank Investment Management",
+   "ai_focus": "",
+   "source_url": "https://www.nbim.no/en/about-us/leader-group/",
+   "verified": "2026-09",
+   "degree": 1
+  },
+  {
+   "id": "norges-bank-investment-management",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Norges Bank Investment Management",
+   "degree": 1
+  },
+  {
+   "id": "person-michael-garland",
+   "type": "person",
+   "layer": "people",
+   "label": "Michael Garland",
+   "title": "Assistant Comptroller for Corporate Governance and Responsible Investment",
+   "org_name": "NYC Comptroller's Office (Bureau of Asset Management)",
+   "ai_focus": "Office co-filed AI & human rights assessment proposals (Uber, Lyft) with AFL-CIO",
+   "source_url": "https://comptroller.nyc.gov/reports/new-york-city-retirement-systems-2025-shareholder-initiatives/",
+   "verified": "2026-06",
+   "degree": 2
+  },
+  {
+   "id": "nyc-comptrollers-office",
+   "type": "investor",
+   "layer": "investors",
+   "label": "NYC Comptroller's Office (Bureau of Asset Management)",
+   "degree": 2
+  },
+  {
+   "id": "person-yumi-narita",
+   "type": "person",
+   "layer": "people",
+   "label": "Yumi Narita",
+   "title": "Executive Director of Corporate Governance",
+   "org_name": "NYC Comptroller's Office (Bureau of Asset Management)",
+   "ai_focus": "",
+   "source_url": "https://comptroller.nyc.gov/reports/new-york-city-retirement-systems-2025-shareholder-initiatives/",
+   "verified": "2025",
+   "degree": 2
+  },
+  {
+   "id": "person-elizabeth-gordon",
+   "type": "person",
+   "layer": "people",
+   "label": "Elizabeth Gordon",
+   "title": "Director, Corporate Governance",
+   "org_name": "New York State Common Retirement Fund",
+   "ai_focus": "",
+   "source_url": "https://www.universalassetowners.com/registry/person/elizabeth-gordon/",
+   "verified": "2026-07",
+   "degree": 1
+  },
+  {
+   "id": "new-york-state-common-retirement-fund",
+   "type": "investor",
+   "layer": "investors",
+   "label": "New York State Common Retirement Fund",
+   "degree": 1
+  },
+  {
+   "id": "person-brandon-rees",
+   "type": "person",
+   "layer": "people",
+   "label": "Brandon Rees",
+   "title": "Deputy Director, Corporations and Capital Markets (role not confirmed since 2024)",
+   "org_name": "AFL-CIO Office of Investment",
+   "ai_focus": "AFL-CIO AI-use report proposals at Apple, Netflix, Disney (2024)",
+   "source_url": "https://aflcio.org/author/brandon-rees",
+   "verified": "UNVERIFIED (last seen 2024)",
+   "degree": 1
+  },
+  {
+   "id": "afl-cio-office-of-investment",
+   "type": "investor",
+   "layer": "investors",
+   "label": "AFL-CIO Office of Investment",
+   "degree": 1
+  },
+  {
+   "id": "person-josh-zinner",
+   "type": "person",
+   "layer": "people",
+   "label": "Josh Zinner",
+   "title": "CEO",
+   "org_name": "ICCR (Interfaith Center on Corporate Responsibility)",
+   "ai_focus": "Issued ICCR statement on papal AI encyclical (2026)",
+   "source_url": "https://www.iccr.org/our-team/",
+   "verified": "2026-11",
+   "degree": 2
+  },
+  {
+   "id": "iccr",
+   "type": "investor",
+   "layer": "investors",
+   "label": "ICCR (Interfaith Center on Corporate Responsibility)",
+   "degree": 1
+  },
+  {
+   "id": "person-rebecca-dewinter-schmitt",
+   "type": "person",
+   "layer": "people",
+   "label": "Rebecca DeWinter-Schmitt",
+   "title": "Director, Investor Alliance for Human Rights",
+   "org_name": "Investor Alliance for Human Rights",
+   "ai_focus": "",
+   "source_url": "https://investorsforhumanrights.org/rebecca-dewinter-schmitt",
+   "verified": "2026-11",
+   "degree": 2
+  },
+  {
+   "id": "investor-alliance-for-human-rights",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Investor Alliance for Human Rights",
+   "degree": 2
+  },
+  {
+   "id": "person-stacey-cram",
+   "type": "person",
+   "layer": "people",
+   "label": "Stacey Cram",
+   "title": "Associate Director, Investor Alliance for Human Rights",
+   "org_name": "Investor Alliance for Human Rights",
+   "ai_focus": "Leads Alliance tech & human rights / Digital Rights and AI work",
+   "source_url": "https://investorsforhumanrights.org/stacey-cram",
+   "verified": "2026-11",
+   "degree": 3
+  },
+  {
+   "id": "person-jan-rydzak",
+   "type": "person",
+   "layer": "people",
+   "label": "Jan Rydzak",
+   "title": "Digital Transformation Lead",
+   "org_name": "World Benchmarking Alliance",
+   "ai_focus": "Collective Impact Coalition for Ethical AI",
+   "source_url": "https://www.worldbenchmarkingalliance.org/news/launch-of-the-2025-collective-impact-coalition-for-ethical-ai-progress-report/",
+   "verified": "2025-12",
+   "degree": 2
+  },
+  {
+   "id": "world-benchmarking-alliance",
+   "type": "investor",
+   "layer": "investors",
+   "label": "World Benchmarking Alliance",
+   "degree": 4
+  },
+  {
+   "id": "person-nicholas-sewe",
+   "type": "person",
+   "layer": "people",
+   "label": "Nicholas Sewe",
+   "title": "Engagement Lead, Digital Transformation",
+   "org_name": "World Benchmarking Alliance",
+   "ai_focus": "Facilitated 2025 Ethical AI CIC progress report launch",
+   "source_url": "https://www.worldbenchmarkingalliance.org/news/launch-of-the-2025-collective-impact-coalition-for-ethical-ai-progress-report/",
+   "verified": "2025-12",
+   "degree": 3
+  },
+  {
+   "id": "person-thomas-abrams",
+   "type": "person",
+   "layer": "people",
+   "label": "Thomas Abrams",
+   "title": "Head of Human Rights, Social and Governance Issues",
+   "org_name": "PRI",
+   "ai_focus": "Authored PRI guidance on AI investment risks and investor action",
+   "source_url": "https://www.unpri.org/blog?id=ai-investment-risks-and-opportunities-what-investors-can-do-now",
+   "verified": "2026",
+   "degree": 1
+  },
+  {
+   "id": "pri",
+   "type": "investor",
+   "layer": "investors",
+   "label": "PRI",
+   "degree": 1
+  },
+  {
+   "id": "person-peter-cashion",
+   "type": "person",
+   "layer": "people",
+   "label": "Peter Cashion",
+   "title": "Managing Investment Director, Sustainable Investments",
+   "org_name": "CalPERS",
+   "ai_focus": "",
+   "source_url": "https://www.calpers.ca.gov/investments/about-investment-office/investment-office-senior-team/peter-cashion",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "calpers",
+   "type": "investor",
+   "layer": "investors",
+   "label": "CalPERS",
+   "degree": 2
+  },
+  {
+   "id": "person-charles-hambly",
+   "type": "person",
+   "layer": "people",
+   "label": "Charles Hambly",
+   "title": "Investment Director, Global Public Equity (presents proxy voting & corporate engagement)",
+   "org_name": "CalPERS",
+   "ai_focus": "",
+   "source_url": "https://www.calpers.ca.gov/documents/202603-invest-agenda-item03c-00-a-mar17/download",
+   "verified": "2026-03",
+   "degree": 1
+  },
+  {
+   "id": "person-nick-abel",
+   "type": "person",
+   "layer": "people",
+   "label": "Nick Abel",
+   "title": "Director of Sustainable Investment and Stewardship Strategies",
+   "org_name": "CalSTRS",
+   "ai_focus": "",
+   "source_url": "https://www.esgtoday.com/calstrs-appoints-nick-abel-as-director-of-sustainable-investment-and-stewardship-strategies",
+   "verified": "2025-12",
+   "degree": 2
+  },
+  {
+   "id": "calstrs",
+   "type": "investor",
+   "layer": "investors",
+   "label": "CalSTRS",
+   "degree": 2
+  },
+  {
+   "id": "person-kirsty-jenkinson",
+   "type": "person",
+   "layer": "people",
+   "label": "Kirsty Jenkinson",
+   "title": "Senior Investment Director, Private Markets and Sustainable Investment & Stewardship Strategies",
+   "org_name": "CalSTRS",
+   "ai_focus": "",
+   "source_url": "https://www.ai-cio.com/news/calstrs-names-senior-investment-director-for-private-markets-sustainable-investments-stewardship/",
+   "verified": "2025-08",
+   "degree": 2
+  },
+  {
+   "id": "person-bruce-duguid",
+   "type": "person",
+   "layer": "people",
+   "label": "Bruce Duguid",
+   "title": "Director, Head of Stewardship, EOS",
+   "org_name": "Federated Hermes EOS",
+   "ai_focus": "",
+   "source_url": "https://www.hermes-investment.com/uk/en/intermediary/eos-stewardship/eos-team/",
+   "verified": "2025",
+   "degree": 1
+  },
+  {
+   "id": "federated-hermes-eos",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Federated Hermes EOS",
+   "degree": 2
+  },
+  {
+   "id": "person-leon-kamhi",
+   "type": "person",
+   "layer": "people",
+   "label": "Leon Kamhi",
+   "title": "Chair of EOS and Head of Responsibility, Federated Hermes Limited",
+   "org_name": "Federated Hermes EOS",
+   "ai_focus": "",
+   "source_url": "https://www.hermes-investment.com/uploads/2026/05/bce7e29721dd9ac0119058bc65fca144/eos-corporate-policy-context-disclosure-2025.pdf",
+   "verified": "2026-04",
+   "degree": 1
+  },
+  {
+   "id": "person-kamil-zabielski",
+   "type": "person",
+   "layer": "people",
+   "label": "Kamil Zabielski",
+   "title": "Head of Sustainable Investments",
+   "org_name": "Storebrand Asset Management",
+   "ai_focus": "Publicly backed 2026 Alphabet AI human-rights / government contracts proposal",
+   "source_url": "https://www.storebrand.com/sam/uk/asset-management/sustainability/core-teams",
+   "verified": "2026-06",
+   "degree": 2
+  },
+  {
+   "id": "storebrand",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Storebrand Asset Management",
+   "degree": 2
+  },
+  {
+   "id": "person-benjamin-chekroun",
+   "type": "person",
+   "layer": "people",
+   "label": "Benjamin Chekroun",
+   "title": "Engagement Lead (Lead Engagement Analyst)",
+   "org_name": "Candriam",
+   "ai_focus": "Candriam co-leads WBA Ethical AI coalition; writes on AI governance",
+   "source_url": "https://www.candriam.com/nl-be/professional/insights/topics/esg/why-we-cant-ignore-ai-governance/",
+   "verified": "2026-09",
+   "degree": 3
+  },
+  {
+   "id": "candriam",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Candriam",
+   "degree": 1
+  },
+  {
+   "id": "person-richard-butters",
+   "type": "person",
+   "layer": "people",
+   "label": "Richard Butters",
+   "title": "Head of Stewardship (role not confirmed since undated bio page)",
+   "org_name": "Aviva Investors",
+   "ai_focus": "",
+   "source_url": "https://www.avivainvestors.com/en-gb/about/our-people/r/richard-butters/",
+   "verified": "UNVERIFIED (undated bio page)",
+   "degree": 1
+  },
+  {
+   "id": "aviva-investors",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Aviva Investors",
+   "degree": 1
+  },
+  {
+   "id": "person-natasha-landell-mills",
+   "type": "person",
+   "layer": "people",
+   "label": "Natasha Landell-Mills",
+   "title": "Partner, Head of Stewardship",
+   "org_name": "Sarasin & Partners",
+   "ai_focus": "",
+   "source_url": "https://sarasinandpartners.com/stewardship/",
+   "verified": "2026-04",
+   "degree": 1
+  },
+  {
+   "id": "sarasin-partners",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Sarasin & Partners",
+   "degree": 1
+  },
+  {
+   "id": "person-peter-van-der-werf",
+   "type": "person",
+   "layer": "people",
+   "label": "Peter van der Werf",
+   "title": "Head of Active Ownership",
+   "org_name": "Robeco",
+   "ai_focus": "Announced 2026 responsible-AI engagement theme",
+   "source_url": "https://www.robeco.com/en-uk/insights/2026/01/new-engagement-themes-for-2026-to-cover-climate-and-ai",
+   "verified": "2026-01",
+   "degree": 2
+  },
+  {
+   "id": "robeco",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Robeco",
+   "degree": 2
+  },
+  {
+   "id": "person-danielle-essink",
+   "type": "person",
+   "layer": "people",
+   "label": "Danielle Essink",
+   "title": "Social Engagement Cluster Lead",
+   "org_name": "Robeco",
+   "ai_focus": "Leads Robeco's 2026 responsible-use-of-AI engagement theme",
+   "source_url": "https://www.robeco.com/en-uk/insights/2026/01/new-engagement-themes-for-2026-to-cover-climate-and-ai",
+   "verified": "2026-01",
+   "degree": 2
+  },
+  {
+   "id": "person-john-wilson",
+   "type": "person",
+   "layer": "people",
+   "label": "John Wilson",
+   "title": "Executive Director, Corporate Engagement",
+   "org_name": "Calvert Research and Management",
+   "ai_focus": "",
+   "source_url": "https://www.eatonvance.com/insights/press-release/calvert-research-and-management-presents-its-2025-stewardship-report.html",
+   "verified": "2026-07",
+   "degree": 1
+  },
+  {
+   "id": "calvert-research-and-management",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Calvert Research and Management",
+   "degree": 1
+  },
+  {
+   "id": "person-kristin-hull",
+   "type": "person",
+   "layer": "people",
+   "label": "Kristin Hull",
+   "title": "Founder, CEO and CIO (role not confirmed since pre-2025)",
+   "org_name": "Nia Impact Capital",
+   "ai_focus": "",
+   "source_url": "https://www.morningstar.com/sustainable-investing/proxy-stalwart-new-way-address-racial-inequity-through-investing",
+   "verified": "UNVERIFIED (last seen pre-2025)",
+   "degree": 1
+  },
+  {
+   "id": "nia-impact-capital",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Nia Impact Capital",
+   "degree": 1
+  },
+  {
+   "id": "person-ethan-birchard",
+   "type": "person",
+   "layer": "people",
+   "label": "Ethan Birchard",
+   "title": "Executive Director",
+   "org_name": "Friends Fiduciary",
+   "ai_focus": "",
+   "source_url": "https://friendsfiduciary.org/about-us/staff/",
+   "verified": "2026-11",
+   "degree": 2
+  },
+  {
+   "id": "friends-fiduciary",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Friends Fiduciary",
+   "degree": 2
+  },
+  {
+   "id": "person-maxwell-homans",
+   "type": "person",
+   "layer": "people",
+   "label": "Maxwell Homans",
+   "title": "Shareholder Advocate",
+   "org_name": "Friends Fiduciary",
+   "ai_focus": "",
+   "source_url": "https://friendsfiduciary.org/about-us/staff/",
+   "verified": "2026-11",
+   "degree": 2
+  },
+  {
+   "id": "person-joshua-brockwell",
+   "type": "person",
+   "layer": "people",
+   "label": "Joshua Brockwell",
+   "title": "Director of Investment Communications",
+   "org_name": "Azzad Asset Management",
+   "ai_focus": "Backed Zevin-led 2026 Alphabet government AI contracts proposal",
+   "source_url": "https://fortune.com/2026/06/04/worlds-largest-sovereign-wealth-fund-backs-push-for-google-oversight-on-government-ai-contracts/",
+   "verified": "2026-06",
+   "degree": 2
+  },
+  {
+   "id": "azzad-asset-management",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Azzad Asset Management",
+   "degree": 3
   },
   {
    "id": "nbim",
@@ -1273,6 +2135,846 @@
    "description": "AI proposals at Alphabet, Amazon and Meta averaged 7.6% in 2026, down from 9.8% in 2025 and 21.4% in 2024. Publication date UNVERIFIED.",
    "source_url": "https://www.glasslewis.com/article/a-look-at-2026-big-tech-shareholder-proposals",
    "degree": 0
+  },
+  {
+   "id": "msft-2023-11",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Microsoft 2023: Report on Data Operations in Human Rights Hotspots",
+   "company": "MSFT",
+   "year": 2023,
+   "topic": "Data center impacts",
+   "subtopic": "Human rights risks of siting cloud data centers in countries of human rights concern",
+   "status": "voted",
+   "support_pct": 33.58,
+   "proponent": "Eko and a co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "msft-2023-13",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Microsoft 2023: Report on AI Misinformation and Disinformation",
+   "company": "MSFT",
+   "year": 2023,
+   "topic": "Social & economic impacts",
+   "subtopic": "Generative AI misinformation/disinformation risk report",
+   "status": "voted",
+   "support_pct": 21.17,
+   "proponent": "Arjuna Capital and a co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
+   "degree": 2
+  },
+  {
+   "id": "msft-2024-6",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Microsoft 2024: Report on Data Operations in Human Rights Hotspots",
+   "company": "MSFT",
+   "year": 2024,
+   "topic": "Data center impacts",
+   "subtopic": "Human rights risks of data center siting",
+   "status": "voted",
+   "support_pct": 32.03,
+   "proponent": "Individual shareholder Olga Bell Greenbaum D'Angelo and a co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "msft-2024-7",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Microsoft 2024: Report on AI and Machine Learning Tools for Oil and Gas Development and Production",
+   "company": "MSFT",
+   "year": 2024,
+   "topic": "AI governance & oversight",
+   "subtopic": "Climate and financial risk of selling AI/ML tools to the oil and gas industry",
+   "status": "voted",
+   "support_pct": 9.71,
+   "proponent": "As You Sow and co-filers",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
+   "degree": 2
+  },
+  {
+   "id": "msft-2024-8",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Microsoft 2024: Report on AI Misinformation and Disinformation",
+   "company": "MSFT",
+   "year": 2024,
+   "topic": "Social & economic impacts",
+   "subtopic": "Generative AI misinformation/disinformation",
+   "status": "voted",
+   "support_pct": 18.67,
+   "proponent": "Arjuna Capital and co-filers",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
+   "degree": 2
+  },
+  {
+   "id": "msft-2024-9",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Microsoft 2024: Report on AI Data Sourcing Accountability",
+   "company": "MSFT",
+   "year": 2024,
+   "topic": "Social & economic impacts",
+   "subtopic": "Ethics and legality of external data used to train AI (privacy/copyright)",
+   "status": "voted",
+   "support_pct": 36.19,
+   "proponent": "National Legal and Policy Center",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "msft-2025-6",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Microsoft 2025: Report on Risks of Censorship in Generative Artificial Intelligence",
+   "company": "MSFT",
+   "year": 2025,
+   "topic": "Social & economic impacts",
+   "subtopic": "GenAI bias against religious or political views (civil rights)",
+   "status": "voted",
+   "support_pct": 0.69,
+   "proponent": "Ridgeline Research LLC, on behalf of American Conservative Values ETF",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "msft-2025-7",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Microsoft 2025: Report on AI Data Usage Oversight",
+   "company": "MSFT",
+   "year": 2025,
+   "topic": "Social & economic impacts",
+   "subtopic": "Oversight of data used to train AI",
+   "status": "voted",
+   "support_pct": 13.36,
+   "proponent": "National Legal and Policy Center",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "msft-2025-8",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Microsoft 2025: Report on Data Operations in Human Rights Hotspots",
+   "company": "MSFT",
+   "year": 2025,
+   "topic": "Data center impacts",
+   "subtopic": "Human rights risks of data center siting",
+   "status": "voted",
+   "support_pct": 27.48,
+   "proponent": "Mari Mennel-Bell, on behalf of individual shareholder Olga Bell Greenbaum D'Angelo",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "msft-2025-9",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Microsoft 2025: Report on Human Rights Due Diligence",
+   "company": "MSFT",
+   "year": 2025,
+   "topic": "Social & economic impacts",
+   "subtopic": "How well human rights due diligence catches customer misuse of Microsoft AI and cloud (including military use)",
+   "status": "voted",
+   "support_pct": 26.34,
+   "proponent": "Religious of the Sacred Heart of Mary and co-filers",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "msft-2025-10",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Microsoft 2025: Report on AI and Machine Learning Tools for Oil and Gas Development and Production",
+   "company": "MSFT",
+   "year": 2025,
+   "topic": "AI governance & oversight",
+   "subtopic": "Climate and financial risk of selling AI/ML tools to the oil and gas industry",
+   "status": "voted",
+   "support_pct": 8.75,
+   "proponent": "As You Sow and co-filers",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
+   "degree": 2
+  },
+  {
+   "id": "meta-2023-5",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Meta 2023: Human Rights Impact Assessment of Targeted Advertising",
+   "company": "META",
+   "year": 2023,
+   "topic": "Social & economic impacts",
+   "subtopic": "Human rights impact of algorithmic targeted advertising",
+   "status": "voted",
+   "support_pct": 17.02,
+   "proponent": "Mercy Investment Services, Inc. (lead) and co-filers",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
+   "degree": 2
+  },
+  {
+   "id": "meta-2024-6",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Meta 2024: Report on Generative AI Misinformation and Disinformation Risks",
+   "company": "META",
+   "year": 2024,
+   "topic": "Social & economic impacts",
+   "subtopic": "GenAI misinformation/disinformation",
+   "status": "voted",
+   "support_pct": 16.73,
+   "proponent": "Arjuna Capital on behalf of John B. Alexander (lead); co-filers Open MIC and Mary Hawkins",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
+   "degree": 3
+  },
+  {
+   "id": "meta-2024-10",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Meta 2024: Human Rights Impact Assessment on AI Systems Driving Targeted Advertising",
+   "company": "META",
+   "year": 2024,
+   "topic": "Social & economic impacts",
+   "subtopic": "Human rights impact of AI-driven targeted ads",
+   "status": "voted",
+   "support_pct": 14.45,
+   "proponent": "Mercy Investment Services, Inc. (lead) and NEI Investments",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
+   "degree": 2
+  },
+  {
+   "id": "meta-2025-10",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Meta 2025: Report on Risks of Deepfakes in Online Child Exploitation",
+   "company": "META",
+   "year": 2025,
+   "topic": "Social & economic impacts",
+   "subtopic": "AI deepfakes and child sexual exploitation (child safety)",
+   "status": "voted",
+   "support_pct": 6.45,
+   "proponent": "Bowyer Research, Inc. on behalf of an anonymous shareholder",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
+   "degree": 1
+  },
+  {
+   "id": "meta-2025-11",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Meta 2025: Report on AI Data Usage Oversight",
+   "company": "META",
+   "year": 2025,
+   "topic": "Social & economic impacts",
+   "subtopic": "Oversight of data used to train AI",
+   "status": "voted",
+   "support_pct": 9.93,
+   "proponent": "National Legal and Policy Center",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
+   "degree": 1
+  },
+  {
+   "id": "meta-2025-12",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Meta 2025: GHG Emissions Reduction Actions",
+   "company": "META",
+   "year": 2025,
+   "topic": "Data center impacts",
+   "subtopic": "Renewable energy transition plan matching the energy demand of expanded AI data centers",
+   "status": "voted",
+   "support_pct": 3.25,
+   "proponent": "As You Sow on behalf of Myra K. Young and James McRitchie",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
+   "degree": 2
+  },
+  {
+   "id": "meta-2026-3",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Meta 2026: Report on AI Data Usage Oversight",
+   "company": "META",
+   "year": 2026,
+   "topic": "Social & economic impacts",
+   "subtopic": "Oversight of data used to train AI",
+   "status": "voted",
+   "support_pct": 10.17,
+   "proponent": "National Legal and Policy Center",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
+   "degree": 1
+  },
+  {
+   "id": "meta-2026-9",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Meta 2026: Report on Climate Change-Related Commitments",
+   "company": "META",
+   "year": 2026,
+   "topic": "Data center impacts",
+   "subtopic": "Meeting climate commitments given AI data center energy demand",
+   "status": "voted",
+   "support_pct": 6.91,
+   "proponent": "As You Sow and Presbyterian Church (U.S.A.) (co-leads) and co-filers",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
+   "degree": 2
+  },
+  {
+   "id": "meta-2026-11",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Meta 2026: Data Protection Impact Assessment on Generative AI Chatbots",
+   "company": "META",
+   "year": 2026,
+   "topic": "Social & economic impacts",
+   "subtopic": "Privacy of user chats with generative AI that are used for ad personalization",
+   "status": "voted",
+   "support_pct": 6.61,
+   "proponent": "Mercy Investment Services, Inc. (lead); co-filers Storebrand Asset Management and Dana Investment Advisors",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
+   "degree": 3
+  },
+  {
+   "id": "googl-2023-10",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Alphabet 2023: Human Rights Assessment of Data Center Siting",
+   "company": "GOOGL",
+   "year": 2023,
+   "topic": "Data center impacts",
+   "subtopic": "Human rights risks of data center siting",
+   "status": "voted",
+   "support_pct": 13.11,
+   "proponent": "SumOfUs on behalf of Mari Mennel-Bell (lead); Missionary Oblates of Mary Immaculate-US Province and others (co-filers)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "googl-2023-11",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Alphabet 2023: Human Rights Assessment of Targeted Ad Policies and Practices",
+   "company": "GOOGL",
+   "year": 2023,
+   "topic": "Social & economic impacts",
+   "subtopic": "Human rights impact of algorithmic targeted advertising",
+   "status": "voted",
+   "support_pct": 18.02,
+   "proponent": "The Shareholder Association for Research & Education (SHARE), on behalf of the United Church of Canada Pension Plan",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "googl-2023-12",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Alphabet 2023: Algorithm Disclosures",
+   "company": "GOOGL",
+   "year": 2023,
+   "topic": "AI governance & oversight",
+   "subtopic": "Transparency about algorithms and AI systems",
+   "status": "voted",
+   "support_pct": 17.02,
+   "proponent": "Trillium Asset Management, on behalf of the John Hancock ESG Large Cap Core Fund (lead), and co-filers",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
+   "degree": 2
+  },
+  {
+   "id": "googl-2024-11",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Alphabet 2024: AI Principles and Board Oversight",
+   "company": "GOOGL",
+   "year": 2024,
+   "topic": "AI governance & oversight",
+   "subtopic": "Board oversight of AI principles",
+   "status": "voted",
+   "support_pct": 7.4,
+   "proponent": "Trillium ESG Global Equity Fund (lead); co-filers Benedictine Sisters of Baltimore, Benedictine Sisters of Mount St. Scholastica and others",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
+   "degree": 2
+  },
+  {
+   "id": "googl-2024-12",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Alphabet 2024: Report on Generative AI Misinformation and Disinformation Risks",
+   "company": "GOOGL",
+   "year": 2024,
+   "topic": "Social & economic impacts",
+   "subtopic": "GenAI misinformation/disinformation",
+   "status": "voted",
+   "support_pct": 17.61,
+   "proponent": "Arjuna Capital, on behalf of Stephen Schewel (lead), and co-filers",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
+   "degree": 2
+  },
+  {
+   "id": "googl-2024-13",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Alphabet 2024: Human Rights Assessment of AI-Driven Targeted Ad Policies",
+   "company": "GOOGL",
+   "year": 2024,
+   "topic": "Social & economic impacts",
+   "subtopic": "Human rights impact of AI-driven targeted ads",
+   "status": "voted",
+   "support_pct": 18.56,
+   "proponent": "SHARE, on behalf of the United Church of Canada Pension Plan, and co-filers",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "googl-2025-7",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Alphabet 2025: Enhanced Disclosure on Climate Goals",
+   "company": "GOOGL",
+   "year": 2025,
+   "topic": "Data center impacts",
+   "subtopic": "Climate goals under rising AI data center energy use",
+   "status": "voted",
+   "support_pct": 8.21,
+   "proponent": "Trillium ESG Global Equity Fund (lead) and co-filers",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
+   "degree": 2
+  },
+  {
+   "id": "googl-2025-9",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Alphabet 2025: Report on Due Diligence Process to Assess Human Rights Risks in CAHRA",
+   "company": "GOOGL",
+   "year": 2025,
+   "topic": "Social & economic impacts",
+   "subtopic": "Customer use of cloud and AI for surveillance or military purposes in conflict-affected and high-risk areas",
+   "status": "voted",
+   "support_pct": 4.51,
+   "proponent": "Zevin Asset Management, on behalf of Denise Bergman and Pamela Rogers",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
+   "degree": 2
+  },
+  {
+   "id": "googl-2025-10",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Alphabet 2025: Report on Risks of Discrimination in GenAI",
+   "company": "GOOGL",
+   "year": 2025,
+   "topic": "Social & economic impacts",
+   "subtopic": "GenAI viewpoint and religious discrimination (civil rights)",
+   "status": "voted",
+   "support_pct": 0.46,
+   "proponent": "Inspire Investing, LLC, on behalf of William C. Cunningham",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "googl-2025-11",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Alphabet 2025: Report on AI Data Usage Oversight",
+   "company": "GOOGL",
+   "year": 2025,
+   "topic": "Social & economic impacts",
+   "subtopic": "Oversight of data used to train AI",
+   "status": "voted",
+   "support_pct": 12.38,
+   "proponent": "National Legal and Policy Center",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "googl-2025-12",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Alphabet 2025: Human Rights Impact Assessment of AI-Driven Targeted Ad Policies",
+   "company": "GOOGL",
+   "year": 2025,
+   "topic": "Social & economic impacts",
+   "subtopic": "Human rights impact of AI-driven targeted ads",
+   "status": "voted",
+   "support_pct": 14.29,
+   "proponent": "SHARE, on behalf of the United Church of Canada Pension Plan (lead), and co-filers",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "googl-2025-15(floor)",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Alphabet 2025: Report on implementing AI app preload capabilities into Android OS (presented at the meeting; not in the proxy)",
+   "company": "GOOGL",
+   "year": 2025,
+   "topic": "AI governance & oversight",
+   "subtopic": "AI product strategy (floor proposal)",
+   "status": "voted",
+   "support_pct": 0.0,
+   "proponent": "UNVERIFIED (the 8-K does not name the proponent)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "googl-2026-5",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Alphabet 2026: Enhanced Disclosure on Climate Goals",
+   "company": "GOOGL",
+   "year": 2026,
+   "topic": "Data center impacts",
+   "subtopic": "Meeting GHG commitments given AI and data center energy demand",
+   "status": "voted",
+   "support_pct": 7.35,
+   "proponent": "Trillium ESG Global Equity Fund (lead) and co-filers",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+   "degree": 2
+  },
+  {
+   "id": "googl-2026-6",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Alphabet 2026: Report on Water Usage and AI Development",
+   "company": "GOOGL",
+   "year": 2026,
+   "topic": "Data center impacts",
+   "subtopic": "WATER: data center water use and AI infrastructure",
+   "status": "voted",
+   "support_pct": 1.5,
+   "proponent": "Inspire Investing, LLC, on behalf of its client",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+   "degree": 1
+  },
+  {
+   "id": "googl-2026-11",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Alphabet 2026: Report on Data Privacy",
+   "company": "GOOGL",
+   "year": 2026,
+   "topic": "Social & economic impacts",
+   "subtopic": "Customer and user data governance in Google Services and Cloud, citing AI deployment",
+   "status": "voted",
+   "support_pct": 6.03,
+   "proponent": "Zevin Asset Management, on behalf of Denise and Gerald Bergman (lead), and co-filers",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+   "degree": 2
+  },
+  {
+   "id": "googl-2026-12",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Alphabet 2026: AI Board Oversight",
+   "company": "GOOGL",
+   "year": 2026,
+   "topic": "AI governance & oversight",
+   "subtopic": "Board oversight of AI",
+   "status": "voted",
+   "support_pct": 3.74,
+   "proponent": "SHARE, on behalf of the Pension Plan of The United Church of Canada (lead), and co-filers",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+   "degree": 1
+  },
+  {
+   "id": "googl-2026-13",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Alphabet 2026: Report on AI-Generated Misinformation",
+   "company": "GOOGL",
+   "year": 2026,
+   "topic": "Social & economic impacts",
+   "subtopic": "AI-generated misinformation and hallucinations",
+   "status": "voted",
+   "support_pct": 9.3,
+   "proponent": "Vancity Investment Management",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+   "degree": 1
+  },
+  {
+   "id": "googl-2026-14",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Alphabet 2026: Report on AI Data Usage Oversight",
+   "company": "GOOGL",
+   "year": 2026,
+   "topic": "Social & economic impacts",
+   "subtopic": "Oversight of data used to train AI",
+   "status": "voted",
+   "support_pct": 12.26,
+   "proponent": "National Legal and Policy Center",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+   "degree": 1
+  },
+  {
+   "id": "amzn-2023-7",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Amazon 2023: Report on Customer Due Diligence",
+   "company": "AMZN",
+   "year": 2023,
+   "topic": "Social & economic impacts",
+   "subtopic": "Customer use of surveillance, computer-vision and cloud products in human rights abuses",
+   "status": "voted",
+   "support_pct": 34.18,
+   "proponent": "UNVERIFIED (the Amazon proxy does not name proponents)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "amzn-2023-23",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Amazon 2023: Report on Customer Use of Certain Technologies (Rekognition facial recognition)",
+   "company": "AMZN",
+   "year": 2023,
+   "topic": "Social & economic impacts",
+   "subtopic": "Facial recognition (Rekognition): civil rights and privacy",
+   "status": "voted",
+   "support_pct": 37.48,
+   "proponent": "UNVERIFIED (the Amazon proxy does not name proponents)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "amzn-2024-6",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Amazon 2024: Report on Customer Due Diligence",
+   "company": "AMZN",
+   "year": 2024,
+   "topic": "Social & economic impacts",
+   "subtopic": "Customer use of surveillance and computer-vision products",
+   "status": "voted",
+   "support_pct": 16.79,
+   "proponent": "UNVERIFIED (not named in proxy; an Investor Advocates for Social Justice PX14A6G supports it)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "amzn-2024-14",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Amazon 2024: Report on Customer Use of Certain Technologies (Rekognition)",
+   "company": "AMZN",
+   "year": 2024,
+   "topic": "Social & economic impacts",
+   "subtopic": "Facial recognition: civil rights and privacy",
+   "status": "voted",
+   "support_pct": 19.08,
+   "proponent": "UNVERIFIED (not named in proxy)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "amzn-2024-16",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Amazon 2024: Additional Board Committee to Oversee Artificial Intelligence",
+   "company": "AMZN",
+   "year": 2024,
+   "topic": "AI governance & oversight",
+   "subtopic": "Board AI committee",
+   "status": "voted",
+   "support_pct": 9.7,
+   "proponent": "UNVERIFIED (not named in proxy)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "amzn-2025-7",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Amazon 2025: Additional Reporting on Impact of Data Centers on Climate Commitments",
+   "company": "AMZN",
+   "year": 2025,
+   "topic": "Data center impacts",
+   "subtopic": "Climate commitments under AI data center energy demand",
+   "status": "voted",
+   "support_pct": 20.11,
+   "proponent": "UNVERIFIED (not named in proxy)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "amzn-2025-8",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Amazon 2025: Assessment of Board Structure for Oversight of AI",
+   "company": "AMZN",
+   "year": 2025,
+   "topic": "AI governance & oversight",
+   "subtopic": "Board oversight of AI",
+   "status": "voted",
+   "support_pct": 10.27,
+   "proponent": "UNVERIFIED (not named in proxy; the proxy says it repeats the same proponent's 2024 proposal)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "amzn-2025-11",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Amazon 2025: Report on Data Usage Oversight in AI Offerings",
+   "company": "AMZN",
+   "year": 2025,
+   "topic": "Social & economic impacts",
+   "subtopic": "Oversight of data used to train AI",
+   "status": "voted",
+   "support_pct": 10.79,
+   "proponent": "National Legal and Policy Center (per its PX14A6G; not named in proxy)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "amzn-2026-5",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Amazon 2026: Additional Reporting on Impact of Data Centers on Climate Commitments",
+   "company": "AMZN",
+   "year": 2026,
+   "topic": "Data center impacts",
+   "subtopic": "Climate commitments under AI data center energy demand",
+   "status": "voted",
+   "support_pct": 18.39,
+   "proponent": "UNVERIFIED (not named in proxy)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "amzn-2026-floor",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Amazon 2026: Establish and maintain a worker-oriented AI advisory council (presented at the meeting under the bylaws; not in the proxy)",
+   "company": "AMZN",
+   "year": 2026,
+   "topic": "Social & economic impacts",
+   "subtopic": "Workforce impacts of AI",
+   "status": "voted",
+   "support_pct": 0.0,
+   "proponent": "UNVERIFIED",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "aapl-2024-7",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Apple 2024: Report on Use of AI",
+   "company": "AAPL",
+   "year": 2024,
+   "topic": "AI governance & oversight",
+   "subtopic": "AI transparency report and ethical guidelines",
+   "status": "voted",
+   "support_pct": 37.53,
+   "proponent": "AFL-CIO Equity Index Funds, represented by Segal Marco Advisors",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "aapl-2025-4",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Apple 2025: Report on Ethical AI Data Acquisition and Usage",
+   "company": "AAPL",
+   "year": 2025,
+   "topic": "Social & economic impacts",
+   "subtopic": "Ethics of data used to train AI",
+   "status": "voted",
+   "support_pct": 11.57,
+   "proponent": "National Legal and Policy Center",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "aapl-2025-5",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Apple 2025: Report on Costs and Benefits of Child Sex Abuse Material-Identifying Software & User Privacy",
+   "company": "AAPL",
+   "year": 2025,
+   "topic": "Social & economic impacts",
+   "subtopic": "CSAM-detection software trade-offs: child safety and privacy",
+   "status": "voted",
+   "support_pct": 8.91,
+   "proponent": "American Family Association, represented by Bowyer Research",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "tsla-2025-7",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Tesla 2025: Board Authorization of an Investment in xAI",
+   "company": "TSLA",
+   "year": 2025,
+   "topic": "AI governance & oversight",
+   "subtopic": "Strategic investment in an AI company (xAI); not a risk or oversight ask",
+   "status": "voted",
+   "support_pct": 53.61,
+   "proponent": "Stephen Hawk",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925090866/tm252289-12_def14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "nvda-2026-7",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Nvidia 2026: Greenhouse Gas Emissions Disclosure (GHG from use of sold products)",
+   "company": "NVDA",
+   "year": 2026,
+   "topic": "Data center impacts",
+   "subtopic": "Emissions from AI chips and systems running in data centers",
+   "status": "voted",
+   "support_pct": 17.57,
+   "proponent": "UNVERIFIED in proxy text; Green Century Equity Fund filed a PX14A6G supporting it",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+   "degree": 1
+  },
+  {
+   "id": "msft-2026-4",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Microsoft 2026: Additional Disclosures Meeting Climate Commitments",
+   "company": "MSFT",
+   "year": 2026,
+   "topic": "Data center impacts",
+   "subtopic": "Climate commitments under AI data center energy demand and embodied carbon (the supporting statement cites generative AI)",
+   "status": "upcoming",
+   "support_pct": null,
+   "proponent": "Trillium Asset Management and a co-filer",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+   "degree": 2
+  },
+  {
+   "id": "msft-2026-5",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Microsoft 2026: Report on Human Rights Due Diligence",
+   "company": "MSFT",
+   "year": 2026,
+   "topic": "Social & economic impacts",
+   "subtopic": "How well human rights due diligence prevents customer misuse of Microsoft AI and cloud that violates human rights or IHL (refiled; got 26.34% in 2025)",
+   "status": "upcoming",
+   "support_pct": null,
+   "proponent": "Religious of the Sacred Heart of Mary and co-filers",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+   "degree": 1
+  },
+  {
+   "id": "msft-2026-6",
+   "type": "proposal",
+   "layer": "proposals",
+   "label": "Microsoft 2026: Report on Data Operations in Human Rights and Conflict Hotspots",
+   "company": "MSFT",
+   "year": 2026,
+   "topic": "Data center impacts",
+   "subtopic": "Human rights risks of siting cloud data centers in countries of significant human rights concern",
+   "status": "upcoming",
+   "support_pct": null,
+   "proponent": "Azzad Asset Management, Inc.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+   "degree": 2
   }
  ],
  "edges": [
@@ -2017,6 +3719,546 @@
    "as_of": "2025-09"
   },
   {
+   "source": "person-natasha-lamb",
+   "target": "arjuna-capital",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://arjuna-capital.com/natasha-lamb-mba"
+  },
+  {
+   "source": "person-julia-cedarholm",
+   "target": "arjuna-capital",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://arjuna-capital.com/julia-cedarholm-mpa"
+  },
+  {
+   "source": "person-andrew-behar",
+   "target": "as-you-sow",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.asyousow.org/staff/andrew-behar"
+  },
+  {
+   "source": "person-danielle-fugere",
+   "target": "as-you-sow",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.asyousow.org/staff/danielle-fugere"
+  },
+  {
+   "source": "person-jonas-kron",
+   "target": "trillium-asset-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.trilliuminvest.com/team/jonas-kron"
+  },
+  {
+   "source": "person-andrea-ranger",
+   "target": "trillium-asset-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.trilliuminvest.com/team/andrea-ranger"
+  },
+  {
+   "source": "person-audrey-mocle",
+   "target": "open-mic",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.openmic.org/staff"
+  },
+  {
+   "source": "person-michael-connor",
+   "target": "open-mic",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.openmic.org/staff"
+  },
+  {
+   "source": "person-emma-ruby-sachs",
+   "target": "eko",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.eko.org/about"
+  },
+  {
+   "source": "person-christina-oconnell",
+   "target": "eko",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://techpolicy.press/the-role-of-shareholder-activism-in-tech-accountability"
+  },
+  {
+   "source": "person-michael-passoff",
+   "target": "proxy-impact",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.proxyimpact.com/about"
+  },
+  {
+   "source": "person-julie-goodridge",
+   "target": "northstar-asset-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://northstarasset.com/team/"
+  },
+  {
+   "source": "person-whitney-nguyen",
+   "target": "northstar-asset-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://northstarasset.com/team/"
+  },
+  {
+   "source": "person-dan-osusky",
+   "target": "the-shareholder-commons",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://theshareholdercommons.com/about/"
+  },
+  {
+   "source": "person-mari-schwartzer",
+   "target": "the-shareholder-commons",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://theshareholdercommons.com/about/"
+  },
+  {
+   "source": "person-lydia-kuykendal",
+   "target": "mercy-investment-services",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://mercyinvestmentservices.org/our-people/staff/"
+  },
+  {
+   "source": "person-mary-minette",
+   "target": "mercy-investment-services",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://mercyinvestmentservices.org/our-people/staff/"
+  },
+  {
+   "source": "person-mary-beth-gallagher",
+   "target": "domini-impact-investments",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://domini.com/investing-for-impact/strategies/engagement/"
+  },
+  {
+   "source": "person-marcela-pinilla",
+   "target": "zevin-asset-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.zevin.com/who-we-are"
+  },
+  {
+   "source": "person-lauren-compere",
+   "target": "boston-common-asset-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://bostoncommonasset.com/team/lauren-compere/"
+  },
+  {
+   "source": "person-amy-orr",
+   "target": "boston-common-asset-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://bostoncommonasset.com/team/amy-orr/"
+  },
+  {
+   "source": "person-marcy-mccullaugh",
+   "target": "parnassus-investments",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/7e134dc4-7e17-4044-bdc3-114f5895bc54/Sustainable%20Insights_Creating%20Confidence%20in%20Clean%20Products.pdf"
+  },
+  {
+   "source": "person-marian-macindoe",
+   "target": "parnassus-investments",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://greenmoney.com/?p=46104"
+  },
+  {
+   "source": "person-michael-marks",
+   "target": "legal-general-investment-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://group.legalandgeneral.com/en/newsroom/press-releases/lgim-dials-up-engagement-on-nature-health-and-ai-in-latest-active-ownership-report"
+  },
+  {
+   "source": "person-carine-smith-ihenacho",
+   "target": "norges-bank-investment-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.nbim.no/en/about-us/leader-group/"
+  },
+  {
+   "source": "person-michael-garland",
+   "target": "nyc-comptrollers-office",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://comptroller.nyc.gov/reports/new-york-city-retirement-systems-2025-shareholder-initiatives/"
+  },
+  {
+   "source": "person-yumi-narita",
+   "target": "nyc-comptrollers-office",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://comptroller.nyc.gov/reports/new-york-city-retirement-systems-2025-shareholder-initiatives/"
+  },
+  {
+   "source": "person-elizabeth-gordon",
+   "target": "new-york-state-common-retirement-fund",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.universalassetowners.com/registry/person/elizabeth-gordon/"
+  },
+  {
+   "source": "person-brandon-rees",
+   "target": "afl-cio-office-of-investment",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://aflcio.org/author/brandon-rees"
+  },
+  {
+   "source": "person-josh-zinner",
+   "target": "iccr",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.iccr.org/our-team/"
+  },
+  {
+   "source": "person-rebecca-dewinter-schmitt",
+   "target": "investor-alliance-for-human-rights",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://investorsforhumanrights.org/rebecca-dewinter-schmitt"
+  },
+  {
+   "source": "person-stacey-cram",
+   "target": "investor-alliance-for-human-rights",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://investorsforhumanrights.org/stacey-cram"
+  },
+  {
+   "source": "person-jan-rydzak",
+   "target": "world-benchmarking-alliance",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.worldbenchmarkingalliance.org/news/launch-of-the-2025-collective-impact-coalition-for-ethical-ai-progress-report/"
+  },
+  {
+   "source": "person-nicholas-sewe",
+   "target": "world-benchmarking-alliance",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.worldbenchmarkingalliance.org/news/launch-of-the-2025-collective-impact-coalition-for-ethical-ai-progress-report/"
+  },
+  {
+   "source": "person-thomas-abrams",
+   "target": "pri",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.unpri.org/blog?id=ai-investment-risks-and-opportunities-what-investors-can-do-now"
+  },
+  {
+   "source": "person-peter-cashion",
+   "target": "calpers",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.calpers.ca.gov/investments/about-investment-office/investment-office-senior-team/peter-cashion"
+  },
+  {
+   "source": "person-charles-hambly",
+   "target": "calpers",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.calpers.ca.gov/documents/202603-invest-agenda-item03c-00-a-mar17/download"
+  },
+  {
+   "source": "person-nick-abel",
+   "target": "calstrs",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.esgtoday.com/calstrs-appoints-nick-abel-as-director-of-sustainable-investment-and-stewardship-strategies"
+  },
+  {
+   "source": "person-kirsty-jenkinson",
+   "target": "calstrs",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.ai-cio.com/news/calstrs-names-senior-investment-director-for-private-markets-sustainable-investments-stewardship/"
+  },
+  {
+   "source": "person-bruce-duguid",
+   "target": "federated-hermes-eos",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.hermes-investment.com/uk/en/intermediary/eos-stewardship/eos-team/"
+  },
+  {
+   "source": "person-leon-kamhi",
+   "target": "federated-hermes-eos",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.hermes-investment.com/uploads/2026/05/bce7e29721dd9ac0119058bc65fca144/eos-corporate-policy-context-disclosure-2025.pdf"
+  },
+  {
+   "source": "person-kamil-zabielski",
+   "target": "storebrand",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.storebrand.com/sam/uk/asset-management/sustainability/core-teams"
+  },
+  {
+   "source": "person-benjamin-chekroun",
+   "target": "candriam",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.candriam.com/nl-be/professional/insights/topics/esg/why-we-cant-ignore-ai-governance/"
+  },
+  {
+   "source": "person-richard-butters",
+   "target": "aviva-investors",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.avivainvestors.com/en-gb/about/our-people/r/richard-butters/"
+  },
+  {
+   "source": "person-natasha-landell-mills",
+   "target": "sarasin-partners",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://sarasinandpartners.com/stewardship/"
+  },
+  {
+   "source": "person-peter-van-der-werf",
+   "target": "robeco",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.robeco.com/en-uk/insights/2026/01/new-engagement-themes-for-2026-to-cover-climate-and-ai"
+  },
+  {
+   "source": "person-danielle-essink",
+   "target": "robeco",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.robeco.com/en-uk/insights/2026/01/new-engagement-themes-for-2026-to-cover-climate-and-ai"
+  },
+  {
+   "source": "person-john-wilson",
+   "target": "calvert-research-and-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.eatonvance.com/insights/press-release/calvert-research-and-management-presents-its-2025-stewardship-report.html"
+  },
+  {
+   "source": "person-kristin-hull",
+   "target": "nia-impact-capital",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.morningstar.com/sustainable-investing/proxy-stalwart-new-way-address-racial-inequity-through-investing"
+  },
+  {
+   "source": "person-ethan-birchard",
+   "target": "friends-fiduciary",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://friendsfiduciary.org/about-us/staff/"
+  },
+  {
+   "source": "person-maxwell-homans",
+   "target": "friends-fiduciary",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://friendsfiduciary.org/about-us/staff/"
+  },
+  {
+   "source": "person-joshua-brockwell",
+   "target": "azzad-asset-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://fortune.com/2026/06/04/worlds-largest-sovereign-wealth-fund-backs-push-for-google-oversight-on-government-ai-contracts/"
+  },
+  {
+   "source": "person-marcela-pinilla",
+   "target": "person-lydia-kuykendal",
+   "type": "co-authored",
+   "layer": "people",
+   "source_url": "https://impactalpha.com/googles-business-is-now-dependent-on-ai-were-asking-the-board-to-report-on-the-risks/",
+   "context": "Co-authored June 2026 ImpactAlpha piece on Alphabet AI user-data risk proposal"
+  },
+  {
+   "source": "person-kamil-zabielski",
+   "target": "zevin-asset-management",
+   "type": "coalition role",
+   "layer": "people",
+   "source_url": "https://fortune.com/2026/06/04/worlds-largest-sovereign-wealth-fund-backs-push-for-google-oversight-on-government-ai-contracts/",
+   "context": "Storebrand backed Zevin-led 2026 Alphabet AI government contracts proposal"
+  },
+  {
+   "source": "person-joshua-brockwell",
+   "target": "zevin-asset-management",
+   "type": "coalition role",
+   "layer": "people",
+   "source_url": "https://fortune.com/2026/06/04/worlds-largest-sovereign-wealth-fund-backs-push-for-google-oversight-on-government-ai-contracts/",
+   "context": "Azzad backed Zevin-led 2026 Alphabet AI government contracts proposal"
+  },
+  {
+   "source": "person-andrew-behar",
+   "target": "proxy-impact",
+   "type": "coalition role",
+   "layer": "people",
+   "source_url": "https://www.proxyimpact.com/about",
+   "context": "Serves on Proxy Impact Advisory Board"
+  },
+  {
+   "source": "person-benjamin-chekroun",
+   "target": "world-benchmarking-alliance",
+   "type": "coalition role",
+   "layer": "people",
+   "source_url": "https://www.candriam.com/nl-be/professional/insights/topics/esg/why-we-cant-ignore-ai-governance/",
+   "context": "Candriam co-leads WBA Collective Impact Coalition for Ethical AI"
+  },
+  {
+   "source": "person-lauren-compere",
+   "target": "world-benchmarking-alliance",
+   "type": "coalition role",
+   "layer": "people",
+   "source_url": "https://www.worldbenchmarkingalliance.org/latest/wba-wins-recognition-pri-awards-2025",
+   "context": "Boston Common co-leads WBA Ethical AI coalition (firm-level role)"
+  },
+  {
+   "source": "person-benjamin-chekroun",
+   "target": "person-nicholas-sewe",
+   "type": "co-presented",
+   "layer": "people",
+   "source_url": "https://www.worldbenchmarkingalliance.org/news/launch-of-the-2025-collective-impact-coalition-for-ethical-ai-progress-report/",
+   "context": "Speaker and facilitator, WBA Ethical AI CIC 2025 progress report launch"
+  },
+  {
+   "source": "person-natasha-lamb",
+   "target": "person-julia-cedarholm",
+   "type": "colleague",
+   "layer": "people",
+   "source_url": "https://arjuna-capital.com/team/",
+   "context": "Listed together on organization's published team/staff page"
+  },
+  {
+   "source": "person-andrew-behar",
+   "target": "person-danielle-fugere",
+   "type": "colleague",
+   "layer": "people",
+   "source_url": "https://www.asyousow.org/about-us/staff/program-staff",
+   "context": "Listed together on organization's published team/staff page"
+  },
+  {
+   "source": "person-jonas-kron",
+   "target": "person-andrea-ranger",
+   "type": "colleague",
+   "layer": "people",
+   "source_url": "https://www.trilliuminvest.com/team",
+   "context": "Listed together on organization's published team/staff page"
+  },
+  {
+   "source": "person-audrey-mocle",
+   "target": "person-michael-connor",
+   "type": "colleague",
+   "layer": "people",
+   "source_url": "https://www.openmic.org/staff",
+   "context": "Listed together on organization's published team/staff page"
+  },
+  {
+   "source": "person-julie-goodridge",
+   "target": "person-whitney-nguyen",
+   "type": "colleague",
+   "layer": "people",
+   "source_url": "https://northstarasset.com/team/",
+   "context": "Listed together on organization's published team/staff page"
+  },
+  {
+   "source": "person-dan-osusky",
+   "target": "person-mari-schwartzer",
+   "type": "colleague",
+   "layer": "people",
+   "source_url": "https://theshareholdercommons.com/about/",
+   "context": "Listed together on organization's published team/staff page"
+  },
+  {
+   "source": "person-lydia-kuykendal",
+   "target": "person-mary-minette",
+   "type": "colleague",
+   "layer": "people",
+   "source_url": "https://mercyinvestmentservices.org/our-people/staff/",
+   "context": "Listed together on organization's published team/staff page"
+  },
+  {
+   "source": "person-lauren-compere",
+   "target": "person-amy-orr",
+   "type": "colleague",
+   "layer": "people",
+   "source_url": "https://bostoncommonasset.com/team",
+   "context": "Listed together on organization's published team/staff page"
+  },
+  {
+   "source": "person-rebecca-dewinter-schmitt",
+   "target": "person-stacey-cram",
+   "type": "colleague",
+   "layer": "people",
+   "source_url": "https://investorsforhumanrights.org/staff",
+   "context": "Listed together on organization's published team/staff page"
+  },
+  {
+   "source": "person-josh-zinner",
+   "target": "person-stacey-cram",
+   "type": "colleague",
+   "layer": "people",
+   "source_url": "https://www.iccr.org/our-team/",
+   "context": "Listed together on organization's published team/staff page"
+  },
+  {
+   "source": "person-michael-garland",
+   "target": "person-yumi-narita",
+   "type": "colleague",
+   "layer": "people",
+   "source_url": "https://comptroller.nyc.gov/reports/new-york-city-retirement-systems-2025-shareholder-initiatives/",
+   "context": "Listed together on organization's published team/staff page"
+  },
+  {
+   "source": "person-nick-abel",
+   "target": "person-kirsty-jenkinson",
+   "type": "colleague",
+   "layer": "people",
+   "source_url": "https://www.esgtoday.com/calstrs-appoints-nick-abel-as-director-of-sustainable-investment-and-stewardship-strategies",
+   "context": "Listed together on organization's published team/staff page"
+  },
+  {
+   "source": "person-peter-van-der-werf",
+   "target": "person-danielle-essink",
+   "type": "colleague",
+   "layer": "people",
+   "source_url": "https://www.robeco.com/en-uk/insights/2026/01/new-engagement-themes-for-2026-to-cover-climate-and-ai",
+   "context": "Listed together on organization's published team/staff page"
+  },
+  {
+   "source": "person-ethan-birchard",
+   "target": "person-maxwell-homans",
+   "type": "colleague",
+   "layer": "people",
+   "source_url": "https://friendsfiduciary.org/about-us/staff/",
+   "context": "Listed together on organization's published team/staff page"
+  },
+  {
+   "source": "person-jan-rydzak",
+   "target": "person-nicholas-sewe",
+   "type": "colleague",
+   "layer": "people",
+   "source_url": "https://www.worldbenchmarkingalliance.org/news/launch-of-the-2025-collective-impact-coalition-for-ethical-ai-progress-report/",
+   "context": "Listed together on organization's published team/staff page"
+  },
+  {
    "source": "nbim",
    "target": "co-AAPL",
    "type": "holds shares in",
@@ -2450,6 +4692,692 @@
    "layer": "policy",
    "source_url": "https://www.parnassus.com/updates/article/the_new_imperative_of_responsible_ai",
    "explanation": "Parnassus says Intuit published AI governance disclosure following its engagement."
+  },
+  {
+   "source": "msft-2023-11",
+   "target": "co-MSFT",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm"
+  },
+  {
+   "source": "msft-2023-13",
+   "target": "co-MSFT",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm"
+  },
+  {
+   "source": "arjuna-capital",
+   "target": "msft-2023-13",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm"
+  },
+  {
+   "source": "msft-2024-6",
+   "target": "co-MSFT",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
+  },
+  {
+   "source": "msft-2024-7",
+   "target": "co-MSFT",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
+  },
+  {
+   "source": "as-you-sow",
+   "target": "msft-2024-7",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
+  },
+  {
+   "source": "msft-2024-8",
+   "target": "co-MSFT",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
+  },
+  {
+   "source": "arjuna-capital",
+   "target": "msft-2024-8",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
+  },
+  {
+   "source": "msft-2024-9",
+   "target": "co-MSFT",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
+  },
+  {
+   "source": "msft-2025-6",
+   "target": "co-MSFT",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
+  },
+  {
+   "source": "msft-2025-7",
+   "target": "co-MSFT",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
+  },
+  {
+   "source": "msft-2025-8",
+   "target": "co-MSFT",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
+  },
+  {
+   "source": "msft-2025-9",
+   "target": "co-MSFT",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
+  },
+  {
+   "source": "msft-2025-10",
+   "target": "co-MSFT",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
+  },
+  {
+   "source": "as-you-sow",
+   "target": "msft-2025-10",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
+  },
+  {
+   "source": "meta-2023-5",
+   "target": "co-META",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
+  },
+  {
+   "source": "mercy-investment-services",
+   "target": "meta-2023-5",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
+  },
+  {
+   "source": "meta-2024-6",
+   "target": "co-META",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+  },
+  {
+   "source": "arjuna-capital",
+   "target": "meta-2024-6",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+  },
+  {
+   "source": "open-mic",
+   "target": "meta-2024-6",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+  },
+  {
+   "source": "meta-2024-10",
+   "target": "co-META",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+  },
+  {
+   "source": "mercy-investment-services",
+   "target": "meta-2024-10",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+  },
+  {
+   "source": "meta-2025-10",
+   "target": "co-META",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+  },
+  {
+   "source": "meta-2025-11",
+   "target": "co-META",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+  },
+  {
+   "source": "meta-2025-12",
+   "target": "co-META",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+  },
+  {
+   "source": "as-you-sow",
+   "target": "meta-2025-12",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+  },
+  {
+   "source": "meta-2026-3",
+   "target": "co-META",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+  },
+  {
+   "source": "meta-2026-9",
+   "target": "co-META",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+  },
+  {
+   "source": "as-you-sow",
+   "target": "meta-2026-9",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+  },
+  {
+   "source": "meta-2026-11",
+   "target": "co-META",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+  },
+  {
+   "source": "mercy-investment-services",
+   "target": "meta-2026-11",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+  },
+  {
+   "source": "storebrand",
+   "target": "meta-2026-11",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+  },
+  {
+   "source": "googl-2023-10",
+   "target": "co-GOOGL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+  },
+  {
+   "source": "googl-2023-11",
+   "target": "co-GOOGL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+  },
+  {
+   "source": "googl-2023-12",
+   "target": "co-GOOGL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "googl-2023-12",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+  },
+  {
+   "source": "googl-2024-11",
+   "target": "co-GOOGL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "googl-2024-11",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
+  },
+  {
+   "source": "googl-2024-12",
+   "target": "co-GOOGL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
+  },
+  {
+   "source": "arjuna-capital",
+   "target": "googl-2024-12",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
+  },
+  {
+   "source": "googl-2024-13",
+   "target": "co-GOOGL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
+  },
+  {
+   "source": "googl-2025-7",
+   "target": "co-GOOGL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "googl-2025-7",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+  },
+  {
+   "source": "googl-2025-9",
+   "target": "co-GOOGL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+  },
+  {
+   "source": "zevin-asset-management",
+   "target": "googl-2025-9",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+  },
+  {
+   "source": "googl-2025-10",
+   "target": "co-GOOGL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+  },
+  {
+   "source": "googl-2025-11",
+   "target": "co-GOOGL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+  },
+  {
+   "source": "googl-2025-12",
+   "target": "co-GOOGL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+  },
+  {
+   "source": "googl-2025-15(floor)",
+   "target": "co-GOOGL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+  },
+  {
+   "source": "googl-2026-5",
+   "target": "co-GOOGL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "googl-2026-5",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+  },
+  {
+   "source": "googl-2026-6",
+   "target": "co-GOOGL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+  },
+  {
+   "source": "googl-2026-11",
+   "target": "co-GOOGL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+  },
+  {
+   "source": "zevin-asset-management",
+   "target": "googl-2026-11",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+  },
+  {
+   "source": "googl-2026-12",
+   "target": "co-GOOGL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+  },
+  {
+   "source": "googl-2026-13",
+   "target": "co-GOOGL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+  },
+  {
+   "source": "googl-2026-14",
+   "target": "co-GOOGL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+  },
+  {
+   "source": "amzn-2023-7",
+   "target": "co-AMZN",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm"
+  },
+  {
+   "source": "amzn-2023-23",
+   "target": "co-AMZN",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm"
+  },
+  {
+   "source": "amzn-2024-6",
+   "target": "co-AMZN",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm"
+  },
+  {
+   "source": "amzn-2024-14",
+   "target": "co-AMZN",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm"
+  },
+  {
+   "source": "amzn-2024-16",
+   "target": "co-AMZN",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm"
+  },
+  {
+   "source": "amzn-2025-7",
+   "target": "co-AMZN",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm"
+  },
+  {
+   "source": "amzn-2025-8",
+   "target": "co-AMZN",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm"
+  },
+  {
+   "source": "amzn-2025-11",
+   "target": "co-AMZN",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm"
+  },
+  {
+   "source": "amzn-2026-5",
+   "target": "co-AMZN",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+  },
+  {
+   "source": "amzn-2026-floor",
+   "target": "co-AMZN",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+  },
+  {
+   "source": "aapl-2024-7",
+   "target": "co-AAPL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm"
+  },
+  {
+   "source": "aapl-2025-4",
+   "target": "co-AAPL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm"
+  },
+  {
+   "source": "aapl-2025-5",
+   "target": "co-AAPL",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm"
+  },
+  {
+   "source": "tsla-2025-7",
+   "target": "co-TSLA",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925090866/tm252289-12_def14a.htm"
+  },
+  {
+   "source": "nvda-2026-7",
+   "target": "co-NVDA",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm"
+  },
+  {
+   "source": "msft-2026-4",
+   "target": "co-MSFT",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "msft-2026-4",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+  },
+  {
+   "source": "msft-2026-5",
+   "target": "co-MSFT",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+  },
+  {
+   "source": "msft-2026-6",
+   "target": "co-MSFT",
+   "type": "proposal at",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+  },
+  {
+   "source": "azzad-asset-management",
+   "target": "msft-2026-6",
+   "type": "filed (named in proxy)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+  },
+  {
+   "source": "arjuna-capital",
+   "target": "co-MSFT",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465923014650/o117232px14a6g.htm"
+  },
+  {
+   "source": "as-you-sow",
+   "target": "co-MSFT",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465924018029/o1029241px14a6g.htm"
+  },
+  {
+   "source": "arjuna-capital",
+   "target": "co-MSFT",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465924018068/j1030243px14a6g.htm"
+  },
+  {
+   "source": "open-mic",
+   "target": "co-MSFT",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465924018068/j1030243px14a6g.htm"
+  },
+  {
+   "source": "northstar-asset-management",
+   "target": "co-MSFT",
+   "type": "exempt solicitation support",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925013664/z911251px14a6g.htm"
+  },
+  {
+   "source": "as-you-sow",
+   "target": "co-MSFT",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925016180/u1110251px14a6g.htm"
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "co-MSFT",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465926013276/y1027263px14a6g.htm"
+  },
+  {
+   "source": "azzad-asset-management",
+   "target": "co-MSFT",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465926014752/w1125263px14a6g.htm"
+  },
+  {
+   "source": "mercy-investment-services",
+   "target": "co-META",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465923006155/b428231px14a6g.htm"
+  },
+  {
+   "source": "mercy-investment-services",
+   "target": "co-META",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465924007262/b422241px14a6g.htm"
+  },
+  {
+   "source": "arjuna-capital",
+   "target": "co-META",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465924007454/o423247px14a6g.htm"
+  },
+  {
+   "source": "as-you-sow",
+   "target": "co-META",
+   "type": "exempt solicitation for (unverified wording)",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465925006514/p428257px14a6g.htm"
+  },
+  {
+   "source": "as-you-sow",
+   "target": "co-META",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465926005915/o511264px14a6g.htm"
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "co-GOOGL",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923006504/r54230px14a6g.htm"
+  },
+  {
+   "source": "arjuna-capital",
+   "target": "co-GOOGL",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924008379/o532411px14a6g.htm"
+  },
+  {
+   "source": "open-mic",
+   "target": "co-GOOGL",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924008462/o56248px14a6g.htm"
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "co-GOOGL",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924008582/e58244px14a6g.htm"
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "co-GOOGL",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006528/w429250px14a6g.htm"
+  },
+  {
+   "source": "zevin-asset-management",
+   "target": "co-GOOGL",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925007295/p59255px14a6g.htm"
+  },
+  {
+   "source": "trillium-asset-management",
+   "target": "co-GOOGL",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465926005129/o427262px14a6g.htm"
+  },
+  {
+   "source": "zevin-asset-management",
+   "target": "co-GOOGL",
+   "type": "exempt solicitation for",
+   "layer": "proposals",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465926005597/o55262px14a6g.htm"
   }
  ]
 }

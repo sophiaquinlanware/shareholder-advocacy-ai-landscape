@@ -1,0 +1,739 @@
+{
+ "people": [
+  {
+   "id": "natasha-lamb",
+   "name": "Natasha Lamb",
+   "title": "Chief Executive Officer / Chief Investment Officer / Portfolio Manager",
+   "org_name": "Arjuna Capital",
+   "org_id": "arjuna-capital",
+   "ai_focus": "Lead filer, AI misinformation proposals at Microsoft, Alphabet, Meta (2023-24)",
+   "profile_url": "https://arjuna-capital.com/natasha-lamb-mba",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "julia-cedarholm",
+   "name": "Julia Cedarholm",
+   "title": "Senior Analyst, Sustainability Research & Shareholder Engagement",
+   "org_name": "Arjuna Capital",
+   "org_id": "arjuna-capital",
+   "ai_focus": "",
+   "profile_url": "https://arjuna-capital.com/julia-cedarholm-mpa",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "andrew-behar",
+   "name": "Andrew Behar",
+   "title": "CEO",
+   "org_name": "As You Sow",
+   "org_id": "as-you-sow",
+   "ai_focus": "",
+   "profile_url": "https://www.asyousow.org/staff/andrew-behar",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "danielle-fugere",
+   "name": "Danielle Fugere",
+   "title": "President and Chief Counsel",
+   "org_name": "As You Sow",
+   "org_id": "as-you-sow",
+   "ai_focus": "Quoted on Microsoft AI-for-fossil-fuels proposal (Dec 2025 AGM)",
+   "profile_url": "https://www.asyousow.org/staff/danielle-fugere",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "jonas-kron",
+   "name": "Jonas Kron",
+   "title": "Chief Advocacy Officer",
+   "org_name": "Trillium Asset Management",
+   "org_id": "trillium-asset-management",
+   "ai_focus": "Spokesperson on Trillium AI governance proposal at Alphabet",
+   "profile_url": "https://www.trilliuminvest.com/team/jonas-kron",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "andrea-ranger",
+   "name": "Andrea Ranger",
+   "title": "Director of Shareholder Advocacy",
+   "org_name": "Trillium Asset Management",
+   "org_id": "trillium-asset-management",
+   "ai_focus": "Alphabet proposal on AI power demand vs. climate goals (2026)",
+   "profile_url": "https://www.trilliuminvest.com/team/andrea-ranger",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "audrey-mocle",
+   "name": "Audrey Mocle",
+   "title": "Executive Director",
+   "org_name": "Open MIC",
+   "org_id": "open-mic",
+   "ai_focus": "Media contact, 2026 Alphabet AI-misinformation proposal (with Vancity)",
+   "profile_url": "https://www.openmic.org/staff",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "michael-connor",
+   "name": "Michael Connor",
+   "title": "Senior Adviser and Project Director (founding Executive Director to late 2025)",
+   "org_name": "Open MIC",
+   "org_id": "open-mic",
+   "ai_focus": "Led AI misinformation proposals at Alphabet, Meta, Microsoft (2023-24)",
+   "profile_url": "https://www.openmic.org/staff",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "emma-ruby-sachs",
+   "name": "Emma Ruby-Sachs",
+   "title": "Executive Director",
+   "org_name": "Ekō",
+   "org_id": "eko",
+   "ai_focus": "",
+   "profile_url": "https://www.eko.org/about",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "christina-oconnell",
+   "name": "Christina O'Connell",
+   "title": "Senior Manager for Shareholder Engagement and Investments (role not confirmed since 2024-06)",
+   "org_name": "Ekō",
+   "org_id": "eko",
+   "ai_focus": "Co-filer voice, 2024 generative-AI proposals at Meta and Alphabet",
+   "profile_url": "https://techpolicy.press/the-role-of-shareholder-activism-in-tech-accountability",
+   "profile_source": "other",
+   "verified_date": "UNVERIFIED (last seen 2024-06)"
+  },
+  {
+   "id": "michael-passoff",
+   "name": "Michael Passoff",
+   "title": "Founder & CEO",
+   "org_name": "Proxy Impact",
+   "org_id": "proxy-impact",
+   "ai_focus": "Meta child-safety proposals citing generative-AI exploitation risk (2025-26)",
+   "profile_url": "https://www.proxyimpact.com/about",
+   "profile_source": "employer bio",
+   "verified_date": "2026-05"
+  },
+  {
+   "id": "julie-goodridge",
+   "name": "Julie N.W. Goodridge",
+   "title": "Founder & Chief Executive Officer",
+   "org_name": "NorthStar Asset Management",
+   "org_id": "northstar-asset-management",
+   "ai_focus": "",
+   "profile_url": "https://northstarasset.com/team/",
+   "profile_source": "employer bio",
+   "verified_date": "2026-08"
+  },
+  {
+   "id": "whitney-nguyen",
+   "name": "Whitney Nguyen",
+   "title": "Director of Impact Research (leads shareholder activism and corporate engagement program)",
+   "org_name": "NorthStar Asset Management",
+   "org_id": "northstar-asset-management",
+   "ai_focus": "",
+   "profile_url": "https://northstarasset.com/team/",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "dan-osusky",
+   "name": "Dan Osusky",
+   "title": "Chief Executive Officer",
+   "org_name": "The Shareholder Commons",
+   "org_id": "the-shareholder-commons",
+   "ai_focus": "",
+   "profile_url": "https://theshareholdercommons.com/about/",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "mari-schwartzer",
+   "name": "Mari Schwartzer",
+   "title": "Director of Investor Engagement",
+   "org_name": "The Shareholder Commons",
+   "org_id": "the-shareholder-commons",
+   "ai_focus": "",
+   "profile_url": "https://theshareholdercommons.com/about/",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "lydia-kuykendal",
+   "name": "Lydia Kuykendal",
+   "title": "Director of Shareholder Advocacy",
+   "org_name": "Mercy Investment Services",
+   "org_id": "mercy-investment-services",
+   "ai_focus": "Co-authored case for Alphabet AI user-data risk proposal (June 2026)",
+   "profile_url": "https://mercyinvestmentservices.org/our-people/staff/",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "mary-minette",
+   "name": "Mary Minette",
+   "title": "Senior Director of Shareholder Advocacy",
+   "org_name": "Mercy Investment Services",
+   "org_id": "mercy-investment-services",
+   "ai_focus": "",
+   "profile_url": "https://mercyinvestmentservices.org/our-people/staff/",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "mary-beth-gallagher",
+   "name": "Mary Beth Gallagher",
+   "title": "Director of Engagement",
+   "org_name": "Domini Impact Investments",
+   "org_id": "domini-impact-investments",
+   "ai_focus": "",
+   "profile_url": "https://domini.com/investing-for-impact/strategies/engagement/",
+   "profile_source": "employer bio",
+   "verified_date": "2025-07"
+  },
+  {
+   "id": "marcela-pinilla",
+   "name": "Marcela Pinilla",
+   "title": "Director of Sustainable Investing",
+   "org_name": "Zevin Asset Management",
+   "org_id": "zevin-asset-management",
+   "ai_focus": "Led 40+ investor coalition on Alphabet government AI contracts proposal (2026)",
+   "profile_url": "https://www.zevin.com/who-we-are",
+   "profile_source": "employer bio",
+   "verified_date": "2026-06"
+  },
+  {
+   "id": "lauren-compere",
+   "name": "Lauren Compere",
+   "title": "Managing Director / Head of Stewardship & Engagement",
+   "org_name": "Boston Common Asset Management",
+   "org_id": "boston-common-asset-management",
+   "ai_focus": "Firm co-leads WBA Collective Impact Coalition for Ethical AI",
+   "profile_url": "https://bostoncommonasset.com/team/lauren-compere/",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "amy-orr",
+   "name": "Amy Orr",
+   "title": "Director of US Shareholder Engagement",
+   "org_name": "Boston Common Asset Management",
+   "org_id": "boston-common-asset-management",
+   "ai_focus": "",
+   "profile_url": "https://bostoncommonasset.com/team/amy-orr/",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "marcy-mccullaugh",
+   "name": "Marcy McCullaugh",
+   "title": "Director, Sustainability Research and Director, Sustainability and Stewardship",
+   "org_name": "Parnassus Investments",
+   "org_id": "parnassus-investments",
+   "ai_focus": "",
+   "profile_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/7e134dc4-7e17-4044-bdc3-114f5895bc54/Sustainable%20Insights_Creating%20Confidence%20in%20Clean%20Products.pdf",
+   "profile_source": "other",
+   "verified_date": "2026-02"
+  },
+  {
+   "id": "marian-macindoe",
+   "name": "Marian Macindoe",
+   "title": "Managing Director (oversees corporate engagement and proxy voting; formerly Head of ESG Stewardship) (role not confirmed since 2025)",
+   "org_name": "Parnassus Investments",
+   "org_id": "parnassus-investments",
+   "ai_focus": "",
+   "profile_url": "https://greenmoney.com/?p=46104",
+   "profile_source": "other",
+   "verified_date": "UNVERIFIED (last seen 2025)"
+  },
+  {
+   "id": "michael-marks",
+   "name": "Michael Marks",
+   "title": "Head of Investment Stewardship (role not confirmed since 2024-04)",
+   "org_name": "Legal & General Investment Management (L&G Asset Management)",
+   "org_id": "legal-general-investment-management",
+   "ai_focus": "Fronted LGIM AI-governance expectations for tech companies",
+   "profile_url": "https://group.legalandgeneral.com/en/newsroom/press-releases/lgim-dials-up-engagement-on-nature-health-and-ai-in-latest-active-ownership-report",
+   "profile_source": "other",
+   "verified_date": "UNVERIFIED (last seen 2024-04)"
+  },
+  {
+   "id": "carine-smith-ihenacho",
+   "name": "Carine Smith Ihenacho",
+   "title": "Chief Governance and Compliance Officer (stepping down end-2026)",
+   "org_name": "Norges Bank Investment Management",
+   "org_id": "norges-bank-investment-management",
+   "ai_focus": "",
+   "profile_url": "https://www.nbim.no/en/about-us/leader-group/",
+   "profile_source": "employer bio",
+   "verified_date": "2026-09"
+  },
+  {
+   "id": "michael-garland",
+   "name": "Michael Garland",
+   "title": "Assistant Comptroller for Corporate Governance and Responsible Investment",
+   "org_name": "NYC Comptroller's Office (Bureau of Asset Management)",
+   "org_id": "nyc-comptrollers-office",
+   "ai_focus": "Office co-filed AI & human rights assessment proposals (Uber, Lyft) with AFL-CIO",
+   "profile_url": "https://comptroller.nyc.gov/reports/new-york-city-retirement-systems-2025-shareholder-initiatives/",
+   "profile_source": "employer bio",
+   "verified_date": "2026-06"
+  },
+  {
+   "id": "yumi-narita",
+   "name": "Yumi Narita",
+   "title": "Executive Director of Corporate Governance",
+   "org_name": "NYC Comptroller's Office (Bureau of Asset Management)",
+   "org_id": "nyc-comptrollers-office",
+   "ai_focus": "",
+   "profile_url": "https://comptroller.nyc.gov/reports/new-york-city-retirement-systems-2025-shareholder-initiatives/",
+   "profile_source": "employer bio",
+   "verified_date": "2025"
+  },
+  {
+   "id": "elizabeth-gordon",
+   "name": "Elizabeth Gordon",
+   "title": "Director, Corporate Governance",
+   "org_name": "New York State Common Retirement Fund",
+   "org_id": "new-york-state-common-retirement-fund",
+   "ai_focus": "",
+   "profile_url": "https://www.universalassetowners.com/registry/person/elizabeth-gordon/",
+   "profile_source": "other",
+   "verified_date": "2026-07"
+  },
+  {
+   "id": "brandon-rees",
+   "name": "Brandon Rees",
+   "title": "Deputy Director, Corporations and Capital Markets (role not confirmed since 2024)",
+   "org_name": "AFL-CIO Office of Investment",
+   "org_id": "afl-cio-office-of-investment",
+   "ai_focus": "AFL-CIO AI-use report proposals at Apple, Netflix, Disney (2024)",
+   "profile_url": "https://aflcio.org/author/brandon-rees",
+   "profile_source": "employer bio",
+   "verified_date": "UNVERIFIED (last seen 2024)"
+  },
+  {
+   "id": "josh-zinner",
+   "name": "Josh Zinner",
+   "title": "CEO",
+   "org_name": "ICCR (Interfaith Center on Corporate Responsibility)",
+   "org_id": "iccr",
+   "ai_focus": "Issued ICCR statement on papal AI encyclical (2026)",
+   "profile_url": "https://www.iccr.org/our-team/",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "rebecca-dewinter-schmitt",
+   "name": "Rebecca DeWinter-Schmitt",
+   "title": "Director, Investor Alliance for Human Rights",
+   "org_name": "Investor Alliance for Human Rights",
+   "org_id": "investor-alliance-for-human-rights",
+   "ai_focus": "",
+   "profile_url": "https://investorsforhumanrights.org/rebecca-dewinter-schmitt",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "stacey-cram",
+   "name": "Stacey Cram",
+   "title": "Associate Director, Investor Alliance for Human Rights",
+   "org_name": "Investor Alliance for Human Rights",
+   "org_id": "investor-alliance-for-human-rights",
+   "ai_focus": "Leads Alliance tech & human rights / Digital Rights and AI work",
+   "profile_url": "https://investorsforhumanrights.org/stacey-cram",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "jan-rydzak",
+   "name": "Jan Rydzak",
+   "title": "Digital Transformation Lead",
+   "org_name": "World Benchmarking Alliance",
+   "org_id": "world-benchmarking-alliance",
+   "ai_focus": "Collective Impact Coalition for Ethical AI",
+   "profile_url": "https://www.worldbenchmarkingalliance.org/news/launch-of-the-2025-collective-impact-coalition-for-ethical-ai-progress-report/",
+   "profile_source": "other",
+   "verified_date": "2025-12"
+  },
+  {
+   "id": "nicholas-sewe",
+   "name": "Nicholas Sewe",
+   "title": "Engagement Lead, Digital Transformation",
+   "org_name": "World Benchmarking Alliance",
+   "org_id": "world-benchmarking-alliance",
+   "ai_focus": "Facilitated 2025 Ethical AI CIC progress report launch",
+   "profile_url": "https://www.worldbenchmarkingalliance.org/news/launch-of-the-2025-collective-impact-coalition-for-ethical-ai-progress-report/",
+   "profile_source": "other",
+   "verified_date": "2025-12"
+  },
+  {
+   "id": "thomas-abrams",
+   "name": "Thomas Abrams",
+   "title": "Head of Human Rights, Social and Governance Issues",
+   "org_name": "PRI",
+   "org_id": "pri",
+   "ai_focus": "Authored PRI guidance on AI investment risks and investor action",
+   "profile_url": "https://www.unpri.org/blog?id=ai-investment-risks-and-opportunities-what-investors-can-do-now",
+   "profile_source": "employer bio",
+   "verified_date": "2026"
+  },
+  {
+   "id": "peter-cashion",
+   "name": "Peter Cashion",
+   "title": "Managing Investment Director, Sustainable Investments",
+   "org_name": "CalPERS",
+   "org_id": "calpers",
+   "ai_focus": "",
+   "profile_url": "https://www.calpers.ca.gov/investments/about-investment-office/investment-office-senior-team/peter-cashion",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "charles-hambly",
+   "name": "Charles Hambly",
+   "title": "Investment Director, Global Public Equity (presents proxy voting & corporate engagement)",
+   "org_name": "CalPERS",
+   "org_id": "calpers",
+   "ai_focus": "",
+   "profile_url": "https://www.calpers.ca.gov/documents/202603-invest-agenda-item03c-00-a-mar17/download",
+   "profile_source": "other",
+   "verified_date": "2026-03"
+  },
+  {
+   "id": "nick-abel",
+   "name": "Nick Abel",
+   "title": "Director of Sustainable Investment and Stewardship Strategies",
+   "org_name": "CalSTRS",
+   "org_id": "calstrs",
+   "ai_focus": "",
+   "profile_url": "https://www.esgtoday.com/calstrs-appoints-nick-abel-as-director-of-sustainable-investment-and-stewardship-strategies",
+   "profile_source": "other",
+   "verified_date": "2025-12"
+  },
+  {
+   "id": "kirsty-jenkinson",
+   "name": "Kirsty Jenkinson",
+   "title": "Senior Investment Director, Private Markets and Sustainable Investment & Stewardship Strategies",
+   "org_name": "CalSTRS",
+   "org_id": "calstrs",
+   "ai_focus": "",
+   "profile_url": "https://www.ai-cio.com/news/calstrs-names-senior-investment-director-for-private-markets-sustainable-investments-stewardship/",
+   "profile_source": "other",
+   "verified_date": "2025-08"
+  },
+  {
+   "id": "bruce-duguid",
+   "name": "Bruce Duguid",
+   "title": "Director, Head of Stewardship, EOS",
+   "org_name": "Federated Hermes EOS",
+   "org_id": "federated-hermes-eos",
+   "ai_focus": "",
+   "profile_url": "https://www.hermes-investment.com/uk/en/intermediary/eos-stewardship/eos-team/",
+   "profile_source": "employer bio",
+   "verified_date": "2025"
+  },
+  {
+   "id": "leon-kamhi",
+   "name": "Leon Kamhi",
+   "title": "Chair of EOS and Head of Responsibility, Federated Hermes Limited",
+   "org_name": "Federated Hermes EOS",
+   "org_id": "federated-hermes-eos",
+   "ai_focus": "",
+   "profile_url": "https://www.hermes-investment.com/uploads/2026/05/bce7e29721dd9ac0119058bc65fca144/eos-corporate-policy-context-disclosure-2025.pdf",
+   "profile_source": "other",
+   "verified_date": "2026-04"
+  },
+  {
+   "id": "kamil-zabielski",
+   "name": "Kamil Zabielski",
+   "title": "Head of Sustainable Investments",
+   "org_name": "Storebrand Asset Management",
+   "org_id": "storebrand",
+   "ai_focus": "Publicly backed 2026 Alphabet AI human-rights / government contracts proposal",
+   "profile_url": "https://www.storebrand.com/sam/uk/asset-management/sustainability/core-teams",
+   "profile_source": "employer bio",
+   "verified_date": "2026-06"
+  },
+  {
+   "id": "benjamin-chekroun",
+   "name": "Benjamin Chekroun",
+   "title": "Engagement Lead (Lead Engagement Analyst)",
+   "org_name": "Candriam",
+   "org_id": "candriam",
+   "ai_focus": "Candriam co-leads WBA Ethical AI coalition; writes on AI governance",
+   "profile_url": "https://www.candriam.com/nl-be/professional/insights/topics/esg/why-we-cant-ignore-ai-governance/",
+   "profile_source": "employer bio",
+   "verified_date": "2026-09"
+  },
+  {
+   "id": "richard-butters",
+   "name": "Richard Butters",
+   "title": "Head of Stewardship (role not confirmed since undated bio page)",
+   "org_name": "Aviva Investors",
+   "org_id": "aviva-investors",
+   "ai_focus": "",
+   "profile_url": "https://www.avivainvestors.com/en-gb/about/our-people/r/richard-butters/",
+   "profile_source": "employer bio",
+   "verified_date": "UNVERIFIED (undated bio page)"
+  },
+  {
+   "id": "natasha-landell-mills",
+   "name": "Natasha Landell-Mills",
+   "title": "Partner, Head of Stewardship",
+   "org_name": "Sarasin & Partners",
+   "org_id": "sarasin-partners",
+   "ai_focus": "",
+   "profile_url": "https://sarasinandpartners.com/stewardship/",
+   "profile_source": "employer bio",
+   "verified_date": "2026-04"
+  },
+  {
+   "id": "peter-van-der-werf",
+   "name": "Peter van der Werf",
+   "title": "Head of Active Ownership",
+   "org_name": "Robeco",
+   "org_id": "robeco",
+   "ai_focus": "Announced 2026 responsible-AI engagement theme",
+   "profile_url": "https://www.robeco.com/en-uk/insights/2026/01/new-engagement-themes-for-2026-to-cover-climate-and-ai",
+   "profile_source": "employer bio",
+   "verified_date": "2026-01"
+  },
+  {
+   "id": "danielle-essink",
+   "name": "Danielle Essink",
+   "title": "Social Engagement Cluster Lead",
+   "org_name": "Robeco",
+   "org_id": "robeco",
+   "ai_focus": "Leads Robeco's 2026 responsible-use-of-AI engagement theme",
+   "profile_url": "https://www.robeco.com/en-uk/insights/2026/01/new-engagement-themes-for-2026-to-cover-climate-and-ai",
+   "profile_source": "employer bio",
+   "verified_date": "2026-01"
+  },
+  {
+   "id": "john-wilson",
+   "name": "John Wilson",
+   "title": "Executive Director, Corporate Engagement",
+   "org_name": "Calvert Research and Management",
+   "org_id": "calvert-research-and-management",
+   "ai_focus": "",
+   "profile_url": "https://www.eatonvance.com/insights/press-release/calvert-research-and-management-presents-its-2025-stewardship-report.html",
+   "profile_source": "employer bio",
+   "verified_date": "2026-07"
+  },
+  {
+   "id": "kristin-hull",
+   "name": "Kristin Hull",
+   "title": "Founder, CEO and CIO (role not confirmed since pre-2025)",
+   "org_name": "Nia Impact Capital",
+   "org_id": "nia-impact-capital",
+   "ai_focus": "",
+   "profile_url": "https://www.morningstar.com/sustainable-investing/proxy-stalwart-new-way-address-racial-inequity-through-investing",
+   "profile_source": "other",
+   "verified_date": "UNVERIFIED (last seen pre-2025)"
+  },
+  {
+   "id": "ethan-birchard",
+   "name": "Ethan Birchard",
+   "title": "Executive Director",
+   "org_name": "Friends Fiduciary",
+   "org_id": "friends-fiduciary",
+   "ai_focus": "",
+   "profile_url": "https://friendsfiduciary.org/about-us/staff/",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "maxwell-homans",
+   "name": "Maxwell Homans",
+   "title": "Shareholder Advocate",
+   "org_name": "Friends Fiduciary",
+   "org_id": "friends-fiduciary",
+   "ai_focus": "",
+   "profile_url": "https://friendsfiduciary.org/about-us/staff/",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11"
+  },
+  {
+   "id": "joshua-brockwell",
+   "name": "Joshua Brockwell",
+   "title": "Director of Investment Communications",
+   "org_name": "Azzad Asset Management",
+   "org_id": "azzad-asset-management",
+   "ai_focus": "Backed Zevin-led 2026 Alphabet government AI contracts proposal",
+   "profile_url": "https://fortune.com/2026/06/04/worlds-largest-sovereign-wealth-fund-backs-push-for-google-oversight-on-government-ai-contracts/",
+   "profile_source": "other",
+   "verified_date": "2026-06"
+  }
+ ],
+ "relations": [
+  {
+   "from": "marcela-pinilla",
+   "to": "lydia-kuykendal",
+   "type": "co-authored",
+   "context": "Co-authored June 2026 ImpactAlpha piece on Alphabet AI user-data risk proposal",
+   "source_url": "https://impactalpha.com/googles-business-is-now-dependent-on-ai-were-asking-the-board-to-report-on-the-risks/"
+  },
+  {
+   "from": "kamil-zabielski",
+   "to": "zevin-asset-management",
+   "type": "coalition role",
+   "context": "Storebrand backed Zevin-led 2026 Alphabet AI government contracts proposal",
+   "source_url": "https://fortune.com/2026/06/04/worlds-largest-sovereign-wealth-fund-backs-push-for-google-oversight-on-government-ai-contracts/"
+  },
+  {
+   "from": "joshua-brockwell",
+   "to": "zevin-asset-management",
+   "type": "coalition role",
+   "context": "Azzad backed Zevin-led 2026 Alphabet AI government contracts proposal",
+   "source_url": "https://fortune.com/2026/06/04/worlds-largest-sovereign-wealth-fund-backs-push-for-google-oversight-on-government-ai-contracts/"
+  },
+  {
+   "from": "andrew-behar",
+   "to": "proxy-impact",
+   "type": "coalition role",
+   "context": "Serves on Proxy Impact Advisory Board",
+   "source_url": "https://www.proxyimpact.com/about"
+  },
+  {
+   "from": "audrey-mocle",
+   "to": "vancity-investment-management",
+   "type": "coalition role",
+   "context": "Open MIC supported Vancity's 2026 Alphabet AI-misinformation proposal; she was media contact",
+   "source_url": "https://www.openmic.org/news/ai-and-misinformation-shareholders-press-alphabet-for-third-party-assessment-of-material-risks"
+  },
+  {
+   "from": "benjamin-chekroun",
+   "to": "world-benchmarking-alliance",
+   "type": "coalition role",
+   "context": "Candriam co-leads WBA Collective Impact Coalition for Ethical AI",
+   "source_url": "https://www.candriam.com/nl-be/professional/insights/topics/esg/why-we-cant-ignore-ai-governance/"
+  },
+  {
+   "from": "lauren-compere",
+   "to": "world-benchmarking-alliance",
+   "type": "coalition role",
+   "context": "Boston Common co-leads WBA Ethical AI coalition (firm-level role)",
+   "source_url": "https://www.worldbenchmarkingalliance.org/latest/wba-wins-recognition-pri-awards-2025"
+  },
+  {
+   "from": "benjamin-chekroun",
+   "to": "nicholas-sewe",
+   "type": "co-presented",
+   "context": "Speaker and facilitator, WBA Ethical AI CIC 2025 progress report launch",
+   "source_url": "https://www.worldbenchmarkingalliance.org/news/launch-of-the-2025-collective-impact-coalition-for-ethical-ai-progress-report/"
+  },
+  {
+   "from": "natasha-lamb",
+   "to": "julia-cedarholm",
+   "type": "colleague",
+   "context": "Listed together on organization's published team/staff page",
+   "source_url": "https://arjuna-capital.com/team/"
+  },
+  {
+   "from": "andrew-behar",
+   "to": "danielle-fugere",
+   "type": "colleague",
+   "context": "Listed together on organization's published team/staff page",
+   "source_url": "https://www.asyousow.org/about-us/staff/program-staff"
+  },
+  {
+   "from": "jonas-kron",
+   "to": "andrea-ranger",
+   "type": "colleague",
+   "context": "Listed together on organization's published team/staff page",
+   "source_url": "https://www.trilliuminvest.com/team"
+  },
+  {
+   "from": "audrey-mocle",
+   "to": "michael-connor",
+   "type": "colleague",
+   "context": "Listed together on organization's published team/staff page",
+   "source_url": "https://www.openmic.org/staff"
+  },
+  {
+   "from": "julie-goodridge",
+   "to": "whitney-nguyen",
+   "type": "colleague",
+   "context": "Listed together on organization's published team/staff page",
+   "source_url": "https://northstarasset.com/team/"
+  },
+  {
+   "from": "dan-osusky",
+   "to": "mari-schwartzer",
+   "type": "colleague",
+   "context": "Listed together on organization's published team/staff page",
+   "source_url": "https://theshareholdercommons.com/about/"
+  },
+  {
+   "from": "lydia-kuykendal",
+   "to": "mary-minette",
+   "type": "colleague",
+   "context": "Listed together on organization's published team/staff page",
+   "source_url": "https://mercyinvestmentservices.org/our-people/staff/"
+  },
+  {
+   "from": "lauren-compere",
+   "to": "amy-orr",
+   "type": "colleague",
+   "context": "Listed together on organization's published team/staff page",
+   "source_url": "https://bostoncommonasset.com/team"
+  },
+  {
+   "from": "rebecca-dewinter-schmitt",
+   "to": "stacey-cram",
+   "type": "colleague",
+   "context": "Listed together on organization's published team/staff page",
+   "source_url": "https://investorsforhumanrights.org/staff"
+  },
+  {
+   "from": "josh-zinner",
+   "to": "stacey-cram",
+   "type": "colleague",
+   "context": "Listed together on organization's published team/staff page",
+   "source_url": "https://www.iccr.org/our-team/"
+  },
+  {
+   "from": "michael-garland",
+   "to": "yumi-narita",
+   "type": "colleague",
+   "context": "Listed together on organization's published team/staff page",
+   "source_url": "https://comptroller.nyc.gov/reports/new-york-city-retirement-systems-2025-shareholder-initiatives/"
+  },
+  {
+   "from": "nick-abel",
+   "to": "kirsty-jenkinson",
+   "type": "colleague",
+   "context": "Listed together on organization's published team/staff page",
+   "source_url": "https://www.esgtoday.com/calstrs-appoints-nick-abel-as-director-of-sustainable-investment-and-stewardship-strategies"
+  },
+  {
+   "from": "peter-van-der-werf",
+   "to": "danielle-essink",
+   "type": "colleague",
+   "context": "Listed together on organization's published team/staff page",
+   "source_url": "https://www.robeco.com/en-uk/insights/2026/01/new-engagement-themes-for-2026-to-cover-climate-and-ai"
+  },
+  {
+   "from": "ethan-birchard",
+   "to": "maxwell-homans",
+   "type": "colleague",
+   "context": "Listed together on organization's published team/staff page",
+   "source_url": "https://friendsfiduciary.org/about-us/staff/"
+  },
+  {
+   "from": "jan-rydzak",
+   "to": "nicholas-sewe",
+   "type": "colleague",
+   "context": "Listed together on organization's published team/staff page",
+   "source_url": "https://www.worldbenchmarkingalliance.org/news/launch-of-the-2025-collective-impact-coalition-for-ethical-ai-progress-report/"
+  }
+ ]
+}

@@ -2,7 +2,7 @@
 // Every fact on the page comes from a data file, and every data file row carries its source link.
 
 const DATA = {};
-const FILES = ["site", "companies", "upcoming", "voting_paths", "network", "people", "pathways", "changes", "tracking", "proposals", "causality"];
+const FILES = ["site", "companies", "upcoming", "voting_paths", "network", "people", "pathways", "changes", "tracking", "proposals", "causality", "graph"];
 
 // People tab: heads of engagement, grouped by organization. Public professional info only.
 function renderPeople() {
@@ -273,7 +273,7 @@ async function main() {
   renderWhy();
   renderRights();
   renderWeighIn();
-  window.renderNetwork(DATA.network, (DATA.people || {}).people);
+  window.renderNetwork(DATA.graph && DATA.graph.nodes ? DATA.graph : DATA.network, (DATA.people || {}).people);
   renderPeople();
   window.renderPathways(DATA.pathways, DATA.network);
   renderNew();
