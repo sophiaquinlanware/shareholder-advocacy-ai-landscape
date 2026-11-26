@@ -155,7 +155,7 @@
     const legend = Object.keys(LINK_VAR).map((k) => `<span class="leg static"><svg class="mark" viewBox="0 0 24 12" aria-hidden="true"><line x1="0" y1="6" x2="24" y2="6" stroke="${cssVar("--cz-link")}" stroke-width="2"${LINK_DASH[k] ? ` stroke-dasharray="${LINK_DASH[k]}"` : ""}></line></svg>${esc(k)}</span>`).join("");
     el.innerHTML = `
       <h2>Causality map</h2>
-      <p class="intro">${C.events.length} dated events in ${LANES.length} lanes, ${fmt(d3min(C.events))} to ${fmt(d3max(C.events))}, with ${C.links.length} sourced links between them.</p>
+      <p class="intro">What changed in the rules and laws around AI and shareholder proposals, and what led to what. Select an event to trace its causes and effects. ${C.events.length} dated events, ${fmt(d3min(C.events))} to ${fmt(d3max(C.events))}, with ${C.links.length} sourced links.</p>
       <div class="net-controls">
         <div class="seg" role="group" aria-label="Trace">
           <button type="button" data-mode="both" aria-pressed="true">Causes and effects</button>
@@ -168,8 +168,10 @@
       <div class="net-legend">${legend}</div>
       <div class="cz-scroll"><div id="cz-graph" class="cz-graph"></div></div>
       <aside id="cz-panel" class="net-panel cz-panel" aria-live="polite"></aside>
-      <h3 class="sub-h">Events</h3>
-      <div class="table-wrap">${eventTable()}</div>`;
+      <details class="cz-list">
+        <summary>List view: the same ${C.events.length} events as text</summary>
+        <div class="table-wrap">${eventTable()}</div>
+      </details>`;
     el.querySelectorAll("[data-show-ev]").forEach((b) => b.addEventListener("click", () => {
       select(b.dataset.showEv);
       document.getElementById("cz-graph").scrollIntoView({ block: "center" });

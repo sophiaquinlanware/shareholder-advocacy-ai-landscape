@@ -559,15 +559,6 @@ function renderNew() {
     ${groups ? `<ul class="timeline">${groups}</ul>` : `<p class="status-note">Nothing flagged yet.</p>`}`;
 }
 
-// ---------- Policy timeline (shown at the top of the Causality tab) ----------
-function policyTimeline() {
-  const s = DATA.site || {};
-  const items = (s.why_now || []).map((e) => `
-    <li><div class="date">${esc(e.date_label)}</div>
-      <div>${esc(e.text)}${srcList(e.sources)}</div></li>`).join("");
-  return items ? `<h2>Policy timeline</h2><ul class="timeline">${items}</ul>` : "";
-}
-
 // ---------- Tabs (WAI-ARIA tabs pattern: arrow keys, Home/End, roving tabindex) ----------
 // Old links keep working: tabs that were renamed or folded into another tab.
 const TAB_ALIASES = { why: "causality", "weigh-in": "upcoming", water: "upcoming", new: "new" };
@@ -657,7 +648,6 @@ async function main() {
   window.renderNetwork(DATA.graph && DATA.graph.nodes ? DATA.graph : DATA.network, (DATA.people || {}).people);
   window.renderPathways(DATA.pathways, DATA.graph && DATA.graph.nodes ? DATA.graph : DATA.network);
   window.renderCausality(DATA.causality);
-  document.getElementById("tab-causality").insertAdjacentHTML("afterbegin", policyTimeline());
   window.renderScorecard(DATA.scorecard);
   window.renderVotes(DATA.fund_votes, DATA.proposals);
   renderPeople();

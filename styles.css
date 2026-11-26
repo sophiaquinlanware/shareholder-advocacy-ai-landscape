@@ -329,3 +329,8 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
 /* Lab pathways reuses the network box but stays on the white page with blue marks: only the co-filer network
    has the dark canvas (owner, 2026-11-26: "You can't read this text"). */
 .net-graph.pw-graph { background: var(--surface); border-color: var(--line); }
+
+/* Policy and causality: the map is the view; its text equivalent is one collapsed list (owner, 2026-11-26:
+   "i dont want redundant information ... my favorite is the visual"). */
+.cz-list { margin: 12px 0 0; }
+.cz-list > summary { cursor: pointer; font-weight: 600; font-size: 14px; padding: 6px 0; }
