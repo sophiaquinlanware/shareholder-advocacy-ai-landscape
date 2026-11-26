@@ -1,0 +1,139 @@
+{
+ "about": "Tiers of the AI value chain as this site classifies them. Each company has one primary tier (its main AI role, field 'tier' in companies.json and graph.json) and may sit in others ('tiers'). The classification is this site's reading of the sources behind each company's 'why included' entry, not a claim by the companies.",
+ "tiers": [
+  {
+   "id": "chips",
+   "label": "Chip builders",
+   "order": 1,
+   "what_it_is": "Design, make or package the chips, memory and networking that AI runs on.",
+   "companies": [
+    "alphabet",
+    "amazon",
+    "nvidia",
+    "cisco-systems",
+    "huawei-technologies",
+    "arm-holdings",
+    "amd",
+    "broadcom",
+    "tsmc",
+    "samsung-electronics",
+    "sk-hynix"
+   ]
+  },
+  {
+   "id": "datacenters",
+   "label": "Data centers and power",
+   "order": 2,
+   "what_it_is": "Own or power the buildings where AI computing runs.",
+   "companies": [
+    "meta-platforms",
+    "tesla",
+    "spacex",
+    "oracle",
+    "digital-realty-trust",
+    "southern-company"
+   ]
+  },
+  {
+   "id": "compute",
+   "label": "Hyperscalers and AI clouds",
+   "order": 3,
+   "what_it_is": "Rent out AI computing at scale and often fund or host frontier labs.",
+   "companies": [
+    "microsoft",
+    "alphabet",
+    "amazon",
+    "g42",
+    "alibaba-group",
+    "oracle",
+    "coreweave",
+    "nebius-group"
+   ]
+  },
+  {
+   "id": "labs",
+   "label": "Frontier AI labs",
+   "order": 4,
+   "what_it_is": "Train general-purpose AI models.",
+   "companies": [
+    "alphabet",
+    "meta-platforms",
+    "anthropic",
+    "spacex",
+    "openai",
+    "mistral-ai",
+    "cohere",
+    "g42",
+    "inflection-ai",
+    "magic",
+    "minimax",
+    "zhipu-ai",
+    "01-ai",
+    "deepseek",
+    "aleph-alpha",
+    "black-forest-labs",
+    "reflection-ai",
+    "writer",
+    "ibm",
+    "servicenow",
+    "alibaba-group",
+    "tencent-holdings",
+    "samsung-electronics"
+   ]
+  },
+  {
+   "id": "capital",
+   "label": "Strategic investors",
+   "order": 5,
+   "what_it_is": "Hold large stakes in frontier labs or AI infrastructure.",
+   "companies": [
+    "microsoft",
+    "alphabet",
+    "amazon",
+    "nvidia",
+    "tesla",
+    "softbank-group"
+   ]
+  },
+  {
+   "id": "deployers",
+   "label": "AI deployers",
+   "order": 6,
+   "what_it_is": "Build AI into products that businesses, governments or consumers use.",
+   "companies": [
+    "microsoft",
+    "alphabet",
+    "meta-platforms",
+    "amazon",
+    "apple",
+    "tesla",
+    "naver",
+    "beijing-volcano-engine-technology",
+    "stability-ai",
+    "scale-ai",
+    "ibm",
+    "salesforce",
+    "adobe",
+    "intuit",
+    "verisk-analytics",
+    "workday",
+    "servicenow",
+    "palantir-technologies",
+    "axon-enterprise",
+    "motorola-solutions",
+    "thales",
+    "beijing-baidu-network-technology",
+    "alibaba-group",
+    "tencent-holdings",
+    "shanghai-sensetime-intelligent-technology",
+    "netflix",
+    "warner-bros-discovery",
+    "walt-disney",
+    "comcast",
+    "samsung-electronics"
+   ]
+  }
+ ],
+ "ties": [],
+ "per_tier": {}
+}

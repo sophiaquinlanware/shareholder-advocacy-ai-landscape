@@ -1,438 +1,2234 @@
 [
-  {
-    "ticker": "MSFT",
-    "name": "Microsoft",
-    "route_status": "open",
-    "route_status_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
-    "state": {
-      "text": "Washington",
-      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
-    },
-    "bylaw": {
-      "text": "Any shareholder of record can bring a proposal to the meeting with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
-      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525154103/d84624dex32.htm"
-    },
-    "threshold": {
-      "text": "None beyond being a shareholder of record",
-      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525154103/d84624dex32.htm"
-    },
-    "control": {
-      "text": "One class of stock. No controlling holder; Vanguard (7.5%) and BlackRock (7.3%) are the largest.",
-      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
-    },
-    "director_voting": {
-      "text": "Majority voting: a director who gets more votes against than for must offer to resign.",
-      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525154103/d84624dex32.htm"
-    },
-    "levers": [
-      {
-        "text": "Votes against directors who oversee AI risk",
-        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525154103/d84624dex32.htm"
-      },
-      {
-        "text": "Exempt solicitations to other shareholders (form PX14A6G)",
-        "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
-      },
-      {
-        "text": "Floor proposals by advance notice under the bylaws",
-        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525154103/d84624dex32.htm"
-      }
-    ],
-    "matrix": {
-      "Proposals if Rule 14a-8 ends": {
-        "level": "open",
-        "label": "Open",
-        "note": "Floor proposals by notice; no stake minimum",
-        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525154103/d84624dex32.htm"
-      },
-      "Votes against directors": {
-        "level": "open",
-        "label": "Meaningful",
-        "note": "Majority voting, no controller",
-        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525154103/d84624dex32.htm"
-      },
-      "Voting control": {
-        "level": "open",
-        "label": "Dispersed",
-        "note": "No holder above 10%",
-        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
-      }
-    }
+ {
+  "ticker": "MSFT",
+  "name": "Microsoft",
+  "route_status": "open",
+  "route_status_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
+  "state": {
+   "text": "Washington",
+   "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
   },
-  {
-    "ticker": "GOOGL",
-    "name": "Alphabet",
-    "route_status": "narrowing",
-    "route_status_reason": "The notice route stays open, but Page and Brin hold about 52.7% of the vote, so no proposal or director vote can pass without them.",
-    "state": {
-      "text": "Delaware",
-      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm"
-    },
-    "bylaw": {
-      "text": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204422000085/googexhibit302.htm"
-    },
-    "threshold": {
-      "text": "None beyond being a shareholder of record",
-      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204422000085/googexhibit302.htm"
-    },
-    "control": {
-      "text": "Class B shares carry 10 votes each. Page and Brin together hold about 52.7% of voting power.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
-    },
-    "director_voting": {
-      "text": "Majority voting on paper, but the founders' votes decide the outcome.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
-    },
-    "levers": [
-      {
-        "text": "Votes against directors who oversee AI risk",
-        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
-      },
-      {
-        "text": "Exempt solicitations to other shareholders (form PX14A6G)",
-        "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
-      },
-      {
-        "text": "Floor proposals by advance notice under the bylaws",
-        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204422000085/googexhibit302.htm"
-      }
-    ],
-    "matrix": {
-      "Proposals if Rule 14a-8 ends": {
-        "level": "open",
-        "label": "Open",
-        "note": "Floor proposals by notice; no stake minimum",
-        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204422000085/googexhibit302.htm"
-      },
-      "Votes against directors": {
-        "level": "narrowing",
-        "label": "Symbolic",
-        "note": "Founders control the result",
-        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
-      },
-      "Voting control": {
-        "level": "closed",
-        "label": "Founder control",
-        "note": "~52.7% of votes with Page and Brin",
-        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
-      }
-    }
+  "bylaw": {
+   "text": "Any shareholder of record can bring a proposal to the meeting with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+   "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525154103/d84624dex32.htm"
   },
-  {
-    "ticker": "META",
-    "name": "Meta",
-    "route_status": "narrowing",
-    "route_status_reason": "The notice route stays open, but Zuckerberg holds 60.8% of the vote and directors are elected by plurality, so outside votes signal views without deciding outcomes.",
-    "state": {
-      "text": "Delaware",
-      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
-    },
-    "bylaw": {
-      "text": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000072/a2024910-exhibit31.htm"
-    },
-    "threshold": {
-      "text": "None beyond being a shareholder of record",
-      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000072/a2024910-exhibit31.htm"
-    },
-    "control": {
-      "text": "Class B shares carry 10 votes each. Zuckerberg holds 60.8% of voting power, and Meta is a 'controlled company' under Nasdaq rules. A new non-voting share class takes effect January 19, 2027.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
-    },
-    "director_voting": {
-      "text": "Plurality voting: a director wins with any votes for, so votes against do not unseat anyone.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
-    },
-    "levers": [
-      {
-        "text": "Votes against directors who oversee AI risk",
-        "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
-      },
-      {
-        "text": "Exempt solicitations to other shareholders (form PX14A6G)",
-        "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
-      },
-      {
-        "text": "Floor proposals by advance notice under the bylaws",
-        "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000072/a2024910-exhibit31.htm"
-      }
-    ],
-    "matrix": {
-      "Proposals if Rule 14a-8 ends": {
-        "level": "open",
-        "label": "Open",
-        "note": "Floor proposals by notice; no stake minimum",
-        "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000072/a2024910-exhibit31.htm"
-      },
-      "Votes against directors": {
-        "level": "closed",
-        "label": "Plurality",
-        "note": "Votes against cannot unseat directors",
-        "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
-      },
-      "Voting control": {
-        "level": "closed",
-        "label": "Founder control",
-        "note": "60.8% of votes with Zuckerberg",
-        "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
-      }
-    },
-    "notes": [
-      {
-        "text": "A restated charter approved by written consent creates non-voting Class C stock, effective January 19, 2027. Meta stays in Delaware.",
-        "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026068935/meta-20261102.htm"
-      }
-    ]
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525154103/d84624dex32.htm"
   },
-  {
-    "ticker": "AMZN",
-    "name": "Amazon",
-    "route_status": "open",
-    "route_status_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
-    "state": {
-      "text": "Delaware",
-      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm"
-    },
-    "bylaw": {
-      "text": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake. (The 3% for 3 years proxy access rule covers director nominations only.)",
-      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057026/tm2413032d1_ex3-2.htm"
-    },
-    "threshold": {
-      "text": "None beyond being a shareholder of record",
-      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057026/tm2413032d1_ex3-2.htm"
-    },
-    "control": {
-      "text": "One class of stock. Bezos holds 8.8%; no controlling holder.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
-    },
-    "director_voting": {
-      "text": "Majority voting for directors.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057026/tm2413032d1_ex3-2.htm"
-    },
-    "levers": [
-      {
-        "text": "Votes against directors who oversee AI risk",
-        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057026/tm2413032d1_ex3-2.htm"
-      },
-      {
-        "text": "Exempt solicitations to other shareholders (form PX14A6G)",
-        "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
-      },
-      {
-        "text": "Floor proposals by advance notice under the bylaws",
-        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057026/tm2413032d1_ex3-2.htm"
-      }
-    ],
-    "matrix": {
-      "Proposals if Rule 14a-8 ends": {
-        "level": "open",
-        "label": "Open",
-        "note": "Floor proposals by notice; no stake minimum",
-        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057026/tm2413032d1_ex3-2.htm"
-      },
-      "Votes against directors": {
-        "level": "open",
-        "label": "Meaningful",
-        "note": "Majority voting, no controller",
-        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057026/tm2413032d1_ex3-2.htm"
-      },
-      "Voting control": {
-        "level": "open",
-        "label": "Dispersed",
-        "note": "Largest holder 8.8%",
-        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
-      }
-    }
+  "control": {
+   "text": "One class of stock. No controlling holder; Vanguard (7.5%) and BlackRock (7.3%) are the largest.",
+   "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
   },
-  {
-    "ticker": "NVDA",
-    "name": "Nvidia",
-    "route_status": "open",
-    "route_status_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
-    "state": {
-      "text": "Delaware",
-      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
-    },
-    "bylaw": {
-      "text": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm"
-    },
-    "threshold": {
-      "text": "None beyond being a shareholder of record",
-      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm"
-    },
-    "control": {
-      "text": "One class of stock. Huang holds 3.6%; BlackRock (7.4%) and Vanguard (7.3%) are the largest holders.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm"
-    },
-    "director_voting": {
-      "text": "Majority voting for directors.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm"
-    },
-    "levers": [
-      {
-        "text": "Votes against directors who oversee AI risk",
-        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm"
-      },
-      {
-        "text": "Exempt solicitations to other shareholders (form PX14A6G)",
-        "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
-      },
-      {
-        "text": "Floor proposals by advance notice under the bylaws",
-        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm"
-      }
-    ],
-    "matrix": {
-      "Proposals if Rule 14a-8 ends": {
-        "level": "open",
-        "label": "Open",
-        "note": "Floor proposals by notice; no stake minimum",
-        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm"
-      },
-      "Votes against directors": {
-        "level": "open",
-        "label": "Meaningful",
-        "note": "Majority voting, no controller",
-        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm"
-      },
-      "Voting control": {
-        "level": "open",
-        "label": "Dispersed",
-        "note": "No holder above 10%",
-        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm"
-      }
-    }
+  "director_voting": {
+   "text": "Majority voting: a director who gets more votes against than for must offer to resign.",
+   "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525154103/d84624dex32.htm"
   },
-  {
-    "ticker": "AAPL",
-    "name": "Apple",
-    "route_status": "open",
-    "route_status_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
-    "state": {
-      "text": "California",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
-    },
-    "bylaw": {
-      "text": "A shareholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake. (The 3% for 3 years proxy access rule covers director nominations only.)",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_ex3-2.htm"
-    },
-    "threshold": {
-      "text": "None beyond being a shareholder of record",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_ex3-2.htm"
-    },
-    "control": {
-      "text": "One class of stock. Vanguard (9.6%) and BlackRock (7.1%) are the largest holders.",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm"
-    },
-    "director_voting": {
-      "text": "Majority voting in uncontested director elections.",
-      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_ex3-2.htm"
-    },
-    "levers": [
-      {
-        "text": "Votes against directors who oversee AI risk",
-        "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_ex3-2.htm"
-      },
-      {
-        "text": "Exempt solicitations to other shareholders (form PX14A6G)",
-        "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
-      },
-      {
-        "text": "Floor proposals by advance notice under the bylaws",
-        "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_ex3-2.htm"
-      }
-    ],
-    "matrix": {
-      "Proposals if Rule 14a-8 ends": {
-        "level": "open",
-        "label": "Open",
-        "note": "Floor proposals by notice; no stake minimum",
-        "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_ex3-2.htm"
-      },
-      "Votes against directors": {
-        "level": "open",
-        "label": "Meaningful",
-        "note": "Majority voting, no controller",
-        "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_ex3-2.htm"
-      },
-      "Voting control": {
-        "level": "open",
-        "label": "Dispersed",
-        "note": "No holder above 10%",
-        "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm"
-      }
-    }
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525154103/d84624dex32.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525154103/d84624dex32.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525154103/d84624dex32.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525154103/d84624dex32.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "No holder above 10%",
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+   }
   },
-  {
-    "ticker": "TSLA",
-    "name": "Tesla",
-    "route_status": "narrowing",
-    "route_status_reason": "Tesla has not adopted the Texas ownership threshold, but its board could adopt one without a shareholder vote. A 2025 proposal to require shareholder approval for that failed narrowly. The notice window is short and the board is classified.",
-    "state": {
-      "text": "Texas",
-      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"
-    },
-    "bylaw": {
-      "text": "A shareholder of record can bring a proposal with notice 45 to 75 days before the anniversary of the date last year's proxy was mailed, a shorter and earlier window than most. No minimum stake for proposals today.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925050072/tm2515421d1_ex3-1.htm"
-    },
-    "threshold": {
-      "text": "None today. Tesla's 2025 proxy says the board has not adopted the Texas Section 21.373 threshold.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925090866/tm252289-12_def14a.htm"
-    },
-    "control": {
-      "text": "One class of stock. Musk holds 19.8% beneficially.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm"
-    },
-    "director_voting": {
-      "text": "Majority of shares present elects directors, but the board is classified, so only a third stand for election each year.",
-      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm"
-    },
-    "levers": [
-      {
-        "text": "Votes against directors who oversee AI risk",
-        "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm"
-      },
-      {
-        "text": "Exempt solicitations to other shareholders (form PX14A6G)",
-        "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
-      },
-      {
-        "text": "Floor proposals by advance notice under the bylaws",
-        "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925050072/tm2515421d1_ex3-1.htm"
-      }
-    ],
-    "matrix": {
-      "Proposals if Rule 14a-8 ends": {
-        "level": "narrowing",
-        "label": "Open for now",
-        "note": "Board could opt into Texas $1M or 3% threshold",
-        "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925050072/tm2515421d1_ex3-1.htm"
-      },
-      "Votes against directors": {
-        "level": "narrowing",
-        "label": "Partial",
-        "note": "Classified board: a third elected each year",
-        "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm"
-      },
-      "Voting control": {
-        "level": "narrowing",
-        "label": "Large holder",
-        "note": "Musk 19.8%",
-        "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm"
-      }
-    },
-    "notes": [
-      {
-        "text": "2025 vote: a proposal to require shareholder approval before adopting a Texas proposal threshold failed, 1.21 billion shares for to 1.23 billion against.",
-        "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925108507/tm2530590d1_8k.htm"
-      },
-      {
-        "text": "May 2025 bylaws require 3% ownership to bring a derivative lawsuit.",
-        "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925050072/tm2515421d1_8k.htm"
-      }
-    ]
-  }
+  "id": "microsoft",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0000789019",
+  "sectors": [
+   "consumer AI",
+   "enterprise AI",
+   "data centers & compute",
+   "frontier lab"
+  ],
+  "basis_type": "shareholder proposal",
+  "engagement_basis": {
+   "text": "2024: Microsoft's proxy ballot included proposals on AI misinformation and AI data sourcing (Arjuna Capital and co-filers; National Legal and Policy Center; Microsoft proxy statement)",
+   "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
+  },
+  "evidence": [
+   {
+    "text": "2025: Microsoft's proxy ballot included proposals on AI data usage oversight and generative AI censorship risk (Microsoft proxy statement)",
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
+   },
+   {
+    "text": "2024: Microsoft signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
+    "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+   },
+   {
+    "text": "Undated: Microsoft is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
+    "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000789019&type=10-K",
+  "source_note": "",
+  "rights_tracked": true,
+  "tier": "compute",
+  "tiers": [
+   "compute",
+   "capital",
+   "deployers"
+  ]
+ },
+ {
+  "ticker": "GOOGL",
+  "name": "Alphabet",
+  "route_status": "narrowing",
+  "route_status_reason": "The notice route stays open, but Page and Brin hold about 52.7% of the vote, so no proposal or director vote can pass without them.",
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm"
+  },
+  "bylaw": {
+   "text": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204422000085/googexhibit302.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204422000085/googexhibit302.htm"
+  },
+  "control": {
+   "text": "Class B shares carry 10 votes each. Page and Brin together hold about 52.7% of voting power.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+  },
+  "director_voting": {
+   "text": "Majority voting on paper, but the founders' votes decide the outcome.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204422000085/googexhibit302.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204422000085/googexhibit302.htm"
+   },
+   "Votes against directors": {
+    "level": "narrowing",
+    "label": "Symbolic",
+    "note": "Founders control the result",
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+   },
+   "Voting control": {
+    "level": "closed",
+    "label": "Founder control",
+    "note": "~52.7% of votes with Page and Brin",
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+   }
+  },
+  "id": "alphabet",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0001652044",
+  "sectors": [
+   "consumer AI",
+   "enterprise AI",
+   "data centers & compute",
+   "frontier lab"
+  ],
+  "basis_type": "shareholder proposal",
+  "engagement_basis": {
+   "text": "2026: Alphabet's proxy ballot included shareholder proposals on AI board oversight, AI data usage oversight, AI-generated misinformation and water use in AI development (Alphabet proxy statement)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+  },
+  "evidence": [
+   {
+    "text": "2025: Alphabet's proxy ballot included proposals on AI data usage oversight and risks of discrimination in generative AI (Alphabet proxy statement)",
+    "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+   },
+   {
+    "text": "2024: Google signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
+    "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+   },
+   {
+    "text": "Undated: Google is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
+    "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001652044&type=10-K",
+  "source_note": "",
+  "rights_tracked": true,
+  "tier": "compute",
+  "tiers": [
+   "compute",
+   "labs",
+   "chips",
+   "capital",
+   "deployers"
+  ]
+ },
+ {
+  "ticker": "META",
+  "name": "Meta",
+  "route_status": "narrowing",
+  "route_status_reason": "The notice route stays open, but Zuckerberg holds 60.8% of the vote and directors are elected by plurality, so outside votes signal views without deciding outcomes.",
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+  },
+  "bylaw": {
+   "text": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000072/a2024910-exhibit31.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000072/a2024910-exhibit31.htm"
+  },
+  "control": {
+   "text": "Class B shares carry 10 votes each. Zuckerberg holds 60.8% of voting power, and Meta is a 'controlled company' under Nasdaq rules. A new non-voting share class takes effect January 19, 2027.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+  },
+  "director_voting": {
+   "text": "Plurality voting: a director wins with any votes for, so votes against do not unseat anyone.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000072/a2024910-exhibit31.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000072/a2024910-exhibit31.htm"
+   },
+   "Votes against directors": {
+    "level": "closed",
+    "label": "Plurality",
+    "note": "Votes against cannot unseat directors",
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+   },
+   "Voting control": {
+    "level": "closed",
+    "label": "Founder control",
+    "note": "60.8% of votes with Zuckerberg",
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+   }
+  },
+  "notes": [
+   {
+    "text": "A restated charter approved by written consent creates non-voting Class C stock, effective January 19, 2027. Meta stays in Delaware.",
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026068935/meta-20261102.htm"
+   }
+  ],
+  "id": "meta-platforms",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0001326801",
+  "sectors": [
+   "consumer AI",
+   "data centers & compute",
+   "frontier lab"
+  ],
+  "basis_type": "shareholder proposal",
+  "engagement_basis": {
+   "text": "2026: Meta's proxy ballot included proposals on AI data usage oversight and a data protection impact assessment of generative AI chatbots (Meta proxy statement)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+  },
+  "evidence": [
+   {
+    "text": "2024: Meta's proxy ballot included proposals on generative AI misinformation risks and a human rights impact assessment of AI systems driving advertising (Meta proxy statement)",
+    "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+   },
+   {
+    "text": "2024: Meta signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
+    "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001326801&type=10-K",
+  "source_note": "",
+  "rights_tracked": true,
+  "tier": "labs",
+  "tiers": [
+   "labs",
+   "deployers",
+   "datacenters"
+  ]
+ },
+ {
+  "ticker": "AMZN",
+  "name": "Amazon",
+  "route_status": "open",
+  "route_status_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm"
+  },
+  "bylaw": {
+   "text": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake. (The 3% for 3 years proxy access rule covers director nominations only.)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057026/tm2413032d1_ex3-2.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057026/tm2413032d1_ex3-2.htm"
+  },
+  "control": {
+   "text": "One class of stock. Bezos holds 8.8%; no controlling holder.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+  },
+  "director_voting": {
+   "text": "Majority voting for directors.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057026/tm2413032d1_ex3-2.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057026/tm2413032d1_ex3-2.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057026/tm2413032d1_ex3-2.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057026/tm2413032d1_ex3-2.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057026/tm2413032d1_ex3-2.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "Largest holder 8.8%",
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+   }
+  },
+  "id": "amazon",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0001018724",
+  "sectors": [
+   "consumer AI",
+   "enterprise AI",
+   "data centers & compute",
+   "frontier lab"
+  ],
+  "basis_type": "shareholder proposal",
+  "engagement_basis": {
+   "text": "2025: Amazon's proxy ballot included proposals on board oversight of AI and data usage oversight in AI offerings (Amazon proxy statement)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm"
+  },
+  "evidence": [
+   {
+    "text": "2026: Amazon's proxy ballot included a proposal asking for additional reporting on the impact of data centers on climate commitments (Amazon proxy statement)",
+    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+   },
+   {
+    "text": "2024: Amazon signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
+    "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+   },
+   {
+    "text": "Undated: Amazon is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
+    "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001018724&type=10-K",
+  "source_note": "",
+  "rights_tracked": true,
+  "tier": "compute",
+  "tiers": [
+   "compute",
+   "chips",
+   "capital",
+   "deployers"
+  ]
+ },
+ {
+  "ticker": "NVDA",
+  "name": "Nvidia",
+  "route_status": "open",
+  "route_status_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+  "state": {
+   "text": "Delaware",
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+  },
+  "bylaw": {
+   "text": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm"
+  },
+  "control": {
+   "text": "One class of stock. Huang holds 3.6%; BlackRock (7.4%) and Vanguard (7.3%) are the largest holders.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm"
+  },
+  "director_voting": {
+   "text": "Majority voting for directors.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "No holder above 10%",
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm"
+   }
+  },
+  "id": "nvidia",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0001045810",
+  "sectors": [
+   "enterprise AI",
+   "data centers & compute",
+   "frontier lab"
+  ],
+  "basis_type": "investor engagement",
+  "engagement_basis": {
+   "text": "2024 to 2025: Nvidia was engaged by Parnassus with an investor group \"to disclose its human-rights policies and risk-management processes\" (Parnassus Investments; 2025 Stewardship Report)",
+   "url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf"
+  },
+  "evidence": [
+   {
+    "text": "Undated: Nvidia is listed among organisations added to the Frontier AI Safety Commitments signatories (gov.uk Frontier AI Safety Commitments page)",
+    "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+   },
+   {
+    "text": "2023: Nvidia signed the US voluntary AI commitments (White House fact sheet, September 2023)",
+    "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001045810&type=10-K",
+  "source_note": "",
+  "rights_tracked": true,
+  "tier": "chips",
+  "tiers": [
+   "chips",
+   "capital"
+  ]
+ },
+ {
+  "ticker": "AAPL",
+  "name": "Apple",
+  "route_status": "open",
+  "route_status_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+  "state": {
+   "text": "California",
+   "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
+  },
+  "bylaw": {
+   "text": "A shareholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake. (The 3% for 3 years proxy access rule covers director nominations only.)",
+   "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_ex3-2.htm"
+  },
+  "threshold": {
+   "text": "None beyond being a shareholder of record",
+   "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_ex3-2.htm"
+  },
+  "control": {
+   "text": "One class of stock. Vanguard (9.6%) and BlackRock (7.1%) are the largest holders.",
+   "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm"
+  },
+  "director_voting": {
+   "text": "Majority voting in uncontested director elections.",
+   "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_ex3-2.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_ex3-2.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_ex3-2.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "open",
+    "label": "Open",
+    "note": "Floor proposals by notice; no stake minimum",
+    "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_ex3-2.htm"
+   },
+   "Votes against directors": {
+    "level": "open",
+    "label": "Meaningful",
+    "note": "Majority voting, no controller",
+    "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_ex3-2.htm"
+   },
+   "Voting control": {
+    "level": "open",
+    "label": "Dispersed",
+    "note": "No holder above 10%",
+    "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm"
+   }
+  },
+  "id": "apple",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0000320193",
+  "sectors": [
+   "consumer AI"
+  ],
+  "basis_type": "shareholder proposal",
+  "engagement_basis": {
+   "text": "2025: Apple's proxy ballot included Proposal No. 4 asking for a report on ethical AI data acquisition and usage (Apple proxy statement)",
+   "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm"
+  },
+  "evidence": [
+   {
+    "text": "2024: Apple's proxy ballot included Proposal No. 7 asking for a report on use of AI (AFL-CIO Equity Index Funds; Apple proxy statement)",
+    "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000320193&type=10-K",
+  "source_note": "",
+  "rights_tracked": true,
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "ticker": "TSLA",
+  "name": "Tesla",
+  "route_status": "narrowing",
+  "route_status_reason": "Tesla has not adopted the Texas ownership threshold, but its board could adopt one without a shareholder vote. A 2025 proposal to require shareholder approval for that failed narrowly. The notice window is short and the board is classified.",
+  "state": {
+   "text": "Texas",
+   "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"
+  },
+  "bylaw": {
+   "text": "A shareholder of record can bring a proposal with notice 45 to 75 days before the anniversary of the date last year's proxy was mailed, a shorter and earlier window than most. No minimum stake for proposals today.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925050072/tm2515421d1_ex3-1.htm"
+  },
+  "threshold": {
+   "text": "None today. Tesla's 2025 proxy says the board has not adopted the Texas Section 21.373 threshold.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925090866/tm252289-12_def14a.htm"
+  },
+  "control": {
+   "text": "One class of stock. Musk holds 19.8% beneficially.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm"
+  },
+  "director_voting": {
+   "text": "Majority of shares present elects directors, but the board is classified, so only a third stand for election each year.",
+   "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm"
+  },
+  "levers": [
+   {
+    "text": "Votes against directors who oversee AI risk",
+    "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm"
+   },
+   {
+    "text": "Exempt solicitations to other shareholders (form PX14A6G)",
+    "url": "https://www.law.cornell.edu/cfr/text/17/240.14a-6"
+   },
+   {
+    "text": "Floor proposals by advance notice under the bylaws",
+    "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925050072/tm2515421d1_ex3-1.htm"
+   }
+  ],
+  "matrix": {
+   "Proposals if Rule 14a-8 ends": {
+    "level": "narrowing",
+    "label": "Open for now",
+    "note": "Board could opt into Texas $1M or 3% threshold",
+    "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925050072/tm2515421d1_ex3-1.htm"
+   },
+   "Votes against directors": {
+    "level": "narrowing",
+    "label": "Partial",
+    "note": "Classified board: a third elected each year",
+    "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm"
+   },
+   "Voting control": {
+    "level": "narrowing",
+    "label": "Large holder",
+    "note": "Musk 19.8%",
+    "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm"
+   }
+  },
+  "notes": [
+   {
+    "text": "2025 vote: a proposal to require shareholder approval before adopting a Texas proposal threshold failed, 1.21 billion shares for to 1.23 billion against.",
+    "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925108507/tm2530590d1_8k.htm"
+   },
+   {
+    "text": "May 2025 bylaws require 3% ownership to bring a derivative lawsuit.",
+    "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925050072/tm2515421d1_8k.htm"
+   }
+  ],
+  "id": "tesla",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0001318605",
+  "sectors": [
+   "consumer AI",
+   "data centers & compute"
+  ],
+  "basis_type": "shareholder proposal",
+  "engagement_basis": {
+   "text": "2025: Tesla's proxy ballot included Proposal Seven asking about board authorization of an investment in xAI (Tesla proxy statement)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925090866/tm252289-12_def14a.htm"
+  },
+  "evidence": [],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001318605&type=10-K",
+  "source_note": "",
+  "rights_tracked": true,
+  "tier": "capital",
+  "tiers": [
+   "capital",
+   "deployers",
+   "datacenters"
+  ]
+ },
+ {
+  "id": "anthropic",
+  "name": "Anthropic",
+  "ticker": "ANT",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0002130357",
+  "sectors": [
+   "frontier lab",
+   "enterprise AI",
+   "consumer AI"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2024: Anthropic signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
+   "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+  },
+  "evidence": [
+   {
+    "text": "Undated: Anthropic is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
+    "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+   },
+   {
+    "text": "2023: Anthropic signed the US voluntary AI commitments (White House fact sheet, July 2023)",
+    "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0002130357",
+  "source_note": "",
+  "rights_tracked": false,
+  "route_note": "Domestic issuer; first annual proxy statement not yet filed",
+  "tier": "labs",
+  "tiers": [
+   "labs"
+  ]
+ },
+ {
+  "id": "spacex",
+  "name": "SpaceX (including xAI)",
+  "ticker": "SPCX",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0001181412",
+  "sectors": [
+   "frontier lab",
+   "consumer AI",
+   "data centers & compute"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2024: xAI signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
+   "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+  },
+  "evidence": [
+   {
+    "text": "2026: xAI became a wholly owned subsidiary of SpaceX on 2 February 2026 (SpaceX Form 10-Q for the quarter ended 30 September 2026)",
+    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026066880/spcx-20260930.htm"
+   },
+   {
+    "text": "Undated: xAI signed only the Safety and Security chapter of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
+    "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001181412",
+  "source_note": "",
+  "rights_tracked": false,
+  "route_note": "Domestic issuer; first annual proxy statement not yet filed",
+  "tier": "labs",
+  "tiers": [
+   "labs",
+   "datacenters"
+  ]
+ },
+ {
+  "id": "openai",
+  "name": "OpenAI",
+  "ticker": null,
+  "exchange": null,
+  "country": "United States",
+  "cik": null,
+  "sectors": [
+   "frontier lab",
+   "consumer AI",
+   "enterprise AI"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2024: OpenAI signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
+   "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+  },
+  "evidence": [
+   {
+    "text": "Undated: OpenAI is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
+    "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+   },
+   {
+    "text": "2023: OpenAI signed the US voluntary AI commitments (White House fact sheet, July 2023)",
+    "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/"
+   }
+  ],
+  "shareholder_route": null,
+  "route_source_url": null,
+  "source_note": "",
+  "rights_tracked": false,
+  "route_note": "source pending: OpenAI's structure page gives ownership shares but does not state it is privately held",
+  "tier": "labs",
+  "tiers": [
+   "labs"
+  ]
+ },
+ {
+  "id": "mistral-ai",
+  "name": "Mistral AI",
+  "ticker": null,
+  "exchange": null,
+  "country": "France",
+  "cik": null,
+  "sectors": [
+   "frontier lab",
+   "enterprise AI",
+   "consumer AI"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2024: Mistral AI signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
+   "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+  },
+  "evidence": [
+   {
+    "text": "Undated: Mistral AI is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
+    "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+   }
+  ],
+  "shareholder_route": null,
+  "route_source_url": null,
+  "source_note": "",
+  "rights_tracked": false,
+  "route_note": "source pending: no public statement of ownership found; company news page mentions funding rounds only",
+  "tier": "labs",
+  "tiers": [
+   "labs"
+  ]
+ },
+ {
+  "id": "cohere",
+  "name": "Cohere",
+  "ticker": null,
+  "exchange": null,
+  "country": "Canada",
+  "cik": null,
+  "sectors": [
+   "frontier lab",
+   "enterprise AI"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2024: Cohere signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
+   "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+  },
+  "evidence": [
+   {
+    "text": "Undated: Cohere is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
+    "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+   },
+   {
+    "text": "2023: Cohere signed the US voluntary AI commitments (White House fact sheet, September 2023)",
+    "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/"
+   }
+  ],
+  "shareholder_route": null,
+  "route_source_url": null,
+  "source_note": "",
+  "rights_tracked": false,
+  "route_note": "source pending: no public statement of ownership found; company about page mentions funding rounds only",
+  "tier": "labs",
+  "tiers": [
+   "labs"
+  ]
+ },
+ {
+  "id": "g42",
+  "name": "G42",
+  "ticker": null,
+  "exchange": null,
+  "country": "United Arab Emirates",
+  "cik": null,
+  "sectors": [
+   "frontier lab",
+   "enterprise AI",
+   "data centers & compute"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2024: G42 signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
+   "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+  },
+  "evidence": [],
+  "shareholder_route": "private",
+  "route_source_url": "https://blogs.microsoft.com/blog/2024/04/15/microsoft-and-g42-partner-to-accelerate-ai-innovation-in-uae-and-beyond/",
+  "source_note": "investor announcement (Microsoft); controlling shareholder detail is from press",
+  "rights_tracked": false,
+  "route_note": "Privately held with no listed shares; Microsoft says it invested $1.5 billion for a minority stake and a board seat, and press reports name Sheikh Tahnoon bin Zayed as controlling shareholder with Mubadala and Silver Lake as minority holders. Two G42 subsidiaries (Presight AI, Bayanat) are listed in Abu Dhabi, but G42 itself is not.",
+  "tier": "compute",
+  "tiers": [
+   "compute",
+   "labs"
+  ]
+ },
+ {
+  "id": "inflection-ai",
+  "name": "Inflection AI",
+  "ticker": null,
+  "exchange": null,
+  "country": "United States",
+  "cik": null,
+  "sectors": [
+   "frontier lab",
+   "enterprise AI"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2024: Inflection AI signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
+   "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+  },
+  "evidence": [
+   {
+    "text": "2023: Inflection AI signed the US voluntary AI commitments (White House fact sheet, July 2023)",
+    "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/"
+   }
+  ],
+  "shareholder_route": "private",
+  "route_source_url": "https://assets.publishing.service.gov.uk/media/6719ff5f549f63039436b3c8/__Full_text_decision__.pdf",
+  "source_note": "regulator decision (UK CMA)",
+  "rights_tracked": false,
+  "route_note": "Privately held and still independent; the UK CMA decision on the 2024 Microsoft deal covers a model license and hiring of staff, not an acquisition of the company, and no 2025 or 2026 acquisition or listing was found.",
+  "tier": "labs",
+  "tiers": [
+   "labs"
+  ]
+ },
+ {
+  "id": "naver",
+  "name": "Naver",
+  "ticker": "035420",
+  "exchange": "KRX",
+  "country": "South Korea",
+  "cik": null,
+  "sectors": [
+   "frontier lab",
+   "consumer AI"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2024: Naver signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
+   "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+  },
+  "evidence": [],
+  "shareholder_route": "listed outside the US",
+  "route_source_url": "https://www.navercorp.com/en/investment/stock",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "magic",
+  "name": "Magic",
+  "ticker": null,
+  "exchange": null,
+  "country": "United States",
+  "cik": null,
+  "sectors": [
+   "frontier lab"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "Undated: Magic is named in the Frontier AI Safety Commitments signatory list as an organisation added to the original list (gov.uk Frontier AI Safety Commitments page)",
+   "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+  },
+  "evidence": [],
+  "shareholder_route": "private",
+  "route_source_url": "https://magic.dev/blog/100m-token-context-windows",
+  "source_note": "",
+  "rights_tracked": false,
+  "route_note": "Privately held, venture-backed; Magic's own post lists investors including Eric Schmidt, Jane Street, Sequoia, Atlassian, Nat Friedman, Daniel Gross and CapitalG, and no acquisition or listing was found through 2026.",
+  "tier": "labs",
+  "tiers": [
+   "labs"
+  ]
+ },
+ {
+  "id": "minimax",
+  "name": "MiniMax (Shanghai Xiyu Technology)",
+  "ticker": "00100",
+  "exchange": "HKEX",
+  "country": "China",
+  "cik": null,
+  "sectors": [
+   "frontier lab",
+   "consumer AI"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "Undated: MiniMax signed the Frontier AI Safety Commitments as an added signatory (gov.uk Frontier AI Safety Commitments page)",
+   "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+  },
+  "evidence": [
+   {
+    "text": "2024: Shanghai Xiyu Technology was a first signatory of China's AI Safety Commitments (China AI Industry Alliance; ETO AGORA)",
+    "url": "https://agora.eto.tech/instrument/1831"
+   },
+   {
+    "text": "Undated: Shanghai Xiyu Technology is given as the legal name of MiniMax (Tiger Brokers news)",
+    "url": "https://www-web.itiger.com/news/1139716237"
+   },
+   {
+    "text": "2026: MiniMax listed on the Hong Kong Stock Exchange on 9 January under code 00100 (etnet listing record)",
+    "url": "https://www.etnet.com.hk/www/eng/stocks/ci_ipo_detail.php?code=00100"
+   }
+  ],
+  "shareholder_route": "listed outside the US",
+  "route_source_url": "https://www.etnet.com.hk/www/eng/stocks/ci_ipo_detail.php?code=00100",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "labs",
+  "tiers": [
+   "labs"
+  ]
+ },
+ {
+  "id": "zhipu-ai",
+  "name": "Zhipu AI (Knowledge Atlas Technology)",
+  "ticker": "2513",
+  "exchange": "HKEX",
+  "country": "China",
+  "cik": null,
+  "sectors": [
+   "frontier lab",
+   "enterprise AI"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2024: Zhipu.ai signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
+   "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+  },
+  "evidence": [
+   {
+    "text": "Undated: Knowledge Atlas Technology is given as another name for Zhipu (eWeek)",
+    "url": "https://www.eweek.com/news/zhipu-hong-kong-ipo/"
+   },
+   {
+    "text": "Undated: Beijing Zhipu Huazhang Technology is listed under ticker 2513 HK (IPOX)",
+    "url": "https://www.ipox.com/ipo-calendar/beijing-zhipu-huazhang-technology"
+   },
+   {
+    "text": "2026: Zhipu listed on the Hong Kong Stock Exchange on 8 January under code 02513 (etnet listing record)",
+    "url": "https://www.etnet.com.hk/www/eng/stocks/ci_ipo_detail.php?code=2513"
+   }
+  ],
+  "shareholder_route": "listed outside the US",
+  "route_source_url": "https://www.etnet.com.hk/www/eng/stocks/ci_ipo_detail.php?code=2513",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "labs",
+  "tiers": [
+   "labs"
+  ]
+ },
+ {
+  "id": "01-ai",
+  "name": "01.AI",
+  "ticker": null,
+  "exchange": null,
+  "country": "China",
+  "cik": null,
+  "sectors": [
+   "frontier lab"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "Undated: 01.ai signed the Frontier AI Safety Commitments as an added signatory (gov.uk Frontier AI Safety Commitments page)",
+   "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+  },
+  "evidence": [],
+  "shareholder_route": "private",
+  "route_source_url": "https://news.bloomberglaw.com/capital-markets/ai-pioneer-kai-fu-lees-startup-targets-hong-kong-ipo-next-year",
+  "source_note": "secondary source",
+  "rights_tracked": false,
+  "route_note": "Privately held; Bloomberg reported in July 2026 that it targets a Hong Kong IPO after fiscal 2027, and 36Kr reported a 2026 investment from Hangzhou state-owned capital, but it has no listed shares today.",
+  "tier": "labs",
+  "tiers": [
+   "labs"
+  ]
+ },
+ {
+  "id": "deepseek",
+  "name": "DeepSeek",
+  "ticker": null,
+  "exchange": null,
+  "country": "China",
+  "cik": null,
+  "sectors": [
+   "frontier lab",
+   "consumer AI"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2024: DeepSeek joined sixteen other Chinese companies in signing China's AI Safety Commitments (Carnegie Endowment analysis)",
+   "url": "https://carnegieendowment.org/research/2025/01/deepseek-and-other-chinese-firms-converge-with-western-companies-on-ai-promises"
+  },
+  "evidence": [],
+  "shareholder_route": "private",
+  "route_source_url": "https://www.digitimes.com/news/a20260428PD235.html",
+  "source_note": "secondary source",
+  "rights_tracked": false,
+  "route_note": "Privately held and controlled by founder Liang Wenfeng; registry data reported in 2026 shows his direct stake rose to 34 percent as DeepSeek took its first outside money, mostly through a limited partnership he manages, plus a direct stake from China's National AI Industry Investment Fund. High-Flyer, also privately held and controlled by Liang, is the affiliated hedge fund, not a listed parent.",
+  "tier": "labs",
+  "tiers": [
+   "labs"
+  ]
+ },
+ {
+  "id": "beijing-volcano-engine-technology",
+  "name": "Beijing Volcano Engine Technology Co., Ltd.",
+  "ticker": null,
+  "exchange": null,
+  "country": "China",
+  "cik": null,
+  "sectors": [
+   "enterprise AI"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2024: Beijing Volcano Engine Technology signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance; ETO AGORA)",
+   "url": "https://agora.eto.tech/instrument/1831"
+  },
+  "evidence": [],
+  "shareholder_route": null,
+  "route_source_url": null,
+  "source_note": "secondary source",
+  "rights_tracked": false,
+  "route_note": "source pending: parent not identified in sources checked",
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "aleph-alpha",
+  "name": "Aleph Alpha",
+  "ticker": null,
+  "exchange": null,
+  "country": "Germany",
+  "cik": null,
+  "sectors": [
+   "frontier lab",
+   "enterprise AI"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "Undated: Aleph Alpha is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+  },
+  "evidence": [],
+  "shareholder_route": "private",
+  "route_source_url": "https://gruppe.schwarz/en/press/archive/2025/the-companies-of-schwarz-group-are-planning-to-increase-their-investment-in-aleph-alpha",
+  "source_note": "investor press release (Schwarz Group); Cohere deal status from press",
+  "rights_tracked": false,
+  "route_note": "Privately held; Schwarz Group said on 28 January 2026 it plans to buy Bosch Ventures' shares to expand its anchor-investor position, and a binding agreement to combine with Cohere (signed 16 September 2026) was still pending regulatory approval as of the latest reports, so Aleph Alpha has not yet become part of Cohere.",
+  "tier": "labs",
+  "tiers": [
+   "labs"
+  ]
+ },
+ {
+  "id": "black-forest-labs",
+  "name": "Black Forest Labs",
+  "ticker": null,
+  "exchange": null,
+  "country": "Germany",
+  "cik": null,
+  "sectors": [
+   "frontier lab",
+   "consumer AI"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "Undated: Black Forest Labs is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+  },
+  "evidence": [],
+  "shareholder_route": "private",
+  "route_source_url": "https://bfl.ai/blog/our-300m-series-b",
+  "source_note": "",
+  "rights_tracked": false,
+  "route_note": "Privately held, venture-backed; its own post announces a $300M Series B at a $3.25B valuation co-led by Salesforce Ventures and Anjney Midha, and no acquisition or listing was found.",
+  "tier": "labs",
+  "tiers": [
+   "labs"
+  ]
+ },
+ {
+  "id": "reflection-ai",
+  "name": "Reflection AI",
+  "ticker": null,
+  "exchange": null,
+  "country": "United States",
+  "cik": null,
+  "sectors": [
+   "frontier lab"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "Undated: Reflection AI is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+  },
+  "evidence": [],
+  "shareholder_route": "private",
+  "route_source_url": "https://reflection.ai/blog/frontier-open-intelligence",
+  "source_note": "",
+  "rights_tracked": false,
+  "route_note": "Privately held, venture-backed; its own post says it raised $2 billion from investors including NVIDIA, Sequoia, Lightspeed, DST and 1789, and press reports a further $2.5 billion round in 2026, with no acquisition or listing found.",
+  "tier": "labs",
+  "tiers": [
+   "labs"
+  ]
+ },
+ {
+  "id": "writer",
+  "name": "WRITER",
+  "ticker": null,
+  "exchange": null,
+  "country": "United States",
+  "cik": null,
+  "sectors": [
+   "enterprise AI",
+   "frontier lab"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "Undated: Writer is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+  },
+  "evidence": [],
+  "shareholder_route": "private",
+  "route_source_url": "https://writer.com/blog/series-c-funding-writer-press-release",
+  "source_note": "",
+  "rights_tracked": false,
+  "route_note": "Privately held, venture-backed; its own release announces a $200M Series C co-led by Premji Invest, Radical Ventures and ICONIQ Growth, and no acquisition or IPO was found through 2026.",
+  "tier": "labs",
+  "tiers": [
+   "labs"
+  ]
+ },
+ {
+  "id": "stability-ai",
+  "name": "Stability AI",
+  "ticker": null,
+  "exchange": null,
+  "country": "United Kingdom",
+  "cik": null,
+  "sectors": [
+   "consumer AI"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2023: Stability AI signed the US voluntary AI commitments in the second round of eight companies (White House fact sheet, September 2023)",
+   "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/"
+  },
+  "evidence": [],
+  "shareholder_route": null,
+  "route_source_url": null,
+  "source_note": "",
+  "rights_tracked": false,
+  "route_note": "source pending: no public statement of ownership found in sources checked",
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "scale-ai",
+  "name": "Scale AI",
+  "ticker": null,
+  "exchange": null,
+  "country": "United States",
+  "cik": null,
+  "sectors": [
+   "enterprise AI"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2023: Scale AI signed the US voluntary AI commitments in the second round of eight companies (White House fact sheet, September 2023)",
+   "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/"
+  },
+  "evidence": [],
+  "shareholder_route": null,
+  "route_source_url": null,
+  "source_note": "",
+  "rights_tracked": false,
+  "route_note": "source pending: no public statement of ownership found; company about page gives a valuation only",
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "ibm",
+  "name": "IBM",
+  "ticker": "IBM",
+  "exchange": "NYSE",
+  "country": "United States",
+  "cik": "0000051143",
+  "sectors": [
+   "enterprise AI",
+   "frontier lab"
+  ],
+  "basis_type": "shareholder proposal",
+  "engagement_basis": {
+   "text": "2026: IBM's proxy ballot included Proposal 7 asking for a report on AI bias (IBM proxy statement)",
+   "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm"
+  },
+  "evidence": [
+   {
+    "text": "2024: IBM signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
+    "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+   },
+   {
+    "text": "Undated: IBM is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
+    "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+   },
+   {
+    "text": "2023: IBM signed the US voluntary AI commitments (White House fact sheet, September 2023)",
+    "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000051143&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "deployers",
+  "tiers": [
+   "deployers",
+   "labs"
+  ]
+ },
+ {
+  "id": "salesforce",
+  "name": "Salesforce",
+  "ticker": "CRM",
+  "exchange": "NYSE",
+  "country": "United States",
+  "cik": "0001108524",
+  "sectors": [
+   "enterprise AI"
+  ],
+  "basis_type": "investor engagement",
+  "engagement_basis": {
+   "text": "2024 to 2025: Salesforce is listed among Parnassus's Responsible AI engagements (Parnassus Investments; 2025 Stewardship Report)",
+   "url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf"
+  },
+  "evidence": [
+   {
+    "text": "2023: Salesforce signed the US voluntary AI commitments (White House fact sheet, September 2023)",
+    "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001108524&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "adobe",
+  "name": "Adobe",
+  "ticker": "ADBE",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0000796343",
+  "sectors": [
+   "consumer AI",
+   "enterprise AI"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2023: Adobe signed the US voluntary AI commitments in the second round of eight companies (White House fact sheet, September 2023)",
+   "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/"
+  },
+  "evidence": [],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000796343&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "intuit",
+  "name": "Intuit",
+  "ticker": "INTU",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0000896878",
+  "sectors": [
+   "consumer AI",
+   "enterprise AI"
+  ],
+  "basis_type": "investor engagement",
+  "engagement_basis": {
+   "text": "2023 to 2024: Intuit was engaged by Parnassus on AI governance and risk management and planned public AI governance disclosure in early 2025 (Parnassus Investments; 2024 Stewardship Report)",
+   "url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf"
+  },
+  "evidence": [
+   {
+    "text": "2024 to 2025: Intuit is listed among Parnassus Responsible AI engagements (Parnassus Investments; 2025 Stewardship Report)",
+    "url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000896878&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "verisk-analytics",
+  "name": "Verisk Analytics",
+  "ticker": "VRSK",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0001442145",
+  "sectors": [
+   "enterprise AI"
+  ],
+  "basis_type": "investor engagement",
+  "engagement_basis": {
+   "text": "2023 to 2024: Verisk was engaged by Parnassus for almost two years on responsible AI; a filed proposal was withdrawn after Verisk agreed to disclosures (Parnassus Investments; 2024 Stewardship Report)",
+   "url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf"
+  },
+  "evidence": [
+   {
+    "text": "2024 to 2025: Verisk is listed among Parnassus Responsible AI engagements (Parnassus Investments; 2025 Stewardship Report)",
+    "url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001442145&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "workday",
+  "name": "Workday",
+  "ticker": "WDAY",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0001327811",
+  "sectors": [
+   "enterprise AI"
+  ],
+  "basis_type": "investor engagement",
+  "engagement_basis": {
+   "text": "2024 to 2025: Workday was engaged by Parnassus on the impacts of its AI-driven human-capital management software on workers' rights and protections (Parnassus Investments; 2025 Stewardship Report)",
+   "url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf"
+  },
+  "evidence": [
+   {
+    "text": "2023 to 2024: Workday is listed among Parnassus Responsible AI engagements (Parnassus Investments; 2024 Stewardship Report)",
+    "url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001327811&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "servicenow",
+  "name": "ServiceNow",
+  "ticker": "NOW",
+  "exchange": "NYSE",
+  "country": "United States",
+  "cik": "0001373715",
+  "sectors": [
+   "enterprise AI",
+   "frontier lab"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "Undated: ServiceNow is listed as a signatory of the EU General-Purpose AI Code of Practice for providers of general-purpose AI models (European Commission signatory list)",
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
+  },
+  "evidence": [],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001373715&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "deployers",
+  "tiers": [
+   "deployers",
+   "labs"
+  ]
+ },
+ {
+  "id": "palantir-technologies",
+  "name": "Palantir Technologies",
+  "ticker": "PLTR",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0001321655",
+  "sectors": [
+   "enterprise AI"
+  ],
+  "basis_type": "shareholder proposal",
+  "engagement_basis": {
+   "text": "2026: Palantir's proxy ballot included Proposals 4 and 5 asking for due diligence and human rights reports, citing its AI (Sisters of St. Joseph of Peace; proxy statement)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm"
+  },
+  "evidence": [
+   {
+    "text": "2023: Palantir signed the US voluntary AI commitments (White House fact sheet, September 2023)",
+    "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001321655&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "cisco-systems",
+  "name": "Cisco Systems",
+  "ticker": "CSCO",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0000858877",
+  "sectors": [
+   "enterprise AI",
+   "data centers & compute"
+  ],
+  "basis_type": "shareholder proposal",
+  "engagement_basis": {
+   "text": "2026: Cisco's proxy ballot included Proposal 5 asking for a human rights impact assessment of high-risk customers; the solicitation cites AI infrastructure sales to government and military (SEC exempt solicitation)",
+   "url": "https://www.sec.gov/Archives/edgar/data/858877/000121465926014472/x1116261px14a6g.htm"
+  },
+  "evidence": [],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000858877&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "chips",
+  "tiers": [
+   "chips"
+  ]
+ },
+ {
+  "id": "axon-enterprise",
+  "name": "Axon Enterprise",
+  "ticker": "AXON",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0001069183",
+  "sectors": [
+   "enterprise AI"
+  ],
+  "basis_type": "shareholder proposal",
+  "engagement_basis": {
+   "text": "2023: Axon was asked in Proposal 6 to discontinue a remotely operated TASER drone system, citing concerns raised by its AI Ethics Board (Open MIC; SEC exempt solicitation)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1069183/000121465923006485/s53230px14a6g.htm"
+  },
+  "evidence": [],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001069183&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "motorola-solutions",
+  "name": "Motorola Solutions",
+  "ticker": "MSI",
+  "exchange": "NYSE",
+  "country": "United States",
+  "cik": "0000068505",
+  "sectors": [
+   "enterprise AI"
+  ],
+  "basis_type": "investor engagement",
+  "engagement_basis": {
+   "text": "2022: Motorola Solutions was included in Candriam's investor review of 15 facial recognition companies (Candriam)",
+   "url": "https://www.candriam.com/en/professional/SysSiteAssets/presspage/press/pressrelease/2022/10-2022/frt-interim-report-press-release_final.pdf"
+  },
+  "evidence": [],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000068505&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "thales",
+  "name": "Thales",
+  "ticker": "HO",
+  "exchange": "Euronext Paris",
+  "country": "France",
+  "cik": null,
+  "sectors": [
+   "enterprise AI"
+  ],
+  "basis_type": "investor engagement",
+  "engagement_basis": {
+   "text": "2022: Thales was included in Candriam's investor review of 15 facial recognition companies (Candriam)",
+   "url": "https://www.candriam.com/en/professional/SysSiteAssets/presspage/press/pressrelease/2022/10-2022/frt-interim-report-press-release_final.pdf"
+  },
+  "evidence": [],
+  "shareholder_route": "listed outside the US",
+  "route_source_url": "https://live.euronext.com/en/product/equities/FR0000121329-XPAR",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "beijing-baidu-network-technology",
+  "name": "Beijing Baidu Network Technology Co., Ltd.",
+  "ticker": null,
+  "exchange": null,
+  "country": "China",
+  "cik": null,
+  "sectors": [
+   "consumer AI",
+   "enterprise AI"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2024: Beijing Baidu Network Technology signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance; ETO AGORA)",
+   "url": "https://agora.eto.tech/instrument/1831"
+  },
+  "evidence": [],
+  "shareholder_route": null,
+  "route_source_url": null,
+  "source_note": "secondary source",
+  "rights_tracked": false,
+  "route_note": "source pending: parent not identified in sources checked",
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "alibaba-group",
+  "name": "Alibaba Group",
+  "ticker": "BABA",
+  "exchange": "NYSE",
+  "country": "China",
+  "cik": "0001577552",
+  "sectors": [
+   "consumer AI",
+   "enterprise AI",
+   "data centers & compute",
+   "frontier lab"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2024: Alibaba (China) Co., Ltd. signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance; ETO AGORA)",
+   "url": "https://agora.eto.tech/instrument/1831"
+  },
+  "evidence": [
+   {
+    "text": "2026: Alibaba (China) Co., Ltd. appears in Alibaba Group Holding's list of subsidiaries and consolidated entities (Alibaba Form 20-F, Exhibit 8.1)",
+    "url": "https://www.sec.gov/Archives/edgar/data/1577552/000119312526231755/baba-ex8_1.htm"
+   },
+   {
+    "text": "2025: Alibaba's Qwen 2.5 is named among Chinese models pushing the AI frontier (Carnegie Endowment)",
+    "url": "https://carnegieendowment.org/research/2025/01/deepseek-and-other-chinese-firms-converge-with-western-companies-on-ai-promises"
+   }
+  ],
+  "shareholder_route": "US-listed foreign issuer",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001577552&type=20-F",
+  "source_note": "secondary source",
+  "rights_tracked": false,
+  "tier": "compute",
+  "tiers": [
+   "compute",
+   "labs",
+   "deployers"
+  ]
+ },
+ {
+  "id": "tencent-holdings",
+  "name": "Tencent Holdings",
+  "ticker": "0700",
+  "exchange": "HKEX",
+  "country": "China",
+  "cik": null,
+  "sectors": [
+   "consumer AI",
+   "enterprise AI",
+   "frontier lab"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2024: Shenzhen Tencent Computer Systems Co., Ltd. signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance; ETO AGORA)",
+   "url": "https://agora.eto.tech/instrument/1831"
+  },
+  "evidence": [
+   {
+    "text": "2005: Tencent Holdings' annual report described Shenzhen Tencent Computer Systems Company Limited as the operating company consolidated as a subsidiary (HKEX filing)",
+    "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2006/0406/00700/EWF115.pdf"
+   },
+   {
+    "text": "2025: Tencent's Hunyuan model is named among Chinese models pushing the AI frontier (Carnegie Endowment)",
+    "url": "https://carnegieendowment.org/research/2025/01/deepseek-and-other-chinese-firms-converge-with-western-companies-on-ai-promises"
+   }
+  ],
+  "shareholder_route": "listed outside the US",
+  "route_source_url": "https://www.tencent.com/en-us/investors.html",
+  "source_note": "secondary source",
+  "rights_tracked": false,
+  "tier": "deployers",
+  "tiers": [
+   "deployers",
+   "labs"
+  ]
+ },
+ {
+  "id": "huawei-technologies",
+  "name": "Huawei Technologies",
+  "ticker": null,
+  "exchange": null,
+  "country": "China",
+  "cik": null,
+  "sectors": [
+   "enterprise AI",
+   "data centers & compute"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2024: Huawei Technologies Co., Ltd. signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance; ETO AGORA)",
+   "url": "https://agora.eto.tech/instrument/1831"
+  },
+  "evidence": [],
+  "shareholder_route": "private",
+  "route_source_url": "https://www.huawei.com/en/corporate-information",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "chips",
+  "tiers": [
+   "chips"
+  ]
+ },
+ {
+  "id": "shanghai-sensetime-intelligent-technology",
+  "name": "Shanghai SenseTime Intelligent Technology Co., Ltd.",
+  "ticker": null,
+  "exchange": null,
+  "country": "China",
+  "cik": null,
+  "sectors": [
+   "enterprise AI"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2024: Shanghai SenseTime Intelligent Technology signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance; ETO AGORA)",
+   "url": "https://agora.eto.tech/instrument/1831"
+  },
+  "evidence": [],
+  "shareholder_route": null,
+  "route_source_url": null,
+  "source_note": "secondary source",
+  "rights_tracked": false,
+  "route_note": "source pending: parent not identified in sources checked",
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "netflix",
+  "name": "Netflix",
+  "ticker": "NFLX",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0001065280",
+  "sectors": [
+   "consumer AI"
+  ],
+  "basis_type": "shareholder proposal",
+  "engagement_basis": {
+   "text": "2024: Netflix's proxy ballot included Proposal 4 asking for a report on Netflix's use of AI (AFL-CIO Equity Index Funds; Netflix proxy statement)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312524100913/d521836ddef14a.htm"
+  },
+  "evidence": [
+   {
+    "text": "2024: A review of 2024 AI shareholder proposals covers Netflix (Harvard Law School Forum on Corporate Governance)",
+    "url": "https://corpgov.law.harvard.edu/?p=168201"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001065280&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "warner-bros-discovery",
+  "name": "Warner Bros. Discovery",
+  "ticker": null,
+  "exchange": null,
+  "country": "United States",
+  "cik": "0001437107",
+  "sectors": [
+   "consumer AI"
+  ],
+  "basis_type": "shareholder proposal",
+  "engagement_basis": {
+   "text": "2024: Warner Bros. Discovery's proxy ballot included Proposal 5 asking for a report on use of AI (AFL-CIO Equity Index Funds and NYC Employees' Retirement System; WBD proxy statement)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1437107/000143710724000102/wbd-20240419.htm"
+  },
+  "evidence": [
+   {
+    "text": "2024: A review of 2024 AI shareholder proposals covers Warner Bros. Discovery (Harvard Law School Forum on Corporate Governance)",
+    "url": "https://corpgov.law.harvard.edu/?p=168201"
+   }
+  ],
+  "shareholder_route": null,
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001437107&type=15-12G",
+  "source_note": "",
+  "rights_tracked": false,
+  "route_note": "Filed Form 15 in October 2026 to end SEC registration",
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "walt-disney",
+  "name": "Walt Disney",
+  "ticker": "DIS",
+  "exchange": "NYSE",
+  "country": "United States",
+  "cik": "0001744489",
+  "sectors": [
+   "consumer AI"
+  ],
+  "basis_type": "shareholder proposal",
+  "engagement_basis": {
+   "text": "2024: SEC staff declined Disney's request to leave the proposal off the ballot; the proposal sought an AI transparency report (AFL-CIO Equity Index Funds and co-filers; SEC staff letter)",
+   "url": "https://www.sec.gov/files/corpfin/no-action/14a-8/aflciodisney010324-14a8.pdf"
+  },
+  "evidence": [
+   {
+    "text": "2024: Disney committed to enhance AI disclosures and the proposal was withdrawn (Responsible Investor, via Harvard Law School Forum on Corporate Governance)",
+    "url": "https://corpgov.law.harvard.edu/?p=168201"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001744489&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "comcast",
+  "name": "Comcast",
+  "ticker": "CMCSA",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0001166691",
+  "sectors": [
+   "consumer AI"
+  ],
+  "basis_type": "shareholder proposal",
+  "engagement_basis": {
+   "text": "2024: Comcast committed to enhance its AI disclosures and a proposal on AI usage was withdrawn (AFL-CIO; Responsible Investor, via Harvard Law School Forum on Corporate Governance)",
+   "url": "https://corpgov.law.harvard.edu/?p=168201"
+  },
+  "evidence": [],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001166691&type=10-K",
+  "source_note": "secondary source",
+  "rights_tracked": false,
+  "tier": "deployers",
+  "tiers": [
+   "deployers"
+  ]
+ },
+ {
+  "id": "oracle",
+  "name": "Oracle",
+  "ticker": "ORCL",
+  "exchange": "NYSE",
+  "country": "United States",
+  "cik": "0001341439",
+  "sectors": [
+   "enterprise AI",
+   "data centers & compute"
+  ],
+  "basis_type": "compute agreement",
+  "engagement_basis": {
+   "text": "2025: Oracle was named an initial equity funder of the Stargate AI infrastructure project (OpenAI)",
+   "url": "https://openai.com/index/announcing-the-stargate-project/"
+  },
+  "evidence": [
+   {
+    "text": "2025: Oracle, OpenAI and SoftBank announced five new Stargate data center sites (OpenAI)",
+    "url": "https://openai.com/index/five-new-stargate-sites/"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001341439&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "compute",
+  "tiers": [
+   "compute",
+   "datacenters"
+  ]
+ },
+ {
+  "id": "softbank-group",
+  "name": "SoftBank Group",
+  "ticker": "9984",
+  "exchange": "Tokyo Stock Exchange",
+  "country": "Japan",
+  "cik": null,
+  "sectors": [
+   "data centers & compute"
+  ],
+  "basis_type": "compute agreement",
+  "engagement_basis": {
+   "text": "2025: SoftBank Group was named an initial equity funder and lead partner of the Stargate AI infrastructure project (OpenAI)",
+   "url": "https://openai.com/index/announcing-the-stargate-project/"
+  },
+  "evidence": [
+   {
+    "text": "2025: SB Energy, a SoftBank Group company, is a partner on new Stargate data center sites (OpenAI)",
+    "url": "https://openai.com/index/five-new-stargate-sites/"
+   }
+  ],
+  "shareholder_route": "listed outside the US",
+  "route_source_url": "https://group.softbank/en/ir/stock/info",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "capital",
+  "tiers": [
+   "capital"
+  ]
+ },
+ {
+  "id": "arm-holdings",
+  "name": "Arm Holdings",
+  "ticker": "ARM",
+  "exchange": "Nasdaq",
+  "country": "United Kingdom",
+  "cik": "0001973239",
+  "sectors": [
+   "data centers & compute"
+  ],
+  "basis_type": "compute agreement",
+  "engagement_basis": {
+   "text": "2025: Arm was named a key initial technology partner of the Stargate AI infrastructure project (OpenAI)",
+   "url": "https://openai.com/index/announcing-the-stargate-project/"
+  },
+  "evidence": [],
+  "shareholder_route": "US-listed foreign issuer",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001973239&type=20-F",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "chips",
+  "tiers": [
+   "chips"
+  ]
+ },
+ {
+  "id": "amd",
+  "name": "AMD",
+  "ticker": "AMD",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0000002488",
+  "sectors": [
+   "data centers & compute"
+  ],
+  "basis_type": "compute agreement",
+  "engagement_basis": {
+   "text": "2025: AMD entered a multi-year agreement with OpenAI to deploy 6 gigawatts of AMD GPUs (OpenAI)",
+   "url": "https://openai.com/index/openai-amd-strategic-partnership/"
+  },
+  "evidence": [],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000002488&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "chips",
+  "tiers": [
+   "chips"
+  ]
+ },
+ {
+  "id": "broadcom",
+  "name": "Broadcom",
+  "ticker": "AVGO",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0001730168",
+  "sectors": [
+   "data centers & compute"
+  ],
+  "basis_type": "compute agreement",
+  "engagement_basis": {
+   "text": "2025: Broadcom announced a collaboration with OpenAI to deploy 10 gigawatts of OpenAI-designed AI accelerators, to complete by the end of 2029 (OpenAI)",
+   "url": "https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration/"
+  },
+  "evidence": [],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001730168&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "chips",
+  "tiers": [
+   "chips"
+  ]
+ },
+ {
+  "id": "tsmc",
+  "name": "TSMC",
+  "ticker": "TSM",
+  "exchange": "NYSE (ADS)",
+  "country": "Taiwan",
+  "cik": "0001046179",
+  "sectors": [
+   "data centers & compute"
+  ],
+  "basis_type": "investor engagement",
+  "engagement_basis": {
+   "text": "2024 to 2025: TSMC was engaged by Parnassus on water and renewable energy (Parnassus Investments; 2025 Stewardship Report)",
+   "url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf"
+  },
+  "evidence": [],
+  "shareholder_route": "US-listed foreign issuer",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001046179&type=20-F",
+  "source_note": "",
+  "rights_tracked": false,
+  "owner_choice_note": "Included by owner decision; the AI link is indirect (AI chip demand)",
+  "tier": "chips",
+  "tiers": [
+   "chips"
+  ]
+ },
+ {
+  "id": "samsung-electronics",
+  "name": "Samsung Electronics",
+  "ticker": "005930",
+  "exchange": "KRX",
+  "country": "South Korea",
+  "cik": null,
+  "sectors": [
+   "data centers & compute",
+   "consumer AI",
+   "frontier lab"
+  ],
+  "basis_type": "safety commitment",
+  "engagement_basis": {
+   "text": "2024: Samsung Electronics signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
+   "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
+  },
+  "evidence": [
+   {
+    "text": "2025: Samsung Electronics and SK hynix announced partnerships with OpenAI under Stargate to scale memory chip supply (OpenAI)",
+    "url": "https://openai.com/index/samsung-and-sk-join-stargate/"
+   }
+  ],
+  "shareholder_route": "listed outside the US",
+  "route_source_url": "https://www.samsung.com/global/ir/stock-information/listing-Info/",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "chips",
+  "tiers": [
+   "chips",
+   "labs",
+   "deployers"
+  ]
+ },
+ {
+  "id": "sk-hynix",
+  "name": "SK hynix",
+  "ticker": "000660",
+  "exchange": "KRX; ADS on Nasdaq (SKHY)",
+  "country": "South Korea",
+  "cik": "0002120882",
+  "sectors": [
+   "data centers & compute"
+  ],
+  "basis_type": "compute agreement",
+  "engagement_basis": {
+   "text": "2025: SK hynix announced a partnership with OpenAI under Stargate to scale advanced memory chip production (OpenAI)",
+   "url": "https://openai.com/index/samsung-and-sk-join-stargate/"
+  },
+  "evidence": [],
+  "shareholder_route": "US-listed foreign issuer",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0002120882&type=6-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "chips",
+  "tiers": [
+   "chips"
+  ]
+ },
+ {
+  "id": "coreweave",
+  "name": "CoreWeave",
+  "ticker": "CRWV",
+  "exchange": "Nasdaq",
+  "country": "United States",
+  "cik": "0001769628",
+  "sectors": [
+   "data centers & compute"
+  ],
+  "basis_type": "compute agreement",
+  "engagement_basis": {
+   "text": "2025: CoreWeave disclosed a material master services agreement with OpenAI for cloud computing capacity, with a September 2025 order form (CoreWeave Form 8-K)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1769628/000119312525216497/d17274d8k.htm"
+  },
+  "evidence": [],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001769628&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "compute",
+  "tiers": [
+   "compute"
+  ]
+ },
+ {
+  "id": "nebius-group",
+  "name": "Nebius Group",
+  "ticker": "NBIS",
+  "exchange": "Nasdaq",
+  "country": "Netherlands",
+  "cik": "0001513845",
+  "sectors": [
+   "data centers & compute"
+  ],
+  "basis_type": "compute agreement",
+  "engagement_basis": {
+   "text": "2025: Nebius agreed to provide Microsoft dedicated GPU capacity, with a contract value of about 17.4 billion dollars through 2031 (Nebius Form 6-K)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465925088312/tm2525580d1_6k.htm"
+  },
+  "evidence": [],
+  "shareholder_route": "US-listed foreign issuer",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001513845&type=20-F",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "compute",
+  "tiers": [
+   "compute"
+  ]
+ },
+ {
+  "id": "digital-realty-trust",
+  "name": "Digital Realty Trust",
+  "ticker": "DLR",
+  "exchange": "NYSE",
+  "country": "United States",
+  "cik": "0001297996",
+  "sectors": [
+   "data centers & compute"
+  ],
+  "basis_type": "shareholder proposal",
+  "engagement_basis": {
+   "text": "2026: Digital Realty's proxy ballot included a stockholder proposal on enhanced water risk disclosure (Digital Realty proxy statement)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm"
+  },
+  "evidence": [
+   {
+    "text": "2026: Glass Lewis describes the Digital Realty proposal as addressing water-use risks of AI-driven data center expansion (Glass Lewis)",
+    "url": "https://www.glasslewis.com/article/technology-related-proposals-in-the-ai-era-notes-from-the-2026-proxy-season"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001297996&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "tier": "datacenters",
+  "tiers": [
+   "datacenters"
+  ]
+ },
+ {
+  "id": "southern-company",
+  "name": "Southern Company",
+  "ticker": "SO",
+  "exchange": "NYSE",
+  "country": "United States",
+  "cik": "0000092122",
+  "sectors": [
+   "data centers & compute"
+  ],
+  "basis_type": "shareholder proposal",
+  "engagement_basis": {
+   "text": "2026: Southern Company's proxy included Item 9 asking for a report on data center costs, citing AI data center demand and residential bills (As You Sow; Southern proxy statement)",
+   "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm"
+  },
+  "evidence": [
+   {
+    "text": "2025: Southern Company was the subject of an exempt solicitation citing large-load demand from AI and manufacturing in urging disclosure of forecast assumptions (As You Sow; SEC exempt solicitation)",
+    "url": "https://www.sec.gov/Archives/edgar/data/92122/000121465925006174/p4212510px14a6g.htm"
+   }
+  ],
+  "shareholder_route": "US proxy rules apply",
+  "route_source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000092122&type=10-K",
+  "source_note": "",
+  "rights_tracked": false,
+  "owner_choice_note": "Included by owner decision; the proposal concerns data center power costs",
+  "tier": "datacenters",
+  "tiers": [
+   "datacenters"
+  ]
+ }
 ]
