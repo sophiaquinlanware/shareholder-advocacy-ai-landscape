@@ -102,12 +102,11 @@ The owner's spec has four phases, and each phase gets its own plan and reviews i
 
 ## Queue (found, not picked up)
 
-1. **Fund votes follow-ups.**
-   - (a) 14 near-miss votes sit in `data/fund_votes.json` `near_misses` for a person to confirm.
-   - (b) Meta 2026 "AI data usage oversight" is held back.
-   - (c) Peer families are not reviewed row by row.
+1. **Fund votes follow-ups.** Fund votes now cover all 29 US-proxy companies (331 rows).
+   - (a) 18 near-miss votes sit in `data/fund_votes.json` `near_misses` for a person to confirm.
+   - (b) Meta 2026 Item 3 stays "Needs checking": the proxy shows Items 3 and 11 are distinct AI-data proposals that some fund filings describe the same way (reason in `held_back_reasons`).
+   - (c) Peer families are not reviewed row by row (shown with †).
    - (d) Praxis and Domini 2025-26 file N-PX as text only.
-   - (e) The data accuracy R2 fixes there were not re-reviewed.
 2. **Secondary sources for status reasons:** the Amazon and Apple withdrawal/exclusion reasons cite minerva.info. PRODUCT.md Never claim 4 prefers primary sources (SEC no-action letter or proxy).
 3. **Performance:** fixed for now: Inter loads without blocking (desktop 98). Self-hosting Inter, or splitting the 383 KB `graph.json`, would help if the data keeps growing.
 4. **Causality time scale:** most events fall in 2025–26. A piecewise time scale would give them more room.

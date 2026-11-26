@@ -19,6 +19,17 @@ from pathlib import Path
 DATA = Path(__file__).resolve().parent.parent / "data"
 FIRST, LAST = "2023-07-01", "2026-06-30"   # structured N-PX starts with meetings from July 2023
 
+# Why a proposal is held back, when a person has checked the proxy (shown next to "Needs checking").
+HELD_BACK_REASONS = {
+    "meta-2026-3": {
+        "reason": ("Meta's 2026 ballot had two AI-data proposals: Item 3 (AI Data Usage Oversight, National Legal and "
+                   "Policy Center) and Item 11 (Data Protection Impact Assessment on Generative AI Chatbots, Mercy "
+                   "Investment Services). Some fund filings describe both as AI data usage oversight, so their votes on "
+                   "the two cannot be told apart."),
+        "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
+    },
+}
+
 NOT_READABLE = {
     "Praxis": "Praxis files Form N-PX only in the older text format, which this tracker cannot read yet, so it is not shown.",
 }
@@ -70,6 +81,7 @@ def main(src):
         "families": run["families"],
         "coverage": coverage,
         "held_back_proposals": sorted(dup_proposals),
+        "held_back_reasons": {k: v for k, v in HELD_BACK_REASONS.items() if k in dup_proposals},
         "unreadable_filings": run.get("unreadable", []),
         "not_shown": [v for k, v in NOT_READABLE.items() if k not in coverage],
         "reviewed": reviewed["reviewed"],
