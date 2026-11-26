@@ -1240,7 +1240,7 @@
    "status": "upcoming",
    "support_pct": null,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a1.pdf",
-   "results_url": "Not yet filed (meeting 2026-12-08)",
+   "results_url": null,
    "degree": 2
   },
   {
@@ -1255,7 +1255,7 @@
    "status": "upcoming",
    "support_pct": null,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a1.pdf",
-   "results_url": "Not yet filed (meeting 2026-12-08)",
+   "results_url": null,
    "degree": 6
   },
   {
@@ -1270,7 +1270,7 @@
    "status": "upcoming",
    "support_pct": null,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a1.pdf",
-   "results_url": "Not yet filed (meeting 2026-12-08)",
+   "results_url": null,
    "degree": 3
   },
   {
