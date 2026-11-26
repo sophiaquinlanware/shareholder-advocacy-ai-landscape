@@ -191,8 +191,10 @@ def main():
         if twin:
             covered.add(twin["id"])
             twin_of[p["id"]] = twin["id"]
-            for k in ("support_pct", "status", "subtopic"):
-                if p.get(k) is not None and twin.get(k) in (None, "", "UNVERIFIED"):
+            # The SEC-based record is authoritative: support comes from the 8-K vote counts and the
+            # topic tag must match the proposal feed, so both files always agree.
+            for k in ("support_pct", "status", "subtopic", "topic"):
+                if k in p:
                     twin[k] = p[k]
             twin["results_url"] = p.get("results_url")
             continue
