@@ -140,7 +140,7 @@ def main():
         if pp.get("org_id"):
             org = pp["org_id"] if pp["org_id"] in nodes else next(
                 (n["id"] for n in nodes.values() if n["type"] in ("investor", "coalition")
-                 and similar(n["label"], pp.get("org_name") or "", 0.6)), pp["org_id"])
+                 and similar(n["label"], pp.get("org_name") or "", 0.9)), pp["org_id"])
             node(org, type="investor", layer="investors", label=pp.get("org_name") or org)
             edge(pid, org, "works at", "people", pp.get("profile_url"))
     for r in ppl.get("relations", []):
@@ -241,7 +241,7 @@ def main():
     # (vote history, filing deadlines, calls for co-filers) onto the matching graph nodes.
     PHASE2_FIELDS = ("vote_history", "filing_deadline", "filing_deadline_source", "seeking", "meeting_date",
                      "results_url", "support_note", "results_note", "status_reason", "status_source_url",
-                     "plain_summary", "plain_summary_source", "plain_summary_note", "ask_id")
+                     "plain_summary", "plain_summary_source", "plain_summary_note", "ask_id", "category")
     # The SEC-based record (proposals.json) is authoritative for these, whatever the node's id.
     AUTHORITATIVE = ("support_pct", "status", "topic", "subtopic")
     pj_by_id = {p["id"]: p for p in load("proposals.json").get("proposals", [])}
