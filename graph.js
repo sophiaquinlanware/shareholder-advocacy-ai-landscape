@@ -703,7 +703,7 @@
     } else if (l.relation === "member of") {
       const coal = state.byId.get(endId(l.target));
       const members = state.data.links.filter((x) => x.relation === "member of" && endId(x.target) === coal.id).length;
-      how = `${endId(l.source) === a.id ? "member of" : "has member"} <span class="conf">· shared coalition membership (${esc(coal.label)}, ${members} members)</span>${link(l.source_url)}`;
+      how = `${endId(l.source) === a.id ? "member of" : "has member"} <span class="conf">· coalition membership (${esc(coal.label)}, ${members} members)</span>${link(l.source_url)}`;
     } else {
       const c = conf(l);
       const dir = endId(l.source) === a.id ? l.relation : `${l.relation} (from)`;
@@ -728,8 +728,9 @@
         state.path = { from: n.id, nodes: new Set([n.id, ...steps.map((x) => x.b)]), links: new Set(steps.map((x) => x.l)) };
         steps.forEach((x) => state.byId.get(x.b) && state.hiddenKinds.delete(state.byId.get(x.b).kind));
         const inferred = steps.filter((x) => x.l.relation === "co-filed with").length;
-        const coalitions = new Set(steps.filter((x) => x.l.relation === "member of").map((x) => endId(x.l.target))).size;
-        const parts = [inferred && `${inferred} inferred from co-filing`, coalitions && `${coalitions} shared coalition membership`].filter(Boolean);
+        // A coalition counts as "shared membership" only when the path passes through it (member in, member out).
+        const coalitions = steps.filter((x, i) => i + 1 < steps.length && x.l.relation === "member of" && steps[i + 1].l.relation === "member of" && x.b === endId(x.l.target)).length;
+        const parts = [inferred && `${inferred} inferred from co-filing`, coalitions && `${coalitions} through shared coalition membership`].filter(Boolean);
         const sum = `Path found: ${steps.length} ${steps.length === 1 ? "hop" : "hops"}${parts.length ? " (" + parts.join(", ") + ")" : ""}`;
         out.innerHTML = `<h5 id="net-path-sum" class="path-sum" tabindex="-1">${sum}</h5><ol class="path-steps">${steps.map(hopHtml).join("")}</ol>
           <button type="button" class="chip" id="net-path-clear">Clear path</button>`;

@@ -128,19 +128,40 @@
   const seekingOf = (n) => (n.seeking || []).filter((s) => s && SEEKING_LABEL[s.type]);
   const RESUB_NOTE = "this site's reading; thresholds may change";
 
-  // The flag belongs on the latest vote on a subject only: a proposal whose vote appears in a later proposal's
-  // vote_history at the same company has already been refiled, so it isn't flagged.
-  function superseded(ctx) {
-    if (ctx.cache.superseded) return ctx.cache.superseded;
-    const s = new Set();
-    ctx.nodes.forEach((m) => (m.vote_history || []).forEach((v) => s.add(`${m.company}|${v.year}|${Number(v.support_pct)}`)));
-    ctx.cache.superseded = s;
-    return s;
+  // Vote chains: graph nodes carry vote_history (earlier votes on the same subject at the same company, as
+  // matched in the data). A chain can be split across nodes, so follow each earlier vote to the proposal node
+  // that holds it (same company and year, support within 0.05 points, since the files round differently) and
+  // take that node's history too.
+  const samePct = (a, b) => Math.abs(Number(a) - Number(b)) <= 0.05;
+  function voteChain(n, ctx) {
+    const votes = new Map();
+    const add = (year, pct, url) => { if (year && pct != null && !votes.has(year)) votes.set(year, { year, pct: Number(pct), results_url: url || null }); };
+    if (n.status === "voted" && n.support_pct != null) add(n.year, n.support_pct, n.results_url);
+    const seen = new Set([n.id]);
+    const queue = [...(n.vote_history || [])];
+    while (queue.length) {
+      const h = queue.shift();
+      add(h.year, h.support_pct, h.results_url);
+      const m = ctx.nodes.find((x) => x.kind === "proposal" && !seen.has(x.id) && x.company === n.company && x.year === h.year && x.support_pct != null && samePct(x.support_pct, h.support_pct));
+      if (m) { seen.add(m.id); queue.push(...(m.vote_history || [])); }
+    }
+    return [...votes.values()].sort((a, b) => a.year - b.year);
+  }
+  // The flag belongs on the latest proposal on a subject only: one whose vote appears in a later proposal's
+  // vote_history at the same company has been refiled since, so it isn't flagged.
+  function superseded(n, ctx) {
+    return ctx.nodes.some((m) => m !== n && m.company === n.company && (m.vote_history || []).some((h) => h.year === n.year && samePct(h.support_pct, n.support_pct)));
   }
   function resub(n, ctx) {
-    if (n.kind !== "proposal" || !R().resubmission) return null;
-    if (n.status === "voted" && superseded(ctx).has(`${n.company}|${n.year}|${Number(n.support_pct)}`)) return null;
-    return R().resubmission(n);
+    if (n.kind !== "proposal" || !(n.vote_history || []).length || !R().resubmission) return null;
+    const key = `resub:${n.id}`;
+    if (ctx.cache[key] !== undefined) return ctx.cache[key];
+    let r = null;
+    if (n.status === "upcoming") r = R().resubmission(voteChain(n, ctx), { pending: true, year: n.year });
+    else if (n.status === "voted" && !superseded(n, ctx)) r = R().resubmission(voteChain(n, ctx), { meetingDate: n.meeting_date });
+    if (r) r.chain = voteChain(n, ctx);
+    ctx.cache[key] = r;
+    return r;
   }
 
   function impactRings(n, ctx) {
@@ -159,7 +180,8 @@
     const d = R().deadlineInfo && R().deadlineInfo(n);
     if (d) {
       const what = d.company ? "Proposal deadline for the next annual meeting" : "Co-file before";
-      out.push({ text: `${what} ${fmtDate(d.date)} (${plural(d.days, "day", "days")} left, from the proxy statement)`, href: d.source, hrefLabel: "source", needsSource: true });
+      const quote = d.company && n.next_proposal_deadline_quote ? ` Proxy text: “${n.next_proposal_deadline_quote}”` : "";
+      out.push({ text: `${what} ${fmtDate(d.date)} (${plural(d.days, "day", "days")} left, from the proxy statement).${quote}`, href: d.source, hrefLabel: "source", needsSource: true });
     }
     seekingOf(n).forEach((s) => out.push({
       text: `Needs ${SEEKING_LABEL[s.type]}${s.note ? ": " + s.note : ""} · posted by ${s.posted_by || "unknown"}${s.posted_at ? ", " + fmtDate(String(s.posted_at).slice(0, 10)) : ""} · ${s.verified ? "reviewed" : "auto-detected, not yet reviewed"}`,
@@ -167,15 +189,16 @@
     }));
     const r = resub(n, ctx);
     if (r) {
-      const matched = n.vote_history_source || (n.vote_history || []).some((v) => v.source || v.match) ? " Earlier votes matched by this site (same company and topic, similar title)." : "";
-      // For a proposal still on the ballot, the bar is stated as a fact about the rule, apart from the meeting
-      // line, so it can't read as a support target for the coming vote.
-      const bar = r.pending
-        ? `Resubmission threshold after this vote: ${r.needs}% (vote ${r.count} on this subject in ${R().LOOKBACK_YEARS} years; ${RESUB_NOTE}). Last vote on the subject: ${r.last.pct}% (${r.last.year}).`
-        : `Last vote: ${r.last.pct}% (${r.last.year}). Needs ${r.needs}% to stay eligible (vote ${r.count} on this subject in ${R().LOOKBACK_YEARS} years; ${RESUB_NOTE}).`;
-      const hist = [...(n.vote_history || [])].sort((a, b) => a.year - b.year);
-      out.push({ text: `${bar}${r.basisNote ? " Support basis note on file: the rule counts For ÷ (For + Against); see Proposals." : ""}${matched}`,
-        links: hist.map((v) => ({ href: v.results_url || null, label: `${v.year} vote: ${v.support_pct}%` })) });
+      const basis = `vote ${r.count} on this subject in the ${R().LOOKBACK_YEARS} years before the ${r.meetingYear} meeting; ${RESUB_NOTE}`;
+      // Stated as facts about the bar; for a proposal on the ballot the bar is kept apart from the meeting line,
+      // so it can't read as a support target for the coming vote.
+      const text = r.pending
+        ? `Resubmission threshold after this vote: ${r.needs}% (${basis}). Last vote on the subject: ${r.last.pct}% (${r.last.year}).`
+        : r.state === "below"
+          ? `Last vote: ${r.last.pct}% (${r.last.year}), under the ${r.needs}% resubmission threshold (${basis}).`
+          : `Last vote: ${r.last.pct}% (${r.last.year}), ${r.margin} ${r.margin === 1 ? "point" : "points"} above the ${r.needs}% resubmission threshold (${basis}).`;
+      out.push({ text: `${text} Earlier votes are matched in this dataset by company, topic and similar title, not confirmed from the proxy.`,
+        links: r.chain.map((v) => ({ href: v.results_url, label: `${v.year} vote: ${v.pct}%` })) });
     }
     return out;
   }

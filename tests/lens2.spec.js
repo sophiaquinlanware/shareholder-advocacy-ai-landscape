@@ -32,12 +32,10 @@ function fixture() {
       },
     ],
   });
-  Object.assign(node("msft-2026-hr-hotspots"), {
-    vote_history: [
-      { year: 2023, support_pct: 33.58, results_url: "https://www.sec.gov/test-2023" },
-      { year: 2024, support_pct: 32.03, results_url: "https://www.sec.gov/test-2024" },
-      { year: 2025, support_pct: 27.48, results_url: "https://www.sec.gov/test-2025" },
-    ],
+  Object.assign(node("co-NVDA"), {
+    next_proposal_deadline: "2027-02-01",
+    next_proposal_deadline_source: "https://www.sec.gov/test-nvda",
+    next_proposal_deadline_quote: "Test quote: proposals must be received by February 1, 2027.",
   });
   return G;
 }
@@ -72,16 +70,47 @@ test("seeking: each ask is a line; exempt-solicitation asks are not shown", asyn
   await expect(acts).not.toContainText("Test Org B");
 });
 
-test("resubmission: at-risk proposal states the threshold; no flag without vote_history", async ({ page }) => {
-  await open(page);
+// Resubmission marks run on the live data's vote_history (data/graph.json), with the clock fixed.
+test("resubmission: on the ballot, below, just above, chained, and no flag where refiled", async ({ page }) => {
+  await open(page, { fixtureData: false });
+  const acts = () => panel(page).locator(".net-actions");
+  // On the ballot: a fact about the bar after this vote, never "below".
   await page.evaluate(() => window.focusNetworkNode("msft-2026-hr-hotspots"));
   await expect(panel(page)).toContainText("At risk of losing resubmission eligibility");
-  await expect(panel(page).locator(".net-actions")).toContainText(
-    "Last vote: 27.48% (2025). Needs 25% to stay eligible",
+  await expect(acts()).toContainText(
+    "Resubmission threshold after this vote: 25% (vote 4 on this subject in the 5 years before the 2027 meeting",
   );
-  await page.evaluate(() => window.focusNetworkNode("msft-2023-hr-hotspots"));
-  await expect(panel(page).locator("h3")).toContainText("2023");
+  await expect(acts()).toContainText("Last vote on the subject: 27.48% (2025)");
+  await expect(acts()).toContainText("not confirmed from the proxy");
+  // Chain split across nodes: 2023 is on the 2024 proposal's history, so this is vote 3 and the bar is 25%.
+  await page.evaluate(() => window.focusNetworkNode("googl-2025-ai-targeted-ads-hr"));
+  await expect(panel(page)).toContainText("Below this site's reading of the resubmission threshold");
+  await expect(acts()).toContainText(
+    "Last vote: 14.29% (2025), under the 25% resubmission threshold (vote 3 on this subject",
+  );
+  // Cleared the bar by less than 3 points: stated as a margin, not as "needs".
+  await page.evaluate(() => window.focusNetworkNode("amzn-2024-customer-dd"));
+  await expect(acts()).toContainText("Last vote: 16.79% (2024), 1.79 points above the 15% resubmission threshold");
+  // Refiled since (its vote is in a later proposal's history): no flag.
+  await page.evaluate(() => window.focusNetworkNode("msft-2024-hr-hotspots"));
+  await expect(panel(page).locator("h3")).toContainText("2024");
   await expect(panel(page)).not.toContainText("resubmission");
+});
+
+test("company deadline: next annual meeting wording, proxy text and source", async ({ page }) => {
+  await open(page);
+  await page.evaluate(() => window.focusNetworkNode("co-NVDA"));
+  await expect(panel(page).locator(".net-actions")).toContainText(
+    "Proposal deadline for the next annual meeting February 1, 2027 (68 days left, from the proxy statement). Proxy text: “Test quote",
+  );
+  await expect(panel(page).locator('.net-actions a[href="https://www.sec.gov/test-nvda"]')).toHaveCount(1);
+});
+
+test("no pulse under reduced motion", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await open(page);
+  await page.waitForSelector("circle.g-pulse", { state: "attached" });
+  expect(await page.$eval("circle.g-pulse", (c) => getComputedStyle(c).animationName)).toBe("none");
 });
 
 test("holdings: fade, count line, Esc returns focus, kept across reload, nothing sent", async ({ page }) => {
@@ -133,6 +162,9 @@ test("warm path: a found path lists labelled hops; an unreachable target says so
   await expect(page.locator("#net-path-sum")).toBeFocused();
   await expect(page.locator(".path-steps li").first()).toBeVisible();
   await expect(page.locator("#net-path-sum")).toBeFocused();
+  await page.keyboard.press("Escape");
+  await expect(page.locator("#net-path-go")).toBeFocused();
+  await expect(page.locator("#net-path-sum")).toHaveCount(0);
   await page.selectOption("#net-path-to", "lab-openai");
   await page.click("#net-path-go");
   await expect(page.locator("#net-path-sum")).toContainText("No path in this map");

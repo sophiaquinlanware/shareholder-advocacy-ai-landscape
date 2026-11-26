@@ -109,32 +109,40 @@
   // "At risk" covers support at the threshold or up to this many points above it (owner's spec: 3 points).
   const AT_RISK_MARGIN = 3;
 
-  // For a proposal node with vote_history (earlier votes on the same subject at the same company, from the
-  // data). Never inferred here. Returns null, or { state: "at-risk" | "below", last, needs, count, basisNote }.
-  function resubmission(node, now = new Date()) {
-    const hist = (node.vote_history || []).filter((v) => v && v.year && v.support_pct != null);
-    if (!hist.length) return null;
-    const voted = node.status === "voted" && node.support_pct != null && node.year;
-    const votes = [...hist, ...(voted ? [{ year: node.year, support_pct: node.support_pct, support_note: node.support_note }] : [])]
-      .sort((a, b) => a.year - b.year);
-    const last = votes.at(-1);
-    // The meeting the question is about: this proposal's own (still to vote) or the next one after the last vote.
-    const pending = !voted && node.status === "upcoming";
-    const meetingYear = pending ? node.year : Math.max(last.year + 1, Number(todayISO(now).slice(0, 4)));
-    if (meetingYear - last.year > RECENT_YEARS) return null;
-    const inWindow = votes.filter((v) => v.year >= meetingYear - LOOKBACK_YEARS && v.year < meetingYear);
-    // For a proposal still to be voted on, its own vote is the next one counted, so the bar it must clear
-    // is set by the votes before it plus itself.
-    const count = inWindow.length + (pending ? 1 : 0);
+  // votes: every vote on one subject at one company, as { year, pct } (lenses.js joins the chain across
+  // proposals). opts: { pending: true, year } for a proposal on the ballot and not yet voted on, and
+  // meetingDate (ISO) of the latest meeting, used to find the next meeting that hasn't happened yet.
+  // Returns null, or { state: "at-risk" | "below", pending, last, needs, count, meetingYear, margin }.
+  function resubmission(votes, opts = {}, now = new Date()) {
+    const v = (votes || []).filter((x) => x && x.year && x.pct != null && !Number.isNaN(Number(x.pct))).sort((a, b) => a.year - b.year);
+    if (!v.length) return null;
+    const last = v.at(-1);
+    const today = todayISO(now);
+    let meetingYear;
+    if (opts.pending) meetingYear = opts.year + 1;
+    else {
+      // The next meeting after the last vote that hasn't happened yet (same month and day as the last meeting,
+      // when its date is known; otherwise the later of next year and this year).
+      const md = opts.meetingDate ? String(opts.meetingDate).slice(4, 10) : null;
+      meetingYear = last.year + 1;
+      if (md) { while (`${meetingYear}${md}` < today) meetingYear++; }
+      else meetingYear = Math.max(meetingYear, Number(today.slice(0, 4)));
+    }
+    // The rule applies only if the last vote was in the RECENT_YEARS calendar years before that meeting.
+    const lastYear = opts.pending ? opts.year : last.year;
+    if (meetingYear - lastYear > RECENT_YEARS) return null;
+    // Votes in the LOOKBACK_YEARS calendar years before that meeting; a pending vote counts as one of them.
+    const count = v.filter((x) => x.year >= meetingYear - LOOKBACK_YEARS && x.year < meetingYear && !(opts.pending && x.year === opts.year)).length + (opts.pending ? 1 : 0);
+    if (!count) return null;
     const needs = RESUBMISSION_THRESHOLDS[Math.min(count, RESUBMISSION_THRESHOLDS.length) - 1];
-    const pct = Number(last.support_pct);
+    const pct = Number(last.pct);
     // A proposal on the ballot was eligible, so it is never "below"; it is "at risk" when its last vote on the
     // subject is under, or within AT_RISK_MARGIN points above, the bar that applies after this vote.
     let state = null;
-    if (pct < needs && !pending) state = "below";
+    if (pct < needs && !opts.pending) state = "below";
     else if (pct <= needs + AT_RISK_MARGIN) state = "at-risk";
     if (!state) return null;
-    return { state, pending, last: { year: last.year, pct }, needs, count, basisNote: !!(last.support_note || last.basis_note) };
+    return { state, pending: !!opts.pending, last: { year: last.year, pct }, needs, count, meetingYear, margin: Math.round((pct - needs) * 100) / 100 };
   }
 
   window.RULES = {
