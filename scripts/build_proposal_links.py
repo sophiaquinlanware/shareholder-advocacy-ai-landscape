@@ -48,6 +48,7 @@ def main():
     asks_doc = json.loads((DATA / "asks.json").read_text()) if (DATA / "asks.json").exists() else {}
     asks = asks_doc.get("asks", [])
     cat_of = {a["id"]: a.get("category") for a in asks}
+    cat_label = {c["id"]: c["label"] for c in asks_doc.get("categories", [])}
     overrides = asks_doc.get("proposal_category_overrides", {})
     for p in props:
         text = ((p.get("title") or "") + " " + (p.get("subtopic") or "")).lower()
@@ -62,6 +63,12 @@ def main():
             p["category"] = cat
         else:
             p.pop("category", None)
+        # The site shows one classification (owner, 2026-11-26: no redundant information): "topic" carries the
+        # category label; the earlier three-way topic is kept as topic_original for vote-history matching.
+        if "topic_original" not in p:
+            p["topic_original"] = p.get("topic")
+        if cat and cat in cat_label:
+            p["topic"] = cat_label[cat]
 
     linked = 0
     for p in props:
@@ -71,7 +78,7 @@ def main():
                 for q in props:
                     if (q is not p and q["company"] == p["company"] and q.get("status") == "voted"
                             and q.get("support_pct") is not None and (q.get("year") or 0) < (p.get("year") or 0)
-                            and q.get("topic") == p.get("topic") and same_subject(q["title"], p["title"])):
+                            and (q.get("topic_original") or q.get("topic")) == (p.get("topic_original") or p.get("topic")) and same_subject(q["title"], p["title"])):
                         hist.append({"year": q["year"], "proposal_id": q["id"], "title": q["title"],
                                      "support_pct": q["support_pct"], "results_url": q.get("results_url")})
             if hist:
@@ -87,6 +94,19 @@ def main():
             p["filing_deadline_source"] = d["source"]
 
     path.write_text(json.dumps(doc, indent=1, ensure_ascii=False) + "\n")
+
+    # Upcoming ballot items show the same category label as their proposal (matched by company, year, title).
+    upath = DATA / "upcoming.json"
+    if upath.exists():
+        up = json.loads(upath.read_text())
+        for m in up.get("meetings", []):
+            year = int((m.get("sort") or "0")[:4] or 0)
+            for it in m.get("items", []):
+                cands = [p for p in props if p["company"] == m.get("ticker") and p.get("year") == year
+                         and same_subject(re.sub(r"\s*\(filed by.*$", "", it.get("title") or ""), p["title"])]
+                if len(cands) == 1 and cands[0].get("topic"):
+                    it["topic"] = cands[0]["topic"]
+        upath.write_text(json.dumps(up, indent=1, ensure_ascii=False) + "\n")
 
     # Deadline status on each company, recomputed every run so "open" never goes stale.
     import datetime as dt

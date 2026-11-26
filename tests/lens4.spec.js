@@ -92,7 +92,7 @@ test("Value chain: a tier opens its details; zero cells are not buttons; capped 
   await page.goto("/index.html#value-chain");
   await page.waitForLoadState("networkidle");
   await page.click('.vc-tiers .chip[data-tier="compute"]');
-  await expect(page.locator("#vc-panel-h")).toHaveText("Hyperscalers and AI clouds");
+  await expect(page.locator("#vc-panel-h")).toHaveText("Cloud and model platforms");
   await expect(page.locator("#vc-panel-h")).toBeFocused();
   await expect(page.locator("#vc-panel")).toContainText("Labs connected by sourced ties");
   await expect(page.locator(".vc-heat .vc-zero button")).toHaveCount(0);
@@ -109,15 +109,17 @@ test("Proposals: filter by what a proposal asks about (when the data has categor
     { id: "users", label: "Harms to people using AI products" },
   ];
   A.categories_note = "Test note.";
+  // One classification on the page: "topic" carries the category label (scripts/build_proposal_links.py).
   P.proposals.forEach((p, i) => {
     p.category = i % 2 ? "users" : "data-centers";
+    p.topic = i % 2 ? "Harms to people using AI products" : "Data center externalities";
   });
   await page.route("**/data/asks.json", (r) => r.fulfill({ json: A }));
   await page.route("**/data/proposals.json", (r) => r.fulfill({ json: P }));
   await page.goto("/index.html#feed");
   await page.waitForLoadState("networkidle");
   const n = P.proposals.filter((p) => p.category === "users" && p.company && p.year).length;
-  await page.selectOption("#feed-cat", "users");
+  await page.selectOption("#feed-topic", "Harms to people using AI products");
   await expect(page.locator("#feed-count")).toContainText(`Showing ${n} proposal`);
   await expect(page.locator("#tab-feed")).toContainText("Test note.");
 });
@@ -171,16 +173,18 @@ test("Motion: headings reveal line by line, then return to plain text; reduced m
 }) => {
   await page.goto("/index.html#people");
   await page.waitForLoadState("networkidle");
+  await page.click('.tabs [data-group="chain"]');
   await page.click("#tabbtn-pathways");
   // Mid-reveal the heading is split into masked lines …
   expect(await page.locator("#tab-pathways h2 .rl").count()).toBeGreaterThan(0);
   // … and afterwards the lines are inline again, so it reads and wraps as plain text.
   await expect(page.locator("#tab-pathways h2")).toHaveClass(/rl-done/, { timeout: 3000 });
-  await expect(page.locator("#tab-pathways h2")).toHaveText("Lab pathways");
+  await expect(page.locator("#tab-pathways h2")).toHaveText("Routes to a frontier lab");
   const ctx = await browser.newContext({ reducedMotion: "reduce" });
   const p2 = await ctx.newPage();
   await p2.goto("/index.html#people");
   await p2.waitForLoadState("networkidle");
+  await p2.click('.tabs [data-group="chain"]');
   await p2.click("#tabbtn-pathways");
   expect(await p2.locator("#tab-pathways h2 .rl").count()).toBe(0);
   await ctx.close();

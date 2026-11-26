@@ -48,7 +48,7 @@ Old links keep working through `TAB_ALIASES` (upcoming and new to start, pathway
 
 ## One vocabulary (R3, R4)
 
-- **Value-chain roles**, everywhere (data, graph key, filters, map columns), using the owner's words from round 2 ("Frontier AI Labs", "hyperscalers", "chip builders"): Chip builders; Data centers and power; Hyperscalers and AI clouds; Frontier AI labs; AI deployers (with sub-labels consumer products and business and government products where needed); Strategic investors. Source of truth: `data/value_chain.json` `tiers` plus a `deployer_kind` on companies.
+- **Value-chain roles**, everywhere (data, graph key, filters, map columns), using the role labels in `roles.js` (the owner's later decision of 2026-11-26, docs/plans/2026-11-26-company-roles.md): Frontier labs; Chips and hardware; Data centers and power; Cloud and model platforms; Consumer products; Business and government products; Strategic investors. `data/value_chain.json` tier labels match them (its "deployers" tier reads "Consumer and business products").
 - **Proposal classification**: only the 4 categories in `data/asks.json` (`category`). `topic` stays in the data for old links but is no longer shown.
 - **Headings**: questions in plain words; no internal terms ("lens", "node", "tier details"); no counts in headings.
 

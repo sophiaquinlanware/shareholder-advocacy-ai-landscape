@@ -12,7 +12,7 @@ test("choosing a lens updates ?lens=, keeps #network, and survives a reload", as
   await page.check('#net-lens input[value="policy"]');
   await expect(page).toHaveURL(/\?lens=policy#network$/);
   await expect(page.locator("#net-lens-status")).toContainText("Policymaker view");
-  await expect(page.locator("#net-intro")).toContainText("Node size = number of proposals with this ask");
+  await expect(page.locator("#net-intro")).toContainText("Circle size = number of proposals with this ask");
   await page.reload();
   await page.waitForSelector("#net-lens input:checked");
   expect(await page.$eval("#net-lens input:checked", (i) => i.value)).toBe("policy");
@@ -67,6 +67,7 @@ test("List view lists every visible node with status and actions", async ({ page
 test("opening a tab puts its name in the address (#hash)", async ({ page }) => {
   await page.goto("/index.html");
   await page.waitForLoadState("networkidle");
+  await page.click('.tabs [role="tab"][data-group="companies"]');
   await page.click('[role="tab"][data-tab="rights"]');
   await expect(page).toHaveURL(/#rights$/);
 });

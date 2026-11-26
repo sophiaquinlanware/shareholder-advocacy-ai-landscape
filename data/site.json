@@ -46,8 +46,8 @@
     {
       "id": "no-alignment-asks",
       "title": "No proposal asks about model alignment",
-      "text": "None of the 78 AI proposals at these 29 companies since 2023 asks directly about model alignment or catastrophic risk. The 12 governance proposals ask for board oversight and transparency instead.",
-      "basis": "This site's classification of every proposal in data/proposals.json (data/asks.json categories).",
+      "text": "None of the 78 AI proposals since 2023 at the 29 companies subject to US proxy rules asks directly about model alignment or catastrophic risk. The 12 governance proposals ask for board oversight and transparency instead.",
+      "basis": "This site's classification of every proposal by what it asks about.",
       "link": "#feed"
     },
     {
@@ -60,9 +60,9 @@
     {
       "id": "policy-gaps",
       "title": "Policy covers part of each ask, none in full",
-      "text": "No recurring ask is fully required by a law or code on the Policy map. Two have no policy at all: human rights reviews of where data centers are built, and reporting on AI sold for oil and gas.",
-      "basis": "data/coverage.json, this site's reading of each policy's text; not yet confirmed by a person.",
-      "link": "#causality"
+      "text": "No recurring ask is fully required by a law or code this site tracks. Two have no policy at all: human rights reviews of where data centers are built, and reporting on AI sold for oil and gas.",
+      "basis": "This site's reading of each policy's text, not yet confirmed by a person. Shown per ask in the Network's Policymaker view.",
+      "link": "?lens=policy#network"
     }
   ]
 }

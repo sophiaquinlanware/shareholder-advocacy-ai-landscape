@@ -25,26 +25,44 @@
     {
      "number": "4",
      "title": "Additional Disclosures Meeting Climate Commitments (filed by Trillium Asset Management and a co-filer)",
-     "topic": "Data center impacts",
+     "topic": "Data center externalities",
      "board_rec": "Against",
      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
     },
     {
      "number": "5",
      "title": "Report on Human Rights Due Diligence (filed by Religious of the Sacred Heart of Mary and co-filers)",
-     "topic": "Social and economic impacts",
+     "topic": "Harms from how customers use AI",
      "board_rec": "Against",
      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
     },
     {
      "number": "6",
      "title": "Report on Data Operations in Human Rights and Conflict Hotspots (filed by Azzad Asset Management, Inc.)",
-     "topic": "Data center impacts",
+     "topic": "Data center externalities",
      "board_rec": "Against",
      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
     }
    ],
    "sort": "2026-12-08"
+  },
+  {
+   "company": "Cisco Systems",
+   "ticker": "CSCO",
+   "meeting_label": "December 15, 2026",
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm",
+   "status": "upcoming",
+   "status_label": "Ballot is out",
+   "note": "AI proposal on the ballot (see the proxy statement).",
+   "items": [
+    {
+     "number": "5",
+     "title": "Human rights impact assessment of high-risk customers and end uses (filed by Azzad Asset Management (lead filer))",
+     "topic": "Harms from how customers use AI",
+     "url": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm"
+    }
+   ],
+   "sort": "2026-12-15"
   },
   {
    "company": "Apple",

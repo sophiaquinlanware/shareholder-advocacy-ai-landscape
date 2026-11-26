@@ -3,7 +3,7 @@
  "tiers": [
   {
    "id": "chips",
-   "label": "Chip builders",
+   "label": "Chips and hardware",
    "order": 1,
    "what_it_is": "Design, make or package the chips, memory and networking that AI runs on.",
    "companies": [
@@ -36,7 +36,7 @@
   },
   {
    "id": "compute",
-   "label": "Hyperscalers and AI clouds",
+   "label": "Cloud and model platforms",
    "order": 3,
    "what_it_is": "Rent out AI computing at scale and often fund or host frontier labs.",
    "companies": [
@@ -52,7 +52,7 @@
   },
   {
    "id": "labs",
-   "label": "Frontier AI labs",
+   "label": "Frontier labs",
    "order": 4,
    "what_it_is": "Train general-purpose AI models.",
    "companies": [
@@ -97,7 +97,7 @@
   },
   {
    "id": "deployers",
-   "label": "AI deployers",
+   "label": "Consumer and business products",
    "order": 6,
    "what_it_is": "Build AI into products that businesses, governments or consumers use.",
    "companies": [
@@ -591,9 +591,10 @@
    "ties_into_tier": 11,
    "ai_proposals": 35,
    "proposal_topics": {
-    "Social & economic impacts": 20,
-    "Data center impacts": 8,
-    "AI governance & oversight": 7
+    "Harms to people using AI products": 12,
+    "Harms from how customers use AI": 9,
+    "Data center externalities": 8,
+    "AI governance and safety": 6
    },
    "median_support_pct": 12.3,
    "median_support_base": {
@@ -1232,9 +1233,9 @@
    "ties_into_tier": 11,
    "ai_proposals": 16,
    "proposal_topics": {
-    "Social & economic impacts": 10,
-    "Data center impacts": 5,
-    "AI governance & oversight": 1
+    "Harms to people using AI products": 10,
+    "Data center externalities": 5,
+    "AI governance and safety": 1
    },
    "median_support_pct": 10.1,
    "median_support_base": {
@@ -1619,9 +1620,10 @@
    "ties_into_tier": 18,
    "ai_proposals": 46,
    "proposal_topics": {
-    "Social & economic impacts": 25,
-    "Data center impacts": 12,
-    "AI governance & oversight": 9
+    "Harms to people using AI products": 17,
+    "Data center externalities": 12,
+    "Harms from how customers use AI": 11,
+    "AI governance and safety": 6
    },
    "median_support_pct": 13.2,
    "median_support_base": {
@@ -2263,9 +2265,10 @@
    "ties_into_tier": 21,
    "ai_proposals": 33,
    "proposal_topics": {
-    "Social & economic impacts": 21,
-    "AI governance & oversight": 6,
-    "Data center impacts": 6
+    "Harms to people using AI products": 22,
+    "Data center externalities": 6,
+    "AI governance and safety": 4,
+    "Harms from how customers use AI": 1
    },
    "median_support_pct": 8.8,
    "median_support_base": {
@@ -2885,9 +2888,10 @@
    "ties_into_tier": 17,
    "ai_proposals": 49,
    "proposal_topics": {
-    "Social & economic impacts": 26,
-    "Data center impacts": 13,
-    "AI governance & oversight": 10
+    "Harms to people using AI products": 17,
+    "Data center externalities": 13,
+    "Harms from how customers use AI": 12,
+    "AI governance and safety": 7
    },
    "median_support_pct": 13.8,
    "median_support_base": {
@@ -3530,9 +3534,10 @@
    "ties_into_tier": 23,
    "ai_proposals": 72,
    "proposal_topics": {
-    "Social & economic impacts": 42,
-    "AI governance & oversight": 15,
-    "Data center impacts": 15
+    "Harms to people using AI products": 30,
+    "Data center externalities": 15,
+    "Harms from how customers use AI": 15,
+    "AI governance and safety": 12
    },
    "median_support_pct": 12.4,
    "median_support_base": {

@@ -4,9 +4,17 @@
 import { expect, test } from "@playwright/test";
 import { findOverlappingText, sidewaysOverflow } from "./layout.js";
 
-// Read the tab list from the page itself, so a new tab is tested without editing this file.
+// Read the view list from the page itself, so a new view is tested without editing this file.
+// Views sit inside six sections; each view's panel names its section (data-group).
 async function tabNames(page) {
-  return page.$$eval('[role="tab"][data-tab]', (tabs) => tabs.map((t) => t.dataset.tab));
+  return page.$$eval(".panel[data-group]", (ps) => ps.map((p) => p.id.slice(4)));
+}
+// Open a view as a reader would: its section tab, then its view tab when the section has more than one.
+async function openView(page, view) {
+  const group = await page.getAttribute(`#tab-${view}`, "data-group");
+  await page.click(`.tabs [role="tab"][data-group="${group}"]`);
+  const sub = page.locator(`#grp-${group} [role="tab"][data-tab="${view}"]`);
+  if (await sub.count()) await sub.click();
 }
 
 // Collect anything that went wrong while the page loaded: console errors and failed local requests.
@@ -37,7 +45,7 @@ test("every tab: no sideways scrolling, no overlapping text", async ({ page }, i
   await page.goto("/index.html");
   await page.waitForLoadState("networkidle");
   for (const tab of await tabNames(page)) {
-    await page.click(`[role="tab"][data-tab="${tab}"]`);
+    await openView(page, tab);
     await page.waitForTimeout(600); // let graphs settle before measuring
     await page.screenshot({ path: `tests/screenshots/${info.project.name}/${tab}.png`, fullPage: true });
 
@@ -54,7 +62,7 @@ test("every local link on every tab points at a file that exists", async ({ page
   await page.waitForLoadState("networkidle");
   const hrefs = new Set();
   for (const tab of await tabNames(page)) {
-    await page.click(`[role="tab"][data-tab="${tab}"]`);
+    await openView(page, tab);
     await page.waitForTimeout(600); // same settle time as the layout test, so late-drawn links are seen
     for (const h of await page.$$eval("a[href]", (as) => as.map((a) => a.href))) hrefs.add(h.split("#")[0]);
   }

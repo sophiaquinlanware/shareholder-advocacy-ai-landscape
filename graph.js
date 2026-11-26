@@ -314,7 +314,7 @@
     el.innerHTML = `
       <p class="eyebrow net-kind">Proposal flow</p>
       <h2>AI advocacy network</h2>
-      <p class="count-line">Who files AI shareholder proposals, on what, at which companies, and how those companies tie to frontier labs. Filers → proposals → companies → labs. For value-chain ties alone, see Lab pathways.</p>
+      <p class="count-line">Who files AI shareholder proposals, on what, at which companies, and how those companies tie to frontier labs. Filers → proposals → companies → labs. For value-chain ties alone, see Value chain › Routes to a lab.</p>
       <fieldset class="lens-pick" id="net-lens"><legend>View as</legend>${Object.entries(window.LENSES || {}).map(([id, l]) =>
         `<label class="chip"><input type="radio" name="net-lens" value="${esc(id)}"${id === state.lens ? " checked" : ""}> ${esc(l.label)}</label>`).join("")}</fieldset>
       <p class="visually-hidden" id="net-lens-status" aria-live="polite"></p>
@@ -324,7 +324,7 @@
       <p class="intro" id="net-intro"></p>
       <div class="net-controls">
         <input type="search" id="net-search" placeholder="Search an organization or company" aria-label="Search the network">
-        <select id="net-topic" aria-label="Filter by topic"><option value="">All topics</option></select>
+        <select id="net-topic" aria-label="What it asks about"><option value="">Everything it asks about</option></select>
         <select id="net-year" aria-label="Filter by year"><option value="">All years</option></select>
         <div class="seg" role="group" aria-label="View">
           <button type="button" data-view="graph" aria-pressed="true">Graph</button>
@@ -333,7 +333,7 @@
       </div>
       <div class="net-tools">
         <button type="button" class="chip" id="net-hold-btn" aria-expanded="false" aria-controls="net-hold">My holdings</button>
-        <button type="button" class="chip" id="net-gaps" aria-pressed="false">Show topics not filed</button>
+        <button type="button" class="chip" id="net-gaps" aria-pressed="false">Show asks not yet filed</button>
       </div>
       <div id="net-hold" class="net-hold" hidden>
         <label for="net-hold-input">Tickers, separated by commas, spaces or new lines</label>
@@ -352,7 +352,7 @@
           <p class="visually-hidden" id="net-kb" aria-live="polite"></p>
         </div>
         <div id="net-list" class="net-list" hidden></div>
-        <aside id="net-panel" class="net-panel" aria-label="Selected node"><p class="status-note">Select a node for its connections and sources.</p></aside>
+        <aside id="net-panel" class="net-panel" aria-label="Selected item"><p class="status-note">Select an organization, person, proposal or company for its connections and sources.</p></aside>
       </div>
       <div class="scrub" id="net-scrub">
         <label for="net-upto">Show the network up to <span id="net-upto-val"></span></label>
@@ -590,7 +590,7 @@
     const shown = state.data.nodes.filter(visible).length;
     document.getElementById("net-intro").textContent = lens().plainIntro
       ? lens().plainIntro(shown, state.data.nodes.length)
-      : `${shown} of ${state.data.nodes.length} nodes shown. Node size = ${lens().sizeLabel}. Company roles are this site's reading of each company's main role in AI.`;
+      : `${shown} of ${state.data.nodes.length} organizations, people, proposals and companies shown. Circle size = ${lens().sizeLabel}. Company roles are this site's reading of each company's main role in AI.`;
   }
 
   function neighbors(id) {
@@ -1017,7 +1017,7 @@
     if (state.drawn) { state.sim.stop(); drawGraph(); }
     intro();
     if (state.view === "list") drawList();
-    document.getElementById("net-lens-status").textContent = on ? `Topics not filed shown: ${n} ${n === 1 ? "node" : "nodes"}, among companies with AI proposals in this dataset.` : "Topics not filed hidden.";
+    document.getElementById("net-lens-status").textContent = on ? `Asks not yet filed shown: ${n} ${n === 1 ? "item" : "items"}, among companies with AI proposals in this dataset.` : "Asks not yet filed hidden.";
   }
 
   // ---------- Warm path: shortest chain through people, coalitions, co-filing and filings ----------
@@ -1161,7 +1161,7 @@
       } else if (e.key === "Escape") {
         state.selected = null; state.hover = null; state.kbId = null;
         applyStyles(); placeFocusMark();
-        document.getElementById("net-panel").innerHTML = `<p class="status-note">Select a node for its connections and sources.</p>`;
+        document.getElementById("net-panel").innerHTML = `<p class="status-note">Select an organization, person, proposal or company for its connections and sources.</p>`;
         say("Selection cleared");
       }
     });
@@ -1466,7 +1466,7 @@
     });
   }
 
-  // "Show topics not filed" belongs to lenses that set gaps: true (the Impact investor lens).
+  // "Show asks not yet filed" belongs to lenses that set gaps: true (the Impact investor lens).
   function gapButton() {
     const b = document.getElementById("net-gaps");
     if (b) b.hidden = !lens().gaps;
@@ -1506,7 +1506,7 @@
       refresh();
       regroup();
       refreshConnected();
-      document.getElementById("net-lens-status").textContent = `${msg} ${state.data.nodes.filter(visible).length} of ${state.data.nodes.length} nodes shown.`;
+      document.getElementById("net-lens-status").textContent = `${msg} ${state.data.nodes.filter(visible).length} of ${state.data.nodes.length} organizations, people, proposals and companies shown.`;
     });
     // Proposal categories (when colour by category is on): the same toggle, only and show-all controls.
     document.getElementById("net-catkey").addEventListener("click", (e) => {
