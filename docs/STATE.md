@@ -107,16 +107,12 @@ The owner's spec has four phases, and each phase gets its own plan and reviews i
    - (b) Meta 2026 Item 3 stays "Needs checking": the proxy shows Items 3 and 11 are distinct AI-data proposals that some fund filings describe the same way (reason in `held_back_reasons`).
    - (c) Peer families are not reviewed row by row (shown with †).
    - (d) Praxis and Domini 2025-26 file N-PX as text only.
-2. **Secondary sources for status reasons:** the Amazon and Apple withdrawal/exclusion reasons cite minerva.info. PRODUCT.md Never claim 4 prefers primary sources (SEC no-action letter or proxy).
-3. **Performance:** fixed for now: Inter loads without blocking (desktop 98). Self-hosting Inter, or splitting the 383 KB `graph.json`, would help if the data keeps growing.
-4. **Causality time scale:** most events fall in 2025–26. A piecewise time scale would give them more room.
-5. **Phone tables:** Company lookup's history and lab-tie tables are cramped at 390px. Stack or drop low-value columns on phones (UX R2).
-6. **Outside links to check by hand:** an SEC comment PDF (`data/causality.json`); www.omiusa.org and www.harringtoninvestments.com (`data/graph.json`).
-7. **Deploy publishes the whole repo** (`path: .` in refresh.yml). It could publish `dist/` instead; this is the owner's call.
-8. **Playwright still runs a "dark" project** although the site has one white theme. Drop the dark projects in `playwright.config.js` to halve test time.
-9. **Network link contrast:** links are `--blue-3` at 0.35 opacity (about 1.5:1). The dotted "inferred" lines are hard to tell from dashed membership lines at 1px. The panel and List view carry the same facts as text. Raising the opacity makes the graph busier, so it's for the owner (accessibility R1).
-10. **Data, for the data session:** googl-2026-5's 2026 vote has no `results_url` (it shows "source pending"). Graph nodes carry no `support_note`, so dual-class and count-computed support has only the generic caveat on the network. graph.json and proposals.json support values differ slightly (33.57 vs 33.58). Item 6 at Microsoft 2026 is "Social & economic impacts" in graph.json but "Data center impacts" in upcoming.json.
-11. **Proposals tab has no filer filter**, so the network can't offer "Open its filings in Proposals".
+2. **Performance:** fixed for now: Inter loads without blocking (desktop 98). Self-hosting Inter, or splitting the 383 KB `graph.json`, would help if the data keeps growing.
+3. **Causality time scale:** most events fall in 2025–26. A piecewise time scale would give them more room.
+4. **Phone tables:** Company lookup's history and lab-tie tables are cramped at 390px. Stack or drop low-value columns on phones (UX R2).
+5. **Playwright still runs a "dark" project** although the site has one white theme. Drop the dark projects in `playwright.config.js` to halve test time.
+6. **Network link contrast:** links are `--blue-3` at 0.35 opacity (about 1.5:1). The dotted "inferred" lines are hard to tell from dashed membership lines at 1px. The panel and List view carry the same facts as text. Raising the opacity makes the graph busier, so it's for the owner (accessibility R1).
+7. **Proposals tab has no filer filter**, so the network can't offer "Open its filings in Proposals".
 
 ## Owner actions
 
