@@ -139,10 +139,17 @@ def words(text):
     return {w for w in re.findall(r"[a-z0-9]+", t) if w not in STOP and (len(w) > 2 or w == "ai")}
 
 
+AI_WORDS = {"ai", "genai"}
+
+
 def score(title, description):
-    """(share of title words found in the description, share of description words found in the title)."""
+    """(share of title words found in the description, share of description words found in the title).
+    A title about AI only matches a description that also mentions AI, because several meetings
+    had look-alike proposals (e.g. Amazon 2024's board committees on AI and on public policy)."""
     A, B = words(title), words(description)
     if not A or not B:
+        return 0.0, 0.0
+    if A & AI_WORDS and not B & AI_WORDS:
         return 0.0, 0.0
     both = len(A & B)
     return both / len(A), both / len(B)
