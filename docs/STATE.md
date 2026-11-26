@@ -39,6 +39,8 @@ The working protocol (AGENTS.md) and the check suite (`npm run check`) are set u
 5. **Tab buttons lack `type="button"`** (11 lint warnings in `index.html`). Harmless today because there is no form. Fix when `index.html` is next edited, then make the lint rule an error again (biome.json).
 6. **Deploy publishes the whole repo** (`path: .` in refresh.yml), including docs/ and tests/. It could publish `dist/` after `npm run build` instead. This is a deploy change, so it's for the owner to decide.
 
+Parked, not merged: local branch `fix-missing-data-and-results-link` (commit 1129740, in the `.claude/worktrees/protocol-setup` worktree, not pushed) has unreviewed fixes for items 1 and 2, plus an empty-icon line that stops the browser's `favicon.ico` 404. The owner stopped this work in the setup session. Use it or delete it.
+
 ## Owner actions
 
 - Confirm or change the Lighthouse bar (ADR 0002): accessibility, best practices and SEO at 90 or above, performance at 80 or above.
