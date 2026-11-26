@@ -243,6 +243,31 @@ def main():
         (DATA / "proposals.json").write_text(json.dumps(pj, indent=1, ensure_ascii=False) + "\n")
         print(f"  added {len(merged_ids)} proposals to proposals.json from the filer network")
 
+    # Filers, co-filers and backing coalitions found later (network.json "proposal_links"), resolved after
+    # every proposal exists so links to SEC-only proposals and to merged twins both land.
+    for e in net.get("proposal_links", []):
+        target = e["to"] if e["to"] in nodes else twin_of.get(e["to"])
+        if e["from"] in nodes and target in nodes:
+            edge(e["from"], target, e["relation"], "proposals", e.get("source_url"), **({"note": e["note"]} if e.get("note") else {}))
+        else:
+            print(f"  warning: proposal link not resolved: {e['from']} -> {e['to']}")
+
+    # Direct engagements an investor reports itself (data/scorecard.json "parnassus_timeline"): private
+    # engagement, not a filing, so it gets its own edge type, one per company, with every dated step.
+    sc = load("scorecard.json") if (DATA / "scorecard.json").exists() else {}
+    co_by_name = {n["label"].lower(): n["id"] for n in nodes.values() if n["type"] == "company"}
+    co_by_name.update({"nvidia": "co-NVDA", "verisk analytics": co_by_name.get("verisk") or co_by_name.get("verisk analytics")})
+    steps = defaultdict(list)
+    for e in sc.get("parnassus_timeline", []):
+        cid = co_by_name.get((e.get("company") or "").lower())
+        if cid and "parnassus" in nodes:
+            steps[cid].append(e)
+    for cid, es in steps.items():
+        es = sorted(es, key=lambda e: str(e.get("date")))
+        edge("parnassus", cid, "engaged directly", "investors", es[0].get("source_url"),
+             reported_by="Parnassus", steps=[{"date": e.get("date"), "title": e.get("title"), "source_url": e.get("source_url"),
+                                             "source_page": e.get("source_page")} for e in es])
+
     # Fields for the impact investor view, copied from proposals.json and companies.json
     # (vote history, filing deadlines, calls for co-filers) onto the matching graph nodes.
     PHASE2_FIELDS = ("vote_history", "filing_deadline", "filing_deadline_source", "seeking", "meeting_date",

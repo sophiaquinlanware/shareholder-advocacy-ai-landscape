@@ -1,6 +1,6 @@
 # Shareholder Advocacy AI Landscape — current state
 
-Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 (UI session: Lab pathways rebuilt as routes to a lab).
+Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 (data session: census of shareholder advocates merged; earlier the UI session rebuilt Lab pathways).
 
 ## Sessions and branches (read this first)
 
@@ -8,7 +8,7 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 
 
 | Session | Owns | Branch | State |
 |---|---|---|---|
-| Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | `data/census-coalitions` (awaiting its data review) | On `main`: 60 companies with tiers; rights maps for 29 US companies; value chain (44 ties); 76 AI proposals at the 29 US-proxy companies (from 2023) with `ask_id` and `category`; fund votes (331 rows); coverage.json (25 rows, all `reviewed: false`); Ceres, VWFI and IIGCC. The census branch brings 289 organizations, 263 people, `proposal_links`, and a new "engaged directly" edge (Parnassus → 6 companies, with steps). |
+| Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | none open | On `main` (7d8d694): 60 companies with tiers; rights maps for 29 US companies; value chain (44 ties); 76 AI proposals with `ask_id` and `category` (4 categories in asks.json); fund votes from every N-PX filing (414 rows, all 9 families full coverage, incl. Praxis and Domini); coverage.json (25 rows, `reviewed: false`); Ceres, VWFI, IIGCC; 282 organizations in network.json, 263 people, 189 `proposal_links`; Parnassus "engaged directly" edges to 6 companies. graph.json 778 nodes, about 735 KB. |
 | UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, `graph.js`, `lenses.js`, `rules.js`, `roles.js`, `pathways.js`, `valuechain.js`, other view JS, `DESIGN.md`, `tests/` | `design/lab-routes` → merged to `main` when its check passes | Live: lens Phases 1–4, Value chain tab, proposal categories, company roles site-wide, "AI advocacy network". |
 | Protocol setup | `AGENTS.md`, `CLAUDE.md`, checks, `docs/` structure | `docs-session-onboarding` (local) | Idle. |
 
@@ -79,10 +79,11 @@ Plan docs/plans/2026-11-26-lab-routes.md, with Revision 2. The owner's question:
 2. **Investor side of Lab pathways** (owner, 2026-11-26) once 13F holdings are collected: which funds hold the route companies. Data session first.
 3. **Policy coverage rows need a person's sign-off** (`reviewed: false` on all 25).
 4. **Fund votes follow-ups:**
-   - 18 near-miss votes to confirm;
+   - 125 near-miss votes listed in `near_misses` to confirm (more now that every filing is read);
    - Meta 2026 Item 3 is marked "Needs checking";
-   - peer families have not been reviewed row by row;
-   - Praxis and Domini 2025–26 N-PX filings are text only.
+   - peer rows were checked against proposal titles and meeting dates by the data session (all matched), not reviewed by a person;
+   - `series` is empty in every N-PX record, so a fund's votes across filings can't be tied to the fund; duplicates are caught by identical share counts.
+4b. **Census follow-ups** (data session): ICCR's 2026 Proxy Resolutions and Voting Guide lists filers for all 411 resolutions and is the best source for a second pass; about 180 census rows outside the review samples are unchecked; ShareAction, PRI Advance, BSR and large fund families (T. Rowe, Fidelity, Wellington) blocked automated reads; 32 pre-declared votes from the PRI platform were left out as uneven; Carine Smith Ihenacho (NBIM) leaves at the end of 2026.
 5. **Performance:** self-host Inter, or split `graph.json`, if the data keeps growing (now more pressing; see Next 2).
 6. **Causality time scale:** most events are 2025–26; a piecewise scale would give them room.
 7. **Phone tables:** Company lookup's history and lab-tie tables are cramped at 390 px.
