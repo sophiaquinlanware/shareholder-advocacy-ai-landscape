@@ -221,17 +221,20 @@ tr.hit td { background: var(--accent-soft); }
   /* Phase 2 marks: deadline ring, seeking ring, resubmission bar. Each 4.5:1 or more on --g-bg. */
   --g-window: #86efac; --g-seeking: #fda4af; --g-risk: #fdba74; --gn-gap: #1e1e1e;
   /* Phase 4: recurring asks (Policymaker lens). */
-  --gn-ask: #d2dcea;
+  /* Node colours by family (owner, 2026-11-26): investors and advocates on the green-blue side, companies and
+     labs on the pink-orange-red side, proposals and asks yellow, policy and responses neutral. Within a family
+     each type differs in hue or lightness (CIE Lab distance 20+ for most pairs); all 3.7:1 or more on --g-bg. */
+  --gn-ask: #fef08a;
   /* Proposal categories (asks.json), used when "Colour proposals by what they ask about" is on. */
-  --gn-cat-governance-safety: #fde68a; --gn-cat-data-centers: #5eead4; --gn-cat-users: #fda4af; --gn-cat-downstream-use: var(--blue-light);
-  --gn-company: var(--blue); --gn-lab: #c4b5fd; --gn-proposal: var(--blue);
-  --gn-manager: #4ade80; --gn-nonprofit: #f472b6; --gn-faith: #e879f9; --gn-pension: #fb923c;
-  --gn-labor: #facc15; --gn-foundation: #bef264; --gn-coalition: #2dd4bf; --gn-other: #a1a1aa;
-  --gn-person: #e2e8f0; --gn-policy: #fca5a5; --gn-response: #67e8f9; --gn-public: #f9a8d4;
-  --gn-tier-chips: #fbbf24; --gn-tier-datacenters: #22d3ee; --gn-tier-compute: var(--blue);
-  --gn-tier-labs: #a78bfa; --gn-tier-capital: #f87171; --gn-tier-deployers: #d4d4d8;
+  --gn-cat-governance-safety: #fde047; --gn-cat-data-centers: #eab308; --gn-cat-users: #fef3c7; --gn-cat-downstream-use: #ca8a04;
+  --gn-company: #fca5a5; --gn-lab: #e879f9; --gn-proposal: #facc15;
+  --gn-manager: #4ade80; --gn-nonprofit: #2dd4bf; --gn-faith: #bef264; --gn-pension: #38bdf8;
+  --gn-labor: #a5b4fc; --gn-foundation: #d9f99d; --gn-coalition: #059669; --gn-other: #94a3b8;
+  --gn-person: #a7f3d0; --gn-policy: #ffffff; --gn-response: #a8a29e; --gn-public: #c8b89a;
+  --gn-tier-chips: #fdba74; --gn-tier-datacenters: #ef4444; --gn-tier-compute: #f472b6;
+  --gn-tier-labs: #e879f9; --gn-tier-capital: #e11d74; --gn-tier-deployers: #fca5a5;
   /* Company roles (roles.js): cloud and model platforms, consumer products, business and government products. */
-  --gn-tier-cloud: var(--blue); --gn-tier-consumer: #e5e7eb; --gn-tier-business: #c08457;
+  --gn-tier-cloud: #f472b6; --gn-tier-consumer: #fbcfe8; --gn-tier-business: #fb923c;
 }
 /* Graph settings panel (display, filters, forces), modelled on Obsidian's graph view settings. */
 .graph-settings { border: 1px solid var(--control-edge); border-radius: var(--radius); padding: 6px 12px; margin: 0 0 10px; font-size: 13px; }
@@ -502,6 +505,7 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
    square corners, a light grey fill and no colour dot, unlike the round key chips. */
 .tool { display: inline-flex; align-items: center; gap: 6px; font: 13px var(--sans); color: var(--ink); background: #ececec; border: 1px solid transparent; border-radius: 3px; padding: 5px 10px; cursor: pointer; transition: background-color var(--dur-micro) var(--ease); }
 .tool:hover { background: #e0e0e0; }
+.tool[hidden] { display: none; }
 .tool[aria-pressed="true"], .tool[aria-expanded="true"] { background: var(--accent); color: #ffffff; }
 .tool[aria-pressed="true"]:focus-visible, .tool[aria-expanded="true"]:focus-visible { outline-color: var(--ink); }
 .net-legend .leg-all { margin-right: var(--s-1); }

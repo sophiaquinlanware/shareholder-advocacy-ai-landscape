@@ -157,7 +157,7 @@
     { x: 0.25, label: "Filers", kinds: FILER_ROWS },
     { x: 0.5, label: "Proposals", kinds: ["proposal"] },
     { x: 0.62, label: "Asks", kinds: ["ask"] },
-    { x: 0.73, label: "Value chain, by role", kinds: ["company", ...TIERS.filter((t) => t.id !== "labs").map((t) => "tier-" + t.id)] },
+    { x: 0.73, label: "AI companies, by role", kinds: ["company", ...TIERS.filter((t) => t.id !== "labs").map((t) => "tier-" + t.id)] },
     { x: 0.92, label: "Frontier labs", kinds: ["lab", "tier-labs"] },
   ];
   const TOP_BAND = ["policy", "response", "public"];
@@ -170,9 +170,14 @@
   // Each node's group target (column x, band y, as fractions of the box), folded into the oval the graph is kept
   // in: a target near a corner is pulled in toward the middle (to 78% of the oval's radius), so the columns curve
   // with the oval instead of piling into the corners (owner, 2026-11-26: "a bit more naturally circled").
+  // The boundary is a rounded rectangle (a superellipse, |x|^4 + |y|^4 = 1), not an oval (owner, 2026-11-26:
+  // "a little more spread out … but more rectangular so it maps onto the linear graph axis part too"): columns
+  // stay under their headings, and only the corners round off.
+  const SUPER = 4;
+  const superNorm = (nx, ny) => (Math.abs(nx) ** SUPER + Math.abs(ny) ** SUPER) ** (1 / SUPER);
   function ovalTarget(d) {
     const nx = groupX(d) * 2 - 1, ny = groupY(d) * 2 - 1;
-    const k = Math.hypot(nx, ny), lim = 0.78;
+    const k = superNorm(nx, ny), lim = 0.88;
     const f = k > lim ? lim / k : 1;
     return { x: (nx * f + 1) / 2, y: (ny * f + 1) / 2 };
   }
@@ -191,7 +196,7 @@
     if (!state.axis) return;
     const { width, height } = state.size;
     const narrow = width < 640;
-    const SHORT = { People: "People", Filers: "Filers", Proposals: "Proposals", Asks: "Asks", "Value chain, by role": "By role", "Frontier labs": "Labs" };
+    const SHORT = { People: "People", Filers: "Filers", Proposals: "Proposals", Asks: "Asks", "AI companies, by role": "By role", "Frontier labs": "Labs" };
     state.cols = activeColumns();
     state.axis.selectAll("*").remove();
     state.axis.append("rect").attr("x", -width).attr("y", -height).attr("width", width * 3).attr("height", height + HEADER_H).attr("fill", cssVar("--g-bg"));
@@ -682,6 +687,19 @@
       intro();
       regroup();
     }
+    // A proposal hidden by Active/Past: show all proposals again.
+    if (n.kind === "proposal" && state.pstatus !== "all" && (state.pstatus === "active") !== isActive(n)) {
+      state.pstatus = "all";
+      document.querySelectorAll("#net-pstatus [data-pstatus]").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.pstatus === "all")));
+      refreshConnected();
+      if (state.drawn) { state.sim.stop(); drawGraph(); }
+    }
+    // A filer or company with no proposal link isn't drawn in Proposals: show it in Connections instead.
+    refreshConnected();
+    if (state.mode === "proposals" && !visible(n)) {
+      setMode("connections", false);
+      document.getElementById("net-lens-status").textContent = `${n.label} has no AI proposal in this data, so it is shown in the Connections view.`;
+    }
     state.selected = id;
     showPanel(n);
     applyStyles();
@@ -710,7 +728,7 @@
   // value-chain ties, policy and responses) belongs to Connections.
   // Exempt solicitations aimed at a company (not at one proposal) carry no year or status, so they show only when
   // no proposal filter (Active/Past, year) is set.
-  const filtering = () => (state.pstatus && state.pstatus !== "all") || !!state.year || !!state.upto;
+  const filtering = () => (state.pstatus && state.pstatus !== "all") || !!state.year || !!state.upto || !!state.topic;
   const inMode = (l) => {
     const prop = l.layer === "proposals" || (state.lens === "policy" && l.relation === "coverage");
     if (state.mode !== "proposals") return !prop || false;
@@ -747,15 +765,30 @@
     ["net-topic", "net-year", "net-scrub"].forEach((id) => { const x = document.getElementById(id); if (x) x.hidden = m !== "proposals"; });
     try {
       const u = new URL(location.href);
-      if (m === "connections") u.searchParams.delete("graph"); else u.searchParams.set("graph", m);
+      // Only when it differs from the lens's own default view (Policymaker opens on Proposals, the others on Connections).
+      const lensDefault = state.lens === "policy" ? "proposals" : "connections";
+      if (m === lensDefault) u.searchParams.delete("graph"); else u.searchParams.set("graph", m);
       window.history.replaceState(null, "", u.pathname + u.search + location.hash);
     } catch (e) {}
     state.selected = null; state.path = null;
+    // The proposal filters (year, topic, year slider, Active/Past) have no controls in Connections: clear them there.
+    if (m === "connections") {
+      state.year = ""; state.topic = ""; state.upto = null; state.pstatus = "all";
+      if (state.ctx) { state.ctx.upto = null; state.ctx.cache = {}; }
+      ["net-topic", "net-year"].forEach((x) => { const el = document.getElementById(x); if (el) el.value = ""; });
+      document.querySelectorAll("#net-pstatus [data-pstatus]").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.pstatus === "all")));
+      if (typeof scrubSync === "function") scrubSync();
+    }
+    // Unlinked nodes never show in Proposals, so the Orphans setting is switched off there.
+    const orph = document.querySelector("[data-gs-check=orphans]");
+    if (orph) { orph.disabled = m === "proposals"; orph.title = m === "proposals" ? "The Proposals view never shows unlinked nodes." : ""; }
     legend(state.data);
     syncLegend();
     refreshConnected();
     if (state.drawn) { state.sim.stop(); drawGraph(); }
     if (state.view === "list") drawList();
+    intro();
+    holdStatus();
     if (announce) document.getElementById("net-lens-status").textContent = `${mode().label} view: ${state.data.nodes.filter(visible).length} nodes shown.`;
   }
   function baseVisible(n) {
@@ -1027,7 +1060,7 @@
     const inMap = new Set(state.data.nodes.filter((n) => isCompanyKind(n.kind) && n.ticker).map((n) => String(n.ticker).toUpperCase()));
     const found = [...state.holdings].filter((t) => inMap.has(t));
     const missing = [...state.holdings].filter((t) => !inMap.has(t));
-    el.textContent = `Holdings: ${state.holdings.size} ${state.holdings.size === 1 ? "ticker" : "tickers"}, ${found.length} in this map${found.length ? " (" + found.join(", ") + ")" : ""}.${missing.length ? " Not in this map: " + missing.join(", ") + "." : ""} Other nodes are faded.`;
+    el.textContent = `Holdings: ${state.holdings.size} ${state.holdings.size === 1 ? "ticker" : "tickers"}, ${found.length} in this map${found.length ? " (" + found.join(", ") + ")" : ""}.${missing.length ? " Not in this map: " + missing.join(", ") + "." : ""}${state.mode === "proposals" ? " In the Proposals view, held companies with no AI proposal are not shown." : ""} Other nodes are faded.`;
   }
   function wireHoldings() {
     const btn = document.getElementById("net-hold-btn");
@@ -1097,6 +1130,8 @@
     if (state.drawn) { state.sim.stop(); drawGraph(); }
     intro();
     if (state.view === "list") drawList();
+    // Count only those drawn in the current view (a company the view hides takes its gaps with it).
+    if (on) n = d.nodes.filter((x) => x.kind === "gap" && visible(x)).length;
     document.getElementById("net-lens-status").textContent = on ? `Asks not yet filed shown: ${n} ${n === 1 ? "item" : "items"}, among companies with AI proposals in this dataset.` : "Asks not yet filed hidden.";
   }
 
@@ -1184,7 +1219,8 @@
         // A coalition counts as "shared membership" only when the path passes through it (member in, member out).
         const coalitions = steps.filter((x, i) => i + 1 < steps.length && x.l.relation === "member of" && steps[i + 1].l.relation === "member of" && x.b === endId(x.l.target)).length;
         const parts = [inferred && `${inferred} inferred from co-filing`, coalitions && `${coalitions} through shared coalition membership`].filter(Boolean);
-        const sum = `Path found: ${steps.length} ${steps.length === 1 ? "hop" : "hops"}${parts.length ? " (" + parts.join(", ") + ")" : ""}`;
+        const crosses = steps.some((x) => !inMode(x.l));
+        const sum = `Path found: ${steps.length} ${steps.length === 1 ? "hop" : "hops"}${parts.length ? " (" + parts.join(", ") + ")" : ""}${crosses ? `. Part of this route is in the ${state.mode === "proposals" ? "Connections" : "Proposals"} view, so the graph draws only some of it; every hop is listed below` : ""}`;
         out.innerHTML = `<h5 id="net-path-sum" class="path-sum" tabindex="-1">${sum}</h5><ol class="path-steps">${steps.map(hopHtml).join("")}</ol>
           <button type="button" class="chip" id="net-path-clear">Clear path</button>`;
         document.getElementById("net-path-clear").addEventListener("click", clear);
@@ -1255,7 +1291,7 @@
     const phone = window.innerWidth < 640;
     const base = phone ? 460 : 600, cap = phone ? 1000 : 1600;
     const area = state.data.nodes.filter(visible).reduce((t, n) => t + Math.PI * (radius(n) + 6) ** 2, 0);
-    return Math.round(Math.max(base, Math.min(cap, (area * 2.4) / Math.max(320, width) + HEADER_H + 60)));
+    return Math.round(Math.max(base, Math.min(cap, (area * 3.4) / Math.max(320, width) + HEADER_H + 60)));
   }
   function drawGraph() {
     const el = document.getElementById("net-graph");
@@ -1281,7 +1317,7 @@
         if (typeof l.source !== "object") l.source = state.byId.get(l.source) || l.source;
         if (typeof l.target !== "object") l.target = state.byId.get(l.target) || l.target;
       }), data.links.filter(inMode))).id((d) => d.id).distance((l) => linkBase(l) * state.cfg.linkDist).strength(state.cfg.linkStrength))
-      .force("charge", d3.forceManyBody().strength((d) => (d.kind === "company" ? -420 : -110) * state.cfg.repel).distanceMax(Math.max(220, Math.min(width, height) * 0.4)))
+      .force("charge", d3.forceManyBody().strength((d) => (d.kind === "company" ? -420 : -110) * state.cfg.repel).distanceMax(Math.max(260, Math.min(width, height) * 0.6)))
       .force("collide", d3.forceCollide().radius((d) => radius(d) + 3))
       .force("center", d3.forceCenter(width / 2, height / 2))
       .force("x", d3.forceX(width / 2).strength(state.cfg.center))
@@ -1297,7 +1333,7 @@
         const rx = width / 2 - 28, ry = (height - top) / 2 - 24;
         for (const d of state.data.nodes) {
           const nx = (d.x - cx) / rx, ny = (d.y - cy) / ry;
-          const k = Math.hypot(nx, ny);
+          const k = superNorm(nx, ny);
           if (k > 1) {
             const pull = ((k - 1) / k) * alpha * 2.5;
             d.vx -= (d.x - cx) * pull;
@@ -1572,7 +1608,8 @@
       refreshConnected();
       if (state.drawn) { state.sim.stop(); drawGraph(); }
       if (state.view === "list") drawList();
-      document.getElementById("net-lens-status").textContent = `${b.textContent} proposals: ${state.data.nodes.filter(visible).length} nodes shown.`;
+      intro();
+      document.getElementById("net-lens-status").textContent = `${{ all: "All", active: "Active", past: "Past" }[state.pstatus]} proposals: ${state.data.nodes.filter(visible).length} nodes shown.`;
     });
     const topics = [...new Set(state.data.nodes.filter((n) => n.kind === "proposal").map((n) => n.topic).filter(Boolean))].sort();
     const years = [...new Set(state.data.nodes.filter((n) => n.kind === "proposal").map((n) => String(n.year)))].sort();
@@ -1632,7 +1669,11 @@
     wireKeys();
     wireHoldings();
     gapButton();
-    document.getElementById("net-gaps").addEventListener("click", () => setGaps(!state.gaps));
+    // "Asks not yet filed" are proposal-side nodes: turning them on opens the Proposals view.
+    document.getElementById("net-gaps").addEventListener("click", () => {
+      if (!state.gaps && state.mode !== "proposals") setMode("proposals", false);
+      setGaps(!state.gaps);
+    });
     document.getElementById("lf-back").addEventListener("click", () => setFeedView("feed", true));
     document.querySelectorAll("#tab-network .seg button[data-view]").forEach((b) => b.addEventListener("click", () => {
       state.view = b.dataset.view;
@@ -1662,7 +1703,10 @@
     state = { data, byId: new Map(data.nodes.map((n) => [n.id, n])), defaults, cfg: loadSettings(defaults), hiddenKinds: new Set(["person", "policy", "response", "public"]), hiddenLabels: new Set(), query: "", topic: "", year: "", view: "graph", selected: null, hover: null, kbId: null, path: null, gaps: false, hiddenCats: new Set(), litKinds: new Set(), litCats: new Set() };
     state.holdings = loadHoldings();
     state.lens = initialLens();
-    state.mode = new URLSearchParams(location.search).get("graph") === "proposals" || state.lens === "policy" ? "proposals" : "connections";
+    {
+      const g = new URLSearchParams(location.search).get("graph");
+      state.mode = g === "proposals" || g === "connections" ? g : state.lens === "policy" ? "proposals" : "connections";
+    }
     state.pstatus = "all";
     state.hiddenKinds = new Set(lens().defaults.hiddenKinds || [...state.hiddenKinds]);
     // Shared inputs for lens functions (lenses.js). app.js supplies upcoming meetings and Company lookup.

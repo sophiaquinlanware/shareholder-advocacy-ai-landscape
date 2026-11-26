@@ -281,7 +281,7 @@
     // is the AI advocacy network's job. Filers stay in the routes table above.
     const inv = [];
     const cols = [
-      { key: "co", title: narrow ? "Value chain" : "Value chain (companies tied to labs)", items: byTier(S.data.public_companies).map((c) => ({ id: "c:" + c.id, label: c.name.replace(/\s*\(.*\)/, ""), ref: c })) },
+      { key: "co", title: narrow ? "AI companies" : "Companies in the AI value chain tied to labs", items: byTier(S.data.public_companies).map((c) => ({ id: "c:" + c.id, label: c.name.replace(/\s*\(.*\)/, ""), ref: c })) },
       { key: "lab", title: "Frontier labs", items: S.data.labs.map((l) => ({ id: "l:" + l.id, label: l.name.replace(/\s*\(.*\)/, ""), ref: l })) },
     ];
     const rowH = narrow ? 36 : 24;

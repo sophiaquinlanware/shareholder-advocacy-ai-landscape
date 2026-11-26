@@ -58,7 +58,7 @@ test("keyboard: Down announces a node, Enter opens it, Escape clears", async ({ 
 });
 
 test("List view lists every visible node with status and actions", async ({ page }) => {
-  await openNetwork(page, "?lens=impact");
+  await openNetwork(page, "?lens=impact&graph=proposals");
   await page.click('#tab-network .seg [data-view="list"]');
   await expect(page.locator("#net-list th")).toHaveText(["Name", "Type", /Connections/, "Status", "What you can do"]);
   await expect(page.locator("#net-list tbody tr", { hasText: "Upcoming vote" }).first()).toBeVisible();
@@ -116,7 +116,7 @@ test("graph labels never overlap, including after selecting a busy node", async 
 });
 
 test("key: clicking a type cycles shown, highlighted, crossed off; 'Show all' resets", async ({ page }) => {
-  await page.goto("/index.html?lens=impact#network");
+  await page.goto("/index.html?lens=impact&graph=proposals#network");
   await page.waitForLoadState("networkidle");
   const chip = page.locator('#net-legend .leg[data-kind="proposal"]');
   await expect(chip).toHaveAttribute("data-state", "on");

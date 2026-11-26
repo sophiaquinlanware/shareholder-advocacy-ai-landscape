@@ -30,7 +30,7 @@
   function shell(el) {
     const nCos = new Set(V.ties.flatMap((t) => [t.from, t.to])).size;
     el.innerHTML = `
-      <h2>The chain, tier by tier</h2>
+      <h2>AI value chain, from chips to AI products: companies by tier</h2>
       <p class="intro">Where companies sit in the AI value chain, how they are tied to each other, and where investors have already engaged at each tier. ${plural(V.ties.length, "sourced tie")} between ${nCos} companies. ${esc(V.about ? "Tiers are this site's reading of each company's main role." : "")}</p>
       <div class="vc-tiers" role="group" aria-label="Tiers">${V.tiers
         .slice()
@@ -220,7 +220,7 @@
   window.renderValueChain = function (data, companies) {
     const el = document.getElementById("tab-value-chain");
     if (!el) return;
-    if (!data || !data.tiers || !data.ties) { el.innerHTML = `<div class="coming"><h2>Value chain</h2><p>Being sourced now.</p></div>`; return; }
+    if (!data || !data.tiers || !data.ties) { el.innerHTML = `<div class="coming"><h2>AI value chain</h2><p>Being sourced now.</p></div>`; return; }
     V = data;
     CO = new Map((companies || []).map((c) => [c.id, c]));
     shell(el);
