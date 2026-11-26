@@ -613,7 +613,7 @@ function renderStart() {
     return `<li><a href="#${esc(first)}">${esc(b.textContent)}</a>: ${esc(q)}</li>`;
   }).join("");
   el.innerHTML = `
-    <h2>This week and next</h2>
+    <h2>Next few weeks</h2>
     <p class="intro">Dates you can act on, three things the data shows, and what each section of the site is for.</p>
     <h3 class="sub-h">Coming up</h3>
     ${comingList ? `<ul class="steps coming-up">${comingList}</ul>` : `<p class="status-note">No ballots or open filing deadlines on file.</p>`}
@@ -658,6 +658,8 @@ function showTab(name, focus = false) {
   const stuck = document.getElementById("sticky-page");
   const gBtn = groupBtns.find((b) => b.dataset.group === group);
   const vBtn = document.querySelector(`#grp-${group} [role="tab"][data-tab="${name}"]`);
+  // A section with one view has no view tab: keep focus on the section tab so it never drops to the page.
+  if (focus === true && !vBtn && gBtn) gBtn.focus();
   if (stuck && gBtn) stuck.textContent = gBtn.textContent + (vBtn ? ` · ${vBtn.textContent}` : "");
   try { if (location.hash.slice(1) !== name) window.history.replaceState(null, "", "#" + name); } catch (e) {}
   // Motion stage 2 (motion.js): the newly shown page's heading reveals line by line.

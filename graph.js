@@ -1017,7 +1017,7 @@
     if (state.drawn) { state.sim.stop(); drawGraph(); }
     intro();
     if (state.view === "list") drawList();
-    document.getElementById("net-lens-status").textContent = on ? `Topics not filed shown: ${n} ${n === 1 ? "node" : "nodes"}, among companies with AI proposals in this dataset.` : "Topics not filed hidden.";
+    document.getElementById("net-lens-status").textContent = on ? `Asks not yet filed shown: ${n} ${n === 1 ? "item" : "items"}, among companies with AI proposals in this dataset.` : "Asks not yet filed hidden.";
   }
 
   // ---------- Warm path: shortest chain through people, coalitions, co-filing and filings ----------
@@ -1506,7 +1506,7 @@
       refresh();
       regroup();
       refreshConnected();
-      document.getElementById("net-lens-status").textContent = `${msg} ${state.data.nodes.filter(visible).length} of ${state.data.nodes.length} nodes shown.`;
+      document.getElementById("net-lens-status").textContent = `${msg} ${state.data.nodes.filter(visible).length} of ${state.data.nodes.length} organizations, people, proposals and companies shown.`;
     });
     // Proposal categories (when colour by category is on): the same toggle, only and show-all controls.
     document.getElementById("net-catkey").addEventListener("click", (e) => {

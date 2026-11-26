@@ -29,7 +29,7 @@ The owner is Sophia Ware. She decides what to build and why, approves plans and 
 
 6. Nothing invented: no figures, vote results, holdings, people, roles, quotes or relationships that a primary source does not support. If it cannot be verified, show "source pending" (the existing `unverified` style) or mark it `[TODO]` and tell the owner, because the site's whole value is that every fact checks out.
 7. Follow PRODUCT.md's "Never claim" list exactly, because those are the claims that would cost the site its credibility or create legal exposure.
-8. Spell the site name one way everywhere: **Shareholder Advocacy AI Landscape**, because people search for it and cite it.
+8. Spell the site name one way everywhere: **Shareholder advocacy on AI** (the owner renamed it on 2026-11-26; the repository keeps its old name), because people search for it and cite it.
 9. Every page meets WCAG 2.1 AA (the Web Content Accessibility Guidelines, level AA), because the audience includes people using screen readers and phones.
 
 ## Staying inside the design

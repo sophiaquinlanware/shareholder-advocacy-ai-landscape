@@ -47,6 +47,24 @@
    "sort": "2026-12-08"
   },
   {
+   "company": "Cisco Systems",
+   "ticker": "CSCO",
+   "meeting_label": "December 15, 2026",
+   "proxy_url": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm",
+   "status": "upcoming",
+   "status_label": "Ballot is out",
+   "note": "AI proposal on the ballot (see the proxy statement).",
+   "items": [
+    {
+     "number": "5",
+     "title": "Human rights impact assessment of high-risk customers and end uses (filed by Azzad Asset Management (lead filer))",
+     "topic": "Harms from how customers use AI",
+     "url": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm"
+    }
+   ],
+   "sort": "2026-12-15"
+  },
+  {
    "company": "Apple",
    "ticker": "AAPL",
    "meeting_label": "expected late February 2027",
