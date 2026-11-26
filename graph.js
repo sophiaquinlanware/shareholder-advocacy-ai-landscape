@@ -199,7 +199,7 @@
     const SHORT = { People: "People", Filers: "Filers", Proposals: "Proposals", Asks: "Asks", "AI companies, by role": "By role", "Frontier labs": "Labs" };
     state.cols = activeColumns();
     state.axis.selectAll("*").remove();
-    state.axis.append("rect").attr("x", 0).attr("y", 0).attr("width", width).attr("height", HEADER_H).attr("fill", cssVar("--g-bg"));
+    state.axis.append("rect").attr("x", 0).attr("y", 0).attr("width", state.size.fullW || width).attr("height", HEADER_H).attr("fill", cssVar("--g-bg"));
     state.axis.selectAll("text.col").data(state.cols).join("text").attr("class", "col")
       .attr("x", (c) => (state.zt || d3.zoomIdentity).applyX(c.x * width)).attr("y", 16).attr("text-anchor", "middle").attr("font-size", narrow ? 9.5 : 11)
       .text((c) => (narrow ? SHORT[c.label] || c.label : c.label).toUpperCase());
@@ -223,14 +223,11 @@
       const r = radius(n) + 14;
       x0 = Math.min(x0, n.x - r); x1 = Math.max(x1, n.x + r); y0 = Math.min(y0, n.y - r); y1 = Math.max(y1, n.y + r);
     }
-    const W = state.size.width;
-    const k = Math.min(1, (W - 2 * pad) / Math.max(1, x1 - x0));
-    const H = Math.max(360, Math.round(top + (y1 - y0) * k + pad));
-    const el = document.getElementById("net-graph");
-    el.style.height = H + "px";
-    state.svg.attr("height", H).attr("viewBox", [0, 0, W, H]);
-    state.fitH = H;
-    state.svg.call(state.zoom.transform, d3.zoomIdentity.translate((W - (x1 - x0) * k) / 2 - x0 * k, top - y0 * k).scale(k));
+    // Fit the whole graph inside the strip (left of the panel on wide screens), centred, never past 100%.
+    const W = state.size.width, H = state.size.height;
+    const k = Math.min(1, (W - 2 * pad) / Math.max(1, x1 - x0), (H - top - pad) / Math.max(1, y1 - y0));
+    state.svg.call(state.zoom.transform, d3.zoomIdentity
+      .translate((W - (x1 - x0) * k) / 2 - x0 * k, top + (H - top - pad - (y1 - y0) * k) / 2 - y0 * k).scale(k));
   }
   // A later change (another view, types shown or hidden, new settings): run most of the new layout off-screen,
   // then let it glide the rest of the way, heavily damped, instead of jumping.
@@ -244,8 +241,7 @@
   function regroup() {
     if (!state.sim) return;
     // Showing or hiding types changes how many nodes there are: resize the box when it should change by over 12%.
-    const want = desiredHeight(state.size.width);
-    if (state.drawn && Math.abs(want - state.size.height) / state.size.height > 0.12) { state.sim.stop(); drawGraph(); return; }
+
     drawAxis();
     const { width, height } = state.size;
     state.sim.force("gx").x((d) => ovalTarget(d).x * width);
@@ -384,6 +380,7 @@
       <p class="count-line" id="net-hold-status" aria-live="polite"></p>
       <div id="net-legend" class="net-legend"></div>
       <div id="net-catkey" class="net-legend" hidden></div>
+      <div id="net-marks" class="net-legend net-marks" hidden></div>
       <details id="net-settings" class="graph-settings"></details>
       <div class="net-views">
         <p class="eyebrow" id="net-kind"></p>
@@ -391,7 +388,7 @@
         <div class="seg" role="group" aria-label="Proposals shown" id="net-pstatus"${state.mode === "proposals" ? "" : " hidden"}>${pstatusButtons()}</div>
         <p class="count-line" id="net-mode-note"></p>
       </div>
-      <div class="net-body">
+      <div class="net-body is-graph">
         <div class="net-graph-wrap">
           <div id="net-graph" class="net-graph" tabindex="0" role="application" aria-roledescription="network graph" aria-describedby="net-kb-hint" aria-label="AI advocacy network graph: investors, proposals, companies, labs and policy. Up and Down arrows move between nodes, Enter opens one, Escape clears. The List view has the same data as a table."></div>
           <p class="kb-hint" id="net-kb-hint">Keyboard: Tab into the graph, ↑ ↓ to move between nodes, Enter to open, Esc to clear. Zoom: pinch, or Ctrl/⌘ + scroll; drag to pan.</p>
@@ -826,6 +823,7 @@
     if (state.view === "list") drawList();
     intro();
     holdStatus();
+    markKey();
     if (announce) document.getElementById("net-lens-status").textContent = `${mode().label} view: ${state.data.nodes.filter(visible).length} nodes shown.`;
   }
   function baseVisible(n) {
@@ -1031,7 +1029,29 @@
   // Marks on a node, one group per node, all from the lens's rings(). One table (DESIGN.md "Lenses"):
   // focus r+1.5/r+3 solid white · upcoming r+6 dashed · deadline r+9 solid + countdown arc ·
   // seeking r+12 dotted · resubmission: a bar under the node plus "!".
+  // Key for the marks drawn around nodes (owner asked what the "!" marks are): only marks that appear in the
+  // current lens and view, each with a small swatch on the graph's dark background.
+  const MARK_KEY = {
+    upcoming: { label: "On a ballot not yet held", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.ring}" stroke-width="1.5" stroke-dasharray="3 2"/>` },
+    deadline: { label: "Proposal filing deadline open; the arc shows the time left", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.win}" stroke-width="1.2"/><path d="M12,3A6,6 0 0 1 18,9" fill="none" stroke="${c.win}" stroke-width="2.5" stroke-linecap="round"/>` },
+    risk: { label: "Close to, or below, the support needed to refile (SEC resubmission threshold; this site's reading)", svg: (c) => `<rect x="5" y="12" width="12" height="2.5" fill="${c.risk}"/><text x="19" y="15" font-size="10" fill="${c.risk}" font-family="sans-serif">!</text>` },
+    seeking: { label: "Filer seeking co-filers or support", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.seek}" stroke-width="1.5" stroke-dasharray="1 2.5" stroke-linecap="round"/>` },
+    "cov-covered": { label: "Ask already required by a rule in this map", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.ring}" stroke-width="2"/>` },
+    "cov-partial": { label: "Ask partly covered by a rule", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.ring}" stroke-width="1.6" stroke-dasharray="5 2"/>` },
+    "cov-none": { label: "No rule in this map reaches this ask", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.risk}" stroke-width="1.6" stroke-dasharray="1 2.5" stroke-linecap="round"/>` },
+  };
+  function markKey() {
+    const el = document.getElementById("net-marks");
+    if (!el) return;
+    const kinds = new Set();
+    state.data.nodes.forEach((n) => { if (visible(n)) rings(n).forEach((m) => kinds.add(m.kind)); });
+    const list = Object.keys(MARK_KEY).filter((k) => kinds.has(k));
+    el.hidden = !list.length;
+    const c = { ring: cssVar("--g-ring"), win: cssVar("--g-window"), risk: cssVar("--g-risk"), seek: cssVar("--g-seeking") };
+    el.innerHTML = list.length ? `<span class="status-note">Marks:</span> ${list.map((k) => `<span class="leg static"><svg class="mark-swatch" viewBox="0 0 24 18" aria-hidden="true"><rect width="24" height="18" rx="3" fill="${cssVar("--g-bg")}"/>${MARK_KEY[k].svg(c)}</svg>${esc(MARK_KEY[k].label)}</span>`).join("")}` : "";
+  }
   function drawRings() {
+    markKey();
     if (!state.ringLayer) return;
     state.ringLayer.selectAll("*").remove();
     const marked = state.data.nodes.filter((n) => rings(n).length);
@@ -1322,27 +1342,29 @@
     el.addEventListener("blur", () => { if (state.kbId) { state.hover = null; applyStyles(); } });
   }
 
-  // The graph box grows with what it shows (owner, 2026-11-26: "a bigger rectangle space that adapts to the amount
-  // of nodes"): its height is set from the total area of the visible nodes at a comfortable packing density, between
-  // the old fixed height and 1,600px (1,000px on phones).
-  function desiredHeight(width) {
-    const phone = window.innerWidth < 640;
-    const base = phone ? 460 : 600, cap = phone ? 1000 : 1600;
-    const area = state.data.nodes.filter(visible).reduce((t, n) => t + Math.PI * (radius(n) + 6) ** 2, 0);
-    return Math.round(Math.max(base, Math.min(cap, (area * 3.4) / Math.max(320, width) + HEADER_H + 60)));
-  }
+  // The graph is a full-width black strip of fixed height (owner, 2026-11-26: "one black thick stripe in the page
+  // that connects to the end of the page", the same size for every lens). On wide screens the details panel floats
+  // over its right side, so the layout uses the strip minus that panel.
+  const panelOverlays = () => window.innerWidth >= 900;
   function drawGraph() {
     const el = document.getElementById("net-graph");
     el.innerHTML = "";
-    const width = el.clientWidth || 800;
-    el.style.height = desiredHeight(width) + "px";
+    el.style.height = "";
+    const fullW = el.clientWidth || 800;
+    // With the panel floating over the strip, lay the graph out only to the left of where the panel starts.
+    let width = fullW;
+    const panel = document.getElementById("net-panel");
+    if (panelOverlays() && panel && panel.offsetParent) {
+      const left = panel.getBoundingClientRect().left - el.getBoundingClientRect().left;
+      width = Math.max(320, Math.min(fullW, Math.round(left - 16)));
+    }
     const height = el.clientHeight || 560;
-    state.size = { width, height };
+    state.size = { width, height, fullW };
     state.fitH = null;
     state.cols = activeColumns();
     const data = state.data;
 
-    const svg = d3.select(el).append("svg").attr("viewBox", [0, 0, width, height]).attr("width", width).attr("height", height);
+    const svg = d3.select(el).append("svg").attr("viewBox", [0, 0, fullW, height]).attr("width", fullW).attr("height", height);
     const g = svg.append("g");
     state.svg = svg;
     // A plain mouse wheel scrolls the page (owner, 2026-11-26: scrolling over the graph used to zoom it out); pinch, or
@@ -1745,6 +1767,7 @@
       state.view = b.dataset.view;
       document.querySelectorAll("#tab-network .seg button[data-view]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
       document.querySelector("#tab-network .net-graph-wrap").hidden = state.view !== "graph";
+      document.querySelector("#tab-network .net-body").classList.toggle("is-graph", state.view === "graph");
       document.getElementById("net-list").hidden = state.view !== "list";
       if (state.view === "list") drawList();
     }));

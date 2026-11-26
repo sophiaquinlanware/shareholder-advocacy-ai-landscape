@@ -45,7 +45,7 @@
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--bar-h, 120px) + 8px); }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans); font-synthesis-weight: none; }
+body { overflow-x: clip; margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans); font-synthesis-weight: none; }
 /* Tabular numerals where figures line up (tables, counts, charts). Not site-wide: in this font tnum also
    widens commas and full stops, which put gaps in running text ("proposals ,"). */
 table, .num, svg text, .pw-bar-n, .status-n, .vc-num, .stat { font-variant-numeric: tabular-nums; }
@@ -221,20 +221,22 @@ tr.hit td { background: var(--accent-soft); }
   /* Phase 2 marks: deadline ring, seeking ring, resubmission bar. Each 4.5:1 or more on --g-bg. */
   --g-window: #86efac; --g-seeking: #fda4af; --g-risk: #fdba74; --gn-gap: #1e1e1e;
   /* Phase 4: recurring asks (Policymaker lens). */
-  /* Node colours by family (owner, 2026-11-26): investors and advocates on the green-blue side, companies and
-     labs on the pink-orange-red side, proposals and asks yellow, policy and responses neutral. Within a family
-     each type differs in hue or lightness (CIE Lab distance 20+ for most pairs); all 3.7:1 or more on --g-bg. */
+  /* Node colours by family (owner, 2026-11-26: "the investors can all be shades of blue, the proposals yellow,
+     the coalitions green and the value chain of AI in shades of warm tones from pink to red to orange"):
+     investor types are blues; coalitions the only green; proposals and asks yellow; companies by role run pink →
+     red → orange in value-chain order (chips, data centers, cloud, labs, consumer, business, capital); people and
+     policy neutral. Every colour is 3:1 or more on --g-bg; shades within a family differ in lightness or hue. */
   --gn-ask: #fef08a;
   /* Proposal categories (asks.json), used when "Colour proposals by what they ask about" is on. */
   --gn-cat-governance-safety: #fde047; --gn-cat-data-centers: #eab308; --gn-cat-users: #fef3c7; --gn-cat-downstream-use: #ca8a04;
-  --gn-company: #fca5a5; --gn-lab: #e879f9; --gn-proposal: #facc15;
-  --gn-manager: #4ade80; --gn-nonprofit: #2dd4bf; --gn-faith: #bef264; --gn-pension: #38bdf8;
-  --gn-labor: #a5b4fc; --gn-foundation: #d9f99d; --gn-coalition: #059669; --gn-other: #94a3b8;
-  --gn-person: #a7f3d0; --gn-policy: #ffffff; --gn-response: #a8a29e; --gn-public: #c8b89a;
-  --gn-tier-chips: #fdba74; --gn-tier-datacenters: #ef4444; --gn-tier-compute: #f472b6;
-  --gn-tier-labs: #e879f9; --gn-tier-capital: #e11d74; --gn-tier-deployers: #fca5a5;
+  --gn-company: #fda4af; --gn-lab: #f87171; --gn-proposal: #facc15;
+  --gn-manager: #38bdf8; --gn-nonprofit: #bfdbfe; --gn-faith: #3b82f6; --gn-pension: #a5b4fc;
+  --gn-labor: #22d3ee; --gn-foundation: #e0e7ff; --gn-coalition: #4ade80; --gn-other: #94a3b8;
+  --gn-person: #d4d4d8; --gn-policy: #ffffff; --gn-response: #a8a29e; --gn-public: #c8b89a;
+  --gn-tier-chips: #fbcfe8; --gn-tier-datacenters: #f472b6; --gn-tier-compute: #db2777;
+  --gn-tier-labs: #f87171; --gn-tier-capital: #c2410c; --gn-tier-deployers: #fda4af;
   /* Company roles (roles.js): cloud and model platforms, consumer products, business and government products. */
-  --gn-tier-cloud: #f472b6; --gn-tier-consumer: #fbcfe8; --gn-tier-business: #fb923c;
+  --gn-tier-cloud: #db2777; --gn-tier-consumer: #dc2626; --gn-tier-business: #fb923c;
 }
 /* Graph settings panel (display, filters, forces), modelled on Obsidian's graph view settings. */
 .graph-settings { border: 1px solid var(--control-edge); border-radius: var(--radius); padding: 6px 12px; margin: 0 0 10px; font-size: 13px; }
@@ -511,3 +513,21 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
   .group-q { margin-top: 12px; }
   .coming-up .kind { display: block; min-width: 0; }
 }
+
+/* Network strip (owner, 2026-11-26: "one black thick stripe in the page that connects to the end of the page",
+   the same size for every lens and view): full-bleed, fixed height. On wide screens the details panel floats
+   over the strip's right side, aligned with the page column; on narrow screens it sits below. */
+:root { --strip-h: clamp(520px, 78vh, 860px); }
+.net-body { display: block; position: relative; }
+.net-graph-wrap { position: relative; width: 100vw; margin-left: calc(50% - 50vw); }
+.net-graph-wrap .net-graph { height: var(--strip-h); border-radius: 0; border: 0; }
+.net-graph-wrap .kb-hint { max-width: 1200px; margin: 6px auto 0; padding: 0 16px; }
+@media (min-width: 900px) {
+  .net-body.is-graph .net-panel { position: absolute; top: 12px; right: 0; width: 320px; max-height: calc(var(--strip-h) - 24px); z-index: 2; box-shadow: 0 6px 24px rgba(0, 0, 0, .35); border-color: transparent; }
+}
+@media (max-width: 899px) {
+  .net-graph-wrap .net-graph { height: clamp(420px, 70vh, 680px); }
+  .net-body .net-panel { margin-top: 12px; max-height: none; }
+}
+.net-marks .mark-swatch { width: 24px; height: 18px; flex: none; }
+.net-marks .leg.static { padding-right: 6px; }
