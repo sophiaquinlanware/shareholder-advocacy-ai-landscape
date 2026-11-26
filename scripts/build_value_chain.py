@@ -63,20 +63,44 @@ def main():
 
     # Company-to-lab ties from pathways.json (company ticker -> lab id).
     pw_company = {c["id"]: (c.get("ticker") or "").split("/")[-1].strip().upper() for c in pathways.get("public_companies", [])}
-    lab_name = {l["id"]: l["name"] for l in pathways.get("labs", [])}
-    labs_of = defaultdict(set)  # companies.json id -> lab ids
+    # Every lab gets one canonical key, so an in-house lab and its parent company count once
+    # (Meta Superintelligence Labs = Meta, Google DeepMind = Alphabet, xAI = SpaceX, ...).
+    PARENT = {"msl": "meta-platforms", "meta-superintelligence-labs": "meta-platforms", "google-deepmind": "alphabet", "gdm": "alphabet", "msai": "microsoft",
+              "microsoft-ai": "microsoft", "amazon-agi": "amazon", "xai": "spacex"}
+    lab_company_ids = {c["id"] for c in companies if c.get("tier") == "labs"}
+    name_to_company = {c["name"].lower(): c["id"] for c in companies}
+
+    def lab_key(pathways_lab_id, name):
+        if pathways_lab_id in PARENT:
+            return "company:" + PARENT[pathways_lab_id]
+        cid = name_to_company.get(name.lower().split(" (")[0])
+        return "company:" + cid if cid else "lab:" + pathways_lab_id
+
+    lab_name = {}
+    key_of_lab = {}
+    for l in pathways.get("labs", []):
+        k = lab_key(l["id"], l["name"])
+        key_of_lab[l["id"]] = k
+        lab_name.setdefault(k, l["name"])
+    labs_of = defaultdict(dict)  # companies.json id -> {lab key: tie type}
     for t in pathways.get("ties", []):
         c = by_ticker.get(pw_company.get(t["from"], ""))
-        if c:
-            labs_of[c["id"]].add(t["to"])
+        if c and t["to"] in key_of_lab:
+            labs_of[c["id"]].setdefault(key_of_lab[t["to"]], t["type"])
 
     # A tie pointing at a frontier-lab company (e.g. power supplied to OpenAI's data center) is direct reach too.
-    lab_company = {c["id"]: c["name"] for c in companies if c.get("tier") == "labs"}
+    for c in companies:
+        if c["id"] in lab_company_ids:
+            lab_name["company:" + c["id"]] = c["name"]  # company name wins over the in-house lab's name
     for t in ties:
-        if t["to"] in lab_company:
-            labs_of[t["from"]].add("company:" + t["to"])
-    for cid, name in lab_company.items():
-        lab_name["company:" + cid] = name
+        if t["to"] in lab_company_ids:
+            labs_of[t["from"]].setdefault("company:" + t["to"], t["type"])
+
+    # The second step of a two-step route must be an operating tie (compute, chips, distribution), not an
+    # investment: supplying a company is not a route to the companies it invests in.
+    OPERATING = {"cloud/compute provider", "chip supplier", "distribution partner", "revenue share/commercial agreement",
+                 "parent company", "supplies chips", "manufactures for", "leases capacity to", "supplies power to",
+                 "provides compute to", "distributes models"}
 
     # Two-step reach follows the direction of the tie: a supplier X reaches the labs its customer Y is tied to
     # (X -> Y -> lab). Being a customer of a supplier is not a route to that supplier's investees.
@@ -105,19 +129,19 @@ def main():
         ids = sorted(c["id"] for c in companies if tier["id"] in (c.get("tiers") or [c.get("tier")]))
         cos = [c for c in companies if c["id"] in ids]
         tickers = {(c.get("ticker") or "").upper() for c in cos}
-        direct = set().union(*[labs_of[i] for i in ids]) if ids else set()
-        # Companies in the "labs" tier are labs themselves; reach counts the labs they are.
-        def norm(l):  # the same lab can appear as a pathways lab id and as a labs-tier company
-            return (lab_name.get(l, l) or "").lower().split(" (")[0]
-        direct_names = {norm(l) for l in direct}
+        direct = set()
+        for i in ids:
+            direct |= set(labs_of[i])
+            if i in lab_company_ids:
+                direct.add("company:" + i)  # a lab in the tier counts as reached: it is the lab itself
         routes = {}
         for i in ids:
             for t in downstream[i]:
-                for l in labs_of[t["to"]]:
-                    if norm(l) in direct_names or t["to"] in ids:
+                for l, second in labs_of[t["to"]].items():
+                    if l in direct or t["to"] in ids or second not in OPERATING:
                         continue
                     routes.setdefault(lab_name.get(l, l), []).append(
-                        {"from": i, "via": t["to"], "tie": t["type"], "source_url": t["source_url"]})
+                        {"from": i, "via": t["to"], "tie": t["type"], "then": second, "source_url": t["source_url"]})
         props = [p for p in proposals if (p.get("company") or "").upper() in tickers]
         supports = [p["support_pct"] for p in props if isinstance(p.get("support_pct"), (int, float))]
         prop_ids = {p["id"] for p in props}
@@ -133,6 +157,7 @@ def main():
             "companies": len(ids),
             "companies_primary": sum(1 for c in cos if c.get("tier") == tier["id"]),
             "labs_reached_directly": sorted({lab_name.get(l, l) for l in direct}),
+            "ties_note": "ties_from_tier and ties_into_tier count every member, so a tie between two companies in the same tier counts in both",
             "labs_reached_in_two_steps": [{"lab": lab, "routes": sorted(r, key=lambda x: (x["from"], x["via"]))}
                                           for lab, r in sorted(routes.items())],
             "ties_from_tier": sum(1 for t in ties if t["from"] in ids),

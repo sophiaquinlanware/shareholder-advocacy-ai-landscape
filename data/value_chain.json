@@ -543,15 +543,15 @@
     "Cohere",
     "Google DeepMind",
     "Meta",
-    "Meta Superintelligence Labs (incl. FAIR)",
     "Mistral AI",
     "OpenAI",
     "Perplexity",
     "Reflection AI",
     "Safe Superintelligence (SSI)",
-    "Thinking Machines Lab",
-    "xAI"
+    "SpaceX (including xAI)",
+    "Thinking Machines Lab"
    ],
+   "ties_note": "ties_from_tier and ties_into_tier count every member, so a tie between two companies in the same tier counts in both",
    "labs_reached_in_two_steps": [
     {
      "lab": "Microsoft AI (MAI Superintelligence Team)",
@@ -560,24 +560,28 @@
        "from": "amd",
        "via": "microsoft",
        "tie": "supplies chips",
+       "then": "parent company",
        "source_url": "https://blogs.microsoft.com/blog/2026/07/20/microsoft-expands-azure-ai-and-hpc-infrastructure-with-amd/"
       },
       {
        "from": "arm-holdings",
        "via": "microsoft",
        "tie": "supplies chips",
+       "then": "parent company",
        "source_url": "https://newsroom.arm.com/blog/inside-arms-hyperscale-surge"
       },
       {
        "from": "nvidia",
        "via": "microsoft",
        "tie": "supplies chips",
+       "then": "parent company",
        "source_url": "https://azure.microsoft.com/en-us/blog/microsofts-strategic-ai-datacenter-planning-enables-seamless-large-scale-nvidia-rubin-deployments/"
       },
       {
        "from": "nvidia",
        "via": "nebius-group",
        "tie": "supplies chips",
+       "then": "cloud/compute provider",
        "source_url": "https://nebius.com/newsroom/nebius-to-offer-nvidia-vera-rubin-nvl-72-in-us-and-europe-from-h2-2026"
       }
      ]
@@ -865,11 +869,11 @@
    "labs_reached_directly": [
     "Anthropic",
     "Meta",
-    "Meta Superintelligence Labs (incl. FAIR)",
     "OpenAI",
     "Reflection AI",
-    "xAI"
+    "SpaceX (including xAI)"
    ],
+   "ties_note": "ties_from_tier and ties_into_tier count every member, so a tie between two companies in the same tier counts in both",
    "labs_reached_in_two_steps": [
     {
      "lab": "Microsoft AI (MAI Superintelligence Team)",
@@ -878,17 +882,7 @@
        "from": "digital-realty-trust",
        "via": "microsoft",
        "tie": "leases capacity to",
-       "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm"
-      }
-     ]
-    },
-    {
-     "lab": "Mistral AI",
-     "routes": [
-      {
-       "from": "digital-realty-trust",
-       "via": "microsoft",
-       "tie": "leases capacity to",
+       "then": "parent company",
        "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm"
       }
      ]
@@ -1137,7 +1131,6 @@
     "DeepSeek",
     "Google DeepMind",
     "Meta",
-    "Meta Superintelligence Labs (incl. FAIR)",
     "Microsoft AI (MAI Superintelligence Team)",
     "Mistral AI",
     "OpenAI",
@@ -1145,6 +1138,7 @@
     "Safe Superintelligence (SSI)",
     "Thinking Machines Lab"
    ],
+   "ties_note": "ties_from_tier and ties_into_tier count every member, so a tie between two companies in the same tier counts in both",
    "labs_reached_in_two_steps": [],
    "ties_from_tier": 6,
    "ties_into_tier": 18,
@@ -1427,54 +1421,29 @@
    "companies": 23,
    "companies_primary": 16,
    "labs_reached_directly": [
+    "01.AI",
+    "Aleph Alpha",
     "Anthropic",
+    "Black Forest Labs",
+    "Cohere",
     "DeepSeek",
     "Google DeepMind",
-    "Meta Superintelligence Labs (incl. FAIR)",
+    "Inflection AI",
+    "Magic",
+    "Meta",
+    "MiniMax (Shanghai Xiyu Technology)",
     "Mistral AI",
     "OpenAI",
     "Perplexity",
     "Reflection AI",
     "Safe Superintelligence (SSI)",
+    "SpaceX (including xAI)",
     "Thinking Machines Lab",
-    "xAI"
+    "WRITER",
+    "Zhipu AI (Knowledge Atlas Technology)"
    ],
-   "labs_reached_in_two_steps": [
-    {
-     "lab": "Cohere",
-     "routes": [
-      {
-       "from": "samsung-electronics",
-       "via": "nvidia",
-       "tie": "supplies chips",
-       "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
-      },
-      {
-       "from": "samsung-electronics",
-       "via": "nvidia",
-       "tie": "manufactures for",
-       "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
-      }
-     ]
-    },
-    {
-     "lab": "Meta",
-     "routes": [
-      {
-       "from": "samsung-electronics",
-       "via": "nvidia",
-       "tie": "supplies chips",
-       "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
-      },
-      {
-       "from": "samsung-electronics",
-       "via": "nvidia",
-       "tie": "manufactures for",
-       "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
-      }
-     ]
-    }
-   ],
+   "ties_note": "ties_from_tier and ties_into_tier count every member, so a tie between two companies in the same tier counts in both",
+   "labs_reached_in_two_steps": [],
    "ties_from_tier": 6,
    "ties_into_tier": 21,
    "ai_proposals": 32,
@@ -1771,16 +1740,16 @@
     "Cohere",
     "Google DeepMind",
     "Meta",
-    "Meta Superintelligence Labs (incl. FAIR)",
     "Microsoft AI (MAI Superintelligence Team)",
     "Mistral AI",
     "OpenAI",
     "Perplexity",
     "Reflection AI",
     "Safe Superintelligence (SSI)",
-    "Thinking Machines Lab",
-    "xAI"
+    "SpaceX (including xAI)",
+    "Thinking Machines Lab"
    ],
+   "ties_note": "ties_from_tier and ties_into_tier count every member, so a tie between two companies in the same tier counts in both",
    "labs_reached_in_two_steps": [],
    "ties_from_tier": 8,
    "ties_into_tier": 17,
@@ -2066,51 +2035,17 @@
     "Cohere",
     "DeepSeek",
     "Google DeepMind",
-    "Meta Superintelligence Labs (incl. FAIR)",
+    "Meta",
     "Microsoft AI (MAI Superintelligence Team)",
     "Mistral AI",
     "OpenAI",
     "Perplexity",
     "Safe Superintelligence (SSI)",
-    "Thinking Machines Lab",
-    "xAI"
+    "SpaceX (including xAI)",
+    "Thinking Machines Lab"
    ],
-   "labs_reached_in_two_steps": [
-    {
-     "lab": "Meta",
-     "routes": [
-      {
-       "from": "samsung-electronics",
-       "via": "nvidia",
-       "tie": "supplies chips",
-       "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
-      },
-      {
-       "from": "samsung-electronics",
-       "via": "nvidia",
-       "tie": "manufactures for",
-       "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
-      }
-     ]
-    },
-    {
-     "lab": "Reflection AI",
-     "routes": [
-      {
-       "from": "samsung-electronics",
-       "via": "nvidia",
-       "tie": "supplies chips",
-       "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
-      },
-      {
-       "from": "samsung-electronics",
-       "via": "nvidia",
-       "tie": "manufactures for",
-       "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
-      }
-     ]
-    }
-   ],
+   "ties_note": "ties_from_tier and ties_into_tier count every member, so a tie between two companies in the same tier counts in both",
+   "labs_reached_in_two_steps": [],
    "ties_from_tier": 10,
    "ties_into_tier": 23,
    "ai_proposals": 63,
