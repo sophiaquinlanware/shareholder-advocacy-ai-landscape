@@ -17,6 +17,8 @@
   const link = (url, label = "source") => url ? `<a class="src" href="${esc(url)}" target="_blank" rel="noopener">[${esc(label)}]</a>` : `<span class="unverified">source pending</span>`;
   const cssVar = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim() || "#888";
   const fmt = (iso) => new Date(iso + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+  // An event known only to the year (date_precision "year") shows the year, never a made-up day.
+  const evDate = (e) => (e.date_precision === "year" ? String(e.date).slice(0, 4) : e.date_precision === "month" ? new Date(e.date + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "short" }) : fmt(e.date));
 
   let C = null;
 
@@ -102,7 +104,7 @@
     C.nodeSel.append("circle").attr("r", (e) => 5 + Math.min(5, C.links.filter((l) => l.from === e.id || l.to === e.id).length))
       .attr("fill", cssVar("--cz-node"))
       .attr("stroke", cssVar("--surface")).attr("stroke-width", 1.5);
-    C.nodeSel.append("title").text((e) => `${fmt(e.date)}: ${e.title}`);
+    C.nodeSel.append("title").text((e) => `${evDate(e)}: ${e.title}`);
     C.labelSel = C.nodeSel.append("text").text((e) => (e.title.length > 34 ? e.title.slice(0, 33) + "…" : e.title))
       .attr("x", 9).attr("y", 4).attr("font-size", 10.5).attr("fill", cssVar("--ink")).attr("opacity", 0);
     apply();
@@ -124,7 +126,7 @@
     const ins = C.links.filter((l) => l.to === id).map((l) => `<li><button class="linklike" data-ev="${esc(l.from)}">${esc(name(l.from))}</button> <span class="ticker">${esc(l.type)}</span><br>${esc(l.explanation || "")} ${link(l.source_url)}</li>`).join("");
     const outs = C.links.filter((l) => l.from === id).map((l) => `<li><button class="linklike" data-ev="${esc(l.to)}">${esc(name(l.to))}</button> <span class="ticker">${esc(l.type)}</span><br>${esc(l.explanation || "")} ${link(l.source_url)}</li>`).join("");
     document.getElementById("cz-panel").innerHTML = `
-      <p class="eyebrow tight">${esc(fmt(e.date))} · ${esc(e.actor || "")}</p>
+      <p class="eyebrow tight">${esc(evDate(e))} · ${esc(e.actor || "")}</p>
       <h3>${esc(e.title)}</h3><p>${esc(e.summary || "")} ${link(e.source_url)}</p>
       <h4 class="pw-h4">What led to this (${up.size - 1} steps upstream)</h4><ul class="conn">${ins || "<li>No sourced causes yet.</li>"}</ul>
       <h4 class="pw-h4">What this led to (${down.size - 1} steps downstream)</h4><ul class="conn">${outs || "<li>No sourced effects yet.</li>"}</ul>`;
@@ -142,7 +144,7 @@
     const rows = [...C.events].sort((a, b) => (a.date < b.date ? -1 : 1)).map((e) => {
       const ins = C.links.filter((l) => l.to === e.id).map((l) => `${esc(l.type)}: ${esc(name(l.from))}`).join("<br>");
       const outs = C.links.filter((l) => l.from === e.id).map((l) => `${esc(l.type)}: ${esc(name(l.to))}`).join("<br>");
-      return `<tr><td class="nowrap">${esc(fmt(e.date))}</td><td>${esc(laneName(e.lane))}</td><td>${esc(e.title)}<div class="ticker">${esc(e.actor || "")}</div> ${link(e.source_url)}</td><td>${ins}</td><td>${outs}</td><td><button type="button" class="linklike" data-show-ev="${esc(e.id)}">Show on map</button></td></tr>`;
+      return `<tr><td class="nowrap">${esc(evDate(e))}</td><td>${esc(laneName(e.lane))}</td><td>${esc(e.title)}<div class="ticker">${esc(e.actor || "")}</div> ${link(e.source_url)}</td><td>${ins}</td><td>${outs}</td><td><button type="button" class="linklike" data-show-ev="${esc(e.id)}">Show on map</button></td></tr>`;
     }).join("");
     return `<table><thead><tr><th scope="col">Date</th><th scope="col">Lane</th><th scope="col">Event</th><th scope="col">From</th><th scope="col">Led to</th><th scope="col"><span class="visually-hidden">Map</span></th></tr></thead><tbody>${rows}</tbody></table>`;
   }

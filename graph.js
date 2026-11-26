@@ -150,7 +150,7 @@
   // ---------- Graph settings (like Obsidian's graph view): display, filters and forces ----------
   // Kept per viewer in localStorage; the page works the same without it.
   const SETTINGS_KEY = "net-settings-v1";
-  const DEFAULTS = { textSize: 11, labelMin: 0, nodeScale: 1, linkScale: 1, labels: false, pulse: true, orphans: true, center: 0.05, repel: 1, linkStrength: 0.6, linkDist: 1, group: 0.5 };
+  const DEFAULTS = { textSize: 11, labelMin: 0, nodeScale: 1, linkScale: 1, labels: false, pulse: true, catColor: false, orphans: true, center: 0.05, repel: 1, linkStrength: 0.6, linkDist: 1, group: 0.5 };
 
   // ---------- Grouped layout: a 2D frame so each kind of node has its own region ----------
   // Left to right follows the filing chain: people → filer organizations → proposals → companies → labs.
@@ -248,6 +248,7 @@
         ${group("Display")}
         <fieldset class="gs-group"><legend>Filters</legend>
           <label class="gs-check"><input type="checkbox" data-gs-check="labels"${state.cfg.labels ? " checked" : ""}> Labels (off: names show for the selected node and its connections)</label>
+          ${catList().length ? `<label class="gs-check"><input type="checkbox" data-gs-check="catColor"${state.cfg.catColor ? " checked" : ""}> Colour proposals by what they ask about</label>` : ""}
           <label class="gs-check"><input type="checkbox" data-gs-check="pulse"${state.cfg.pulse ? " checked" : ""}> Pulse deadline rings (twice, then still; off with reduced motion)</label>
           <label class="gs-check"><input type="checkbox" data-gs-check="orphans"${state.cfg.orphans ? " checked" : ""}> Orphans (nodes with no visible links)</label>
         </fieldset>
@@ -276,8 +277,9 @@
   }
   // Display settings restyle in place; force settings (and node size, which changes collisions) re-run the layout.
   function applySettings(relayout) {
+    catKey();
     if (!state.node) { intro(); return; }
-    state.node.attr("r", radius);
+    state.node.attr("r", radius).attr("fill", fillOf);
     drawRings();
     state.labels.attr("font-size", (d) => (d.kind === "company" ? state.cfg.textSize + 2 : state.cfg.textSize));
     state.linkSel.attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.4 : 1) * state.cfg.linkScale);
@@ -331,6 +333,7 @@
       </div>
       <p class="count-line" id="net-hold-status" aria-live="polite"></p>
       <div id="net-legend" class="net-legend"></div>
+      <div id="net-catkey" class="net-legend" hidden></div>
       <details id="net-settings" class="graph-settings"></details>
       <div class="net-body">
         <div class="net-graph-wrap">
@@ -524,6 +527,20 @@
   const kindLabel = (k) => (lens().kindLabels && lens().kindLabels[k]) || TYPE_LABEL[k];
   function relabelLegend() {
     document.querySelectorAll("#net-legend .leg").forEach((b) => { const t = b.querySelector(".leg-text"); if (t) t.textContent = kindLabel(b.dataset.kind); });
+  }
+  // Proposal categories (asks.json), used when "Colour proposals by what they ask about" is on.
+  const catList = () => ((window.LENS_CTX && window.LENS_CTX.categories) || []).filter((c) => state.data.nodes.some((n) => n.kind === "proposal" && n.category === c.id));
+  function fillOf(d) {
+    if (d.kind === "gap") return cssVar("--g-bg");
+    if (d.kind === "proposal" && state.cfg.catColor && d.category) return cssVar(`--gn-cat-${d.category}`) || nodeColor(d.kind);
+    return nodeColor(d.kind);
+  }
+  function catKey() {
+    const el = document.getElementById("net-catkey");
+    if (!el) return;
+    const on = state.cfg.catColor && catList().length;
+    el.hidden = !on;
+    el.innerHTML = on ? `<span class="status-note">Proposals by what they ask about:</span> ${catList().map((c) => `<span class="leg static"><span class="dot" style="background:${cssVar(`--gn-cat-${c.id}`)}"></span>${esc(c.label)}</span>`).join("")}` : "";
   }
   function legend(data) {
     const kinds = [...new Set(data.nodes.map((n) => n.kind))];
@@ -1115,7 +1132,7 @@
 
     state.node = g.append("g").selectAll("circle").data(data.nodes).join("circle")
       .attr("r", radius)
-      .attr("fill", (d) => (d.kind === "gap" ? cssVar("--g-bg") : nodeColor(d.kind)))
+      .attr("fill", fillOf)
       .attr("stroke", (d) => (d.kind === "gap" ? cssVar("--g-label-soft") : cssVar("--g-bg")))
       .attr("stroke-dasharray", (d) => (d.kind === "gap" ? "3 2" : null))
       .style("cursor", "pointer")

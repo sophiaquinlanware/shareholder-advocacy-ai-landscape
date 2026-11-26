@@ -128,7 +128,7 @@
       <ul class="vc-summary">
         <li><strong>Asks made here:</strong> ${plural(p.ai_proposals || 0, "AI proposal")}${p.median_support_pct != null ? `, median support ${p.median_support_pct}% (computed by this site)` : ""}. Outcomes such as adoption or withdrawal after an agreement are not in the data yet.</li>
         <li><strong>Labs connected:</strong> ${(p.labs_reached_directly || []).length} directly${(p.labs_reached_in_two_steps || []).length ? `, ${(p.labs_reached_in_two_steps || []).length} in two steps` : ""}, through sourced ties, equity stakes or ownership.</li>
-        <li><strong>Active here:</strong> ${plural((p.active_filers || []).length, "filer")}${(p.active_filers || []).length >= 12 ? " (the 12 most active)" : ""}, ${plural((p.coalitions || []).length, "coalition")}, ${plural((p.people || []).length, "person", "people")} on file.</li>
+        <li><strong>Active here:</strong> ${(p.active_filers || []).length >= 12 ? "the 12 most active filers" : plural((p.active_filers || []).length, "filer")}, ${plural((p.coalitions || []).length, "coalition")}, ${plural((p.people || []).length, "person", "people")} on file.</li>
       </ul>
       <h4 id="vc-reach" tabindex="-1">Labs connected by sourced ties</h4>
       <p class="status-note">From the sourced ties here and in Lab pathways (chips, compute and distribution, plus equity stakes and parent companies), including labs owned by companies in this tier.</p>

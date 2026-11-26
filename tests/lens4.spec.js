@@ -99,3 +99,24 @@ test("Value chain: a tier opens its details; zero cells are not buttons; capped 
   await page.locator(".vc-heat .vc-num").first().click();
   await expect(page.locator("#vc-panel h4:focus")).toHaveCount(1);
 });
+
+test("Proposals: filter by what a proposal asks about (when the data has categories)", async ({ page }) => {
+  const A = JSON.parse(readFileSync("data/asks.json", "utf8"));
+  const P = JSON.parse(readFileSync("data/proposals.json", "utf8"));
+  A.categories = [
+    { id: "data-centers", label: "Data center externalities" },
+    { id: "users", label: "Harms to people using AI products" },
+  ];
+  A.categories_note = "Test note.";
+  P.proposals.forEach((p, i) => {
+    p.category = i % 2 ? "users" : "data-centers";
+  });
+  await page.route("**/data/asks.json", (r) => r.fulfill({ json: A }));
+  await page.route("**/data/proposals.json", (r) => r.fulfill({ json: P }));
+  await page.goto("/index.html#feed");
+  await page.waitForLoadState("networkidle");
+  const n = P.proposals.filter((p) => p.category === "users" && p.company && p.year).length;
+  await page.selectOption("#feed-cat", "users");
+  await expect(page.locator("#feed-count")).toContainText(`Showing ${n} proposal`);
+  await expect(page.locator("#tab-feed")).toContainText("Test note.");
+});

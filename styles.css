@@ -172,6 +172,8 @@ tr.hit td { background: var(--accent-soft); }
   --g-window: #86efac; --g-seeking: #fda4af; --g-risk: #fdba74; --gn-gap: #1e1e1e;
   /* Phase 4: recurring asks (Policymaker lens). */
   --gn-ask: #c7d2fe;
+  /* Proposal categories (asks.json), used when "Colour proposals by what they ask about" is on. */
+  --gn-cat-governance-safety: #fde68a; --gn-cat-data-centers: #5eead4; --gn-cat-users: #fda4af; --gn-cat-downstream-use: #a5b4fc;
   --gn-company: #93c5fd; --gn-lab: #c4b5fd; --gn-proposal: #38bdf8;
   --gn-manager: #4ade80; --gn-nonprofit: #f472b6; --gn-faith: #e879f9; --gn-pension: #fb923c;
   --gn-labor: #facc15; --gn-foundation: #bef264; --gn-coalition: #2dd4bf; --gn-other: #a1a1aa;
@@ -349,4 +351,4 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
 .vc-summary { padding-left: 18px; margin: 6px 0 10px; }
 .vc-summary li { margin: 3px 0; }
 .vc-num.on-dark:focus-visible { outline-color: #ffffff; outline-offset: -3px; }
-.vc-heat .sticky-col { position: sticky; left: 0; background: var(--surface); z-index: 1; }
+.vc-heat .sticky-col { position: sticky; left: 0; background: var(--surface); z-index: 1; min-width: 120px; }

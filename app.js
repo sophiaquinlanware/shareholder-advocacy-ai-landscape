@@ -295,6 +295,10 @@ function renderFeed() {
   const companies = [...new Set(all.map((p) => p.company))].sort((a, b) => companyName(a).localeCompare(companyName(b)));
   const statuses = ["voted", "upcoming", "withdrawn", "excluded"].filter((s) => all.some((p) => p.status === s));
   const plottable = (p) => p.status === "voted" && p.meeting_date && p.results_url && p.support_pct != null;
+  // What each proposal asks about (asks.json categories), when the data has them (owner, 2026-11-26: sort by
+  // "alignment versus externalities associated with data centers versus externalities on consumers").
+  const cats = ((DATA.asks && DATA.asks.categories) || []).filter((c) => all.some((p) => p.category === c.id));
+  const catNote = cats.length && DATA.asks.categories_note ? DATA.asks.categories_note : "";
 
   el.innerHTML = `
     <h2>Proposals</h2>
@@ -304,8 +308,10 @@ function renderFeed() {
       <select id="feed-co" aria-label="Company"><option value="">All companies</option>${companies.map((c) => `<option value="${esc(c)}">${esc(companyName(c))}</option>`).join("")}</select>
       <select id="feed-topic" aria-label="Topic"><option value="">All topics</option>${topics.map((t) => `<option>${esc(t)}</option>`).join("")}</select>
       <select id="feed-year" aria-label="Meeting year"><option value="">All years</option>${years.map((y) => `<option>${y}</option>`).join("")}</select>
+      ${cats.length ? `<select id="feed-cat" aria-label="What it asks about"><option value="">All asks</option>${cats.map((c) => `<option value="${esc(c.id)}">${esc(c.label)} (${all.filter((p) => p.category === c.id).length})</option>`).join("")}</select>` : ""}
       <button type="button" class="chip" id="feed-clear" hidden>Clear filters</button>
     </div>
+    ${catNote ? `<p class="status-note">${esc(catNote)}</p>` : ""}
     <p class="count-line" id="feed-count" aria-live="polite"></p>
     <figure class="card chart-card">
       <div class="chart-scroll" id="feed-chart"></div>
@@ -313,10 +319,10 @@ function renderFeed() {
     </figure>
     <div class="table-wrap" id="feed-table"></div>`;
 
-  const F = { status: "", co: "", topic: "", year: "" };
+  const F = { status: "", co: "", topic: "", year: "", cat: "" };
   const sort = { key: "date", dir: "desc" };
   let feedNotes = new Map();
-  const filterOn = (p, skipStatus) => (skipStatus || !F.status || p.status === F.status) && (!F.co || p.company === F.co) && (!F.topic || normTopic(p.topic) === F.topic) && (!F.year || String(p.year) === F.year);
+  const filterOn = (p, skipStatus) => (skipStatus || !F.status || p.status === F.status) && (!F.co || p.company === F.co) && (!F.topic || normTopic(p.topic) === F.topic) && (!F.year || String(p.year) === F.year) && (!F.cat || p.category === F.cat);
   const dateKey = (p) => p.meeting_date || `${p.year}-07-01`;
   const filerOf = (p) => {
     if (p.proponent && !/UNVERIFIED/.test(p.proponent)) return esc(p.proponent) + (p.proponent_source_url ? src(p.proponent_source_url) : "");
@@ -414,15 +420,16 @@ function renderFeed() {
   // Company lookup's "Open in Proposals" sets the company filter here.
   window.filterFeedCompany = (t) => {
     Object.keys(F).forEach((k) => { F[k] = ""; });
-    ["feed-topic", "feed-year"].forEach((id) => { document.getElementById(id).value = ""; });
+    ["feed-topic", "feed-year", "feed-cat"].forEach((id) => { const s = document.getElementById(id); if (s) s.value = ""; });
     F.co = t; document.getElementById("feed-co").value = t;
     redraw();
   };
   const sel = (id, k) => document.getElementById(id).addEventListener("change", (e) => { F[k] = e.target.value; redraw(); });
   sel("feed-co", "co"); sel("feed-topic", "topic"); sel("feed-year", "year");
+  if (document.getElementById("feed-cat")) sel("feed-cat", "cat");
   document.getElementById("feed-clear").addEventListener("click", () => {
     Object.keys(F).forEach((k) => { F[k] = ""; });
-    ["feed-co", "feed-topic", "feed-year"].forEach((id) => { document.getElementById(id).value = ""; });
+    ["feed-co", "feed-topic", "feed-year", "feed-cat"].forEach((id) => { const s = document.getElementById(id); if (s) s.value = ""; });
     redraw();
   });
   drawStatus(); drawTable();
@@ -642,6 +649,7 @@ async function main() {
     asks: (DATA.asks && DATA.asks.asks) || [],
     coverage: DATA.coverage || null,
     causality: DATA.causality || null,
+    categories: (DATA.asks && DATA.asks.categories) || [],
     hasCompany: (t) => companyEntries().some((e) => e.key === keyForTicker(t)),
     openCompany,
   };
