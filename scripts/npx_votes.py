@@ -269,7 +269,10 @@ def main():
     for r in results:
         k = (r["family"], r["proposal_id"])
         e = summary.setdefault(k, {"family": r["family"], "proposal_id": r["proposal_id"], "company": r["company"],
-                                   "meeting_date": r["meeting_date"], "counts": {}, "sources": set()})
+                                   "meeting_date": r["meeting_date"], "counts": {}, "sources": set(),
+                                   "npx_descriptions": set(), "min_confidence": 1.0})
+        e["npx_descriptions"].add(r["npx_description"] or "")
+        e["min_confidence"] = min(e["min_confidence"], r["match_confidence"], r["description_cover"])
         for h in r["how_voted"]:
             e["counts"][h] = e["counts"].get(h, 0) + 1
         e["sources"].add(r["source_url"])
@@ -277,7 +280,8 @@ def main():
     for e in summary.values():
         c = e["counts"]
         vote = next(iter(c)) if len(c) == 1 else "SPLIT"
-        rows.append({**e, "vote": vote, "vote_records": sum(c.values()), "sources": sorted(e["sources"])})
+        rows.append({**e, "vote": vote, "vote_records": sum(c.values()), "sources": sorted(e["sources"]),
+                     "npx_descriptions": sorted(e["npx_descriptions"]), "min_confidence": round(e["min_confidence"], 2)})
     rows.sort(key=lambda r: (r["meeting_date"], r["proposal_id"], r["family"]))
     checked = sorted({p["id"] for p in proposals})
     out = {"generated": dt.date.today().isoformat(),
