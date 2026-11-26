@@ -204,5 +204,6 @@ Roles are derived from the data session's sourced tiers and consumer/enterprise 
 ## Lines and controls (owner, 2026-11-26)
 
 - **Full-width hairlines** ("lines all the way through the sheet … not overdoing it"): the header, section bar, row of views and footer each sit on a line that runs edge to edge, matching the full-width graph band.
+- **Views are page tabs** (owner: the view buttons looked like filters): folder tabs standing on a full-width line, the open view white with a blue top edge and joined to the page, the others grey. On phones they form one row that scrolls sideways.
 - **Select boxes** use one centred chevron in every browser.
 - **Dated timelines:** every month label on the Laws and rules chart carries its year ("Jun ’25"), so any part of it read alone is dated.

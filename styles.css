@@ -479,10 +479,6 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
    answers, then a row of views. Views are quieter than the section tabs above them. */
 .tagline { margin: 4px 0 6px; max-width: 70ch; color: var(--ink); }
 .group-q { margin: 20px 0 8px; font-size: 15px; color: var(--ink-soft); max-width: 70ch; }
-.subtabs { display: flex; flex-wrap: wrap; gap: 4px 6px; margin: 0 0 16px; }
-.subtabs button { font: 400 14px var(--sans); color: var(--ink-soft); background: none; border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
-.subtabs button[aria-selected="true"] { color: var(--surface, #fff); background: var(--accent); border-color: var(--accent); }
-@media (hover: hover) { .subtabs button:not([aria-selected="true"]):hover { border-color: var(--accent); color: var(--ink); } }
 .subtabs button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 /* Start here */
 .findings { list-style: none; padding: 0; margin: 0 0 8px; display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
@@ -536,5 +532,20 @@ select { -webkit-appearance: none; appearance: none; background-image: url("data
 /* Full-width rules (owner, 2026-11-26: "lines all the way through the sheet … like the header lines … not
    overdoing it"): the header, the section bar, the row of views and the footer each sit on a hairline that runs
    edge to edge, like the black graph band. */
-.subtabs { position: relative; padding-bottom: 14px; }
-.subtabs::after { content: ""; position: absolute; left: 50%; bottom: 0; width: 100vw; height: 1px; transform: translateX(-50%); background: var(--line); }
+
+/* Views as page tabs (owner, 2026-11-26: the view buttons looked like filters; "make it clear these tabs give you
+   totally different pages"). Folder tabs standing on a full-width line: the open view is white and joins the page
+   below, with a blue top edge; the others sit back in grey. Nothing else on the page looks like this. */
+.subtabs { position: relative; display: flex; flex-wrap: wrap; align-items: flex-end; gap: 4px; margin: 14px 0 24px; padding: 0; }
+.subtabs::after { content: ""; position: absolute; left: 50%; bottom: 0; width: 100vw; height: 1px; transform: translateX(-50%); background: var(--control-edge); z-index: 0; }
+.subtabs button { position: relative; z-index: 1; font: 400 15px var(--sans); color: var(--ink-soft); background: #f2f2f2; border: 1px solid var(--line); border-bottom: 0; border-radius: 6px 6px 0 0; padding: 10px 18px 9px; margin-bottom: 0; cursor: pointer; transition: background-color var(--dur-micro) var(--ease), color var(--dur-micro) var(--ease); }
+.subtabs button[aria-selected="true"] { color: var(--ink); background: var(--bg); border-color: var(--control-edge); box-shadow: inset 0 3px 0 var(--accent); padding-bottom: 10px; margin-bottom: -1px; z-index: 2; }
+@media (hover: hover) { .subtabs button:not([aria-selected="true"]):hover { background: #e8e8e8; color: var(--ink); } }
+/* Phones: one row of tabs that scrolls sideways, standing on its own line. */
+@media (max-width: 640px) {
+  .subtabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--control-edge); margin-left: -16px; margin-right: -16px; padding: 0 16px; }
+  .subtabs::-webkit-scrollbar { display: none; }
+  .subtabs::after { display: none; }
+  .subtabs button { flex: none; white-space: nowrap; padding: 8px 12px 7px; font-size: 14px; }
+  .subtabs button[aria-selected="true"] { margin-bottom: 0; }
+}
