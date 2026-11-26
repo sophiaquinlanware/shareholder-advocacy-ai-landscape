@@ -20,7 +20,8 @@
    "filing_deadline": "2023-06-29",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312522270484/d318171ddef14a.htm",
    "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud datacenters in countries of significant human rights concern and how it mitigates those impacts.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
+   "ask_id": "ask-dc-siting-rights"
   },
   {
    "id": "msft-2023-13",
@@ -42,7 +43,8 @@
    "filing_deadline": "2023-06-29",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312522270484/d318171ddef14a.htm",
    "plain_summary": "Asks the board for an annual report on risks from Microsoft's role in AI-generated or AI-spread misinformation and disinformation, its planned remediation steps, and their effectiveness.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
+   "ask_id": "ask-ai-misinformation"
   },
   {
    "id": "msft-2024-6",
@@ -74,7 +76,8 @@
    "filing_deadline": "2024-06-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud datacenters in countries of significant human rights concern and how it mitigates those impacts.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
+   "ask_id": "ask-dc-siting-rights"
   },
   {
    "id": "msft-2024-7",
@@ -96,7 +99,8 @@
    "filing_deadline": "2024-06-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "plain_summary": "Asks for a report on the risks to Microsoft of providing advanced technology, including AI and machine learning tools, to facilitate new oil and gas development and production.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
+   "ask_id": "ask-ai-fossil-fuels"
   },
   {
    "id": "msft-2024-8",
@@ -128,7 +132,8 @@
    "filing_deadline": "2024-06-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "plain_summary": "Asks the board for an annual report on risks from Microsoft's role in AI-generated or AI-spread misinformation and disinformation, its planned remediation steps, and their effectiveness.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
+   "ask_id": "ask-ai-misinformation"
   },
   {
    "id": "msft-2024-9",
@@ -150,7 +155,8 @@
    "filing_deadline": "2024-06-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "plain_summary": "Asks for an annual report on risks from unethical or improper use of external data to train Microsoft's AI offerings, how it mitigates them, and how it measures effectiveness.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
+   "ask_id": "ask-ai-training-data"
   },
   {
    "id": "msft-2025-6",
@@ -172,7 +178,8 @@
    "filing_deadline": "2025-07-01",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "plain_summary": "Asks the board for a report on how it oversees risks of generative AI bias against religious or political views and whether such bias affects people's civil rights.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
+   "ask_id": "ask-ai-bias"
   },
   {
    "id": "msft-2025-7",
@@ -194,7 +201,8 @@
    "filing_deadline": "2025-07-01",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "plain_summary": "Asks for an annual report on risks from unethical or improper use of external data to train Microsoft's AI offerings, how it mitigates them, and how it measures effectiveness.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
+   "ask_id": "ask-ai-training-data"
   },
   {
    "id": "msft-2025-8",
@@ -233,7 +241,8 @@
    "filing_deadline": "2025-07-01",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud datacenters in countries of significant human rights concern and how it mitigates those impacts.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
+   "ask_id": "ask-dc-siting-rights"
   },
   {
    "id": "msft-2025-9",
@@ -255,7 +264,8 @@
    "filing_deadline": "2025-07-01",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "plain_summary": "Asks the board for a report assessing how well Microsoft's human rights due diligence prevents and addresses customer misuse of its AI and cloud products that violates human rights.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
+   "ask_id": "ask-customer-due-diligence"
   },
   {
    "id": "msft-2025-10",
@@ -287,7 +297,8 @@
    "filing_deadline": "2025-07-01",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "plain_summary": "Asks for a report on the climate and financial risks to Microsoft of providing AI and machine learning tools to facilitate oil and gas development and production.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
+   "ask_id": "ask-ai-fossil-fuels"
   },
   {
    "id": "meta-2023-5",
@@ -309,7 +320,8 @@
    "filing_deadline": "2022-12-09",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680122000043/meta2022definitiveproxysta.htm",
    "plain_summary": "Asks the board to publish an independent third-party human rights impact assessment of Facebook's targeted advertising policies and practices across its business.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
+   "ask_id": "ask-targeted-ads-rights"
   },
   {
    "id": "meta-2024-6",
@@ -331,7 +343,8 @@
    "filing_deadline": "2023-12-16",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
    "plain_summary": "Asks the board for an annual report on risks from Meta's role in spreading generative AI misinformation and disinformation, its remediation steps, and how it measures their effectiveness.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
+   "ask_id": "ask-ai-misinformation"
   },
   {
    "id": "meta-2024-10",
@@ -363,7 +376,8 @@
    "filing_deadline": "2023-12-16",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
    "plain_summary": "Asks the board to publish an independent third-party human rights impact assessment of the AI systems that drive Facebook's targeted advertising policies and practices.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
+   "ask_id": "ask-targeted-ads-rights"
   },
   {
    "id": "meta-2025-10",
@@ -385,7 +399,8 @@
    "filing_deadline": "2024-12-20",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "plain_summary": "Asks Meta to publish a transparency report on its use of deepfake-identifying software to combat the risks of online child exploitation.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
+   "ask_id": "ask-child-safety"
   },
   {
    "id": "meta-2025-11",
@@ -407,7 +422,8 @@
    "filing_deadline": "2024-12-20",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "plain_summary": "Asks for an annual report on risks from unethical or improper use of external data in developing and deploying Meta's AI, how it mitigates them, and how it measures effectiveness.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
+   "ask_id": "ask-ai-training-data"
   },
   {
    "id": "meta-2025-12",
@@ -429,7 +445,8 @@
    "filing_deadline": "2024-12-20",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "plain_summary": "Asks Meta to disclose a transition plan for new renewable energy or other actions that cut emissions at least as much as its expanded data centers' added energy demand.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
+   "ask_id": "ask-dc-climate-energy"
   },
   {
    "id": "meta-2026-3",
@@ -461,7 +478,8 @@
    "filing_deadline": "2025-12-18",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "plain_summary": "Asks for an annual report on risks from unethical or improper use of external data in developing and deploying Meta's AI, how it mitigates them, and how it measures effectiveness.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
+   "ask_id": "ask-ai-training-data"
   },
   {
    "id": "meta-2026-9",
@@ -483,7 +501,8 @@
    "filing_deadline": "2025-12-18",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "plain_summary": "Asks Meta for a report explaining how it will meet its greenhouse gas commitments given rising energy demand from its artificial intelligence work and planned data centers.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
+   "ask_id": "ask-dc-climate-energy"
   },
   {
    "id": "meta-2026-11",
@@ -505,7 +524,8 @@
    "filing_deadline": "2025-12-18",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "plain_summary": "Asks the board to oversee a data protection impact assessment of Meta's use of AI chatbot conversations to personalize ads and content, including appropriate use and opt-out procedures.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
+   "ask_id": "ask-ai-training-data"
   },
   {
    "id": "googl-2023-10",
@@ -527,7 +547,8 @@
    "filing_deadline": "2022-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm",
    "plain_summary": "Asks the board to commission a report on siting Google Cloud data centers in countries of significant human rights concern and how the company mitigates the related impacts.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
+   "ask_id": "ask-dc-siting-rights"
   },
   {
    "id": "googl-2023-11",
@@ -549,7 +570,8 @@
    "filing_deadline": "2022-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm",
    "plain_summary": "Asks the board to publish an independent third-party human rights impact assessment of Google's targeted advertising policies and practices across its business.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
+   "ask_id": "ask-targeted-ads-rights"
   },
   {
    "id": "googl-2023-12",
@@ -571,7 +593,8 @@
    "filing_deadline": "2022-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm",
    "plain_summary": "Asks Alphabet to disclose more quantitative and qualitative information on its algorithmic systems, such as how they target ads, their error rates, and effects on user speech.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
+   "ask_id": "ask-ai-oversight-reporting"
   },
   {
    "id": "googl-2024-11",
@@ -593,7 +616,8 @@
    "filing_deadline": "2023-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "plain_summary": "Asks the board to amend the Audit and Compliance Committee charter to make it responsible for overseeing Alphabet's AI activities and implementation of its AI Principles.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
+   "ask_id": "ask-ai-oversight-reporting"
   },
   {
    "id": "googl-2024-12",
@@ -615,7 +639,8 @@
    "filing_deadline": "2023-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "plain_summary": "Asks the board for an annual report on risks from Alphabet's role in generative AI misinformation and disinformation, its remediation steps, and how it measures their effectiveness.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
+   "ask_id": "ask-ai-misinformation"
   },
   {
    "id": "googl-2024-13",
@@ -647,7 +672,8 @@
    "filing_deadline": "2023-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "plain_summary": "Asks the board to publish an independent third-party human rights impact assessment of Google's AI-driven targeted advertising policies and practices.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
+   "ask_id": "ask-targeted-ads-rights"
   },
   {
    "id": "googl-2025-7",
@@ -669,7 +695,8 @@
    "filing_deadline": "2024-12-27",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "plain_summary": "Asks Alphabet to disclose additional information each year showing if and how it will meet its 2030 climate goals, given its growing greenhouse gas emissions.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
+   "ask_id": "ask-dc-climate-energy"
   },
   {
    "id": "googl-2025-9",
@@ -691,7 +718,8 @@
    "filing_deadline": "2024-12-27",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "plain_summary": "Asks the board for an independent report on how Alphabet assesses whether customer use of its products for surveillance, censorship, or military purposes causes human rights harms in conflict areas.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
+   "ask_id": "ask-customer-due-diligence"
   },
   {
    "id": "googl-2025-10",
@@ -713,7 +741,8 @@
    "filing_deadline": "2024-12-27",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "plain_summary": "Asks the board for a report on how it oversees risks of generative AI bias against religious or political views and whether such bias affects people's civil rights.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
+   "ask_id": "ask-ai-bias"
   },
   {
    "id": "googl-2025-11",
@@ -735,7 +764,8 @@
    "filing_deadline": "2024-12-27",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "plain_summary": "Asks for an annual report on risks from unethical or improper use of external data in developing and deploying Alphabet's AI, how it mitigates them, and how it measures effectiveness.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
+   "ask_id": "ask-ai-training-data"
   },
   {
    "id": "googl-2025-12",
@@ -767,7 +797,8 @@
    "filing_deadline": "2024-12-27",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "plain_summary": "Asks the board to publish an independent third-party human rights impact assessment of Google's AI-driven targeted advertising policies and practices.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
+   "ask_id": "ask-targeted-ads-rights"
   },
   {
    "id": "googl-2025-15(floor)",
@@ -821,7 +852,8 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "plain_summary": "Asks Alphabet for a report explaining how it will meet its greenhouse gas commitments given rising energy demand from artificial intelligence and its planned data centers.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+   "ask_id": "ask-dc-climate-energy"
   },
   {
    "id": "googl-2026-6",
@@ -843,7 +875,8 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "plain_summary": "Asks Alphabet for a report on how its water usage policies and practices align with long-term shareholder value, particularly for brand growth and AI development.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+   "ask_id": "ask-dc-water"
   },
   {
    "id": "googl-2026-11",
@@ -865,7 +898,8 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "plain_summary": "Asks the board for a report on risks from gaps in Alphabet's oversight of customer and user data that could let its services facilitate government surveillance, censorship, or profiling.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+   "ask_id": "ask-ai-training-data"
   },
   {
    "id": "googl-2026-12",
@@ -897,7 +931,8 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "plain_summary": "Asks the board to update the Audit Committee charter to give it formal oversight of responsible AI development and deployment and of AI risks to users' human rights.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+   "ask_id": "ask-ai-oversight-reporting"
   },
   {
    "id": "googl-2026-13",
@@ -919,7 +954,8 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "plain_summary": "Asks the board to commission a third-party assessment of further actions Alphabet could take to curb the spread of false information, including AI-generated falsehoods, and report the outcome.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+   "ask_id": "ask-ai-misinformation"
   },
   {
    "id": "googl-2026-14",
@@ -951,7 +987,8 @@
    "filing_deadline": "2025-12-26",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "plain_summary": "Asks for an annual report on risks from unethical or improper use of external data in developing and deploying Alphabet's AI, how it mitigates them, and how it measures effectiveness.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+   "ask_id": "ask-ai-training-data"
   },
   {
    "id": "amzn-2023-7",
@@ -973,7 +1010,8 @@
    "filing_deadline": "2022-12-15",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465922045572/tm223357-5_def14a.htm",
    "plain_summary": "Asks the board to commission an independent report on whether customers' use of Amazon's surveillance, computer vision or cloud storage products contributes to human rights violations.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
+   "ask_id": "ask-customer-due-diligence"
   },
   {
    "id": "amzn-2023-23",
@@ -995,7 +1033,8 @@
    "filing_deadline": "2022-12-15",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465922045572/tm223357-5_def14a.htm",
    "plain_summary": "Asks the board to commission an independent study of Rekognition on its privacy and civil rights risks, its sale to repressive governments, and related financial risks.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
+   "ask_id": "ask-customer-due-diligence"
   },
   {
    "id": "amzn-2024-6",
@@ -1027,7 +1066,8 @@
    "filing_deadline": "2023-12-15",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
    "plain_summary": "Asks the board to commission an independent report on whether customers' use of Amazon's surveillance, computer vision or cloud products contributes to human rights violations or breaches humanitarian law.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
+   "ask_id": "ask-customer-due-diligence"
   },
   {
    "id": "amzn-2024-14",
@@ -1059,7 +1099,8 @@
    "filing_deadline": "2023-12-15",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
    "plain_summary": "Asks the board to commission an independent study of Rekognition on its privacy and civil rights risks in the US, its sale to repressive governments, and related financial risks.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
+   "ask_id": "ask-customer-due-diligence"
   },
   {
    "id": "amzn-2024-16",
@@ -1081,7 +1122,8 @@
    "filing_deadline": "2023-12-15",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm",
    "plain_summary": "Asks the board to create a new committee of independent directors on AI to address human rights risks from developing and deploying AI systems.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
+   "ask_id": "ask-ai-oversight-reporting"
   },
   {
    "id": "amzn-2025-7",
@@ -1103,7 +1145,8 @@
    "filing_deadline": "2024-12-12",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "plain_summary": "Asks for a report explaining how Amazon will meet its greenhouse gas commitments given the growing energy demand from AI and the data centers it plans to build.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
+   "ask_id": "ask-dc-climate-energy"
   },
   {
    "id": "amzn-2025-8",
@@ -1125,7 +1168,8 @@
    "filing_deadline": "2024-12-12",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "plain_summary": "Asks the board to commission an independent, public assessment of how the board and its committees oversee human rights risks tied to AI.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
+   "ask_id": "ask-ai-oversight-reporting"
   },
   {
    "id": "amzn-2025-11",
@@ -1147,7 +1191,8 @@
    "filing_deadline": "2024-12-12",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm",
    "plain_summary": "Asks for an annual report on risks from unethical or improper use of external data to train Amazon's AI offerings, how it mitigates them, and how it measures that.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
+   "ask_id": "ask-ai-training-data"
   },
   {
    "id": "amzn-2026-5",
@@ -1179,7 +1224,8 @@
    "filing_deadline": "2025-12-11",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "plain_summary": "Asks for a report explaining how Amazon will meet its greenhouse gas commitments given the growing energy demand from AI and the data centers it plans to build.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
+   "ask_id": "ask-dc-climate-energy"
   },
   {
    "id": "amzn-2026-floor",
@@ -1201,7 +1247,8 @@
    "filing_deadline": "2025-12-11",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "plain_summary": null,
-   "plain_summary_note": "No resolution text available: the proposal was withdrawn or raised from the meeting floor."
+   "plain_summary_note": "No resolution text available: the proposal was withdrawn or raised from the meeting floor.",
+   "ask_id": "ask-ai-workforce"
   },
   {
    "id": "aapl-2024-7",
@@ -1223,7 +1270,8 @@
    "filing_deadline": "2023-09-14",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817923000019/laap2023_def14a.htm",
    "plain_summary": "Asks for a public transparency report on Apple's use of AI in its business operations and any ethical guidelines it has adopted for that use.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm",
+   "ask_id": "ask-ai-oversight-reporting"
   },
   {
    "id": "aapl-2025-4",
@@ -1245,7 +1293,8 @@
    "filing_deadline": "2024-09-13",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm",
    "plain_summary": "Asks for an annual report on risks from Apple's unethical or improper use of external data to develop and train its AI, its mitigation steps, and how it measures them.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
+   "ask_id": "ask-ai-training-data"
   },
   {
    "id": "aapl-2025-5",
@@ -1267,7 +1316,8 @@
    "filing_deadline": "2024-09-13",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm",
    "plain_summary": "Asks for a public transparency report on the costs and benefits of Apple's decisions about using software that identifies child sex abuse material.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
+   "ask_id": "ask-child-safety"
   },
   {
    "id": "tsla-2025-7",
@@ -1311,7 +1361,8 @@
    "filing_deadline": "2026-01-13",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000095/nvda-20250512.htm",
    "plain_summary": "Asks for a report disclosing the greenhouse gas emissions from the use of NVIDIA's sold products.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+   "ask_id": "ask-dc-climate-energy"
   },
   {
    "id": "msft-2026-4",
@@ -1334,7 +1385,8 @@
    "filing_deadline": "2026-06-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "plain_summary": "Asks Microsoft to disclose additional information each year, beyond current disclosures, showing how it will manage its climate commitments as its emissions grow.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+   "ask_id": "ask-dc-climate-energy"
   },
   {
    "id": "msft-2026-5",
@@ -1367,7 +1419,8 @@
    "filing_deadline": "2026-06-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "plain_summary": "Asks for a report assessing how well Microsoft's human rights due diligence prevents and addresses customer misuse of its AI and cloud products that violates human rights or humanitarian law.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+   "ask_id": "ask-customer-due-diligence"
   },
   {
    "id": "msft-2026-6",
@@ -1414,7 +1467,8 @@
    "filing_deadline": "2026-06-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "plain_summary": "Asks the board to commission a report on the implications of siting Microsoft cloud data centers in countries of significant human rights concern and how it mitigates them.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+   "ask_id": "ask-dc-siting-rights"
   },
   {
    "id": "googl-2023-audit-committee-review",
@@ -1430,7 +1484,8 @@
    "filing_deadline": "2022-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817922000262/lgoog2022_def14a.htm",
    "plain_summary": "Asks the board to commission an independent assessment of the Audit and Compliance Committee's role in overseeing material risks to public well-being from company operations.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
+   "ask_id": "ask-ai-oversight-reporting"
   },
   {
    "id": "googl-2024-child-online-safety",
@@ -1448,7 +1503,8 @@
    "filing_deadline": "2023-12-23",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "plain_summary": "Asks the board to adopt targets and publish an annual report with metrics on whether YouTube and Alphabet have improved child safety and reduced harm to children on their platforms.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
+   "ask_id": "ask-child-safety"
   },
   {
    "id": "meta-2023-community-standards",
@@ -1482,7 +1538,8 @@
    "filing_deadline": "2024-12-20",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "plain_summary": "Asks the board to publish a report with targets and metrics assessing whether and how Meta has improved child safety and reduced harm to children on its platforms.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
+   "ask_id": "ask-child-safety"
   },
   {
    "id": "meta-2026-child-safety-pay",
@@ -1500,7 +1557,8 @@
    "filing_deadline": "2025-12-18",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "plain_summary": "Asks the Compensation Committee to report on the feasibility of tying senior executive pay to performance on improving child safety.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
+   "ask_id": "ask-child-safety"
   },
   {
    "id": "amzn-2026-responsible-ai-sales",
@@ -1521,7 +1579,8 @@
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "plain_summary": "Asks the board to report on misalignment between Amazon's responsible AI policies and its sales of AI and cloud services, including to Israel's military and DHS.",
    "plain_summary_source": "https://news.bloomberglaw.com/esg/amazon-to-block-investor-vote-on-ai-services-for-israel-dhs",
-   "plain_summary_note": "Secondary source: the resolution was not in a proxy statement."
+   "plain_summary_note": "Secondary source: the resolution was not in a proxy statement.",
+   "ask_id": "ask-customer-due-diligence"
   },
   {
    "id": "aapl-2026-ai-energy",
@@ -1542,7 +1601,8 @@
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
    "plain_summary": "Asks for a report evaluating how AI and increased data center use may affect Apple's long-term energy strategy.",
    "plain_summary_source": "https://www.minerva.info/post/apple-shareholders-stunted-proposals-plummet-as-sec-shift-bites",
-   "plain_summary_note": "Secondary source: the resolution was not in a proxy statement."
+   "plain_summary_note": "Secondary source: the resolution was not in a proxy statement.",
+   "ask_id": "ask-dc-climate-energy"
   },
   {
    "id": "nvda-2026-military-ai",
@@ -1560,7 +1620,8 @@
    "filing_deadline": "2026-01-13",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000095/nvda-20250512.htm",
    "plain_summary": null,
-   "plain_summary_note": "The only public resolution text is on the PRI Collaboration Platform, whose terms bar republishing."
+   "plain_summary_note": "The only public resolution text is on the PRI Collaboration Platform, whose terms bar republishing.",
+   "ask_id": "ask-customer-due-diligence"
   },
   {
    "id": "amzn-2026-climate-cost",
@@ -1578,7 +1639,8 @@
    "filing_deadline": "2025-12-11",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "plain_summary": "Asks the board to report, by March 31, 2027, the added capital and operating costs of Amazon's climate commitments since 2019 and its reassessment of them given AI energy demand.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
+   "ask_id": "ask-dc-climate-energy"
   },
   {
    "id": "ibm-2026-7",
@@ -1601,7 +1663,8 @@
    "notes": "Proxy heading for the proposal text: \"Proposal 7 - AI Bias Audit\". Proponent owned at least 7 shares per the proxy.",
    "source": "SEC filings (round 29)",
    "plain_summary": "Asks the board to report on the methods used to remove bias from IBM's AI models, including whether avoiding disparate impact in outputs undermines their accuracy and trust.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
+   "ask_id": "ask-ai-bias"
   },
   {
    "id": "axon-2023-6",
@@ -1624,7 +1687,8 @@
    "notes": "Resolved clause cites the public safety and human and civil rights issues raised by former members of the Axon AI Ethics Board; nine of thirteen board members resigned in 2022 over the drone plan.",
    "source": "SEC filings (round 29)",
    "plain_summary": "Asks the company to discontinue development and plans to sell a remotely operated, non-lethal TASER drone system.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1069183/000106918323000019/axon-20230531xdef14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1069183/000106918323000019/axon-20230531xdef14a.htm",
+   "ask_id": "ask-customer-due-diligence"
   },
   {
    "id": "pltr-2026-4",
@@ -1647,7 +1711,8 @@
    "notes": "First shareholder proposals on a Palantir ballot since its 2020 listing (2023 to 2025 proxies carried none). Supporting statement cites Palantir taking over Project Maven, described as an AI-driven system. Board opposed Items 4 and 5 in one statement.",
    "source": "SEC filings (round 29)",
    "plain_summary": "Asks for an independent report on Palantir's due diligence on whether customers' use of its defense products contributes to human rights harms or humanitarian law violations in conflict areas.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
+   "ask_id": "ask-customer-due-diligence"
   },
   {
    "id": "pltr-2026-5",
@@ -1670,7 +1735,8 @@
    "notes": "Supporting statement says ICE and other US agencies use Palantir's artificial intelligence to combine social media and private data to track migrants, and cites ImmigrationOS.",
    "source": "SEC filings (round 29)",
    "plain_summary": "Asks the board to publish the results of a human rights impact assessment of the actual and potential impacts from the use of Palantir's products and services.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
+   "ask_id": "ask-customer-due-diligence"
   },
   {
    "id": "nflx-2024-4",
@@ -1692,7 +1758,8 @@
    "notes": "Part of the AFL-CIO 2024 AI transparency campaign at media and tech companies; same resolution as the ones filed at Disney and Comcast.",
    "source": "SEC filings (round 29)",
    "plain_summary": "Asks Netflix to publish a transparency report on its use of AI in business operations, the board's role in overseeing it, and any ethical AI guidelines adopted.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1065280/000119312524100913/d521836ddef14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1065280/000119312524100913/d521836ddef14a.htm",
+   "ask_id": "ask-ai-oversight-reporting"
   },
   {
    "id": "dis-2024-afl-ai",
@@ -1714,7 +1781,8 @@
    "notes": "SEC staff denied Disney's request to exclude the proposal under Rule 14a-8(i)(7) on January 3, 2024 (letter: https://business.cch.com/srd/TheWaltDisneyCompany.pdf; SEC index: https://www.sec.gov/corpfin/2023-2024-shareholder-proposals-no-action). The proposal does not appear in Disney's 2024 proxy (a contested DEFC14A); FTI Consulting on the Harvard Law School Forum (2024-09-29) reports the AFL-CIO withdrew it following commitments from Disney: https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/. Withdrawal date not found.",
    "source": "SEC filings (round 29)",
    "plain_summary": null,
-   "plain_summary_note": "No resolution text available: the proposal was withdrawn or raised from the meeting floor."
+   "plain_summary_note": "No resolution text available: the proposal was withdrawn or raised from the meeting floor.",
+   "ask_id": "ask-ai-oversight-reporting"
   },
   {
    "id": "cmcsa-2024-afl-ai",
@@ -1736,7 +1804,8 @@
    "notes": "Not in Comcast's 2024 proxy (only shareholder item was a political expenditures report). PRI collaboration platform lists 'AI Transparency Report at Comcast Corp.' as withdrawn for the 2024 AGM: https://collaborate.unpri.org/group/23611/home. FTI Consulting on the Harvard Law School Forum reports the AFL-CIO withdrew it following company commitments: https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/. No SEC no-action letter found; withdrawal date not found. Filer named per the FTI Consulting review on the Harvard Law School Forum; the PRI database is not cited because its terms bar republishing.",
    "source": "SEC filings (round 29)",
    "plain_summary": null,
-   "plain_summary_note": "No resolution text available: the proposal was withdrawn or raised from the meeting floor."
+   "plain_summary_note": "No resolution text available: the proposal was withdrawn or raised from the meeting floor.",
+   "ask_id": "ask-ai-oversight-reporting"
   },
   {
    "id": "so-2026-9",
@@ -1759,7 +1828,8 @@
    "notes": "WHEREAS cites Georgia, where 80% of projected demand would serve artificial intelligence (AI) data centers.",
    "source": "SEC filings (round 29)",
    "plain_summary": "Asks for a report on whether and how Southern is putting safeguards in place to avoid shifting data center infrastructure costs to residential customers and small businesses.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm",
+   "ask_id": "ask-dc-climate-energy"
   },
   {
    "id": "dlr-2026-4",
@@ -1782,7 +1852,8 @@
    "notes": "Jointly presented by NorthStar and Proxy Impact. Same proponent and subject (water) as dlr-2025-5.",
    "source": "SEC filings (round 29)",
    "plain_summary": "Asks the board to disclose annual region-level metrics on Digital Realty's exposure to water risks and its operational water intensity in water-stressed areas.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm",
+   "ask_id": "ask-dc-water"
   },
   {
    "id": "dlr-2025-5",
@@ -1805,7 +1876,8 @@
    "notes": "Supporting statement cites generative AI workloads that require significant water for cooling.",
    "source": "SEC filings (round 29)",
    "plain_summary": "Asks the board to create a policy committing the company to the human right to water, including strategies to cut water use in high water stress regions.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817925000509/dlr000000-def14a.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817925000509/dlr000000-def14a.htm",
+   "ask_id": "ask-dc-water"
   },
   {
    "id": "csco-2026-5",
@@ -1827,7 +1899,8 @@
    "source": "SEC filings (round 29)",
    "filing_deadline_note": "Not recorded: the 2025 proxy deadline sentence was not read for this proposal.",
    "plain_summary": "Asks the board to commission an independent human rights impact assessment of risks from high-risk customers, end users and business relationships, including surveillance, military and immigration enforcement uses.",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm",
+   "ask_id": "ask-customer-due-diligence"
   }
  ],
  "exempt_solicitations": [

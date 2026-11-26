@@ -44,6 +44,16 @@ def main():
         for d in c.get("deadlines_by_year", []):
             by_company_year[(c["ticker"].upper(), int(d["for_meeting_year"]))] = d
 
+    # Recurring asks: first matching rule in data/asks.json wins; no match leaves ask_id unset.
+    asks = json.loads((DATA / "asks.json").read_text())["asks"] if (DATA / "asks.json").exists() else []
+    for p in props:
+        text = ((p.get("title") or "") + " " + (p.get("subtopic") or "")).lower()
+        hit = next((a["id"] for a in asks if any(m in text for m in a["match"])), None)
+        if hit:
+            p["ask_id"] = hit
+        else:
+            p.pop("ask_id", None)
+
     linked = 0
     for p in props:
         if p.get("vote_history_source") != "manual":
