@@ -47,6 +47,7 @@ jobs:
         run: |
           python scripts/refresh.py || echo "Filing check skipped"
           python scripts/holdings.py
+          python scripts/build_proposal_links.py
           python scripts/build_graph.py
           python scripts/build_value_chain.py
       - name: Save any changes

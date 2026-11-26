@@ -181,6 +181,7 @@ def main():
     org_names = {n["id"]: n["label"].lower() for n in nodes.values() if n["type"] in ("investor", "coalition")}
     net_props = [n for n in nodes.values() if n["type"] == "proposal"]
     covered = set()  # network proposals already paired with an SEC record
+    twin_of = {}  # proposals.json id -> network proposal id it was merged into
     for p in load("proposals.json").get("proposals", []):
         if p["id"] in nodes:
             continue
@@ -189,8 +190,11 @@ def main():
         twin = max(cands, key=lambda n: len(words(n["label"]) & words(p["title"])), default=None)
         if twin:
             covered.add(twin["id"])
-            for k in ("support_pct", "status", "subtopic"):
-                if p.get(k) is not None and twin.get(k) in (None, "", "UNVERIFIED"):
+            twin_of[p["id"]] = twin["id"]
+            # The SEC-based record is authoritative: support comes from the 8-K vote counts and the
+            # topic tag must match the proposal feed, so both files always agree.
+            for k in ("support_pct", "status", "subtopic", "topic"):
+                if k in p:
                     twin[k] = p[k]
             twin["results_url"] = p.get("results_url")
             continue
@@ -232,6 +236,23 @@ def main():
     if merged_ids:
         (DATA / "proposals.json").write_text(json.dumps(pj, indent=1, ensure_ascii=False) + "\n")
         print(f"  added {len(merged_ids)} proposals to proposals.json from the filer network")
+
+    # Fields for the impact investor view, copied from proposals.json and companies.json
+    # (vote history, filing deadlines, calls for co-filers) onto the matching graph nodes.
+    PHASE2_FIELDS = ("vote_history", "filing_deadline", "filing_deadline_source", "seeking", "meeting_date")
+    pj_by_id = {p["id"]: p for p in load("proposals.json").get("proposals", [])}
+    for pid, p in pj_by_id.items():
+        target = nodes.get(pid) or nodes.get(twin_of.get(pid, ""))
+        if target:
+            for k in PHASE2_FIELDS:
+                if p.get(k) not in (None, [], ""):
+                    target[k] = p[k]
+    for c in load("companies.json") or []:
+        key = "co-" + (c["ticker"].upper() if c.get("ticker") and c["ticker"] not in ("private", "UNVERIFIED") else c.get("id", ""))
+        if key in nodes:
+            for k in ("next_proposal_deadline", "next_proposal_deadline_source", "next_proposal_deadline_status", "next_proposal_deadline_quote", "next_proposal_deadline_note"):
+                if c.get(k):
+                    nodes[key][k] = c[k]
 
     # Degree, for sizing dots.
     deg = defaultdict(int)

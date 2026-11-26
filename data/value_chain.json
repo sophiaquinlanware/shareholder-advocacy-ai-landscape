@@ -589,9 +589,9 @@
    ],
    "ties_from_tier": 27,
    "ties_into_tier": 11,
-   "ai_proposals": 34,
+   "ai_proposals": 35,
    "proposal_topics": {
-    "Social & economic impacts": 19,
+    "Social & economic impacts": 20,
     "Data center impacts": 8,
     "AI governance & oversight": 7
    },
@@ -620,6 +620,12 @@
      "year": 2026,
      "title": "Report on Impact of Climate Commitments",
      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    },
+    {
+     "company": "CSCO",
+     "year": 2026,
+     "title": "Human rights impact assessment of high-risk customers and end uses",
+     "url": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm"
     },
     {
      "company": "GOOGL",
@@ -662,12 +668,6 @@
      "year": 2026,
      "title": "Greenhouse Gas Emissions Disclosure (GHG from use of sold products)",
      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm"
-    },
-    {
-     "company": "NVDA",
-     "year": 2026,
-     "title": "Rationale for Military Sales (AI-enabled capabilities)",
-     "url": "https://collaborate.unpri.org/group/38826/home"
     }
    ],
    "investor_engagements": [
@@ -751,12 +751,12 @@
     {
      "id": "iccr",
      "name": "Interfaith Center on Corporate Responsibility (ICCR)",
-     "members_active_here": 13
+     "members_active_here": 14
     },
     {
      "id": "iahr",
      "name": "Investor Alliance for Human Rights",
-     "members_active_here": 10
+     "members_active_here": 11
     },
     {
      "id": "wba-cic-ethical-ai",
@@ -809,6 +809,11 @@
      "id": "person-jonas-kron",
      "name": "Jonas Kron",
      "org": "Trillium Asset Management"
+    },
+    {
+     "id": "person-joshua-brockwell",
+     "name": "Joshua Brockwell",
+     "org": "Azzad Asset Management"
     },
     {
      "id": "person-julia-cedarholm",
@@ -890,14 +895,20 @@
    ],
    "ties_from_tier": 6,
    "ties_into_tier": 11,
-   "ai_proposals": 13,
+   "ai_proposals": 16,
    "proposal_topics": {
     "Social & economic impacts": 10,
-    "Data center impacts": 2,
+    "Data center impacts": 5,
     "AI governance & oversight": 1
    },
-   "median_support_pct": 9.9,
+   "median_support_pct": 10.1,
    "asks_made": [
+    {
+     "company": "DLR",
+     "year": 2026,
+     "title": "Stockholder Proposal Regarding Enhanced Water Risk Disclosure",
+     "url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm"
+    },
     {
      "company": "META",
      "year": 2026,
@@ -921,6 +932,18 @@
      "year": 2026,
      "title": "Integrate Child Safety into Executive Compensation",
      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+    },
+    {
+     "company": "SO",
+     "year": 2026,
+     "title": "Report on Data Center Costs",
+     "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm"
+    },
+    {
+     "company": "DLR",
+     "year": 2025,
+     "title": "Stockholder Proposal Regarding Human Right to Water",
+     "url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817925000509/dlr000000-def14a.htm"
     },
     {
      "company": "META",
@@ -951,24 +974,6 @@
      "year": 2025,
      "title": "Board Authorization of an Investment in xAI",
      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925090866/tm252289-12_def14a.htm"
-    },
-    {
-     "company": "META",
-     "year": 2024,
-     "title": "Report on Generative AI Misinformation and Disinformation Risks",
-     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
-    },
-    {
-     "company": "META",
-     "year": 2024,
-     "title": "Human Rights Impact Assessment on AI Systems Driving Targeted Advertising",
-     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
-    },
-    {
-     "company": "META",
-     "year": 2023,
-     "title": "Human Rights Impact Assessment of Targeted Advertising",
-     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
     }
    ],
    "investor_engagements": [],
@@ -983,7 +988,7 @@
     {
      "id": "as-you-sow",
      "name": "As You Sow",
-     "proposals": 5
+     "proposals": 6
     },
     {
      "id": "mercy",
@@ -991,13 +996,13 @@
      "proposals": 5
     },
     {
-     "id": "nlpc",
-     "name": "National Legal and Policy Center",
-     "proposals": 3
-    },
-    {
      "id": "proxy-impact",
      "name": "Proxy Impact",
+     "proposals": 4
+    },
+    {
+     "id": "nlpc",
+     "name": "National Legal and Policy Center",
      "proposals": 3
     },
     {
@@ -1021,6 +1026,11 @@
      "proposals": 2
     },
     {
+     "id": "northstar",
+     "name": "NorthStar Asset Management",
+     "proposals": 2
+    },
+    {
      "id": "pcusa",
      "name": "Presbyterian Church (U.S.A.)",
      "proposals": 2
@@ -1034,23 +1044,18 @@
      "id": "axa-im",
      "name": "AXA Investment Managers",
      "proposals": 1
-    },
-    {
-     "id": "benedictine-mt-scholastica",
-     "name": "Benedictine Sisters of Mount St. Scholastica",
-     "proposals": 1
     }
    ],
    "coalitions": [
     {
      "id": "iccr",
      "name": "Interfaith Center on Corporate Responsibility (ICCR)",
-     "members_active_here": 7
+     "members_active_here": 8
     },
     {
      "id": "iahr",
      "name": "Investor Alliance for Human Rights",
-     "members_active_here": 2
+     "members_active_here": 3
     },
     {
      "id": "wba-cic-ethical-ai",
@@ -1090,6 +1095,11 @@
      "org": "Arjuna Capital"
     },
     {
+     "id": "person-julie-goodridge",
+     "name": "Julie N.W. Goodridge",
+     "org": "NorthStar Asset Management"
+    },
+    {
      "id": "person-kamil-zabielski",
      "name": "Kamil Zabielski",
      "org": "Storebrand Asset Management"
@@ -1118,6 +1128,11 @@
      "id": "person-natasha-lamb",
      "name": "Natasha Lamb",
      "org": "Arjuna Capital"
+    },
+    {
+     "id": "person-whitney-nguyen",
+     "name": "Whitney Nguyen",
+     "org": "NorthStar Asset Management"
     }
    ]
   },
@@ -1446,13 +1461,13 @@
    "labs_reached_in_two_steps": [],
    "ties_from_tier": 6,
    "ties_into_tier": 21,
-   "ai_proposals": 32,
+   "ai_proposals": 33,
    "proposal_topics": {
     "Social & economic impacts": 21,
-    "Data center impacts": 6,
-    "AI governance & oversight": 5
+    "AI governance & oversight": 6,
+    "Data center impacts": 6
    },
-   "median_support_pct": 9.3,
+   "median_support_pct": 8.8,
    "asks_made": [
     {
      "company": "GOOGL",
@@ -1491,6 +1506,12 @@
      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
     },
     {
+     "company": "IBM",
+     "year": 2026,
+     "title": "Stockholder proposal requesting a report on AI bias",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm"
+    },
+    {
      "company": "META",
      "year": 2026,
      "title": "Report on AI Data Usage Oversight",
@@ -1518,12 +1539,6 @@
      "company": "GOOGL",
      "year": 2025,
      "title": "Enhanced Disclosure on Climate Goals",
-     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
-    },
-    {
-     "company": "GOOGL",
-     "year": 2025,
-     "title": "Report on Due Diligence Process to Assess Human Rights Risks in CAHRA",
      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
     }
    ],
@@ -2048,13 +2063,13 @@
    "labs_reached_in_two_steps": [],
    "ties_from_tier": 10,
    "ties_into_tier": 23,
-   "ai_proposals": 63,
+   "ai_proposals": 70,
    "proposal_topics": {
-    "Social & economic impacts": 37,
-    "Data center impacts": 15,
-    "AI governance & oversight": 11
+    "Social & economic impacts": 40,
+    "AI governance & oversight": 15,
+    "Data center impacts": 15
    },
-   "median_support_pct": 12.3,
+   "median_support_pct": 12.4,
    "asks_made": [
     {
      "company": "AAPL",
@@ -2123,10 +2138,10 @@
      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
     },
     {
-     "company": "META",
+     "company": "IBM",
      "year": 2026,
-     "title": "Report on AI Data Usage Oversight",
-     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+     "title": "Stockholder proposal requesting a report on AI bias",
+     "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm"
     }
    ],
    "investor_engagements": [
@@ -2350,5 +2365,5 @@
    ]
   }
  },
- "derived_note": "ties come from data/value_chain_ties.json and data/pathways.json, each with a source; per_tier is computed by scripts/build_value_chain.py from the site's data files and describes where engagement has happened and what is connected. It is not a recommendation."
+ "derived_note": "ties come from data/value_chain_ties.json and data/pathways.json, each with a source; per_tier is computed by scripts/build_value_chain.py from the site's data files and describes where engagement has happened and what is connected. Proposal counts cover AI-related proposals since 2023 at the 29 companies subject to US proxy rules; withdrawn or excluded proposals appear only where a public source records them, and companies outside US proxy rules have no proposal data. It is not a recommendation."
 }

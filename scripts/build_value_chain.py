@@ -180,7 +180,9 @@ def main():
     vc["per_tier"] = per_tier
     vc["derived_note"] = ("ties come from data/value_chain_ties.json and data/pathways.json, each with a source; per_tier is "
                           "computed by scripts/build_value_chain.py from the site's data files and describes where engagement "
-                          "has happened and what is connected. It is not a recommendation.")
+                          "has happened and what is connected. Proposal counts cover AI-related proposals since 2023 at the 29 "
+                          "companies subject to US proxy rules; withdrawn or excluded proposals appear only where a public source "
+                          "records them, and companies outside US proxy rules have no proposal data. It is not a recommendation.")
     (DATA / "value_chain.json").write_text(json.dumps(vc, indent=1, ensure_ascii=False) + "\n")
     print(f"value_chain.json: {len(ties)} ties")
     for t in vc.get("tiers", []):
