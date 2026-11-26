@@ -582,13 +582,13 @@
   "ticker": "TSLA",
   "name": "Tesla",
   "route_status": "narrowing",
-  "route_status_reason": "Tesla has not adopted the Texas ownership threshold, but its board could adopt one without a shareholder vote. A 2025 proposal to require shareholder approval for that failed narrowly. The notice window is short and the board is classified.",
+  "route_status_reason": "Tesla has not adopted the Texas ownership threshold, but its board could adopt one without a shareholder vote. A 2025 proposal to require shareholder approval for that failed narrowly.",
   "state": {
    "text": "Texas",
    "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"
   },
   "bylaw": {
-   "text": "A shareholder of record can bring a proposal with notice 45 to 75 days before the anniversary of the date last year's proxy was mailed, a shorter and earlier window than most. No minimum stake for proposals today.",
+   "text": "A shareholder of record can bring a proposal with notice 45 to 75 days before the anniversary of the date last year's proxy was mailed. No minimum stake for proposals today.",
    "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925050072/tm2515421d1_ex3-1.htm"
   },
   "threshold": {
@@ -829,7 +829,7 @@
    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026043288/exhibit32-8xk.htm"
   },
   "control": {
-   "text": "Class A shares carry one vote and Class B shares carry ten. Musk reported sole voting power over 6.42 billion shares (48.4% of Class A counted as converted), of which 5.22 billion are Class B, as of June 30, 2026. 5.33 billion Class B shares were outstanding on October 15, 2026. No proxy statement yet.",
+   "text": "Class A shares carry one vote and Class B shares carry ten. Musk reported sole voting power over 6.42 billion shares (48.4% of Class A counted as converted), of which 5.22 billion are Class B, as of June 30, 2026. 5.33 billion Class B shares were outstanding on October 15, 2026. No proxy statement yet. Calculated from these share counts, Musk holds about 87% of total votes (this site's calculation; the filings do not state a percentage).",
    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000110465926095936/xslSCHEDULE_13G_X02/primary_doc.xml"
   },
   "director_voting": {
@@ -1919,7 +1919,7 @@
    "url": "https://www.sec.gov/Archives/edgar/data/1327811/000110465923007534/tm234245d1_ex3-1.htm"
   },
   "control": {
-   "text": "Class A shares carry one vote and Class B shares 10 votes. Co-founders Bhusri and Duffield, through a voting agreement, hold 99% of Class B and 69% of total voting power. The board is classified: a third of directors are elected each year for three-year terms.",
+   "text": "Class A shares carry one vote and Class B shares 10 votes. Co-founders Bhusri and Duffield, through a voting agreement, hold about 69% of total voting power as of April 17, 2026. The board is classified: a third of directors are elected each year for three-year terms.",
    "url": "https://www.sec.gov/Archives/edgar/data/1327811/000110465926055687/tm261347-2_def14a.htm"
   },
   "director_voting": {
@@ -3342,7 +3342,7 @@
    "Voting control": {
     "level": "closed",
     "label": "Founder control",
-    "note": "Founders together hold about 74% of votes",
+    "note": "Directors and officers together hold 72.32% of votes",
     "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000191/crwv-20260422.htm"
    }
   },
