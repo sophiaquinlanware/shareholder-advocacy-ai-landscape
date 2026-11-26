@@ -38,6 +38,24 @@ INVESTORS = {
     "blackrock": "BlackRock, Inc.",
     "vanguard": "Vanguard Group Inc",
     "state-street": "State Street Corp",
+    # Added 2026-11-26: more investors that file or back AI proposals and file 13F.
+    "green-century": "Green Century Capital Management",
+    "boston-trust-walden": "Boston Trust Walden",
+    "impax": "Impax Asset Management",
+    "wespath": "Wespath Benefits and Investments",
+    "friends-fiduciary": "Friends Fiduciary Corp",
+    "dana": "Dana Investment Advisors",
+    "harrington": "Harrington Investments",
+    "clean-yield": "Clean Yield Asset Management",
+    "first-affirmative": "First Affirmative Financial Network",
+    "bailard": "Bailard",
+    "newground": "Newground Social Investment",
+    "nuveen-tiaa": "Nuveen",
+    "mercy": "Mercy Investment Services",
+    "azzad": "Azzad Asset Management",
+    "fidelity": "FMR LLC",
+    "t-rowe-price": "T. Rowe Price Associates",
+    "jpmorgan-am": "JPMorgan Chase & Co",
 }
 
 # Companies matched by issuer name in the 13F table (CUSIPs differ by share class).
@@ -45,7 +63,14 @@ ISSUERS = {
     "MSFT": r"^MICROSOFT", "GOOGL": r"^ALPHABET", "META": r"^META PLATFORMS", "AMZN": r"^AMAZON",
     "NVDA": r"^NVIDIA", "AAPL": r"^APPLE INC", "TSLA": r"^TESLA", "ORCL": r"^ORACLE",
     "CRWV": r"^COREWEAVE", "AMD": r"^ADVANCED MICRO", "AVGO": r"^BROADCOM",
+    # Added 2026-11-26: every company in data/companies.json under US proxy rules.
+    "IBM": r"^INTERNATIONAL BUSINESS MACH", "CRM": r"^SALESFORCE", "ADBE": r"^ADOBE", "INTU": r"^INTUIT",
+    "VRSK": r"^VERISK", "WDAY": r"^WORKDAY", "NOW": r"^SERVICENOW", "PLTR": r"^PALANTIR", "CSCO": r"^CISCO",
+    "AXON": r"^AXON ENTERPRISE", "MSI": r"^MOTOROLA SOLUTIONS", "NFLX": r"^NETFLIX", "DIS": r"^(WALT )?DISNEY",
+    "CMCSA": r"^COMCAST", "DLR": r"^DIGITAL REALTY", "SO": r"^SOUTHERN CO\b", "ANT": r"^ANTHROPIC", "SPCX": r"^SPACE EXPLORATION|^SPACEX",
 }
+# When the company list changes, every investor's latest 13F is read again, not only newer filings.
+ISSUERS_VERSION = "2026-11-26"
 
 
 def get(url):
@@ -105,7 +130,7 @@ def main():
                 continue
             cfg[slug] = cik
             acc, period = latest_13f(cik)
-            if not acc or inv.get(slug, {}).get("accession") == acc:
+            if not acc or (inv.get(slug, {}).get("accession") == acc and h.get("issuers_version") == ISSUERS_VERSION):
                 continue  # nothing newer
             rows, base = read_table(cik, acc)
             total = sum(r["value"] for r in rows) or None
@@ -124,6 +149,10 @@ def main():
             print(f"  {name}: skipped ({e})")
 
     h["investors"] = list(inv.values())
+    h["issuers_version"] = ISSUERS_VERSION
+    h["note"] = ("Positions in the companies under US proxy rules, from each investor's latest Form 13F (US equity holdings "
+                 "of managers over $100 million), plus Norges Bank's own published holdings. A 13F shows the manager's holdings, "
+                 "not who can file a proposal; pct_of_portfolio is the share of that 13F's reported value.")
     path.write_text(json.dumps(h, indent=2) + "\n")
     cfg_path.write_text(json.dumps(cfg, indent=2) + "\n")
 

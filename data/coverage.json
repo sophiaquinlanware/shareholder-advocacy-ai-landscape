@@ -23,21 +23,11 @@
    "reviewed": false
   },
   {
-   "ask_id": "ask-dc-siting-rights",
-   "policy_id": null,
-   "graph_id": null,
-   "coverage": "none",
-   "note": "Checked Utah HB 76, California AB 2619, the EU AI Act, EO 14365 and the AI Action Plan; none requires a human rights review of where data centers are built.",
-   "source_url": null,
-   "policy_status": null,
-   "reviewed": false
-  },
-  {
    "ask_id": "ask-ai-fossil-fuels",
    "policy_id": null,
    "graph_id": null,
    "coverage": "none",
-   "note": "Checked the EU AI Act, GPAI Code, SB 53, RAISE Act, Colorado SB 26-189, EO 14365 and the AI Action Plan; none requires reporting on AI tools sold for oil and gas work.",
+   "note": "Checked the EU AI Act, GPAI Code, DSA, CSDDD, SB 53, the RAISE Act, Colorado SB 26-189, China's AI rules, the UN Guiding Principles, OECD Guidelines and the G7 code; none requires reporting on AI tools sold for oil and gas work.",
    "source_url": null,
    "policy_status": null,
    "reviewed": false
@@ -249,6 +239,756 @@
    "coverage": "partial",
    "note": "The EU AI Act makes general-purpose model providers keep documentation for regulators and, for systemic-risk models, assess risks and report incidents; it requires no board oversight or public AI report.",
    "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-customer-due-diligence",
+   "policy_id": "un-guiding-principles",
+   "graph_id": "ev-un-guiding-principles",
+   "coverage": "partial",
+   "note": "Voluntary: the UN Guiding Principles expect human rights due diligence on impacts linked to a company's products through business relationships, which covers AI customer use; nothing is legally required.",
+   "source_url": "https://www.ohchr.org/sites/default/files/documents/publications/guidingprinciplesbusinesshr_en.pdf",
+   "policy_status": "voluntary",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-dc-siting-rights",
+   "policy_id": "un-guiding-principles",
+   "graph_id": "ev-un-guiding-principles",
+   "coverage": "partial",
+   "note": "Voluntary: the Guiding Principles' due diligence expectation covers impacts of a company's own operations, including where data centers are built; no law requires it.",
+   "source_url": "https://www.ohchr.org/sites/default/files/documents/publications/guidingprinciplesbusinesshr_en.pdf",
+   "policy_status": "voluntary",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-customer-due-diligence",
+   "policy_id": "oecd-mne-guidelines-2023",
+   "graph_id": "ev-oecd-mne-guidelines-2023",
+   "coverage": "partial",
+   "note": "Voluntary: the 2023 OECD Guidelines expect technology companies to do due diligence on how their products are used, including by customers; enforcement is limited to National Contact Point complaints.",
+   "source_url": "https://www.oecd.org/en/publications/oecd-guidelines-for-multinational-enterprises-on-responsible-business-conduct_81f92357-en.html",
+   "policy_status": "voluntary",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-dc-climate-energy",
+   "policy_id": "oecd-mne-guidelines-2023",
+   "graph_id": "ev-oecd-mne-guidelines-2023",
+   "coverage": "partial",
+   "note": "Voluntary: the 2023 Guidelines expect companies to set and report on emissions targets consistent with the Paris Agreement; they say nothing specific about data centers.",
+   "source_url": "https://www.oecd.org/en/publications/oecd-guidelines-for-multinational-enterprises-on-responsible-business-conduct_81f92357-en.html",
+   "policy_status": "voluntary",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-oversight-reporting",
+   "policy_id": "g7-hiroshima-code",
+   "graph_id": "ev-g7-hiroshima-code",
+   "coverage": "partial",
+   "note": "Voluntary: the G7 Code asks advanced AI developers to publish transparency reports and disclose governance and risk policies; it does not mention board oversight.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/library/hiroshima-process-international-code-conduct-advanced-ai-systems",
+   "policy_status": "voluntary",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-misinformation",
+   "policy_id": "g7-hiroshima-code",
+   "graph_id": "ev-g7-hiroshima-code",
+   "coverage": "partial",
+   "note": "Voluntary: the G7 Code asks developers to use content authentication and provenance, such as watermarking, where feasible; it requires no misinformation risk report.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/library/hiroshima-process-international-code-conduct-advanced-ai-systems",
+   "policy_status": "voluntary",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-training-data",
+   "policy_id": "g7-hiroshima-code",
+   "graph_id": "ev-g7-hiroshima-code",
+   "coverage": "partial",
+   "note": "Voluntary: the G7 Code asks developers to apply data quality controls and protect personal data and intellectual property; it requires no public data report.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/library/hiroshima-process-international-code-conduct-advanced-ai-systems",
+   "policy_status": "voluntary",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-oversight-reporting",
+   "policy_id": "haip-reporting-framework",
+   "graph_id": "ev-haip-reporting-framework",
+   "coverage": "partial",
+   "note": "Voluntary: companies that join publish a public report on risk management, transparency and governance; Google, Microsoft, OpenAI, Anthropic, Salesforce, Amazon, Cohere and SoftBank Corp. have filed, others on this site have not.",
+   "source_url": "https://oecd.ai/en/transparency/reports",
+   "policy_status": "voluntary",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-oversight-reporting",
+   "policy_id": "iso-iec-42001",
+   "graph_id": "ev-iso-iec-42001",
+   "coverage": "partial",
+   "note": "Voluntary: certification requires top management to set an AI policy, assign roles and run AI risk and impact assessments; nothing is published to investors.",
+   "source_url": "https://www.iso.org/standard/42001",
+   "policy_status": "voluntary",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-oversight-reporting",
+   "policy_id": "seoul-frontier-commitments",
+   "graph_id": "ev-seoul-frontier-commitments",
+   "coverage": "partial",
+   "note": "Voluntary: signatories pledged to publish frontier safety frameworks and report on implementation; covers severe risks only, not board oversight.",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "policy_status": "voluntary",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-workforce",
+   "policy_id": "india-ai-impact-summit",
+   "graph_id": "ev-india-ai-impact-summit",
+   "coverage": "partial",
+   "note": "Voluntary: the New Delhi Frontier AI Impact Commitments ask signers to publish aggregated usage data to inform jobs and skills policy by the next summit; the signer list is not confirmed here and nothing covers worker input.",
+   "source_url": "https://theprint.in/economy/leading-ai-firms-indian-innovators-make-new-delhi-frontier-ai-impact-commitments-vaishnaw/2858856",
+   "policy_status": "nonbinding",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-oversight-reporting",
+   "policy_id": "us-eo-14110",
+   "graph_id": "ev-us-eo-14110",
+   "coverage": "partial",
+   "note": "EO 14110 made developers of large dual-use foundation models report red-team results to Commerce, not the public; revoked January 20, 2025.",
+   "source_url": "https://www.federalregister.gov/documents/2023/11/01/2023-24283/safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence",
+   "policy_status": "revoked",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-bias",
+   "policy_id": "nyc-ll144",
+   "graph_id": "ev-nyc-ll144",
+   "coverage": "partial",
+   "note": "NYC employers using automated hiring tools must publish annual independent bias audit summaries; the duty falls on employers in one city, not on AI vendors.",
+   "source_url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-workforce",
+   "policy_id": "nyc-ll144",
+   "graph_id": "ev-nyc-ll144",
+   "coverage": "partial",
+   "note": "Candidates and employees in NYC must be told when automated hiring tools are used; no worker input body is required.",
+   "source_url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-bias",
+   "policy_id": "illinois-hb3773",
+   "graph_id": "ev-illinois-hb3773",
+   "coverage": "partial",
+   "note": "Illinois employers may not use AI with discriminatory effects in employment decisions from 2026; it covers one state and requires no public bias report.",
+   "source_url": "https://www.ilga.gov/Legislation/BillStatus?DocNum=3773&GAID=17&GA=103&DocTypeID=HB&SessionID=112",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-workforce",
+   "policy_id": "illinois-hb3773",
+   "graph_id": "ev-illinois-hb3773",
+   "coverage": "partial",
+   "note": "Illinois employers must notify employees when AI is used for employment decisions; no worker advisory body is required.",
+   "source_url": "https://www.ilga.gov/Legislation/BillStatus?DocNum=3773&GAID=17&GA=103&DocTypeID=HB&SessionID=112",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-misinformation",
+   "policy_id": "ca-sb942",
+   "graph_id": "ev-ca-sb942",
+   "coverage": "partial",
+   "note": "Large generative AI providers must offer a free detection tool and embed latent disclosures in AI images, video and audio from August 2, 2026; no misinformation risk report is required.",
+   "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB942",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-training-data",
+   "policy_id": "ca-ab2013",
+   "graph_id": "ev-ca-ab2013",
+   "coverage": "partial",
+   "note": "Generative AI developers must post public training data documentation, including whether it holds personal information, from 2026; it does not require a report on data-misuse risks or user data.",
+   "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB2013",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "policy_id": "us-take-it-down-act",
+   "graph_id": "ev-us-take-it-down-act",
+   "coverage": "partial",
+   "note": "Platforms must remove reported nonconsensual intimate images, including AI deepfakes, within 48 hours from May 2026; no child safety reporting or targets.",
+   "source_url": "https://www.ftc.gov/business-guidance/resources/complying-take-it-down-act",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "policy_id": "ca-sb243",
+   "graph_id": "ev-ca-sb243",
+   "coverage": "partial",
+   "note": "Companion chatbot operators must keep self-harm protocols, remind known minors to take breaks and block sexual content for minors from 2026; one state and one product type.",
+   "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB243",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "policy_id": "texas-traiga",
+   "graph_id": "ev-texas-traiga",
+   "coverage": "partial",
+   "note": "TRAIGA bars AI built with the sole intent of producing child sexual abuse material or deepfakes, or chatbots that impersonate children in sexual chats; no reporting duties.",
+   "source_url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00149F.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-bias",
+   "policy_id": "texas-traiga",
+   "graph_id": "ev-texas-traiga",
+   "coverage": "partial",
+   "note": "TRAIGA bars AI developed or deployed with intent to unlawfully discriminate, but disparate impact alone is not enough; no bias testing or reporting.",
+   "source_url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00149F.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "policy_id": "ftc-6b-ai-companions",
+   "graph_id": "ev-ftc-6b-ai-companions",
+   "coverage": "partial",
+   "note": "The FTC's 6(b) orders compel seven companies, including Alphabet, Meta, OpenAI and xAI, to tell the FTC how they test and monitor chatbot harms to minors; answers are not public.",
+   "source_url": "https://www.ftc.gov/news-events/news/press-releases/2025/09/ftc-launches-inquiry-ai-chatbots-acting-companions",
+   "policy_status": "pending",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-bias",
+   "policy_id": "us-eo-14319",
+   "graph_id": "ev-us-eo-14319",
+   "coverage": "partial",
+   "note": "Federal LLM contracts must require ideological neutrality and truth-seeking, which touches viewpoint bias; it applies only to models sold to federal agencies and requires no public report.",
+   "source_url": "https://www.whitehouse.gov/presidential-actions/2025/07/preventing-woke-ai-in-the-federal-government/",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-dc-climate-energy",
+   "policy_id": "texas-sb6-large-loads",
+   "graph_id": "ev-texas-sb6-large-loads",
+   "coverage": "partial",
+   "note": "Texas makes loads of 75 MW or more pay interconnection study costs and disclose backup generation to the grid operator; it covers grid costs in ERCOT only, not emissions or investor reports.",
+   "source_url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB6",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-dc-climate-energy",
+   "policy_id": "oregon-power-act",
+   "graph_id": "ev-oregon-power-act",
+   "coverage": "partial",
+   "note": "Oregon puts users of 20 MW or more in their own rate class so data centers bear their grid costs; no emissions or public energy reporting.",
+   "source_url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3546",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-dc-climate-energy",
+   "policy_id": "georgia-psc-large-load",
+   "graph_id": "ev-georgia-psc-large-load",
+   "coverage": "partial",
+   "note": "Georgia Power may charge new customers above 100 MW their full transmission, distribution and generation costs; it is a utility rule in one state and requires no company disclosure.",
+   "source_url": "https://psc.ga.gov/site/assets/files/8617/media_advisory_data_centers_rule_1-23-2025.pdf",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-customer-due-diligence",
+   "policy_id": "bis-h200-case-by-case",
+   "graph_id": "ev-bis-h200-case-by-case",
+   "coverage": "partial",
+   "note": "Exporters of H200-class chips to China must certify know-your-customer and remote-access safeguards; this is national security screening for one destination, not human rights due diligence.",
+   "source_url": "https://www.govinfo.gov/content/pkg/FR-2026-01-15/html/2026-00789.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "policy_id": "eu-dsa-vlop-duties",
+   "graph_id": "ev-eu-dsa-vlop-duties",
+   "coverage": "partial",
+   "note": "Very large platforms must assess and reduce systemic risks to minors and publish risk reports and audits, and may not show profiling-based ads to minors; there are no AI-specific child safety targets or metrics.",
+   "source_url": "https://eur-lex.europa.eu/eli/reg/2022/2065/oj",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "policy_id": "eu-dsa-minors-guidelines",
+   "graph_id": "ev-eu-dsa-minors-guidelines",
+   "coverage": "partial",
+   "note": "The guidelines set the benchmark for platforms' Article 28 duty to protect minors, including age assurance and risk reviews; they are not binding and do not require public child safety reports.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-protection-minors",
+   "policy_status": "in force (nonbinding guidelines)",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "policy_id": "uk-osa-children-codes",
+   "graph_id": "ev-uk-osa-children-codes",
+   "coverage": "partial",
+   "note": "UK services children use must assess risks to children and use highly effective age checks for the most harmful content; they need not report AI-specific child safety metrics to investors.",
+   "source_url": "https://www.ofcom.org.uk/online-safety/protecting-children/online-age-checks-must-be-in-force-from-tomorrow",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "policy_id": "uk-crime-policing-act-ai",
+   "graph_id": "ev-uk-crime-policing-act-ai",
+   "coverage": "partial",
+   "note": "Once commenced, the Act makes supplying tools built to create child sexual abuse images an offence, and it allows illegal content duties to be extended to all AI services; it requires no company reporting.",
+   "source_url": "https://www.legislation.gov.uk/ukpga/2026/20/section/248",
+   "policy_status": "enacted; s.72 not yet in force; no s.248 regulations yet",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "policy_id": "au-social-media-min-age",
+   "graph_id": "ev-au-social-media-min-age",
+   "coverage": "partial",
+   "note": "Listed platforms such as Facebook, Instagram, X and YouTube must keep under-16s off accounts in Australia; it does not cover AI products as such or require reports.",
+   "source_url": "https://www.esafety.gov.au/about-us/industry-regulation/social-media-age-restrictions",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "policy_id": "au-esafety-codes-ai-companions",
+   "graph_id": "ev-au-esafety-codes-ai-companions",
+   "coverage": "partial",
+   "note": "AI companion chatbots and generative AI services in Australia must age-check before sexual, violent or self-harm material; no public child safety reporting is required.",
+   "source_url": "https://www.esafety.gov.au/newsroom/media-releases/new-industry-codes-seek-to-take-on-ai-chatbots-that-encourage-suicide-and-engage-in-sexually-explicit-conversations-with-aussie-kids",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-misinformation",
+   "policy_id": "eu-dsa-vlop-duties",
+   "graph_id": "ev-eu-dsa-vlop-duties",
+   "coverage": "partial",
+   "note": "Very large platforms and search engines must assess and reduce systemic risks to civic discourse and elections and publish risk reports; this covers their services, not a report on generative AI misinformation as such.",
+   "source_url": "https://eur-lex.europa.eu/eli/reg/2022/2065/oj",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-misinformation",
+   "policy_id": "eu-dsa-election-guidelines",
+   "graph_id": "ev-eu-dsa-election-guidelines",
+   "coverage": "partial",
+   "note": "The guidelines expect labels on AI-generated content and red-teaming of generative AI before elections, or equally effective measures; no public misinformation report is required.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-providers-vlops-and-vloses-mitigation-systemic-risks-electoral-processes",
+   "policy_status": "in force (guidelines)",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-misinformation",
+   "policy_id": "in-it-rules-sgi",
+   "graph_id": "ev-in-it-rules-sgi",
+   "coverage": "partial",
+   "note": "Intermediaries in India that enable AI content must label it and embed metadata, and social media intermediaries must get and verify user declarations; no risk report is required.",
+   "source_url": "https://www.businesstoday.in/technology/story/govt-tightens-rules-on-ai-generated-content-mandates-labels-and-faster-takedowns-515505-2026-02-10",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-misinformation",
+   "policy_id": "kr-ai-basic-act-in-force",
+   "graph_id": "ev-kr-ai-basic-act-in-force",
+   "coverage": "partial",
+   "note": "Korea requires notice of generative AI use and labels on its outputs; it does not require reports on misinformation risks.",
+   "source_url": "https://www.trade.gov/market-intelligence/south-korea-ai-basic-act",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-targeted-ads-rights",
+   "policy_id": "eu-dsa-vlop-duties",
+   "graph_id": "ev-eu-dsa-vlop-duties",
+   "coverage": "partial",
+   "note": "The DSA bans, on all online platforms, ads based on profiling with sensitive data and profiling-based ads shown to minors, and requires public ad repositories for very large platforms; it requires no human rights impact assessment of targeted ads.",
+   "source_url": "https://eur-lex.europa.eu/eli/reg/2022/2065/oj",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-training-data",
+   "policy_id": "eu-edpb-opinion-ai-models",
+   "graph_id": "ev-eu-edpb-opinion-ai-models",
+   "coverage": "partial",
+   "note": "Under the GDPR as read by the EDPB, training on personal data needs a lawful basis tested case by case and can taint later model use; there is no duty to report publicly on training data.",
+   "source_url": "https://www.edpb.europa.eu/news/news/2024/edpb-opinion-ai-models-gdpr-principles-support-responsible-ai_en",
+   "policy_status": "in force (GDPR interpretation)",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-training-data",
+   "policy_id": "ie-dpc-meta-ai-training-2025",
+   "graph_id": "ev-ie-dpc-meta-ai-training-2025",
+   "coverage": "partial",
+   "note": "Meta must offer EU users an objection route and other safeguards before training on their public posts and report to the DPC; the report goes to the regulator, not investors.",
+   "source_url": "https://www.dataprotection.ie/news-media/latest-news/dpc-statement-meta-ai",
+   "policy_status": "in force (supervision ongoing)",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-bias",
+   "policy_id": "kr-ai-basic-act-in-force",
+   "graph_id": "ev-kr-ai-basic-act-in-force",
+   "coverage": "partial",
+   "note": "Korean high-impact AI operators must run risk management, give explanations and keep human oversight; there is no public bias report duty.",
+   "source_url": "https://www.trade.gov/market-intelligence/south-korea-ai-basic-act",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-oversight-reporting",
+   "policy_id": "eu-dsa-vlop-duties",
+   "graph_id": "ev-eu-dsa-vlop-duties",
+   "coverage": "partial",
+   "note": "Very large platforms must publish transparency reports, including on automated moderation, explain recommender systems and undergo independent audits; this is not reporting on AI governance generally.",
+   "source_url": "https://eur-lex.europa.eu/eli/reg/2022/2065/oj",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-oversight-reporting",
+   "policy_id": "kr-ai-basic-act-in-force",
+   "graph_id": "ev-kr-ai-basic-act-in-force",
+   "coverage": "partial",
+   "note": "Korea requires risk management, documentation and human oversight for high-impact AI and safety duties for large models; it does not require board oversight disclosures.",
+   "source_url": "https://www.trade.gov/market-intelligence/south-korea-ai-basic-act",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-workforce",
+   "policy_id": "eu-ai-act-prohibitions-literacy",
+   "graph_id": "ev-eu-ai-act-prohibitions-literacy",
+   "coverage": "partial",
+   "note": "The EU AI Act bans emotion recognition at work and requires measures for staff AI literacy; it does not require reporting on AI's effects on workers.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-prohibited-ai-practices",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-dc-climate-energy",
+   "policy_id": "eu-eed-dc-reporting",
+   "graph_id": "ev-eu-eed-dc-reporting",
+   "coverage": "partial",
+   "note": "EU data centres of 500 kW or more must report energy use, efficiency, renewable share and waste heat each year to an EU database; per-site data is not published and no company climate goals are required.",
+   "source_url": "https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficiency-targets-directive-and-rules/energy-efficiency-directive/energy-performance-data-centres_en",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-dc-climate-energy",
+   "policy_id": "eu-csrd-in-force",
+   "graph_id": "ev-eu-csrd-in-force",
+   "coverage": "partial",
+   "note": "Companies in CSRD scope must report scope 1 to 3 emissions and energy use where material, which takes in data centres; it is not data centre specific and Omnibus I narrowed who reports.",
+   "source_url": "https://eur-lex.europa.eu/eli/dir/2022/2464/oj",
+   "policy_status": "in force; scope narrowed by Omnibus I",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-dc-water",
+   "policy_id": "eu-eed-dc-reporting",
+   "graph_id": "ev-eu-eed-dc-reporting",
+   "coverage": "partial",
+   "note": "EU data centres of 500 kW or more must report water input each year to an EU database; there is no public per-site data or water-stress analysis.",
+   "source_url": "https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficiency-targets-directive-and-rules/energy-efficiency-directive/energy-performance-data-centres_en",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-dc-water",
+   "policy_id": "eu-csrd-in-force",
+   "graph_id": "ev-eu-csrd-in-force",
+   "coverage": "partial",
+   "note": "Companies in CSRD scope must report water use and impacts if material under the water standard; it is not data centre specific.",
+   "source_url": "https://eur-lex.europa.eu/eli/dir/2022/2464/oj",
+   "policy_status": "in force; scope narrowed by Omnibus I",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-customer-due-diligence",
+   "policy_id": "eu-csddd-in-force",
+   "graph_id": "ev-eu-csddd-in-force",
+   "coverage": "partial",
+   "note": "The largest companies must run human rights due diligence on their own operations and chains of activities from 2029; customer use of products falls outside the CSDDD chain of activities.",
+   "source_url": "https://eur-lex.europa.eu/eli/dir/2024/1760/oj",
+   "policy_status": "in force; application from July 26, 2029",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-dc-siting-rights",
+   "policy_id": "eu-csddd-in-force",
+   "graph_id": "ev-eu-csddd-in-force",
+   "coverage": "partial",
+   "note": "Due diligence on adverse human rights and environmental impacts of own operations would cover data centre sites of in-scope companies from 2029; it names no siting review.",
+   "source_url": "https://eur-lex.europa.eu/eli/dir/2024/1760/oj",
+   "policy_status": "in force; application from July 26, 2029",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-dc-climate-energy",
+   "policy_id": "cn-dc-energy-standard",
+   "graph_id": "ev-cn-dc-energy-standard",
+   "coverage": "partial",
+   "note": "GB 40879 sets mandatory energy efficiency limits for new and expanded data centers in China; it does not require emissions or cost reporting.",
+   "source_url": "https://www.chinesestandard.net/PDF-EN/GB40879-2021EN-P09P-H7528H-273421.pdf",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-dc-climate-energy",
+   "policy_id": "cn-green-dc-action-plan",
+   "graph_id": "ev-cn-green-dc-action-plan",
+   "coverage": "partial",
+   "note": "The plan caps PUE for new large data centers in China at 1.25 (1.2 at hubs) through project energy review; it does not require company disclosure of energy, emissions or costs.",
+   "source_url": "https://www.gov.cn/zhengce/zhengceku/202407/P020240724272072479001.pdf",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-dc-climate-energy",
+   "policy_id": "cn-ai-energy-action-plan",
+   "graph_id": "ev-cn-ai-energy-action-plan",
+   "coverage": "partial",
+   "note": "PUE, green electricity share and renewable energy plans become review criteria for new computing facilities in China; no public company reporting is required.",
+   "source_url": "https://www.nea.gov.cn/20260508/4dae97ca01d348e4871bb8654be34b3a/c.html",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "policy_id": "cn-algorithm-provisions",
+   "graph_id": "ev-cn-algorithm-provisions",
+   "coverage": "partial",
+   "note": "Recommendation services must not push minors harmful content or induce addiction and should offer minors' modes; this covers recommendation feeds in China, not child safety reporting.",
+   "source_url": "https://www.cac.gov.cn/2022-01/04/c_1642894606364259.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "policy_id": "cn-genai-measures",
+   "graph_id": "ev-cn-genai-measures",
+   "coverage": "partial",
+   "note": "Generative AI providers must take steps against minors' over-reliance or addiction; there is no duty to assess or report child safety risks.",
+   "source_url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "policy_id": "cn-minors-online-regulations",
+   "graph_id": "ev-cn-minors-online-regulations",
+   "coverage": "partial",
+   "note": "Large platforms serving minors in China must run regular minors' protection impact assessments, offer a minors' mode and publish a yearly minors' online protection social responsibility report; this is not specific to AI.",
+   "source_url": "https://www.gov.cn/zhengce/content/202310/content_6911288.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "policy_id": "cn-anthropomorphic-ai-measures",
+   "graph_id": "ev-cn-anthropomorphic-ai-measures",
+   "coverage": "partial",
+   "note": "AI companion services in China may not offer virtual partner services to minors, need guardian consent under 14 and must offer minors' modes; other AI services are not covered.",
+   "source_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-targeted-ads-rights",
+   "policy_id": "cn-pipl",
+   "graph_id": "ev-cn-pipl",
+   "coverage": "partial",
+   "note": "Automated pushes and marketing in China must offer a non-personalized option or easy refusal; it does not require a human rights assessment of targeted ads.",
+   "source_url": "http://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-targeted-ads-rights",
+   "policy_id": "cn-algorithm-provisions",
+   "graph_id": "ev-cn-algorithm-provisions",
+   "coverage": "partial",
+   "note": "Users in China must be able to turn off personalized recommendations and delete profile tags; there is no human rights impact assessment duty.",
+   "source_url": "https://www.cac.gov.cn/2022-01/04/c_1642894606364259.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-misinformation",
+   "policy_id": "cn-deep-synthesis-provisions",
+   "graph_id": "ev-cn-deep-synthesis-provisions",
+   "coverage": "partial",
+   "note": "Deepfake providers in China must label synthetic content and not produce fake news; there is no duty to report on misinformation risks.",
+   "source_url": "https://www.cac.gov.cn/2022-12/11/c_1672221949354811.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-misinformation",
+   "policy_id": "cn-genai-measures",
+   "graph_id": "ev-cn-genai-measures",
+   "coverage": "partial",
+   "note": "Generative AI providers must improve accuracy and reliability, label images and video and act on illegal content; no misinformation risk report is required.",
+   "source_url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-misinformation",
+   "policy_id": "cn-labeling-measures",
+   "graph_id": "ev-cn-labeling-measures",
+   "coverage": "partial",
+   "note": "AI services covered by China's algorithm, deep synthesis and generative AI rules must add metadata labels, plus visible labels where content may confuse the public and platforms must flag AI content; it addresses labeling, not assessment or reporting of misinformation risks.",
+   "source_url": "https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-bias",
+   "policy_id": "cn-genai-measures",
+   "graph_id": "ev-cn-genai-measures",
+   "coverage": "partial",
+   "note": "Providers must take effective measures to prevent discrimination by ethnicity, belief, country, region, sex, age, occupation or health in design and training data; no public bias audit or report is required.",
+   "source_url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-bias",
+   "policy_id": "cn-pipl",
+   "graph_id": "ev-cn-pipl",
+   "coverage": "partial",
+   "note": "Automated decisions using personal data must be transparent and fair with no unreasonable price discrimination; there is no reporting duty.",
+   "source_url": "http://www.npc.gov.cn/npc/c2/c30834/202108/t20210820_313088.html",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-bias",
+   "policy_id": "cn-algorithm-provisions",
+   "graph_id": "ev-cn-algorithm-provisions",
+   "coverage": "partial",
+   "note": "Recommendation services may not use algorithms for unreasonable price discrimination against consumers; broader bias review or reporting is not required.",
+   "source_url": "https://www.cac.gov.cn/2022-01/04/c_1642894606364259.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-training-data",
+   "policy_id": "cn-genai-measures",
+   "graph_id": "ev-cn-genai-measures",
+   "coverage": "partial",
+   "note": "Training data must come from lawful sources, respect IP and have consent for personal data, and providers must explain data sources to regulators on request; no public disclosure is required.",
+   "source_url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-training-data",
+   "policy_id": "cn-deep-synthesis-provisions",
+   "graph_id": "ev-cn-deep-synthesis-provisions",
+   "coverage": "partial",
+   "note": "Deepfake providers must secure training data, follow personal data rules and get separate consent to edit faces or voices; no public reporting is required.",
+   "source_url": "https://www.cac.gov.cn/2022-12/11/c_1672221949354811.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-training-data",
+   "policy_id": "cn-network-data-security-regs",
+   "graph_id": "ev-cn-network-data-security-regs",
+   "coverage": "partial",
+   "note": "Generative AI providers must strengthen security management of training data; the rule is general and has no disclosure duty.",
+   "source_url": "https://www.gov.cn/zhengce/content/202409/content_6977766.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-training-data",
+   "policy_id": "cn-anthropomorphic-ai-measures",
+   "graph_id": "ev-cn-anthropomorphic-ai-measures",
+   "coverage": "partial",
+   "note": "AI companion providers must use lawfully sourced training data, guard against data poisoning and assess synthetic data; this covers one service type only.",
+   "source_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-workforce",
+   "policy_id": "cn-algorithm-provisions",
+   "graph_id": "ev-cn-algorithm-provisions",
+   "coverage": "partial",
+   "note": "Platforms that use algorithms to schedule workers must protect pay and rest and refine order allocation, pay and working time rules; this covers platform work in China only.",
+   "source_url": "https://www.cac.gov.cn/2022-01/04/c_1642894606364259.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-oversight-reporting",
+   "policy_id": "cn-algorithm-provisions",
+   "graph_id": "ev-cn-algorithm-provisions",
+   "coverage": "partial",
+   "note": "Providers must set up algorithm review and ethics review systems, publish basic principles of their recommendation algorithms and, for services with public-opinion capacity, file algorithm self-assessment reports with the CAC; filings go to the regulator, not to shareholders.",
+   "source_url": "https://www.cac.gov.cn/2022-01/04/c_1642894606364259.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-oversight-reporting",
+   "policy_id": "cn-genai-measures",
+   "graph_id": "ev-cn-genai-measures",
+   "coverage": "partial",
+   "note": "Generative AI services with public-opinion capacity need security assessments and algorithm filing; these go to regulators and do not require board oversight.",
+   "source_url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-oversight-reporting",
+   "policy_id": "cn-ethics-review-measures",
+   "graph_id": "ev-cn-ethics-review-measures",
+   "coverage": "partial",
+   "note": "Companies doing AI research in ethically sensitive areas must set up ethics review committees; there is no board-level oversight or public reporting duty.",
+   "source_url": "https://www.gov.cn/zhengce/zhengceku/202310/content_6908045.htm",
+   "policy_status": "in force",
+   "reviewed": false
+  },
+  {
+   "ask_id": "ask-ai-oversight-reporting",
+   "policy_id": "cn-anthropomorphic-ai-measures",
+   "graph_id": "ev-cn-anthropomorphic-ai-measures",
+   "coverage": "partial",
+   "note": "AI companion providers must submit security assessment reports to provincial regulators at launch, after major changes and on reaching 1 million registered or 100,000 monthly active users; nothing is published to investors.",
+   "source_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm",
    "policy_status": "in force",
    "reviewed": false
   }

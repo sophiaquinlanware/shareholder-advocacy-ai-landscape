@@ -35,7 +35,7 @@ test("an ask's panel: recurrence, support by year, coverage scoped and not confi
   );
   await expect(panel(page).locator(".ring-cov-partial")).toContainText("Partially covered");
   // Only "none" entries: scoped to this map, with its own line form.
-  await page.evaluate(() => window.focusNetworkNode("ask-dc-siting-rights"));
+  await page.evaluate(() => window.focusNetworkNode("ask-ai-fossil-fuels"));
   await expect(panel(page).locator(".ring-cov-none")).toContainText("No rule in this map reaches this");
   await expect(panel(page).locator(".net-actions")).toContainText("No requirement found.");
 });

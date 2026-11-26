@@ -60,7 +60,7 @@
     {
       "id": "policy-gaps",
       "title": "Policy covers part of each ask, none in full",
-      "text": "No recurring ask is fully required by a law or code this site tracks. Two have no policy at all: human rights reviews of where data centers are built, and reporting on AI sold for oil and gas.",
+      "text": "No recurring ask is fully required by a law or code this site tracks, across the US, EU, UK, China and international frameworks. One has no policy at all: reporting on AI sold for oil and gas.",
       "basis": "This site's reading of each policy's text, not yet confirmed by a person. Shown per ask in the Network's Policymaker view.",
       "link": "?lens=policy#network"
     }

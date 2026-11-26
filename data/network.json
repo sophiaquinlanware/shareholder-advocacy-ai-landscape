@@ -542,7 +542,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
   },
   {
    "id": "calstrs",
@@ -550,7 +550,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
   },
   {
    "id": "dws",
@@ -558,7 +558,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
   },
   {
    "id": "impax",
@@ -566,7 +566,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
   },
   {
    "id": "nyc-comptrollers-office",
@@ -574,7 +574,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
   },
   {
    "id": "australiansuper",
@@ -582,7 +582,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
   },
   {
    "id": "aberdeen-investments-formerly-abrdn",
@@ -590,7 +590,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
   },
   {
    "id": "federated-hermes-eos",
@@ -598,7 +598,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
   },
   {
    "id": "calvert-research-and-management",
@@ -606,7 +606,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network"
   },
   {
    "id": "friends-fiduciary",
@@ -614,7 +614,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network"
   },
   {
    "id": "nuveen-tiaa",
@@ -622,7 +622,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network"
   },
   {
    "id": "blackrock",
@@ -630,7 +630,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network"
   },
   {
    "id": "state-street",
@@ -638,7 +638,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network"
   },
   {
    "id": "praxis-mutual-funds-everence-financial",
@@ -646,7 +646,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network"
   },
   {
    "id": "miller-howard-investments",
@@ -654,7 +654,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network"
   },
   {
    "id": "church-of-england-pensions-board-national-investing-bodies",
@@ -662,7 +662,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network"
   },
   {
    "id": "ifm-investors",
@@ -670,7 +670,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network"
   },
   {
    "id": "bnp-paribas-asset-management-incl-axa-im",
@@ -678,7 +678,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network"
   },
   {
    "id": "new-york-state-common-retirement-fund",
@@ -686,7 +686,7 @@
    "type": "investor",
    "website": null,
    "description": null,
-   "source_url": null
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network"
   },
   {
    "id": "maryknoll-sisters",
@@ -819,51 +819,6 @@
    "website": null,
    "description": "Trust that signed a 2026 investor statement opposing Amazon directors over excluded proposals.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
-   "ai_related": true
-  },
-  {
-   "id": "vidacaixa",
-   "name": "VidaCaixa",
-   "type": "investor",
-   "website": "https://www.vidacaixa.es",
-   "description": "Spanish insurance and pension provider that declared a vote for AI transparency proposals on the PRI Collaboration Platform.",
-   "source_url": "https://collaborate.unpri.org/group/20921/home",
-   "ai_related": true
-  },
-  {
-   "id": "anima-sgr",
-   "name": "Anima Sgr",
-   "type": "investor",
-   "website": "https://www.animasgr.it",
-   "description": "Italian asset manager that declared voting intentions on AI proposals on the PRI Collaboration Platform.",
-   "source_url": "https://collaborate.unpri.org/group/20921/home",
-   "ai_related": true
-  },
-  {
-   "id": "kutxabank-gestion",
-   "name": "Kutxabank Gestion SGIIC SAU",
-   "type": "investor",
-   "website": "https://www.kutxabank.es",
-   "description": "Spanish fund manager that declared a vote for AI transparency proposals on the PRI Collaboration Platform.",
-   "source_url": "https://collaborate.unpri.org/group/20921/home",
-   "ai_related": true
-  },
-  {
-   "id": "rothschild-co-am",
-   "name": "Rothschild & Co Asset Management",
-   "type": "investor",
-   "website": "https://am.eu.rothschildandco.com",
-   "description": "Asset manager that declared a vote for AI transparency proposals on the PRI Collaboration Platform.",
-   "source_url": "https://collaborate.unpri.org/group/20921/home",
-   "ai_related": true
-  },
-  {
-   "id": "thematics-am",
-   "name": "Thematics Asset Management",
-   "type": "impact/ESG asset manager",
-   "website": null,
-   "description": "Thematic equity manager that declared a vote for the Netflix 2024 AI transparency proposal on the PRI Collaboration Platform.",
-   "source_url": "https://collaborate.unpri.org/group/23411/home",
    "ai_related": true
   },
   {
@@ -1080,14 +1035,6 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000121465926006347/pti515261px14a6g.htm"
   },
   {
-   "id": "efg-asset-management",
-   "name": "EFG Asset Management",
-   "type": "investor",
-   "website": "https://www.efginternational.com",
-   "description": "Asset management arm of Swiss private bank EFG International.",
-   "source_url": "https://collaborate.unpri.org/group/17361/home"
-  },
-  {
    "id": "meyer-memorial-trust",
    "name": "Meyer Memorial Trust",
    "type": "foundation/endowment",
@@ -1120,22 +1067,6 @@
    "description": "US private foundation that co-filed through Open MIC.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "ai_related": true
-  },
-  {
-   "id": "comgest",
-   "name": "Comgest",
-   "type": "investor",
-   "website": "https://www.comgest.com",
-   "description": "Independent global equity asset manager that publishes pre-declared proxy votes.",
-   "source_url": "https://collaborate.unpri.org/group/23361/home"
-  },
-  {
-   "id": "bell-asset-management",
-   "name": "Bell Asset Management",
-   "type": "investor",
-   "website": "https://www.bellasset.com.au",
-   "description": "Australian global equities asset manager.",
-   "source_url": "https://collaborate.unpri.org/group/28856/home"
   },
   {
    "id": "durocher-fund",
