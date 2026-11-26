@@ -19,6 +19,9 @@ export function findOverlappingText() {
     if (!node.textContent.trim()) continue;
     const el = node.parentElement;
     if (!el || el.closest("svg, [hidden], script, style")) continue;
+    // Text inside a closed <details> (other than its <summary>) is not shown, though browsers still report boxes for it.
+    const closed = el.closest("details:not([open])");
+    if (closed && !el.closest("summary")) continue;
     const style = getComputedStyle(el);
     if (style.visibility === "hidden" || style.opacity === "0") continue;
     const range = document.createRange();

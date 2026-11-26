@@ -10,8 +10,19 @@
     const mx = (sx + tx) / 2 - (ty - sy) * 0.15, my = (sy + ty) / 2 + (tx - sx) * 0.15;
     return `M${sx},${sy}Q${mx},${my} ${tx},${ty}`;
   };
+  // Companies and labs are typed by their primary value-chain tier ("tier" on graph.json nodes, set by the
+  // data session from data/value_chain.json; labels verbatim from there). A company with no tier stays "Company".
+  const TIERS = [
+    { id: "chips", label: "Chip builders" },
+    { id: "datacenters", label: "Data centers and power" },
+    { id: "compute", label: "Hyperscalers and AI clouds" },
+    { id: "labs", label: "Frontier AI labs" },
+    { id: "capital", label: "Strategic investors" },
+    { id: "deployers", label: "AI deployers" },
+  ];
   const TYPE_LABEL = {
-    company: "Company",
+    ...Object.fromEntries(TIERS.map((t) => ["tier-" + t.id, t.label])),
+    company: "Company (tier not yet assigned)",
     proposal: "Proposal",
     "impact/ESG asset manager": "Impact or ESG asset manager",
     "advocacy nonprofit": "Advocacy nonprofit",
@@ -22,12 +33,13 @@
     coalition: "Coalition",
     other: "Other investor",
     person: "Engagement lead",
-    lab: "Frontier lab",
+    lab: "Frontier AI lab (tier not yet assigned)",
     policy: "Policy or rule",
     response: "Company or investor response",
     public: "Public engagement",
   };
   const TYPE_VAR = {
+    ...Object.fromEntries(TIERS.map((t) => ["tier-" + t.id, "--n-tier-" + t.id])),
     company: "--n-company",
     proposal: "--n-proposal",
     "impact/ESG asset manager": "--n-manager",
@@ -39,10 +51,10 @@
     coalition: "--n-coalition",
     other: "--n-other",
     person: "--n-person",
-    lab: "--t-lab",
-    policy: "--n-pension",
-    response: "--n-foundation",
-    public: "--n-nonprofit",
+    lab: "--n-lab",
+    policy: "--n-policy",
+    response: "--n-response",
+    public: "--n-public",
   };
   const COMPANY_NAMES = { MSFT: "Microsoft", GOOGL: "Alphabet", META: "Meta", AMZN: "Amazon", NVDA: "Nvidia", AAPL: "Apple", TSLA: "Tesla" };
 
@@ -57,6 +69,10 @@
     const nodes = G.nodes.map((n) => {
       let kind = n.type;
       if (kind === "investor") kind = TYPE_VAR[n.org_type] ? n.org_type : "other";
+      if (kind === "company" || kind === "lab") {
+        const tier = n.tier || (window.companyTiers || new Map()).get(n.ticker);
+        if (tier && TYPE_LABEL["tier-" + tier]) kind = "tier-" + tier;
+      }
       return { ...n, kind, label: n.label };
     });
     const ids = new Set(nodes.map((n) => n.id));
@@ -87,7 +103,7 @@
     return { nodes: [...nodes.values()], links };
   }
 
-  function radius(n) {
+  function baseRadius(n) {
     if (n.kind === "company") return 16;
     if (n.kind === "proposal") return 5;
     if (n.kind === "person") return 4;
@@ -95,25 +111,170 @@
     if (n.kind === "lab") return 10;
     return 6 + Math.min(10, Math.sqrt(n.degree) * 2.4);
   }
+  const radius = (n) => baseRadius(n) * state.cfg.nodeScale;
+
+  // ---------- Graph settings (like Obsidian's graph view): display, filters and forces ----------
+  // Kept per viewer in localStorage; the page works the same without it.
+  const SETTINGS_KEY = "net-settings-v1";
+  const DEFAULTS = { textSize: 11, labelMin: 0, nodeScale: 1, linkScale: 1, orphans: true, center: 0.05, repel: 1, linkStrength: 0.6, linkDist: 1, group: 0.5 };
+
+  // ---------- Grouped layout: a 2D frame so each kind of node has its own region ----------
+  // Left to right follows the filing chain: people → filer organizations → proposals → companies → labs.
+  // Filer types each get a horizontal band; policy, responses and public engagement sit in a top band.
+  const FILER_ROWS = ["impact/ESG asset manager", "advocacy nonprofit", "faith-based investor", "public pension", "labor fund", "foundation", "coalition", "other"];
+  const COLUMNS = [
+    { x: 0.06, label: "People", kinds: ["person"] },
+    { x: 0.25, label: "Filers", kinds: FILER_ROWS },
+    { x: 0.5, label: "Proposals", kinds: ["proposal"] },
+    { x: 0.73, label: "Companies", kinds: ["company", ...TIERS.filter((t) => t.id !== "labs").map((t) => "tier-" + t.id)] },
+    { x: 0.92, label: "Frontier labs", kinds: ["lab", "tier-labs"] },
+  ];
+  const TOP_BAND = ["policy", "response", "public"];
+  // Columns whose node types are all hidden give up their space; the rest spread across the width.
+  function activeColumns() {
+    const present = new Set(state.data.nodes.map((n) => n.kind));
+    const cols = COLUMNS.filter((c) => c.kinds.some((k) => present.has(k) && !state.hiddenKinds.has(k)));
+    return cols.map((c, i) => ({ ...c, x: cols.length === 1 ? 0.5 : 0.1 + (i * 0.8) / (cols.length - 1) }));
+  }
+  const groupX = (d) => {
+    if (TOP_BAND.includes(d.kind)) return 0.5;
+    const col = (state.cols || COLUMNS).find((c) => c.kinds.includes(d.kind));
+    return col ? col.x : 0.5;
+  };
+  // Column headers (short on phones) and filer-type band labels, redrawn when layers change.
+  function drawAxis() {
+    if (!state.axis) return;
+    const { width, height } = state.size;
+    const narrow = width < 640;
+    const SHORT = { People: "People", Filers: "Filers", Proposals: "Proposals", Companies: "Cos.", "Frontier labs": "Labs" };
+    state.cols = activeColumns();
+    state.axis.selectAll("*").remove();
+    state.axis.selectAll("text.col").data(state.cols).join("text").attr("class", "col")
+      .attr("x", (c) => c.x * width).attr("y", 14).attr("text-anchor", "middle").attr("font-size", narrow ? 9.5 : 11)
+      .text((c) => (narrow ? SHORT[c.label] : c.label).toUpperCase());
+    const bands = FILER_ROWS.filter((k) => !state.hiddenKinds.has(k) && state.data.nodes.some((n) => n.kind === k));
+    if (!narrow) state.axis.selectAll("text.band").data(bands).join("text").attr("class", "band")
+      .attr("x", 6).attr("y", (k) => groupY({ kind: k }) * height + 4).attr("font-size", 10).attr("font-weight", 400)
+      .text((k) => TYPE_LABEL[k]);
+    state.axis.attr("display", state.cfg.group > 0 ? null : "none");
+  }
+  // Re-aim the grouping forces after layers change, then let the layout settle again.
+  function regroup() {
+    if (!state.sim) return;
+    drawAxis();
+    const { width, height } = state.size;
+    state.sim.force("gx").x((d) => groupX(d) * width);
+    state.sim.force("gy").y((d) => groupY(d) * height);
+    if (REDUCED_MOTION) { state.sim.alpha(1).stop(); state.sim.tick(300); state.draw(); } else state.sim.alpha(0.5).restart();
+  }
+  const groupY = (d) => {
+    if (TOP_BAND.includes(d.kind)) return 0.06;
+    const i = FILER_ROWS.indexOf(d.kind);
+    if (i >= 0) return 0.16 + (i / (FILER_ROWS.length - 1)) * 0.76;
+    // Companies: one band per value-chain tier, top to bottom in value-chain order.
+    const companyTiers = TIERS.filter((t) => t.id !== "labs");
+    const t = companyTiers.findIndex((x) => "tier-" + x.id === d.kind);
+    return t >= 0 ? 0.16 + (t / (companyTiers.length - 1)) * 0.76 : 0.55;
+  };
+  const SLIDERS = [
+    { group: "Display", key: "textSize", label: "Text size", min: 8, max: 20, step: 1, fmt: (v) => v + "px" },
+    { group: "Display", key: "labelMin", label: "Labels from connections ≥", min: 0, max: 40, step: 1, fmt: (v) => String(v) },
+    { group: "Display", key: "nodeScale", label: "Node size", min: 0.4, max: 3, step: 0.1, fmt: (v) => v.toFixed(1) + "×" },
+    { group: "Display", key: "linkScale", label: "Link thickness", min: 0.3, max: 4, step: 0.1, fmt: (v) => v.toFixed(1) + "×" },
+    { group: "Forces", key: "group", label: "Grouping force (0 = free layout)", min: 0, max: 1, step: 0.05, fmt: (v) => v.toFixed(2) },
+    { group: "Forces", key: "center", label: "Center force", min: 0, max: 0.4, step: 0.01, fmt: (v) => v.toFixed(2) },
+    { group: "Forces", key: "repel", label: "Repel force", min: 0, max: 4, step: 0.1, fmt: (v) => v.toFixed(1) + "×" },
+    { group: "Forces", key: "linkStrength", label: "Link force", min: 0, max: 1, step: 0.05, fmt: (v) => v.toFixed(2) },
+    { group: "Forces", key: "linkDist", label: "Link distance", min: 0.3, max: 3, step: 0.1, fmt: (v) => v.toFixed(1) + "×" },
+  ];
+  function loadSettings(defaults) {
+    try { return { ...defaults, ...JSON.parse(localStorage.getItem(SETTINGS_KEY) || "{}") }; } catch (e) { return { ...defaults }; }
+  }
+  function saveSettings() {
+    try { localStorage.setItem(SETTINGS_KEY, JSON.stringify(state.cfg)); } catch (e) {}
+  }
+  function settingsPanel() {
+    const maxDeg = Math.max(...state.data.nodes.map((n) => n.degree || 0));
+    const row = (s) => {
+      const max = s.key === "labelMin" ? maxDeg : s.max;
+      return `<label class="gs-row"><span>${esc(s.label)} <output id="gs-out-${s.key}" aria-hidden="true">${esc(s.fmt(state.cfg[s.key]))}</output></span>
+        <input type="range" data-gs="${s.key}" min="${s.min}" max="${max}" step="${s.step}" value="${state.cfg[s.key]}"></label>`;
+    };
+    const group = (g) => `<fieldset class="gs-group"><legend>${g}</legend>${SLIDERS.filter((s) => s.group === g).map(row).join("")}</fieldset>`;
+    document.getElementById("net-settings").innerHTML = `
+      <summary>Graph settings</summary>
+      <div class="gs-grid">
+        ${group("Display")}
+        <fieldset class="gs-group"><legend>Filters</legend>
+          <label class="gs-check"><input type="checkbox" data-gs-check="orphans"${state.cfg.orphans ? " checked" : ""}> Orphans (nodes with no visible links)</label>
+        </fieldset>
+        ${group("Forces")}
+      </div>
+      <button type="button" class="chip" id="gs-reset">Reset to defaults</button>`;
+    const panel = document.getElementById("net-settings");
+    panel.querySelectorAll("[data-gs]").forEach((inp) => inp.addEventListener("input", () => {
+      const s = SLIDERS.find((x) => x.key === inp.dataset.gs);
+      state.cfg[s.key] = Number(inp.value);
+      document.getElementById("gs-out-" + s.key).textContent = s.fmt(state.cfg[s.key]);
+      saveSettings();
+      applySettings(s.group === "Forces" || s.key === "nodeScale");
+    }));
+    panel.querySelector("[data-gs-check]").addEventListener("change", (e) => {
+      state.cfg.orphans = e.target.checked; saveSettings(); applySettings(false);
+    });
+    document.getElementById("gs-reset").addEventListener("click", () => {
+      state.cfg = { ...state.defaults };
+      saveSettings();
+      const open = panel.open;
+      settingsPanel();
+      panel.open = open;
+      applySettings(true);
+    });
+  }
+  // Display settings restyle in place; force settings (and node size, which changes collisions) re-run the layout.
+  function applySettings(relayout) {
+    if (!state.node) { intro(); return; }
+    state.node.attr("r", radius);
+    state.labels.attr("font-size", (d) => (d.kind === "company" ? state.cfg.textSize + 2 : state.cfg.textSize)).attr("dx", (d) => radius(d) + 4);
+    state.linkSel.attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.4 : 1) * state.cfg.linkScale);
+    if (!relayout) declutter();
+    applyStyles();
+    intro();
+    if (state.view === "list") drawList();
+    if (!relayout) return;
+    const sim = state.sim;
+    sim.force("charge").strength((d) => (d.kind === "company" ? -420 : -110) * state.cfg.repel);
+    sim.force("link").strength(state.cfg.linkStrength).distance((l) => linkBase(l) * state.cfg.linkDist);
+    sim.force("collide").radius((d) => radius(d) + 3);
+    sim.force("x").strength(state.cfg.center);
+    sim.force("y").strength(state.cfg.center * 1.25);
+    sim.force("gx").strength(state.cfg.group);
+    sim.force("gy").strength(state.cfg.group * 0.8);
+    drawAxis();
+    if (REDUCED_MOTION) { sim.alpha(1).stop(); sim.tick(300); state.draw(); } else sim.alpha(0.6).restart();
+  }
+  const linkBase = (l) => (l.relation === "member of" ? 90 : l.relation === "proposal at" ? 55 : l.relation === "works at" ? 22 : 45);
+  const endId = (x) => (typeof x === "object" ? x.id : x);
 
   function shell(el) {
     el.innerHTML = `
-      <h2>Advocacy network</h2>
-      <p class="intro">Who is engaging these companies on AI, and how they connect. Everything on this site in one map: companies and the labs they fund or supply, the funds that hold and engage them, the people who lead that engagement, the proposals they filed, and the policies and responses around them. Dashed lines between organizations are worked out from the filings: two groups that filed the same proposal are connected. Click a type in the legend to hide or show it. Drag to move, scroll or pinch to zoom, and click any dot for details and sources.</p>
+      <h2>Co-filer network</h2>
+      <p class="intro" id="net-intro"></p>
       <div class="net-controls">
         <input type="search" id="net-search" placeholder="Search an organization or company" aria-label="Search the network">
         <select id="net-topic" aria-label="Filter by topic"><option value="">All topics</option></select>
         <select id="net-year" aria-label="Filter by year"><option value="">All years</option></select>
         <div class="seg" role="group" aria-label="View">
-          <button data-view="graph" aria-pressed="true">Graph</button>
-          <button data-view="list" aria-pressed="false">List</button>
+          <button type="button" data-view="graph" aria-pressed="true">Graph</button>
+          <button type="button" data-view="list" aria-pressed="false">List</button>
         </div>
       </div>
       <div id="net-legend" class="net-legend"></div>
+      <details id="net-settings" class="graph-settings"></details>
       <div class="net-body">
-        <div id="net-graph" class="net-graph" aria-label="Network graph"></div>
+        <div id="net-graph" class="net-graph" role="group" aria-label="Co-filer network graph; the List view has the same data as a table"></div>
         <div id="net-list" class="net-list" hidden></div>
-        <aside id="net-panel" class="net-panel"><p class="status-note">Click a dot to see who it is, what it filed and where the facts come from.</p></aside>
+        <aside id="net-panel" class="net-panel" aria-live="polite"><p class="status-note">Select a node for its connections and sources.</p></aside>
       </div>`;
   }
 
@@ -122,7 +283,14 @@
     const order = Object.keys(TYPE_LABEL);
     kinds.sort((a, b) => order.indexOf(a) - order.indexOf(b));
     document.getElementById("net-legend").innerHTML = kinds.map((k) =>
-      `<button class="leg" data-kind="${esc(k)}" aria-pressed="true"><span class="dot" style="background:${cssVar(TYPE_VAR[k])}"></span>${esc(TYPE_LABEL[k])}</button>`).join("");
+      `<button type="button" class="leg" data-kind="${esc(k)}" aria-pressed="${!state.hiddenKinds.has(k)}"><span class="dot" style="background:${cssVar(TYPE_VAR[k])}"></span>${esc(TYPE_LABEL[k])}</button>`).join("");
+  }
+
+  // One plain line: how much is shown, and what node size means. Recomputed when layers change.
+  function intro() {
+    refreshConnected();
+    const shown = state.data.nodes.filter(visible).length;
+    document.getElementById("net-intro").textContent = `${shown} of ${state.data.nodes.length} nodes shown. Node size = number of connections. Company tiers are this site's reading of each company's main role in the AI value chain.`;
   }
 
   function neighbors(id) {
@@ -163,6 +331,14 @@
   function focus(id) {
     const n = state.data.nodes.find((x) => x.id === id);
     if (!n) return;
+    // A node in a hidden layer can't be shown, so switch its layer on first.
+    if (state.hiddenKinds.has(n.kind)) {
+      state.hiddenKinds.delete(n.kind);
+      const b = document.querySelector(`#net-legend .leg[data-kind="${n.kind}"]`);
+      if (b) b.setAttribute("aria-pressed", "true");
+      intro();
+      regroup();
+    }
     state.selected = id;
     showPanel(n);
     applyStyles();
@@ -172,7 +348,7 @@
     }
   }
 
-  function visible(n) {
+  function baseVisible(n) {
     if (state.hiddenKinds.has(n.kind)) return false;
     if (n.kind === "proposal") {
       if (state.topic && n.topic !== state.topic) return false;
@@ -180,8 +356,40 @@
     }
     return true;
   }
+  // With "Orphans" off, a node shows only if at least one of its links has both ends shown.
+  function refreshConnected() {
+    const byId = state.byId;
+    state.connected = new Set();
+    state.data.links.forEach((l) => {
+      const a = byId.get(endId(l.source)), b = byId.get(endId(l.target));
+      if (a && b && baseVisible(a) && baseVisible(b)) { state.connected.add(a.id); state.connected.add(b.id); }
+    });
+  }
+  function visible(n) {
+    return baseVisible(n) && (state.cfg.orphans || state.connected.has(n.id));
+  }
+
+  // Default labels: companies, labs (all tiers) and nodes at or above the label threshold.
+  const isCompanyKind = (k) => k === "company" || k === "lab" || String(k).startsWith("tier-");
+  const labelCandidate = (d) => isCompanyKind(d.kind) || (d.degree || 0) >= state.cfg.labelMin;
+  // Hide default labels that would print over a higher-priority one (companies and labs first, then by
+  // connections). Hovering or selecting a node still shows its label.
+  function declutter() {
+    state.hiddenLabels = new Set();
+    if (!state.labels) return;
+    const kept = [];
+    const items = [];
+    state.labels.each(function (d) { if (visible(d) && labelCandidate(d)) items.push({ d, el: this }); });
+    items.sort((a, b) => (isCompanyKind(b.d.kind) - isCompanyKind(a.d.kind)) || (b.d.degree || 0) - (a.d.degree || 0));
+    for (const { d, el } of items) {
+      const b = el.getBBox();
+      if (kept.some((k) => b.x < k.x + k.width + 2 && k.x < b.x + b.width + 2 && b.y < k.y + k.height && k.y < b.y + b.height)) state.hiddenLabels.add(d.id);
+      else kept.push(b);
+    }
+  }
 
   function applyStyles() {
+    refreshConnected();
     const focusId = state.hover || state.selected;
     const near = focusId ? neighbors(focusId) : null;
     const q = state.query;
@@ -197,7 +405,7 @@
       .attr("opacity", (d) => {
         if (q) return d.label.toLowerCase().includes(q) ? 1 : 0;
         if (near) return near.has(d.id) ? 1 : 0;
-        return ["proposal", "person", "policy", "response", "public"].includes(d.kind) ? 0 : 1;
+        return labelCandidate(d) && !state.hiddenLabels.has(d.id) ? 1 : 0;
       });
   }
 
@@ -207,6 +415,7 @@
     const width = el.clientWidth || 800;
     const height = el.clientHeight || 560;
     state.size = { width, height };
+    state.cols = activeColumns();
     const data = state.data;
 
     const svg = d3.select(el).append("svg").attr("viewBox", [0, 0, width, height]).attr("width", width).attr("height", height);
@@ -217,16 +426,21 @@
     svg.on("click", (ev) => { if (ev.target.tagName === "svg") { state.selected = null; applyStyles(); } });
 
     const sim = d3.forceSimulation(data.nodes)
-      .force("link", d3.forceLink(data.links).id((d) => d.id).distance((l) => (l.relation === "member of" ? 90 : l.relation === "proposal at" ? 55 : l.relation === "works at" ? 22 : 45)).strength(0.6))
-      .force("charge", d3.forceManyBody().strength((d) => (d.kind === "company" ? -420 : -110)))
+      .force("link", d3.forceLink(data.links).id((d) => d.id).distance((l) => linkBase(l) * state.cfg.linkDist).strength(state.cfg.linkStrength))
+      .force("charge", d3.forceManyBody().strength((d) => (d.kind === "company" ? -420 : -110) * state.cfg.repel))
       .force("collide", d3.forceCollide().radius((d) => radius(d) + 3))
       .force("center", d3.forceCenter(width / 2, height / 2))
-      .force("x", d3.forceX(width / 2).strength(0.04))
-      .force("y", d3.forceY(height / 2).strength(0.05));
+      .force("x", d3.forceX(width / 2).strength(state.cfg.center))
+      .force("y", d3.forceY(height / 2).strength(state.cfg.center * 1.25))
+      .force("gx", d3.forceX((d) => groupX(d) * width).strength(state.cfg.group))
+      .force("gy", d3.forceY((d) => groupY(d) * height).strength(state.cfg.group * 0.8));
     state.sim = sim;
-
-    state.linkSel = g.append("g").attr("stroke", cssVar("--ink-soft")).attr("fill", "none").selectAll("path").data(data.links).join("path")
-      .attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.4 : 1))
+    // Column labels for the grouped layout; they move and zoom with the graph.
+    state.axis = g.append("g").attr("font-size", 11).attr("font-weight", 600).attr("fill", cssVar("--ink-soft"))
+      .attr("display", state.cfg.group > 0 ? null : "none");
+    drawAxis();
+    state.linkSel = g.append("g").attr("stroke", cssVar("--blue-3")).attr("fill", "none").selectAll("path").data(data.links).join("path")
+      .attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.4 : 1) * state.cfg.linkScale)
       .attr("stroke-dasharray", (l) => (l.relation === "member of" || l.derived ? "3 3" : null));
 
     state.node = g.append("g").selectAll("circle").data(data.nodes).join("circle")
@@ -245,19 +459,29 @@
 
     state.labels = g.append("g").selectAll("text").data(data.nodes).join("text")
       .text((d) => (d.label.length > 42 ? d.label.slice(0, 40) + "…" : d.label))
-      .attr("font-size", (d) => (d.kind === "company" ? 13 : 10.5))
+      .attr("font-size", (d) => (d.kind === "company" ? state.cfg.textSize + 2 : state.cfg.textSize))
       .attr("font-weight", (d) => (d.kind === "company" ? 600 : 400))
       .attr("fill", cssVar("--ink"))
       .attr("pointer-events", "none")
       .attr("dx", (d) => radius(d) + 4).attr("dy", 4);
 
+    // Keep every node inside the box (below the column headers), and anchor right-hand labels leftwards.
     const draw = () => {
+      data.nodes.forEach((d) => {
+        const r = radius(d) + 2;
+        d.x = Math.max(r, Math.min(width - r, d.x));
+        d.y = Math.max(r + 22, Math.min(height - r, d.y));
+      });
       state.linkSel.attr("d", arc);
       state.node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
-      state.labels.attr("x", (d) => d.x).attr("y", (d) => d.y);
+      state.labels.attr("x", (d) => d.x).attr("y", (d) => d.y)
+        .attr("text-anchor", (d) => (d.x > width * 0.72 ? "end" : "start"))
+        .attr("dx", (d) => (d.x > width * 0.72 ? -(radius(d) + 4) : radius(d) + 4));
     };
+    state.draw = draw;
     sim.on("tick", draw);
-    if (REDUCED_MOTION) { sim.stop(); sim.tick(300); draw(); }
+    sim.on("end", () => { declutter(); applyStyles(); });
+    if (REDUCED_MOTION) { sim.stop(); sim.tick(300); draw(); declutter(); }
     applyStyles();
   }
 
@@ -271,7 +495,7 @@
       return `<tr><td><button class="linklike" data-id="${esc(n.id)}">${esc(n.label)}</button></td><td>${esc(TYPE_LABEL[n.kind])}</td><td>${props.length}</td><td>${esc(cos)}</td></tr>`;
     }).join("");
     const el = document.getElementById("net-list");
-    el.innerHTML = `<div class="table-wrap"><table><thead><tr><th>Organization</th><th>Type</th><th>AI proposals</th><th>Companies</th></tr></thead><tbody>${rows || `<tr><td colspan="4">No matches.</td></tr>`}</tbody></table></div>`;
+    el.innerHTML = `<div class="table-wrap"><table><thead><tr><th scope="col">Organization</th><th scope="col">Type</th><th scope="col">AI proposals</th><th scope="col">Companies</th></tr></thead><tbody>${rows || `<tr><td colspan="4">No matches.</td></tr>`}</tbody></table></div>`;
     el.querySelectorAll(".linklike").forEach((b) => b.addEventListener("click", () => {
       const n = state.data.nodes.find((x) => x.id === b.dataset.id);
       state.selected = n.id; showPanel(n);
@@ -283,7 +507,7 @@
     const years = [...new Set(state.data.nodes.filter((n) => n.kind === "proposal").map((n) => String(n.year)))].sort();
     document.getElementById("net-topic").insertAdjacentHTML("beforeend", topics.map((t) => `<option>${esc(t)}</option>`).join(""));
     document.getElementById("net-year").insertAdjacentHTML("beforeend", years.map((t) => `<option>${esc(t)}</option>`).join(""));
-    const refresh = () => { applyStyles(); if (state.view === "list") drawList(); };
+    const refresh = () => { applyStyles(); intro(); if (state.view === "list") drawList(); };
     document.getElementById("net-search").addEventListener("input", (e) => {
       state.query = e.target.value.trim().toLowerCase(); refresh();
       const hit = state.query && state.data.nodes.find((n) => n.kind !== "proposal" && n.label.toLowerCase().includes(state.query));
@@ -296,10 +520,11 @@
       if (state.hiddenKinds.has(k)) state.hiddenKinds.delete(k); else state.hiddenKinds.add(k);
       b.setAttribute("aria-pressed", String(!state.hiddenKinds.has(k)));
       refresh();
+      regroup();
     }));
-    document.querySelectorAll(".seg button").forEach((b) => b.addEventListener("click", () => {
+    document.querySelectorAll("#tab-network .seg button").forEach((b) => b.addEventListener("click", () => {
       state.view = b.dataset.view;
-      document.querySelectorAll(".seg button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      document.querySelectorAll("#tab-network .seg button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
       document.getElementById("net-graph").hidden = state.view !== "graph";
       document.getElementById("net-list").hidden = state.view !== "list";
       if (state.view === "list") drawList();
@@ -314,8 +539,19 @@
       document.getElementById("net-graph").innerHTML = `<p class="coming">The graph library did not load. Try reloading the page.</p>`;
       return;
     }
-    state = { data: raw && raw.nodes ? buildFromGraph(raw) : build(raw, people), hiddenKinds: new Set(), query: "", topic: "", year: "", view: "graph", selected: null, hover: null };
+    // Default view: filers, companies, proposals, labs and coalitions. People, policy, responses
+    // and public engagement have their own tabs, so their layers start off (one click in the legend).
+    const data = raw && raw.nodes ? buildFromGraph(raw) : build(raw, people);
+    const FILER_KINDS = ["impact/ESG asset manager", "advocacy nonprofit", "faith-based investor", "public pension", "labor fund", "foundation", "coalition", "other"];
+    const topFilers = new Set(data.nodes.filter((n) => FILER_KINDS.includes(n.kind)).sort((a, b) => (b.degree || 0) - (a.degree || 0)).slice(0, 12).map((n) => n.id));
+    // Default label threshold: the 12th-highest filer's connection count, so about a dozen filers are named.
+    const twelfth = data.nodes.find((n) => n.id === [...topFilers].at(-1));
+    const defaults = { ...DEFAULTS, labelMin: twelfth ? twelfth.degree || 0 : 0 };
+    state = { data, byId: new Map(data.nodes.map((n) => [n.id, n])), defaults, cfg: loadSettings(defaults), hiddenKinds: new Set(["person", "policy", "response", "public"]), hiddenLabels: new Set(), query: "", topic: "", year: "", view: "graph", selected: null, hover: null };
+    refreshConnected();
+    settingsPanel();
     legend(state.data);
+    intro();
     wire();
     // The graph needs a visible container to measure, so draw it the first time its tab opens.
     const draw = () => { if (!state.drawn && !el.hidden) { state.drawn = true; drawGraph(); } };

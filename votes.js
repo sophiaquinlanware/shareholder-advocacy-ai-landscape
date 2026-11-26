@@ -96,8 +96,7 @@
     const opt = (v, t, sel) => `<option value="${esc(v)}"${sel ? " selected" : ""}>${esc(t)}</option>`;
     el.innerHTML = `
       <h2>Fund votes</h2>
-      <p class="intro">How fund families voted on the AI-related shareholder proposals that went to a vote at the companies this site tracks, from July 2023 to June 2026. Every U.S. mutual fund and ETF reports its votes to the SEC each year on Form N-PX. Each vote links to the filing it comes from.</p>
-      <div class="callout">Each fund votes under its own policy. Nothing here says any vote was right or wrong, and nothing here suggests how anyone should vote. This site is independent and is not affiliated with any fund shown.</div>
+      <p class="intro">Form N-PX votes by ${families.length} fund families on AI proposals at tracked companies, meetings ${esc(longDate(data.first_meeting_covered))} to ${esc(longDate(data.last_meeting_covered))}. Each vote links to its filing. No vote is rated, and nothing here suggests how to vote. Not affiliated with any fund shown.</p>
       <ul class="steps">
         <li><strong>Split</strong> means the family reported more than one way of voting on that proposal. The numbers count fund records: different funds can vote differently, and a single fund can split its own shares, as pass-through voting programs do.</li>
         <li><strong>No vote found</strong> means no matching vote turned up in the filings checked. It does not say why.</li>
@@ -112,9 +111,8 @@
         <label class="sr-label">Topic <select id="fv-topic">${opt("", "All topics")}${topics.map((t) => opt(t, t)).join("")}</select></label>
         <label class="sr-label">Fund family <select id="fv-family">${opt("", "All fund families")}${families.map((f) => opt(f, f)).join("")}</select></label>
       </div>
-      <p class="status-note">The table scrolls sideways for more fund families.</p>
       <div id="fv-table" class="table-wrap" role="region" aria-label="Fund votes table" tabindex="0"></div>
-      <p class="status-note">How votes are matched: a vote is linked to a proposal at the same company and meeting only when the filing's wording and the proposal's title share most of their key words, and clearly more than with any other proposal at that meeting. Close calls are left out rather than guessed. Proposals raised from the meeting floor are not shown, because funds do not report them on Form N-PX.</p>`;
+      <p class="note">Matching: same company and meeting, with the filing's wording and the proposal title agreeing closely; close calls are left out. Floor proposals are not reported on N-PX.</p>`;
     el.querySelector("#fv-company").addEventListener("change", (e) => { V.company = e.target.value; draw(); });
     el.querySelector("#fv-topic").addEventListener("change", (e) => { V.topic = e.target.value; draw(); });
     el.querySelector("#fv-family").addEventListener("change", (e) => { V.family = e.target.value; draw(); });

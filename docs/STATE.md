@@ -1,97 +1,98 @@
 # Shareholder Advocacy AI Landscape — current state
 
-Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25.
+Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-25 (UI session, round 2 merge).
+
+## Sessions and branches (read this first)
+
+**The live site is `main`**, published to https://sophiaquinlanware.github.io/shareholder-advocacy-ai-landscape/ on every push (`PAGES_ENABLED` = `"true"`, ADR 0001). Anything not on `main` is not on the site.
+
+| Session | Owns | Branch | State |
+|---|---|---|---|
+| Data / backend ("Account linking") | `data/*.json`, `scripts/`, `SOURCES.md`, `.github/workflows/` | `data/company-universe`, `data/value-chain` (open) | Company universe (60 companies) ready to merge **after** round 2, which filters the rights map by `rights_tracked`. Value-chain tiers data in progress (docs/plans/2026-11-25-value-chain.md). |
+| UI ("Shareholder advocacy AI landscape UI") | page files: `index.html`, `styles.css`, `app.js`, the view JS files incl. `votes.js`, `DESIGN.md`, `tests/` | `design/round2-structure` (merged with this update) | Round 2 live. Next: lens Phase 1 (owner approved), then the value-chain and engagement-map visuals once `data/value_chain.json` lands. |
+| Protocol setup | `AGENTS.md`, `CLAUDE.md`, checks, `docs/` structure | `docs-session-onboarding` (local) | Idle. |
+
+**Data contract:** views read only `data/*.json`.
+- **Company fields:** `sectors`, `basis_type`, `engagement_basis` {text,url} (shown as "Why included"), `owner_choice_note`, `shareholder_route` + `route_source_url` or `route_note`, `rights_tracked`, `source_note`. Companies are keyed by `id`, because private companies have no ticker.
+- **Proposal fields:** `status_reason`, `status_source_url`, `proponent`, `proponent_source_url`, `meeting_date_source`, `results_note`, `support_note`.
 
 ## Phase
 
-The **blue-green restyle, round 1 of 2 (colour and type only)**, is merged to `main` (plan: docs/plans/2026-11-25-blue-green-restyle.md). It covers:
-- new tokens in both themes, with a light-blue accent and a teal-green open status;
-- Inter Tight headings;
-- 14px radii;
-- focus outlines and reduced motion;
-- thin, curved graph lines;
-- graph palettes at 3:1 or more;
-- a hatched or outlined scorecard state.
+**Round 2 (structure, wording and look) is merged and live.** Plan: docs/plans/2026-11-25-round2-structure.md (revisions 2–3 quote the owner).
 
-Wording, chart types and data are unchanged. **Round 2 (structure and wording) is next** and needs the owner's go-ahead. See "Round 2 brief" below.
+**Tabs (11, task order):**
+1. Upcoming votes (`#upcoming`)
+2. Company lookup
+3. Proposals
+4. Fund votes (`#votes`, unchanged link)
+5. Rights map
+6. Co-filer network
+7. Contacts
+8. Lab pathways
+9. Policy and causality
+10. Disclosure scorecard
+11. New filings
 
-**Fund votes tab** (Form N-PX), merged 2026-11-25 from branch `data/fund-votes` with the owner's go-ahead: 8 fund families (BlackRock iShares, Calvert, Domini, Green Century, Impax, Parnassus, TIAA-CREF, Vanguard) on the AI proposals voted July 2023 to June 2026, 298 family-by-proposal rows. Data pipeline: `scripts/npx_votes.py` (manual "fund-votes" task in refresh.yml, needs `SEC_USER_AGENT`) → run artifact → `scripts/publish_fund_votes.py` → `data/fund_votes.json`; reviewed rows in `data/fund_votes_reviewed.json` (Parnassus, 39, owner, 2026-11-25). Plan: docs/plans/2026-11-25-fund-votes.md.
+**Owner decisions recorded (2026-11-25):**
+- Plain header ("Yes, plain header").
+- Why now folded into Policy and causality; How you can weigh in and Data center water removed ("Yes, as described"). Old links redirect.
+- Internal, scenario-led tool.
+- Look: "largely just black and white, but where necessary, there is blue … all the visuals should be blue", on plain white ("Have it plain white, not some off-white background").
+- The network uses saturated distinct colours per node type, a grouped 2D layout and an Obsidian-style Graph settings panel.
 
-Before that: the working protocol (AGENTS.md) and the check suite (`npm run check`) were set up. The disclosure scorecard tab and the fund-vote (N-PX) review script landed the same day.
+**Protocol deviation:** this round mixes structure and colour/type (AGENTS.md rule 27.3), because the owner directed both during the build.
 
-## Live
-
-- Code on GitHub: `sophiaquinlanware/shareholder-advocacy-ai-landscape`, branch `main`.
-- Public site: https://sophiaquinlanware.github.io/shareholder-advocacy-ai-landscape/. The repo variable `PAGES_ENABLED` is `"true"` (set 2026-11-26 01:03 UTC, ADR 0001), so every push to `main` republishes the site through `refresh.yml`.
-- Weekly refresh: every Monday 13:00 UTC, `.github/workflows/refresh.yml` runs the EDGAR scripts and commits `data/` to `main`.
-- The reference design for the client-facing UI is the owner's private Claude Design canvas "AI Landscape Client UI". It has four screens: Home, Influence pathways, Microsoft profile and Proposal feed.
-
-## Latest check (2026-11-25, branch `design/blue-green-restyle` before merge)
-
-| Step | Result |
-|---|---|
-| Lint (Biome + Python compile) | pass: 0 errors, 43 warnings. `useButtonType` is an error again, and all tab buttons have `type="button"` (old queue item 5 closed). |
-| Build | pass: 12 data files valid, all linked files present |
-| Layout: 11 tabs × 1440/390 px × light/dark | pass: no overlapping text, no sideways scrolling |
-| Load errors and local links | **fail**: the same 8 as before, from queue items 1 and 2 only |
-| Lighthouse phone | accessibility 100, best practices 96, SEO 100, **performance 77** (bar 80; was 76) |
-| Lighthouse desktop | accessibility 100, best practices 96, SEO 100, **performance 57** (bar 80; was 60, within run-to-run noise) |
-| Layout shift (CLS) | phone 0.44, desktop 0.493 (was 0.49). The font swap adds about 0.01; the rest is queue item 3. |
-| Web-font bytes (latin woff2, measured) | 93,348 (was 170,600 with Source Serif 4): −45% |
-
-## Latest check (2026-11-25, merge of `data/fund-votes` into `main`)
+## Latest check (2026-11-25, `design/round2-structure` before merge)
 
 | Step | Result |
 |---|---|
-| Lint | pass (0 errors) |
-| Build | pass |
-| Tests: 12 tabs × 1440/390 px × light/dark, load errors, local links | **24/24 pass** (queue items 1 and 2 fixed in data) |
-| Lighthouse phone | accessibility 100, best practices 100, SEO 100, **performance 77** (bar 80) |
-| Lighthouse desktop | accessibility 100, best practices 100, SEO 100, **performance 57** (bar 80) |
+| Lint | pass: 0 errors |
+| Build | pass: 16 data files |
+| Tests: 11 tabs × 1440/390 px × light/dark, load errors, local links, script errors when a tab opens (new) | **24/24 pass**; also 24/24 with `data/company-universe`'s 60-company `companies.json` swapped in |
+| Lighthouse phone | accessibility 100, best practices 100, SEO 100, **performance 99** (bar 80) |
+| Lighthouse desktop | accessibility 100, best practices 100, SEO 100, **performance 76** (bar 80) |
+| Layout shift (CLS) | 0.04 phone, 0.01 desktop (was 0.44–0.81). Fix: `main` reserves a screen of height. |
+| Largest paint | about 6.8s simulated. The first tabs now draw from 4 small files, with d3 async and the site scripts deferred. What's left is the font and data request chain (queue 3). |
 
-## Latest review scores (fund votes)
-
-| Field | Plan R1 | Result R1 | Result R2 |
-|---|---|---|---|
-| Data accuracy | 62 REVISE | 72 REVISE | 78 REVISE → fixes applied after the round cap, not re-reviewed (owner approved publishing) |
-| UX / content | 76 REVISE | 78 REVISE | 86 PASS |
-| Accessibility | 74 REVISE | 82 PASS | not needed |
-
-## Latest review scores (blue-green restyle)
+## Latest review scores (round 2)
 
 | Field | Plan R1 | Result R1 | Result R2 |
 |---|---|---|---|
-| Visual design | 76 REVISE | 78 REVISE | 84 PASS |
-| Accessibility | 72 REVISE | 84 PASS | not needed |
-| Performance / SEO | 74 REVISE | 81 PASS | not needed |
+| UX / content | 76 REVISE | 74 REVISE | 80 PASS |
+| Visual design | 72 REVISE | 74 REVISE | 78 REVISE (round cap reached). After R2: causality axis bug fixed, chart opens at the latest events, lanes 70px; network label declutter added. Not re-reviewed. |
+| Accessibility | 72 REVISE | 86 PASS | not needed |
+| Data accuracy | 68 REVISE | 76 REVISE | 84 PASS. Its minor content fault ("company reports N on another basis") was reworded to "N with a basis note or caveat (see notes)" after R2; not re-reviewed. |
 
-## Round 2 brief (structure and wording; owner's words in the plan)
+**Network node key by value-chain tier** (owner, after R2): "Instead of 'company,' have 'Frontier AI Labs,' 'hyperscalers,' 'chip builders' … coordinate with the other chat". Built to read `tier` from graph.json, with labels verbatim from the data session. It shows "Company (tier not yet assigned)" until `data/value-chain` merges. Tested with that branch's data: 24/24 pass.
 
-1. **Data-science audit of every chart.** For each dataset (graph.json, pathways.json, causality.json, proposals.json, scorecard.json), record its entities, relation types, counts and time span, then pick the chart that best shows how things relate. Candidates from the canvas: a layered filers → companies → labs view for pathways, and a network that sizes nodes by prevalence. No decorative visuals: a chart has to be drawn from `data/`.
-2. **Wording for practitioners.** The audience is shareholder advocates. Cut definitions, primers and the retail "how to vote" content. Headings become plain data labels, with no slogans. Examples to replace: "The ballot route is narrowing", "Where leverage still exists", "How you can weigh in".
-3. **Proposal feed:** all 65 proposals, including withdrawn and excluded, each with a status label and the sourced reason. `status_reason`, `status_source_url` and `proponent` are now in `data/proposals.json` for the three withdrawn/excluded proposals (merged from `data/proposal-status`).
-4. **Always-visible table equivalents** for the pathways and causality graphs, as the network has.
-5. Every control does something real: no placeholder links or buttons.
+## Next (UI session)
+
+1. **Lens Phase 1** (owner approved with defaults: plain-language definitions only in the Individual investor lens; static rings plus countdown, pulse optional):
+   - Impact investor / Individual investor / Policymaker toggle, `?lens=`;
+   - `lenses.js` and `rules.js` config files;
+   - "What you can do" panel block;
+   - edge confidence markers (verified / reported / inferred);
+   - keyboard focus on graph nodes.
+2. **Value chain map and engagement map** (owner request via the data session): build when `data/value_chain.json` is merged.
 
 ## Queue (found, not picked up)
 
-1. **Fund votes follow-ups.** (a) 14 near-miss votes (3 distinct items, mostly BlackRock wording) sit in `data/fund_votes.json` `near_misses` for a person to confirm; (b) Meta 2026 "AI data usage oversight" is held back ("Needs checking"): two ballot items read as it; check the proxy and add the second proposal; (c) peer families are not reviewed row by row (shown with †); (d) Praxis and Domini 2025-26 file N-PX as text only; (e) data accuracy R2 fixes were applied after the round cap and not re-reviewed.
-2. **Company universe expansion** (owner, 2026-11-25: every company worth influencing on responsible AI across consumer AI, enterprise AI, data centers and frontier labs). Data session researching; plan to come as docs/plans/2026-11-25-company-universe.md. Agreed fields with the UI session: `sectors` (["consumer AI", "enterprise AI", "data centers & compute", "frontier lab"]) and `engagement_basis` {text, url} in data/companies.json.
-3. **Layout shift.** CLS 0.44–0.49 (good is under 0.1), because content jumps as tabs fill in after the data loads. This is why performance is under 80. It's a change to how the page works, so it needs the owner's go-ahead. Pair it with `defer` on the scripts at the end of `index.html` and a preload for the Inter Tight woff2; Lighthouse estimates 1.5 s of render-blocking time.
-4. **Outside links to check by hand:** an SEC comment PDF (`data/causality.json`) returned 404 without an SEC user agent; www.omiusa.org and www.harringtoninvestments.com (`data/graph.json`) would not connect from Node.
-5. **Deploy publishes the whole repo** (`path: .` in refresh.yml), including docs/ and tests/. It could publish `dist/` after `npm run build` instead. This is a deploy change, so it's for the owner.
-6. **Fallback font metrics are estimates** (`styles.css`, "Inter Tight Fallback"). Measured font CLS is about 0.01, so the impact is small. Derive them from the Inter Tight file (capsize or fontkit) when touching fonts next.
-7. **Inline styles in `app.js`** (about 20 `style=` attributes) break DESIGN rule 1 in spirit. Move them to classes during round 2.
-8. **Pathways investor dots vs legend:** investor dots are drawn in `--n-manager` green (`pathways.js:123`), but the "investor engages company" legend chip is grey. One of them is wrong. Found in the visual R2 review; this predates the restyle.
-9. **Network legend colour reuse:** 15 legend entries share 11 colours (DESIGN.md, palettes). This is part of the round 2 chart audit.
-10. **Disclosure scorecard layout:** the 17-column heatmap is wider than its column at desktop width, so the last pillar is cut off next to the 300px panel. Reported by the data session.
-
-Parked, not merged: local branch `fix-missing-data-and-results-link` (commit 1129740, in the `.claude/worktrees/protocol-setup` worktree, not pushed) duplicates the old missing-files and link-field fixes, which are now on `main` from `data/fund-votes`. It can be deleted.
+1. **Fund votes follow-ups.**
+   - (a) 14 near-miss votes sit in `data/fund_votes.json` `near_misses` for a person to confirm.
+   - (b) Meta 2026 "AI data usage oversight" is held back.
+   - (c) Peer families are not reviewed row by row.
+   - (d) Praxis and Domini 2025-26 file N-PX as text only.
+   - (e) The data accuracy R2 fixes there were not re-reviewed.
+2. **Secondary sources for status reasons:** the Amazon and Apple withdrawal/exclusion reasons cite minerva.info. PRODUCT.md Never claim 4 prefers primary sources (SEC no-action letter or proxy).
+3. **Performance under 80:** the remaining cost is the Google Fonts and data request chain and the 306 KB `graph.json`. Options: self-host Inter, preload the first data files, split graph.json. These change how the page loads, so they're for the owner to decide.
+4. **Causality time scale:** most events fall in 2025–26. A piecewise time scale would give them more room.
+5. **Phone tables:** Company lookup's history and lab-tie tables are cramped at 390px. Stack or drop low-value columns on phones (UX R2).
+6. **Outside links to check by hand:** an SEC comment PDF (`data/causality.json`); www.omiusa.org and www.harringtoninvestments.com (`data/graph.json`).
+7. **Deploy publishes the whole repo** (`path: .` in refresh.yml). It could publish `dist/` instead; this is the owner's call.
+8. **Playwright still runs a "dark" project** although the site has one white theme. Drop the dark projects in `playwright.config.js` to halve test time.
 
 ## Owner actions
 
-- Approve round 2 (structure and wording) using the brief above.
-- Confirm or change the Lighthouse bar (ADR 0002): accessibility, best practices and SEO at 90 or above, performance at 80 or above.
-- Decide on queue items 3 and 5.
+- Confirm or change the Lighthouse bar (ADR 0002).
+- Decide on queue items 3 and 7.
 - Supply three positioning points with sources for PRODUCT.md, or say to drop that section.
-- Check the "Never claim" list in PRODUCT.md.
