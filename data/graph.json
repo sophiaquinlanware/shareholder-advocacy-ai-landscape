@@ -28,7 +28,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "SEC Rule 14a-8 ... No later than close of business (5:30 p.m. Pacific Time) on June 24, 2027",
-   "degree": 47
+   "degree": 48
   },
   {
    "id": "co-GOOGL",
@@ -60,7 +60,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "Corporate Secretary must receive the written proposal ... no later than Friday, December 25, 2026.",
-   "degree": 42
+   "degree": 43
   },
   {
    "id": "co-META",
@@ -120,7 +120,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "must be received no later than 6:00 p.m., Pacific Time, on Thursday, December 10, 2026",
-   "degree": 21
+   "degree": 22
   },
   {
    "id": "co-NVDA",
@@ -173,7 +173,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm",
    "next_proposal_deadline_status": "passed",
    "next_proposal_deadline_quote": "must be received on or before the close of business on September 10, 2026.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "co-TSLA",
@@ -1569,7 +1569,7 @@
    "description": "Sustainable wealth manager; lead filer of generative-AI misinformation proposals.",
    "website": "https://arjuna-capital.com",
    "source_url": "https://arjuna-capital.com",
-   "degree": 22
+   "degree": 23
   },
   {
    "id": "open-mic",
@@ -1613,7 +1613,7 @@
    "description": "Shareholder advocacy nonprofit filing environmental and social resolutions.",
    "website": "https://www.asyousow.org",
    "source_url": "https://www.asyousow.org",
-   "degree": 26
+   "degree": 28
   },
   {
    "id": "nlpc",
@@ -1679,7 +1679,7 @@
    "description": "Jewish values investor network (ADL-affiliated) that opposes some human-rights proposals.",
    "website": "https://www.jlensnetwork.org",
    "source_url": "https://www.jlensnetwork.org",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "adl",
@@ -1701,7 +1701,7 @@
    "description": "ESG investment manager; files on AI principles and data center climate impacts.",
    "website": "https://www.trilliuminvest.com",
    "source_url": "https://www.trilliuminvest.com",
-   "degree": 21
+   "degree": 23
   },
   {
    "id": "csjp",
@@ -1723,7 +1723,7 @@
    "description": "Boston socially responsible manager filing on AI, cloud and human rights.",
    "website": "https://www.zevin.com",
    "source_url": "https://www.zevin.com",
-   "degree": 24
+   "degree": 25
   },
   {
    "id": "jewish-investor-network",
@@ -1745,7 +1745,7 @@
    "description": "Wisconsin ESG asset manager; co-filer on tech human rights proposals.",
    "website": "https://www.danainvestment.com",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923007656/s522230px14a6g.htm",
-   "degree": 8
+   "degree": 10
   },
   {
    "id": "marianists",
@@ -1800,7 +1800,7 @@
    "description": "Catholic health system whose investment program co-files tech proposals.",
    "website": "https://www.commonspirit.org",
    "source_url": "https://collaborate.unpri.org/group/15876/home",
-   "degree": 17
+   "degree": 18
   },
   {
    "id": "boston-common",
@@ -1811,7 +1811,7 @@
    "description": "Sustainable manager; co-founder and co-lead of WBA ethical AI coalition.",
    "website": "https://www.bostoncommonasset.com",
    "source_url": "https://www.bostoncommonasset.com",
-   "degree": 6
+   "degree": 8
   },
   {
    "id": "harrington",
@@ -1833,7 +1833,7 @@
    "description": "UK asset manager; co-filed at Alphabet, signed IAHR EU AI Act statement.",
    "website": "https://www.avivainvestors.com",
    "source_url": "https://www.avivainvestors.com",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "nordea",
@@ -1877,7 +1877,7 @@
    "description": "Investment program of the Sisters of Mercy; prolific ICCR filer.",
    "website": "https://www.mercyinvestmentservices.org",
    "source_url": "https://www.mercyinvestmentservices.org",
-   "degree": 39
+   "degree": 41
   },
   {
    "id": "inspire",
@@ -1965,7 +1965,7 @@
    "description": "Canadian credit-union-owned responsible investment manager.",
    "website": "https://www.vancity.com",
    "source_url": "https://www.vancity.com",
-   "degree": 6
+   "degree": 8
   },
   {
    "id": "nei",
@@ -1976,7 +1976,7 @@
    "description": "Canadian responsible investment fund manager.",
    "website": "https://www.neiinvestments.com",
    "source_url": "https://collaborate.unpri.org/group/24941/home",
-   "degree": 8
+   "degree": 10
   },
   {
    "id": "axa-im",
@@ -2020,7 +2020,7 @@
    "description": "Denomination whose MRTI committee runs shareholder engagement.",
    "website": "https://www.presbyterianmission.org",
    "source_url": "https://www.presbyterianmission.org",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "portico",
@@ -2031,7 +2031,7 @@
    "description": "Evangelical Lutheran Church in America benefits and pension ministry.",
    "website": "https://www.porticobenefits.org",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465926005915/o511264px14a6g.htm",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "adrian-dominican",
@@ -2042,7 +2042,7 @@
    "description": "Catholic congregation active in ICCR shareholder advocacy.",
    "website": "https://www.adriandominicans.org",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465926005915/o511264px14a6g.htm",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "ipjc",
@@ -2086,7 +2086,7 @@
    "description": "US labor federation; its funds file AI transparency and board oversight proposals.",
    "website": "https://aflcio.org",
    "source_url": "https://aflcio.org",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "united-for-respect",
@@ -2119,7 +2119,7 @@
    "description": "Environmental fund manager; lead filer on Nvidia AI emissions.",
    "website": "https://www.greencentury.com",
    "source_url": "https://www.greencentury.com",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "ttt-investments",
@@ -2174,7 +2174,7 @@
    "description": "ESG mutual fund manager; member of WBA ethical AI coalition.",
    "website": "https://www.parnassus.com",
    "source_url": "https://www.parnassus.com",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "fidelity-intl",
@@ -2185,7 +2185,7 @@
    "description": "Global asset manager; co-founder and co-lead of WBA ethical AI coalition.",
    "website": "https://www.fidelityinternational.com",
    "source_url": "https://www.fidelityinternational.com",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "candriam",
@@ -2207,7 +2207,7 @@
    "description": "Europe's largest asset manager; co-lead of WBA ethical AI coalition.",
    "website": "https://www.amundi.com",
    "source_url": "https://www.amundi.com",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "lgim",
@@ -2240,7 +2240,7 @@
    "description": "Impact mutual fund firm; ICCR and Investor Alliance member.",
    "website": "https://www.domini.com",
    "source_url": "https://www.domini.com",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "northstar",
@@ -2252,6 +2252,259 @@
    "website": "https://www.northstarasset.com",
    "source_url": "https://www.northstarasset.com",
    "degree": 16
+  },
+  {
+   "id": "ceres",
+   "type": "coalition",
+   "layer": "investors",
+   "label": "Ceres",
+   "org_type": "coalition",
+   "description": "Nonprofit advocacy organization, founded in 1989, that works with investors and companies on climate change, water scarcity and pollution, and nature loss. It runs investor, company and policy networks and launched and runs the Valuing Water Finance Initiative.",
+   "website": "https://www.ceres.org/about",
+   "source_url": "https://www.ceres.org/about",
+   "degree": 8
+  },
+  {
+   "id": "ceres-investor-network",
+   "type": "coalition",
+   "layer": "investors",
+   "label": "Ceres Investor Network",
+   "org_type": "coalition",
+   "description": "Ceres' voluntary membership network of institutional investors (asset owners and managers). Ceres' April 2024 network page said it had more than 220 investors managing more than $46 trillion; the current page gives no count. Members can join initiatives including Climate Action 100+, Nature Action 100 and the Valuing Water Finance Initiative.",
+   "website": "https://www.ceres.org/networks/investor",
+   "source_url": "https://www.ceres.org/networks/investor",
+   "degree": 32
+  },
+  {
+   "id": "vwfi",
+   "type": "coalition",
+   "layer": "investors",
+   "label": "Valuing Water Finance Initiative",
+   "org_type": "coalition",
+   "description": "Investor-led initiative, launched by Ceres on August 16, 2022 with 64 signatories ($9.8 trillion), that engages companies with large water footprints in four industries (food, beverage, apparel, high-tech) to meet six Corporate Expectations for Valuing Water by 2030: water quantity, water quality, ecosystem protection, access to water and sanitation, board oversight, and public policy engagement. Ceres' page now shows 110 investors, about $18 trillion, and 71 focus companies. Ceres benchmarks the focus companies every two years (2023, 2025).",
+   "website": "https://www.ceres.org/water/valuing-water-finance-initiative",
+   "source_url": "https://www.ceres.org/water/valuing-water-finance-initiative",
+   "degree": 28
+  },
+  {
+   "id": "iigcc",
+   "type": "coalition",
+   "layer": "investors",
+   "label": "IIGCC (Institutional Investors Group on Climate Change)",
+   "org_type": "coalition",
+   "description": "European investor membership body on climate change. In February 2026 it published research on climate and nature risks of AI data centres, including water use, and said it plans data centre guidance, insights and engagement tools; in October 2026 it published bondholder stewardship research on hyperscaler and data centre debt.",
+   "website": "https://www.iigcc.org/insights/ai-data-centres-climate-and-nature-risks-for-investors",
+   "source_url": "https://www.iigcc.org/insights/ai-data-centres-climate-and-nature-risks-for-investors",
+   "degree": 3
+  },
+  {
+   "id": "calpers",
+   "type": "investor",
+   "layer": "investors",
+   "label": "CalPERS",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 4
+  },
+  {
+   "id": "calstrs",
+   "type": "investor",
+   "layer": "investors",
+   "label": "CalSTRS",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 5
+  },
+  {
+   "id": "dws",
+   "type": "investor",
+   "layer": "investors",
+   "label": "DWS",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 3
+  },
+  {
+   "id": "impax",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Impax Asset Management",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 4
+  },
+  {
+   "id": "nyc-comptrollers-office",
+   "type": "investor",
+   "layer": "investors",
+   "label": "NYC Comptroller's Office (Bureau of Asset Management)",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 5
+  },
+  {
+   "id": "australiansuper",
+   "type": "investor",
+   "layer": "investors",
+   "label": "AustralianSuper",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 3
+  },
+  {
+   "id": "aberdeen-investments-formerly-abrdn",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Aberdeen Investments (formerly abrdn)",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 3
+  },
+  {
+   "id": "federated-hermes-eos",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Federated Hermes EOS",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 7
+  },
+  {
+   "id": "calvert-research-and-management",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Calvert Research and Management",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 2
+  },
+  {
+   "id": "friends-fiduciary",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Friends Fiduciary",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 3
+  },
+  {
+   "id": "nuveen-tiaa",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Nuveen (TIAA)",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 3
+  },
+  {
+   "id": "blackrock",
+   "type": "investor",
+   "layer": "investors",
+   "label": "BlackRock",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 5
+  },
+  {
+   "id": "state-street",
+   "type": "investor",
+   "layer": "investors",
+   "label": "State Street Investment Management",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 5
+  },
+  {
+   "id": "praxis-mutual-funds-everence-financial",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Praxis Mutual Funds / Everence Financial",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 3
+  },
+  {
+   "id": "miller-howard-investments",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Miller/Howard Investments",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 2
+  },
+  {
+   "id": "church-of-england-pensions-board-national-investing-bodies",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Church of England Pensions Board (National Investing Bodies)",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 2
+  },
+  {
+   "id": "ifm-investors",
+   "type": "investor",
+   "layer": "investors",
+   "label": "IFM Investors",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 2
+  },
+  {
+   "id": "bnp-paribas-asset-management-incl-axa-im",
+   "type": "investor",
+   "layer": "investors",
+   "label": "BNP Paribas Asset Management (incl. AXA IM)",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 3
+  },
+  {
+   "id": "new-york-state-common-retirement-fund",
+   "type": "investor",
+   "layer": "investors",
+   "label": "New York State Common Retirement Fund",
+   "org_type": "investor",
+   "description": null,
+   "website": null,
+   "source_url": null,
+   "degree": 2
   },
   {
    "id": "msft-2023-hr-hotspots",
@@ -4111,13 +4364,6 @@
    "degree": 2
   },
   {
-   "id": "nyc-comptrollers-office",
-   "type": "investor",
-   "layer": "investors",
-   "label": "NYC Comptroller's Office (Bureau of Asset Management)",
-   "degree": 3
-  },
-  {
    "id": "person-yumi-narita",
    "type": "person",
    "layer": "people",
@@ -4139,13 +4385,6 @@
    "ai_focus": "",
    "source_url": "https://www.universalassetowners.com/registry/person/elizabeth-gordon/",
    "verified": "2026-07",
-   "degree": 1
-  },
-  {
-   "id": "new-york-state-common-retirement-fund",
-   "type": "investor",
-   "layer": "investors",
-   "label": "New York State Common Retirement Fund",
    "degree": 1
   },
   {
@@ -4266,13 +4505,6 @@
    "degree": 1
   },
   {
-   "id": "calpers",
-   "type": "investor",
-   "layer": "investors",
-   "label": "CalPERS",
-   "degree": 2
-  },
-  {
    "id": "person-charles-hambly",
    "type": "person",
    "layer": "people",
@@ -4294,13 +4526,6 @@
    "ai_focus": "",
    "source_url": "https://www.esgtoday.com/calstrs-appoints-nick-abel-as-director-of-sustainable-investment-and-stewardship-strategies",
    "verified": "2025-12",
-   "degree": 2
-  },
-  {
-   "id": "calstrs",
-   "type": "investor",
-   "layer": "investors",
-   "label": "CalSTRS",
    "degree": 2
   },
   {
@@ -4326,13 +4551,6 @@
    "source_url": "https://www.hermes-investment.com/uk/en/intermediary/eos-stewardship/eos-team/",
    "verified": "2026-11",
    "degree": 1
-  },
-  {
-   "id": "federated-hermes-eos",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Federated Hermes EOS",
-   "degree": 5
   },
   {
    "id": "person-leon-kamhi",
@@ -4445,13 +4663,6 @@
    "degree": 1
   },
   {
-   "id": "calvert-research-and-management",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Calvert Research and Management",
-   "degree": 1
-  },
-  {
    "id": "person-kristin-hull",
    "type": "person",
    "layer": "people",
@@ -4480,13 +4691,6 @@
    "ai_focus": "",
    "source_url": "https://friendsfiduciary.org/about-us/staff/",
    "verified": "2026-11",
-   "degree": 2
-  },
-  {
-   "id": "friends-fiduciary",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Friends Fiduciary",
    "degree": 2
   },
   {
@@ -4574,13 +4778,6 @@
    "degree": 1
   },
   {
-   "id": "impax",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Impax Asset Management",
-   "degree": 2
-  },
-  {
    "id": "person-robyn-lockyer",
    "type": "person",
    "layer": "people",
@@ -4605,13 +4802,6 @@
    "degree": 1
   },
   {
-   "id": "praxis-mutual-funds-everence-financial",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Praxis Mutual Funds / Everence Financial",
-   "degree": 2
-  },
-  {
    "id": "person-chris-meyer",
    "type": "person",
    "layer": "people",
@@ -4634,13 +4824,6 @@
    "source_url": "https://www.nuveen.com/global/about-us/profiles/o/amy-obrien",
    "verified": "2026-11",
    "degree": 1
-  },
-  {
-   "id": "nuveen-tiaa",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Nuveen (TIAA)",
-   "degree": 2
   },
   {
    "id": "person-jeffrey-warshauer",
@@ -4698,13 +4881,6 @@
    "degree": 1
   },
   {
-   "id": "blackrock",
-   "type": "investor",
-   "layer": "investors",
-   "label": "BlackRock",
-   "degree": 4
-  },
-  {
    "id": "person-john-roe",
    "type": "person",
    "layer": "people",
@@ -4739,13 +4915,6 @@
    "source_url": "https://www.ssga.com/library-content/assets/pdf/global/asset-stewardship/stewardship-report-2025.pdf",
    "verified": "2026-11",
    "degree": 1
-  },
-  {
-   "id": "state-street",
-   "type": "investor",
-   "layer": "investors",
-   "label": "State Street Investment Management",
-   "degree": 4
   },
   {
    "id": "person-benjamin-colton",
@@ -5280,13 +5449,6 @@
    "degree": 1
   },
   {
-   "id": "miller-howard-investments",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Miller/Howard Investments",
-   "degree": 1
-  },
-  {
    "id": "person-luda-svystunova",
    "type": "person",
    "layer": "people",
@@ -5483,13 +5645,6 @@
    "degree": 1
   },
   {
-   "id": "dws",
-   "type": "investor",
-   "layer": "investors",
-   "label": "DWS",
-   "degree": 1
-  },
-  {
    "id": "person-caroline-le-meaux",
    "type": "person",
    "layer": "people",
@@ -5512,13 +5667,6 @@
    "source_url": "https://www.bnpparibas-am.com/en/press/mediaroom-en-bnp-paribas-asset-management-unveils-its-2026-annual-general-meeting-season-review-underpinned-by-its-unified-voting-policy/",
    "verified": "2026-11",
    "degree": 1
-  },
-  {
-   "id": "bnp-paribas-asset-management-incl-axa-im",
-   "type": "investor",
-   "layer": "investors",
-   "label": "BNP Paribas Asset Management (incl. AXA IM)",
-   "degree": 2
   },
   {
    "id": "person-adam-kanzer",
@@ -5641,13 +5789,6 @@
    "degree": 1
   },
   {
-   "id": "aberdeen-investments-formerly-abrdn",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Aberdeen Investments (formerly abrdn)",
-   "degree": 2
-  },
-  {
    "id": "person-stuart-riddick",
    "type": "person",
    "layer": "people",
@@ -5722,13 +5863,6 @@
    "degree": 1
   },
   {
-   "id": "church-of-england-pensions-board-national-investing-bodies",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Church of England Pensions Board (National Investing Bodies)",
-   "degree": 1
-  },
-  {
    "id": "person-liza-mcdonald",
    "type": "person",
    "layer": "people",
@@ -5772,13 +5906,6 @@
    "degree": 1
   },
   {
-   "id": "australiansuper",
-   "type": "investor",
-   "layer": "investors",
-   "label": "AustralianSuper",
-   "degree": 1
-  },
-  {
    "id": "person-ashley-kopczynski",
    "type": "person",
    "layer": "people",
@@ -5788,13 +5915,6 @@
    "ai_focus": "Co-chairs RIAA's Human Rights Working Group, whose first 2026 meeting (4 March 2026) was on AI and human rights",
    "source_url": "https://www.responsibleinvestment.org/membership/working-groups/human-rights",
    "verified": "2026-11",
-   "degree": 1
-  },
-  {
-   "id": "ifm-investors",
-   "type": "investor",
-   "layer": "investors",
-   "label": "IFM Investors",
    "degree": 1
   },
   {
@@ -5817,620 +5937,70 @@
    "degree": 1
   },
   {
-   "id": "ev-sec-slb-14m",
-   "type": "policy",
-   "layer": "policy",
-   "label": "SEC staff issues SLB 14M, rescinding SLB 14L",
-   "date": "2025-02-12",
-   "lane": "government",
-   "kind": "rule",
-   "actor": "SEC Division of Corporation Finance",
-   "jurisdiction": "US federal",
-   "description": "Staff guidance restored the pre-2021 approach to the ordinary business and economic relevance exclusions, giving companies more room to exclude proposals, including on AI.",
-   "source_url": "https://www.sec.gov/about/shareholder-proposals-staff-legal-bulletin-no-14m-cf",
+   "id": "person-kirsten-james",
+   "type": "person",
+   "layer": "people",
+   "label": "Kirsten James",
+   "title": "Senior Program Director, Water",
+   "org_name": "Ceres",
+   "ai_focus": "Leads the Valuing Water Finance Initiative; co-author of Ceres' data center water reports (Drained by Data, 2025; Water Behind the Watts, 2026).",
+   "source_url": "https://www.ceres.org/people/james",
+   "verified": "2026-11",
    "degree": 1
   },
   {
-   "id": "ev-crenshaw-dissent-14m",
-   "type": "policy",
-   "layer": "policy",
-   "label": "Commissioner Crenshaw criticizes SLB 14M",
-   "date": "2025-02-12",
-   "lane": "government",
-   "kind": "response",
-   "actor": "SEC Commissioner Caroline Crenshaw",
-   "jurisdiction": "US federal",
-   "description": "Dissenting statement said the bulletin changes the rules for excluding shareholder proposals mid-season.",
-   "source_url": "https://www.sec.gov/newsroom/speeches-statements/crenshaw-statement-staff-legal-bulletin-14m-021225",
+   "id": "person-shama-perveen",
+   "type": "person",
+   "layer": "people",
+   "label": "Shama Perveen, Ph.D.",
+   "title": "Director, Water, Research",
+   "org_name": "Ceres",
+   "ai_focus": "Leads Ceres water research, including the VWFI benchmarks and co-authorship of the data center water reports.",
+   "source_url": "https://www.ceres.org/people/perveen",
+   "verified": "2026-11",
    "degree": 1
   },
   {
-   "id": "ev-sec-noaction-pause",
-   "type": "policy",
-   "layer": "policy",
-   "label": "SEC staff stops responding to most 14a-8 no-action requests",
-   "date": "2025-11-17",
-   "lane": "government",
-   "kind": "rule",
-   "actor": "SEC Division of Corporation Finance",
-   "jurisdiction": "US federal",
-   "description": "For the 2025-2026 season, staff said it would not respond to no-action requests except under Rule 14a-8(i)(1), citing post-shutdown resource limits. Companies still file notices.",
-   "source_url": "https://www.sec.gov/newsroom/speeches-statements/statement-regarding-division-corporation-finances-role-exchange-act-rule-14a-8-process-current-proxy-season",
-   "degree": 5
-  },
-  {
-   "id": "ev-proponent-lawsuits-2026",
+   "id": "ev-vwfi-launch",
    "type": "response",
    "layer": "policy",
-   "label": "Proponents sue companies that excluded proposals without SEC review",
-   "date": "2026-03-01",
+   "label": "Ceres launches the Valuing Water Finance Initiative",
+   "date": "2022-08-16",
    "lane": "investors",
-   "kind": "response",
-   "actor": "Shareholder proponents",
-   "jurisdiction": "US federal",
-   "description": "Law firm reports litigation against companies rose after the revised 14a-8 process; Skadden later counted six proponents suing six companies. Date is month of memo.",
-   "source_url": "https://www.jonesday.com/es/insights/2026/03/shareholder-proposal-litigation-increases-following-the-secs-revised-rule-14a8-process",
-   "degree": 1
-  },
-  {
-   "id": "ev-iccr-ays-lawsuit",
-   "type": "response",
-   "layer": "policy",
-   "label": "ICCR and As You Sow sue SEC over no-action pause",
-   "date": "2026-03-19",
-   "lane": "investors",
-   "kind": "response",
-   "actor": "ICCR; As You Sow",
-   "jurisdiction": "US federal",
-   "description": "Suit in D.C. federal court argues the SEC changed how Rule 14a-8 works without notice-and-comment rulemaking under the APA. Pending as of latest reports.",
-   "source_url": "https://news.ballotpedia.org/2026/03/30/advocacy-groups-sue-sec-over-proxy-policy-shift-2/",
+   "kind": "campaign",
+   "actor": "Ceres",
+   "jurisdiction": "Global",
+   "description": "64 investors with $9.8 trillion launched an effort to engage 72 large corporate water users, including Alphabet, Amazon, Apple and Microsoft, on six Corporate Expectations for Valuing Water.",
+   "source_url": "https://www.ceres.org/resources/news/ceres-launches-new-investor-led-effort-to-move-corporate-water-users-and-polluters-to-value-and-act-on-water-as-a-financial-risk",
    "degree": 2
   },
   {
-   "id": "ev-exclusions-2026-season",
+   "id": "ev-parnassus-intuit-engagement",
    "type": "response",
    "layer": "policy",
-   "label": "About 135 companies excluded roughly 165 proposals in 2026",
-   "date": "2026-07-23",
-   "lane": "companies",
-   "kind": "milestone",
-   "actor": "Skadden (law firm review)",
+   "label": "Parnassus begins AI governance engagement with Intuit",
+   "date": "2023-01-01",
+   "lane": "investors",
+   "kind": "campaign",
+   "actor": "Parnassus Investments",
    "jurisdiction": "US federal",
-   "description": "Post-season memo: about 45% of excluded proposals came from one individual filer; Glass Lewis found companies excluded fewer proposals than feared without staff relief.",
-   "source_url": "https://corpgov.law.harvard.edu/2026/07/23/the-2026-shareholder-proposal-exclusion-experience-and-takeaways-for-the-2027-season/",
-   "degree": 1
+   "description": "Private engagement on AI policies, governance, staffing and resourcing. No filed proposal found. Start date is year only.",
+   "source_url": "https://www.parnassus.com/updates/article/the_new_imperative_of_responsible_ai",
+   "degree": 2
   },
   {
-   "id": "ev-dfking-2026-season",
+   "id": "ev-vwfi-benchmark-2023",
    "type": "response",
    "layer": "policy",
-   "label": "Shareholder proposal submissions fall nearly 25% in 2026",
-   "date": "2026-08-31",
+   "label": "First Valuing Water Finance Initiative benchmark",
+   "date": "2023-10-25",
    "lane": "investors",
    "kind": "milestone",
-   "actor": "D.F. King",
-   "jurisdiction": "US federal",
-   "description": "D.F. King reports 2026 shareholder proposal submissions were down nearly 25% from 2025, the lowest level in a decade.",
-   "source_url": "https://corpgov.law.harvard.edu/2026/08/31/2026-proxy-season-shareholder-proposals/",
-   "degree": 1
-  },
-  {
-   "id": "ev-sec-aug14-statement",
-   "type": "policy",
-   "layer": "policy",
-   "label": "SEC staff ends all Rule 14a-8 no-action responses",
-   "date": "2026-08-14",
-   "lane": "government",
-   "kind": "rule",
-   "actor": "SEC Division of Corporation Finance",
-   "jurisdiction": "US federal",
-   "description": "Staff stopped responding to all no-action requests, including (i)(1), until further notice. Companies must still submit 14a-8(j) notices through an online form.",
-   "source_url": "https://sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426",
-   "degree": 1
-  },
-  {
-   "id": "ev-sec-oira-submission",
-   "type": "policy",
-   "layer": "policy",
-   "label": "SEC sends 14a-8 rescission rule for interagency review",
-   "date": "2026-08-28",
-   "lane": "government",
-   "kind": "milestone",
-   "actor": "SEC",
-   "jurisdiction": "US federal",
-   "description": "Ballotpedia reports the proposed rescission was submitted for interagency review and listed as economically significant on the regulatory agenda.",
-   "source_url": "https://news.ballotpedia.org/2026/08/24/sec-makes-shareholder-proposal-no-action-pause-permanent-2/",
-   "degree": 1
-  },
-  {
-   "id": "ev-sec-14a8-rescission-proposal",
-   "type": "policy",
-   "layer": "policy",
-   "label": "SEC proposes rescinding Rule 14a-8 and amending Rule 14a-4",
-   "date": "2026-09-16",
-   "lane": "government",
-   "kind": "rule",
-   "actor": "SEC",
-   "jurisdiction": "US federal",
-   "description": "Release 34-106383, File S7-2026-32, would end the federal shareholder proposal rule and leave proposals to state law and company governing documents. 60-day comment period.",
-   "source_url": "https://www.sec.gov/rules/proposed/2026/34-106383.pdf",
-   "degree": 5
-  },
-  {
-   "id": "ev-cii-statement-rescission",
-   "type": "response",
-   "layer": "policy",
-   "label": "CII calls rescission a solution in search of a problem",
-   "date": "2026-09-16",
-   "lane": "investors",
-   "kind": "response",
-   "actor": "Council of Institutional Investors",
-   "jurisdiction": "US federal",
-   "description": "CII executive director Glenn Davis publicly opposed the proposal on release day, per a law firm summary. ICCR warned of losing an early warning system.",
-   "source_url": "https://www.cohenmilstein.com/the-end-of-the-federal-shareholder-proposal-rule-the-secs-effort-to-rescind-rule-14a-8/",
-   "degree": 1
-  },
-  {
-   "id": "ev-ny-comptrollers-statement",
-   "type": "response",
-   "layer": "policy",
-   "label": "NY State and NYC comptrollers oppose 14a-8 rescission",
-   "date": "2026-09-24",
-   "lane": "investors",
-   "kind": "response",
-   "actor": "NYS Comptroller DiNapoli; NYC Comptroller Levine",
-   "jurisdiction": "US federal",
-   "description": "Joint statement opposed the proposal, urged companies to keep supporting shareholder proposals, and predicted lengthy legal challenges. A statement, not a docket letter.",
-   "source_url": "https://www.osc.ny.gov/press/releases/2026/09/nys-comptroller-dinapoli-and-nyc-comptroller-levine-statement-secs-plan-silence-shareholders-public",
-   "degree": 2
-  },
-  {
-   "id": "ev-s7-2026-32-comment-count",
-   "type": "public",
-   "layer": "public",
-   "label": "Rescission docket reaches 394 public comments",
-   "date": "2026-11-25",
-   "lane": "public",
-   "kind": "milestone",
-   "actor": "Public commenters",
-   "jurisdiction": "US federal",
-   "description": "The docket for the proposal to rescind Rule 14a-8 shows 394 entries when comments closed. Letters on file include TIAA and Nuveen, L&G Asset Management, Wespath, the Washington State Investment Board, the Investment Adviser Association, the AJL Foundation with Oxfam America, the State Financial Officers Foundation and a staff memo of a meeting with CII. This site has not reviewed each letter's position.",
-   "source_url": "https://www.sec.gov/rules-regulations/public-comments/s7-2026-32",
-   "degree": 1
-  },
-  {
-   "id": "ev-delaware-sb21",
-   "type": "policy",
-   "layer": "policy",
-   "label": "Delaware enacts SB 21 amending DGCL sections 144 and 220",
-   "date": "2025-03-25",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "Delaware Governor Matt Meyer",
-   "jurisdiction": "Delaware",
-   "description": "Narrowed controlling-stockholder liability and books-and-records rights, responding to Chancery rulings like the Tesla pay case and to companies leaving Delaware.",
-   "source_url": "https://corpgov.law.harvard.edu/2025/04/06/delaware-revamps-its-general-corporation-law-will-it-stop-companies-from-leaving",
-   "degree": 2
-  },
-  {
-   "id": "ev-reincorporation-trend",
-   "type": "response",
-   "layer": "policy",
-   "label": "Companies reincorporate from Delaware to Nevada and Texas",
-   "date": "2025-04-06",
-   "lane": "companies",
-   "kind": "milestone",
-   "actor": "Tesla, SpaceX, Tripadvisor, Dropbox and others",
-   "jurisdiction": "Nevada; Texas",
-   "description": "Memo lists firms moving to Nevada and Texas after Chancery rulings. Later reports say the pace did not slow after SB 21 (this site has not confirmed the share figures).",
-   "source_url": "https://corpgov.law.harvard.edu/2025/04/06/delaware-revamps-its-general-corporation-law-will-it-stop-companies-from-leaving",
-   "degree": 2
-  },
-  {
-   "id": "ev-texas-sb29",
-   "type": "policy",
-   "layer": "policy",
-   "label": "Texas SB 29 codifies business judgment rule",
-   "date": "2025-05-14",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "Texas Governor Greg Abbott",
-   "jurisdiction": "Texas",
-   "description": "Effective on signing; protects listed Texas companies' directors, lets companies set ownership thresholds for derivative suits, and aims to attract incorporations.",
-   "source_url": "https://gov.texas.gov/news/post/governor-abbott-signs-pro-growth-business-legislation-into-law",
-   "degree": 1
-  },
-  {
-   "id": "ev-texas-sb1057",
-   "type": "policy",
-   "layer": "policy",
-   "label": "Texas SB 1057 raises shareholder proposal thresholds",
-   "date": "2025-05-19",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "Texas Legislature; Governor Abbott",
-   "jurisdiction": "Texas",
-   "description": "Opt-in law lets companies require $1 million or 3% ownership, six-month holding, and solicitation of 67% of voting power. Effective September 1, 2025.",
-   "source_url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB01057F.htm",
-   "degree": 1
-  },
-  {
-   "id": "ev-exxon-retail-voting",
-   "type": "response",
-   "layer": "policy",
-   "label": "ExxonMobil launches first US retail standing voting program",
-   "date": "2025-09-01",
-   "lane": "companies",
-   "kind": "milestone",
-   "actor": "ExxonMobil",
-   "jurisdiction": "US federal",
-   "description": "After an SEC no-action letter in September 2025, Exxon let retail holders give standing voting instructions. The day shown is approximate.",
-   "source_url": "https://www.broadridge.com/insights/standing-voting-instructions-lessons-from-the-first-year-experiences-of-exxonmobil-and-bigbear-ai",
-   "degree": 0
-  },
-  {
-   "id": "ev-blackrock-voting-choice-2026",
-   "type": "response",
-   "layer": "policy",
-   "label": "BlackRock Voting Choice covers about $851 billion",
-   "date": "2026-03-31",
-   "lane": "investors",
-   "kind": "milestone",
-   "actor": "BlackRock",
-   "jurisdiction": "US federal",
-   "description": "Index equity clients with about $851 billion in assets were using Voting Choice; eligible assets with individual investors reach about $3.96 trillion.",
-   "source_url": "https://www.blackrock.com/corporate/about-us/investment-stewardship/blackrock-voting-choice",
-   "degree": 1
-  },
-  {
-   "id": "ev-vanguard-investor-choice-2026",
-   "type": "public",
-   "layer": "public",
-   "label": "Vanguard Investor Choice passes half a million participants",
-   "date": "2026-09-29",
-   "lane": "public",
-   "kind": "milestone",
-   "actor": "Vanguard",
-   "jurisdiction": "US federal",
-   "description": "Pass-through voting participation grew more than sixfold; no single voting policy got over 38% of selections.",
-   "source_url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/who-we-are/pressroom/press-release-vanguard-investor-choice-participation-grows-more-than-sixfold-surpassing-half-a-million-investors-092926.html",
-   "degree": 1
-  },
-  {
-   "id": "ev-eu-ai-act-in-force",
-   "type": "policy",
-   "layer": "policy",
-   "label": "EU AI Act enters into force",
-   "date": "2024-08-01",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "European Commission",
-   "jurisdiction": "EU",
-   "description": "Risk-based AI regulation takes effect, with general-purpose AI provisions applying 12 months later and most high-risk rules later still.",
-   "source_url": "https://commission.europa.eu/news/ai-act-enters-force-2024-08-01_en",
-   "degree": 2
-  },
-  {
-   "id": "ev-eu-gpai-code",
-   "type": "policy",
-   "layer": "policy",
-   "label": "EU publishes General-Purpose AI Code of Practice",
-   "date": "2025-07-10",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "European Commission AI Office",
-   "jurisdiction": "EU",
-   "description": "Voluntary code with transparency, copyright, and safety and security chapters, offered as a way for model providers to show AI Act compliance.",
-   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/gpai-code-practice",
-   "degree": 8
-  },
-  {
-   "id": "ev-openai-eu-code",
-   "type": "response",
-   "layer": "policy",
-   "label": "OpenAI says it intends to sign EU AI code",
-   "date": "2025-07-11",
-   "lane": "labs",
-   "kind": "response",
-   "actor": "OpenAI",
-   "jurisdiction": "EU",
-   "description": "OpenAI said it would sign the GPAI Code of Practice, subject to formal approval by the AI Board.",
-   "source_url": "https://openai.com/global-affairs/eu-code-of-practice/",
-   "degree": 2
-  },
-  {
-   "id": "ev-meta-declines-eu-code",
-   "type": "response",
-   "layer": "policy",
-   "label": "Meta refuses to sign EU AI code",
-   "date": "2025-07-18",
-   "lane": "labs",
-   "kind": "response",
-   "actor": "Meta",
-   "jurisdiction": "EU",
-   "description": "Joel Kaplan said the code creates legal uncertainty and goes beyond the AI Act. Meta remained absent from the signatory list in 2026.",
-   "source_url": "https://www.euronews.com/2025/07/18/meta-rebuffs-eus-ai-code-of-practice",
-   "degree": 2
-  },
-  {
-   "id": "ev-anthropic-eu-code",
-   "type": "response",
-   "layer": "policy",
-   "label": "Anthropic announces it will sign EU AI code",
-   "date": "2025-07-21",
-   "lane": "labs",
-   "kind": "response",
-   "actor": "Anthropic",
-   "jurisdiction": "EU",
-   "description": "After review, Anthropic said it intends to sign the General-Purpose AI Code of Practice.",
-   "source_url": "https://www.anthropic.com/news/eu-code-practice",
-   "degree": 2
-  },
-  {
-   "id": "ev-google-eu-code",
-   "type": "response",
-   "layer": "policy",
-   "label": "Google says it will sign EU AI code",
-   "date": "2025-07-30",
-   "lane": "labs",
-   "kind": "response",
-   "actor": "Google",
-   "jurisdiction": "EU",
-   "description": "Google committed to sign while voicing concerns that parts of the code and AI Act could slow innovation in Europe.",
-   "source_url": "https://blog.google/around-the-globe/google-europe/eu-ai-code-practice/",
-   "degree": 2
-  },
-  {
-   "id": "ev-microsoft-eu-code",
-   "type": "response",
-   "layer": "policy",
-   "label": "Microsoft confirms it will sign EU AI code",
-   "date": "2025-07-31",
-   "lane": "labs",
-   "kind": "response",
-   "actor": "Microsoft",
-   "jurisdiction": "EU",
-   "description": "Microsoft publicly shared its decision to become a signatory a day after Google, per trade press.",
-   "source_url": "https://www.ciodive.com/news/Google-european-union-AI-act-code-signatory/756343/",
-   "degree": 2
-  },
-  {
-   "id": "ev-xai-eu-code-safety",
-   "type": "response",
-   "layer": "policy",
-   "label": "xAI signs only safety chapter of EU AI code",
-   "date": "2025-08-01",
-   "lane": "labs",
-   "kind": "response",
-   "actor": "xAI",
-   "jurisdiction": "EU",
-   "description": "xAI joined the Safety and Security chapter only, calling the rest overreach, so it must show transparency and copyright compliance by other means.",
-   "source_url": "https://www.euronews.com/2025/08/01/some-26-tech-companies-sign-up-to-eu-commissions-ai-code",
-   "degree": 2
-  },
-  {
-   "id": "ev-eu-gpai-obligations",
-   "type": "policy",
-   "layer": "policy",
-   "label": "EU AI Act obligations for general-purpose models apply",
-   "date": "2025-08-02",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "European Commission",
-   "jurisdiction": "EU",
-   "description": "GPAI providers must meet transparency and copyright duties; models already on the market have until August 2, 2027.",
-   "source_url": "https://digital-strategy.ec.europa.eu/en/news/eu-rules-general-purpose-ai-models-start-apply-bringing-more-transparency-safety-and-accountability",
-   "degree": 2
-  },
-  {
-   "id": "ev-eu-omnibus-proposal",
-   "type": "policy",
-   "layer": "policy",
-   "label": "Commission proposes digital omnibus delaying AI Act rules",
-   "date": "2025-11-19",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "European Commission",
-   "jurisdiction": "EU",
-   "description": "Proposal to push high-risk AI obligations back toward 2027 as part of a simplification package.",
-   "source_url": "https://www.euronews.com/2025/11/19/european-commission-delays-full-implementation-of-ai-act-to-2027",
-   "degree": 1
-  },
-  {
-   "id": "ev-eu-omnibus-adopted",
-   "type": "policy",
-   "layer": "policy",
-   "label": "Council approves AI digital omnibus, delaying high-risk deadlines",
-   "date": "2026-06-29",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "Council of the EU",
-   "jurisdiction": "EU",
-   "description": "Annex III high-risk duties move to December 2, 2027 and Annex I to August 2, 2028; adds explicit deepfake ban. This site has not confirmed the entry-into-force date.",
-   "source_url": "https://www.cuatrecasas.com/en/global/intellectual-property/art/council-eu-approves-digital-omnibus-ai",
-   "degree": 2
-  },
-  {
-   "id": "ev-senate-strikes-moratorium",
-   "type": "policy",
-   "layer": "policy",
-   "label": "Senate votes 99-1 to strike state AI law moratorium",
-   "date": "2025-07-01",
-   "lane": "government",
-   "kind": "milestone",
-   "actor": "US Senate",
-   "jurisdiction": "US federal",
-   "description": "Proposed moratorium on state AI laws was removed from the budget reconciliation bill before passage.",
-   "source_url": "https://www.ncsl.org/press-room/details/partnership-not-preemption-state-legislators-stand-against-federal-ai-overreach",
-   "degree": 0
-  },
-  {
-   "id": "ev-us-ai-action-plan",
-   "type": "policy",
-   "layer": "policy",
-   "label": "White House releases America's AI Action Plan",
-   "date": "2025-07-23",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "White House",
-   "jurisdiction": "US federal",
-   "description": "Over 90 nonbinding federal actions on innovation, infrastructure and diplomacy, plus executive orders including faster permitting for data centers.",
-   "source_url": "https://www.whitehouse.gov/releases/2025/07/white-house-unveils-americas-ai-action-plan",
-   "degree": 1
-  },
-  {
-   "id": "ev-openai-newsom-letter",
-   "type": "response",
-   "layer": "policy",
-   "label": "OpenAI urges Newsom to harmonize California AI rules",
-   "date": "2025-08-11",
-   "lane": "labs",
-   "kind": "response",
-   "actor": "OpenAI (Chris Lehane)",
-   "jurisdiction": "California",
-   "description": "Letter asked California to treat compliance with federal or EU frameworks, such as the EU code, as satisfying state AI safety rules.",
-   "source_url": "https://openai.com/global-affairs/letter-to-governor-newsom-on-harmonized-regulation",
+   "actor": "Ceres",
+   "jurisdiction": "Global",
+   "description": "Ceres assessed the 72 focus companies against the Corporate Expectations; 94 investors with more than $17 trillion were then committed to engage them.",
+   "source_url": "https://www.ceres.org/resources/news/companies-are-making-progress-on-water-management-but-new-report-calls-for-greater-action-to-ensure-sustainable-water-supplies",
    "degree": 3
-  },
-  {
-   "id": "ev-colorado-ai-delay",
-   "type": "policy",
-   "layer": "policy",
-   "label": "Colorado delays AI Act to June 30, 2026",
-   "date": "2025-08-28",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "Colorado Governor Jared Polis",
-   "jurisdiction": "Colorado",
-   "description": "Special-session bill SB 25B-004 moved the effective date from February 1, 2026. The 2026 session then repealed and replaced the act with SB 26-189 (see next event).",
-   "source_url": "https://www.akingump.com/en/insights/ai-law-and-regulation-tracker/colorado-postpones-implementation-of-colorado-ai-act-sb-24-205",
-   "degree": 2
-  },
-  {
-   "id": "ev-colorado-sb26-189",
-   "type": "policy",
-   "layer": "policy",
-   "label": "Colorado repeals and replaces its AI Act with SB 26-189",
-   "date": "2026-05-14",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "Colorado Governor Jared Polis",
-   "jurisdiction": "Colorado",
-   "description": "SB 26-189 repeals and reenacts SB 24-205 as a law on automated decision-making technology used in consequential decisions (jobs, education, housing, lending, insurance, health care, government services). It drops the impact assessment duty, keeps consumer notices, explanations and human review, and takes effect January 1, 2027. The Attorney General enforces it; there is no private right of action.",
-   "source_url": "https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189",
-   "degree": 1
-  },
-  {
-   "id": "ev-anthropic-endorses-sb53",
-   "type": "response",
-   "layer": "policy",
-   "label": "Anthropic endorses California SB 53",
-   "date": "2025-09-08",
-   "lane": "labs",
-   "kind": "response",
-   "actor": "Anthropic",
-   "jurisdiction": "California",
-   "description": "Anthropic backed the frontier AI transparency bill, while major tech groups lobbied against it.",
-   "source_url": "https://anthropic.com/news/anthropic-is-endorsing-sb-53",
-   "degree": 2
-  },
-  {
-   "id": "ev-ca-sb53-signed",
-   "type": "policy",
-   "layer": "policy",
-   "label": "Newsom signs SB 53, Transparency in Frontier AI Act",
-   "date": "2025-09-29",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "California Governor Gavin Newsom",
-   "jurisdiction": "California",
-   "description": "Large frontier developers must publish safety frameworks and transparency reports and report critical safety incidents; whistleblower protections; AG enforces penalties.",
-   "source_url": "https://www.gov.ca.gov/2025/09/29/governor-newsom-signs-sb-53-advancing-californias-world-leading-artificial-intelligence-industry/",
-   "degree": 3
-  },
-  {
-   "id": "ev-us-eo-14365",
-   "type": "policy",
-   "layer": "policy",
-   "label": "Executive order seeks national AI framework preempting state laws",
-   "date": "2025-12-11",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "President Trump",
-   "jurisdiction": "US federal",
-   "description": "EO 14365 creates a DOJ AI Litigation Task Force, ties some state funding to AI laws, and asks for a preemptive federal framework.",
-   "source_url": "https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence/",
-   "degree": 2
-  },
-  {
-   "id": "ev-ny-raise-signed",
-   "type": "policy",
-   "layer": "policy",
-   "label": "Hochul signs New York RAISE Act for frontier AI",
-   "date": "2025-12-19",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "New York Governor Kathy Hochul",
-   "jurisdiction": "New York",
-   "description": "Requires large frontier developers to publish safety frameworks and report incidents within 72 hours; signed on condition of 2026 chapter amendments.",
-   "source_url": "https://www.governor.ny.gov/news/governor-hochul-signs-nation-leading-legislation-require-ai-frameworks-ai-frontier-models",
-   "degree": 1
-  },
-  {
-   "id": "ev-ny-raise-amended",
-   "type": "policy",
-   "layer": "policy",
-   "label": "New York amends RAISE Act to mirror California SB 53",
-   "date": "2026-03-27",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "New York Legislature; Governor Hochul",
-   "jurisdiction": "New York",
-   "description": "Chapter amendment adopts SB 53's $500 million revenue threshold and cuts penalties to $1 million and $3 million. Effective January 1, 2027 (per law firm).",
-   "source_url": "https://www.mofo.com/resources/insights/260403-new-york-amends-the-raise-act-to-align-more-closely",
-   "degree": 2
-  },
-  {
-   "id": "ev-great-american-ai-act",
-   "type": "policy",
-   "layer": "policy",
-   "label": "Great American AI Act discussion draft would preempt state AI model laws",
-   "date": "2026-06-04",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "Reps. Jay Obernolte and Lori Trahan",
-   "jurisdiction": "US federal",
-   "description": "A bipartisan House discussion draft, not yet introduced, would bar state laws specifically regulating AI model development for three years and add federal frontier-model duties similar to California SB 53 and New York's RAISE Act.",
-   "source_url": "https://fpf.org/blog/frontier-ai-goes-federal-how-the-great-american-ai-act-compares-to-state-laws/",
-   "degree": 0
-  },
-  {
-   "id": "ev-utah-hb76",
-   "type": "policy",
-   "layer": "policy",
-   "label": "Utah data center water reporting law takes effect",
-   "date": "2026-07-01",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "Utah Legislature",
-   "jurisdiction": "Utah",
-   "description": "HB 76 requires large data centers drawing 75 acre feet or more a year to notify the state and file annual water use reports.",
-   "source_url": "https://le.utah.gov/Session/2026/bills/enrolled/HB0076.pdf",
-   "degree": 0
-  },
-  {
-   "id": "ev-ca-ab2619",
-   "type": "policy",
-   "layer": "policy",
-   "label": "California requires data centers to report annual water use",
-   "date": "2026-09-21",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "California Governor Gavin Newsom",
-   "jurisdiction": "California",
-   "description": "AB 2619 ties water reporting to business licenses; AB 2469 requires water supply assessments for new data centers. Signing date per law firm.",
-   "source_url": "https://www.hklaw.com/en/insights/publications/2026/10/californias-2026-data-center-laws-what-you-need-to-know",
-   "degree": 0
   },
   {
    "id": "ev-arjuna-msft-vote-2023",
@@ -6517,18 +6087,116 @@
    "degree": 2
   },
   {
-   "id": "ev-parnassus-intuit-engagement",
+   "id": "ev-eu-ai-act-in-force",
+   "type": "policy",
+   "layer": "policy",
+   "label": "EU AI Act enters into force",
+   "date": "2024-08-01",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "European Commission",
+   "jurisdiction": "EU",
+   "description": "Risk-based AI regulation takes effect, with general-purpose AI provisions applying 12 months later and most high-risk rules later still.",
+   "source_url": "https://commission.europa.eu/news/ai-act-enters-force-2024-08-01_en",
+   "degree": 2
+  },
+  {
+   "id": "ev-sec-slb-14m",
+   "type": "policy",
+   "layer": "policy",
+   "label": "SEC staff issues SLB 14M, rescinding SLB 14L",
+   "date": "2025-02-12",
+   "lane": "government",
+   "kind": "rule",
+   "actor": "SEC Division of Corporation Finance",
+   "jurisdiction": "US federal",
+   "description": "Staff guidance restored the pre-2021 approach to the ordinary business and economic relevance exclusions, giving companies more room to exclude proposals, including on AI.",
+   "source_url": "https://www.sec.gov/about/shareholder-proposals-staff-legal-bulletin-no-14m-cf",
+   "degree": 1
+  },
+  {
+   "id": "ev-crenshaw-dissent-14m",
+   "type": "policy",
+   "layer": "policy",
+   "label": "Commissioner Crenshaw criticizes SLB 14M",
+   "date": "2025-02-12",
+   "lane": "government",
+   "kind": "response",
+   "actor": "SEC Commissioner Caroline Crenshaw",
+   "jurisdiction": "US federal",
+   "description": "Dissenting statement said the bulletin changes the rules for excluding shareholder proposals mid-season.",
+   "source_url": "https://www.sec.gov/newsroom/speeches-statements/crenshaw-statement-staff-legal-bulletin-14m-021225",
+   "degree": 1
+  },
+  {
+   "id": "ev-delaware-sb21",
+   "type": "policy",
+   "layer": "policy",
+   "label": "Delaware enacts SB 21 amending DGCL sections 144 and 220",
+   "date": "2025-03-25",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "Delaware Governor Matt Meyer",
+   "jurisdiction": "Delaware",
+   "description": "Narrowed controlling-stockholder liability and books-and-records rights, responding to Chancery rulings like the Tesla pay case and to companies leaving Delaware.",
+   "source_url": "https://corpgov.law.harvard.edu/2025/04/06/delaware-revamps-its-general-corporation-law-will-it-stop-companies-from-leaving",
+   "degree": 2
+  },
+  {
+   "id": "ev-reincorporation-trend",
    "type": "response",
    "layer": "policy",
-   "label": "Parnassus begins AI governance engagement with Intuit",
-   "date": "2023-01-01",
-   "lane": "investors",
-   "kind": "campaign",
-   "actor": "Parnassus Investments",
-   "jurisdiction": "US federal",
-   "description": "Private engagement on AI policies, governance, staffing and resourcing. No filed proposal found. Start date is year only.",
-   "source_url": "https://www.parnassus.com/updates/article/the_new_imperative_of_responsible_ai",
+   "label": "Companies reincorporate from Delaware to Nevada and Texas",
+   "date": "2025-04-06",
+   "lane": "companies",
+   "kind": "milestone",
+   "actor": "Tesla, SpaceX, Tripadvisor, Dropbox and others",
+   "jurisdiction": "Nevada; Texas",
+   "description": "Memo lists firms moving to Nevada and Texas after Chancery rulings. Later reports say the pace did not slow after SB 21 (this site has not confirmed the share figures).",
+   "source_url": "https://corpgov.law.harvard.edu/2025/04/06/delaware-revamps-its-general-corporation-law-will-it-stop-companies-from-leaving",
    "degree": 2
+  },
+  {
+   "id": "ev-texas-sb29",
+   "type": "policy",
+   "layer": "policy",
+   "label": "Texas SB 29 codifies business judgment rule",
+   "date": "2025-05-14",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "Texas Governor Greg Abbott",
+   "jurisdiction": "Texas",
+   "description": "Effective on signing; protects listed Texas companies' directors, lets companies set ownership thresholds for derivative suits, and aims to attract incorporations.",
+   "source_url": "https://gov.texas.gov/news/post/governor-abbott-signs-pro-growth-business-legislation-into-law",
+   "degree": 1
+  },
+  {
+   "id": "ev-texas-sb1057",
+   "type": "policy",
+   "layer": "policy",
+   "label": "Texas SB 1057 raises shareholder proposal thresholds",
+   "date": "2025-05-19",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "Texas Legislature; Governor Abbott",
+   "jurisdiction": "Texas",
+   "description": "Opt-in law lets companies require $1 million or 3% ownership, six-month holding, and solicitation of 67% of voting power. Effective September 1, 2025.",
+   "source_url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB01057F.htm",
+   "degree": 1
+  },
+  {
+   "id": "ev-msft-rai-report-2025",
+   "type": "response",
+   "layer": "policy",
+   "label": "Microsoft releases 2025 Responsible AI Transparency Report",
+   "date": "2025-06-20",
+   "lane": "companies",
+   "kind": "disclosure",
+   "actor": "Microsoft",
+   "jurisdiction": "US federal",
+   "description": "Second annual report on Microsoft's responsible AI practices and customer support.",
+   "source_url": "https://blogs.microsoft.com/on-the-issues/2025/06/20/our-2025-responsible-ai-transparency-report/",
+   "degree": 1
   },
   {
    "id": "ev-intuit-ai-disclosure",
@@ -6545,17 +6213,297 @@
    "degree": 2
   },
   {
-   "id": "ev-msft-rai-report-2025",
+   "id": "ev-senate-strikes-moratorium",
+   "type": "policy",
+   "layer": "policy",
+   "label": "Senate votes 99-1 to strike state AI law moratorium",
+   "date": "2025-07-01",
+   "lane": "government",
+   "kind": "milestone",
+   "actor": "US Senate",
+   "jurisdiction": "US federal",
+   "description": "Proposed moratorium on state AI laws was removed from the budget reconciliation bill before passage.",
+   "source_url": "https://www.ncsl.org/press-room/details/partnership-not-preemption-state-legislators-stand-against-federal-ai-overreach",
+   "degree": 0
+  },
+  {
+   "id": "ev-eu-gpai-code",
+   "type": "policy",
+   "layer": "policy",
+   "label": "EU publishes General-Purpose AI Code of Practice",
+   "date": "2025-07-10",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "European Commission AI Office",
+   "jurisdiction": "EU",
+   "description": "Voluntary code with transparency, copyright, and safety and security chapters, offered as a way for model providers to show AI Act compliance.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/gpai-code-practice",
+   "degree": 8
+  },
+  {
+   "id": "ev-openai-eu-code",
    "type": "response",
    "layer": "policy",
-   "label": "Microsoft releases 2025 Responsible AI Transparency Report",
-   "date": "2025-06-20",
-   "lane": "companies",
-   "kind": "disclosure",
-   "actor": "Microsoft",
+   "label": "OpenAI says it intends to sign EU AI code",
+   "date": "2025-07-11",
+   "lane": "labs",
+   "kind": "response",
+   "actor": "OpenAI",
+   "jurisdiction": "EU",
+   "description": "OpenAI said it would sign the GPAI Code of Practice, subject to formal approval by the AI Board.",
+   "source_url": "https://openai.com/global-affairs/eu-code-of-practice/",
+   "degree": 2
+  },
+  {
+   "id": "ev-meta-declines-eu-code",
+   "type": "response",
+   "layer": "policy",
+   "label": "Meta refuses to sign EU AI code",
+   "date": "2025-07-18",
+   "lane": "labs",
+   "kind": "response",
+   "actor": "Meta",
+   "jurisdiction": "EU",
+   "description": "Joel Kaplan said the code creates legal uncertainty and goes beyond the AI Act. Meta remained absent from the signatory list in 2026.",
+   "source_url": "https://www.euronews.com/2025/07/18/meta-rebuffs-eus-ai-code-of-practice",
+   "degree": 2
+  },
+  {
+   "id": "ev-anthropic-eu-code",
+   "type": "response",
+   "layer": "policy",
+   "label": "Anthropic announces it will sign EU AI code",
+   "date": "2025-07-21",
+   "lane": "labs",
+   "kind": "response",
+   "actor": "Anthropic",
+   "jurisdiction": "EU",
+   "description": "After review, Anthropic said it intends to sign the General-Purpose AI Code of Practice.",
+   "source_url": "https://www.anthropic.com/news/eu-code-practice",
+   "degree": 2
+  },
+  {
+   "id": "ev-us-ai-action-plan",
+   "type": "policy",
+   "layer": "policy",
+   "label": "White House releases America's AI Action Plan",
+   "date": "2025-07-23",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "White House",
    "jurisdiction": "US federal",
-   "description": "Second annual report on Microsoft's responsible AI practices and customer support.",
-   "source_url": "https://blogs.microsoft.com/on-the-issues/2025/06/20/our-2025-responsible-ai-transparency-report/",
+   "description": "Over 90 nonbinding federal actions on innovation, infrastructure and diplomacy, plus executive orders including faster permitting for data centers.",
+   "source_url": "https://www.whitehouse.gov/releases/2025/07/white-house-unveils-americas-ai-action-plan",
+   "degree": 1
+  },
+  {
+   "id": "ev-google-eu-code",
+   "type": "response",
+   "layer": "policy",
+   "label": "Google says it will sign EU AI code",
+   "date": "2025-07-30",
+   "lane": "labs",
+   "kind": "response",
+   "actor": "Google",
+   "jurisdiction": "EU",
+   "description": "Google committed to sign while voicing concerns that parts of the code and AI Act could slow innovation in Europe.",
+   "source_url": "https://blog.google/around-the-globe/google-europe/eu-ai-code-practice/",
+   "degree": 2
+  },
+  {
+   "id": "ev-microsoft-eu-code",
+   "type": "response",
+   "layer": "policy",
+   "label": "Microsoft confirms it will sign EU AI code",
+   "date": "2025-07-31",
+   "lane": "labs",
+   "kind": "response",
+   "actor": "Microsoft",
+   "jurisdiction": "EU",
+   "description": "Microsoft publicly shared its decision to become a signatory a day after Google, per trade press.",
+   "source_url": "https://www.ciodive.com/news/Google-european-union-AI-act-code-signatory/756343/",
+   "degree": 2
+  },
+  {
+   "id": "ev-xai-eu-code-safety",
+   "type": "response",
+   "layer": "policy",
+   "label": "xAI signs only safety chapter of EU AI code",
+   "date": "2025-08-01",
+   "lane": "labs",
+   "kind": "response",
+   "actor": "xAI",
+   "jurisdiction": "EU",
+   "description": "xAI joined the Safety and Security chapter only, calling the rest overreach, so it must show transparency and copyright compliance by other means.",
+   "source_url": "https://www.euronews.com/2025/08/01/some-26-tech-companies-sign-up-to-eu-commissions-ai-code",
+   "degree": 2
+  },
+  {
+   "id": "ev-eu-gpai-obligations",
+   "type": "policy",
+   "layer": "policy",
+   "label": "EU AI Act obligations for general-purpose models apply",
+   "date": "2025-08-02",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "European Commission",
+   "jurisdiction": "EU",
+   "description": "GPAI providers must meet transparency and copyright duties; models already on the market have until August 2, 2027.",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/news/eu-rules-general-purpose-ai-models-start-apply-bringing-more-transparency-safety-and-accountability",
+   "degree": 2
+  },
+  {
+   "id": "ev-openai-newsom-letter",
+   "type": "response",
+   "layer": "policy",
+   "label": "OpenAI urges Newsom to harmonize California AI rules",
+   "date": "2025-08-11",
+   "lane": "labs",
+   "kind": "response",
+   "actor": "OpenAI (Chris Lehane)",
+   "jurisdiction": "California",
+   "description": "Letter asked California to treat compliance with federal or EU frameworks, such as the EU code, as satisfying state AI safety rules.",
+   "source_url": "https://openai.com/global-affairs/letter-to-governor-newsom-on-harmonized-regulation",
+   "degree": 3
+  },
+  {
+   "id": "ev-colorado-ai-delay",
+   "type": "policy",
+   "layer": "policy",
+   "label": "Colorado delays AI Act to June 30, 2026",
+   "date": "2025-08-28",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "Colorado Governor Jared Polis",
+   "jurisdiction": "Colorado",
+   "description": "Special-session bill SB 25B-004 moved the effective date from February 1, 2026. The 2026 session then repealed and replaced the act with SB 26-189 (see next event).",
+   "source_url": "https://www.akingump.com/en/insights/ai-law-and-regulation-tracker/colorado-postpones-implementation-of-colorado-ai-act-sb-24-205",
+   "degree": 2
+  },
+  {
+   "id": "ev-exxon-retail-voting",
+   "type": "response",
+   "layer": "policy",
+   "label": "ExxonMobil launches first US retail standing voting program",
+   "date": "2025-09-01",
+   "lane": "companies",
+   "kind": "milestone",
+   "actor": "ExxonMobil",
+   "jurisdiction": "US federal",
+   "description": "After an SEC no-action letter in September 2025, Exxon let retail holders give standing voting instructions. The day shown is approximate.",
+   "source_url": "https://www.broadridge.com/insights/standing-voting-instructions-lessons-from-the-first-year-experiences-of-exxonmobil-and-bigbear-ai",
+   "degree": 0
+  },
+  {
+   "id": "ev-anthropic-endorses-sb53",
+   "type": "response",
+   "layer": "policy",
+   "label": "Anthropic endorses California SB 53",
+   "date": "2025-09-08",
+   "lane": "labs",
+   "kind": "response",
+   "actor": "Anthropic",
+   "jurisdiction": "California",
+   "description": "Anthropic backed the frontier AI transparency bill, while major tech groups lobbied against it.",
+   "source_url": "https://anthropic.com/news/anthropic-is-endorsing-sb-53",
+   "degree": 2
+  },
+  {
+   "id": "ev-ceres-drained-by-data",
+   "type": "response",
+   "layer": "policy",
+   "label": "Ceres report 'Drained by Data' on data center water stress",
+   "date": "2025-09-23",
+   "lane": "investors",
+   "kind": "milestone",
+   "actor": "Ceres",
+   "jurisdiction": "US (Phoenix, Arizona case study)",
+   "description": "Analysis with Cathay Financial Holdings and Bluerisk of data center water demand around Phoenix, covering cooling water and water used to generate their electricity, and the water-stress risk that can pose for companies.",
+   "source_url": "https://www.ceres.org/resources/news/water-impacts-from-data-centers-may-expose-companies-to-more-risk-than-acknowledged-a-new-analysis-shows",
+   "degree": 1
+  },
+  {
+   "id": "ev-ca-sb53-signed",
+   "type": "policy",
+   "layer": "policy",
+   "label": "Newsom signs SB 53, Transparency in Frontier AI Act",
+   "date": "2025-09-29",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "California Governor Gavin Newsom",
+   "jurisdiction": "California",
+   "description": "Large frontier developers must publish safety frameworks and transparency reports and report critical safety incidents; whistleblower protections; AG enforces penalties.",
+   "source_url": "https://www.gov.ca.gov/2025/09/29/governor-newsom-signs-sb-53-advancing-californias-world-leading-artificial-intelligence-industry/",
+   "degree": 3
+  },
+  {
+   "id": "ev-vwfi-benchmark-2025",
+   "type": "response",
+   "layer": "policy",
+   "label": "Second VWFI benchmark, with a high-tech industry analysis",
+   "date": "2025-10-29",
+   "lane": "investors",
+   "kind": "milestone",
+   "actor": "Ceres",
+   "jurisdiction": "Global",
+   "description": "Assessed 71 focus companies; the high-tech analysis covers Alphabet, Amazon, Apple, Microsoft and Sony and discusses data center and semiconductor water use. Tech industry average rose to 32.7 of 90 points from 23.7 in 2023.",
+   "source_url": "https://assets.ceres.org/files/vwfi-benchmark-tech-2025-(1).pdf",
+   "degree": 2
+  },
+  {
+   "id": "ev-sec-noaction-pause",
+   "type": "policy",
+   "layer": "policy",
+   "label": "SEC staff stops responding to most 14a-8 no-action requests",
+   "date": "2025-11-17",
+   "lane": "government",
+   "kind": "rule",
+   "actor": "SEC Division of Corporation Finance",
+   "jurisdiction": "US federal",
+   "description": "For the 2025-2026 season, staff said it would not respond to no-action requests except under Rule 14a-8(i)(1), citing post-shutdown resource limits. Companies still file notices.",
+   "source_url": "https://www.sec.gov/newsroom/speeches-statements/statement-regarding-division-corporation-finances-role-exchange-act-rule-14a-8-process-current-proxy-season",
+   "degree": 5
+  },
+  {
+   "id": "ev-eu-omnibus-proposal",
+   "type": "policy",
+   "layer": "policy",
+   "label": "Commission proposes digital omnibus delaying AI Act rules",
+   "date": "2025-11-19",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "European Commission",
+   "jurisdiction": "EU",
+   "description": "Proposal to push high-risk AI obligations back toward 2027 as part of a simplification package.",
+   "source_url": "https://www.euronews.com/2025/11/19/european-commission-delays-full-implementation-of-ai-act-to-2027",
+   "degree": 1
+  },
+  {
+   "id": "ev-us-eo-14365",
+   "type": "policy",
+   "layer": "policy",
+   "label": "Executive order seeks national AI framework preempting state laws",
+   "date": "2025-12-11",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "President Trump",
+   "jurisdiction": "US federal",
+   "description": "EO 14365 creates a DOJ AI Litigation Task Force, ties some state funding to AI laws, and asks for a preemptive federal framework.",
+   "source_url": "https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence/",
+   "degree": 2
+  },
+  {
+   "id": "ev-ny-raise-signed",
+   "type": "policy",
+   "layer": "policy",
+   "label": "Hochul signs New York RAISE Act for frontier AI",
+   "date": "2025-12-19",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "New York Governor Kathy Hochul",
+   "jurisdiction": "New York",
+   "description": "Requires large frontier developers to publish safety frameworks and report incidents within 72 hours; signed on condition of 2026 chapter amendments.",
+   "source_url": "https://www.governor.ny.gov/news/governor-hochul-signs-nation-leading-legislation-require-ai-frameworks-ai-frontier-models",
    "degree": 1
   },
   {
@@ -6573,6 +6521,90 @@
    "degree": 1
   },
   {
+   "id": "ev-iigcc-ai-data-centres-insight",
+   "type": "response",
+   "layer": "policy",
+   "label": "IIGCC publishes research on AI data centre climate and nature risks",
+   "date": "2026-02-05",
+   "lane": "investors",
+   "kind": "milestone",
+   "actor": "IIGCC",
+   "jurisdiction": "Europe / Global",
+   "description": "Insight covering data centre emissions, water use for cooling and physical risk; IIGCC said it plans guidance, insights and engagement tools on data centre operations, developed with members.",
+   "source_url": "https://www.iigcc.org/insights/ai-data-centres-climate-and-nature-risks-for-investors",
+   "degree": 1
+  },
+  {
+   "id": "ev-proponent-lawsuits-2026",
+   "type": "response",
+   "layer": "policy",
+   "label": "Proponents sue companies that excluded proposals without SEC review",
+   "date": "2026-03-01",
+   "lane": "investors",
+   "kind": "response",
+   "actor": "Shareholder proponents",
+   "jurisdiction": "US federal",
+   "description": "Law firm reports litigation against companies rose after the revised 14a-8 process; Skadden later counted six proponents suing six companies. Date is month of memo.",
+   "source_url": "https://www.jonesday.com/es/insights/2026/03/shareholder-proposal-litigation-increases-following-the-secs-revised-rule-14a8-process",
+   "degree": 1
+  },
+  {
+   "id": "ev-iccr-ays-lawsuit",
+   "type": "response",
+   "layer": "policy",
+   "label": "ICCR and As You Sow sue SEC over no-action pause",
+   "date": "2026-03-19",
+   "lane": "investors",
+   "kind": "response",
+   "actor": "ICCR; As You Sow",
+   "jurisdiction": "US federal",
+   "description": "Suit in D.C. federal court argues the SEC changed how Rule 14a-8 works without notice-and-comment rulemaking under the APA. Pending as of latest reports.",
+   "source_url": "https://news.ballotpedia.org/2026/03/30/advocacy-groups-sue-sec-over-proxy-policy-shift-2/",
+   "degree": 2
+  },
+  {
+   "id": "ev-ny-raise-amended",
+   "type": "policy",
+   "layer": "policy",
+   "label": "New York amends RAISE Act to mirror California SB 53",
+   "date": "2026-03-27",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "New York Legislature; Governor Hochul",
+   "jurisdiction": "New York",
+   "description": "Chapter amendment adopts SB 53's $500 million revenue threshold and cuts penalties to $1 million and $3 million. Effective January 1, 2027 (per law firm).",
+   "source_url": "https://www.mofo.com/resources/insights/260403-new-york-amends-the-raise-act-to-align-more-closely",
+   "degree": 2
+  },
+  {
+   "id": "ev-blackrock-voting-choice-2026",
+   "type": "response",
+   "layer": "policy",
+   "label": "BlackRock Voting Choice covers about $851 billion",
+   "date": "2026-03-31",
+   "lane": "investors",
+   "kind": "milestone",
+   "actor": "BlackRock",
+   "jurisdiction": "US federal",
+   "description": "Index equity clients with about $851 billion in assets were using Voting Choice; eligible assets with individual investors reach about $3.96 trillion.",
+   "source_url": "https://www.blackrock.com/corporate/about-us/investment-stewardship/blackrock-voting-choice",
+   "degree": 1
+  },
+  {
+   "id": "ev-colorado-sb26-189",
+   "type": "policy",
+   "layer": "policy",
+   "label": "Colorado repeals and replaces its AI Act with SB 26-189",
+   "date": "2026-05-14",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "Colorado Governor Jared Polis",
+   "jurisdiction": "Colorado",
+   "description": "SB 26-189 repeals and reenacts SB 24-205 as a law on automated decision-making technology used in consequential decisions (jobs, education, housing, lending, insurance, health care, government services). It drops the impact assessment duty, keeps consumer notices, explanations and human review, and takes effect January 1, 2027. The Attorney General enforces it; there is no private right of action.",
+   "source_url": "https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189",
+   "degree": 1
+  },
+  {
    "id": "ev-amazon-datacenter-vote-2026",
    "type": "response",
    "layer": "policy",
@@ -6585,6 +6617,20 @@
    "description": "Proposal on AI data center energy demand drew less support than a similar 2025 measure (20.1%). Date is report date.",
    "source_url": "https://www.insurancejournal.com/news/national/2026/05/22/871049.htm",
    "degree": 1
+  },
+  {
+   "id": "ev-great-american-ai-act",
+   "type": "policy",
+   "layer": "policy",
+   "label": "Great American AI Act discussion draft would preempt state AI model laws",
+   "date": "2026-06-04",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "Reps. Jay Obernolte and Lori Trahan",
+   "jurisdiction": "US federal",
+   "description": "A bipartisan House discussion draft, not yet introduced, would bar state laws specifically regulating AI model development for three years and add federal frontier-model duties similar to California SB 53 and New York's RAISE Act.",
+   "source_url": "https://fpf.org/blog/frontier-ai-goes-federal-how-the-great-american-ai-act-compares-to-state-laws/",
+   "degree": 0
   },
   {
    "id": "ev-msft-water-update",
@@ -6601,6 +6647,34 @@
    "degree": 1
   },
   {
+   "id": "ev-eu-omnibus-adopted",
+   "type": "policy",
+   "layer": "policy",
+   "label": "Council approves AI digital omnibus, delaying high-risk deadlines",
+   "date": "2026-06-29",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "Council of the EU",
+   "jurisdiction": "EU",
+   "description": "Annex III high-risk duties move to December 2, 2027 and Annex I to August 2, 2028; adds explicit deepfake ban. This site has not confirmed the entry-into-force date.",
+   "source_url": "https://www.cuatrecasas.com/en/global/intellectual-property/art/council-eu-approves-digital-omnibus-ai",
+   "degree": 2
+  },
+  {
+   "id": "ev-utah-hb76",
+   "type": "policy",
+   "layer": "policy",
+   "label": "Utah data center water reporting law takes effect",
+   "date": "2026-07-01",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "Utah Legislature",
+   "jurisdiction": "Utah",
+   "description": "HB 76 requires large data centers drawing 75 acre feet or more a year to notify the state and file annual water use reports.",
+   "source_url": "https://le.utah.gov/Session/2026/bills/enrolled/HB0076.pdf",
+   "degree": 0
+  },
+  {
    "id": "ev-bigtech-ai-support-2026",
    "type": "response",
    "layer": "policy",
@@ -6615,6 +6689,146 @@
    "degree": 0
   },
   {
+   "id": "ev-exclusions-2026-season",
+   "type": "response",
+   "layer": "policy",
+   "label": "About 135 companies excluded roughly 165 proposals in 2026",
+   "date": "2026-07-23",
+   "lane": "companies",
+   "kind": "milestone",
+   "actor": "Skadden (law firm review)",
+   "jurisdiction": "US federal",
+   "description": "Post-season memo: about 45% of excluded proposals came from one individual filer; Glass Lewis found companies excluded fewer proposals than feared without staff relief.",
+   "source_url": "https://corpgov.law.harvard.edu/2026/07/23/the-2026-shareholder-proposal-exclusion-experience-and-takeaways-for-the-2027-season/",
+   "degree": 1
+  },
+  {
+   "id": "ev-sec-aug14-statement",
+   "type": "policy",
+   "layer": "policy",
+   "label": "SEC staff ends all Rule 14a-8 no-action responses",
+   "date": "2026-08-14",
+   "lane": "government",
+   "kind": "rule",
+   "actor": "SEC Division of Corporation Finance",
+   "jurisdiction": "US federal",
+   "description": "Staff stopped responding to all no-action requests, including (i)(1), until further notice. Companies must still submit 14a-8(j) notices through an online form.",
+   "source_url": "https://sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426",
+   "degree": 1
+  },
+  {
+   "id": "ev-ceres-water-behind-the-watts",
+   "type": "response",
+   "layer": "policy",
+   "label": "Ceres report 'Water Behind the Watts' on water used to power data centers",
+   "date": "2026-08-24",
+   "lane": "investors",
+   "kind": "milestone",
+   "actor": "Ceres",
+   "jurisdiction": "US (VA, TX, CA, IL, GA, OH, AZ)",
+   "description": "Finds data centers in seven states depend on about 3.4 trillion gallons of freshwater a year for their electricity; asks investors to seek fuller water disclosure from data center companies and power producers.",
+   "source_url": "https://www.ceres.org/resources/news/new-ceres-report-spotlights-data-centers-biggest-and-least-visible-water-use-the-power-that-runs-them",
+   "degree": 1
+  },
+  {
+   "id": "ev-sec-oira-submission",
+   "type": "policy",
+   "layer": "policy",
+   "label": "SEC sends 14a-8 rescission rule for interagency review",
+   "date": "2026-08-28",
+   "lane": "government",
+   "kind": "milestone",
+   "actor": "SEC",
+   "jurisdiction": "US federal",
+   "description": "Ballotpedia reports the proposed rescission was submitted for interagency review and listed as economically significant on the regulatory agenda.",
+   "source_url": "https://news.ballotpedia.org/2026/08/24/sec-makes-shareholder-proposal-no-action-pause-permanent-2/",
+   "degree": 1
+  },
+  {
+   "id": "ev-dfking-2026-season",
+   "type": "response",
+   "layer": "policy",
+   "label": "Shareholder proposal submissions fall nearly 25% in 2026",
+   "date": "2026-08-31",
+   "lane": "investors",
+   "kind": "milestone",
+   "actor": "D.F. King",
+   "jurisdiction": "US federal",
+   "description": "D.F. King reports 2026 shareholder proposal submissions were down nearly 25% from 2025, the lowest level in a decade.",
+   "source_url": "https://corpgov.law.harvard.edu/2026/08/31/2026-proxy-season-shareholder-proposals/",
+   "degree": 1
+  },
+  {
+   "id": "ev-sec-14a8-rescission-proposal",
+   "type": "policy",
+   "layer": "policy",
+   "label": "SEC proposes rescinding Rule 14a-8 and amending Rule 14a-4",
+   "date": "2026-09-16",
+   "lane": "government",
+   "kind": "rule",
+   "actor": "SEC",
+   "jurisdiction": "US federal",
+   "description": "Release 34-106383, File S7-2026-32, would end the federal shareholder proposal rule and leave proposals to state law and company governing documents. 60-day comment period.",
+   "source_url": "https://www.sec.gov/rules/proposed/2026/34-106383.pdf",
+   "degree": 5
+  },
+  {
+   "id": "ev-cii-statement-rescission",
+   "type": "response",
+   "layer": "policy",
+   "label": "CII calls rescission a solution in search of a problem",
+   "date": "2026-09-16",
+   "lane": "investors",
+   "kind": "response",
+   "actor": "Council of Institutional Investors",
+   "jurisdiction": "US federal",
+   "description": "CII executive director Glenn Davis publicly opposed the proposal on release day, per a law firm summary. ICCR warned of losing an early warning system.",
+   "source_url": "https://www.cohenmilstein.com/the-end-of-the-federal-shareholder-proposal-rule-the-secs-effort-to-rescind-rule-14a-8/",
+   "degree": 2
+  },
+  {
+   "id": "ev-ca-ab2619",
+   "type": "policy",
+   "layer": "policy",
+   "label": "California requires data centers to report annual water use",
+   "date": "2026-09-21",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "California Governor Gavin Newsom",
+   "jurisdiction": "California",
+   "description": "AB 2619 ties water reporting to business licenses; AB 2469 requires water supply assessments for new data centers. Signing date per law firm.",
+   "source_url": "https://www.hklaw.com/en/insights/publications/2026/10/californias-2026-data-center-laws-what-you-need-to-know",
+   "degree": 0
+  },
+  {
+   "id": "ev-ny-comptrollers-statement",
+   "type": "response",
+   "layer": "policy",
+   "label": "NY State and NYC comptrollers oppose 14a-8 rescission",
+   "date": "2026-09-24",
+   "lane": "investors",
+   "kind": "response",
+   "actor": "NYS Comptroller DiNapoli; NYC Comptroller Levine",
+   "jurisdiction": "US federal",
+   "description": "Joint statement opposed the proposal, urged companies to keep supporting shareholder proposals, and predicted lengthy legal challenges. A statement, not a docket letter.",
+   "source_url": "https://www.osc.ny.gov/press/releases/2026/09/nys-comptroller-dinapoli-and-nyc-comptroller-levine-statement-secs-plan-silence-shareholders-public",
+   "degree": 2
+  },
+  {
+   "id": "ev-vanguard-investor-choice-2026",
+   "type": "public",
+   "layer": "public",
+   "label": "Vanguard Investor Choice passes half a million participants",
+   "date": "2026-09-29",
+   "lane": "public",
+   "kind": "milestone",
+   "actor": "Vanguard",
+   "jurisdiction": "US federal",
+   "description": "Pass-through voting participation grew more than sixfold; no single voting policy got over 38% of selections.",
+   "source_url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/who-we-are/pressroom/press-release-vanguard-investor-choice-participation-grows-more-than-sixfold-surpassing-half-a-million-investors-092926.html",
+   "degree": 1
+  },
+  {
    "id": "ev-iss-ai-proposals-2026",
    "type": "response",
    "layer": "policy",
@@ -6627,6 +6841,34 @@
    "description": "AI-related shareholder proposals at US companies grew over five years to 29 in 2026, while environmental and social proposals fell more than 60%. Average support for AI proposals fell to 10.3%.",
    "source_url": "https://corpgov.law.harvard.edu/2026/10/06/governing-ai-corporate-oversight-and-shareholder-engagement/",
    "degree": 0
+  },
+  {
+   "id": "ev-iigcc-bondholder-data-centres",
+   "type": "response",
+   "layer": "policy",
+   "label": "IIGCC research on bondholder stewardship of data centre financing",
+   "date": "2026-10-27",
+   "lane": "investors",
+   "kind": "milestone",
+   "actor": "IIGCC",
+   "jurisdiction": "Europe / Global",
+   "description": "Notes hyperscaler (Alphabet, Amazon, Meta, Microsoft, Oracle) bond issuance and sets out water and resilience questions bondholders can raise; mentions a forthcoming IIGCC data centre playbook.",
+   "source_url": "https://www.iigcc.org/insights/financing-ai-what-the-data-centre-boom-means-for-bondholder-stewardship",
+   "degree": 1
+  },
+  {
+   "id": "ev-s7-2026-32-comment-count",
+   "type": "public",
+   "layer": "public",
+   "label": "Rescission docket reaches 394 public comments",
+   "date": "2026-11-25",
+   "lane": "public",
+   "kind": "milestone",
+   "actor": "Public commenters",
+   "jurisdiction": "US federal",
+   "description": "The docket for the proposal to rescind Rule 14a-8 shows 394 entries when comments closed. Letters on file include TIAA and Nuveen, L&G Asset Management, Wespath, the Washington State Investment Board, the Investment Adviser Association, the AJL Foundation with Oxfam America, the State Financial Officers Foundation and a staff memo of a meeting with CII. This site has not reviewed each letter's position.",
+   "source_url": "https://www.sec.gov/rules-regulations/public-comments/s7-2026-32",
+   "degree": 1
   },
   {
    "id": "googl-2025-7",
@@ -8446,7 +8688,8 @@
    "target": "googl-2023-targeted-ads-hr",
    "type": "lead filer",
    "layer": "proposals",
-   "source_url": "https://collaborate.unpri.org/group/15876/home"
+   "source_url": "https://collaborate.unpri.org/group/15876/home",
+   "note": "SHARE filed on behalf of the plan"
   },
   {
    "source": "commonspirit",
@@ -8572,7 +8815,8 @@
    "target": "googl-2024-ai-targeted-ads-hr",
    "type": "lead filer",
    "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.pdf",
+   "note": "SHARE filed on behalf of the plan"
   },
   {
    "source": "commonspirit",
@@ -8656,7 +8900,8 @@
    "target": "googl-2025-ai-targeted-ads-hr",
    "type": "lead filer",
    "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog_courtesy-pdf.pdf"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog_courtesy-pdf.pdf",
+   "note": "SHARE filed on behalf of the plan"
   },
   {
    "source": "akademikerpension",
@@ -8789,7 +9034,8 @@
    "target": "googl-2026-ai-board-oversight",
    "type": "lead filer",
    "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog2025_courtesy-pdf.pdf",
+   "note": "SHARE filed on behalf of the plan"
   },
   {
    "source": "share",
@@ -9076,7 +9322,8 @@
    "target": "amzn-2023-customer-dd",
    "type": "lead filer",
    "layer": "proposals",
-   "source_url": "https://www.openmic.org/news/amazon-shareholder-proposals-highlight-the-seriousness-of-digital-rights-concerns"
+   "source_url": "https://www.openmic.org/news/amazon-shareholder-proposals-highlight-the-seriousness-of-digital-rights-concerns",
+   "note": "filing representative for ABHMS"
   },
   {
    "source": "abhms",
@@ -9139,7 +9386,8 @@
    "target": "amzn-2026-dc-climate",
    "type": "lead filer",
    "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
+   "note": "represented shareholder Brian Kariger"
   },
   {
    "source": "mercy",
@@ -9174,42 +9422,48 @@
    "target": "amzn-2026-responsible-ai-sales",
    "type": "exempt solicitation",
    "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "signatory of IASJ solicitation; co-filer status not confirmed"
   },
   {
    "source": "zevin",
    "target": "amzn-2026-responsible-ai-sales",
    "type": "exempt solicitation",
    "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "signatory of IASJ solicitation; co-filer status not confirmed"
   },
   {
    "source": "csjp",
    "target": "amzn-2026-responsible-ai-sales",
    "type": "exempt solicitation",
    "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "signatory of IASJ solicitation; co-filer status not confirmed"
   },
   {
    "source": "scl",
    "target": "amzn-2026-responsible-ai-sales",
    "type": "exempt solicitation",
    "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "signatory of IASJ solicitation; co-filer status not confirmed"
   },
   {
    "source": "omi-us",
    "target": "amzn-2026-responsible-ai-sales",
    "type": "exempt solicitation",
    "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "signatory of IASJ solicitation; co-filer status not confirmed"
   },
   {
    "source": "united-for-respect",
    "target": "amzn-2026-responsible-ai-sales",
    "type": "exempt solicitation",
    "layer": "proposals",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm",
+   "note": "signatory of IASJ solicitation; co-filer status not confirmed"
   },
   {
    "source": "united-for-respect",
@@ -9594,14 +9848,505 @@
    "target": "iccr",
    "type": "member of",
    "layer": "investors",
-   "source_url": "https://investorsforhumanrights.org/investor-actions-ict-engagement"
+   "source_url": "https://investorsforhumanrights.org/investor-actions-ict-engagement",
+   "note": "IAHR is an initiative of ICCR"
   },
   {
    "source": "aviva",
    "target": "iahr",
    "type": "member of",
    "layer": "investors",
-   "source_url": "https://investorsforhumanrights.org/sites/default/files/attachments/2023-02/List%20of%20signatories%20-%20AI%20Act%20Investor%20Statement%2002152023.pdf"
+   "source_url": "https://investorsforhumanrights.org/sites/default/files/attachments/2023-02/List%20of%20signatories%20-%20AI%20Act%20Investor%20Statement%2002152023.pdf",
+   "note": "signatory of IAHR EU AI Act investor statement 2023, not confirmed member"
+  },
+  {
+   "source": "adrian-dominican",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "as-you-sow",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "aviva",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "boston-common",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "calpers",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "calstrs",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "commonspirit",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "dana",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "dws",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "fidelity-intl",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "impax",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "jlens",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "mercy",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "nei",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "nyc-comptrollers-office",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "trillium",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "vancity",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "amundi",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "australiansuper",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "aberdeen-investments-formerly-abrdn",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "note": "Listed as Aberdeen Standard Investments",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "federated-hermes-eos",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "note": "Listed as Federated Hermes / Federated Hermes Limited",
+   "as_of": "2024-05"
+  },
+  {
+   "source": "calstrs",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://www.ceres.org/water/valuing-water-finance-initiative",
+   "as_of": "2026-11"
+  },
+  {
+   "source": "australiansuper",
+   "target": "vwfi",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://www.ceres.org/water/valuing-water-finance-initiative",
+   "as_of": "2026-11"
+  },
+  {
+   "source": "arjuna",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "trillium",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "boston-common",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "green-century",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "parnassus",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "mercy",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "calvert-research-and-management",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "impax",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "domini",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "nyc-comptrollers-office",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "calstrs",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "calpers",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "zevin",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "friends-fiduciary",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "nuveen-tiaa",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "blackrock",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "state-street",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "praxis-mutual-funds-everence-financial",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "pcusa",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "portico",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "miller-howard-investments",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "dana",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "as-you-sow",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "federated-hermes-eos",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "note": "Listed as Federated Hermes / Federated Hermes Limited",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "dws",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "nei",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "vancity",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "church-of-england-pensions-board-national-investing-bodies",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "ifm-investors",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "bnp-paribas-asset-management-incl-axa-im",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "note": "Listed as BNP Paribas Asset Management (April 2024, before the AXA IM acquisition)",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "afl-cio",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "new-york-state-common-retirement-fund",
+   "target": "ceres-investor-network",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
+   "note": "Listed as New York State Comptroller",
+   "as_of": "2024-04"
+  },
+  {
+   "source": "vwfi",
+   "target": "ceres",
+   "type": "member of",
+   "layer": "investors",
+   "source_url": "https://www.ceres.org/water/valuing-water-finance-initiative",
+   "note": "VWFI is an initiative of Ceres"
+  },
+  {
+   "source": "co-GOOGL",
+   "target": "vwfi",
+   "type": "focus company of",
+   "layer": "investors",
+   "source_url": "https://assets.ceres.org/files/vwfi-benchmark-tech-2025-(1).pdf",
+   "context": "On the VWFI focus list (high-tech); assessed in the 2023 and 2025 benchmarks. 2025 benchmark notes Google's target to replenish 120% of freshwater it consumes across offices and data centers by 2030 and its watershed risk framework for siting and cooling choices at data centers.",
+   "as_of": "2025-10"
+  },
+  {
+   "source": "co-AMZN",
+   "target": "vwfi",
+   "type": "focus company of",
+   "layer": "investors",
+   "source_url": "https://assets.ceres.org/files/vwfi-benchmark-tech-2025-(1).pdf",
+   "context": "On the VWFI focus list (high-tech); assessed in the 2023 and 2025 benchmarks. 2025 benchmark says Amazon again had the lowest relative overall score of the five tech companies, and describes its outside-air cooling and on-site water recycling at data centers.",
+   "as_of": "2025-10"
+  },
+  {
+   "source": "co-AAPL",
+   "target": "vwfi",
+   "type": "focus company of",
+   "layer": "investors",
+   "source_url": "https://assets.ceres.org/files/vwfi-benchmark-tech-2025-(1).pdf",
+   "context": "On the VWFI focus list (high-tech); assessed in the 2023 and 2025 benchmarks. 2025 benchmark says Apple is the only tech company with a supplier water target (50% average supplier water reuse by 2030) and aims to certify its own data centers to the Alliance for Water Stewardship Standard.",
+   "as_of": "2025-10"
+  },
+  {
+   "source": "co-MSFT",
+   "target": "vwfi",
+   "type": "focus company of",
+   "layer": "investors",
+   "source_url": "https://assets.ceres.org/files/vwfi-benchmark-tech-2025-(1).pdf",
+   "context": "On the VWFI focus list (high-tech); assessed in the 2023 and 2025 benchmarks. 2025 benchmark says Microsoft had the highest individual score among the five tech companies and cites its water-positive-by-2030 goal, 40% data center water use efficiency target and move to chip-level cooling so AI operations use zero water for cooling.",
+   "as_of": "2025-10"
   },
   {
    "source": "arjuna",
@@ -12669,6 +13414,20 @@
    "source_url": "https://www.responsibleinvestment.org/people/estelle-parker"
   },
   {
+   "source": "person-kirsten-james",
+   "target": "ceres",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.ceres.org/people/james"
+  },
+  {
+   "source": "person-shama-perveen",
+   "target": "ceres",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.ceres.org/people/perveen"
+  },
+  {
    "source": "person-marcela-pinilla",
    "target": "person-lydia-kuykendal",
    "type": "co-authored",
@@ -12928,18 +13687,67 @@
    "pct_of_portfolio": 0.9465
   },
   {
-   "source": "as-you-sow",
-   "target": "ev-iccr-ays-lawsuit",
+   "source": "ceres",
+   "target": "ev-vwfi-launch",
    "type": "acted in",
    "layer": "policy",
-   "source_url": "https://news.ballotpedia.org/2026/03/30/advocacy-groups-sue-sec-over-proxy-policy-shift-2/"
+   "source_url": "https://www.ceres.org/resources/news/ceres-launches-new-investor-led-effort-to-move-corporate-water-users-and-polluters-to-value-and-act-on-water-as-a-financial-risk"
   },
   {
-   "source": "nyc-comptrollers-office",
-   "target": "ev-ny-comptrollers-statement",
+   "source": "parnassus",
+   "target": "ev-parnassus-intuit-engagement",
    "type": "acted in",
    "layer": "policy",
-   "source_url": "https://www.osc.ny.gov/press/releases/2026/09/nys-comptroller-dinapoli-and-nyc-comptroller-levine-statement-secs-plan-silence-shareholders-public"
+   "source_url": "https://www.parnassus.com/updates/article/the_new_imperative_of_responsible_ai"
+  },
+  {
+   "source": "ceres",
+   "target": "ev-vwfi-benchmark-2023",
+   "type": "acted in",
+   "layer": "policy",
+   "source_url": "https://www.ceres.org/resources/news/companies-are-making-progress-on-water-management-but-new-report-calls-for-greater-action-to-ensure-sustainable-water-supplies"
+  },
+  {
+   "source": "arjuna",
+   "target": "ev-arjuna-msft-vote-2023",
+   "type": "acted in",
+   "layer": "policy",
+   "source_url": "https://www.businesswire.com/news/home/20231207496751/en/Arjuna-Capital-Microsoft-Investors-Weigh-in-on-Generative-Artificial-Intelligences-Mis--and-Disinformation-Problem"
+  },
+  {
+   "source": "co-AAPL",
+   "target": "ev-apple-aflcio-vote-2024",
+   "type": "acted in",
+   "layer": "policy",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124010155/ny20022580x1_8k.htm"
+  },
+  {
+   "source": "co-MSFT",
+   "target": "ev-msft-rai-report-2024",
+   "type": "acted in",
+   "layer": "policy",
+   "source_url": "https://blogs.microsoft.com/on-the-issues/2024/05/01/responsible-ai-transparency-report-2024/"
+  },
+  {
+   "source": "arjuna",
+   "target": "ev-meta-genai-vote-2024",
+   "type": "acted in",
+   "layer": "policy",
+   "source_url": "https://openmic.org/news/2024/6/majority-of-independent-shareholders-support-more-disclosure-accountability-at-meta-for-generative-ai-alphabet-up-next"
+  },
+  {
+   "source": "arjuna",
+   "target": "ev-alphabet-genai-vote-2024",
+   "type": "acted in",
+   "layer": "policy",
+   "source_url": "https://www.openmic.org/news/2024/6/2024-shareholder-votes-send-strong-message-to-meta-and-alphabet-regarding-artificial-intelligence"
+  },
+  {
+   "source": "arjuna",
+   "target": "ev-openmic-msft-refile",
+   "type": "acted in",
+   "layer": "policy",
+   "source_url": "https://www.openmic.org/news/2024/7/16/open-mic-refiles-shareholder-proposal-at-microsoft-calling-for-annual-report-on-mitigation-of-ai-risks"
   },
   {
    "source": "co-TSLA",
@@ -12949,18 +13757,18 @@
    "source_url": "https://corpgov.law.harvard.edu/2025/04/06/delaware-revamps-its-general-corporation-law-will-it-stop-companies-from-leaving"
   },
   {
-   "source": "blackrock",
-   "target": "ev-blackrock-voting-choice-2026",
+   "source": "co-MSFT",
+   "target": "ev-msft-rai-report-2025",
    "type": "acted in",
    "layer": "policy",
-   "source_url": "https://www.blackrock.com/corporate/about-us/investment-stewardship/blackrock-voting-choice"
+   "source_url": "https://blogs.microsoft.com/on-the-issues/2025/06/20/our-2025-responsible-ai-transparency-report/"
   },
   {
-   "source": "vanguard",
-   "target": "ev-vanguard-investor-choice-2026",
+   "source": "co-INTU",
+   "target": "ev-intuit-ai-disclosure",
    "type": "acted in",
    "layer": "policy",
-   "source_url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/who-we-are/pressroom/press-release-vanguard-investor-choice-participation-grows-more-than-sixfold-surpassing-half-a-million-investors-092926.html"
+   "source_url": "https://www.parnassus.com/updates/article/the_new_imperative_of_responsible_ai"
   },
   {
    "source": "co-openai",
@@ -13019,67 +13827,18 @@
    "source_url": "https://anthropic.com/news/anthropic-is-endorsing-sb-53"
   },
   {
-   "source": "arjuna",
-   "target": "ev-arjuna-msft-vote-2023",
+   "source": "ceres",
+   "target": "ev-ceres-drained-by-data",
    "type": "acted in",
    "layer": "policy",
-   "source_url": "https://www.businesswire.com/news/home/20231207496751/en/Arjuna-Capital-Microsoft-Investors-Weigh-in-on-Generative-Artificial-Intelligences-Mis--and-Disinformation-Problem"
+   "source_url": "https://www.ceres.org/resources/news/water-impacts-from-data-centers-may-expose-companies-to-more-risk-than-acknowledged-a-new-analysis-shows"
   },
   {
-   "source": "co-AAPL",
-   "target": "ev-apple-aflcio-vote-2024",
+   "source": "ceres",
+   "target": "ev-vwfi-benchmark-2025",
    "type": "acted in",
    "layer": "policy",
-   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124010155/ny20022580x1_8k.htm"
-  },
-  {
-   "source": "co-MSFT",
-   "target": "ev-msft-rai-report-2024",
-   "type": "acted in",
-   "layer": "policy",
-   "source_url": "https://blogs.microsoft.com/on-the-issues/2024/05/01/responsible-ai-transparency-report-2024/"
-  },
-  {
-   "source": "arjuna",
-   "target": "ev-meta-genai-vote-2024",
-   "type": "acted in",
-   "layer": "policy",
-   "source_url": "https://openmic.org/news/2024/6/majority-of-independent-shareholders-support-more-disclosure-accountability-at-meta-for-generative-ai-alphabet-up-next"
-  },
-  {
-   "source": "arjuna",
-   "target": "ev-alphabet-genai-vote-2024",
-   "type": "acted in",
-   "layer": "policy",
-   "source_url": "https://www.openmic.org/news/2024/6/2024-shareholder-votes-send-strong-message-to-meta-and-alphabet-regarding-artificial-intelligence"
-  },
-  {
-   "source": "arjuna",
-   "target": "ev-openmic-msft-refile",
-   "type": "acted in",
-   "layer": "policy",
-   "source_url": "https://www.openmic.org/news/2024/7/16/open-mic-refiles-shareholder-proposal-at-microsoft-calling-for-annual-report-on-mitigation-of-ai-risks"
-  },
-  {
-   "source": "parnassus",
-   "target": "ev-parnassus-intuit-engagement",
-   "type": "acted in",
-   "layer": "policy",
-   "source_url": "https://www.parnassus.com/updates/article/the_new_imperative_of_responsible_ai"
-  },
-  {
-   "source": "co-INTU",
-   "target": "ev-intuit-ai-disclosure",
-   "type": "acted in",
-   "layer": "policy",
-   "source_url": "https://www.parnassus.com/updates/article/the_new_imperative_of_responsible_ai"
-  },
-  {
-   "source": "co-MSFT",
-   "target": "ev-msft-rai-report-2025",
-   "type": "acted in",
-   "layer": "policy",
-   "source_url": "https://blogs.microsoft.com/on-the-issues/2025/06/20/our-2025-responsible-ai-transparency-report/"
+   "source_url": "https://assets.ceres.org/files/vwfi-benchmark-tech-2025-(1).pdf"
   },
   {
    "source": "co-MSFT",
@@ -13087,6 +13846,27 @@
    "type": "acted in",
    "layer": "policy",
    "source_url": "https://blogs.microsoft.com/on-the-issues/2026/01/13/community-first-ai-infrastructure/"
+  },
+  {
+   "source": "iigcc",
+   "target": "ev-iigcc-ai-data-centres-insight",
+   "type": "acted in",
+   "layer": "policy",
+   "source_url": "https://www.iigcc.org/insights/ai-data-centres-climate-and-nature-risks-for-investors"
+  },
+  {
+   "source": "as-you-sow",
+   "target": "ev-iccr-ays-lawsuit",
+   "type": "acted in",
+   "layer": "policy",
+   "source_url": "https://news.ballotpedia.org/2026/03/30/advocacy-groups-sue-sec-over-proxy-policy-shift-2/"
+  },
+  {
+   "source": "blackrock",
+   "target": "ev-blackrock-voting-choice-2026",
+   "type": "acted in",
+   "layer": "policy",
+   "source_url": "https://www.blackrock.com/corporate/about-us/investment-stewardship/blackrock-voting-choice"
   },
   {
    "source": "co-AMZN",
@@ -13101,6 +13881,41 @@
    "type": "acted in",
    "layer": "policy",
    "source_url": "https://blogs.microsoft.com/blog/2026/06/24/inside-microsofts-two-decade-push-to-cut-water-intensity-while-scaling-for-growth/"
+  },
+  {
+   "source": "ceres",
+   "target": "ev-ceres-water-behind-the-watts",
+   "type": "acted in",
+   "layer": "policy",
+   "source_url": "https://www.ceres.org/resources/news/new-ceres-report-spotlights-data-centers-biggest-and-least-visible-water-use-the-power-that-runs-them"
+  },
+  {
+   "source": "iigcc",
+   "target": "ev-cii-statement-rescission",
+   "type": "acted in",
+   "layer": "policy",
+   "source_url": "https://www.cohenmilstein.com/the-end-of-the-federal-shareholder-proposal-rule-the-secs-effort-to-rescind-rule-14a-8/"
+  },
+  {
+   "source": "nyc-comptrollers-office",
+   "target": "ev-ny-comptrollers-statement",
+   "type": "acted in",
+   "layer": "policy",
+   "source_url": "https://www.osc.ny.gov/press/releases/2026/09/nys-comptroller-dinapoli-and-nyc-comptroller-levine-statement-secs-plan-silence-shareholders-public"
+  },
+  {
+   "source": "vanguard",
+   "target": "ev-vanguard-investor-choice-2026",
+   "type": "acted in",
+   "layer": "policy",
+   "source_url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/who-we-are/pressroom/press-release-vanguard-investor-choice-participation-grows-more-than-sixfold-surpassing-half-a-million-investors-092926.html"
+  },
+  {
+   "source": "iigcc",
+   "target": "ev-iigcc-bondholder-data-centres",
+   "type": "acted in",
+   "layer": "policy",
+   "source_url": "https://www.iigcc.org/insights/financing-ai-what-the-data-centre-boom-means-for-bondholder-stewardship"
   },
   {
    "source": "ev-sec-slb-14m",
@@ -13373,6 +14188,22 @@
    "layer": "policy",
    "source_url": "https://corpgov.law.harvard.edu/2026/08/31/2026-proxy-season-shareholder-proposals/",
    "explanation": "D.F. King says that, in light of the SEC's updated no-action process, most companies made conservative exclusion decisions, so more proposals reached ballots than first estimated."
+  },
+  {
+   "source": "ev-vwfi-launch",
+   "target": "ev-vwfi-benchmark-2023",
+   "type": "led to",
+   "layer": "policy",
+   "source_url": "https://www.ceres.org/resources/news/companies-are-making-progress-on-water-management-but-new-report-calls-for-greater-action-to-ensure-sustainable-water-supplies",
+   "explanation": "Ceres benchmarks the focus companies the initiative engages every two years."
+  },
+  {
+   "source": "ev-vwfi-benchmark-2023",
+   "target": "ev-vwfi-benchmark-2025",
+   "type": "led to",
+   "layer": "policy",
+   "source_url": "https://www.ceres.org/resources/news/companies-are-stepping-up-on-water-stewardship-but-ceres-latest-benchmark-urges-faster-action-as-water-risks-deepen",
+   "explanation": "Second biennial benchmark of the same focus companies, with a high-tech analysis of data center and chip water use."
   },
   {
    "source": "googl-2025-7",

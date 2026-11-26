@@ -1605,6 +1605,28 @@
    "profile_source": "employer bio",
    "verified_date": "2026-11",
    "org_id": "responsible-investment-association-australasia-riaa"
+  },
+  {
+   "id": "kirsten-james",
+   "name": "Kirsten James",
+   "title": "Senior Program Director, Water",
+   "org_name": "Ceres",
+   "ai_focus": "Leads the Valuing Water Finance Initiative; co-author of Ceres' data center water reports (Drained by Data, 2025; Water Behind the Watts, 2026).",
+   "profile_url": "https://www.ceres.org/people/james",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11",
+   "org_id": "ceres"
+  },
+  {
+   "id": "shama-perveen",
+   "name": "Shama Perveen, Ph.D.",
+   "title": "Director, Water, Research",
+   "org_name": "Ceres",
+   "ai_focus": "Leads Ceres water research, including the VWFI benchmarks and co-authorship of the data center water reports.",
+   "profile_url": "https://www.ceres.org/people/perveen",
+   "profile_source": "employer bio",
+   "verified_date": "2026-11",
+   "org_id": "ceres"
   }
  ],
  "relations": [

@@ -119,9 +119,15 @@ def main():
     for e in net.get("edges", []):
         if e["from"] in nodes and e["to"] in nodes:
             layer = "investors" if e["relation"] == "member of" else "proposals"
-            edge(e["from"], e["to"], e["relation"], layer, e.get("source_url"))
+            edge(e["from"], e["to"], e["relation"], layer, e.get("source_url"), **{k: e[k] for k in ("note", "as_of") if e.get(k)})
             if e["relation"] in ("lead filer", "co-filer", "exempt solicitation"):
                 filers[e["to"]].add(e["from"])
+
+    # Coalition engagements with companies (e.g. the Valuing Water Finance Initiative's focus companies).
+    for g in net.get("engagements", []):
+        co = "co-" + g["company"].upper()
+        if g["coalition"] in nodes and co in nodes:
+            edge(co, g["coalition"], "focus company of", "investors", g.get("source_url"), context=g.get("what"), as_of=g.get("as_of"))
 
     # Derived: organizations that worked on the same proposal are connected.
     pairs = defaultdict(list)
