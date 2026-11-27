@@ -892,3 +892,28 @@ button + [role="status"], button + .ticker, button + .status-note, button + outp
 .cz-fig .cz-frame { grid-template-columns: 180px minmax(0, 1fr); }
 .cz-fig .cz-timebar, .cz-fig .cz-overview { margin-left: 180px; margin-right: 16px; }
 @media (max-width: 640px) { .cz-fig { margin-left: -16px; margin-right: -16px; } .cz-fig .cz-frame { grid-template-columns: 92px minmax(0, 1fr); } .cz-fig .cz-timebar, .cz-fig .cz-overview { margin-left: 92px; } }
+
+/* Value chain tier panel (owner, 2026-11-26): figures at a glance, then collapsible sections with clear headings. */
+.vc-tier-h { font-size: 24px; margin: 0 0 4px; }
+.vc-tier-what { max-width: 75ch; margin: 0 0 14px; }
+.vc-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin: 0 0 12px; }
+.vc-stat { background: var(--surface); padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; }
+.vc-stat-n { font-size: 26px; line-height: 1.1; color: var(--blue-1); font-variant-numeric: tabular-nums; }
+.vc-stat-l { font-size: 13px; color: var(--ink); }
+.vc-stat-s { font-size: 11.5px; color: var(--ink-soft); }
+.vc-tier-use { margin: 0 0 6px; }
+.vc-sec-all { margin: 0 0 6px; text-align: right; }
+.vc-sec { border-top: 1px solid var(--line); }
+.vc-sec:last-of-type { border-bottom: 1px solid var(--line); }
+.vc-sec > summary { list-style: none; cursor: pointer; display: flex; align-items: baseline; gap: 10px; padding: 14px 4px; font-size: 17px; color: var(--ink); }
+.vc-sec > summary::-webkit-details-marker { display: none; }
+.vc-sec > summary::before { content: "+"; width: 16px; flex: none; color: var(--blue-1); font-size: 18px; }
+.vc-sec[open] > summary::before { content: "−"; }
+.vc-sec > summary:hover .vc-sec-t { text-decoration: underline; text-underline-offset: 3px; }
+.vc-sec > summary:focus-visible { outline: 2px solid var(--blue-1); outline-offset: 2px; }
+.vc-sec-n { font-size: 13px; color: var(--ink-soft); border: 1px solid var(--line); border-radius: 999px; padding: 0 8px; font-variant-numeric: tabular-nums; }
+.vc-sec-b { padding: 0 4px 16px 30px; }
+.vc-sub { margin: 12px 0 4px; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); }
+.vc-topics { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.vc-asks-t td:first-child { white-space: nowrap; }
+@media (max-width: 640px) { .vc-sec-b { padding-left: 4px; } .vc-stats { grid-template-columns: 1fr 1fr; } }

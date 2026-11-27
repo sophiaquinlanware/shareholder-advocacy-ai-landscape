@@ -94,11 +94,12 @@ test("Value chain: a tier opens its details; zero cells are not buttons; capped 
   await page.click('.vc-tiers .chip[data-tier="compute"]');
   await expect(page.locator("#vc-panel-h")).toHaveText("Cloud and model platforms");
   await expect(page.locator("#vc-panel-h")).toBeFocused();
-  await expect(page.locator("#vc-panel")).toContainText("Labs connected by sourced ties");
+  await expect(page.locator("#vc-panel")).toContainText("Which frontier labs this tier reaches");
   await expect(page.locator(".vc-heat .vc-zero button")).toHaveCount(0);
   await expect(page.locator(".vc-heat thead")).not.toContainText("Active filers");
   await page.locator(".vc-heat .vc-num").first().click();
-  await expect(page.locator("#vc-panel h4:focus")).toHaveCount(1);
+  // A count opens its section and focuses the section's heading.
+  await expect(page.locator("#vc-panel details[open] > summary:focus")).toHaveCount(1);
 });
 
 test("Proposals: filter by what a proposal asks about (when the data has categories)", async ({ page }) => {

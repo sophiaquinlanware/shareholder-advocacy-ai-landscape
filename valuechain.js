@@ -236,41 +236,63 @@
     const capped = (arr, total, what) => (arr && total && arr.length < total ? `<p class="status-note">The ${arr.length} most recent of ${total} ${what}.</p>` : "");
     const drawn = [...new Set(V.ties.flatMap((x) => [x.from, x.to]))].filter((id) => (CO.get(id) || {}).tier === tid).length;
     const ownLabs = tid === "labs" ? " (this tier's own labs included)" : "";
+    // Owner, 2026-11-26: "the headers are hard to find … make this page more clear and obvious why it's of use to
+    // the viewer … more pop-open sections … primed for an impact investor". The tier opens with its figures at a
+    // glance, then one collapsible section per question an investor brings to it, each headed with its count.
+    const labsDirect = p.labs_reached_directly || [];
+    const labsTwo = p.labs_reached_in_two_steps || [];
+    const filers = p.active_filers || [];
+    const stat = (n, label, sub) => `<div class="vc-stat"><span class="vc-stat-n">${n}</span><span class="vc-stat-l">${esc(label)}</span>${sub ? `<span class="vc-stat-s">${esc(sub)}</span>` : ""}</div>`;
+    const sec = (id, title, count, body, open) => `<details class="vc-sec" id="${id}"${open ? " open" : ""}><summary><span class="vc-sec-t">${esc(title)}</span>${count != null ? ` <span class="vc-sec-n">${count}</span>` : ""}</summary><div class="vc-sec-b">${body}</div></details>`;
+    const askRows = (p.asks_made || []).map((a) => `<tr><td>${esc(a.company)}</td><td class="num">${esc(a.year)}</td><td>${esc(a.title)}</td><td>${src(a.url, "proxy")}</td></tr>`).join("");
+    const topics = p.proposal_topics && Object.keys(p.proposal_topics).length ? Object.entries(p.proposal_topics).sort((a, b) => b[1] - a[1]).map(([k, n]) => `<li><span>${esc(k)}</span> <span class="vc-sec-n">${n}</span></li>`).join("") : "";
     panel.innerHTML = `
-      <p class="eyebrow" style="margin:0 0 4px">Tier</p>
-      <h3 id="vc-panel-h" tabindex="-1">${esc(t.label)}</h3>
-      <p>${esc(t.what_it_is || "")} ${plural(p.companies || 0, "company", "companies")} in this tier, ${p.companies_primary || 0} with it as their main role; ${drawn} with a sourced tie appear in the map above.</p>
-      <ul class="vc-summary">
-        <li><strong>Asks made here:</strong> ${plural(p.ai_proposals || 0, "AI proposal")}${p.median_support_pct != null ? `, median support ${p.median_support_pct}% (computed by this site)` : ""}. Outcomes such as adoption or withdrawal after an agreement are not in the data yet.</li>
-        <li><strong>Labs connected:</strong> ${(p.labs_reached_directly || []).length} directly${(p.labs_reached_in_two_steps || []).length ? `, ${(p.labs_reached_in_two_steps || []).length} in two steps` : ""}, through sourced ties, equity stakes or ownership.</li>
-        <li><strong>Active here:</strong> ${(p.active_filers || []).length >= 12 ? "the 12 most active filers" : plural((p.active_filers || []).length, "filer")}, ${plural((p.coalitions || []).length, "coalition")}, ${plural((p.people || []).length, "person", "people")} on file.</li>
-      </ul>
-      <h4 id="vc-reach" tabindex="-1">Labs connected by sourced ties</h4>
-      <p class="status-note">From the sourced ties here and in Ties to each frontier lab (chips, compute and distribution, plus equity stakes and parent companies), including labs owned by companies in this tier.</p>
-      <p>Reached directly${ownLabs}: ${(p.labs_reached_directly || []).map(esc).join(", ") || "none in the data"}.</p>
-      ${routes.length ? `<p>Reached in two steps:</p><ul class="conn">${routes.join("")}</ul>` : ""}
-      <p class="status-note">Ties out of this tier: ${p.ties_from_tier ?? 0}; into it: ${p.ties_into_tier ?? 0}. A tie between two companies in the same tier counts both ways. The map above shows operating ties; equity stakes are drawn in Ties to each frontier lab.</p>
-      <h4 id="vc-asks" tabindex="-1">Asks made here</h4>
-      <p>${plural(p.ai_proposals || 0, "AI proposal")}${(p.proposal_topics && Object.keys(p.proposal_topics).length) ? ` (${Object.entries(p.proposal_topics).map(([k, n]) => `${esc(k)} ${n}`).join(", ")})` : ""}${p.median_support_pct != null ? `; median support ${p.median_support_pct}%, computed by this site from the recorded figures` : ""}.</p>
-      ${capped(p.asks_made, p.ai_proposals, "proposals")}
-      ${list(p.asks_made, (a) => `<li>${esc(a.company)} ${esc(a.year)}: ${esc(a.title)}${src(a.url, "proxy")}</li>`)}
-      <h4 id="vc-engagements" tabindex="-1">Companies included for a named investor engagement</h4>
-      ${list(p.investor_engagements, coLine)}
-      <h4 id="vc-safety" tabindex="-1">Companies included for a safety commitment</h4>
-      ${list(p.safety_commitments, coLine)}
-      <h4 id="vc-who" tabindex="-1">Investors, coalitions and people active here</h4>
-      <p class="status-note">From the site's filer data; each filing, membership and profile is sourced in Contacts and the Co-filer network.</p>
-      <p>Filers active at this tier's companies${p.active_filers && p.active_filers.length >= 12 ? " (the 12 most active)" : ""}:</p>${list(p.active_filers, (f) => `<li>${esc(f.name)} (${plural(f.proposals, "proposal")})</li>`)}
-      <p>Coalitions:</p>${list(p.coalitions, (c) => `<li>${esc(c.name)} (${plural(c.members_active_here, "member")} active here)</li>`)}
-      <p>People on file (${(p.people || []).length}):</p>${list(p.people, (x) => `<li>${esc(x.name)}, ${esc(x.org)}</li>`)}
-      <h4 id="vc-routes" tabindex="-1">Shareholder routes</h4>
-      <p>${routesMix ? esc(routesMix) : "Not recorded"}.</p>
-      <h4 id="vc-fund" tabindex="-1">Fund-family votes on file</h4>
-      <p>${p.fund_vote_rows ?? 0} votes, counted once per fund family per proposal, from Form N-PX filings on proposals at these companies. Most are matched automatically and not yet reviewed; see Fund family votes on AI proposals for each one.</p>`;
+      <p class="eyebrow" style="margin:0 0 4px">AI value chain tier</p>
+      <h3 id="vc-panel-h" tabindex="-1" class="vc-tier-h">${esc(t.label)}</h3>
+      <p class="vc-tier-what">${esc(t.what_it_is || "")}</p>
+      <div class="vc-stats" role="list" aria-label="This tier at a glance">
+        ${stat(p.companies || 0, "companies", `${p.companies_primary || 0} with this as their main role`)}
+        ${stat(p.ai_proposals || 0, "AI proposals filed", "since 2023, US proxy companies")}
+        ${stat(p.median_support_pct != null ? `${p.median_support_pct}%` : "—", "median support", "computed by this site")}
+        ${stat(labsDirect.length + labsTwo.length, "frontier labs reached", `${labsDirect.length} directly, ${labsTwo.length} in two steps`)}
+        ${stat(filers.length >= 12 ? "12+" : filers.length, "filers active here", `${plural((p.coalitions || []).length, "coalition")}, ${plural((p.people || []).length, "person", "people")} on file`)}
+        ${stat(p.fund_vote_rows ?? 0, "fund-family votes", "from Form N-PX filings")}
+      </div>
+      <p class="status-note vc-tier-use">Each section answers one question about engaging at this tier: which labs it reaches, what has been asked, and who is already engaging. Open a section for the detail and sources.</p>
+      <p class="vc-sec-all"><button type="button" class="tool" id="vc-open-all">Open all sections</button></p>
+      ${sec("vc-reach", "Which frontier labs this tier reaches", labsDirect.length + labsTwo.length, `
+        <p class="status-note">Through sourced ties here and in Ties to each frontier lab (chips, compute, distribution, equity stakes and parent companies)${ownLabs}.</p>
+        <p><strong>Directly:</strong> ${labsDirect.map(esc).join(", ") || "none in the data"}.</p>
+        ${routes.length ? `<p><strong>In two steps</strong> (company → company → lab):</p><ul class="conn">${routes.join("")}</ul>` : ""}
+        <p class="status-note">Ties out of this tier: ${p.ties_from_tier ?? 0}; into it: ${p.ties_into_tier ?? 0}. A tie between two companies in the same tier counts both ways.</p>`, true)}
+      ${sec("vc-asks", "What investors have already asked here", p.ai_proposals || 0, `
+        <p>${plural(p.ai_proposals || 0, "AI proposal")}${p.median_support_pct != null ? `; median support ${p.median_support_pct}% of votes for and against, computed by this site from the recorded figures` : ""}. Outcomes such as adoption or withdrawal after an agreement are not in the data yet.</p>
+        ${topics ? `<p class="vc-sub">By topic</p><ul class="vc-topics">${topics}</ul>` : ""}
+        ${askRows ? `<p class="vc-sub">${(p.asks_made || []).length < (p.ai_proposals || 0) ? `The ${(p.asks_made || []).length} most recent of ${p.ai_proposals}` : "All"} proposals</p><div class="table-wrap"><table class="vc-asks-t"><thead><tr><th scope="col">Company</th><th scope="col" class="num">Year</th><th scope="col">Proposal</th><th scope="col">Source</th></tr></thead><tbody>${askRows}</tbody></table></div>` : `<p class="status-note">None in the data.</p>`}`, true)}
+      ${sec("vc-who", "Who is already engaging here", null, `
+        <p class="status-note">From the site's filer data; each filing, membership and profile is sourced in Network and contacts.</p>
+        <p class="vc-sub">Filers${filers.length >= 12 ? " (the 12 most active)" : ""}</p>${list(filers, (x) => `<li>${esc(x.name)} <span class="ticker">${plural(x.proposals, "proposal")}</span></li>`)}
+        <p class="vc-sub">Coalitions</p>${list(p.coalitions, (c) => `<li>${esc(c.name)} <span class="ticker">${plural(c.members_active_here, "member")} active here</span></li>`)}
+        <p class="vc-sub">People on file</p>${list(p.people, (x) => `<li>${esc(x.name)} <span class="ticker">${esc(x.org)}</span></li>`)}`)}
+      ${sec("vc-engagements", "Engagements an investor has reported here", (p.investor_engagements || []).length, list(p.investor_engagements, coLine))}
+      ${sec("vc-safety", "AI safety commitments signed here", (p.safety_commitments || []).length, list(p.safety_commitments, coLine))}
+      ${sec("vc-routes", "How shareholders can reach these companies", null, `
+        <p><strong>Shareholder routes:</strong> ${routesMix ? esc(routesMix) : "not recorded"}.</p>
+        <p><strong>Fund-family votes on file:</strong> ${p.fund_vote_rows ?? 0}, counted once per fund family per proposal, from Form N-PX filings on proposals at these companies. Most are matched automatically and not yet reviewed; see Fund family votes on AI proposals.</p>`)}
+      <p class="status-note">${drawn} of these companies have a sourced tie and appear in the map above. Not a recommendation.</p>`;
+    const all = document.getElementById("vc-open-all");
+    all.addEventListener("click", () => {
+      const secs = [...panel.querySelectorAll("details.vc-sec")];
+      const open = !secs.every((d) => d.open);
+      secs.forEach((d) => { d.open = open; });
+      all.textContent = open ? "Close all sections" : "Open all sections";
+    });
+    if (section) { const d = document.getElementById(section); if (d && d.tagName === "DETAILS") d.open = true; }
     highlight((x) => (CO.get(x.from) || {}).tier === tid || (CO.get(x.to) || {}).tier === tid);
     announce(`${t.label}: details below the chart.`);
     document.querySelectorAll(".vc-tiers .chip").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.tier === tid)));
-    const target = document.getElementById(section || "vc-panel-h");
+    const sel = section && document.querySelector(`#${section} > summary`);
+    const target = sel || document.getElementById("vc-panel-h");
     target.focus({ preventScroll: true });
     target.scrollIntoView({ block: "start", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   }
@@ -308,7 +330,7 @@
     { key: "ai_proposals", label: "AI proposals", n: (p) => p.ai_proposals || 0, sec: "vc-asks" },
     { key: "investor_engagements", label: "Companies included for a named investor engagement", n: (p) => (p.investor_engagements || []).length, sec: "vc-engagements" },
     { key: "safety_commitments", label: "Companies included for a safety commitment", n: (p) => (p.safety_commitments || []).length, sec: "vc-safety" },
-    { key: "fund_vote_rows", label: "Fund-family votes on file", n: (p) => p.fund_vote_rows || 0, sec: "vc-fund" },
+    { key: "fund_vote_rows", label: "Fund-family votes on file", n: (p) => p.fund_vote_rows || 0, sec: "vc-routes" },
   ];
   function drawHeat() {
     const tiers = V.tiers.slice().sort((a, b) => a.order - b.order);
