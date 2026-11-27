@@ -120,7 +120,7 @@
       unexposed: betaDraw(E.new_pair_unexposed, r),
       cFirst: betaDraw(E.commitment_first, r),
       cRefile: betaDraw(E.commitment_refile, r),
-      excl: betaDraw(scen.exclRegime === "latest" && E.exclusion_latest ? E.exclusion_latest : E.exclusion, r),
+      excl: betaDraw((scen.exclRegime === "latest" && E.exclusion_latest) || (scen.exclRegime === "before" && E.exclusion_before) || E.exclusion, r),
     };
     const prior = P.ask_support[ask] || {};
     const pool = prior.values && prior.values.length ? prior.values : Object.values(P.ask_support).flatMap((a) => a.values || []);
@@ -321,6 +321,11 @@
     el.innerHTML = `
       <h2>Test plans over time</h2>
       <p class="intro">Choose one or more companies and asks to file on, then see how the next seasons could unfold under a model built from this site's records: who files again, who files for the first time, how votes move, when the SEC resubmission rule blocks a refile, and when a company commits. Compare up to three plans. Each result is a scenario computed by this site from stated assumptions, not a forecast and not advice.</p>
+      <section class="pl-card pl-wide" aria-labelledby="sim-h-seat"><h3 id="sim-h-seat">Take a seat</h3>
+        <p class="status-note">See the moves each participant has, with what this model covers. Moves the model covers can be tried in the scenarios below. Describes options; it does not say which to take.</p>
+        <div class="seg sim-seats" role="group" aria-label="Seat">${SEATS.map((s, i) => `<button type="button" data-seat="${s.id}" aria-pressed="${i === 0}">${esc(s.label)}</button>`).join("")}</div>
+        <div id="sim-seat" aria-live="polite"></div>
+        <details><summary>Game clock: the next filing deadlines</summary><div id="sim-clock"></div></details></section>
       <div id="sim-plans"></div>
       <details class="sim-settings"><summary>Assumptions</summary><div id="sim-settings"></div></details>
       <p><button type="button" class="chip" id="sim-run">Run the scenarios</button> <span id="sim-status" class="ticker" role="status"></span></p>
@@ -332,6 +337,12 @@
     drawPlans();
     drawSettings();
     drawMethod();
+    drawSeat(SEATS[0].id);
+    drawClock();
+    el.querySelectorAll(".sim-seats [data-seat]").forEach((b) => b.addEventListener("click", () => {
+      el.querySelectorAll(".sim-seats [data-seat]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      drawSeat(b.dataset.seat);
+    }));
     el.querySelector("#sim-run").addEventListener("click", run);
     run();
     el.querySelector("#sim-sweep").addEventListener("click", runSweep);
@@ -377,6 +388,72 @@
     if (add) add.addEventListener("click", () => { S.touched = true; S.plans.push({ ...JSON.parse(JSON.stringify(S.plans[S.plans.length - 1])), name: `Plan ${"ABC"[S.plans.length]}` }); drawPlans(); });
   }
 
+  // ---------- Take a seat: each participant's moves, sourced, and what the model covers ----------
+  const SEC_URL = "https://sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426";
+  const SEC_2025 = "https://www.sec.gov/newsroom/speeches-statements/statement-regarding-division-corporation-finances-role-exchange-act-rule-14a-8-process-current-proxy-season";
+  const RULE_URL = "https://www.ecfr.gov/current/title-17/chapter-II/part-240/subject-group-ECFR8c9733e13b955d6/section-240.14a-8";
+  const SEATS = [
+    { id: "proponent", label: "Proponent", moves: [
+      { m: "File a proposal (Rule 14a-8) by the company's deadline", model: "Yes: your plan files each season from its first season", src: RULE_URL },
+      { m: "Lead a coalition of co-filers", model: "Yes, as an assumption: the coalition setting multiplies the chance of a company commitment", apply: { plan: { lead: true } }, label: "Turn on in Plan A" },
+      { m: "Negotiate and withdraw for a company commitment", model: "Yes: the commitment rate from this site's records (first filings and refiles apart)" },
+      { m: "File an exempt solicitation (Form PX14A6G) before the vote", model: "No: shown as records on company profiles' engagement timelines" },
+      { m: "Urge votes against directors after an exclusion", model: "No: one recorded case, Amazon 2026, on its engagement timeline" },
+      { m: "Go to court over an exclusion", model: "No: two 2026 rulings went opposite ways (Laws and rules)" },
+    ] },
+    { id: "company", label: "Company", moves: [
+      { m: "Engage and commit, ending the proposal", model: "Yes: the commitment rate from this site's records" },
+      { m: "Oppose and let it go to a vote", model: "Yes: support drawn from recorded votes" },
+      { m: "Exclude it, sending the Rule 14a-8(j) notice 80 days before the definitive proxy", model: "Yes: the exclusion rate; 2026 was the first season in which SEC staff did not review most exclusions", src: SEC_2025, apply: { scen: { exclRegime: "latest" } }, label: "Use the 2026 rate" },
+      { m: "Accept the risk of a lawsuit after an exclusion", model: "No: court outcomes are not modelled" },
+    ] },
+    { id: "fund", label: "Fund family", moves: [
+      { m: "Vote each proposal under its own voting policy", model: "In the step-by-step log: each family votes FOR at its Form N-PX rate on the ask; vote totals come from recorded results", family: true },
+      { m: "Offer pass-through voting so fund holders choose", model: "No: programs are listed under How fund families voted" },
+    ] },
+    { id: "advisor", label: "Proxy advisor", moves: [
+      { m: "Recommend for or against each proposal", model: "No: ISS and Glass Lewis recommendations are not public in this site's sources" },
+    ] },
+    { id: "policy", label: "Policymaker", moves: [
+      { m: "Adopt the SEC's proposed rescission of Rule 14a-8", model: "Yes, as a switch: from a season on, only floor proposals (raised in person at the meeting) where a company's own rules allow them", src: P0 => (P0.rescission || {}).source_url, apply: { scen: { rescind: true } }, label: "Turn on" },
+      { m: "Resume SEC staff review of exclusions", model: "Yes, roughly: use the exclusion rate of the seasons with SEC staff review", src: SEC_URL, apply: { scen: { exclRegime: "before" } }, label: "Use those seasons' rate" },
+      { m: "Pass laws that cover an ask", model: "No: policy coverage by ask is on Laws and rules and in the planner" },
+    ] },
+  ];
+  function drawSeat(id) {
+    const s = SEATS.find((x) => x.id === id);
+    const fams = s.moves.some((m) => m.family) ? famTotals() : "";
+    const isOn = (m) => (m.apply.plan ? Object.entries(m.apply.plan).every(([k, v]) => S.plans[0][k] === v) : true) && (m.apply.scen ? Object.entries(m.apply.scen).every(([k, v]) => S.scen[k] === v) : true);
+    // A move already in use is stated, not offered as a button; it changes back under Assumptions or in the plan.
+    el.querySelector("#sim-seat").innerHTML = `<ul class="steps tight sim-moves">${s.moves.map((m, i) => {
+      const src = typeof m.src === "function" ? m.src(P) : m.src;
+      const act = !m.apply ? "" : isOn(m) ? `<span class="sim-inuse">In use in the scenarios; change it under Assumptions or in the plan.</span>` : `<button type="button" class="chip sim-apply" data-i="${i}" data-move-seat="${esc(id)}">${esc(m.label)}</button>`;
+      return `<li><strong>${esc(m.m)}</strong>${link(src, "source")}<div class="ticker">In this model: ${esc(m.model)}</div>${act}</li>`;
+    }).join("")}</ul>${fams}`;
+    el.querySelectorAll(".sim-apply").forEach((b) => b.addEventListener("click", () => {
+      const m = SEATS.find((x) => x.id === b.dataset.moveSeat).moves[+b.dataset.i];
+      if (m.apply.plan) Object.assign(S.plans[0], m.apply.plan);
+      if (m.apply.scen) Object.assign(S.scen, m.apply.scen);
+      S.touched = true;
+      drawPlans();
+      drawSettings();
+      drawSeat(b.dataset.moveSeat);
+      run({ type: "click" });
+    }));
+  }
+  function famTotals() {
+    const t = {};
+    Object.entries(P.family_for || {}).forEach(([f, d]) => { Object.values(d).forEach((v) => { t[f] = t[f] || { for: 0, n: 0, un: 0 }; t[f].for += v.for; t[f].n += v.n; t[f].un += v.unreviewed || 0; }); });
+    const rows = Object.entries(t).sort((a, b) => b[1].for / b[1].n - a[1].for / a[1].n);
+    return rows.length ? `<p class="ticker">Fund families' Form N-PX record on all AI proposals here: ${rows.map(([f, v]) => `${esc(f)} FOR on ${v.for} of ${v.n}`).join("; ")}. <span class="unverified">Matched automatically; ${rows.reduce((n, [, v]) => n + v.un, 0)} of ${rows.reduce((n, [, v]) => n + v.n, 0)} not yet reviewed by a person.</span></p>` : "";
+  }
+  function drawClock() {
+    const today = window.RULES ? window.RULES.todayISO() : new Date().toISOString().slice(0, 10);
+    const dayNum = (iso) => Math.round(Date.parse(`${iso}T12:00:00Z`) / 864e5);
+    const list = P.companies.filter((c) => c.next_deadline && c.next_deadline >= today).sort((a, b) => a.next_deadline.localeCompare(b.next_deadline));
+    el.querySelector("#sim-clock").innerHTML = list.length ? `<ol class="steps tight">${list.map((c) => `<li><strong>${esc(DL(c.next_deadline))}</strong> (in ${plural(dayNum(c.next_deadline) - dayNum(today), "day")}): ${esc(c.name)}${link(c.next_deadline_source, "proxy")}</li>`).join("")}</ol><p class="ticker">Rule 14a-8 deadlines from each company's proxy statement. A scenario season starts at the next deadline.</p>` : `<p class="status-note">No open filing deadline on file.</p>`;
+  }
+
   function drawSettings() {
     const lit = P.literature.find((l) => l.id === "lead_investor");
     const sc = S.scen;
@@ -390,13 +467,19 @@
       <label>Refile rate × <input type="number" step="0.1" min="0.5" max="1.8" data-s="refileMult" value="${sc.refileMult}"> <span class="ticker">1 = the rate in this data; the held-out test below suggests it may be higher</span></label>
       <label>Share of usual refilers who would raise a floor proposal after a rescission: <input type="number" step="0.05" min="0" max="1" data-s="floorShare" value="${sc.floorShare}"> <span class="ticker">no estimate in this data</span></label>
       <label>Chance a floor proposal ends in a commitment, against a filed one: × <input type="number" step="0.1" min="0" max="1" data-s="floorCommit" value="${sc.floorCommit}"> <span class="ticker">no estimate in this data</span></label>
-      <label>Chance a company excludes a filing: <select data-s="exclRegime"><option value="latest"${sc.exclRegime === "latest" ? " selected" : ""}>as in ${P.estimates.exclusion_latest ? P.estimates.exclusion_latest.season : "the latest season"}, the first season in which SEC staff did not review most exclusions (${P.estimates.exclusion_latest ? `${P.estimates.exclusion_latest.k} of ${P.estimates.exclusion_latest.n} company-and-ask filings` : "–"})</option><option value="all"${sc.exclRegime === "all" ? " selected" : ""}>as in all seasons (${P.estimates.exclusion.k} of ${P.estimates.exclusion.n} company-and-ask filings)</option></select> <span class="ticker">SEC staff stopped answering most no-action requests on November 17, 2025 and all of them on August 14, 2026; proponents have since gone to court over exclusions (see <a href="#causality">Laws and rules</a>)</span></label>
+      <label>Chance a company excludes a filing: <select data-s="exclRegime">${[
+        ["latest", `as in ${P.estimates.exclusion_latest ? P.estimates.exclusion_latest.season : "the latest season"}, the first season in which SEC staff did not review most exclusions (${P.estimates.exclusion_latest ? `${P.estimates.exclusion_latest.k} of ${P.estimates.exclusion_latest.n}` : "–"} company-and-ask filings)`],
+        ["before", `as in the seasons with SEC staff review, to ${P.estimates.exclusion_before ? P.estimates.exclusion_before.until : ""} (${P.estimates.exclusion_before ? `${P.estimates.exclusion_before.k} of ${P.estimates.exclusion_before.n}` : "–"})`],
+        ["all", `as in all seasons (${P.estimates.exclusion.k} of ${P.estimates.exclusion.n})`],
+      ].map(([v, l]) => `<option value="${v}"${sc.exclRegime === v ? " selected" : ""}>${esc(l)}</option>`).join("")}</select> <span class="ticker">SEC staff stopped answering most no-action requests on November 17, 2025${link(SEC_2025, "SEC")} and all of them on August 14, 2026${link(SEC_URL, "SEC")}; proponents have since gone to court over exclusions (see <a href="#causality">Laws and rules</a>)</span></label>
       <label>Runs per scenario <select data-s="runs">${[200, 400, 1000].map((n) => `<option${n === sc.runs ? " selected" : ""}>${n}</option>`).join("")}</select></label>
     </div>`;
+    if (box.dataset.wired) return; // the settings can be redrawn (Take a seat); listen once
+    box.dataset.wired = "1";
     box.addEventListener("change", (e) => {
       const k = e.target.dataset.s;
       if (!k) return;
-      sc[k] = e.target.type === "checkbox" ? e.target.checked : Number.isNaN(+e.target.value) ? e.target.value : +e.target.value;
+      S.scen[k] = e.target.type === "checkbox" ? e.target.checked : Number.isNaN(+e.target.value) ? e.target.value : +e.target.value;
     });
   }
 

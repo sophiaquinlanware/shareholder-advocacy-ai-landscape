@@ -58,6 +58,11 @@
    "n": 19,
    "season": 2026
   },
+  "exclusion_before": {
+   "k": 0,
+   "n": 38,
+   "until": 2025
+  },
   "unit": "one per company, ask and season with a filing not lead-filed from a critical stance on ESG"
  },
  "ask_support": {
@@ -1542,6 +1547,7 @@
    "name": "Adobe",
    "route_status": "open",
    "next_deadline": "2026-10-30",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000043/adbe-20260227.htm",
    "tier": "deployers"
   },
   {
@@ -1550,6 +1556,7 @@
    "name": "Alphabet",
    "route_status": "narrowing",
    "next_deadline": "2026-12-25",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "tier": "compute"
   },
   {
@@ -1558,6 +1565,7 @@
    "name": "Amazon",
    "route_status": "open",
    "next_deadline": "2026-12-10",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
    "tier": "compute"
   },
   {
@@ -1566,6 +1574,7 @@
    "name": "AMD",
    "route_status": "open",
    "next_deadline": "2026-11-27",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm",
    "tier": "chips"
   },
   {
@@ -1574,6 +1583,7 @@
    "name": "Anthropic",
    "route_status": "narrowing",
    "next_deadline": null,
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm",
    "tier": "labs"
   },
   {
@@ -1582,6 +1592,7 @@
    "name": "Apple",
    "route_status": "open",
    "next_deadline": "2026-09-10",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm",
    "tier": "deployers"
   },
   {
@@ -1590,6 +1601,7 @@
    "name": "Axon Enterprise",
    "route_status": "open",
    "next_deadline": "2026-12-17",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1069183/000162828026025521/axon-20260416.htm",
    "tier": "deployers"
   },
   {
@@ -1598,6 +1610,7 @@
    "name": "Broadcom",
    "route_status": "open",
    "next_deadline": "2026-11-02",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/d49254ddef14a.htm",
    "tier": "chips"
   },
   {
@@ -1606,6 +1619,7 @@
    "name": "Cisco Systems",
    "route_status": "open",
    "next_deadline": "2027-07-01",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm",
    "tier": "chips"
   },
   {
@@ -1614,6 +1628,7 @@
    "name": "Comcast",
    "route_status": "narrowing",
    "next_deadline": "2026-12-25",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1166691/000119312526177138/cmcsa-20260424.htm",
    "tier": "deployers"
   },
   {
@@ -1622,6 +1637,7 @@
    "name": "CoreWeave",
    "route_status": "narrowing",
    "next_deadline": "2026-12-23",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000191/crwv-20260422.htm",
    "tier": "compute"
   },
   {
@@ -1630,6 +1646,7 @@
    "name": "Digital Realty Trust",
    "route_status": "open",
    "next_deadline": "2026-12-18",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm",
    "tier": "datacenters"
   },
   {
@@ -1638,6 +1655,7 @@
    "name": "IBM",
    "route_status": "open",
    "next_deadline": "2026-11-10",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
    "tier": "deployers"
   },
   {
@@ -1646,6 +1664,7 @@
    "name": "Intuit",
    "route_status": "open",
    "next_deadline": "2027-07-28",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000053/intu-20261125.htm",
    "tier": "deployers"
   },
   {
@@ -1654,6 +1673,7 @@
    "name": "Meta",
    "route_status": "narrowing",
    "next_deadline": "2026-12-17",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "tier": "labs"
   },
   {
@@ -1662,6 +1682,7 @@
    "name": "Microsoft",
    "route_status": "open",
    "next_deadline": "2027-06-24",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "tier": "compute"
   },
   {
@@ -1670,6 +1691,7 @@
    "name": "Motorola Solutions",
    "route_status": "open",
    "next_deadline": "2026-12-03",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/68505/000119312526139004/d50373ddef14a.htm",
    "tier": "deployers"
   },
   {
@@ -1678,6 +1700,7 @@
    "name": "Netflix",
    "route_status": "open",
    "next_deadline": "2026-12-17",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1065280/000119312526159286/d20613ddef14a.htm",
    "tier": "deployers"
   },
   {
@@ -1686,6 +1709,7 @@
    "name": "Nvidia",
    "route_status": "open",
    "next_deadline": "2027-01-12",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
    "tier": "chips"
   },
   {
@@ -1694,6 +1718,7 @@
    "name": "Oracle",
    "route_status": "narrowing",
    "next_deadline": "2027-05-28",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526402816/orcl-20260925.htm",
    "tier": "compute"
   },
   {
@@ -1702,6 +1727,7 @@
    "name": "Palantir Technologies",
    "route_status": "narrowing",
    "next_deadline": "2026-12-25",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
    "tier": "deployers"
   },
   {
@@ -1710,6 +1736,7 @@
    "name": "Salesforce",
    "route_status": "open",
    "next_deadline": "2026-12-17",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm",
    "tier": "deployers"
   },
   {
@@ -1718,6 +1745,7 @@
    "name": "ServiceNow",
    "route_status": "open",
    "next_deadline": "2026-12-07",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000039/now-20260406.htm",
    "tier": "deployers"
   },
   {
@@ -1726,6 +1754,7 @@
    "name": "Southern Company",
    "route_status": "open",
    "next_deadline": "2026-12-04",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm",
    "tier": "datacenters"
   },
   {
@@ -1734,6 +1763,7 @@
    "name": "SpaceX (including xAI)",
    "route_status": "narrowing",
    "next_deadline": null,
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm",
    "tier": "labs"
   },
   {
@@ -1742,6 +1772,7 @@
    "name": "Tesla",
    "route_status": "narrowing",
    "next_deadline": "2027-06-21",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm",
    "tier": "capital"
   },
   {
@@ -1750,6 +1781,7 @@
    "name": "Verisk Analytics",
    "route_status": "open",
    "next_deadline": "2026-12-04",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1442145/000119312526141398/d23242ddef14a.htm",
    "tier": "deployers"
   },
   {
@@ -1758,6 +1790,7 @@
    "name": "Walt Disney",
    "route_status": "open",
    "next_deadline": "2026-09-24",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000013/dis-20260122.htm",
    "tier": "deployers"
   },
   {
@@ -1766,6 +1799,7 @@
    "name": "Workday",
    "route_status": "narrowing",
    "next_deadline": "2027-01-05",
+   "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1327811/000110465926055687/tm261347-2_def14a.htm",
    "tier": "deployers"
   }
  ],
@@ -2348,415 +2382,514 @@
   "Calvert": {
    "ask-dc-siting-rights": {
     "for": 3,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-ai-misinformation": {
     "for": 4,
-    "n": 4
+    "n": 4,
+    "unreviewed": 4
    },
    "ask-ai-oversight-reporting": {
     "for": 6,
-    "n": 6
+    "n": 6,
+    "unreviewed": 6
    },
    "ask-customer-due-diligence": {
     "for": 4,
-    "n": 4
+    "n": 4,
+    "unreviewed": 4
    },
    "ask-targeted-ads-rights": {
     "for": 2,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    },
    "ask-child-safety": {
     "for": 2,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    },
    "ask-ai-fossil-fuels": {
     "for": 0,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    },
    "ask-ai-training-data": {
     "for": 5,
-    "n": 7
+    "n": 7,
+    "unreviewed": 7
    },
    "ask-dc-climate-energy": {
     "for": 5,
-    "n": 6
+    "n": 6,
+    "unreviewed": 6
    },
    "ask-dc-water": {
     "for": 2,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-ai-bias": {
     "for": 0,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    }
   },
   "Domini": {
    "ask-dc-siting-rights": {
     "for": 3,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-ai-misinformation": {
     "for": 4,
-    "n": 4
+    "n": 4,
+    "unreviewed": 4
    },
    "ask-ai-oversight-reporting": {
     "for": 6,
-    "n": 6
+    "n": 6,
+    "unreviewed": 6
    },
    "ask-customer-due-diligence": {
     "for": 4,
-    "n": 4
+    "n": 4,
+    "unreviewed": 4
    },
    "ask-targeted-ads-rights": {
     "for": 2,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    },
    "ask-child-safety": {
     "for": 2,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    },
    "ask-ai-fossil-fuels": {
     "for": 2,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    },
    "ask-ai-training-data": {
     "for": 7,
-    "n": 7
+    "n": 7,
+    "unreviewed": 7
    },
    "ask-dc-climate-energy": {
     "for": 5,
-    "n": 6
+    "n": 6,
+    "unreviewed": 6
    },
    "ask-dc-water": {
     "for": 2,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-ai-bias": {
     "for": 0,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    }
   },
   "Green Century": {
    "ask-dc-siting-rights": {
     "for": 3,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-ai-misinformation": {
     "for": 4,
-    "n": 4
+    "n": 4,
+    "unreviewed": 4
    },
    "ask-ai-oversight-reporting": {
     "for": 3,
-    "n": 4
+    "n": 4,
+    "unreviewed": 4
    },
    "ask-targeted-ads-rights": {
     "for": 2,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    },
    "ask-child-safety": {
     "for": 2,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-ai-fossil-fuels": {
     "for": 2,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    },
    "ask-ai-training-data": {
     "for": 4,
-    "n": 7
+    "n": 7,
+    "unreviewed": 7
    },
    "ask-dc-water": {
     "for": 3,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-ai-bias": {
     "for": 0,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    },
    "ask-dc-climate-energy": {
     "for": 4,
-    "n": 4
+    "n": 4,
+    "unreviewed": 4
    },
    "ask-customer-due-diligence": {
     "for": 2,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    }
   },
   "Impax (Pax)": {
    "ask-dc-siting-rights": {
     "for": 2,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-ai-oversight-reporting": {
     "for": 4,
-    "n": 5
+    "n": 5,
+    "unreviewed": 5
    },
    "ask-ai-misinformation": {
     "for": 2,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-targeted-ads-rights": {
     "for": 2,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    },
    "ask-child-safety": {
     "for": 1,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    },
    "ask-ai-fossil-fuels": {
     "for": 0,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    },
    "ask-ai-training-data": {
     "for": 0,
-    "n": 7
+    "n": 7,
+    "unreviewed": 7
    },
    "ask-dc-climate-energy": {
     "for": 2,
-    "n": 6
+    "n": 6,
+    "unreviewed": 6
    },
    "ask-dc-water": {
     "for": 0,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-ai-bias": {
     "for": 0,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-customer-due-diligence": {
     "for": 1,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    }
   },
   "Parnassus": {
    "ask-dc-siting-rights": {
     "for": 3,
-    "n": 3
+    "n": 3,
+    "unreviewed": 0
    },
    "ask-ai-misinformation": {
     "for": 4,
-    "n": 4
+    "n": 4,
+    "unreviewed": 0
    },
    "ask-ai-oversight-reporting": {
     "for": 4,
-    "n": 6
+    "n": 6,
+    "unreviewed": 1
    },
    "ask-customer-due-diligence": {
     "for": 4,
-    "n": 4
+    "n": 4,
+    "unreviewed": 0
    },
    "ask-targeted-ads-rights": {
     "for": 2,
-    "n": 2
+    "n": 2,
+    "unreviewed": 0
    },
    "ask-child-safety": {
     "for": 1,
-    "n": 2
+    "n": 2,
+    "unreviewed": 1
    },
    "ask-ai-fossil-fuels": {
     "for": 2,
-    "n": 2
+    "n": 2,
+    "unreviewed": 0
    },
    "ask-ai-training-data": {
     "for": 3,
-    "n": 8
+    "n": 8,
+    "unreviewed": 0
    },
    "ask-dc-climate-energy": {
     "for": 6,
-    "n": 7
+    "n": 7,
+    "unreviewed": 1
    },
    "ask-ai-bias": {
     "for": 0,
-    "n": 2
+    "n": 2,
+    "unreviewed": 0
    },
    "ask-dc-water": {
     "for": 1,
-    "n": 1
+    "n": 1,
+    "unreviewed": 0
    }
   },
   "Praxis": {
    "ask-dc-siting-rights": {
     "for": 3,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-ai-misinformation": {
     "for": 5,
-    "n": 5
+    "n": 5,
+    "unreviewed": 5
    },
    "ask-ai-oversight-reporting": {
     "for": 6,
-    "n": 6
+    "n": 6,
+    "unreviewed": 6
    },
    "ask-customer-due-diligence": {
     "for": 4,
-    "n": 4
+    "n": 4,
+    "unreviewed": 4
    },
    "ask-targeted-ads-rights": {
     "for": 3,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-child-safety": {
     "for": 3,
-    "n": 4
+    "n": 4,
+    "unreviewed": 4
    },
    "ask-ai-fossil-fuels": {
     "for": 2,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    },
    "ask-ai-training-data": {
     "for": 9,
-    "n": 9
+    "n": 9,
+    "unreviewed": 9
    },
    "ask-dc-climate-energy": {
     "for": 8,
-    "n": 9
+    "n": 9,
+    "unreviewed": 9
    },
    "ask-dc-water": {
     "for": 2,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-ai-bias": {
     "for": 0,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    }
   },
   "TIAA-CREF": {
    "ask-dc-siting-rights": {
     "for": 0,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-ai-misinformation": {
     "for": 4,
-    "n": 5
+    "n": 5,
+    "unreviewed": 5
    },
    "ask-ai-oversight-reporting": {
     "for": 2,
-    "n": 6
+    "n": 6,
+    "unreviewed": 6
    },
    "ask-customer-due-diligence": {
     "for": 0,
-    "n": 6
+    "n": 6,
+    "unreviewed": 6
    },
    "ask-targeted-ads-rights": {
     "for": 1,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-child-safety": {
     "for": 0,
-    "n": 4
+    "n": 4,
+    "unreviewed": 4
    },
    "ask-ai-fossil-fuels": {
     "for": 0,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    },
    "ask-ai-training-data": {
     "for": 3,
-    "n": 9
+    "n": 9,
+    "unreviewed": 9
    },
    "ask-dc-climate-energy": {
     "for": 3,
-    "n": 9
+    "n": 9,
+    "unreviewed": 9
    },
    "ask-dc-water": {
     "for": 0,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-ai-bias": {
     "for": 0,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    }
   },
   "Vanguard": {
    "ask-dc-siting-rights": {
     "for": 0,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-ai-misinformation": {
     "for": 0,
-    "n": 5
+    "n": 5,
+    "unreviewed": 5
    },
    "ask-ai-oversight-reporting": {
     "for": 0,
-    "n": 6
+    "n": 6,
+    "unreviewed": 6
    },
    "ask-customer-due-diligence": {
     "for": 0,
-    "n": 6
+    "n": 6,
+    "unreviewed": 6
    },
    "ask-targeted-ads-rights": {
     "for": 0,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-child-safety": {
     "for": 0,
-    "n": 5
+    "n": 5,
+    "unreviewed": 5
    },
    "ask-ai-fossil-fuels": {
     "for": 0,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    },
    "ask-ai-training-data": {
     "for": 0,
-    "n": 9
+    "n": 9,
+    "unreviewed": 9
    },
    "ask-dc-climate-energy": {
     "for": 0,
-    "n": 9
+    "n": 9,
+    "unreviewed": 9
    },
    "ask-dc-water": {
     "for": 0,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-ai-bias": {
     "for": 0,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    }
   },
   "BlackRock (iShares)": {
    "ask-ai-misinformation": {
     "for": 0,
-    "n": 5
+    "n": 5,
+    "unreviewed": 5
    },
    "ask-ai-oversight-reporting": {
     "for": 0,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-customer-due-diligence": {
     "for": 0,
-    "n": 5
+    "n": 5,
+    "unreviewed": 5
    },
    "ask-targeted-ads-rights": {
     "for": 0,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    },
    "ask-dc-siting-rights": {
     "for": 0,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    },
    "ask-ai-fossil-fuels": {
     "for": 0,
-    "n": 2
+    "n": 2,
+    "unreviewed": 2
    },
    "ask-ai-training-data": {
     "for": 0,
-    "n": 9
+    "n": 9,
+    "unreviewed": 9
    },
    "ask-child-safety": {
     "for": 0,
-    "n": 4
+    "n": 4,
+    "unreviewed": 4
    },
    "ask-dc-climate-energy": {
     "for": 0,
-    "n": 9
+    "n": 9,
+    "unreviewed": 9
    },
    "ask-dc-water": {
     "for": 0,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    },
    "ask-ai-bias": {
     "for": 0,
-    "n": 3
+    "n": 3,
+    "unreviewed": 3
    }
   }
  },

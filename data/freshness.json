@@ -1,0 +1,75 @@
+{
+ "about": "When each dataset was last checked, read from the dataset itself; each row says what kind of date it is.",
+ "datasets": [
+  {
+   "dataset": "New SEC filings (proxy statements, exempt solicitations, vote results, bylaw changes)",
+   "date": "2026-11-26",
+   "kind": "checked",
+   "how": "Weekly check of 7 companies; findings are auto-detected and not yet reviewed",
+   "view": "new"
+  },
+  {
+   "dataset": "Proposal filing deadlines",
+   "date": "2026-11-26",
+   "kind": "checked",
+   "how": "Read from each company's proxy statement; 27 of 29 companies under the US proxy rules checked on or before this date",
+   "view": "start"
+  },
+  {
+   "dataset": "Fund-family votes (Form N-PX)",
+   "date": "2026-11-26",
+   "kind": "read",
+   "how": "Read from SEC filings by a hand-run job and matched to proposals automatically; 39 of 414 matches reviewed by a person",
+   "view": "votes"
+  },
+  {
+   "dataset": "Shareholdings (Form 13F and Norges Bank)",
+   "date": "2026-09-30",
+   "kind": "report period",
+   "how": "Latest report period, not a check date; current filers' periods run from 2026-06-30 to 2026-09-30; read weekly when a newer filing appears",
+   "view": "network"
+  },
+  {
+   "dataset": "Laws, rules and the causal map",
+   "date": "2026-11-25",
+   "kind": "latest event",
+   "how": "Date of the latest event on the map, not a check date; events reviewed by hand",
+   "view": "causality"
+  },
+  {
+   "dataset": "Policy coverage by ask",
+   "date": "2026-11-25",
+   "kind": "checked",
+   "how": "Reviewed by hand; each row awaits a person's sign-off",
+   "view": "planner"
+  },
+  {
+   "dataset": "Commitments ledger",
+   "date": "2026-11-26",
+   "kind": "checked",
+   "how": "Delivery checked against company documents by hand",
+   "view": "outcomes"
+  },
+  {
+   "dataset": "AI disclosure scores",
+   "date": "2026-11-25",
+   "kind": "scored",
+   "how": "Scored by this site against published recommendations",
+   "view": "parnassus"
+  },
+  {
+   "dataset": "Lab ties",
+   "date": "2026-11-25",
+   "kind": "compiled",
+   "how": "Reviewed by hand",
+   "view": "pathways"
+  },
+  {
+   "dataset": "Engagement leads",
+   "date": "2026-11",
+   "kind": "checked",
+   "how": "Roles checked against each organization's own pages; the oldest dated check is 2025; 4 of 257 have no check date or are marked unverified",
+   "view": "people"
+  }
+ ]
+}

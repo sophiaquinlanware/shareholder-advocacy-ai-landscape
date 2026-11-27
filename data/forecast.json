@@ -1,0 +1,1209 @@
+{
+ "about": "Support ranges from this site's own records, with a published backtest. Computed by this site; a scenario, not a forecast of any vote, and not advice.",
+ "method": "Refile: latest recorded support at this company on this ask. First filing: median of the ask's recorded votes at other companies. Range: 10th to 90th percentile of past errors of the same rule (actual divided by starting point).",
+ "bands": {
+  "refile": {
+   "lo": -0.8119895272770715,
+   "mid": -0.13944081193003033,
+   "hi": 0.266265189333171,
+   "min": -1.3678504594606324,
+   "max": 0.7732640639558018,
+   "n": 18
+  },
+  "first": {
+   "lo": -1.8292384210850585,
+   "mid": -0.4688806645011118,
+   "hi": 0.5854831993587998,
+   "min": -3.6281019673533814,
+   "max": 1.2271073797275929,
+   "n": 25
+  }
+ },
+ "backtest": {
+  "cases": 29,
+  "inside_80": 16,
+  "coverage": 0.552,
+  "inside_full": 19,
+  "full_coverage": 0.655,
+  "median_abs_error_points": 4.1,
+  "by_kind": {
+   "refile": {
+    "n": 11,
+    "inside": 7
+   },
+   "first": {
+    "n": 18,
+    "inside": 9
+   }
+  },
+  "seasons": [
+   2025,
+   2026
+  ],
+  "worst_misses": [
+   {
+    "id": "googl-2025-10",
+    "company": "GOOGL",
+    "ask": "ask-ai-bias",
+    "season": 2025,
+    "kind": "first",
+    "start": 17.31,
+    "actual": 0.46,
+    "range": [
+     11.6,
+     54.2
+    ]
+   },
+   {
+    "id": "msft-2025-6",
+    "company": "MSFT",
+    "ask": "ask-ai-bias",
+    "season": 2025,
+    "kind": "first",
+    "start": 17.31,
+    "actual": 0.69,
+    "range": [
+     11.6,
+     54.2
+    ]
+   },
+   {
+    "id": "meta-2025-12",
+    "company": "META",
+    "ask": "ask-dc-climate-energy",
+    "season": 2025,
+    "kind": "first",
+    "start": 17.31,
+    "actual": 3.25,
+    "range": [
+     11.6,
+     54.2
+    ]
+   },
+   {
+    "id": "googl-2025-9",
+    "company": "GOOGL",
+    "ask": "ask-customer-due-diligence",
+    "season": 2025,
+    "kind": "first",
+    "start": 19.08,
+    "actual": 4.51,
+    "range": [
+     12.8,
+     59.7
+    ]
+   },
+   {
+    "id": "meta-2026-child-safety-pay",
+    "company": "META",
+    "ask": "ask-child-safety",
+    "season": 2026,
+    "kind": "refile",
+    "start": 13.43,
+    "actual": 3.42,
+    "range": [
+     6.0,
+     13.8
+    ]
+   }
+  ]
+ },
+ "latest": {
+  "AMZN|ask-customer-due-diligence": {
+   "season": 2024,
+   "support": 19.08,
+   "id": "amzn-2024-14",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924065117/tm2414140d1_8k.htm"
+  },
+  "META|ask-targeted-ads-rights": {
+   "season": 2024,
+   "support": 14.45,
+   "id": "meta-2024-10",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000057/meta-20240529.htm"
+  },
+  "AXON|ask-customer-due-diligence": {
+   "season": 2023,
+   "support": 13.67,
+   "id": "axon-2023-6",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1069183/000155837023010762/axon-20230531x8k.htm"
+  },
+  "GOOGL|ask-dc-siting-rights": {
+   "season": 2023,
+   "support": 13.11,
+   "id": "googl-2023-10",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm"
+  },
+  "GOOGL|ask-targeted-ads-rights": {
+   "season": 2025,
+   "support": 14.29,
+   "id": "googl-2025-12",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+  },
+  "GOOGL|ask-ai-oversight-reporting": {
+   "season": 2026,
+   "support": 3.74,
+   "id": "googl-2026-12",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm"
+  },
+  "MSFT|ask-dc-siting-rights": {
+   "season": 2025,
+   "support": 27.48,
+   "id": "msft-2025-8",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+  },
+  "MSFT|ask-ai-misinformation": {
+   "season": 2024,
+   "support": 18.67,
+   "id": "msft-2024-8",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
+  },
+  "AAPL|ask-ai-oversight-reporting": {
+   "season": 2024,
+   "support": 37.53,
+   "id": "aapl-2024-7",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124010155/ny20022580x1_8k.htm"
+  },
+  "AMZN|ask-ai-oversight-reporting": {
+   "season": 2025,
+   "support": 10.27,
+   "id": "amzn-2025-8",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm"
+  },
+  "META|ask-ai-misinformation": {
+   "season": 2024,
+   "support": 16.73,
+   "id": "meta-2024-6",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000057/meta-20240529.htm"
+  },
+  "NFLX|ask-ai-oversight-reporting": {
+   "season": 2024,
+   "support": 43.29,
+   "id": "nflx-2024-4",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528024000185/nflx-20240606.htm"
+  },
+  "GOOGL|ask-ai-misinformation": {
+   "season": 2026,
+   "support": 9.3,
+   "id": "googl-2026-13",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm"
+  },
+  "GOOGL|ask-child-safety": {
+   "season": 2024,
+   "support": 14.24,
+   "id": "googl-2024-child-online-safety",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm"
+  },
+  "MSFT|ask-ai-fossil-fuels": {
+   "season": 2025,
+   "support": 8.75,
+   "id": "msft-2025-10",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+  },
+  "AAPL|ask-child-safety": {
+   "season": 2025,
+   "support": 8.91,
+   "id": "aapl-2025-5",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125005876/ef20044022_8k.htm"
+  },
+  "AMZN|ask-dc-climate-energy": {
+   "season": 2026,
+   "support": 18.39,
+   "id": "amzn-2026-5",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926065717/tm2614288d1_8k.htm"
+  },
+  "META|ask-child-safety": {
+   "season": 2026,
+   "support": 3.42,
+   "id": "meta-2026-child-safety-pay",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm"
+  },
+  "META|ask-dc-climate-energy": {
+   "season": 2026,
+   "support": 6.91,
+   "id": "meta-2026-9",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm"
+  },
+  "GOOGL|ask-dc-climate-energy": {
+   "season": 2026,
+   "support": 7.35,
+   "id": "googl-2026-5",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm"
+  },
+  "GOOGL|ask-customer-due-diligence": {
+   "season": 2025,
+   "support": 4.51,
+   "id": "googl-2025-9",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+  },
+  "GOOGL|ask-ai-bias": {
+   "season": 2025,
+   "support": 0.46,
+   "id": "googl-2025-10",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+  },
+  "DLR|ask-dc-water": {
+   "season": 2026,
+   "support": 22.47,
+   "id": "dlr-2026-4",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926068907/dlr-20260529x8k.htm"
+  },
+  "MSFT|ask-ai-bias": {
+   "season": 2025,
+   "support": 0.69,
+   "id": "msft-2025-6",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+  },
+  "MSFT|ask-customer-due-diligence": {
+   "season": 2025,
+   "support": 26.34,
+   "id": "msft-2025-9",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+  },
+  "SO|ask-dc-climate-energy": {
+   "season": 2026,
+   "support": 9.74,
+   "id": "so-2026-9",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000040/so-20260513.htm"
+  },
+  "META|ask-ai-training-data": {
+   "season": 2026,
+   "support": 6.61,
+   "id": "meta-2026-11",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm"
+  },
+  "PLTR|ask-customer-due-diligence": {
+   "season": 2026,
+   "support": 12.47,
+   "id": "pltr-2026-5",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000033/pltr-20260603.htm"
+  },
+  "GOOGL|ask-dc-water": {
+   "season": 2026,
+   "support": 1.5,
+   "id": "googl-2026-6",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm"
+  },
+  "GOOGL|ask-ai-training-data": {
+   "season": 2026,
+   "support": 6.03,
+   "id": "googl-2026-11",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm"
+  },
+  "NVDA|ask-dc-climate-energy": {
+   "season": 2026,
+   "support": 17.57,
+   "id": "nvda-2026-7",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm"
+  }
+ },
+ "by_season": {
+  "AMZN|ask-customer-due-diligence|2023": {
+   "season": 2023,
+   "support": 37.48,
+   "id": "amzn-2023-23",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923065457/tm2315877d1_8k.htm"
+  },
+  "META|ask-targeted-ads-rights|2023": {
+   "season": 2023,
+   "support": 17.02,
+   "id": "meta-2023-5",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000083/meta-20230531.htm"
+  },
+  "AXON|ask-customer-due-diligence|2023": {
+   "season": 2023,
+   "support": 13.67,
+   "id": "axon-2023-6",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1069183/000155837023010762/axon-20230531x8k.htm"
+  },
+  "GOOGL|ask-dc-siting-rights|2023": {
+   "season": 2023,
+   "support": 13.11,
+   "id": "googl-2023-10",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm"
+  },
+  "GOOGL|ask-targeted-ads-rights|2023": {
+   "season": 2023,
+   "support": 18.02,
+   "id": "googl-2023-11",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm"
+  },
+  "GOOGL|ask-ai-oversight-reporting|2023": {
+   "season": 2023,
+   "support": 17.02,
+   "id": "googl-2023-12",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm"
+  },
+  "MSFT|ask-dc-siting-rights|2023": {
+   "season": 2023,
+   "support": 33.58,
+   "id": "msft-2023-11",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm"
+  },
+  "MSFT|ask-ai-misinformation|2023": {
+   "season": 2023,
+   "support": 21.17,
+   "id": "msft-2023-13",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm"
+  },
+  "AAPL|ask-ai-oversight-reporting|2024": {
+   "season": 2024,
+   "support": 37.53,
+   "id": "aapl-2024-7",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124010155/ny20022580x1_8k.htm"
+  },
+  "AMZN|ask-customer-due-diligence|2024": {
+   "season": 2024,
+   "support": 19.08,
+   "id": "amzn-2024-14",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924065117/tm2414140d1_8k.htm"
+  },
+  "AMZN|ask-ai-oversight-reporting|2024": {
+   "season": 2024,
+   "support": 9.7,
+   "id": "amzn-2024-16",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924065117/tm2414140d1_8k.htm"
+  },
+  "META|ask-ai-misinformation|2024": {
+   "season": 2024,
+   "support": 16.73,
+   "id": "meta-2024-6",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000057/meta-20240529.htm"
+  },
+  "META|ask-targeted-ads-rights|2024": {
+   "season": 2024,
+   "support": 14.45,
+   "id": "meta-2024-10",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000057/meta-20240529.htm"
+  },
+  "NFLX|ask-ai-oversight-reporting|2024": {
+   "season": 2024,
+   "support": 43.29,
+   "id": "nflx-2024-4",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528024000185/nflx-20240606.htm"
+  },
+  "GOOGL|ask-ai-oversight-reporting|2024": {
+   "season": 2024,
+   "support": 7.4,
+   "id": "googl-2024-11",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm"
+  },
+  "GOOGL|ask-ai-misinformation|2024": {
+   "season": 2024,
+   "support": 17.61,
+   "id": "googl-2024-12",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm"
+  },
+  "GOOGL|ask-targeted-ads-rights|2024": {
+   "season": 2024,
+   "support": 18.56,
+   "id": "googl-2024-13",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm"
+  },
+  "GOOGL|ask-child-safety|2024": {
+   "season": 2024,
+   "support": 14.24,
+   "id": "googl-2024-child-online-safety",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm"
+  },
+  "MSFT|ask-dc-siting-rights|2024": {
+   "season": 2024,
+   "support": 32.03,
+   "id": "msft-2024-6",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
+  },
+  "MSFT|ask-ai-fossil-fuels|2024": {
+   "season": 2024,
+   "support": 9.71,
+   "id": "msft-2024-7",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
+  },
+  "MSFT|ask-ai-misinformation|2024": {
+   "season": 2024,
+   "support": 18.67,
+   "id": "msft-2024-8",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
+  },
+  "AAPL|ask-child-safety|2025": {
+   "season": 2025,
+   "support": 8.91,
+   "id": "aapl-2025-5",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125005876/ef20044022_8k.htm"
+  },
+  "AMZN|ask-dc-climate-energy|2025": {
+   "season": 2025,
+   "support": 20.11,
+   "id": "amzn-2025-7",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm"
+  },
+  "AMZN|ask-ai-oversight-reporting|2025": {
+   "season": 2025,
+   "support": 10.27,
+   "id": "amzn-2025-8",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm"
+  },
+  "META|ask-child-safety|2025": {
+   "season": 2025,
+   "support": 13.43,
+   "id": "meta-2025-child-safety",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm"
+  },
+  "META|ask-dc-climate-energy|2025": {
+   "season": 2025,
+   "support": 3.25,
+   "id": "meta-2025-12",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm"
+  },
+  "GOOGL|ask-dc-climate-energy|2025": {
+   "season": 2025,
+   "support": 8.21,
+   "id": "googl-2025-7",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+  },
+  "GOOGL|ask-customer-due-diligence|2025": {
+   "season": 2025,
+   "support": 4.51,
+   "id": "googl-2025-9",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+  },
+  "GOOGL|ask-ai-bias|2025": {
+   "season": 2025,
+   "support": 0.46,
+   "id": "googl-2025-10",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+  },
+  "GOOGL|ask-targeted-ads-rights|2025": {
+   "season": 2025,
+   "support": 14.29,
+   "id": "googl-2025-12",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+  },
+  "DLR|ask-dc-water|2025": {
+   "season": 2025,
+   "support": 10.37,
+   "id": "dlr-2025-5",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000155837025008511/dlr-20250606x8k.htm"
+  },
+  "MSFT|ask-ai-bias|2025": {
+   "season": 2025,
+   "support": 0.69,
+   "id": "msft-2025-6",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+  },
+  "MSFT|ask-dc-siting-rights|2025": {
+   "season": 2025,
+   "support": 27.48,
+   "id": "msft-2025-8",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+  },
+  "MSFT|ask-customer-due-diligence|2025": {
+   "season": 2025,
+   "support": 26.34,
+   "id": "msft-2025-9",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+  },
+  "MSFT|ask-ai-fossil-fuels|2025": {
+   "season": 2025,
+   "support": 8.75,
+   "id": "msft-2025-10",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+  },
+  "SO|ask-dc-climate-energy|2026": {
+   "season": 2026,
+   "support": 9.74,
+   "id": "so-2026-9",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000040/so-20260513.htm"
+  },
+  "AMZN|ask-dc-climate-energy|2026": {
+   "season": 2026,
+   "support": 18.39,
+   "id": "amzn-2026-5",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926065717/tm2614288d1_8k.htm"
+  },
+  "META|ask-dc-climate-energy|2026": {
+   "season": 2026,
+   "support": 6.91,
+   "id": "meta-2026-9",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm"
+  },
+  "META|ask-ai-training-data|2026": {
+   "season": 2026,
+   "support": 6.61,
+   "id": "meta-2026-11",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm"
+  },
+  "META|ask-child-safety|2026": {
+   "season": 2026,
+   "support": 3.42,
+   "id": "meta-2026-child-safety-pay",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm"
+  },
+  "DLR|ask-dc-water|2026": {
+   "season": 2026,
+   "support": 22.47,
+   "id": "dlr-2026-4",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926068907/dlr-20260529x8k.htm"
+  },
+  "PLTR|ask-customer-due-diligence|2026": {
+   "season": 2026,
+   "support": 12.47,
+   "id": "pltr-2026-5",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000033/pltr-20260603.htm"
+  },
+  "GOOGL|ask-dc-climate-energy|2026": {
+   "season": 2026,
+   "support": 7.35,
+   "id": "googl-2026-5",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm"
+  },
+  "GOOGL|ask-dc-water|2026": {
+   "season": 2026,
+   "support": 1.5,
+   "id": "googl-2026-6",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm"
+  },
+  "GOOGL|ask-ai-training-data|2026": {
+   "season": 2026,
+   "support": 6.03,
+   "id": "googl-2026-11",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm"
+  },
+  "GOOGL|ask-ai-oversight-reporting|2026": {
+   "season": 2026,
+   "support": 3.74,
+   "id": "googl-2026-12",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm"
+  },
+  "GOOGL|ask-ai-misinformation|2026": {
+   "season": 2026,
+   "support": 9.3,
+   "id": "googl-2026-13",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm"
+  },
+  "NVDA|ask-dc-climate-energy|2026": {
+   "season": 2026,
+   "support": 17.57,
+   "id": "nvda-2026-7",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm"
+  }
+ },
+ "ask_votes": {
+  "ask-customer-due-diligence": [
+   4.51,
+   8.28,
+   12.47,
+   13.67,
+   16.79,
+   19.08,
+   26.34,
+   34.18,
+   37.48
+  ],
+  "ask-targeted-ads-rights": [
+   14.29,
+   14.45,
+   17.02,
+   18.02,
+   18.56
+  ],
+  "ask-dc-siting-rights": [
+   13.11,
+   27.48,
+   32.03,
+   33.58
+  ],
+  "ask-ai-oversight-reporting": [
+   3.74,
+   7.4,
+   8.36,
+   9.7,
+   10.27,
+   17.02,
+   37.53,
+   43.29
+  ],
+  "ask-ai-misinformation": [
+   9.3,
+   16.73,
+   17.61,
+   18.67,
+   21.17
+  ],
+  "ask-child-safety": [
+   3.42,
+   6.45,
+   8.91,
+   13.43,
+   14.24
+  ],
+  "ask-ai-fossil-fuels": [
+   8.75,
+   9.71
+  ],
+  "ask-dc-climate-energy": [
+   3.25,
+   6.91,
+   7.35,
+   8.21,
+   9.74,
+   17.57,
+   18.39,
+   20.11
+  ],
+  "ask-ai-bias": [
+   0.46,
+   0.69
+  ],
+  "ask-dc-water": [
+   1.5,
+   10.37,
+   22.47
+  ],
+  "ask-ai-training-data": [
+   6.03,
+   6.61
+  ]
+ },
+ "all_votes_median": 13.43,
+ "family_for": {
+  "ask-dc-siting-rights": {
+   "Calvert": {
+    "for": 3,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Domini": {
+    "for": 3,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Green Century": {
+    "for": 3,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Impax (Pax)": {
+    "for": 2,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Parnassus": {
+    "for": 3,
+    "n": 3,
+    "unreviewed": 0
+   },
+   "Praxis": {
+    "for": 3,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "TIAA-CREF": {
+    "for": 0,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Vanguard": {
+    "for": 0,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "BlackRock (iShares)": {
+    "for": 0,
+    "n": 2,
+    "unreviewed": 2
+   }
+  },
+  "ask-ai-misinformation": {
+   "BlackRock (iShares)": {
+    "for": 0,
+    "n": 5,
+    "unreviewed": 5
+   },
+   "Calvert": {
+    "for": 4,
+    "n": 4,
+    "unreviewed": 4
+   },
+   "Domini": {
+    "for": 4,
+    "n": 4,
+    "unreviewed": 4
+   },
+   "Green Century": {
+    "for": 4,
+    "n": 4,
+    "unreviewed": 4
+   },
+   "Parnassus": {
+    "for": 4,
+    "n": 4,
+    "unreviewed": 0
+   },
+   "Praxis": {
+    "for": 5,
+    "n": 5,
+    "unreviewed": 5
+   },
+   "TIAA-CREF": {
+    "for": 4,
+    "n": 5,
+    "unreviewed": 5
+   },
+   "Vanguard": {
+    "for": 0,
+    "n": 5,
+    "unreviewed": 5
+   },
+   "Impax (Pax)": {
+    "for": 2,
+    "n": 3,
+    "unreviewed": 3
+   }
+  },
+  "ask-ai-oversight-reporting": {
+   "BlackRock (iShares)": {
+    "for": 0,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Calvert": {
+    "for": 6,
+    "n": 6,
+    "unreviewed": 6
+   },
+   "Domini": {
+    "for": 6,
+    "n": 6,
+    "unreviewed": 6
+   },
+   "Green Century": {
+    "for": 3,
+    "n": 4,
+    "unreviewed": 4
+   },
+   "Impax (Pax)": {
+    "for": 4,
+    "n": 5,
+    "unreviewed": 5
+   },
+   "Parnassus": {
+    "for": 4,
+    "n": 6,
+    "unreviewed": 1
+   },
+   "Praxis": {
+    "for": 6,
+    "n": 6,
+    "unreviewed": 6
+   },
+   "TIAA-CREF": {
+    "for": 2,
+    "n": 6,
+    "unreviewed": 6
+   },
+   "Vanguard": {
+    "for": 0,
+    "n": 6,
+    "unreviewed": 6
+   }
+  },
+  "ask-customer-due-diligence": {
+   "Calvert": {
+    "for": 4,
+    "n": 4,
+    "unreviewed": 4
+   },
+   "Domini": {
+    "for": 4,
+    "n": 4,
+    "unreviewed": 4
+   },
+   "Parnassus": {
+    "for": 4,
+    "n": 4,
+    "unreviewed": 0
+   },
+   "Praxis": {
+    "for": 4,
+    "n": 4,
+    "unreviewed": 4
+   },
+   "TIAA-CREF": {
+    "for": 0,
+    "n": 6,
+    "unreviewed": 6
+   },
+   "Vanguard": {
+    "for": 0,
+    "n": 6,
+    "unreviewed": 6
+   },
+   "BlackRock (iShares)": {
+    "for": 0,
+    "n": 5,
+    "unreviewed": 5
+   },
+   "Green Century": {
+    "for": 2,
+    "n": 2,
+    "unreviewed": 2
+   },
+   "Impax (Pax)": {
+    "for": 1,
+    "n": 2,
+    "unreviewed": 2
+   }
+  },
+  "ask-targeted-ads-rights": {
+   "Praxis": {
+    "for": 3,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "TIAA-CREF": {
+    "for": 1,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Vanguard": {
+    "for": 0,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "BlackRock (iShares)": {
+    "for": 0,
+    "n": 2,
+    "unreviewed": 2
+   },
+   "Calvert": {
+    "for": 2,
+    "n": 2,
+    "unreviewed": 2
+   },
+   "Domini": {
+    "for": 2,
+    "n": 2,
+    "unreviewed": 2
+   },
+   "Green Century": {
+    "for": 2,
+    "n": 2,
+    "unreviewed": 2
+   },
+   "Impax (Pax)": {
+    "for": 2,
+    "n": 2,
+    "unreviewed": 2
+   },
+   "Parnassus": {
+    "for": 2,
+    "n": 2,
+    "unreviewed": 0
+   }
+  },
+  "ask-child-safety": {
+   "Calvert": {
+    "for": 2,
+    "n": 2,
+    "unreviewed": 2
+   },
+   "Domini": {
+    "for": 2,
+    "n": 2,
+    "unreviewed": 2
+   },
+   "Green Century": {
+    "for": 2,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Impax (Pax)": {
+    "for": 1,
+    "n": 2,
+    "unreviewed": 2
+   },
+   "Parnassus": {
+    "for": 1,
+    "n": 2,
+    "unreviewed": 1
+   },
+   "Praxis": {
+    "for": 3,
+    "n": 4,
+    "unreviewed": 4
+   },
+   "TIAA-CREF": {
+    "for": 0,
+    "n": 4,
+    "unreviewed": 4
+   },
+   "Vanguard": {
+    "for": 0,
+    "n": 5,
+    "unreviewed": 5
+   },
+   "BlackRock (iShares)": {
+    "for": 0,
+    "n": 4,
+    "unreviewed": 4
+   }
+  },
+  "ask-ai-fossil-fuels": {
+   "BlackRock (iShares)": {
+    "for": 0,
+    "n": 2,
+    "unreviewed": 2
+   },
+   "Calvert": {
+    "for": 0,
+    "n": 2,
+    "unreviewed": 2
+   },
+   "Domini": {
+    "for": 2,
+    "n": 2,
+    "unreviewed": 2
+   },
+   "Green Century": {
+    "for": 2,
+    "n": 2,
+    "unreviewed": 2
+   },
+   "Impax (Pax)": {
+    "for": 0,
+    "n": 2,
+    "unreviewed": 2
+   },
+   "Parnassus": {
+    "for": 2,
+    "n": 2,
+    "unreviewed": 0
+   },
+   "Praxis": {
+    "for": 2,
+    "n": 2,
+    "unreviewed": 2
+   },
+   "TIAA-CREF": {
+    "for": 0,
+    "n": 2,
+    "unreviewed": 2
+   },
+   "Vanguard": {
+    "for": 0,
+    "n": 2,
+    "unreviewed": 2
+   }
+  },
+  "ask-ai-training-data": {
+   "BlackRock (iShares)": {
+    "for": 0,
+    "n": 9,
+    "unreviewed": 9
+   },
+   "Calvert": {
+    "for": 5,
+    "n": 7,
+    "unreviewed": 7
+   },
+   "Domini": {
+    "for": 7,
+    "n": 7,
+    "unreviewed": 7
+   },
+   "Green Century": {
+    "for": 4,
+    "n": 7,
+    "unreviewed": 7
+   },
+   "Impax (Pax)": {
+    "for": 0,
+    "n": 7,
+    "unreviewed": 7
+   },
+   "Parnassus": {
+    "for": 3,
+    "n": 8,
+    "unreviewed": 0
+   },
+   "Praxis": {
+    "for": 9,
+    "n": 9,
+    "unreviewed": 9
+   },
+   "TIAA-CREF": {
+    "for": 3,
+    "n": 9,
+    "unreviewed": 9
+   },
+   "Vanguard": {
+    "for": 0,
+    "n": 9,
+    "unreviewed": 9
+   }
+  },
+  "ask-dc-climate-energy": {
+   "BlackRock (iShares)": {
+    "for": 0,
+    "n": 9,
+    "unreviewed": 9
+   },
+   "Calvert": {
+    "for": 5,
+    "n": 6,
+    "unreviewed": 6
+   },
+   "Domini": {
+    "for": 5,
+    "n": 6,
+    "unreviewed": 6
+   },
+   "Impax (Pax)": {
+    "for": 2,
+    "n": 6,
+    "unreviewed": 6
+   },
+   "Parnassus": {
+    "for": 6,
+    "n": 7,
+    "unreviewed": 1
+   },
+   "Praxis": {
+    "for": 8,
+    "n": 9,
+    "unreviewed": 9
+   },
+   "TIAA-CREF": {
+    "for": 3,
+    "n": 9,
+    "unreviewed": 9
+   },
+   "Vanguard": {
+    "for": 0,
+    "n": 9,
+    "unreviewed": 9
+   },
+   "Green Century": {
+    "for": 4,
+    "n": 4,
+    "unreviewed": 4
+   }
+  },
+  "ask-dc-water": {
+   "BlackRock (iShares)": {
+    "for": 0,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Calvert": {
+    "for": 2,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Domini": {
+    "for": 2,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Green Century": {
+    "for": 3,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Impax (Pax)": {
+    "for": 0,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Praxis": {
+    "for": 2,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "TIAA-CREF": {
+    "for": 0,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Vanguard": {
+    "for": 0,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Parnassus": {
+    "for": 1,
+    "n": 1,
+    "unreviewed": 0
+   }
+  },
+  "ask-ai-bias": {
+   "BlackRock (iShares)": {
+    "for": 0,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Calvert": {
+    "for": 0,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Domini": {
+    "for": 0,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Green Century": {
+    "for": 0,
+    "n": 2,
+    "unreviewed": 2
+   },
+   "Impax (Pax)": {
+    "for": 0,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Parnassus": {
+    "for": 0,
+    "n": 2,
+    "unreviewed": 0
+   },
+   "Praxis": {
+    "for": 0,
+    "n": 2,
+    "unreviewed": 2
+   },
+   "TIAA-CREF": {
+    "for": 0,
+    "n": 3,
+    "unreviewed": 3
+   },
+   "Vanguard": {
+    "for": 0,
+    "n": 3,
+    "unreviewed": 3
+   }
+  }
+ },
+ "control": {
+  "GOOGL": {
+   "pct": 52.7,
+   "who": "Larry Page and Sergey Brin together (this site's company record)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+  },
+  "META": {
+   "pct": 60.8,
+   "who": "Mark Zuckerberg",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+  },
+  "CMCSA": {
+   "pct": 33.33,
+   "who": "Brian L. Roberts (all Class B shares)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1166691/000119312526177138/cmcsa-20260424.htm"
+  },
+  "WDAY": {
+   "pct": 69.0,
+   "who": "co-founders Aneel Bhusri and David Duffield, under a voting agreement",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1327811/000110465926055687/tm261347-2_def14a.htm"
+  }
+ },
+ "proxy_advisors": "Not public in this site's sources: ISS and Glass Lewis recommendations are not used."
+}
