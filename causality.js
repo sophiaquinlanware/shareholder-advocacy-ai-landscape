@@ -284,7 +284,7 @@
         <select id="cz-status" aria-label="Legal status"><option value="">Any status</option>${statuses.map((k) => `<option value="${k}">${esc(STATUS_LABEL[k])} (${count((e) => statusOf(e) === k)})</option>`).join("")}</select>
         <button type="button" class="chip" id="cz-reset">Reset filters</button>
       </div>
-      <figure class="card chart-card fig cz-fig">
+      <figure class="fig cz-fig">
       ${window.figHead(`Causal map of AI policy and governance, ${window.yearSpan(C.events.map((e) => e.date))}`, `${plural(C.events.length, "event")} by lane (rows) and date (left to right; recent months get more room). Arrows run from an event to what followed from it; the mark on each event is its legal status.`)}
       <div class="net-legend">${legend}</div>
       <div class="net-legend" id="cz-status-key"></div>

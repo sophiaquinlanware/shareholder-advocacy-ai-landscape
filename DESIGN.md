@@ -240,11 +240,17 @@ Not built from the brief, by owner decision: off-white background, serif heading
 
 ## Every chart works as a screenshot (owner, 2026-11-26)
 
-"Have it so that this visual could be screenshotted and all relevant info is there." Each chart sits in a figure box (`.fig`, helpers `figHead`, `figSource`, `yearSpan` in app.js). The box holds:
+"Have it so that this visual could be screenshotted and all relevant info is there." Each chart has a title naming the data, a subtitle with the measure, count and years, its key and a source line naming the site (helpers `figHead`, `figSource`, `yearSpan` in app.js). The Proposals support chart draws calendar-year bands. Two exceptions, by owner decision:
 
-- a title that names the data;
-- a subtitle with the measure, the count and the years covered;
-- the key;
-- a source line naming the site.
+- **Network:** the black band shows only the nodes. A small "Key" button at its bottom left opens a panel with the title, view, years, colour key, ring marks and source, for screenshots.
+- **Causal map:** an open workspace with no card. The lanes, time bar and year strip run to the right edge of the screen.
 
-Time charts label their years on the visual: the Proposals support chart has shaded calendar-year bands, and the network shows its year range in its caption. The network's caption (title, counts, colour key, ring marks, source) sits inside the black band, at the bottom left on wide screens and under the graph on phones.
+Commas: `tabular-nums` widens commas and semicolons in this font, so it is set only on figure cells and axis ticks.
+
+## Value chain interactions (owner, 2026-11-26)
+
+The ties draw in from chips to AI products as the reader scrolls: a soft-edged mask that never undraws, and is drawn at once with reduced motion. Tapping a line (or Enter on it) traces it and every tie upstream and downstream of it in orange (#e8590c); tapping the chart again clears the trace.
+
+## Your portfolio: the fund you play as
+
+Loading an investor's holdings marks that investor's node in the network. It gets a white glow, a thick white ring, its name, and bright white lines; the companies it holds keep their usual colours.

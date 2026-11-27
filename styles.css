@@ -792,3 +792,30 @@ button + [role="status"], button + .ticker, button + .status-note, button + outp
 /* Value chain trace targets: no box around a tapped line; keyboard focus shows as a soft orange band instead. */
 .vc-hit:focus { outline: none; }
 .vc-hit:focus-visible { stroke: rgba(232, 89, 12, .28); }
+/* The fund you play as: a white glow around its circle (owner, 2026-11-26). */
+#net-graph circle.is-you { filter: drop-shadow(0 0 5px rgba(255, 255, 255, .95)) drop-shadow(0 0 14px rgba(255, 255, 255, .55)); }
+/* Network key: a small "Key" button at the band's bottom left opens a balanced panel over the band with the title,
+   colour key, marks and source, so one screenshot carries everything. */
+.net-keybox { position: absolute; left: max(16px, calc(50vw - 600px)); top: calc(var(--strip-h) - 12px); transform: translateY(-100%); display: flex; flex-direction: column-reverse; align-items: flex-start; gap: 8px; max-width: min(720px, calc(100vw - 32px)); z-index: 3; }
+.net-key-btn { font: 13px var(--sans); color: var(--g-label); background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .28); border-radius: 999px; padding: 4px 14px; cursor: pointer; }
+.net-key-btn:hover, .net-key-btn[aria-expanded="true"] { background: rgba(255, 255, 255, .14); border-color: rgba(255, 255, 255, .5); }
+.net-key-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.net-figcap { background: rgba(20, 20, 20, .92); border: 1px solid rgba(255, 255, 255, .14); border-radius: 10px; padding: 14px 16px; color: var(--g-label-soft); font-size: 12px; line-height: 1.5; backdrop-filter: blur(2px); }
+.net-figcap p { margin: 0; }
+.net-figcap .fc-title { color: var(--g-label); font-size: 15px; margin-bottom: 4px; }
+.net-figcap .fc-key { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 3px 14px; margin: 10px 0; color: var(--g-label); }
+.net-figcap .fc-key i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 7px; }
+.net-figcap .fc-marks { grid-template-columns: 1fr; margin-top: 0; }
+.net-figcap .fc-marks .mark-swatch { width: 20px; height: 15px; vertical-align: -3px; margin-right: 6px; }
+.net-figcap .fc-src { font-size: 10.5px; border-top: 1px solid rgba(255, 255, 255, .12); padding-top: 8px; }
+@media (max-width: 899px) { .net-keybox { left: 12px; top: calc(clamp(420px, 70vh, 680px) - 12px); } }
+/* Causal map as an open workspace (owner, 2026-11-26: "you don't need a box … think in layers … an expansive
+   entire workspace"): no card; the title, keys and source align with the page text while the lanes, time bar and
+   year strip run out to the right edge of the screen. The lanes' alternating shading is the only ground. */
+.cz-fig { margin: var(--s-2) calc(50% - 50vw) 0 0; padding: 0; border: 0; background: none; box-shadow: none; }
+.cz-fig .fig-head, .cz-fig .net-legend, .cz-fig .fig-src { padding-right: max(16px, calc(50vw - 600px)); }
+.cz-fig .cz-scroll { border: 0; border-radius: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.cz-timebar { flex-wrap: nowrap; gap: 12px; }
+.cz-timebar #cz-window { flex: 1 1 auto; min-width: 0; }
+.cz-timebar .chip { flex: none; }
+@media (max-width: 640px) { .cz-timebar { flex-wrap: wrap; } .cz-fig { margin-right: -16px; } }

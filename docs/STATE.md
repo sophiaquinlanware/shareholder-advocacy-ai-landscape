@@ -55,7 +55,7 @@ Routes table per lab (tie, strength, rights and deadline, filers, related asks, 
 
 ## Figures
 
-Every chart is screenshot-ready: title, measure, count, years, key and source inside the figure. That covers Proposals support, the value chain ties and engagement table, Lab pathways bars and map, the Laws and rules causal map, and the network band caption. The simulator charts (sim.js, data session) are not yet framed this way.
+Every chart is screenshot-ready (title, measure, count, years, key, source), except the network: its band stays nodes-only, and a "Key" button opens the key panel. The causal map is an open, full-width workspace. The value chain draws in on scroll, and tapping a tie traces its path in orange. Loading a fund under "Your portfolio" makes that fund glow. The simulator charts (sim.js, data session) have been asked for the same frame. Plain tab names, no counts in tabs. Not reviewed by agents.
 
 ## Latest check
 

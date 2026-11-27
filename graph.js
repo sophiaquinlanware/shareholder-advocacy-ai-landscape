@@ -406,6 +406,10 @@
       <div class="net-body is-graph">
         <div class="net-graph-wrap">
           <div id="net-graph" class="net-graph" tabindex="0" role="application" aria-roledescription="network graph" aria-describedby="net-kb-hint" aria-label="AI advocacy network graph: investors, proposals, companies, labs and policy. Up and Down arrows move between nodes, Enter opens one, Escape clears. The List view has the same data as a table."></div>
+          <div class="net-keybox">
+            <button type="button" class="net-key-btn" id="net-key-btn" aria-expanded="false" aria-controls="net-figcap">Key</button>
+            <div class="net-figcap" id="net-figcap" hidden></div>
+          </div>
           <p class="kb-hint" id="net-kb-hint">Keyboard: Tab into the graph, ↑ ↓ to move between nodes, Enter to open, Esc to clear. Zoom: pinch, or Ctrl/⌘ + scroll; drag to pan.</p>
           <p class="visually-hidden" id="net-kb" aria-live="polite"></p>
         </div>
@@ -672,7 +676,36 @@
     const extra = [asks && `${asks} recurring ask${asks === 1 ? "" : "s"}`, gaps && `${gaps} ask${gaps === 1 ? "" : "s"} not yet filed`].filter(Boolean);
     return { shown, total: base.length, extra: extra.length ? `, plus ${extra.join(" and ")}` : "" };
   }
+  // Key panel (owner, 2026-11-26: a "Key" at the bottom that opens the key "in an aesthetically balanced way so
+  // that you have all the info in one screenshottable section"). Closed by default, so the band stays nodes only.
+  function figCap() {
+    const el = document.getElementById("net-figcap");
+    if (!el || el.hidden) return;
+    const c = counts();
+    const [lo, hi] = yearRange();
+    const yrs = state.year ? state.year : `${lo}–${state.upto || hi}`;
+    const kinds = [...new Set(state.data.nodes.filter(visible).map((n) => n.kind))].filter((k) => !mode().hides.has(k));
+    const mk = document.getElementById("net-marks");
+    const marks = mk && !mk.hidden ? [...mk.querySelectorAll(".leg")].map((e) => `<span>${e.innerHTML}</span>`) : [];
+    const you = state.holdings.size && state.portInvestor && state.byId.get(state.portInvestor);
+    el.innerHTML = `<p class="fc-title">AI shareholder advocacy network: ${esc(mode().label)} view, ${esc(yrs)}</p>
+      <p class="fc-sub">${c.shown} of ${c.total} investors, people, proposals and companies shown${esc(c.extra)}. Circle size = ${esc(lens().sizeLabel)}. Lines are sourced ties.${you ? ` Glowing white: ${esc(you.label)}, with its holdings and ties lit.` : ""}</p>
+      <div class="fc-key">${kinds.map((k) => `<span><i style="background:${nodeColor(k)}"></i>${esc(kindLabel(k))}</span>`).join("")}</div>
+      ${marks.length ? `<div class="fc-key fc-marks">${marks.join("")}</div>` : ""}
+      <p class="fc-src">Source: SEC filings, proxy statements, coalition and investor records, cited in each item's details. ${esc(typeof FIG_SITE !== "undefined" ? FIG_SITE : "")}.</p>`;
+  }
+  function wireKey() {
+    const btn = document.getElementById("net-key-btn"), box = document.getElementById("net-figcap");
+    if (!btn) return;
+    btn.addEventListener("click", () => {
+      box.hidden = !box.hidden;
+      btn.setAttribute("aria-expanded", String(!box.hidden));
+      btn.textContent = box.hidden ? "Key" : "Hide key";
+      figCap();
+    });
+  }
   function intro() {
+    figCap();
     refreshConnected();
     const c = counts();
     document.getElementById("net-intro").textContent = lens().plainIntro
@@ -956,10 +989,14 @@
       // Holdings overlay: what the viewer doesn't hold fades to 15%.
       return held(d) || d.id === focusId ? o : Math.min(o, 0.15);
     };
+    // The fund you chose to play as (Your portfolio → Load an investor's holdings) glows white with a thick ring,
+    // so it stands apart from every other coloured node (owner, 2026-11-26: "a specialness to the fund you selected").
+    const you = state.holdings.size && state.portInvestor ? state.portInvestor : null;
     state.node.attr("display", (d) => (visible(d) ? null : "none"))
+      .classed("is-you", (d) => d.id === you)
       .attr("opacity", nodeOpacity)
-      .attr("stroke", (d) => (d.id === state.selected || (state.holdings.size && isCompanyKind(d.kind) && isHeld(d)) ? cssVar("--g-focus") : d.kind === "gap" ? cssVar("--g-label-soft") : edgeOf(d)))
-      .attr("stroke-width", (d) => (d.id === state.selected ? 2.5 : state.holdings.size && isCompanyKind(d.kind) && isHeld(d) ? 2 : d.kind === "gap" ? 1.5 : 1));
+      .attr("stroke", (d) => (d.id === you || d.id === state.selected || (state.holdings.size && isCompanyKind(d.kind) && isHeld(d)) ? cssVar("--g-focus") : d.kind === "gap" ? cssVar("--g-label-soft") : edgeOf(d)))
+      .attr("stroke-width", (d) => (d.id === you ? 3.5 : d.id === state.selected ? 2.5 : state.holdings.size && isCompanyKind(d.kind) && isHeld(d) ? 2 : d.kind === "gap" ? 1.5 : 1));
     if (state.ringSel) state.ringSel.attr("display", (d) => (visible(d) ? null : "none")).attr("opacity", nodeOpacity);
     state.linkSel.attr("display", (l) => (inMode(l) && visible(l.source) && visible(l.target) ? null : "none"))
       .attr("stroke-opacity", (l) => {
@@ -967,10 +1004,11 @@
         if (near) return l.source.id === focusId || l.target.id === focusId ? 0.9 : 0.04;
         if (q) return 0.08;
         // Portfolio: the lines from held companies stand out; the rest go quiet.
-        if (reach) return isHeld(l.source) || isHeld(l.target) || l.source.id === state.portInvestor ? 0.75 : 0.03;
+        if (reach) return l.source.id === you || l.target.id === you ? 0.95 : isHeld(l.source) || isHeld(l.target) ? 0.6 : 0.03;
         return isLit(l.source) || isLit(l.target) ? 0.45 : 0.04;
       })
-      .attr("stroke-width", (l) => (P && P.links.has(l) ? 2.5 : (l.relation === "lead filer" ? 1.4 : 1)) * state.cfg.linkScale);
+      .attr("stroke-width", (l) => (P && P.links.has(l) ? 2.5 : you && (l.source.id === you || l.target.id === you) ? 1.8 : (l.relation === "lead filer" ? 1.4 : 1)) * state.cfg.linkScale)
+      .attr("stroke", (l) => (you && (l.source.id === you || l.target.id === you) ? cssVar("--g-focus") : null));
     const fewShown = state.data.nodes.filter(visible).length <= 25;
     state.labels.attr("display", (d) => (visible(d) ? null : "none"))
       .attr("opacity", (d) => {
@@ -980,7 +1018,8 @@
         if (near) return near.has(d.id) ? 1 : 0;
         if (!isLit(d)) return 0;
         // Portfolio: name each held company and the investor whose holdings were loaded.
-        if (reach && ((isCompanyKind(d.kind) && isHeld(d)) || d.id === state.portInvestor) && !state.hiddenLabels.has(d.id)) return 1;
+        if (d.id === you) return 1;
+        if (reach && isCompanyKind(d.kind) && isHeld(d) && !state.hiddenLabels.has(d.id)) return 1;
         // Highlighted types: name every highlighted node when there are 25 or fewer.
         if ((state.litKinds.size || (state.cfg.catColor && state.litCats.size)) && state.data.nodes.filter((n) => visible(n) && isLit(n)).length <= 25) return 1;
         // Labels are off by default; selecting a node (or hovering, or keyboard focus) names it and its connections.
@@ -992,7 +1031,7 @@
       })
       // The clicked (or hovered, or keyboard-focused) node's own label stands out from its neighbours' labels
       // (owner, 2026-11-26): larger, bold, white on a blue pill; the neighbours' labels go a softer grey.
-      .attr("font-size", (d) => (d.kind === "company" ? state.cfg.textSize + 2 : state.cfg.textSize) + (d.id === focusId ? 3 : 0))
+      .attr("font-size", (d) => (d.kind === "company" ? state.cfg.textSize + 2 : state.cfg.textSize) + (d.id === focusId || d.id === you ? 3 : 0))
       .attr("font-weight", (d) => (d.id === focusId ? 500 : d.kind === "company" ? 500 : 400))
       .attr("fill", (d) => (d.id === focusId ? cssVar("--g-focus") : near ? cssVar("--g-label-soft") : cssVar("--g-label")));
     layoutLabels();
@@ -1115,6 +1154,7 @@
   const collideR = (d) => radius(d) + 3 + (rings(d).length ? 13 : 0);
   function drawRings() {
     markKey();
+    figCap();
     // Marks changed with the lens: give the marked nodes their room and let the layout settle briefly.
     const sig = state.data.nodes.filter((n) => rings(n).length).map((n) => n.id).join("|");
     if (state.sim && sig !== state.ringSig) {
@@ -1207,6 +1247,19 @@
   const holdable = () => [...new Map(state.data.nodes.filter((n) => isCompanyKind(n.kind) && n.kind !== "lab" && n.kind !== "tier-labs" && n.ticker && !/private|unverified/i.test(n.ticker))
     .map((n) => [String(n.ticker).toUpperCase(), n])).values()].sort((a, b) => a.label.localeCompare(b.label));
   const holdingsData = () => (typeof DATA !== "undefined" && DATA.holdings) || null;
+  // The network node for an investor in holdings.json: the same id, else the same name, else the node whose id
+  // starts that investor's id ("parnassus" for "parnassus-investments").
+  function investorNode(hid) {
+    if (!hid) return null;
+    if (state.byId.has(hid)) return hid;
+    const inv = ((holdingsData() || {}).investors || []).find((i) => i.id === hid);
+    const nm = inv && String(inv.name).toLowerCase();
+    const orgs = state.data.nodes.filter((n) => !/^(person-|ev-|prop|co-|lab-)/.test(n.id) && !isCompanyKind(n.kind));
+    const byName = nm && orgs.find((n) => String(n.label).toLowerCase() === nm);
+    if (byName) return byName.id;
+    const pre = orgs.filter((n) => hid.startsWith(n.id + "-") || n.id.startsWith(hid + "-")).sort((a, b) => b.id.length - a.id.length);
+    return pre.length ? pre[0].id : null;
+  }
   function portfolioPicker() {
     const cos = document.getElementById("net-hold-cos");
     if (!cos) return;
@@ -1218,7 +1271,7 @@
       (H.holdings || []).forEach((h) => n.set(h.investor, (n.get(h.investor) || 0) + 1));
       sel.innerHTML = `<option value="">Choose an investor</option>` + H.investors.filter((i) => n.get(i.id))
         .sort((a, b) => a.name.localeCompare(b.name))
-        .map((i) => `<option value="${esc(i.id)}"${state.portInvestor === i.id ? " selected" : ""}>${esc(i.name)} (${n.get(i.id)} compan${n.get(i.id) === 1 ? "y" : "ies"})</option>`).join("");
+        .map((i) => `<option value="${esc(i.id)}"${state.portHid === i.id ? " selected" : ""}>${esc(i.name)} (${n.get(i.id)} compan${n.get(i.id) === 1 ? "y" : "ies"})</option>`).join("");
     }
   }
   function wireHoldings() {
@@ -1229,9 +1282,10 @@
     const listed = new Set(holdable().map((n) => String(n.ticker).toUpperCase()));
     input.value = [...state.holdings].filter((t) => !listed.has(t)).join(", ");
     document.getElementById("net-hold-inv").addEventListener("change", (e) => {
-      state.portInvestor = e.target.value || null;
+      state.portHid = e.target.value || null;
+      state.portInvestor = investorNode(state.portHid);
       const H = holdingsData();
-      const mine = new Set(((H && H.holdings) || []).filter((h) => h.investor === state.portInvestor).map((h) => String(h.company).toUpperCase()));
+      const mine = new Set(((H && H.holdings) || []).filter((h) => h.investor === state.portHid).map((h) => String(h.company).toUpperCase()));
       document.querySelectorAll("#net-hold-cos input").forEach((c) => { c.checked = mine.has(c.value); });
     });
     const close = () => { box.hidden = true; btn.setAttribute("aria-expanded", "false"); btn.focus(); };
@@ -1252,6 +1306,7 @@
     document.getElementById("net-hold-clear").addEventListener("click", () => {
       input.value = "";
       state.portInvestor = null;
+      state.portHid = null;
       document.getElementById("net-hold-inv").value = "";
       document.querySelectorAll("#net-hold-cos input").forEach((c) => { c.checked = false; });
       apply();
@@ -1299,7 +1354,7 @@
     const fmtD = (iso) => window.DATES.long(String(iso).slice(0, 10));
     box.hidden = false;
     box.innerHTML = `<h3 id="net-port-h" class="sub-h">Your portfolio: what it connects to</h3>
-      <p class="count-line">${held.length} compan${held.length === 1 ? "y" : "ies"} held in this map${state.portInvestor ? ` (holdings reported by ${esc(((holdingsData() || {}).investors || []).find((i) => i.id === state.portInvestor)?.name || "")})` : ""} · tied to ${allLabs.size} frontier lab${allLabs.size === 1 ? "" : "s"} · ${votes} AI proposal${votes === 1 ? "" : "s"} on upcoming ballots · ${openN} with a proposal filing deadline open · ${filerSet.size} investors and groups already filing AI proposals at these companies (in this dataset).</p>
+      <p class="count-line">${held.length} compan${held.length === 1 ? "y" : "ies"} held in this map${state.portHid ? ` (holdings reported by ${esc(((holdingsData() || {}).investors || []).find((i) => i.id === state.portHid)?.name || "")})` : ""} · tied to ${allLabs.size} frontier lab${allLabs.size === 1 ? "" : "s"} · ${votes} AI proposal${votes === 1 ? "" : "s"} on upcoming ballots · ${openN} with a proposal filing deadline open · ${filerSet.size} investors and groups already filing AI proposals at these companies (in this dataset).</p>
       <div class="table-wrap"><table class="port-table"><thead><tr><th scope="col">Company</th><th scope="col">Frontier labs it is tied to</th><th scope="col">AI proposals here</th><th scope="col">Already filing here</th><th scope="col">Next filing deadline</th><th scope="col">Plan</th></tr></thead><tbody>
       ${rows.map((r) => `<tr><td><button type="button" class="linklike" data-port-node="${esc(r.n.id)}">${esc(r.n.label)}</button> <span class="ticker">${esc(r.t)} · ${esc(kindLabel(r.n.kind))}</span></td>
         <td>${r.labs.length ? esc(r.labs.join(", ")) : `<span class="ticker">none in this map</span>`}</td>
@@ -1936,6 +1991,7 @@
     document.querySelectorAll("#net-lens input").forEach((r) => r.addEventListener("change", () => { if (r.checked) setLens(r.value, true); }));
     wireKeys();
     wireHoldings();
+    wireKey();
     gapButton();
     // "Asks not yet filed" are proposal-side nodes: turning them on opens the Proposals view.
     document.getElementById("net-gaps").addEventListener("click", () => {
