@@ -1345,6 +1345,38 @@
  ],
  "parnassus_timeline": [
   {
+   "date": "2025-H1",
+   "company": "Salesforce",
+   "title": "Responsible AI engagement",
+   "summary": "Parnassus lists Salesforce among the companies in its Responsible AI engagement theme for July 2024 to June 2025, alongside Intuit, NVIDIA and Verisk Analytics.",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "source_page": "21, 23"
+  },
+  {
+   "date": "2025-H1",
+   "company": "Verisk Analytics",
+   "title": "Responsible AI engagement continues",
+   "summary": "Parnassus still lists Verisk Analytics in its Responsible AI engagement theme for July 2024 to June 2025, after the 2023 agreement on responsible AI disclosures.",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "source_page": "21"
+  },
+  {
+   "date": "2025-H1",
+   "company": "TSMC",
+   "title": "Water quantity and quality risk engagement",
+   "summary": "Parnassus engaged TSMC on water quantity and quality risks, which its report ties to the growth of high-performance computing and AI servers.",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "source_page": "22"
+  },
+  {
+   "date": "2025-H1",
+   "company": "Micron Technology",
+   "title": "Water risk engagement",
+   "summary": "Parnassus engaged Micron on water risk, part of its semiconductor water engagements for July 2024 to June 2025.",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "source_page": "11, 25"
+  },
+  {
    "date": "2023",
    "company": "Verisk Analytics",
    "title": "Verisk agrees to publish responsible AI disclosures",
