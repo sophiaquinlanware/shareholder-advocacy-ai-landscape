@@ -400,8 +400,13 @@
     });
   }
 
-  function run() {
+  // Owner, 2026-11-26: "Nothing happened when I ran the scenarios": say whether anything changed, then take the
+  // reader to the results and mark what redrew. The first run on arrival stays put.
+  function run(e) {
     const st = el.querySelector("#sim-status");
+    const sig = JSON.stringify([S.plans, S.scen]);
+    const same = S.lastSig === sig && S.result;
+    const byClick = !!(e && e.type === "click");
     st.textContent = "Running…";
     setTimeout(() => {
       const t0 = performance.now();
@@ -409,7 +414,17 @@
       S.base = simulate({ targets: [], from: S.M.last + 1, lead: false }, { ...S.scen, extraAsks: [...new Set(S.plans.flatMap((p) => p.targets.map((t) => t.ask)))] }, S.scen.runs, 7);
       S.season = S.scen.horizon;
       drawResults();
-      st.textContent = `${plural(S.scen.runs, "run")} per plan in ${Math.round(performance.now() - t0)} ms. Results below.`;
+      S.lastSig = sig;
+      const ms = Math.round(performance.now() - t0);
+      st.textContent = same
+        ? `Same plans and assumptions as the last run, so the results are unchanged (${plural(S.scen.runs, "run")} per plan, ${ms} ms). Change a plan or an assumption to see a difference.`
+        : `${plural(S.scen.runs, "run")} per plan in ${ms} ms. Results updated below.`;
+      if (byClick) {
+        const out = el.querySelector("#sim-out");
+        out.querySelectorAll(".pl-card, .chart-card").forEach((c) => { c.classList.remove("sim-updated"); void c.offsetWidth; c.classList.add("sim-updated"); setTimeout(() => c.classList.remove("sim-updated"), 2000); });
+        const h = out.querySelector("h3");
+        if (h) { h.tabIndex = -1; h.scrollIntoView({ block: "start", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); h.focus({ preventScroll: true }); }
+      }
     }, 20);
   }
 
@@ -439,7 +454,6 @@
       <p class="note">Scenario computed by this site from data/sim_params.json and the assumptions above${sc.rescind ? `, with Rule 14a-8 rescinded from ${sc.rescindFrom}` : ""}. Not a forecast; not advice. Each rate is drawn from its own uncertainty in every run.</p>
       <div class="pl-grid">${rows}</div>
       <section class="pl-card pl-wide" aria-labelledby="sim-h-chart"><h3 id="sim-h-chart">Support over time</h3>
-        <p class="status-note">Blue dots are recorded votes (8-K results); green lines and bands are scenarios: each plan's middle and middle 80% of support, among runs with a vote that season (runs where the rule blocked a refile or the company committed have no vote). Dashed lines are the Rule 14a-8(i)(12) bars a refile must clear after one, two and three votes.</p>
         <div id="sim-chart"></div></section>
       <section class="pl-card pl-wide" aria-labelledby="sim-h-field"><h3 id="sim-h-field">The field, season by season</h3>
         <p class="status-note">Recorded seasons show in blue what was filed. Scenario seasons show in green the share of runs in which each company has a filing (shade) or a commitment (outline), under ${esc(S.plans[0].name)}. Move the slider through time.</p>
@@ -468,11 +482,11 @@
     }));
     const maxY = Math.max(30, ...all.flatMap((a) => a.hist.map((v) => v.support)), ...all.flatMap((a) => seasons.map((s) => quant(a.T.support[s] || [], 0.9) || 0))) * 1.1;
     const y = (v) => H - m.b - (v / maxY) * (H - m.t - m.b);
-    let svg = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" style="max-width:100%;height:auto" role="img" aria-label="Support over time for each plan's targets: recorded votes and the scenario's middle 80% of runs">`;
+    let svg = `<svg class="sim-svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" style="max-width:100%;height:auto" role="img" aria-label="Support over time for each plan's targets: recorded votes and the scenario's middle 80% of runs">`;
     for (let g = 0; g <= maxY; g += 10) svg += `<line x1="${m.l}" x2="${W - m.r}" y1="${y(g)}" y2="${y(g)}" stroke="var(--line)"/><text x="${m.l - 6}" y="${y(g) + 4}" text-anchor="end" font-size="11" fill="var(--ink-soft)">${g}%</text>`;
     P.thresholds.values.forEach((v) => { if (v < maxY) svg += `<line x1="${m.l}" x2="${W - m.r}" y1="${y(v)}" y2="${y(v)}" stroke="var(--ink-soft)" stroke-dasharray="4 4"/>`; });
     for (let yr = y0; yr <= y1; yr++) svg += `<text x="${x(yr)}" y="${H - 8}" text-anchor="middle" font-size="11" fill="var(--ink-soft)">${yr}</text>`;
-    svg += `<line x1="${x(S.M.last + 0.5)}" x2="${x(S.M.last + 0.5)}" y1="${m.t}" y2="${H - m.b}" stroke="var(--ink)"/><text x="${x(S.M.last + 0.5) + 4}" y="${m.t + 10}" font-size="11" fill="var(--ink)">scenarios →</text>`;
+    svg += `<line x1="${x(S.M.last + 0.5)}" x2="${x(S.M.last + 0.5)}" y1="${m.t}" y2="${H - m.b}" stroke="var(--ink)"/><text x="${x(S.M.last + 0.5) + 10}" y="${m.t + 10}" font-size="11" fill="var(--ink)">scenarios →</text>`;
     all.forEach(({ i, hist, T }) => {
       const col = COLORS[i];
       const pts = seasons.filter((s) => (T.support[s] || []).length >= 5);
@@ -488,7 +502,15 @@
       const s = T.support[yr] || [];
       return `<tr><td>${esc(S.plans[i].name)}</td><td>${esc(coName(t.co))}, ${esc(askLabel(t.ask))}</td><td>${yr}</td><td>${rec || "–"}</td><td>${s.length ? pct(quant(s, 0.5)) : "–"}</td><td>${s.length ? `${pct(quant(s, 0.1))} to ${pct(quant(s, 0.9))}` : "–"}</td><td>${yr > S.M.last ? share(s.length / S.result[i].runs) : "–"}</td></tr>`;
     })).join("");
-    box.innerHTML = `${svg}</svg><details><summary>The same figures as a table</summary><div class="table-wrap"><table><thead><tr><th scope="col">Plan</th><th scope="col">Target</th><th scope="col">Season</th><th scope="col">Recorded vote</th><th scope="col">Scenario middle</th><th scope="col">Middle 80% of runs</th><th scope="col">Runs with a vote</th></tr></thead><tbody>${rows}</tbody></table></div><p class="ticker">A dash in the recorded column: no recorded vote on this ask at this company.</p></details>`;
+    // A self-contained figure (owner, 2026-11-26): title, measure, years, key and source inside it, so a screenshot
+    // stands on its own. Helpers from app.js.
+    const head = window.figHead ? window.figHead(`Support for each plan's targets, recorded and in scenarios, ${y0}–${y1}`,
+      `Percent of votes cast for ÷ (for + against). Scenarios: ${S.scen.runs} runs per plan, among runs with a vote that season.`) : "";
+    const key = `<div class="chart-key sim-key"><span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="4" fill="var(--accent)"/></svg> Recorded vote</span>
+      ${S.plans.map((p, i) => `<span><svg width="22" height="12" aria-hidden="true"><rect x="0" y="2" width="22" height="8" fill="${COLORS[i]}" opacity=".2"/><line x1="0" x2="22" y1="6" y2="6" stroke="${COLORS[i]}" stroke-width="2"/></svg> ${esc(p.name)}: middle and middle 80% of runs</span>`).join("")}
+      <span><svg width="22" height="12" aria-hidden="true"><line x1="0" x2="22" y1="6" y2="6" stroke="var(--ink-soft)" stroke-dasharray="4 4"/></svg> Rule 14a-8(i)(12) bars: 5%, 15%, 25%</span></div>`;
+    const source = window.figSource ? window.figSource("8-K vote results for recorded votes; scenarios computed by this site from data/sim_params.json, not a forecast and not advice;") : "";
+    box.innerHTML = `<figure class="card chart-card fig">${head}${key}${svg}</svg>${source}</figure><details><summary>The same figures as a table</summary><div class="table-wrap"><table><thead><tr><th scope="col">Plan</th><th scope="col">Target</th><th scope="col">Season</th><th scope="col">Recorded vote</th><th scope="col">Scenario middle</th><th scope="col">Middle 80% of runs</th><th scope="col">Runs with a vote</th></tr></thead><tbody>${rows}</tbody></table></div><p class="ticker">A dash in the recorded column: no recorded vote on this ask at this company.</p></details>`;
   }
 
   function drawField() {

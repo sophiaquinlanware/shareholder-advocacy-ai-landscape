@@ -838,3 +838,9 @@ button + [role="status"], button + .ticker, button + .status-note, button + outp
 .cp-outcomes { margin-bottom: 16px; }
 .cp-ledger td { font-variant-numeric: normal; }
 .cp-states li.cp-escalation::before { background: var(--ink); border-radius: 0; }
+.sim-key { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--ink-soft); margin: 0 0 8px; }
+.sim-key span { display: inline-flex; align-items: center; gap: 6px; }
+/* A run that redrew the results marks them briefly (not when motion is reduced). */
+@keyframes sim-updated { from { box-shadow: 0 0 0 3px var(--scenario); } to { box-shadow: 0 0 0 0 transparent; } }
+.sim-updated { animation: sim-updated 1.6s ease-out 1; }
+@media (prefers-reduced-motion: reduce) { .sim-updated { animation: none; outline: 2px solid var(--scenario); outline-offset: 2px; } }

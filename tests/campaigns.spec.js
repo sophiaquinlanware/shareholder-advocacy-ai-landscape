@@ -39,7 +39,7 @@ test("the planner shows the ladder for the chosen ask and the SEC's role in excl
 
 test("the simulator's exclusion setting names the first season without SEC review", async ({ page }) => {
   await open(page, "/index.html#simulate");
-  await expect(page.locator("#sim-status")).toContainText("Results below");
+  await expect(page.locator("#sim-status")).toContainText(/updated below|unchanged/);
   await expect(page.locator('#sim-settings select[data-s="exclRegime"]')).toHaveValue("latest");
   await expect(page.locator('#sim-settings select[data-s="exclRegime"] option').first()).toContainText(
     "did not review most exclusions",

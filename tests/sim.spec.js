@@ -27,12 +27,12 @@ test("a plan from the planner runs as a scenario with labelled results", async (
   await expect(page.locator("#tab-simulate h2")).toHaveText("Test plans over time");
   await expect(page.locator('#sim-plans select[data-f="co"]').first()).toHaveValue("MSFT");
   await page.locator("#sim-run").click();
-  await expect(page.locator("#sim-status")).toContainText("Results below");
+  await expect(page.locator("#sim-status")).toContainText(/updated below|unchanged/);
   await expect(page.locator("#sim-out")).toContainText("Not a forecast; not advice.");
   await expect(page.locator("#sim-out")).toContainText(
     "Microsoft, Board oversight and AI transparency reporting: commits by",
   );
-  await expect(page.locator("#sim-chart svg")).toBeVisible();
+  await expect(page.locator("#sim-chart svg.sim-svg")).toBeVisible();
   await expect(page.locator(".sim-log li").first()).toBeVisible();
   // The field moves back to a recorded season.
   await page.locator("#sim-season").fill("2024");
@@ -41,10 +41,10 @@ test("a plan from the planner runs as a scenario with labelled results", async (
 
 test("plans compare side by side, and the same plan gives the same result", async ({ page }) => {
   await open(page, "/index.html?plan=amazon~ask-dc-climate-energy#simulate");
-  await expect(page.locator("#sim-status")).toContainText("Results below");
+  await expect(page.locator("#sim-status")).toContainText(/updated below|unchanged/);
   await page.locator("#sim-addplan").click();
   await page.locator("#sim-run").click();
-  await expect(page.locator("#sim-status")).toContainText("Results below");
+  await expect(page.locator("#sim-status")).toContainText(/updated below|unchanged/);
   const cards = page.locator("#sim-out .pl-grid .pl-card");
   await expect(cards).toHaveCount(2);
   const a = await cards.nth(0).locator("li").first().innerText();
@@ -81,4 +81,15 @@ test("a refile the rule allows is not blocked by a vote on a proposal from a fil
   await expect(page.locator("#sim-out .pl-grid li").first()).not.toContainText(
     "blocked by the SEC rule at least once in 100%",
   );
+});
+
+test("running the same plans again says so, and a changed plan takes the reader to the results", async ({ page }) => {
+  await open(page, "/index.html?plan=amazon~ask-dc-climate-energy#simulate");
+  await expect(page.locator("#sim-status")).toContainText("Results");
+  await page.locator("#sim-run").click();
+  await expect(page.locator("#sim-status")).toContainText("Same plans and assumptions as the last run");
+  await page.locator('#sim-plans input[data-f="lead"]').first().uncheck();
+  await page.locator("#sim-run").click();
+  await expect(page.locator("#sim-status")).toContainText("Results updated below");
+  await expect(page.locator("#sim-out h3").first()).toBeFocused();
 });
