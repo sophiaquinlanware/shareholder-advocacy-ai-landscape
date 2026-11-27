@@ -916,6 +916,7 @@ async function main() {
   if (window.renderPlanner) window.renderPlanner(DATA);
   if (window.renderSimulator) window.renderSimulator(DATA);
   if (window.renderBoard) window.renderBoard();
+  if (window.renderAlignment) window.renderAlignment();
   document.dispatchEvent(new Event("siteready"));
 }
 main();

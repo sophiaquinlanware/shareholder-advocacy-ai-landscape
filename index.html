@@ -63,9 +63,11 @@
     <div class="subtabs" role="tablist" aria-label="Value chain views">
       <button type="button" role="tab" id="tabbtn-value-chain" aria-controls="tab-value-chain" data-tab="value-chain" aria-selected="true">Chips to AI products</button>
       <button type="button" role="tab" id="tabbtn-pathways" aria-controls="tab-pathways" data-tab="pathways" aria-selected="false" tabindex="-1">Ties to each frontier lab</button>
+      <button type="button" role="tab" id="tabbtn-listed-labs" aria-controls="tab-listed-labs" data-tab="listed-labs" aria-selected="false" tabindex="-1">Labs you can file at</button>
     </div>
     <section id="tab-value-chain" class="panel" role="tabpanel" aria-labelledby="tabbtn-value-chain" data-group="chain" hidden></section>
     <section id="tab-pathways" class="panel" role="tabpanel" aria-labelledby="tabbtn-pathways" data-group="chain" hidden></section>
+    <section id="tab-listed-labs" class="panel" role="tabpanel" aria-labelledby="tabbtn-listed-labs" data-group="chain" hidden></section>
     <p class="next-section"><a href="#causality">Next: Laws and rules →</a></p>
   </div>
 
@@ -127,10 +129,12 @@
     <p class="group-q">Plan an engagement on one ask at one company from the earlier sections' data, then test plans forward in time against a model of past filer, company, voter and policy behavior.</p>
     <div class="subtabs" role="tablist" aria-label="Plan and test views">
       <button type="button" role="tab" id="tabbtn-planner" aria-controls="tab-planner" data-tab="planner" aria-selected="true">Plan an engagement</button>
+      <button type="button" role="tab" id="tabbtn-asks" aria-controls="tab-asks" data-tab="asks" aria-selected="false" tabindex="-1">Safety asks</button>
       <button type="button" role="tab" id="tabbtn-predict" aria-controls="tab-predict" data-tab="predict" aria-selected="false" tabindex="-1">Prediction board</button>
       <button type="button" role="tab" id="tabbtn-simulate" aria-controls="tab-simulate" data-tab="simulate" aria-selected="false" tabindex="-1">Test plans over time</button>
     </div>
     <section id="tab-planner" class="panel" role="tabpanel" aria-labelledby="tabbtn-planner" data-group="plan" hidden></section>
+    <section id="tab-asks" class="panel" role="tabpanel" aria-labelledby="tabbtn-asks" data-group="plan" hidden></section>
     <section id="tab-predict" class="panel" role="tabpanel" aria-labelledby="tabbtn-predict" data-group="plan" hidden></section>
     <section id="tab-simulate" class="panel" role="tabpanel" aria-labelledby="tabbtn-simulate" data-group="plan" hidden></section>
   </div>
@@ -202,6 +206,7 @@
 <script defer src="planner-tools.js"></script>
 <script defer src="planner.js"></script>
 <script defer src="sim.js"></script>
+<script defer src="alignment.js"></script>
 <script defer src="board-live.js"></script>
 <script defer src="board.js"></script>
 <script defer src="planner-docs.js"></script>

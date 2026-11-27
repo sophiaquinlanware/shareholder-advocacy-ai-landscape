@@ -1,0 +1,3589 @@
+{
+ "about": "Listed companies with sourced ties to each frontier lab, how strong each tie is (this site's 1-3 rating with its reason, from data/pathways.json), whether shareholders can reach the company, and its reported holders. Ordered by what the records show (a listed lab first, then the strongest ties); not a forecast of influence and not a recommendation.",
+ "as_of": "2026-11-25",
+ "holdings_as_of": "2026Q3",
+ "labs": [
+  {
+   "id": "anthropic",
+   "name": "Anthropic",
+   "status": "public",
+   "parent": null,
+   "description": "Claude maker; IPO priced $83/share on Nasdaq (ANT) November 19, 2026; founders keep voting control via Class F share.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/0001628280-26-074944-index.htm",
+   "routes": [
+    {
+     "ticker": "ANT",
+     "name": "Anthropic",
+     "route": "narrowing",
+     "route_reason": "Any record holder can give notice of a floor proposal, but one Class F share carries 50.1% of the vote and directors are elected by plurality, so outside votes signal views without deciding outcomes.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": null,
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm",
+     "next_deadline_status": null,
+     "how_to_file": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last annual meeting. For the 2027 meeting, notice is due between February 1 and March 3, 2027. No minimum stake. The Class F and Class T holders are exempt from these notice rules.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/exhibit32-closing8xk.htm",
+     "threshold": "None beyond being a stockholder of record",
+     "control": "Class A shares carry one vote each and Class N shares have no vote. One Class F share, held by Anthropic Founders, LLC, carries 50.1% of total voting power. Class T stock elects the Class T directors. No proxy statement yet; this is from the IPO closing filings of November 2026.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/ant-20261119.htm",
+     "ai_proposals_filed": 0,
+     "holders": [],
+     "holders_count": 0,
+     "direct": true,
+     "direct_note": "The lab itself is listed",
+     "levers": []
+    },
+    {
+     "ticker": "AMZN",
+     "name": "Amazon",
+     "route": "open",
+     "route_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-12-10",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake. (The 3% for 3 years proxy access rule covers director nominations only.)",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057026/tm2413032d1_ex3-2.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. Bezos holds 8.8%; no controlling holder.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
+     "ai_proposals_filed": 12,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 80386924697.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 31867316197,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 13617165946.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 5132909070.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 3600566559.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 2780394159.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 18,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "about 14.7% of all stock post-IPO (non-voting); $8B + $5B invested, up to $20B more on milestones.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Largest outside economic holder.",
+       "as_of": "2026-11",
+       "source_url": "https://techcrunch.com/2026/11/17/amazon-and-google-will-together-own-nearly-30-of-anthropic-after-its-ipo/"
+      },
+      {
+       "type": "cloud/compute provider",
+       "description": "AWS primary cloud/training partner; >$100B over 10 years for up to 5 GW Trainium capacity.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Anthropic's primary training infrastructure.",
+       "as_of": "2026-04",
+       "source_url": "https://www.anthropic.com/news/anthropic-amazon-compute"
+      }
+     ]
+    },
+    {
+     "ticker": "GOOGL",
+     "name": "Alphabet",
+     "route": "narrowing",
+     "route_reason": "The notice route stays open, but Page and Brin hold about 52.7% of the vote, so no proposal or director vote can pass without them.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-12-25",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204422000085/googexhibit302.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "Class B shares carry 10 votes each. Page and Brin together hold about 52.7% of voting power.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+     "ai_proposals_filed": 20,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 125345370941.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 50466058081,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 23118465179.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 9523177924.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 5402837736.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 4142859151.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "about 13.7% of all stock post-IPO (non-voting Class N), incl. about $10B bought in IPO private placement.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Second-largest economic holder, though shares carry no votes.",
+       "as_of": "2026-11",
+       "source_url": "https://techcrunch.com/2026/11/17/amazon-and-google-will-together-own-nearly-30-of-anthropic-after-its-ipo/"
+      },
+      {
+       "type": "cloud/compute provider",
+       "description": "Up to 1M TPUs (Oct 2025) plus multi-GW next-gen TPU deal with Broadcom from 2027.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "One of Anthropic's three core compute platforms.",
+       "as_of": "2026-04",
+       "source_url": "https://www.anthropic.com/news/google-broadcom-partnership-compute"
+      }
+     ]
+    },
+    {
+     "ticker": "MSFT",
+     "name": "Microsoft",
+     "route": "open",
+     "route_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2027-06-24",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any shareholder of record can bring a proposal to the meeting with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525154103/d84624dex32.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. No controlling holder; Vanguard (7.5%) and BlackRock (7.3%) are the largest.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+     "ai_proposals_filed": 14,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 104520177799.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 35113298063,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 24871054423.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 9885468420.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 5413077359.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 4338861137.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "Up to $5B investment announced Nov 2025; partly funded via Series G.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Meaningful dollars but small share of a ~$1.5T company.",
+       "as_of": "2025-11",
+       "source_url": "https://blogs.microsoft.com/blog/2025/11/18/microsoft-nvidia-and-anthropic-announce-strategic-partnerships/"
+      },
+      {
+       "type": "cloud/compute provider",
+       "description": "Anthropic committed to buy $30B of Azure compute, option up to 1 GW.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Large contract but AWS and Google remain bigger providers.",
+       "as_of": "2025-11",
+       "source_url": "https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships"
+      },
+      {
+       "type": "distribution partner",
+       "description": "Claude offered in Microsoft Foundry and used in Microsoft products.",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "One of several distribution channels.",
+       "as_of": "2025-11",
+       "source_url": "https://blogs.microsoft.com/blog/2025/11/18/microsoft-nvidia-and-anthropic-announce-strategic-partnerships/"
+      }
+     ]
+    },
+    {
+     "ticker": "NVDA",
+     "name": "Nvidia",
+     "route": "open",
+     "route_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2027-01-12",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. Huang holds 3.6%; BlackRock (7.4%) and Vanguard (7.3%) are the largest holders.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+     "ai_proposals_filed": 2,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 213034649836.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 61847326779,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 36095831027.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 12738573702.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 7876756544.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 5688837091.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "Up to $10B investment announced Nov 2025.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Sizable dollars, small percentage.",
+       "as_of": "2025-11",
+       "source_url": "https://blogs.nvidia.com/blog/microsoft-nvidia-anthropic-announce-partnership"
+      },
+      {
+       "type": "chip supplier",
+       "description": "Initial 1 GW commitment on Grace Blackwell and Vera Rubin systems.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "One of three chip platforms Anthropic uses.",
+       "as_of": "2025-11",
+       "source_url": "https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships"
+      }
+     ]
+    },
+    {
+     "ticker": "AVGO",
+     "name": "Broadcom",
+     "route": "open",
+     "route_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-11-02",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/d49254ddef14a.htm",
+     "next_deadline_status": "passed",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312518107559/d562806dex32.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock, one vote per share. No controlling holder; Vanguard (9.9%) and BlackRock (7.3%) are the largest.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/0001193125-26-085691.txt",
+     "ai_proposals_filed": 0,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 44752634691.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 23402660001,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 11211482631.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 4530595077.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 2377126443.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 1740947163.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "chip supplier",
+       "description": "Part of multi-GW next-gen TPU agreement with Google, online from 2027.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Builds Anthropic's TPU capacity.",
+       "as_of": "2026-04",
+       "source_url": "https://www.anthropic.com/news/google-broadcom-partnership-compute"
+      }
+     ]
+    },
+    {
+     "ticker": "CRM",
+     "name": "Salesforce",
+     "route": "open",
+     "route_reason": "Any stockholder of record can give notice of a floor proposal with no stake minimum, directors face majority voting, and no holder controls the vote; Vanguard's 10.2% is the largest stake.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-12-17",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 45 to 75 days before the anniversary of the date the company first mailed proxy materials for the prior annual meeting. For the 2027 meeting, notice is due between January 31 and March 2, 2027. No minimum stake. Bylaws effective December 5, 2024.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000036/exhibit31.htm",
+     "threshold": "None beyond being a stockholder of record",
+     "control": "One class of stock, one vote per share. No controlling holder; Vanguard (10.2%), BlackRock (8.9%) and State Street (6.0%) are the largest. Vanguard reported shared voting power over only 1.27 million shares.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm",
+     "ai_proposals_filed": 2,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 2337427131.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 1244683770.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 389013023.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 271097606.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 212727367.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      },
+      {
+       "id": "amalgamated-bank",
+       "name": "Amalgamated Bank",
+       "value_usd": 32105000.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+      }
+     ],
+     "holders_count": 14,
+     "direct": false,
+     "levers": [
+      {
+       "type": "distribution partner",
+       "description": "Claude in Agentforce 360 for regulated industries; Claude-Slack integration.",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "One enterprise channel among many.",
+       "as_of": "2025-10",
+       "source_url": "https://www.salesforce.com/news/press-releases/2025/10/14/anthropic-regulated-industries-partnership-expansion-announcement/"
+      }
+     ]
+    },
+    {
+     "ticker": "SPCX",
+     "name": "SpaceX (including xAI)",
+     "route": "narrowing",
+     "route_reason": "SpaceX has opted into the Texas ownership threshold for proposals, Musk holds most of the vote through 10-vote Class B shares, and directors are elected by plurality.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": null,
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm",
+     "next_deadline_status": null,
+     "how_to_file": "A shareholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last annual meeting; the bylaws treat June 19, 2026 as the date of the 2026 meeting. Proposals other than nominations also need the Texas Section 21.373 ownership stake, and the notice must say whether the shareholder will solicit holders of at least 67% of the voting power. Musk and his permitted transferees are exempt from these notice rules.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052535/a32-amendedandrestatedbyla.htm",
+     "threshold": "At least $1 million in market value or 3% of voting shares, held for six months before and through the meeting (bylaws Section 2.5, adopted June 15, 2026, under Texas Section 21.373).",
+     "control": "Class A shares carry one vote and Class B shares carry ten. Musk reported sole voting power over 6.42 billion shares (48.4% of Class A counted as converted), of which 5.22 billion are Class B, as of June 30, 2026. 5.33 billion Class B shares were outstanding on October 15, 2026. No proxy statement yet. Calculated from these share counts, Musk holds about 87% of total votes (this site's calculation; the filings do not state a percentage).",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1181412/000110465926095936/xslSCHEDULE_13G_X02/primary_doc.xml",
+     "ai_proposals_filed": 0,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 36327436092.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 269662854.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 146148793.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "federated-hermes",
+       "name": "Federated Hermes",
+       "value_usd": 105843528.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 104743154.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 93321996.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 8,
+     "direct": false,
+     "levers": [
+      {
+       "type": "cloud/compute provider",
+       "description": "Anthropic gets GPU capacity in Colossus 1 and Colossus 2.",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Supplementary capacity versus AWS/Google.",
+       "as_of": "2026-05",
+       "source_url": "https://www.anthropic.com/news/series-h"
+      }
+     ]
+    },
+    {
+     "ticker": "005930",
+     "name": "Samsung Electronics",
+     "route": null,
+     "route_reason": null,
+     "shareholder_route": "listed outside the US",
+     "next_deadline": null,
+     "next_deadline_source": null,
+     "next_deadline_status": null,
+     "how_to_file": null,
+     "how_to_file_source": null,
+     "threshold": null,
+     "control": null,
+     "control_source": null,
+     "ai_proposals_filed": 0,
+     "holders": [],
+     "holders_count": 0,
+     "direct": false,
+     "levers": [
+      {
+       "type": "chip supplier",
+       "description": "Named strategic infrastructure partner in Series H (terms undisclosed).",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Undisclosed terms.",
+       "as_of": "2026-05",
+       "source_url": "https://www.anthropic.com/news/series-h"
+      }
+     ]
+    },
+    {
+     "ticker": "000660",
+     "name": "SK hynix",
+     "route": null,
+     "route_reason": null,
+     "shareholder_route": "US-listed foreign issuer",
+     "next_deadline": null,
+     "next_deadline_source": null,
+     "next_deadline_status": null,
+     "how_to_file": null,
+     "how_to_file_source": null,
+     "threshold": null,
+     "control": null,
+     "control_source": null,
+     "ai_proposals_filed": 0,
+     "holders": [],
+     "holders_count": 0,
+     "direct": false,
+     "levers": [
+      {
+       "type": "chip supplier",
+       "description": "Named strategic infrastructure partner in Series H (terms undisclosed).",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Undisclosed terms.",
+       "as_of": "2026-05",
+       "source_url": "https://www.anthropic.com/news/series-h"
+      }
+     ]
+    }
+   ],
+   "strong_routes": 2
+  },
+  {
+   "id": "openai",
+   "name": "OpenAI",
+   "status": "private",
+   "parent": null,
+   "description": "ChatGPT/GPT maker; PBC controlled by OpenAI Foundation; $852B post-money (Mar 2026); confidential IPO filing June 2026.",
+   "source_url": "https://techcrunch.com/2026/06/08/following-anthropic-openai-files-confidentially-for-ipo/",
+   "routes": [
+    {
+     "ticker": "MSFT",
+     "name": "Microsoft",
+     "route": "open",
+     "route_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2027-06-24",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any shareholder of record can bring a proposal to the meeting with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525154103/d84624dex32.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. No controlling holder; Vanguard (7.5%) and BlackRock (7.3%) are the largest.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+     "ai_proposals_filed": 14,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 104520177799.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 35113298063,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 24871054423.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 9885468420.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 5413077359.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 4338861137.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "about 27% diluted stake (about $135B) after Oct 2025 recapitalization; joined 2026 round; current % after dilution UNVERIFIED.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Largest outside shareholder; listed by OpenAI as a top dependency risk.",
+       "as_of": "2025-10",
+       "source_url": "https://blogs.microsoft.com/blog/2025/10/28/the-next-chapter-of-the-microsoft-openai-partnership/"
+      },
+      {
+       "type": "cloud/compute provider",
+       "description": "Primary cloud partner; Azure-first launches, but exclusivity ended Apr 2026; OpenAI committed incremental $250B Azure (Oct 2025).",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Large share of OpenAI compute, though now non-exclusive.",
+       "as_of": "2026-04",
+       "source_url": "https://blogs.microsoft.com/blog/2026/04/27/the-next-phase-of-the-microsoft-openai-partnership/"
+      },
+      {
+       "type": "revenue share/commercial agreement",
+       "description": "Non-exclusive IP license to 2032; OpenAI pays Microsoft revenue share through 2030, now capped; Microsoft stopped paying share back.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Contractual economics and IP rights tie Microsoft's results to OpenAI.",
+       "as_of": "2026-04",
+       "source_url": "https://openai.com/index/next-phase-of-microsoft-partnership"
+      }
+     ]
+    },
+    {
+     "ticker": "AMZN",
+     "name": "Amazon",
+     "route": "open",
+     "route_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-12-10",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake. (The 3% for 3 years proxy access rule covers director nominations only.)",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057026/tm2413032d1_ex3-2.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. Bezos holds 8.8%; no controlling holder.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
+     "ai_proposals_filed": 12,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 80386924697.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 31867316197,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 13617165946.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 5132909070.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 3600566559.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 2780394159.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 18,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "$50B commitment in 2026 round: $15B upfront, $35B on preset conditions.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "One of the three largest checks in OpenAI's biggest round.",
+       "as_of": "2026-02",
+       "source_url": "https://openai.com/index/scaling-ai-for-everyone/"
+      },
+      {
+       "type": "cloud/compute provider",
+       "description": "$38B AWS deal (Nov 2025); 2 GW of Trainium capacity added Feb 2026.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Large but one of several OpenAI providers.",
+       "as_of": "2026-02",
+       "source_url": "https://siliconangle.com/2026/02/27/openai-raises-110b-730b-valuation-expands-aws-nvidia-partnerships/"
+      }
+     ]
+    },
+    {
+     "ticker": "NVDA",
+     "name": "Nvidia",
+     "route": "open",
+     "route_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2027-01-12",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. Huang holds 3.6%; BlackRock (7.4%) and Vanguard (7.3%) are the largest holders.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+     "ai_proposals_filed": 2,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 213034649836.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 61847326779,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 36095831027.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 12738573702.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 7876756544.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 5688837091.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "$30B in Feb 2026 round; earlier 'up to $100B' Sept 2025 LOI never made definitive.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Major shareholder and key supplier.",
+       "as_of": "2026-02",
+       "source_url": "https://openai.com/index/scaling-ai-for-everyone/"
+      },
+      {
+       "type": "chip supplier",
+       "description": "3 GW inference + 2 GW training on Vera Rubin (Feb 2026); runs across Microsoft, OCI, CoreWeave.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Dominant GPU supplier for OpenAI.",
+       "as_of": "2026-02",
+       "source_url": "https://openai.com/index/scaling-ai-for-everyone/"
+      }
+     ]
+    },
+    {
+     "ticker": "AMD",
+     "name": "AMD",
+     "route": "open",
+     "route_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-11-27",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake. The proposer or a representative must attend the meeting.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000218/amd-bylawsnov2026amendment.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock, one vote per share. No controlling holder; Vanguard (8.8%) and BlackRock (7.7%) are the largest.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm",
+     "ai_proposals_filed": 0,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 32600802547.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 12356895031,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 6789022504.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 1979797900.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 1494462998.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 1131297180.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "chip supplier",
+       "description": "6 GW of AMD Instinct GPUs; OpenAI got a warrant for up to 160M AMD shares.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Multi-generation supply deal plus cross-equity.",
+       "as_of": "2025-10",
+       "source_url": "https://openai.com/index/openai-amd-strategic-partnership/"
+      }
+     ]
+    },
+    {
+     "ticker": "AVGO",
+     "name": "Broadcom",
+     "route": "open",
+     "route_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-11-02",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/d49254ddef14a.htm",
+     "next_deadline_status": "passed",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312518107559/d562806dex32.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock, one vote per share. No controlling holder; Vanguard (9.9%) and BlackRock (7.3%) are the largest.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/0001193125-26-085691.txt",
+     "ai_proposals_filed": 0,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 44752634691.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 23402660001,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 11211482631.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 4530595077.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 2377126443.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 1740947163.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "chip supplier",
+       "description": "Co-developing 10 GW of OpenAI-designed custom accelerators, deploying 2026-2029.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "OpenAI's custom-silicon path.",
+       "as_of": "2025-10",
+       "source_url": "https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration/"
+      }
+     ]
+    },
+    {
+     "ticker": "ORCL",
+     "name": "Oracle",
+     "route": "narrowing",
+     "route_reason": "The notice route stays open, but directors are elected by plurality and Lawrence Ellison holds 38.2% of the vote.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2027-05-28",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526402816/orcl-20260925.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the date the prior year's proxy materials were first mailed (bylaws Section 1.11). No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312523279837/d606391dex302.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock, one vote per share. Lawrence J. Ellison holds 38.2% of shares as of September 21, 2026; no other holder above 5% is listed.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526402816/orcl-20260925.htm",
+     "ai_proposals_filed": 0,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 3736031242.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 3256817434,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 1357532604.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 457025705.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 354338760.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 249272681.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 16,
+     "direct": false,
+     "levers": [
+      {
+       "type": "cloud/compute provider",
+       "description": "Stargate partner: 4.5 GW of US capacity (Jul 2025); about $300B five-year deal reported.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Among OpenAI's largest compute commitments.",
+       "as_of": "2025-07",
+       "source_url": "https://openai.com/index/stargate-advances-with-partnership-with-oracle/"
+      }
+     ]
+    },
+    {
+     "ticker": "9984",
+     "name": "SoftBank Group",
+     "route": null,
+     "route_reason": null,
+     "shareholder_route": "listed outside the US",
+     "next_deadline": null,
+     "next_deadline_source": null,
+     "next_deadline_status": null,
+     "how_to_file": null,
+     "how_to_file_source": null,
+     "threshold": null,
+     "control": null,
+     "control_source": null,
+     "ai_proposals_filed": 0,
+     "holders": [],
+     "holders_count": 0,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "about $64.6B cumulative invested, about 13% stake after $30B follow-on completed Oct 2026 (stake % press-reported).",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Second-largest outside shareholder; co-led 2026 round.",
+       "as_of": "2026-10",
+       "source_url": "https://group.softbank/en/news/press/20260227"
+      }
+     ]
+    },
+    {
+     "ticker": "AAPL",
+     "name": "Apple",
+     "route": "open",
+     "route_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-09-10",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm",
+     "next_deadline_status": "passed",
+     "how_to_file": "A shareholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake. (The 3% for 3 years proxy access rule covers director nominations only.)",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_ex3-2.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. Vanguard (9.6%) and BlackRock (7.1%) are the largest holders.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm",
+     "ai_proposals_filed": 4,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 123213667912.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 52718798466,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 35205747796.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 12043322625.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 7313330668.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 5476118605.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 18,
+     "direct": false,
+     "levers": [
+      {
+       "type": "distribution partner",
+       "description": "ChatGPT integrated into Siri and Apple Intelligence; reportedly unchanged after Gemini deal.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Reach across Apple's device base.",
+       "as_of": "2024-06",
+       "source_url": "https://openai.com/index/openai-and-apple-announce-partnership/"
+      }
+     ]
+    },
+    {
+     "ticker": "CRWV",
+     "name": "CoreWeave",
+     "route": "narrowing",
+     "route_reason": "The notice route stays open, but directors and officers hold 72.32% of the vote through Class B shares and directors are elected by plurality on a classified board.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-12-23",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000191/crwv-20260422.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1769628/000119312525085800/d935353dex32.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "Class B shares carry 10 votes each. As of April 15, 2026, Intrator holds 38.70% of voting power, Venturo 20.30% and McBee 14.59%; directors and officers as a group hold 72.32%.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000191/crwv-20260422.htm",
+     "ai_proposals_filed": 0,
+     "holders": [
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 611817235,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 118407219.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 116958255.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 42737674.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 39449853.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 16143336.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 7,
+     "direct": false,
+     "levers": [
+      {
+       "type": "cloud/compute provider",
+       "description": "Contracts expanded by up to $6.5B, totaling about $22.4B (Sept 2025).",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Large contract; OpenAI is a top CoreWeave customer.",
+       "as_of": "2025-09",
+       "source_url": "https://www.coreweave.com/news/coreweave-expands-agreement-with-openai-by-up-to-6-5b"
+      }
+     ]
+    },
+    {
+     "ticker": "005930",
+     "name": "Samsung Electronics",
+     "route": null,
+     "route_reason": null,
+     "shareholder_route": "listed outside the US",
+     "next_deadline": null,
+     "next_deadline_source": null,
+     "next_deadline_status": null,
+     "how_to_file": null,
+     "how_to_file_source": null,
+     "threshold": null,
+     "control": null,
+     "control_source": null,
+     "ai_proposals_filed": 0,
+     "holders": [],
+     "holders_count": 0,
+     "direct": false,
+     "levers": [
+      {
+       "type": "chip supplier",
+       "description": "Stargate partner; LOI to supply memory (DRAM) for OpenAI data centers.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "HBM/DRAM supply is a bottleneck input.",
+       "as_of": "2025-10",
+       "source_url": "https://openai.com/index/samsung-and-sk-join-stargate/"
+      }
+     ]
+    },
+    {
+     "ticker": "000660",
+     "name": "SK hynix",
+     "route": null,
+     "route_reason": null,
+     "shareholder_route": "US-listed foreign issuer",
+     "next_deadline": null,
+     "next_deadline_source": null,
+     "next_deadline_status": null,
+     "how_to_file": null,
+     "how_to_file_source": null,
+     "threshold": null,
+     "control": null,
+     "control_source": null,
+     "ai_proposals_filed": 0,
+     "holders": [],
+     "holders_count": 0,
+     "direct": false,
+     "levers": [
+      {
+       "type": "chip supplier",
+       "description": "Stargate partner; LOI to supply HBM/DRAM.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "HBM is a bottleneck input.",
+       "as_of": "2025-10",
+       "source_url": "https://openai.com/index/samsung-and-sk-join-stargate/"
+      }
+     ]
+    },
+    {
+     "ticker": "GOOGL",
+     "name": "Alphabet",
+     "route": "narrowing",
+     "route_reason": "The notice route stays open, but Page and Brin hold about 52.7% of the vote, so no proposal or director vote can pass without them.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-12-25",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204422000085/googexhibit302.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "Class B shares carry 10 votes each. Page and Brin together hold about 52.7% of voting power.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+     "ai_proposals_filed": 20,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 125345370941.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 50466058081,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 23118465179.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 9523177924.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 5402837736.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 4142859151.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "cloud/compute provider",
+       "description": "Google Cloud added as an OpenAI compute supplier (reported June 2025).",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Supplementary capacity.",
+       "as_of": "2025-06",
+       "source_url": "https://www.reuters.com/business/retail-consumer/openai-taps-google-unprecedented-cloud-deal-despite-ai-rivalry-sources-say-2025-06-10/"
+      }
+     ]
+    }
+   ],
+   "strong_routes": 7
+  },
+  {
+   "id": "reflection",
+   "name": "Reflection AI",
+   "status": "private",
+   "parent": null,
+   "description": "US open-weight frontier lab; $2B round led by Nvidia (Oct 2025).",
+   "source_url": "https://techcrunch.com/2025/10/09/reflection-raises-2b-to-be-americas-open-frontier-ai-lab-challenging-deepseek",
+   "routes": [
+    {
+     "ticker": "NVDA",
+     "name": "Nvidia",
+     "route": "open",
+     "route_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2027-01-12",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. Huang holds 3.6%; BlackRock (7.4%) and Vanguard (7.3%) are the largest holders.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+     "ai_proposals_filed": 2,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 213034649836.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 61847326779,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 36095831027.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 12738573702.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 7876756544.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 5688837091.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "Led $2B Oct 2025 round, reportedly $800M.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Lead and likely largest outside investor.",
+       "as_of": "2025-10",
+       "source_url": "https://techcrunch.com/2025/10/09/reflection-raises-2b-to-be-americas-open-frontier-ai-lab-challenging-deepseek"
+      }
+     ]
+    },
+    {
+     "ticker": "SPCX",
+     "name": "SpaceX (including xAI)",
+     "route": "narrowing",
+     "route_reason": "SpaceX has opted into the Texas ownership threshold for proposals, Musk holds most of the vote through 10-vote Class B shares, and directors are elected by plurality.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": null,
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm",
+     "next_deadline_status": null,
+     "how_to_file": "A shareholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last annual meeting; the bylaws treat June 19, 2026 as the date of the 2026 meeting. Proposals other than nominations also need the Texas Section 21.373 ownership stake, and the notice must say whether the shareholder will solicit holders of at least 67% of the voting power. Musk and his permitted transferees are exempt from these notice rules.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052535/a32-amendedandrestatedbyla.htm",
+     "threshold": "At least $1 million in market value or 3% of voting shares, held for six months before and through the meeting (bylaws Section 2.5, adopted June 15, 2026, under Texas Section 21.373).",
+     "control": "Class A shares carry one vote and Class B shares carry ten. Musk reported sole voting power over 6.42 billion shares (48.4% of Class A counted as converted), of which 5.22 billion are Class B, as of June 30, 2026. 5.33 billion Class B shares were outstanding on October 15, 2026. No proxy statement yet. Calculated from these share counts, Musk holds about 87% of total votes (this site's calculation; the filings do not state a percentage).",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1181412/000110465926095936/xslSCHEDULE_13G_X02/primary_doc.xml",
+     "ai_proposals_filed": 0,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 36327436092.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 269662854.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 146148793.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "federated-hermes",
+       "name": "Federated Hermes",
+       "value_usd": 105843528.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 104743154.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 93321996.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 8,
+     "direct": false,
+     "levers": [
+      {
+       "type": "cloud/compute provider",
+       "description": "about $6.3B ($150M/month) for Nvidia GB300 capacity at Colossus 2, Jul 2026-2029.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Reflection's largest compute contract.",
+       "as_of": "2026-06",
+       "source_url": "https://thenextweb.com/news/spacex-reflection-ai-6-3bn-compute-deal"
+      }
+     ]
+    },
+    {
+     "ticker": "NBIS",
+     "name": "Nebius Group",
+     "route": null,
+     "route_reason": null,
+     "shareholder_route": "US-listed foreign issuer",
+     "next_deadline": null,
+     "next_deadline_source": null,
+     "next_deadline_status": null,
+     "how_to_file": null,
+     "how_to_file_source": null,
+     "threshold": null,
+     "control": null,
+     "control_source": null,
+     "ai_proposals_filed": 0,
+     "holders": [],
+     "holders_count": 0,
+     "direct": false,
+     "levers": [
+      {
+       "type": "cloud/compute provider",
+       "description": "Contract worth more than $1B through 2029.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Second-largest Reflection compute deal.",
+       "as_of": "2026-07",
+       "source_url": "https://techcrunch.com/2026/07/14/reflection-inks-1b-compute-deal-with-nebius/"
+      }
+     ]
+    }
+   ],
+   "strong_routes": 2
+  },
+  {
+   "id": "xai",
+   "name": "xAI",
+   "status": "in-house",
+   "parent": "spacex",
+   "description": "Grok maker; acquired by SpaceX in all-stock deal Feb 2026 (xAI valued about $250B).",
+   "source_url": "https://www.axios.com/2026/02/02/elon-musk-spacex-xai",
+   "routes": [
+    {
+     "ticker": "SPCX",
+     "name": "SpaceX (including xAI)",
+     "route": "narrowing",
+     "route_reason": "SpaceX has opted into the Texas ownership threshold for proposals, Musk holds most of the vote through 10-vote Class B shares, and directors are elected by plurality.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": null,
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm",
+     "next_deadline_status": null,
+     "how_to_file": "A shareholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last annual meeting; the bylaws treat June 19, 2026 as the date of the 2026 meeting. Proposals other than nominations also need the Texas Section 21.373 ownership stake, and the notice must say whether the shareholder will solicit holders of at least 67% of the voting power. Musk and his permitted transferees are exempt from these notice rules.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052535/a32-amendedandrestatedbyla.htm",
+     "threshold": "At least $1 million in market value or 3% of voting shares, held for six months before and through the meeting (bylaws Section 2.5, adopted June 15, 2026, under Texas Section 21.373).",
+     "control": "Class A shares carry one vote and Class B shares carry ten. Musk reported sole voting power over 6.42 billion shares (48.4% of Class A counted as converted), of which 5.22 billion are Class B, as of June 30, 2026. 5.33 billion Class B shares were outstanding on October 15, 2026. No proxy statement yet. Calculated from these share counts, Musk holds about 87% of total votes (this site's calculation; the filings do not state a percentage).",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1181412/000110465926095936/xslSCHEDULE_13G_X02/primary_doc.xml",
+     "ai_proposals_filed": 0,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 36327436092.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 269662854.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 146148793.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "federated-hermes",
+       "name": "Federated Hermes",
+       "value_usd": 105843528.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 104743154.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 93321996.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 8,
+     "direct": true,
+     "direct_note": "The lab is part of this listed company",
+     "levers": [
+      {
+       "type": "parent company",
+       "description": "SpaceX acquired xAI in all-stock deal (Feb 2026); SpaceX listed as SPCX June 2026.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Full ownership.",
+       "as_of": "2026-06",
+       "source_url": "https://www.npr.org/2026/06/12/nx-s1-5855004/stock-ai-spacex-ipo-elon-musk"
+      }
+     ]
+    },
+    {
+     "ticker": "NVDA",
+     "name": "Nvidia",
+     "route": "open",
+     "route_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2027-01-12",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. Huang holds 3.6%; BlackRock (7.4%) and Vanguard (7.3%) are the largest holders.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+     "ai_proposals_filed": 2,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 213034649836.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 61847326779,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 36095831027.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 12738573702.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 7876756544.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 5688837091.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "chip supplier",
+       "description": "Colossus I/II built on Nvidia GPUs; >1M H100-equivalents end-2025.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Essentially sole GPU supplier.",
+       "as_of": "2026-01",
+       "source_url": "https://x.ai/news/series-e"
+      },
+      {
+       "type": "equity stake",
+       "description": "Strategic investor in xAI's $20B Series E (Jan 2026), amount undisclosed; now converted into SpaceX shares.",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Undisclosed minority stake, now inside SpaceX.",
+       "as_of": "2026-01",
+       "source_url": "https://x.ai/news/series-e"
+      }
+     ]
+    },
+    {
+     "ticker": "TSLA",
+     "name": "Tesla",
+     "route": "narrowing",
+     "route_reason": "Tesla has not adopted the Texas ownership threshold, but its board could adopt one without a shareholder vote. A 2025 proposal to require shareholder approval for that failed narrowly.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2027-06-21",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "A shareholder of record can bring a proposal with notice 45 to 75 days before the anniversary of the date last year's proxy was mailed. No minimum stake for proposals today.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925050072/tm2515421d1_ex3-1.htm",
+     "threshold": "None today. Tesla's 2025 proxy says the board has not adopted the Texas Section 21.373 threshold.",
+     "control": "One class of stock. Musk holds 19.8% beneficially.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926116700/tm267596-1_def14a.htm",
+     "ai_proposals_filed": 1,
+     "holders": [
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 15720016270,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 13773938962.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 7283599640.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 1820700774.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 1516329144.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 1079396595.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 13,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "about $2B of xAI Series E preferred (Jan 2026), despite failed shareholder vote; now SpaceX stock.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Shareholder-contested related-party stake.",
+       "as_of": "2026-01",
+       "source_url": "https://techcrunch.com/2026/01/28/tesla-invested-2b-in-elon-musks-xai"
+      }
+     ]
+    },
+    {
+     "ticker": "CSCO",
+     "name": "Cisco Systems",
+     "route": "open",
+     "route_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2027-07-01",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any stockholder of record can bring a proposal to the meeting with notice 60 to 90 days before the anniversary of the date the last proxy materials were sent. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/858877/000085887725000103/exhibit32-amendedandrestat.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock, one vote per share. No controlling holder; BlackRock (8.9%), Vanguard Capital Management (7.2%) and State Street (5.0%) are the largest holders. Directors are elected every year.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm",
+     "ai_proposals_filed": 1,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 4280906706.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 3396483032.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 844255963.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 634533096.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 500675171.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      },
+      {
+       "id": "federated-hermes",
+       "name": "Federated Hermes",
+       "value_usd": 130882924.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+      }
+     ],
+     "holders_count": 15,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "Cisco Investments named strategic investor in $20B Series E.",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Undisclosed minority stake.",
+       "as_of": "2026-01",
+       "source_url": "https://x.ai/news/series-e"
+      }
+     ]
+    }
+   ],
+   "strong_routes": 2
+  },
+  {
+   "id": "amazon-agi",
+   "name": "Amazon AGI / Nova",
+   "status": "in-house",
+   "parent": "amzn",
+   "description": "Amazon's in-house foundation model group (Nova models).",
+   "source_url": "https://www.aboutamazon.com/news/aws/amazon-nova-artificial-intelligence-bedrock-aws",
+   "routes": [
+    {
+     "ticker": "AMZN",
+     "name": "Amazon",
+     "route": "open",
+     "route_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-12-10",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake. (The 3% for 3 years proxy access rule covers director nominations only.)",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057026/tm2413032d1_ex3-2.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. Bezos holds 8.8%; no controlling holder.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
+     "ai_proposals_filed": 12,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 80386924697.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 31867316197,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 13617165946.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 5132909070.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 3600566559.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 2780394159.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 18,
+     "direct": true,
+     "direct_note": "The lab is part of this listed company",
+     "levers": [
+      {
+       "type": "parent company",
+       "description": "Amazon AGI / Nova is an in-house Amazon group.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Full ownership and control.",
+       "as_of": "2024-12",
+       "source_url": "https://www.aboutamazon.com/news/aws/amazon-nova-artificial-intelligence-bedrock-aws"
+      }
+     ]
+    }
+   ],
+   "strong_routes": 1
+  },
+  {
+   "id": "gdm",
+   "name": "Google DeepMind",
+   "status": "in-house",
+   "parent": "googl",
+   "description": "Alphabet's AI lab; builds Gemini models.",
+   "source_url": "https://deepmind.google/about/",
+   "routes": [
+    {
+     "ticker": "GOOGL",
+     "name": "Alphabet",
+     "route": "narrowing",
+     "route_reason": "The notice route stays open, but Page and Brin hold about 52.7% of the vote, so no proposal or director vote can pass without them.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-12-25",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204422000085/googexhibit302.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "Class B shares carry 10 votes each. Page and Brin together hold about 52.7% of voting power.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+     "ai_proposals_filed": 20,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 125345370941.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 50466058081,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 23118465179.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 9523177924.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 5402837736.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 4142859151.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": true,
+     "direct_note": "The lab is part of this listed company",
+     "levers": [
+      {
+       "type": "parent company",
+       "description": "Google DeepMind is Alphabet's wholly owned AI lab.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Full ownership and control.",
+       "as_of": "2026-11",
+       "source_url": "https://deepmind.google/about/"
+      }
+     ]
+    },
+    {
+     "ticker": "AAPL",
+     "name": "Apple",
+     "route": "open",
+     "route_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-09-10",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm",
+     "next_deadline_status": "passed",
+     "how_to_file": "A shareholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake. (The 3% for 3 years proxy access rule covers director nominations only.)",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_ex3-2.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. Vanguard (9.6%) and BlackRock (7.1%) are the largest holders.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm",
+     "ai_proposals_filed": 4,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 123213667912.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 52718798466,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 35205747796.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 12043322625.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 7313330668.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 5476118605.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 18,
+     "direct": false,
+     "levers": [
+      {
+       "type": "revenue share/commercial agreement",
+       "description": "Multi-year deal: next Apple Foundation Models based on Gemini; terms undisclosed (about $1B/yr reported, UNVERIFIED).",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Large distribution win for Gemini.",
+       "as_of": "2026-01",
+       "source_url": "https://blog.google/company-news/inside-google/company-announcements/joint-statement-google-apple/"
+      }
+     ]
+    },
+    {
+     "ticker": "AVGO",
+     "name": "Broadcom",
+     "route": "open",
+     "route_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-11-02",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/d49254ddef14a.htm",
+     "next_deadline_status": "passed",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312518107559/d562806dex32.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock, one vote per share. No controlling holder; Vanguard (9.9%) and BlackRock (7.3%) are the largest.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/0001193125-26-085691.txt",
+     "ai_proposals_filed": 0,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 44752634691.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 23402660001,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 11211482631.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 4530595077.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 2377126443.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 1740947163.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "chip supplier",
+       "description": "Broadcom co-designs Google's TPUs used by Google DeepMind (per Anthropic TPU deal context).",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Key silicon partner for Alphabet.",
+       "as_of": "2026-04",
+       "source_url": "https://www.anthropic.com/news/google-broadcom-partnership-compute"
+      }
+     ]
+    }
+   ],
+   "strong_routes": 1
+  },
+  {
+   "id": "msl",
+   "name": "Meta Superintelligence Labs (incl. FAIR)",
+   "status": "in-house",
+   "parent": "meta",
+   "description": "Meta's frontier AI org formed June 2025, absorbing FAIR and Llama teams.",
+   "source_url": "https://www.cnbc.com/2025/06/30/mark-zuckerberg-creating-meta-superintelligence-labs-read-the-memo.html",
+   "routes": [
+    {
+     "ticker": "META",
+     "name": "Meta",
+     "route": "narrowing",
+     "route_reason": "The notice route stays open, but Zuckerberg holds 60.8% of the vote and directors are elected by plurality, so outside votes signal views without deciding outcomes.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-12-17",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000072/a2024910-exhibit31.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "Class B shares carry 10 votes each. Zuckerberg holds 60.8% of voting power, and Meta is a 'controlled company' under Nasdaq rules.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
+     "ai_proposals_filed": 12,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 73550553979.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 17047898622,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 9777841976.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 4407001531.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 2386246850.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 1687188559.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 15,
+     "direct": true,
+     "direct_note": "The lab is part of this listed company",
+     "levers": [
+      {
+       "type": "parent company",
+       "description": "Meta Superintelligence Labs is a wholly owned Meta division.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Full ownership and control.",
+       "as_of": "2025-06",
+       "source_url": "https://www.cnbc.com/2025/06/30/mark-zuckerberg-creating-meta-superintelligence-labs-read-the-memo.html"
+      }
+     ]
+    },
+    {
+     "ticker": "AMD",
+     "name": "AMD",
+     "route": "open",
+     "route_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-11-27",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake. The proposer or a representative must attend the meeting.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000218/amd-bylawsnov2026amendment.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock, one vote per share. No controlling holder; Vanguard (8.8%) and BlackRock (7.7%) are the largest.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm",
+     "ai_proposals_filed": 0,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 32600802547.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 12356895031,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 6789022504.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 1979797900.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 1494462998.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 1131297180.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "chip supplier",
+       "description": "Multiyear deal for up to 6 GW of AMD Instinct GPUs for Meta (reported).",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Large second-source accelerator supply.",
+       "as_of": "2026-03",
+       "source_url": "https://www.techrepublic.com/article/news-meta-27b-ai-infrastructure-deal-nebius/"
+      }
+     ]
+    },
+    {
+     "ticker": "CRWV",
+     "name": "CoreWeave",
+     "route": "narrowing",
+     "route_reason": "The notice route stays open, but directors and officers hold 72.32% of the vote through Class B shares and directors are elected by plurality on a classified board.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-12-23",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000191/crwv-20260422.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1769628/000119312525085800/d935353dex32.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "Class B shares carry 10 votes each. As of April 15, 2026, Intrator holds 38.70% of voting power, Venturo 20.30% and McBee 14.59%; directors and officers as a group hold 72.32%.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000191/crwv-20260422.htm",
+     "ai_proposals_filed": 0,
+     "holders": [
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 611817235,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 118407219.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 116958255.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 42737674.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 39449853.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 16143336.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 7,
+     "direct": false,
+     "levers": [
+      {
+       "type": "cloud/compute provider",
+       "description": "Meta committed additional $21B (2027-2032) on top of $14.2B Sept 2025 deal.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Major external compute source for Meta AI.",
+       "as_of": "2026-04",
+       "source_url": "https://www.ciodive.com/news/meta-coreweave-strike-deal-expansion-compute-capacity/817109/"
+      }
+     ]
+    },
+    {
+     "ticker": "GOOGL",
+     "name": "Alphabet",
+     "route": "narrowing",
+     "route_reason": "The notice route stays open, but Page and Brin hold about 52.7% of the vote, so no proposal or director vote can pass without them.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-12-25",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204422000085/googexhibit302.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "Class B shares carry 10 votes each. Page and Brin together hold about 52.7% of voting power.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+     "ai_proposals_filed": 20,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 125345370941.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 50466058081,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 23118465179.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 9523177924.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 5402837736.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 4142859151.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "cloud/compute provider",
+       "description": "Multi-year deal for Meta to rent Google TPUs (reported Feb 2026); $10B+ cloud deal Aug 2025.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Rival supplies Meta training compute.",
+       "as_of": "2026-02",
+       "source_url": "https://siliconangle.com/2026/02/26/google-meta-reportedly-strike-new-multibillion-dollar-ai-chip-deal/"
+      }
+     ]
+    },
+    {
+     "ticker": "NBIS",
+     "name": "Nebius Group",
+     "route": null,
+     "route_reason": null,
+     "shareholder_route": "US-listed foreign issuer",
+     "next_deadline": null,
+     "next_deadline_source": null,
+     "next_deadline_status": null,
+     "how_to_file": null,
+     "how_to_file_source": null,
+     "threshold": null,
+     "control": null,
+     "control_source": null,
+     "ai_proposals_filed": 0,
+     "holders": [],
+     "holders_count": 0,
+     "direct": false,
+     "levers": [
+      {
+       "type": "cloud/compute provider",
+       "description": "Five-year deal worth up to $27B for Meta, on top of $3B 2025 deal.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Large external compute for Meta AI.",
+       "as_of": "2026-03",
+       "source_url": "https://www.techrepublic.com/article/news-meta-27b-ai-infrastructure-deal-nebius/"
+      }
+     ]
+    }
+   ],
+   "strong_routes": 1
+  },
+  {
+   "id": "msai",
+   "name": "Microsoft AI (MAI Superintelligence Team)",
+   "status": "in-house",
+   "parent": "msft",
+   "description": "Microsoft's in-house model lab under Mustafa Suleyman (MAI models).",
+   "source_url": "https://microsoft.ai/news/towards-humanist-superintelligence/",
+   "routes": [
+    {
+     "ticker": "MSFT",
+     "name": "Microsoft",
+     "route": "open",
+     "route_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2027-06-24",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any shareholder of record can bring a proposal to the meeting with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525154103/d84624dex32.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. No controlling holder; Vanguard (7.5%) and BlackRock (7.3%) are the largest.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+     "ai_proposals_filed": 14,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 104520177799.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 35113298063,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 24871054423.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 9885468420.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 5413077359.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 4338861137.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": true,
+     "direct_note": "The lab is part of this listed company",
+     "levers": [
+      {
+       "type": "parent company",
+       "description": "Microsoft AI is a wholly owned division of Microsoft.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Full ownership and control.",
+       "as_of": "2025-11",
+       "source_url": "https://microsoft.ai/news/towards-humanist-superintelligence/"
+      }
+     ]
+    },
+    {
+     "ticker": "NBIS",
+     "name": "Nebius Group",
+     "route": null,
+     "route_reason": null,
+     "shareholder_route": "US-listed foreign issuer",
+     "next_deadline": null,
+     "next_deadline_source": null,
+     "next_deadline_status": null,
+     "how_to_file": null,
+     "how_to_file_source": null,
+     "threshold": null,
+     "control": null,
+     "control_source": null,
+     "ai_proposals_filed": 0,
+     "holders": [],
+     "holders_count": 0,
+     "direct": false,
+     "levers": [
+      {
+       "type": "cloud/compute provider",
+       "description": "$17.4B (up to $19.4B) dedicated GPU capacity for Microsoft through 2031; not lab-specific.",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Microsoft-wide capacity, link to MAI indirect.",
+       "as_of": "2025-09",
+       "source_url": "https://www.theregister.com/2025/09/09/microsoft_inks_near_20b_deal/"
+      }
+     ]
+    }
+   ],
+   "strong_routes": 1
+  },
+  {
+   "id": "thinking-machines",
+   "name": "Thinking Machines Lab",
+   "status": "private",
+   "parent": null,
+   "description": "Mira Murati's lab; $2B seed at $12B (Jul 2025); Nvidia and Google Cloud deals 2026.",
+   "source_url": "https://techcrunch.com/2026/03/10/thinking-machines-lab-inks-massive-compute-deal-with-nvidia",
+   "routes": [
+    {
+     "ticker": "NVDA",
+     "name": "Nvidia",
+     "route": "open",
+     "route_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2027-01-12",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. Huang holds 3.6%; BlackRock (7.4%) and Vanguard (7.3%) are the largest holders.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+     "ai_proposals_filed": 2,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 213034649836.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 61847326779,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 36095831027.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 12738573702.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 7876756544.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 5688837091.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "chip supplier",
+       "description": "Multi-year deal to deploy at least 1 GW of Vera Rubin systems.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "Core compute for the lab.",
+       "as_of": "2026-03",
+       "source_url": "https://techcrunch.com/2026/03/10/thinking-machines-lab-inks-massive-compute-deal-with-nvidia"
+      },
+      {
+       "type": "equity stake",
+       "description": "Seed investor (Jul 2025) plus separate investment with Mar 2026 deal (amount undisclosed).",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Repeat strategic investor.",
+       "as_of": "2026-03",
+       "source_url": "https://techcrunch.com/2026/03/10/thinking-machines-lab-inks-massive-compute-deal-with-nvidia"
+      }
+     ]
+    },
+    {
+     "ticker": "GOOGL",
+     "name": "Alphabet",
+     "route": "narrowing",
+     "route_reason": "The notice route stays open, but Page and Brin hold about 52.7% of the vote, so no proposal or director vote can pass without them.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-12-25",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204422000085/googexhibit302.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "Class B shares carry 10 votes each. Page and Brin together hold about 52.7% of voting power.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+     "ai_proposals_filed": 20,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 125345370941.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 50466058081,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 23118465179.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 9523177924.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 5402837736.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 4142859151.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "cloud/compute provider",
+       "description": "First cloud deal, reportedly single-digit billions, non-exclusive.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Major compute source for a young lab.",
+       "as_of": "2026-04",
+       "source_url": "https://techcrunch.com/2026/04/22/exclusive-google-deepens-thinking-machines-lab-ties-with-new-multi-billion-dollar-deal/"
+      }
+     ]
+    },
+    {
+     "ticker": "AMD",
+     "name": "AMD",
+     "route": "open",
+     "route_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-11-27",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake. The proposer or a representative must attend the meeting.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000218/amd-bylawsnov2026amendment.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock, one vote per share. No controlling holder; Vanguard (8.8%) and BlackRock (7.7%) are the largest.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm",
+     "ai_proposals_filed": 0,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 32600802547.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 12356895031,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 6789022504.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 1979797900.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 1494462998.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 1131297180.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "Participated in $2B seed (Jul 2025).",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Minority seed stake.",
+       "as_of": "2025-07",
+       "source_url": "https://techcrunch.com/2025/07/15/mira-muratis-thinking-machines-lab-is-worth-12b-in-seed-round/"
+      }
+     ]
+    },
+    {
+     "ticker": "CSCO",
+     "name": "Cisco Systems",
+     "route": "open",
+     "route_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2027-07-01",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any stockholder of record can bring a proposal to the meeting with notice 60 to 90 days before the anniversary of the date the last proxy materials were sent. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/858877/000085887725000103/exhibit32-amendedandrestat.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock, one vote per share. No controlling holder; BlackRock (8.9%), Vanguard Capital Management (7.2%) and State Street (5.0%) are the largest holders. Directors are elected every year.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm",
+     "ai_proposals_filed": 1,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 4280906706.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 3396483032.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 844255963.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 634533096.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 500675171.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      },
+      {
+       "id": "federated-hermes",
+       "name": "Federated Hermes",
+       "value_usd": 130882924.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1056288/000162363226001675/"
+      }
+     ],
+     "holders_count": 15,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "Participated in $2B seed (Jul 2025).",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Minority seed stake.",
+       "as_of": "2025-07",
+       "source_url": "https://techcrunch.com/2025/07/15/mira-muratis-thinking-machines-lab-is-worth-12b-in-seed-round/"
+      }
+     ]
+    }
+   ],
+   "strong_routes": 1
+  },
+  {
+   "id": "cohere",
+   "name": "Cohere",
+   "status": "private",
+   "parent": null,
+   "description": "Canadian enterprise/sovereign AI lab; Series E initial close Oct 2026 targeting up to C$7B.",
+   "source_url": "https://lightreading.com/ai-machine-learning/cohere-wraps-initial-close-of-new-funding-round-to-fuel-sovereign-ai-efforts",
+   "routes": [
+    {
+     "ticker": "NVDA",
+     "name": "Nvidia",
+     "route": "open",
+     "route_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2027-01-12",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. Huang holds 3.6%; BlackRock (7.4%) and Vanguard (7.3%) are the largest holders.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+     "ai_proposals_filed": 2,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 213034649836.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 61847326779,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 36095831027.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 12738573702.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 7876756544.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 5688837091.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "Returning investor in Series E (Oct 2026) and 2025 rounds.",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Minority stake.",
+       "as_of": "2026-10",
+       "source_url": "https://lightreading.com/ai-machine-learning/cohere-wraps-initial-close-of-new-funding-round-to-fuel-sovereign-ai-efforts"
+      }
+     ]
+    },
+    {
+     "ticker": "AMD",
+     "name": "AMD",
+     "route": "open",
+     "route_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-11-27",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake. The proposer or a representative must attend the meeting.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000218/amd-bylawsnov2026amendment.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock, one vote per share. No controlling holder; Vanguard (8.8%) and BlackRock (7.7%) are the largest.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm",
+     "ai_proposals_filed": 0,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 32600802547.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 12356895031,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 6789022504.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 1979797900.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 1494462998.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 1131297180.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "AMD Ventures invested in 2025 round at $6.8B valuation.",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Minority stake.",
+       "as_of": "2025-08",
+       "source_url": "https://techcrunch.com/2025/08/14/cohere-hits-a-6-8b-valuation-as-investors-amd-nvidia-and-salesforce-double-down"
+      }
+     ]
+    },
+    {
+     "ticker": "CRM",
+     "name": "Salesforce",
+     "route": "open",
+     "route_reason": "Any stockholder of record can give notice of a floor proposal with no stake minimum, directors face majority voting, and no holder controls the vote; Vanguard's 10.2% is the largest stake.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-12-17",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 45 to 75 days before the anniversary of the date the company first mailed proxy materials for the prior annual meeting. For the 2027 meeting, notice is due between January 31 and March 2, 2027. No minimum stake. Bylaws effective December 5, 2024.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000036/exhibit31.htm",
+     "threshold": "None beyond being a stockholder of record",
+     "control": "One class of stock, one vote per share. No controlling holder; Vanguard (10.2%), BlackRock (8.9%) and State Street (6.0%) are the largest. Vanguard reported shared voting power over only 1.27 million shares.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm",
+     "ai_proposals_filed": 2,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 2337427131.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 1244683770.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 389013023.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 271097606.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 212727367.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      },
+      {
+       "id": "amalgamated-bank",
+       "name": "Amalgamated Bank",
+       "value_usd": 32105000.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+      }
+     ],
+     "holders_count": 14,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "Salesforce Ventures investor in 2025 round.",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Minority stake.",
+       "as_of": "2025-08",
+       "source_url": "https://techcrunch.com/2025/08/14/cohere-hits-a-6-8b-valuation-as-investors-amd-nvidia-and-salesforce-double-down"
+      }
+     ]
+    }
+   ],
+   "strong_routes": 0
+  },
+  {
+   "id": "mistral",
+   "name": "Mistral AI",
+   "status": "private",
+   "parent": null,
+   "description": "French open-weight/sovereign AI lab; €3B Series D led by Samsung, Sept 2026.",
+   "source_url": "https://techcrunch.com/2026/09/08/mistral-raises-e3b-as-sovereign-ai-becomes-big-business/",
+   "routes": [
+    {
+     "ticker": "MSFT",
+     "name": "Microsoft",
+     "route": "open",
+     "route_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2027-06-24",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any shareholder of record can bring a proposal to the meeting with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525154103/d84624dex32.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. No controlling holder; Vanguard (7.5%) and BlackRock (7.3%) are the largest.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+     "ai_proposals_filed": 14,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 104520177799.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 35113298063,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 24871054423.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 9885468420.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 5413077359.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 4338861137.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "revenue share/commercial agreement",
+       "description": "Multibillion-dollar commitment to use Mistral's European GPU capacity; Mistral models in Foundry/Copilot Studio; joint sales.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Material revenue source for Mistral's compute buildout.",
+       "as_of": "2026-07",
+       "source_url": "https://news.microsoft.com/source/2026/07/21/microsoft-and-mistral-expand-strategic-partnership-to-give-enterprises-and-regulated-industries-frontier-ai-they-can-control/"
+      },
+      {
+       "type": "equity stake",
+       "description": "Small stake from 2024 investment; no new equity in 2026 deal (amount UNVERIFIED).",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Minor minority stake.",
+       "as_of": "2026-07",
+       "source_url": "https://dealroom.co/news/140157-microsoft-commits-multibillion-dollar-deal-to-fund-mistrals-european-ai/"
+      }
+     ]
+    },
+    {
+     "ticker": "NVDA",
+     "name": "Nvidia",
+     "route": "open",
+     "route_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2027-01-12",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. Huang holds 3.6%; BlackRock (7.4%) and Vanguard (7.3%) are the largest holders.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+     "ai_proposals_filed": 2,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 213034649836.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 61847326779,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 36095831027.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 12738573702.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 7876756544.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 5688837091.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "chip supplier",
+       "description": "Mistral adding thousands of Vera Rubin GPUs to French data centers.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Main chip supplier for Mistral Compute.",
+       "as_of": "2026-07",
+       "source_url": "https://siliconangle.com/2026/07/21/mistral-ai-strikes-multibillion-deal-microsoft-build-azure-infrastructure-europe/"
+      },
+      {
+       "type": "equity stake",
+       "description": "Existing backer that invested again in €3B Series D.",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Minority stake.",
+       "as_of": "2026-09",
+       "source_url": "https://techcrunch.com/2026/09/08/mistral-raises-e3b-as-sovereign-ai-becomes-big-business/"
+      }
+     ]
+    },
+    {
+     "ticker": "005930",
+     "name": "Samsung Electronics",
+     "route": null,
+     "route_reason": null,
+     "shareholder_route": "listed outside the US",
+     "next_deadline": null,
+     "next_deadline_source": null,
+     "next_deadline_status": null,
+     "how_to_file": null,
+     "how_to_file_source": null,
+     "threshold": null,
+     "control": null,
+     "control_source": null,
+     "ai_proposals_filed": 0,
+     "holders": [],
+     "holders_count": 0,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "Led Mistral's €3B Series D (~€21B valuation).",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Lead investor in largest European AI round.",
+       "as_of": "2026-09",
+       "source_url": "https://techcrunch.com/2026/09/08/mistral-raises-e3b-as-sovereign-ai-becomes-big-business/"
+      }
+     ]
+    },
+    {
+     "ticker": "CRM",
+     "name": "Salesforce",
+     "route": "open",
+     "route_reason": "Any stockholder of record can give notice of a floor proposal with no stake minimum, directors face majority voting, and no holder controls the vote; Vanguard's 10.2% is the largest stake.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-12-17",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 45 to 75 days before the anniversary of the date the company first mailed proxy materials for the prior annual meeting. For the 2027 meeting, notice is due between January 31 and March 2, 2027. No minimum stake. Bylaws effective December 5, 2024.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000036/exhibit31.htm",
+     "threshold": "None beyond being a stockholder of record",
+     "control": "One class of stock, one vote per share. No controlling holder; Vanguard (10.2%), BlackRock (8.9%) and State Street (6.0%) are the largest. Vanguard reported shared voting power over only 1.27 million shares.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm",
+     "ai_proposals_filed": 2,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 2337427131.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 1244683770.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 389013023.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 271097606.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 212727367.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      },
+      {
+       "id": "amalgamated-bank",
+       "name": "Amalgamated Bank",
+       "value_usd": 32105000.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919192/000091919226000006/"
+      }
+     ],
+     "holders_count": 14,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "Salesforce Ventures invested again in €3B Series D.",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Minority stake.",
+       "as_of": "2026-09",
+       "source_url": "https://techcrunch.com/2026/09/08/mistral-raises-e3b-as-sovereign-ai-becomes-big-business/"
+      }
+     ]
+    }
+   ],
+   "strong_routes": 0
+  },
+  {
+   "id": "perplexity",
+   "name": "Perplexity",
+   "status": "private",
+   "parent": null,
+   "description": "AI answer engine; builds on others' models plus own; $20B valuation (2025), Nvidia reportedly eyeing more.",
+   "source_url": "https://siliconangle.com/2026/08/24/nvidia-reportedly-eyes-another-investment-in-perplexity-ai-at-a-30b-valuation/",
+   "routes": [
+    {
+     "ticker": "NVDA",
+     "name": "Nvidia",
+     "route": "open",
+     "route_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2027-01-12",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. Huang holds 3.6%; BlackRock (7.4%) and Vanguard (7.3%) are the largest holders.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+     "ai_proposals_filed": 2,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 213034649836.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 61847326779,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 36095831027.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 12738573702.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 7876756544.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 5688837091.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "Existing investor; reportedly considering more at about $30B valuation.",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Minority stake.",
+       "as_of": "2026-08",
+       "source_url": "https://siliconangle.com/2026/08/24/nvidia-reportedly-eyes-another-investment-in-perplexity-ai-at-a-30b-valuation/"
+      }
+     ]
+    },
+    {
+     "ticker": "9984",
+     "name": "SoftBank Group",
+     "route": null,
+     "route_reason": null,
+     "shareholder_route": "listed outside the US",
+     "next_deadline": null,
+     "next_deadline_source": null,
+     "next_deadline_status": null,
+     "how_to_file": null,
+     "how_to_file_source": null,
+     "threshold": null,
+     "control": null,
+     "control_source": null,
+     "ai_proposals_filed": 0,
+     "holders": [],
+     "holders_count": 0,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "Existing investor (via Vision Fund); amount undisclosed.",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Minority stake.",
+       "as_of": "2026-08",
+       "source_url": "https://siliconangle.com/2026/08/24/nvidia-reportedly-eyes-another-investment-in-perplexity-ai-at-a-30b-valuation/"
+      }
+     ]
+    },
+    {
+     "ticker": "005930",
+     "name": "Samsung Electronics",
+     "route": null,
+     "route_reason": null,
+     "shareholder_route": "listed outside the US",
+     "next_deadline": null,
+     "next_deadline_source": null,
+     "next_deadline_status": null,
+     "how_to_file": null,
+     "how_to_file_source": null,
+     "threshold": null,
+     "control": null,
+     "control_source": null,
+     "ai_proposals_filed": 0,
+     "holders": [],
+     "holders_count": 0,
+     "direct": false,
+     "levers": [
+      {
+       "type": "distribution partner",
+       "description": "Perplexity integrated into Galaxy S26 AI features (reported).",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Device distribution; press-reported.",
+       "as_of": "2026-02",
+       "source_url": "https://www.outlookbusiness.com/deeptech/tech/samsung-partners-with-perplexity-to-boost-galaxy-s26-ai-capabilities"
+      }
+     ]
+    }
+   ],
+   "strong_routes": 0
+  },
+  {
+   "id": "ssi",
+   "name": "Safe Superintelligence (SSI)",
+   "status": "private",
+   "parent": null,
+   "description": "Ilya Sutskever's lab; $32B valuation (Apr 2025); Nvidia partnership July 2026.",
+   "source_url": "https://techcrunch.com/2026/07/27/ilya-sutskevers-safe-superintelligence-partners-with-nvidia-to-scale-its-ai-research/",
+   "routes": [
+    {
+     "ticker": "NVDA",
+     "name": "Nvidia",
+     "route": "open",
+     "route_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2027-01-12",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000069/exhibit31-amendedandrestat.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. Huang holds 3.6%; BlackRock (7.4%) and Vanguard (7.3%) are the largest holders.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm",
+     "ai_proposals_filed": 2,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 213034649836.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 61847326779,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 36095831027.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 12738573702.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 7876756544.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 5688837091.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "equity stake",
+       "description": "Long-term partnership with undisclosed investment (reported about $5B, UNVERIFIED); also in Apr 2025 round.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Likely large stake plus compute dependence.",
+       "as_of": "2026-07",
+       "source_url": "https://techcrunch.com/2026/07/27/ilya-sutskevers-safe-superintelligence-partners-with-nvidia-to-scale-its-ai-research/"
+      },
+      {
+       "type": "chip supplier",
+       "description": "Vera Rubin access to raise SSI compute 'by an order of magnitude'.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Becomes main compute source.",
+       "as_of": "2026-07",
+       "source_url": "https://techcrunch.com/2026/07/27/ilya-sutskevers-safe-superintelligence-partners-with-nvidia-to-scale-its-ai-research/"
+      }
+     ]
+    },
+    {
+     "ticker": "GOOGL",
+     "name": "Alphabet",
+     "route": "narrowing",
+     "route_reason": "The notice route stays open, but Page and Brin hold about 52.7% of the vote, so no proposal or director vote can pass without them.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-12-25",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+     "next_deadline_status": "open",
+     "how_to_file": "Any stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204422000085/googexhibit302.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "Class B shares carry 10 votes each. Page and Brin together hold about 52.7% of voting power.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+     "ai_proposals_filed": 20,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 125345370941.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 50466058081,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 23118465179.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 9523177924.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 5402837736.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 4142859151.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 19,
+     "direct": false,
+     "levers": [
+      {
+       "type": "cloud/compute provider",
+       "description": "Google Cloud provides SSI access to TPUs.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Key research compute source.",
+       "as_of": "2025-04",
+       "source_url": "https://www.computing.co.uk/news/2025/ai/alphabet-and-nvidia-back-sutskever-ssi"
+      },
+      {
+       "type": "equity stake",
+       "description": "Alphabet invested in SSI's Apr 2025 round; terms undisclosed.",
+       "strength": 1,
+       "strength_label": "weak",
+       "strength_reason": "Undisclosed minority stake.",
+       "as_of": "2025-04",
+       "source_url": "https://www.computing.co.uk/news/2025/ai/alphabet-and-nvidia-back-sutskever-ssi"
+      }
+     ]
+    }
+   ],
+   "strong_routes": 0
+  }
+ ]
+}

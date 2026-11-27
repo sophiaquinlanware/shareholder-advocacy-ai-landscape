@@ -46,9 +46,16 @@
     {
       "id": "no-alignment-asks",
       "title": "No proposal asks about model alignment",
-      "text": "None of the 78 AI proposals since 2023 at the 29 companies subject to US proxy rules asks directly about model alignment or catastrophic risk. The 12 governance proposals ask for board oversight and transparency instead.",
+      "text": "None of the 79 AI proposals since 2023 at the 29 companies subject to US proxy rules asks directly about model alignment or catastrophic risk. The 12 governance proposals ask for board oversight and transparency instead. Safety asks sets out nine that could, with the rules that already require each.",
       "basis": "This site's classification of every proposal by what it asks about.",
-      "link": "#feed"
+      "link": "#asks"
+    },
+    {
+      "id": "labs-listed",
+      "title": "Two frontier labs can now be reached directly",
+      "text": "Anthropic listed in November 2026 and xAI is part of SpaceX, listed in June 2026, so shareholders can file at a frontier lab for the first time. Notice for Anthropic's 2027 meeting is due February 1 to March 3, 2027. Founders keep control of the vote at both.",
+      "basis": "Each company's IPO and bylaw filings, linked in Labs you can file at.",
+      "link": "#listed-labs"
     },
     {
       "id": "support-falling",

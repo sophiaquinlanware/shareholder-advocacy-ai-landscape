@@ -1099,3 +1099,10 @@ details.bd-post > summary::-webkit-details-marker, details.bd-suggest > summary:
 .bd-postform input:not([type="checkbox"]), .bd-postform select, .bd-suggestform input:not([type="checkbox"]), .bd-suggestform select, .bd-suggestform textarea { padding: 7px 9px; border: 1px solid var(--control-edge); border-radius: var(--radius); font: inherit; min-width: 0; }
 .bd-postform .bd-check, .bd-suggestform .bd-check { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; color: var(--ink-soft); }
 .bd-postform .bd-check input, .bd-suggestform .bd-check input { margin-top: 3px; flex: none; }
+/* Labs you can file at; Safety asks (alignment.js) */
+.al-dl { margin: 8px 0; }
+.al-dl > div { display: grid; grid-template-columns: minmax(0, 13em) minmax(0, 1fr); gap: 4px 16px; padding: 8px 0; border-top: 1px solid var(--line); }
+.al-dl dt { font-weight: 500; }
+.al-dl dd { margin: 0; overflow-wrap: anywhere; }
+.al-quote { margin: 0 0 4px; padding: 8px 12px; border-left: 3px solid var(--accent); background: var(--accent-soft); }
+@media (max-width: 640px) { .al-dl > div { grid-template-columns: minmax(0, 1fr); } }

@@ -52,6 +52,7 @@ jobs:
           python scripts/build_proposal_links.py
           python scripts/build_graph.py
           python scripts/build_value_chain.py
+          python scripts/build_leverage.py
           python scripts/build_sim_params.py
           python scripts/build_campaigns.py
           python scripts/build_forecast.py
