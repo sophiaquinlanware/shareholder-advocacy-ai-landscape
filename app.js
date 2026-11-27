@@ -394,27 +394,72 @@ function renderFeed() {
     const pts = all.filter((p) => plottable(p) && filterOn(p));
     const votedHere = all.filter((p) => p.status === "voted" && filterOn(p));
     const skipped = votedHere.length - pts.length;
-    const topicKeys = topics.map((t) => `<span class="leg static"><svg class="mark" viewBox="-6 -6 12 12" aria-hidden="true"><path d="${typeof d3 !== "undefined" ? d3.symbol(d3[symbolName(topicStyle(t).shape)], 60)() : ""}" fill="${topicColor(t)}"></path></svg>${esc(t)}</span>`).join("");
     // Every mark is filled (owner, 2026-11-26: "Be consistent with the circles"). Hollow marks once flagged a
     // basis note, but nearly every figure now has one, so the split no longer told anything apart.
     const noted = pts.filter((p) => p.support_note).length;
-    key.innerHTML = `${topicKeys}
-      <p class="note">${plural(pts.length, "voted proposal")} plotted. Shape and shade show what each proposal asks about; every mark is filled.${noted ? ` ${noted} of these figures ${noted === 1 ? "has" : "have"} a basis note (for example, computed from 8-K vote counts or dual-class voting), listed in the table.` : ""}${skipped > 0 ? ` ${plural(skipped, "voted proposal has", "voted proposals have")} no meeting date or vote-results filing recorded and appear in the table only.` : ""} Upcoming, withdrawn and excluded proposals are in the table.</p>`;
+    // The topic key is drawn inside the chart (so a screenshot carries it); this note explains the counts.
+    key.innerHTML = `<p class="note">${plural(pts.length, "voted proposal")} plotted. Shape and shade show what each proposal asks about; every mark is filled.${noted ? ` ${noted} of these figures ${noted === 1 ? "has" : "have"} a basis note (for example, computed from 8-K vote counts or dual-class voting), listed in the table.` : ""}${skipped > 0 ? ` ${plural(skipped, "voted proposal has", "voted proposals have")} no meeting date or vote-results filing recorded and appear in the table only.` : ""} Upcoming, withdrawn and excluded proposals are in the table.</p>`;
     if (typeof d3 === "undefined") return;
     if (!pts.length) { box.innerHTML = `<p class="status-note">No voted proposals with a dated vote-results filing match these filters.</p>`; return; }
     const all_pts = all.filter(plottable);
-    const W = Math.max(560, box.clientWidth || 800), H = 300, m = { t: 16, r: 16, b: 30, l: 40 };
+    // Self-contained figure (owner, 2026-11-26: "this visual could be screenshotted and all relevant info is
+    // there"; years labelled on the visual, as on the network timeline): title, subtitle with the measure and n,
+    // calendar-year bands with their year, axis titles, the topic key and the source all sit inside the SVG.
+    const W = Math.max(320, box.clientWidth || 800), narrow = W < 640;
+    // Lay the topic key out first, so the figure grows by however many rows it needs.
+    const keyPos = [];
+    { let kx = 0, row = 0;
+      topics.forEach((t) => { const w = 22 + t.length * 6.6; if (kx && kx + w > W) { kx = 0; row++; } keyPos.push({ t, x: kx, row }); kx += w + 10; }); }
+    const keyRows = keyPos.length ? keyPos[keyPos.length - 1].row + 1 : 0;
+    const top = narrow ? 140 : 78, foot = narrow ? 90 : 76;
+    const m = { t: top, r: 16, b: foot + keyRows * 18, l: 58 }, H = top + (narrow ? 220 : 240) + foot + keyRows * 18;
     const dates = all_pts.map((p) => new Date(p.meeting_date + "T12:00:00"));
     const x = d3.scaleTime().domain(d3.extent(dates)).nice().range([m.l + 10, W - m.r - 10]);
     const yMax = Math.max(60, Math.ceil((d3.max(all_pts, (p) => p.support_pct) + 5) / 10) * 10);
     const y = d3.scaleLinear().domain([0, yMax]).range([H - m.b, m.t]);
+    const ink = cssVar("--ink"), soft = cssVar("--ink-soft"), font = "var(--sans)";
+    const yrs = d3.extent(pts, (p) => +p.meeting_date.slice(0, 4));
+    const filt = [F.co && companyName(F.co), F.topic, F.year].filter(Boolean).join(", ");
     const svg = d3.select(box).append("svg").attr("viewBox", [0, 0, W, H]).attr("width", W).attr("height", H)
-      .attr("role", "img")
+      .attr("role", "img").attr("font-family", font)
       .attr("aria-label", `Support for ${plural(pts.length, "voted proposal")}, ${d3.min(pts, (p) => p.support_pct)}% to ${d3.max(pts, (p) => p.support_pct)}%, by meeting date. The table below lists every proposal.`);
-    svg.append("g").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(Math.min(8, W / 90)).tickSizeOuter(0)).attr("color", cssVar("--ink-soft"));
-    svg.append("g").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6).tickFormat((d) => d + "%")).attr("color", cssVar("--ink-soft")).call((g) => g.select(".domain").remove());
-    svg.append("line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y(50)).attr("y2", y(50)).attr("stroke", cssVar("--ink-soft")).attr("stroke-dasharray", "4 4");
-    svg.append("text").attr("x", W - m.r).attr("y", y(50) - 6).attr("text-anchor", "end").attr("font-size", 11).attr("fill", cssVar("--ink-soft")).text("50% of for + against");
+    const lines = (arr, y0, size, fill, gap) => arr.forEach((t, i) => svg.append("text").attr("x", 0).attr("y", y0 + i * gap).attr("font-size", size).attr("fill", fill).text(t));
+    const title = `Support for AI shareholder proposals, ${yrs[0] === yrs[1] ? yrs[0] : yrs[0] + "–" + yrs[1]}${filt ? ` (${filt})` : ""}`;
+    const sub1 = `Each mark is one voted proposal (${pts.length}), placed at its meeting date.`, sub2 = "Support = votes for ÷ (for + against).";
+    if (narrow) {
+      lines(["Support for AI shareholder proposals,", `${yrs[0] === yrs[1] ? yrs[0] : yrs[0] + "–" + yrs[1]}${filt ? ` (${filt})` : ""}`], 18, 14, ink, 18);
+      lines([`Each mark is one voted proposal (${pts.length}),`, "placed at its meeting date.", sub2], 58, 11.5, soft, 15);
+    }
+    else { lines([title], 20, 16, ink, 0); lines([`${sub1} ${sub2}`], 40, 12, soft, 0); }
+    // Calendar-year bands, alternately shaded, each named at its top.
+    const [d0, d1] = x.domain();
+    const yearsIn = d3.timeYear.range(d3.timeYear.floor(d0), d1);
+    const band = svg.append("g");
+    yearsIn.forEach((yr, i) => {
+      const xa = Math.max(x(yr), m.l + 10), xb = Math.min(x(d3.timeYear.offset(yr, 1)), W - m.r - 10);
+      if (xb <= xa) return;
+      if (i % 2 === 0) band.append("rect").attr("x", xa).attr("y", m.t - 18).attr("width", xb - xa).attr("height", H - m.b - m.t + 18).attr("fill", "#f3f5f8");
+      if (xb - xa > 30) band.append("text").attr("x", (xa + xb) / 2).attr("y", m.t - 6).attr("text-anchor", "middle").attr("font-size", 12).attr("font-weight", 500).attr("fill", ink).text(yr.getFullYear());
+    });
+    // Month ticks; January carries the year so the axis reads on its own.
+    const xAxis = d3.axisBottom(x).ticks(d3.timeMonth.every(W < 700 ? 6 : 3)).tickSizeOuter(0)
+      .tickFormat((d) => (d.getMonth() === 0 ? d3.timeFormat(narrow ? "%Y" : "Jan %Y")(d) : d3.timeFormat("%b")(d)));
+    svg.append("g").attr("transform", `translate(0,${H - m.b})`).call(xAxis).attr("color", soft).attr("font-family", font);
+    svg.append("text").attr("x", (m.l + W - m.r) / 2).attr("y", H - m.b + 34).attr("text-anchor", "middle").attr("font-size", 12).attr("fill", soft).text("Annual meeting date");
+    svg.append("g").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6).tickFormat((d) => d + "%")).attr("color", soft).attr("font-family", font).call((g) => g.select(".domain").remove());
+    svg.append("text").attr("transform", `translate(14,${(m.t + H - m.b) / 2}) rotate(-90)`).attr("text-anchor", "middle").attr("font-size", 12).attr("fill", soft).text("Support (% of for + against)");
+    svg.append("line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y(50)).attr("y2", y(50)).attr("stroke", soft).attr("stroke-dasharray", "4 4");
+    svg.append("text").attr("x", W - m.r).attr("y", y(50) - 6).attr("text-anchor", "end").attr("font-size", 11).attr("fill", soft).text(narrow ? "Majority (50%)" : "Majority: 50% of for + against");
+    // Topic key and source inside the figure, so a screenshot carries them.
+    const keyG = svg.append("g").attr("transform", `translate(0,${H - m.b + 62})`);
+    keyPos.forEach(({ t, x: kx, row }) => {
+      const g = keyG.append("g").attr("transform", `translate(${kx},${row * 18})`);
+      g.append("path").attr("transform", "translate(6,-4)").attr("d", d3.symbol(d3[symbolName(topicStyle(t).shape)], 50)()).attr("fill", topicColor(t));
+      g.append("text").attr("x", 16).attr("y", 0).attr("font-size", 11.5).attr("fill", ink).text(t);
+    });
+    const src1 = "Source: company 8-K Item 5.07 vote counts.", src2 = "Shareholder advocacy towards responsible AI, sophiaquinlanware.github.io/shareholder-advocacy-ai-landscape";
+    if (narrow) lines([src1, "Shareholder advocacy towards responsible AI", "sophiaquinlanware.github.io/shareholder-advocacy-ai-landscape"], H - 32, 10, soft, 14);
+    else lines([`${src1} ${src2}`], H - 4, 10.5, soft, 0);
     // Spread marks that share a meeting date so none hide behind another.
     const byDate = d3.group(pts, (p) => p.meeting_date);
     const spread = new Map();
