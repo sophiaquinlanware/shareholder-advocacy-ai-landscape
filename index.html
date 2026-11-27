@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="site-header">
+<header class="site-header" id="top">
   <div class="wrap">
     <button type="button" class="tool qs-open" aria-keyshortcuts="Meta+K Control+K">Search <kbd>⌘K</kbd></button>
     <h1>Shareholder advocacy towards responsible AI</h1>
@@ -127,10 +127,47 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap">
-    <p><strong>This site informs. It does not coordinate votes.</strong> Nothing here is a recommendation to vote any particular way, and nothing here is investment, legal or tax advice. Read the company's proxy statement and decide for yourself.</p>
-    <p>For a full database of shareholder resolutions across topics, see the <a href="https://collaborate.unpri.org/shareholder-resolution" target="_blank" rel="noopener">PRI Resolution Database</a>. This tracker links to it and does not copy from it.</p>
-    <p>Built by Sophia Ware. Data comes from SEC EDGAR and the public sources linked on each row. Spot an error? <a href="https://github.com/sophiaquinlanware/shareholder-advocacy-ai-landscape/issues" target="_blank" rel="noopener">Open an issue on GitHub</a>.</p>
+  <!-- Footer (owner, 2026-11-26: "something functionally like this but of the aesthetic of the rest of my site"):
+       the black band of the network graph, the site's name and purpose, one column per section, the data and
+       feedback links, then the disclaimer. Every link goes somewhere real. -->
+  <div class="wrap foot-main">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <p class="foot-name">Shareholder advocacy towards responsible AI</p>
+        <p class="foot-tag">Public data on AI shareholder proposals, votes, companies and the investors engaging them.</p>
+        <p class="foot-note">Every fact links to its source. Built by Sophia Ware.</p>
+      </div>
+      <nav class="foot-col" aria-label="Deadlines and votes">
+        <h2 class="foot-h">Deadlines and votes</h2>
+        <ul><li><a href="#start">Key dates and findings</a></li><li><a href="#upcoming">AI proposals on upcoming ballots</a></li><li><a href="#new">New SEC filings</a></li></ul>
+      </nav>
+      <nav class="foot-col" aria-label="Companies">
+        <h2 class="foot-h">Companies</h2>
+        <ul><li><a href="#company">Company profiles</a></li><li><a href="#parnassus">AI disclosure scores</a></li><li><a href="#rights">Shareholder proposal rights</a></li></ul>
+      </nav>
+      <nav class="foot-col" aria-label="AI value chain">
+        <h2 class="foot-h">AI value chain</h2>
+        <ul><li><a href="#value-chain">Chips to AI products</a></li><li><a href="#pathways">Ties to each frontier lab</a></li><li><a href="#causality">Laws and rules</a></li></ul>
+      </nav>
+      <nav class="foot-col" aria-label="Proposals and network">
+        <h2 class="foot-h">Proposals and network</h2>
+        <ul><li><a href="#feed">All AI proposals</a></li><li><a href="#votes">Fund family votes</a></li><li><a href="#outcomes">Results of private engagement</a></li><li><a href="#network">Network of investors</a></li><li><a href="#people">Heads of stewardship</a></li></ul>
+      </nav>
+      <nav class="foot-col" aria-label="Plan and test">
+        <h2 class="foot-h">Plan and test</h2>
+        <ul><li><a href="#planner">Plan an engagement</a></li><li><a href="#predict">Prediction board</a></li><li><a href="#simulate">Test plans over time</a></li></ul>
+      </nav>
+      <nav class="foot-col" aria-label="About the data">
+        <h2 class="foot-h">About the data</h2>
+        <ul><li><a href="https://github.com/sophiaquinlanware/shareholder-advocacy-ai-landscape/blob/main/SOURCES.md" target="_blank" rel="noopener">Sources and methods</a></li><li><a href="https://collaborate.unpri.org/shareholder-resolution" target="_blank" rel="noopener">PRI Resolution Database</a></li><li><a href="https://github.com/sophiaquinlanware/shareholder-advocacy-ai-landscape/issues" target="_blank" rel="noopener">Report an error</a></li><li><a href="https://github.com/sophiaquinlanware/shareholder-advocacy-ai-landscape" target="_blank" rel="noopener">Code on GitHub</a></li></ul>
+      </nav>
+    </div>
+  </div>
+  <div class="foot-legal">
+    <div class="wrap">
+      <p><strong>This site informs. It does not coordinate votes.</strong> Nothing here is a recommendation to vote any particular way, and nothing here is investment, legal or tax advice. Read the company's proxy statement and decide for yourself. For a full database of shareholder resolutions across topics, see the PRI Resolution Database; this tracker links to it and does not copy from it.</p>
+      <p class="foot-base"><span>© 2026 Sophia Ware. Data from SEC EDGAR and the public sources linked on each row.</span><a href="#top">Back to the top ↑</a></p>
+    </div>
   </div>
 </footer>
 

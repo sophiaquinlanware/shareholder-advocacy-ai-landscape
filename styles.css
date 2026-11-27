@@ -987,3 +987,27 @@ button + [role="status"], button + .ticker, button + .status-note, button + outp
 #tab-predict article.bd-card h4 { font-size: 18px; line-height: 1.35; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid var(--line); }
 #tab-predict article.bd-card h4::before { content: "Question " counter(bdq); display: block; margin-bottom: 4px; font-size: 12px; font-weight: 400; letter-spacing: .04em; text-transform: uppercase; color: var(--blue-1); }
 @media (max-width: 640px) { #tab-predict article.bd-card { padding: 14px 14px 16px; margin: 20px 0; } #tab-predict article.bd-card h4 { font-size: 16px; } }
+
+/* Footer: the network graph's black band, carried to the end of the page (owner, 2026-11-26). Full width, light
+   text on #1e1e1e, the site's name and purpose on the left, a column per section, the disclaimer below a rule. */
+.site-footer { border-top: 0; padding: 0; margin-top: var(--s-5, 48px); background: var(--g-bg); color: var(--g-label-soft); font-size: 14px; width: 100vw; margin-left: calc(50% - 50vw); }
+.site-footer p { max-width: none; }
+.foot-main { padding-top: 48px; padding-bottom: 36px; }
+.foot-grid { display: grid; grid-template-columns: minmax(220px, 1.4fr) repeat(6, minmax(0, 1fr)); gap: 28px 24px; }
+.foot-name { color: #ffffff; font-size: 20px; line-height: 1.25; margin: 0 0 10px; }
+.foot-tag { margin: 0 0 10px; line-height: 1.5; color: var(--g-label); }
+.foot-note { margin: 0; font-size: 13px; }
+.foot-h { color: #ffffff; font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; margin: 4px 0 14px; }
+.foot-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.site-footer a { color: var(--g-label); text-decoration: none; }
+.site-footer a:hover { color: #ffffff; text-decoration: underline; text-underline-offset: 3px; }
+.site-footer a:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
+.foot-legal { border-top: 1px solid rgba(255, 255, 255, .12); padding: 20px 0 28px; font-size: 12.5px; }
+.foot-legal p { margin: 0 0 12px; line-height: 1.55; max-width: 110ch; }
+.foot-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin: 0; }
+/* The data-freshness block (freshness.js) sits above the columns, on the same black. */
+.site-footer details { color: var(--g-label-soft); margin: 0 0 28px; }
+.site-footer details summary { color: var(--g-label); cursor: pointer; }
+.site-footer table, .site-footer th, .site-footer td { color: var(--g-label); background: transparent; border-color: rgba(255, 255, 255, .12); }
+@media (max-width: 1100px) { .foot-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .foot-brand { grid-column: 1 / -1; } }
+@media (max-width: 640px) { .foot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .foot-main { padding-top: 36px; } }
