@@ -1177,12 +1177,12 @@ details.bd-post > summary::-webkit-details-marker, details.bd-suggest > summary:
    node per view; netmark.js lights each the first time it is opened, and the logo's seven nodes follow. */
 .hdr-art .ha-snow { fill: var(--bg); fill-opacity: .32; }
 .hdr-art .ha-facet { stroke: var(--bg); stroke-opacity: .45; stroke-width: 1.2; }
-.hdr-art .ha-mesh line { stroke: var(--blue-1); stroke-opacity: .22; stroke-width: 1; }
-.hdr-art .ha-mesh circle { fill: var(--blue-1); fill-opacity: .35; }
+.hdr-art .ha-mesh line { stroke: var(--blue-1); stroke-opacity: .14; stroke-width: 1; }
+.hdr-art .ha-mesh circle { fill: var(--blue-1); fill-opacity: .25; }
 .hdr-art .ha-seg { stroke: var(--blue-1); stroke-opacity: .28; stroke-width: 1.6; stroke-dasharray: 4 5; transition: stroke-opacity .8s ease; }
 .hdr-art .ha-seg.on { stroke-opacity: .9; stroke-dasharray: none; }
 .hdr-art .ha-halo { opacity: 0; transition: opacity .9s ease; }
-.hdr-art .ha-hub.on .ha-halo { opacity: 1; }
+.hdr-art.all .ha-hub[data-g="plan"] .ha-halo { opacity: .8; }
 .hdr-art .ha-core { fill: var(--bg); stroke: var(--blue-1); stroke-width: 1.8; stroke-opacity: .7; transition: fill .6s ease; }
 .hdr-art .ha-hub.on .ha-core { fill: var(--blue-1); stroke: var(--bg); stroke-opacity: 1; }
 .hdr-art .ha-spoke { stroke: var(--blue-1); stroke-width: 1; stroke-opacity: .16; transition: stroke-opacity .6s ease; }
@@ -1223,3 +1223,11 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 .vc-stage-t th, .vc-stage-t td { text-align: center; }
 .vc-stage-t th.sticky-col, .vc-stage-t td.sticky-col { text-align: left; }
 .vc-stage-t .vc-trend { align-items: center; }
+/* Plan an engagement: the fields sit on one level, the hint beside "Ask" rather than under it, and the save button
+   level with the fields (owner, 2026-11-27). */
+.pl-controls { align-items: flex-end; }
+.pl-controls label:has(.pl-hint) { display: grid; grid-template-columns: auto 1fr; column-gap: 6px; row-gap: 4px; align-items: baseline; }
+.pl-controls label:has(.pl-hint) select { grid-column: 1 / -1; }
+.pl-controls .pl-hint { display: inline; white-space: nowrap; }
+.pl-controls #pl-copy { align-self: flex-end; }
+@media (max-width: 640px) { .pl-controls .pl-hint { white-space: normal; } }

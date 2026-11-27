@@ -638,7 +638,7 @@ function renderAbout() {
   const list = document.getElementById("ab-sections");
   if (list && !list.innerHTML) list.innerHTML = sections;
   const filled = document.getElementById("ab-basis");
-  if (filled && cos) filled.innerHTML = `<strong>Companies.</strong> ${cos} in all: ${basisList}. The aim is to model the AI value chain, not to list every company in it.`;
+  if (filled && cos) filled.innerHTML = `<strong>Companies.</strong> ${cos} in all: ${basisList}. The aim is to model where power sits in the AI value chain and how investors can reach it, not to list every company.`;
 }
 
 function renderStart() {

@@ -253,7 +253,7 @@
     d3.selectAll("#vc-flow path.vc-tie").filter((x) => on.has(x)).raise();
     return on.size;
   }
-  // A slow, eased glide to the details (about 1.6 s), after 1.5 s on the lit chart (owner, 2026-11-27: "a second
+  // A slow, eased glide to the details (about 1.6 s), after 2.5 s on the lit chart (owner, 2026-11-27: "a second
   // slower so they have time to look at the graph"), through the page's smooth scroller when it is running.
   let glidedTo = null;
   function glideTo(el) {
@@ -263,7 +263,7 @@
     setTimeout(() => {
       if (L && L.scrollTo) L.scrollTo(el, { offset: -96, duration: 1.6 });
       else el.scrollIntoView({ block: "start", behavior: "smooth" });
-    }, 1450);
+    }, 2450);
   }
 
   // Ties of the chosen tier or company stay strong; the rest fade, so crossing lines stay readable.

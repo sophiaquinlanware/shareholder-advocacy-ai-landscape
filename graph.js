@@ -976,7 +976,7 @@
   const MODES = {
     connections: { label: "Connections", eyebrow: "Relationships among investors, companies and labs", hides: () => new Set(["proposal", "ask", "gap"]) },
     // Policy and responses stay in Proposals for the Policymaker lens, whose asks link to them.
-    proposals: { label: "Proposals", eyebrow: "Proposals: filers to companies", hides: () => new Set(["lab", "tier-labs", "person", ...(state.lens === "policy" ? [] : ["policy", "response", "public"])]) },
+    proposals: { label: "Proposals", eyebrow: "Proposals: filers to companies", hides: () => new Set(["lab", "tier-labs", ...(state.lens === "policy" ? [] : ["policy", "response", "public"])]) },
   };
   const mode = () => {
     const m = MODES[state.mode] || MODES.connections;
@@ -988,9 +988,22 @@
   // Exempt solicitations aimed at a company (not at one proposal) carry no year or status, so they show only when
   // no proposal filter (Active/Past, year) is set.
   const filtering = () => (state.pstatus && state.pstatus !== "all") || !!state.year || !!state.upto || !!state.topic;
+  let filerSet = null;
+  const filerOrgs = () => {
+    if (filerSet) return filerSet;
+    filerSet = new Set();
+    for (const l of state.data.links) {
+      if (l.layer !== "proposals" || !/filer|exempt/.test(l.relation || "")) continue;
+      for (const e of [l.source, l.target]) { const n = typeof e === "object" ? e : state.byId.get(e); if (n && n.kind !== "proposal" && !isCompanyKind(n.kind)) filerSet.add(n.id); }
+    }
+    return filerSet;
+  };
   const inMode = (l) => {
     const prop = l.layer === "proposals" || (state.lens === "policy" && l.relation === "coverage");
     if (state.mode !== "proposals") return !prop || false;
+    // Owner, 2026-11-27: each effort shows the people leading it. A person's "works at" line joins the Proposals view
+    // when their organization filed or co-filed a proposal shown there.
+    if (l.relation === "works at") return filerOrgs().has(typeof l.target === "object" ? l.target.id : l.target);
     if (!prop) return false;
     if (/^exempt solicitation/.test(l.relation || "") && filtering()) {
       const t = typeof l.target === "object" ? l.target : state.byId.get(l.target);
