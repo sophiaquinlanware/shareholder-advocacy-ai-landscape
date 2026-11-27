@@ -1613,7 +1613,7 @@
    "description": "Shareholder advocacy nonprofit filing environmental and social resolutions.",
    "website": "https://www.asyousow.org",
    "source_url": "https://www.asyousow.org",
-   "degree": 33
+   "degree": 36
   },
   {
    "id": "nlpc",
@@ -1624,7 +1624,7 @@
    "description": "Conservative watchdog filing anti-ESG proposals, including on AI data usage.",
    "website": "https://nlpc.org",
    "source_url": "https://nlpc.org",
-   "degree": 22
+   "degree": 23
   },
   {
    "id": "ridgeline",
@@ -1668,7 +1668,7 @@
    "description": "Coalition of faith-based investors doing shareholder advocacy on human rights.",
    "website": "https://iasj.org",
    "source_url": "https://iasj.org",
-   "degree": 30
+   "degree": 32
   },
   {
    "id": "jlens",
@@ -1679,7 +1679,7 @@
    "description": "Jewish values investor network (ADL-affiliated) that opposes some human-rights proposals.",
    "website": "https://www.jlensnetwork.org",
    "source_url": "https://www.jlensnetwork.org",
-   "degree": 11
+   "degree": 14
   },
   {
    "id": "adl",
@@ -1701,7 +1701,7 @@
    "description": "ESG investment manager; files on AI principles and data center climate impacts.",
    "website": "https://www.trilliuminvest.com",
    "source_url": "https://www.trilliuminvest.com",
-   "degree": 46
+   "degree": 47
   },
   {
    "id": "csjp",
@@ -1723,7 +1723,7 @@
    "description": "Boston socially responsible manager filing on AI, cloud and human rights.",
    "website": "https://www.zevin.com",
    "source_url": "https://www.zevin.com",
-   "degree": 36
+   "degree": 37
   },
   {
    "id": "jewish-investor-network",
@@ -1778,7 +1778,7 @@
    "description": "Canadian responsible-investment nonprofit filing on AI, targeted ads and oversight.",
    "website": "https://share.ca",
    "source_url": "https://share.ca",
-   "degree": 27
+   "degree": 28
   },
   {
    "id": "ucc-pension",
@@ -1811,7 +1811,7 @@
    "description": "Sustainable manager; co-founder and co-lead of WBA ethical AI coalition.",
    "website": "https://www.bostoncommonasset.com",
    "source_url": "https://www.bostoncommonasset.com",
-   "degree": 19
+   "degree": 24
   },
   {
    "id": "harrington",
@@ -1833,7 +1833,7 @@
    "description": "UK asset manager; co-filed at Alphabet, signed IAHR EU AI Act statement.",
    "website": "https://www.avivainvestors.com",
    "source_url": "https://www.avivainvestors.com",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "nordea",
@@ -1877,7 +1877,7 @@
    "description": "Investment program of the Sisters of Mercy; prolific ICCR filer.",
    "website": "https://www.mercyinvestmentservices.org",
    "source_url": "https://www.mercyinvestmentservices.org",
-   "degree": 47
+   "degree": 49
   },
   {
    "id": "inspire",
@@ -2009,7 +2009,7 @@
    "description": "Conservative proxy adviser filing and opposing proposals for faith clients.",
    "website": "https://www.bowyerresearch.com",
    "source_url": "https://www.bowyerresearch.com",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "pcusa",
@@ -2064,7 +2064,7 @@
    "description": "Norwegian asset manager with sustainability focus.",
    "website": "https://www.storebrand.com",
    "source_url": "https://www.boardroomalpha.com/meetings/meta-2026-annual-meeting",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "abhms",
@@ -2097,7 +2097,7 @@
    "description": "Retail worker organizing group; floor proposal for Amazon worker AI council.",
    "website": "https://united4respect.org",
    "source_url": "https://www.iccr.org/wp-content/uploads/2026/05/Amazon-Floor-Proposal_-Memo-in-Support-.pdf",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "tulipshare",
@@ -2119,7 +2119,7 @@
    "description": "Environmental fund manager; lead filer on Nvidia AI emissions.",
    "website": "https://www.greencentury.com",
    "source_url": "https://www.greencentury.com",
-   "degree": 8
+   "degree": 11
   },
   {
    "id": "ttt-investments",
@@ -2141,7 +2141,7 @@
    "description": "Coalition of 300+ faith and values investors; runs Digital Rights and AI Accountability work.",
    "website": "https://www.iccr.org",
    "source_url": "https://www.iccr.org/digital-rights-and-ai-accountability/",
-   "degree": 24
+   "degree": 35
   },
   {
    "id": "iahr",
@@ -2229,7 +2229,7 @@
    "description": "Manages Norway's wealth fund; published responsible AI expectations in 2023.",
    "website": "https://www.nbim.no",
    "source_url": "https://www.nbim.no/en/publications/our-views/2023/responsible-artificial-intelligence/",
-   "degree": 16
+   "degree": 18
   },
   {
    "id": "domini",
@@ -2240,7 +2240,7 @@
    "description": "Impact mutual fund firm; ICCR and Investor Alliance member.",
    "website": "https://www.domini.com",
    "source_url": "https://www.domini.com",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "northstar",
@@ -2251,7 +2251,7 @@
    "description": "Socially responsible manager; signed IASJ Amazon responsible-AI solicitation.",
    "website": "https://www.northstarasset.com",
    "source_url": "https://www.northstarasset.com",
-   "degree": 45
+   "degree": 47
   },
   {
    "id": "ceres",
@@ -2262,7 +2262,7 @@
    "description": "Nonprofit advocacy organization, founded in 1989, that works with investors and companies on climate change, water scarcity and pollution, and nature loss. It runs investor, company and policy networks and launched and runs the Valuing Water Finance Initiative.",
    "website": "https://www.ceres.org/about",
    "source_url": "https://www.ceres.org/about",
-   "degree": 10
+   "degree": 12
   },
   {
    "id": "ceres-investor-network",
@@ -2306,7 +2306,7 @@
    "description": null,
    "website": null,
    "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
-   "degree": 34
+   "degree": 38
   },
   {
    "id": "calstrs",
@@ -2317,7 +2317,7 @@
    "description": null,
    "website": null,
    "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
-   "degree": 33
+   "degree": 34
   },
   {
    "id": "dws",
@@ -2339,7 +2339,7 @@
    "description": null,
    "website": null,
    "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "nyc-comptrollers-office",
@@ -2350,7 +2350,7 @@
    "description": null,
    "website": null,
    "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
-   "degree": 7
+   "degree": 13
   },
   {
    "id": "australiansuper",
@@ -2361,7 +2361,7 @@
    "description": null,
    "website": null,
    "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "aberdeen-investments-formerly-abrdn",
@@ -2471,7 +2471,7 @@
    "description": null,
    "website": null,
    "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "ifm-investors",
@@ -2504,7 +2504,7 @@
    "description": null,
    "website": null,
    "source_url": "http://web.archive.org/web/20240408191448/https://www.ceres.org/networks/ceres-investor-network",
-   "degree": 29
+   "degree": 31
   },
   {
    "id": "maryknoll-sisters",
@@ -2559,7 +2559,7 @@
    "description": "US nonprofit that organizes shareholders to hold corporate boards accountable on climate and governance.",
    "website": "https://www.majorityaction.us",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000199937125005942/amzn-px14a6g_051225.htm",
-   "degree": 4
+   "degree": 8
   },
   {
    "id": "segal-marco-advisors",
@@ -2790,7 +2790,7 @@
    "description": "Office of the Illinois State Treasurer, which manages state investment portfolios.",
    "website": "https://illinoistreasurer.gov",
    "source_url": "https://www.csjp.org/news/2026/2/25/pltr",
-   "degree": 2
+   "degree": 4
   },
   {
    "id": "broz-family-investments",
@@ -2944,7 +2944,7 @@
    "description": "General agency of the United Methodist Church that manages pension and investment assets.",
    "website": "https://www.wespath.org",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000121465926006347/pti515261px14a6g.htm",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "sisters-of-st-francis-philadelphia",
@@ -3043,7 +3043,7 @@
    "description": "Catholic socially responsible investment manager.",
    "website": "https://cbisonline.com",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
-   "degree": 1
+   "degree": 3
   },
   {
    "id": "presentation-sisters-aberdeen",
@@ -3175,7 +3175,7 @@
    "description": "Boston asset manager with an ESG Investing and Active Ownership team that engages companies and files shareholder proposals, such as its climate report proposal at Texas Roadhouse in 2023 and 2024.",
    "website": "https://www.bostontrustwalden.com",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1289460/000155837024004744/txrh-20240405xdef14a.htm",
-   "degree": 2
+   "degree": 5
   },
   {
    "id": "clean-yield-asset-management",
@@ -3186,7 +3186,7 @@
    "description": "Vermont adviser that files shareholder proposals for clients, including a 2023 Walmart proposal on reproductive rights and data privacy and political spending proposals at Cigna and FedEx.",
    "website": "https://cleanyield.com",
    "source_url": "https://cleanyield.com/shareholder-advocacy/",
-   "degree": 0
+   "degree": 1
   },
   {
    "id": "amalgamated-bank",
@@ -3230,7 +3230,7 @@
    "description": "Connecticut's pension system, run by the State Treasurer, engages companies and files resolutions, such as voting-results-by-share-class proposals at Airbnb (2025) and AppLovin (2026).",
    "website": "https://portal.ct.gov/ott",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1751008/000175100826000028/app-20260420.htm",
-   "degree": 1
+   "degree": 2
   },
   {
    "id": "vermont-pension-investment-commission",
@@ -3890,7 +3890,7 @@
    "description": "Association of US asset owners and managers that advocates on corporate governance and shareowner rights.",
    "website": "https://www.cii.org",
    "source_url": "https://www.cii.org/staff",
-   "degree": 2
+   "degree": 4
   },
   {
    "id": "icgn",
@@ -3901,7 +3901,7 @@
    "description": "Investor-led global network that sets stewardship and corporate governance standards and advocates on policy for its members.",
    "website": "https://icgn.org",
    "source_url": "https://icgn.org/about-us/who-we-are/",
-   "degree": 1
+   "degree": 3
   },
   {
    "id": "investor-forum",
@@ -4088,7 +4088,7 @@
    "description": "Australian superannuation fund whose General Manager, Responsible Investment and Sustainability sits on the Climate Action 100+ global Steering Committee.",
    "website": "https://rest.com.au",
    "source_url": "https://www.climateaction100.org/about/",
-   "degree": 1
+   "degree": 2
   },
   {
    "id": "bci",
@@ -4099,7 +4099,7 @@
    "description": "Canadian public-sector investment manager whose Director, ESG sits on the Climate Action 100+ global Steering Committee.",
    "website": "https://www.bci.ca",
    "source_url": "https://www.climateaction100.org/about/",
-   "degree": 1
+   "degree": 2
   },
   {
    "id": "university-pension-plan",
@@ -4154,7 +4154,7 @@
    "description": "UK manager whose 2026-2028 engagement priorities include sustainable and ethical AI, covering AI governance and data center footprints, with escalation where engagement stalls.",
    "website": "https://www.rlam.com",
    "source_url": "https://www.rlam.com/en-au/our-views/2026/company-engagement-priorities-for-2026-2028/",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "rathbones",
@@ -4308,7 +4308,7 @@
    "description": "Dutch pension investment manager that takes part in the Big Tech and Human Rights investor collaboration.",
    "website": "https://assetmanagement.apg.nl",
    "source_url": "https://etikradet.se/en/our-work/proactive-work/big-tech-human-rights/big-tech-human-rights-investor-collaboration/",
-   "degree": 0
+   "degree": 2
   },
   {
    "id": "achmea-investment-management",
@@ -4330,7 +4330,7 @@
    "description": "French sustainable investment manager (Natixis IM affiliate) that publishes annual engagement priorities and reports on climate, biodiversity and social issues.",
    "website": "https://www.mirova.com",
    "source_url": "https://www.mirova.com/sites/default/files/2025-06/Mirova-engagement-report-2024.pdf",
-   "degree": 0
+   "degree": 2
   },
   {
    "id": "sycomore-am",
@@ -4473,7 +4473,7 @@
    "description": "Sovereign fund that publishes annual stewardship and engagement reports and follows the Aotearoa New Zealand Stewardship Code.",
    "website": "https://www.nzsuperfund.nz",
    "source_url": "https://nzsuperfund.nz/assets/Uploads/2025-Stewardship-Report.pdf",
-   "degree": 0
+   "degree": 1
   },
   {
    "id": "ccgg",
@@ -4605,7 +4605,7 @@
    "description": "Mutual fund family whose corporate governance team publishes reviews of each proxy season and votes under its own proxy voting guidelines.",
    "website": "https://www.troweprice.com",
    "source_url": "https://www.troweprice.com/en/us/insights/2026-pre-agm-season-review",
-   "degree": 1
+   "degree": 3
   },
   {
    "id": "pri",
@@ -4617,6 +4617,457 @@
    "website": "https://www.unpri.org",
    "source_url": "https://www.unpri.org/initiatives/advance",
    "degree": 4
+  },
+  {
+   "id": "goldman-sachs-asset-management",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Goldman Sachs Asset Management",
+   "org_type": "investor",
+   "description": "Asset management arm of Goldman Sachs, whose Global Stewardship Team runs proxy voting and company engagement.",
+   "website": "https://am.gs.com",
+   "source_url": "https://am.gs.com/cms-assets/gsam-app/documents/evergreen/en/GS-Stewardship-Report-2025.pdf",
+   "degree": 1
+  },
+  {
+   "id": "franklin-templeton",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Franklin Templeton",
+   "org_type": "investor",
+   "description": "Global asset manager whose specialist investment managers run their own stewardship, supported by a firmwide Stewardship and Sustainability Council.",
+   "website": "https://www.franklintempleton.com",
+   "source_url": "https://www.franklintempleton.com/forms-literature/download/Franklin-Templeton-Stewardship-Report%20Summary",
+   "degree": 2
+  },
+  {
+   "id": "morgan-stanley-im",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Morgan Stanley Investment Management",
+   "org_type": "investor",
+   "description": "Asset management division of Morgan Stanley, whose Global Stewardship Team coordinates proxy voting and investee engagement.",
+   "website": "https://www.morganstanley.com/im",
+   "source_url": "https://www.morganstanley.com/im/en-us/financial-advisor/about-us/people-and-teams/investment-professionals/robert-walker.html",
+   "degree": 4
+  },
+  {
+   "id": "invesco",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Invesco",
+   "org_type": "investor",
+   "description": "Global asset manager whose investment stewardship team supports proxy voting and engagement across its investment teams.",
+   "website": "https://www.invesco.com",
+   "source_url": "https://www.invesco.com/content/dam/invesco/uk/en/pdf/invesco-uk-stewardship-code-report-2025_en-uk.pdf",
+   "degree": 1
+  },
+  {
+   "id": "mg-investments",
+   "type": "investor",
+   "layer": "investors",
+   "label": "M&G Investments",
+   "org_type": "investor",
+   "description": "UK asset manager whose Corporate Finance and Stewardship team leads voting and engagement.",
+   "website": "https://www.mandg.com",
+   "source_url": "https://group.mandg.com/~/media/Files/M/mandg-corp/corp/documents/sustainability/responsible-investing/mandg-investments/mg-investments-annual-stewardship-report-2024.pdf",
+   "degree": 1
+  },
+  {
+   "id": "neuberger-berman",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Neuberger Berman",
+   "org_type": "investor",
+   "description": "Employee-owned global asset manager whose stewardship team leads issuer engagement and proxy voting.",
+   "website": "https://www.nb.com",
+   "source_url": "https://www.nb.com/bios/caitlin-mcsherry",
+   "degree": 1
+  },
+  {
+   "id": "wellington-management",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Wellington Management",
+   "org_type": "investor",
+   "description": "Boston-based private investment management firm that publishes an annual sustainability and stewardship report.",
+   "website": "https://www.wellington.com",
+   "source_url": "https://www.wellington.com/content/dam/wellington/insights/en/pdf/2025-sustainability-report.pdf",
+   "degree": 3
+  },
+  {
+   "id": "brown-advisory",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Brown Advisory",
+   "org_type": "wealth manager/adviser",
+   "description": "Baltimore-based investment management and advisory firm that runs a range of sustainable investing strategies.",
+   "website": "https://www.brownadvisory.com",
+   "source_url": "https://www.brownadvisory.com/sites/default/files/2026-07/Sustainable_Investing_at_Brown_Advisory_Platform_Overview.pdf",
+   "degree": 1
+  },
+  {
+   "id": "schroders",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Schroders",
+   "org_type": "investor",
+   "description": "UK-based global asset and wealth manager whose active ownership team publishes annual Engagement Blueprints setting its stewardship priorities.",
+   "website": "https://www.schroders.com",
+   "source_url": "https://www.schroders.com/nl-nl/nl/professionele/inzichten/launching-our-2026-engagement-blueprints/",
+   "degree": 2
+  },
+  {
+   "id": "minnesota-sbi",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Minnesota State Board of Investment",
+   "org_type": "public pension",
+   "description": "Minnesota state agency that invests the pension and other public funds of the State of Minnesota and runs its own stewardship program.",
+   "website": "https://www.msbi.us",
+   "source_url": "https://www.msbi.us/staff",
+   "degree": 2
+  },
+  {
+   "id": "wsib",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Washington State Investment Board (WSIB)",
+   "org_type": "public pension",
+   "description": "Washington state agency that manages the pension and trust funds of public employees and runs an asset stewardship program.",
+   "website": "https://www.sib.wa.gov",
+   "source_url": "https://sib.wa.gov/docs/reports/sustainability/2025.pdf",
+   "degree": 2
+  },
+  {
+   "id": "massprim",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Massachusetts Pension Reserves Investment Management Board (MassPRIM)",
+   "org_type": "public pension",
+   "description": "Board that invests the Massachusetts state employees' and teachers' pension reserves and has a staff Director of Stewardship.",
+   "website": "https://www.mapension.com",
+   "source_url": "https://www.mapension.com/wp-content/uploads/2026/01/Stwardship-and-Sustainability-2025-Stewardship-and-Sustainability-Meeting-Minutes-11252025.pdf",
+   "degree": 1
+  },
+  {
+   "id": "scers",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Seattle City Employees' Retirement System (SCERS)",
+   "org_type": "public pension",
+   "description": "Pension system for City of Seattle employees that publishes regular ESG and proxy voting updates.",
+   "website": "https://www.seattle.gov/retirement",
+   "source_url": "https://www.seattle.gov/documents/Departments/Retirement/Publications/performance/ESG%20Updates/ESG_Report_2026Sept.pdf",
+   "degree": 1
+  },
+  {
+   "id": "cpp-investments",
+   "type": "investor",
+   "layer": "investors",
+   "label": "CPP Investments",
+   "org_type": "public pension",
+   "description": "Organization that invests the assets of the Canada Pension Plan.",
+   "website": "https://www.cppinvestments.com",
+   "source_url": "https://cppinvestments.com/wp-content/uploads/2024/10/Integrating-AI-and-Human-Capital-Guiding-Boards-and-Management-EN.pdf",
+   "degree": 1
+  },
+  {
+   "id": "otpp",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Ontario Teachers' Pension Plan (OTPP)",
+   "org_type": "public pension",
+   "description": "Pension plan for Ontario teachers that invests globally and runs its own corporate governance and stewardship program.",
+   "website": "https://www.otpp.com",
+   "source_url": "https://www.otpp.com/en-ca/modals/bios/anna-murray/",
+   "degree": 1
+  },
+  {
+   "id": "cdpq",
+   "type": "investor",
+   "layer": "investors",
+   "label": "CDPQ (La Caisse)",
+   "org_type": "public pension",
+   "description": "Quebec institutional investor that manages funds for public pension and insurance plans.",
+   "website": "https://www.lacaisse.com",
+   "source_url": "https://www.lacaisse.com/en/about-us/cdpq-governance/executive-committee",
+   "degree": 1
+  },
+  {
+   "id": "omers",
+   "type": "investor",
+   "layer": "investors",
+   "label": "OMERS",
+   "org_type": "public pension",
+   "description": "Defined benefit pension plan for Ontario municipal employees that invests directly across public and private markets.",
+   "website": "https://www.omers.com",
+   "source_url": "https://www.omers.com/katharine-preston",
+   "degree": 1
+  },
+  {
+   "id": "aimco",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Alberta Investment Management Corporation (AIMCo)",
+   "org_type": "public pension",
+   "description": "Crown corporation that invests pension, endowment and government funds for Alberta public sector clients.",
+   "website": "https://www.aimco.ca",
+   "source_url": "https://aimco.ca/who-we-are/leadership",
+   "degree": 1
+  },
+  {
+   "id": "railpen",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Railpen",
+   "org_type": "asset owner",
+   "description": "Investment manager for the UK railways pension schemes, with an in-house sustainable ownership team.",
+   "website": "https://www.railpen.com",
+   "source_url": "https://www.railpen.com/news-media/2026/railpen-launches-enhanced-systems-stewardship-strategy-for-2026-2030/",
+   "degree": 5
+  },
+  {
+   "id": "church-commissioners-for-england",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Church Commissioners for England",
+   "org_type": "faith-based investor",
+   "description": "Endowment fund of the Church of England and one of its National Investing Bodies, with its own responsible investment team.",
+   "website": "https://www.churchofengland.org/about/leadership-and-governance/church-commissioners",
+   "source_url": "https://www.churchofengland.org/media-and-news/press-releases/commissioners-appoints-olga-hancock",
+   "degree": 2
+  },
+  {
+   "id": "ranking-digital-rights",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Ranking Digital Rights",
+   "org_type": "advocacy nonprofit",
+   "description": "Independent research initiative that scores the largest tech and telecom companies on freedom of expression and privacy and publishes guidance for investors.",
+   "website": "https://rankingdigitalrights.org",
+   "source_url": "https://rankingdigitalrights.org/who-we-are/",
+   "degree": 4
+  },
+  {
+   "id": "world-benchmarking-alliance",
+   "type": "coalition",
+   "layer": "investors",
+   "label": "World Benchmarking Alliance",
+   "org_type": "coalition",
+   "description": "Nonprofit that benchmarks the world's most influential companies and convenes investor coalitions, including the Collective Impact Coalition for Ethical AI.",
+   "website": "https://www.worldbenchmarkingalliance.org",
+   "source_url": "https://www.worldbenchmarkingalliance.org/who-we-work/financial-institutions/all-you-need-know-about-collective-impact-coalition-ethical-ai",
+   "degree": 7
+  },
+  {
+   "id": "the-shareholder-commons",
+   "type": "investor",
+   "layer": "investors",
+   "label": "The Shareholder Commons",
+   "org_type": "advocacy nonprofit",
+   "description": "Nonprofit that pushes diversified investors to address systemic risks that companies impose on the wider economy.",
+   "website": "https://theshareholdercommons.com",
+   "source_url": "https://theshareholdercommons.com/about-us/",
+   "degree": 4
+  },
+  {
+   "id": "castlefield-investment-partners",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Castlefield Investment Partners",
+   "org_type": "impact/ESG asset manager",
+   "description": "UK investment firm that helps individuals, charities and advisers align their investments with their values.",
+   "website": "https://www.castlefield.com",
+   "source_url": "https://www.castlefield.com/",
+   "degree": 1
+  },
+  {
+   "id": "global-delta-capital",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Global Delta Capital",
+   "org_type": "investor",
+   "description": "Employee-owned investment firm in Somerville, Massachusetts that invests across international, emerging and frontier markets.",
+   "website": "https://www.globaldeltacapital.com",
+   "source_url": "https://www.globaldeltacapital.com/",
+   "degree": 1
+  },
+  {
+   "id": "betashares",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Betashares",
+   "org_type": "investor",
+   "description": "Australian fund manager that offers exchange traded funds and other investment products.",
+   "website": "https://www.betashares.com.au",
+   "source_url": "https://www.responsibleinvestment.org/events-news/conference/speaker/vinnay-cchoda",
+   "degree": 1
+  },
+  {
+   "id": "scottish-widows",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Scottish Widows",
+   "org_type": "asset owner",
+   "description": "UK pensions, insurance and investment provider and one of the country's largest asset owners.",
+   "website": "https://www.scottishwidows.co.uk",
+   "source_url": "https://expertise.scottishwidows.co.uk/contributor/eva-cairns/",
+   "degree": 2
+  },
+  {
+   "id": "natixis-investment-managers",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Natixis Investment Managers",
+   "org_type": "investor",
+   "description": "Global asset management group with a network of affiliated investment managers.",
+   "website": "https://www.im.natixis.com",
+   "source_url": "https://www.im.natixis.com/",
+   "degree": 1
+  },
+  {
+   "id": "eqt-group",
+   "type": "investor",
+   "layer": "investors",
+   "label": "EQT Group",
+   "org_type": "investor",
+   "description": "Global investment firm active in private capital, infrastructure and property.",
+   "website": "https://eqtgroup.com",
+   "source_url": "https://eqtgroup.com/about/people/sophie-walker",
+   "degree": 1
+  },
+  {
+   "id": "general-atlantic",
+   "type": "investor",
+   "layer": "investors",
+   "label": "General Atlantic",
+   "org_type": "investor",
+   "description": "Global growth investor in private companies.",
+   "website": "https://www.generalatlantic.com",
+   "source_url": "https://www.generalatlantic.com/people/team/cornelia-gomez/",
+   "degree": 1
+  },
+  {
+   "id": "stepstone-group",
+   "type": "investor",
+   "layer": "investors",
+   "label": "StepStone Group",
+   "org_type": "investor",
+   "description": "Private markets investment firm that manages and advises on private equity, infrastructure, credit and property.",
+   "website": "https://www.stepstonegroup.com",
+   "source_url": "https://pip2026.unpri.org/amsterdam/agenda",
+   "degree": 1
+  },
+  {
+   "id": "lbp-am",
+   "type": "investor",
+   "layer": "investors",
+   "label": "La Banque Postale Asset Management (LBP AM)",
+   "org_type": "impact/ESG asset manager",
+   "description": "French asset manager specialized in socially responsible investment, part of La Banque Postale group.",
+   "website": "https://www.lbpam.com",
+   "source_url": "https://www.buildingbridges.org/speaker/camille-bisconte-de-st-julien/",
+   "degree": 1
+  },
+  {
+   "id": "los-angeles-capital-management",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Los Angeles Capital Management",
+   "org_type": "investor",
+   "description": "Quantitative equity investment manager based in Los Angeles.",
+   "website": "https://www.lacapm.com",
+   "source_url": "https://www.responsibleinvestment.org/events-news/conference/speaker/colleen-raab-smith",
+   "degree": 1
+  },
+  {
+   "id": "uksif",
+   "type": "coalition",
+   "layer": "investors",
+   "label": "UKSIF",
+   "org_type": "coalition",
+   "description": "UK membership network for sustainable and responsible finance.",
+   "website": "https://www.uksif.org",
+   "source_url": "https://www.uksif.org/people/sally-kramers/",
+   "degree": 1
+  },
+  {
+   "id": "omidyar-network",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Omidyar Network",
+   "org_type": "foundation/endowment",
+   "description": "Philanthropic investment firm that funds and convenes work on technology and society, including investor engagement on responsible AI.",
+   "website": "https://omidyar.com",
+   "source_url": "https://peievents.com/en/event/ri-europe/agenda",
+   "degree": 1
+  },
+  {
+   "id": "imco",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Investment Management Corporation of Ontario (IMCO)",
+   "org_type": "public pension",
+   "description": "Canadian investment manager for Ontario public sector pension and insurance funds.",
+   "website": "https://www.imcoinvest.com",
+   "source_url": "https://peievents.com/en/event/ri-europe/agenda",
+   "degree": 1
+  },
+  {
+   "id": "danske-bank",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Danske Bank",
+   "org_type": "investor",
+   "description": "Danish bank whose asset management arm invests on behalf of clients.",
+   "website": "https://danskebank.com",
+   "source_url": "https://icgn.org/event/summer-conference-2026-amsterdam-hosted-by-eumedion/",
+   "degree": 1
+  },
+  {
+   "id": "vanguard",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Vanguard",
+   "org_type": "investor",
+   "description": "Global asset manager known for index funds.",
+   "website": "https://www.vanguard.com",
+   "source_url": "https://icgn.org/event/summer-conference-2026-amsterdam-hosted-by-eumedion/",
+   "degree": 4
+  },
+  {
+   "id": "alliancebernstein",
+   "type": "investor",
+   "layer": "investors",
+   "label": "AllianceBernstein",
+   "org_type": "investor",
+   "description": "Global investment management firm.",
+   "website": "https://www.alliancebernstein.com",
+   "source_url": "https://icgn.org/event/summer-conference-2026-amsterdam-hosted-by-eumedion/",
+   "degree": 1
+  },
+  {
+   "id": "manulife-investment-management",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Manulife Investment Management",
+   "org_type": "investor",
+   "description": "Global asset management arm of Manulife.",
+   "website": "https://www.manulifeim.com",
+   "source_url": "https://icgn.org/event/icgn-autumn-conference-2026-toronto/",
+   "degree": 1
+  },
+  {
+   "id": "sands-capital",
+   "type": "investor",
+   "layer": "investors",
+   "label": "Sands Capital",
+   "org_type": "investor",
+   "description": "US investment manager focused on growth businesses in public and private markets.",
+   "website": "https://www.sandscapital.com",
+   "source_url": "https://icgn.org/event/icgn-autumn-conference-2026-toronto/",
+   "degree": 1
   },
   {
    "id": "msft-2023-hr-hotspots",
@@ -6394,13 +6845,6 @@
    "degree": 2
   },
   {
-   "id": "the-shareholder-commons",
-   "type": "investor",
-   "layer": "investors",
-   "label": "The Shareholder Commons",
-   "degree": 2
-  },
-  {
    "id": "person-mari-schwartzer",
    "type": "person",
    "layer": "people",
@@ -6629,13 +7073,6 @@
    "degree": 2
   },
   {
-   "id": "ranking-digital-rights",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Ranking Digital Rights",
-   "degree": 1
-  },
-  {
    "id": "person-nicholas-sewe",
    "type": "person",
    "layer": "people",
@@ -6645,13 +7082,6 @@
    "ai_focus": "Facilitated 2025 Ethical AI CIC progress report launch",
    "source_url": "https://www.worldbenchmarkingalliance.org/about-us/our-team",
    "verified": "2026-11",
-   "degree": 3
-  },
-  {
-   "id": "world-benchmarking-alliance",
-   "type": "investor",
-   "layer": "investors",
-   "label": "World Benchmarking Alliance",
    "degree": 3
   },
   {
@@ -6810,7 +7240,7 @@
    "type": "investor",
    "layer": "investors",
    "label": "Robeco",
-   "degree": 3
+   "degree": 9
   },
   {
    "id": "person-danielle-essink",
@@ -7015,13 +7445,6 @@
    "source_url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/articles/vanguard-names-leaders-new-investment-stewardship-programs.html",
    "verified": "2026-11",
    "degree": 1
-  },
-  {
-   "id": "vanguard",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Vanguard",
-   "degree": 3
   },
   {
    "id": "person-carolyn-cross",
@@ -7676,13 +8099,6 @@
    "degree": 1
   },
   {
-   "id": "jpmorgan-am",
-   "type": "investor",
-   "layer": "investors",
-   "label": "J.P. Morgan Asset Management",
-   "degree": 1
-  },
-  {
    "id": "person-kristin-drake",
    "type": "person",
    "layer": "people",
@@ -7699,7 +8115,7 @@
    "type": "investor",
    "layer": "investors",
    "label": "Dimensional Fund Advisors",
-   "degree": 1
+   "degree": 3
   },
   {
    "id": "person-courtney-wicks",
@@ -7797,7 +8213,7 @@
    "type": "investor",
    "layer": "investors",
    "label": "Allianz Global Investors",
-   "degree": 1
+   "degree": 2
   },
   {
    "id": "person-julia-christine-rippel",
@@ -7997,13 +8413,6 @@
    "source_url": "https://www.railpen.com/our-people/our-specialists/caroline-escott/",
    "verified": "2026-11",
    "degree": 1
-  },
-  {
-   "id": "railpen",
-   "type": "investor",
-   "layer": "investors",
-   "label": "Railpen",
-   "degree": 2
   },
   {
    "id": "person-jasmine-porter",
@@ -9432,6 +9841,1878 @@
    "org_name": "New York State Common Retirement Fund",
    "ai_focus": "Speaker at PRI's December 2026 webinar on AI data centers and responsible investment",
    "source_url": "https://www.unpri.org/events/webinar-ai-data-centres",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-catherine-winner",
+   "type": "person",
+   "layer": "people",
+   "label": "Catherine Winner",
+   "title": "Global Head of Stewardship",
+   "org_name": "Goldman Sachs Asset Management",
+   "ai_focus": "Leads Goldman Sachs AM's Global Stewardship Team, whose 2025 Stewardship Report names AI oversight a recurring engagement theme with issuers",
+   "source_url": "https://am.gs.com/cms-assets/gsam-app/documents/evergreen/en/GS-Stewardship-Report-2025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-anne-simpson",
+   "type": "person",
+   "layer": "people",
+   "label": "Anne Simpson",
+   "title": "Global Head of Sustainability",
+   "org_name": "Franklin Templeton",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.franklintempleton.com/forms-literature/download/Franklin-Templeton-Stewardship-Report%20Summary",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-robert-walker",
+   "type": "person",
+   "layer": "people",
+   "label": "Robert Walker",
+   "title": "Global Head of Stewardship, Executive Director",
+   "org_name": "Morgan Stanley Investment Management",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.morganstanley.com/im/en-us/financial-advisor/about-us/people-and-teams/investment-professionals/robert-walker.html",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-matt-brazier",
+   "type": "person",
+   "layer": "people",
+   "label": "Matt Brazier",
+   "title": "Global Head of Governance & Advisory",
+   "org_name": "Invesco",
+   "ai_focus": "Signs Invesco UK's 2025 Stewardship Report, which lists artificial intelligence among the systemic risks its stewardship team researches",
+   "source_url": "https://www.invesco.com/content/dam/invesco/uk/en/pdf/invesco-uk-stewardship-code-report-2025_en-uk.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-rupert-krefting",
+   "type": "person",
+   "layer": "people",
+   "label": "Rupert Krefting",
+   "title": "Head of Corporate Finance and Stewardship",
+   "org_name": "M&G Investments",
+   "ai_focus": "Signs M&G's 2024 Stewardship Report, which records its support for AI misinformation proposals at Meta and Alphabet and an AI disclosure proposal at Apple",
+   "source_url": "https://group.mandg.com/~/media/Files/M/mandg-corp/corp/documents/sustainability/responsible-investing/mandg-investments/mg-investments-annual-stewardship-report-2024.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-matt-christensen",
+   "type": "person",
+   "layer": "people",
+   "label": "Matt Christensen",
+   "title": "Global Head of Sustainable and Impact Investing",
+   "org_name": "Allianz Global Investors",
+   "ai_focus": "Leads AllianzGI's sustainable and impact investing; its 2026 voting policy update describes a new engagement framework for AI-related shareholder resolutions",
+   "source_url": "https://origin-www.allianzgi.com/en/press-centre/media/press-releases/20260303-allianzgi-enhances-governance-and-sustainability-leadership-with-updated-voting-policies-for-2026",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-caitlin-mcsherry",
+   "type": "person",
+   "layer": "people",
+   "label": "Caitlin McSherry",
+   "title": "Managing Director, Global Head of Stewardship and North America Sustainable Investing",
+   "org_name": "Neuberger Berman",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.nb.com/bios/caitlin-mcsherry",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-christian-preussner",
+   "type": "person",
+   "layer": "people",
+   "label": "Christian Preussner",
+   "title": "Global Head of Sustainable Investing and Stewardship",
+   "org_name": "J.P. Morgan Asset Management",
+   "ai_focus": "Oversees J.P. Morgan AM's sustainable investing and investment stewardship, whose 2025 report includes an AI thematic engagement chapter and support for several AI-risk proposals",
+   "source_url": "https://am.jpmorgan.com/content/dam/jpm-am-aem/global/en/sustainable-investing/investment-stewardship-report.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-yo-takatsuki",
+   "type": "person",
+   "layer": "people",
+   "label": "Yo Takatsuki",
+   "title": "Global Head of Investment Stewardship",
+   "org_name": "J.P. Morgan Asset Management",
+   "ai_focus": "Leads J.P. Morgan AM's global engagement and proxy voting team, whose 2025 report includes an AI thematic engagement chapter and support for several AI-risk proposals",
+   "source_url": "https://am.jpmorgan.com/content/dam/jpm-am-aem/global/en/sustainable-investing/investment-stewardship-report.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-wendy-cromwell",
+   "type": "person",
+   "layer": "people",
+   "label": "Wendy Cromwell",
+   "title": "Vice Chair and Head of Sustainable Investment",
+   "org_name": "Wellington Management",
+   "ai_focus": "Leads Wellington's sustainable investment work; its 2025 sustainability report describes company engagements on AI governance and risk mitigation practices",
+   "source_url": "https://www.wellington.com/content/dam/wellington/insights/en/pdf/2025-sustainability-report.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-ellen-chae",
+   "type": "person",
+   "layer": "people",
+   "label": "Ellen Chae",
+   "title": "Head of Sustainability Group",
+   "org_name": "Wellington Management",
+   "ai_focus": "Heads Wellington's Sustainability Group; its 2025 sustainability report describes company engagements on AI governance and risk mitigation practices",
+   "source_url": "https://www.wellington.com/content/dam/wellington/insights/en/pdf/2025-sustainability-report.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-caroline-c-conway",
+   "type": "person",
+   "layer": "people",
+   "label": "Caroline C. Conway",
+   "title": "SI Analyst",
+   "org_name": "Wellington Management",
+   "ai_focus": "Wrote Wellington's 2026 investor guide on evaluating human capital management amid AI adoption, with engagement questions for companies",
+   "source_url": "https://www.wellington.com/en/insights/evaluating-human-capital-amid-ai-adoption",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-katherine-kroll",
+   "type": "person",
+   "layer": "people",
+   "label": "Katherine Kroll",
+   "title": "Head of Institutional Sustainable Investing",
+   "org_name": "Brown Advisory",
+   "ai_focus": "Leads Brown Advisory's institutional sustainable investing; the firm lists effective oversight over AI applications among its governance engagement priorities",
+   "source_url": "https://www.brownadvisory.com/sites/default/files/2026-07/Sustainable_Investing_at_Brown_Advisory_Platform_Overview.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-maria-elena-drew",
+   "type": "person",
+   "layer": "people",
+   "label": "Maria Elena Drew",
+   "title": "Head, Global Sustainability",
+   "org_name": "T. Rowe Price",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.troweprice.com/financial-intermediary/us/en/search.html/biokey/maria-elena-drew",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-yijiang-wang",
+   "type": "person",
+   "layer": "people",
+   "label": "Yijiang Wang",
+   "title": "Corporate Governance Analyst",
+   "org_name": "T. Rowe Price",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.troweprice.com/en/is/insights/2026-pre-agm-season-review",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-jim-whittington",
+   "type": "person",
+   "layer": "people",
+   "label": "Jim Whittington",
+   "title": "Head of Responsible Investment and Senior Portfolio Manager",
+   "org_name": "Dimensional Fund Advisors",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.dimensional.com/us-en/sustainability",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-lacey-huebel",
+   "type": "person",
+   "layer": "people",
+   "label": "Lacey Huebel",
+   "title": "Head of Responsible Investment, North America, and Senior Portfolio Manager",
+   "org_name": "Dimensional Fund Advisors",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.dimensional.com/us-en/sustainability",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-simone-andrews",
+   "type": "person",
+   "layer": "people",
+   "label": "Simone Andrews",
+   "title": "Senior Responsible Investment Manager",
+   "org_name": "APG Asset Management",
+   "ai_focus": "Speaks for APG's responsible AI engagement program with tech companies, begun in 2024, which assesses AI policy, accountability, oversight and human rights impact assessments",
+   "source_url": "https://assetmanagement.apg.nl/publications/looking-for-the-next-tectonic-shift-in-big-tech/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-charles-stott",
+   "type": "person",
+   "layer": "people",
+   "label": "Charles Stott",
+   "title": "Responsible Investment Analyst",
+   "org_name": "Royal London Asset Management",
+   "ai_focus": "Quoted in Royal London Asset Management's June 2026 Sustainable and Ethical AI Investor Expectations, which set the firm's AI asks for investee companies",
+   "source_url": "https://www.rlam.com/globalassets/media/literature/reports/2026/sustainable-and-ethical-ai-investor-expectations.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-louise-schreiber",
+   "type": "person",
+   "layer": "people",
+   "label": "Louise Schreiber",
+   "title": "Co-Head of Sustainability Research, Listed Assets",
+   "org_name": "Mirova",
+   "ai_focus": "Co-leads the listed-assets sustainability research team behind Mirova's engagements, where digital transformation and responsible AI is a core theme (16 engagements with 9 companies in 2025)",
+   "source_url": "https://www.mirova.com/sites/default/files/2026-06/mirova-RAPPORT-ENGAGEMENT-2026-EN_FINAL.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-gabrielle-ferhat",
+   "type": "person",
+   "layer": "people",
+   "label": "Gabrielle Ferhat",
+   "title": "Impact & ESG Analyst",
+   "org_name": "Mirova",
+   "ai_focus": "Co-wrote Mirova's June 2025 position paper on how sustainable investors can engage on AI and its environmental footprint",
+   "source_url": "https://www.mirova.com/sites/default/files/2025-06/PositionPaper_AIClimate_MIROVA_2025_EN.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-lucy-larner",
+   "type": "person",
+   "layer": "people",
+   "label": "Lucy Larner",
+   "title": "Sustainable Investment Research Lead",
+   "org_name": "Schroders",
+   "ai_focus": "Co-wrote Schroders' 2026 Engagement Blueprints, which name technology as one of six cross-thematic engagement topics",
+   "source_url": "https://www.schroders.com/nl-nl/nl/professionele/inzichten/launching-our-2026-engagement-blueprints/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-prudence-johnson-hill",
+   "type": "person",
+   "layer": "people",
+   "label": "Prudence Johnson-Hill",
+   "title": "Sustainable Investment Analyst, Cazenove Capital",
+   "org_name": "Schroders",
+   "ai_focus": "Quoted on Cazenove Capital's 2025 Engagement Report, which says the firm engaged companies on the cross-thematic impacts of artificial intelligence",
+   "source_url": "https://www.cazenovecapital.com/en-gb/uk/charity/what-we-offer/sustainability/engagement-report/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-erik-hogberg",
+   "type": "person",
+   "layer": "people",
+   "label": "Erik Högberg",
+   "title": "Corporate Governance Analyst",
+   "org_name": "Storebrand Asset Management",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.spp.se/globalassets/hallbarhet/hallbarhetsbiblotek/kvartalsrapporter/kvartalsrapporter-2026/storebrand-sustainable-investment-review-q1-2026.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-yumi-fujita",
+   "type": "person",
+   "layer": "people",
+   "label": "Yumi Fujita",
+   "title": "Senior Engagement Specialist",
+   "org_name": "Robeco",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.robeco.com/files/docm/docu-202604-robeco-active-ownership-report-2025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-diana-trif",
+   "type": "person",
+   "layer": "people",
+   "label": "Diana Trif",
+   "title": "Engagement Specialist",
+   "org_name": "Robeco",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.robeco.com/files/docm/docu-202604-robeco-active-ownership-report-2025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-lucas-van-beek",
+   "type": "person",
+   "layer": "people",
+   "label": "Lucas van Beek",
+   "title": "Engagement Specialist",
+   "org_name": "Robeco",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.robeco.com/files/docm/docu-202604-robeco-active-ownership-report-2025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-ronnie-lim",
+   "type": "person",
+   "layer": "people",
+   "label": "Ronnie Lim",
+   "title": "Senior Engagement Specialist",
+   "org_name": "Robeco",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.robeco.com/files/docm/docu-202601-active-ownership-report-q4-en.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-sylvia-van-waveren",
+   "type": "person",
+   "layer": "people",
+   "label": "Sylvia van Waveren",
+   "title": "Senior Engagement Specialist",
+   "org_name": "Robeco",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.robeco.com/files/docm/docu-202601-active-ownership-report-q4-en.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-ghislaine-nadaud",
+   "type": "person",
+   "layer": "people",
+   "label": "Ghislaine Nadaud",
+   "title": "Senior Engagement Specialist",
+   "org_name": "Robeco",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.robeco.com/files/docm/docu-202604-robeco-active-ownership-report-2025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-khine-thant",
+   "type": "person",
+   "layer": "people",
+   "label": "Khine Thant",
+   "title": "Sustainability Analyst",
+   "org_name": "Boston Common Asset Management",
+   "ai_focus": "Co-author of Boston Common's 2026 \"The AI Buildout\" engagement with Microsoft, SK hynix, Samsung, TSMC and Delta Electronics on water, community and chemical risks",
+   "source_url": "https://bostoncommonasset.com/active-shareowner-update/active-shareowner-update-2026-q3/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-tim-nixon",
+   "type": "person",
+   "layer": "people",
+   "label": "Tim Nixon",
+   "title": "Director, Material Risk Research",
+   "org_name": "Boston Common Asset Management",
+   "ai_focus": "Co-author of Boston Common's 2026 \"Global AI Governance\" research, which reviews the WBA Collective Impact Coalition for Ethical AI",
+   "source_url": "https://www.bostoncommonasset.com/team",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-steven-heim",
+   "type": "person",
+   "layer": "people",
+   "label": "Steven Heim",
+   "title": "Director of Sustainability Research",
+   "org_name": "Boston Common Asset Management",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.bostoncommonasset.com/team/steven-heim",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-constantina-bichta-phd",
+   "type": "person",
+   "layer": "people",
+   "label": "Constantina Bichta, PhD",
+   "title": "Associate Director of Sustainability Research",
+   "org_name": "Boston Common Asset Management",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.bostoncommonasset.com/team/constantina-bichta",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-calvin-bader",
+   "type": "person",
+   "layer": "people",
+   "label": "Calvin Bader",
+   "title": "Sustainability Analyst",
+   "org_name": "Boston Common Asset Management",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://bostoncommonasset.com/active-shareowner-update/active-shareowner-update-2026-q3/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-emily-lethenstrom",
+   "type": "person",
+   "layer": "people",
+   "label": "Emily Lethenstrom",
+   "title": "Director of ESG Research and ESG Specialist",
+   "org_name": "Trillium Asset Management",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://trilliuminvest.com/team/emily-lethenstrom",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-sonia-kowal",
+   "type": "person",
+   "layer": "people",
+   "label": "Sonia Kowal",
+   "title": "President",
+   "org_name": "Zevin Asset Management",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.zevin.com/meet-our-staff",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-kristen-lang",
+   "type": "person",
+   "layer": "people",
+   "label": "Kristen Lang",
+   "title": "Deputy Director, ESG Investing",
+   "org_name": "Boston Trust Walden",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.bostontrustwalden.com/team-member/kristen-lang/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-jared-fernandez",
+   "type": "person",
+   "layer": "people",
+   "label": "Jared Fernandez",
+   "title": "Manager, Proxy Voting and ESG Analysis",
+   "org_name": "Boston Trust Walden",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.bostontrustwalden.com/team-member/jared-fernandez/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-willow-huppert",
+   "type": "person",
+   "layer": "people",
+   "label": "Willow Huppert",
+   "title": "Senior ESG Analyst",
+   "org_name": "Boston Trust Walden",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.bostontrustwalden.com/team-member/willow-huppert/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-andrew-shalit",
+   "type": "person",
+   "layer": "people",
+   "label": "Andrew Shalit",
+   "title": "Shareholder Advocate",
+   "org_name": "Green Century Capital Management",
+   "ai_focus": "Shareholder Advocate at Green Century, whose engagement program covers data center and AI companies on clean energy and emissions",
+   "source_url": "https://www.greencentury.com/team/andrew-shalit/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-frances-fairhead-stanova",
+   "type": "person",
+   "layer": "people",
+   "label": "Frances Fairhead-Stanova",
+   "title": "Shareholder Advocate",
+   "org_name": "Green Century Capital Management",
+   "ai_focus": "Shareholder Advocate at Green Century, whose engagement program covers data center and AI companies on clean energy and emissions",
+   "source_url": "https://www.greencentury.com/team/frances-fairhead-stanova/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-mckenzie-ursch",
+   "type": "person",
+   "layer": "people",
+   "label": "McKenzie Ursch",
+   "title": "Shareholder Advocate",
+   "org_name": "Green Century Capital Management",
+   "ai_focus": "Shareholder Advocate at Green Century, whose engagement program covers data center and AI companies on clean energy and emissions",
+   "source_url": "https://www.greencentury.com/meet-our-team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-tenzing-tashishar-cfa",
+   "type": "person",
+   "layer": "people",
+   "label": "Tenzing Tashishar, CFA",
+   "title": "Associate Director of Research",
+   "org_name": "NorthStar Asset Management",
+   "ai_focus": "Co-author of NorthStar's \"Drinking From an Empty Cup\" white paper on the water demands of AI; contributes to shareholder engagement",
+   "source_url": "https://northstarasset.com/team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-nimrit-kang-cfa",
+   "type": "person",
+   "layer": "people",
+   "label": "Nimrit Kang, CFA",
+   "title": "Chief Investment Officer",
+   "org_name": "NorthStar Asset Management",
+   "ai_focus": "Directs strategy at NorthStar, whose 2025-26 activism included a responsible AI proposal at Salesforce and AI water-risk work at Digital Realty",
+   "source_url": "https://northstarasset.com/team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-elizabeth-levy-cfa",
+   "type": "person",
+   "layer": "people",
+   "label": "Elizabeth Levy, CFA",
+   "title": "Managing Director and Portfolio Manager",
+   "org_name": "Clean Yield Asset Management",
+   "ai_focus": "Wrote Clean Yield's 2026 shareholder advocacy report, which records votes for AI use and oversight proposals at Alphabet and Meta",
+   "source_url": "https://cleanyield.com/team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-lionella-pezza",
+   "type": "person",
+   "layer": "people",
+   "label": "Lionella Pezza",
+   "title": "Director of Impact Research",
+   "org_name": "Domini Impact Investments",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://domini.com/2025impactreport",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-chris-dodwell",
+   "type": "person",
+   "layer": "people",
+   "label": "Chris Dodwell",
+   "title": "Co Head of Sustainability Centre, Global Head of Policy & Advocacy",
+   "org_name": "Impax Asset Management",
+   "ai_focus": "Co-heads the Impax Sustainability Centre, whose 2025 engagements assessed company governance of AI-related risks",
+   "source_url": "https://impaxam.com/about/team/chris-dodwell/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-mark-d-levine",
+   "type": "person",
+   "layer": "people",
+   "label": "Mark D. Levine",
+   "title": "New York City Comptroller",
+   "org_name": "NYC Comptroller's Office (Bureau of Asset Management)",
+   "ai_focus": "Signed the October 2026 letter urging Anthropic to pause its planned IPO until it addresses AI safety, governance and development-pace concerns",
+   "source_url": "https://comptroller.nyc.gov/reports/letter-to-anthropic-re-planned-initial-public-offering/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-thomas-p-dinapoli",
+   "type": "person",
+   "layer": "people",
+   "label": "Thomas P. DiNapoli",
+   "title": "New York State Comptroller and Trustee, New York State Common Retirement Fund",
+   "org_name": "New York State Common Retirement Fund",
+   "ai_focus": "Wrote to Anthropic in September 2026 urging one-share, one-vote governance before its IPO; the Fund reached AI transparency report agreements with three US airlines in 2025",
+   "source_url": "https://www.osc.ny.gov/files/common-retirement-fund/corporate-governance/pdf/anthropic-pbc-amodei-dario-091526.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-kyle-seeley",
+   "type": "person",
+   "layer": "people",
+   "label": "Kyle Seeley",
+   "title": "Deputy Director of Corporate Governance",
+   "org_name": "New York State Common Retirement Fund",
+   "ai_focus": "Named as the Fund's contact in its September 2026 letter to Anthropic on founder voting control and board accountability ahead of the IPO",
+   "source_url": "https://www.osc.ny.gov/files/common-retirement-fund/corporate-governance/pdf/anthropic-pbc-amodei-dario-091526.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-jennifer-conovitz",
+   "type": "person",
+   "layer": "people",
+   "label": "Jennifer Conovitz",
+   "title": "Special Counsel for Corporate Governance and Responsible Investment",
+   "org_name": "NYC Comptroller's Office (Bureau of Asset Management)",
+   "ai_focus": "Credited on the NYC pension funds' 2025 postseason report, which covers AI and human rights proposals at Uber and Lyft and Uber's commitment to publish Responsible AI Principles",
+   "source_url": "https://comptroller.nyc.gov/wp-content/uploads/documents/2025-Postseason-Report.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-amna-khan",
+   "type": "person",
+   "layer": "people",
+   "label": "Amna Khan",
+   "title": "Corporate Governance Coordinator",
+   "org_name": "NYC Comptroller's Office (Bureau of Asset Management)",
+   "ai_focus": "Credited on the NYC pension funds' 2025 postseason report, which covers AI and human rights proposals at Uber and Lyft and Uber's commitment to publish Responsible AI Principles",
+   "source_url": "https://comptroller.nyc.gov/wp-content/uploads/documents/2025-Postseason-Report.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-michelle-folder-taylor",
+   "type": "person",
+   "layer": "people",
+   "label": "Michelle Folder-Taylor",
+   "title": "Senior Investment Analyst",
+   "org_name": "NYC Comptroller's Office (Bureau of Asset Management)",
+   "ai_focus": "Credited on the NYC pension funds' 2025 postseason report, which covers AI and human rights proposals at Uber and Lyft and Uber's commitment to publish Responsible AI Principles",
+   "source_url": "https://comptroller.nyc.gov/wp-content/uploads/documents/2025-Postseason-Report.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-emily-law",
+   "type": "person",
+   "layer": "people",
+   "label": "Emily Law",
+   "title": "Senior Investment Analyst",
+   "org_name": "NYC Comptroller's Office (Bureau of Asset Management)",
+   "ai_focus": "Credited on the NYC pension funds' 2025 postseason report, which covers AI and human rights proposals at Uber and Lyft and Uber's commitment to publish Responsible AI Principles",
+   "source_url": "https://comptroller.nyc.gov/wp-content/uploads/documents/2025-Postseason-Report.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-andrew-elcock",
+   "type": "person",
+   "layer": "people",
+   "label": "Andrew Elcock",
+   "title": "Senior Investment Analyst",
+   "org_name": "NYC Comptroller's Office (Bureau of Asset Management)",
+   "ai_focus": "Credited on the NYC pension funds' 2025 postseason report, which covers AI and human rights proposals at Uber and Lyft and Uber's commitment to publish Responsible AI Principles",
+   "source_url": "https://comptroller.nyc.gov/wp-content/uploads/documents/2025-Postseason-Report.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-prashant-yerramalli",
+   "type": "person",
+   "layer": "people",
+   "label": "Prashant Yerramalli",
+   "title": "General Counsel",
+   "org_name": "CalPERS",
+   "ai_focus": "Wrote an October 2026 op-ed arguing shareholders should have a say in how AI companies manage safety, opposing SEC repeal of the shareholder proposal rule",
+   "source_url": "https://www.calpers.ca.gov/newsroom/for-the-record/2026/calpers-general-counsel-shareholders-should-have-a-say-on-making-ai-safe",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-travis-antoniono",
+   "type": "person",
+   "layer": "people",
+   "label": "Travis Antoniono",
+   "title": "Investment Director, Sustainable Investments",
+   "org_name": "CalPERS",
+   "ai_focus": "Investment Director on CalPERS's Sustainable Investments team, whose November 2026 program review lists responsible AI engagement with asset managers and companies, and AI safety, as a priority",
+   "source_url": "https://www.calpers.ca.gov/documents/202611-invest-agenda-item07c-01-a/download",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-fanny-bourdais-de-charbonniere",
+   "type": "person",
+   "layer": "people",
+   "label": "Fanny Bourdais de Charbonniere",
+   "title": "Investment Director, Sustainable Investments",
+   "org_name": "CalPERS",
+   "ai_focus": "Investment Director on CalPERS's Sustainable Investments team, whose November 2026 program review lists responsible AI engagement with asset managers and companies, and AI safety, as a priority",
+   "source_url": "https://www.calpers.ca.gov/documents/202611-invest-agenda-item07c-01-a/download",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-nelson-da-conceicao",
+   "type": "person",
+   "layer": "people",
+   "label": "Nelson Da Conceicao",
+   "title": "Investment Director, Sustainable Investments",
+   "org_name": "CalPERS",
+   "ai_focus": "Investment Director on CalPERS's Sustainable Investments team, whose November 2026 program review lists responsible AI engagement with asset managers and companies, and AI safety, as a priority",
+   "source_url": "https://www.calpers.ca.gov/documents/202611-invest-agenda-item07c-01-a/download",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-aeisha-mastagni",
+   "type": "person",
+   "layer": "people",
+   "label": "Aeisha Mastagni",
+   "title": "Senior Portfolio Manager",
+   "org_name": "CalSTRS",
+   "ai_focus": "Senior portfolio manager at CalSTRS; the fund's 2025 stewardship priorities say artificial intelligence touches all three of its stewardship priorities",
+   "source_url": "https://www.calstrs.com/calstrs-key-personnel",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-alex-wolsky",
+   "type": "person",
+   "layer": "people",
+   "label": "Alex Wolsky",
+   "title": "Senior Investment Officer, Head of Stewardship",
+   "org_name": "Minnesota State Board of Investment",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.msbi.us/staff",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-hannah-lundquist",
+   "type": "person",
+   "layer": "people",
+   "label": "Hannah Lundquist",
+   "title": "Investment Analyst, Stewardship",
+   "org_name": "Minnesota State Board of Investment",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.msbi.us/staff",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-allyson-tucker",
+   "type": "person",
+   "layer": "people",
+   "label": "Allyson Tucker",
+   "title": "Chief Executive Officer",
+   "org_name": "Washington State Investment Board (WSIB)",
+   "ai_focus": "Her CEO letter in WSIB's 2025 Sustainability Report names AI as a systemic investment theme and says WSIB is working to understand its material impacts on portfolio companies",
+   "source_url": "https://sib.wa.gov/docs/reports/sustainability/2025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-bridget-murphy",
+   "type": "person",
+   "layer": "people",
+   "label": "Bridget Murphy",
+   "title": "Asset Stewardship Officer",
+   "org_name": "Washington State Investment Board (WSIB)",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.sib.wa.gov/docs/meetings/board/25_0417final.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-veena-ramani",
+   "type": "person",
+   "layer": "people",
+   "label": "Veena Ramani",
+   "title": "Director of Stewardship",
+   "org_name": "Massachusetts Pension Reserves Investment Management Board (MassPRIM)",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.mapension.com/wp-content/uploads/2026/01/Stwardship-and-Sustainability-2025-Stewardship-and-Sustainability-Meeting-Minutes-11252025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-jessica-weaver",
+   "type": "person",
+   "layer": "people",
+   "label": "Jessica Weaver",
+   "title": "Deputy Director, Corporate Governance & Sustainable Investments",
+   "org_name": "Connecticut Retirement Plans and Trust Funds (Office of the Treasurer)",
+   "ai_focus": "Presented the CRPTF's 2026 proxy season review in September 2026, which lists continued engagement on AI as a focus for the 2027 season",
+   "source_url": "https://portal.ct.gov/-/media/ott/pension-funds/investment-advisory-council/090426iacmeetingmaterials-septexecsess.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-karen-kerschke",
+   "type": "person",
+   "layer": "people",
+   "label": "Karen Kerschke",
+   "title": "Director, Stewardship & Sustainable Investment",
+   "org_name": "Illinois State Treasurer",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://illinoistreasurer.gov/wp-content/uploads/2025/12/2025-Sustainability-Annual-Report_FINAL.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-marissa-martinez",
+   "type": "person",
+   "layer": "people",
+   "label": "Marissa Martinez",
+   "title": "Deputy Director of Stewardship & Sustainable Investment",
+   "org_name": "Illinois State Treasurer",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://illinoistreasurer.gov/wp-content/uploads/2025/12/2025-Sustainability-Annual-Report_FINAL.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-leola-ross",
+   "type": "person",
+   "layer": "people",
+   "label": "Leola Ross",
+   "title": "Deputy Chief Investment Officer & Head of ESG",
+   "org_name": "Seattle City Employees' Retirement System (SCERS)",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.seattle.gov/documents/Departments/Retirement/Publications/performance/ESG%20Updates/ESG_Report_2026Sept.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-richard-manley",
+   "type": "person",
+   "layer": "people",
+   "label": "Richard Manley",
+   "title": "Chief Sustainability Officer",
+   "org_name": "CPP Investments",
+   "ai_focus": "Quoted in CPP Investments' 2024 report on integrating AI and human capital, warning that weak board oversight of the AI-talent nexus could put future returns at risk",
+   "source_url": "https://cppinvestments.com/wp-content/uploads/2024/10/Integrating-AI-and-Human-Capital-Guiding-Boards-and-Management-EN.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-anna-murray",
+   "type": "person",
+   "layer": "people",
+   "label": "Anna Murray",
+   "title": "Senior Managing Director and Global Head of Sustainable Investing",
+   "org_name": "Ontario Teachers' Pension Plan (OTPP)",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.otpp.com/en-ca/modals/bios/anna-murray/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-emmanuel-jaclot",
+   "type": "person",
+   "layer": "people",
+   "label": "Emmanuel Jaclot",
+   "title": "Executive Vice-President and Head of Infrastructure and Sustainability",
+   "org_name": "CDPQ (La Caisse)",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.lacaisse.com/en/about-us/cdpq-governance/executive-committee",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-katharine-preston",
+   "type": "person",
+   "layer": "people",
+   "label": "Katharine Preston",
+   "title": "Vice President, Sustainable Investing",
+   "org_name": "OMERS",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.omers.com/katharine-preston",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-kelly-featherstone",
+   "type": "person",
+   "layer": "people",
+   "label": "Kelly Featherstone",
+   "title": "Chief Client Relations Officer (responsible for the Sustainable Investing function)",
+   "org_name": "Alberta Investment Management Corporation (AIMCo)",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://aimco.ca/who-we-are/leadership",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-jennifer-coulson",
+   "type": "person",
+   "layer": "people",
+   "label": "Jennifer Coulson",
+   "title": "Senior Managing Director and Global Head of ESG",
+   "org_name": "British Columbia Investment Management Corporation (BCI)",
+   "ai_focus": "Leads BCI's ESG program; BCI's 2024-2025 Stewardship Report set responsible AI as one of three ESG engagement priorities",
+   "source_url": "https://www.bci.ca/bci-releases-2024-2025-stewardship-report/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-patrick-du-plessis",
+   "type": "person",
+   "layer": "people",
+   "label": "Patrick Du Plessis",
+   "title": "Global Head of Risk Monitoring",
+   "org_name": "Norges Bank Investment Management",
+   "ai_focus": "Leads NBIM's sustainability risk monitoring, which in 2025 began using large language models to screen every company entering the fund's equity portfolio",
+   "source_url": "https://www.nbim.no/contentassets/99fa5525f1a947d6b7231101832bfb40/responsible-investment-2025.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-claudia-kruse",
+   "type": "person",
+   "layer": "people",
+   "label": "Claudia Kruse",
+   "title": "Managing Director RI Strategy",
+   "org_name": "APG Asset Management",
+   "ai_focus": "APG's Stewardship Overview 2024 describes engagement on responsible AI with leading AI companies in China and Korea, mapped against regional AI governance frameworks",
+   "source_url": "https://assetmanagement.apg.nl/media/a0bl145c/stewardship-overview-2024-apg.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-andrew-mccarthy",
+   "type": "person",
+   "layer": "people",
+   "label": "Andrew McCarthy",
+   "title": "Investment Manager, Fundamental Equities",
+   "org_name": "Railpen",
+   "ai_focus": "Quoted in Railpen's 2026 report Navigating AI on using its AI Governance Framework to compare how companies govern AI and to engage them on it",
+   "source_url": "https://www.railpen.com/media/vpsiiuia/railpen-ai-report-2026.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-tom-ward",
+   "type": "person",
+   "layer": "people",
+   "label": "Tom Ward",
+   "title": "Investment Associate, Sustainable Ownership team",
+   "org_name": "Railpen",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.railpen.com/news-media/2026/railpen-launches-enhanced-systems-stewardship-strategy-for-2026-2030/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-adam-c-t-matthews",
+   "type": "person",
+   "layer": "people",
+   "label": "Adam C.T. Matthews",
+   "title": "Chief Responsible Investment Officer",
+   "org_name": "Church of England Pensions Board (National Investing Bodies)",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.churchofengland.org/media/finance-news/response-joe-lycetts-letter-about-water-companies",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-olga-hancock",
+   "type": "person",
+   "layer": "people",
+   "label": "Olga Hancock",
+   "title": "Head of Responsible Investment",
+   "org_name": "Church Commissioners for England",
+   "ai_focus": "General stewardship; no AI work found",
+   "source_url": "https://www.churchofengland.org/media-and-news/press-releases/commissioners-appoints-olga-hancock",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-anne-maree-o-connor",
+   "type": "person",
+   "layer": "people",
+   "label": "Anne-Maree O'Connor",
+   "title": "Head of Sustainable Investment",
+   "org_name": "Guardians of New Zealand Superannuation (NZ Super Fund)",
+   "ai_focus": "Has overall responsibility for stewardship; NZ Super's 2025 Stewardship Report lists responsible governance of AI as an engagement theme, including 2025 engagement with Apple on AI data sourcing and governance",
+   "source_url": "https://nzsuperfund.nz/assets/Uploads/2025-Stewardship-Report.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-rabbi-rachel-kahn-troster",
+   "type": "person",
+   "layer": "people",
+   "label": "Rabbi Rachel Kahn-Troster",
+   "title": "Executive Vice President",
+   "org_name": "Interfaith Center on Corporate Responsibility (ICCR)",
+   "ai_focus": "Executive vice president of ICCR, whose members engage tech companies on human rights through its Digital Rights and AI Accountability program",
+   "source_url": "https://www.iccr.org/our-team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-tracey-rembert",
+   "type": "person",
+   "layer": "people",
+   "label": "Tracey Rembert",
+   "title": "Associate Director, Climate Change & Environmental Justice",
+   "org_name": "Interfaith Center on Corporate Responsibility (ICCR)",
+   "ai_focus": "Leads ICCR's corporate climate lobbying work; her bio cites experience in worker rights and child safety online. No AI work found",
+   "source_url": "https://www.iccr.org/our-team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-erica-lasdon",
+   "type": "person",
+   "layer": "people",
+   "label": "Erica Lasdon",
+   "title": "Director, Climate Change and Environmental Justice",
+   "org_name": "Interfaith Center on Corporate Responsibility (ICCR)",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.iccr.org/our-team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-sehr-khaliq",
+   "type": "person",
+   "layer": "people",
+   "label": "Sehr Khaliq",
+   "title": "Director of Program Evaluation",
+   "org_name": "Interfaith Center on Corporate Responsibility (ICCR)",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.iccr.org/our-team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-chavi-keeney-nana",
+   "type": "person",
+   "layer": "people",
+   "label": "Chavi Keeney Nana",
+   "title": "Director of Equitable Global Supply Chains",
+   "org_name": "Interfaith Center on Corporate Responsibility (ICCR)",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.iccr.org/our-team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-nadira-narine",
+   "type": "person",
+   "layer": "people",
+   "label": "Nadira Narine",
+   "title": "Senior Director, Strategic Initiatives",
+   "org_name": "Interfaith Center on Corporate Responsibility (ICCR)",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.iccr.org/our-team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-gina-falada",
+   "type": "person",
+   "layer": "people",
+   "label": "Gina Falada",
+   "title": "Associate Director: Advancing Worker Justice",
+   "org_name": "Interfaith Center on Corporate Responsibility (ICCR)",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.iccr.org/our-team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-tim-smith",
+   "type": "person",
+   "layer": "people",
+   "label": "Tim Smith",
+   "title": "Senior Policy Advisor",
+   "org_name": "Interfaith Center on Corporate Responsibility (ICCR)",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.iccr.org/our-team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-david-schilling",
+   "type": "person",
+   "layer": "people",
+   "label": "David Schilling",
+   "title": "Senior Advisor",
+   "org_name": "Interfaith Center on Corporate Responsibility (ICCR)",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.iccr.org/our-team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-beth-ann-roth",
+   "type": "person",
+   "layer": "people",
+   "label": "Beth-ann Roth",
+   "title": "General Counsel",
+   "org_name": "Interfaith Center on Corporate Responsibility (ICCR)",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.iccr.org/our-team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-pia-garavaglia",
+   "type": "person",
+   "layer": "people",
+   "label": "Pía Garavaglia",
+   "title": "Consultant",
+   "org_name": "Interfaith Center on Corporate Responsibility (ICCR)",
+   "ai_focus": "Economist on the digital economy and platform work who consults for ICCR and spoke on platform worker solidarity in the age of AI at ICCR's 2026 conference",
+   "source_url": "https://iccrconference.org/speakers/pia-garavaglia",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-michael-corley",
+   "type": "person",
+   "layer": "people",
+   "label": "Michael Corley",
+   "title": "Senior Staff Attorney",
+   "org_name": "As You Sow",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.asyousow.org/about-us/staff",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-gail-follansbee",
+   "type": "person",
+   "layer": "people",
+   "label": "Gail Follansbee",
+   "title": "Shareholder Relations Sr. Manager",
+   "org_name": "As You Sow",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.asyousow.org/about-us/staff",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-olivia-knight",
+   "type": "person",
+   "layer": "people",
+   "label": "Olivia Knight",
+   "title": "Racial and Environmental Justice Sr. Manager",
+   "org_name": "As You Sow",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.asyousow.org/about-us/staff",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-bryant-sewell",
+   "type": "person",
+   "layer": "people",
+   "label": "Bryant Sewell",
+   "title": "Co-Executive Director",
+   "org_name": "Majority Action",
+   "ai_focus": "Co-leads Majority Action and is the contact for investor stewardship on AI accountability through its Collaborative for People-Centered AI",
+   "source_url": "https://www.majorityaction.us/our-team",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-tyler-devere",
+   "type": "person",
+   "layer": "people",
+   "label": "Tyler DeVere",
+   "title": "Consultant",
+   "org_name": "Majority Action",
+   "ai_focus": "Strategist whose Majority Action work examines emerging technology and the system-level challenges of AI and data-center development",
+   "source_url": "https://www.majorityaction.us/our-team",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-divya-sundar",
+   "type": "person",
+   "layer": "people",
+   "label": "Divya Sundar",
+   "title": "Director of Research",
+   "org_name": "Majority Action",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.majorityaction.us/our-team",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-eli-kasargod-staub",
+   "type": "person",
+   "layer": "people",
+   "label": "Eli Kasargod-Staub",
+   "title": "Co-Founder & Advisor",
+   "org_name": "Majority Action",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.majorityaction.us/our-team",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-leandro-ucciferri",
+   "type": "person",
+   "layer": "people",
+   "label": "Leandro Ucciferri",
+   "title": "Deputy Director",
+   "org_name": "Ranking Digital Rights",
+   "ai_focus": "Deputy director of Ranking Digital Rights, which scores tech and telecom companies on freedom of expression and privacy, including algorithms and ad tech, and guides investors",
+   "source_url": "https://rankingdigitalrights.org/who-we-are/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-samantha-ndiwalana",
+   "type": "person",
+   "layer": "people",
+   "label": "Samantha Ndiwalana",
+   "title": "Advocacy Director",
+   "org_name": "Ranking Digital Rights",
+   "ai_focus": "Directs advocacy at Ranking Digital Rights, which scores tech and telecom companies on freedom of expression and privacy and guides investors",
+   "source_url": "https://rankingdigitalrights.org/who-we-are/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-dr-tayrine-dos-santos-dias",
+   "type": "person",
+   "layer": "people",
+   "label": "Dr. Tayrine dos Santos Dias",
+   "title": "Research Manager",
+   "org_name": "Ranking Digital Rights",
+   "ai_focus": "Manages research for Ranking Digital Rights, which scores tech and telecom companies on freedom of expression and privacy, including algorithms and ad tech",
+   "source_url": "https://rankingdigitalrights.org/who-we-are/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-gerbrand-haverkamp",
+   "type": "person",
+   "layer": "people",
+   "label": "Gerbrand Haverkamp",
+   "title": "Executive Director",
+   "org_name": "World Benchmarking Alliance",
+   "ai_focus": "Leads the World Benchmarking Alliance, which convenes the Collective Impact Coalition for Ethical AI with investors and civil society",
+   "source_url": "https://www.worldbenchmarkingalliance.org/about-us/our-team",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-ana-colazo-bella",
+   "type": "person",
+   "layer": "people",
+   "label": "Ana Colazo Bella",
+   "title": "Investor Engagement Lead",
+   "org_name": "World Benchmarking Alliance",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.worldbenchmarkingalliance.org/about-us/our-team",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-lauren-muusse",
+   "type": "person",
+   "layer": "people",
+   "label": "Lauren Muusse",
+   "title": "Finance Engagement Lead",
+   "org_name": "World Benchmarking Alliance",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.worldbenchmarkingalliance.org/about-us/our-team?page=1",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-ari-hoffnung",
+   "type": "person",
+   "layer": "people",
+   "label": "Ari Hoffnung",
+   "title": "Managing Director",
+   "org_name": "JLens",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.jlensnetwork.org/overview/people/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-dani-nurick",
+   "type": "person",
+   "layer": "people",
+   "label": "Dani Nurick",
+   "title": "Director of Advocacy",
+   "org_name": "JLens",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.jlensnetwork.org/overview/people/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-allison-marill",
+   "type": "person",
+   "layer": "people",
+   "label": "Allison Marill",
+   "title": "Director of Research",
+   "org_name": "JLens",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.jlensnetwork.org/overview/people/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-sophie-faris",
+   "type": "person",
+   "layer": "people",
+   "label": "Sophie Faris",
+   "title": "Chief Operating Officer",
+   "org_name": "The Shareholder Commons",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://theshareholdercommons.com/about-us/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-frederick-alexander",
+   "type": "person",
+   "layer": "people",
+   "label": "Frederick Alexander",
+   "title": "Founder",
+   "org_name": "The Shareholder Commons",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://theshareholdercommons.com/about-us/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-tracey-cadet-fleming",
+   "type": "person",
+   "layer": "people",
+   "label": "Tracey Cadet-Fleming",
+   "title": "Communications & Affiliate Partnership Director",
+   "org_name": "Investor Advocates for Social Justice",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://iasj.org/about-us/team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-terwase-tor",
+   "type": "person",
+   "layer": "people",
+   "label": "Terwase Tor",
+   "title": "Proxy Voting Analyst",
+   "org_name": "Investor Advocates for Social Justice",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://iasj.org/about-us/team/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-mellissa-duru",
+   "type": "person",
+   "layer": "people",
+   "label": "Mellissa Duru",
+   "title": "Deputy Director and Deputy General Counsel",
+   "org_name": "Council of Institutional Investors (CII)",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.cii.org/staff",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-jeff-mahoney-jd-cpa",
+   "type": "person",
+   "layer": "people",
+   "label": "Jeff Mahoney, JD, CPA",
+   "title": "General Counsel",
+   "org_name": "Council of Institutional Investors (CII)",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.cii.org/staff",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-peter-van-veen",
+   "type": "person",
+   "layer": "people",
+   "label": "Peter van Veen",
+   "title": "Global Policy Director",
+   "org_name": "International Corporate Governance Network (ICGN)",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://icgn.org/about-us/who-we-are/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-ayan-tewari",
+   "type": "person",
+   "layer": "people",
+   "label": "Ayan Tewari",
+   "title": "Senior Policy Executive",
+   "org_name": "International Corporate Governance Network (ICGN)",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://icgn.org/about-us/who-we-are/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-rob-berridge",
+   "type": "person",
+   "layer": "people",
+   "label": "Rob Berridge",
+   "title": "Senior Director, Investor Network, Investment Stewardship",
+   "org_name": "Ceres",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.ceres.org/about/staff",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-andrew-collier",
+   "type": "person",
+   "layer": "people",
+   "label": "Andrew Collier",
+   "title": "Director, Freedom to Invest",
+   "org_name": "Ceres",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.ceres.org/about/staff",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-lisa-laird",
+   "type": "person",
+   "layer": "people",
+   "label": "Lisa Laird",
+   "title": "Chief Investment Officer",
+   "org_name": "Mercy Investment Services",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.mercyinvestmentservices.org/about-us/staff",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-bryan-j-pini",
+   "type": "person",
+   "layer": "people",
+   "label": "Bryan J. Pini",
+   "title": "President",
+   "org_name": "Mercy Investment Services",
+   "ai_focus": "General shareholder advocacy; no AI work found",
+   "source_url": "https://www.mercyinvestmentservices.org/about-us/staff",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-julie-b-tanner",
+   "type": "person",
+   "layer": "people",
+   "label": "Julie B. Tanner",
+   "title": "Managing Director, Catholic Responsible Investments",
+   "org_name": "Christian Brothers Investment Services, Inc.",
+   "ai_focus": "Leads CBIS engagement on child safety in the age of AI, with resolutions at Verizon, AT&T and Apple, and CBIS's work in the WBA Collective Impact Coalition on Ethical AI",
+   "source_url": "https://cbisonline.com/us/wp-content/uploads/sites/2/2026/04/2026-Q1-IJ-Quarterly-Review.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-raymond-j-burnell",
+   "type": "person",
+   "layer": "people",
+   "label": "Raymond J. Burnell",
+   "title": "Senior Director, Catholic Responsible Investments",
+   "org_name": "Christian Brothers Investment Services, Inc.",
+   "ai_focus": "Works on CBIS child safety and ethical AI engagements with tech companies and spoke on health and AI at ICCR's 2026 conference",
+   "source_url": "https://cbisonline.com/us/wp-content/uploads/sites/2/2026/04/2026-Q1-IJ-Quarterly-Review.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-meagan-tenety",
+   "type": "person",
+   "layer": "people",
+   "label": "Meagan Tenety",
+   "title": "Sustainable Investment Stewardship Manager",
+   "org_name": "Wespath Benefits & Investments",
+   "ai_focus": "Manages Wespath stewardship focused on AI, defense and surveillance technology",
+   "source_url": "https://iccrconference.org/speakers/meagan-tenety",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-maria-orozco",
+   "type": "person",
+   "layer": "people",
+   "label": "María Orozco",
+   "title": "Senior Program Officer, Investor Leadership",
+   "org_name": "SHARE (Shareholder Association for Research and Education)",
+   "ai_focus": "Helps coordinate the Labour Rights Investor Network for the Committee on Workers' Capital at SHARE and spoke on platform worker solidarity in the age of AI at ICCR's 2026 conference",
+   "source_url": "https://iccrconference.org/speakers/maria-orozco",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-ita-mcmahon",
+   "type": "person",
+   "layer": "people",
+   "label": "Ita McMahon",
+   "title": "Head of Stewardship",
+   "org_name": "Castlefield Investment Partners",
+   "ai_focus": "Speaker at the Investor Alliance for Human Rights' May 2026 investor webinar on governance of AI and what the data shows",
+   "source_url": "https://investorsforhumanrights.org/events/investor-webinar-governance-artificial-intelligence-what-does-data-tell-us",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-asha-mehta",
+   "type": "person",
+   "layer": "people",
+   "label": "Asha Mehta",
+   "title": "Managing Partner and CIO",
+   "org_name": "Global Delta Capital",
+   "ai_focus": "Speaker at the Investor Alliance for Human Rights' September 2026 webinar on how big telcos are responding to human rights threats, including AI",
+   "source_url": "https://investorsforhumanrights.org/events/public-webinar-how-are-big-telcos-responding-new-human-rights-threats",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-vinnay-cchoda",
+   "type": "person",
+   "layer": "people",
+   "label": "Vinnay Cchoda",
+   "title": "Manager, Responsible Investments",
+   "org_name": "Betashares",
+   "ai_focus": "Panelist on 'The AI reckoning' at the RIAA Conference Aotearoa NZ, September 2026",
+   "source_url": "https://www.responsibleinvestment.org/events-news/conference/speaker/vinnay-cchoda",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-jenni-black",
+   "type": "person",
+   "layer": "people",
+   "label": "Jenni Black",
+   "title": "Head of Company and Industry Engagement",
+   "org_name": "World Benchmarking Alliance",
+   "ai_focus": "Gave the ethical AI session at the ICGN Summer Conference 2026 in Amsterdam",
+   "source_url": "https://www.worldbenchmarkingalliance.org/profile/jenni-black",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-eva-cairns",
+   "type": "person",
+   "layer": "people",
+   "label": "Eva Cairns",
+   "title": "Head of Responsible Investment",
+   "org_name": "Scottish Widows",
+   "ai_focus": "Speaker at PRI in Person 2025's session on AI and disruptive technologies, and on RI Europe 2026's AI and responsible investment panel",
+   "source_url": "https://expertise.scottishwidows.co.uk/contributor/eva-cairns/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-peter-flynn",
+   "type": "person",
+   "layer": "people",
+   "label": "Peter Flynn",
+   "title": "Manager, Responsible Investments",
+   "org_name": "Scottish Widows",
+   "ai_focus": "Speaker at the ICGN Summer Conference 2026 briefing on AI governance and the board",
+   "source_url": "https://icgn.org/event/summer-conference-2026-amsterdam-hosted-by-eumedion/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-lamia-yous-chouiten",
+   "type": "person",
+   "layer": "people",
+   "label": "Lamia Yous-Chouiten",
+   "title": "Global Chief Sustainability Officer",
+   "org_name": "Natixis Investment Managers",
+   "ai_focus": "Speaker at PRI in Person 2025's session on AI's role in responsible investment work",
+   "source_url": "https://pip2025.unpri.org/saopaulo/agenda",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-sophie-walker",
+   "type": "person",
+   "layer": "people",
+   "label": "Sophie Walker",
+   "title": "Senior Advisor - Sustainability & Responsible AI",
+   "org_name": "EQT Group",
+   "ai_focus": "Speaker at PRI in Person 2026's workshop on investor action on AI and responsible technology",
+   "source_url": "https://eqtgroup.com/about/people/sophie-walker",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-cornelia-gomez",
+   "type": "person",
+   "layer": "people",
+   "label": "Cornelia Gomez",
+   "title": "Managing Director, Global Head of Sustainability",
+   "org_name": "General Atlantic",
+   "ai_focus": "Speaker at PRI in Person 2026's workshop on investor action on AI and responsible technology",
+   "source_url": "https://www.generalatlantic.com/people/team/cornelia-gomez/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-suzanne-tavill",
+   "type": "person",
+   "layer": "people",
+   "label": "Suzanne Tavill",
+   "title": "Partner, Global Head of Responsible Investment",
+   "org_name": "StepStone Group",
+   "ai_focus": "Speaker at PRI in Person 2026's workshop on investor action on AI and responsible technology",
+   "source_url": "https://pip2026.unpri.org/amsterdam/agenda",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-dan-neale",
+   "type": "person",
+   "layer": "people",
+   "label": "Dan Neale",
+   "title": "Social Themes Lead",
+   "org_name": "Church Commissioners for England",
+   "ai_focus": "Speaker at PRI in Person 2026's session on stewardship in defence and dual-use tech, including AI",
+   "source_url": "https://www.ihrb.org/people/daniel-neale",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-camille-bisconte-de-saint-julien",
+   "type": "person",
+   "layer": "people",
+   "label": "Camille Bisconte de Saint Julien",
+   "title": "Business & Human Rights Advisor",
+   "org_name": "La Banque Postale Asset Management (LBP AM)",
+   "ai_focus": "Author of the Investor Alliance for Human Rights' June 2026 piece 'AI in the Kill Chain' on AI-enabled warfare risks for investors",
+   "source_url": "https://www.buildingbridges.org/speaker/camille-bisconte-de-st-julien/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-luke-perlot",
+   "type": "person",
+   "layer": "people",
+   "label": "Luke Perlot",
+   "title": "Associate Director, Corporate Integrity Project",
+   "org_name": "National Legal and Policy Center",
+   "ai_focus": "Contact on NLPC's exempt solicitation for its AI data usage oversight proposal at Microsoft (2025)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1958085/000109690625001784/nlpc_px14a6g.htm",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-gerald-bowyer",
+   "type": "person",
+   "layer": "people",
+   "label": "Gerald Bowyer",
+   "title": "President",
+   "org_name": "Bowyer Research",
+   "ai_focus": "Contact on Bowyer Research's 2025 Meta exempt solicitation backing a report on deepfakes in online child exploitation",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1996368/000109690625000742/bowy_px14a6g.htm",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-bianca-agustin",
+   "type": "person",
+   "layer": "people",
+   "label": "Bianca Agustin",
+   "title": "Co-Executive Director",
+   "org_name": "United for Respect Education Fund",
+   "ai_focus": "Proponent of the 2026 Amazon floor proposal for an independent AI and Automation Advisory Council",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/05/Amazon-Floor-Proposal_-Memo-in-Support-.pdf",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-jeremy-hubbard",
+   "type": "person",
+   "layer": "people",
+   "label": "Jeremy Hubbard",
+   "title": "Chief Technology and Data Officer",
+   "org_name": "Rest",
+   "ai_focus": "Speaker at the RIAA Conference Australia 2026 session on AI for responsible investors: use cases, risks and readiness",
+   "source_url": "https://www.responsibleinvestment.org/events-news/conference/speaker/jeremy-hubbard",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-colleen-raab-smith",
+   "type": "person",
+   "layer": "people",
+   "label": "Colleen Raab Smith",
+   "title": "Portfolio Manager and Lead Strategist for Sustainable Solutions",
+   "org_name": "Los Angeles Capital Management",
+   "ai_focus": "Speaker at the RIAA Conference Australia 2026 session on AI for responsible investors: use cases, risks and readiness",
+   "source_url": "https://www.responsibleinvestment.org/events-news/conference/speaker/colleen-raab-smith",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-katrina-dudley",
+   "type": "person",
+   "layer": "people",
+   "label": "Katrina Dudley",
+   "title": "SVP, AI & Sustainability Lead",
+   "org_name": "Franklin Templeton",
+   "ai_focus": "Speaker at US SIF's September 2026 Climate Week event 'Stewarding the AI Transition: Governance, Innovation and Long-Term Value'",
+   "source_url": "https://www.ussif.org/events-and-networking/us-sif-ny-climate-week-event-stewarding-the-ai-transition-governance-innovation-and-long-term-value",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-louise-piffaut",
+   "type": "person",
+   "layer": "people",
+   "label": "Louise Piffaut",
+   "title": "Head of ESG",
+   "org_name": "Aviva Investors",
+   "ai_focus": "Quoted in the Investor Alliance for Human Rights' February 2023 release of the investor statement on the EU AI Act",
+   "source_url": "https://www.avivainvestors.com/en-us/about/our-people/l/louise-piffaut/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-sally-kramers",
+   "type": "person",
+   "layer": "people",
+   "label": "Sally Kramers",
+   "title": "Chief Operating Officer and Head of Industry Development",
+   "org_name": "UKSIF",
+   "ai_focus": "Moderator of RI Europe 2026's panel 'AI and RI: Harnessing technology for sustainable outcomes'",
+   "source_url": "https://www.uksif.org/people/sally-kramers/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-laurie-fitzjohn-sykes",
+   "type": "person",
+   "layer": "people",
+   "label": "Laurie Fitzjohn-Sykes",
+   "title": "Strategic Advisor",
+   "org_name": "Omidyar Network",
+   "ai_focus": "Speaker on RI Europe 2026's AI and responsible investment panel; works with investors on responsible AI and set up the Investor AI Resource Hub",
+   "source_url": "https://peievents.com/en/event/ri-europe/agenda",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-kathleen-beaumont",
+   "type": "person",
+   "layer": "people",
+   "label": "Kathleen Beaumont",
+   "title": "Managing Director, Sustainable Investing",
+   "org_name": "Investment Management Corporation of Ontario (IMCO)",
+   "ai_focus": "Speaker on RI Europe 2026's panel 'AI and RI: Harnessing technology for sustainable outcomes'",
+   "source_url": "https://peievents.com/en/event/ri-europe/agenda",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-christopher-wright",
+   "type": "person",
+   "layer": "people",
+   "label": "Christopher Wright",
+   "title": "Head of Sustainability and Geopolitical Risk",
+   "org_name": "Norges Bank Investment Management",
+   "ai_focus": "Speaker on RI Europe 2026's controversy monitoring panel, which covered investor use of new AI tools",
+   "source_url": "https://peievents.com/en/event/ri-europe/agenda",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-oshni-arachchi",
+   "type": "person",
+   "layer": "people",
+   "label": "Oshni Arachchi",
+   "title": "Global Head of Active Ownership and Head of Responsible Investment",
+   "org_name": "Danske Bank",
+   "ai_focus": "Speaker at the ICGN Summer Conference 2026 briefing on AI governance and the board",
+   "source_url": "https://icgn.org/event/summer-conference-2026-amsterdam-hosted-by-eumedion/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-erica-serpico",
+   "type": "person",
+   "layer": "people",
+   "label": "Erica Serpico",
+   "title": "Director - Investor Choice, UK & Europe",
+   "org_name": "Vanguard",
+   "ai_focus": "Speaker on the ICGN Summer Conference 2026 plenary on the future of stewardship and AI",
+   "source_url": "https://icgn.org/event/summer-conference-2026-amsterdam-hosted-by-eumedion/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-shane-mccullagh",
+   "type": "person",
+   "layer": "people",
+   "label": "Shane McCullagh",
+   "title": "Investment Associate - Sustainable Ownership",
+   "org_name": "Railpen",
+   "ai_focus": "Speaker at the ICGN Summer Conference 2026 Future Leaders session, where AI was one of three core themes",
+   "source_url": "https://icgn.org/event/summer-conference-2026-amsterdam-hosted-by-eumedion/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-arnav-prasad",
+   "type": "person",
+   "layer": "people",
+   "label": "Arnav Prasad",
+   "title": "Senior Investment Analyst, ESG & Stewardship",
+   "org_name": "AustralianSuper",
+   "ai_focus": "Speaker at the ICGN Summer Conference 2026 Future Leaders session, where AI was one of three core themes",
+   "source_url": "https://icgn.org/event/summer-conference-2026-amsterdam-hosted-by-eumedion/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-landon-shea",
+   "type": "person",
+   "layer": "people",
+   "label": "Landon Shea",
+   "title": "Research Lead, Investment Stewardship",
+   "org_name": "AllianceBernstein",
+   "ai_focus": "Moderator of the ICGN Summer Conference 2026 Future Leaders session, where AI was one of three core themes",
+   "source_url": "https://icgn.org/event/summer-conference-2026-amsterdam-hosted-by-eumedion/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-pete-dervan",
+   "type": "person",
+   "layer": "people",
+   "label": "Pete Dervan",
+   "title": "Senior Director",
+   "org_name": "Manulife Investment Management",
+   "ai_focus": "Speaker on the ICGN Autumn Conference 2026 plenary 'AI and the Future of Investor Voting: Evolution or Disruption?'",
+   "source_url": "https://icgn.org/event/icgn-autumn-conference-2026-toronto/",
+   "verified": "2026-11",
+   "degree": 1
+  },
+  {
+   "id": "person-christopher-jenkins",
+   "type": "person",
+   "layer": "people",
+   "label": "Christopher Jenkins",
+   "title": "Senior Proxy Voting & Stewardship Specialist",
+   "org_name": "Sands Capital",
+   "ai_focus": "Moderator of the ICGN Autumn Conference 2026 briefing 'Oversight and Opportunity: Governing AI for Sustainable Value'",
+   "source_url": "https://icgn.org/event/icgn-autumn-conference-2026-toronto/",
    "verified": "2026-11",
    "degree": 1
   },
@@ -18414,7 +20695,7 @@
   },
   {
    "source": "person-janet-wong",
-   "target": "jpmorgan-am",
+   "target": "morgan-stanley-im",
    "type": "works at",
    "layer": "people",
    "source_url": "https://am.jpmorgan.com/content/dam/jpm-am-aem/global/en/sustainable-investing/investment-stewardship-report.pdf"
@@ -19412,6 +21693,1098 @@
    "type": "works at",
    "layer": "people",
    "source_url": "https://www.unpri.org/events/webinar-ai-data-centres"
+  },
+  {
+   "source": "person-catherine-winner",
+   "target": "goldman-sachs-asset-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://am.gs.com/cms-assets/gsam-app/documents/evergreen/en/GS-Stewardship-Report-2025.pdf"
+  },
+  {
+   "source": "person-anne-simpson",
+   "target": "franklin-templeton",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.franklintempleton.com/forms-literature/download/Franklin-Templeton-Stewardship-Report%20Summary"
+  },
+  {
+   "source": "person-robert-walker",
+   "target": "morgan-stanley-im",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.morganstanley.com/im/en-us/financial-advisor/about-us/people-and-teams/investment-professionals/robert-walker.html"
+  },
+  {
+   "source": "person-matt-brazier",
+   "target": "invesco",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.invesco.com/content/dam/invesco/uk/en/pdf/invesco-uk-stewardship-code-report-2025_en-uk.pdf"
+  },
+  {
+   "source": "person-rupert-krefting",
+   "target": "mg-investments",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://group.mandg.com/~/media/Files/M/mandg-corp/corp/documents/sustainability/responsible-investing/mandg-investments/mg-investments-annual-stewardship-report-2024.pdf"
+  },
+  {
+   "source": "person-matt-christensen",
+   "target": "allianz-global-investors",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://origin-www.allianzgi.com/en/press-centre/media/press-releases/20260303-allianzgi-enhances-governance-and-sustainability-leadership-with-updated-voting-policies-for-2026"
+  },
+  {
+   "source": "person-caitlin-mcsherry",
+   "target": "neuberger-berman",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.nb.com/bios/caitlin-mcsherry"
+  },
+  {
+   "source": "person-christian-preussner",
+   "target": "morgan-stanley-im",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://am.jpmorgan.com/content/dam/jpm-am-aem/global/en/sustainable-investing/investment-stewardship-report.pdf"
+  },
+  {
+   "source": "person-yo-takatsuki",
+   "target": "morgan-stanley-im",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://am.jpmorgan.com/content/dam/jpm-am-aem/global/en/sustainable-investing/investment-stewardship-report.pdf"
+  },
+  {
+   "source": "person-wendy-cromwell",
+   "target": "wellington-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.wellington.com/content/dam/wellington/insights/en/pdf/2025-sustainability-report.pdf"
+  },
+  {
+   "source": "person-ellen-chae",
+   "target": "wellington-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.wellington.com/content/dam/wellington/insights/en/pdf/2025-sustainability-report.pdf"
+  },
+  {
+   "source": "person-caroline-c-conway",
+   "target": "wellington-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.wellington.com/en/insights/evaluating-human-capital-amid-ai-adoption"
+  },
+  {
+   "source": "person-katherine-kroll",
+   "target": "brown-advisory",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.brownadvisory.com/sites/default/files/2026-07/Sustainable_Investing_at_Brown_Advisory_Platform_Overview.pdf"
+  },
+  {
+   "source": "person-maria-elena-drew",
+   "target": "t-rowe-price",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.troweprice.com/financial-intermediary/us/en/search.html/biokey/maria-elena-drew"
+  },
+  {
+   "source": "person-yijiang-wang",
+   "target": "t-rowe-price",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.troweprice.com/en/is/insights/2026-pre-agm-season-review"
+  },
+  {
+   "source": "person-jim-whittington",
+   "target": "dimensional-fund-advisors",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.dimensional.com/us-en/sustainability"
+  },
+  {
+   "source": "person-lacey-huebel",
+   "target": "dimensional-fund-advisors",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.dimensional.com/us-en/sustainability"
+  },
+  {
+   "source": "person-simone-andrews",
+   "target": "apg-asset-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://assetmanagement.apg.nl/publications/looking-for-the-next-tectonic-shift-in-big-tech/"
+  },
+  {
+   "source": "person-charles-stott",
+   "target": "royal-london-asset-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.rlam.com/globalassets/media/literature/reports/2026/sustainable-and-ethical-ai-investor-expectations.pdf"
+  },
+  {
+   "source": "person-louise-schreiber",
+   "target": "mirova",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.mirova.com/sites/default/files/2026-06/mirova-RAPPORT-ENGAGEMENT-2026-EN_FINAL.pdf"
+  },
+  {
+   "source": "person-gabrielle-ferhat",
+   "target": "mirova",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.mirova.com/sites/default/files/2025-06/PositionPaper_AIClimate_MIROVA_2025_EN.pdf"
+  },
+  {
+   "source": "person-lucy-larner",
+   "target": "schroders",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.schroders.com/nl-nl/nl/professionele/inzichten/launching-our-2026-engagement-blueprints/"
+  },
+  {
+   "source": "person-prudence-johnson-hill",
+   "target": "schroders",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.cazenovecapital.com/en-gb/uk/charity/what-we-offer/sustainability/engagement-report/"
+  },
+  {
+   "source": "person-erik-hogberg",
+   "target": "storebrand",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.spp.se/globalassets/hallbarhet/hallbarhetsbiblotek/kvartalsrapporter/kvartalsrapporter-2026/storebrand-sustainable-investment-review-q1-2026.pdf"
+  },
+  {
+   "source": "person-yumi-fujita",
+   "target": "robeco",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.robeco.com/files/docm/docu-202604-robeco-active-ownership-report-2025.pdf"
+  },
+  {
+   "source": "person-diana-trif",
+   "target": "robeco",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.robeco.com/files/docm/docu-202604-robeco-active-ownership-report-2025.pdf"
+  },
+  {
+   "source": "person-lucas-van-beek",
+   "target": "robeco",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.robeco.com/files/docm/docu-202604-robeco-active-ownership-report-2025.pdf"
+  },
+  {
+   "source": "person-ronnie-lim",
+   "target": "robeco",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.robeco.com/files/docm/docu-202601-active-ownership-report-q4-en.pdf"
+  },
+  {
+   "source": "person-sylvia-van-waveren",
+   "target": "robeco",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.robeco.com/files/docm/docu-202601-active-ownership-report-q4-en.pdf"
+  },
+  {
+   "source": "person-ghislaine-nadaud",
+   "target": "robeco",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.robeco.com/files/docm/docu-202604-robeco-active-ownership-report-2025.pdf"
+  },
+  {
+   "source": "person-khine-thant",
+   "target": "boston-common",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://bostoncommonasset.com/active-shareowner-update/active-shareowner-update-2026-q3/"
+  },
+  {
+   "source": "person-tim-nixon",
+   "target": "boston-common",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.bostoncommonasset.com/team"
+  },
+  {
+   "source": "person-steven-heim",
+   "target": "boston-common",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.bostoncommonasset.com/team/steven-heim"
+  },
+  {
+   "source": "person-constantina-bichta-phd",
+   "target": "boston-common",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.bostoncommonasset.com/team/constantina-bichta"
+  },
+  {
+   "source": "person-calvin-bader",
+   "target": "boston-common",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://bostoncommonasset.com/active-shareowner-update/active-shareowner-update-2026-q3/"
+  },
+  {
+   "source": "person-emily-lethenstrom",
+   "target": "trillium",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://trilliuminvest.com/team/emily-lethenstrom"
+  },
+  {
+   "source": "person-sonia-kowal",
+   "target": "zevin",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.zevin.com/meet-our-staff"
+  },
+  {
+   "source": "person-kristen-lang",
+   "target": "boston-trust-walden",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.bostontrustwalden.com/team-member/kristen-lang/"
+  },
+  {
+   "source": "person-jared-fernandez",
+   "target": "boston-trust-walden",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.bostontrustwalden.com/team-member/jared-fernandez/"
+  },
+  {
+   "source": "person-willow-huppert",
+   "target": "boston-trust-walden",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.bostontrustwalden.com/team-member/willow-huppert/"
+  },
+  {
+   "source": "person-andrew-shalit",
+   "target": "green-century",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.greencentury.com/team/andrew-shalit/"
+  },
+  {
+   "source": "person-frances-fairhead-stanova",
+   "target": "green-century",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.greencentury.com/team/frances-fairhead-stanova/"
+  },
+  {
+   "source": "person-mckenzie-ursch",
+   "target": "green-century",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.greencentury.com/meet-our-team/"
+  },
+  {
+   "source": "person-tenzing-tashishar-cfa",
+   "target": "northstar",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://northstarasset.com/team/"
+  },
+  {
+   "source": "person-nimrit-kang-cfa",
+   "target": "northstar",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://northstarasset.com/team/"
+  },
+  {
+   "source": "person-elizabeth-levy-cfa",
+   "target": "clean-yield-asset-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://cleanyield.com/team/"
+  },
+  {
+   "source": "person-lionella-pezza",
+   "target": "domini",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://domini.com/2025impactreport"
+  },
+  {
+   "source": "person-chris-dodwell",
+   "target": "impax",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://impaxam.com/about/team/chris-dodwell/"
+  },
+  {
+   "source": "person-mark-d-levine",
+   "target": "nyc-comptrollers-office",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://comptroller.nyc.gov/reports/letter-to-anthropic-re-planned-initial-public-offering/"
+  },
+  {
+   "source": "person-thomas-p-dinapoli",
+   "target": "new-york-state-common-retirement-fund",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.osc.ny.gov/files/common-retirement-fund/corporate-governance/pdf/anthropic-pbc-amodei-dario-091526.pdf"
+  },
+  {
+   "source": "person-kyle-seeley",
+   "target": "new-york-state-common-retirement-fund",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.osc.ny.gov/files/common-retirement-fund/corporate-governance/pdf/anthropic-pbc-amodei-dario-091526.pdf"
+  },
+  {
+   "source": "person-jennifer-conovitz",
+   "target": "nyc-comptrollers-office",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://comptroller.nyc.gov/wp-content/uploads/documents/2025-Postseason-Report.pdf"
+  },
+  {
+   "source": "person-amna-khan",
+   "target": "nyc-comptrollers-office",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://comptroller.nyc.gov/wp-content/uploads/documents/2025-Postseason-Report.pdf"
+  },
+  {
+   "source": "person-michelle-folder-taylor",
+   "target": "nyc-comptrollers-office",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://comptroller.nyc.gov/wp-content/uploads/documents/2025-Postseason-Report.pdf"
+  },
+  {
+   "source": "person-emily-law",
+   "target": "nyc-comptrollers-office",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://comptroller.nyc.gov/wp-content/uploads/documents/2025-Postseason-Report.pdf"
+  },
+  {
+   "source": "person-andrew-elcock",
+   "target": "nyc-comptrollers-office",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://comptroller.nyc.gov/wp-content/uploads/documents/2025-Postseason-Report.pdf"
+  },
+  {
+   "source": "person-prashant-yerramalli",
+   "target": "calpers",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.calpers.ca.gov/newsroom/for-the-record/2026/calpers-general-counsel-shareholders-should-have-a-say-on-making-ai-safe"
+  },
+  {
+   "source": "person-travis-antoniono",
+   "target": "calpers",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.calpers.ca.gov/documents/202611-invest-agenda-item07c-01-a/download"
+  },
+  {
+   "source": "person-fanny-bourdais-de-charbonniere",
+   "target": "calpers",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.calpers.ca.gov/documents/202611-invest-agenda-item07c-01-a/download"
+  },
+  {
+   "source": "person-nelson-da-conceicao",
+   "target": "calpers",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.calpers.ca.gov/documents/202611-invest-agenda-item07c-01-a/download"
+  },
+  {
+   "source": "person-aeisha-mastagni",
+   "target": "calstrs",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.calstrs.com/calstrs-key-personnel"
+  },
+  {
+   "source": "person-alex-wolsky",
+   "target": "minnesota-sbi",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.msbi.us/staff"
+  },
+  {
+   "source": "person-hannah-lundquist",
+   "target": "minnesota-sbi",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.msbi.us/staff"
+  },
+  {
+   "source": "person-allyson-tucker",
+   "target": "wsib",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://sib.wa.gov/docs/reports/sustainability/2025.pdf"
+  },
+  {
+   "source": "person-bridget-murphy",
+   "target": "wsib",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.sib.wa.gov/docs/meetings/board/25_0417final.pdf"
+  },
+  {
+   "source": "person-veena-ramani",
+   "target": "massprim",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.mapension.com/wp-content/uploads/2026/01/Stwardship-and-Sustainability-2025-Stewardship-and-Sustainability-Meeting-Minutes-11252025.pdf"
+  },
+  {
+   "source": "person-jessica-weaver",
+   "target": "connecticut-retirement-plans-and-trust-funds",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://portal.ct.gov/-/media/ott/pension-funds/investment-advisory-council/090426iacmeetingmaterials-septexecsess.pdf"
+  },
+  {
+   "source": "person-karen-kerschke",
+   "target": "illinois-state-treasurer",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://illinoistreasurer.gov/wp-content/uploads/2025/12/2025-Sustainability-Annual-Report_FINAL.pdf"
+  },
+  {
+   "source": "person-marissa-martinez",
+   "target": "illinois-state-treasurer",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://illinoistreasurer.gov/wp-content/uploads/2025/12/2025-Sustainability-Annual-Report_FINAL.pdf"
+  },
+  {
+   "source": "person-leola-ross",
+   "target": "scers",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.seattle.gov/documents/Departments/Retirement/Publications/performance/ESG%20Updates/ESG_Report_2026Sept.pdf"
+  },
+  {
+   "source": "person-richard-manley",
+   "target": "cpp-investments",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://cppinvestments.com/wp-content/uploads/2024/10/Integrating-AI-and-Human-Capital-Guiding-Boards-and-Management-EN.pdf"
+  },
+  {
+   "source": "person-anna-murray",
+   "target": "otpp",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.otpp.com/en-ca/modals/bios/anna-murray/"
+  },
+  {
+   "source": "person-emmanuel-jaclot",
+   "target": "cdpq",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.lacaisse.com/en/about-us/cdpq-governance/executive-committee"
+  },
+  {
+   "source": "person-katharine-preston",
+   "target": "omers",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.omers.com/katharine-preston"
+  },
+  {
+   "source": "person-kelly-featherstone",
+   "target": "aimco",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://aimco.ca/who-we-are/leadership"
+  },
+  {
+   "source": "person-jennifer-coulson",
+   "target": "bci",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.bci.ca/bci-releases-2024-2025-stewardship-report/"
+  },
+  {
+   "source": "person-patrick-du-plessis",
+   "target": "nbim",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.nbim.no/contentassets/99fa5525f1a947d6b7231101832bfb40/responsible-investment-2025.pdf"
+  },
+  {
+   "source": "person-claudia-kruse",
+   "target": "apg-asset-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://assetmanagement.apg.nl/media/a0bl145c/stewardship-overview-2024-apg.pdf"
+  },
+  {
+   "source": "person-andrew-mccarthy",
+   "target": "railpen",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.railpen.com/media/vpsiiuia/railpen-ai-report-2026.pdf"
+  },
+  {
+   "source": "person-tom-ward",
+   "target": "railpen",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.railpen.com/news-media/2026/railpen-launches-enhanced-systems-stewardship-strategy-for-2026-2030/"
+  },
+  {
+   "source": "person-adam-c-t-matthews",
+   "target": "church-of-england-pensions-board-national-investing-bodies",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.churchofengland.org/media/finance-news/response-joe-lycetts-letter-about-water-companies"
+  },
+  {
+   "source": "person-olga-hancock",
+   "target": "church-commissioners-for-england",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.churchofengland.org/media-and-news/press-releases/commissioners-appoints-olga-hancock"
+  },
+  {
+   "source": "person-anne-maree-o-connor",
+   "target": "nz-super-fund",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://nzsuperfund.nz/assets/Uploads/2025-Stewardship-Report.pdf"
+  },
+  {
+   "source": "person-rabbi-rachel-kahn-troster",
+   "target": "iccr",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.iccr.org/our-team/"
+  },
+  {
+   "source": "person-tracey-rembert",
+   "target": "iccr",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.iccr.org/our-team/"
+  },
+  {
+   "source": "person-erica-lasdon",
+   "target": "iccr",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.iccr.org/our-team/"
+  },
+  {
+   "source": "person-sehr-khaliq",
+   "target": "iccr",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.iccr.org/our-team/"
+  },
+  {
+   "source": "person-chavi-keeney-nana",
+   "target": "iccr",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.iccr.org/our-team/"
+  },
+  {
+   "source": "person-nadira-narine",
+   "target": "iccr",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.iccr.org/our-team/"
+  },
+  {
+   "source": "person-gina-falada",
+   "target": "iccr",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.iccr.org/our-team/"
+  },
+  {
+   "source": "person-tim-smith",
+   "target": "iccr",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.iccr.org/our-team/"
+  },
+  {
+   "source": "person-david-schilling",
+   "target": "iccr",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.iccr.org/our-team/"
+  },
+  {
+   "source": "person-beth-ann-roth",
+   "target": "iccr",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.iccr.org/our-team/"
+  },
+  {
+   "source": "person-pia-garavaglia",
+   "target": "iccr",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://iccrconference.org/speakers/pia-garavaglia"
+  },
+  {
+   "source": "person-michael-corley",
+   "target": "as-you-sow",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.asyousow.org/about-us/staff"
+  },
+  {
+   "source": "person-gail-follansbee",
+   "target": "as-you-sow",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.asyousow.org/about-us/staff"
+  },
+  {
+   "source": "person-olivia-knight",
+   "target": "as-you-sow",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.asyousow.org/about-us/staff"
+  },
+  {
+   "source": "person-bryant-sewell",
+   "target": "majority-action",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.majorityaction.us/our-team"
+  },
+  {
+   "source": "person-tyler-devere",
+   "target": "majority-action",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.majorityaction.us/our-team"
+  },
+  {
+   "source": "person-divya-sundar",
+   "target": "majority-action",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.majorityaction.us/our-team"
+  },
+  {
+   "source": "person-eli-kasargod-staub",
+   "target": "majority-action",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.majorityaction.us/our-team"
+  },
+  {
+   "source": "person-leandro-ucciferri",
+   "target": "ranking-digital-rights",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://rankingdigitalrights.org/who-we-are/"
+  },
+  {
+   "source": "person-samantha-ndiwalana",
+   "target": "ranking-digital-rights",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://rankingdigitalrights.org/who-we-are/"
+  },
+  {
+   "source": "person-dr-tayrine-dos-santos-dias",
+   "target": "ranking-digital-rights",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://rankingdigitalrights.org/who-we-are/"
+  },
+  {
+   "source": "person-gerbrand-haverkamp",
+   "target": "world-benchmarking-alliance",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.worldbenchmarkingalliance.org/about-us/our-team"
+  },
+  {
+   "source": "person-ana-colazo-bella",
+   "target": "world-benchmarking-alliance",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.worldbenchmarkingalliance.org/about-us/our-team"
+  },
+  {
+   "source": "person-lauren-muusse",
+   "target": "world-benchmarking-alliance",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.worldbenchmarkingalliance.org/about-us/our-team?page=1"
+  },
+  {
+   "source": "person-ari-hoffnung",
+   "target": "jlens",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.jlensnetwork.org/overview/people/"
+  },
+  {
+   "source": "person-dani-nurick",
+   "target": "jlens",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.jlensnetwork.org/overview/people/"
+  },
+  {
+   "source": "person-allison-marill",
+   "target": "jlens",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.jlensnetwork.org/overview/people/"
+  },
+  {
+   "source": "person-sophie-faris",
+   "target": "the-shareholder-commons",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://theshareholdercommons.com/about-us/"
+  },
+  {
+   "source": "person-frederick-alexander",
+   "target": "the-shareholder-commons",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://theshareholdercommons.com/about-us/"
+  },
+  {
+   "source": "person-tracey-cadet-fleming",
+   "target": "iasj",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://iasj.org/about-us/team/"
+  },
+  {
+   "source": "person-terwase-tor",
+   "target": "iasj",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://iasj.org/about-us/team/"
+  },
+  {
+   "source": "person-mellissa-duru",
+   "target": "cii",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.cii.org/staff"
+  },
+  {
+   "source": "person-jeff-mahoney-jd-cpa",
+   "target": "cii",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.cii.org/staff"
+  },
+  {
+   "source": "person-peter-van-veen",
+   "target": "icgn",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://icgn.org/about-us/who-we-are/"
+  },
+  {
+   "source": "person-ayan-tewari",
+   "target": "icgn",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://icgn.org/about-us/who-we-are/"
+  },
+  {
+   "source": "person-rob-berridge",
+   "target": "ceres",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.ceres.org/about/staff"
+  },
+  {
+   "source": "person-andrew-collier",
+   "target": "ceres",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.ceres.org/about/staff"
+  },
+  {
+   "source": "person-lisa-laird",
+   "target": "mercy",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.mercyinvestmentservices.org/about-us/staff"
+  },
+  {
+   "source": "person-bryan-j-pini",
+   "target": "mercy",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.mercyinvestmentservices.org/about-us/staff"
+  },
+  {
+   "source": "person-julie-b-tanner",
+   "target": "christian-brothers-investment-services",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://cbisonline.com/us/wp-content/uploads/sites/2/2026/04/2026-Q1-IJ-Quarterly-Review.pdf"
+  },
+  {
+   "source": "person-raymond-j-burnell",
+   "target": "christian-brothers-investment-services",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://cbisonline.com/us/wp-content/uploads/sites/2/2026/04/2026-Q1-IJ-Quarterly-Review.pdf"
+  },
+  {
+   "source": "person-meagan-tenety",
+   "target": "wespath",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://iccrconference.org/speakers/meagan-tenety"
+  },
+  {
+   "source": "person-maria-orozco",
+   "target": "share",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://iccrconference.org/speakers/maria-orozco"
+  },
+  {
+   "source": "person-ita-mcmahon",
+   "target": "castlefield-investment-partners",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://investorsforhumanrights.org/events/investor-webinar-governance-artificial-intelligence-what-does-data-tell-us"
+  },
+  {
+   "source": "person-asha-mehta",
+   "target": "global-delta-capital",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://investorsforhumanrights.org/events/public-webinar-how-are-big-telcos-responding-new-human-rights-threats"
+  },
+  {
+   "source": "person-vinnay-cchoda",
+   "target": "betashares",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.responsibleinvestment.org/events-news/conference/speaker/vinnay-cchoda"
+  },
+  {
+   "source": "person-jenni-black",
+   "target": "world-benchmarking-alliance",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.worldbenchmarkingalliance.org/profile/jenni-black"
+  },
+  {
+   "source": "person-eva-cairns",
+   "target": "scottish-widows",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://expertise.scottishwidows.co.uk/contributor/eva-cairns/"
+  },
+  {
+   "source": "person-peter-flynn",
+   "target": "scottish-widows",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://icgn.org/event/summer-conference-2026-amsterdam-hosted-by-eumedion/"
+  },
+  {
+   "source": "person-lamia-yous-chouiten",
+   "target": "natixis-investment-managers",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://pip2025.unpri.org/saopaulo/agenda"
+  },
+  {
+   "source": "person-sophie-walker",
+   "target": "eqt-group",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://eqtgroup.com/about/people/sophie-walker"
+  },
+  {
+   "source": "person-cornelia-gomez",
+   "target": "general-atlantic",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.generalatlantic.com/people/team/cornelia-gomez/"
+  },
+  {
+   "source": "person-suzanne-tavill",
+   "target": "stepstone-group",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://pip2026.unpri.org/amsterdam/agenda"
+  },
+  {
+   "source": "person-dan-neale",
+   "target": "church-commissioners-for-england",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.ihrb.org/people/daniel-neale"
+  },
+  {
+   "source": "person-camille-bisconte-de-saint-julien",
+   "target": "lbp-am",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.buildingbridges.org/speaker/camille-bisconte-de-st-julien/"
+  },
+  {
+   "source": "person-luke-perlot",
+   "target": "nlpc",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1958085/000109690625001784/nlpc_px14a6g.htm"
+  },
+  {
+   "source": "person-gerald-bowyer",
+   "target": "bowyer",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1996368/000109690625000742/bowy_px14a6g.htm"
+  },
+  {
+   "source": "person-bianca-agustin",
+   "target": "united-for-respect",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/05/Amazon-Floor-Proposal_-Memo-in-Support-.pdf"
+  },
+  {
+   "source": "person-jeremy-hubbard",
+   "target": "rest-super",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.responsibleinvestment.org/events-news/conference/speaker/jeremy-hubbard"
+  },
+  {
+   "source": "person-colleen-raab-smith",
+   "target": "los-angeles-capital-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.responsibleinvestment.org/events-news/conference/speaker/colleen-raab-smith"
+  },
+  {
+   "source": "person-katrina-dudley",
+   "target": "franklin-templeton",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.ussif.org/events-and-networking/us-sif-ny-climate-week-event-stewarding-the-ai-transition-governance-innovation-and-long-term-value"
+  },
+  {
+   "source": "person-louise-piffaut",
+   "target": "aviva",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.avivainvestors.com/en-us/about/our-people/l/louise-piffaut/"
+  },
+  {
+   "source": "person-sally-kramers",
+   "target": "uksif",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://www.uksif.org/people/sally-kramers/"
+  },
+  {
+   "source": "person-laurie-fitzjohn-sykes",
+   "target": "omidyar-network",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://peievents.com/en/event/ri-europe/agenda"
+  },
+  {
+   "source": "person-kathleen-beaumont",
+   "target": "imco",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://peievents.com/en/event/ri-europe/agenda"
+  },
+  {
+   "source": "person-christopher-wright",
+   "target": "nbim",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://peievents.com/en/event/ri-europe/agenda"
+  },
+  {
+   "source": "person-oshni-arachchi",
+   "target": "danske-bank",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://icgn.org/event/summer-conference-2026-amsterdam-hosted-by-eumedion/"
+  },
+  {
+   "source": "person-erica-serpico",
+   "target": "vanguard",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://icgn.org/event/summer-conference-2026-amsterdam-hosted-by-eumedion/"
+  },
+  {
+   "source": "person-shane-mccullagh",
+   "target": "railpen",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://icgn.org/event/summer-conference-2026-amsterdam-hosted-by-eumedion/"
+  },
+  {
+   "source": "person-arnav-prasad",
+   "target": "australiansuper",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://icgn.org/event/summer-conference-2026-amsterdam-hosted-by-eumedion/"
+  },
+  {
+   "source": "person-landon-shea",
+   "target": "alliancebernstein",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://icgn.org/event/summer-conference-2026-amsterdam-hosted-by-eumedion/"
+  },
+  {
+   "source": "person-pete-dervan",
+   "target": "manulife-investment-management",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://icgn.org/event/icgn-autumn-conference-2026-toronto/"
+  },
+  {
+   "source": "person-christopher-jenkins",
+   "target": "sands-capital",
+   "type": "works at",
+   "layer": "people",
+   "source_url": "https://icgn.org/event/icgn-autumn-conference-2026-toronto/"
   },
   {
    "source": "person-marcela-pinilla",

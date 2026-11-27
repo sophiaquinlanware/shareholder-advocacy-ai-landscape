@@ -2450,6 +2450,334 @@
    "website": "https://www.unpri.org",
    "description": "UN-supported network of investors (Principles for Responsible Investment) that runs collaborative stewardship initiatives, including Advance on human rights.",
    "source_url": "https://www.unpri.org/initiatives/advance"
+  },
+  {
+   "id": "goldman-sachs-asset-management",
+   "name": "Goldman Sachs Asset Management",
+   "type": "investor",
+   "website": "https://am.gs.com",
+   "description": "Asset management arm of Goldman Sachs, whose Global Stewardship Team runs proxy voting and company engagement.",
+   "source_url": "https://am.gs.com/cms-assets/gsam-app/documents/evergreen/en/GS-Stewardship-Report-2025.pdf"
+  },
+  {
+   "id": "franklin-templeton",
+   "name": "Franklin Templeton",
+   "type": "investor",
+   "website": "https://www.franklintempleton.com",
+   "description": "Global asset manager whose specialist investment managers run their own stewardship, supported by a firmwide Stewardship and Sustainability Council.",
+   "source_url": "https://www.franklintempleton.com/forms-literature/download/Franklin-Templeton-Stewardship-Report%20Summary"
+  },
+  {
+   "id": "morgan-stanley-im",
+   "name": "Morgan Stanley Investment Management",
+   "type": "investor",
+   "website": "https://www.morganstanley.com/im",
+   "description": "Asset management division of Morgan Stanley, whose Global Stewardship Team coordinates proxy voting and investee engagement.",
+   "source_url": "https://www.morganstanley.com/im/en-us/financial-advisor/about-us/people-and-teams/investment-professionals/robert-walker.html"
+  },
+  {
+   "id": "invesco",
+   "name": "Invesco",
+   "type": "investor",
+   "website": "https://www.invesco.com",
+   "description": "Global asset manager whose investment stewardship team supports proxy voting and engagement across its investment teams.",
+   "source_url": "https://www.invesco.com/content/dam/invesco/uk/en/pdf/invesco-uk-stewardship-code-report-2025_en-uk.pdf"
+  },
+  {
+   "id": "mg-investments",
+   "name": "M&G Investments",
+   "type": "investor",
+   "website": "https://www.mandg.com",
+   "description": "UK asset manager whose Corporate Finance and Stewardship team leads voting and engagement.",
+   "source_url": "https://group.mandg.com/~/media/Files/M/mandg-corp/corp/documents/sustainability/responsible-investing/mandg-investments/mg-investments-annual-stewardship-report-2024.pdf"
+  },
+  {
+   "id": "neuberger-berman",
+   "name": "Neuberger Berman",
+   "type": "investor",
+   "website": "https://www.nb.com",
+   "description": "Employee-owned global asset manager whose stewardship team leads issuer engagement and proxy voting.",
+   "source_url": "https://www.nb.com/bios/caitlin-mcsherry"
+  },
+  {
+   "id": "wellington-management",
+   "name": "Wellington Management",
+   "type": "investor",
+   "website": "https://www.wellington.com",
+   "description": "Boston-based private investment management firm that publishes an annual sustainability and stewardship report.",
+   "source_url": "https://www.wellington.com/content/dam/wellington/insights/en/pdf/2025-sustainability-report.pdf"
+  },
+  {
+   "id": "brown-advisory",
+   "name": "Brown Advisory",
+   "type": "wealth manager/adviser",
+   "website": "https://www.brownadvisory.com",
+   "description": "Baltimore-based investment management and advisory firm that runs a range of sustainable investing strategies.",
+   "source_url": "https://www.brownadvisory.com/sites/default/files/2026-07/Sustainable_Investing_at_Brown_Advisory_Platform_Overview.pdf"
+  },
+  {
+   "id": "schroders",
+   "name": "Schroders",
+   "type": "investor",
+   "website": "https://www.schroders.com",
+   "description": "UK-based global asset and wealth manager whose active ownership team publishes annual Engagement Blueprints setting its stewardship priorities.",
+   "source_url": "https://www.schroders.com/nl-nl/nl/professionele/inzichten/launching-our-2026-engagement-blueprints/"
+  },
+  {
+   "id": "minnesota-sbi",
+   "name": "Minnesota State Board of Investment",
+   "type": "public pension",
+   "website": "https://www.msbi.us",
+   "description": "Minnesota state agency that invests the pension and other public funds of the State of Minnesota and runs its own stewardship program.",
+   "source_url": "https://www.msbi.us/staff"
+  },
+  {
+   "id": "wsib",
+   "name": "Washington State Investment Board (WSIB)",
+   "type": "public pension",
+   "website": "https://www.sib.wa.gov",
+   "description": "Washington state agency that manages the pension and trust funds of public employees and runs an asset stewardship program.",
+   "source_url": "https://sib.wa.gov/docs/reports/sustainability/2025.pdf"
+  },
+  {
+   "id": "massprim",
+   "name": "Massachusetts Pension Reserves Investment Management Board (MassPRIM)",
+   "type": "public pension",
+   "website": "https://www.mapension.com",
+   "description": "Board that invests the Massachusetts state employees' and teachers' pension reserves and has a staff Director of Stewardship.",
+   "source_url": "https://www.mapension.com/wp-content/uploads/2026/01/Stwardship-and-Sustainability-2025-Stewardship-and-Sustainability-Meeting-Minutes-11252025.pdf"
+  },
+  {
+   "id": "scers",
+   "name": "Seattle City Employees' Retirement System (SCERS)",
+   "type": "public pension",
+   "website": "https://www.seattle.gov/retirement",
+   "description": "Pension system for City of Seattle employees that publishes regular ESG and proxy voting updates.",
+   "source_url": "https://www.seattle.gov/documents/Departments/Retirement/Publications/performance/ESG%20Updates/ESG_Report_2026Sept.pdf"
+  },
+  {
+   "id": "cpp-investments",
+   "name": "CPP Investments",
+   "type": "public pension",
+   "website": "https://www.cppinvestments.com",
+   "description": "Organization that invests the assets of the Canada Pension Plan.",
+   "source_url": "https://cppinvestments.com/wp-content/uploads/2024/10/Integrating-AI-and-Human-Capital-Guiding-Boards-and-Management-EN.pdf"
+  },
+  {
+   "id": "otpp",
+   "name": "Ontario Teachers' Pension Plan (OTPP)",
+   "type": "public pension",
+   "website": "https://www.otpp.com",
+   "description": "Pension plan for Ontario teachers that invests globally and runs its own corporate governance and stewardship program.",
+   "source_url": "https://www.otpp.com/en-ca/modals/bios/anna-murray/"
+  },
+  {
+   "id": "cdpq",
+   "name": "CDPQ (La Caisse)",
+   "type": "public pension",
+   "website": "https://www.lacaisse.com",
+   "description": "Quebec institutional investor that manages funds for public pension and insurance plans.",
+   "source_url": "https://www.lacaisse.com/en/about-us/cdpq-governance/executive-committee"
+  },
+  {
+   "id": "omers",
+   "name": "OMERS",
+   "type": "public pension",
+   "website": "https://www.omers.com",
+   "description": "Defined benefit pension plan for Ontario municipal employees that invests directly across public and private markets.",
+   "source_url": "https://www.omers.com/katharine-preston"
+  },
+  {
+   "id": "aimco",
+   "name": "Alberta Investment Management Corporation (AIMCo)",
+   "type": "public pension",
+   "website": "https://www.aimco.ca",
+   "description": "Crown corporation that invests pension, endowment and government funds for Alberta public sector clients.",
+   "source_url": "https://aimco.ca/who-we-are/leadership"
+  },
+  {
+   "id": "railpen",
+   "name": "Railpen",
+   "type": "asset owner",
+   "website": "https://www.railpen.com",
+   "description": "Investment manager for the UK railways pension schemes, with an in-house sustainable ownership team.",
+   "source_url": "https://www.railpen.com/news-media/2026/railpen-launches-enhanced-systems-stewardship-strategy-for-2026-2030/"
+  },
+  {
+   "id": "church-commissioners-for-england",
+   "name": "Church Commissioners for England",
+   "type": "faith-based investor",
+   "website": "https://www.churchofengland.org/about/leadership-and-governance/church-commissioners",
+   "description": "Endowment fund of the Church of England and one of its National Investing Bodies, with its own responsible investment team.",
+   "source_url": "https://www.churchofengland.org/media-and-news/press-releases/commissioners-appoints-olga-hancock"
+  },
+  {
+   "id": "ranking-digital-rights",
+   "name": "Ranking Digital Rights",
+   "type": "advocacy nonprofit",
+   "website": "https://rankingdigitalrights.org",
+   "description": "Independent research initiative that scores the largest tech and telecom companies on freedom of expression and privacy and publishes guidance for investors.",
+   "source_url": "https://rankingdigitalrights.org/who-we-are/"
+  },
+  {
+   "id": "world-benchmarking-alliance",
+   "name": "World Benchmarking Alliance",
+   "type": "coalition",
+   "website": "https://www.worldbenchmarkingalliance.org",
+   "description": "Nonprofit that benchmarks the world's most influential companies and convenes investor coalitions, including the Collective Impact Coalition for Ethical AI.",
+   "source_url": "https://www.worldbenchmarkingalliance.org/who-we-work/financial-institutions/all-you-need-know-about-collective-impact-coalition-ethical-ai"
+  },
+  {
+   "id": "the-shareholder-commons",
+   "name": "The Shareholder Commons",
+   "type": "advocacy nonprofit",
+   "website": "https://theshareholdercommons.com",
+   "description": "Nonprofit that pushes diversified investors to address systemic risks that companies impose on the wider economy.",
+   "source_url": "https://theshareholdercommons.com/about-us/"
+  },
+  {
+   "id": "castlefield-investment-partners",
+   "name": "Castlefield Investment Partners",
+   "type": "impact/ESG asset manager",
+   "website": "https://www.castlefield.com",
+   "description": "UK investment firm that helps individuals, charities and advisers align their investments with their values.",
+   "source_url": "https://www.castlefield.com/"
+  },
+  {
+   "id": "global-delta-capital",
+   "name": "Global Delta Capital",
+   "type": "investor",
+   "website": "https://www.globaldeltacapital.com",
+   "description": "Employee-owned investment firm in Somerville, Massachusetts that invests across international, emerging and frontier markets.",
+   "source_url": "https://www.globaldeltacapital.com/"
+  },
+  {
+   "id": "betashares",
+   "name": "Betashares",
+   "type": "investor",
+   "website": "https://www.betashares.com.au",
+   "description": "Australian fund manager that offers exchange traded funds and other investment products.",
+   "source_url": "https://www.responsibleinvestment.org/events-news/conference/speaker/vinnay-cchoda"
+  },
+  {
+   "id": "scottish-widows",
+   "name": "Scottish Widows",
+   "type": "asset owner",
+   "website": "https://www.scottishwidows.co.uk",
+   "description": "UK pensions, insurance and investment provider and one of the country's largest asset owners.",
+   "source_url": "https://expertise.scottishwidows.co.uk/contributor/eva-cairns/"
+  },
+  {
+   "id": "natixis-investment-managers",
+   "name": "Natixis Investment Managers",
+   "type": "investor",
+   "website": "https://www.im.natixis.com",
+   "description": "Global asset management group with a network of affiliated investment managers.",
+   "source_url": "https://www.im.natixis.com/"
+  },
+  {
+   "id": "eqt-group",
+   "name": "EQT Group",
+   "type": "investor",
+   "website": "https://eqtgroup.com",
+   "description": "Global investment firm active in private capital, infrastructure and property.",
+   "source_url": "https://eqtgroup.com/about/people/sophie-walker"
+  },
+  {
+   "id": "general-atlantic",
+   "name": "General Atlantic",
+   "type": "investor",
+   "website": "https://www.generalatlantic.com",
+   "description": "Global growth investor in private companies.",
+   "source_url": "https://www.generalatlantic.com/people/team/cornelia-gomez/"
+  },
+  {
+   "id": "stepstone-group",
+   "name": "StepStone Group",
+   "type": "investor",
+   "website": "https://www.stepstonegroup.com",
+   "description": "Private markets investment firm that manages and advises on private equity, infrastructure, credit and property.",
+   "source_url": "https://pip2026.unpri.org/amsterdam/agenda"
+  },
+  {
+   "id": "lbp-am",
+   "name": "La Banque Postale Asset Management (LBP AM)",
+   "type": "impact/ESG asset manager",
+   "website": "https://www.lbpam.com",
+   "description": "French asset manager specialized in socially responsible investment, part of La Banque Postale group.",
+   "source_url": "https://www.buildingbridges.org/speaker/camille-bisconte-de-st-julien/"
+  },
+  {
+   "id": "los-angeles-capital-management",
+   "name": "Los Angeles Capital Management",
+   "type": "investor",
+   "website": "https://www.lacapm.com",
+   "description": "Quantitative equity investment manager based in Los Angeles.",
+   "source_url": "https://www.responsibleinvestment.org/events-news/conference/speaker/colleen-raab-smith"
+  },
+  {
+   "id": "uksif",
+   "name": "UKSIF",
+   "type": "coalition",
+   "website": "https://www.uksif.org",
+   "description": "UK membership network for sustainable and responsible finance.",
+   "source_url": "https://www.uksif.org/people/sally-kramers/"
+  },
+  {
+   "id": "omidyar-network",
+   "name": "Omidyar Network",
+   "type": "foundation/endowment",
+   "website": "https://omidyar.com",
+   "description": "Philanthropic investment firm that funds and convenes work on technology and society, including investor engagement on responsible AI.",
+   "source_url": "https://peievents.com/en/event/ri-europe/agenda"
+  },
+  {
+   "id": "imco",
+   "name": "Investment Management Corporation of Ontario (IMCO)",
+   "type": "public pension",
+   "website": "https://www.imcoinvest.com",
+   "description": "Canadian investment manager for Ontario public sector pension and insurance funds.",
+   "source_url": "https://peievents.com/en/event/ri-europe/agenda"
+  },
+  {
+   "id": "danske-bank",
+   "name": "Danske Bank",
+   "type": "investor",
+   "website": "https://danskebank.com",
+   "description": "Danish bank whose asset management arm invests on behalf of clients.",
+   "source_url": "https://icgn.org/event/summer-conference-2026-amsterdam-hosted-by-eumedion/"
+  },
+  {
+   "id": "vanguard",
+   "name": "Vanguard",
+   "type": "investor",
+   "website": "https://www.vanguard.com",
+   "description": "Global asset manager known for index funds.",
+   "source_url": "https://icgn.org/event/summer-conference-2026-amsterdam-hosted-by-eumedion/"
+  },
+  {
+   "id": "alliancebernstein",
+   "name": "AllianceBernstein",
+   "type": "investor",
+   "website": "https://www.alliancebernstein.com",
+   "description": "Global investment management firm.",
+   "source_url": "https://icgn.org/event/summer-conference-2026-amsterdam-hosted-by-eumedion/"
+  },
+  {
+   "id": "manulife-investment-management",
+   "name": "Manulife Investment Management",
+   "type": "investor",
+   "website": "https://www.manulifeim.com",
+   "description": "Global asset management arm of Manulife.",
+   "source_url": "https://icgn.org/event/icgn-autumn-conference-2026-toronto/"
+  },
+  {
+   "id": "sands-capital",
+   "name": "Sands Capital",
+   "type": "investor",
+   "website": "https://www.sandscapital.com",
+   "description": "US investment manager focused on growth businesses in public and private markets.",
+   "source_url": "https://icgn.org/event/icgn-autumn-conference-2026-toronto/"
   }
  ],
  "proposals": [
