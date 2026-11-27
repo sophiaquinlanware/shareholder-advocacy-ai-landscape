@@ -596,11 +596,86 @@
     "Data center externalities": 8,
     "AI governance and safety": 6
    },
-   "median_support_pct": 12.3,
+   "median_support_pct": 13.7,
    "median_support_base": {
-    "with_recorded_support": 30,
-    "proposals": 35
+    "with_recorded_support": 26,
+    "proposals": 35,
+    "left_out_critical": 4
    },
+   "support_range": [
+    0.5,
+    37.5
+   ],
+   "support_by_year": {
+    "2023": {
+     "median": 17.5,
+     "n": 6
+    },
+    "2024": {
+     "median": 16.8,
+     "n": 7
+    },
+    "2025": {
+     "median": 9.2,
+     "n": 6
+    },
+    "2026": {
+     "median": 7.3,
+     "n": 7
+    }
+   },
+   "commitments": [
+    {
+     "company": "NVDA",
+     "promised": "Conduct a third-party human rights saliency (impact) assessment across the value chain.",
+     "by": "Investor group including Parnassus Investments",
+     "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf"
+    },
+    {
+     "company": "NVDA",
+     "promised": "Review and update its Human Rights and Responsible Minerals policies in FY26 using the saliency assessment.",
+     "by": "Investor group including Parnassus Investments",
+     "source_url": "https://images.nvidia.com/aem-dam/Solutions/documents/NVIDIA-Sustainability-Report-Fiscal-Year-2025.pdf"
+    },
+    {
+     "company": "NVDA",
+     "promised": "Form an executive-level sustainability steering committee with oversight of human rights.",
+     "by": "Investor group including Parnassus Investments",
+     "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf"
+    },
+    {
+     "company": "NVDA",
+     "promised": "Add staff to support human rights work.",
+     "by": "Investor group including Parnassus Investments",
+     "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf"
+    }
+   ],
+   "deadlines_next_90": [
+    {
+     "company": "AMD",
+     "name": "AMD",
+     "date": "2026-11-27",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm"
+    },
+    {
+     "company": "AMZN",
+     "name": "Amazon",
+     "date": "2026-12-10",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    },
+    {
+     "company": "GOOGL",
+     "name": "Alphabet",
+     "date": "2026-12-25",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "NVDA",
+     "name": "Nvidia",
+     "date": "2027-01-12",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm"
+    }
+   ],
    "asks_made": [
     {
      "company": "AMZN",
@@ -1464,9 +1539,53 @@
    },
    "median_support_pct": 10.1,
    "median_support_base": {
-    "with_recorded_support": 16,
-    "proposals": 16
+    "with_recorded_support": 14,
+    "proposals": 16,
+    "left_out_critical": 2
    },
+   "support_range": [
+    3.2,
+    53.6
+   ],
+   "support_by_year": {
+    "2023": {
+     "median": 12.1,
+     "n": 2
+    },
+    "2024": {
+     "median": 15.6,
+     "n": 2
+    },
+    "2025": {
+     "median": 10.4,
+     "n": 5
+    },
+    "2026": {
+     "median": 6.9,
+     "n": 5
+    }
+   },
+   "commitments": [],
+   "deadlines_next_90": [
+    {
+     "company": "SO",
+     "name": "Southern Company",
+     "date": "2026-12-04",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm"
+    },
+    {
+     "company": "META",
+     "name": "Meta",
+     "date": "2026-12-17",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+    },
+    {
+     "company": "DLR",
+     "name": "Digital Realty Trust",
+     "date": "2026-12-18",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm"
+    }
+   ],
    "asks_made": [
     {
      "company": "DLR",
@@ -1910,11 +2029,55 @@
     "Harms from how customers use AI": 11,
     "AI governance and safety": 6
    },
-   "median_support_pct": 13.2,
+   "median_support_pct": 14.3,
    "median_support_base": {
-    "with_recorded_support": 40,
-    "proposals": 46
+    "with_recorded_support": 34,
+    "proposals": 46,
+    "left_out_critical": 6
    },
+   "support_range": [
+    0.5,
+    37.5
+   ],
+   "support_by_year": {
+    "2023": {
+     "median": 19.6,
+     "n": 8
+    },
+    "2024": {
+     "median": 17.2,
+     "n": 10
+    },
+    "2025": {
+     "median": 9.5,
+     "n": 10
+    },
+    "2026": {
+     "median": 6.7,
+     "n": 6
+    }
+   },
+   "commitments": [],
+   "deadlines_next_90": [
+    {
+     "company": "AMZN",
+     "name": "Amazon",
+     "date": "2026-12-10",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    },
+    {
+     "company": "CRWV",
+     "name": "CoreWeave",
+     "date": "2026-12-23",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000191/crwv-20260422.htm"
+    },
+    {
+     "company": "GOOGL",
+     "name": "Alphabet",
+     "date": "2026-12-25",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    }
+   ],
    "asks_made": [
     {
      "company": "AMZN",
@@ -2820,11 +2983,55 @@
     "AI governance and safety": 4,
     "Harms from how customers use AI": 1
    },
-   "median_support_pct": 8.8,
+   "median_support_pct": 8.2,
    "median_support_base": {
-    "with_recorded_support": 32,
-    "proposals": 33
+    "with_recorded_support": 27,
+    "proposals": 33,
+    "left_out_critical": 5
    },
+   "support_range": [
+    0.5,
+    18.6
+   ],
+   "support_by_year": {
+    "2023": {
+     "median": 15.1,
+     "n": 6
+    },
+    "2024": {
+     "median": 15.6,
+     "n": 6
+    },
+    "2025": {
+     "median": 6.5,
+     "n": 7
+    },
+    "2026": {
+     "median": 6.3,
+     "n": 8
+    }
+   },
+   "commitments": [],
+   "deadlines_next_90": [
+    {
+     "company": "NOW",
+     "name": "ServiceNow",
+     "date": "2026-12-07",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000039/now-20260406.htm"
+    },
+    {
+     "company": "META",
+     "name": "Meta",
+     "date": "2026-12-17",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+    },
+    {
+     "company": "GOOGL",
+     "name": "Alphabet",
+     "date": "2026-12-25",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    }
+   ],
    "asks_made": [
     {
      "company": "GOOGL",
@@ -3618,11 +3825,80 @@
     "Harms from how customers use AI": 12,
     "AI governance and safety": 7
    },
-   "median_support_pct": 13.8,
+   "median_support_pct": 15.5,
    "median_support_base": {
-    "with_recorded_support": 42,
-    "proposals": 49
+    "with_recorded_support": 36,
+    "proposals": 49,
+    "left_out_critical": 6
    },
+   "support_range": [
+    0.5,
+    53.6
+   ],
+   "support_by_year": {
+    "2023": {
+     "median": 19.6,
+     "n": 8
+    },
+    "2024": {
+     "median": 17.2,
+     "n": 10
+    },
+    "2025": {
+     "median": 10.3,
+     "n": 11
+    },
+    "2026": {
+     "median": 7.3,
+     "n": 7
+    }
+   },
+   "commitments": [
+    {
+     "company": "NVDA",
+     "promised": "Conduct a third-party human rights saliency (impact) assessment across the value chain.",
+     "by": "Investor group including Parnassus Investments",
+     "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf"
+    },
+    {
+     "company": "NVDA",
+     "promised": "Review and update its Human Rights and Responsible Minerals policies in FY26 using the saliency assessment.",
+     "by": "Investor group including Parnassus Investments",
+     "source_url": "https://images.nvidia.com/aem-dam/Solutions/documents/NVIDIA-Sustainability-Report-Fiscal-Year-2025.pdf"
+    },
+    {
+     "company": "NVDA",
+     "promised": "Form an executive-level sustainability steering committee with oversight of human rights.",
+     "by": "Investor group including Parnassus Investments",
+     "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf"
+    },
+    {
+     "company": "NVDA",
+     "promised": "Add staff to support human rights work.",
+     "by": "Investor group including Parnassus Investments",
+     "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf"
+    }
+   ],
+   "deadlines_next_90": [
+    {
+     "company": "AMZN",
+     "name": "Amazon",
+     "date": "2026-12-10",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    },
+    {
+     "company": "GOOGL",
+     "name": "Alphabet",
+     "date": "2026-12-25",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "NVDA",
+     "name": "Nvidia",
+     "date": "2027-01-12",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm"
+    }
+   ],
    "asks_made": [
     {
      "company": "AMZN",
@@ -4544,11 +4820,134 @@
     "Harms from how customers use AI": 15,
     "AI governance and safety": 12
    },
-   "median_support_pct": 12.4,
+   "median_support_pct": 13.4,
    "median_support_base": {
-    "with_recorded_support": 61,
-    "proposals": 73
+    "with_recorded_support": 51,
+    "proposals": 73,
+    "left_out_critical": 10
    },
+   "support_range": [
+    0.5,
+    53.6
+   ],
+   "support_by_year": {
+    "2023": {
+     "median": 17.0,
+     "n": 11
+    },
+    "2024": {
+     "median": 17.2,
+     "n": 14
+    },
+    "2025": {
+     "median": 8.9,
+     "n": 15
+    },
+    "2026": {
+     "median": 6.9,
+     "n": 11
+    }
+   },
+   "commitments": [
+    {
+     "company": "DIS",
+     "promised": "Enhance its disclosure on its use of AI (exact terms not public).",
+     "by": "AFL-CIO Equity Index Funds and co-filers",
+     "source_url": "https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/"
+    },
+    {
+     "company": "CMCSA",
+     "promised": "Enhance its disclosure on its use of AI (exact terms not public).",
+     "by": "AFL-CIO",
+     "source_url": "https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/"
+    },
+    {
+     "company": "VRSK",
+     "promised": "Publish disclosures on its policies, practices and governance for responsible AI, including efforts to reduce the risk of disproportionately affecting marginalized groups.",
+     "by": "Parnassus Investments",
+     "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf"
+    },
+    {
+     "company": "INTU",
+     "promised": "Publish public disclosure on AI governance and risk management practices in early 2025.",
+     "by": "Parnassus Investments",
+     "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf"
+    }
+   ],
+   "deadlines_next_90": [
+    {
+     "company": "MSI",
+     "name": "Motorola Solutions",
+     "date": "2026-12-03",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/68505/000119312526139004/d50373ddef14a.htm"
+    },
+    {
+     "company": "VRSK",
+     "name": "Verisk Analytics",
+     "date": "2026-12-04",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1442145/000119312526141398/d23242ddef14a.htm"
+    },
+    {
+     "company": "NOW",
+     "name": "ServiceNow",
+     "date": "2026-12-07",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000039/now-20260406.htm"
+    },
+    {
+     "company": "AMZN",
+     "name": "Amazon",
+     "date": "2026-12-10",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    },
+    {
+     "company": "META",
+     "name": "Meta",
+     "date": "2026-12-17",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+    },
+    {
+     "company": "CRM",
+     "name": "Salesforce",
+     "date": "2026-12-17",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm"
+    },
+    {
+     "company": "AXON",
+     "name": "Axon Enterprise",
+     "date": "2026-12-17",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1069183/000162828026025521/axon-20260416.htm"
+    },
+    {
+     "company": "NFLX",
+     "name": "Netflix",
+     "date": "2026-12-17",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312526159286/d20613ddef14a.htm"
+    },
+    {
+     "company": "GOOGL",
+     "name": "Alphabet",
+     "date": "2026-12-25",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "company": "PLTR",
+     "name": "Palantir Technologies",
+     "date": "2026-12-25",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm"
+    },
+    {
+     "company": "CMCSA",
+     "name": "Comcast",
+     "date": "2026-12-25",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1166691/000119312526177138/cmcsa-20260424.htm"
+    },
+    {
+     "company": "WDAY",
+     "name": "Workday",
+     "date": "2027-01-05",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1327811/000110465926055687/tm261347-2_def14a.htm"
+    }
+   ],
    "asks_made": [
     {
      "company": "AAPL",

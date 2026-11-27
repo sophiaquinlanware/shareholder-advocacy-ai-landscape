@@ -989,3 +989,6 @@ button + [role="status"], button + .ticker, button + .status-note, button + outp
 @media (max-width: 640px) { #tab-predict article.bd-card { padding: 14px 14px 16px; margin: 20px 0; } #tab-predict article.bd-card h4 { font-size: 16px; } }
 button.bd-btn { border: 0; font: inherit; font-weight: 500; cursor: pointer; }
 .bd-minelist .linklike { text-align: left; }
+/* Collapsed model-checking sections in Test plans over time (module audit, 2026-11-27) */
+details.sim-more > summary { cursor: pointer; list-style: revert; }
+details.sim-more > summary h3 { display: inline; margin: 0; }
