@@ -53,6 +53,10 @@ Routes table per lab (tie, strength, rights and deadline, filers, related asks, 
 
 195 events; filters for region, jurisdiction (narrows to the region) and legal status; status marks on every node with a key; lanes grow with their events; lane names stay pinned; month labels carry the year. Not separately reviewed.
 
+## Figures
+
+Every chart is screenshot-ready: title, measure, count, years, key and source inside the figure. That covers Proposals support, the value chain ties and engagement table, Lab pathways bars and map, the Laws and rules causal map, and the network band caption. The simulator charts (sim.js, data session) are not yet framed this way.
+
 ## Latest check
 
 `npm run check` on main at c992866 (simulator, section order, causal map, on top of the UI's title change): lint pass, build pass, Playwright 268 passed; Lighthouse phone 100/100/100/99, desktop 100/100/100/86.

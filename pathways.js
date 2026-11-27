@@ -112,15 +112,22 @@
       <div id="pw-twostep"></div>
       <div id="pw-holders"></div>
       <h3 class="sub-h">Labs reached, by company</h3>
-      <p class="count-line">Number of frontier labs each company has a sourced tie to.</p>
-      <ol class="pw-bars" id="pw-bars"></ol>
+      <figure class="card chart-card fig">
+        ${window.figHead("Frontier labs reached, by company", `Number of frontier labs each company has a sourced tie to (ownership, investment, board seat, compute, chips or customer); ties dated ${window.yearSpan(data.ties.map((t) => t.as_of))}.`)}
+        <ol class="pw-bars" id="pw-bars"></ol>
+        ${window.figSource("company filings and announcements, cited for each tie under All ties.")}
+      </figure>
       <h3 class="sub-h">Gaps in the tie data</h3>
       <ul class="pw-gaps">${(data.gaps || []).map((g) => `<li>${esc(g)}</li>`).join("") || "<li>None listed.</li>"}</ul>
       <h3 class="sub-h">Value-chain ties: companies → frontier labs</h3>
       <p class="count-line">Each line is a sourced tie (ownership, investment, board seat, compute, chips or customer); width = tie strength (1–3). Who files proposals where is in the AI advocacy network. Choose companies to see the labs they reach together.</p>
       <details class="pw-cos"><summary>Companies</summary><div class="chips">${cos}</div></details>
-      <div class="net-legend"><span class="leg static"><span class="dot" style="background:var(--t-equity)"></span>company → lab tie (width = strength)</span></div>
-      <div id="pw-graph" class="net-graph pw-graph"></div>
+      <figure class="card chart-card fig">
+        ${window.figHead("Sourced ties: companies → frontier labs", `${plural(data.ties.length, "company → lab tie")}, dated ${window.yearSpan(data.ties.map((t) => t.as_of))}. Line width = tie strength (1–3, this site's reading); the chosen lab's ties are drawn dark.`)}
+        <div class="net-legend"><span class="leg static"><span class="dot" style="background:var(--t-equity)"></span>company → lab tie (width = strength)</span></div>
+        <div id="pw-graph" class="net-graph pw-graph"></div>
+        ${window.figSource("company filings and announcements, cited for each tie under All ties.")}
+      </figure>
       <div id="pw-panel" class="pw-panel"></div>
       <details class="pw-all"><summary>All ties (${data.ties.length})</summary>
         <p class="count-line" id="pw-count"></p>

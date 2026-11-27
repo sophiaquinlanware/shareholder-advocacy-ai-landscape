@@ -21,6 +21,18 @@ function fmtDate(iso, _short = false) {
   return iso ? window.DATES.long(String(iso).slice(0, 10)) : "";
 }
 const plural = (n, one, many = one + "s") => `${n} ${n === 1 ? one : many}`;
+// Figure frame (owner, 2026-11-26: "have it so that this visual could be screenshotted and all relevant info is
+// there"): every chart sits in a figure box with a title, a subtitle naming the measure, count and years, its key,
+// and a source line naming the site.
+const FIG_SITE = "Shareholder advocacy towards responsible AI, sophiaquinlanware.github.io/shareholder-advocacy-ai-landscape";
+window.figHead = (title, sub) => `<div class="fig-head"><p class="fig-title">${esc(title)}</p>${sub ? `<p class="fig-sub">${esc(sub)}</p>` : ""}</div>`;
+window.figSource = (source) => `<p class="fig-src">Source: ${esc(source)} ${esc(FIG_SITE)}.</p>`;
+window.yearSpan = (isos) => {
+  const ys = isos.filter(Boolean).map((d) => +String(d).slice(0, 4)).filter(Number.isFinite);
+  if (!ys.length) return "";
+  const a = Math.min(...ys), b = Math.max(...ys);
+  return a === b ? String(a) : `${a}–${b}`;
+};
 
 const STATUS_LABEL = { open: "Still open", narrowing: "Narrowing", closed: "Closed", pending: "Being verified" };
 const PROPOSAL_STATUS = { voted: "Voted", upcoming: "Upcoming", withdrawn: "Withdrawn", excluded: "Excluded" };

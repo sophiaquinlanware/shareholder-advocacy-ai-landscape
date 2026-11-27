@@ -284,12 +284,16 @@
         <select id="cz-status" aria-label="Legal status"><option value="">Any status</option>${statuses.map((k) => `<option value="${k}">${esc(STATUS_LABEL[k])} (${count((e) => statusOf(e) === k)})</option>`).join("")}</select>
         <button type="button" class="chip" id="cz-reset">Reset filters</button>
       </div>
+      <figure class="card chart-card fig cz-fig">
+      ${window.figHead(`Causal map of AI policy and governance, ${window.yearSpan(C.events.map((e) => e.date))}`, `${plural(C.events.length, "event")} by lane (rows) and date (left to right; recent months get more room). Arrows run from an event to what followed from it; the mark on each event is its legal status.`)}
       <div class="net-legend">${legend}</div>
       <div class="net-legend" id="cz-status-key"></div>
       <p class="count-line" id="cz-count" aria-live="polite"></p>
       <div class="cz-timebar"><button type="button" class="chip" id="cz-earlier">← Earlier</button> <span id="cz-window" class="ticker" aria-live="polite"></span> <button type="button" class="chip" id="cz-later">Later →</button></div>
       <div class="cz-frame"><div class="cz-lanes" id="cz-lanes" aria-hidden="true"></div><div class="cz-scroll"><div id="cz-graph" class="cz-graph"></div></div></div>
       <div class="cz-overview" id="cz-overview" aria-hidden="true" title="Years covered; the box is the part in view. Click to jump."></div>
+      ${window.figSource("official texts, court and agency records, and filings, cited for each event in the list view.")}
+      </figure>
       <aside id="cz-panel" class="net-panel cz-panel" aria-live="polite"></aside>
       <details class="cz-list">
         <summary>List view: the same ${C.events.length} events as text</summary>

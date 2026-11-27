@@ -40,14 +40,22 @@
         .sort((a, b) => a.order - b.order)
         .map((t) => `<button type="button" class="chip" data-tier="${esc(t.id)}" aria-pressed="false">${esc(t.label)}</button>`)
         .join("")}</div>
-      <div class="net-legend" id="vc-key"></div>
-      <div class="chart-scroll" tabindex="0" role="region" aria-label="Value chain chart (scrolls sideways on small screens)"><div id="vc-flow" class="vc-flow"></div></div>
+      <figure class="card chart-card fig">
+        ${window.figHead(`AI value chain: sourced ties between companies, from chips to AI products`, `${plural(V.ties.length, "sourced tie")} among ${nCos} companies, dated ${window.yearSpan(V.ties.map((t) => t.as_of))}. Columns are each company's main role (this site's reading); circle size = number of ties; line pattern = type of tie.`)}
+        <div class="net-legend" id="vc-key"></div>
+        <div class="chart-scroll" tabindex="0" role="region" aria-label="Value chain chart (scrolls sideways on small screens)"><div id="vc-flow" class="vc-flow"></div></div>
+        ${window.figSource("company filings and announcements, cited for each tie in the list view.")}
+      </figure>
       <p class="visually-hidden" id="vc-status" aria-live="polite"></p>
       <section id="vc-panel" class="net-panel vc-panel" aria-label="Details"><p class="status-note">Choose a tier or a company for who it reaches, the asks already made there and who is engaging.</p></section>
       <details class="cz-list"><summary>List view: the same ${V.ties.length} ties as text</summary><div class="table-wrap" id="vc-ties"></div></details>
       <h3 class="sub-h">Engagement by tier</h3>
       <p class="status-note">Counts per tier, from the site's data; darker blue means more within that column, and each number opens the tier's details. A company can sit in several tiers and is counted in each, so the rows overlap and must not be added up. Proposal counts cover AI-related proposals since 2023 at the companies subject to US proxy rules; companies outside US proxy rules have no proposal data. Not a recommendation.</p>
-      <div class="table-wrap" id="vc-heat" tabindex="0" role="region" aria-label="Engagement by tier table"></div>`;
+      <figure class="card chart-card fig">
+        ${window.figHead("Engagement by AI value-chain tier", "Counts per tier; darker blue = more within that column. Rows overlap (a company can sit in several tiers), so do not add them up. AI proposals since 2023, at companies subject to US proxy rules.")}
+        <div class="table-wrap" id="vc-heat" tabindex="0" role="region" aria-label="Engagement by tier table"></div>
+        ${window.figSource("company proxy statements and 8-K vote results; investor and coalition records, as cited in each tier's details.")}
+      </figure>`;
   }
 
   const name = (id) => (CO.get(id) || {}).name || id;

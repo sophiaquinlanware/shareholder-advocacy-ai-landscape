@@ -228,7 +228,9 @@
     if (state.userZoomed || !state.svg || state.view !== "graph") return;
     const vis = state.data.nodes.filter(visible);
     if (!vis.length) return;
-    const pad = 24, top = HEADER_H + 10;
+    const cap = document.getElementById("net-figcap");
+    const capH = cap && getComputedStyle(cap).position === "absolute" ? cap.offsetHeight + 8 : 0;
+    const pad = 24 + capH, top = HEADER_H + 10;
     let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
     for (const n of vis) {
       const r = radius(n) + 14;
@@ -239,6 +241,7 @@
     const k = Math.min(1, (W - 2 * pad) / Math.max(1, x1 - x0), (H - top - pad) / Math.max(1, y1 - y0));
     state.svg.call(state.zoom.transform, d3.zoomIdentity
       .translate((W - (x1 - x0) * k) / 2 - x0 * k, top + (H - top - pad - (y1 - y0) * k) / 2 - y0 * k).scale(k));
+    figCap();
   }
   // A later change (another view, types shown or hidden, new settings): run most of the new layout off-screen,
   // then let it glide the rest of the way, heavily damped, instead of jumping.
@@ -406,6 +409,7 @@
       <div class="net-body is-graph">
         <div class="net-graph-wrap">
           <div id="net-graph" class="net-graph" tabindex="0" role="application" aria-roledescription="network graph" aria-describedby="net-kb-hint" aria-label="AI advocacy network graph: investors, proposals, companies, labs and policy. Up and Down arrows move between nodes, Enter opens one, Escape clears. The List view has the same data as a table."></div>
+          <div class="net-figcap" id="net-figcap" aria-hidden="true"></div>
           <p class="kb-hint" id="net-kb-hint">Keyboard: Tab into the graph, ↑ ↓ to move between nodes, Enter to open, Esc to clear. Zoom: pinch, or Ctrl/⌘ + scroll; drag to pan.</p>
           <p class="visually-hidden" id="net-kb" aria-live="polite"></p>
         </div>
@@ -672,7 +676,26 @@
     const extra = [asks && `${asks} recurring ask${asks === 1 ? "" : "s"}`, gaps && `${gaps} ask${gaps === 1 ? "" : "s"} not yet filed`].filter(Boolean);
     return { shown, total: base.length, extra: extra.length ? `, plus ${extra.join(" and ")}` : "" };
   }
+  // Caption inside the black band (owner, 2026-11-26: a screenshot of the graph carries everything): title with
+  // the view and years, what is shown and what size means, a colour key of the types in view, and the source.
+  function figCap() {
+    const el = document.getElementById("net-figcap");
+    if (!el) return;
+    const c = counts();
+    const [lo, hi] = yearRange();
+    const yrs = state.year ? state.year : `${lo}–${state.upto || hi}`;
+    const kinds = [...new Set(state.data.nodes.filter(visible).map((n) => n.kind))].filter((k) => !mode().hides.has(k));
+    // Ring marks in view, with the same swatches as the Marks key above the graph.
+    const mk = document.getElementById("net-marks");
+    const marks = mk && !mk.hidden ? [...mk.querySelectorAll(".leg")].map((e) => `<span>${e.innerHTML}</span>`) : [];
+    el.innerHTML = `<p class="fc-title">AI shareholder advocacy network: ${esc(mode().label)} view, ${esc(yrs)}</p>
+      <p class="fc-sub">${c.shown} of ${c.total} investors, people, proposals and companies shown${esc(c.extra)}. Circle size = ${esc(lens().sizeLabel)}. Lines are sourced ties.</p>
+      <p class="fc-key">${kinds.map((k) => `<span><i style="background:${nodeColor(k)}"></i>${esc(kindLabel(k))}</span>`).join("")}</p>
+      ${marks.length ? `<p class="fc-key fc-marks">${marks.join("")}</p>` : ""}
+      <p class="fc-src">Source: SEC filings, proxy statements, coalition and investor records, cited in each item's details. ${esc(typeof FIG_SITE !== "undefined" ? FIG_SITE : "")}.</p>`;
+  }
   function intro() {
+    figCap();
     refreshConnected();
     const c = counts();
     document.getElementById("net-intro").textContent = lens().plainIntro
@@ -1115,6 +1138,7 @@
   const collideR = (d) => radius(d) + 3 + (rings(d).length ? 13 : 0);
   function drawRings() {
     markKey();
+    figCap();
     // Marks changed with the lens: give the marked nodes their room and let the layout settle briefly.
     const sig = state.data.nodes.filter((n) => rings(n).length).map((n) => n.id).join("|");
     if (state.sim && sig !== state.ringSig) {
