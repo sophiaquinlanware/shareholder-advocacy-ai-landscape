@@ -130,15 +130,18 @@
     return { nodes: [...nodes.values()], links };
   }
 
+  // Circle size = number of connections, for every kind that has them, on a wider range so the most connected
+  // organizations and companies stand out (owner, 2026-11-26: "make this distinction slightly more prominent").
   function baseRadius(n) {
-    if (n.kind === "company") return 16;
+    const deg = Math.sqrt(n.degree || 0);
+    if (n.kind === "company" || String(n.kind).startsWith("tier-")) return 7 + Math.min(21, deg * 2.4);
     if (n.kind === "proposal") return 5;
     if (n.kind === "person") return 4;
     if (["policy", "response", "public"].includes(n.kind)) return 4 + Math.min(6, Math.sqrt(n.degree) * 1.5);
-    if (n.kind === "lab") return 10;
+    if (n.kind === "lab") return 6 + Math.min(16, deg * 2.4);
     if (n.kind === "gap") return 6;
     if (n.kind === "ask") return 8;
-    return 6 + Math.min(10, Math.sqrt(n.degree) * 2.4);
+    return 4 + Math.min(18, deg * 2.8);
   }
   const radius = (n) => {
     const r = state.ctx ? lens().size(n, state.ctx) : null;
