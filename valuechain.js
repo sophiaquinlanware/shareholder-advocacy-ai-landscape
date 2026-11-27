@@ -17,10 +17,10 @@
   // Tie types differ by dash pattern, not colour (all marks are blue on white).
   // Six clearly different line patterns (owner, 2026-11-27: the old dashes were "not distinct enough"): solid, long
   // dash, round dots, dash-dot, short dash, dash-dot-dot. Dotted lines use round caps so the dots read as dots.
-  const DASH = { "supplies chips": null, "manufactures for": "14 6", "leases capacity to": "0.1 6", "provides compute to": "12 4 2 4", "supplies power to": "5 5", "distributes models": "12 3 2 3 2 3" };
+  const DASH = { "supplies chips": null, "manufactures for": "14 6", "leases capacity to": "0.1 6", "provides compute to": "12 4 2 4", "supplies power to": "5 5", "distributes models": "12 3 2 3 2 3", "owns or invests in": "2 3", "commercial agreement with": "22 5" };
   const CAP = { "leases capacity to": "round" };
   // Each tie type as words that read as a sentence: "{from} {phrase} {to}".
-  const PHRASE = { "supplies chips": "supplies chips to", "manufactures for": "manufactures for", "leases capacity to": "leases capacity to", "provides compute to": "provides compute to", "supplies power to": "supplies power to", "distributes models": "distributes the models of" };
+  const PHRASE = { "supplies chips": "supplies chips to", "manufactures for": "manufactures for", "leases capacity to": "leases capacity to", "provides compute to": "provides compute to", "supplies power to": "supplies power to", "distributes models": "distributes the models of", "owns or invests in": "owns or invests in", "commercial agreement with": "has a commercial agreement with" };
   const phrase = (t) => PHRASE[t] || t;
   const SHORT_TIER = { chips: "Chips", datacenters: "Data centers", cloud: "Cloud platforms", labs: "Frontier labs", capital: "Strategic investors", consumer: "Consumer", business: "Business" };
   // Columns are the site's company roles (roles.js) in value-chain order, with strategic investors in their own
@@ -68,13 +68,18 @@
     box.innerHTML = "";
     if (typeof d3 === "undefined") { box.innerHTML = `<p class="status-note">The chart library did not load; the ties are listed below.</p>`; return; }
     const inTies = new Set(V.ties.flatMap((t) => [t.from, t.to]));
+    const everyone = new Set([...CO.keys()].filter((id) => FLOW.includes(roleOfId(id))));
     const W = Math.max(720, box.clientWidth || 900);
     const colX = (i) => 70 + (i * (W - 220)) / (FLOW.length - 1);
     // Short column headings whenever the full ones would run into each other.
     const narrow = (W - 220) / (FLOW.length - 1) < 175;
-    const rowH = 58; // owner, 2026-11-26: "even more space in between … the text super clear to read"
+    // owner, 2026-11-26: "even more space in between … the text super clear to read"; tighter only when a column
+    // holds many companies, so the map stays on one screen height or two.
+    const longest = Math.max(...FLOW.map((tid) => [...everyone].filter((id) => roleOfId(id) === tid).length));
+    const rowH = longest > 16 ? 44 : 58;
     const cols = FLOW.map((tid, i) => {
-      const ids = [...inTies].filter((id) => roleOfId(id) === tid).sort((a, b) => name(a).localeCompare(name(b)));
+      const ids = [...everyone].filter((id) => roleOfId(id) === tid)
+        .sort((a, b) => (inTies.has(b) ? 1 : 0) - (inTies.has(a) ? 1 : 0) || name(a).localeCompare(name(b)));
       return { tid, x: colX(i), ids };
     });
     const H = 80 + Math.max(...cols.map((c) => c.ids.length)) * rowH;
@@ -133,15 +138,16 @@
       .attr("tabindex", 0).attr("role", "button").attr("aria-label", ([id]) => `${name(id)}: ${plural(deg.get(id) || 0, "tie")}`).style("cursor", "pointer")
       .on("click", (ev, [id]) => showCompany(id))
       .on("keydown", (ev, [id]) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); showCompany(id); } });
-    co.append("circle").attr("r", ([id]) => 3 + Math.sqrt(deg.get(id) || 1) * 1.6).attr("fill", cssVar("--blue-1"));
+    co.append("circle").attr("r", ([id]) => (deg.get(id) ? 3 + Math.sqrt(deg.get(id)) * 1.6 : 3.5))
+      .attr("fill", ([id]) => (deg.get(id) ? cssVar("--blue-1") : cssVar("--surface"))).attr("stroke", cssVar("--blue-1")).attr("stroke-width", 1.2);
     // Names sit just above each circle, clear of the lines that leave it sideways, larger and with a wide white
     // outline so crossing lines never run through the letters.
-    co.append("text").attr("x", 0).attr("y", ([id]) => -(3 + Math.sqrt(deg.get(id) || 1) * 1.6) - 6).attr("text-anchor", "middle").attr("font-size", 13).attr("font-weight", 400).attr("fill", cssVar("--ink"))
+    co.append("text").attr("x", 0).attr("y", ([id]) => -(3 + Math.sqrt(deg.get(id) || 1) * 1.6) - 6).attr("text-anchor", "middle").attr("font-size", 13).attr("font-weight", 400).attr("fill", ([id]) => (deg.get(id) ? cssVar("--ink") : cssVar("--ink-soft")))
       .attr("stroke", cssVar("--surface")).attr("stroke-width", 5).attr("stroke-linejoin", "round").attr("paint-order", "stroke").text(([id]) => (name(id).length > 26 ? name(id).slice(0, 25) + "…" : name(id)));
     // Key: one dash pattern per tie type.
     document.getElementById("vc-key").innerHTML = [...new Set(V.ties.map((t) => t.type))].map((k) =>
       `<span class="leg static"><svg class="mark vc-line" viewBox="0 0 44 10" aria-hidden="true"><line x1="2" y1="5" x2="42" y2="5" stroke="${ink}" stroke-width="2.5"${DASH[k] ? ` stroke-dasharray="${DASH[k]}"` : ""}${CAP[k] ? ` stroke-linecap="${CAP[k]}"` : ""}></line></svg>${esc(k)}</span>`).join("")
-      + `<span class="status-note">Tap a line to trace its path along the value chain in orange; tap the chart again to clear. Each line is one sourced tie; open a company to read its ties in words. Circle size = number of sourced ties; companies with no sourced tie are counted in each tier's panel. Strategic investors have their own column; their equity stakes in labs are in Ties to each frontier lab.</span>`;
+      + `<span class="status-note">Tap a line to trace its path along the value chain in orange; tap the chart again to clear. Each line is one sourced tie; open a company to read its ties in words. Circle size = number of sourced ties; companies with no sourced tie are counted in each tier's panel. Hollow circles are companies in the data with no sourced tie yet. Ties to frontier labs, including equity stakes and parent companies, come from Lab pathways.</span>`;
   }
 
   const REDUCED = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -344,12 +350,53 @@
       <tbody>${tiers.map((t) => `<tr><th scope="row" class="sticky-col"><button type="button" class="linklike" data-tier="${t.id}">${esc(t.label)}</button></th>${COLS.map((c) => cell(c, t)).join("")}</tr>`).join("")}</tbody></table>`;
   }
 
+  // Owner, 2026-11-26: "why did you not include all of the frontier labs, including Google DeepMind … check all data
+  // for other companies in this value chain". The map now also draws the sourced company → lab ties from Lab pathways
+  // (data/pathways.json), and the labs and companies they name, matched to data/companies.json by ticker or name.
+  // Pathways tie types become the map's: chip supplier → supplies chips; cloud/compute provider → provides compute
+  // to; distribution partner → distributes models; equity stake, parent company, board seat → owns or invests in;
+  // revenue share/commercial agreement → commercial agreement with.
+  const PW_TYPE = { "chip supplier": "supplies chips", "cloud/compute provider": "provides compute to", "distribution partner": "distributes models", "equity stake": "owns or invests in", "parent company": "owns or invests in", "board seat or observer": "owns or invests in", "revenue share/commercial agreement": "commercial agreement with" };
+  // Companies named only in Lab pathways, placed by this site's reading of their main role.
+  const PW_ROLE = { mu: "chips", asml: "chips", tsm: "chips", intc: "chips", dell: "chips", snow: "compute" };
+  function mergeLabTies() {
+    const P = (typeof DATA !== "undefined" && DATA.pathways) || null;
+    if (!P || !P.ties || V._merged) return;
+    V._merged = true;
+    const all = [...CO.values()];
+    const byTicker = new Map(all.filter((c) => c.ticker).map((c) => [String(c.ticker).split(/\s*\/\s*/).pop().toUpperCase(), c.id]));
+    all.filter((c) => c.ticker).forEach((c) => String(c.ticker).split(/\s*\/\s*/).forEach((t) => byTicker.set(t.toUpperCase(), c.id)));
+    const byName = new Map(all.map((c) => [String(c.name).toLowerCase(), c.id]));
+    const idMap = new Map();
+    (P.public_companies || []).forEach((pc) => {
+      const tick = String(pc.ticker || "").split(/\s*\/\s*/).map((t) => t.toUpperCase());
+      const hit = tick.map((t) => byTicker.get(t)).find(Boolean) || byName.get(String(pc.name).toLowerCase());
+      if (hit) idMap.set(pc.id, hit);
+      else { const id = "pw-" + pc.id; CO.set(id, { id, name: pc.name, ticker: pc.ticker, tier: PW_ROLE[pc.id] || "deployers", sectors: ["enterprise AI"], from_pathways: true }); idMap.set(pc.id, id); }
+    });
+    (P.labs || []).forEach((l) => {
+      const hit = byName.get(String(l.name).toLowerCase());
+      if (hit) idMap.set(l.id, hit);
+      else { const id = "lab-" + l.id; CO.set(id, { id, name: l.name, tier: "labs", from_pathways: true }); idMap.set(l.id, id); }
+    });
+    const seen = new Set(V.ties.map((t) => `${t.from}|${t.to}|${t.type}`));
+    P.ties.forEach((t) => {
+      const from = idMap.get(t.from), to = idMap.get(t.to), type = PW_TYPE[t.type] || t.type;
+      if (!from || !to || from === to) return;
+      const k = `${from}|${to}|${type}`;
+      if (seen.has(k)) return;
+      seen.add(k);
+      V.ties.push({ from, to, type, as_of: t.as_of, description: t.description, source_url: t.source_url, from_pathways: true });
+    });
+  }
+
   window.renderValueChain = function (data, companies) {
     const el = document.getElementById("tab-value-chain");
     if (!el) return;
     if (!data || !data.tiers || !data.ties) { el.innerHTML = `<div class="coming"><h2>AI value chain</h2><p>Being sourced now.</p></div>`; return; }
     V = data;
     CO = new Map((companies || []).map((c) => [c.id, c]));
+    mergeLabTies();
     shell(el);
     drawTieTable();
     drawHeat();
