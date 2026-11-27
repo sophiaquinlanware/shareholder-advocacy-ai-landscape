@@ -1,0 +1,412 @@
+{
+  "about": "Test fixture for tests/board.spec.js: a fixed copy of data/forecast-questions.json with every question open.",
+  "groups": [
+    "Investor or asset manager",
+    "Asset owner or pension",
+    "Company (governance, legal, IR)",
+    "Proxy advisor or ESG data",
+    "Policymaker or regulator",
+    "Academic or researcher",
+    "Civil society or advocacy",
+    "Employee of an AI company",
+    "Journalist",
+    "Retail shareholder",
+    "Other"
+  ],
+  "min_group": 3,
+  "questions": [
+    {
+      "id": "q-msft-2026-4-bar",
+      "kind": "vote",
+      "section": "Coming votes",
+      "title": "Will \"Additional Disclosures Meeting Climate Commitments\" at Microsoft get at least 9% support at its meeting on December 8, 2026?",
+      "closes": "2099-12-30",
+      "company": "MSFT",
+      "ask": "ask-dc-climate-energy",
+      "ask_label": "Data center energy, emissions and costs",
+      "resolves": "Yes if support, computed by this site as for ÷ (for + against) from the counts in Microsoft's 8-K, is at least 9%. Void if the proposal is withdrawn or excluded, or the vote is not held within 60 days of December 8, 2026.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+      "base": {
+        "p": 0.24,
+        "start": "Benchmark: the median of this ask's 8 recorded votes at other companies (9%).",
+        "how": "Of the 25 first-time votes on an ask at a company this site records, 6 (24%) got at least the median of that ask's earlier votes elsewhere.",
+        "source_url": "https://github.com/sophiaquinlanware/shareholder-advocacy-ai-landscape/blob/main/data/forecast.json"
+      },
+      "auto": {
+        "type": "support_at_least",
+        "proposal_id": "msft-2026-4",
+        "bar": 9.0
+      },
+      "created": "2026-11-26",
+      "resolved": null,
+      "resolution_source": null,
+      "decided": null,
+      "crowd": {
+        "n": 0,
+        "stake_left_out": 0,
+        "weighted_groups": 0,
+        "headline": "all_median",
+        "groups": {},
+        "equal_weight": null,
+        "all_median": null
+      }
+    },
+    {
+      "id": "q-msft-2026-5-bar",
+      "kind": "vote",
+      "section": "Coming votes",
+      "title": "Will \"Report on Human Rights Due Diligence\" at Microsoft get at least 26.34% support at its meeting on December 8, 2026?",
+      "closes": "2099-12-30",
+      "company": "MSFT",
+      "ask": "ask-customer-due-diligence",
+      "ask_label": "Customer and end-use due diligence (surveillance, military, facial recognition)",
+      "resolves": "Yes if support, computed by this site as for ÷ (for + against) from the counts in Microsoft's 8-K, is at least 26.34%. Void if the proposal is withdrawn or excluded, or the vote is not held within 60 days of December 8, 2026.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+      "base": {
+        "p": 0.222,
+        "start": "Benchmark: the previous recorded vote on this ask here (26.34% in 2025).",
+        "how": "Of the 18 refiled votes this site records, 4 (22%) got support at or above the previous recorded vote on the same ask at the same company.",
+        "source_url": "https://github.com/sophiaquinlanware/shareholder-advocacy-ai-landscape/blob/main/data/forecast.json"
+      },
+      "auto": {
+        "type": "support_at_least",
+        "proposal_id": "msft-2026-5",
+        "bar": 26.34
+      },
+      "created": "2026-11-26",
+      "resolved": null,
+      "resolution_source": null,
+      "decided": null,
+      "crowd": {
+        "n": 0,
+        "stake_left_out": 0,
+        "weighted_groups": 0,
+        "headline": "all_median",
+        "groups": {},
+        "equal_weight": null,
+        "all_median": null
+      }
+    },
+    {
+      "id": "q-2027-commitment",
+      "kind": "season",
+      "section": "The 2027 season",
+      "title": "Will any AI proposal at a company tracked here be withdrawn after a company commitment, for meetings January 1 to June 30, 2027?",
+      "closes": "2099-12-30",
+      "resolves_by": "2027-06-30",
+      "resolves": "Yes if this site records at least one such withdrawal (an AI proposal as listed in this site's Proposals and votes, leaving out those lead-filed by filers critical of ESG), with the filer's or company's statement as source, for meetings January 1 to June 30, 2027.",
+      "base": {
+        "p": 0.333,
+        "how": "Years 2023 to 2026 recorded here with at least one, counting meetings January 1 to June 30: 1 of 4 (per year: 0, 3, 0, 0); smoothed as (1 + 1) ÷ (4 + 2) = 33%. Withdrawals and exclusions in earlier years may be less fully recorded here than recent ones.",
+        "source_url": "https://github.com/sophiaquinlanware/shareholder-advocacy-ai-landscape/blob/main/data/proposals.json"
+      },
+      "auto": {
+        "type": "count_at_least",
+        "what": "withdrawn_commitment",
+        "season": 2027,
+        "n": 1
+      },
+      "created": "2026-11-26",
+      "resolved": null,
+      "resolution_source": null,
+      "decided": null,
+      "crowd": {
+        "n": 0,
+        "stake_left_out": 0,
+        "weighted_groups": 0,
+        "headline": "all_median",
+        "groups": {},
+        "equal_weight": null,
+        "all_median": null
+      }
+    },
+    {
+      "id": "q-2027-exclusions",
+      "kind": "season",
+      "section": "The 2027 season",
+      "title": "Will companies tracked here exclude 3 or more AI proposals, for meetings January 1 to June 30, 2027?",
+      "closes": "2099-12-30",
+      "resolves_by": "2027-06-30",
+      "resolves": "Yes if this site records at least three excluded, each an AI proposal as listed in this site's Proposals and votes, leaving out those lead-filed by filers critical of ESG, with the company's notice or reason, for meetings January 1 to June 30, 2027.",
+      "base": {
+        "p": 0.333,
+        "how": "Years 2023 to 2026 recorded here with 3 or more, counting meetings January 1 to June 30: 1 of 4 (per year: 0, 0, 0, 3); smoothed as (1 + 1) ÷ (4 + 2) = 33%. Withdrawals and exclusions in earlier years may be less fully recorded here than recent ones.",
+        "source_url": "https://github.com/sophiaquinlanware/shareholder-advocacy-ai-landscape/blob/main/data/proposals.json"
+      },
+      "auto": {
+        "type": "count_at_least",
+        "what": "excluded",
+        "season": 2027,
+        "n": 3
+      },
+      "created": "2026-11-26",
+      "resolved": null,
+      "resolution_source": null,
+      "decided": null,
+      "crowd": {
+        "n": 0,
+        "stake_left_out": 0,
+        "weighted_groups": 0,
+        "headline": "all_median",
+        "groups": {},
+        "equal_weight": null,
+        "all_median": null
+      }
+    },
+    {
+      "id": "q-2027-top-support",
+      "kind": "season",
+      "section": "The 2027 season",
+      "title": "Will any AI proposal at a company tracked here get 30% support or more, for meetings January 1 to June 30, 2027?",
+      "closes": "2099-12-30",
+      "resolves_by": "2027-06-30",
+      "resolves": "Yes if any one (an AI proposal as listed in this site's Proposals and votes, leaving out those lead-filed by filers critical of ESG) records 30% or more, computed by this site as for ÷ (for + against) from the 8-K counts, for meetings January 1 to June 30, 2027.",
+      "base": {
+        "p": 0.5,
+        "how": "Years 2023 to 2026 with a vote of 30% or more at meetings January 1 to June 30: 2 of 4 (highest per year: 37%, 43%, 20%, 22%); smoothed as (2 + 1) ÷ (4 + 2) = 50%.",
+        "source_url": "https://github.com/sophiaquinlanware/shareholder-advocacy-ai-landscape/blob/main/data/proposals.json"
+      },
+      "auto": {
+        "type": "max_support_at_least",
+        "season": 2027,
+        "bar": 30
+      },
+      "created": "2026-11-26",
+      "resolved": null,
+      "resolution_source": null,
+      "decided": null,
+      "crowd": {
+        "n": 0,
+        "stake_left_out": 0,
+        "weighted_groups": 0,
+        "headline": "all_median",
+        "groups": {},
+        "equal_weight": null,
+        "all_median": null
+      }
+    },
+    {
+      "id": "q-sec-rescission-2027",
+      "kind": "policy",
+      "section": "Rules",
+      "title": "Will the SEC vote to adopt a final rule rescinding Rule 14a-8 by June 30, 2027?",
+      "closes": "2099-12-30",
+      "resolves_by": "2027-06-30",
+      "resolves": "Yes if the Commission votes by June 30, 2027 to adopt a final rule that removes shareholders' right to have proposals included in the company's proxy statement under Rule 14a-8, as announced by the SEC. An amendment that keeps the rule, such as new ownership thresholds, resolves No. Resolved by hand from the SEC's announcement.",
+      "source_url": "https://www.sec.gov/rules/proposed/2026/34-106383.pdf",
+      "base": {
+        "p": null,
+        "how": "This site's records give no base rate for SEC rulemaking. The proposal's comment period closed November 20, 2026.",
+        "source_url": "https://www.sec.gov/rules/proposed/2026/34-106383.pdf"
+      },
+      "auto": {
+        "type": "manual"
+      },
+      "created": "2026-11-26",
+      "resolved": null,
+      "resolution_source": null,
+      "decided": null,
+      "crowd": {
+        "n": 0,
+        "stake_left_out": 0,
+        "weighted_groups": 0,
+        "headline": "all_median",
+        "groups": {},
+        "equal_weight": null,
+        "all_median": null
+      }
+    },
+    {
+      "id": "q-2027-exclusions-if-adopted",
+      "kind": "conditional",
+      "section": "If, then",
+      "title": "If the SEC votes to adopt the Rule 14a-8 rescission by June 30, 2027: will companies tracked here exclude 3 or more AI proposals, for meetings January 1 to June 30, 2027?",
+      "closes": "2099-12-30",
+      "resolves_by": "2027-06-30",
+      "condition": {
+        "question": "q-sec-rescission-2027",
+        "if": 1
+      },
+      "resolves": "Yes if this site records at least three excluded, each an AI proposal as listed in this site's Proposals and votes, leaving out those lead-filed by filers critical of ESG, with the company's notice or reason, for meetings January 1 to June 30, 2027. If Rule 14a-8 is gone, a proposal counts as excluded when the company leaves it out of the proxy statement and says so in its filings. Void (not scored) if the SEC does not vote to adopt the rescission by then.",
+      "base": {
+        "p": 0.333,
+        "how": "This site's records hold no season with the rescission adopted, so this is the unconditional rate.",
+        "source_url": "https://github.com/sophiaquinlanware/shareholder-advocacy-ai-landscape/blob/main/data/proposals.json"
+      },
+      "auto": {
+        "type": "count_at_least",
+        "what": "excluded",
+        "season": 2027,
+        "n": 3
+      },
+      "created": "2026-11-26",
+      "resolved": null,
+      "resolution_source": null,
+      "decided": null,
+      "crowd": {
+        "n": 0,
+        "stake_left_out": 0,
+        "weighted_groups": 0,
+        "headline": "all_median",
+        "groups": {},
+        "equal_weight": null,
+        "all_median": null
+      }
+    },
+    {
+      "id": "q-2027-exclusions-if-not",
+      "kind": "conditional",
+      "section": "If, then",
+      "title": "If the SEC does not vote to adopt the Rule 14a-8 rescission by June 30, 2027: will companies tracked here exclude 3 or more AI proposals, for meetings January 1 to June 30, 2027?",
+      "closes": "2099-12-30",
+      "resolves_by": "2027-06-30",
+      "condition": {
+        "question": "q-sec-rescission-2027",
+        "if": 0
+      },
+      "resolves": "Yes if this site records at least three excluded, each an AI proposal as listed in this site's Proposals and votes, leaving out those lead-filed by filers critical of ESG, with the company's notice or reason, for meetings January 1 to June 30, 2027. Void (not scored) if the SEC votes to adopt the rescission by then.",
+      "base": {
+        "p": 0.333,
+        "how": "All recorded years (2023 to 2026) were without an adopted rescission, so this is the unconditional rate.",
+        "source_url": "https://github.com/sophiaquinlanware/shareholder-advocacy-ai-landscape/blob/main/data/proposals.json"
+      },
+      "auto": {
+        "type": "count_at_least",
+        "what": "excluded",
+        "season": 2027,
+        "n": 3
+      },
+      "created": "2026-11-26",
+      "resolved": null,
+      "resolution_source": null,
+      "decided": null,
+      "crowd": {
+        "n": 0,
+        "stake_left_out": 0,
+        "weighted_groups": 0,
+        "headline": "all_median",
+        "groups": {},
+        "equal_weight": null,
+        "all_median": null
+      }
+    },
+    {
+      "id": "q-gap-amd-2026-11-27",
+      "kind": "coverage_gap",
+      "section": "Companies with no AI proposal recorded in 2026",
+      "title": "Will any investor (not counting filers critical of ESG) file an AI proposal at AMD by its deadline of November 27, 2026?",
+      "closes": "2099-12-30",
+      "company": "AMD",
+      "resolves_by": "2027-09-23",
+      "resolves": "Yes if AMD's next proxy statement includes an AI proposal as listed in this site's Proposals and votes, leaving out those lead-filed by filers critical of ESG, or this site records one filed by the deadline and then withdrawn or excluded. Resolved from the proxy statement and the company's filings; No if none is recorded by September 23, 2027.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm",
+      "base": {
+        "p": 0.207,
+        "how": "Of companies here under US proxy rules, already public the year before, with no AI proposal recorded one year, the share with one recorded the next: 12 of 58 (2024: 5 of 21, 2025: 2 of 17, 2026: 5 of 20).",
+        "source_url": "https://github.com/sophiaquinlanware/shareholder-advocacy-ai-landscape/blob/main/data/proposals.json"
+      },
+      "auto": {
+        "type": "filed_after",
+        "company": "AMD",
+        "deadline": "2026-11-27"
+      },
+      "created": "2026-11-26",
+      "resolved": null,
+      "resolution_source": null,
+      "decided": null,
+      "crowd": {
+        "n": 0,
+        "stake_left_out": 0,
+        "weighted_groups": 0,
+        "headline": "all_median",
+        "groups": {},
+        "equal_weight": null,
+        "all_median": null
+      }
+    },
+    {
+      "id": "q-gap-msi-2026-12-03",
+      "kind": "coverage_gap",
+      "section": "Companies with no AI proposal recorded in 2026",
+      "title": "Will any investor (not counting filers critical of ESG) file an AI proposal at Motorola Solutions by its deadline of December 3, 2026?",
+      "closes": "2099-12-30",
+      "company": "MSI",
+      "resolves_by": "2027-09-29",
+      "resolves": "Yes if Motorola Solutions's next proxy statement includes an AI proposal as listed in this site's Proposals and votes, leaving out those lead-filed by filers critical of ESG, or this site records one filed by the deadline and then withdrawn or excluded. Resolved from the proxy statement and the company's filings; No if none is recorded by September 29, 2027.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/68505/000119312526139004/d50373ddef14a.htm",
+      "base": {
+        "p": 0.207,
+        "how": "Of companies here under US proxy rules, already public the year before, with no AI proposal recorded one year, the share with one recorded the next: 12 of 58 (2024: 5 of 21, 2025: 2 of 17, 2026: 5 of 20).",
+        "source_url": "https://github.com/sophiaquinlanware/shareholder-advocacy-ai-landscape/blob/main/data/proposals.json"
+      },
+      "auto": {
+        "type": "filed_after",
+        "company": "MSI",
+        "deadline": "2026-12-03"
+      },
+      "created": "2026-11-26",
+      "resolved": null,
+      "resolution_source": null,
+      "decided": null,
+      "crowd": {
+        "n": 0,
+        "stake_left_out": 0,
+        "weighted_groups": 0,
+        "headline": "all_median",
+        "groups": {},
+        "equal_weight": null,
+        "all_median": null
+      }
+    }
+  ],
+  "leaderboard": [],
+  "crowd_vs_site": {
+    "questions": 0,
+    "crowd_brier": null,
+    "site_brier": null
+  },
+  "forecasts_total": 0,
+  "company_names": {
+    "MSFT": "Microsoft",
+    "GOOGL": "Alphabet",
+    "META": "Meta",
+    "AMZN": "Amazon",
+    "NVDA": "Nvidia",
+    "AAPL": "Apple",
+    "TSLA": "Tesla",
+    "ANT": "Anthropic",
+    "SPCX": "SpaceX (including xAI)",
+    "035420": "Naver",
+    "00100": "MiniMax (Shanghai Xiyu Technology)",
+    "2513": "Zhipu AI (Knowledge Atlas Technology)",
+    "IBM": "IBM",
+    "CRM": "Salesforce",
+    "ADBE": "Adobe",
+    "INTU": "Intuit",
+    "VRSK": "Verisk Analytics",
+    "WDAY": "Workday",
+    "NOW": "ServiceNow",
+    "PLTR": "Palantir Technologies",
+    "CSCO": "Cisco Systems",
+    "AXON": "Axon Enterprise",
+    "MSI": "Motorola Solutions",
+    "HO": "Thales",
+    "BABA": "Alibaba Group",
+    "0700": "Tencent Holdings",
+    "NFLX": "Netflix",
+    "DIS": "Walt Disney",
+    "CMCSA": "Comcast",
+    "ORCL": "Oracle",
+    "9984": "SoftBank Group",
+    "ARM": "Arm Holdings",
+    "AMD": "AMD",
+    "AVGO": "Broadcom",
+    "TSM": "TSMC",
+    "005930": "Samsung Electronics",
+    "000660": "SK hynix",
+    "CRWV": "CoreWeave",
+    "NBIS": "Nebius Group",
+    "DLR": "Digital Realty Trust",
+    "SO": "Southern Company"
+  }
+}

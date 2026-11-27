@@ -53,7 +53,6 @@ jobs:
           python scripts/build_sim_params.py
           python scripts/build_campaigns.py
           python scripts/build_forecast.py
-          python scripts/build_questions.py
           python scripts/build_freshness.py
       - name: Save any changes
         run: |
@@ -63,9 +62,22 @@ jobs:
           git diff --cached --quiet || git commit -m "Weekly refresh: $(date -u +%Y-%m-%d)"
           # Other sessions push to main too: replay this commit on top of theirs, then push; try a few times.
           # A file both changed stops the run (rebase aborted) rather than overwrite newer work.
+          pushed=no
           for i in 1 2 3; do
-            if git pull --rebase origin "${GITHUB_REF_NAME}"; then git push && exit 0; else git rebase --abort; exit 1; fi
+            if git pull --rebase origin "${GITHUB_REF_NAME}"; then git push && { pushed=yes; break; }; else git rebase --abort; exit 1; fi
             sleep 10
+          done
+          [ "$pushed" = yes ] || exit 1
+          # Prediction board: rebuilt last, from the newest main, because posted forecasts also write it
+          # (.github/workflows/forecasts.yml). On a refused push, start again from main rather than rebase.
+          for i in 1 2 3 4 5; do
+            git fetch -q origin "${GITHUB_REF_NAME}" && git reset -q --hard "origin/${GITHUB_REF_NAME}"
+            python scripts/build_questions.py
+            git add data/forecast-questions.json
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Prediction board: new questions and results"
+            git push -q origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep $((i * 10))
           done
           exit 1
 

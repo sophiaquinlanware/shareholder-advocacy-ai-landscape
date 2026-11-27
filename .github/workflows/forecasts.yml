@@ -4,6 +4,8 @@ name: Add a posted forecast
 # data/predictions.json, rebuild data/forecast-questions.json, reply, close and lock the issue, and republish.
 # The issue's text reaches the scripts only through environment variables, never through the shell.
 # The reply says "Added" only if the forecast was pushed to main.
+# No concurrency group: GitHub cancels queued runs in a group, which would drop forecasts. Runs instead start
+# again from the newest main whenever a push is refused, so simultaneous forecasts and the weekly refresh are safe.
 on:
   issues:
     types: [opened]
@@ -12,10 +14,6 @@ permissions:
   contents: write
   issues: write
   actions: write
-
-concurrency:
-  group: forecasts
-  cancel-in-progress: false
 
 jobs:
   add:
@@ -38,10 +36,11 @@ jobs:
         run: |
           git config user.name "tracker-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # On a push race, start again from the newest main and redo the whole step (never rebase generated JSON).
-          for i in 1 2 3; do
+          for i in 1 2 3 4 5; do
             git fetch -q origin main && git reset -q --hard origin/main
-            if ! python scripts/ingest_forecast.py > reply.txt; then echo "result=rejected" >> "$GITHUB_OUTPUT"; exit 0; fi
+            python scripts/ingest_forecast.py > reply.txt; rc=$?
+            if [ "$rc" = "3" ]; then echo "result=rejected" >> "$GITHUB_OUTPUT"; exit 0; fi
+            if [ "$rc" != "0" ]; then echo "result=error" >> "$GITHUB_OUTPUT"; exit 0; fi
             python scripts/build_questions.py || { echo "result=error" >> "$GITHUB_OUTPUT"; exit 0; }
             git add data/predictions.json data/forecast-questions.json
             git commit -q -m "Forecast posted: issue #${ISSUE_NUMBER}"
@@ -68,6 +67,7 @@ jobs:
               gh issue close "$NUM" --repo "$GITHUB_REPOSITORY" --reason "not planned"
               gh issue lock "$NUM" --repo "$GITHUB_REPOSITORY" --reason resolved || true ;;
             *)
-              echo "This forecast was not added because of a server error. It has not been lost: the site's maintainer will add it, or you can post again." > why.txt
-              gh issue comment "$NUM" --repo "$GITHUB_REPOSITORY" --body-file why.txt ;;
+              echo "This forecast was not added because of a server error. The issue stays open so the site's maintainer sees it; you can also post again." > why.txt
+              gh issue comment "$NUM" --repo "$GITHUB_REPOSITORY" --body-file why.txt
+              exit 1 ;;
           esac

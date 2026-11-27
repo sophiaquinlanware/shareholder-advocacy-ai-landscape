@@ -1,6 +1,15 @@
 // Prediction board (board.js): base rate first, crowd only after your own forecast, the GitHub post link,
 // the conditional pair and the ground rules.
+import { readFileSync } from "node:fs";
 import { expect, test } from "@playwright/test";
+
+// A fixed copy of the questions with every question open, so the tests don't change as votes resolve.
+const FIXTURE = readFileSync(new URL("./fixtures/forecast-questions.json", import.meta.url), "utf8");
+test.beforeEach(async ({ page }) => {
+  await page.route("**/data/forecast-questions.json", (route) =>
+    route.fulfill({ contentType: "application/json", body: FIXTURE }),
+  );
+});
 
 test("the board shows the site estimate, the public crowd and the post link", async ({ page }) => {
   await page.goto("/index.html#predict");

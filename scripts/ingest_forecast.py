@@ -1,6 +1,6 @@
 """Add one forecast posted through the GitHub issue form (.github/ISSUE_TEMPLATE/forecast.yml) to data/predictions.json.
 Run by .github/workflows/forecasts.yml with the issue's body, author and number in the environment (never on the
-command line, so nothing in the body is run as a command). Prints one line for the bot's reply; exits 1 if the
+command line, so nothing in the body is run as a command). Prints one line for the bot's reply; exits 3 if the
 forecast can't be accepted, with the reason. The free-text "Why" stays on the GitHub issue and is not copied into
 the site's data.
 
@@ -37,8 +37,9 @@ def fields(body):
 
 
 def fail(why):
+    """A rejected forecast exits 3, so the workflow can tell it from a crash (exit 1)."""
     print(why)
-    sys.exit(1)
+    sys.exit(3)
 
 
 def main():

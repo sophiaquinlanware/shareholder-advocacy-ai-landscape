@@ -35,7 +35,7 @@ GROUPS = ["Investor or asset manager", "Asset owner or pension", "Company (gover
 COMMIT_WORDS = (" committed to", "negotiated agreement", " agreed to")
 AI_DEF = "an AI proposal as listed in this site's Proposals and votes, leaving out those lead-filed by filers critical of ESG"
 # Year each company became public, for companies that listed during the years the site records
-# (data/companies.json notes "Newly listed November 2026" for ANT and SPCX; CoreWeave's IPO was March 2025).
+# (data/companies.json notes "Newly listed" in November 2026 for ANT and June 2026 for SPCX; CoreWeave's IPO was March 2025).
 LISTED = {"ANT": 2026, "SPCX": 2026, "CRWV": 2025}
 RESOLVE_LAG = 30  # days after a season window ends before it resolves, so the records can catch up
 MIN_GROUP = 3
@@ -67,7 +67,7 @@ def in_window(p, y):
     return f"{y}-01-01" <= d <= f"{y}-06-30" if d else p["year"] == y
 
 
-def candidates(P, pro, fc, companies, asks, events, today):
+def candidates(P, pro, fc, companies, asks, events, today, have):
     """Questions the current records suggest. Only those whose id is new are added to the store."""
     qs = []
     seasons = sorted({p["year"] for p in P if p["year"] < int(today[:4]) or (p["year"] == int(today[:4]) and today[5:] > "06-30")})
@@ -117,7 +117,7 @@ def candidates(P, pro, fc, companies, asks, events, today):
     smooth = lambda k, n: f"smoothed as ({k} + 1) ÷ ({n} + 2) = {round(100 * (k + 1) / (n + 2))}%"
     win = f"meetings January 1 to June 30, {nxt}"
     caveat = " Withdrawals and exclusions in earlier years may be less fully recorded here than recent ones."
-    closes, by = f"{nxt}-01-31", f"{nxt}-06-30"
+    closes, by = f"{nxt - 1}-12-31", f"{nxt}-06-30"
     k1, k2, k3 = sum(1 for n in wc if n), sum(1 for n in ex if n >= 3), sum(1 for m in mx if m >= 30)
     src = SRC + "proposals.json"
     excl = {"id": f"q-{nxt}-exclusions", "kind": "season", "section": f"The {nxt} season",
@@ -144,7 +144,8 @@ def candidates(P, pro, fc, companies, asks, events, today):
 
     # 3. Rules, with no base rate from this site's records; resolved by hand (data/forecast-resolutions.json).
     resc = events.get("sec-14a8-rescission-proposal") or {}
-    if resc:
+    adopted = any(q.get("kind") == "policy" and q.get("resolved") == 1 for q in have.values())
+    if resc and not adopted:
         rid = f"q-sec-rescission-{nxt}"
         qs.append({"id": rid, "kind": "policy", "section": "Rules",
                    "title": f"Will the SEC vote to adopt a final rule rescinding Rule 14a-8 by June 30, {nxt}?",
@@ -195,8 +196,6 @@ def candidates(P, pro, fc, companies, asks, events, today):
 
 
 def resolve(q, P, pro, today, manual):
-    if q["id"] in manual:
-        return manual[q["id"]]["resolved"]
     a = q.get("auto") or {}
     t = a.get("type")
     if t == "support_at_least":
@@ -215,7 +214,10 @@ def resolve(q, P, pro, today, manual):
         n = sum(1 for x in ps if (x["status"] == "excluded" if a["what"] == "excluded" else commitment(x)))
         return int(n >= a["n"])
     if t == "filed_after":
-        if any(x["company"] == a["company"] and ((x.get("meeting_date") or "") > a["deadline"] or (not x.get("meeting_date") and x["year"] > int(a["deadline"][:4]))) for x in pro):
+        # Only the meeting that follows this deadline: a meeting after the deadline and by resolves_by, or, with no
+        # meeting date, a record of the season after the deadline's year.
+        if any(x["company"] == a["company"] and (a["deadline"] < (x.get("meeting_date") or "") <= q["resolves_by"]
+                                                  or (not x.get("meeting_date") and x["year"] == int(a["deadline"][:4]) + 1)) for x in pro):
             return 1
         if q["resolves_by"] < today:
             return 0
@@ -236,23 +238,37 @@ def main():
     store = load("forecast-questions.json", {}) or {}
     have = {q["id"]: q for q in store.get("questions", [])}
     added = 0
-    for q in candidates(P, pro, fc, companies, asks, events, today):
+    for q in candidates(P, pro, fc, companies, asks, events, today, have):
         if q["id"] not in have:
             q["created"] = today
             have[q["id"]] = q
             added += 1
+            # A corrected deadline creates a new gap question; drop the old open one if no one has forecast it.
+            if q["kind"] == "coverage_gap":
+                for old in [o for o in have.values() if o["kind"] == "coverage_gap" and o["company"] == q["company"] and o["id"] != q["id"]
+                            and o.get("resolved") is None and not (o.get("crowd") or {}).get("n") and not (o.get("crowd") or {}).get("stake_left_out")]:
+                    del have[old["id"]]
     qs = list(have.values())
 
     # Results (conditional questions after the questions they depend on).
     res = {}
     for q in sorted(qs, key=lambda q: q.get("kind") == "conditional"):
-        r = resolve(q, P, pro, today, manual)
-        c = q.get("condition")
-        if c and q["id"] not in manual:
-            cr = res.get(c["question"])
-            r = "void" if cr in (0, 1) and cr != c["if"] else r if cr in (0, 1) else None
+        prev = q.get("resolved")
+        if q["id"] in manual:
+            r = manual[q["id"]]["resolved"]
+        elif prev in (0, 1, "void"):
+            r = prev  # results are frozen once set; only data/forecast-resolutions.json can change one
+        else:
+            r = resolve(q, P, pro, today, manual)
+            c = q.get("condition")
+            if c:
+                cr = res.get(c["question"])
+                r = "void" if cr in (0, 1) and cr != c["if"] else r if cr in (0, 1) else None
+        if r is not None and prev != r:
+            q["resolved_on"] = today
         q["resolved"] = r
         q["resolution_source"] = (manual.get(q["id"]) or {}).get("source_url")
+        q["decided"] = (manual.get(q["id"]) or {}).get("decided")
         res[q["id"]] = r
 
     # Crowd: each account's latest forecast per question.
@@ -264,20 +280,22 @@ def main():
     for f in latest.values():
         byq[f["question"]].append(f)
     for q in qs:
-        alln = byq.get(q["id"], [])
+        alln = [f for f in byq.get(q["id"], []) if not q.get("decided") or f["made"] < q["decided"]]
         fs = [f for f in alln if not f.get("filer")]
         groups = defaultdict(list)
         for f in fs:
             groups[f["group"]].append(f["p"])
         weighted = {g: v for g, v in groups.items() if len(v) >= MIN_GROUP}
         small = [x for v in groups.values() if len(v) < MIN_GROUP for x in v]
-        if small:
+        if len(small) >= MIN_GROUP:
             weighted["Smaller groups pooled"] = small
         wmed = [st.median(v) for v in weighted.values()]
+        allm = round(st.median([f["p"] for f in fs]), 3) if fs else None
         q["crowd"] = {"n": len(fs), "stake_left_out": len(alln) - len(fs), "weighted_groups": len(weighted),
+                      "headline": "equal_weight" if len(wmed) >= 2 else "all_median",
                       "groups": {g: {"n": len(v), "median": round(st.median(v), 3)} for g, v in groups.items()},
-                      "equal_weight": round(st.mean(wmed), 3) if wmed else None,
-                      "all_median": round(st.median([f["p"] for f in fs]), 3) if fs else None}
+                      "equal_weight": round(st.mean(wmed), 3) if len(wmed) >= 2 else allm,
+                      "all_median": allm}
 
     # Scores on resolved questions (forecasters who declared a stake are not ranked).
     score = defaultdict(list)
@@ -285,7 +303,7 @@ def main():
         if q["resolved"] in (0, 1):
             b = q["base"]["p"]
             for f in byq.get(q["id"], []):
-                if not f.get("filer"):
+                if not f.get("filer") and not (q.get("decided") and f["made"] >= q["decided"]):
                     score[f["handle"]].append(((f["p"] - q["resolved"]) ** 2, (b - q["resolved"]) ** 2 if b is not None else None))
 
     def row(h, v):

@@ -44,7 +44,7 @@ body:
     id: filer
     attributes:
       label: Do you or your organization have a stake in this question?
-      description: Yes if you filed, co-filed or plan to file at the company it is about, or you are that company or advise it. Your forecast is then kept but left out of the crowd figure.
+      description: Yes if you filed, co-filed or plan to file at the company it is about, or you are that company or advise it. For a question across companies, any company it covers; for a Rules question, working at or advising the SEC. Your forecast is then kept but left out of the crowd figure.
       options:
         - "No"
         - "Yes"

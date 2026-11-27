@@ -40,10 +40,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -74,10 +76,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -108,10 +112,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -142,10 +148,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -156,7 +164,7 @@
    "kind": "season",
    "section": "The 2027 season",
    "title": "Will any AI proposal at a company tracked here be withdrawn after a company commitment, for meetings January 1 to June 30, 2027?",
-   "closes": "2027-01-31",
+   "closes": "2026-12-31",
    "resolves_by": "2027-06-30",
    "resolves": "Yes if this site records at least one such withdrawal (an AI proposal as listed in this site's Proposals and votes, leaving out those lead-filed by filers critical of ESG), with the filer's or company's statement as source, for meetings January 1 to June 30, 2027.",
    "base": {
@@ -173,10 +181,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -187,7 +197,7 @@
    "kind": "season",
    "section": "The 2027 season",
    "title": "Will companies tracked here exclude 3 or more AI proposals, for meetings January 1 to June 30, 2027?",
-   "closes": "2027-01-31",
+   "closes": "2026-12-31",
    "resolves_by": "2027-06-30",
    "resolves": "Yes if this site records at least three excluded, each an AI proposal as listed in this site's Proposals and votes, leaving out those lead-filed by filers critical of ESG, with the company's notice or reason, for meetings January 1 to June 30, 2027.",
    "base": {
@@ -204,10 +214,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -218,7 +230,7 @@
    "kind": "season",
    "section": "The 2027 season",
    "title": "Will any AI proposal at a company tracked here get 30% support or more, for meetings January 1 to June 30, 2027?",
-   "closes": "2027-01-31",
+   "closes": "2026-12-31",
    "resolves_by": "2027-06-30",
    "resolves": "Yes if any one (an AI proposal as listed in this site's Proposals and votes, leaving out those lead-filed by filers critical of ESG) records 30% or more, computed by this site as for ÷ (for + against) from the 8-K counts, for meetings January 1 to June 30, 2027.",
    "base": {
@@ -234,10 +246,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -248,7 +262,7 @@
    "kind": "policy",
    "section": "Rules",
    "title": "Will the SEC vote to adopt a final rule rescinding Rule 14a-8 by June 30, 2027?",
-   "closes": "2027-01-31",
+   "closes": "2026-12-31",
    "resolves_by": "2027-06-30",
    "resolves": "Yes if the Commission votes by June 30, 2027 to adopt a final rule that removes shareholders' right to have proposals included in the company's proxy statement under Rule 14a-8, as announced by the SEC. An amendment that keeps the rule, such as new ownership thresholds, resolves No. Resolved by hand from the SEC's announcement.",
    "source_url": "https://www.sec.gov/rules/proposed/2026/34-106383.pdf",
@@ -263,10 +277,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -277,7 +293,7 @@
    "kind": "conditional",
    "section": "If, then",
    "title": "If the SEC votes to adopt the Rule 14a-8 rescission by June 30, 2027: will companies tracked here exclude 3 or more AI proposals, for meetings January 1 to June 30, 2027?",
-   "closes": "2027-01-31",
+   "closes": "2026-12-31",
    "resolves_by": "2027-06-30",
    "condition": {
     "question": "q-sec-rescission-2027",
@@ -298,10 +314,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -312,7 +330,7 @@
    "kind": "conditional",
    "section": "If, then",
    "title": "If the SEC does not vote to adopt the Rule 14a-8 rescission by June 30, 2027: will companies tracked here exclude 3 or more AI proposals, for meetings January 1 to June 30, 2027?",
-   "closes": "2027-01-31",
+   "closes": "2026-12-31",
    "resolves_by": "2027-06-30",
    "condition": {
     "question": "q-sec-rescission-2027",
@@ -333,10 +351,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -365,10 +385,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -397,10 +419,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -429,10 +453,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -461,10 +487,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -493,10 +521,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -525,10 +555,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -557,10 +589,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -589,10 +623,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -621,10 +657,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -653,10 +691,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -685,10 +725,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
@@ -717,10 +759,12 @@
    "created": "2026-11-26",
    "resolved": null,
    "resolution_source": null,
+   "decided": null,
    "crowd": {
     "n": 0,
     "stake_left_out": 0,
     "weighted_groups": 0,
+    "headline": "all_median",
     "groups": {},
     "equal_weight": null,
     "all_median": null
