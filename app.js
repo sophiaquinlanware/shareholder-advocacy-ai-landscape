@@ -601,7 +601,7 @@ function renderPeople() {
     { key: "org", label: "Organization", sortValue: (p) => (p.org_name || "").toLowerCase(), render: (p) => esc(p.org_name) },
     { key: "title", label: "Title", render: (p) => esc(p.title) },
     { key: "focus", label: "AI work", render: (p) => esc(p.ai_focus || "") },
-    { key: "links", label: "Links", render: (p) => `${src(p.profile_url, "profile")} <button type="button" class="linklike" data-person="person-${esc(p.id)}">Show in network</button>` },
+    { key: "links", label: "Links", render: (p) => `${src(p.profile_url, "profile")}${p.ai_focus_source_url ? src(p.ai_focus_source_url, "AI work") : ""} <button type="button" class="linklike" data-person="person-${esc(p.id)}">Show in network</button>` },
   ];
   el.innerHTML = `
     <h2>Heads of stewardship and engagement</h2>
