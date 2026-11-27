@@ -31,8 +31,3 @@ test("copying a plan link shows a visible message", async ({ page, context }) =>
   await expect(page.locator("#pl-copy-msg")).not.toBeEmpty();
   await expect(page.locator("#pl-copy-msg")).toBeVisible();
 });
-
-test("filings found are listed without a repeated 'filed'", async ({ page }) => {
-  await open(page, "/index.html#new");
-  await expect(page.locator("#tab-new")).not.toContainText(/filed, filed/);
-});

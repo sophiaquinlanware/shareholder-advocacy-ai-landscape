@@ -547,45 +547,28 @@ function renderRights() {
   const sort = { key: "company", dir: "asc" };
   const pill = (level, label) => `<span class="pill ${esc(level || "pending")}">${esc(label || STATUS_LABEL[level] || level || "Being verified")}</span>`;
   const cols = [
-    { key: "company", label: "Company", sortValue: (c) => c.name.toLowerCase(), render: (c) => `<strong>${esc(c.name)}</strong><div class="ticker">${esc(c.ticker)}</div>` },
+    { key: "company", label: "Company", sortValue: (c) => c.name.toLowerCase(), render: (c) => `<strong>${esc(c.name)}</strong><div class="ticker">${esc(c.ticker)}</div>${realTicker(c.ticker) ? `<button type="button" class="linklike" data-co="${esc(realTicker(c.ticker))}">Full profile</button>` : ""}` },
     ...(roleIds.length ? [{ key: "role", label: "Role in AI", render: (c) => esc(R.label(R.roleOf(c))) }] : []),
     { key: "route", label: "Route", sortValue: (c) => RANK[c.route_status || "pending"], render: (c) => pill(c.route_status) },
     ...matrixCols.map((k) => ({ key: "m:" + k, label: k, sortValue: (c) => RANK[((c.matrix || {})[k] || {}).level || "pending"] ?? 9,
       render: (c) => { const v = (c.matrix || {})[k]; return v ? `${pill(v.level, v.label)}${src(v.url)}<div class="ticker">${esc(v.note || "")}</div>` : `<span class="unverified">source pending</span>`; } })),
   ];
-  const fact = (label, obj) => obj && obj.text ? `<div><dt>${esc(label)}</dt><dd>${esc(obj.text)}${src(obj.url)}</dd></div>` : `<div><dt>${esc(label)}</dt><dd><span class="unverified">source pending</span></dd></div>`;
-  const card = (c) => {
-    const levers = (c.levers || []).map((l) => `<li>${esc(l.text)}${src(l.url)}</li>`).join("");
-    return `<details class="card co-detail">
-      <summary><strong>${esc(c.name)}</strong> <span class="ticker">${esc(c.ticker)}</span>: ${esc(STATUS_LABEL[c.route_status] || "Being verified")}</summary>
-      <p class="status-note">${esc(c.route_status_reason || "")}</p>
-      <dl class="facts">
-        ${fact("State of incorporation", c.state)}
-        ${fact("Proposal rules in the bylaws", c.bylaw)}
-        ${fact("Ownership threshold", c.threshold)}
-        ${fact("Voting control", c.control)}
-        ${fact("Director elections", c.director_voting)}
-      </dl>
-      ${(c.notes || []).length ? `<ul class="steps tight">${c.notes.map((n) => `<li>${esc(n.text)}${src(n.url)}</li>`).join("")}</ul>` : ""}
-      ${levers ? `<h4 class="sub-h">Levers</h4><ul class="steps tight">${levers}</ul>` : ""}
-    </details>`;
-  };
+  // The per-company detail blocks were cut (module audit, 2026-11-27): each repeated One company in full. The
+  // comparison table stays; each row links to that company's full profile.
   el.innerHTML = `
     <h2>Shareholder proposal rights</h2>
     <p class="intro">Which companies would still let investors put a proposal on the ballot if the SEC rescinds Rule 14a-8, and shareholders' say over directors at each, from its bylaws, state of incorporation and share structure. This site's reading of the cited documents, not a legal opinion.</p>
     ${roleIds.length ? `<div class="net-controls"><select id="rights-sector" aria-label="Main role in AI"><option value="">All roles</option>${roleIds.map((r) => `<option value="${esc(r)}">${esc(R.label(r))}</option>`).join("")}</select></div>` : ""}
     <p class="count-line" id="rights-count" aria-live="polite"></p>
     <div class="table-wrap" id="rights-table"></div>
-    ${DATA.site && DATA.site.status_key ? `<p class="note">${esc(DATA.site.status_key)}</p>` : ""}
-    <h3 class="sub-h">Detail by company</h3>
-    <div id="rights-cards" class="detail-list"></div>`;
+    ${DATA.site && DATA.site.status_key ? `<p class="note">${esc(DATA.site.status_key)}</p>` : ""}`;
   const draw = () => {
     const rows = cos.filter((c) => !F.sector || (R && R.roleOf(c) === F.sector));
     const box = document.getElementById("rights-table");
     box.innerHTML = sortableTable(cols, rows, sort);
     wireSort(box, sort, draw);
     document.getElementById("rights-count").textContent = `${plural(rows.length, "company", "companies")}${F.sector ? ` in ${R.label(F.sector).toLowerCase()}` : ""}.`;
-    document.getElementById("rights-cards").innerHTML = rows.map(card).join("");
+    wireCompanyLinks(box);
   };
   const s = document.getElementById("rights-sector");
   if (s) s.addEventListener("change", (e) => { F.sector = e.target.value; draw(); });
@@ -627,25 +610,6 @@ function renderPeople() {
 }
 
 // ---------- New filings ----------
-function renderNew() {
-  const items = (DATA.changes && DATA.changes.items) || [];
-  const t = DATA.tracking || {};
-  const byWeek = new Map();
-  items.forEach((c) => {
-    const k = c.detected || c.filed;
-    if (!byWeek.has(k)) byWeek.set(k, []);
-    byWeek.get(k).push(c);
-  });
-  const groups = [...byWeek.entries()].sort((a, b) => (a[0] < b[0] ? 1 : -1)).map(([wk, list]) => `
-    <li><div class="date">Found ${esc(fmtDate(wk))}</div>
-      <ul class="conn">${list.map((c) => `<li><strong>${esc(c.company)}</strong>: ${esc(c.what)}, filed ${esc(fmtDate(c.filed))}${src(c.url, c.form)}
-        <div class="ticker">${esc(c.review_status || "")}</div></li>`).join("")}</ul></li>`).join("");
-  document.getElementById("tab-new").innerHTML = `
-    <h2>New SEC filings</h2>
-    <p class="intro">Checked on SEC EDGAR every Monday: new proxy statements, investor exempt solicitations (PX14A6G), vote results and bylaw changes at the companies tracked. Listed as found, not yet reviewed.</p>
-    <p class="count-line">Last check: ${esc(t.last_checked ? fmtDate(t.last_checked.slice(0, 10)) : "not run yet")}.${t.new_this_run != null ? ` ${plural(t.new_this_run, "new filing")} found in that run.` : ""}</p>
-    ${groups ? `<ul class="timeline">${groups}</ul>` : `<p class="status-note">Nothing flagged yet.</p>`}`;
-}
 
 // ---------- Start here: Overview ----------
 // What an analyst can act on now (ballots out, open filing deadlines, this week's SEC finds), three findings
@@ -740,24 +704,16 @@ function renderStart() {
   const coming = [...ballots, ...deadlines].sort((a, b) => String(a.date).localeCompare(String(b.date)));
   const shown = coming.slice(0, 8);
   const comingList = shown.map((x) => `<li><span class="kind">${esc(x.kind)}</span> ${x.html}${x.ticker ? ` <button type="button" class="linklike" data-co="${esc(x.ticker)}">${esc(companyName(x.ticker))} profile</button>` : ""}</li>`).join("");
-  const items = ((DATA.changes && DATA.changes.items) || []).slice().sort((a, b) => String(b.filed).localeCompare(String(a.filed)));
-  const t = DATA.tracking || {};
-  const filings = `<p class="count-line">Checked ${esc(t.last_checked ? fmtDate(t.last_checked.slice(0, 10)) : "not yet")}${t.new_this_run != null ? `: ${plural(t.new_this_run, "new filing")} found` : ""}. Auto-detected, not yet reviewed.</p>
-    ${items.length ? `<p><a href="#new">See the ${plural(items.length, "filing")} found so far</a></p>` : ""}`;
-  // The second pass (after the weekly SEC check has loaded) updates only the filings block, so the rest of the
-  // page, including its largest text, is painted once and not redrawn.
-  const box = document.getElementById("start-new");
-  if (box) { box.innerHTML = filings; return; }
+  // No weekly-filings block (module audit, 2026-11-27): new SEC records flow into the proposal tables, marked
+  // "not yet reviewed", instead of a separate feed.
   el.innerHTML = `
     <h2>Key dates and findings</h2>
-    <p class="intro">Next ballots and filing deadlines, findings from the data, and the latest weekly SEC filings.</p>
+    <p class="intro">The next ballots and proposal filing deadlines, and the findings that bear on where and when to engage.</p>
     <h3 class="sub-h">Coming up</h3>
     ${comingList ? `<ul class="steps coming-up">${comingList}</ul>` : `<p class="status-note">No ballots or open filing deadlines on file.</p>`}
     <p><a href="#upcoming">All upcoming votes</a> · <a href="#planner">Plan an engagement at any of these companies</a>${coming.length > shown.length ? ` · ${coming.length - shown.length} more open filing deadlines are on the company profiles` : ""}</p>
     <h3 class="sub-h">What the data shows</h3>
-    ${findings ? `<ul class="findings">${findings}</ul>` : `<p class="status-note">No findings recorded.</p>`}
-    <h3 class="sub-h">New SEC filings</h3>
-    <div id="start-new">${filings}</div>`;
+    ${findings ? `<ul class="findings">${findings}</ul>` : `<p class="status-note">No findings recorded.</p>`}`;
   wireCompanyLinks(el);
 }
 
@@ -765,7 +721,7 @@ function renderStart() {
 // Six sections in the order of an engagement cycle, each holding one or more views (index.html). Every view
 // keeps its own address (#feed, #network, ...), so old links and the tests open the right place.
 // Old addresses for views that were renamed or folded into another view.
-const TAB_ALIASES = { why: "causality", "weigh-in": "upcoming", water: "upcoming", overview: "start" };
+const TAB_ALIASES = { why: "causality", "weigh-in": "upcoming", water: "upcoming", overview: "start", new: "upcoming" };
 const lastView = {}; // per section, the view last open in it
 // Tab switches crossfade with the View Transitions API (motion brief stage 7) where the browser has it, except
 // under reduced motion, on the first paint, and in automated test browsers (navigator.webdriver), where the
@@ -956,8 +912,6 @@ async function main() {
   window.renderScorecard(DATA.scorecard);
   window.renderVotes(DATA.fund_votes, DATA.proposals, DATA.pass_through_voting);
   renderPeople();
-  renderNew();
-  renderStart(); // again, now that the weekly SEC check (changes, tracking) has loaded
   renderAbout(); // its counts need people, pathways and causality, which load in this second batch
   if (window.renderPlanner) window.renderPlanner(DATA);
   if (window.renderSimulator) window.renderSimulator(DATA);

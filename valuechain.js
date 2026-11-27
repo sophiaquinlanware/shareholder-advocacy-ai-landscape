@@ -52,8 +52,8 @@
       <section id="vc-panel" class="net-panel vc-panel" aria-label="Details"><p class="status-note">Choose a stage or a company to see what it reaches, the asks made there and who is engaging.</p></section>
       <details class="cz-list"><summary>List view: the same ${V.ties.length} ties as text</summary><div class="table-wrap" id="vc-ties"></div></details>
             <figure class="card chart-card fig">
-        ${window.figHead("Investor engagement by value-chain stage", "Each cell counts records for the companies at that stage. Shading compares stages within one column: the darkest cell is the stage with the highest count in that column. A company at several stages is counted at each, so a column does not sum to a total. AI proposals: since 2023, at companies under US proxy rules only. Select a number for its records. Not a recommendation.")}
-        <div class="table-wrap" id="vc-heat" tabindex="0" role="region" aria-label="Investor engagement by value-chain stage"></div>
+        ${window.figHead("Engagement record by value-chain stage", "AI proposals since 2023 at companies under US proxy rules. Median support: votes for ÷ (for + against), proposals lead-filed by filers critical of ESG left out; range = lowest to highest; n = proposals with recorded votes. Support by year: median per meeting year. Commitments won: company commitments that ended an engagement or proposal. Next filing deadline: within 90 days. A company at several stages is counted at each. Select a figure for its records. Not a recommendation.")}
+        <div class="table-wrap" id="vc-heat" tabindex="0" role="region" aria-label="Engagement record by value-chain stage"></div>
         ${window.figSource("company proxy statements and 8-K vote results; investor and coalition records, as cited in each stage's details.")}
       </figure>`;
   }
@@ -257,14 +257,12 @@
       <h3 id="vc-panel-h" tabindex="-1" class="vc-tier-h">${esc(t.label)}</h3>
       <p class="vc-tier-what">${esc(t.what_it_is || "")}</p>
       <div class="vc-stats" role="list" aria-label="This stage at a glance">
-        ${stat(p.companies || 0, "companies", `${p.companies_primary || 0} with this as their main role`)}
-        ${stat(p.ai_proposals || 0, "AI proposals filed", "since 2023, US proxy companies")}
-        ${stat(p.median_support_pct != null ? `${p.median_support_pct}%` : "—", "median support", "computed by this site")}
-        ${stat(labsDirect.length + labsTwo.length, "frontier labs reached", `${labsDirect.length} directly, ${labsTwo.length} in two steps`)}
-        ${stat(filers.length >= 12 ? "12+" : filers.length, "filers active here", `${plural((p.coalitions || []).length, "coalition")}, ${plural((p.people || []).length, "person", "people")} on file`)}
-        ${stat(p.fund_vote_rows ?? 0, "fund-family votes", "from Form N-PX filings")}
+        ${stat(p.median_support_pct != null ? `${p.median_support_pct}%` : "—", "median support", `${p.support_range ? `range ${p.support_range[0]}–${p.support_range[1]}%; ` : ""}n = ${supportN(p) ?? 0} proposals with recorded votes`)}
+        ${stat((p.commitments || []).length, "commitments won", (p.commitments || []).length ? [...new Set(p.commitments.map((c) => c.company))].join(", ") : "none recorded")}
+        ${stat((p.deadlines_next_90 || []).length, "filing deadlines in the next 90 days", (p.deadlines_next_90 || []).length ? `first: ${p.deadlines_next_90.slice().sort((a, b) => String(a.date).localeCompare(String(b.date)))[0].name}` : "none")}
+        ${stat(labsDirect.length + labsTwo.length, "frontier labs reached", labsDirect.slice(0, 4).join(", ") + (labsDirect.length > 4 ? ` and ${labsDirect.length - 4} more` : ""))}
       </div>
-      <p class="status-note vc-tier-use">Each section answers one question about engaging at this stage: which labs it reaches, what has been asked, and who is already engaging. Open a section for the detail and sources.</p>
+      <p class="status-note vc-tier-use">Median support: votes for ÷ (for + against), computed by this site; proposals lead-filed by filers critical of ESG are left out. Each section below opens the records and sources.</p>
       <p class="vc-sec-all"><button type="button" class="tool" id="vc-open-all">Open all sections</button></p>
       ${sec("vc-reach", "Frontier labs reached from this stage", labsDirect.length + labsTwo.length, `
         <p class="status-note">Through sourced ties here and in Ties to each frontier lab (chips, compute, distribution, equity stakes and parent companies)${ownLabs}.</p>
@@ -272,9 +270,11 @@
         ${routes.length ? `<p><strong>In two steps</strong> (company → company → lab):</p><ul class="conn">${routes.join("")}</ul>` : ""}
         <p class="status-note">Ties out of this stage: ${p.ties_from_tier ?? 0}; into it: ${p.ties_into_tier ?? 0}. A tie between two companies at the same stage counts both ways.</p>`, true)}
       ${sec("vc-asks", "What investors have already asked here", p.ai_proposals || 0, `
-        <p>${plural(p.ai_proposals || 0, "AI proposal")}${p.median_support_pct != null ? `; median support ${p.median_support_pct}% of votes for and against, computed by this site from the recorded figures` : ""}. Outcomes such as adoption or withdrawal after an agreement are not in the data yet.</p>
+        <p>${plural(p.ai_proposals || 0, "AI proposal")}${p.median_support_pct != null ? `; median support ${p.median_support_pct}% of votes for and against, computed by this site from the recorded figures` : ""}. Commitments won are listed under Commitments won.</p>
         ${topics ? `<p class="vc-sub">By topic</p><ul class="vc-topics">${topics}</ul>` : ""}
         ${askRows ? `<p class="vc-sub">${(p.asks_made || []).length < (p.ai_proposals || 0) ? `The ${(p.asks_made || []).length} most recent of ${p.ai_proposals}` : "All"} proposals</p><div class="table-wrap"><table class="vc-asks-t"><thead><tr><th scope="col">Company</th><th scope="col" class="num">Year</th><th scope="col">Proposal</th><th scope="col">Source</th></tr></thead><tbody>${askRows}</tbody></table></div>` : `<p class="status-note">None in the data.</p>`}`, true)}
+      ${sec("vc-commit", "Commitments won", (p.commitments || []).length, list(p.commitments, (c) => `<li><strong>${esc(c.company)}</strong>: ${esc(c.promised)} <span class="ticker">${esc(c.by)}</span>${src(c.source_url)}</li>`))}
+      ${sec("vc-deadlines", "Proposal filing deadlines in the next 90 days", (p.deadlines_next_90 || []).length, list((p.deadlines_next_90 || []).slice().sort((a, b) => String(a.date).localeCompare(String(b.date))), (d) => `<li><strong>${esc(d.name)}</strong>: ${esc(fmtD(d.date))}${src(d.source_url, "proxy")}</li>`))}
       ${sec("vc-who", "Who is already engaging here", null, `
         <p class="status-note">From the site's filer data; each filing, membership and profile is sourced in Network and contacts.</p>
         <p class="vc-sub">Filers${filers.length >= 12 ? " (the 12 most active)" : ""}</p>${list(filers, (x) => `<li>${esc(x.name)} <span class="ticker">${plural(x.proposals, "proposal")}</span></li>`)}
@@ -284,7 +284,7 @@
       ${sec("vc-safety", "AI safety commitments signed here", (p.safety_commitments || []).length, list(p.safety_commitments, coLine))}
       ${sec("vc-routes", "How shareholders can reach these companies", null, `
         <p><strong>Shareholder routes:</strong> ${routesMix ? esc(routesMix) : "not recorded"}.</p>
-        <p><strong>Fund-family votes on file:</strong> ${p.fund_vote_rows ?? 0}, counted once per fund family per proposal, from Form N-PX filings on proposals at these companies. Most are matched automatically and not yet reviewed; see Fund family votes on AI proposals.</p>`)}
+        <p>How each fund family voted on these proposals: Proposals and results › Fund family votes on AI proposals.</p>`)}
       <p class="status-note">${drawn} of these companies have a sourced tie and appear in the map above. Not a recommendation.</p>`;
     const all = document.getElementById("vc-open-all");
     all.addEventListener("click", () => {
@@ -329,30 +329,48 @@
     document.getElementById("vc-ties").innerHTML = `<table><thead><tr><th scope="col">From</th><th scope="col">Tie</th><th scope="col">To</th><th scope="col">As of</th><th scope="col">Source</th></tr></thead><tbody>${rows}</tbody></table>`;
   }
 
+  // Stage figures that bear on a decision (module audit, 2026-11-27): support and its trend, commitments won,
+  // filing deadlines in the next 90 days and frontier labs reached. Counts of why a company is in this dataset, and
+  // row counts, are left out.
+  const fmtD = (iso) => (window.DATES ? window.DATES.long(iso) : iso);
+  const supportText = (p) => (p.median_support_pct == null ? "no recorded votes"
+    : `${p.median_support_pct}%${p.support_range ? ` (range ${p.support_range[0]}–${p.support_range[1]}%)` : ""}`);
+  const supportN = (p) => ((p.median_support_base || {}).with_recorded_support ?? null);
+  // Median support by meeting year as a small line; the first and last years are labelled.
+  function trendSvg(p) {
+    const ys = Object.entries(p.support_by_year || {}).filter(([, v]) => v && v.median != null).sort((a, b) => a[0] - b[0]);
+    if (ys.length < 2) return `<span class="ticker">fewer than two years</span>`;
+    const W = 120, H = 30, max = Math.max(40, ...ys.map(([, v]) => v.median));
+    const x = (i) => 4 + (i * (W - 8)) / (ys.length - 1), y = (m) => H - 4 - (m / max) * (H - 8);
+    const d = ys.map(([, v], i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(v.median).toFixed(1)}`).join("");
+    const a = ys[0], b = ys[ys.length - 1];
+    const label = `Median support by year: ${ys.map(([yr, v]) => `${yr} ${v.median}% (n = ${v.n})`).join("; ")}`;
+    return `<span class="vc-trend"><svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${esc(label)}"><title>${esc(label)}</title><path d="${d}" fill="none" stroke="${cssVar("--blue-1")}" stroke-width="2"/>${ys.map(([, v], i) => `<circle cx="${x(i).toFixed(1)}" cy="${y(v.median).toFixed(1)}" r="2.4" fill="${cssVar("--blue-1")}"/>`).join("")}</svg><span class="ticker">${esc(a[0])} ${a[1].median}% → ${esc(b[0])} ${b[1].median}%</span></span>`;
+  }
+
   // Engagement map: tier × engagement type. Shade by count within each column; numbers always printed.
   // Only true totals. asks_made, active_filers, coalitions and people are capped lists in the data (e.g. the
   // first 12), so they are listed in the tier panel, never counted here.
-  const COLS = [
-    { key: "ai_proposals", label: "AI proposals", n: (p) => p.ai_proposals || 0, sec: "vc-asks" },
-    { key: "investor_engagements", label: "Companies with an investor engagement reported by the investor", n: (p) => (p.investor_engagements || []).length, sec: "vc-engagements" },
-    { key: "safety_commitments", label: "Companies that signed a frontier AI safety commitment", n: (p) => (p.safety_commitments || []).length, sec: "vc-safety" },
-    { key: "fund_vote_rows", label: "Fund-family votes recorded (Form N-PX)", n: (p) => p.fund_vote_rows || 0, sec: "vc-routes" },
-  ];
   function drawHeat() {
     const tiers = V.tiers.slice().sort((a, b) => a.order - b.order);
-    const max = new Map(COLS.map((c) => [c.key, Math.max(1, ...tiers.map((t) => c.n(V.per_tier[t.id] || {})))]));
-    // Five tints of the site's one blue (tokens --heat-1..5: 10, 30, 55, 80 and 100%); text turns white on
-    // the two darkest, so every cell keeps 4.5:1 (4.9:1 and 8.1:1 there).
-    const STEPS = [1, 2, 3, 4, 5].map((i) => cssVar(`--heat-${i}`));
-    const cell = (c, t) => {
-      const n = c.n(V.per_tier[t.id] || {});
-      if (!n) return `<td class="num vc-zero">0</td>`;
-      const step = Math.min(4, Math.floor((n / max.get(c.key)) * 4.999));
-      const bg = STEPS[step];
-      return `<td class="num vc-cell" style="background:${bg}"><button type="button" class="vc-num${step >= 3 ? " on-dark" : ""}" data-tier="${t.id}" data-sec="${c.sec}" aria-label="${esc(`${t.label}: ${n} ${c.label.toLowerCase()}, open details`)}">${n}</button></td>`;
-    };
-    document.getElementById("vc-heat").innerHTML = `<table class="vc-heat"><caption class="visually-hidden">Investor engagement by value-chain stage</caption><thead><tr><th scope="col" class="sticky-col">Stage</th>${COLS.map((c) => `<th scope="col" class="num">${esc(c.label)}</th>`).join("")}</tr></thead>
-      <tbody>${tiers.map((t) => `<tr><th scope="row" class="sticky-col"><button type="button" class="linklike" data-tier="${t.id}">${esc(t.label)}</button></th>${COLS.map((c) => cell(c, t)).join("")}</tr>`).join("")}</tbody></table>`;
+    const btn = (t, sec, text, label) => `<button type="button" class="linklike" data-tier="${t.id}" data-sec="${sec}" aria-label="${esc(`${t.label}: ${label}`)}">${text}</button>`;
+    const rows = tiers.map((t) => {
+      const p = V.per_tier[t.id] || {};
+      const n = supportN(p);
+      const dl = (p.deadlines_next_90 || []).slice().sort((a, b) => String(a.date).localeCompare(String(b.date)));
+      const com = p.commitments || [];
+      const labs = (p.labs_reached_directly || []).length + (p.labs_reached_in_two_steps || []).length;
+      return `<tr><th scope="row" class="sticky-col"><button type="button" class="linklike" data-tier="${t.id}">${esc(t.label)}</button></th>
+        <td class="num">${p.ai_proposals ? btn(t, "vc-asks", String(p.ai_proposals), `${p.ai_proposals} AI proposals`) : "0"}</td>
+        <td>${esc(supportText(p))}${n != null ? `<div class="ticker">n = ${n} with recorded votes</div>` : ""}</td>
+        <td>${trendSvg(p)}</td>
+        <td>${com.length ? btn(t, "vc-commit", `${com.length}`, `${com.length} commitments won`) + `<div class="ticker">${esc([...new Set(com.map((c) => c.company))].join(", "))}</div>` : `<span class="ticker">none recorded</span>`}</td>
+        <td>${dl.length ? btn(t, "vc-deadlines", esc(`${dl[0].name}, ${fmtD(dl[0].date)}`), "next filing deadlines") + (dl.length > 1 ? `<div class="ticker">and ${dl.length - 1} more</div>` : "") : `<span class="ticker">none in 90 days</span>`}</td>
+        <td class="num">${labs ? btn(t, "vc-reach", String(labs), `${labs} frontier labs reached`) : "0"}</td></tr>`;
+    }).join("");
+    document.getElementById("vc-heat").innerHTML = `<table class="vc-heat vc-stage-t"><caption class="visually-hidden">Engagement record by value-chain stage</caption><thead><tr>
+      <th scope="col" class="sticky-col">Stage</th><th scope="col" class="num">AI proposals</th><th scope="col">Median support</th><th scope="col">Support by year</th><th scope="col">Commitments won</th><th scope="col">Next filing deadline</th><th scope="col" class="num">Frontier labs reached</th></tr></thead>
+      <tbody>${rows}</tbody></table>`;
   }
 
   // Owner, 2026-11-26: "why did you not include all of the frontier labs, including Google DeepMind … check all data

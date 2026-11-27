@@ -142,9 +142,26 @@
     const longDate = (d) => new Date(`${d}T12:00:00`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
     const reviewedBy = (data.reviewed || []).map((r) => `${r.family}, ${r.proposal_ids.length} proposals (${longDate(r.date)})`).join("; ");
     const opt = (v, t, sel) => `<option value="${esc(v)}"${sel ? " selected" : ""}>${esc(t)}</option>`;
+    // Lead with each family's FOR rate (module audit, 2026-11-27: "who votes for" is what a filer or coalition
+    // needs). Rate = proposals where all of the family's reported fund votes were FOR ÷ proposals where a vote was
+    // found (FOR, AGAINST, ABSTAIN or SPLIT); held-back and unchecked proposals are left out.
+    const shownIds = new Set(props.map((p) => p.id));
+    const rate = families.map((f) => {
+      const rows = data.summary.filter((r) => r.family === f && shownIds.has(r.proposal_id) && ["FOR", "AGAINST", "ABSTAIN", "SPLIT"].includes(r.vote));
+      const n = rows.length, k = (v) => rows.filter((r) => r.vote === v).length;
+      return { f, n, for: k("FOR"), against: k("AGAINST"), split: k("SPLIT"), abstain: k("ABSTAIN") };
+    }).filter((x) => x.n).sort((a, b) => b.for / b.n - a.for / a.n || b.n - a.n);
+    const pct = (x) => Math.round((x.for / x.n) * 100);
+    const rateHtml = `<figure class="card chart-card fig fv-rate">
+      ${window.figHead ? window.figHead("FOR rate on AI shareholder proposals, by fund family", `Share of AI proposals at the companies tracked on which every fund in the family that voted voted FOR. Denominator: proposals with a vote found (FOR, AGAINST, ABSTAIN or split). A split means the family's funds voted in more than one way, as index families often do; a split counts toward the denominator but not as FOR. Meetings ${longDate(data.first_meeting_covered)} to ${longDate(data.last_meeting_covered)}.`) : ""}
+      <ol class="fv-bars">${rate.map((x) => `<li><span class="fv-name">${esc(x.f)}</span><span class="fv-track"><span class="fv-fill" style="width:${pct(x)}%"></span></span><span class="fv-n">${pct(x)}%</span><span class="ticker fv-detail">FOR ${x.for} of ${x.n}; against ${x.against}; split ${x.split}${x.abstain ? `; abstain ${x.abstain}` : ""}</span></li>`).join("")}</ol>
+      ${window.figSource ? window.figSource("SEC Form N-PX filings, matched to each proposal; details and filing links in the table below.") : ""}
+    </figure>`;
     el.innerHTML = `
       <h2>Fund family votes on AI proposals</h2>
       <p class="intro">Form N-PX votes by ${families.length} fund families on AI proposals at tracked companies, meetings ${esc(longDate(data.first_meeting_covered))} to ${esc(longDate(data.last_meeting_covered))}. Each vote links to its filing. No vote is rated; nothing here suggests how to vote. Not affiliated with any fund shown.</p>
+      ${rateHtml}
+      <details class="fv-defs"><summary>How to read the vote table</summary>
       <ul class="steps">
         <li><strong>Split</strong> means the family reported more than one way of voting on that proposal. The numbers count fund records: different funds can vote differently, and a single fund can split its own shares, as pass-through voting programs do.</li>
         <li><strong>No vote found</strong> means no matching vote turned up in the filings checked. It does not say why.</li>
@@ -154,6 +171,7 @@
         <li><strong>†</strong> marks votes matched automatically and spot-checked, but not yet reviewed row by row.${reviewedBy ? ` Reviewed row by row so far: ${esc(reviewedBy)}.` : ""}</li>
         ${(data.not_shown || []).map((t) => `<li>${esc(t)}</li>`).join("")}
       </ul>
+      </details>
       <div class="net-controls">
         <label class="sr-label">Company <select id="fv-company">${opt("", "All companies")}${companies.map((c) => opt(c, NAMES[c] || c, c === V.company)).join("")}</select></label>
         <label class="sr-label">Topic <select id="fv-topic">${opt("", "All topics")}${topics.map((t) => opt(t, t)).join("")}</select></label>

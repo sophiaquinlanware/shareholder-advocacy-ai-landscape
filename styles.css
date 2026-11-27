@@ -1068,3 +1068,20 @@ button.bd-btn { border: 0; font: inherit; font-weight: 500; cursor: pointer; }
 /* Collapsed model-checking sections in Test plans over time (module audit, 2026-11-27) */
 details.sim-more > summary { cursor: pointer; list-style: revert; }
 details.sim-more > summary h3 { display: inline; margin: 0; }
+
+/* Stage table: decision figures, not shading. */
+.vc-stage-t td, .vc-stage-t th { vertical-align: top; }
+.vc-stage-t .vc-cell { background: none; }
+.vc-trend { display: inline-flex; flex-direction: column; gap: 2px; }
+.vc-trend svg { display: block; }
+
+/* Fund family FOR rate (bars in the site's blue). */
+.fv-bars { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.fv-bars li { display: grid; grid-template-columns: minmax(120px, 200px) 1fr 48px; grid-template-areas: "name track n" ". detail detail"; align-items: center; gap: 2px 12px; }
+.fv-name { grid-area: name; }
+.fv-track { grid-area: track; height: 12px; background: var(--heat-1); border-radius: 2px; overflow: hidden; }
+.fv-fill { display: block; height: 100%; background: var(--blue-1); }
+.fv-n { grid-area: n; text-align: right; font-variant-numeric: tabular-nums; }
+.fv-detail { grid-area: detail; }
+.fv-defs { margin: 16px 0; }
+@media (max-width: 640px) { .fv-bars li { grid-template-columns: 1fr 44px; grid-template-areas: "name n" "track track" "detail detail"; } }

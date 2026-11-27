@@ -111,24 +111,12 @@
       <div id="pw-findings"></div>
       <div id="pw-twostep"></div>
       <div id="pw-holders"></div>
-      <h3 class="sub-h">Labs reached, by company</h3>
-      <figure class="card chart-card fig">
-        ${window.figHead("Frontier labs reached, by company", `Number of frontier labs each company has a sourced tie to (ownership, investment, board seat, compute, chips or customer); ties dated ${window.yearSpan(data.ties.map((t) => t.as_of))}.`)}
-        <ol class="pw-bars" id="pw-bars"></ol>
-        ${window.figSource("company filings and announcements, cited for each tie under All ties.")}
-      </figure>
-      <h3 class="sub-h">Gaps in the tie data</h3>
-      <ul class="pw-gaps">${(data.gaps || []).map((g) => `<li>${esc(g)}</li>`).join("") || "<li>None listed.</li>"}</ul>
-      <h3 class="sub-h">Value-chain ties: companies → frontier labs</h3>
-      <p class="count-line">Each line is a sourced tie (ownership, investment, board seat, compute, chips or customer); width = tie strength (1–3). Filers by company are in the AI advocacy network. Choose companies to see the labs they reach together.</p>
-      <details class="pw-cos"><summary>Companies</summary><div class="chips">${cos}</div></details>
-      <figure class="card chart-card fig">
-        ${window.figHead("Sourced ties: companies → frontier labs", `${plural(data.ties.length, "company → lab tie")}, dated ${window.yearSpan(data.ties.map((t) => t.as_of))}. Line width = tie strength (1–3, this site's reading); the chosen lab's ties are drawn dark.`)}
-        <div class="net-legend"><span class="leg static"><span class="dot" style="background:var(--t-equity)"></span>company → lab tie (width = strength)</span></div>
-        <div id="pw-graph" class="net-graph pw-graph"></div>
-        ${window.figSource("company filings and announcements, cited for each tie under All ties.")}
-      </figure>
+      <!-- Module audit (2026-11-27): the "Labs reached, by company" chart and the companies → labs map were cut; both
+           repeated the AI value chain map and the routes table above. The tie data's gaps are a methods note. -->
       <div id="pw-panel" class="pw-panel"></div>
+      <details class="pw-method"><summary>Method note: gaps in the tie data</summary>
+        <ul class="pw-gaps">${(data.gaps || []).map((g) => `<li>${esc(g)}</li>`).join("") || "<li>None listed.</li>"}</ul>
+      </details>
       <details class="pw-all"><summary>All ties (${data.ties.length})</summary>
         <p class="count-line" id="pw-count"></p>
         <div class="table-wrap" id="pw-ties"></div>
@@ -315,6 +303,7 @@
   }
 
   function labsReached() {
+    if (!document.getElementById("pw-bars")) return;
     const counts = S.data.public_companies.map((c) => ({ c, labs: new Set(S.data.ties.filter((t) => t.from === c.id).map((t) => t.to)) }))
       .filter((x) => x.labs.size).sort((a, b) => b.labs.size - a.labs.size || a.c.name.localeCompare(b.c.name));
     const max = Math.max(1, ...counts.map((x) => x.labs.size));
@@ -350,6 +339,7 @@
 
   function layout() {
     const el = document.getElementById("pw-graph");
+    if (!el) return;
     const W = el.clientWidth || 800;
     const narrow = W < 640;
     // Value-chain ties only (owner, 2026-11-26): this map shows how companies tie to labs; who files which proposal
@@ -402,6 +392,7 @@
 
   function draw() {
     const el = document.getElementById("pw-graph");
+    if (!el) return;
     el.innerHTML = "";
     const L = layout();
     S.L = L;

@@ -95,9 +95,10 @@ test("Value chain: a tier opens its details; zero cells are not buttons; capped 
   await expect(page.locator("#vc-panel-h")).toHaveText("Cloud and model platforms");
   await expect(page.locator("#vc-panel-h")).toBeFocused();
   await expect(page.locator("#vc-panel")).toContainText("Frontier labs reached from this stage");
-  await expect(page.locator(".vc-heat .vc-zero button")).toHaveCount(0);
+  // The stage table shows decision figures, not counts of why companies are in the dataset.
+  await expect(page.locator(".vc-heat thead")).toContainText("Median support");
   await expect(page.locator(".vc-heat thead")).not.toContainText("Active filers");
-  await page.locator(".vc-heat .vc-num").first().click();
+  await page.locator('.vc-heat [data-sec="vc-asks"]').first().click();
   // A count opens its section and focuses the section's heading.
   await expect(page.locator("#vc-panel details[open] > summary:focus")).toHaveCount(1);
 });
@@ -150,7 +151,6 @@ test("Lab pathways: routes to a lab, sorted by strongest tie, with findings, bar
     });
     expect(second).toBe("US proxy rights and next filing deadline");
   }
-  expect(await page.locator("#pw-bars li").count()).toBeGreaterThan(5);
   expect(await page.locator(".pw-gaps li").count()).toBeGreaterThan(0);
   // Choosing another lab rebuilds the table; sorting announces itself.
   await page.click('#tab-pathways [data-lab="anthropic"]');
@@ -164,7 +164,6 @@ test("Lab pathways: routes to a lab, sorted by strongest tie, with findings, bar
   const over = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
   expect(over).toBeLessThanOrEqual(0);
   await page.screenshot({ path: `tests/screenshots/lab-routes-${info.project.name}.png`, fullPage: true });
-  await page.locator("#pw-graph").screenshot({ path: `tests/screenshots/lab-routes-map-${info.project.name}.png` });
   await page.locator("#pw-routes").screenshot({ path: `tests/screenshots/lab-routes-table-${info.project.name}.png` });
 });
 
