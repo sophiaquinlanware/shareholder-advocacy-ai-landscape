@@ -140,6 +140,7 @@ def main():
         "about": "Support ranges from this site's own records, with a published backtest. Computed by this site; a scenario, not a forecast of any vote, and not advice.",
         "method": "Refile: latest recorded support at this company on this ask. First filing: median of the ask's recorded votes at other companies. Range: 10th to 90th percentile of past errors of the same rule (actual divided by starting point).",
         "bands": bands,
+        "errors": {k: sorted(round(r["log_ratio"], 4) for r in rows if r["kind"] == k) for k in ("refile", "first")},
         "backtest": {"cases": len(tested), "inside_80": inside, "coverage": round(inside / len(tested), 3) if tested else None,
                      "inside_full": inside_full, "full_coverage": round(inside_full / len(tested), 3) if tested else None,
                      "median_abs_error_points": round(st.median(abs_err), 1) if abs_err else None, "by_kind": by_kind,

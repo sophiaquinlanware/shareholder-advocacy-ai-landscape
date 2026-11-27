@@ -117,9 +117,11 @@
     <p class="group-q">Plan an engagement at one company on one ask with what the earlier sections show, then test plans forward in time against a model of how filers, companies, voters and policy have behaved.</p>
     <div class="subtabs" role="tablist" aria-label="Plan and test views">
       <button type="button" role="tab" id="tabbtn-planner" aria-controls="tab-planner" data-tab="planner" aria-selected="true">Plan an engagement</button>
+      <button type="button" role="tab" id="tabbtn-predict" aria-controls="tab-predict" data-tab="predict" aria-selected="false" tabindex="-1">Prediction board</button>
       <button type="button" role="tab" id="tabbtn-simulate" aria-controls="tab-simulate" data-tab="simulate" aria-selected="false" tabindex="-1">Test plans over time</button>
     </div>
     <section id="tab-planner" class="panel" role="tabpanel" aria-labelledby="tabbtn-planner" data-group="plan" hidden></section>
+    <section id="tab-predict" class="panel" role="tabpanel" aria-labelledby="tabbtn-predict" data-group="plan" hidden></section>
     <section id="tab-simulate" class="panel" role="tabpanel" aria-labelledby="tabbtn-simulate" data-group="plan" hidden></section>
   </div>
 </main>
@@ -152,6 +154,7 @@
 <script defer src="planner-tools.js"></script>
 <script defer src="planner.js"></script>
 <script defer src="sim.js"></script>
+<script defer src="board.js"></script>
 <script defer src="planner-docs.js"></script>
 <script defer src="app.js"></script>
 <!-- Motion libraries (docs/plans/2026-11-26-motion.md): GSAP, ScrollTrigger and Lenis, pinned. Last in order, so the

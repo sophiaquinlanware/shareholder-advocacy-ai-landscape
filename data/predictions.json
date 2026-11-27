@@ -1,0 +1,4 @@
+{
+ "about": "Forecasts posted through the site's GitHub form (one per person per question counts: the latest). Added by scripts/ingest_forecast.py; personal estimates of outcomes, not statements of support.",
+ "forecasts": []
+}

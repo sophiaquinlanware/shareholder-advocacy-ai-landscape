@@ -1,0 +1,64 @@
+name: Post a forecast
+description: Post your probability for a question on the site's Prediction board. A bot adds it to the board and closes this issue.
+title: "Forecast: "
+labels: ["forecast"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A forecast is your estimate of what will happen. It is not a statement of how you or your organization will vote, not a request for anyone to vote a certain way, and not a commitment to act. No money or prize is involved. Use public information only. Your GitHub name, group and figure become public on the site.
+  - type: input
+    id: question
+    attributes:
+      label: Question id
+      description: Filled in for you when you start from the board, for example q-msft-2026-5-bar.
+    validations:
+      required: true
+  - type: input
+    id: probability
+    attributes:
+      label: Your probability that the answer is Yes (1 to 99)
+      description: A whole number of percent.
+    validations:
+      required: true
+  - type: dropdown
+    id: group
+    attributes:
+      label: Which group are you answering as?
+      description: Each group's median is shown, and every group counts the same in the crowd figure.
+      options:
+        - Investor or asset manager
+        - Asset owner or pension
+        - Company (governance, legal, IR)
+        - Proxy advisor or ESG data
+        - Policymaker or regulator
+        - Academic or researcher
+        - Civil society or advocacy
+        - Employee of an AI company
+        - Journalist
+        - Retail shareholder
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: filer
+    attributes:
+      label: Do you or your organization have a stake in this question?
+      description: Yes if you filed, co-filed or plan to file at the company it is about, or you are that company or advise it. Your forecast is then kept but left out of the crowd figure.
+      options:
+        - "No"
+        - "Yes"
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Why (optional, public)
+      description: A sentence or two on your reasoning, from public information. Don't urge anyone to vote, file or act a certain way.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: This is my own forecast of the outcome, from public information. It is not a statement of how I or my organization will vote, not a request for anyone to vote, file or act a certain way, and not a commitment to act.
+          required: true
