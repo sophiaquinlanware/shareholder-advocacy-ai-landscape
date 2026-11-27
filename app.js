@@ -620,13 +620,8 @@ function renderPeople() {
 function renderAbout() {
   const el = document.getElementById("tab-about");
   if (!el) return;
-  const props = (DATA.proposals && DATA.proposals.proposals) || [];
-  const people = ((DATA.people && DATA.people.people) || []).length;
   const cos = (DATA.companies || []).length;
-  const ties = ((DATA.pathways && DATA.pathways.ties) || []).length + ((DATA.value_chain && DATA.value_chain.ties) || []).length;
-  const events = ((DATA.causality && DATA.causality.events) || []).length;
-  const yrs = window.yearSpan ? window.yearSpan(props.map((p) => p.meeting_date)) : "";
-  const stat = (n, l) => `<div class="ab-stat" role="listitem"><span class="ab-n">${n}</span><span class="ab-l">${esc(l)}</span></div>`;
+
   const sections = [...document.querySelectorAll('.tabs [role="tab"][data-group]')].filter((b) => b.dataset.group !== "about").map((b) => {
     const g = b.dataset.group;
     const q = (document.querySelector(`#grp-${g} .group-q`) || {}).textContent || "";
@@ -639,50 +634,12 @@ function renderAbout() {
   const basis = {};
   (DATA.companies || []).forEach((c) => { if (c.basis_type) basis[c.basis_type] = (basis[c.basis_type] || 0) + 1; });
   const basisList = Object.entries(basis).sort((a, b) => b[1] - a[1]).map(([k, n]) => `<li><span class="ab-bn">${n}</span> ${esc(BASIS[k] || k)}</li>`).join("");
-  const body = document.getElementById("about-body");
-  if (!body) return;
-  body.innerHTML = `
-    <div class="ab-stats" role="list" aria-label="Coverage">
-      ${stat(cos, "companies in scope")}
-      ${stat(props.length, `AI shareholder proposals${yrs ? `, ${yrs}` : ""}`)}
-      ${stat(people, "stewardship and engagement leads")}
-      ${stat(ties, "sourced company and lab ties")}
-      ${stat(events, "dated policy and governance events")}
-    </div>
-    <section class="ab-sec">
-      <h3>How investor influence reaches AI</h3>
-      <ol class="ab-theory">
-        <li><strong>Channels.</strong> Shareholders influence a company through dialogue with management and the board, votes at the annual meeting, and proposals filed under SEC Rule 14a-8.</li>
-        <li><strong>Reach.</strong> Most frontier labs are private. Shareholders reach them through the listed companies that own, fund, supply or distribute them.</li>
-        <li><strong>Conditions.</strong> Which channel is open at a company depends on its proposal rights, its filing deadline and SEC rules, which are changing.</li>
-        <li><strong>Record.</strong> What has already been asked, with what support and by whom, sets the starting point for the next engagement.</li>
-      </ol>
-    </section>
-    <section class="ab-sec">
-      <h3>Why these companies</h3>
-      <p>Each of the ${cos} companies is in scope for one stated reason, with its source on the company's profile:</p>
-      <ul class="ab-basis">${basisList}</ul>
-      <p class="status-note">Companies with none of these on record are out of scope. Counts across the site cover these companies and the sources listed, not every company or proposal.</p>
-    </section>
-    <section class="ab-sec">
-      <h3>Read in order</h3>
-      <ol class="ab-sections">${sections}</ol>
-    </section>
-    <section class="ab-sec">
-      <h3>Who it is for</h3>
-      <p>Stewardship and engagement teams at asset managers, pension funds, faith-based and labor investors, foundations and nonprofit filers; researchers and journalists following AI governance.</p>
-    </section>
-    <section class="ab-sec">
-      <h3>Principles</h3>
-      <ol class="ab-principles">
-        <li><strong>Sourced.</strong> Each fact links to its filing or page. Records found automatically are marked until reviewed; a missing source reads "source pending".</li>
-        <li><strong>Informs; does not coordinate.</strong> Nothing here recommends a vote or organizes investors to act together.</li>
-        <li><strong>Not advice.</strong> Nothing here is investment, legal or tax advice.</li>
-        <li><strong>Computed figures labelled.</strong> Averages, scenarios and forecasts are marked as computed by this site and never presented as facts.</li>
-        <li><strong>Public roles only.</strong> People appear by name, organization and published title.</li>
-      </ol>
-    </section>
-    <p class="ab-start"><a class="ab-cta" href="#value-chain">Begin: the AI value chain →</a> <a class="ab-cta ab-cta-2" href="#planner">Go straight to planning →</a></p>`;
+  // The cover text is written into index.html so it paints at once; only the reading-order list (from the tabs)
+  // and the scope list (from companies.json) are drawn here.
+  const list = document.getElementById("ab-sections");
+  if (list && !list.innerHTML) list.innerHTML = sections;
+  const filled = document.getElementById("ab-basis");
+  if (filled && cos) filled.innerHTML = `<p>Each of the ${cos} companies is in scope for one stated reason, with its source on the company's profile:</p><ul class="ab-basis">${basisList}</ul>`;
 }
 
 function renderStart() {
@@ -856,6 +813,7 @@ async function main() {
   // larger files (the 300 KB relationship graph and the rest) keep loading in parallel.
   // The four are preloaded from index.html; the rest start once they're in, so they don't share the bandwidth.
   const FIRST = PRELOADED;
+  renderAbout(); // draws before any data loads (only its scope list needs companies.json)
   await Promise.all(FIRST.map(load));
   const rest = Promise.all(FILES.filter((f) => !FIRST.includes(f)).map(load));
   if (!DATA.site || !DATA.site.last_updated) {
@@ -871,6 +829,7 @@ async function main() {
   header();
   renderUpcoming();
   renderFeed();
+  renderAbout(); // needs only companies.json, so it draws with the first data, before the rest loads
   renderStart();
   renderRights();
   await rest;
@@ -912,7 +871,6 @@ async function main() {
   window.renderScorecard(DATA.scorecard);
   window.renderVotes(DATA.fund_votes, DATA.proposals, DATA.pass_through_voting);
   renderPeople();
-  renderAbout(); // its counts need people, pathways and causality, which load in this second batch
   if (window.renderPlanner) window.renderPlanner(DATA);
   if (window.renderSimulator) window.renderSimulator(DATA);
   if (window.renderBoard) window.renderBoard();

@@ -1111,3 +1111,8 @@ details.bd-post > summary::-webkit-details-marker, details.bd-suggest > summary:
 .pw-direct { border: 1px solid var(--line); border-left: 4px solid var(--blue-1); padding: 12px 16px; margin: 12px 0 16px; background: var(--surface); }
 .pw-direct p { margin: 4px 0; max-width: 90ch; }
 .pw-direct-h { font-size: 16px; }
+/* About: scope reasons read as plain lines, not headline figures (owner, 2026-11-27: numbers "look like fluff"). */
+.ab-basis { list-style: disc; padding-left: 22px; gap: 2px; }
+.ab-basis li { display: list-item; }
+.ab-bn { font-size: inherit; color: var(--ink); min-width: 0; text-align: left; }
+.vc-scope { margin: 10px 0 14px; } .vc-scope summary { cursor: pointer; } .vc-scope ul { margin: 6px 0; padding-left: 20px; } .vc-scope p { max-width: 80ch; }

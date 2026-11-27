@@ -187,8 +187,23 @@
     const f = k > lim ? lim / k : 1;
     return { x: (nx * f + 1) / 2, y: (ny * f + 1) / 2 };
   }
+  // Policy events sit in the top band by jurisdiction, west to east (owner, 2026-11-27: "cluster the policy by
+  // proximity … EU stuff near one another and US to each other"). This site's grouping of each event's jurisdiction.
+  const REGION_X = { us: 0.2, americas: 0.32, global: 0.44, eu: 0.56, uk: 0.66, china: 0.8, apac: 0.9 };
+  function regionOf(d) {
+    const j = String(d.jurisdiction || "").toLowerCase();
+    if (!j) return null;
+    if (/china|hong kong/.test(j)) return "china";
+    if (/\bus\b|federal|california|texas|colorado|new york|illinois|georgia|virginia|delaware|nevada|utah|washington|tennessee|connecticut|florida/.test(j)) return "us";
+    if (/\buk\b|united kingdom|britain|england/.test(j)) return "uk";
+    if (/\beu\b|europe|ireland|italy|france|germany|spain|netherlands/.test(j)) return "eu";
+    if (/global|un\b|oecd|g7|international/.test(j)) return "global";
+    if (/japan|korea|india|singapore|australia|taiwan|asia/.test(j)) return "apac";
+    if (/canada|brazil|mexico|chile|americas/.test(j)) return "americas";
+    return null;
+  }
   const groupX = (d) => {
-    if (TOP_BAND.includes(d.kind)) return 0.5;
+    if (TOP_BAND.includes(d.kind)) { const r = regionOf(d); return r ? REGION_X[r] : 0.5; }
     // A "topic not filed" node sits just left of its company.
     if (d.kind === "gap") { const c = state.byId.get(d.gapFor); return c ? groupX(c) - 0.09 : 0.6; }
     const col = (state.cols || COLUMNS).find((c) => c.kinds.includes(d.kind));
@@ -314,6 +329,17 @@
   }
   const groupY = (d) => {
     if (TOP_BAND.includes(d.kind)) return 0.06;
+    // A person's row is their organization's row, nudged by organization so colleagues form one cluster and
+    // different organizations in the same row sit apart.
+    if (d.kind === "person") {
+      const o = d._org || state.byId.get(d.org_id);
+      if (o && o.kind !== "person") {
+        let h = 0;
+        for (const ch of String(o.id)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+        return Math.max(0.12, Math.min(0.94, groupY(o) + ((h % 11) - 5) * 0.014));
+      }
+      return 0.55;
+    }
     // Policymaker lens: each ask has its own row, and its proposals sit beside it.
     if (state.askY && d.kind === "ask") return state.askY.get(d.id) ?? 0.55;
     if (state.askY && d.kind === "proposal" && state.askY.has(d.ask_id)) return state.askY.get(d.ask_id);
@@ -325,6 +351,26 @@
     const t = companyTiers.findIndex((x) => "tier-" + x.id === d.kind);
     return t >= 0 ? 0.16 + (t / (companyTiers.length - 1)) * 0.76 : 0.55;
   };
+  // People cluster by employer (owner, 2026-11-27: "group the individual actors in clusters dependent on the company
+  // they work for"): each person is pulled toward the height of the organization they work at, so colleagues sit
+  // together beside their organization. Read live each tick, since the organizations move as the layout settles.
+  function employerForce() {
+    let people = [];
+    const f = (alpha) => {
+      for (const p of people) {
+        const o = p._org;
+        if (!o || !Number.isFinite(o.y)) continue;
+        p.vy += (o.y - p.y) * 0.35 * alpha;
+      }
+    };
+    f.initialize = (nodes) => {
+      const byId = new Map(nodes.map((n) => [n.id, n]));
+      const orgOf = new Map(state.data.links.filter((l) => l.relation === "works at").map((l) => [typeof l.source === "object" ? l.source.id : l.source, typeof l.target === "object" ? l.target.id : l.target]));
+      people = nodes.filter((n) => n.kind === "person");
+      people.forEach((p) => { p._org = byId.get(orgOf.get(p.id)); });
+    };
+    return f;
+  }
   const SLIDERS = [
     { group: "Display", key: "textSize", label: "Text size", min: 8, max: 20, step: 1, fmt: (v) => v + "px" },
     { group: "Display", key: "labelMin", label: "Labels from connections ≥", min: 0, max: 40, step: 1, fmt: (v) => String(v) },
@@ -1748,6 +1794,7 @@
       .force("x", d3.forceX(width / 2).strength(state.cfg.center))
       .force("y", d3.forceY(height / 2).strength(state.cfg.center * 1.25))
       // Columns are held firmly sideways (1.8× the grouping force) so each cluster sits under its heading.
+      .force("employer", employerForce())
       .force("gx", d3.forceX((d) => ovalTarget(d).x * width).strength(Math.min(1, state.cfg.group * 1.8)))
       .force("gy", d3.forceY((d) => ovalTarget(d).y * height).strength(state.cfg.group * 0.8))
       // A soft oval boundary (owner, 2026-11-26: "it doesn't have to go so far to the edge … a bit more naturally

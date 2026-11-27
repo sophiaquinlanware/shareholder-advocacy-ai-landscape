@@ -32,11 +32,31 @@
   let V = null;
   let CO = null;
 
+  // Scope rule (owner, 2026-11-27: make clear the purpose is to model the value chain, not to cover every player, and
+  // state the rule that selects the subset). Counted from each company's recorded basis and the sourced lab ties.
+  function scopeNote() {
+    const BASIS = { "shareholder proposal": "had an AI shareholder proposal on its ballot since 2023", "safety commitment": "signed a frontier AI safety commitment", "investor engagement": "was the subject of an AI engagement reported by an investor", "compute agreement": "holds a compute agreement with a frontier lab" };
+    const n = {};
+    let viaTie = 0;
+    for (const c of CO.values()) {
+      if (c.from_pathways) { viaTie++; continue; }
+      if (c.basis_type) n[c.basis_type] = (n[c.basis_type] || 0) + 1;
+    }
+    const total = Object.values(n).reduce((a, b) => a + b, 0) + viaTie;
+    const parts = Object.entries(n).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${esc(BASIS[k] || k)} (${v})`);
+    if (viaTie) parts.push(`is named in a sourced ownership, supply or distribution tie to a frontier lab (${viaTie})`);
+    return `<details class="vc-scope"><summary>Scope: which companies this model includes, and why (${total})</summary>
+      <p>The map models how influence travels along the AI value chain toward the frontier labs. It is not a census of every company in AI, and market share is not a criterion. A company is included when its record meets one of these tests; each is counted once, under the reason recorded for it:</p>
+      <ul>${parts.map((p) => `<li>it ${p}</li>`).join("")}</ul>
+      <p class="status-note">Each company's reason and source are on its profile. Companies outside these tests are out of scope.</p></details>`;
+  }
+
   function shell(el) {
     const nCos = new Set(V.ties.flatMap((t) => [t.from, t.to])).size;
     el.innerHTML = `
       <h2>AI value chain: companies by stage, from chips to AI products</h2>
       <p class="intro">Companies by stage of the AI value chain, their sourced ties to each other, and investor engagement at each stage: ${plural(V.ties.length, "sourced tie")} between ${nCos} companies. ${esc(V.about ? "Tiers are this site's reading of each company's main role." : "")}</p>
+      ${scopeNote()}
       <div class="vc-tiers" role="group" aria-label="Value-chain stages">${V.tiers
         .slice()
         .sort((a, b) => a.order - b.order)
