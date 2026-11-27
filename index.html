@@ -42,7 +42,6 @@
     <button type="button" role="tab" id="gbtn-companies" aria-controls="grp-companies" data-group="companies" aria-selected="false" tabindex="-1">Company profiles</button>
     <button type="button" role="tab" id="gbtn-proposals" aria-controls="grp-proposals" data-group="proposals" aria-selected="false" tabindex="-1">Proposals and results</button>
     <button type="button" role="tab" id="gbtn-engaging" aria-controls="grp-engaging" data-group="engaging" aria-selected="false" tabindex="-1">Network and contacts</button>
-    <button type="button" role="tab" id="gbtn-start" aria-controls="grp-start" data-group="start" aria-selected="false" tabindex="-1">Key dates</button>
     <button type="button" role="tab" id="gbtn-plan" aria-controls="grp-plan" data-group="plan" aria-selected="false" tabindex="-1">Plan and test</button>
   </div>
 </nav>
@@ -60,8 +59,7 @@
         <li><a href="#company">Company profiles</a><p>Each company's AI proposals, votes, lab ties and proposal rights.</p></li>
         <li><a href="#feed">Proposals and results</a><p>AI proposals since 2023: filers, votes, upcoming ballots, fund votes and engagement results.</p></li>
         <li><a href="#network">Network and contacts</a><p>Who files or backs AI proposals, how they connect, and who leads their engagement.</p></li>
-        <li><a href="#start">Key dates</a><p>Upcoming filing deadlines and ballots.</p></li>
-        <li><a href="#planner">Plan and test</a><p>Plan one engagement and test it against past behavior.</p></li>
+        <li><a href="#planner">Plan and test</a><p>Upcoming deadlines, then plan one engagement and test it against past behavior.</p></li>
       </ol>
         <section class="ab-sec">
           <h3>Sources and scope</h3>
@@ -137,15 +135,6 @@
     </div>
     <section id="tab-network" class="panel" role="tabpanel" aria-labelledby="tabbtn-network" data-group="engaging" hidden></section>
     <section id="tab-people" class="panel" role="tabpanel" aria-labelledby="tabbtn-people" data-group="engaging" hidden></section>
-    <p class="next-section"><a href="#start">Next: Key dates →</a></p>
-  </div>
-
-  <div id="grp-start" class="group" role="tabpanel" aria-labelledby="gbtn-start" hidden>
-    <p class="group-q">Upcoming filing deadlines and ballots.</p>
-    <div class="subtabs" role="tablist" aria-label="Start here views">
-      <button type="button" role="tab" id="tabbtn-start" aria-controls="tab-start" data-tab="start" aria-selected="true">Key dates and findings</button>
-    </div>
-    <section id="tab-start" class="panel" role="tabpanel" aria-labelledby="tabbtn-start" data-group="start"></section>
     <p class="next-section"><a href="#planner">Next: Plan and test →</a></p>
   </div>
 
@@ -154,11 +143,13 @@
     <div class="subtabs" role="tablist" aria-label="Plan and test views">
       <button type="button" role="tab" id="tabbtn-planner" aria-controls="tab-planner" data-tab="planner" aria-selected="true">Plan an engagement</button>
       <button type="button" role="tab" id="tabbtn-asks" aria-controls="tab-asks" data-tab="asks" aria-selected="false" tabindex="-1">Safety asks</button>
+      <button type="button" role="tab" id="tabbtn-start" aria-controls="tab-start" data-tab="start" aria-selected="false" tabindex="-1">Upcoming deadlines</button>
       <button type="button" role="tab" id="tabbtn-predict" aria-controls="tab-predict" data-tab="predict" aria-selected="false" tabindex="-1">Prediction board</button>
       <button type="button" role="tab" id="tabbtn-simulate" aria-controls="tab-simulate" data-tab="simulate" aria-selected="false" tabindex="-1">Test plans over time</button>
     </div>
     <section id="tab-planner" class="panel" role="tabpanel" aria-labelledby="tabbtn-planner" data-group="plan" hidden></section>
     <section id="tab-asks" class="panel" role="tabpanel" aria-labelledby="tabbtn-asks" data-group="plan" hidden></section>
+    <section id="tab-start" class="panel" role="tabpanel" aria-labelledby="tabbtn-start" data-group="plan" hidden></section>
     <section id="tab-predict" class="panel" role="tabpanel" aria-labelledby="tabbtn-predict" data-group="plan" hidden></section>
     <section id="tab-simulate" class="panel" role="tabpanel" aria-labelledby="tabbtn-simulate" data-group="plan" hidden></section>
   </div>
@@ -188,13 +179,9 @@
         <h2 class="foot-h">Proposals and network</h2>
         <ul><li><a href="#feed">All AI proposals</a></li><li><a href="#upcoming">Upcoming ballots</a></li><li><a href="#votes">Fund family votes</a></li><li><a href="#outcomes">Results of private engagement</a></li><li><a href="#network">Network of investors</a></li><li><a href="#people">Heads of stewardship</a></li></ul>
       </nav>
-      <nav class="foot-col" aria-label="Key dates">
-        <h2 class="foot-h">Key dates</h2>
-        <ul><li><a href="#start">Key dates and findings</a></li></ul>
-      </nav>
       <nav class="foot-col" aria-label="Plan and test">
         <h2 class="foot-h">Plan and test</h2>
-        <ul><li><a href="#planner">Plan an engagement</a></li><li><a href="#predict">Prediction board</a></li><li><a href="#simulate">Test plans over time</a></li></ul>
+        <ul><li><a href="#planner">Plan an engagement</a></li><li><a href="#start">Upcoming deadlines</a></li><li><a href="#predict">Prediction board</a></li><li><a href="#simulate">Test plans over time</a></li></ul>
       </nav>
       <nav class="foot-col" aria-label="About the data">
         <h2 class="foot-h">About the data</h2>

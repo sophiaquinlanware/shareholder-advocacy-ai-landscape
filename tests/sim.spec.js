@@ -7,7 +7,7 @@ async function open(page, path) {
 }
 
 test("sections run from context to planning, each pointing to the next", async ({ page }) => {
-  await open(page, "/index.html#start");
+  await open(page, "/index.html#network");
   const tabs = await page.locator('.tabs [role="tab"][data-group]').allTextContents();
   expect(tabs.map((s) => s.trim())).toEqual([
     "About",
@@ -16,10 +16,9 @@ test("sections run from context to planning, each pointing to the next", async (
     "Company profiles",
     "Proposals and results",
     "Network and contacts",
-    "Key dates",
     "Plan and test",
   ]);
-  await page.locator("#grp-start .next-section a").click();
+  await page.locator("#grp-engaging .next-section a").click();
   await expect(page.locator("#tab-planner")).toBeVisible();
 });
 

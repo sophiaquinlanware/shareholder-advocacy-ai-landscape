@@ -93,7 +93,7 @@ function wireSort(box, state, redraw) {
 // ---------- Upcoming votes ----------
 function renderUpcoming() {
   const up = DATA.upcoming || {};
-  // Meetings already held drop off before the next data refresh, as on Key dates.
+  // Meetings already held drop off before the next data refresh, as on Upcoming deadlines.
   const todayIso = window.RULES ? window.RULES.todayISO() : new Date().toISOString().slice(0, 10);
   const meetings = [...(up.meetings || [])].filter((m) => !/^\d{4}-\d{2}-\d{2}$/.test(m.sort || "") || m.sort >= todayIso)
     .sort((a, b) => String(a.sort || "").localeCompare(String(b.sort || "")));
@@ -663,7 +663,7 @@ function renderStart() {
   // No weekly-filings block (module audit, 2026-11-27): new SEC records flow into the proposal tables, marked
   // "not yet reviewed", instead of a separate feed.
   el.innerHTML = `
-    <h2>Key dates and findings</h2>
+    <h2>Upcoming deadlines</h2>
     <p class="intro">Upcoming ballots and filing deadlines.</p>
     <h3 class="sub-h">Coming up</h3>
     ${comingList ? `<ul class="steps coming-up">${comingList}</ul>` : `<p class="status-note">No ballots or open filing deadlines on file.</p>`}
@@ -697,7 +697,7 @@ function showTab(name, focus = false) {
 function applyTab(name, focus = false) {
   name = TAB_ALIASES[name] || name;
   let panel = document.getElementById("tab-" + name);
-  if (!name || !panel || !panel.dataset.group) { name = "start"; panel = document.getElementById("tab-start"); }
+  if (!name || !panel || !panel.dataset.group) { name = "about"; panel = document.getElementById("tab-about"); }
   const group = panel.dataset.group;
   lastView[group] = name;
   const groupBtns = [...document.querySelectorAll('.tabs [role="tab"][data-group]')];
