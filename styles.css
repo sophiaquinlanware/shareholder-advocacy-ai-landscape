@@ -885,3 +885,10 @@ button + [role="status"], button + .ticker, button + .status-note, button + outp
 .sim-inuse { display: inline-block; font-size: 13px; color: var(--scenario); font-weight: 500; margin-top: 4px; }
 /* Anything marked hidden stays hidden, whatever display a class gives it (the "View as" row showed through). */
 [hidden] { display: none !important; }
+/* Causal map across the whole screen, like the network band (owner, 2026-11-26): the chart, time bar and year strip
+   run edge to edge; the title, keys and source stay aligned with the page text. */
+.cz-fig { margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }
+.cz-fig .fig-head, .cz-fig > .net-legend, .cz-fig > .count-line, .cz-fig .fig-src { padding-left: max(16px, calc(50vw - 584px)); padding-right: max(16px, calc(50vw - 584px)); }
+.cz-fig .cz-frame { grid-template-columns: 180px minmax(0, 1fr); }
+.cz-fig .cz-timebar, .cz-fig .cz-overview { margin-left: 180px; margin-right: 16px; }
+@media (max-width: 640px) { .cz-fig { margin-left: -16px; margin-right: -16px; } .cz-fig .cz-frame { grid-template-columns: 92px minmax(0, 1fr); } .cz-fig .cz-timebar, .cz-fig .cz-overview { margin-left: 92px; } }
