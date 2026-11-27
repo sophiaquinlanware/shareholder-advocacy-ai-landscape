@@ -710,7 +710,11 @@ let historyReady = false;
 function showTab(name, focus = false) {
   const vt = tabsReady && document.startViewTransition && !navigator.webdriver && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   tabsReady = true;
-  if (vt) document.startViewTransition(() => applyTab(name, focus));
+  if (vt) {
+    // A quick second tab change skips the first transition; that rejection is expected, so it is caught here.
+    const t = document.startViewTransition(() => applyTab(name, focus));
+    [t.ready, t.finished, t.updateCallbackDone].forEach((p) => p && p.catch(() => {}));
+  }
   else applyTab(name, focus);
 }
 function applyTab(name, focus = false) {
@@ -796,9 +800,17 @@ function setupTabs() {
     });
   });
   // In-page links such as href="#feed" (Start here) open their view.
-  window.addEventListener("hashchange", () => showTab(location.hash.slice(1), true));
+  // Only a tab name (or an old alias) switches tabs; an in-page #anchor inside a tab just scrolls to its target.
+  const isTabHash = (h) => !h || !!TAB_ALIASES[h] || !!(document.getElementById("tab-" + h) && document.getElementById("tab-" + h).dataset.group);
+  const onHash = () => {
+    const h = decodeURIComponent(location.hash.slice(1));
+    if (isTabHash(h)) { showTab(h, true); return; }
+    const el = document.getElementById(h);
+    if (el) el.scrollIntoView({ block: "start" });
+  };
+  window.addEventListener("hashchange", onHash);
   // pushState doesn't fire hashchange on Back/Forward in every browser; popstate covers it.
-  window.addEventListener("popstate", () => showTab(location.hash.slice(1), true));
+  window.addEventListener("popstate", onHash);
   showTab(location.hash.slice(1));
 }
 
