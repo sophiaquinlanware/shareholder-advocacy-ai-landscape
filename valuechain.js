@@ -160,7 +160,7 @@
     const nodes = drawn.append("g").selectAll("g").data([...pos.entries()]).join("g").attr("transform", ([, p]) => `translate(${p.x},${p.y})`);
     const co = nodes.filter(([id]) => id !== "__capital__")
       .attr("tabindex", 0).attr("role", "button").attr("aria-label", ([id]) => `${name(id)}: ${plural(deg.get(id) || 0, "tie")}`).style("cursor", "pointer")
-      .on("click", (ev, [id]) => showCompany(id))
+      .on("click", (ev, [id]) => { ev.stopPropagation(); showCompany(id); })
       .on("keydown", (ev, [id]) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); showCompany(id); } });
     co.append("circle").attr("r", ([id]) => (deg.get(id) ? 3 + Math.sqrt(deg.get(id)) * 1.6 : 3.5))
       .attr("fill", ([id]) => (deg.get(id) ? cssVar("--blue-1") : cssVar("--surface"))).attr("stroke", cssVar("--blue-1")).attr("stroke-width", 1.2);
@@ -228,6 +228,40 @@
       .attr("stroke-width", (x) => (x === t ? 3.4 : on.has(x) ? 2.6 : 1.8) + (CAP[x.type] ? 1 : 0));
     d3.selectAll("#vc-flow path.vc-tie").filter((x) => on.has(x)).raise();
     announce(`Traced ${name(t.from)} ${phrase(t.type)} ${name(t.to)}: ${on.size} ${on.size === 1 ? "tie" : "ties"} on its path, in orange. Tap the chart again to clear.`);
+  }
+
+  // A company's whole stream (owner, 2026-11-27: tap a company "to light up the whole stream of connections off the
+  // company in orange"; for a lab, "the value chain that leads up to it lights up"): every tie that feeds into it,
+  // and into those, and every tie it feeds, and onward, along the value chain.
+  function traceCompany(id) {
+    if (typeof d3 === "undefined") return 0;
+    const ties = V.ties, on = new Set();
+    const walk = (seed, next, key) => {
+      const seen = new Set([seed]), q = [seed];
+      while (q.length) {
+        const x0 = q.shift();
+        for (const x of ties) if (x[key] === x0 && !on.has(x)) { on.add(x); const n = next(x); if (!seen.has(n)) { seen.add(n); q.push(n); } }
+      }
+    };
+    walk(id, (x) => x.from, "to");
+    walk(id, (x) => x.to, "from");
+    S.traced = { company: id };
+    d3.selectAll("#vc-flow path.vc-tie")
+      .attr("stroke", (x) => (on.has(x) ? TRACE : cssVar("--blue-2")))
+      .attr("stroke-opacity", (x) => (on.has(x) ? 1 : 0.4))
+      .attr("stroke-width", (x) => (x.from === id || x.to === id ? 3.2 : on.has(x) ? 2.6 : 1.8) + (CAP[x.type] ? 1 : 0));
+    d3.selectAll("#vc-flow path.vc-tie").filter((x) => on.has(x)).raise();
+    return on.size;
+  }
+  // A slow, eased glide to the details (about 1.6 s), through the page's smooth scroller when it is running.
+  function glideTo(el) {
+    if (!el) return;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) { el.scrollIntoView({ block: "start" }); return; }
+    const L = window.MOTION && window.MOTION.lenis;
+    setTimeout(() => {
+      if (L && L.scrollTo) L.scrollTo(el, { offset: -96, duration: 1.6 });
+      else el.scrollIntoView({ block: "start", behavior: "smooth" });
+    }, 450);
   }
 
   // Ties of the chosen tier or company stay strong; the rest fade, so crossing lines stay readable.
@@ -336,11 +370,11 @@
       ${c.ticker && window.LENS_CTX && window.LENS_CTX.hasCompany && window.LENS_CTX.hasCompany(c.ticker) ? `<button type="button" class="chip" id="vc-open-co">Open company profile</button>` : ""}`;
     const b = document.getElementById("vc-open-co");
     if (b) b.addEventListener("click", () => window.LENS_CTX.openCompany(c.ticker));
-    highlight((x) => x.from === id || x.to === id);
-    announce(`${c.name || id}: ${plural(outs.length + ins.length, "tie")}, details below the chart.`);
+    const n = traceCompany(id);
+    announce(`${c.name || id}: ${plural(n, "tie")} in its stream, in orange; details below the chart. Tap the chart again to clear.`);
     const h = document.getElementById("vc-panel-h");
     h.focus({ preventScroll: true });
-    h.scrollIntoView({ block: "start", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    glideTo(h);
   }
 
   function drawTieTable() {
