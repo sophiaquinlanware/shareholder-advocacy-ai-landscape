@@ -16,7 +16,7 @@ test("sections run from context to planning, each pointing to the next", async (
     "Company profiles",
     "Proposals and results",
     "Network and contacts",
-    "Deadlines and votes",
+    "Key dates",
     "Plan and test",
   ]);
   await page.locator("#grp-start .next-section a").click();

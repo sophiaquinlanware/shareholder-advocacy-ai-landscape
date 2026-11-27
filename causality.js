@@ -191,7 +191,9 @@
     C.nodeSel.each(function (e) { mark(d3.select(this), statusOf(e), rOf(e)); });
     C.nodeSel.append("title").text((e) => `${evDate(e)}: ${e.title}`);
     C.labelSel = C.nodeSel.append("text").text((e) => (e.title.length > 34 ? e.title.slice(0, 33) + "…" : e.title))
-      .attr("x", 9).attr("y", 4).attr("font-size", 10.5).attr("fill", cssVar("--ink")).attr("opacity", 0);
+      .attr("x", 9).attr("y", 4).attr("font-size", 10.5).attr("fill", cssVar("--ink")).attr("opacity", 0)
+      // A white outline keeps each label readable over lines and other marks.
+      .attr("stroke", cssVar("--surface")).attr("stroke-width", 4).attr("stroke-linejoin", "round").attr("paint-order", "stroke");
     laneLabels();
     apply();
   }
@@ -219,18 +221,48 @@
       return `<span class="leg static">${svg.node().outerHTML}${esc(STATUS_LABEL[k])}</span>`;
     }).join("")}`;
   }
+  // Selected chain (owner, 2026-11-27: "make sure … you can read all text when you select certain causal chains …
+  // the selected event orange and the connection points to it blue"): the chosen event gets an orange ring and an
+  // orange, bold label; its chain stays blue. Labels are placed in order (chosen event, then direct links, then the
+  // rest) and any label that would overlap one already placed is left to its tooltip, so no two labels collide.
+  const PICK = "#e8590c";
   function apply() {
     if (!C.nodeSel) return;
-    const hi = C.highlight;
+    const hi = C.highlight, sel = C.selected;
     C.nodeSel.attr("opacity", (e) => (!hi || hi.has(e.id) ? 1 : 0.15));
-    C.labelSel.attr("opacity", (e) => (hi && hi.has(e.id) ? 1 : 0));
     C.linkSel.attr("stroke-opacity", (l) => (!hi ? 0.55 : hi.has(l.from) && hi.has(l.to) ? 1 : 0.06));
+    C.nodeSel.selectAll(".cz-pick").remove();
+    C.labelSel.attr("fill", cssVar("--ink")).attr("font-weight", 400).attr("font-size", 10.5);
+    if (!hi) { C.labelSel.attr("opacity", 0); return; }
+    if (sel) {
+      const g = C.nodeSel.filter((e) => e.id === sel);
+      g.insert("circle", ":first-child").attr("class", "cz-pick").attr("r", 14).attr("fill", "none").attr("stroke", PICK).attr("stroke-width", 3);
+      g.select("text").attr("fill", PICK).attr("font-weight", 600).attr("font-size", 12);
+      C.nodeSel.filter((e) => hi.has(e.id)).raise();
+      g.raise();
+    }
+    const direct = new Set(C.links.filter((l) => l.from === sel || l.to === sel).flatMap((l) => [l.from, l.to]));
+    const rank = (e) => (e.id === sel ? 0 : direct.has(e.id) ? 1 : 2);
+    const placed = [];
+    const nodes = C.nodeSel.filter((e) => hi.has(e.id)).nodes().sort((a, b) => rank(a.__data__) - rank(b.__data__));
+    const shown = new Set();
+    for (const n of nodes) {
+      const e = n.__data__, t = n.querySelector("text");
+      if (!t) continue;
+      const w = t.getComputedTextLength ? t.getComputedTextLength() : 120;
+      const box = { x0: e._x + 7, x1: e._x + 11 + w, y0: e._y - 9, y1: e._y + 7 };
+      if (placed.some((p) => box.x0 < p.x1 && p.x0 < box.x1 && box.y0 < p.y1 && p.y0 < box.y1)) continue;
+      placed.push(box);
+      shown.add(e.id);
+    }
+    C.labelSel.attr("opacity", (e) => (shown.has(e.id) ? 1 : 0));
   }
 
   function select(id) {
     const e = C.events.find((x) => x.id === id);
     const up = walk(id, "up"), down = walk(id, "down");
     C.highlight = C.mode === "causes" ? up : C.mode === "effects" ? down : new Set([...up, ...down]);
+    C.selected = id;
     apply();
     const name = (i) => (C.events.find((x) => x.id === i) || {}).title || i;
     const ins = C.links.filter((l) => l.to === id).map((l) => `<li><button class="linklike" data-ev="${esc(l.from)}">${esc(name(l.from))}</button> <span class="ticker">${esc(rel(l.type))}</span><br>${esc(l.explanation || "")} ${link(l.source_url)}</li>`).join("");

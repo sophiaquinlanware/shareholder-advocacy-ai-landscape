@@ -1004,7 +1004,7 @@
   }
   const MODE_NOTE = {
     connections: "Sourced relationships: shareholdings, coalition memberships, co-filings, employment, company–lab ownership and supply ties, and policy events. Proposals appear in the Proposals view.",
-    proposals: "AI shareholder proposals by company, with lead filers, co-filers and exempt solicitations for or against. Active: on a ballot not yet held. Past: voted, withdrawn or excluded.",
+    proposals: "AI shareholder proposals by company, with lead filers, co-filers and exempt solicitations for or against. Active: on a ballot not yet held. Past: voted, withdrawn or excluded. A past proposal's line to its company is green if it succeeded (withdrawn after the company committed to act, or a majority vote) and red if it failed (voted, under 50% support).",
   };
   // Switch the graph between its two views; the layout is rebuilt so it only uses that view's links.
   function setMode(m, announce = true) {

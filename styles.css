@@ -1116,3 +1116,10 @@ details.bd-post > summary::-webkit-details-marker, details.bd-suggest > summary:
 .ab-basis li { display: list-item; }
 .ab-bn { font-size: inherit; color: var(--ink); min-width: 0; text-align: left; }
 .vc-scope { margin: 10px 0 14px; } .vc-scope summary { cursor: pointer; } .vc-scope ul { margin: 6px 0; padding-left: 20px; } .vc-scope p { max-width: 80ch; }
+/* The network band's keyboard focus ring sits inside the black, in white, so the band keeps one clean edge (owner,
+   2026-11-27: "don't have this double line … only have it black"). */
+.net-graph-wrap .net-graph:focus { outline: none; }
+.net-graph-wrap .net-graph:focus-visible { outline: 2px solid #ffffff; outline-offset: -4px; }
+/* Causal map: more room between the keys and the chart. */
+.cz-fig .cz-timebar { margin-top: 28px; }
+.cz-fig .cz-frame { margin-top: 10px; }
