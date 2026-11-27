@@ -41,7 +41,19 @@ COMPANIES = {
     "AAPL": ("Apple", 320193),
     "TSLA": ("Tesla", 1318605),
 }
+# Every company under the US proxy rules in data/companies.json (with its SEC CIK) is checked, not only these seven.
 FORMS = {"DEF 14A", "DEFA14A", "PX14A6G", "8-K"}
+
+
+def all_companies():
+    out = dict(COMPANIES)
+    try:
+        for c in json.loads((DATA / "companies.json").read_text()):
+            if c.get("shareholder_route") == "US proxy rules apply" and c.get("cik") and c.get("ticker") and c["ticker"] not in out:
+                out[c["ticker"]] = (c["name"], int(c["cik"]))
+    except Exception as e:  # the seven above still run
+        print(f"  could not read companies.json: {e}")
+    return out
 LOOKBACK_DAYS = 120  # how far back to look on each run; already-seen filings are skipped
 
 # Words that suggest a filing touches AI. Grouped to match the site's topic tags.
@@ -98,8 +110,15 @@ def main():
     tracking = load("tracking.json", {})
     new_items = []
 
-    for ticker, (name, cik) in COMPANIES.items():
-        sub = json.loads(get(f"https://data.sec.gov/submissions/CIK{cik:010d}.json"))
+    companies = all_companies()
+    checked = 0
+    for ticker, (name, cik) in companies.items():
+        try:
+            sub = json.loads(get(f"https://data.sec.gov/submissions/CIK{cik:010d}.json"))
+        except Exception as e:  # one company's failure should not stop the run
+            print(f"  {ticker}: skipped ({e})")
+            continue
+        checked += 1
         r = sub["filings"]["recent"]
         for i, form in enumerate(r["form"]):
             if form not in FORMS:
@@ -150,7 +169,9 @@ def main():
     save("changes.json", changes)
     tracking.update({
         "last_checked": now.isoformat(timespec="minutes"),
-        "companies_checked": len(COMPANIES),
+        "companies_checked": checked,
+        "companies_listed": len(companies),
+        "forms_checked": sorted(FORMS),
         "new_this_run": len(new_items),
     })
     save("tracking.json", tracking)

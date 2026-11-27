@@ -857,3 +857,21 @@ button + [role="status"], button + .ticker, button + .status-note, button + outp
 }
 .net-keybox { pointer-events: none; }
 .net-keybox > * { pointer-events: auto; }
+
+
+/* ---------- Planner tools (planner-tools.js) ---------- */
+.pt-range { font-size: 22px; margin: 4px 0; }
+.pt-log { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: end; margin: 6px 0; }
+.pt-log label { display: flex; flex-direction: column; font-size: 13px; }
+.pt-log input { width: 6em; }
+#pt-ask-text { width: 100%; box-sizing: border-box; font: inherit; padding: 8px; border: 1px solid var(--control-edge); border-radius: var(--radius); }
+.pt-ask-label { display: block; font-size: 13px; margin: 6px 0 4px; }
+.freshness { margin: 0 0 14px; font-size: 13px; }
+.freshness summary { cursor: pointer; }
+.pl-hint { font-size: 12px; color: var(--ink-soft); font-weight: 400; }
+@media (max-width: 640px) { .pl-hint { display: block; } }
+.pl-copy-note { flex-basis: 100%; margin: 2px 0 0; }
+/* The ask designer's spectrum is a reading aid, not buttons: plain text steps with the main one marked. */
+.pt-spectrum { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 14px; padding: 0; margin: 8px 0; font-size: 13px; color: var(--ink-soft); }
+.pt-spectrum li.on { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.sim-inuse { display: inline-block; font-size: 13px; color: var(--scenario); font-weight: 500; margin-top: 4px; }

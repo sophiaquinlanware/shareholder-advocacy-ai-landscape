@@ -32,6 +32,9 @@
     { id: "coal", label: "Shares a coalition with your organization" },
   ];
   const STORE = "planner-shortlist-v1", MINE = "planner-mine-v1";
+  // Settings last for the visit (sessionStorage); the shortlist is saved work and stays in this browser.
+  const visit = { get(k, d) { try { const v = sessionStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+    set(k, v) { try { sessionStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* storage blocked */ } } };
 
   let D, S, idx;
   const store = { get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
@@ -151,6 +154,14 @@
       <span class="ticker">A company that excludes must still send its Rule 14a-8(j) notice to the SEC and to you 80 days before filing its definitive proxy; a proponent's remedy is in court${courts.length ? `, where 2026 rulings went both ways: ${courts.map((e) => `${esc(e.title)}${src(e.source_url, "order")}`).join("; ")}` : ""}.</span>`;
   }
 
+  // ---------- Support range, logged forecasts and the ask designer (planner-tools.js) ----------
+  function tools(c, ask) {
+    if (c.shareholder_route !== "US proxy rules apply" || !window.PLANNER_TOOLS) return "";
+    const t = tick(c);
+    const up = D.proposals.filter((p) => p.company === t && p.ask_id === ask && p.status === "upcoming").map((p) => `${p.title} (${fmt(p.meeting_date)})`).join("; ");
+    return `<div class="pl-grid"><div class="pltools-slot" data-kind="forecast" data-co="${esc(t)}" data-ask="${esc(ask)}" data-name="${esc(c.name)}" data-upcoming="${esc(up)}"></div><div class="pltools-slot" data-kind="designer" data-ask="${esc(ask)}"></div></div>`;
+  }
+
   // ---------- Ideas ----------
   function ideas(c, ask) {
     const t = tick(c);
@@ -181,9 +192,11 @@
   function familyVotes(ask) {
     const askProps = new Map(D.proposals.filter((p) => p.ask_id === ask).map((p) => [p.id, p]));
     const fam = new Map();
+    const held = new Set((D.fundVotes && D.fundVotes.held_back_proposals) || []);
     idx.votes.forEach((r) => {
       const p = askProps.get(r.proposal_id);
-      if (!p) return;
+      // Rows the matcher could not settle (NEEDS_CHECK) and held-back proposals are not counted as votes.
+      if (!p || r.vote === "NEEDS_CHECK" || held.has(r.proposal_id)) return;
       const f = fam.get(r.family) || { for: 0, n: 0, unreviewed: 0, years: new Set(), items: [] };
       f.n += 1; f.years.add(p.year);
       if (r.vote === "FOR") { f.for += 1; f.items.push({ text: `${p.company} ${p.year}`, url: (r.sources || [])[0] }); }
@@ -314,7 +327,7 @@
     const c = coById(S.co);
     const out = document.getElementById("pl-out");
     if (!c) { out.innerHTML = `<p class="status-note">Choose a company.</p>`; return; }
-    out.innerHTML = `${grid()}<div class="pl-grid">${record(c, S.ask)}${timing(c)}</div>${ideas(c, S.ask)}${organizations(c, S.ask, S.mine)}<div class="pl-grid">${yours(c, S.ask, S.mine)}${policy(S.ask)}</div>`;
+    out.innerHTML = `${grid()}<div class="pl-grid">${record(c, S.ask)}${timing(c)}</div>${ideas(c, S.ask)}${organizations(c, S.ask, S.mine)}${tools(c, S.ask)}<div class="pl-grid">${yours(c, S.ask, S.mine)}${policy(S.ask)}</div>`;
     out.querySelectorAll(".pl-add").forEach((b) => b.addEventListener("click", () => {
       const id = b.dataset.org, n = idx.nodes.get(id), list = getList();
       const row = b.closest("tr"), record = row ? [...row.querySelectorAll(".pl-why > li > strong")].map((s) => s.textContent.replace(/:$/, "")).join("; ") : "";
@@ -353,6 +366,7 @@
     }
     drawShortlist();
     if (window.CAMPAIGNS) window.CAMPAIGNS.fill(out);
+    if (window.PLANNER_TOOLS) window.PLANNER_TOOLS.fill(out, { coName: c.name, askLabel: askOf(S.ask).label, proposals: D.proposals, askOf, critical: idx.critical });
     // The last step of the site: the same company and ask, tested forward in Plan and test › Test plans over time.
     const nx = document.getElementById("pl-next");
     if (nx) nx.href = planUrl().replace(/#planner$/, "#simulate");
@@ -419,7 +433,7 @@
     const soonCo = soon ? coById(soon.company) : null;
     S = { co: fromUrl[0] || (soonCo && (soonCo.id || soonCo.ticker)) || (usCos()[0] || {}).id, ask: fromUrl[1] || (soon && soon.ask_id) || (topAsk && topAsk[0]),
       mine: fromUrl[2] || "", memory: [], showAll: false };
-    S.mine = S.mine || store.get(MINE, "");
+    S.mine = S.mine || visit.get(MINE, "");
     if (!tick(coById(S.co))) S.co = (soonCo && (soonCo.id || soonCo.ticker)) || (usCos()[0] || {}).id;
     if (!D.asks.some((a) => a.id === S.ask)) S.ask = (soon && soon.ask_id) || (topAsk && topAsk[0]);
     if (S.mine && !idx.orgs.some((o) => o.id === S.mine)) S.mine = "";
@@ -431,9 +445,10 @@
       <p class="intro">Choose a company and an ask, or a square in the grid. Add your organization to see its own record and the coalitions it shares with each organization listed. Every line links to its source.</p>
       <div class="net-controls pl-controls">
         <label>Company <select id="pl-co">${cos.map((c) => `<option value="${esc(c.id || c.ticker)}">${esc(c.name)} (${esc(c.ticker)})</option>`).join("")}</select></label>
-        <label>Ask <select id="pl-ask">${D.asks.map((a) => `<option value="${esc(a.id)}">${esc(a.label)} (${askCount.get(a.id) || 0} filed)</option>`).join("")}</select></label>
+        <label>Ask <span class="pl-hint">(what you want the company to do)</span> <select id="pl-ask">${D.asks.map((a) => `<option value="${esc(a.id)}">${esc(a.label)} (${askCount.get(a.id) || 0} filed)</option>`).join("")}</select></label>
         <label>Your organization (optional) <select id="pl-mine"><option value="">Not set</option>${orgs.map((o) => `<option value="${esc(o.id)}">${esc(o.label)}</option>`).join("")}</select></label>
-        <button type="button" class="chip" id="pl-copy">Copy a link to this plan</button> <span id="pl-copy-msg" class="ticker"></span>
+        <button type="button" class="chip" id="pl-copy" aria-describedby="pl-copy-note">Save this plan as a link</button> <span id="pl-copy-msg" class="ticker"></span>
+        <p class="ticker pl-copy-note" id="pl-copy-note">Copies a web address that reopens this company, ask and organization. Bookmark it or send it to a colleague; nothing is stored on a server.</p>
       </div>
       <p id="pl-status" class="visually-hidden" role="status"></p>
       <div id="pl-out"></div>
@@ -442,12 +457,12 @@
       <p class="next-section"><a id="pl-next" href="#simulate">Next: test this plan over time →</a></p>`;
     document.getElementById("pl-co").addEventListener("change", (e) => { S.co = e.target.value; sync(); });
     document.getElementById("pl-ask").addEventListener("change", (e) => { S.ask = e.target.value; sync(); });
-    document.getElementById("pl-mine").addEventListener("change", (e) => { S.mine = e.target.value; store.set(MINE, S.mine); sync(); });
+    document.getElementById("pl-mine").addEventListener("change", (e) => { S.mine = e.target.value; visit.set(MINE, S.mine); sync(); });
     document.getElementById("pl-copy").addEventListener("click", async () => {
       const url = location.origin + planUrl();
       const st = document.getElementById("pl-status");
       const msg = document.getElementById("pl-copy-msg");
-      try { await navigator.clipboard.writeText(url); st.textContent = msg.textContent = "Link copied."; } catch (e) { st.textContent = msg.textContent = `Copy this link: ${url}`; }
+      try { await navigator.clipboard.writeText(url); st.textContent = msg.textContent = "Link copied. Paste it into a bookmark or a message to come back to this plan."; } catch (e) { st.textContent = msg.textContent = `Copy this link: ${url}`; }
     });
     sync(false, false);
   }

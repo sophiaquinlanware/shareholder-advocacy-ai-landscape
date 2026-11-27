@@ -1,0 +1,22 @@
+REVIEWER: Data accuracy (forecaster and planning tools) SCORE: 62 VERDICT: REVISE
+
+TOP FAILURES
+1. **The dual-class floor can go above 100%, and its maths is misapplied.** planner-tools.js divides lo and hi by (1−c) with no cap. Using forecast.json bands, WDAY on ask-dc-siting-rights reads "at least 14% to 159%". Others: META siting rights reaches 126% and WDAY misinformation 102%. For a first filing, the starting point is the median at other, mostly widely held companies, so it is not this company's all-votes figure, and dividing by (1−c) has no basis. The data show dual-class firms already run lower: the median log(actual/start) is −0.68 at the four dual-class firms against −0.11 elsewhere. The floor is only valid for refiles. The CONTROL figures are correct. I checked the filings: META 60.8, WDAY about 69, CMCSA 33 1/3. GOOGL's 52.7 is this site's sum of Page 27.4 and Brin 25.3, so "stated" is a stretch. CRWV, SPCX and ANT, which also have controlling holders, have no floor.
+2. **The backtest coverage is inflated by future seasons, and the page runs a different rule from the one tested.** I recomputed and got the same 43 cases, 31 inside, 4.6 points. Leave-one-season-out builds 2024's range from 2025 and 2026 errors. Using only earlier seasons' errors, coverage is 16 of 29 (55%), not 72%, so "a little too narrow" understates it. The page's "median" is the lower middle value (`v[Math.floor((v.length-1)/2)]`) while Python's `st.median` averages. That differs for 6 asks, for example siting rights 27.48 against 29.76. The backtest validates Python's median, not the one users see.
+3. **Unreviewed N-PX counts are shown as plain facts, and the footer says they were reviewed.** family_for counts all 414 summary rows. 375 are not reviewed, 18 have confidence 0.5, and the 6 rows of the held-back proposal meta-2026-3 are included. Neither "Fund families on this ask" nor famTotals in sim.js carries "not yet reviewed", although planner.js already does. freshness.json says "then matched and reviewed", which is false for 91% of rows.
+
+TOP IMPROVEMENTS
+1. **Ask designer: the highest matching level wins, so plain disclosure asks get labelled mandates.** "publish a report on steps taken to stop AI misinformation" → "Operational mandate" from the word "stop". "report on whether it will not sell" → mandate. "Audit Committee oversee" → "Assessment". Past proposals are levelled from the site's own title and plain_summary, not the resolved clause, and the page doesn't say so. Add negation and context checks, or show every level matched.
+2. **Logged forecasts: scoring uses the latest vote even when it is from a later season.** It uses `F.latest` whenever `last.season >= f.season`, so a 2027 forecast gets scored against a 2028 result. It also allows past seasons, which are scored at once. Match on season exactly.
+3. **Freshness: several "last checked" dates take the most recent date and hide older rows.** Deadlines: 27 of 29 US-proxy companies checked. Holdings: one investor is still at 2026-06-30. Leads include 2026-05 and one "UNVERIFIED". The causal-map date and the 13F period are event and report dates, not check dates. `companies_checked=len(companies)` counts companies that were skipped. The live row still says 7 companies.
+
+OUT-OF-FIELD NOTES
+- **Take a seat:** the seat labelled "Index fund" lists Calvert, Domini, Praxis and other non-index families.
+- **SEC_URL:** it points to the 14 August 2026 statement for "first season without SEC review of most exclusions". The 17 November 2025 statement (causality.json) is the right source. The "all seasons" rate (3 of 57) includes the 3 exclusions from 2026; the rate before 2026 is 0 of 38.
+- **Checked and accurate:** the court-ruling claims (Chubb denied, BJ's ordered), the Amazon 2026 exempt solicitation, the rescission switch's floor-only logic, and the 80-day 14a-8(j) notice.
+
+CONTENT RULES: FAIL
+- Rule 5: the second labelled exception covers only "Plan and test › Test plans over time". The support range and the "middle" figure appear in Plan an engagement, which needs the owner to extend PRODUCT.md.
+- Rule 4: unreviewed N-PX counts are shown with no "not yet reviewed" label (planner-tools.js forecastHtml, sim.js famTotals), and the freshness "reviewed" claim is false.
+
+I edited no repo files. I re-ran scripts/build_forecast.py to recompute; the regenerated data/forecast.json was identical to the original.

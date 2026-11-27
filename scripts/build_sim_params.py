@@ -159,6 +159,7 @@ def main():
             # The SEC staff stopped reviewing exclusions on November 17, 2025 (data/causality.json sec-noaction-pause),
             # so the latest season is the only one without staff review.
             "exclusion_latest": {**rate(sum(1 for u in units if u[2] and u[1] == upto), sum(1 for u in units if u[1] == upto)), "season": upto},
+            "exclusion_before": {**rate(sum(1 for u in units if u[2] and u[1] < upto), sum(1 for u in units if u[1] < upto)), "until": upto - 1},
             "unit": "one per company, ask and season with a filing not lead-filed from a critical stance on ESG",
         }
 
@@ -226,13 +227,16 @@ def main():
         if e["type"] == "holds shares in" and e["target"] in nodes:
             holders[nodes[e["target"]].get("ticker") or ""].append(e["source"])
 
-    fam = defaultdict(lambda: defaultdict(lambda: {"for": 0, "n": 0}))
+    fam = defaultdict(lambda: defaultdict(lambda: {"for": 0, "n": 0, "unreviewed": 0}))
     pid_ask = {p["id"]: p["ask_id"] for p in P}
-    for r in load("fund_votes.json")["summary"]:
+    fvj = load("fund_votes.json")
+    held = set(fvj.get("held_back_proposals") or [])
+    for r in fvj["summary"]:
         a = pid_ask.get(r["proposal_id"])
-        if a and r["vote"] in ("FOR", "AGAINST", "SPLIT", "ABSTAIN"):
+        if a and r["vote"] in ("FOR", "AGAINST", "SPLIT", "ABSTAIN") and r["proposal_id"] not in held:
             fam[r["family"]][a]["n"] += 1
             fam[r["family"]][a]["for"] += r["vote"] == "FOR"
+            fam[r["family"]][a]["unreviewed"] += not r.get("reviewed")
 
     cov = defaultdict(lambda: {"full": 0, "partial": 0, "none": 0, "regions": []})
     events = {e["id"]: e for e in load("causality.json")["events"]}
@@ -255,7 +259,7 @@ def main():
                                                                     "filers": [o for o, _ in acts.get(x["id"], [])]} for x in by[y]] for y in sorted(by)}}
                   for (co, a), by in sorted(cells.items())],
         "companies": [{"id": c["id"], "ticker": c["ticker"], "name": c["name"], "route_status": c.get("route_status"),
-                       "next_deadline": c.get("next_proposal_deadline"), "tier": c.get("tier")} for c in sorted(us, key=lambda c: c["name"].lower())],
+                       "next_deadline": c.get("next_proposal_deadline"), "next_deadline_source": c.get("next_proposal_deadline_source"), "tier": c.get("tier")} for c in sorted(us, key=lambda c: c["name"].lower())],
         "filers": {a: dict(c.most_common()) for a, c in filers.items()},
         "holders": {t: sorted(set(v)) for t, v in holders.items() if t in tickers},
         "family_for": {f: {a: v for a, v in d.items()} for f, d in fam.items()},
