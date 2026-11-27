@@ -629,16 +629,16 @@ function renderAbout() {
     return `<li><a href="#${esc(first)}">${esc(b.textContent)}</a><p>${esc(q)}</p></li>`;
   }).join("");
   // Scope counts from each company's stated, sourced basis in data/companies.json.
-  const BASIS = { "shareholder proposal": "an AI shareholder proposal on its ballot", "safety commitment": "a signed frontier AI safety commitment", "investor engagement": "an investor-reported engagement on AI", "compute agreement": "a compute agreement with a frontier lab" };
+  const BASIS = { "shareholder proposal": "had an AI shareholder proposal on the ballot", "safety commitment": "signed a frontier AI safety commitment", "investor engagement": "were engaged on AI, as reported by the investor", "compute agreement": "have a compute agreement with a frontier lab" };
   const basis = {};
   (DATA.companies || []).forEach((c) => { if (c.basis_type) basis[c.basis_type] = (basis[c.basis_type] || 0) + 1; });
-  const basisList = Object.entries(basis).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${esc(BASIS[k] || k)} (${n})`).join("; ");
+  const basisList = Object.entries(basis).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${n} ${esc(BASIS[k] || k)}`).join("; ");
   // The cover text is written into index.html so it paints at once; only the reading-order list (from the tabs)
   // and the scope list (from companies.json) are drawn here.
   const list = document.getElementById("ab-sections");
   if (list && !list.innerHTML) list.innerHTML = sections;
   const filled = document.getElementById("ab-basis");
-  if (filled && cos) filled.innerHTML = `<strong>Companies.</strong> ${cos}, each included for one sourced reason: ${basisList}. The aim is to model the AI value chain, not to list every company in it.`;
+  if (filled && cos) filled.innerHTML = `<strong>Companies.</strong> ${cos} in all: ${basisList}. The aim is to model the AI value chain, not to list every company in it.`;
 }
 
 function renderStart() {

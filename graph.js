@@ -839,7 +839,10 @@
   function selectNode(d) {
     const again = state.selected === d.id;
     const wasOpen = !!state.selected;
-    state.depth = again ? Math.min(4, (state.depth || 1) + 1) : 1;
+    // Owner, 2026-11-27: first click lights direct connections, the second reaches one step further, the third
+    // returns to the full network.
+    if (again && (state.depth || 1) >= 2) { clearSelection(); return; }
+    state.depth = again ? 2 : 1;
     state.selected = d.id;
     if (!again) showPanel(d);
     applyStyles();
@@ -847,9 +850,9 @@
     const n = neighbors(d.id, state.depth).size - 1;
     say(state.depth === 1
       ? `Opened ${d.label}: ${n} direct connection${n === 1 ? "" : "s"} lit. Click it again to reach one step further.`
-      : `${d.label}: ${n} nodes within ${state.depth} steps lit. Click again to go further, or Close.`);
+      : `${d.label}: ${n} nodes within 2 steps lit. Click again to return to the full network.`);
     const hint = document.getElementById("net-depth");
-    if (hint) hint.textContent = state.depth === 1 ? "Showing direct connections. Click the node again to reach one step further." : `Showing connections up to ${state.depth} steps away. Click the node again to go further.`;
+    if (hint) hint.textContent = state.depth === 1 ? "Showing direct connections. Click the node again to reach one step further." : "Showing connections up to 2 steps away. Click the node again to return to the full network.";
   }
   function clearSelection() {
     const wasOpen = !!state.selected;
@@ -1121,8 +1124,9 @@
     const nodeOpacity = (d) => {
       if (P) return P.nodes.has(d.id) ? 1 : 0.12;
       let o = 1;
-      if (q) o = d.label.toLowerCase().includes(q) ? 1 : 0.12;
-      else if (near && !near.has(d.id)) o = 0.12;
+      // A chosen node's network wins over a search: clicking another node dims the searched one.
+      if (near) o = near.has(d.id) ? 1 : 0.12;
+      else if (q) o = d.label.toLowerCase().includes(q) ? 1 : 0.12;
       // Highlighted key chips: everything outside the highlighted types (or proposal categories) dims.
       if (!isLit(d) && d.id !== focusId) o = Math.min(o, 0.12);
       // A chosen node's connections keep their full colour; otherwise the holdings overlay fades what isn't held.
@@ -1131,7 +1135,8 @@
     };
     // The fund you chose to play as (Your portfolio → Load an investor's holdings) glows white with a thick ring,
     // so it stands apart from every other coloured node (owner, 2026-11-26: "a specialness to the fund you selected").
-    const you = state.holdings.size && state.portInvestor ? state.portInvestor : null;
+    // The fund you play as stands out until you choose another node; then that node's network takes over.
+    const you = state.holdings.size && state.portInvestor && !(near && !near.has(state.portInvestor)) ? state.portInvestor : null;
     state.node.attr("display", (d) => (visible(d) ? null : "none"))
       .classed("is-you", (d) => d.id === you)
       .attr("opacity", nodeOpacity)
@@ -1141,7 +1146,9 @@
     state.linkSel.attr("display", (l) => (inMode(l) && visible(l.source) && visible(l.target) ? null : "none"))
       .attr("stroke-opacity", (l) => {
         if (P) return P.links.has(l) ? 0.95 : 0.03;
-        if (near) return l.source.id === focusId || l.target.id === focusId ? 0.9 : near.has(l.source.id) && near.has(l.target.id) ? 0.55 : 0.04;
+        // Owner, 2026-11-27 ("why are all the spider webs lit up"): one click lights only the node's own lines; lines
+        // between its neighbours light only after a second click reaches further.
+        if (near) return l.source.id === focusId || l.target.id === focusId ? 0.9 : (focusId === state.selected && (state.depth || 1) > 1 && near.has(l.source.id) && near.has(l.target.id)) ? 0.4 : 0.03;
         if (q) return 0.08;
         // Portfolio: the lines from held companies stand out; the rest go quiet.
         if (reach) return l.source.id === you || l.target.id === you ? 0.95 : isHeld(l.source) || isHeld(l.target) ? 0.6 : 0.03;
@@ -1155,8 +1162,8 @@
       .attr("opacity", (d) => {
         if (P) return P.nodes.has(d.id) ? 1 : 0;
         if (!held(d) && d.id !== focusId) return 0;
-        if (q) return d.label.toLowerCase().includes(q) ? 1 : 0;
         if (near) return near.has(d.id) ? 1 : 0;
+        if (q) return d.label.toLowerCase().includes(q) ? 1 : 0;
         if (!isLit(d)) return 0;
         // Portfolio: name each held company and the investor whose holdings were loaded.
         if (d.id === you) return 1;

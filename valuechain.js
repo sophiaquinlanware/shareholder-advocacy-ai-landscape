@@ -253,7 +253,9 @@
     d3.selectAll("#vc-flow path.vc-tie").filter((x) => on.has(x)).raise();
     return on.size;
   }
-  // A slow, eased glide to the details (about 1.6 s), through the page's smooth scroller when it is running.
+  // A slow, eased glide to the details (about 1.6 s), after 1.5 s on the lit chart (owner, 2026-11-27: "a second
+  // slower so they have time to look at the graph"), through the page's smooth scroller when it is running.
+  let glidedTo = null;
   function glideTo(el) {
     if (!el) return;
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) { el.scrollIntoView({ block: "start" }); return; }
@@ -261,7 +263,7 @@
     setTimeout(() => {
       if (L && L.scrollTo) L.scrollTo(el, { offset: -96, duration: 1.6 });
       else el.scrollIntoView({ block: "start", behavior: "smooth" });
-    }, 450);
+    }, 1450);
   }
 
   // Ties of the chosen tier or company stay strong; the rest fade, so crossing lines stay readable.
@@ -293,6 +295,7 @@
     const ROUTE = { "US proxy rules apply": ["company under US proxy rules", "companies under US proxy rules"], "US-listed foreign issuer": ["US-listed foreign issuer", "US-listed foreign issuers"], private: ["private company", "private companies"] };
     const routesMix = p.shareholder_routes ? Object.entries(p.shareholder_routes).map(([k, n]) => `${n} ${(ROUTE[k] || [k, k])[n === 1 ? 0 : 1]}`).join(", ") : "";
     const panel = document.getElementById("vc-panel");
+    panel.classList.remove("vc-lit");
     const capped = (arr, total, what) => (arr && total && arr.length < total ? `<p class="status-note">The ${arr.length} most recent of ${total} ${what}.</p>` : "");
     const drawn = [...new Set(V.ties.flatMap((x) => [x.from, x.to]))].filter((id) => (CO.get(id) || {}).tier === tid).length;
     const ownLabs = tid === "labs" ? " (this tier's own labs included)" : "";
@@ -374,7 +377,11 @@
     announce(`${c.name || id}: ${plural(n, "tie")} in its stream, in orange; details below the chart. Tap the chart again to clear.`);
     const h = document.getElementById("vc-panel-h");
     h.focus({ preventScroll: true });
-    glideTo(h);
+    // The details light in the same orange as the stream, so the eye finds them after the glide.
+    panel.classList.add("vc-lit");
+    // Glide down once per company; clicking the same company again stays on the chart (owner, 2026-11-27).
+    if (glidedTo !== id) glideTo(h);
+    glidedTo = id;
   }
 
   function drawTieTable() {
