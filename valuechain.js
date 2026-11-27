@@ -112,7 +112,7 @@
         const mx = (a.x + b.x) / 2;
         return a.x === b.x ? `M${a.x},${a.y}C${a.x + 60},${a.y} ${b.x + 60},${b.y} ${b.x},${b.y}` : `M${a.x},${a.y}C${mx},${a.y} ${mx},${b.y} ${b.x},${b.y}`;
       })
-      .attr("class", "vc-tie").attr("stroke", ink).attr("stroke-opacity", 0.7).attr("stroke-width", 2).attr("stroke-dasharray", (t) => DASH[t.type] || null).attr("stroke-linecap", (t) => CAP[t.type] || "butt")
+      .attr("class", "vc-tie").attr("stroke", ink).attr("stroke-opacity", 0.7).attr("stroke-width", (t) => (CAP[t.type] ? 3 : 2)).attr("stroke-dasharray", (t) => DASH[t.type] || null).attr("stroke-linecap", (t) => CAP[t.type] || "butt")
       .append("title").text((t) => `${name(t.from)} ${phrase(t.type)} ${name(t.to)}`);
     // Tap (or Enter on) a line to trace it: the tie and every tie upstream of it and downstream of it along the
     // value chain turn orange, so a path from chips to AI products reads at a glance (owner, 2026-11-26). Wide,
@@ -180,7 +180,7 @@
     if (typeof d3 === "undefined") return;
     const ties = V.ties;
     if (!t) {
-      d3.selectAll("#vc-flow path.vc-tie").attr("stroke", cssVar("--blue-2")).attr("stroke-opacity", 0.7).attr("stroke-width", 2);
+      d3.selectAll("#vc-flow path.vc-tie").attr("stroke", cssVar("--blue-2")).attr("stroke-opacity", 0.7).attr("stroke-width", (x) => (CAP[x.type] ? 3 : 2));
       announce("Trace cleared.");
       return;
     }
@@ -198,8 +198,8 @@
     walk(t.to, (x) => x.to, "from");
     d3.selectAll("#vc-flow path.vc-tie")
       .attr("stroke", (x) => (on.has(x) ? TRACE : cssVar("--blue-2")))
-      .attr("stroke-opacity", (x) => (on.has(x) ? 1 : 0.12))
-      .attr("stroke-width", (x) => (x === t ? 3.4 : on.has(x) ? 2.6 : 1.6));
+      .attr("stroke-opacity", (x) => (on.has(x) ? 1 : 0.4))
+      .attr("stroke-width", (x) => (x === t ? 3.4 : on.has(x) ? 2.6 : 1.8) + (CAP[x.type] ? 1 : 0));
     d3.selectAll("#vc-flow path.vc-tie").filter((x) => on.has(x)).raise();
     announce(`Traced ${name(t.from)} ${phrase(t.type)} ${name(t.to)}: ${on.size} ${on.size === 1 ? "tie" : "ties"} on its path, in orange. Tap the chart again to clear.`);
   }
@@ -209,7 +209,10 @@
     if (typeof d3 === "undefined") return;
     S.traced = null;
     d3.selectAll("#vc-flow path.vc-tie").attr("stroke", cssVar("--blue-2"));
-    d3.selectAll("#vc-flow path.vc-tie").attr("stroke-opacity", (x) => (keep(x) ? 0.95 : 0.08)).attr("stroke-width", (x) => (keep(x) ? 2.6 : 1.6));
+    // Faded lines stay readable (owner, 2026-11-26: "make it so that all of these lines are legible"); dotted ties are
+    // drawn heavier, since round dots vanish at hairline widths.
+    const dot = (x) => (CAP[x.type] ? 1 : 0);
+    d3.selectAll("#vc-flow path.vc-tie").attr("stroke-opacity", (x) => (keep(x) ? 1 : 0.4)).attr("stroke-width", (x) => (keep(x) ? 3 : 1.8) + dot(x));
   }
   // Clear then set, so the same message is announced again on a repeat click.
   function announce(t) {
