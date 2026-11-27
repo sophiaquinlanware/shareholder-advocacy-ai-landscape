@@ -39,6 +39,7 @@ test("the page loads with no errors and no missing files", async ({ page }) => {
 });
 
 test("every tab: no sideways scrolling, no overlapping text", async ({ page }, info) => {
+  test.setTimeout(90000); // walks every view, including the About cover page
   const problems = [];
   // Graphs draw when their tab first opens, so script errors there only show up here.
   page.on("pageerror", (err) => problems.push(`script error: ${err.message}`));

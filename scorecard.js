@@ -87,7 +87,7 @@
       <h2>Documents reviewed</h2><ul class="steps">${docs}</ul>`;
     const out = document.getElementById("tab-outcomes");
     if (out) out.innerHTML = tl
-      ? `<h2>Results of private engagement</h2><p class="intro">What changed at companies after private engagement on AI, as the investor itself has reported it. Today this covers Parnassus Investments, from its stewardship reports; each step links to the page. The same engagements show in the Network as "engaged directly" links.</p><ul class="timeline">${tl}</ul>`
+      ? `<h2>Results of private engagement</h2><p class="intro">Company changes after private engagement on AI, as reported by the investor. Currently covers Parnassus Investments only, from its stewardship reports; each step links to its source page. The same engagements appear in the Network as "engaged directly" links.</p><ul class="timeline">${tl}</ul>`
       : `<h2>Results of private engagement</h2><p class="status-note">No reported engagement outcomes on file.</p>`;
     el.querySelectorAll("[data-p]").forEach((b) => b.addEventListener("click", () => {
       S.pillar = b.dataset.p;

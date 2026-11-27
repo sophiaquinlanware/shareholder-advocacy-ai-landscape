@@ -155,7 +155,7 @@
       const col = document.getElementById("cz-lanes");
       if (col) {
         col.style.height = `${H}px`;
-        col.innerHTML = lanes.map((l, i) => `<span style="top:${laneTop(i) + laneHs[i] / 2}px">${esc(l.label)}</span>`).join("");
+        col.innerHTML = lanes.map((l, i) => `<span style="top:${laneTop(i) + 14}px">${esc(l.label)}</span>`).join("");
       }
       timeNav(xr, t0, t1, W);
     };
@@ -272,7 +272,7 @@
     const legend = Object.keys(LINK_VAR).map((k) => `<span class="leg static"><svg class="mark" viewBox="0 0 24 12" aria-hidden="true"><line x1="0" y1="6" x2="24" y2="6" stroke="${cssVar("--cz-link")}" stroke-width="2"${LINK_DASH[k] ? ` stroke-dasharray="${LINK_DASH[k]}"` : ""}></line></svg>${esc(rel(k))}</span>`).join("");
     el.innerHTML = `
       <h2>Causal map of AI policy and governance</h2>
-      <p class="intro">A causal timeline of AI laws, regulation and SEC rule changes, and of how companies, investors and labs responded. Each arrow is a causal link stated in a cited source. Select an event to trace its antecedents and consequences. ${C.events.length} dated events, ${fmt(d3min(C.events))} to ${fmt(d3max(C.events))}, with ${C.links.length} sourced links.</p>
+      <p class="intro">${C.events.length} dated events, ${fmt(d3min(C.events))} to ${fmt(d3max(C.events))}: AI laws, regulation and SEC rule changes, and how companies, investors and labs responded. Each of the ${C.links.length} arrows is a causal link stated in a cited source. Select an event to trace its antecedents and consequences.</p>
       <div class="net-controls">
         <div class="seg" role="group" aria-label="Trace">
           <button type="button" data-mode="both" aria-pressed="true">Antecedents and consequences</button>

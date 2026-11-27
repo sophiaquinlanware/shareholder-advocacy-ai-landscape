@@ -108,7 +108,7 @@
     const fam = (ptv && ptv.families) || [];
     if (!fam.length) return "";
     const say = (f) => (f.offered === true ? "Yes" : f.offered === false ? "No" : "No program found on the pages checked");
-    return `<h3 class="sub-h">Can fund holders choose their own votes? (pass-through voting)</h3>
+    return `<h3 class="sub-h">Pass-through voting: can fund holders choose their own votes?</h3>
       <p class="count-line">${esc(ptv.about || "Whether each fund family offers holders of its funds a say in proxy votes.")}</p>
       <div class="table-wrap"><table><thead><tr><th scope="col">Fund family</th><th scope="col">Offered</th><th scope="col">Detail</th></tr></thead><tbody>
       ${fam.map((f) => `<tr><td>${esc(f.family)}</td><td>${esc(say(f))}</td><td>${esc(f.note || "")} ${f.source_url ? `<a class="src" href="${esc(f.source_url)}" target="_blank" rel="noopener">[source]</a>` : `<span class="unverified">source pending</span>`}</td></tr>`).join("")}
@@ -144,7 +144,7 @@
     const opt = (v, t, sel) => `<option value="${esc(v)}"${sel ? " selected" : ""}>${esc(t)}</option>`;
     el.innerHTML = `
       <h2>Fund family votes on AI proposals</h2>
-      <p class="intro">Form N-PX votes by ${families.length} fund families on AI proposals at tracked companies, meetings ${esc(longDate(data.first_meeting_covered))} to ${esc(longDate(data.last_meeting_covered))}. Each vote links to its filing. No vote is rated, and nothing here suggests how to vote. Not affiliated with any fund shown.</p>
+      <p class="intro">Form N-PX votes by ${families.length} fund families on AI proposals at tracked companies, meetings ${esc(longDate(data.first_meeting_covered))} to ${esc(longDate(data.last_meeting_covered))}. Each vote links to its filing. No vote is rated; nothing here suggests how to vote. Not affiliated with any fund shown.</p>
       <ul class="steps">
         <li><strong>Split</strong> means the family reported more than one way of voting on that proposal. The numbers count fund records: different funds can vote differently, and a single fund can split its own shares, as pass-through voting programs do.</li>
         <li><strong>No vote found</strong> means no matching vote turned up in the filings checked. It does not say why.</li>

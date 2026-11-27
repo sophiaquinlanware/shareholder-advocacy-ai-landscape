@@ -23,7 +23,7 @@
   <div class="wrap">
     <button type="button" class="tool qs-open" aria-keyshortcuts="Meta+K Control+K">Search <kbd>⌘K</kbd></button>
     <h1>Shareholder advocacy towards responsible AI</h1>
-    <p class="tagline">For investors engaging companies on responsible AI: what is on the ballot, what has been asked, where you have leverage, and who else is doing the work.</p>
+    <p class="tagline">For investors engaging companies on responsible AI: what is on the ballot, what has been asked, where you have leverage and who else is engaging.</p>
     <p class="meta" id="last-updated"></p>
   </div>
 </header>
@@ -35,45 +35,31 @@
        Shown once the page header scrolls away; the selected tab already tells screen readers, so it is hidden from them. -->
   <div class="wrap sticky-title" aria-hidden="true"><span class="st-site">Shareholder advocacy towards responsible AI</span><span class="st-page" id="sticky-page"></span></div>
   <div class="wrap tab-row" role="tablist" aria-label="Sections">
-    <button type="button" role="tab" id="gbtn-start" aria-controls="grp-start" data-group="start" aria-selected="true">Deadlines and votes</button>
-    <button type="button" role="tab" id="gbtn-companies" aria-controls="grp-companies" data-group="companies" aria-selected="false" tabindex="-1">Company profiles</button>
+    <button type="button" role="tab" id="gbtn-about" aria-controls="grp-about" data-group="about" aria-selected="true">About</button>
     <button type="button" role="tab" id="gbtn-chain" aria-controls="grp-chain" data-group="chain" aria-selected="false" tabindex="-1">AI value chain</button>
     <button type="button" role="tab" id="gbtn-policy" aria-controls="grp-policy" data-group="policy" aria-selected="false" tabindex="-1">Laws and rules</button>
+    <button type="button" role="tab" id="gbtn-companies" aria-controls="grp-companies" data-group="companies" aria-selected="false" tabindex="-1">Company profiles</button>
     <button type="button" role="tab" id="gbtn-proposals" aria-controls="grp-proposals" data-group="proposals" aria-selected="false" tabindex="-1">Proposals and results</button>
     <button type="button" role="tab" id="gbtn-engaging" aria-controls="grp-engaging" data-group="engaging" aria-selected="false" tabindex="-1">Network and contacts</button>
+    <button type="button" role="tab" id="gbtn-start" aria-controls="grp-start" data-group="start" aria-selected="false" tabindex="-1">Deadlines and votes</button>
     <button type="button" role="tab" id="gbtn-plan" aria-controls="grp-plan" data-group="plan" aria-selected="false" tabindex="-1">Plan and test</button>
   </div>
 </nav>
 
 <main class="wrap">
-  <div id="grp-start" class="group" role="tabpanel" aria-labelledby="gbtn-start">
-    <p class="group-q">Proposal filing deadlines, AI proposals on upcoming ballots, new SEC filings, and three findings from the data.</p>
-    <div class="subtabs" role="tablist" aria-label="Start here views">
-      <button type="button" role="tab" id="tabbtn-start" aria-controls="tab-start" data-tab="start" aria-selected="true">Key dates and findings</button>
-      <button type="button" role="tab" id="tabbtn-upcoming" aria-controls="tab-upcoming" data-tab="upcoming" aria-selected="false" tabindex="-1">AI proposals on upcoming ballots</button>
-      <button type="button" role="tab" id="tabbtn-new" aria-controls="tab-new" data-tab="new" aria-selected="false" tabindex="-1">New SEC filings</button>
-    </div>
-    <section id="tab-start" class="panel" role="tabpanel" aria-labelledby="tabbtn-start" data-group="start"></section>
-    <section id="tab-upcoming" class="panel" role="tabpanel" aria-labelledby="tabbtn-upcoming" data-group="start" hidden></section>
-    <section id="tab-new" class="panel" role="tabpanel" aria-labelledby="tabbtn-new" data-group="start" hidden></section>
-    <p class="next-section"><a href="#company">Next: Company profiles →</a></p>
-  </div>
-
-  <div id="grp-companies" class="group" role="tabpanel" aria-labelledby="gbtn-companies" hidden>
-    <p class="group-q">One company in full: why it is tracked, its AI proposals and results, who filed them, its lab ties and its shareholder proposal rights. Plus side-by-side comparisons.</p>
-    <div class="subtabs" role="tablist" aria-label="Companies views">
-      <button type="button" role="tab" id="tabbtn-company" aria-controls="tab-company" data-tab="company" aria-selected="true">One company in full</button>
-      <button type="button" role="tab" id="tabbtn-parnassus" aria-controls="tab-parnassus" data-tab="parnassus" aria-selected="false" tabindex="-1">AI disclosure scores</button>
-      <button type="button" role="tab" id="tabbtn-rights" aria-controls="tab-rights" data-tab="rights" aria-selected="false" tabindex="-1">Shareholder proposal rights</button>
-    </div>
-    <section id="tab-company" class="panel" role="tabpanel" aria-labelledby="tabbtn-company" data-group="companies" hidden></section>
-    <section id="tab-parnassus" class="panel" role="tabpanel" aria-labelledby="tabbtn-parnassus" data-group="companies" hidden></section>
-    <section id="tab-rights" class="panel" role="tabpanel" aria-labelledby="tabbtn-rights" data-group="companies" hidden></section>
-    <p class="next-section"><a href="#value-chain">Next: AI value chain →</a></p>
+  <!-- Cover page (owner, 2026-11-26: "one page that's like the cover home page that clearly lays out the intention
+       and use case for this site and features, like a kind of manifesto"). Opens when a visit has no #view. -->
+  <div id="grp-about" class="group" role="tabpanel" aria-labelledby="gbtn-about">
+    <section id="tab-about" class="panel" role="tabpanel" aria-labelledby="gbtn-about" data-group="about">
+      <!-- Written into the page so it paints at once; app.js fills #about-body from the data. -->
+      <h2 class="ab-h">Investor engagement on AI, in one sourced record</h2>
+      <p class="ab-lede">What investors have asked AI companies, how shareholders voted, and where engagement can still reach, read in order from the AI value chain to a plan for one engagement.</p>
+      <div id="about-body"></div>
+    </section>
   </div>
 
   <div id="grp-chain" class="group" role="tabpanel" aria-labelledby="gbtn-chain" hidden>
-    <p class="group-q">How chip makers, data centers, cloud providers, frontier labs and AI product companies are tied to each other, and which companies own, fund or supply each frontier lab.</p>
+    <p class="group-q">Sourced ties between chip makers, data centers, cloud providers, frontier labs and AI product companies, and which companies own, fund or supply each frontier lab.</p>
     <div class="subtabs" role="tablist" aria-label="Value chain views">
       <button type="button" role="tab" id="tabbtn-value-chain" aria-controls="tab-value-chain" data-tab="value-chain" aria-selected="true">Chips to AI products</button>
       <button type="button" role="tab" id="tabbtn-pathways" aria-controls="tab-pathways" data-tab="pathways" aria-selected="false" tabindex="-1">Ties to each frontier lab</button>
@@ -84,13 +70,26 @@
   </div>
 
   <div id="grp-policy" class="group" role="tabpanel" aria-labelledby="gbtn-policy" hidden>
-    <p class="group-q">AI laws, regulation and SEC rule changes, and how companies and investors have responded, as a causal map with a cited source for every link.</p>
+    <p class="group-q">AI laws, regulation and SEC rule changes and how companies and investors responded, as a causal map; every link cites a source.</p>
     <section id="tab-causality" class="panel" data-group="policy" hidden></section>
+    <p class="next-section"><a href="#company">Next: Company profiles →</a></p>
+  </div>
+
+  <div id="grp-companies" class="group" role="tabpanel" aria-labelledby="gbtn-companies" hidden>
+    <p class="group-q">One company at a time: why it is tracked, its AI proposals, results and filers, its frontier-lab ties and its proposal rights. Then AI disclosure scores and proposal rights across companies.</p>
+    <div class="subtabs" role="tablist" aria-label="Companies views">
+      <button type="button" role="tab" id="tabbtn-company" aria-controls="tab-company" data-tab="company" aria-selected="true">One company in full</button>
+      <button type="button" role="tab" id="tabbtn-parnassus" aria-controls="tab-parnassus" data-tab="parnassus" aria-selected="false" tabindex="-1">AI disclosure scores</button>
+      <button type="button" role="tab" id="tabbtn-rights" aria-controls="tab-rights" data-tab="rights" aria-selected="false" tabindex="-1">Shareholder proposal rights</button>
+    </div>
+    <section id="tab-company" class="panel" role="tabpanel" aria-labelledby="tabbtn-company" data-group="companies" hidden></section>
+    <section id="tab-parnassus" class="panel" role="tabpanel" aria-labelledby="tabbtn-parnassus" data-group="companies" hidden></section>
+    <section id="tab-rights" class="panel" role="tabpanel" aria-labelledby="tabbtn-rights" data-group="companies" hidden></section>
     <p class="next-section"><a href="#feed">Next: Proposals and results →</a></p>
   </div>
 
   <div id="grp-proposals" class="group" role="tabpanel" aria-labelledby="gbtn-proposals" hidden>
-    <p class="group-q">Every AI shareholder proposal since 2023 with its filer, status and vote result, how fund families voted on each, and what companies changed after private engagement.</p>
+    <p class="group-q">Every AI shareholder proposal since 2023 at the companies tracked, with filer, status and vote result; fund-family votes on each; and company changes reported after private engagement.</p>
     <div class="subtabs" role="tablist" aria-label="Proposals and votes views">
       <button type="button" role="tab" id="tabbtn-feed" aria-controls="tab-feed" data-tab="feed" aria-selected="true">All AI proposals</button>
       <button type="button" role="tab" id="tabbtn-votes" aria-controls="tab-votes" data-tab="votes" aria-selected="false" tabindex="-1">Fund family votes on AI proposals</button>
@@ -103,18 +102,31 @@
   </div>
 
   <div id="grp-engaging" class="group" role="tabpanel" aria-labelledby="gbtn-engaging" hidden>
-    <p class="group-q">Investors, advocacy groups and coalitions that file or back AI proposals, how they connect to each other and to companies, and the people who lead their engagement.</p>
+    <p class="group-q">Investors, advocacy groups and coalitions that file or back AI proposals, their ties to each other and to companies, and the people who lead their engagement.</p>
     <div class="subtabs" role="tablist" aria-label="Who's engaging views">
       <button type="button" role="tab" id="tabbtn-network" aria-controls="tab-network" data-tab="network" aria-selected="true">Network of investors, proposals and companies</button>
       <button type="button" role="tab" id="tabbtn-people" aria-controls="tab-people" data-tab="people" aria-selected="false" tabindex="-1">Heads of stewardship and engagement</button>
     </div>
     <section id="tab-network" class="panel" role="tabpanel" aria-labelledby="tabbtn-network" data-group="engaging" hidden></section>
     <section id="tab-people" class="panel" role="tabpanel" aria-labelledby="tabbtn-people" data-group="engaging" hidden></section>
+    <p class="next-section"><a href="#start">Next: Deadlines and votes →</a></p>
+  </div>
+
+  <div id="grp-start" class="group" role="tabpanel" aria-labelledby="gbtn-start" hidden>
+    <p class="group-q">Filing deadlines, upcoming AI votes, new SEC filings and three findings.</p>
+    <div class="subtabs" role="tablist" aria-label="Start here views">
+      <button type="button" role="tab" id="tabbtn-start" aria-controls="tab-start" data-tab="start" aria-selected="true">Key dates and findings</button>
+      <button type="button" role="tab" id="tabbtn-upcoming" aria-controls="tab-upcoming" data-tab="upcoming" aria-selected="false" tabindex="-1">AI proposals on upcoming ballots</button>
+      <button type="button" role="tab" id="tabbtn-new" aria-controls="tab-new" data-tab="new" aria-selected="false" tabindex="-1">New SEC filings</button>
+    </div>
+    <section id="tab-start" class="panel" role="tabpanel" aria-labelledby="tabbtn-start" data-group="start"></section>
+    <section id="tab-upcoming" class="panel" role="tabpanel" aria-labelledby="tabbtn-upcoming" data-group="start" hidden></section>
+    <section id="tab-new" class="panel" role="tabpanel" aria-labelledby="tabbtn-new" data-group="start" hidden></section>
     <p class="next-section"><a href="#planner">Next: Plan and test →</a></p>
   </div>
 
   <div id="grp-plan" class="group" role="tabpanel" aria-labelledby="gbtn-plan" hidden>
-    <p class="group-q">Plan an engagement at one company on one ask with what the earlier sections show, then test plans forward in time against a model of how filers, companies, voters and policy have behaved.</p>
+    <p class="group-q">Plan an engagement on one ask at one company from the earlier sections' data, then test plans forward in time against a model of past filer, company, voter and policy behavior.</p>
     <div class="subtabs" role="tablist" aria-label="Plan and test views">
       <button type="button" role="tab" id="tabbtn-planner" aria-controls="tab-planner" data-tab="planner" aria-selected="true">Plan an engagement</button>
       <button type="button" role="tab" id="tabbtn-predict" aria-controls="tab-predict" data-tab="predict" aria-selected="false" tabindex="-1">Prediction board</button>
@@ -124,6 +136,7 @@
     <section id="tab-predict" class="panel" role="tabpanel" aria-labelledby="tabbtn-predict" data-group="plan" hidden></section>
     <section id="tab-simulate" class="panel" role="tabpanel" aria-labelledby="tabbtn-simulate" data-group="plan" hidden></section>
   </div>
+
 </main>
 
 <footer class="site-footer">
@@ -137,21 +150,21 @@
         <p class="foot-tag">Public data on AI shareholder proposals, votes, companies and the investors engaging them.</p>
         <p class="foot-note">Every fact links to its source. Built by Sophia Ware.</p>
       </div>
-      <nav class="foot-col" aria-label="Deadlines and votes">
-        <h2 class="foot-h">Deadlines and votes</h2>
-        <ul><li><a href="#start">Key dates and findings</a></li><li><a href="#upcoming">AI proposals on upcoming ballots</a></li><li><a href="#new">New SEC filings</a></li></ul>
+      <nav class="foot-col" aria-label="AI value chain">
+        <h2 class="foot-h">AI value chain</h2>
+        <ul><li><a href="#value-chain">Chips to AI products</a></li><li><a href="#pathways">Ties to each frontier lab</a></li><li><a href="#causality">Laws and rules</a></li></ul>
       </nav>
       <nav class="foot-col" aria-label="Companies">
         <h2 class="foot-h">Companies</h2>
         <ul><li><a href="#company">Company profiles</a></li><li><a href="#parnassus">AI disclosure scores</a></li><li><a href="#rights">Shareholder proposal rights</a></li></ul>
       </nav>
-      <nav class="foot-col" aria-label="AI value chain">
-        <h2 class="foot-h">AI value chain</h2>
-        <ul><li><a href="#value-chain">Chips to AI products</a></li><li><a href="#pathways">Ties to each frontier lab</a></li><li><a href="#causality">Laws and rules</a></li></ul>
-      </nav>
       <nav class="foot-col" aria-label="Proposals and network">
         <h2 class="foot-h">Proposals and network</h2>
         <ul><li><a href="#feed">All AI proposals</a></li><li><a href="#votes">Fund family votes</a></li><li><a href="#outcomes">Results of private engagement</a></li><li><a href="#network">Network of investors</a></li><li><a href="#people">Heads of stewardship</a></li></ul>
+      </nav>
+      <nav class="foot-col" aria-label="Deadlines and votes">
+        <h2 class="foot-h">Deadlines and votes</h2>
+        <ul><li><a href="#start">Key dates and findings</a></li><li><a href="#upcoming">AI proposals on upcoming ballots</a></li><li><a href="#new">New SEC filings</a></li></ul>
       </nav>
       <nav class="foot-col" aria-label="Plan and test">
         <h2 class="foot-h">Plan and test</h2>

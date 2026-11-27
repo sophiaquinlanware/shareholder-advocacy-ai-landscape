@@ -202,7 +202,7 @@ function renderCompany() {
   const F = { sector: "", basis: "" };
   el.innerHTML = `
     <h2>One company in full</h2>
-    <p class="intro">Everything on file for one company: why it is included, its next ballot and filing deadline, its AI proposals and how they did, who filed them, its ties to frontier labs, and the proposal rights investors have there.</p>
+    <p class="intro">All records for one company: why it is included, next ballot and filing deadline, AI proposals and their results, filers, frontier-lab ties and shareholder proposal rights.</p>
     <div class="net-controls">
       ${roleIds.length ? `<select id="co-role" aria-label="Main role in AI"><option value="">All roles</option>${roleIds.map((r) => `<option value="${esc(r)}">${esc(R.label(r))}</option>`).join("")}</select>` : ""}
       ${bases.length ? `<select id="co-basis" aria-label="Why included"><option value="">Any reason included</option>${bases.map((s) => `<option>${esc(s)}</option>`).join("")}</select>` : ""}
@@ -412,7 +412,7 @@ function renderFeed() {
     // basis note, but nearly every figure now has one, so the split no longer told anything apart.
     const noted = pts.filter((p) => p.support_note).length;
     // The topic key is drawn inside the chart (so a screenshot carries it); this note explains the counts.
-    key.innerHTML = `<p class="note">${plural(pts.length, "voted proposal")} plotted. Shape and shade show what each proposal asks about; every mark is filled.${noted ? ` ${noted} of these figures ${noted === 1 ? "has" : "have"} a basis note (for example, computed from 8-K vote counts or dual-class voting), listed in the table.` : ""}${skipped > 0 ? ` ${plural(skipped, "voted proposal has", "voted proposals have")} no meeting date or vote-results filing recorded and appear in the table only.` : ""} Upcoming, withdrawn and excluded proposals are in the table.</p>`;
+    key.innerHTML = `<p class="note">${plural(pts.length, "voted proposal")} plotted. Shape and shade show what each proposal asks about; every mark is filled.${noted ? ` ${noted} of these figures ${noted === 1 ? "has" : "have"} a basis note (for example, computed from 8-K vote counts or dual-class voting), listed in the table.` : ""}${skipped > 0 ? ` ${plural(skipped, "voted proposal has", "voted proposals have")} no meeting date or vote-results filing recorded and appear in the table only.` : ""} Upcoming, withdrawn and excluded proposals are in the table only.</p>`;
     if (typeof d3 === "undefined") return;
     if (!pts.length) { box.innerHTML = `<p class="status-note">No voted proposals with a dated vote-results filing match these filters.</p>`; return; }
     const all_pts = all.filter(plottable);
@@ -570,7 +570,7 @@ function renderRights() {
   };
   el.innerHTML = `
     <h2>Shareholder proposal rights</h2>
-    <p class="intro">If the SEC rescinds Rule 14a-8, which companies still let investors put a proposal on the ballot, and how much say they have over directors? From each company's bylaws, state of incorporation and share structure. This site's reading of the cited documents, not a legal opinion.</p>
+    <p class="intro">Which companies would still let investors put a proposal on the ballot if the SEC rescinds Rule 14a-8, and shareholders' say over directors at each, from its bylaws, state of incorporation and share structure. This site's reading of the cited documents, not a legal opinion.</p>
     ${roleIds.length ? `<div class="net-controls"><select id="rights-sector" aria-label="Main role in AI"><option value="">All roles</option>${roleIds.map((r) => `<option value="${esc(r)}">${esc(R.label(r))}</option>`).join("")}</select></div>` : ""}
     <p class="count-line" id="rights-count" aria-live="polite"></p>
     <div class="table-wrap" id="rights-table"></div>
@@ -605,7 +605,7 @@ function renderPeople() {
   ];
   el.innerHTML = `
     <h2>Heads of stewardship and engagement</h2>
-    <p class="intro">The people who lead stewardship, shareholder engagement and shareholder advocacy at the organizations in the network (most hold titles such as Head of Stewardship or Director of Shareholder Engagement), each with a public profile page. Public professional details only.</p>
+    <p class="intro">Leads of stewardship, shareholder engagement and advocacy at the organizations in the network (most titled Head of Stewardship, Director of Shareholder Engagement or similar), each linked to a public profile page. Public professional details only.</p>
     <div class="net-controls"><input type="search" id="people-search" placeholder="Search name, organization or AI work" aria-label="Search people"></div>
     <p class="count-line" id="people-count" aria-live="polite"></p>
     <div class="table-wrap" id="people-table"></div>`;
@@ -640,7 +640,7 @@ function renderNew() {
         <div class="ticker">${esc(c.review_status || "")}</div></li>`).join("")}</ul></li>`).join("");
   document.getElementById("tab-new").innerHTML = `
     <h2>New SEC filings</h2>
-    <p class="intro">Every Monday the site checks SEC EDGAR for new proxy statements, investor exempt solicitations (PX14A6G), vote results and bylaw changes at the companies it tracks. Filings found are listed here before anyone reviews them.</p>
+    <p class="intro">Checked on SEC EDGAR every Monday: new proxy statements, investor exempt solicitations (PX14A6G), vote results and bylaw changes at the companies tracked. Listed as found, not yet reviewed.</p>
     <p class="count-line">Last check: ${esc(t.last_checked ? fmtDate(t.last_checked.slice(0, 10)) : "not run yet")}.${t.new_this_run != null ? ` ${plural(t.new_this_run, "new filing")} found in that run.` : ""}</p>
     ${groups ? `<ul class="timeline">${groups}</ul>` : `<p class="status-note">Nothing flagged yet.</p>`}`;
 }
@@ -648,6 +648,77 @@ function renderNew() {
 // ---------- Start here: Overview ----------
 // What an analyst can act on now (ballots out, open filing deadlines, this week's SEC finds), three findings
 // from the data with their basis, and what each section of the site is for.
+// ---------- About: the cover page ----------
+// What the site is for, who uses it, what each section answers, and the rules it keeps (PRODUCT.md). Counts come
+// from the data so they stay current.
+function renderAbout() {
+  const el = document.getElementById("tab-about");
+  if (!el) return;
+  const props = (DATA.proposals && DATA.proposals.proposals) || [];
+  const people = ((DATA.people && DATA.people.people) || []).length;
+  const cos = (DATA.companies || []).length;
+  const ties = ((DATA.pathways && DATA.pathways.ties) || []).length + ((DATA.value_chain && DATA.value_chain.ties) || []).length;
+  const events = ((DATA.causality && DATA.causality.events) || []).length;
+  const yrs = window.yearSpan ? window.yearSpan(props.map((p) => p.meeting_date)) : "";
+  const stat = (n, l) => `<div class="ab-stat" role="listitem"><span class="ab-n">${n}</span><span class="ab-l">${esc(l)}</span></div>`;
+  const sections = [...document.querySelectorAll('.tabs [role="tab"][data-group]')].filter((b) => b.dataset.group !== "about").map((b) => {
+    const g = b.dataset.group;
+    const q = (document.querySelector(`#grp-${g} .group-q`) || {}).textContent || "";
+    const first = (document.querySelector(`#grp-${g} .panel`) || {}).id.slice(4);
+    return `<li><a href="#${esc(first)}">${esc(b.textContent)}</a><p>${esc(q)}</p></li>`;
+  }).join("");
+  // Why each company is in scope (owner, 2026-11-26: "explain why you chose certain companies … so it doesn't
+  // feel like arbitrary data"). Counted from each company's stated, sourced basis in data/companies.json.
+  const BASIS = { "shareholder proposal": "an AI shareholder proposal on its ballot", "safety commitment": "a frontier AI safety commitment it signed", "investor engagement": "an investor engagement on AI that the investor reported", "compute agreement": "a compute agreement with a frontier lab" };
+  const basis = {};
+  (DATA.companies || []).forEach((c) => { if (c.basis_type) basis[c.basis_type] = (basis[c.basis_type] || 0) + 1; });
+  const basisList = Object.entries(basis).sort((a, b) => b[1] - a[1]).map(([k, n]) => `<li><span class="ab-bn">${n}</span> ${esc(BASIS[k] || k)}</li>`).join("");
+  const body = document.getElementById("about-body");
+  if (!body) return;
+  body.innerHTML = `
+    <div class="ab-stats" role="list" aria-label="Coverage">
+      ${stat(cos, "companies in scope")}
+      ${stat(props.length, `AI shareholder proposals${yrs ? `, ${yrs}` : ""}`)}
+      ${stat(people, "stewardship and engagement leads")}
+      ${stat(ties, "sourced company and lab ties")}
+      ${stat(events, "dated policy and governance events")}
+    </div>
+    <section class="ab-sec">
+      <h3>How investor influence reaches AI</h3>
+      <ol class="ab-theory">
+        <li><strong>Channels.</strong> Shareholders influence a company through dialogue with management and the board, votes at the annual meeting, and proposals filed under SEC Rule 14a-8.</li>
+        <li><strong>Reach.</strong> Most frontier labs are private. Shareholders reach them through the listed companies that own, fund, supply or distribute them.</li>
+        <li><strong>Conditions.</strong> Which channel is open at a company depends on its proposal rights, its filing deadline and SEC rules, which are changing.</li>
+        <li><strong>Record.</strong> What has already been asked, with what support and by whom, sets the starting point for the next engagement.</li>
+      </ol>
+    </section>
+    <section class="ab-sec">
+      <h3>Why these companies</h3>
+      <p>Each of the ${cos} companies is in scope for one stated reason, with its source on the company's profile:</p>
+      <ul class="ab-basis">${basisList}</ul>
+      <p class="status-note">Companies with none of these on record are out of scope. Counts across the site cover these companies and the sources listed, not every company or proposal.</p>
+    </section>
+    <section class="ab-sec">
+      <h3>Read in order</h3>
+      <ol class="ab-sections">${sections}</ol>
+    </section>
+    <section class="ab-sec">
+      <h3>Who it is for</h3>
+      <p>Stewardship and engagement teams at asset managers, pension funds, faith-based and labor investors, foundations and nonprofit filers; researchers and journalists following AI governance.</p>
+    </section>
+    <section class="ab-sec">
+      <h3>Principles</h3>
+      <ol class="ab-principles">
+        <li><strong>Sourced.</strong> Each fact links to its filing or page. Records found automatically are marked until reviewed; a missing source reads "source pending".</li>
+        <li><strong>Informs; does not coordinate.</strong> Nothing here recommends a vote or organizes investors to act together.</li>
+        <li><strong>Not advice.</strong> Nothing here is investment, legal or tax advice.</li>
+        <li><strong>Computed figures labelled.</strong> Averages, scenarios and forecasts are marked as computed by this site and never presented as facts.</li>
+        <li><strong>Public roles only.</strong> People appear by name, organization and published title.</li>
+      </ol>
+    </section>
+    <p class="ab-start"><a class="ab-cta" href="#value-chain">Begin: the AI value chain →</a> <a class="ab-cta ab-cta-2" href="#planner">Go straight to planning →</a></p>`;
+}
+
 function renderStart() {
   const el = document.getElementById("tab-start");
   const s = DATA.site || {};
@@ -669,13 +740,7 @@ function renderStart() {
   const comingList = shown.map((x) => `<li><span class="kind">${esc(x.kind)}</span> ${x.html}${x.ticker ? ` <button type="button" class="linklike" data-co="${esc(x.ticker)}">${esc(companyName(x.ticker))} profile</button>` : ""}</li>`).join("");
   const items = ((DATA.changes && DATA.changes.items) || []).slice().sort((a, b) => String(b.filed).localeCompare(String(a.filed)));
   const t = DATA.tracking || {};
-  const sections = [...document.querySelectorAll('.tabs [role="tab"][data-group]')].slice(1).map((b) => {
-    const g = b.dataset.group;
-    const q = (document.querySelector(`#grp-${g} .group-q`) || {}).textContent || "";
-    const first = (document.querySelector(`#grp-${g} .panel`) || {}).id.slice(4);
-    return `<li><a href="#${esc(first)}">${esc(b.textContent)}</a>: ${esc(q)}</li>`;
-  }).join("");
-  const filings = `<p class="count-line">Checked ${esc(t.last_checked ? fmtDate(t.last_checked.slice(0, 10)) : "not yet")}${t.new_this_run != null ? `: ${plural(t.new_this_run, "new filing")} found` : ""}. Found automatically and not yet reviewed.</p>
+  const filings = `<p class="count-line">Checked ${esc(t.last_checked ? fmtDate(t.last_checked.slice(0, 10)) : "not yet")}${t.new_this_run != null ? `: ${plural(t.new_this_run, "new filing")} found` : ""}. Auto-detected, not yet reviewed.</p>
     ${items.length ? `<p><a href="#new">See the ${plural(items.length, "filing")} found so far</a></p>` : ""}`;
   // The second pass (after the weekly SEC check has loaded) updates only the filings block, so the rest of the
   // page, including its largest text, is painted once and not redrawn.
@@ -683,16 +748,14 @@ function renderStart() {
   if (box) { box.innerHTML = filings; return; }
   el.innerHTML = `
     <h2>Key dates and findings</h2>
-    <p class="intro">Dates you can act on, three things the data shows, and what each section of the site is for.</p>
+    <p class="intro">Next ballots and filing deadlines, findings from the data, and the latest weekly SEC filings.</p>
     <h3 class="sub-h">Coming up</h3>
     ${comingList ? `<ul class="steps coming-up">${comingList}</ul>` : `<p class="status-note">No ballots or open filing deadlines on file.</p>`}
     <p><a href="#upcoming">All upcoming votes</a> · <a href="#planner">Plan an engagement at any of these companies</a>${coming.length > shown.length ? ` · ${coming.length - shown.length} more open filing deadlines are on the company profiles` : ""}</p>
     <h3 class="sub-h">What the data shows</h3>
     ${findings ? `<ul class="findings">${findings}</ul>` : `<p class="status-note">No findings recorded.</p>`}
     <h3 class="sub-h">New SEC filings</h3>
-    <div id="start-new">${filings}</div>
-    <h3 class="sub-h">How this site is organized</h3>
-    <ul class="steps">${sections}</ul>`;
+    <div id="start-new">${filings}</div>`;
   wireCompanyLinks(el);
 }
 
@@ -811,7 +874,7 @@ function setupTabs() {
   window.addEventListener("hashchange", onHash);
   // pushState doesn't fire hashchange on Back/Forward in every browser; popstate covers it.
   window.addEventListener("popstate", onHash);
-  showTab(location.hash.slice(1));
+  showTab(location.hash.slice(1) || "about");
 }
 
 // Resolves once d3 (loaded async from the CDN) is available, or after it fails, so the page never hangs.
@@ -893,6 +956,7 @@ async function main() {
   renderPeople();
   renderNew();
   renderStart(); // again, now that the weekly SEC check (changes, tracking) has loaded
+  renderAbout(); // its counts need people, pathways and causality, which load in this second batch
   if (window.renderPlanner) window.renderPlanner(DATA);
   if (window.renderSimulator) window.renderSimulator(DATA);
   if (window.renderBoard) window.renderBoard();

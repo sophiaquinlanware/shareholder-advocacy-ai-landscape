@@ -414,7 +414,7 @@
   function shell(el) {
     el.innerHTML = `
       <h2>AI advocacy network</h2>
-      <p class="count-line">Two views: Connections (who is tied to whom) and Proposals (which companies the AI proposals reach, active or past). For value-chain ties alone, see AI value chain › Ties to each frontier lab.</p>
+      <p class="count-line">Connections: sourced relationships among investors, coalitions, companies and frontier labs. Proposals: the AI shareholder proposals filed at each company, with their filers. Company–lab ties alone: AI value chain › Ties to each frontier lab.</p>
       <!-- One view for everyone (owner, 2026-11-26: "maybe it's not necessary to have different view settings"); old ?lens= links still open their view. -->
       <fieldset class="lens-pick" id="net-lens" hidden><legend>View as</legend>${Object.entries(window.LENSES || {}).map(([id, l]) =>
         `<label class="chip"><input type="radio" name="net-lens" value="${esc(id)}"${id === state.lens ? " checked" : ""}> ${esc(l.label)}</label>`).join("")}</fieldset>
@@ -438,7 +438,7 @@
       </div>
       <div id="net-hold" class="net-hold port" hidden>
         <h4 class="port-h">Your portfolio</h4>
-        <p class="status-note">Choose the companies you hold, or load an investor's reported holdings, to see what they connect to: frontier labs, the investors already filing there, coalitions and upcoming votes. Kept in this browser only; nothing is sent anywhere.</p>
+        <p class="status-note">Choose the companies you hold, or load an investor's reported holdings, to see their frontier labs, the investors already filing there, coalitions and upcoming votes. Stored in this browser only; nothing is sent.</p>
         <div class="port-row"><label for="net-hold-inv">Load an investor's reported holdings</label> <select id="net-hold-inv"><option value="">Choose an investor</option></select></div>
         <fieldset class="port-pick"><legend>Or choose companies</legend><div id="net-hold-cos" class="port-cos"></div></fieldset>
         <details class="port-paste"><summary>Paste tickers instead</summary>
@@ -475,7 +475,7 @@
         <input type="range" id="net-upto" step="1">
         <button type="button" class="chip" id="net-play">Play</button>
         <p class="status-note" id="net-scrub-note"></p>
-        <p class="status-note">Drag the slider back to see the network in earlier years, or press Play to watch it build year by year.</p>
+        <p class="status-note">Drag the slider back for earlier years, or press Play to build the network year by year.</p>
         <p class="visually-hidden" id="net-scrub-status" aria-live="polite"></p>
       </div>
       <section id="net-portfolio" class="net-portfolio" aria-labelledby="net-port-h" hidden></section>
@@ -511,7 +511,7 @@
     const F = lens().feed;
     const box = document.getElementById("net-feed");
     const d0 = [];
-    const introP = `<p class="intro">Upcoming votes on AI-related ${term("shareholder proposal", "shareholder proposals", d0)} at the ${term("annual meeting", "annual meetings", d0)} of the companies this site tracks.</p>${d0.join("")}`;
+    const introP = `<p class="intro">Upcoming votes on AI-related ${term("shareholder proposal", "shareholder proposals", d0)} at the ${term("annual meeting", "annual meetings", d0)} of the companies tracked.</p>${d0.join("")}`;
     box.innerHTML = `
       <h3 id="lf-h">Upcoming AI proposals in this tracker</h3>
       ${introP}
@@ -520,7 +520,7 @@
         <label for="lf-in">Your tickers or fund name</label>
         <div class="feed-row"><input id="lf-in" type="text" autocomplete="off" spellcheck="false" aria-describedby="lf-hint">
         <button type="submit" class="chip">Show</button></div>
-        <p id="lf-hint" class="status-note">For example: MSFT, AAPL, Vanguard. Use stock tickers, not company names. Separate several with commas. Tickers entered here also set My holdings in the graph. Stored in this browser only.</p>
+        <p id="lf-hint" class="status-note">Stock tickers, not company names, separated by commas; for example: MSFT, AAPL, Vanguard. Tickers entered here also set My holdings in the graph. Stored in this browser only.</p>
       </form>
       <p id="lf-status" class="count-line" aria-live="polite"></p>
       <button type="button" class="chip" id="lf-to-graph">See the bigger picture</button>
@@ -923,9 +923,9 @@
   const nodeYear = (n) => (n.kind === "proposal" ? Number(n.year) : String(n.id).startsWith("ev-") && n.date ? Number(String(n.date).slice(0, 4)) : null);
   // Two views of the graph (owner, 2026-11-26: "The first tab is how everything is connected to each other, and
   // then the next tab on the graph you switch to is active proposals/past"). docs/plans/2026-11-26-network-views.md.
-  // Connections: who is tied to whom (no proposals). Proposals: filers → proposals → companies, active or past.
+  // Connections: sourced relationships (no proposals). Proposals: filers → proposals → companies, active or past.
   const MODES = {
-    connections: { label: "Connections", eyebrow: "Ties between filers, companies and labs", hides: () => new Set(["proposal", "ask", "gap"]) },
+    connections: { label: "Connections", eyebrow: "Relationships among investors, companies and labs", hides: () => new Set(["proposal", "ask", "gap"]) },
     // Policy and responses stay in Proposals for the Policymaker lens, whose asks link to them.
     proposals: { label: "Proposals", eyebrow: "Proposals: filers to companies", hides: () => new Set(["lab", "tier-labs", "person", ...(state.lens === "policy" ? [] : ["policy", "response", "public"])]) },
   };
@@ -957,8 +957,8 @@
     return ["all", "active", "past"].map((k) => `<button type="button" data-pstatus="${k}" aria-pressed="${(state.pstatus || "all") === k}">${lab[k]} (${n[k]})</button>`).join("");
   }
   const MODE_NOTE = {
-    connections: "Who is tied to whom: shareholdings, coalition membership and roles, co-filing partners, people's employers and colleagues, company → lab ties, and policy events. Proposals are in the Proposals view.",
-    proposals: "Which companies AI shareholder proposals already reach, and who filed, co-filed or solicited for or against them. Active = on a ballot not yet held; past = voted, withdrawn or excluded.",
+    connections: "Sourced relationships: shareholdings, coalition memberships, co-filings, employment, company–lab ownership and supply ties, and policy events. Proposals appear in the Proposals view.",
+    proposals: "AI shareholder proposals by company, with lead filers, co-filers and exempt solicitations for or against. Active: on a ballot not yet held. Past: voted, withdrawn or excluded.",
   };
   // Switch the graph between its two views; the layout is rebuilt so it only uses that view's links.
   function setMode(m, announce = true) {
@@ -1099,10 +1099,11 @@
         if (q) return 0.08;
         // Portfolio: the lines from held companies stand out; the rest go quiet.
         if (reach) return l.source.id === you || l.target.id === you ? 0.95 : isHeld(l.source) || isHeld(l.target) ? 0.6 : 0.03;
+        if (outcomeColor(l)) return 0.85;
         return isLit(l.source) || isLit(l.target) ? 0.45 : 0.04;
       })
       .attr("stroke-width", (l) => (P && P.links.has(l) ? 2.5 : you && (l.source.id === you || l.target.id === you) ? 1.8 : (l.relation === "lead filer" ? 1.4 : 1)) * state.cfg.linkScale)
-      .attr("stroke", (l) => (you && (l.source.id === you || l.target.id === you) ? cssVar("--g-focus") : null));
+      .attr("stroke", (l) => (you && (l.source.id === you || l.target.id === you) ? cssVar("--g-focus") : outcomeColor(l)));
     const fewShown = state.data.nodes.filter(visible).length <= 25;
     state.labels.attr("display", (d) => (visible(d) ? null : "none"))
       .attr("opacity", (d) => {
@@ -1222,6 +1223,31 @@
   // seeking r+12 dotted · resubmission: a bar under the node plus "!".
   // Key for the marks drawn around nodes (owner asked what the "!" marks are): only marks that appear in the
   // current lens and view, each with a small swatch on the graph's dark background.
+  // Outcome of a past proposal, on its line to the company (owner, 2026-11-26: "indicate if it failed or succeeded
+  // … the line could be green or red"). Success: withdrawn after the company committed to act, or a majority vote.
+  // Not passed: voted with under 50% support. Excluded, or withdrawn with no agreement on record: no colour.
+  // Read from proposals.json status, support and the stated reason for a withdrawal.
+  let outcomeById = null;
+  function outcomeOf(n) {
+    if (!n || n.kind !== "proposal") return null;
+    if (!outcomeById) {
+      outcomeById = new Map();
+      ((window.LENS_CTX && window.LENS_CTX.proposals) || []).forEach((p) => {
+        let o = null;
+        // The data's own outcome field (proposals.json, set from the commitments ledger) wins when present.
+        if (p.outcome) o = p.outcome === "commitment" || p.outcome === "majority" ? "won" : p.outcome === "below_majority" ? "lost" : null;
+        else if (p.status === "voted" && p.support_pct != null) o = p.support_pct >= 50 ? "won" : "lost";
+        else if (p.status === "withdrawn" && /commit|agreed|agreement/i.test(p.status_reason || "")) o = "won";
+        outcomeById.set(p.id, o);
+      });
+    }
+    return outcomeById.get(n.sec_id || n.id) || null;
+  }
+  const outcomeColor = (l) => {
+    if (state.mode !== "proposals" || l.relation !== "proposal at") return null;
+    const o = outcomeOf(l.source) || outcomeOf(l.target);
+    return o === "won" ? cssVar("--g-window") : o === "lost" ? "#f87171" : null;
+  };
   const MARK_KEY = {
     upcoming: { label: "On a ballot not yet held", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.ring}" stroke-width="1.5" stroke-dasharray="3 2"/>` },
     deadline: { label: "Proposal filing deadline open; the arc shows the time left", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.win}" stroke-width="1.2"/><path d="M12,3A6,6 0 0 1 18,9" fill="none" stroke="${c.win}" stroke-width="2.5" stroke-linecap="round"/>` },
@@ -1231,6 +1257,8 @@
     "cov-partial": { label: "Ask partly covered by a rule", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.ring}" stroke-width="1.6" stroke-dasharray="5 2"/>` },
     // Drawn as a line in the graph, so its key swatch is the same line (rings are keyed as circles).
     engaged: { label: "Dash-dot line: investor engaged the company directly (reported by the investor; open a node for the steps)", svg: () => `<line x1="1" y1="9" x2="23" y2="9" stroke="${cssVar("--g-label")}" stroke-width="1.6" stroke-dasharray="7 2 2 2"/>` },
+    won: { label: "Green line: proposal succeeded (withdrawn after the company committed to act, or majority vote)", svg: (c) => `<line x1="1" y1="9" x2="23" y2="9" stroke="${c.win}" stroke-width="2.4"/>` },
+    lost: { label: "Red line: voted, under 50% support", svg: () => `<line x1="1" y1="9" x2="23" y2="9" stroke="#f87171" stroke-width="2.4"/>` },
     "cov-none": { label: "No rule in this map reaches this ask", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.risk}" stroke-width="1.6" stroke-dasharray="1 2.5" stroke-linecap="round"/>` },
   };
   function markKey() {
@@ -1239,6 +1267,7 @@
     const kinds = new Set();
     state.data.nodes.forEach((n) => { if (visible(n)) rings(n).forEach((m) => kinds.add(m.kind)); });
     if (state.data.links.some((l) => l.relation === "engaged directly" && inMode(l) && visible(l.source) && visible(l.target))) kinds.add("engaged");
+    state.data.links.forEach((l) => { if (visible(l.source) && visible(l.target) && inMode(l)) { const c = outcomeColor(l); if (c) kinds.add(outcomeOf(l.source) || outcomeOf(l.target)); } });
     const list = Object.keys(MARK_KEY).filter((k) => kinds.has(k));
     el.hidden = !list.length;
     const c = { ring: cssVar("--g-ring"), win: cssVar("--g-window"), risk: cssVar("--g-risk"), seek: cssVar("--g-seeking") };
@@ -1996,7 +2025,14 @@
       playTimer = setInterval(() => {
         y += 1;
         scrubTo(y, refresh, true);
-        if (y >= hi) stopPlay(true);
+        if (y >= hi) {
+          stopPlay(true);
+          // Invite a replay: the Play button glows for a few seconds after the history has filled in.
+          b.classList.remove("glow");
+          void b.offsetWidth;
+          b.classList.add("glow");
+          setTimeout(() => b.classList.remove("glow"), 6000);
+        }
       }, 1500);
     });
   }
@@ -2010,7 +2046,14 @@
   function wire() {
     document.getElementById("net-mode").addEventListener("click", (e) => {
       const b = e.target.closest("[data-mode]");
-      if (b && b.dataset.mode !== state.mode) setMode(b.dataset.mode);
+      if (b && b.dataset.mode !== state.mode) {
+        setMode(b.dataset.mode);
+        // Opening Proposals plays its history year by year (owner, 2026-11-26: "a slow history fill out"); the reader
+        // can pause or drag the slider at any time. Not with reduced motion.
+        if (state.mode === "proposals" && !REDUCED_MOTION && !navigator.webdriver && !state.year) {
+          setTimeout(() => { const p = document.getElementById("net-play"); if (p && !p.disabled && !playTimer && state.mode === "proposals") { state.upto = null; p.click(); } }, 700);
+        }
+      }
     });
     document.getElementById("net-pstatus").addEventListener("click", (e) => {
       const b = e.target.closest("[data-pstatus]");

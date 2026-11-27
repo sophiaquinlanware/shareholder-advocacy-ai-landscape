@@ -120,7 +120,7 @@
       <h3 class="sub-h">Gaps in the tie data</h3>
       <ul class="pw-gaps">${(data.gaps || []).map((g) => `<li>${esc(g)}</li>`).join("") || "<li>None listed.</li>"}</ul>
       <h3 class="sub-h">Value-chain ties: companies → frontier labs</h3>
-      <p class="count-line">Each line is a sourced tie (ownership, investment, board seat, compute, chips or customer); width = tie strength (1–3). Who files proposals where is in the AI advocacy network. Choose companies to see the labs they reach together.</p>
+      <p class="count-line">Each line is a sourced tie (ownership, investment, board seat, compute, chips or customer); width = tie strength (1–3). Filers by company are in the AI advocacy network. Choose companies to see the labs they reach together.</p>
       <details class="pw-cos"><summary>Companies</summary><div class="chips">${cos}</div></details>
       <figure class="card chart-card fig">
         ${window.figHead("Sourced ties: companies → frontier labs", `${plural(data.ties.length, "company → lab tie")}, dated ${window.yearSpan(data.ties.map((t) => t.as_of))}. Line width = tie strength (1–3, this site's reading); the chosen lab's ties are drawn dark.`)}

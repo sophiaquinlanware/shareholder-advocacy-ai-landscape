@@ -10,16 +10,17 @@ test("sections run from context to planning, each pointing to the next", async (
   await open(page, "/index.html#start");
   const tabs = await page.locator('.tabs [role="tab"][data-group]').allTextContents();
   expect(tabs.map((s) => s.trim())).toEqual([
-    "Deadlines and votes",
-    "Company profiles",
+    "About",
     "AI value chain",
     "Laws and rules",
+    "Company profiles",
     "Proposals and results",
     "Network and contacts",
+    "Deadlines and votes",
     "Plan and test",
   ]);
   await page.locator("#grp-start .next-section a").click();
-  await expect(page.locator("#tab-company")).toBeVisible();
+  await expect(page.locator("#tab-planner")).toBeVisible();
 });
 
 test("a plan from the planner runs as a scenario with labelled results", async ({ page }) => {

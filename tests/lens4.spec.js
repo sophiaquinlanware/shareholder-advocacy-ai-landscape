@@ -94,7 +94,7 @@ test("Value chain: a tier opens its details; zero cells are not buttons; capped 
   await page.click('.vc-tiers .chip[data-tier="compute"]');
   await expect(page.locator("#vc-panel-h")).toHaveText("Cloud and model platforms");
   await expect(page.locator("#vc-panel-h")).toBeFocused();
-  await expect(page.locator("#vc-panel")).toContainText("Which frontier labs this tier reaches");
+  await expect(page.locator("#vc-panel")).toContainText("Frontier labs reached from this stage");
   await expect(page.locator(".vc-heat .vc-zero button")).toHaveCount(0);
   await expect(page.locator(".vc-heat thead")).not.toContainText("Active filers");
   await page.locator(".vc-heat .vc-num").first().click();

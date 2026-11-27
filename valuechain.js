@@ -35,9 +35,9 @@
   function shell(el) {
     const nCos = new Set(V.ties.flatMap((t) => [t.from, t.to])).size;
     el.innerHTML = `
-      <h2>AI value chain, from chips to AI products: companies by tier</h2>
-      <p class="intro">Where companies sit in the AI value chain, how they are tied to each other, and where investors have already engaged at each tier. ${plural(V.ties.length, "sourced tie")} between ${nCos} companies. ${esc(V.about ? "Tiers are this site's reading of each company's main role." : "")}</p>
-      <div class="vc-tiers" role="group" aria-label="Tiers">${V.tiers
+      <h2>AI value chain: companies by stage, from chips to AI products</h2>
+      <p class="intro">Companies by stage of the AI value chain, their sourced ties to each other, and investor engagement at each stage: ${plural(V.ties.length, "sourced tie")} between ${nCos} companies. ${esc(V.about ? "Tiers are this site's reading of each company's main role." : "")}</p>
+      <div class="vc-tiers" role="group" aria-label="Value-chain stages">${V.tiers
         .slice()
         .sort((a, b) => a.order - b.order)
         .map((t) => `<button type="button" class="chip" data-tier="${esc(t.id)}" aria-pressed="false">${esc(t.label)}</button>`)
@@ -49,14 +49,12 @@
         ${window.figSource("company filings and announcements, cited for each tie in the list view.")}
       </figure>
       <p class="visually-hidden" id="vc-status" aria-live="polite"></p>
-      <section id="vc-panel" class="net-panel vc-panel" aria-label="Details"><p class="status-note">Choose a tier or a company for who it reaches, the asks already made there and who is engaging.</p></section>
+      <section id="vc-panel" class="net-panel vc-panel" aria-label="Details"><p class="status-note">Choose a stage or a company to see what it reaches, the asks made there and who is engaging.</p></section>
       <details class="cz-list"><summary>List view: the same ${V.ties.length} ties as text</summary><div class="table-wrap" id="vc-ties"></div></details>
-      <h3 class="sub-h">Engagement by tier</h3>
-      <p class="status-note">Counts per tier, from the site's data; darker blue means more within that column, and each number opens the tier's details. A company can sit in several tiers and is counted in each, so the rows overlap and must not be added up. Proposal counts cover AI-related proposals since 2023 at the companies subject to US proxy rules; companies outside US proxy rules have no proposal data. Not a recommendation.</p>
-      <figure class="card chart-card fig">
-        ${window.figHead("Engagement by AI value-chain tier", "Counts per tier; darker blue = more within that column. Rows overlap (a company can sit in several tiers), so do not add them up. AI proposals since 2023, at companies subject to US proxy rules.")}
-        <div class="table-wrap" id="vc-heat" tabindex="0" role="region" aria-label="Engagement by tier table"></div>
-        ${window.figSource("company proxy statements and 8-K vote results; investor and coalition records, as cited in each tier's details.")}
+            <figure class="card chart-card fig">
+        ${window.figHead("Investor engagement by value-chain stage", "Each cell counts records for the companies at that stage. Shading compares stages within one column: the darkest cell is the stage with the highest count in that column. A company at several stages is counted at each, so a column does not sum to a total. AI proposals: since 2023, at companies under US proxy rules only. Select a number for its records. Not a recommendation.")}
+        <div class="table-wrap" id="vc-heat" tabindex="0" role="region" aria-label="Investor engagement by value-chain stage"></div>
+        ${window.figSource("company proxy statements and 8-K vote results; investor and coalition records, as cited in each stage's details.")}
       </figure>`;
   }
 
@@ -73,22 +71,28 @@
     const colX = (i) => 70 + (i * (W - 220)) / (FLOW.length - 1);
     // Short column headings whenever the full ones would run into each other.
     const narrow = (W - 220) / (FLOW.length - 1) < 175;
-    // owner, 2026-11-26: "even more space in between … the text super clear to read"; tighter only when a column
-    // holds many companies, so the map stays on one screen height or two.
-    const longest = Math.max(...FLOW.map((tid) => [...everyone].filter((id) => roleOfId(id) === tid).length));
-    const rowH = longest > 16 ? 44 : 58;
+    // Whole map on one screen (owner, 2026-11-26: "rethink the spacing so that on one computer screen you can see
+    // the whole visual … I do like the left to right"). Columns hold only companies with a sourced tie; the rest are
+    // counted at the foot of their column. Row spacing fits the window height, between 30 and 58 px.
     const cols = FLOW.map((tid, i) => {
-      const ids = [...everyone].filter((id) => roleOfId(id) === tid)
-        .sort((a, b) => (inTies.has(b) ? 1 : 0) - (inTies.has(a) ? 1 : 0) || name(a).localeCompare(name(b)));
-      return { tid, x: colX(i), ids };
+      const all = [...everyone].filter((id) => roleOfId(id) === tid);
+      const ids = all.filter((id) => inTies.has(id)).sort((a, b) => name(a).localeCompare(name(b)));
+      return { tid, x: colX(i), ids, untied: all.length - ids.length };
     });
-    const H = 80 + Math.max(...cols.map((c) => c.ids.length)) * rowH;
+    const longest = Math.max(1, ...cols.map((c) => c.ids.length));
+    const avail = Math.max(380, (window.innerHeight || 900) - 260);
+    const rowH = Math.max(30, Math.min(58, Math.floor(avail / longest)));
+    const compact = rowH < 44;
+    const top = compact ? 56 : 80;
+    const H = top + longest * rowH + 48;
     const pos = new Map();
-    cols.forEach((c) => c.ids.forEach((id, j) => pos.set(id, { x: c.x, y: 80 + j * rowH })));
+    cols.forEach((c) => c.ids.forEach((id, j) => pos.set(id, { x: c.x, y: top + j * rowH })));
+    const untiedCols = [];
+    cols.forEach((c) => { if (c.untied) untiedCols.push(c); });
     const deg = new Map();
     V.ties.forEach((t) => { deg.set(t.from, (deg.get(t.from) || 0) + 1); deg.set(t.to, (deg.get(t.to) || 0) + 1); });
     const svg = d3.select(box).append("svg").attr("viewBox", [0, 0, W, H]).attr("width", W).attr("height", H)
-      .attr("role", "group").attr("aria-label", `Value chain: ${V.ties.length} sourced ties between companies, by tier. Each company is a button; the same ties are in the list view below.`);
+      .attr("role", "group").attr("aria-label", `Value chain: ${V.ties.length} sourced ties between companies, by stage. Each company is a button; the same ties are in the list view below.`);
     cols.forEach((c) => svg.append("text").attr("x", c.x).attr("y", 24).attr("text-anchor", "middle").attr("font-size", 12).attr("font-weight", 400).attr("fill", cssVar("--ink-soft"))
       .text((narrow ? SHORT_TIER[c.tid] || tierLabel(c.tid) : c.tid === "business" ? "Business and government" : tierLabel(c.tid)).toUpperCase()));
     const ink = cssVar("--blue-2");
@@ -142,12 +146,13 @@
       .attr("fill", ([id]) => (deg.get(id) ? cssVar("--blue-1") : cssVar("--surface"))).attr("stroke", cssVar("--blue-1")).attr("stroke-width", 1.2);
     // Names sit just above each circle, clear of the lines that leave it sideways, larger and with a wide white
     // outline so crossing lines never run through the letters.
-    co.append("text").attr("x", 0).attr("y", ([id]) => -(3 + Math.sqrt(deg.get(id) || 1) * 1.6) - 6).attr("text-anchor", "middle").attr("font-size", 13).attr("font-weight", 400).attr("fill", ([id]) => (deg.get(id) ? cssVar("--ink") : cssVar("--ink-soft")))
-      .attr("stroke", cssVar("--surface")).attr("stroke-width", 5).attr("stroke-linejoin", "round").attr("paint-order", "stroke").text(([id]) => (name(id).length > 26 ? name(id).slice(0, 25) + "…" : name(id)));
+    co.append("text").attr("x", ([id]) => (compact ? 4 + Math.sqrt(deg.get(id) || 1) * 1.6 + 4 : 0)).attr("y", ([id]) => (compact ? 4 : -(3 + Math.sqrt(deg.get(id) || 1) * 1.6) - 6)).attr("text-anchor", compact ? "start" : "middle").attr("font-size", compact ? 12 : 13).attr("font-weight", 400).attr("fill", ([id]) => (deg.get(id) ? cssVar("--ink") : cssVar("--ink-soft")))
+      .attr("stroke", cssVar("--surface")).attr("stroke-width", 5).attr("stroke-linejoin", "round").attr("paint-order", "stroke").text(([id]) => { const n = name(id), max = compact ? 20 : 26; return n.length > max ? n.slice(0, max - 1) + "…" : n; });
+    untiedCols.forEach((c) => svg.append("text").attr("x", c.x).attr("y", top + c.ids.length * rowH + 4).attr("text-anchor", compact ? "start" : "middle").attr("font-size", 11.5).attr("fill", cssVar("--ink-soft")).text(`+${c.untied} with no sourced tie yet`));
     // Key: one dash pattern per tie type.
     document.getElementById("vc-key").innerHTML = [...new Set(V.ties.map((t) => t.type))].map((k) =>
       `<span class="leg static"><svg class="mark vc-line" viewBox="0 0 44 10" aria-hidden="true"><line x1="2" y1="5" x2="42" y2="5" stroke="${ink}" stroke-width="2.5"${DASH[k] ? ` stroke-dasharray="${DASH[k]}"` : ""}${CAP[k] ? ` stroke-linecap="${CAP[k]}"` : ""}></line></svg>${esc(k)}</span>`).join("")
-      + `<span class="status-note">Tap a line to trace its path along the value chain in orange; tap the chart again to clear. Each line is one sourced tie; open a company to read its ties in words. Circle size = number of sourced ties; companies with no sourced tie are counted in each tier's panel. Hollow circles are companies in the data with no sourced tie yet. Ties to frontier labs, including equity stakes and parent companies, come from Lab pathways.</span>`;
+      + `<span class="status-note">Tap a line to trace its path in orange; tap the chart again to clear. Each line is one sourced tie; open a company to read its ties in words. Circle size = number of sourced ties; companies with no sourced tie are counted in each tier's panel. Each column lists its companies with a sourced tie; the count beneath it is the companies at that stage with none yet (listed in the stage's details). Ties to frontier labs, including equity stakes and parent companies, come from Ties to each frontier lab.</span>`;
   }
 
   const REDUCED = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -243,15 +248,15 @@
     const labsDirect = p.labs_reached_directly || [];
     const labsTwo = p.labs_reached_in_two_steps || [];
     const filers = p.active_filers || [];
-    const stat = (n, label, sub) => `<div class="vc-stat"><span class="vc-stat-n">${n}</span><span class="vc-stat-l">${esc(label)}</span>${sub ? `<span class="vc-stat-s">${esc(sub)}</span>` : ""}</div>`;
+    const stat = (n, label, sub) => `<div class="vc-stat" role="listitem"><span class="vc-stat-n">${n}</span><span class="vc-stat-l">${esc(label)}</span>${sub ? `<span class="vc-stat-s">${esc(sub)}</span>` : ""}</div>`;
     const sec = (id, title, count, body, open) => `<details class="vc-sec" id="${id}"${open ? " open" : ""}><summary><span class="vc-sec-t">${esc(title)}</span>${count != null ? ` <span class="vc-sec-n">${count}</span>` : ""}</summary><div class="vc-sec-b">${body}</div></details>`;
     const askRows = (p.asks_made || []).map((a) => `<tr><td>${esc(a.company)}</td><td class="num">${esc(a.year)}</td><td>${esc(a.title)}</td><td>${src(a.url, "proxy")}</td></tr>`).join("");
     const topics = p.proposal_topics && Object.keys(p.proposal_topics).length ? Object.entries(p.proposal_topics).sort((a, b) => b[1] - a[1]).map(([k, n]) => `<li><span>${esc(k)}</span> <span class="vc-sec-n">${n}</span></li>`).join("") : "";
     panel.innerHTML = `
-      <p class="eyebrow" style="margin:0 0 4px">AI value chain tier</p>
+      <p class="eyebrow" style="margin:0 0 4px">Value-chain stage</p>
       <h3 id="vc-panel-h" tabindex="-1" class="vc-tier-h">${esc(t.label)}</h3>
       <p class="vc-tier-what">${esc(t.what_it_is || "")}</p>
-      <div class="vc-stats" role="list" aria-label="This tier at a glance">
+      <div class="vc-stats" role="list" aria-label="This stage at a glance">
         ${stat(p.companies || 0, "companies", `${p.companies_primary || 0} with this as their main role`)}
         ${stat(p.ai_proposals || 0, "AI proposals filed", "since 2023, US proxy companies")}
         ${stat(p.median_support_pct != null ? `${p.median_support_pct}%` : "—", "median support", "computed by this site")}
@@ -259,13 +264,13 @@
         ${stat(filers.length >= 12 ? "12+" : filers.length, "filers active here", `${plural((p.coalitions || []).length, "coalition")}, ${plural((p.people || []).length, "person", "people")} on file`)}
         ${stat(p.fund_vote_rows ?? 0, "fund-family votes", "from Form N-PX filings")}
       </div>
-      <p class="status-note vc-tier-use">Each section answers one question about engaging at this tier: which labs it reaches, what has been asked, and who is already engaging. Open a section for the detail and sources.</p>
+      <p class="status-note vc-tier-use">Each section answers one question about engaging at this stage: which labs it reaches, what has been asked, and who is already engaging. Open a section for the detail and sources.</p>
       <p class="vc-sec-all"><button type="button" class="tool" id="vc-open-all">Open all sections</button></p>
-      ${sec("vc-reach", "Which frontier labs this tier reaches", labsDirect.length + labsTwo.length, `
+      ${sec("vc-reach", "Frontier labs reached from this stage", labsDirect.length + labsTwo.length, `
         <p class="status-note">Through sourced ties here and in Ties to each frontier lab (chips, compute, distribution, equity stakes and parent companies)${ownLabs}.</p>
         <p><strong>Directly:</strong> ${labsDirect.map(esc).join(", ") || "none in the data"}.</p>
         ${routes.length ? `<p><strong>In two steps</strong> (company → company → lab):</p><ul class="conn">${routes.join("")}</ul>` : ""}
-        <p class="status-note">Ties out of this tier: ${p.ties_from_tier ?? 0}; into it: ${p.ties_into_tier ?? 0}. A tie between two companies in the same tier counts both ways.</p>`, true)}
+        <p class="status-note">Ties out of this stage: ${p.ties_from_tier ?? 0}; into it: ${p.ties_into_tier ?? 0}. A tie between two companies at the same stage counts both ways.</p>`, true)}
       ${sec("vc-asks", "What investors have already asked here", p.ai_proposals || 0, `
         <p>${plural(p.ai_proposals || 0, "AI proposal")}${p.median_support_pct != null ? `; median support ${p.median_support_pct}% of votes for and against, computed by this site from the recorded figures` : ""}. Outcomes such as adoption or withdrawal after an agreement are not in the data yet.</p>
         ${topics ? `<p class="vc-sub">By topic</p><ul class="vc-topics">${topics}</ul>` : ""}
@@ -329,9 +334,9 @@
   // first 12), so they are listed in the tier panel, never counted here.
   const COLS = [
     { key: "ai_proposals", label: "AI proposals", n: (p) => p.ai_proposals || 0, sec: "vc-asks" },
-    { key: "investor_engagements", label: "Companies included for a named investor engagement", n: (p) => (p.investor_engagements || []).length, sec: "vc-engagements" },
-    { key: "safety_commitments", label: "Companies included for a safety commitment", n: (p) => (p.safety_commitments || []).length, sec: "vc-safety" },
-    { key: "fund_vote_rows", label: "Fund-family votes on file", n: (p) => p.fund_vote_rows || 0, sec: "vc-routes" },
+    { key: "investor_engagements", label: "Companies with an investor engagement reported by the investor", n: (p) => (p.investor_engagements || []).length, sec: "vc-engagements" },
+    { key: "safety_commitments", label: "Companies that signed a frontier AI safety commitment", n: (p) => (p.safety_commitments || []).length, sec: "vc-safety" },
+    { key: "fund_vote_rows", label: "Fund-family votes recorded (Form N-PX)", n: (p) => p.fund_vote_rows || 0, sec: "vc-routes" },
   ];
   function drawHeat() {
     const tiers = V.tiers.slice().sort((a, b) => a.order - b.order);
@@ -346,7 +351,7 @@
       const bg = STEPS[step];
       return `<td class="num vc-cell" style="background:${bg}"><button type="button" class="vc-num${step >= 3 ? " on-dark" : ""}" data-tier="${t.id}" data-sec="${c.sec}" aria-label="${esc(`${t.label}: ${n} ${c.label.toLowerCase()}, open details`)}">${n}</button></td>`;
     };
-    document.getElementById("vc-heat").innerHTML = `<table class="vc-heat"><caption class="visually-hidden">Engagement by value-chain tier</caption><thead><tr><th scope="col" class="sticky-col">Tier</th>${COLS.map((c) => `<th scope="col" class="num">${esc(c.label)}</th>`).join("")}</tr></thead>
+    document.getElementById("vc-heat").innerHTML = `<table class="vc-heat"><caption class="visually-hidden">Investor engagement by value-chain stage</caption><thead><tr><th scope="col" class="sticky-col">Stage</th>${COLS.map((c) => `<th scope="col" class="num">${esc(c.label)}</th>`).join("")}</tr></thead>
       <tbody>${tiers.map((t) => `<tr><th scope="row" class="sticky-col"><button type="button" class="linklike" data-tier="${t.id}">${esc(t.label)}</button></th>${COLS.map((c) => cell(c, t)).join("")}</tr>`).join("")}</tbody></table>`;
   }
 
