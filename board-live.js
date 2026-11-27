@@ -87,7 +87,7 @@
             <div class="bd-acct-row"><input type="email" id="${box.id}-email" required autocomplete="email" placeholder="you@example.org"><button type="submit" class="bd-btn">Email me a sign-in link</button></div>
             <p class="note">Your email is used only to sign in and is never shown. Open the link in this browser.</p></form>`
         : !st.name ? `<form class="bd-acct-form" data-act="name"><label for="${box.id}-name">Choose the name shown with what you post</label>
-            <div class="bd-acct-row"><input id="${box.id}-name" required minlength="2" maxlength="40" pattern="[^<>@]{2,40}" placeholder="for example, J. Rivera (Acme Pension)"><button type="submit" class="bd-btn">Save my name</button></div>
+            <div class="bd-acct-row"><input id="${box.id}-name" required minlength="2" maxlength="40" pattern="[^<>@]{2,40}" placeholder="for example, J. Rivera (Acme Pension)" value="${esc(String(st.email || "").split("@")[0].replace(/[^A-Za-z0-9._ -]/g, "").slice(0, 40))}"><button type="submit" class="bd-btn">Save my name</button></div>
             <p class="note">Signed in as ${esc(st.email)}. Use your own name or your organization's; it is public.</p></form>`
         : `<p class="bd-acct-in">Posting as <strong>${esc(st.name)}</strong> <button type="button" class="linklike" data-act="out">Sign out</button></p>`;
       if (msg) box.insertAdjacentHTML("beforeend", `<p class="note bd-acct-msg" role="status">${esc(msg)}</p>`);

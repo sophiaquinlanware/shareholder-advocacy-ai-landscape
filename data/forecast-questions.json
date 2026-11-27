@@ -952,6 +952,91 @@
     "equal_weight": null,
     "all_median": null
    }
+  },
+  {
+   "id": "q-ant-rsp-external-review-2027",
+   "kind": "engagement",
+   "section": "Engagements",
+   "company": "ANT",
+   "title": "Will Anthropic publish a summary of an external review of its compliance with its Responsible Scaling Policy by December 31, 2027?",
+   "closes": "2027-06-30",
+   "resolves_by": "2027-12-31",
+   "resolves": "Yes if, by December 31, 2027, Anthropic publishes (on its website or in an SEC filing) a summary of a review by a party outside the company of whether it complied with its Responsible Scaling Policy. Internal reviews and reviews of single models only do not count. Resolved by hand from Anthropic's publications.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm",
+   "context": "Anthropic listed on Nasdaq on November 19, 2026. Its prospectus says it has an external reviewer program and uses external reviewers who can assess its safety practices, and that it has determined it meets the AI research and development capability threshold in its Responsible Scaling Policy, based on what it expects from future models. Its board has a safety and risk committee, and a Long-Term Benefit Trust can elect a majority of the board; one Class F share carries 50.1% of the vote.",
+   "context_sources": [
+    "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm"
+   ],
+   "base": {
+    "p": null,
+    "how": "No base rate yet: this site's records hold no outcomes of requests for external safety reviews."
+   },
+   "auto": {
+    "type": "manual"
+   },
+   "scenarios": [
+    {
+     "seat": "Parnassus Investments seat",
+     "p": 0.4,
+     "why": "The prospectus already describes external reviewers who assess its safety practices, so the reviews exist; publishing a compliance summary is a further step a newly listed company may take to answer investors, but nothing requires it."
+    }
+   ],
+   "created": "2026-11-27",
+   "resolved": null,
+   "resolution_source": null,
+   "decided": null,
+   "crowd": {
+    "n": 0,
+    "stake_left_out": 0,
+    "weighted_groups": 0,
+    "headline": "all_median",
+    "groups": {},
+    "equal_weight": null,
+    "all_median": null
+   }
+  },
+  {
+   "id": "q-ant-2027-safety-proposal",
+   "kind": "engagement",
+   "section": "Engagements",
+   "company": "ANT",
+   "title": "Will a shareholder give notice of an AI safety proposal for Anthropic's 2027 annual meeting?",
+   "closes": "2027-01-31",
+   "resolves_by": "2027-08-31",
+   "resolves": "Yes if Anthropic's 2027 proxy statement, or another Anthropic SEC filing by August 31, 2027, reports a shareholder proposal on AI safety or alignment for the 2027 annual meeting (by advance notice or under Rule 14a-8). Resolved by hand from Anthropic's filings.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/exhibit32-closing8xk.htm",
+   "context": "Anthropic listed on Nasdaq on November 19, 2026. Its prospectus says it has an external reviewer program and uses external reviewers who can assess its safety practices, and that it has determined it meets the AI research and development capability threshold in its Responsible Scaling Policy, based on what it expects from future models. Its board has a safety and risk committee, and a Long-Term Benefit Trust can elect a majority of the board; one Class F share carries 50.1% of the vote. Notice for the 2027 meeting is due February 1 to March 3, 2027; shares bought at the listing cannot meet Rule 14a-8's holding periods in time.",
+   "context_sources": [
+    "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm",
+    "https://www.sec.gov/Archives/edgar/data/2130357/000162828026075973/exhibit32-closing8xk.htm"
+   ],
+   "base": {
+    "p": null,
+    "how": "No base rate yet: no frontier lab has held a meeting with public shareholders before."
+   },
+   "auto": {
+    "type": "manual"
+   },
+   "scenarios": [
+    {
+     "seat": "Parnassus Investments seat",
+     "p": 0.2,
+     "why": "Founders control the vote and only holders of record can use the notice route this year, so a filer gains a public record rather than a decision; the first meeting of the first listed lab is still a strong draw for long-standing AI filers."
+    }
+   ],
+   "created": "2026-11-27",
+   "resolved": null,
+   "resolution_source": null,
+   "decided": null,
+   "crowd": {
+    "n": 0,
+    "stake_left_out": 0,
+    "weighted_groups": 0,
+    "headline": "all_median",
+    "groups": {},
+    "equal_weight": null,
+    "all_median": null
+   }
   }
  ],
  "leaderboard": [],

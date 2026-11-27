@@ -1123,3 +1123,12 @@ details.bd-post > summary::-webkit-details-marker, details.bd-suggest > summary:
 /* Causal map: more room between the keys and the chart. */
 .cz-fig .cz-timebar { margin-top: 28px; }
 .cz-fig .cz-frame { margin-top: 10px; }
+/* Prediction board: a forecast you posted lights up (owner, 2026-11-27: "make it light up special your prediction on the board").
+   Blue, the site's colour for the record; green stays for scenarios. */
+#tab-predict article.bd-card.bd-posted { border: 2px solid var(--accent); border-left-width: 6px; box-shadow: 0 0 0 4px var(--accent-soft), 0 0 28px rgba(31, 78, 152, .5); }
+#tab-predict article.bd-card.bd-posted .bd-pill-top::before { content: "\2605  "; }
+@media (prefers-reduced-motion: no-preference) {
+  #tab-predict article.bd-card.bd-posted { animation: bd-glow 2.4s ease-in-out infinite alternate; }
+  @keyframes bd-glow { from { box-shadow: 0 0 0 4px var(--accent-soft), 0 0 12px rgba(31, 78, 152, .30); } to { box-shadow: 0 0 0 4px var(--accent-soft), 0 0 32px rgba(31, 78, 152, .60); } }
+}
+.bd-ifscore { margin: 2px 0 8px; }

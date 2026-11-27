@@ -66,13 +66,21 @@
     </div>`;
   }
 
-  const GROUP_OPTS = () => (Q.groups || []).map((g) => `<option>${esc(g)}</option>`).join("");
+  // The last group and stake answer are remembered, so later posts start from them.
+  const prefs = {
+    get() { try { return JSON.parse(localStorage.getItem("board-post-v1") || "{}"); } catch (e) { return {}; } },
+    set(v) { try { localStorage.setItem("board-post-v1", JSON.stringify(v)); } catch (e) { /* storage blocked */ } },
+  };
+  const GROUP_OPTS = () => { const g0 = prefs.get().group; return (Q.groups || []).map((g) => `<option${g === g0 ? " selected" : ""}>${esc(g)}</option>`).join(""); };
+  const STAKE = () => (prefs.get().stake ? " checked" : "");
+  const postFields = () => `
+      <label>Your group <select name="group" required><option value="">Choose…</option>${GROUP_OPTS()}</select></label>
+      <label class="bd-check"><input type="checkbox" name="stake"${STAKE()}> I or my organization have a stake (filed or plan to file at a company this covers, or are that company or advise it)</label>
+      <label class="bd-check"><input type="checkbox" name="confirm" required> This is my own forecast of the outcome, from public information. It is not a statement of how I or my organization will vote, not a request for anyone to vote, file or act, and not a commitment to act.</label>`;
   function postForm(q, m) {
     const issue = `https://github.com/${REPO}/issues/new?template=forecast.yml&title=${encodeURIComponent(`Forecast: ${q.id}`)}&question=${encodeURIComponent(q.id)}&probability=${Math.round(m.p * 100)}`;
     return `<form class="bd-postform" data-q="${esc(q.id)}">
-      <label>Your group <select name="group" required><option value="">Choose…</option>${GROUP_OPTS()}</select></label>
-      <label class="bd-check"><input type="checkbox" name="stake"> I or my organization have a stake (filed or plan to file at a company this covers, or are that company or advise it)</label>
-      <label class="bd-check"><input type="checkbox" name="confirm" required> This is my own forecast of the outcome, from public information. It is not a statement of how I or my organization will vote, not a request for anyone to vote, file or act, and not a commitment to act.</label>
+${postFields()}
       <button type="submit" class="bd-btn">Post ${pct(m.p)}</button> <a class="note" href="${issue}" rel="noopener" target="_blank">or post through GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>
       <p class="note bd-post-msg" role="status"></p></form>`;
   }
@@ -97,8 +105,9 @@
     const done = q.resolved != null;
     const shut = !done && isClosed(q);
     const issue = (p) => `https://github.com/${REPO}/issues/new?template=forecast.yml&labels=forecast&title=${encodeURIComponent(`Forecast: ${q.id}`)}&question=${encodeURIComponent(q.id)}&probability=${Math.round(p * 100)}`;
-    return `<article class="bd-card${m ? " bd-mine" : ""}" id="bd-${esc(q.id)}" data-q="${esc(q.id)}" aria-labelledby="bd-h-${esc(q.id)}">
-      ${m ? `<p class="bd-pill bd-pill-top">Your forecast ${pct(m.p)}</p>` : ""}
+    return `<article class="bd-card${m ? " bd-mine" : ""}${m && m.posted ? " bd-posted" : ""}" id="bd-${esc(q.id)}" data-q="${esc(q.id)}" aria-labelledby="bd-h-${esc(q.id)}">
+      ${m ? `<p class="bd-pill bd-pill-top">${m.posted ? `Your posted forecast ${pct(m.posted)}` : `Your forecast ${pct(m.p)}, not yet posted`}</p>` : ""}
+      ${m && q.resolved == null ? `<p class="note bd-ifscore">Your score when it resolves: ${((1 - m.p) ** 2).toFixed(2)} if Yes, ${(m.p ** 2).toFixed(2)} if No (Brier score: 0 is perfect, 0.25 is what always saying 50% earns).</p>` : ""}
       <h4 id="bd-h-${esc(q.id)}">${esc(q.title)}</h4>
       ${q.context ? `<p class="note">${esc(q.context)} ${(q.context_sources || []).map((u, i) => `<a href="${esc(u)}" rel="noopener" target="_blank">Source ${i + 1}<span class="visually-hidden"> (opens in a new tab)</span></a>`).join(" ")}</p>` : ""}
       <p class="note">Forecasts accepted through ${esc(day(q.closes))} (UTC)${q.resolves_by ? `; resolves by ${esc(day(q.resolves_by))}` : ""}. ${esc(q.resolves)}${q.kind === "season" || q.kind === "conditional" || q.kind === "coverage_gap" ? ` <a href="#feed">All AI proposals on this site</a>` : ""}${q.source_url ? ` <a href="${esc(q.source_url)}" rel="noopener" target="_blank">Source<span class="visually-hidden"> (opens in a new tab)</span></a>` : ""}</p>
@@ -129,7 +138,8 @@
     return `<section class="pl-card bd-minebox" aria-labelledby="bd-h-mine">
       <h3 id="bd-h-mine">Your forecasts</h3>
       ${mineQs.length ? `<ul class="bd-minelist">${mineQs.map((q) => `<li><button type="button" class="linklike" data-jump="bd-${esc(q.id)}">${esc(q.title)}</button> <span class="bd-pill">Yours ${pct(M[q.id].p)}</span>${M[q.id].posted ? ` <span class="note">posted ${pct(M[q.id].posted)}</span>` : ` <span class="note">not posted</span>`} <span class="note">Crowd ${q.crowd && q.crowd.n ? `${pct(q.crowd.equal_weight)} (n = ${q.crowd.n})` : "none yet"}; ${esc(status(q))}.</span></li>`).join("")}</ul>
-        <p class="note">Kept in this browser. They glow wherever they appear below; post one to make it public.</p>`
+        <p class="note">Kept in this browser. They glow wherever they appear below; post one to make it public.</p>
+        ${(() => { const un = mineQs.filter((q) => q.resolved == null && !isClosed(q) && M[q.id].posted !== M[q.id].p); return un.length ? `<details class="bd-post"><summary class="bd-btn">Post all ${un.length} not yet posted</summary><form class="bd-postall">${postFields()}<button type="submit" class="bd-btn">Post ${un.length} forecast${un.length === 1 ? "" : "s"}</button><p class="note bd-post-msg" role="status"></p></form></details>` : ""; })()}`
         : `<p class="note">None yet. Forecasts you save appear here and glow in the list below, so you can check on them easily.</p>`}
       ${seats.map((st) => `<p><button type="button" class="chip" data-seat="${esc(st)}">Try the ${esc(st)} figures as your own</button> <span class="note">Copies this site's scenario figures for that seat into your forecasts in this browser, to adjust and post if you agree. Forecasts you already saved are kept. Nothing is posted.</span></p>`).join("")}
       <p class="note bd-seat-msg"></p>
@@ -289,13 +299,31 @@
   function wire() {
     el.addEventListener("submit", async (e) => {
       const f = e.target;
-      if (!f.matches(".bd-postform, .bd-suggestform")) return;
+      if (!f.matches(".bd-postform, .bd-suggestform, .bd-postall")) return;
       e.preventDefault();
       if (await needSignIn(f)) return;
       const msg = f.querySelector(".bd-post-msg");
       const fd = new FormData(f);
       try {
-        if (f.matches(".bd-postform")) {
+        if (f.matches(".bd-postform, .bd-postall")) prefs.set({ group: fd.get("group"), stake: fd.get("stake") === "on" });
+        if (f.matches(".bd-postall")) {
+          const all = mine.get();
+          const ids = Q.questions.filter((q) => all[q.id] && q.resolved == null && !isClosed(q) && all[q.id].posted !== all[q.id].p).map((q) => q.id);
+          let done = 0;
+          for (const qid of ids) {
+            msg.textContent = `Posting ${done + 1} of ${ids.length}…`;
+            await window.BOARD_LIVE.forecast({ question: qid, p: all[qid].p, group: fd.get("group"), stake: fd.get("stake") === "on" });
+            all[qid].posted = all[qid].p;
+            mine.set(all);
+            done += 1;
+          }
+          await liveCrowd();
+          draw();
+          const live = el.querySelector("#bd-live");
+          if (live) live.textContent = `Posted ${done} forecast${done === 1 ? "" : "s"}.`;
+          const box = el.querySelector(".bd-minebox");
+          if (box) box.scrollIntoView({ block: "start" });
+        } else if (f.matches(".bd-postform")) {
           const qid = f.dataset.q;
           const all = mine.get();
           await window.BOARD_LIVE.forecast({ question: qid, p: all[qid].p, group: fd.get("group"), stake: fd.get("stake") === "on" });
@@ -330,6 +358,14 @@
       if (post) post.hidden = true;
     });
     el.addEventListener("click", (e) => {
+      // Posting through the GitHub form: mark it posted here (the bot adds it to the board within minutes).
+      const gh = e.target.closest(".bd-postform a[href*='github.com']");
+      if (gh) {
+        const qid = gh.closest(".bd-postform").dataset.q;
+        const all = mine.get();
+        if (all[qid]) { all[qid].posted = all[qid].p; all[qid].via = "github"; mine.set(all); M = all; setTimeout(draw, 300); }
+        return;
+      }
       const seat = e.target.closest("[data-seat]");
       if (seat) {
         const all = mine.get();

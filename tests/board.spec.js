@@ -107,3 +107,22 @@ test("board links stay on the board, saving updates Your forecasts, and a seat k
   await expect(el.locator('.bd-card[data-q="q-msft-water-absolute-2028"]')).toContainText("Your forecast 40%");
   await expect(el.locator(".bd-seat-msg")).toContainText("kept your own on 1");
 });
+
+test("after trying a seat, one button posts all unposted forecasts, and the group choice is remembered", async ({
+  page,
+}) => {
+  await page.goto("/index.html#predict");
+  await page.evaluate(() => {
+    localStorage.removeItem("board-mine-v1");
+    localStorage.setItem("board-post-v1", JSON.stringify({ group: "Academic or researcher", stake: true }));
+  });
+  await page.reload();
+  await page.waitForLoadState("networkidle");
+  const el = page.locator("#tab-predict");
+  await el.locator("[data-seat]").first().click();
+  const all = el.locator(".bd-minebox details.bd-post");
+  await expect(all.locator("summary")).toContainText("Post all 4 not yet posted");
+  await all.locator("summary").click();
+  await expect(all.locator("select[name=group]")).toHaveValue("Academic or researcher");
+  await expect(all.locator("input[name=stake]")).toBeChecked();
+});
