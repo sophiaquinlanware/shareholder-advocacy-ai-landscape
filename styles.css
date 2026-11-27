@@ -844,3 +844,16 @@ button + [role="status"], button + .ticker, button + .status-note, button + outp
 @keyframes sim-updated { from { box-shadow: 0 0 0 3px var(--scenario); } to { box-shadow: 0 0 0 0 transparent; } }
 .sim-updated { animation: sim-updated 1.6s ease-out 1; }
 @media (prefers-reduced-motion: reduce) { .sim-updated { animation: none; outline: 2px solid var(--scenario); outline-offset: 2px; } }
+/* Key docked on the left of the band (owner, 2026-11-26: it should not block the graph; the graph moves to fit
+   beside it). The panel fills the band's height above the button, one column, scrolling if it must. */
+@media (min-width: 900px) {
+  .net-keybox { top: 40px; bottom: auto; transform: none; height: calc(var(--strip-h) - 52px); flex-direction: column; justify-content: flex-end; width: 300px; max-width: none; }
+  .net-figcap { order: 0; flex: 0 1 auto; min-height: 0; overflow-y: auto; }
+  .net-key-btn { order: 1; flex: none; }
+  .net-figcap .fc-key { grid-template-columns: 1fr; gap: 2px; }
+}
+@media (max-width: 899px) {
+  .net-keybox { position: static; transform: none; max-width: none; padding: 10px 12px 12px; background: var(--g-bg); flex-direction: column; }
+}
+.net-keybox { pointer-events: none; }
+.net-keybox > * { pointer-events: auto; }

@@ -227,7 +227,14 @@
   // Fit the box to the graph once the layout settles (owner, 2026-11-26: "fit the black box to the model so
   // there's a more natural fit"): the box's height shrinks to the nodes' extent, centred, never zoomed in past
   // 100%. Skipped once the viewer has zoomed or panned.
-  function fitToContent() {
+  // The space the open key takes on the left of the band (wide screens), so the graph fits beside it.
+  const keyInset = () => {
+    const box = document.getElementById("net-figcap");
+    if (!box || box.hidden || window.innerWidth < 900) return 0;
+    const g = document.getElementById("net-graph").getBoundingClientRect();
+    return Math.max(0, box.getBoundingClientRect().right - g.left + 16);
+  };
+  function fitToContent(smooth) {
     if (state.userZoomed || !state.svg || state.view !== "graph") return;
     const vis = state.data.nodes.filter(visible);
     if (!vis.length) return;
@@ -238,10 +245,12 @@
       x0 = Math.min(x0, n.x - r); x1 = Math.max(x1, n.x + r); y0 = Math.min(y0, n.y - r); y1 = Math.max(y1, n.y + r);
     }
     // Fit the whole graph inside the strip (left of the panel on wide screens), centred, never past 100%.
-    const W = state.size.width, H = state.size.height;
+    const inset = keyInset();
+    const W = state.size.width - inset, H = state.size.height;
     const k = Math.min(1, (W - 2 * pad) / Math.max(1, x1 - x0), (H - top - pad) / Math.max(1, y1 - y0));
-    state.svg.call(state.zoom.transform, d3.zoomIdentity
-      .translate((W - (x1 - x0) * k) / 2 - x0 * k, top + (H - top - pad - (y1 - y0) * k) / 2 - y0 * k).scale(k));
+    const t = d3.zoomIdentity.translate(inset + (W - (x1 - x0) * k) / 2 - x0 * k, top + (H - top - pad - (y1 - y0) * k) / 2 - y0 * k).scale(k);
+    if (smooth && !REDUCED_MOTION) state.svg.transition().duration(450).call(state.zoom.transform, t);
+    else state.svg.call(state.zoom.transform, t);
   }
   // A later change (another view, types shown or hidden, new settings): run most of the new layout off-screen,
   // then let it glide the rest of the way, heavily damped, instead of jumping.
@@ -706,6 +715,8 @@
       btn.setAttribute("aria-expanded", String(!box.hidden));
       btn.textContent = box.hidden ? "Key" : "Hide key";
       figCap();
+      // The key docks on the left; the graph slides over to fit beside it (and back when it closes).
+      fitToContent(true);
     });
   }
   function intro() {
