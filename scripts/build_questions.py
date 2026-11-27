@@ -248,6 +248,14 @@ def main():
                 for old in [o for o in have.values() if o["kind"] == "coverage_gap" and o["company"] == q["company"] and o["id"] != q["id"]
                             and o.get("resolved") is None and not (o.get("crowd") or {}).get("n") and not (o.get("crowd") or {}).get("stake_left_out")]:
                     del have[old["id"]]
+    # Questions the maintainer adds by hand (data/forecast-curated.json): added once, then fixed like the rest;
+    # only their labelled scenario figures are refreshed.
+    for q in (load("forecast-curated.json", {}) or {}).get("questions", []):
+        if q["id"] not in have:
+            have[q["id"]] = {**q, "created": today}
+            added += 1
+        else:
+            have[q["id"]]["scenarios"] = q.get("scenarios", [])
     qs = list(have.values())
 
     # Results (conditional questions after the questions they depend on).

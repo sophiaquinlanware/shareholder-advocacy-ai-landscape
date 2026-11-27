@@ -357,6 +357,189 @@
         "equal_weight": null,
         "all_median": null
       }
+    },
+    {
+      "id": "q-msft-water-absolute-2028",
+      "kind": "engagement",
+      "section": "Engagements",
+      "company": "MSFT",
+      "title": "Will Microsoft publish a company-wide absolute water withdrawal reduction target by June 30, 2028?",
+      "closes": "2099-12-30",
+      "resolves_by": "2028-06-30",
+      "resolves": "Yes if Microsoft's sustainability report or website states a company-wide target to reduce total water withdrawal in absolute terms (a volume, not per unit of use), by June 30, 2028. Replenishment (water positive), water use effectiveness and other per-unit targets do not count. Resolved by hand from Microsoft's own publications.",
+      "source_url": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/water",
+      "context": "Parnassus reported engaging Microsoft in the first half of 2025 on absolute water withdrawal targets and supply chain water risk, linked to AI data centers; it called initial contacts favorable (2025 Stewardship Report, p. 11). Microsoft's published water goals are water positive by 2030 (replenishing more than it withdraws), data center water use effectiveness, and reducing freshwater use for cooling, with no absolute withdrawal target (Microsoft water page, checked November 26, 2026). Microsoft is a focus company of Ceres' Valuing Water Finance Initiative (110 investors, about $18 trillion); the 2025 tech benchmark gave it the highest score of the five tech companies. Parnassus is a member of the Ceres Investor Network; this site found no public list showing whether it is a VWFI signatory.",
+      "context_sources": [
+        "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+        "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/water",
+        "https://assets.ceres.org/files/vwfi-benchmark-tech-2025-(1).pdf"
+      ],
+      "base": {
+        "p": null,
+        "how": "No base rate yet: this site's records hold no outcomes of water target engagements."
+      },
+      "auto": {
+        "type": "manual"
+      },
+      "scenarios": [
+        {
+          "seat": "Parnassus Investments seat",
+          "p": 0.15,
+          "why": "Microsoft's data center growth makes an absolute cap costly, and it already answers water questions with replenishment and efficiency goals and the top tech score in Ceres' benchmark, so the bar for a new kind of target is high."
+        }
+      ],
+      "created": "2026-11-26",
+      "resolved": null,
+      "resolution_source": null,
+      "decided": null,
+      "crowd": {
+        "n": 0,
+        "stake_left_out": 0,
+        "weighted_groups": 0,
+        "headline": "all_median",
+        "groups": {},
+        "equal_weight": null,
+        "all_median": null
+      }
+    },
+    {
+      "id": "q-parnassus-vwfi-msft-2027",
+      "kind": "engagement",
+      "section": "Engagements",
+      "company": "MSFT",
+      "title": "Will a Ceres publication name Parnassus as a lead or co-lead investor engaging Microsoft through the Valuing Water Finance Initiative by June 30, 2027?",
+      "closes": "2099-12-30",
+      "resolves_by": "2027-06-30",
+      "resolves": "Yes if a Ceres page or report published by June 30, 2027 names Parnassus Investments as a lead or co-lead investor for Microsoft in the Valuing Water Finance Initiative. Resolved by hand from Ceres' publications.",
+      "source_url": "https://www.ceres.org/water/valuing-water-finance-initiative",
+      "context": "Parnassus reported engaging Microsoft in the first half of 2025 on absolute water withdrawal targets and supply chain water risk, linked to AI data centers; it called initial contacts favorable (2025 Stewardship Report, p. 11). Microsoft's published water goals are water positive by 2030 (replenishing more than it withdraws), data center water use effectiveness, and reducing freshwater use for cooling, with no absolute withdrawal target (Microsoft water page, checked November 26, 2026). Microsoft is a focus company of Ceres' Valuing Water Finance Initiative (110 investors, about $18 trillion); the 2025 tech benchmark gave it the highest score of the five tech companies. Parnassus is a member of the Ceres Investor Network; this site found no public list showing whether it is a VWFI signatory.",
+      "context_sources": [
+        "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+        "https://www.ceres.org/water/valuing-water-finance-initiative"
+      ],
+      "base": {
+        "p": null,
+        "how": "No base rate yet: this site doesn't record which investors lead each VWFI company engagement."
+      },
+      "auto": {
+        "type": "manual"
+      },
+      "scenarios": [
+        {
+          "seat": "Parnassus Investments seat",
+          "p": 0.35,
+          "why": "Escalating through Ceres is a natural next step after a favorable start and keeps the engagement collaborative, but Ceres rarely publishes lead-investor names, so being named is less likely than taking part."
+        }
+      ],
+      "created": "2026-11-26",
+      "resolved": null,
+      "resolution_source": null,
+      "decided": null,
+      "crowd": {
+        "n": 0,
+        "stake_left_out": 0,
+        "weighted_groups": 0,
+        "headline": "all_median",
+        "groups": {},
+        "equal_weight": null,
+        "all_median": null
+      }
+    },
+    {
+      "id": "q-msft-water-absolute-2028-if-ceres",
+      "kind": "conditional",
+      "section": "If, then",
+      "company": "MSFT",
+      "title": "If Parnassus is named as a lead or co-lead investor on Microsoft in Ceres' Valuing Water Finance Initiative by June 30, 2027: will Microsoft publish a company-wide absolute water withdrawal reduction target by June 30, 2028?",
+      "closes": "2099-12-30",
+      "resolves_by": "2028-06-30",
+      "condition": {
+        "question": "q-parnassus-vwfi-msft-2027",
+        "if": 1
+      },
+      "resolves": "Yes if Microsoft's sustainability report or website states a company-wide target to reduce total water withdrawal in absolute terms (a volume, not per unit of use), by June 30, 2028. Replenishment (water positive), water use effectiveness and other per-unit targets do not count. Resolved by hand from Microsoft's own publications. Void (not scored) if Parnassus is not named by then.",
+      "source_url": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/water",
+      "context": "Parnassus reported engaging Microsoft in the first half of 2025 on absolute water withdrawal targets and supply chain water risk, linked to AI data centers; it called initial contacts favorable (2025 Stewardship Report, p. 11). Microsoft's published water goals are water positive by 2030 (replenishing more than it withdraws), data center water use effectiveness, and reducing freshwater use for cooling, with no absolute withdrawal target (Microsoft water page, checked November 26, 2026). Microsoft is a focus company of Ceres' Valuing Water Finance Initiative (110 investors, about $18 trillion); the 2025 tech benchmark gave it the highest score of the five tech companies. Parnassus is a member of the Ceres Investor Network; this site found no public list showing whether it is a VWFI signatory.",
+      "context_sources": [
+        "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+        "https://www.ceres.org/water/valuing-water-finance-initiative",
+        "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/water"
+      ],
+      "base": {
+        "p": null,
+        "how": "No base rate yet."
+      },
+      "auto": {
+        "type": "manual"
+      },
+      "scenarios": [
+        {
+          "seat": "Parnassus Investments seat",
+          "p": 0.22,
+          "why": "Coalition backing from 110 investors adds weight to the same ask, a modest lift."
+        }
+      ],
+      "created": "2026-11-26",
+      "resolved": null,
+      "resolution_source": null,
+      "decided": null,
+      "crowd": {
+        "n": 0,
+        "stake_left_out": 0,
+        "weighted_groups": 0,
+        "headline": "all_median",
+        "groups": {},
+        "equal_weight": null,
+        "all_median": null
+      }
+    },
+    {
+      "id": "q-msft-water-absolute-2028-if-no-ceres",
+      "kind": "conditional",
+      "section": "If, then",
+      "company": "MSFT",
+      "title": "If Parnassus is not named as a lead or co-lead investor on Microsoft in Ceres' Valuing Water Finance Initiative by June 30, 2027: will Microsoft publish a company-wide absolute water withdrawal reduction target by June 30, 2028?",
+      "closes": "2099-12-30",
+      "resolves_by": "2028-06-30",
+      "condition": {
+        "question": "q-parnassus-vwfi-msft-2027",
+        "if": 0
+      },
+      "resolves": "Yes if Microsoft's sustainability report or website states a company-wide target to reduce total water withdrawal in absolute terms (a volume, not per unit of use), by June 30, 2028. Replenishment (water positive), water use effectiveness and other per-unit targets do not count. Resolved by hand from Microsoft's own publications. Void (not scored) if Parnassus is named by then.",
+      "source_url": "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/water",
+      "context": "Parnassus reported engaging Microsoft in the first half of 2025 on absolute water withdrawal targets and supply chain water risk, linked to AI data centers; it called initial contacts favorable (2025 Stewardship Report, p. 11). Microsoft's published water goals are water positive by 2030 (replenishing more than it withdraws), data center water use effectiveness, and reducing freshwater use for cooling, with no absolute withdrawal target (Microsoft water page, checked November 26, 2026). Microsoft is a focus company of Ceres' Valuing Water Finance Initiative (110 investors, about $18 trillion); the 2025 tech benchmark gave it the highest score of the five tech companies. Parnassus is a member of the Ceres Investor Network; this site found no public list showing whether it is a VWFI signatory.",
+      "context_sources": [
+        "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+        "https://www.ceres.org/water/valuing-water-finance-initiative",
+        "https://www.microsoft.com/en-us/corporate-responsibility/sustainability/water"
+      ],
+      "base": {
+        "p": null,
+        "how": "No base rate yet."
+      },
+      "auto": {
+        "type": "manual"
+      },
+      "scenarios": [
+        {
+          "seat": "Parnassus Investments seat",
+          "p": 0.12,
+          "why": "Without coalition backing the ask rests on one holder's dialogue."
+        }
+      ],
+      "created": "2026-11-26",
+      "resolved": null,
+      "resolution_source": null,
+      "decided": null,
+      "crowd": {
+        "n": 0,
+        "stake_left_out": 0,
+        "weighted_groups": 0,
+        "headline": "all_median",
+        "groups": {},
+        "equal_weight": null,
+        "all_median": null
+      }
     }
   ],
   "leaderboard": [],

@@ -918,8 +918,6 @@ button + [role="status"], button + .ticker, button + .status-note, button + outp
 .vc-asks-t td:first-child { white-space: nowrap; }
 @media (max-width: 640px) { .vc-sec-b { padding-left: 4px; } .vc-stats { grid-template-columns: 1fr 1fr; } }
 /* Prediction board (board.js) */
-.bd-steps { padding-left: 20px; margin: 8px 0 16px; }
-.bd-steps li { margin: 4px 0; }
 .bd-rules p { margin: 6px 0; }
 .bd-view { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 16px 0 4px; }
 .bd-view button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); }
@@ -951,3 +949,33 @@ button + [role="status"], button + .ticker, button + .status-note, button + outp
 .bd-how dt { font-weight: 500; }
 .bd-how dd { margin: 2px 0 0; }
 @media (max-width: 600px) { .bd-groups li { grid-template-columns: minmax(0, 1fr) 30% auto; } }
+
+/* Prediction board: how to take part (owner, 2026-11-27: "make it very clear how you can post") */
+.bd-take h3 { margin-bottom: 10px; }
+.bd-ways { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.bd-way { border-top: 3px solid var(--accent); padding-top: 10px; min-width: 0; }
+.bd-way h4 { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; font-size: 16px; font-weight: 500; }
+.bd-way ol { padding-left: 20px; margin: 6px 0 12px; }
+.bd-way li { margin: 4px 0; }
+.bd-num { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; }
+.bd-btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; padding: 8px 14px; border-radius: var(--radius); font-weight: 500; }
+.bd-btn:hover { filter: brightness(1.15); }
+.bd-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pl-board-see { margin-left: 14px; }
+/* Prediction board: your forecasts glow (owner, 2026-11-27: "it glows or something and you can easily check on your proposals") */
+.bd-card.bd-mine { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft), 0 0 18px rgba(31, 78, 152, .35); }
+.bd-pill { display: inline-block; background: var(--accent); color: #fff; border-radius: 999px; padding: 1px 10px; font-size: 12.5px; font-weight: 500; }
+.bd-pill-top { margin: 0 0 6px; }
+.bd-minebox { border-color: var(--accent); }
+.bd-minelist { padding-left: 18px; margin: 6px 0; }
+.bd-minelist li { margin: 6px 0; overflow-wrap: anywhere; }
+.bd-scen { margin: 8px 0 2px; padding: 6px 10px; background: var(--scenario-soft); border-left: 3px solid var(--scenario); border-radius: 4px; }
+.bd-scen strong { color: var(--scenario); }
+@media (prefers-reduced-motion: no-preference) { .bd-card.bd-mine { transition: box-shadow var(--dur-micro) var(--ease); } }
+/* Tracker grid: what a click does, and a visual key (owner via UI session, 2026-11-27) */
+.pl-mx-do { margin: 6px 0; }
+.pl-mx-key { list-style: none; padding: 0; margin: 4px 0 10px; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--ink-soft); }
+.pl-mx-key li { display: flex; align-items: center; gap: 6px; }
+.pl-mx-key .pl-mx { pointer-events: none; flex: none; }
+#pl-h-rec { scroll-margin-top: 96px; }
+.pl-mx-key .pl-mx { display: inline-grid; place-items: center; cursor: default; }

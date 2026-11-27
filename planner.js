@@ -90,11 +90,19 @@
     const rows = D.asks.map((a, r) => `<tr><th scope="row" class="pl-mx-row"><span class="pl-long">${esc(a.label)}</span><span class="pl-short" aria-hidden="true">${esc(a.short_label || a.label)}</span> <span class="ticker">${totals.get(a.id)} filed</span></th>${cos.map((c, i) => {
       const x = cell.get(a.id + "|" + tick(c));
       const on = S.co === (c.id || c.ticker) && S.ask === a.id;
-      const label = `${a.label} at ${c.name}: ${x ? `filed ${plural(x.n, "time")}${x.best != null ? `, highest support ${Math.round(x.best)}%` : ""}${x.up ? ", on the next ballot" : ""}${x.crit ? `, ${x.crit === x.n ? (x.n === 1 ? "by a filer" : "all by filers") : `${x.crit} of them by filers`} critical of ESG${x.best != null ? " (left out of the highest support)" : ""}` : ""}` : "not filed in this dataset"}`;
-      return `<td><button type="button" class="pl-mx${x ? " filed" : ""}${x && x.crit === x.n ? " crit" : ""}${x && x.up ? " up" : ""}" data-co="${esc(c.id || c.ticker)}" data-ask="${esc(a.id)}" data-r="${r}" data-c="${i}" tabindex="${on ? 0 : -1}"${on ? ' aria-current="true"' : ""} aria-label="${esc(label)}">${x ? (x.best != null ? Math.round(x.best) : "•") : ""}</button></td>`;
+      const label = `${a.label} at ${c.name}: ${x ? `filed ${plural(x.n, "time")}${x.best != null ? `, highest support ${Math.round(x.best)}%` : ""}${x.best == null ? ", not voted (withdrawn, excluded or still to come)" : ""}${x.up ? ", on the next ballot" : ""}${x.crit ? `, ${x.crit === x.n ? (x.n === 1 ? "by a filer" : "all by filers") : `${x.crit} of them by filers`} critical of ESG${x.best != null ? " (left out of the highest support)" : ""}` : ""}` : "not filed in this dataset"}`;
+      return `<td><button type="button" class="pl-mx${x ? " filed" : ""}${x && x.crit === x.n ? " crit" : ""}${x && x.up ? " up" : ""}" data-co="${esc(c.id || c.ticker)}" data-ask="${esc(a.id)}" data-r="${r}" data-c="${i}" tabindex="${on ? 0 : -1}"${on ? ' aria-current="true"' : ""} aria-label="${esc(label)}. Opens the plan below." title="${esc(label)}. Click to open the plan below.">${x ? (x.best != null ? Math.round(x.best) : "•") : ""}</button></td>`;
     }).join("")}</tr>`).join("");
     return `<section class="pl-card pl-wide" aria-labelledby="pl-h-mx"><h3 id="pl-h-mx">AI shareholder engagement tracker: each ask, by company</h3>
-      <p class="status-note">Rows are asks (with how often each has been filed), columns are the US-listed companies. A number is the highest support that ask has had at that company (% for ÷ (for + against)), leaving out filings from filers critical of ESG; a dot means filed but not voted; a dashed square was filed only by filers critical of ESG; an outlined square is on the next ballot; an empty square has no filing there in this dataset. Choose a square to plan it; arrow keys move between squares.</p>
+      <p class="pl-mx-do"><strong>Click a square to plan an engagement for that company and ask: the plan opens below the grid.</strong> Arrow keys move between squares.</p>
+      <p class="status-note">Rows are asks (with how often each has been filed), columns are the US-listed companies. Leaving out filings from filers critical of ESG:</p>
+      <ul class="pl-mx-key" aria-label="What the squares show">
+        <li><span class="pl-mx filed" aria-hidden="true">34</span> highest support that ask has had at that company (% for ÷ (for + against))</li>
+        <li><span class="pl-mx filed" aria-hidden="true">•</span> filed but not voted: withdrawn, excluded or still to come</li>
+        <li><span class="pl-mx filed up" aria-hidden="true"></span> outlined: on the next ballot</li>
+        <li><span class="pl-mx filed crit" aria-hidden="true"></span> dashed: filed only by filers critical of ESG</li>
+        <li><span class="pl-mx" aria-hidden="true"></span> empty: no filing there in this dataset</li>
+      </ul>
       <div class="table-wrap pl-mx-wrap"><table class="pl-mx-table"><thead><tr><th scope="col"><span class="visually-hidden">Ask</span></th>${head}</tr></thead><tbody>${rows}</tbody></table></div></section>`;
   }
 
@@ -341,11 +349,21 @@
     const more = document.getElementById("pl-more");
     if (more) more.addEventListener("click", () => { S.showAll = !S.showAll; draw(); document.getElementById("pl-h-who").focus(); });
     // Grid: one square in the tab order; arrow keys move.
-    const cells = [...out.querySelectorAll(".pl-mx")];
+    const cells = [...out.querySelectorAll("button.pl-mx")];
     if (cells.length && !cells.some((b) => b.tabIndex === 0)) cells[0].tabIndex = 0;
     const at = (r, ci) => out.querySelector(`.pl-mx[data-r="${r}"][data-c="${ci}"]`);
     cells.forEach((b) => {
-      b.addEventListener("click", () => { S.co = b.dataset.co; S.ask = b.dataset.ask; sync(false); const again = out.querySelector('.pl-mx[aria-current="true"]'); if (again) again.focus(); });
+      b.addEventListener("click", (ev) => {
+        S.co = b.dataset.co; S.ask = b.dataset.ask; sync(false);
+        const again = out.querySelector('.pl-mx[aria-current="true"]');
+        if (again) again.focus({ preventScroll: true });
+        // A click (not a key move) shows the result: scroll to the plan for this company and ask.
+        if (ev.detail > 0) {
+          const h = document.getElementById("pl-h-rec");
+          const still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          if (h) h.scrollIntoView({ behavior: still ? "auto" : "smooth", block: "start" });
+        }
+      });
       b.addEventListener("keydown", (e) => {
         const r = +b.dataset.r, ci = +b.dataset.c;
         const to = { ArrowRight: [r, ci + 1], ArrowLeft: [r, ci - 1], ArrowDown: [r + 1, ci], ArrowUp: [r - 1, ci], Home: [r, 0], End: [r, cells.filter((x) => +x.dataset.r === r).length - 1] }[e.key];
@@ -370,6 +388,10 @@
     // The last step of the site: the same company and ask, tested forward in Plan and test › Test plans over time.
     const nx = document.getElementById("pl-next");
     if (nx) nx.href = planUrl().replace(/#planner$/, "#simulate");
+    // The same company and ask, suggested for the Prediction board (board.js builds the GitHub form address).
+    const bd = document.getElementById("pl-board");
+    if (bd) bd.href = window.BOARD_SUGGEST ? window.BOARD_SUGGEST(c.name, askOf(S.ask).label)
+      : `https://github.com/sophiaquinlanware/shareholder-advocacy-ai-landscape/issues/new?template=suggest-question.yml`;
     // planner-docs.js (UI session) adds the escalation step and drafted documents after each redraw.
     document.dispatchEvent(new CustomEvent("plannerdraw"));
     const status = document.getElementById("pl-status");
@@ -454,6 +476,12 @@
       <div id="pl-out"></div>
       <div id="pl-docs"></div>
       <aside id="pl-shortlist" class="pl-card" aria-labelledby="pl-h-list"></aside>
+      <section class="pl-card" aria-labelledby="pl-h-board">
+        <h3 id="pl-h-board">Put this plan on the Prediction board</h3>
+        <p>Suggest this company and ask as a question for everyone to forecast, such as whether a proposal would reach a level of support. A GitHub form opens with the company and ask filled in; the site's maintainer checks it before it goes on the board. Posting needs a free GitHub account, and nothing is posted until you submit the form.</p>
+        <a id="pl-board" class="bd-btn" href="#predict" rel="noopener" target="_blank">Suggest this proposal for the board<span class="visually-hidden"> (opens a GitHub form in a new tab)</span></a>
+        <a href="#predict" class="pl-board-see">See the Prediction board</a>
+      </section>
       <p class="next-section"><a id="pl-next" href="#simulate">Next: test this plan over time →</a></p>`;
     document.getElementById("pl-co").addEventListener("change", (e) => { S.co = e.target.value; sync(); });
     document.getElementById("pl-ask").addEventListener("change", (e) => { S.ask = e.target.value; sync(); });

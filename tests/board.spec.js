@@ -41,9 +41,42 @@ test("the board warns on extreme figures, pairs the conditional branches and gro
   const card = el.locator(".bd-card").first();
   await card.locator('input[type="range"]').fill("4");
   await expect(card.locator(".bd-warn")).toBeVisible();
-  await expect(el.locator(".bd-pair .bd-card")).toHaveCount(2);
+  await el.locator('[data-view="topic"]').click();
+  await expect(el.locator(".bd-pair")).toHaveCount(2);
+  await expect(el.locator(".bd-pair .bd-card")).toHaveCount(4);
   await expect(el).toContainText("no base rate yet");
   await el.locator('[data-view="company"]').click();
   await expect(el.locator('[data-view="company"]')).toHaveAttribute("aria-pressed", "true");
   await expect(el.locator("h3", { hasText: "Microsoft" })).toHaveCount(1);
+});
+
+test("the board says how to post a forecast and how to put a proposal on the board", async ({ page }) => {
+  await page.goto("/index.html#predict");
+  await page.waitForLoadState("networkidle");
+  const take = page.locator(".bd-take");
+  await expect(take).toContainText("Forecast a question");
+  await expect(take).toContainText("Put a proposal on the board");
+  await expect(take.locator("a.bd-btn", { hasText: "Suggest a proposal" })).toHaveAttribute(
+    "href",
+    /template=suggest-question\.yml/,
+  );
+  await page.goto("/index.html?plan=meta-platforms~ask-ai-training-data#planner");
+  await page.waitForLoadState("networkidle");
+  await expect(page.locator("#pl-board")).toHaveAttribute("href", /template=suggest-question\.yml.*company=Meta/);
+});
+
+test("questions rank most likely first, a seat's scenario figures can be tried, and your forecasts glow at the top", async ({
+  page,
+}) => {
+  await page.goto("/index.html#predict");
+  await page.evaluate(() => localStorage.removeItem("board-mine-v1"));
+  await page.reload();
+  await page.waitForLoadState("networkidle");
+  const el = page.locator("#tab-predict");
+  await expect(el.locator('[data-view="likely"]')).toHaveAttribute("aria-pressed", "true");
+  await expect(el.locator(".bd-scen").first()).toContainText("Scenario, Parnassus Investments seat");
+  await el.locator("[data-seat]").first().click();
+  await expect(el.locator(".bd-minelist li")).toHaveCount(4);
+  await expect(el.locator(".bd-card.bd-mine")).toHaveCount(4);
+  await expect(el.locator('.bd-card.bd-mine[data-q="q-msft-water-absolute-2028"]')).toContainText("Your forecast 15%");
 });

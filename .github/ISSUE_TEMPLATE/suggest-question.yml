@@ -1,0 +1,61 @@
+name: Suggest a proposal for the Prediction board
+description: Suggest a shareholder proposal (filed or planned) or another outcome for people to forecast on the site's Prediction board. The site's maintainer reviews each suggestion before it goes on the board.
+title: "Board suggestion: "
+labels: ["question-suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest something people can forecast: for example "Will the proposal asking Company X to report on AI risks get at least 20% support?" The board asks what will happen, never what people support. A suggestion is not a request for anyone to vote, file or act a certain way. Use public information only. Your GitHub name and this text are public.
+  - type: input
+    id: company
+    attributes:
+      label: Company
+      description: Filled in for you when you start from Plan an engagement.
+    validations:
+      required: true
+  - type: input
+    id: ask
+    attributes:
+      label: The ask (what the proposal asks the company to do)
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Where does this proposal stand?
+      options:
+        - Filed and in a proxy statement
+        - Filed, not yet in a proxy statement (public notice or filer statement)
+        - Not filed (an outcome to forecast, such as whether anyone will file it)
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: The question people would forecast
+      description: One yes-or-no outcome with a date, for example "at least 20% support at the 2027 annual meeting" or "withdrawn after a company commitment by June 30, 2027".
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Public source
+      description: A link to the proxy statement, SEC filing or filer's public statement. Needed for a filed proposal.
+  - type: dropdown
+    id: stake
+    attributes:
+      label: Do you or your organization have a stake in it?
+      description: Yes if you filed, co-filed or plan to file it, or you are the company or advise it. A stake doesn't stop a suggestion; it is noted on the question.
+      options:
+        - "No"
+        - "Yes"
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: This is from public information, and it is a question about an outcome, not a request for anyone to vote, file or act a certain way.
+          required: true
