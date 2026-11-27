@@ -8,6 +8,8 @@
 // Everything shown comes from the data with its source; nothing here is advice.
 
 (function () {
+  // Draw-in progress and the traced tie, kept across redraws.
+  const S = {};
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   const cssVar = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim() || "#1f4e98";
   const plural = (n, one, many) => `${n} ${n === 1 ? one : many || one + "s"}`;
@@ -85,7 +87,26 @@
     cols.forEach((c) => svg.append("text").attr("x", c.x).attr("y", 24).attr("text-anchor", "middle").attr("font-size", 12).attr("font-weight", 400).attr("fill", cssVar("--ink-soft"))
       .text((narrow ? SHORT_TIER[c.tid] || tierLabel(c.tid) : c.tid === "business" ? "Business and government" : tierLabel(c.tid)).toUpperCase()));
     const ink = cssVar("--blue-2");
-    svg.append("g").attr("fill", "none").selectAll("path").data(V.ties.filter((t) => pos.has(t.from) && pos.has(t.to))).join("path")
+    // Drawn in as the reader scrolls (owner, 2026-11-26: "animate it to be liquid as you scroll … filled out across
+    // the value chain so you can see it being drawn"): a soft-edged mask sweeps from chips to AI products, tied to
+    // how far the chart has come into view. It never undraws; with reduced motion it is drawn at once.
+    const FEATHER = 140;
+    const defs = svg.append("defs");
+    const grad = defs.append("linearGradient").attr("id", "vc-feather");
+    grad.append("stop").attr("offset", 0).attr("stop-color", "#fff");
+    grad.append("stop").attr("offset", 1).attr("stop-color", "#000");
+    const mask = defs.append("mask").attr("id", "vc-reveal").attr("maskUnits", "userSpaceOnUse").attr("x", 0).attr("y", 0).attr("width", W).attr("height", H);
+    const solid = mask.append("rect").attr("x", 0).attr("y", 0).attr("height", H).attr("fill", "#fff");
+    const edge = mask.append("rect").attr("y", 0).attr("width", FEATHER).attr("height", H).attr("fill", "url(#vc-feather)");
+    const drawn = svg.append("g").attr("mask", "url(#vc-reveal)");
+    const setReveal = (p) => {
+      const x = -FEATHER + p * (W + FEATHER * 2);
+      solid.attr("width", Math.max(0, x));
+      edge.attr("x", x);
+    };
+    S.reveal = { set: setReveal, W };
+    setReveal(REDUCED() ? 1.2 : S.revealP || 0);
+    drawn.append("g").attr("fill", "none").selectAll("path").data(V.ties.filter((t) => pos.has(t.from) && pos.has(t.to))).join("path")
       .attr("d", (t) => {
         const a = pos.get(t.from), b = pos.get(t.to);
         const mx = (a.x + b.x) / 2;
@@ -93,7 +114,21 @@
       })
       .attr("class", "vc-tie").attr("stroke", ink).attr("stroke-opacity", 0.7).attr("stroke-width", 2).attr("stroke-dasharray", (t) => DASH[t.type] || null).attr("stroke-linecap", (t) => CAP[t.type] || "butt")
       .append("title").text((t) => `${name(t.from)} ${phrase(t.type)} ${name(t.to)}`);
-    const nodes = svg.append("g").selectAll("g").data([...pos.entries()]).join("g").attr("transform", ([, p]) => `translate(${p.x},${p.y})`);
+    // Tap (or Enter on) a line to trace it: the tie and every tie upstream of it and downstream of it along the
+    // value chain turn orange, so a path from chips to AI products reads at a glance (owner, 2026-11-26). Wide,
+    // invisible strokes make thin and dotted lines easy to hit.
+    drawn.append("g").attr("fill", "none").selectAll("path").data(V.ties.filter((t) => pos.has(t.from) && pos.has(t.to))).join("path")
+      .attr("d", (t) => {
+        const a = pos.get(t.from), b = pos.get(t.to);
+        const mx = (a.x + b.x) / 2;
+        return a.x === b.x ? `M${a.x},${a.y}C${a.x + 60},${a.y} ${b.x + 60},${b.y} ${b.x},${b.y}` : `M${a.x},${a.y}C${mx},${a.y} ${mx},${b.y} ${b.x},${b.y}`;
+      })
+      .attr("class", "vc-hit").attr("stroke", "transparent").attr("stroke-width", 12).style("cursor", "pointer")
+      .attr("tabindex", 0).attr("role", "button").attr("aria-label", (t) => `Trace: ${name(t.from)} ${phrase(t.type)} ${name(t.to)}`)
+      .on("click", (ev, t) => { ev.stopPropagation(); trace(t); })
+      .on("keydown", (ev, t) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); trace(t); } });
+    svg.on("click", () => { if (S.traced) trace(null); });
+    const nodes = drawn.append("g").selectAll("g").data([...pos.entries()]).join("g").attr("transform", ([, p]) => `translate(${p.x},${p.y})`);
     const co = nodes.filter(([id]) => id !== "__capital__")
       .attr("tabindex", 0).attr("role", "button").attr("aria-label", ([id]) => `${name(id)}: ${plural(deg.get(id) || 0, "tie")}`).style("cursor", "pointer")
       .on("click", (ev, [id]) => showCompany(id))
@@ -106,12 +141,74 @@
     // Key: one dash pattern per tie type.
     document.getElementById("vc-key").innerHTML = [...new Set(V.ties.map((t) => t.type))].map((k) =>
       `<span class="leg static"><svg class="mark vc-line" viewBox="0 0 44 10" aria-hidden="true"><line x1="2" y1="5" x2="42" y2="5" stroke="${ink}" stroke-width="2.5"${DASH[k] ? ` stroke-dasharray="${DASH[k]}"` : ""}${CAP[k] ? ` stroke-linecap="${CAP[k]}"` : ""}></line></svg>${esc(k)}</span>`).join("")
-      + `<span class="status-note">Each line is one sourced tie; open a company to read its ties in words. Circle size = number of sourced ties; companies with no sourced tie are counted in each tier's panel. Strategic investors have their own column; their equity stakes in labs are in Ties to each frontier lab.</span>`;
+      + `<span class="status-note">Tap a line to trace its path along the value chain in orange; tap the chart again to clear. Each line is one sourced tie; open a company to read its ties in words. Circle size = number of sourced ties; companies with no sourced tie are counted in each tier's panel. Strategic investors have their own column; their equity stakes in labs are in Ties to each frontier lab.</span>`;
+  }
+
+  const REDUCED = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Scroll progress of the chart: 0 when its top reaches the bottom of the screen, 1 when its bottom is two thirds
+  // of the way up. Eased toward the target each frame, so the sweep flows rather than jumps.
+  function wireReveal() {
+    if (S.revealWired) return;
+    S.revealWired = true;
+    let target = 0, raf = 0;
+    const box = () => document.getElementById("vc-flow");
+    const measure = () => {
+      const el = box();
+      if (!el || !el.offsetParent) return;
+      const r = el.getBoundingClientRect(), vh = window.innerHeight;
+      target = Math.max(target, Math.min(1, (vh - r.top) / (r.height + vh * 0.35)));
+      if (!raf) raf = requestAnimationFrame(step);
+    };
+    const step = () => {
+      raf = 0;
+      const p = S.revealP || 0;
+      const next = Math.abs(target - p) < 0.002 ? target : p + (target - p) * 0.12;
+      S.revealP = next;
+      if (S.reveal) S.reveal.set(next);
+      if (next !== target) raf = requestAnimationFrame(step);
+    };
+    if (REDUCED()) { S.revealP = 1.2; if (S.reveal) S.reveal.set(1.2); return; }
+    window.addEventListener("scroll", measure, { passive: true });
+    window.addEventListener("resize", measure);
+    measure();
+    // Opening the view by a link lands mid-page: measure again once it is shown.
+    new MutationObserver(measure).observe(document.getElementById("tab-value-chain"), { attributes: true, attributeFilter: ["hidden"] });
+  }
+  const TRACE = "#e8590c";
+  function trace(t) {
+    S.traced = t;
+    if (typeof d3 === "undefined") return;
+    const ties = V.ties;
+    if (!t) {
+      d3.selectAll("#vc-flow path.vc-tie").attr("stroke", cssVar("--blue-2")).attr("stroke-opacity", 0.7).attr("stroke-width", 2);
+      announce("Trace cleared.");
+      return;
+    }
+    // Upstream: ties into the tie's start, and into theirs; downstream: ties out of its end, and out of theirs.
+    const on = new Set([t]);
+    const walk = (seed, next, key) => {
+      const seen = new Set([seed]);
+      const q = [seed];
+      while (q.length) {
+        const id = q.shift();
+        for (const x of ties) if (x[key] === id && !on.has(x)) { on.add(x); const n = next(x); if (!seen.has(n)) { seen.add(n); q.push(n); } }
+      }
+    };
+    walk(t.from, (x) => x.from, "to");
+    walk(t.to, (x) => x.to, "from");
+    d3.selectAll("#vc-flow path.vc-tie")
+      .attr("stroke", (x) => (on.has(x) ? TRACE : cssVar("--blue-2")))
+      .attr("stroke-opacity", (x) => (on.has(x) ? 1 : 0.12))
+      .attr("stroke-width", (x) => (x === t ? 3.4 : on.has(x) ? 2.6 : 1.6));
+    d3.selectAll("#vc-flow path.vc-tie").filter((x) => on.has(x)).raise();
+    announce(`Traced ${name(t.from)} ${phrase(t.type)} ${name(t.to)}: ${on.size} ${on.size === 1 ? "tie" : "ties"} on its path, in orange. Tap the chart again to clear.`);
   }
 
   // Ties of the chosen tier or company stay strong; the rest fade, so crossing lines stay readable.
   function highlight(keep) {
     if (typeof d3 === "undefined") return;
+    S.traced = null;
+    d3.selectAll("#vc-flow path.vc-tie").attr("stroke", cssVar("--blue-2"));
     d3.selectAll("#vc-flow path.vc-tie").attr("stroke-opacity", (x) => (keep(x) ? 0.95 : 0.08)).attr("stroke-width", (x) => (keep(x) ? 2.6 : 1.6));
   }
   // Clear then set, so the same message is announced again on a repeat click.
@@ -166,7 +263,7 @@
       <h4 id="vc-routes" tabindex="-1">Shareholder routes</h4>
       <p>${routesMix ? esc(routesMix) : "Not recorded"}.</p>
       <h4 id="vc-fund" tabindex="-1">Fund-family votes on file</h4>
-      <p>${p.fund_vote_rows ?? 0} votes, counted once per fund family per proposal, from Form N-PX filings on proposals at these companies. Most are matched automatically and not yet reviewed; see How fund families voted for each one.</p>`;
+      <p>${p.fund_vote_rows ?? 0} votes, counted once per fund family per proposal, from Form N-PX filings on proposals at these companies. Most are matched automatically and not yet reviewed; see Fund family votes on AI proposals for each one.</p>`;
     highlight((x) => (CO.get(x.from) || {}).tier === tid || (CO.get(x.to) || {}).tier === tid);
     announce(`${t.label}: details below the chart.`);
     document.querySelectorAll(".vc-tiers .chip").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.tier === tid)));
@@ -244,7 +341,7 @@
     });
     // The flow needs a visible container to measure, so it draws the first time the tab opens.
     let drawn = false;
-    const draw = () => { if (!drawn && !el.hidden) { drawn = true; drawFlow(); } };
+    const draw = () => { if (!drawn && !el.hidden) { drawn = true; drawFlow(); wireReveal(); } };
     new MutationObserver(draw).observe(el, { attributes: true, attributeFilter: ["hidden"] });
     draw();
   };

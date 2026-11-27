@@ -120,7 +120,7 @@ function renderUpcoming() {
   document.getElementById("tab-upcoming").innerHTML = `
     <h2>AI proposals on upcoming ballots</h2>
     <p class="intro">${plural(items.length, "AI proposal")} on ${plural(meetings.filter((m) => (m.items || []).length).length, "ballot")}, by meeting date. Source: each company's proxy statement.</p>
-    ${rows ? `<div class="table-wrap"><table><thead><tr><th scope="col">Meeting</th><th scope="col">Company</th><th scope="col">Item</th><th scope="col">Proposal</th><th scope="col">Filed by</th><th scope="col">What it asks about</th><th scope="col">Board</th><th scope="col">Earlier AI votes at this company</th></tr></thead><tbody>${rows}</tbody></table></div>` : `<p class="status-note">No AI proposals on announced ballots.</p>`}
+    ${rows ? `<div class="table-wrap"><table><thead><tr><th scope="col">Meeting</th><th scope="col">Company</th><th scope="col">Item</th><th scope="col">Proposal</th><th scope="col">Filed by</th><th scope="col">Topic</th><th scope="col">Board</th><th scope="col">Earlier AI votes at this company</th></tr></thead><tbody>${rows}</tbody></table></div>` : `<p class="status-note">No AI proposals on announced ballots.</p>`}
     ${empty.length ? `<h3 class="sub-h">Meetings with no AI proposals on the ballot, or ballot not yet filed</h3>
       <ul class="steps">${empty.map((m) => `<li><button type="button" class="linklike" data-co="${esc(m.ticker)}">${esc(m.company)}</button>, ${esc(m.meeting_label)}${m.status_label && !/^expected/i.test(m.meeting_label || "") ? `: ${esc(m.status_label)}` : ""}${m.proxy_url ? src(m.proxy_url, "proxy") : ""}</li>`).join("")}</ul>` : ""}`;
   wireCompanyLinks(document.getElementById("tab-upcoming"));
@@ -338,7 +338,7 @@ function renderFeed() {
     <div class="status-filter" role="group" aria-label="Filter by status" id="feed-status"></div>
     <div class="net-controls">
       <select id="feed-co" aria-label="Company"><option value="">All companies</option>${companies.map((c) => `<option value="${esc(c)}">${esc(companyName(c))}</option>`).join("")}</select>
-      <select id="feed-topic" aria-label="What it asks about"><option value="">Everything it asks about</option>${topics.map((t) => `<option value="${esc(t)}">${esc(t)} (${all.filter((p) => normTopic(p.topic) === t).length})</option>`).join("")}</select>
+      <select id="feed-topic" aria-label="Topic"><option value="">All topics</option>${topics.map((t) => `<option value="${esc(t)}">${esc(t)} (${all.filter((p) => normTopic(p.topic) === t).length})</option>`).join("")}</select>
       <select id="feed-year" aria-label="Meeting year"><option value="">All years</option>${years.map((y) => `<option>${y}</option>`).join("")}</select>
       <button type="button" class="chip" id="feed-clear" hidden>Clear filters</button>
     </div>
@@ -643,22 +643,6 @@ function renderNew() {
     ${groups ? `<ul class="timeline">${groups}</ul>` : `<p class="status-note">Nothing flagged yet.</p>`}`;
 }
 
-// View buttons that carry a count (data-count-label="All {proposals} AI proposals") are filled in from the data,
-// so the numbers never go stale.
-function labelCounts() {
-  const n = {
-    proposals: ((DATA.proposals && DATA.proposals.proposals) || []).length,
-    families: new Set(((DATA.fund_votes && DATA.fund_votes.summary) || []).map((r) => r.family)).size,
-    scored: ((DATA.scorecard && DATA.scorecard.companies) || []).length,
-    rights: (DATA.companies || []).filter((c) => c.rights_tracked !== false && c.matrix).length,
-    people: ((DATA.people && DATA.people.people) || []).length,
-  };
-  document.querySelectorAll("[data-count-label]").forEach((b) => {
-    const text = b.dataset.countLabel.replace(/\{(\w+)\}/g, (_, k) => (n[k] ? String(n[k]) : ""));
-    if (!/\s\s|\s,|^\s/.test(text)) b.textContent = text.replace(/\s+/g, " ").trim();
-  });
-}
-
 // ---------- Start here: Overview ----------
 // What an analyst can act on now (ballots out, open filing deadlines, this week's SEC finds), three findings
 // from the data with their basis, and what each section of the site is for.
@@ -897,7 +881,6 @@ async function main() {
   renderStart(); // again, now that the weekly SEC check (changes, tracking) has loaded
   if (window.renderPlanner) window.renderPlanner(DATA);
   if (window.renderSimulator) window.renderSimulator(DATA);
-  labelCounts();
   document.dispatchEvent(new Event("siteready"));
 }
 main();

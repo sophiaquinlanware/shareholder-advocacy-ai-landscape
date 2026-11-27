@@ -50,7 +50,9 @@ html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--bar-h, 120
 body { overflow-x: clip; margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans); font-synthesis-weight: none; }
 /* Tabular numerals where figures line up (tables, counts, charts). Not site-wide: in this font tnum also
    widens commas and full stops, which put gaps in running text ("proposals ,"). */
-table, .num, svg text, .pw-bar-n, .status-n, .vc-num, .stat { font-variant-numeric: tabular-nums; }
+/* Only where cells hold figures alone: in this font tnum also widens commas and semicolons, which left a gap
+   before every comma in table prose and chart labels (owner, 2026-11-26: "eliminate all typos like this"). */
+td.num, th.num, .num, .tick text, .pw-bar-n, .status-n, .vc-num, .stat { font-variant-numeric: tabular-nums; }
 /* Lenis smooth scroll (motion.js): its recommended base styles. */
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
@@ -784,15 +786,9 @@ button:active:not([disabled]) { transform: scale(.98); }
 .fig .net-legend { margin-bottom: 8px; }
 @media (max-width: 640px) { .fig { padding: 12px 12px 10px; } .fig-title { font-size: 15px; } }
 
-/* Network caption inside the black band: title, counts, colour key and source (screenshot-ready). On wide screens
-   it sits at the band's bottom left; on phones it follows the graph on the same black. */
-.net-figcap { position: absolute; left: max(16px, calc(50vw - 600px)); top: calc(var(--strip-h) - 10px); transform: translateY(-100%); max-width: min(760px, calc(100vw - 420px)); pointer-events: none; color: var(--g-label-soft); font-size: 11.5px; line-height: 1.45; }
-.net-figcap p { margin: 0; }
-.net-figcap .fc-title { color: var(--g-label); font-size: 14px; margin-bottom: 2px; }
-.net-figcap .fc-key { display: flex; flex-wrap: wrap; gap: 2px 12px; margin: 4px 0; color: var(--g-label); }
-.net-figcap .fc-key i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; vertical-align: 0; }
-.net-figcap .fc-src { font-size: 10.5px; }
-@media (max-width: 899px) {
-  .net-figcap { position: static; max-width: none; background: var(--g-bg); padding: 8px 16px 12px; }
-}
-.net-figcap .fc-marks .mark-swatch { width: 20px; height: 15px; vertical-align: -3px; margin-right: 5px; }
+/* A status line or note right after a button keeps clear of it (owner, 2026-11-26: "normal spacing between things
+   on the entire website"). */
+button + [role="status"], button + .ticker, button + .status-note, button + output, .chip + [role="status"], .chip + .ticker { margin-left: 10px; }
+/* Value chain trace targets: no box around a tapped line; keyboard focus shows as a soft orange band instead. */
+.vc-hit:focus { outline: none; }
+.vc-hit:focus-visible { stroke: rgba(232, 89, 12, .28); }
