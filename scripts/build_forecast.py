@@ -147,6 +147,7 @@ def main():
         "latest": latest, "by_season": by_season,
         "ask_votes": {a: sorted(v) for a, v in ask_votes.items()},
         "all_votes_median": st.median([p["support_pct"] for p in votes]) if votes else None,
+        "max_recorded": max(p["support_pct"] for p in votes) if votes else None,
         "family_for": {a: dict(d) for a, d in fam.items()},
         "control": {t: {**v, "source_url": (companies.get(t, {}).get("control") or {}).get("url")} for t, v in CONTROL.items()},
         "proxy_advisors": "Not public in this site's sources: ISS and Glass Lewis recommendations are not used.",
