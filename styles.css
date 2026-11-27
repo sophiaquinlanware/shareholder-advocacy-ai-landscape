@@ -987,3 +987,5 @@ button + [role="status"], button + .ticker, button + .status-note, button + outp
 #tab-predict article.bd-card h4 { font-size: 18px; line-height: 1.35; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid var(--line); }
 #tab-predict article.bd-card h4::before { content: "Question " counter(bdq); display: block; margin-bottom: 4px; font-size: 12px; font-weight: 400; letter-spacing: .04em; text-transform: uppercase; color: var(--blue-1); }
 @media (max-width: 640px) { #tab-predict article.bd-card { padding: 14px 14px 16px; margin: 20px 0; } #tab-predict article.bd-card h4 { font-size: 16px; } }
+button.bd-btn { border: 0; font: inherit; font-weight: 500; cursor: pointer; }
+.bd-minelist .linklike { text-align: left; }

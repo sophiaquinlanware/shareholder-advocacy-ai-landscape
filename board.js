@@ -30,7 +30,7 @@
   const INTRO = {
     gap: "Companies under US proxy rules where this site records no AI proposal in the latest season (leaving out filers critical of ESG), with a filing deadline still open. Filings withdrawn privately never reach a proxy statement, so some may be missing. Each question closes the day before the deadline; forecasts rest on public information only.",
     Engagements: "Outcomes of named engagements, added by the site's maintainer with their sources. Green figures are scenarios written by this site from a seat in Take a seat: not forecasts, not counted, and not the view of the organization named.",
-    "If, then": "Pairs of questions: the same outcome under each answer to another question (the SEC rule, or an escalation). Only the branch whose condition happens is scored; the other is void. The gap between the two shows how much forecasters expect the rule to change exclusions. It measures expectations, not cause.",
+    "If, then": "Pairs of questions: the same outcome under each answer to another question (the SEC rule, or an escalation). Only the branch whose condition happens is scored; the other is void. The gap between the two shows how much forecasters expect the first outcome to change the second. It measures expectations, not cause.",
   };
 
   const introFor = (s) => (s.startsWith("Companies with no AI proposal") ? INTRO.gap : INTRO[s]);
@@ -103,10 +103,11 @@
     const status = (q) => (q.resolved === "void" ? "void" : q.resolved != null ? `resolved ${q.resolved ? "Yes" : "No"}, your score ${((M[q.id].p - q.resolved) ** 2).toFixed(3)}` : isClosed(q) ? "closed, awaiting the result" : `open until ${day(q.closes)}`);
     return `<section class="pl-card bd-minebox" aria-labelledby="bd-h-mine">
       <h3 id="bd-h-mine">Your forecasts</h3>
-      ${mineQs.length ? `<ul class="bd-minelist">${mineQs.map((q) => `<li><a href="#bd-${esc(q.id)}" data-jump="${esc(q.id)}">${esc(q.title)}</a> <span class="bd-pill">Yours ${pct(M[q.id].p)}</span> <span class="note">Crowd ${q.crowd && q.crowd.n ? `${pct(q.crowd.equal_weight)} (n = ${q.crowd.n})` : "none yet"}; ${esc(status(q))}.</span></li>`).join("")}</ul>
+      ${mineQs.length ? `<ul class="bd-minelist">${mineQs.map((q) => `<li><button type="button" class="linklike" data-jump="bd-${esc(q.id)}">${esc(q.title)}</button> <span class="bd-pill">Yours ${pct(M[q.id].p)}</span> <span class="note">Crowd ${q.crowd && q.crowd.n ? `${pct(q.crowd.equal_weight)} (n = ${q.crowd.n})` : "none yet"}; ${esc(status(q))}.</span></li>`).join("")}</ul>
         <p class="note">Kept in this browser. They glow wherever they appear below; post one to make it public.</p>`
         : `<p class="note">None yet. Forecasts you save appear here and glow in the list below, so you can check on them easily.</p>`}
-      ${seats.map((st) => `<p><button type="button" class="chip" data-seat="${esc(st)}">Try the ${esc(st)} figures as your own</button> <span class="note">Copies this site's scenario figures for that seat into your forecasts in this browser, to adjust and post if you agree. Nothing is posted.</span></p>`).join("")}
+      ${seats.map((st) => `<p><button type="button" class="chip" data-seat="${esc(st)}">Try the ${esc(st)} figures as your own</button> <span class="note">Copies this site's scenario figures for that seat into your forecasts in this browser, to adjust and post if you agree. Forecasts you already saved are kept. Nothing is posted.</span></p>`).join("")}
+      <p class="note bd-seat-msg"></p>
     </section>`;
   }
 
@@ -124,7 +125,7 @@
     };
     const pairs = byCondition(qs.filter((x) => x.kind === "conditional"));
     const gapText = pairs.filter((ps) => ps.length === 2 && ps.every((q) => q.crowd && q.crowd.n))
-      .map((ps) => ` Crowd now on "${esc(ps[0].title.split(":")[0].replace(/^If /, "if "))}": ${Math.round((ps.find((q) => q.condition.if === 1).crowd.equal_weight - ps.find((q) => q.condition.if === 0).crowd.equal_weight) * 100)} points higher than if not.`).join("");
+      .map((ps) => ` Crowd now on "${esc(ps.find((q) => q.condition.if === 1).title.split(":")[0].replace(/^If /, "if "))}": ${Math.round((ps.find((q) => q.condition.if === 1).crowd.equal_weight - ps.find((q) => q.condition.if === 0).crowd.equal_weight) * 100)} points higher than if not.`).join("");
     const shut = qs.filter((q) => q.resolved != null);
     const sections = [...new Set(open.map((q) => q.section))];
     const names = Q.company_names || {};
@@ -155,7 +156,7 @@
               <li>Move the slider to your probability and press <strong>Save my forecast</strong>. It stays in this browser.</li>
               <li>Press <strong>Post my forecast publicly</strong>. A GitHub form opens with the question and your figure filled in: choose your group and submit. Your forecast appears on the board within a few minutes, and is scored when the question resolves.</li>
             </ol>
-            <a class="bd-btn" href="#bd-questions">Go to the questions ↓</a>
+            <button type="button" class="bd-btn" data-jump="bd-questions">Go to the questions ↓</button>
           </div>
           <div class="bd-way">
             <h4><span class="bd-num" aria-hidden="true">2</span>Put a proposal on the board</h4>
@@ -226,12 +227,30 @@
       if (seat) {
         const all = mine.get();
         const made = new Date().toISOString().slice(0, 10);
-        for (const q of Q.questions) for (const x of q.scenarios || []) if (x.seat === seat.dataset.seat && q.resolved == null && !isClosed(q)) all[q.id] = { p: x.p, made };
+        let copied = 0, kept = 0;
+        for (const q of Q.questions) for (const x of q.scenarios || []) {
+          if (x.seat !== seat.dataset.seat || q.resolved != null || isClosed(q)) continue;
+          if (all[q.id]) kept += 1;
+          else { all[q.id] = { p: x.p, made }; copied += 1; }
+        }
         mine.set(all);
         draw();
+        const msg = `Copied ${copied} of the ${seat.dataset.seat} figures into your forecasts${kept ? `; kept your own on ${kept} you had already saved` : ""}.`;
         const live = el.querySelector("#bd-live");
-        if (live) live.textContent = `Copied the ${seat.dataset.seat} figures into your forecasts.`;
+        if (live) live.textContent = msg;
+        const note = el.querySelector(".bd-seat-msg");
+        if (note) note.textContent = msg;
         el.querySelector("#bd-h-mine").scrollIntoView({ block: "start" });
+        return;
+      }
+      const j = e.target.closest("[data-jump]");
+      if (j) {
+        const t = document.getElementById(j.dataset.jump);
+        if (t) {
+          t.scrollIntoView({ block: "start" });
+          const f = t.matches("h3") ? el.querySelector(".bd-view button") : t.querySelector("input, button, h4");
+          if (f) f.focus({ preventScroll: true });
+        }
         return;
       }
       const v = e.target.closest("[data-view]");
@@ -249,6 +268,14 @@
       const nu = tmp.firstElementChild;
       c.replaceWith(nu);
       bars(nu);
+      // Keep "Your forecasts" and the ranking current: in the ranked view redraw everything, otherwise just the panel.
+      if (view === "likely") draw();
+      else {
+        const box = el.querySelector(".bd-minebox");
+        const tmp2 = document.createElement("div");
+        tmp2.innerHTML = mineHtml();
+        if (box) box.replaceWith(tmp2.firstElementChild);
+      }
       const fresh = el.querySelector(`#bd-${CSS.escape(q.id)} .bd-save`);
       if (fresh) fresh.focus();
       const live = el.querySelector("#bd-live");

@@ -38,7 +38,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           for i in 1 2 3 4 5; do
             git fetch -q origin main && git reset -q --hard origin/main
-            python scripts/ingest_forecast.py > reply.txt; rc=$?
+            # GitHub runs this step with bash -e: capture the exit code without ending the step.
+            rc=0; python scripts/ingest_forecast.py > reply.txt || rc=$?
             if [ "$rc" = "3" ]; then echo "result=rejected" >> "$GITHUB_OUTPUT"; exit 0; fi
             if [ "$rc" != "0" ]; then echo "result=error" >> "$GITHUB_OUTPUT"; exit 0; fi
             python scripts/build_questions.py || { echo "result=error" >> "$GITHUB_OUTPUT"; exit 0; }

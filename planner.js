@@ -353,16 +353,14 @@
     if (cells.length && !cells.some((b) => b.tabIndex === 0)) cells[0].tabIndex = 0;
     const at = (r, ci) => out.querySelector(`.pl-mx[data-r="${r}"][data-c="${ci}"]`);
     cells.forEach((b) => {
-      b.addEventListener("click", (ev) => {
+      b.addEventListener("click", () => {
         S.co = b.dataset.co; S.ask = b.dataset.ask; sync(false);
         const again = out.querySelector('.pl-mx[aria-current="true"]');
         if (again) again.focus({ preventScroll: true });
-        // A click (not a key move) shows the result: scroll to the plan for this company and ask.
-        if (ev.detail > 0) {
-          const h = document.getElementById("pl-h-rec");
-          const still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-          if (h) h.scrollIntoView({ behavior: still ? "auto" : "smooth", block: "start" });
-        }
+        // Choosing a square (click, Enter or Space; arrow keys only move focus) shows the result: scroll to the plan.
+        const h = document.getElementById("pl-h-rec");
+        const still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (h) h.scrollIntoView({ behavior: still ? "auto" : "smooth", block: "start" });
       });
       b.addEventListener("keydown", (e) => {
         const r = +b.dataset.r, ci = +b.dataset.c;

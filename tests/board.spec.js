@@ -80,3 +80,27 @@ test("questions rank most likely first, a seat's scenario figures can be tried, 
   await expect(el.locator(".bd-card.bd-mine")).toHaveCount(4);
   await expect(el.locator('.bd-card.bd-mine[data-q="q-msft-water-absolute-2028"]')).toContainText("Your forecast 15%");
 });
+
+test("board links stay on the board, saving updates Your forecasts, and a seat keeps your own figures", async ({
+  page,
+}) => {
+  await page.goto("/index.html#predict");
+  await page.evaluate(() => localStorage.removeItem("board-mine-v1"));
+  await page.reload();
+  await page.waitForLoadState("networkidle");
+  const el = page.locator("#tab-predict");
+  await el.locator('[data-jump="bd-questions"]').click();
+  await expect(el).toBeVisible();
+  await expect(page.locator("#tab-start")).toBeHidden();
+  const card = el.locator('.bd-card[data-q="q-msft-water-absolute-2028"]');
+  await card.locator('input[type="range"]').fill("40");
+  await card.locator(".bd-save").click();
+  await expect(el.locator(".bd-minelist li")).toHaveCount(1);
+  await expect(el.locator(".bd-minelist")).toContainText("Yours 40%");
+  await el.locator(".bd-minelist [data-jump]").first().click();
+  await expect(page.locator("#tab-start")).toBeHidden();
+  await el.locator("[data-seat]").first().click();
+  await expect(el.locator(".bd-minelist li")).toHaveCount(4);
+  await expect(el.locator('.bd-card[data-q="q-msft-water-absolute-2028"]')).toContainText("Your forecast 40%");
+  await expect(el.locator(".bd-seat-msg")).toContainText("kept your own on 1");
+});
