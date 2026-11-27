@@ -736,6 +736,20 @@ function applyTab(name, focus = false) {
   document.dispatchEvent(new CustomEvent("tabshown", { detail: { panel } }));
 }
 window.showTab = showTab;
+// Header art (owner, 2026-11-27: "have the graphic scroll up past the title so that the title goes over it"): the
+// title drifts down more slowly than the page scrolls, so the ridges pass up behind it.
+function setupHeaderArt() {
+  const title = document.querySelector(".site-header .wrap");
+  if (!title || !document.querySelector(".hdr-art") || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let raf = 0;
+  const move = () => {
+    raf = 0;
+    const y = Math.min(window.scrollY, 260);
+    title.style.transform = y ? `translateY(${(y * 0.6).toFixed(1)}px)` : "";
+  };
+  addEventListener("scroll", () => { if (!raf) raf = requestAnimationFrame(move); }, { passive: true });
+  move();
+}
 function setupTabs() {
   // The page title joins the sticky tab bar once the site header has scrolled out of view.
   const head = document.querySelector(".site-header"), nav = document.querySelector(".tabs");
@@ -799,6 +813,7 @@ function d3Ready() {
 }
 
 async function main() {
+  setupHeaderArt();
   setupTabs();
   const PRELOADED = ["site", "companies", "upcoming", "proposals", "asks"]; // asks: the Proposals tab's category filter
   const load = async (f) => {

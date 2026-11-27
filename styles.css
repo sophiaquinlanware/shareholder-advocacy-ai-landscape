@@ -1148,3 +1148,8 @@ details.bd-post > summary::-webkit-details-marker, details.bd-suggest > summary:
 .site-footer .freshness table, .site-footer .freshness th, .site-footer .freshness td, .site-footer .freshness .ticker, .site-footer .freshness a { color: #a9c8ff; background: transparent; }
 .site-footer .freshness tbody tr, .site-footer .freshness tbody tr:hover, .site-footer .freshness tbody tr:hover td { background: transparent; }
 .site-footer .freshness thead th { position: sticky; top: 0; background: #111; color: #cfe0ff; }
+
+/* The title sits above the header art, which rises behind it on scroll (app.js setupHeaderArt). */
+.site-header .wrap { position: relative; z-index: 2; will-change: transform; }
+.site-header .wrap h1, .site-header .wrap p { text-shadow: 0 0 6px var(--bg), 0 0 2px var(--bg); }
+.hdr-art { position: relative; z-index: 1; }
