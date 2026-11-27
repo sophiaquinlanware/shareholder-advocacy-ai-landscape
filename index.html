@@ -23,9 +23,10 @@
   <div class="wrap">
     <button type="button" class="tool qs-open" aria-keyshortcuts="Meta+K Control+K">Search <kbd>⌘K</kbd></button>
     <h1>Shareholder advocacy towards responsible AI</h1>
-    <p class="tagline">For investors engaging companies on responsible AI: what is on the ballot, what has been asked, where you have leverage and who else is engaging.</p>
+    <p class="tagline">AI proposals, votes, company ties and filing deadlines, for investors.</p>
     <p class="meta" id="last-updated"></p>
   </div>
+  <svg class="hdr-art" viewBox="0 0 1440 150" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false"><defs><linearGradient id="hdr-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--blue-1)" stop-opacity=".28"/><stop offset="1" stop-color="var(--blue-1)" stop-opacity="0"/></linearGradient></defs><path d="M0,150 L0,96 L160,100 L320,88 L480,97 L640,57 L800,62 L960,97 L1120,92 L1280,103 L1440,94 L1440,150 Z" fill="url(#hdr-g)" opacity="0.55"/><path d="M0,150 L0,118 L120,118 L240,110 L360,93 L480,88 L600,81 L720,92 L840,98 L960,108 L1080,112 L1200,99 L1320,119 L1440,102 L1440,150 Z" fill="url(#hdr-g)" opacity="0.75"/><path d="M0,150 L0,132 L103,134 L206,135 L309,132 L411,125 L514,134 L617,128 L720,125 L823,120 L926,106 L1029,112 L1131,124 L1234,131 L1337,126 L1440,130 L1440,150 Z" fill="url(#hdr-g)" opacity="1"/><line x1="0" y1="96" x2="160" y2="100"/><line x1="0" y1="96" x2="0" y2="118"/><line x1="160" y1="100" x2="0" y2="118"/><line x1="160" y1="100" x2="240" y2="110"/><line x1="320" y1="88" x2="480" y2="97"/><line x1="320" y1="88" x2="240" y2="110"/><line x1="320" y1="88" x2="480" y2="88"/><line x1="480" y1="97" x2="480" y2="88"/><line x1="640" y1="57" x2="800" y2="62"/><line x1="640" y1="57" x2="720" y2="92"/><line x1="800" y1="62" x2="720" y2="92"/><line x1="960" y1="97" x2="1120" y2="92"/><line x1="960" y1="97" x2="960" y2="108"/><line x1="1120" y1="92" x2="960" y2="108"/><line x1="1120" y1="92" x2="1200" y2="99"/><line x1="1280" y1="103" x2="1440" y2="94"/><line x1="1280" y1="103" x2="1200" y2="99"/><line x1="1280" y1="103" x2="1440" y2="102"/><line x1="1440" y1="94" x2="1440" y2="102"/><circle cx="0" cy="96" r="3.2"/><circle cx="160" cy="100" r="2"/><circle cx="320" cy="88" r="2"/><circle cx="480" cy="97" r="2"/><circle cx="640" cy="57" r="3.2"/><circle cx="800" cy="62" r="2"/><circle cx="960" cy="97" r="2"/><circle cx="1120" cy="92" r="2"/><circle cx="1280" cy="103" r="3.2"/><circle cx="1440" cy="94" r="2"/><circle cx="0" cy="118" r="2"/><circle cx="240" cy="110" r="2"/><circle cx="480" cy="88" r="3.2"/><circle cx="720" cy="92" r="2"/><circle cx="960" cy="108" r="2"/><circle cx="1200" cy="99" r="2"/><circle cx="1440" cy="102" r="3.2"/></svg>
 </header>
 
 <!-- Seven sections: context first, then planning and testing last (owner, 2026-11-26; docs/plans/2026-11-26-engagement-simulator.md).
@@ -53,42 +54,26 @@
     <section id="tab-about" class="panel" role="tabpanel" aria-labelledby="gbtn-about" data-group="about">
       <!-- Written into the page so it paints at once; app.js fills #about-body from the data. -->
       <h2 class="ab-h">How to read this site</h2>
-      <p class="ab-lede">Each section adds context, in order, toward one engagement plan.</p>
       <ol class="ab-sections" id="ab-sections">
-        <li><a href="#value-chain">AI value chain</a><p>Sourced ties between chip makers, data centers, cloud providers, frontier labs and AI product companies, and which companies own, fund or supply each frontier lab.</p></li>
-        <li><a href="#causality">Laws and rules</a><p>AI laws, regulation and SEC rule changes and how companies and investors responded, as a causal map; every link cites a source.</p></li>
-        <li><a href="#company">Company profiles</a><p>One company at a time: why it is tracked, its AI proposals, results and filers, its frontier-lab ties and its proposal rights. Then AI disclosure scores and proposal rights across companies.</p></li>
-        <li><a href="#feed">Proposals and results</a><p>Every AI shareholder proposal since 2023 at the companies tracked, with filer, status and vote result; the AI proposals on upcoming ballots; fund-family votes on each; and company changes reported after private engagement.</p></li>
-        <li><a href="#network">Network and contacts</a><p>Investors, advocacy groups and coalitions that file or back AI proposals, their ties to each other and to companies, and the people who lead their engagement.</p></li>
-        <li><a href="#start">Key dates</a><p>The next proposal filing deadlines and ballots, and the findings that bear on when to engage.</p></li>
-        <li><a href="#planner">Plan and test</a><p>Plan an engagement on one ask at one company from the earlier sections' data, then test plans forward in time against a model of past filer, company, voter and policy behavior.</p></li>
+        <li><a href="#value-chain">AI value chain</a><p>Which companies own, fund, supply or sell through each frontier lab.</p></li>
+        <li><a href="#causality">Laws and rules</a><p>AI laws, SEC rule changes and how companies and investors responded.</p></li>
+        <li><a href="#company">Company profiles</a><p>Each company's AI proposals, votes, lab ties and proposal rights.</p></li>
+        <li><a href="#feed">Proposals and results</a><p>AI proposals since 2023: filers, votes, upcoming ballots, fund votes and engagement results.</p></li>
+        <li><a href="#network">Network and contacts</a><p>Who files or backs AI proposals, how they connect, and who leads their engagement.</p></li>
+        <li><a href="#start">Key dates</a><p>Upcoming filing deadlines and ballots.</p></li>
+        <li><a href="#planner">Plan and test</a><p>Plan one engagement and test it against past behavior.</p></li>
       </ol>
         <section class="ab-sec">
-          <h3>How investor influence reaches AI</h3>
-          <ol class="ab-theory">
-            <li><strong>Channels.</strong> Shareholders influence a company through dialogue with management and the board, votes at the annual meeting, and proposals filed under SEC Rule 14a-8.</li>
-            <li><strong>Reach.</strong> Most frontier labs are private. Shareholders reach them through the listed companies that own, fund, supply or distribute them.</li>
-            <li><strong>Conditions.</strong> Which channel is open at a company depends on its proposal rights, its filing deadline and SEC rules, which are changing.</li>
-            <li><strong>Record.</strong> What has already been asked, with what support and by whom, sets the starting point for the next engagement.</li>
-          </ol>
-        </section>
-        <section class="ab-sec">
-          <h3>Why these companies</h3>
-          <div id="ab-basis"></div>
-          <p class="status-note">Companies with none of these on record are out of scope. Counts across the site cover these companies and the sources listed, not every company or proposal.</p>
-        </section>
-        <section class="ab-sec">
-          <h3>Who it is for</h3>
-          <p>Stewardship and engagement teams at asset managers, pension funds, faith-based and labor investors, foundations and nonprofit filers; researchers and journalists following AI governance.</p>
+          <h3>Sources and scope</h3>
+          <p><strong>Sources.</strong> SEC EDGAR filings (proxy statements, vote results, Form N-PX, Form 13F), company and investor publications, and government records. Each row links its source. Records matched automatically are marked until a person reviews them.</p>
+          <p id="ab-basis"><strong>Companies.</strong> Each has at least one of: an AI shareholder proposal on its ballot, a signed frontier AI safety commitment, an investor-reported engagement on AI, or a compute agreement with a frontier lab. The aim is to model the AI value chain, not to list every company in it.</p>
         </section>
         <section class="ab-sec">
           <h3>Principles this site follows</h3>
-          <p>The commitments behind every page: how facts are reported here, and what this site will not do.</p>
           <ol class="ab-principles">
-            <li><strong>Sourced.</strong> Each fact links to its filing or page. Records found automatically are marked until reviewed; a missing source reads "source pending".</li>
-            <li><strong>Informs; does not coordinate.</strong> Nothing here recommends a vote or organizes investors to act together.</li>
-            <li><strong>Not advice.</strong> Nothing here is investment, legal or tax advice.</li>
-            <li><strong>Computed figures labelled.</strong> Averages, scenarios and forecasts are marked as computed by this site and never presented as facts.</li>
+            <li><strong>Informs; does not coordinate.</strong> No vote recommendations; no organizing investors to act together.</li>
+            <li><strong>Not advice.</strong> Not investment, legal or tax advice.</li>
+            <li><strong>Computed figures labelled.</strong> Averages, scenarios and forecasts are marked as this site's.</li>
             <li><strong>Public roles only.</strong> People appear by name, organization and published title.</li>
           </ol>
         </section>
@@ -98,7 +83,7 @@
   </div>
 
   <div id="grp-chain" class="group" role="tabpanel" aria-labelledby="gbtn-chain" hidden>
-    <p class="group-q">Sourced ties between chip makers, data centers, cloud providers, frontier labs and AI product companies, and which companies own, fund or supply each frontier lab.</p>
+    <p class="group-q">Which companies own, fund, supply or sell through each frontier lab.</p>
     <div class="subtabs" role="tablist" aria-label="Value chain views">
       <button type="button" role="tab" id="tabbtn-value-chain" aria-controls="tab-value-chain" data-tab="value-chain" aria-selected="true">Chips to AI products</button>
       <button type="button" role="tab" id="tabbtn-pathways" aria-controls="tab-pathways" data-tab="pathways" aria-selected="false" tabindex="-1">Ties to each frontier lab</button>
@@ -111,13 +96,13 @@
   </div>
 
   <div id="grp-policy" class="group" role="tabpanel" aria-labelledby="gbtn-policy" hidden>
-    <p class="group-q">AI laws, regulation and SEC rule changes and how companies and investors responded, as a causal map; every link cites a source.</p>
+    <p class="group-q">AI laws, SEC rule changes and how companies and investors responded.</p>
     <section id="tab-causality" class="panel" data-group="policy" hidden></section>
     <p class="next-section"><a href="#company">Next: Company profiles →</a></p>
   </div>
 
   <div id="grp-companies" class="group" role="tabpanel" aria-labelledby="gbtn-companies" hidden>
-    <p class="group-q">One company at a time: why it is tracked, its AI proposals, results and filers, its frontier-lab ties and its proposal rights. Then AI disclosure scores and proposal rights across companies.</p>
+    <p class="group-q">Each company's AI proposals, votes, lab ties and proposal rights.</p>
     <div class="subtabs" role="tablist" aria-label="Companies views">
       <button type="button" role="tab" id="tabbtn-company" aria-controls="tab-company" data-tab="company" aria-selected="true">One company in full</button>
       <button type="button" role="tab" id="tabbtn-parnassus" aria-controls="tab-parnassus" data-tab="parnassus" aria-selected="false" tabindex="-1">AI disclosure scores</button>
@@ -130,7 +115,7 @@
   </div>
 
   <div id="grp-proposals" class="group" role="tabpanel" aria-labelledby="gbtn-proposals" hidden>
-    <p class="group-q">Every AI shareholder proposal since 2023 at the companies tracked, with filer, status and vote result; the AI proposals on upcoming ballots; fund-family votes on each; and company changes reported after private engagement.</p>
+    <p class="group-q">AI proposals since 2023: filers, votes, upcoming ballots, fund votes and engagement results.</p>
     <div class="subtabs" role="tablist" aria-label="Proposals and votes views">
       <button type="button" role="tab" id="tabbtn-feed" aria-controls="tab-feed" data-tab="feed" aria-selected="true">All AI proposals</button>
       <button type="button" role="tab" id="tabbtn-upcoming" aria-controls="tab-upcoming" data-tab="upcoming" aria-selected="false" tabindex="-1">AI proposals on upcoming ballots</button>
@@ -145,7 +130,7 @@
   </div>
 
   <div id="grp-engaging" class="group" role="tabpanel" aria-labelledby="gbtn-engaging" hidden>
-    <p class="group-q">Investors, advocacy groups and coalitions that file or back AI proposals, their ties to each other and to companies, and the people who lead their engagement.</p>
+    <p class="group-q">Who files or backs AI proposals, how they connect, and who leads their engagement.</p>
     <div class="subtabs" role="tablist" aria-label="Who's engaging views">
       <button type="button" role="tab" id="tabbtn-network" aria-controls="tab-network" data-tab="network" aria-selected="true">Network of investors, proposals and companies</button>
       <button type="button" role="tab" id="tabbtn-people" aria-controls="tab-people" data-tab="people" aria-selected="false" tabindex="-1">Heads of stewardship and engagement</button>
@@ -156,7 +141,7 @@
   </div>
 
   <div id="grp-start" class="group" role="tabpanel" aria-labelledby="gbtn-start" hidden>
-    <p class="group-q">The next proposal filing deadlines and ballots, and the findings that bear on when to engage.</p>
+    <p class="group-q">Upcoming filing deadlines and ballots.</p>
     <div class="subtabs" role="tablist" aria-label="Start here views">
       <button type="button" role="tab" id="tabbtn-start" aria-controls="tab-start" data-tab="start" aria-selected="true">Key dates and findings</button>
     </div>
@@ -165,7 +150,7 @@
   </div>
 
   <div id="grp-plan" class="group" role="tabpanel" aria-labelledby="gbtn-plan" hidden>
-    <p class="group-q">Plan an engagement on one ask at one company from the earlier sections' data, then test plans forward in time against a model of past filer, company, voter and policy behavior.</p>
+    <p class="group-q">Plan one engagement and test it against past behavior.</p>
     <div class="subtabs" role="tablist" aria-label="Plan and test views">
       <button type="button" role="tab" id="tabbtn-planner" aria-controls="tab-planner" data-tab="planner" aria-selected="true">Plan an engagement</button>
       <button type="button" role="tab" id="tabbtn-asks" aria-controls="tab-asks" data-tab="asks" aria-selected="false" tabindex="-1">Safety asks</button>

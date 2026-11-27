@@ -202,7 +202,7 @@ function renderCompany() {
   const F = { sector: "", basis: "" };
   el.innerHTML = `
     <h2>One company in full</h2>
-    <p class="intro">All records for one company: why it is included, next ballot and filing deadline, AI proposals and their results, filers, frontier-lab ties and shareholder proposal rights.</p>
+    <p class="intro">One company: why it is included, next ballot and deadline, AI proposals and results, filers, lab ties and proposal rights.</p>
     <div class="net-controls">
       ${roleIds.length ? `<select id="co-role" aria-label="Main role in AI"><option value="">All roles</option>${roleIds.map((r) => `<option value="${esc(r)}">${esc(R.label(r))}</option>`).join("")}</select>` : ""}
       ${bases.length ? `<select id="co-basis" aria-label="Why included"><option value="">Any reason included</option>${bases.map((s) => `<option>${esc(s)}</option>`).join("")}</select>` : ""}
@@ -557,7 +557,7 @@ function renderRights() {
   // comparison table stays; each row links to that company's full profile.
   el.innerHTML = `
     <h2>Shareholder proposal rights</h2>
-    <p class="intro">Which companies would still let investors put a proposal on the ballot if the SEC rescinds Rule 14a-8, and shareholders' say over directors at each, from its bylaws, state of incorporation and share structure. This site's reading of the cited documents, not a legal opinion.</p>
+    <p class="intro">Which companies would still allow shareholder proposals if the SEC rescinds Rule 14a-8, and shareholders' say over directors, from bylaws, state of incorporation and share structure. This site's reading, not a legal opinion.</p>
     ${roleIds.length ? `<div class="net-controls"><select id="rights-sector" aria-label="Main role in AI"><option value="">All roles</option>${roleIds.map((r) => `<option value="${esc(r)}">${esc(R.label(r))}</option>`).join("")}</select></div>` : ""}
     <p class="count-line" id="rights-count" aria-live="polite"></p>
     <div class="table-wrap" id="rights-table"></div>
@@ -590,7 +590,7 @@ function renderPeople() {
   ];
   el.innerHTML = `
     <h2>Heads of stewardship and engagement</h2>
-    <p class="intro">Leads of stewardship, shareholder engagement and advocacy at the organizations in the network (most titled Head of Stewardship, Director of Shareholder Engagement or similar), each linked to a public profile page. Public professional details only.</p>
+    <p class="intro">Stewardship and engagement leads at the organizations in the network, each linked to a public profile.</p>
     <div class="net-controls"><input type="search" id="people-search" placeholder="Search name, organization or AI work" aria-label="Search people"></div>
     <p class="count-line" id="people-count" aria-live="polite"></p>
     <div class="table-wrap" id="people-table"></div>`;
@@ -628,18 +628,17 @@ function renderAbout() {
     const first = (document.querySelector(`#grp-${g} .panel`) || {}).id.slice(4);
     return `<li><a href="#${esc(first)}">${esc(b.textContent)}</a><p>${esc(q)}</p></li>`;
   }).join("");
-  // Why each company is in scope (owner, 2026-11-26: "explain why you chose certain companies … so it doesn't
-  // feel like arbitrary data"). Counted from each company's stated, sourced basis in data/companies.json.
-  const BASIS = { "shareholder proposal": "an AI shareholder proposal on its ballot", "safety commitment": "a frontier AI safety commitment it signed", "investor engagement": "an investor engagement on AI that the investor reported", "compute agreement": "a compute agreement with a frontier lab" };
+  // Scope counts from each company's stated, sourced basis in data/companies.json.
+  const BASIS = { "shareholder proposal": "an AI shareholder proposal on its ballot", "safety commitment": "a signed frontier AI safety commitment", "investor engagement": "an investor-reported engagement on AI", "compute agreement": "a compute agreement with a frontier lab" };
   const basis = {};
   (DATA.companies || []).forEach((c) => { if (c.basis_type) basis[c.basis_type] = (basis[c.basis_type] || 0) + 1; });
-  const basisList = Object.entries(basis).sort((a, b) => b[1] - a[1]).map(([k, n]) => `<li><span class="ab-bn">${n}</span> ${esc(BASIS[k] || k)}</li>`).join("");
+  const basisList = Object.entries(basis).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${esc(BASIS[k] || k)} (${n})`).join("; ");
   // The cover text is written into index.html so it paints at once; only the reading-order list (from the tabs)
   // and the scope list (from companies.json) are drawn here.
   const list = document.getElementById("ab-sections");
   if (list && !list.innerHTML) list.innerHTML = sections;
   const filled = document.getElementById("ab-basis");
-  if (filled && cos) filled.innerHTML = `<p>Each of the ${cos} companies is in scope for one stated reason, with its source on the company's profile:</p><ul class="ab-basis">${basisList}</ul>`;
+  if (filled && cos) filled.innerHTML = `<strong>Companies.</strong> ${cos}, each included for one sourced reason: ${basisList}. The aim is to model the AI value chain, not to list every company in it.`;
 }
 
 function renderStart() {
@@ -665,7 +664,7 @@ function renderStart() {
   // "not yet reviewed", instead of a separate feed.
   el.innerHTML = `
     <h2>Key dates and findings</h2>
-    <p class="intro">The next ballots and proposal filing deadlines, and the findings that bear on where and when to engage.</p>
+    <p class="intro">Upcoming ballots and filing deadlines.</p>
     <h3 class="sub-h">Coming up</h3>
     ${comingList ? `<ul class="steps coming-up">${comingList}</ul>` : `<p class="status-note">No ballots or open filing deadlines on file.</p>`}
     <p><a href="#upcoming">All upcoming votes</a> · <a href="#planner">Plan an engagement at any of these companies</a>${coming.length > shown.length ? ` · ${coming.length - shown.length} more open filing deadlines are on the company profiles` : ""}</p>
@@ -820,11 +819,9 @@ async function main() {
     document.querySelector("main").innerHTML = `<p class="coming">The data files did not load. If you opened this file directly, view it through GitHub Pages or a local server instead.</p>`;
     return;
   }
-  const nCos = (DATA.companies || []).length;
-  const nProps = ((DATA.proposals && DATA.proposals.proposals) || []).length;
   const header = () => {
     const checked = DATA.tracking && DATA.tracking.last_checked ? DATA.tracking.last_checked.slice(0, 10) : DATA.site.last_updated;
-    document.getElementById("last-updated").textContent = `${plural(nCos, "company", "companies")} · ${plural(nProps, "proposal")} · every fact links to its source · SEC filings last checked ${fmtDate(checked)}`;
+    document.getElementById("last-updated").textContent = `SEC filings checked ${fmtDate(checked)}`;
   };
   header();
   renderUpcoming();

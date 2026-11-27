@@ -55,7 +55,7 @@
     const nCos = new Set(V.ties.flatMap((t) => [t.from, t.to])).size;
     el.innerHTML = `
       <h2>A model of the AI value chain: how companies connect, from chips to AI products</h2>
-      <p class="intro">One connected model of the AI value chain: ${plural(V.ties.length, "sourced tie")} among ${nCos} companies, arranged by stage from chip makers to the companies that sell AI products. Follow a company's ties to see which frontier labs it reaches and where investors have engaged. Each company's stage is this site's reading of its main role.</p>
+      <p class="intro">One connected model of the AI value chain: ${plural(V.ties.length, "sourced tie")} among ${nCos} companies, arranged by stage from chip makers to the companies that sell AI products. Most frontier labs are private; shareholders reach them through the listed companies that own, fund, supply or distribute them. Stages are this site's reading of each company's main role.</p>
       ${scopeNote()}
       <div class="vc-tiers" role="group" aria-label="Value-chain stages">${V.tiers
         .slice()

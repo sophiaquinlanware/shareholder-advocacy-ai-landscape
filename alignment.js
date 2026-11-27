@@ -57,7 +57,7 @@
     };
     el.innerHTML = `
       <h2>Frontier labs you can file at</h2>
-      <p class="intro">Until 2026 the standalone frontier labs had no public shareholders, so investors reached them only through the companies that fund, host or supply them; labs inside Alphabet, Meta, Microsoft and Amazon have always been reachable through their parents. Two standalone labs can now be reached directly: Anthropic, listed on Nasdaq in November 2026, and xAI, part of SpaceX since February 2026, listed in June 2026. In both, founders keep control of the vote, so outside proposals record shareholders' views rather than decide outcomes.</p>
+      <p class="intro">Two standalone labs are now listed: Anthropic (Nasdaq, November 2026) and xAI (through SpaceX, June 2026). Founders keep control of the vote at both, so outside proposals record shareholders' views rather than decide outcomes. Labs inside Alphabet, Meta, Microsoft and Amazon are reached through their parents.</p>
       ${direct.map(card).join("")}
       <h3>Labs inside listed companies</h3>
       <p class="status-note">Shareholders reach these through the parent company's annual meeting.</p>

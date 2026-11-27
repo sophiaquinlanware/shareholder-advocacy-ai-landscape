@@ -469,7 +469,7 @@
     const orgs = idx.orgs.slice().sort((a, b) => a.label.localeCompare(b.label));
     el.innerHTML = `
       <h2>Plan an engagement</h2>
-      <p class="intro">Choose a company and an ask, or a square in the grid. Add your organization to see its own record and the coalitions it shares with each organization listed. Every line links to its source.</p>
+      <p class="intro">Choose a company and an ask, or a square in the grid. Add your organization to see its record and shared coalitions.</p>
       <div class="net-controls pl-controls">
         <label>Company <select id="pl-co">${cos.map((c) => `<option value="${esc(c.id || c.ticker)}">${esc(c.name)} (${esc(c.ticker)})</option>`).join("")}</select></label>
         <label>Ask <span class="pl-hint">(what you want the company to do)</span> <select id="pl-ask">${D.asks.map((a) => `<option value="${esc(a.id)}">${esc(a.label)} (${askCount.get(a.id) || 0} filed)</option>`).join("")}</select></label>

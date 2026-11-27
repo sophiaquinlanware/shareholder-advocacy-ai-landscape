@@ -324,7 +324,7 @@
       supportBoost: 0, refileMult: 1, floorShare: 0.2, floorCommit: 0.5, exclRegime: "latest", runs: 400 }, season: M.last, result: null, sweep: null };
     el.innerHTML = `
       <h2>Test plans over time</h2>
-      <p class="intro">Choose one or more companies and asks to file on, then see how the next seasons could unfold under a model built from this site's records: who files again, who files for the first time, how votes move, when the SEC resubmission rule blocks a refile, and when a company commits. Compare up to three plans. Each result is a scenario computed by this site from stated assumptions, not a forecast and not advice.</p>
+      <p class="intro">Choose companies and asks, then see how the next seasons could unfold: refilings, new filers, vote shifts, resubmission limits and commitments. Compare up to three plans. Results are scenarios computed by this site, not forecasts or advice.</p>
       <section class="pl-card pl-wide" aria-labelledby="sim-h-seat"><h3 id="sim-h-seat">Take a seat</h3>
         <p class="status-note">See the moves each participant has, with what this model covers. Moves the model covers can be tried in the scenarios below. Describes options; it does not say which to take.</p>
         <div class="seg sim-seats" role="group" aria-label="Seat">${SEATS.map((s, i) => `<button type="button" data-seat="${s.id}" aria-pressed="${i === 0}">${esc(s.label)}</button>`).join("")}</div>
