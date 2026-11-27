@@ -1,6 +1,6 @@
 # Shareholder Advocacy AI Landscape — current state
 
-Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 (data session: Plan and test, engagement simulator, section order, causal map, one date style; c992866).
+Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 (data session: engagement ladder, commitments ledger, SEC exclusion changes, simulator figure; 3dae94f).
 
 ## Sessions and branches (read this first)
 
@@ -21,6 +21,8 @@ Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 
 Deadlines and votes · Company profiles · AI value chain · Proposals and results · Network and contacts · Laws and rules (now "Causal map of AI policy and governance": lane names outside the scrolling chart, Earlier / Later, dates in view, an overview strip of the years) · **Plan and test** (Plan an engagement `#planner` · Test plans over time `#simulate`). Each section ends with "Next: … →"; the planner ends with "Next: test this plan over time" (`?plan=<co>~<ask>#simulate`). Every view keeps its address.
 
 **Test plans over time** (sim.js, data session): an agent-based scenario model. Data: `data/sim_params.json` from `scripts/build_sim_params.py` (in the weekly job), every rate with its k of n and a held-out test (fit 2023–2025, compare 2026). Agents: filers (refile, refile after a gap, first filing with same-role contagion), the Rule 14a-8(i)(12) bar, companies (exclude, commit), voters, fund families (log), the proposed 14a-8 rescission as a switch, and "you". Scenarios are green, recorded data blue. PRODUCT.md item 5 has the owner's labelled exception for scenario figures. Plan: docs/plans/2026-11-26-engagement-simulator.md. Reviews: methods R1 62, R2 85 PASS; UX R1 72, R2 79 (its three failures fixed after R2, not re-reviewed: round cap). `window.SIM.simulate(plan, scenario)` is there for the network's Proposals view to draw scenario seasons (not built).
+
+**Engagement ladder** (data session; owner's brief items 1, 2, 3, 8): `data/campaigns.json` from `scripts/build_campaigns.py` (weekly job) gives each ask at each company dated, sourced steps (filed, exempt solicitations for or against, voted, withdrawn with or without a commitment, excluded, escalation after an exclusion, delivery), a four-step milestone stage, an "engagement outside proposals" ladder per company and outcome counts. `data/commitments.json`: 9 commitments, delivery judged from company documents only (7 delivered, 1 partial, 1 no evidence; Workday a reported action). `data/field_context.json`: Glass Lewis, D.F. King, Fisch and Robertson, scoped. Shown by campaigns.js on Company profiles (Engagement timeline, Commitments ledger), in the planner and in Results of private engagement. SEC: events checked against sec.gov (Nov 17, 2025 pause; Aug 14, 2026 end of all no-action responses "until the Division announces otherwise"; rescission still proposed, comments closed Nov 20, 2026) plus two 2026 rulings (BJ's injunction, Chubb denied); the planner states the SEC's role and the Rule 14a-8(b) tiers; the simulator uses the 2026 exclusion rate (3 of 19 company-and-ask filings). Reviews: data R1 76, R2 85 PASS; UX R1 74, R2 79 (its items fixed after R2, not re-reviewed: round cap). Not built from the brief yet: vote forecaster (item 4; the simulator gives ranges), role-play (6), ask designer (7), shared scored forecasts (9; no server), per-dataset "last checked" dates (10).
 
 One date style site-wide (dates.js, `window.DATES.long`): "November 26, 2026".
 
@@ -59,7 +61,7 @@ Every chart is screenshot-ready (title, measure, count, years, key, source), exc
 
 ## Latest check
 
-`npm run check` on main at c992866 (simulator, section order, causal map, on top of the UI's title change): lint pass, build pass, Playwright 268 passed; Lighthouse phone 100/100/100/99, desktop 100/100/100/86.
+`npm run check` on the engagement-ladder branch before merge (on top of the UI's chart figures): lint pass, build pass, Playwright 288 passed; Lighthouse phone 100/100/100/97, desktop 100/100/100/84 (desktop varies 84 to 93 between runs here).
 
 ## Queue (found, not picked up)
 
