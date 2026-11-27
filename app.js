@@ -700,6 +700,7 @@ function applyTab(name, focus = false) {
   if (!name || !panel || !panel.dataset.group) { name = "about"; panel = document.getElementById("tab-about"); }
   const group = panel.dataset.group;
   lastView[group] = name;
+  if (window.NETMARK) window.NETMARK.visit(name);
   const groupBtns = [...document.querySelectorAll('.tabs [role="tab"][data-group]')];
   groupBtns.forEach((b) => {
     const on = b.dataset.group === group;

@@ -105,9 +105,16 @@ ${postFields()}
     const done = q.resolved != null;
     const shut = !done && isClosed(q);
     const issue = (p) => `https://github.com/${REPO}/issues/new?template=forecast.yml&labels=forecast&title=${encodeURIComponent(`Forecast: ${q.id}`)}&question=${encodeURIComponent(q.id)}&probability=${Math.round(p * 100)}`;
-    return `<article class="bd-card${m ? " bd-mine" : ""}${m && m.posted ? " bd-posted" : ""}" id="bd-${esc(q.id)}" data-q="${esc(q.id)}" aria-labelledby="bd-h-${esc(q.id)}">
+    // Card state, as forecasting sites show it (Metaculus, Good Judgment Open, Manifold): open questions glow blue,
+    // your posted forecast carries a star, and a resolved question shows its answer; the card turns green when your
+    // forecast scored better than a 50% guess (Brier under 0.25) and red when it scored worse.
+    const yn = done && q.resolved !== "void";
+    const sc = yn && m ? (m.p - q.resolved) ** 2 : null;
+    const state = done ? (q.resolved === "void" ? " bd-void" : sc == null ? " bd-res" : sc < 0.25 ? " bd-res bd-right" : sc > 0.25 ? " bd-res bd-wrong" : " bd-res") : shut ? " bd-shut" : "";
+    return `<article class="bd-card${m ? " bd-mine" : ""}${m && m.posted ? " bd-posted" : ""}${state}" id="bd-${esc(q.id)}" data-q="${esc(q.id)}" aria-labelledby="bd-h-${esc(q.id)}">
       ${m ? `<p class="bd-pill bd-pill-top">${m.posted ? `Your posted forecast ${pct(m.posted)}` : `Your forecast ${pct(m.p)}, not yet posted`}</p>` : ""}
       ${m && q.resolved == null ? `<p class="note bd-ifscore">Your score when it resolves: ${((1 - m.p) ** 2).toFixed(2)} if Yes, ${(m.p ** 2).toFixed(2)} if No (Brier score: 0 is perfect, 0.25 is what always saying 50% earns).</p>` : ""}
+      ${done ? `<p class="bd-verdict">${q.resolved === "void" ? "Void" : `Resolved ${q.resolved ? "Yes" : "No"}`}${sc != null ? `<span>${sc < 0.25 ? "your forecast beat a 50% guess" : sc > 0.25 ? "your forecast did worse than a 50% guess" : "your forecast matched a 50% guess"}</span>` : ""}</p>` : shut ? `<p class="bd-verdict bd-verdict-wait">Closed, awaiting the result</p>` : ""}
       <h4 id="bd-h-${esc(q.id)}">${esc(q.title)}</h4>
       ${q.context ? `<p class="note">${esc(q.context)} ${(q.context_sources || []).map((u, i) => `<a href="${esc(u)}" rel="noopener" target="_blank">Source ${i + 1}<span class="visually-hidden"> (opens in a new tab)</span></a>`).join(" ")}</p>` : ""}
       <p class="note">Forecasts accepted through ${esc(day(q.closes))} (UTC)${q.resolves_by ? `; resolves by ${esc(day(q.resolves_by))}` : ""}. ${esc(q.resolves)}${q.kind === "season" || q.kind === "conditional" || q.kind === "coverage_gap" ? ` <a href="#feed">All AI proposals on this site</a>` : ""}${q.source_url ? ` <a href="${esc(q.source_url)}" rel="noopener" target="_blank">Source<span class="visually-hidden"> (opens in a new tab)</span></a>` : ""}</p>
@@ -218,6 +225,7 @@ ${postFields()}
       </div>
       ${groupsHtml}
       <h3>Resolved</h3>
+      <p class="note bd-key"><span class="bd-k bd-k-open"></span>Open <span class="bd-k bd-k-post">★</span>Your posted forecast <span class="bd-k bd-k-right"></span>Resolved, your forecast beat a 50% guess <span class="bd-k bd-k-wrong"></span>Resolved, it did worse</p>
       ${shut.length ? shut.map(card).join("") : `<p class="status-note">No question has resolved yet.${(() => { const n = open.filter((q) => !isClosed(q)).sort((x, y) => (x.closes > y.closes ? 1 : -1))[0]; return n ? ` Next to close for forecasts: ${esc(day(n.closes))}.` : ""; })()}</p>`}
       ${vs.questions || lb.length ? `<h3>Scores</h3>
       <p>${vs.questions ? `On ${vs.questions} resolved question${vs.questions === 1 ? "" : "s"}, the crowd scored ${vs.crowd_brier} and this site's starting estimates ${vs.site_brier} (Brier; lower is better).` : "When questions close, this compares the crowd with the site's starting estimates (Brier score; lower is better)."}</p>
