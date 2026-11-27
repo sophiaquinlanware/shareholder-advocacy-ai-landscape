@@ -883,3 +883,5 @@ button + [role="status"], button + .ticker, button + .status-note, button + outp
 .pt-spectrum { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 14px; padding: 0; margin: 8px 0; font-size: 13px; color: var(--ink-soft); }
 .pt-spectrum li.on { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
 .sim-inuse { display: inline-block; font-size: 13px; color: var(--scenario); font-weight: 500; margin-top: 4px; }
+/* Anything marked hidden stays hidden, whatever display a class gives it (the "View as" row showed through). */
+[hidden] { display: none !important; }

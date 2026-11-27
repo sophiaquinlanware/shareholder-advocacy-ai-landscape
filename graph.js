@@ -194,7 +194,7 @@
   // Column headers (short on phones), drawn on top on an opaque strip that nodes can't enter (they're held
   // below HEADER_H). The filer-type row labels were dropped (owner, 2026-11-26): the colour key names the
   // types, and nodes spill across the bands, so row labels pointed at the wrong nodes.
-  const HEADER_H = 26;
+  const HEADER_H = 40; // column headings sit 30px into the band (owner, 2026-11-26: more space from the edge)
   function drawAxis() {
     if (!state.axis) return;
     const { width, height } = state.size;
@@ -204,7 +204,7 @@
     state.axis.selectAll("*").remove();
     state.axis.append("rect").attr("x", 0).attr("y", 0).attr("width", state.size.fullW || width).attr("height", HEADER_H).attr("fill", cssVar("--g-bg"));
     state.axis.selectAll("text.col").data(state.cols).join("text").attr("class", "col")
-      .attr("x", (c) => (state.zt || d3.zoomIdentity).applyX(c.x * width)).attr("y", 16).attr("text-anchor", "middle").attr("font-size", narrow ? 9.5 : 11)
+      .attr("x", (c) => (state.zt || d3.zoomIdentity).applyX(c.x * width)).attr("y", 30).attr("text-anchor", "middle").attr("font-size", narrow ? 9.5 : 11)
       .text((c) => (narrow ? SHORT[c.label] || c.label : c.label).toUpperCase());
     state.axis.attr("display", state.cfg.group > 0 ? null : "none");
   }
@@ -1195,7 +1195,8 @@
     seeking: { label: "Filer seeking co-filers or support", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.seek}" stroke-width="1.5" stroke-dasharray="1 2.5" stroke-linecap="round"/>` },
     "cov-covered": { label: "Ask already required by a rule in this map", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.ring}" stroke-width="2"/>` },
     "cov-partial": { label: "Ask partly covered by a rule", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.ring}" stroke-width="1.6" stroke-dasharray="5 2"/>` },
-    engaged: { label: "Investor engaged the company directly (reported by the investor; open a node for the steps)", svg: (c) => `<line x1="2" y1="9" x2="22" y2="9" stroke="${c.ring}" stroke-width="2" stroke-dasharray="5 2 1.5 2"/>` },
+    // Drawn as a line in the graph, so its key swatch is the same line (rings are keyed as circles).
+    engaged: { label: "Dash-dot line: investor engaged the company directly (reported by the investor; open a node for the steps)", svg: () => `<line x1="1" y1="9" x2="23" y2="9" stroke="${cssVar("--g-label")}" stroke-width="1.6" stroke-dasharray="7 2 2 2"/>` },
     "cov-none": { label: "No rule in this map reaches this ask", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.risk}" stroke-width="1.6" stroke-dasharray="1 2.5" stroke-linecap="round"/>` },
   };
   function markKey() {
