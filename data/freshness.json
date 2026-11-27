@@ -44,6 +44,13 @@
    "view": "planner"
   },
   {
+   "dataset": "Public-opinion polls by ask",
+   "date": "2026-11-27",
+   "kind": "checked",
+   "how": "18 polls from the pollsters' own pages, checked by hand",
+   "view": "planner"
+  },
+  {
    "dataset": "Commitments ledger",
    "date": "2026-11-26",
    "kind": "checked",
