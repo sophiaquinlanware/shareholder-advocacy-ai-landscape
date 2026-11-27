@@ -1132,3 +1132,5 @@ details.bd-post > summary::-webkit-details-marker, details.bd-suggest > summary:
   @keyframes bd-glow { from { box-shadow: 0 0 0 4px var(--accent-soft), 0 0 12px rgba(31, 78, 152, .30); } to { box-shadow: 0 0 0 4px var(--accent-soft), 0 0 32px rgba(31, 78, 152, .60); } }
 }
 .bd-ifscore { margin: 2px 0 8px; }
+/* The post form opens on its own line under the buttons, not squeezed beside them */
+.bd-actions details.bd-post[open] { flex-basis: 100%; }

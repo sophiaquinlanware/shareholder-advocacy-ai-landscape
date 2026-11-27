@@ -61,7 +61,7 @@
         <ul class="bd-groups">${groups.map(([g, v]) => `<li><span class="bd-g">${esc(g)}</span><span class="bd-bar" aria-hidden="true"><i data-w="${Math.round(v.median * 100)}"></i></span><span>${pct(v.median)} <span class="note">(${v.n})</span></span></li>`).join("")}</ul>
         <p class="note">A forecast of the result by self-selected visitors, not a poll of shareholders and not a sign of how anyone will vote.</p>
         ${spread >= 0.25 ? `<p class="note">Groups differ by ${Math.round(spread * 100)} points here: worth reading why.</p>` : ""}`
-        : `<p><span class="bd-label">Crowd forecast (n = 0)</span> No one has posted a forecast on this question yet.</p>`}
+        : c.stake_left_out ? `<p><span class="bd-label">Crowd forecast (n = 0)</span> No forecasts count toward the crowd figure yet.</p>` : `<p><span class="bd-label">Crowd forecast (n = 0)</span> No one has posted a forecast on this question yet.</p>`}
       ${c.stake_left_out ? `<p class="note">${c.stake_left_out} forecast${c.stake_left_out === 1 ? "" : "s"} from people who declared a stake in this question ${c.stake_left_out === 1 ? "is" : "are"} left out of these figures.</p>` : ""}
     </div>`;
   }
@@ -267,7 +267,7 @@ ${postFields()}
     if (!live) return;
     let site = [], gh = [];
     try { site = await live.forecasts(); } catch (e) { return; }
-    try { gh = ((await fetch("data/predictions.json").then((r) => r.json())).forecasts || []); } catch (e) { /* none */ }
+    try { gh = ((await fetch("data/predictions.json", { cache: "no-cache" }).then((r) => r.json())).forecasts || []); } catch (e) { /* none */ }
     const rows = [
       ...gh.map((f) => ({ q: f.question, who: `gh:${f.handle}`, p: f.p, g: f.group, stake: !!f.filer, made: f.made })),
       ...site.map((f) => ({ q: f.question, who: `site:${f.display_name}`, p: +f.p, g: f.stakeholder_group, stake: !!f.stake, made: f.made })),
@@ -433,7 +433,7 @@ ${postFields()}
       if (el.hidden || el.dataset.built) return;
       el.dataset.built = "1";
       el.innerHTML = `<p class="status-note" role="status">Loading the board…</p>`;
-      try { Q = await fetch("data/forecast-questions.json").then((r) => r.json()); } catch (e) { el.innerHTML = `<p class="status-note">The board's data did not load.</p>`; return; }
+      try { Q = await fetch("data/forecast-questions.json", { cache: "no-cache" }).then((r) => r.json()); } catch (e) { el.innerHTML = `<p class="status-note">The board's data did not load.</p>`; return; }
       draw();
       wire();
       if (window.BOARD_LIVE) liveCrowd().then(draw);
