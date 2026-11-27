@@ -37,8 +37,10 @@
       basis = v.length ? `the median of this ask's ${v.length} recorded vote${v.length === 1 ? "" : "s"} at other companies (${pct(start)})` : `the median of all recorded AI votes (${pct(start)}); this ask has none`;
     }
     const b = F.bands[kind];
-    const at = (x) => Math.min(100, start * Math.exp(x));
-    return { kind, basis, last, lo: at(b.lo), mid: at(b.mid), hi: at(b.hi), min: at(b.min), max: at(b.max) };
+    // Capped a little above the highest AI-proposal vote recorded here, as the simulator is.
+    const cap = F.max_recorded ? Math.min(100, 1.1 * F.max_recorded) : 100;
+    const at = (x) => Math.min(cap, start * Math.exp(x));
+    return { kind, basis, last, cap, lo: at(b.lo), mid: at(b.mid), hi: at(b.hi), min: at(b.min), max: at(b.max) };
   }
 
   function forecastHtml(co, ask, coName, upcoming) {
@@ -53,7 +55,7 @@
     return `<section class="pl-card" aria-labelledby="pt-h-fc"><h3 id="pt-h-fc">Support range if this ask is filed here</h3>
       ${upcoming ? `<p class="status-note">On the ballot already: ${esc(upcoming)}.</p>` : ""}
       <p class="pt-range">Scenario: <strong>${pct(r.lo, 0)} to ${pct(r.hi, 0)}</strong> <span class="ticker">(the middle 80% of past errors)</span></p>
-      <p class="ticker">Full spread of past errors: ${pct(r.min, 0)} to ${pct(r.max, 0)}. In a strict test on past votes the middle band held only ${bt.inside_80} of ${bt.cases} times (${pct(100 * bt.coverage, 0)}) and the full spread ${bt.inside_full} of ${bt.cases} (${pct(100 * bt.full_coverage, 0)}): there is too little history for a true 80% range, so read both as narrower than the actual uncertainty.</p>
+      <p class="ticker">Full spread of past errors: ${pct(r.min, 0)} to ${pct(r.max, 0)}${r.max >= r.cap - 0.05 ? ` (capped at ${pct(r.cap, 0)}, a little above the highest AI-proposal vote recorded here)` : ""}. In a strict test on past votes the middle band held only ${bt.inside_80} of ${bt.cases} times (${pct(100 * bt.coverage, 0)}) and the full spread ${bt.inside_full} of ${bt.cases} (${pct(100 * bt.full_coverage, 0)}): there is too little history for a true 80% range, so read both as narrower than the actual uncertainty.</p>
       <p class="ticker">Starts from ${esc(r.basis)}${r.last ? link(r.last.source_url, "8-K") : ""}. Support is for ÷ (for + against), leaving out proposals from filers critical of ESG. Computed by this site; not a forecast of this vote and not advice.</p>
       ${floor != null ? `<p class="ticker">Dual-class control: ${esc(ctl.who)}, ${pct(ctl.pct, ctl.pct % 1 ? 1 : 0)} of voting power${link(ctl.source_url, "company")}. Using that figure from this site's current company record at the ${r.last.season} vote: if those votes were all cast against, support among all other votes cast was at least ${pct(floor, 0)}.</p>` : ""}
       ${fam.length ? `<h4>Fund families on this ask (Form N-PX)</h4><ul class="steps tight pt-fam">${fam.map(([f, v]) => `<li>${esc(f)}: FOR on ${v.for} of ${v.n} proposals</li>`).join("")}</ul><p class="ticker"><span class="unverified">Matched automatically; ${unrev} of ${all} not yet reviewed by a person.</span></p>` : `<p class="ticker">No Form N-PX record on this ask in this dataset.</p>`}

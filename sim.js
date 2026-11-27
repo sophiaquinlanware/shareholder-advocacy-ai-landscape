@@ -87,7 +87,11 @@
       });
     });
     const last = Math.max(...P.seasons_observed);
-    return { E, cos, asks, role, cells, last, thr: P.thresholds };
+    // The first season a new filer can reach at each company: the next one, unless the filing deadline for that
+    // meeting has passed, then the one after (found running the scenarios as Parnassus, 2026-11-26).
+    const todayIso = window.RULES ? window.RULES.todayISO() : new Date().toISOString().slice(0, 10);
+    const firstSeason = new Map(cos.map((c) => [c.ticker, c.next_deadline && c.next_deadline < todayIso ? last + 2 : last + 1]));
+    return { E, cos, asks, role, cells, last, thr: P.thresholds, firstSeason };
   }
 
   // Rule 14a-8(i)(12): may the company exclude a refile in this season? (votes on the same subject)
@@ -154,7 +158,7 @@
         const r = stream(seed, run, ask, season, c.ticker);
         const s = st.get(c.ticker);
         if (s.committed) { row.byCo[c.ticker] = "committed"; continue; }
-        const isMine = mine.has(c.ticker) && season >= plan.from;
+        const isMine = mine.has(c.ticker) && season >= Math.max(plan.from, M.firstSeason.get(c.ticker) || plan.from);
         let route = "14a-8", p;
         if (rescinded) {
           if (c.route_status !== "open") { if (isMine) row.byCo[c.ticker] = "no route"; continue; }
@@ -288,7 +292,7 @@
       const T = res.targets[`${c.ticker}|${a}`];
       const holderFilers = Object.keys(P.filers[a] || {}).filter((o) => (P.holders[c.ticker] || []).includes(o));
       out.push({ co: c.ticker, ask: a, gain: mean(res.asks[a].commits) - base[a], pTarget: T.commitBy / runs,
-        never: cell.filed.size === 0, holders: holderFilers.length, critical: cell.critical });
+        never: cell.filed.size === 0, holders: holderFilers.length, critical: cell.critical, first: M.firstSeason.get(c.ticker) });
       });
     }
     return out.sort((x, y) => y.gain - x.gain);
@@ -524,7 +528,9 @@
         const lastS = seasons.filter((y) => T.support[y]).at(-1);
         const sup = lastS ? T.support[lastS] : [];
         const blocked = T.blockedRuns / R.runs;
-        return `<li><strong>${esc(coName(t.co))}</strong>, ${esc(askLabel(t.ask))}: commits by ${sc.horizon} in ${share(T.commitBy / R.runs)} of runs${sup.length ? `; support in ${lastS}, middle 80% of runs: ${pct(quant(sup, 0.1))} to ${pct(quant(sup, 0.9))}` : ""}${blocked ? `; a refile blocked by the SEC rule at least once in ${share(blocked)} of runs` : ""}</li>`;
+        const fs = S.M.firstSeason.get(t.co);
+        const late = fs > p.from ? ` <span class="ticker">(the filing deadline for the ${p.from} meeting has passed, so this plan files from ${fs})</span>` : "";
+        return `<li><strong>${esc(coName(t.co))}</strong>, ${esc(askLabel(t.ask))}${late}: commits by ${sc.horizon} in ${share(T.commitBy / R.runs)} of runs${sup.length ? `; support in ${lastS}, middle 80% of runs: ${pct(quant(sup, 0.1))} to ${pct(quant(sup, 0.9))}` : ""}${blocked ? `; a refile blocked by the SEC rule at least once in ${share(blocked)} of runs` : ""}</li>`;
       }).join("");
       const askLines = [...new Set(p.targets.map((t) => t.ask))].map((a) => {
         const c = R.asks[a].commits;
@@ -632,7 +638,7 @@
       box.innerHTML = `<p class="note">In this data every company commitment came on a first filing of an ask at a company (${P.estimates.commitment_first.k} of ${P.estimates.commitment_first.n} first filings; ${P.estimates.commitment_refile.k} of ${P.estimates.commitment_refile.n} refiles), so pairs never filed rank high. Three commitments is a small base: this ranks pairs by the model, it does not say where anyone should file.</p>
         <div class="table-wrap"><table><thead><tr><th scope="col">Company</th><th scope="col">Ask</th><th scope="col">Change in expected commitments</th><th scope="col">Commits by ${S.scen.horizon}, share of runs</th><th scope="col">Context</th><th scope="col"><span class="visually-hidden">Test</span></th></tr></thead><tbody>
         ${list.map((r) => `<tr><td>${esc(coName(r.co))}</td><td>${esc(askLabel(r.ask))}</td><td>+${r.gain.toFixed(2)}</td><td>${share(r.pTarget)}</td>
-          <td>${r.never ? "never filed here" : "filed here before"}${r.holders ? `; ${plural(r.holders, "investor")} that filed this ask elsewhere ${r.holders === 1 ? "holds" : "hold"} shares here` : ""}${r.critical ? "; earlier filings came from filers critical of ESG" : ""}</td>
+          <td>${r.never ? "never filed here" : "filed here before"}${r.holders ? `; ${plural(r.holders, "investor")} that filed this ask elsewhere ${r.holders === 1 ? "holds" : "hold"} shares here` : ""}${r.critical ? "; earlier filings came from filers critical of ESG" : ""}${r.first > S.M.last + 1 ? `; deadline for the ${S.M.last + 1} meeting has passed, so filing starts ${r.first}` : ""}</td>
           <td><button type="button" class="linklike" data-co="${esc(r.co)}" data-ask="${esc(r.ask)}" aria-label="Test ${esc(coName(r.co))}, ${esc(askLabel(r.ask))} in ${esc(S.plans[0].name)}">Test in ${esc(S.plans[0].name)}</button></td></tr>`).join("")}</tbody></table></div>
 `;
       box.querySelectorAll("[data-co]").forEach((b) => b.addEventListener("click", () => {
