@@ -4,24 +4,25 @@ import { expect, test } from "@playwright/test";
 async function openNetwork(page, query = "") {
   await page.goto(`/index.html${query}#network`);
   await page.waitForLoadState("networkidle");
-  await page.waitForSelector("#net-lens input:checked");
+  await page.waitForSelector("#net-lens input:checked", { state: "attached" });
 }
 
 test("choosing a lens updates ?lens=, keeps #network, and survives a reload", async ({ page }) => {
   await openNetwork(page);
-  await page.check('#net-lens input[value="policy"]');
+  // The picker is hidden (one view for everyone); a lens is still chosen by link.
+  await page.goto("/index.html?lens=policy#network");
+  await page.waitForSelector("#net-lens input:checked", { state: "attached" });
   await expect(page).toHaveURL(/\?lens=policy#network$/);
-  await expect(page.locator("#net-lens-status")).toContainText("Policymaker view");
   await expect(page.locator("#net-intro")).toContainText("Circle size = number of proposals with this ask");
   await page.reload();
-  await page.waitForSelector("#net-lens input:checked");
+  await page.waitForSelector("#net-lens input:checked", { state: "attached" });
   expect(await page.$eval("#net-lens input:checked", (i) => i.value)).toBe("policy");
 });
 
 test("?lens= in a shared link opens that lens", async ({ page }) => {
   await page.goto("/index.html?lens=individual&view=graph#network");
   await page.waitForLoadState("networkidle");
-  await page.waitForSelector("#net-lens input:checked");
+  await page.waitForSelector("#net-lens input:checked", { state: "attached" });
   expect(await page.$eval("#net-lens input:checked", (i) => i.value)).toBe("individual");
   await expect(page.locator("#net-intro")).toContainText("Bigger circles are companies with more AI proposals");
 });

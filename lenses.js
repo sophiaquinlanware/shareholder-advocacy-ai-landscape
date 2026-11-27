@@ -432,7 +432,8 @@
       label: "Impact investor",
       gaps: true,
       sizeLabel: "number of connections",
-      defaults: { hiddenKinds: ["person", "policy", "response", "public"], orphans: true },
+      // Opens with nothing filtered (owner, 2026-11-26: "when you first open this page it is cleared, no filters").
+      defaults: { hiddenKinds: [], orphans: true },
       size: () => null,
       rings: impactRings,
       actions(n, ctx) {

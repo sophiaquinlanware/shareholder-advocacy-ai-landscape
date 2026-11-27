@@ -66,17 +66,19 @@
 
   // ---------- Lenses (lenses.js): which layers start on, what size and rings mean, and the actions ----------
   const LENS_KEY = "lens";
+  // Earlier versions kept these across visits; clear them so a new visit opens clean.
+  try { ["lens", "net-settings-v1", "fund", "holdings"].forEach((k) => localStorage.removeItem(k)); } catch (e) {}
   const lens = () => (window.LENSES || {})[state.lens] || { label: "", sizeLabel: "number of connections", defaults: {}, size: () => null, rings: () => [], actions: () => [] };
   function initialLens() {
     const ids = Object.keys(window.LENSES || {});
     const fromUrl = new URLSearchParams(location.search).get("lens");
     if (ids.includes(fromUrl)) return fromUrl;
-    try { const s = localStorage.getItem(LENS_KEY); if (ids.includes(s)) return s; } catch (e) {}
+    try { const s = sessionStorage.getItem(LENS_KEY); if (ids.includes(s)) return s; } catch (e) {}
     return ids[0] || "impact";
   }
   // Keep the choice in the URL (shareable) and in this browser; the #tab hash stays as it is.
   function saveLens(id) {
-    try { localStorage.setItem(LENS_KEY, id); } catch (e) {}
+    try { sessionStorage.setItem(LENS_KEY, id); } catch (e) {}
     try {
       const u = new URL(location.href);
       u.searchParams.set("lens", id);
@@ -144,7 +146,8 @@
   };
 
   // ---------- Graph settings (like Obsidian's graph view): display, filters and forces ----------
-  // Kept per viewer in localStorage; the page works the same without it.
+  // Kept for this visit only (sessionStorage): a new visit opens with nothing filtered, and choices hold while the
+  // reader moves between sections (owner, 2026-11-26). The page works the same without it.
   const SETTINGS_KEY = "net-settings-v1";
   const DEFAULTS = { textSize: 11, labelMin: 0, nodeScale: 1, linkScale: 1, labels: false, pulse: true, catColor: false, orphans: true, center: 0.05, repel: 1, linkStrength: 0.6, linkDist: 1, group: 0.5 };
 
@@ -284,10 +287,10 @@
     { group: "Forces", key: "linkDist", label: "Link distance", min: 0.3, max: 3, step: 0.1, fmt: (v) => v.toFixed(1) + "×" },
   ];
   function loadSettings(defaults) {
-    try { return { ...defaults, ...JSON.parse(localStorage.getItem(SETTINGS_KEY) || "{}") }; } catch (e) { return { ...defaults }; }
+    try { return { ...defaults, ...JSON.parse(sessionStorage.getItem(SETTINGS_KEY) || "{}") }; } catch (e) { return { ...defaults }; }
   }
   function saveSettings() {
-    try { localStorage.setItem(SETTINGS_KEY, JSON.stringify(state.cfg)); } catch (e) {}
+    try { sessionStorage.setItem(SETTINGS_KEY, JSON.stringify(state.cfg)); } catch (e) {}
   }
   function settingsPanel() {
     const maxDeg = Math.max(...state.data.nodes.map((n) => n.degree || 0));
@@ -362,7 +365,8 @@
     el.innerHTML = `
       <h2>AI advocacy network</h2>
       <p class="count-line">Two views: Connections (who is tied to whom) and Proposals (which companies the AI proposals reach, active or past). For value-chain ties alone, see AI value chain › Ties to each frontier lab.</p>
-      <fieldset class="lens-pick" id="net-lens"><legend>View as</legend>${Object.entries(window.LENSES || {}).map(([id, l]) =>
+      <!-- One view for everyone (owner, 2026-11-26: "maybe it's not necessary to have different view settings"); old ?lens= links still open their view. -->
+      <fieldset class="lens-pick" id="net-lens" hidden><legend>View as</legend>${Object.entries(window.LENSES || {}).map(([id, l]) =>
         `<label class="chip"><input type="radio" name="net-lens" value="${esc(id)}"${id === state.lens ? " checked" : ""}> ${esc(l.label)}</label>`).join("")}</fieldset>
       <p class="visually-hidden" id="net-lens-status" aria-live="polite"></p>
       <section id="net-feed" class="net-feed" aria-labelledby="lf-h" hidden></section>
@@ -472,7 +476,7 @@
       <button type="button" class="chip" id="lf-to-graph">See the bigger picture</button>
       <div id="lf-list"></div>`;
     let fund = "";
-    try { fund = localStorage.getItem("fund") || ""; } catch (e) {}
+    try { fund = sessionStorage.getItem("fund") || ""; } catch (e) {}
     document.getElementById("lf-in").value = [...state.holdings, ...(fund ? [fund] : [])].join(", ");
     document.getElementById("lf-form").addEventListener("submit", (e) => { e.preventDefault(); feedApply(true); });
     document.getElementById("lf-to-graph").addEventListener("click", () => setFeedView("graph", true));
@@ -529,7 +533,7 @@
       holdStatus();
       const hi = document.getElementById("net-hold-input");
       if (hi) hi.value = m.tickers.join(", ");
-      try { if (m.family) localStorage.setItem("fund", m.family); else localStorage.removeItem("fund"); } catch (e) {}
+      try { if (m.family) sessionStorage.setItem("fund", m.family); else sessionStorage.removeItem("fund"); } catch (e) {}
     }
     const items = F.items(state.ctx, m.tickers);
     const quiet = F.quiet(state.ctx, m.tickers, items);
@@ -1212,10 +1216,10 @@
   // ---------- Holdings overlay (all lenses): tickers kept in this browser only ----------
   const HOLD_KEY = "holdings";
   function loadHoldings() {
-    try { return new Set(JSON.parse(localStorage.getItem(HOLD_KEY) || "[]")); } catch (e) { return new Set(); }
+    try { return new Set(JSON.parse(sessionStorage.getItem(HOLD_KEY) || "[]")); } catch (e) { return new Set(); }
   }
   function saveHoldings() {
-    try { if (state.holdings.size) localStorage.setItem(HOLD_KEY, JSON.stringify([...state.holdings])); else localStorage.removeItem(HOLD_KEY); } catch (e) {}
+    try { if (state.holdings.size) sessionStorage.setItem(HOLD_KEY, JSON.stringify([...state.holdings])); else sessionStorage.removeItem(HOLD_KEY); } catch (e) {}
   }
   const tickerOf = (n) => (isCompanyKind(n.kind) ? n.ticker : n.kind === "proposal" ? n.company : null);
   const isHeld = (n) => {
@@ -2025,7 +2029,7 @@
     // Default label threshold: the 12th-highest filer's connection count, so about a dozen filers are named.
     const twelfth = data.nodes.find((n) => n.id === [...topFilers].at(-1));
     const defaults = { ...DEFAULTS, labelMin: twelfth ? twelfth.degree || 0 : 0 };
-    state = { data, byId: new Map(data.nodes.map((n) => [n.id, n])), defaults, cfg: loadSettings(defaults), hiddenKinds: new Set(["person", "policy", "response", "public"]), hiddenLabels: new Set(), query: "", topic: "", year: "", view: "graph", selected: null, hover: null, kbId: null, path: null, gaps: false, hiddenCats: new Set(), litKinds: new Set(), litCats: new Set() };
+    state = { data, byId: new Map(data.nodes.map((n) => [n.id, n])), defaults, cfg: loadSettings(defaults), hiddenKinds: new Set(), hiddenLabels: new Set(), query: "", topic: "", year: "", view: "graph", selected: null, hover: null, kbId: null, path: null, gaps: false, hiddenCats: new Set(), litKinds: new Set(), litCats: new Set() };
     state.holdings = loadHoldings();
     state.lens = initialLens();
     {

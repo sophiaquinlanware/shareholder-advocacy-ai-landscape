@@ -83,7 +83,8 @@ test("plain-language terms open as disclosures and close with Esc", async ({ pag
 
 test("other lenses have no list and no view= in the URL", async ({ page }) => {
   await openFeed(page);
-  await page.check('#net-lens input[value="impact"]');
+  await page.goto("/index.html?lens=impact#network");
+  await page.waitForSelector("#net-lens input:checked", { state: "attached" });
   await expect(page.locator("#net-graph-area")).toBeVisible();
   await expect(page.locator("#net-feed")).toBeHidden();
   await expect(page.locator("#lf-back")).toBeHidden();

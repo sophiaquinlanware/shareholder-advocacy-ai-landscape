@@ -48,7 +48,7 @@ async function open(page, { fixtureData = true, query = "?lens=impact" } = {}) {
   }
   await page.goto(`/index.html${query}#network`);
   await page.waitForLoadState("networkidle");
-  await page.waitForSelector("#net-lens input:checked");
+  await page.waitForSelector("#net-lens input:checked", { state: "attached" });
 }
 const panel = (page) => page.locator("#net-panel");
 
@@ -153,7 +153,7 @@ test("holdings: fade, count line, Esc returns focus, kept across reload, nothing
   await expect(page.locator("#net-hold-btn")).toBeFocused();
   await expect(page.locator("#net-hold")).toBeHidden();
   await page.reload();
-  await page.waitForSelector("#net-lens input:checked");
+  await page.waitForSelector("#net-lens input:checked", { state: "attached" });
   await expect(page.locator("#net-hold-status")).toContainText("1 in this map (MSFT)");
   expect(posts).toEqual([]);
 });
@@ -171,8 +171,9 @@ test("topics not filed: toggle, scoped wording, rows in the List view", async ({
   await expect(page.locator("#net-list tbody tr", { hasText: "none in this dataset" }).first()).toContainText(
     "with AI proposals tracked",
   );
-  await page.check('#net-lens input[value="policy"]');
-  await expect(btn).toBeHidden();
+  await page.goto("/index.html?lens=policy#network");
+  await page.waitForSelector("#net-lens input:checked", { state: "attached" });
+  await expect(page.locator("#net-gaps")).toBeHidden();
 });
 
 test("warm path: a found path lists labelled hops; an unreachable target says so", async ({ page }) => {

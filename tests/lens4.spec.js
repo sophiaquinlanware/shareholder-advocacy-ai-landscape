@@ -5,7 +5,7 @@ import { expect, test } from "@playwright/test";
 async function open(page, query = "?lens=policy") {
   await page.goto(`/index.html${query}#network`);
   await page.waitForLoadState("networkidle");
-  await page.waitForSelector("#net-lens input:checked");
+  await page.waitForSelector("#net-lens input:checked", { state: "attached" });
 }
 const panel = (page) => page.locator("#net-panel");
 
@@ -14,7 +14,7 @@ test("ask nodes appear only in the Policymaker lens", async ({ page }) => {
   await page.click('#tab-network .seg [data-view="list"]');
   const asks = page.locator("#net-list tbody tr", { hasText: "Recurring ask" });
   expect(await asks.count()).toBeGreaterThan(0);
-  await page.check('#net-lens input[value="impact"]');
+  await open(page, "?lens=impact");
   await page.click('#tab-network .seg [data-view="list"]');
   await expect(page.locator("#net-list tbody tr", { hasText: "Recurring ask" })).toHaveCount(0);
 });
@@ -217,7 +217,7 @@ test("Network views: the Policymaker lens opens on Proposals; focusing a proposa
 }) => {
   await open(page, "?lens=policy");
   await expect(page.locator('#net-mode [data-mode="proposals"]')).toHaveAttribute("aria-pressed", "true");
-  await page.click('#net-lens input[value="impact"]');
+  await open(page, "?lens=impact");
   await page.click('#net-mode [data-mode="connections"]');
   const pid = await page.evaluate(() => {
     const c = [...document.querySelectorAll("#net-graph svg > g > g > circle")].find(
