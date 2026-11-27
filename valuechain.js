@@ -70,14 +70,14 @@
     const colX = (i) => 70 + (i * (W - 220)) / (FLOW.length - 1);
     // Short column headings whenever the full ones would run into each other.
     const narrow = (W - 220) / (FLOW.length - 1) < 175;
-    const rowH = 36; // owner, 2026-11-26: "more space vertically between the companies"
+    const rowH = 58; // owner, 2026-11-26: "even more space in between … the text super clear to read"
     const cols = FLOW.map((tid, i) => {
       const ids = [...inTies].filter((id) => roleOfId(id) === tid).sort((a, b) => name(a).localeCompare(name(b)));
       return { tid, x: colX(i), ids };
     });
-    const H = 60 + Math.max(...cols.map((c) => c.ids.length)) * rowH + 30;
+    const H = 80 + Math.max(...cols.map((c) => c.ids.length)) * rowH;
     const pos = new Map();
-    cols.forEach((c) => c.ids.forEach((id, j) => pos.set(id, { x: c.x, y: 56 + j * rowH })));
+    cols.forEach((c) => c.ids.forEach((id, j) => pos.set(id, { x: c.x, y: 80 + j * rowH })));
     const deg = new Map();
     V.ties.forEach((t) => { deg.set(t.from, (deg.get(t.from) || 0) + 1); deg.set(t.to, (deg.get(t.to) || 0) + 1); });
     const svg = d3.select(box).append("svg").attr("viewBox", [0, 0, W, H]).attr("width", W).attr("height", H)
@@ -99,9 +99,10 @@
       .on("click", (ev, [id]) => showCompany(id))
       .on("keydown", (ev, [id]) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); showCompany(id); } });
     co.append("circle").attr("r", ([id]) => 3 + Math.sqrt(deg.get(id) || 1) * 1.6).attr("fill", cssVar("--blue-1"));
-    co.append("text").attr("x", 9).attr("y", 4).attr("font-size", 11).attr("fill", cssVar("--ink"))
-      // A white outline keeps names legible where tie lines cross them.
-      .attr("stroke", cssVar("--surface")).attr("stroke-width", 3).attr("stroke-linejoin", "round").attr("paint-order", "stroke").text(([id]) => (name(id).length > 26 ? name(id).slice(0, 25) + "…" : name(id)));
+    // Names sit just above each circle, clear of the lines that leave it sideways, larger and with a wide white
+    // outline so crossing lines never run through the letters.
+    co.append("text").attr("x", 0).attr("y", ([id]) => -(3 + Math.sqrt(deg.get(id) || 1) * 1.6) - 6).attr("text-anchor", "middle").attr("font-size", 13).attr("font-weight", 400).attr("fill", cssVar("--ink"))
+      .attr("stroke", cssVar("--surface")).attr("stroke-width", 5).attr("stroke-linejoin", "round").attr("paint-order", "stroke").text(([id]) => (name(id).length > 26 ? name(id).slice(0, 25) + "…" : name(id)));
     // Key: one dash pattern per tie type.
     document.getElementById("vc-key").innerHTML = [...new Set(V.ties.map((t) => t.type))].map((k) =>
       `<span class="leg static"><svg class="mark vc-line" viewBox="0 0 44 10" aria-hidden="true"><line x1="2" y1="5" x2="42" y2="5" stroke="${ink}" stroke-width="2.5"${DASH[k] ? ` stroke-dasharray="${DASH[k]}"` : ""}${CAP[k] ? ` stroke-linecap="${CAP[k]}"` : ""}></line></svg>${esc(k)}</span>`).join("")
