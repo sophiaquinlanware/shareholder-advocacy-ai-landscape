@@ -1135,12 +1135,13 @@ details.bd-post > summary::-webkit-details-marker, details.bd-suggest > summary:
 /* The post form opens on its own line under the buttons, not squeezed beside them */
 .bd-actions details.bd-post[open] { flex-basis: 100%; }
 
-/* Header art (owner, 2026-11-27): low ridges joined by a network, under the title. Built inline, no image. */
-.site-header { position: relative; overflow: hidden; padding-bottom: 96px; }
-.hdr-art { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 110px; pointer-events: none; }
-.hdr-art line { stroke: var(--blue-1); stroke-opacity: .35; stroke-width: 1; }
-.hdr-art circle { fill: var(--blue-1); fill-opacity: .7; }
-@media (max-width: 640px) { .site-header { padding-bottom: 64px; } .hdr-art { height: 72px; } }
+/* Header art (owner, 2026-11-27): ridges joined by a network, under the title. Built inline, no image. */
+.site-header { padding-bottom: 0; }
+.hdr-art { display: block; width: 100%; height: 170px; margin-top: 8px; pointer-events: none; }
+.hdr-art line { stroke: var(--blue-1); stroke-opacity: .5; stroke-width: 1.1; }
+.hdr-art circle { fill: var(--blue-1); }
+.hdr-art .hdr-glow { fill: var(--blue-1); fill-opacity: .18; }
+@media (max-width: 640px) { .hdr-art { height: 110px; } }
 
 /* Freshness table in the footer (owner, 2026-11-27): light blue text on the black, no white box, scrolls. */
 .site-footer .freshness .table-wrap { background: transparent; border: 0; max-height: 300px; overflow: auto; }
