@@ -1,4 +1,15 @@
 {
  "about": "Forecasts posted through the site's GitHub form (one per person per question counts: the latest). Added by scripts/ingest_forecast.py; personal estimates of outcomes, not statements of support.",
- "forecasts": []
+ "forecasts": [
+  {
+   "id": 1,
+   "question": "q-ant-rsp-external-review-2027",
+   "handle": "sophiaquinlanware",
+   "group": "Academic or researcher",
+   "p": 0.4,
+   "filer": true,
+   "made": "2026-11-27",
+   "issue_url": "https://github.com/sophiaquinlanware/shareholder-advocacy-ai-landscape/issues/1"
+  }
+ ]
 }

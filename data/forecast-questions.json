@@ -987,7 +987,7 @@
    "decided": null,
    "crowd": {
     "n": 0,
-    "stake_left_out": 0,
+    "stake_left_out": 1,
     "weighted_groups": 0,
     "headline": "all_median",
     "groups": {},
@@ -1045,7 +1045,7 @@
   "crowd_brier": null,
   "site_brier": null
  },
- "forecasts_total": 0,
+ "forecasts_total": 1,
  "company_names": {
   "MSFT": "Microsoft",
   "GOOGL": "Alphabet",
