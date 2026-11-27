@@ -1,5 +1,5 @@
 // Lens config for the co-filer network: one shared dataset, several ways to view it.
-// A lens changes only emphasis and the "What you can do" block; the facts about a node stay the same.
+// A lens changes only emphasis and the "Engagement levers" block; the facts about a node stay the same.
 // graph.js reads lenses only through the fields below, so a new lens is one more entry in LENSES.
 //
 // Each entry:
@@ -9,7 +9,7 @@
 //   size(n, ctx)     a radius in px, or null to keep the default size
 //   rings(n, ctx)    [{ kind, text }]: drawn as a ring on the node and always stated in text too
 //   measure    optional { label, value(n, ctx) }: the number behind node size, shown and sortable in the List view
-//   actionsHeading   optional heading for the actions block (default "What you can do")
+//   actionsHeading   optional heading for the actions block (default "Engagement levers")
 //   actions(n, ctx)  [{ text, href?, hrefLabel?, links?: [{ href, label }], button?: { label, run } }]: facts about where, when
 //                    or who; never advice and never how to vote (PRODUCT.md Never claim 1-2)
 //

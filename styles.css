@@ -857,3 +857,11 @@ button + [role="status"], button + .ticker, button + .status-note, button + outp
 }
 .net-keybox { pointer-events: none; }
 .net-keybox > * { pointer-events: auto; }
+/* Details panel flush with the band's right edge, square, scrolling inside (owner, 2026-11-26); the graph fits to
+   its left when it opens. A Close button ends the view. */
+@media (min-width: 900px) {
+  .net-body.is-graph .net-panel { right: calc(50% - 50vw); top: 0; width: 340px; max-height: var(--strip-h); border-radius: 0; box-shadow: none; border: 0; border-left: 1px solid var(--line); overscroll-behavior: contain; }
+}
+.net-close { float: right; margin: -4px -4px 6px 8px; font: 13px var(--sans); background: var(--surface); border: 1px solid var(--control-edge); border-radius: 999px; padding: 3px 10px; cursor: pointer; }
+.net-close:hover { background: var(--bg-soft, #f2f4f7); }
+.net-depth { margin: 8px 0 4px; }

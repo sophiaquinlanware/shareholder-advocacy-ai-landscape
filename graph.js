@@ -234,6 +234,12 @@
     const g = document.getElementById("net-graph").getBoundingClientRect();
     return Math.max(0, box.getBoundingClientRect().right - g.left + 16);
   };
+  const panelInset = () => {
+    const p = document.getElementById("net-panel");
+    if (!p || !state.selected || window.innerWidth < 900) return 0;
+    const g = document.getElementById("net-graph").getBoundingClientRect();
+    return Math.max(0, g.right - p.getBoundingClientRect().left + 16);
+  };
   function fitToContent(smooth) {
     if (state.userZoomed || !state.svg || state.view !== "graph") return;
     const vis = state.data.nodes.filter(visible);
@@ -246,7 +252,8 @@
     }
     // Fit the whole graph inside the strip (left of the panel on wide screens), centred, never past 100%.
     const inset = keyInset();
-    const W = state.size.width - inset, H = state.size.height;
+    const right = panelInset();
+    const W = state.size.width - inset - right, H = state.size.height;
     const k = Math.min(1, (W - 2 * pad) / Math.max(1, x1 - x0), (H - top - pad) / Math.max(1, y1 - y0));
     const t = d3.zoomIdentity.translate(inset + (W - (x1 - x0) * k) / 2 - x0 * k, top + (H - top - pad - (y1 - y0) * k) / 2 - y0 * k).scale(k);
     if (smooth && !REDUCED_MOTION) state.svg.transition().duration(450).call(state.zoom.transform, t);
@@ -427,7 +434,7 @@
           <p class="visually-hidden" id="net-kb" aria-live="polite"></p>
         </div>
         <div id="net-list" class="net-list" hidden></div>
-        <aside id="net-panel" class="net-panel" aria-label="Selected item"><p class="status-note">Select an organization, person, proposal or company for its connections and sources.</p></aside>
+        <aside id="net-panel" class="net-panel" aria-label="Selected item" data-lenis-prevent><p class="status-note">Select an organization, person, proposal or company for its connections and sources.</p></aside>
       </div>
       <div class="scrub" id="net-scrub">
         <label for="net-upto">Timeline: the network as it stood at the end of <span id="net-upto-val"></span></label>
@@ -730,14 +737,47 @@
 
   // Neighbors through links drawn in the current view only, so everything that lights up on hover or selection
   // has a visible line to the node (owner, 2026-11-27: some lit nodes had no "relational string").
-  function neighbors(id) {
+  // Nodes within `depth` steps of a node, through lines drawn in this view. One click on a node shows its direct
+  // connections; each further click on it reaches one step further (owner, 2026-11-26: "one click lights only
+  // Parnassus … one more makes it so you can see all connections to Parnassus and so on").
+  function neighbors(id, depth = 1) {
     const s = new Set([id]);
-    state.data.links.forEach((l) => {
-      if (!inMode(l) || !visible(l.source) || !visible(l.target)) return;
-      if (l.source.id === id) s.add(l.target.id);
-      if (l.target.id === id) s.add(l.source.id);
-    });
+    let frontier = new Set([id]);
+    for (let d = 0; d < depth && frontier.size; d++) {
+      const next = new Set();
+      state.data.links.forEach((l) => {
+        if (!inMode(l) || !visible(l.source) || !visible(l.target)) return;
+        if (frontier.has(l.source.id) && !s.has(l.target.id)) next.add(l.target.id);
+        if (frontier.has(l.target.id) && !s.has(l.source.id)) next.add(l.source.id);
+      });
+      next.forEach((x) => s.add(x));
+      frontier = next;
+    }
     return s;
+  }
+  // Click on a node: the first click opens it with its direct connections; clicking it again reaches one step further.
+  function selectNode(d) {
+    const again = state.selected === d.id;
+    const wasOpen = !!state.selected;
+    state.depth = again ? Math.min(4, (state.depth || 1) + 1) : 1;
+    state.selected = d.id;
+    if (!again) showPanel(d);
+    applyStyles();
+    if (!wasOpen) fitToContent(true);
+    const n = neighbors(d.id, state.depth).size - 1;
+    say(state.depth === 1
+      ? `Opened ${d.label}: ${n} direct connection${n === 1 ? "" : "s"} lit. Click it again to reach one step further.`
+      : `${d.label}: ${n} nodes within ${state.depth} steps lit. Click again to go further, or Close.`);
+    const hint = document.getElementById("net-depth");
+    if (hint) hint.textContent = state.depth === 1 ? "Showing direct connections. Click the node again to reach one step further." : `Showing connections up to ${state.depth} steps away. Click the node again to go further.`;
+  }
+  function clearSelection() {
+    const wasOpen = !!state.selected;
+    state.selected = null; state.hover = null; state.kbId = null; state.depth = 1;
+    applyStyles(); placeFocusMark();
+    document.getElementById("net-panel").innerHTML = `<p class="status-note">Select an organization, person, proposal or company for its connections and sources.</p>`;
+    if (wasOpen) fitToContent(true);
+    say("Selection cleared");
   }
 
   function showPanel(n) {
@@ -758,7 +798,7 @@
     }).join("");
     // "What you can do": from the active lens; left out when the lens has nothing for this node.
     const acts = actions(n);
-    const actHtml = acts.length ? `<section class="net-actions" aria-labelledby="net-actions-h"><h4 id="net-actions-h">${esc((lens().actionsHeadingFor && lens().actionsHeadingFor(n)) || lens().actionsHeading || "What you can do")}</h4><ul>${acts.map((a, i) => `<li>${actionHtml(a, n.id, i)}</li>`).join("")}</ul></section>` : "";
+    const actHtml = acts.length ? `<section class="net-actions" aria-labelledby="net-actions-h"><h4 id="net-actions-h">${esc((lens().actionsHeadingFor && lens().actionsHeadingFor(n)) || lens().actionsHeading || "Engagement levers")}</h4><ul>${acts.map((a, i) => `<li>${actionHtml(a, n.id, i)}</li>`).join("")}</ul></section>` : "";
     const ringHtml = rings(n).map((r) => `<p class="ring-note ring-${esc(r.kind)}">${esc(r.text)}</p>`).join("");
     let facts = "";
     if (n.kind === "proposal") {
@@ -779,13 +819,17 @@
     }
     const head = `<p class="eyebrow" style="margin:0 0 4px">${esc(TYPE_LABEL[n.kind])}</p><h3>${esc(n.label)}</h3>${ringHtml}`;
     // For an ask, its name and coverage mark come first, so the long figures below are clearly about it.
-    const top = n.kind === "ask" ? `${head}${facts}${actHtml}` : `${actHtml}${head}${facts}`;
+    // Name and type first (owner, 2026-11-26), then the engagement block, then the facts.
+    const top = n.kind === "ask" ? `${head}${facts}${actHtml}` : `${head}${actHtml}${facts}`;
     document.getElementById("net-panel").innerHTML = `
+      <button type="button" class="net-close" id="net-close" aria-label="Close details">Close ×</button>
       ${top}
+      <p class="ticker net-depth" id="net-depth">Showing direct connections. Click the node again to reach one step further.</p>
       ${pathFinderHtml(n)}
       <h4 style="margin:14px 0 4px;font-size:14px">Connections</h4><ul class="conn">${rel || "<li>None yet</li>"}</ul>`;
     document.querySelectorAll("#net-panel .conn .linklike").forEach((b) => b.addEventListener("click", () => focus(b.dataset.id)));
     wireActions(document.getElementById("net-panel"));
+    document.getElementById("net-close").addEventListener("click", clearSelection);
     wirePathFinder(n);
   }
 
@@ -987,7 +1031,7 @@
   function applyStyles() {
     refreshConnected();
     const focusId = state.hover || state.selected;
-    const near = focusId ? neighbors(focusId) : null;
+    const near = focusId ? neighbors(focusId, focusId === state.selected ? state.depth || 1 : 1) : null;
     const q = state.query;
     const P = state.path;
     // Portfolio: held companies stay lit, with everything they link to in this view (labs, filers, coalitions)
@@ -1001,7 +1045,8 @@
       else if (near && !near.has(d.id)) o = 0.12;
       // Highlighted key chips: everything outside the highlighted types (or proposal categories) dims.
       if (!isLit(d) && d.id !== focusId) o = Math.min(o, 0.12);
-      // Holdings overlay: what the viewer doesn't hold fades to 15%.
+      // A chosen node's connections keep their full colour; otherwise the holdings overlay fades what isn't held.
+      if (near && near.has(d.id)) return o;
       return held(d) || d.id === focusId ? o : Math.min(o, 0.15);
     };
     // The fund you chose to play as (Your portfolio → Load an investor's holdings) glows white with a thick ring,
@@ -1016,7 +1061,7 @@
     state.linkSel.attr("display", (l) => (inMode(l) && visible(l.source) && visible(l.target) ? null : "none"))
       .attr("stroke-opacity", (l) => {
         if (P) return P.links.has(l) ? 0.95 : 0.03;
-        if (near) return l.source.id === focusId || l.target.id === focusId ? 0.9 : 0.04;
+        if (near) return l.source.id === focusId || l.target.id === focusId ? 0.9 : near.has(l.source.id) && near.has(l.target.id) ? 0.55 : 0.04;
         if (q) return 0.08;
         // Portfolio: the lines from held companies stand out; the rest go quiet.
         if (reach) return l.source.id === you || l.target.id === you ? 0.95 : isHeld(l.source) || isHeld(l.target) ? 0.6 : 0.03;
@@ -1583,14 +1628,8 @@
         const n = state.kbId && state.byId.get(state.kbId);
         if (!n) return;
         e.preventDefault();
-        state.selected = n.id; showPanel(n); applyStyles();
-        say(`Opened ${n.label}. Details are in the node panel.`);
-      } else if (e.key === "Escape") {
-        state.selected = null; state.hover = null; state.kbId = null;
-        applyStyles(); placeFocusMark();
-        document.getElementById("net-panel").innerHTML = `<p class="status-note">Select an organization, person, proposal or company for its connections and sources.</p>`;
-        say("Selection cleared");
-      }
+        selectNode(n);
+      } else if (e.key === "Escape") clearSelection();
     });
     el.addEventListener("blur", () => { if (state.kbId) { state.hover = null; applyStyles(); } });
   }
@@ -1640,7 +1679,7 @@
         if (typeof l.target !== "object") l.target = state.byId.get(l.target) || l.target;
       }), data.links.filter(inMode))).id((d) => d.id).distance((l) => linkBase(l) * state.cfg.linkDist).strength(state.cfg.linkStrength))
       .force("charge", d3.forceManyBody().strength((d) => (d.kind === "company" ? -420 : -110) * state.cfg.repel).distanceMax(Math.max(260, Math.min(width, height) * 0.6)))
-      .force("collide", d3.forceCollide().radius(collideR))
+      .force("collide", d3.forceCollide().radius(collideR).strength(1).iterations(3))
       .force("center", d3.forceCenter(width / 2, height / 2))
       .force("x", d3.forceX(width / 2).strength(state.cfg.center))
       .force("y", d3.forceY(height / 2).strength(state.cfg.center * 1.25))
@@ -1678,7 +1717,7 @@
       .style("cursor", "pointer")
       .on("mouseenter", (ev, d) => { state.hover = d.id; applyStyles(); })
       .on("mouseleave", () => { state.hover = null; applyStyles(); })
-      .on("click", (ev, d) => { ev.stopPropagation(); state.selected = d.id; showPanel(d); applyStyles(); say(`Opened ${d.label}. Details are in the node panel.`); })
+      .on("click", (ev, d) => { ev.stopPropagation(); selectNode(d); })
       .call(d3.drag()
         .on("start", (ev, d) => { if (!ev.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
         .on("drag", (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
@@ -1763,7 +1802,7 @@
     document.getElementById("net-list-table").innerHTML = `<div class="table-wrap"><table><thead><tr><th scope="col">Name</th><th scope="col">Type</th>
       ${m ? `<th scope="col" aria-sort="${dir}"><button type="button" class="th-sort" id="net-list-sort">${esc(sortLabel)} ${dir === "descending" ? "↓" : "↑"}</button></th><th scope="col">Connections</th>`
         : `<th scope="col" aria-sort="${dir}"><button type="button" class="th-sort" id="net-list-sort">Connections ${dir === "descending" ? "↓" : "↑"}</button></th>`}
-      ${state.holdings.size ? `<th scope="col">Held</th>` : ""}<th scope="col">Status</th><th scope="col">${esc(lens().actionsHeading || "What you can do")}</th></tr></thead>
+      ${state.holdings.size ? `<th scope="col">Held</th>` : ""}<th scope="col">Status</th><th scope="col">${esc(lens().actionsHeading || "Engagement levers")}</th></tr></thead>
       <tbody>${body || `<tr><td colspan="${(m ? 6 : 5) + (state.holdings.size ? 1 : 0)}">No matches.</td></tr>`}</tbody></table></div>`;
     document.getElementById("net-list-count").textContent = `${rows.length} nodes in this view (${lens().label}), sorted by ${sortLabel.toLowerCase()}.${state.upto ? ` Proposals and events up to ${state.upto} only (year slider above).` : ""}`;
     document.getElementById("net-list-sort").addEventListener("click", () => {
