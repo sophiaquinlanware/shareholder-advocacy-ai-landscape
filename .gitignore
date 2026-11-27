@@ -9,3 +9,4 @@ playwright-report/
 tests/screenshots/
 reports/
 .env
+suggestions_new.json

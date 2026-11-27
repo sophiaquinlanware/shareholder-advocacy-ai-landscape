@@ -390,6 +390,13 @@
     const bd = document.getElementById("pl-board");
     if (bd) bd.href = window.BOARD_SUGGEST ? window.BOARD_SUGGEST(c.name, askOf(S.ask).label)
       : `https://github.com/sophiaquinlanware/shareholder-advocacy-ai-landscape/issues/new?template=suggest-question.yml`;
+    // The same suggestion, posted from this page (board-live.js): the form carries this company and ask.
+    const slot = document.getElementById("pl-board-form");
+    if (slot && window.BOARD_SUGGEST_FORM) {
+      const f = slot.querySelector("form");
+      if (!f) slot.innerHTML = window.BOARD_SUGGEST_FORM("pl-sg", c.name, askOf(S.ask).label);
+      else { f.elements.company.value = c.name; f.elements.ask.value = askOf(S.ask).label; }
+    }
     // planner-docs.js (UI session) adds the escalation step and drafted documents after each redraw.
     document.dispatchEvent(new CustomEvent("plannerdraw"));
     const status = document.getElementById("pl-status");
@@ -476,12 +483,39 @@
       <aside id="pl-shortlist" class="pl-card" aria-labelledby="pl-h-list"></aside>
       <section class="pl-card" aria-labelledby="pl-h-board">
         <h3 id="pl-h-board">Put this plan on the Prediction board</h3>
-        <p>Suggest this company and ask as a question for everyone to forecast, such as whether a proposal would reach a level of support. A GitHub form opens with the company and ask filled in; the site's maintainer checks it before it goes on the board. Posting needs a free GitHub account, and nothing is posted until you submit the form.</p>
-        <a id="pl-board" class="bd-btn" href="#predict" rel="noopener" target="_blank">Suggest this proposal for the board<span class="visually-hidden"> (opens a GitHub form in a new tab)</span></a>
+        <p>Suggest this company and ask as a question for everyone to forecast, such as whether a proposal would reach a level of support. The company and ask are filled in; the site's maintainer checks the source before it goes on the board.</p>
+        <details class="bd-suggest" id="pl-board-box"><summary class="bd-btn">Suggest this proposal for the board</summary>
+          <div class="bd-acct" id="pl-acct"></div>
+          <div id="pl-board-form"></div>
+          <p class="note">Or <a id="pl-board" href="#predict" rel="noopener" target="_blank">use the GitHub form<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
+        </details>
         <a href="#predict" class="pl-board-see">See the Prediction board</a>
       </section>
       <p class="next-section"><a id="pl-next" href="#simulate">Next: test this plan over time →</a></p>`;
     document.getElementById("pl-co").addEventListener("change", (e) => { S.co = e.target.value; sync(); });
+    // Suggest this plan for the Prediction board, posted from the page once signed in.
+    const box = document.getElementById("pl-board-box");
+    if (box) {
+      box.addEventListener("toggle", () => { if (box.open && window.BOARD_LIVE) window.BOARD_LIVE.mountAccount(document.getElementById("pl-acct")); });
+      box.addEventListener("submit", async (e) => {
+        const f = e.target.closest(".bd-suggestform");
+        if (!f) return;
+        e.preventDefault();
+        const msg = f.querySelector(".bd-post-msg");
+        const live = window.BOARD_LIVE;
+        if (!live) { msg.textContent = "Posting from the site isn't available right now; use the GitHub form."; return; }
+        await live.init();
+        const st = live.state();
+        if (!st.signedIn || !st.name) { msg.textContent = !st.signedIn ? "Sign in first with the box above." : "Choose your display name first, in the box above."; return; }
+        const fd = new FormData(f);
+        try {
+          await live.suggest({ company: fd.get("company"), ask: fd.get("ask"), standing: fd.get("standing"), question: fd.get("question"),
+            source_url: fd.get("source_url") || null, stake: fd.get("stake") === "on" });
+          f.elements.question.value = ""; f.elements.source_url.value = "";
+          msg.textContent = "Thank you: your suggestion is in. The site's maintainer checks its source before adding it to the Prediction board.";
+        } catch (err) { msg.textContent = err.message; }
+      });
+    }
     document.getElementById("pl-ask").addEventListener("change", (e) => { S.ask = e.target.value; sync(); });
     document.getElementById("pl-mine").addEventListener("change", (e) => { S.mine = e.target.value; visit.set(MINE, S.mine); sync(); });
     document.getElementById("pl-copy").addEventListener("click", async () => {
