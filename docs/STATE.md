@@ -1,6 +1,6 @@
 # Shareholder Advocacy AI Landscape — current state
 
-Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-26 (data session: Prediction board; 156 people added).
+Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-27 (data session: Prediction board posting, your forecasts, Parnassus water questions; tracker grid clicks).
 
 ## Sessions and branches (read this first)
 
@@ -44,6 +44,8 @@ Owner's request 2026-11-26; plan docs/plans/2026-11-26-prediction-board.md. Peop
 - **Posting:** GitHub issue form `.github/ISSUE_TEMPLATE/forecast.yml` (label `forecast`, created) → `.github/workflows/forecasts.yml` → `scripts/ingest_forecast.py` → `data/predictions.json`; the bot replies, closes and locks the issue and dispatches `refresh.yml` with `task=publish` (skips the refresh job, deploys). Free text stays on the issue, not in site data. Forecasters who declare a stake are kept but left out of the crowd and the ranking.
 - **Crowd:** a group counts at 3 or more forecasters (smaller groups pooled; the pool counts at 3); headline = mean of group medians when two groups qualify, else the median of everyone. Ranking by skill against the site's base rate, at 3+ resolved.
 - **Reviews:** UX/legal R1 72, R2 84 PASS; data R1 58, R2 76 (fixes applied after the last round, not re-reviewed). Tests use `tests/fixtures/forecast-questions.json`.
+- **Taking part (2026-11-27):** a "How to take part" panel (1 forecast a question, 2 put a proposal on the board); "Suggest a proposal" opens `.github/ISSUE_TEMPLATE/suggest-question.yml` (label `question-suggestion`, created; not auto-added: the maintainer checks the source and adds the question to `data/forecast-curated.json`). Plan an engagement has "Put this plan on the Prediction board", prefilled with company and ask. "Your forecasts" sits at the top; your cards glow; the default view ranks most likely first (crowd, else site estimate, else your own figure).
+- **Curated questions:** Microsoft absolute water withdrawal target by June 30, 2028; Parnassus named lead on Microsoft in Ceres' VWFI by June 30, 2027; the if/then pair. Green "Parnassus Investments seat" scenario figures (15%, 35%, 22% if Ceres, 12% if not), written by this site, not counted, not Parnassus's view; "Try the seat's figures as your own" copies them into the viewer's browser. Resolved by hand.
 - **Not tested live:** the workflow has not run on GitHub yet; the first real forecast will show whether the issue-form prefill, labels and bot permissions work.
 
 ## Plan an engagement (`#planner`)
@@ -64,7 +66,7 @@ Every chart is screenshot-ready (title, measure, count, years, key, source), exc
 
 ## Latest check
 
-`npm run check` on the prediction-board branch (with the people dig) before merge: lint pass, build pass, Playwright 324 passed; Lighthouse phone 95/100/100/100, desktop 92/100/100/100 (performance/accessibility/best practices/SEO).
+`npm run check` on design/board-posting before merge: lint pass, build pass, Playwright 332 passed; Lighthouse phone 94/100/100/100, desktop 90/100/100/100.
 
 ## Queue (found, not picked up)
 
