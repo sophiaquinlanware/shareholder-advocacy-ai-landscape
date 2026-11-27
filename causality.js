@@ -233,7 +233,7 @@
     C.linkSel.attr("stroke-opacity", (l) => (!hi ? 0.55 : hi.has(l.from) && hi.has(l.to) ? 1 : 0.06));
     C.nodeSel.selectAll(".cz-pick").remove();
     C.labelSel.attr("fill", cssVar("--ink")).attr("font-weight", 400).attr("font-size", 10.5);
-    if (!hi) { C.labelSel.attr("opacity", 0); return; }
+    if (!hi) { C.labelSel.attr("opacity", 0); d3.select(C.nodeSel.node().ownerSVGElement).selectAll("g.cz-top").remove(); return; }
     if (sel) {
       const g = C.nodeSel.filter((e) => e.id === sel);
       g.insert("circle", ":first-child").attr("class", "cz-pick").attr("r", 14).attr("fill", "none").attr("stroke", PICK).attr("stroke-width", 3);
@@ -243,19 +243,45 @@
     }
     const direct = new Set(C.links.filter((l) => l.from === sel || l.to === sel).flatMap((l) => [l.from, l.to]));
     const rank = (e) => (e.id === sel ? 0 : direct.has(e.id) ? 1 : 2);
+    // Labels go on a layer above every event, at the first of four positions (right, left, above, below) that
+    // covers no other label and no event mark; a label with no clear position is left to its tooltip.
+    C.labelSel.attr("opacity", 0);
+    const svg = d3.select(C.nodeSel.node().ownerSVGElement);
+    svg.selectAll("g.cz-top").remove();
+    const top = svg.append("g").attr("class", "cz-top").style("pointer-events", "none");
+    const marks = C.nodeSel.filter((e) => hi.has(e.id)).data().map((e) => ({ x0: e._x - 9, x1: e._x + 9, y0: e._y - 9, y1: e._y + 9 }));
+    const hit = (b, list) => list.some((p) => b.x0 < p.x1 && p.x0 < b.x1 && b.y0 < p.y1 && p.y0 < b.y1);
     const placed = [];
-    const nodes = C.nodeSel.filter((e) => hi.has(e.id)).nodes().sort((a, b) => rank(a.__data__) - rank(b.__data__));
-    const shown = new Set();
-    for (const n of nodes) {
-      const e = n.__data__, t = n.querySelector("text");
-      if (!t) continue;
-      const w = t.getComputedTextLength ? t.getComputedTextLength() : 120;
-      const box = { x0: e._x + 7, x1: e._x + 11 + w, y0: e._y - 9, y1: e._y + 7 };
-      if (placed.some((p) => box.x0 < p.x1 && p.x0 < box.x1 && box.y0 < p.y1 && p.y0 < box.y1)) continue;
-      placed.push(box);
-      shown.add(e.id);
+    const probe = top.append("text").attr("font-size", 11).attr("visibility", "hidden");
+    const evs = C.nodeSel.filter((e) => hi.has(e.id)).data().slice().sort((a, b) => rank(a) - rank(b));
+    for (const e of evs) {
+      const isSel = e.id === sel;
+      const txt = e.title.length > 40 ? e.title.slice(0, 39) + "…" : e.title;
+      probe.attr("font-size", isSel ? 12 : 11).attr("font-weight", isSel ? 600 : 400).text(txt);
+      const w = probe.node().getComputedTextLength(), h = isSel ? 13 : 12;
+      const spots = [
+        { x: e._x + 12, y: e._y + 4, anchor: "start" },
+        { x: e._x - 12, y: e._y + 4, anchor: "end" },
+        { x: e._x, y: e._y - 13, anchor: "middle" },
+        { x: e._x, y: e._y + 20, anchor: "middle" },
+      ];
+      const own = { x0: e._x - 9, x1: e._x + 9, y0: e._y - 9, y1: e._y + 9 };
+      const others = marks.filter((m) => !(m.x0 === own.x0 && m.y0 === own.y0));
+      let chosen = null;
+      for (const sp of spots) {
+        const x0 = sp.anchor === "start" ? sp.x : sp.anchor === "end" ? sp.x - w : sp.x - w / 2;
+        const b = { x0: x0 - 2, x1: x0 + w + 2, y0: sp.y - h + 2, y1: sp.y + 3 };
+        if (!hit(b, placed) && !hit(b, others)) { chosen = { ...sp, b }; break; }
+      }
+      if (!chosen) continue;
+      placed.push(chosen.b);
+      top.append("text").attr("x", chosen.x).attr("y", chosen.y).attr("text-anchor", chosen.anchor)
+        .attr("font-size", isSel ? 12 : 11).attr("font-weight", isSel ? 600 : 400)
+        .attr("fill", isSel ? PICK : cssVar("--ink"))
+        .attr("stroke", cssVar("--surface")).attr("stroke-width", 4).attr("stroke-linejoin", "round").attr("paint-order", "stroke")
+        .text(txt);
     }
-    C.labelSel.attr("opacity", (e) => (shown.has(e.id) ? 1 : 0));
+    probe.remove();
   }
 
   function select(id) {
