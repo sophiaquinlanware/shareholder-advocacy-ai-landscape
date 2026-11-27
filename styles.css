@@ -1106,3 +1106,8 @@ details.bd-post > summary::-webkit-details-marker, details.bd-suggest > summary:
 .al-dl dd { margin: 0; overflow-wrap: anywhere; }
 .al-quote { margin: 0 0 4px; padding: 8px 12px; border-left: 3px solid var(--accent); background: var(--accent-soft); }
 @media (max-width: 640px) { .al-dl > div { grid-template-columns: minmax(0, 1fr); } }
+
+/* Ties to each lab: the direct route (file at the lab or its listed parent) leads the routes. */
+.pw-direct { border: 1px solid var(--line); border-left: 4px solid var(--blue-1); padding: 12px 16px; margin: 12px 0 16px; background: var(--surface); }
+.pw-direct p { margin: 4px 0; max-width: 90ch; }
+.pw-direct-h { font-size: 16px; }

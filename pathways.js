@@ -104,6 +104,7 @@
       <p class="pw-label" id="pw-labs-h">Lab</p>
       <div class="chips" role="group" aria-labelledby="pw-labs-h">${labs}</div>
       <div id="pw-lab-about" class="pw-about"></div>
+      <div id="pw-direct"></div>
       <h3 class="sub-h" id="pw-routes-h" tabindex="-1">Routes</h3>
       <p class="count-line" id="pw-status" role="status"></p>
       <div class="table-wrap pw-routes" id="pw-routes" tabindex="0" role="region" aria-labelledby="pw-routes-h"></div>
@@ -473,9 +474,38 @@
     const c = COLS.find((x) => x.key === sortState.key);
     document.getElementById("pw-status").textContent = c ? `${S.summary} Sorted by ${c.say[sortState.dir === "asc" ? 0 : 1]}.` : S.summary;
     labsReached();
+    directRoute(lab);
     tieTable(S.data.ties);
     redrawMap();
     if (focus) document.getElementById("pw-routes-h").focus();
+  }
+
+  // The direct route first (data/lab_leverage.json): where a lab is listed itself (Anthropic, xAI inside SpaceX) or
+  // sits inside a listed parent (Google DeepMind in Alphabet), a shareholder can file there. Deadlines are compared
+  // with today here, since the file's status is set when it is built.
+  let LEV = null;
+  async function directRoute(lab) {
+    const box = document.getElementById("pw-direct");
+    if (!box) return;
+    box.innerHTML = "";
+    try { LEV = LEV || (await (await fetch("data/lab_leverage.json")).json()); } catch (e) { return; }
+    if (S.lab !== lab.id) return;
+    const L = (LEV.labs || []).find((x) => x.id === lab.id);
+    const r = L && (L.routes || []).find((x) => x.direct);
+    if (!r) return;
+    const today = window.RULES && window.RULES.todayISO ? window.RULES.todayISO() : new Date().toISOString().slice(0, 10);
+    const base = lab.name.replace(/\s*\(.*\)/, "");
+    const itself = r.name === base || r.name.includes(`(including ${base})`);
+    const dl = r.next_deadline
+      ? `${esc(window.DATES.long(r.next_deadline.slice(0, 10)))}: ${r.next_deadline.slice(0, 10) >= today ? "<strong>open</strong>" : "passed"} ${link(r.next_deadline_source, "proxy")}`
+      : `none on record ${r.next_deadline_source ? link(r.next_deadline_source) : ""}`;
+    box.innerHTML = `<div class="pw-direct">
+      <p class="pw-direct-h">${itself ? "File at the lab itself" : "File at its parent company"}: <strong>${esc(r.name)}</strong> <span class="ticker">${esc(r.ticker || "")}</span></p>
+      <p>${esc(r.how_to_file || "")}</p>
+      <p><strong>Next filing deadline:</strong> ${dl}</p>
+      ${r.route_reason ? `<p class="status-note">${esc(r.route_reason)} <span class="ticker">This site's reading.</span></p>` : ""}
+      <p><a href="#listed-labs">All labs you can file at →</a></p>
+    </div>`;
   }
 
   function tieTable(ties) {
