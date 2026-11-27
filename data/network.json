@@ -3267,14 +3267,14 @@
   {
    "from": "jlens",
    "to": "msft-2025-hrdd-ai-misuse",
-   "relation": "exempt solicitation",
+   "relation": "exempt solicitation against",
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000092189525002903/px14a6g14098msft_11062025.htm",
    "stance": "oppose"
   },
   {
    "from": "adl",
    "to": "msft-2025-hrdd-ai-misuse",
-   "relation": "exempt solicitation",
+   "relation": "exempt solicitation against",
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000092189525002903/px14a6g14098msft_11062025.htm",
    "stance": "oppose"
   },
@@ -3656,14 +3656,14 @@
   {
    "from": "jlens",
    "to": "googl-2026-data-privacy-cloud",
-   "relation": "exempt solicitation",
+   "relation": "exempt solicitation against",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000092189526001098/px14a6g14098010_04282026.htm",
    "stance": "oppose"
   },
   {
    "from": "adl",
    "to": "googl-2026-data-privacy-cloud",
-   "relation": "exempt solicitation",
+   "relation": "exempt solicitation against",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000092189526001098/px14a6g14098010_04282026.htm",
    "stance": "oppose"
   },
@@ -3942,14 +3942,14 @@
   {
    "from": "jlens",
    "to": "amzn-2024-customer-dd",
-   "relation": "exempt solicitation",
+   "relation": "exempt solicitation against",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000092189524000827/px14a6g14098002_04112024.htm",
    "stance": "oppose"
   },
   {
    "from": "adl",
    "to": "amzn-2024-customer-dd",
-   "relation": "exempt solicitation",
+   "relation": "exempt solicitation against",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000092189524000827/px14a6g14098002_04112024.htm",
    "stance": "oppose"
   },
@@ -4065,7 +4065,7 @@
   {
    "from": "bowyer",
    "to": "aapl-2024-ai-transparency",
-   "relation": "exempt solicitation",
+   "relation": "exempt solicitation against",
    "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000109690624000156/bowy_px14a6g.htm",
    "stance": "oppose"
   },

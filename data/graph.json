@@ -1591,7 +1591,7 @@
    "description": "Online campaigning group that files and backs shareholder proposals against corporate abuses.",
    "website": "https://www.eko.org",
    "source_url": "https://www.eko.org",
-   "degree": 30
+   "degree": 28
   },
   {
    "id": "azzad",
@@ -1602,7 +1602,7 @@
    "description": "Islamic-values ethical asset manager active in human rights shareholder advocacy.",
    "website": "https://www.azzad.net",
    "source_url": "https://www.azzad.net",
-   "degree": 35
+   "degree": 33
   },
   {
    "id": "as-you-sow",
@@ -1646,7 +1646,7 @@
    "description": "Catholic women's religious congregation; lead filer on Microsoft AI human rights due diligence.",
    "website": null,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf",
-   "degree": 11
+   "degree": 9
   },
   {
    "id": "chicory-wealth",
@@ -1657,7 +1657,7 @@
    "description": "Values-aligned wealth adviser; co-filer at Microsoft.",
    "website": null,
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925010874/j724252px14a6g.htm",
-   "degree": 7
+   "degree": 5
   },
   {
    "id": "iasj",
@@ -1668,7 +1668,7 @@
    "description": "Coalition of faith-based investors doing shareholder advocacy on human rights.",
    "website": "https://iasj.org",
    "source_url": "https://iasj.org",
-   "degree": 32
+   "degree": 30
   },
   {
    "id": "jlens",
@@ -1679,7 +1679,7 @@
    "description": "Jewish values investor network (ADL-affiliated) that opposes some human-rights proposals.",
    "website": "https://www.jlensnetwork.org",
    "source_url": "https://www.jlensnetwork.org",
-   "degree": 19
+   "degree": 11
   },
   {
    "id": "adl",
@@ -1690,7 +1690,7 @@
    "description": "Civil rights group; co-files exempt solicitations with JLens opposing proposals.",
    "website": "https://www.adl.org",
    "source_url": "https://www.adl.org",
-   "degree": 18
+   "degree": 10
   },
   {
    "id": "trillium",
@@ -1723,7 +1723,7 @@
    "description": "Boston socially responsible manager filing on AI, cloud and human rights.",
    "website": "https://www.zevin.com",
    "source_url": "https://www.zevin.com",
-   "degree": 38
+   "degree": 36
   },
   {
    "id": "jewish-investor-network",
@@ -2009,7 +2009,7 @@
    "description": "Conservative proxy adviser filing and opposing proposals for faith clients.",
    "website": "https://www.bowyerresearch.com",
    "source_url": "https://www.bowyerresearch.com",
-   "degree": 10
+   "degree": 9
   },
   {
    "id": "pcusa",
@@ -2075,7 +2075,7 @@
    "description": "Baptist mission agency; lead filer on Amazon AI and surveillance human rights.",
    "website": "https://abhms.org",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm",
-   "degree": 15
+   "degree": 13
   },
   {
    "id": "afl-cio",
@@ -2086,7 +2086,7 @@
    "description": "US labor federation; its funds file AI transparency and board oversight proposals.",
    "website": "https://aflcio.org",
    "source_url": "https://aflcio.org",
-   "degree": 14
+   "degree": 13
   },
   {
    "id": "united-for-respect",
@@ -6048,7 +6048,7 @@
    "filing_deadline": "2025-12-11",
    "filing_deadline_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "meeting_date": "2026-05-20",
-   "status_reason": "Excluded by Amazon under Rule 14a-8(i)(12) (resubmission): a similar 2024 proposal got 16.8%, below the 25% needed. SEC staff said they would not object (January 30, 2026).",
+   "status_reason": "Excluded by Amazon under Rule 14a-8(i)(12) (resubmission): a similar 2024 proposal got 16.8%, below the 25% needed. SEC staff replied, \"based solely on\" Amazon's representation, that it would not object (January 30, 2026); staff did not evaluate the basis.",
    "status_source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/americanbaptisthomeamazon13026.pdf",
    "plain_summary": "Asks the board to report on misalignment between Amazon's responsible AI policies and its sales of AI and cloud services, including to Israel's military and DHS.",
    "plain_summary_source": "https://news.bloomberglaw.com/esg/amazon-to-block-investor-vote-on-ai-services-for-israel-dhs",
@@ -11315,7 +11315,7 @@
    "kind": "rule",
    "actor": "SEC Division of Corporation Finance",
    "jurisdiction": "US federal",
-   "description": "For the 2025-2026 season, staff said it would not respond to no-action requests except under Rule 14a-8(i)(1), citing post-shutdown resource limits. Companies still file notices.",
+   "description": "For the season of October 1, 2025 to September 30, 2026, staff said it would not respond to no-action requests except under Rule 14a-8(i)(1), citing post-shutdown resource limits. Companies still had to send Rule 14a-8(j) notices 80 days before filing a definitive proxy; a company that added an unqualified representation of a reasonable basis to exclude got a letter saying staff would not object, without staff evaluating it.",
    "source_url": "https://www.sec.gov/newsroom/speeches-statements/statement-regarding-division-corporation-finances-role-exchange-act-rule-14a-8-process-current-proxy-season",
    "degree": 5
   },
@@ -11656,6 +11656,20 @@
    "degree": 1
   },
   {
+   "id": "ev-chubb-14a8-pi-denied-2026",
+   "type": "policy",
+   "layer": "policy",
+   "label": "Court declines to order Chubb to include As You Sow's proposal",
+   "date": "2026-03-31",
+   "lane": "government",
+   "kind": "ruling",
+   "actor": "U.S. District Court, District of Columbia",
+   "jurisdiction": "US federal",
+   "description": "As You Sow v. Chubb Limited (26-734): the court denied a preliminary injunction over a climate-report proposal Chubb excluded on ordinary-business grounds, finding As You Sow \"has not demonstrated that it is entitled to emergency injunctive relief\". The opinion is a court-stamped filing hosted by Climate Policy Radar, not a court site.",
+   "source_url": "https://cdn.climatepolicyradar.org/navigator/USA/2026/as-you-sow-v-chubb-ltd_67bef05a8839a64c5e67095d9da7c71d.pdf",
+   "degree": 1
+  },
+  {
    "id": "ev-cn-ai-energy-action-plan",
    "type": "policy",
    "layer": "policy",
@@ -11682,6 +11696,20 @@
    "description": "In force from July 15, 2026 for AI companion and emotional interaction services: providers may not offer virtual partner or relative services to minors, need guardian consent for users under 14, must offer a minors' mode, intervene when users signal self-harm, avoid fostering dependence, and manage training data. Services with 1 million registered or 100,000 monthly active users must file security assessments with provincial regulators and complete algorithm filing.",
    "source_url": "https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm",
    "degree": 2
+  },
+  {
+   "id": "ev-bjs-14a8-injunction-2026",
+   "type": "policy",
+   "layer": "policy",
+   "label": "Court orders BJ's Wholesale Club to include an excluded proposal",
+   "date": "2026-04-22",
+   "lane": "government",
+   "kind": "ruling",
+   "actor": "U.S. District Court, District of Massachusetts",
+   "jurisdiction": "US federal",
+   "description": "DiNapoli v. BJ's Wholesale Club Holdings (26-11075-LTS): the court granted the New York State Common Retirement Fund's motion for injunctive relief and denied BJ's motion to dismiss, rejecting its private-right-of-action, ordinary-business, Delaware-law and vagueness arguments. The order is a court-stamped filing hosted by a law firm, not a court site.",
+   "source_url": "https://governancebeat.cooley.com/wp-content/uploads/2026/04/BJ-Order.pdf",
+   "degree": 1
   },
   {
    "id": "ev-cn-labeling-enforcement-2026",
@@ -11824,20 +11852,6 @@
    "degree": 1
   },
   {
-   "id": "ev-ca-bill-c36",
-   "type": "policy",
-   "layer": "policy",
-   "label": "Canada tables privacy bill with automated decision rules",
-   "date": "2026-06-15",
-   "lane": "government",
-   "kind": "policy",
-   "actor": "Government of Canada (ISED)",
-   "jurisdiction": "Canada",
-   "description": "Bill C-36, the Protecting Privacy and Consumer Data Act, would modernize Canada's private-sector privacy law, add rules on automated decisions and children's data, and create a Digital Safety and Data Protection Commission. It does not revive AIDA.",
-   "source_url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/06/government-of-canada-tables-new-legislation-to-protect-childrens-data-strengthen-privacy-and-build-trust-in-the-digital-economy.html",
-   "degree": 0
-  },
-  {
    "id": "ev-eu-cada-proposal",
    "type": "policy",
    "layer": "policy",
@@ -11877,6 +11891,20 @@
    "jurisdiction": "Canada",
    "description": "Bill C-34 would bar children under 16 from social media, require operators of human-like chatbots to be transparent about their reporting thresholds in crisis situations and limit harmful content, and create a Digital Safety Commission.",
    "source_url": "https://www.canada.ca/en/canadian-heritage/news/2026/06/government-of-canada-introduces-legislation-to-make-social-media-services-and-ai-chatbots-safer-for-children.html",
+   "degree": 0
+  },
+  {
+   "id": "ev-ca-bill-c36",
+   "type": "policy",
+   "layer": "policy",
+   "label": "Canada tables privacy bill with automated decision rules",
+   "date": "2026-06-15",
+   "lane": "government",
+   "kind": "policy",
+   "actor": "Government of Canada (ISED)",
+   "jurisdiction": "Canada",
+   "description": "Bill C-36, the Protecting Privacy and Consumer Data Act, would modernize Canada's private-sector privacy law, add rules on automated decisions and children's data, and create a Digital Safety and Data Protection Commission. It does not revive AIDA.",
+   "source_url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/06/government-of-canada-tables-new-legislation-to-protect-childrens-data-strengthen-privacy-and-build-trust-in-the-digital-economy.html",
    "degree": 0
   },
   {
@@ -11961,7 +11989,7 @@
    "jurisdiction": "US federal",
    "description": "Post-season memo: about 45% of excluded proposals came from one individual filer; Glass Lewis found companies excluded fewer proposals than feared without staff relief.",
    "source_url": "https://corpgov.law.harvard.edu/2026/07/23/the-2026-shareholder-proposal-exclusion-experience-and-takeaways-for-the-2027-season/",
-   "degree": 1
+   "degree": 3
   },
   {
    "id": "ev-sec-aug14-statement",
@@ -11973,7 +12001,7 @@
    "kind": "rule",
    "actor": "SEC Division of Corporation Finance",
    "jurisdiction": "US federal",
-   "description": "Staff stopped responding to all no-action requests, including (i)(1), until further notice. Companies must still submit 14a-8(j) notices through an online form.",
+   "description": "Staff stopped responding to all no-action requests, including (i)(1), and stopped sending will-not-object letters, \"effective immediately, unless and until the Division announces otherwise.\" Companies are still required to submit Rule 14a-8(j) notices, and the statement says they should use the online Shareholder Proposal Form. Staff received no (i)(1) requests in the 2025-2026 season.",
    "source_url": "https://sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426",
    "degree": 1
   },
@@ -12043,7 +12071,7 @@
    "kind": "rule",
    "actor": "SEC",
    "jurisdiction": "US federal",
-   "description": "Release 34-106383, File S7-2026-32, would end the federal shareholder proposal rule and leave proposals to state law and company governing documents. 60-day comment period.",
+   "description": "Release 34-106383, File S7-2026-32 (September 16, 2026; 91 FR 59904), would end the federal shareholder proposal rule and amend Rule 14a-4, leaving proposals to state law and company governing documents. Comments were due November 20, 2026. It is a proposal, not a final rule.",
    "source_url": "https://www.sec.gov/rules/proposed/2026/34-106383.pdf",
    "degree": 5
   },
@@ -13945,14 +13973,14 @@
   {
    "source": "jlens",
    "target": "msft-2025-hrdd-ai-misuse",
-   "type": "exempt solicitation",
+   "type": "exempt solicitation against",
    "layer": "proposals",
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000092189525002903/px14a6g14098msft_11062025.htm"
   },
   {
    "source": "adl",
    "target": "msft-2025-hrdd-ai-misuse",
-   "type": "exempt solicitation",
+   "type": "exempt solicitation against",
    "layer": "proposals",
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000092189525002903/px14a6g14098msft_11062025.htm"
   },
@@ -14396,14 +14424,14 @@
   {
    "source": "jlens",
    "target": "googl-2026-data-privacy-cloud",
-   "type": "exempt solicitation",
+   "type": "exempt solicitation against",
    "layer": "proposals",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000092189526001098/px14a6g14098010_04282026.htm"
   },
   {
    "source": "adl",
    "target": "googl-2026-data-privacy-cloud",
-   "type": "exempt solicitation",
+   "type": "exempt solicitation against",
    "layer": "proposals",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000092189526001098/px14a6g14098010_04282026.htm"
   },
@@ -14727,14 +14755,14 @@
   {
    "source": "jlens",
    "target": "amzn-2024-customer-dd",
-   "type": "exempt solicitation",
+   "type": "exempt solicitation against",
    "layer": "proposals",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000092189524000827/px14a6g14098002_04112024.htm"
   },
   {
    "source": "adl",
    "target": "amzn-2024-customer-dd",
-   "type": "exempt solicitation",
+   "type": "exempt solicitation against",
    "layer": "proposals",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000092189524000827/px14a6g14098002_04112024.htm"
   },
@@ -14867,7 +14895,7 @@
   {
    "source": "bowyer",
    "target": "aapl-2024-ai-transparency",
-   "type": "exempt solicitation",
+   "type": "exempt solicitation against",
    "layer": "proposals",
    "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000109690624000156/bowy_px14a6g.htm"
   },
@@ -15822,82 +15850,6 @@
    ]
   },
   {
-   "source": "adl",
-   "target": "azzad",
-   "type": "co-filed with",
-   "layer": "investors",
-   "source_url": null,
-   "derived": true,
-   "weight": 1,
-   "proposals": [
-    "msft-2025-hrdd-ai-misuse"
-   ]
-  },
-  {
-   "source": "adl",
-   "target": "chicory-wealth",
-   "type": "co-filed with",
-   "layer": "investors",
-   "source_url": null,
-   "derived": true,
-   "weight": 1,
-   "proposals": [
-    "msft-2025-hrdd-ai-misuse"
-   ]
-  },
-  {
-   "source": "adl",
-   "target": "eko",
-   "type": "co-filed with",
-   "layer": "investors",
-   "source_url": null,
-   "derived": true,
-   "weight": 2,
-   "proposals": [
-    "msft-2025-hrdd-ai-misuse",
-    "googl-2026-data-privacy-cloud"
-   ]
-  },
-  {
-   "source": "adl",
-   "target": "iasj",
-   "type": "co-filed with",
-   "layer": "investors",
-   "source_url": null,
-   "derived": true,
-   "weight": 2,
-   "proposals": [
-    "msft-2025-hrdd-ai-misuse",
-    "amzn-2024-customer-dd"
-   ]
-  },
-  {
-   "source": "adl",
-   "target": "jlens",
-   "type": "co-filed with",
-   "layer": "investors",
-   "source_url": null,
-   "derived": true,
-   "weight": 3,
-   "proposals": [
-    "msft-2025-hrdd-ai-misuse",
-    "googl-2026-data-privacy-cloud",
-    "amzn-2024-customer-dd"
-   ]
-  },
-  {
-   "source": "adl",
-   "target": "rshm",
-   "type": "co-filed with",
-   "layer": "investors",
-   "source_url": null,
-   "derived": true,
-   "weight": 1,
-   "proposals": [
-    "msft-2025-hrdd-ai-misuse"
-   ]
-  },
-  {
    "source": "azzad",
    "target": "chicory-wealth",
    "type": "co-filed with",
@@ -15912,18 +15864,6 @@
   {
    "source": "azzad",
    "target": "iasj",
-   "type": "co-filed with",
-   "layer": "investors",
-   "source_url": null,
-   "derived": true,
-   "weight": 1,
-   "proposals": [
-    "msft-2025-hrdd-ai-misuse"
-   ]
-  },
-  {
-   "source": "azzad",
-   "target": "jlens",
    "type": "co-filed with",
    "layer": "investors",
    "source_url": null,
@@ -15971,18 +15911,6 @@
   },
   {
    "source": "chicory-wealth",
-   "target": "jlens",
-   "type": "co-filed with",
-   "layer": "investors",
-   "source_url": null,
-   "derived": true,
-   "weight": 1,
-   "proposals": [
-    "msft-2025-hrdd-ai-misuse"
-   ]
-  },
-  {
-   "source": "chicory-wealth",
    "target": "rshm",
    "type": "co-filed with",
    "layer": "investors",
@@ -16007,19 +15935,6 @@
   },
   {
    "source": "eko",
-   "target": "jlens",
-   "type": "co-filed with",
-   "layer": "investors",
-   "source_url": null,
-   "derived": true,
-   "weight": 2,
-   "proposals": [
-    "msft-2025-hrdd-ai-misuse",
-    "googl-2026-data-privacy-cloud"
-   ]
-  },
-  {
-   "source": "eko",
    "target": "rshm",
    "type": "co-filed with",
    "layer": "investors",
@@ -16028,19 +15943,6 @@
    "weight": 1,
    "proposals": [
     "msft-2025-hrdd-ai-misuse"
-   ]
-  },
-  {
-   "source": "iasj",
-   "target": "jlens",
-   "type": "co-filed with",
-   "layer": "investors",
-   "source_url": null,
-   "derived": true,
-   "weight": 2,
-   "proposals": [
-    "msft-2025-hrdd-ai-misuse",
-    "amzn-2024-customer-dd"
    ]
   },
   {
@@ -16054,18 +15956,6 @@
    "proposals": [
     "msft-2025-hrdd-ai-misuse",
     "msft-2026-hrdd-ai-misuse"
-   ]
-  },
-  {
-   "source": "jlens",
-   "target": "rshm",
-   "type": "co-filed with",
-   "layer": "investors",
-   "source_url": null,
-   "derived": true,
-   "weight": 1,
-   "proposals": [
-    "msft-2025-hrdd-ai-misuse"
    ]
   },
   {
@@ -17158,31 +17048,7 @@
    ]
   },
   {
-   "source": "adl",
-   "target": "zevin",
-   "type": "co-filed with",
-   "layer": "investors",
-   "source_url": null,
-   "derived": true,
-   "weight": 1,
-   "proposals": [
-    "googl-2026-data-privacy-cloud"
-   ]
-  },
-  {
    "source": "eko",
-   "target": "zevin",
-   "type": "co-filed with",
-   "layer": "investors",
-   "source_url": null,
-   "derived": true,
-   "weight": 1,
-   "proposals": [
-    "googl-2026-data-privacy-cloud"
-   ]
-  },
-  {
-   "source": "jlens",
    "target": "zevin",
    "type": "co-filed with",
    "layer": "investors",
@@ -17434,30 +17300,6 @@
     "amzn-2023-customer-dd",
     "amzn-2024-customer-dd",
     "amzn-2026-responsible-ai-sales"
-   ]
-  },
-  {
-   "source": "abhms",
-   "target": "adl",
-   "type": "co-filed with",
-   "layer": "investors",
-   "source_url": null,
-   "derived": true,
-   "weight": 1,
-   "proposals": [
-    "amzn-2024-customer-dd"
-   ]
-  },
-  {
-   "source": "abhms",
-   "target": "jlens",
-   "type": "co-filed with",
-   "layer": "investors",
-   "source_url": null,
-   "derived": true,
-   "weight": 1,
-   "proposals": [
-    "amzn-2024-customer-dd"
    ]
   },
   {
@@ -17746,18 +17588,6 @@
    "weight": 1,
    "proposals": [
     "amzn-2026-responsible-ai-sales"
-   ]
-  },
-  {
-   "source": "afl-cio",
-   "target": "bowyer",
-   "type": "co-filed with",
-   "layer": "investors",
-   "source_url": null,
-   "derived": true,
-   "weight": 1,
-   "proposals": [
-    "aapl-2024-ai-transparency"
    ]
   },
   {
@@ -23305,8 +23135,8 @@
    "target": "ev-sec-aug14-statement",
    "type": "led to",
    "layer": "policy",
-   "source_url": "https://news.ballotpedia.org/2026/08/24/sec-makes-shareholder-proposal-no-action-pause-permanent-2/",
-   "explanation": "August statement made the temporary pause permanent and dropped the (i)(1) exception."
+   "source_url": "https://sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426",
+   "explanation": "The August statement extended the pause to all no-action requests, including (i)(1), until the Division announces otherwise."
   },
   {
    "source": "ev-sec-oira-submission",
@@ -24019,6 +23849,22 @@
    "layer": "policy",
    "source_url": "https://www.court.gov.cn/zixun/xiangqing/511101.html",
    "explanation": "The Supreme People's Court cited the Five-Year Plan's call for AI rules as background for its opinions."
+  },
+  {
+   "source": "ev-exclusions-2026-season",
+   "target": "ev-bjs-14a8-injunction-2026",
+   "type": "responded to",
+   "layer": "policy",
+   "source_url": "https://governancebeat.cooley.com/wp-content/uploads/2026/04/BJ-Order.pdf",
+   "explanation": "A proponent sued after the company excluded its proposal without SEC staff review."
+  },
+  {
+   "source": "ev-exclusions-2026-season",
+   "target": "ev-chubb-14a8-pi-denied-2026",
+   "type": "responded to",
+   "layer": "policy",
+   "source_url": "https://cdn.climatepolicyradar.org/navigator/USA/2026/as-you-sow-v-chubb-ltd_67bef05a8839a64c5e67095d9da7c71d.pdf",
+   "explanation": "A proponent sued after the company excluded its proposal on ordinary-business grounds."
   },
   {
    "source": "googl-2025-7",

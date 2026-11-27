@@ -156,6 +156,9 @@ def main():
             "commitment_first": rate(sum(1 for u in commits if u[4]), sum(1 for u in not_excl if u[4])),
             "commitment_refile": rate(sum(1 for u in commits if not u[4]), sum(1 for u in not_excl if not u[4])),
             "exclusion": rate(sum(1 for u in units if u[2]), len(units)),
+            # The SEC staff stopped reviewing exclusions on November 17, 2025 (data/causality.json sec-noaction-pause),
+            # so the latest season is the only one without staff review.
+            "exclusion_latest": {**rate(sum(1 for u in units if u[2] and u[1] == upto), sum(1 for u in units if u[1] == upto)), "season": upto},
             "unit": "one per company, ask and season with a filing not lead-filed from a critical stance on ESG",
         }
 

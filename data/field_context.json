@@ -1,0 +1,35 @@
+{
+ "about": "Figures about the whole field from other publishers, traced to the original publication on 2026-11-26. Each is quoted with its scope.",
+ "items": [
+  {
+   "id": "glasslewis-bigtech-2026",
+   "publisher": "Glass Lewis",
+   "title": "A Look at 2026 Big Tech Shareholder Proposals",
+   "date": "2026-07-07",
+   "url": "https://www.glasslewis.com/article/a-look-at-2026-big-tech-shareholder-proposals",
+   "text": "AI proposals at Alphabet, Amazon and Meta received 7.6% support on average in 2026, down from 9.8% in 2025 and 21.4% in 2024.",
+   "scope": "Alphabet, Amazon and Meta only; Glass Lewis's own averages.",
+   "quoted": true
+  },
+  {
+   "id": "dfking-debriefing-2026",
+   "publisher": "D.F. King",
+   "title": "The Debriefing 2026: Season Review and Fall Engagement Guide",
+   "date": "2026",
+   "url": "https://equiniti.com/media/kednjhdl/the-debriefing-2026.pdf",
+   "text": "Total number of proposals filed in 2026 is down nearly 25% from 2025 and is at the lowest level we have seen over the past decade.",
+   "scope": "All shareholder proposals, not only AI; Russell 3000, January to June 30, 2026 (page 5). The report prints no publication date.",
+   "quoted": true
+  },
+  {
+   "id": "fisch-robertson-proxies-for-politics",
+   "publisher": "Jill E. Fisch and Adriana Z. Robertson",
+   "title": "Proxies for Politics (ECGI Law Working Paper 889/2025)",
+   "date": "2025-12-21",
+   "url": "https://www.ecgi.global/publications/working-papers/proxies-for-politics",
+   "text": "The authors find that the use of political-disclosure shareholder proposals over their study period, including proposals later withdrawn, is correlated with more political transparency by companies; they say they cannot demonstrate causation.",
+   "scope": "Political-disclosure proposals, not AI proposals. This site's summary of the working paper's abstract.",
+   "quoted": false
+  }
+ ]
+}

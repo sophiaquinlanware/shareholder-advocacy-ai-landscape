@@ -1,0 +1,4441 @@
+{
+ "about": "Each AI shareholder campaign (one ask at one company) as dated states with sources, a milestone stage, engagement steps investors report at the company level, an outcome summary and the commitments ledger. Built by scripts/build_campaigns.py from data/proposals.json, data/graph.json, data/scorecard.json and data/commitments.json.",
+ "stages": [
+  "Concern raised",
+  "Company engaged",
+  "Commitment made",
+  "Commitment delivered"
+ ],
+ "campaigns": [
+  {
+   "id": "AAPL|ask-ai-oversight-reporting",
+   "company": "AAPL",
+   "ask": "ask-ai-oversight-reporting",
+   "ask_label": "Board oversight and AI transparency reporting",
+   "states": [
+    {
+     "proposal_id": "aapl-2024-7",
+     "title": "Report on Use of AI",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "AFL-CIO (Equity Index Funds)",
+      "Segal Marco Advisors"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm"
+    },
+    {
+     "proposal_id": "aapl-2024-7",
+     "title": "Report on Use of AI",
+     "critical": false,
+     "date": "2024-02-28",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation against the proposal",
+     "by": [
+      "Bowyer Research"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000109690624000156/bowy_px14a6g.htm"
+    },
+    {
+     "proposal_id": "aapl-2024-7",
+     "title": "Report on Use of AI",
+     "critical": false,
+     "date": "2024-02-28",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 37.53,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124010155/ny20022580x1_8k.htm"
+    }
+   ],
+   "proposals": [
+    "aapl-2024-7"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 2,
+   "filings": 1,
+   "votes": 1,
+   "best_support": 37.53,
+   "ledger_ids": []
+  },
+  {
+   "id": "AAPL|ask-ai-training-data",
+   "company": "AAPL",
+   "ask": "ask-ai-training-data",
+   "ask_label": "Training data and user data in AI",
+   "states": [
+    {
+     "proposal_id": "aapl-2025-4",
+     "title": "Report on Ethical AI Data Acquisition and Usage",
+     "critical": true,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "National Legal and Policy Center"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm"
+    },
+    {
+     "proposal_id": "aapl-2025-4",
+     "title": "Report on Ethical AI Data Acquisition and Usage",
+     "critical": true,
+     "date": "2025-02-25",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "National Legal and Policy Center"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000109690625000100/nlpc_px14a6g.htm"
+    },
+    {
+     "proposal_id": "aapl-2025-4",
+     "title": "Report on Ethical AI Data Acquisition and Usage",
+     "critical": true,
+     "date": "2025-02-25",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 11.57,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125005876/ef20044022_8k.htm"
+    }
+   ],
+   "proposals": [
+    "aapl-2025-4"
+   ],
+   "critical_only": true,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 1,
+   "filings": 1,
+   "votes": 0,
+   "best_support": null,
+   "ledger_ids": []
+  },
+  {
+   "id": "AAPL|ask-child-safety",
+   "company": "AAPL",
+   "ask": "ask-child-safety",
+   "ask_label": "Child safety and AI",
+   "states": [
+    {
+     "proposal_id": "aapl-2025-5",
+     "title": "Report on Costs and Benefits of Child Sex Abuse Material-Identifying Software & User Privacy",
+     "critical": false,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Bowyer Research",
+      "American Family Association"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm"
+    },
+    {
+     "proposal_id": "aapl-2025-5",
+     "title": "Report on Costs and Benefits of Child Sex Abuse Material-Identifying Software & User Privacy",
+     "critical": false,
+     "date": "2025-02-25",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Bowyer Research"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000109690625000152/bowy_px14a6g.htm"
+    },
+    {
+     "proposal_id": "aapl-2025-5",
+     "title": "Report on Costs and Benefits of Child Sex Abuse Material-Identifying Software & User Privacy",
+     "critical": false,
+     "date": "2025-02-25",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 8.91,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125005876/ef20044022_8k.htm"
+    }
+   ],
+   "proposals": [
+    "aapl-2025-5"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 2,
+   "filings": 1,
+   "votes": 1,
+   "best_support": 8.91,
+   "ledger_ids": []
+  },
+  {
+   "id": "AAPL|ask-dc-climate-energy",
+   "company": "AAPL",
+   "ask": "ask-dc-climate-energy",
+   "ask_label": "Data center energy, emissions and costs",
+   "states": [
+    {
+     "proposal_id": "aapl-2026-ai-energy",
+     "title": "AI and Data Center Use in Energy Strategy",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Tulipshare"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/tulipshareapple112625.pdf"
+    },
+    {
+     "proposal_id": "aapl-2026-ai-energy",
+     "title": "AI and Data Center Use in Energy Strategy",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "withdrawn",
+     "label": "Withdrawn",
+     "detail": "Withdrawn by Tulipshare after Apple asked the SEC to let it exclude the proposal as not economically significant (Rule 14a-8(i)(5)) and as ordinary business or micromanagement (Rule 14a-8(i)(7)). No reason for the withdrawal is public.",
+     "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/tulipshareapple112625.pdf"
+    }
+   ],
+   "proposals": [
+    "aapl-2026-ai-energy"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 1,
+   "filings": 1,
+   "votes": 0,
+   "best_support": null,
+   "ledger_ids": []
+  },
+  {
+   "id": "AMZN|ask-ai-oversight-reporting",
+   "company": "AMZN",
+   "ask": "ask-ai-oversight-reporting",
+   "ask_label": "Board oversight and AI transparency reporting",
+   "states": [
+    {
+     "proposal_id": "amzn-2024-16",
+     "title": "Additional Board Committee to Oversee Artificial Intelligence",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "AFL-CIO (Equity Index Funds)"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm"
+    },
+    {
+     "proposal_id": "amzn-2024-16",
+     "title": "Additional Board Committee to Oversee Artificial Intelligence",
+     "critical": false,
+     "date": "2024-05-22",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 9.7,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924065117/tm2414140d1_8k.htm"
+    },
+    {
+     "proposal_id": "amzn-2025-8",
+     "title": "Assessment of Board Structure for Oversight of AI",
+     "critical": false,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "AFL-CIO (Equity Index Funds)",
+      "Segal Marco Advisors"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm"
+    },
+    {
+     "proposal_id": "amzn-2025-8",
+     "title": "Assessment of Board Structure for Oversight of AI",
+     "critical": false,
+     "date": "2025-05-21",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 10.27,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm"
+    }
+   ],
+   "proposals": [
+    "amzn-2024-16",
+    "amzn-2025-8"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 2,
+   "filings": 2,
+   "votes": 2,
+   "best_support": 10.27,
+   "ledger_ids": []
+  },
+  {
+   "id": "AMZN|ask-ai-training-data",
+   "company": "AMZN",
+   "ask": "ask-ai-training-data",
+   "ask_label": "Training data and user data in AI",
+   "states": [
+    {
+     "proposal_id": "amzn-2025-11",
+     "title": "Report on Data Usage Oversight in AI Offerings",
+     "critical": true,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "National Legal and Policy Center"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm"
+    },
+    {
+     "proposal_id": "amzn-2025-11",
+     "title": "Report on Data Usage Oversight in AI Offerings",
+     "critical": true,
+     "date": "2025-05-21",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "National Legal and Policy Center"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000109690625000526/nlpc_px14a6g.htm"
+    },
+    {
+     "proposal_id": "amzn-2025-11",
+     "title": "Report on Data Usage Oversight in AI Offerings",
+     "critical": true,
+     "date": "2025-05-21",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 10.79,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm"
+    }
+   ],
+   "proposals": [
+    "amzn-2025-11"
+   ],
+   "critical_only": true,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 1,
+   "filings": 1,
+   "votes": 0,
+   "best_support": null,
+   "ledger_ids": []
+  },
+  {
+   "id": "AMZN|ask-ai-workforce",
+   "company": "AMZN",
+   "ask": "ask-ai-workforce",
+   "ask_label": "AI and workers",
+   "states": [
+    {
+     "proposal_id": "amzn-2026-floor",
+     "title": "Establish and maintain a worker-oriented AI advisory council (presented at the meeting under the bylaws; not in the proxy)",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "United for Respect Education Fund"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    },
+    {
+     "proposal_id": "amzn-2026-floor",
+     "title": "Establish and maintain a worker-oriented AI advisory council (presented at the meeting under the bylaws; not in the proxy)",
+     "critical": false,
+     "date": "2026-05-20",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": null,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926065717/tm2614288d1_8k.htm"
+    }
+   ],
+   "proposals": [
+    "amzn-2026-floor"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 1,
+   "filings": 1,
+   "votes": 0,
+   "best_support": null,
+   "ledger_ids": []
+  },
+  {
+   "id": "AMZN|ask-customer-due-diligence",
+   "company": "AMZN",
+   "ask": "ask-customer-due-diligence",
+   "ask_label": "Customer and end-use due diligence (surveillance, military, facial recognition)",
+   "states": [
+    {
+     "proposal_id": "amzn-2023-7",
+     "title": "Report on Customer Due Diligence",
+     "critical": false,
+     "date": "2023",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "American Baptist Home Mission Societies",
+      "Investor Advocates for Social Justice"
+     ],
+     "co_filers": 3,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm"
+    },
+    {
+     "proposal_id": "amzn-2023-23",
+     "title": "Report on Customer Use of Certain Technologies (Rekognition facial recognition)",
+     "critical": false,
+     "date": "2023",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Harrington Investments"
+     ],
+     "co_filers": 3,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923044708/tm233694d2_def14a.htm"
+    },
+    {
+     "proposal_id": "amzn-2023-7",
+     "title": "Report on Customer Due Diligence",
+     "critical": false,
+     "date": "2023-05-24",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 34.18,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923065457/tm2315877d1_8k.htm"
+    },
+    {
+     "proposal_id": "amzn-2023-23",
+     "title": "Report on Customer Use of Certain Technologies (Rekognition facial recognition)",
+     "critical": false,
+     "date": "2023-05-24",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 37.48,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923065457/tm2315877d1_8k.htm"
+    },
+    {
+     "proposal_id": "amzn-2024-6",
+     "title": "Report on Customer Due Diligence",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "American Baptist Home Mission Societies"
+     ],
+     "co_filers": 2,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm"
+    },
+    {
+     "proposal_id": "amzn-2024-14",
+     "title": "Report on Customer Use of Certain Technologies (Rekognition)",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Harrington Investments"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm"
+    },
+    {
+     "proposal_id": "amzn-2024-6",
+     "title": "Report on Customer Due Diligence",
+     "critical": false,
+     "date": "2024-05-22",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Investor Advocates for Social Justice"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465924009029/o514240px14a6g.htm"
+    },
+    {
+     "proposal_id": "amzn-2024-6",
+     "title": "Report on Customer Due Diligence",
+     "critical": false,
+     "date": "2024-05-22",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation against the proposal",
+     "by": [
+      "JLens",
+      "Anti-Defamation League"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000092189524000827/px14a6g14098002_04112024.htm"
+    },
+    {
+     "proposal_id": "amzn-2024-6",
+     "title": "Report on Customer Due Diligence",
+     "critical": false,
+     "date": "2024-05-22",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 16.79,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924065117/tm2414140d1_8k.htm"
+    },
+    {
+     "proposal_id": "amzn-2024-14",
+     "title": "Report on Customer Use of Certain Technologies (Rekognition)",
+     "critical": false,
+     "date": "2024-05-22",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 19.08,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924065117/tm2414140d1_8k.htm"
+    },
+    {
+     "proposal_id": "amzn-2026-responsible-ai-sales",
+     "title": "Responsible AI policies vs sales of AI/cloud to militaries and DHS",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "American Baptist Home Mission Societies"
+     ],
+     "co_filers": 10,
+     "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/americanbaptisthomeamazon13026.pdf"
+    },
+    {
+     "proposal_id": "amzn-2026-responsible-ai-sales",
+     "title": "Responsible AI policies vs sales of AI/cloud to militaries and DHS",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "excluded",
+     "label": "Excluded by the company",
+     "detail": "Excluded by Amazon under Rule 14a-8(i)(12) (resubmission): a similar 2024 proposal got 16.8%, below the 25% needed. SEC staff replied, \"based solely on\" Amazon's representation, that it would not object (January 30, 2026); staff did not evaluate the basis.",
+     "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/americanbaptisthomeamazon13026.pdf"
+    },
+    {
+     "proposal_id": "amzn-2026-responsible-ai-sales",
+     "title": "Responsible AI policies vs sales of AI/cloud to militaries and DHS",
+     "critical": false,
+     "date": "2026-05",
+     "precision": "month",
+     "state": "escalation",
+     "label": "Exempt solicitation urging votes against four directors over the exclusion",
+     "by": [
+      "Investor Advocates for Social Justice",
+      "NorthStar Asset Management",
+      "Zevin Asset Management",
+      "Congregation of the Sisters of St. Joseph of Peace"
+     ],
+     "more": 14,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000121465926006345/amz515260px14a6g.htm"
+    }
+   ],
+   "proposals": [
+    "amzn-2023-7",
+    "amzn-2023-23",
+    "amzn-2024-6",
+    "amzn-2024-14",
+    "amzn-2026-responsible-ai-sales"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 18,
+   "filings": 5,
+   "votes": 4,
+   "best_support": 37.48,
+   "ledger_ids": []
+  },
+  {
+   "id": "AMZN|ask-dc-climate-energy",
+   "company": "AMZN",
+   "ask": "ask-dc-climate-energy",
+   "ask_label": "Data center energy, emissions and costs",
+   "states": [
+    {
+     "proposal_id": "amzn-2025-7",
+     "title": "Additional Reporting on Impact of Data Centers on Climate Commitments",
+     "critical": false,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Amazon Employees for Climate Justice",
+      "Majority Action"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm"
+    },
+    {
+     "proposal_id": "amzn-2025-7",
+     "title": "Additional Reporting on Impact of Data Centers on Climate Commitments",
+     "critical": false,
+     "date": "2025-05-21",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Majority Action"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000199937125005942/amzn-px14a6g_051225.htm"
+    },
+    {
+     "proposal_id": "amzn-2025-7",
+     "title": "Additional Reporting on Impact of Data Centers on Climate Commitments",
+     "critical": false,
+     "date": "2025-05-21",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 20.11,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm"
+    },
+    {
+     "proposal_id": "amzn-2026-5",
+     "title": "Additional Reporting on Impact of Data Centers on Climate Commitments",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "As You Sow",
+      "Mercy Investment Services"
+     ],
+     "co_filers": 1,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    },
+    {
+     "proposal_id": "amzn-2026-climate-cost",
+     "title": "Report on Impact of Climate Commitments",
+     "critical": true,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "National Legal and Policy Center"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm"
+    },
+    {
+     "proposal_id": "amzn-2026-5",
+     "title": "Additional Reporting on Impact of Data Centers on Climate Commitments",
+     "critical": false,
+     "date": "2026-05-20",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 18.39,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926065717/tm2614288d1_8k.htm"
+    },
+    {
+     "proposal_id": "amzn-2026-climate-cost",
+     "title": "Report on Impact of Climate Commitments",
+     "critical": true,
+     "date": "2026-05-20",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 1.23,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926065717/tm2614288d1_8k.htm"
+    }
+   ],
+   "proposals": [
+    "amzn-2025-7",
+    "amzn-2026-5",
+    "amzn-2026-climate-cost"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 5,
+   "filings": 3,
+   "votes": 2,
+   "best_support": 20.11,
+   "ledger_ids": []
+  },
+  {
+   "id": "AXON|ask-customer-due-diligence",
+   "company": "AXON",
+   "ask": "ask-customer-due-diligence",
+   "ask_label": "Customer and end-use due diligence (surveillance, military, facial recognition)",
+   "states": [
+    {
+     "proposal_id": "axon-2023-6",
+     "title": "Shareholder Proposal to Discontinue the Development of a Non-Lethal TASER Drone System",
+     "critical": false,
+     "date": "2023",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Jubitz Foundation (Jubitz Family Foundation)"
+     ],
+     "co_filers": 1,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1069183/000106918323000019/axon-20230531xdef14a.htm"
+    },
+    {
+     "proposal_id": "axon-2023-6",
+     "title": "Shareholder Proposal to Discontinue the Development of a Non-Lethal TASER Drone System",
+     "critical": false,
+     "date": "2023-05-31",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Open MIC (Open Media and Information Companies Initiative)"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1069183/000121465923006485/s53230px14a6g.htm"
+    },
+    {
+     "proposal_id": "axon-2023-6",
+     "title": "Shareholder Proposal to Discontinue the Development of a Non-Lethal TASER Drone System",
+     "critical": false,
+     "date": "2023-05-31",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 13.67,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1069183/000155837023010762/axon-20230531x8k.htm"
+    }
+   ],
+   "proposals": [
+    "axon-2023-6"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 2,
+   "filings": 1,
+   "votes": 1,
+   "best_support": 13.67,
+   "ledger_ids": []
+  },
+  {
+   "id": "CMCSA|ask-ai-oversight-reporting",
+   "company": "CMCSA",
+   "ask": "ask-ai-oversight-reporting",
+   "ask_label": "Board oversight and AI transparency reporting",
+   "states": [
+    {
+     "proposal_id": "cmcsa-2024-afl-ai",
+     "title": "AI Transparency Report",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "AFL-CIO (Equity Index Funds)",
+      "AFL-CIO Reserve Fund"
+     ],
+     "co_filers": 0,
+     "source_url": "https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/"
+    },
+    {
+     "proposal_id": "cmcsa-2024-afl-ai",
+     "title": "AI Transparency Report",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "withdrawn_commitment",
+     "label": "Withdrawn after a company commitment",
+     "detail": "Withdrawn by the AFL-CIO after Comcast committed to enhance its disclosure on its use of AI, as reported by FTI Consulting on the Harvard Law School Forum, citing Responsible Investor. No SEC no-action letter; withdrawal date not public.",
+     "source_url": "https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/"
+    },
+    {
+     "proposal_id": "cmcsa-2024-afl-ai",
+     "title": "AI Transparency Report",
+     "critical": false,
+     "date": "2025-04",
+     "precision": "month",
+     "state": "delivery",
+     "label": "Commitment partly delivered",
+     "detail": "Evidence in the commitments ledger below.",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1166691/000130817925000504/cmcsa012438-def14a.htm"
+    }
+   ],
+   "proposals": [
+    "cmcsa-2024-afl-ai"
+   ],
+   "critical_only": false,
+   "stage": 3,
+   "stage_label": "Commitment made",
+   "stage_basis": "a withdrawal after a company commitment",
+   "filer_count": 2,
+   "filings": 1,
+   "votes": 0,
+   "best_support": null,
+   "ledger_ids": [
+    "cmcsa-2024-afl-ai-disclosure"
+   ]
+  },
+  {
+   "id": "CRM|ask-ai-oversight-reporting",
+   "company": "CRM",
+   "ask": "ask-ai-oversight-reporting",
+   "ask_label": "Board oversight and AI transparency reporting",
+   "states": [
+    {
+     "proposal_id": "crm-2026-ai-human-rights",
+     "title": "AI-Related Human Rights Risks",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "NorthStar Asset Management"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf"
+    },
+    {
+     "proposal_id": "crm-2026-ai-human-rights",
+     "title": "AI-Related Human Rights Risks",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "withdrawn",
+     "label": "Withdrawn",
+     "detail": "Not in Salesforce's 2026 proxy statement, whose only stockholder proposal was cumulative voting (NLPC). No SEC Rule 14a-8 correspondence for it is posted. The PRI resolution database lists it as withdrawn; no public reason or agreement terms found.",
+     "source_url": "https://collaborate.unpri.org/group/38911/home"
+    }
+   ],
+   "proposals": [
+    "crm-2026-ai-human-rights"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 1,
+   "filings": 1,
+   "votes": 0,
+   "best_support": null,
+   "ledger_ids": []
+  },
+  {
+   "id": "CRM|ask-customer-due-diligence",
+   "company": "CRM",
+   "ask": "ask-customer-due-diligence",
+   "ask_label": "Customer and end-use due diligence (surveillance, military, facial recognition)",
+   "states": [
+    {
+     "proposal_id": "crm-2026-dual-use-defense",
+     "title": "Dual-use and Defense Technologies",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Open MIC (Open Media and Information Companies Initiative)"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/scottsalesforce21026.pdf"
+    },
+    {
+     "proposal_id": "crm-2026-dual-use-defense",
+     "title": "Dual-use and Defense Technologies",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "excluded",
+     "label": "Excluded by the company",
+     "detail": "Excluded by Salesforce under Rule 14a-8(b) and 14a-8(f)(1): the proponent did not give adequate proof of three years' continuous ownership after a deficiency notice. SEC staff said they would not object, based solely on the company's representation (February 10, 2026).",
+     "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/scottsalesforce21026.pdf"
+    }
+   ],
+   "proposals": [
+    "crm-2026-dual-use-defense"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 1,
+   "filings": 1,
+   "votes": 0,
+   "best_support": null,
+   "ledger_ids": []
+  },
+  {
+   "id": "CSCO|ask-customer-due-diligence",
+   "company": "CSCO",
+   "ask": "ask-customer-due-diligence",
+   "ask_label": "Customer and end-use due diligence (surveillance, military, facial recognition)",
+   "states": [
+    {
+     "proposal_id": "csco-2026-5",
+     "title": "Human rights impact assessment of high-risk customers and end uses",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Azzad Asset Management"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm"
+    },
+    {
+     "proposal_id": "csco-2026-5",
+     "title": "Human rights impact assessment of high-risk customers and end uses",
+     "critical": false,
+     "date": "2026-12-15",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Azzad Asset Management",
+      "Ekō (formerly SumOfUs)"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/858877/000121465926014472/x1116261px14a6g.htm"
+    },
+    {
+     "proposal_id": "csco-2026-5",
+     "title": "Human rights impact assessment of high-risk customers and end uses",
+     "critical": false,
+     "date": "2026-12-15",
+     "precision": "day",
+     "state": "upcoming",
+     "label": "On the ballot",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm"
+    }
+   ],
+   "proposals": [
+    "csco-2026-5"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 1,
+   "filings": 1,
+   "votes": 0,
+   "best_support": null,
+   "ledger_ids": []
+  },
+  {
+   "id": "DIS|ask-ai-oversight-reporting",
+   "company": "DIS",
+   "ask": "ask-ai-oversight-reporting",
+   "ask_label": "Board oversight and AI transparency reporting",
+   "states": [
+    {
+     "proposal_id": "dis-2024-afl-ai",
+     "title": "AI transparency report (AFL-CIO Equity Index Funds)",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "AFL-CIO (Equity Index Funds)",
+      "AFL-CIO Reserve Fund"
+     ],
+     "co_filers": 0,
+     "source_url": "https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/"
+    },
+    {
+     "proposal_id": "dis-2024-afl-ai",
+     "title": "AI transparency report (AFL-CIO Equity Index Funds)",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "withdrawn_commitment",
+     "label": "Withdrawn after a company commitment",
+     "detail": "Withdrawn by the AFL-CIO after Disney committed to enhance its disclosure on its use of AI, as reported by FTI Consulting on the Harvard Law School Forum, citing Responsible Investor. SEC staff had earlier (January 3, 2024) declined Disney's request to exclude it under Rule 14a-8(i)(7). Withdrawal date not public.",
+     "source_url": "https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/"
+    },
+    {
+     "proposal_id": "dis-2024-afl-ai",
+     "title": "AI transparency report (AFL-CIO Equity Index Funds)",
+     "critical": false,
+     "date": "2024-02-01",
+     "precision": "day",
+     "state": "delivery",
+     "label": "Commitment delivered",
+     "detail": "Evidence in the commitments ledger below.",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448924000073/dis-20240201.htm"
+    }
+   ],
+   "proposals": [
+    "dis-2024-afl-ai"
+   ],
+   "critical_only": false,
+   "stage": 4,
+   "stage_label": "Commitment delivered",
+   "stage_basis": "the company's own report of delivery",
+   "filer_count": 2,
+   "filings": 1,
+   "votes": 0,
+   "best_support": null,
+   "ledger_ids": [
+    "dis-2024-afl-ai-disclosure"
+   ]
+  },
+  {
+   "id": "DLR|ask-dc-water",
+   "company": "DLR",
+   "ask": "ask-dc-water",
+   "ask_label": "Data center water use",
+   "states": [
+    {
+     "proposal_id": "dlr-2025-5",
+     "title": "Stockholder Proposal Regarding Human Right to Water",
+     "critical": false,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "NorthStar Asset Management"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817925000509/dlr000000-def14a.htm"
+    },
+    {
+     "proposal_id": "dlr-2025-5",
+     "title": "Stockholder Proposal Regarding Human Right to Water",
+     "critical": false,
+     "date": "2025-06-06",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "NorthStar Asset Management"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000121465925008240/z522250px14a6g.htm"
+    },
+    {
+     "proposal_id": "dlr-2025-5",
+     "title": "Stockholder Proposal Regarding Human Right to Water",
+     "critical": false,
+     "date": "2025-06-06",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 10.37,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000155837025008511/dlr-20250606x8k.htm"
+    },
+    {
+     "proposal_id": "dlr-2026-4",
+     "title": "Stockholder Proposal Regarding Enhanced Water Risk Disclosure",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Proxy Impact",
+      "NorthStar Asset Management"
+     ],
+     "co_filers": 2,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm"
+    },
+    {
+     "proposal_id": "dlr-2026-4",
+     "title": "Stockholder Proposal Regarding Enhanced Water Risk Disclosure",
+     "critical": false,
+     "date": "2026-05-29",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 22.47,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926068907/dlr-20260529x8k.htm"
+    }
+   ],
+   "proposals": [
+    "dlr-2025-5",
+    "dlr-2026-4"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 3,
+   "filings": 2,
+   "votes": 2,
+   "best_support": 22.47,
+   "ledger_ids": []
+  },
+  {
+   "id": "GOOGL|other",
+   "company": "GOOGL",
+   "ask": null,
+   "ask_label": "Harms to people using AI products",
+   "states": [
+    {
+     "proposal_id": "googl-2025-15(floor)",
+     "title": "Report on implementing AI app preload capabilities into Android OS (presented at the meeting; not in the proxy)",
+     "critical": false,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+    },
+    {
+     "proposal_id": "googl-2025-15(floor)",
+     "title": "Report on implementing AI app preload capabilities into Android OS (presented at the meeting; not in the proxy)",
+     "critical": false,
+     "date": "2025-06-06",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": null,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+    }
+   ],
+   "proposals": [
+    "googl-2025-15(floor)"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 0,
+   "filings": 1,
+   "votes": 0,
+   "best_support": null,
+   "ledger_ids": []
+  },
+  {
+   "id": "GOOGL|ask-ai-bias",
+   "company": "GOOGL",
+   "ask": "ask-ai-bias",
+   "ask_label": "AI bias, discrimination and viewpoint",
+   "states": [
+    {
+     "proposal_id": "googl-2025-10",
+     "title": "Report on Risks of Discrimination in GenAI",
+     "critical": false,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Inspire Investing"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+    },
+    {
+     "proposal_id": "googl-2025-10",
+     "title": "Report on Risks of Discrimination in GenAI",
+     "critical": false,
+     "date": "2025-06-06",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Inspire Investing"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000109690625000830/insp_px14a6g.htm"
+    },
+    {
+     "proposal_id": "googl-2025-10",
+     "title": "Report on Risks of Discrimination in GenAI",
+     "critical": false,
+     "date": "2025-06-06",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 0.46,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+    }
+   ],
+   "proposals": [
+    "googl-2025-10"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 1,
+   "filings": 1,
+   "votes": 1,
+   "best_support": 0.46,
+   "ledger_ids": []
+  },
+  {
+   "id": "GOOGL|ask-ai-misinformation",
+   "company": "GOOGL",
+   "ask": "ask-ai-misinformation",
+   "ask_label": "AI misinformation and disinformation",
+   "states": [
+    {
+     "proposal_id": "googl-2024-12",
+     "title": "Report on Generative AI Misinformation and Disinformation Risks",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Arjuna Capital"
+     ],
+     "co_filers": 2,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
+    },
+    {
+     "proposal_id": "googl-2024-12",
+     "title": "Report on Generative AI Misinformation and Disinformation Risks",
+     "critical": false,
+     "date": "2024-06-07",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Arjuna Capital"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924008379/o532411px14a6g.htm"
+    },
+    {
+     "proposal_id": "googl-2024-12",
+     "title": "Report on Generative AI Misinformation and Disinformation Risks",
+     "critical": false,
+     "date": "2024-06-07",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Open MIC (Open Media and Information Companies Initiative)"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924008462/o56248px14a6g.htm"
+    },
+    {
+     "proposal_id": "googl-2024-12",
+     "title": "Report on Generative AI Misinformation and Disinformation Risks",
+     "critical": false,
+     "date": "2024-06-07",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 17.61,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm"
+    },
+    {
+     "proposal_id": "googl-2026-13",
+     "title": "Report on AI-Generated Misinformation",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Vancity Investment Management"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "proposal_id": "googl-2026-13",
+     "title": "Report on AI-Generated Misinformation",
+     "critical": false,
+     "date": "2026-06-05",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 9.3,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm"
+    }
+   ],
+   "proposals": [
+    "googl-2024-12",
+    "googl-2026-13"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 4,
+   "filings": 2,
+   "votes": 2,
+   "best_support": 17.61,
+   "ledger_ids": []
+  },
+  {
+   "id": "GOOGL|ask-ai-oversight-reporting",
+   "company": "GOOGL",
+   "ask": "ask-ai-oversight-reporting",
+   "ask_label": "Board oversight and AI transparency reporting",
+   "states": [
+    {
+     "proposal_id": "googl-2023-12",
+     "title": "Algorithm Disclosures",
+     "critical": false,
+     "date": "2023",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Trillium Asset Management"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+    },
+    {
+     "proposal_id": "googl-2023-audit-committee-review",
+     "title": "Performance Review of the Audit and Compliance Committee",
+     "critical": false,
+     "date": "2023",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Harrington Investments"
+     ],
+     "co_filers": 2,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+    },
+    {
+     "proposal_id": "googl-2023-12",
+     "title": "Algorithm Disclosures",
+     "critical": false,
+     "date": "2023-06-02",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Trillium Asset Management"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923006504/r54230px14a6g.htm"
+    },
+    {
+     "proposal_id": "googl-2023-audit-committee-review",
+     "title": "Performance Review of the Audit and Compliance Committee",
+     "critical": false,
+     "date": "2023-06-02",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Harrington Investments"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923005962/b425233px14a6g.htm"
+    },
+    {
+     "proposal_id": "googl-2023-12",
+     "title": "Algorithm Disclosures",
+     "critical": false,
+     "date": "2023-06-02",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 17.02,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm"
+    },
+    {
+     "proposal_id": "googl-2023-audit-committee-review",
+     "title": "Performance Review of the Audit and Compliance Committee",
+     "critical": false,
+     "date": "2023-06-02",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 8.36,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm"
+    },
+    {
+     "proposal_id": "googl-2024-11",
+     "title": "AI Principles and Board Oversight",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Trillium Asset Management"
+     ],
+     "co_filers": 3,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
+    },
+    {
+     "proposal_id": "googl-2024-11",
+     "title": "AI Principles and Board Oversight",
+     "critical": false,
+     "date": "2024-06-07",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Trillium Asset Management"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924008582/e58244px14a6g.htm"
+    },
+    {
+     "proposal_id": "googl-2024-11",
+     "title": "AI Principles and Board Oversight",
+     "critical": false,
+     "date": "2024-06-07",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 7.4,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm"
+    },
+    {
+     "proposal_id": "googl-2026-12",
+     "title": "AI Board Oversight",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "SHARE (Shareholder Association for Research and Education)",
+      "Pension Plan of The United Church of Canada"
+     ],
+     "co_filers": 2,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "proposal_id": "googl-2026-12",
+     "title": "AI Board Oversight",
+     "critical": false,
+     "date": "2026-06-05",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "SHARE (Shareholder Association for Research and Education)"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465926005268/o429268px14a6g.htm"
+    },
+    {
+     "proposal_id": "googl-2026-12",
+     "title": "AI Board Oversight",
+     "critical": false,
+     "date": "2026-06-05",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 3.74,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm"
+    }
+   ],
+   "proposals": [
+    "googl-2023-12",
+    "googl-2023-audit-committee-review",
+    "googl-2024-11",
+    "googl-2026-12"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 11,
+   "filings": 4,
+   "votes": 4,
+   "best_support": 17.02,
+   "ledger_ids": []
+  },
+  {
+   "id": "GOOGL|ask-ai-training-data",
+   "company": "GOOGL",
+   "ask": "ask-ai-training-data",
+   "ask_label": "Training data and user data in AI",
+   "states": [
+    {
+     "proposal_id": "googl-2025-11",
+     "title": "Report on AI Data Usage Oversight",
+     "critical": true,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "National Legal and Policy Center"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+    },
+    {
+     "proposal_id": "googl-2025-11",
+     "title": "Report on AI Data Usage Oversight",
+     "critical": true,
+     "date": "2025-06-06",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "National Legal and Policy Center"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000109690625000841/nlpc_px14a6g.htm"
+    },
+    {
+     "proposal_id": "googl-2025-11",
+     "title": "Report on AI Data Usage Oversight",
+     "critical": true,
+     "date": "2025-06-06",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 12.38,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+    },
+    {
+     "proposal_id": "googl-2026-11",
+     "title": "Report on Data Privacy",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Zevin Asset Management"
+     ],
+     "co_filers": 7,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "proposal_id": "googl-2026-14",
+     "title": "Report on AI Data Usage Oversight",
+     "critical": true,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "National Legal and Policy Center"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "proposal_id": "googl-2026-11",
+     "title": "Report on Data Privacy",
+     "critical": false,
+     "date": "2026-06-05",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Zevin Asset Management"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465926005597/o55262px14a6g.htm"
+    },
+    {
+     "proposal_id": "googl-2026-11",
+     "title": "Report on Data Privacy",
+     "critical": false,
+     "date": "2026-06-05",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Ekō (formerly SumOfUs)"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465926006524/d518261px14a6g.htm"
+    },
+    {
+     "proposal_id": "googl-2026-11",
+     "title": "Report on Data Privacy",
+     "critical": false,
+     "date": "2026-06-05",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation against the proposal",
+     "by": [
+      "JLens",
+      "Anti-Defamation League"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000092189526001098/px14a6g14098010_04282026.htm"
+    },
+    {
+     "proposal_id": "googl-2026-11",
+     "title": "Report on Data Privacy",
+     "critical": false,
+     "date": "2026-06-05",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 6.03,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm"
+    },
+    {
+     "proposal_id": "googl-2026-14",
+     "title": "Report on AI Data Usage Oversight",
+     "critical": true,
+     "date": "2026-06-05",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 12.26,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm"
+    }
+   ],
+   "proposals": [
+    "googl-2025-11",
+    "googl-2026-11",
+    "googl-2026-14"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 9,
+   "filings": 3,
+   "votes": 1,
+   "best_support": 6.03,
+   "ledger_ids": []
+  },
+  {
+   "id": "GOOGL|ask-child-safety",
+   "company": "GOOGL",
+   "ask": "ask-child-safety",
+   "ask_label": "Child safety and AI",
+   "states": [
+    {
+     "proposal_id": "googl-2024-child-online-safety",
+     "title": "Report on Online Safety for Children",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Boston Common Asset Management"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
+    },
+    {
+     "proposal_id": "googl-2024-child-online-safety",
+     "title": "Report on Online Safety for Children",
+     "critical": false,
+     "date": "2024-06-07",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 14.24,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm"
+    }
+   ],
+   "proposals": [
+    "googl-2024-child-online-safety"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 1,
+   "filings": 1,
+   "votes": 1,
+   "best_support": 14.24,
+   "ledger_ids": []
+  },
+  {
+   "id": "GOOGL|ask-customer-due-diligence",
+   "company": "GOOGL",
+   "ask": "ask-customer-due-diligence",
+   "ask_label": "Customer and end-use due diligence (surveillance, military, facial recognition)",
+   "states": [
+    {
+     "proposal_id": "googl-2025-9",
+     "title": "Report on Due Diligence Process to Assess Human Rights Risks in CAHRA",
+     "critical": false,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Zevin Asset Management"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+    },
+    {
+     "proposal_id": "googl-2025-9",
+     "title": "Report on Due Diligence Process to Assess Human Rights Risks in CAHRA",
+     "critical": false,
+     "date": "2025-06-06",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Zevin Asset Management"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925007295/p59255px14a6g.htm"
+    },
+    {
+     "proposal_id": "googl-2025-9",
+     "title": "Report on Due Diligence Process to Assess Human Rights Risks in CAHRA",
+     "critical": false,
+     "date": "2025-06-06",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation against the proposal",
+     "by": [
+      "Anti-Defamation League",
+      "JLens"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000092189525001315/px14a6g14098010_05072025.htm"
+    },
+    {
+     "proposal_id": "googl-2025-9",
+     "title": "Report on Due Diligence Process to Assess Human Rights Risks in CAHRA",
+     "critical": false,
+     "date": "2025-06-06",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 4.51,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+    }
+   ],
+   "proposals": [
+    "googl-2025-9"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 1,
+   "filings": 1,
+   "votes": 1,
+   "best_support": 4.51,
+   "ledger_ids": []
+  },
+  {
+   "id": "GOOGL|ask-dc-climate-energy",
+   "company": "GOOGL",
+   "ask": "ask-dc-climate-energy",
+   "ask_label": "Data center energy, emissions and costs",
+   "states": [
+    {
+     "proposal_id": "googl-2025-7",
+     "title": "Enhanced Disclosure on Climate Goals",
+     "critical": false,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Trillium Asset Management"
+     ],
+     "co_filers": 2,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+    },
+    {
+     "proposal_id": "googl-2025-7",
+     "title": "Enhanced Disclosure on Climate Goals",
+     "critical": false,
+     "date": "2025-06-06",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Trillium Asset Management"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006528/w429250px14a6g.htm"
+    },
+    {
+     "proposal_id": "googl-2025-7",
+     "title": "Enhanced Disclosure on Climate Goals",
+     "critical": false,
+     "date": "2025-06-06",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 8.21,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+    },
+    {
+     "proposal_id": "googl-2026-5",
+     "title": "Enhanced Disclosure on Climate Goals",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Trillium Asset Management"
+     ],
+     "co_filers": 2,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "proposal_id": "googl-2026-5",
+     "title": "Enhanced Disclosure on Climate Goals",
+     "critical": false,
+     "date": "2026-06-05",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Trillium Asset Management"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465926005129/o427262px14a6g.htm"
+    },
+    {
+     "proposal_id": "googl-2026-5",
+     "title": "Enhanced Disclosure on Climate Goals",
+     "critical": false,
+     "date": "2026-06-05",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 7.35,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm"
+    }
+   ],
+   "proposals": [
+    "googl-2025-7",
+    "googl-2026-5"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 5,
+   "filings": 2,
+   "votes": 2,
+   "best_support": 8.21,
+   "ledger_ids": []
+  },
+  {
+   "id": "GOOGL|ask-dc-siting-rights",
+   "company": "GOOGL",
+   "ask": "ask-dc-siting-rights",
+   "ask_label": "Human rights in data center siting",
+   "states": [
+    {
+     "proposal_id": "googl-2023-10",
+     "title": "Human Rights Assessment of Data Center Siting",
+     "critical": false,
+     "date": "2023",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Ekō (formerly SumOfUs)"
+     ],
+     "co_filers": 3,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+    },
+    {
+     "proposal_id": "googl-2023-10",
+     "title": "Human Rights Assessment of Data Center Siting",
+     "critical": false,
+     "date": "2023-06-02",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Ekō (formerly SumOfUs)"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465923007656/s522230px14a6g.htm"
+    },
+    {
+     "proposal_id": "googl-2023-10",
+     "title": "Human Rights Assessment of Data Center Siting",
+     "critical": false,
+     "date": "2023-06-02",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 13.11,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm"
+    }
+   ],
+   "proposals": [
+    "googl-2023-10"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 4,
+   "filings": 1,
+   "votes": 1,
+   "best_support": 13.11,
+   "ledger_ids": []
+  },
+  {
+   "id": "GOOGL|ask-dc-water",
+   "company": "GOOGL",
+   "ask": "ask-dc-water",
+   "ask_label": "Data center water use",
+   "states": [
+    {
+     "proposal_id": "googl-2026-6",
+     "title": "Report on Water Usage and AI Development",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Inspire Investing"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm"
+    },
+    {
+     "proposal_id": "googl-2026-6",
+     "title": "Report on Water Usage and AI Development",
+     "critical": false,
+     "date": "2026-06-05",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 1.5,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm"
+    }
+   ],
+   "proposals": [
+    "googl-2026-6"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 1,
+   "filings": 1,
+   "votes": 1,
+   "best_support": 1.5,
+   "ledger_ids": []
+  },
+  {
+   "id": "GOOGL|ask-targeted-ads-rights",
+   "company": "GOOGL",
+   "ask": "ask-targeted-ads-rights",
+   "ask_label": "Human rights of AI-driven targeted ads",
+   "states": [
+    {
+     "proposal_id": "googl-2023-11",
+     "title": "Human Rights Assessment of Targeted Ad Policies and Practices",
+     "critical": false,
+     "date": "2023",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "SHARE (Shareholder Association for Research and Education)",
+      "Pension Plan of The United Church of Canada"
+     ],
+     "co_filers": 1,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm"
+    },
+    {
+     "proposal_id": "googl-2023-11",
+     "title": "Human Rights Assessment of Targeted Ad Policies and Practices",
+     "critical": false,
+     "date": "2023-06-02",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 18.02,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm"
+    },
+    {
+     "proposal_id": "googl-2024-13",
+     "title": "Human Rights Assessment of AI-Driven Targeted Ad Policies",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "SHARE (Shareholder Association for Research and Education)",
+      "Pension Plan of The United Church of Canada"
+     ],
+     "co_filers": 2,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm"
+    },
+    {
+     "proposal_id": "googl-2024-13",
+     "title": "Human Rights Assessment of AI-Driven Targeted Ad Policies",
+     "critical": false,
+     "date": "2024-06-07",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "SHARE (Shareholder Association for Research and Education)"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465924007961/o51248px14a6g.htm"
+    },
+    {
+     "proposal_id": "googl-2024-13",
+     "title": "Human Rights Assessment of AI-Driven Targeted Ad Policies",
+     "critical": false,
+     "date": "2024-06-07",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 18.56,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm"
+    },
+    {
+     "proposal_id": "googl-2025-12",
+     "title": "Human Rights Impact Assessment of AI-Driven Targeted Ad Policies",
+     "critical": false,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "SHARE (Shareholder Association for Research and Education)",
+      "Pension Plan of The United Church of Canada"
+     ],
+     "co_filers": 10,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm"
+    },
+    {
+     "proposal_id": "googl-2025-12",
+     "title": "Human Rights Impact Assessment of AI-Driven Targeted Ad Policies",
+     "critical": false,
+     "date": "2025-06-06",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "SHARE (Shareholder Association for Research and Education)"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000121465925006690/b430252px14a6g.htm"
+    },
+    {
+     "proposal_id": "googl-2025-12",
+     "title": "Human Rights Impact Assessment of AI-Driven Targeted Ad Policies",
+     "critical": false,
+     "date": "2025-06-06",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 14.29,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+    }
+   ],
+   "proposals": [
+    "googl-2023-11",
+    "googl-2024-13",
+    "googl-2025-12"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 12,
+   "filings": 3,
+   "votes": 3,
+   "best_support": 18.56,
+   "ledger_ids": []
+  },
+  {
+   "id": "IBM|ask-ai-bias",
+   "company": "IBM",
+   "ask": "ask-ai-bias",
+   "ask_label": "AI bias, discrimination and viewpoint",
+   "states": [
+    {
+     "proposal_id": "ibm-2026-7",
+     "title": "Stockholder proposal requesting a report on AI bias",
+     "critical": true,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "National Center for Public Policy Research"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm"
+    },
+    {
+     "proposal_id": "ibm-2026-7",
+     "title": "Stockholder proposal requesting a report on AI bias",
+     "critical": true,
+     "date": "2026-04-28",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 2.45,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000043/ibm-20260428.htm"
+    }
+   ],
+   "proposals": [
+    "ibm-2026-7"
+   ],
+   "critical_only": true,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 1,
+   "filings": 1,
+   "votes": 0,
+   "best_support": null,
+   "ledger_ids": []
+  },
+  {
+   "id": "META|other",
+   "company": "META",
+   "ask": null,
+   "ask_label": "Harms to people using AI products",
+   "states": [
+    {
+     "proposal_id": "meta-2023-community-standards",
+     "title": "Report on Enforcement of Community Standards",
+     "critical": false,
+     "date": "2023",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "As You Sow",
+      "Meyer Memorial Trust"
+     ],
+     "co_filers": 1,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
+    },
+    {
+     "proposal_id": "meta-2023-community-standards",
+     "title": "Report on Enforcement of Community Standards",
+     "critical": false,
+     "date": "2023-05-31",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "As You Sow"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465923006039/g427230px14a6g.htm"
+    },
+    {
+     "proposal_id": "meta-2023-community-standards",
+     "title": "Report on Enforcement of Community Standards",
+     "critical": false,
+     "date": "2023-05-31",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 7.16,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000083/meta-20230531.htm"
+    }
+   ],
+   "proposals": [
+    "meta-2023-community-standards"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 3,
+   "filings": 1,
+   "votes": 1,
+   "best_support": 7.16,
+   "ledger_ids": []
+  },
+  {
+   "id": "META|ask-ai-misinformation",
+   "company": "META",
+   "ask": "ask-ai-misinformation",
+   "ask_label": "AI misinformation and disinformation",
+   "states": [
+    {
+     "proposal_id": "meta-2024-6",
+     "title": "Report on Generative AI Misinformation and Disinformation Risks",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Arjuna Capital"
+     ],
+     "co_filers": 4,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+    },
+    {
+     "proposal_id": "meta-2024-6",
+     "title": "Report on Generative AI Misinformation and Disinformation Risks",
+     "critical": false,
+     "date": "2024-05-29",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Arjuna Capital"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465924007454/o423247px14a6g.htm"
+    },
+    {
+     "proposal_id": "meta-2024-6",
+     "title": "Report on Generative AI Misinformation and Disinformation Risks",
+     "critical": false,
+     "date": "2024-05-29",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Ekō (formerly SumOfUs)"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465924009867/o523240px14a6g.htm"
+    },
+    {
+     "proposal_id": "meta-2024-6",
+     "title": "Report on Generative AI Misinformation and Disinformation Risks",
+     "critical": false,
+     "date": "2024-05-29",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 16.73,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000057/meta-20240529.htm"
+    }
+   ],
+   "proposals": [
+    "meta-2024-6"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 5,
+   "filings": 1,
+   "votes": 1,
+   "best_support": 16.73,
+   "ledger_ids": []
+  },
+  {
+   "id": "META|ask-ai-training-data",
+   "company": "META",
+   "ask": "ask-ai-training-data",
+   "ask_label": "Training data and user data in AI",
+   "states": [
+    {
+     "proposal_id": "meta-2025-11",
+     "title": "Report on AI Data Usage Oversight",
+     "critical": true,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "National Legal and Policy Center"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+    },
+    {
+     "proposal_id": "meta-2025-11",
+     "title": "Report on AI Data Usage Oversight",
+     "critical": true,
+     "date": "2025-05-28",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "National Legal and Policy Center"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000109690625000701/nlpc_px14a6g.htm"
+    },
+    {
+     "proposal_id": "meta-2025-11",
+     "title": "Report on AI Data Usage Oversight",
+     "critical": true,
+     "date": "2025-05-28",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 9.93,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm"
+    },
+    {
+     "proposal_id": "meta-2026-3",
+     "title": "Report on AI Data Usage Oversight",
+     "critical": true,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "National Legal and Policy Center"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+    },
+    {
+     "proposal_id": "meta-2026-11",
+     "title": "Data Protection Impact Assessment on Generative AI Chatbots",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Mercy Investment Services"
+     ],
+     "co_filers": 2,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+    },
+    {
+     "proposal_id": "meta-2026-3",
+     "title": "Report on AI Data Usage Oversight",
+     "critical": true,
+     "date": "2026-05-27",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 10.17,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm"
+    },
+    {
+     "proposal_id": "meta-2026-11",
+     "title": "Data Protection Impact Assessment on Generative AI Chatbots",
+     "critical": false,
+     "date": "2026-05-27",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 6.61,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm"
+    }
+   ],
+   "proposals": [
+    "meta-2025-11",
+    "meta-2026-3",
+    "meta-2026-11"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 4,
+   "filings": 3,
+   "votes": 1,
+   "best_support": 6.61,
+   "ledger_ids": []
+  },
+  {
+   "id": "META|ask-child-safety",
+   "company": "META",
+   "ask": "ask-child-safety",
+   "ask_label": "Child safety and AI",
+   "states": [
+    {
+     "proposal_id": "meta-2025-10",
+     "title": "Report on Risks of Deepfakes in Online Child Exploitation",
+     "critical": false,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Bowyer Research"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+    },
+    {
+     "proposal_id": "meta-2025-child-safety",
+     "title": "Report on Child Safety Impacts and Harm Reduction",
+     "critical": false,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Proxy Impact"
+     ],
+     "co_filers": 20,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+    },
+    {
+     "proposal_id": "meta-2025-10",
+     "title": "Report on Risks of Deepfakes in Online Child Exploitation",
+     "critical": false,
+     "date": "2025-05-28",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Bowyer Research"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000109690625000742/bowy_px14a6g.htm"
+    },
+    {
+     "proposal_id": "meta-2025-child-safety",
+     "title": "Report on Child Safety Impacts and Harm Reduction",
+     "critical": false,
+     "date": "2025-05-28",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Proxy Impact"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465925007546/d514251px14a6g.htm"
+    },
+    {
+     "proposal_id": "meta-2025-10",
+     "title": "Report on Risks of Deepfakes in Online Child Exploitation",
+     "critical": false,
+     "date": "2025-05-28",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 6.45,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm"
+    },
+    {
+     "proposal_id": "meta-2025-child-safety",
+     "title": "Report on Child Safety Impacts and Harm Reduction",
+     "critical": false,
+     "date": "2025-05-28",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 13.43,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm"
+    },
+    {
+     "proposal_id": "meta-2026-child-safety-pay",
+     "title": "Integrate Child Safety into Executive Compensation",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Proxy Impact"
+     ],
+     "co_filers": 12,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+    },
+    {
+     "proposal_id": "meta-2026-child-safety-pay",
+     "title": "Integrate Child Safety into Executive Compensation",
+     "critical": false,
+     "date": "2026-05-27",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Intercommunity Peace & Justice Center",
+      "Proxy Impact"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465926006412/o514269px14a6g.htm"
+    },
+    {
+     "proposal_id": "meta-2026-child-safety-pay",
+     "title": "Integrate Child Safety into Executive Compensation",
+     "critical": false,
+     "date": "2026-05-27",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 3.42,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm"
+    }
+   ],
+   "proposals": [
+    "meta-2025-10",
+    "meta-2025-child-safety",
+    "meta-2026-child-safety-pay"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 25,
+   "filings": 3,
+   "votes": 3,
+   "best_support": 13.43,
+   "ledger_ids": []
+  },
+  {
+   "id": "META|ask-dc-climate-energy",
+   "company": "META",
+   "ask": "ask-dc-climate-energy",
+   "ask_label": "Data center energy, emissions and costs",
+   "states": [
+    {
+     "proposal_id": "meta-2025-12",
+     "title": "GHG Emissions Reduction Actions",
+     "critical": false,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "As You Sow"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm"
+    },
+    {
+     "proposal_id": "meta-2025-12",
+     "title": "GHG Emissions Reduction Actions",
+     "critical": false,
+     "date": "2025-05-28",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "As You Sow"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465925006514/p428257px14a6g.htm"
+    },
+    {
+     "proposal_id": "meta-2025-12",
+     "title": "GHG Emissions Reduction Actions",
+     "critical": false,
+     "date": "2025-05-28",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 3.25,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000090/meta-20250528.htm"
+    },
+    {
+     "proposal_id": "meta-2026-9",
+     "title": "Report on Climate Change-Related Commitments",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "As You Sow",
+      "Presbyterian Church (U.S.A.)"
+     ],
+     "co_filers": 5,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm"
+    },
+    {
+     "proposal_id": "meta-2026-9",
+     "title": "Report on Climate Change-Related Commitments",
+     "critical": false,
+     "date": "2026-05-27",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Presbyterian Church (U.S.A.)"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465926003974/o330262px14a6g.htm"
+    },
+    {
+     "proposal_id": "meta-2026-9",
+     "title": "Report on Climate Change-Related Commitments",
+     "critical": false,
+     "date": "2026-05-27",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "As You Sow",
+      "Portico Benefit Services",
+      "Adrian Dominican Sisters"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465926005915/o511264px14a6g.htm"
+    },
+    {
+     "proposal_id": "meta-2026-9",
+     "title": "Report on Climate Change-Related Commitments",
+     "critical": false,
+     "date": "2026-05-27",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 6.91,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm"
+    }
+   ],
+   "proposals": [
+    "meta-2025-12",
+    "meta-2026-9"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 6,
+   "filings": 2,
+   "votes": 2,
+   "best_support": 6.91,
+   "ledger_ids": []
+  },
+  {
+   "id": "META|ask-targeted-ads-rights",
+   "company": "META",
+   "ask": "ask-targeted-ads-rights",
+   "ask_label": "Human rights of AI-driven targeted ads",
+   "states": [
+    {
+     "proposal_id": "meta-2023-5",
+     "title": "Human Rights Impact Assessment of Targeted Advertising",
+     "critical": false,
+     "date": "2023",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Mercy Investment Services"
+     ],
+     "co_filers": 5,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm"
+    },
+    {
+     "proposal_id": "meta-2023-5",
+     "title": "Human Rights Impact Assessment of Targeted Advertising",
+     "critical": false,
+     "date": "2023-05-31",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Mercy Investment Services"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465923006155/b428231px14a6g.htm"
+    },
+    {
+     "proposal_id": "meta-2023-5",
+     "title": "Human Rights Impact Assessment of Targeted Advertising",
+     "critical": false,
+     "date": "2023-05-31",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 17.02,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000083/meta-20230531.htm"
+    },
+    {
+     "proposal_id": "meta-2024-10",
+     "title": "Human Rights Impact Assessment on AI Systems Driving Targeted Advertising",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Mercy Investment Services"
+     ],
+     "co_filers": 1,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm"
+    },
+    {
+     "proposal_id": "meta-2024-10",
+     "title": "Human Rights Impact Assessment on AI Systems Driving Targeted Advertising",
+     "critical": false,
+     "date": "2024-05-29",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Mercy Investment Services"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000121465924007262/b422241px14a6g.htm"
+    },
+    {
+     "proposal_id": "meta-2024-10",
+     "title": "Human Rights Impact Assessment on AI Systems Driving Targeted Advertising",
+     "critical": false,
+     "date": "2024-05-29",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 14.45,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000057/meta-20240529.htm"
+    }
+   ],
+   "proposals": [
+    "meta-2023-5",
+    "meta-2024-10"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 6,
+   "filings": 2,
+   "votes": 2,
+   "best_support": 17.02,
+   "ledger_ids": []
+  },
+  {
+   "id": "MSFT|ask-ai-bias",
+   "company": "MSFT",
+   "ask": "ask-ai-bias",
+   "ask_label": "AI bias, discrimination and viewpoint",
+   "states": [
+    {
+     "proposal_id": "msft-2025-6",
+     "title": "Report on Risks of Censorship in Generative Artificial Intelligence",
+     "critical": false,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Ridgeline Research LLC",
+      "American Conservative Values ETF"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
+    },
+    {
+     "proposal_id": "msft-2025-6",
+     "title": "Report on Risks of Censorship in Generative Artificial Intelligence",
+     "critical": false,
+     "date": "2025-12-05",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 0.69,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+    }
+   ],
+   "proposals": [
+    "msft-2025-6"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 2,
+   "filings": 1,
+   "votes": 1,
+   "best_support": 0.69,
+   "ledger_ids": []
+  },
+  {
+   "id": "MSFT|ask-ai-fossil-fuels",
+   "company": "MSFT",
+   "ask": "ask-ai-fossil-fuels",
+   "ask_label": "AI tools sold for oil and gas",
+   "states": [
+    {
+     "proposal_id": "msft-2024-7",
+     "title": "Report on AI and Machine Learning Tools for Oil and Gas Development and Production",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "As You Sow"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
+    },
+    {
+     "proposal_id": "msft-2024-7",
+     "title": "Report on AI and Machine Learning Tools for Oil and Gas Development and Production",
+     "critical": false,
+     "date": "2024-12-10",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "As You Sow"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465924018029/o1029241px14a6g.htm"
+    },
+    {
+     "proposal_id": "msft-2024-7",
+     "title": "Report on AI and Machine Learning Tools for Oil and Gas Development and Production",
+     "critical": false,
+     "date": "2024-12-10",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 9.71,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
+    },
+    {
+     "proposal_id": "msft-2025-10",
+     "title": "Report on AI and Machine Learning Tools for Oil and Gas Development and Production",
+     "critical": false,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "As You Sow"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
+    },
+    {
+     "proposal_id": "msft-2025-10",
+     "title": "Report on AI and Machine Learning Tools for Oil and Gas Development and Production",
+     "critical": false,
+     "date": "2025-12-05",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "As You Sow"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925016180/u1110251px14a6g.htm"
+    },
+    {
+     "proposal_id": "msft-2025-10",
+     "title": "Report on AI and Machine Learning Tools for Oil and Gas Development and Production",
+     "critical": false,
+     "date": "2025-12-05",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 8.75,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+    }
+   ],
+   "proposals": [
+    "msft-2024-7",
+    "msft-2025-10"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 1,
+   "filings": 2,
+   "votes": 2,
+   "best_support": 9.71,
+   "ledger_ids": []
+  },
+  {
+   "id": "MSFT|ask-ai-misinformation",
+   "company": "MSFT",
+   "ask": "ask-ai-misinformation",
+   "ask_label": "AI misinformation and disinformation",
+   "states": [
+    {
+     "proposal_id": "msft-2023-13",
+     "title": "Report on AI Misinformation and Disinformation",
+     "critical": false,
+     "date": "2023",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Arjuna Capital"
+     ],
+     "co_filers": 3,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm"
+    },
+    {
+     "proposal_id": "msft-2023-13",
+     "title": "Report on AI Misinformation and Disinformation",
+     "critical": false,
+     "date": "2023-12-07",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Arjuna Capital"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465923014650/o117232px14a6g.htm"
+    },
+    {
+     "proposal_id": "msft-2023-13",
+     "title": "Report on AI Misinformation and Disinformation",
+     "critical": false,
+     "date": "2023-12-07",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 21.17,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm"
+    },
+    {
+     "proposal_id": "msft-2024-8",
+     "title": "Report on AI Misinformation and Disinformation",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Arjuna Capital"
+     ],
+     "co_filers": 2,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
+    },
+    {
+     "proposal_id": "msft-2024-8",
+     "title": "Report on AI Misinformation and Disinformation",
+     "critical": false,
+     "date": "2024-12-10",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Arjuna Capital",
+      "Open MIC (Open Media and Information Companies Initiative)"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465924018068/j1030243px14a6g.htm"
+    },
+    {
+     "proposal_id": "msft-2024-8",
+     "title": "Report on AI Misinformation and Disinformation",
+     "critical": false,
+     "date": "2024-12-10",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 18.67,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
+    }
+   ],
+   "proposals": [
+    "msft-2023-13",
+    "msft-2024-8"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 4,
+   "filings": 2,
+   "votes": 2,
+   "best_support": 21.17,
+   "ledger_ids": []
+  },
+  {
+   "id": "MSFT|ask-ai-training-data",
+   "company": "MSFT",
+   "ask": "ask-ai-training-data",
+   "ask_label": "Training data and user data in AI",
+   "states": [
+    {
+     "proposal_id": "msft-2024-9",
+     "title": "Report on AI Data Sourcing Accountability",
+     "critical": true,
+     "date": "2024",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "National Legal and Policy Center"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
+    },
+    {
+     "proposal_id": "msft-2024-9",
+     "title": "Report on AI Data Sourcing Accountability",
+     "critical": true,
+     "date": "2024-12-10",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "National Legal and Policy Center"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000109690624002070/nlpc_px14a6g.htm"
+    },
+    {
+     "proposal_id": "msft-2024-9",
+     "title": "Report on AI Data Sourcing Accountability",
+     "critical": true,
+     "date": "2024-12-10",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 36.19,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
+    },
+    {
+     "proposal_id": "msft-2025-7",
+     "title": "Report on AI Data Usage Oversight",
+     "critical": true,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "National Legal and Policy Center"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
+    },
+    {
+     "proposal_id": "msft-2025-7",
+     "title": "Report on AI Data Usage Oversight",
+     "critical": true,
+     "date": "2025-12-05",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "National Legal and Policy Center"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000109690625001784/nlpc_px14a6g.htm"
+    },
+    {
+     "proposal_id": "msft-2025-7",
+     "title": "Report on AI Data Usage Oversight",
+     "critical": true,
+     "date": "2025-12-05",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 13.36,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+    }
+   ],
+   "proposals": [
+    "msft-2024-9",
+    "msft-2025-7"
+   ],
+   "critical_only": true,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 1,
+   "filings": 2,
+   "votes": 0,
+   "best_support": null,
+   "ledger_ids": []
+  },
+  {
+   "id": "MSFT|ask-customer-due-diligence",
+   "company": "MSFT",
+   "ask": "ask-customer-due-diligence",
+   "ask_label": "Customer and end-use due diligence (surveillance, military, facial recognition)",
+   "states": [
+    {
+     "proposal_id": "msft-2025-9",
+     "title": "Report on Human Rights Due Diligence",
+     "critical": false,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Religious of the Sacred Heart of Mary"
+     ],
+     "co_filers": 2,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
+    },
+    {
+     "proposal_id": "msft-2025-9",
+     "title": "Report on Human Rights Due Diligence",
+     "critical": false,
+     "date": "2025-12-05",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Investor Advocates for Social Justice"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925010874/j724252px14a6g.htm"
+    },
+    {
+     "proposal_id": "msft-2025-9",
+     "title": "Report on Human Rights Due Diligence",
+     "critical": false,
+     "date": "2025-12-05",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Azzad Asset Management"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925015203/y1022250px14a6g.htm"
+    },
+    {
+     "proposal_id": "msft-2025-9",
+     "title": "Report on Human Rights Due Diligence",
+     "critical": false,
+     "date": "2025-12-05",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Ekō (formerly SumOfUs)"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925016907/j1117252px14a6g.htm"
+    },
+    {
+     "proposal_id": "msft-2025-9",
+     "title": "Report on Human Rights Due Diligence",
+     "critical": false,
+     "date": "2025-12-05",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation against the proposal",
+     "by": [
+      "JLens",
+      "Anti-Defamation League"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000092189525002903/px14a6g14098msft_11062025.htm"
+    },
+    {
+     "proposal_id": "msft-2025-9",
+     "title": "Report on Human Rights Due Diligence",
+     "critical": false,
+     "date": "2025-12-05",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "NorthStar Asset Management"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925013664/z911251px14a6g.htm"
+    },
+    {
+     "proposal_id": "msft-2025-9",
+     "title": "Report on Human Rights Due Diligence",
+     "critical": false,
+     "date": "2025-12-05",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Ekō (formerly SumOfUs)"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925010900/i725250px14a6g.htm"
+    },
+    {
+     "proposal_id": "msft-2025-9",
+     "title": "Report on Human Rights Due Diligence",
+     "critical": false,
+     "date": "2025-12-05",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 26.34,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+    },
+    {
+     "proposal_id": "msft-2026-5",
+     "title": "Report on Human Rights Due Diligence",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Religious of the Sacred Heart of Mary"
+     ],
+     "co_filers": 3,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+    },
+    {
+     "proposal_id": "msft-2026-5",
+     "title": "Report on Human Rights Due Diligence",
+     "critical": false,
+     "date": "2026-12-08",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Investor Advocates for Social Justice"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465926011511/o91268px14a6g.htm"
+    },
+    {
+     "proposal_id": "msft-2026-5",
+     "title": "Report on Human Rights Due Diligence",
+     "critical": false,
+     "date": "2026-12-08",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation against the proposal",
+     "by": [
+      "Anti-Defamation League",
+      "JLens"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000092189526002869/px14a6g14098012_10282026.htm"
+    },
+    {
+     "proposal_id": "msft-2026-5",
+     "title": "Report on Human Rights Due Diligence",
+     "critical": false,
+     "date": "2026-12-08",
+     "precision": "day",
+     "state": "upcoming",
+     "label": "On the ballot",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+    }
+   ],
+   "proposals": [
+    "msft-2025-9",
+    "msft-2026-5"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 6,
+   "filings": 2,
+   "votes": 1,
+   "best_support": 26.34,
+   "ledger_ids": []
+  },
+  {
+   "id": "MSFT|ask-dc-climate-energy",
+   "company": "MSFT",
+   "ask": "ask-dc-climate-energy",
+   "ask_label": "Data center energy, emissions and costs",
+   "states": [
+    {
+     "proposal_id": "msft-2026-4",
+     "title": "Additional Disclosures Meeting Climate Commitments",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Trillium Asset Management"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+    },
+    {
+     "proposal_id": "msft-2026-4",
+     "title": "Additional Disclosures Meeting Climate Commitments",
+     "critical": false,
+     "date": "2026-12-08",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Trillium Asset Management"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465926013276/y1027263px14a6g.htm"
+    },
+    {
+     "proposal_id": "msft-2026-4",
+     "title": "Additional Disclosures Meeting Climate Commitments",
+     "critical": false,
+     "date": "2026-12-08",
+     "precision": "day",
+     "state": "upcoming",
+     "label": "On the ballot",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+    }
+   ],
+   "proposals": [
+    "msft-2026-4"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 1,
+   "filings": 1,
+   "votes": 0,
+   "best_support": null,
+   "ledger_ids": []
+  },
+  {
+   "id": "MSFT|ask-dc-siting-rights",
+   "company": "MSFT",
+   "ask": "ask-dc-siting-rights",
+   "ask_label": "Human rights in data center siting",
+   "states": [
+    {
+     "proposal_id": "msft-2023-11",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "critical": false,
+     "date": "2023",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Ekō (formerly SumOfUs)"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm"
+    },
+    {
+     "proposal_id": "msft-2023-11",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "critical": false,
+     "date": "2023-12-07",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 33.58,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312523291720/d636199d8k.htm"
+    },
+    {
+     "proposal_id": "msft-2024-6",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [],
+     "co_filers": 1,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm"
+    },
+    {
+     "proposal_id": "msft-2024-6",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "critical": false,
+     "date": "2024-12-10",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 32.03,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312524275524/d865252d8k.htm"
+    },
+    {
+     "proposal_id": "msft-2025-8",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "critical": false,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm"
+    },
+    {
+     "proposal_id": "msft-2025-8",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "critical": false,
+     "date": "2025-12-05",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Ekō (formerly SumOfUs)"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925016907/j1117252px14a6g.htm"
+    },
+    {
+     "proposal_id": "msft-2025-8",
+     "title": "Report on Data Operations in Human Rights Hotspots",
+     "critical": false,
+     "date": "2025-12-05",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 27.48,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+    },
+    {
+     "proposal_id": "msft-2026-6",
+     "title": "Report on Data Operations in Human Rights and Conflict Hotspots",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Azzad Asset Management"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+    },
+    {
+     "proposal_id": "msft-2026-6",
+     "title": "Report on Data Operations in Human Rights and Conflict Hotspots",
+     "critical": false,
+     "date": "2026-12-08",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Azzad Asset Management"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465926014752/w1125263px14a6g.htm"
+    },
+    {
+     "proposal_id": "msft-2026-6",
+     "title": "Report on Data Operations in Human Rights and Conflict Hotspots",
+     "critical": false,
+     "date": "2026-12-08",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation against the proposal",
+     "by": [
+      "Anti-Defamation League",
+      "JLens"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000092189526002869/px14a6g14098012_10282026.htm"
+    },
+    {
+     "proposal_id": "msft-2026-6",
+     "title": "Report on Data Operations in Human Rights and Conflict Hotspots",
+     "critical": false,
+     "date": "2026-12-08",
+     "precision": "day",
+     "state": "upcoming",
+     "label": "On the ballot",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm"
+    }
+   ],
+   "proposals": [
+    "msft-2023-11",
+    "msft-2024-6",
+    "msft-2025-8",
+    "msft-2026-6"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 2,
+   "filings": 4,
+   "votes": 3,
+   "best_support": 33.58,
+   "ledger_ids": []
+  },
+  {
+   "id": "NFLX|ask-ai-oversight-reporting",
+   "company": "NFLX",
+   "ask": "ask-ai-oversight-reporting",
+   "ask_label": "Board oversight and AI transparency reporting",
+   "states": [
+    {
+     "proposal_id": "nflx-2024-4",
+     "title": "Report on Netflix's Use of Artificial Intelligence",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Segal Marco Advisors",
+      "AFL-CIO (Equity Index Funds)",
+      "AFL-CIO Reserve Fund"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312524100913/d521836ddef14a.htm"
+    },
+    {
+     "proposal_id": "nflx-2024-4",
+     "title": "Report on Netflix's Use of Artificial Intelligence",
+     "critical": false,
+     "date": "2024-06-06",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 43.29,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1065280/000106528024000185/nflx-20240606.htm"
+    }
+   ],
+   "proposals": [
+    "nflx-2024-4"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 3,
+   "filings": 1,
+   "votes": 1,
+   "best_support": 43.29,
+   "ledger_ids": []
+  },
+  {
+   "id": "NVDA|ask-customer-due-diligence",
+   "company": "NVDA",
+   "ask": "ask-customer-due-diligence",
+   "ask_label": "Customer and end-use due diligence (surveillance, military, facial recognition)",
+   "states": [
+    {
+     "proposal_id": "nvda-2026-military-ai",
+     "title": "Rationale for Military Sales (AI-enabled capabilities)",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Open MIC (Open Media and Information Companies Initiative)",
+      "TTT Investments LLC"
+     ],
+     "co_filers": 1,
+     "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/tttnvidia31026.pdf"
+    },
+    {
+     "proposal_id": "nvda-2026-military-ai",
+     "title": "Rationale for Military Sales (AI-enabled capabilities)",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "excluded",
+     "label": "Excluded by the company",
+     "detail": "Excluded: Nvidia notified the SEC (February 20, 2026) that it would omit the proposal as ordinary business under Rule 14a-8(i)(7), citing staff precedent on sales of products to military customers. Under the Division's November 17, 2025 statement, staff replied on March 10, 2026 that it would not object, based solely on the company's representation.",
+     "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/tttnvidia31026.pdf"
+    }
+   ],
+   "proposals": [
+    "nvda-2026-military-ai"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 2,
+   "filings": 1,
+   "votes": 0,
+   "best_support": null,
+   "ledger_ids": []
+  },
+  {
+   "id": "NVDA|ask-dc-climate-energy",
+   "company": "NVDA",
+   "ask": "ask-dc-climate-energy",
+   "ask_label": "Data center energy, emissions and costs",
+   "states": [
+    {
+     "proposal_id": "nvda-2026-7",
+     "title": "Greenhouse Gas Emissions Disclosure (GHG from use of sold products)",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Green Century Capital Management"
+     ],
+     "co_filers": 1,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm"
+    },
+    {
+     "proposal_id": "nvda-2026-7",
+     "title": "Greenhouse Gas Emissions Disclosure (GHG from use of sold products)",
+     "critical": false,
+     "date": "2026-06-24",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Green Century Capital Management"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000121465926006075/b513262px14a6g.htm"
+    },
+    {
+     "proposal_id": "nvda-2026-7",
+     "title": "Greenhouse Gas Emissions Disclosure (GHG from use of sold products)",
+     "critical": false,
+     "date": "2026-06-24",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 17.57,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm"
+    }
+   ],
+   "proposals": [
+    "nvda-2026-7"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 2,
+   "filings": 1,
+   "votes": 1,
+   "best_support": 17.57,
+   "ledger_ids": []
+  },
+  {
+   "id": "PLTR|ask-customer-due-diligence",
+   "company": "PLTR",
+   "ask": "ask-customer-due-diligence",
+   "ask_label": "Customer and end-use due diligence (surveillance, military, facial recognition)",
+   "states": [
+    {
+     "proposal_id": "pltr-2026-4",
+     "title": "Independent Report on Due Diligence Process",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Presbyterian Church (U.S.A.)"
+     ],
+     "co_filers": 2,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm"
+    },
+    {
+     "proposal_id": "pltr-2026-5",
+     "title": "Human Rights Impact Assessment",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Congregation of the Sisters of St. Joseph of Peace"
+     ],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm"
+    },
+    {
+     "proposal_id": "pltr-2026-4",
+     "title": "Independent Report on Due Diligence Process",
+     "critical": false,
+     "date": "2026-06-03",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Presbyterian Church (U.S.A.)",
+      "Portico Benefit Services",
+      "Missionary Oblates of Mary Immaculate, US Province"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000121465926005220/o429261px14a6g.htm"
+    },
+    {
+     "proposal_id": "pltr-2026-5",
+     "title": "Human Rights Impact Assessment",
+     "critical": false,
+     "date": "2026-06-03",
+     "precision": "before meeting",
+     "state": "campaign",
+     "label": "Exempt solicitation for the proposal",
+     "by": [
+      "Investor Advocates for Social Justice"
+     ],
+     "more": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000121465926006347/pti515261px14a6g.htm"
+    },
+    {
+     "proposal_id": "pltr-2026-4",
+     "title": "Independent Report on Due Diligence Process",
+     "critical": false,
+     "date": "2026-06-03",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 8.28,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000033/pltr-20260603.htm"
+    },
+    {
+     "proposal_id": "pltr-2026-5",
+     "title": "Human Rights Impact Assessment",
+     "critical": false,
+     "date": "2026-06-03",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 12.47,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000033/pltr-20260603.htm"
+    }
+   ],
+   "proposals": [
+    "pltr-2026-4",
+    "pltr-2026-5"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 4,
+   "filings": 2,
+   "votes": 2,
+   "best_support": 12.47,
+   "ledger_ids": []
+  },
+  {
+   "id": "SO|ask-dc-climate-energy",
+   "company": "SO",
+   "ask": "ask-dc-climate-energy",
+   "ask_label": "Data center energy, emissions and costs",
+   "states": [
+    {
+     "proposal_id": "so-2026-9",
+     "title": "Report on Data Center Costs",
+     "critical": false,
+     "date": "2026",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "As You Sow",
+      "Mercy Investment Services"
+     ],
+     "co_filers": 2,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm"
+    },
+    {
+     "proposal_id": "so-2026-9",
+     "title": "Report on Data Center Costs",
+     "critical": false,
+     "date": "2026-05-13",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 9.74,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000040/so-20260513.htm"
+    }
+   ],
+   "proposals": [
+    "so-2026-9"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 3,
+   "filings": 1,
+   "votes": 1,
+   "best_support": 9.74,
+   "ledger_ids": []
+  },
+  {
+   "id": "TSLA|other",
+   "company": "TSLA",
+   "ask": null,
+   "ask_label": "AI governance and safety",
+   "states": [
+    {
+     "proposal_id": "tsla-2025-7",
+     "title": "Board Authorization of an Investment in xAI",
+     "critical": false,
+     "date": "2025",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [],
+     "co_filers": 0,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925090866/tm252289-12_def14a.htm"
+    },
+    {
+     "proposal_id": "tsla-2025-7",
+     "title": "Board Authorization of an Investment in xAI",
+     "critical": false,
+     "date": "2025-11-06",
+     "precision": "day",
+     "state": "voted",
+     "label": "Voted",
+     "support": 53.61,
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925108507/tm2530590d1_8k.htm"
+    }
+   ],
+   "proposals": [
+    "tsla-2025-7"
+   ],
+   "critical_only": false,
+   "stage": 1,
+   "stage_label": "Concern raised",
+   "stage_basis": "a filing",
+   "filer_count": 0,
+   "filings": 1,
+   "votes": 1,
+   "best_support": 53.61,
+   "ledger_ids": []
+  },
+  {
+   "id": "VRSK|ask-ai-bias",
+   "company": "VRSK",
+   "ask": "ask-ai-bias",
+   "ask_label": "AI bias, discrimination and viewpoint",
+   "states": [
+    {
+     "proposal_id": "vrsk-2024-responsible-ai",
+     "title": "Responsible AI disclosure (Parnassus)",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "filed",
+     "label": "Filed",
+     "by": [
+      "Parnassus Investments"
+     ],
+     "co_filers": 0,
+     "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf"
+    },
+    {
+     "proposal_id": "vrsk-2024-responsible-ai",
+     "title": "Responsible AI disclosure (Parnassus)",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "withdrawn_commitment",
+     "label": "Withdrawn after a company commitment",
+     "detail": "Withdrawn by Parnassus after a negotiated agreement: Verisk agreed to publish disclosures on its policies, practices and governance for the responsible use of AI, including its efforts to reduce the risk of disproportionately affecting marginalized groups. Filing and withdrawal dates not public; no SEC no-action letter found. Parnassus calls it a 2023 proposal and does not name the meeting; the 2024 meeting is inferred from Verisk's December 9, 2023 deadline for proposals.",
+     "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf"
+    },
+    {
+     "proposal_id": "vrsk-2024-responsible-ai",
+     "title": "Responsible AI disclosure (Parnassus)",
+     "critical": false,
+     "date": "2024",
+     "precision": "year",
+     "state": "delivery",
+     "label": "Commitment delivered",
+     "detail": "Evidence in the commitments ledger below.",
+     "source_url": "https://www.verisk.com/49edb0/siteassets/media/corporate-social-responsibility/downloads/verisk-commitment-to-ethical-and-responsible-ai.pdf"
+    }
+   ],
+   "proposals": [
+    "vrsk-2024-responsible-ai"
+   ],
+   "critical_only": false,
+   "stage": 4,
+   "stage_label": "Commitment delivered",
+   "stage_basis": "the company's own report of delivery",
+   "filer_count": 1,
+   "filings": 1,
+   "votes": 0,
+   "best_support": null,
+   "ledger_ids": [
+    "vrsk-2024-responsible-ai-disclosure"
+   ]
+  }
+ ],
+ "reported": [
+  {
+   "company": "INTU",
+   "date": "2023",
+   "title": "Parnassus begins AI governance engagement with Intuit",
+   "summary": "Parnassus began engaging Intuit in 2023 to understand how its AI governance aligned with best practices, as Intuit built AI into tax, finance and marketing products.",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/30a15313-fafe-4604-804b-8c7aede1598d/Sustainable_Insights_The_New_Imperative_of_Responsible_AI_Final.pdf",
+   "source_page": "4",
+   "reported_by": "Parnassus Investments",
+   "kind": "reported by the investor"
+  },
+  {
+   "company": "NVDA",
+   "date": "2023-09",
+   "title": "Investor group organizes human rights engagement with Nvidia",
+   "summary": "Parnassus joined an investor group that in September 2023 organized to strengthen Nvidia's human rights risk management, including an independent assessment of potential AI harms.",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "source_page": "16",
+   "reported_by": "Parnassus Investments",
+   "kind": "reported by the investor"
+  },
+  {
+   "company": "NVDA",
+   "date": "2024-H1",
+   "title": "Nvidia adds oversight, staff and first human rights assessment",
+   "summary": "Nvidia formed an executive-level sustainability steering committee overseeing human rights, added staff and began its first human rights impact assessment, with Parnassus input on scope.",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf",
+   "source_page": "13",
+   "reported_by": "Parnassus Investments",
+   "kind": "reported by the investor"
+  },
+  {
+   "company": "INTU",
+   "date": "2024-H1",
+   "title": "Intuit plans public AI governance disclosure after engagement",
+   "summary": "Parnassus reported that Intuit considered its requests, including stronger attention to human rights risks in AI governance, and planned public disclosure on AI governance in early 2025.",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf",
+   "source_page": "24",
+   "reported_by": "Parnassus Investments",
+   "kind": "reported by the investor"
+  },
+  {
+   "company": "INTU",
+   "date": "2025-H1",
+   "title": "Intuit publishes AI governance and risk management disclosure",
+   "summary": "Following Parnassus engagement begun in 2023, Intuit released public disclosure on its AI governance and risk management practices in the first half of 2025.",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/30a15313-fafe-4604-804b-8c7aede1598d/Sustainable_Insights_The_New_Imperative_of_Responsible_AI_Final.pdf",
+   "source_page": "4",
+   "reported_by": "Parnassus Investments",
+   "kind": "reported by the investor"
+  },
+  {
+   "company": "WDAY",
+   "date": "2025-H1",
+   "title": "Workday completes NIST AI RMF assessment and gets ISO 42001 accreditation",
+   "summary": "After Parnassus engagement on AI and workers' rights, Workday completed a third-party assessment against the NIST AI RMF and achieved ISO 42001 accreditation.",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "source_page": "26",
+   "reported_by": "Parnassus Investments",
+   "kind": "reported by the investor"
+  },
+  {
+   "company": "NVDA",
+   "date": "2025-H1",
+   "title": "Nvidia completes third-party human rights saliency assessment",
+   "summary": "The engagement prompted a third-party saliency assessment identifying five salient risks, including responsible product development and use, plus plans to strengthen human rights policies.",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "source_page": "16",
+   "reported_by": "Parnassus Investments",
+   "kind": "reported by the investor"
+  },
+  {
+   "company": "MSFT",
+   "date": "2025-H1",
+   "title": "Water stewardship engagement linked to AI data centers",
+   "summary": "Parnassus engaged Microsoft on absolute water withdrawal targets and supply chain water risk, citing AI's water and power use in data centers; initial contacts were favorable.",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "source_page": "11",
+   "reported_by": "Parnassus Investments",
+   "kind": "reported by the investor"
+  },
+  {
+   "company": "GOOGL",
+   "date": "2025-H1",
+   "title": "Supply chain water-risk engagement as infrastructure expands",
+   "summary": "Parnassus reported engaging Alphabet management on supply chain water-risk reduction given the expansion of its global infrastructure footprint, which includes data centers.",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "source_page": "34",
+   "reported_by": "Parnassus Investments",
+   "kind": "reported by the investor"
+  }
+ ],
+ "outside": {
+  "GOOGL": {
+   "stage": 2,
+   "stage_label": "Company engaged",
+   "stage_basis": "steps an investor reports",
+   "reported": 1,
+   "commitments": []
+  },
+  "INTU": {
+   "stage": 4,
+   "stage_label": "Commitment delivered",
+   "stage_basis": "the company's own report of delivery (ledger)",
+   "reported": 3,
+   "commitments": [
+    "intu-ai-governance-disclosure"
+   ]
+  },
+  "MSFT": {
+   "stage": 2,
+   "stage_label": "Company engaged",
+   "stage_basis": "steps an investor reports",
+   "reported": 1,
+   "commitments": []
+  },
+  "NVDA": {
+   "stage": 4,
+   "stage_label": "Commitment delivered",
+   "stage_basis": "the company's own report of delivery (ledger)",
+   "reported": 3,
+   "commitments": [
+    "nvda-hr-saliency-assessment",
+    "nvda-hr-policy-update",
+    "nvda-hr-steering-committee",
+    "nvda-hr-staffing"
+   ]
+  },
+  "WDAY": {
+   "stage": 2,
+   "stage_label": "Company engaged",
+   "stage_basis": "steps an investor reports",
+   "reported": 1,
+   "commitments": []
+  }
+ },
+ "metrics": {
+  "basis": "AI proposals at the companies tracked, leaving out those lead-filed by filers critical of ESG",
+  "filings": 69,
+  "voted": 57,
+  "upcoming": 4,
+  "excluded": 3,
+  "withdrawn_with_commitment": 3,
+  "withdrawn_other": 2,
+  "conceded": [
+   {
+    "proposal_id": "dis-2024-afl-ai",
+    "company": "DIS",
+    "company_name": "Walt Disney",
+    "what": "Enhance its disclosure on its use of AI (exact terms not public).",
+    "source_url": "https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/"
+   },
+   {
+    "proposal_id": "cmcsa-2024-afl-ai",
+    "company": "CMCSA",
+    "company_name": "Comcast",
+    "what": "Enhance its disclosure on its use of AI (exact terms not public).",
+    "source_url": "https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/"
+   },
+   {
+    "proposal_id": "vrsk-2024-responsible-ai",
+    "company": "VRSK",
+    "company_name": "Verisk Analytics",
+    "what": "Publish disclosures on its policies, practices and governance for responsible AI, including efforts to reduce the risk of disproportionately affecting marginalized groups.",
+    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf"
+   }
+  ],
+  "by_season": {
+   "2023": {
+    "voted": 11
+   },
+   "2024": {
+    "voted": 14,
+    "withdrawn": 3
+   },
+   "2025": {
+    "voted": 17
+   },
+   "2026": {
+    "voted": 15,
+    "upcoming": 4,
+    "excluded": 3,
+    "withdrawn": 2
+   }
+  },
+  "campaigns": 48,
+  "campaigns_by_stage": {
+   "Concern raised": 41,
+   "Company engaged": 0,
+   "Commitment made": 1,
+   "Commitment delivered": 2
+  },
+  "outside_by_stage": {
+   "Concern raised": 0,
+   "Company engaged": 3,
+   "Commitment made": 0,
+   "Commitment delivered": 2
+  }
+ },
+ "commitments": [
+  {
+   "id": "dis-2024-afl-ai-disclosure",
+   "company": "DIS",
+   "ask_hint": "ask-ai-oversight-reporting",
+   "engaged_by": "AFL-CIO Equity Index Funds and co-filers",
+   "related_proposal_id": "dis-2024-afl-ai",
+   "promised": "Enhance its disclosure on its use of AI (exact terms not public).",
+   "promised_quote": "According to Responsible Investor, AFL-CIO agreed to withdraw its proposal at Comcast and Disney following commitments from these companies to enhance their disclosures on their use of AI.",
+   "promised_date": null,
+   "deadline": null,
+   "commitment_source_url": "https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/",
+   "commitment_source_kind": "third party",
+   "status": "delivered",
+   "evidence": [
+    {
+     "text": "Disney's proxy for the meeting the proposal targeted already says the full Board reviews potential uses of generative AI and the development of generative AI governance principles; the 2025 proxy repeats it.",
+     "quote": "The full Board also reviews reports regarding certain potential uses of generative artificial intelligence and the development of generative artificial intelligence governance principles.",
+     "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448924000073/dis-20240201.htm",
+     "date": "2024-02-01"
+    },
+    {
+     "text": "Disney published a Responsible AI Use topic brief describing its AI principles, central review process, Board updates and three categories of AI use. Upload path is dated 2025/05; the version online is marked 'As of 5/22/26'.",
+     "quote": "We have established an AI governance process pursuant to a principles-based framework and our generally applicable policies",
+     "url": "https://impact.disney.com/app/uploads/2025/05/Responsible-AI-Use-Topic-Brief.pdf",
+     "date": "2026-05-22",
+     "date_note": "current version; first posted 2025-05 per upload path"
+    },
+    {
+     "text": "2026 proxy lists 'Enhanced artificial intelligence oversight disclosure' among governance changes and sets out Board and committee AI oversight.",
+     "quote": "Enhanced disclosure of artificial intelligence oversight by the Board and its Committees",
+     "url": "https://investors.thewaltdisneycompany.com/files/doc_financials/2025/ar/2026-Proxy-Statement.pdf",
+     "date": "2026-01-22"
+    }
+   ],
+   "checked": "2026-11-26",
+   "notes": "Commitment known only second-hand (FTI Consulting on the Harvard Law School Forum, citing Responsible Investor); Disney has not published the commitment's terms. Commitment date not public: it falls between SEC staff's 2024-01-03 no-action reply and Disney's 2024 definitive proxy (2024-02-01), which omits the proposal. 'Delivered' is judged against the reported promise to enhance AI disclosure; the proposal's three asks (AI use, board oversight, ethical guidelines) are each covered by the topic brief and proxies. Disney's FY2024 sustainability report not checked.",
+   "company_name": "Walt Disney"
+  },
+  {
+   "id": "cmcsa-2024-afl-ai-disclosure",
+   "company": "CMCSA",
+   "ask_hint": "ask-ai-oversight-reporting",
+   "engaged_by": "AFL-CIO",
+   "related_proposal_id": "cmcsa-2024-afl-ai",
+   "promised": "Enhance its disclosure on its use of AI (exact terms not public).",
+   "promised_quote": "According to Responsible Investor, AFL-CIO agreed to withdraw its proposal at Comcast and Disney following commitments from these companies to enhance their disclosures on their use of AI.",
+   "promised_date": null,
+   "deadline": null,
+   "commitment_source_url": "https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/",
+   "commitment_source_kind": "third party",
+   "status": "partial",
+   "evidence": [
+    {
+     "text": "2025 proxy adds AI to the Governance and Corporate Responsibility Committee's remit; the 2024 proxy has no AI governance language (checked).",
+     "quote": "Reviews significant legal and regulatory compliance risks, such as privacy, AI and data governance.",
+     "url": "https://www.sec.gov/Archives/edgar/data/1166691/000130817925000504/cmcsa012438-def14a.htm",
+     "date": "2025-04",
+     "date_note": "DEF 14A; record date 2025-04-08"
+    },
+    {
+     "text": "2026 proxy repeats the committee oversight line, now spelled out as 'artificial intelligence'.",
+     "quote": "Compliance, legal and regulatory matters, including privacy, artificial intelligence and data governance",
+     "url": "https://www.sec.gov/Archives/edgar/data/1166691/000119312526177138/cmcsa-20260424.htm",
+     "date": "2026-04-24"
+    }
+   ],
+   "checked": "2026-11-26",
+   "notes": "Commitment known only second-hand (FTI Consulting on the Harvard Law School Forum, citing Responsible Investor); terms and date not public (filing deadline 2023-12-30; withdrawn before the 2024 proxy). Classified partial: the only company evidence found is a one-line committee-oversight disclosure. No public AI principles, AI-use report or ethical guidelines found. Looked in: 2024 DEF 14A (no AI), 2025 and 2026 DEF 14A, 2025 Impact Report (update.comcast.com/download/18245; AI mentioned only as products and training, no governance section), FY2025 10-K (AI only in risk factors), corporate.comcast.com search. The 2024 Impact Report link (update.comcast.com/download/17729) returned 404 and was not read.",
+   "company_name": "Comcast"
+  },
+  {
+   "id": "vrsk-2024-responsible-ai-disclosure",
+   "company": "VRSK",
+   "ask_hint": "ask-ai-bias",
+   "engaged_by": "Parnassus Investments",
+   "related_proposal_id": "vrsk-2024-responsible-ai",
+   "promised": "Publish disclosures on its policies, practices and governance for responsible AI, including efforts to reduce the risk of disproportionately affecting marginalized groups.",
+   "promised_quote": "Verisk agreed to publish disclosures describing its policies, practices and governance regarding the responsible use of AI. This disclosure will include information about the company's efforts to reduce the risks of disproportionately affecting marginalized groups.",
+   "promised_date": null,
+   "deadline": null,
+   "commitment_source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf",
+   "commitment_source_kind": "proponent",
+   "status": "delivered",
+   "evidence": [
+    {
+     "text": "Verisk's 2024 Corporate Responsibility Report says it publicly issued its Commitment to Ethical and Responsible AI in 2024, covering principles, governance structure, standards and review processes.",
+     "quote": "In 2024, Verisk publicly issued its Commitment to Ethical and Responsible AI",
+     "url": "https://www.verisk.com/49833a/siteassets/media/corporate-social-responsibility/downloads/verisk-corporate-responsibility-report-2024.pdf",
+     "date": "2025",
+     "date_note": "report covers 2024; exact publication date not shown"
+    },
+    {
+     "text": "The Commitment document (©2024) sets 'FAITH' principles, a Board Risk Committee > ERMC > AI Governance Board structure, and monitoring for discriminatory outcomes; it cites FairCheck for insurer models.",
+     "quote": "Verisk will strive to ensure that AI Systems do not treat individuals or groups unfairly.",
+     "url": "https://www.verisk.com/49edb0/siteassets/media/corporate-social-responsibility/downloads/verisk-commitment-to-ethical-and-responsible-ai.pdf",
+     "date": "2024",
+     "date_note": "copyright line; the copy online has file creation date 2025-07-02"
+    },
+    {
+     "text": "2025 Corporate Responsibility Report says Verisk built on the Commitment with a responsible AI course for all employees.",
+     "quote": "In 2025, Verisk built on its Commitment by launching multiple AI educational resources",
+     "url": "https://beta.verisk.com/496a53/siteassets/media/corporate-social-responsibility/downloads/verisk-corporate-responsibility-report-2025.pdf",
+     "date": "2026",
+     "date_note": "file created 2026-04-02"
+    }
+   ],
+   "checked": "2026-11-26",
+   "notes": "Verisk's commitment addresses unfair and discriminatory outcomes in general terms ('unfairly biased or discriminatory outcomes'); it does not use the words 'marginalized groups'. 'Delivered' judges the publication; whether its depth satisfies Parnassus is not stated by Verisk.",
+   "company_name": "Verisk Analytics"
+  },
+  {
+   "id": "nvda-hr-saliency-assessment",
+   "company": "NVDA",
+   "ask_hint": "human rights due diligence on AI products",
+   "engaged_by": "Investor group including Parnassus Investments",
+   "related_proposal_id": null,
+   "promised": "Conduct a third-party human rights saliency (impact) assessment across the value chain.",
+   "promised_quote": "The engagement prompted NVIDIA to commit to conducting a human-rights saliency assessment with a third party, with full board and executive team support.",
+   "promised_date": null,
+   "deadline": null,
+   "commitment_source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "commitment_source_kind": "proponent",
+   "status": "delivered",
+   "evidence": [
+    {
+     "text": "FY2024 report: NVIDIA had begun preparing the assessment (the company's own statement of intent).",
+     "quote": "We have begun preparation for a human rights impact assessment across our value chain.",
+     "url": "https://images.nvidia.com/aem-dam/Solutions/documents/FY2024-NVIDIA-Corporate-Sustainability-Report.pdf",
+     "date": "2024",
+     "date_note": "FY2024 report; fiscal year ended 2024-01-28"
+    },
+    {
+     "text": "FY2025 report: independent firm completed the saliency assessment, naming five salient risks including responsible product development and responsible product use.",
+     "quote": "In FY25, NVIDIA commissioned an independent firm to conduct a human rights saliency assessment of potential human rights impacts across our value chain.",
+     "url": "https://images.nvidia.com/aem-dam/Solutions/documents/NVIDIA-Sustainability-Report-Fiscal-Year-2025.pdf",
+     "date": "2025",
+     "date_note": "FY2025 report; fiscal year ended 2025-01-26"
+    }
+   ],
+   "checked": "2026-11-26",
+   "notes": "Investor group organized September 2023 (Parnassus 2025 report p.16); Parnassus 2024 report p.13 says NVIDIA was 'conducting its first human rights impact assessment'. No deadline stated. NVIDIA does not name the assessor.",
+   "company_name": "Nvidia"
+  },
+  {
+   "id": "nvda-hr-policy-update",
+   "company": "NVDA",
+   "ask_hint": "human rights due diligence on AI products",
+   "engaged_by": "Investor group including Parnassus Investments",
+   "related_proposal_id": null,
+   "promised": "Review and update its Human Rights and Responsible Minerals policies in FY26 using the saliency assessment.",
+   "promised_quote": "In FY26, we'll review and update our Human Rights and Responsible Minerals policies.",
+   "promised_date": "2025",
+   "deadline": "2026-01-25",
+   "commitment_source_url": "https://images.nvidia.com/aem-dam/Solutions/documents/NVIDIA-Sustainability-Report-Fiscal-Year-2025.pdf",
+   "commitment_source_kind": "company",
+   "status": "delivered",
+   "evidence": [
+    {
+     "text": "FY2026 report states the updates were made in FY26.",
+     "quote": "These assessment results guided updates to NVIDIA's human rights and responsible minerals policies in FY26",
+     "url": "https://images.nvidia.com/aem-dam/Solutions/documents/NVIDIA-Sustainability-Report-Fiscal-Year-2026.pdf",
+     "date": "2026",
+     "date_note": "FY2026 report; fiscal year ended 2026-01-25"
+    },
+    {
+     "text": "Human Rights Policy now names the five salient risks and adds 'Responsible Product Development' and 'Responsible Product Use' sections (model risk management, Trustworthy AI Terms, model cards).",
+     "quote": "We conducted a human rights impact assessment across our value chain, with input from both internal and external stakeholders, identifying five salient risk areas",
+     "url": "https://www.nvidia.com/content/dam/en-zz/Solutions/about-us/documents/HumanRightsPolicy.pdf",
+     "date": "2026-02-05",
+     "date_note": "Last updated"
+    },
+    {
+     "text": "Responsible Minerals Policy also shows a new revision date.",
+     "quote": "Last updated: FEB 05, 2026",
+     "url": "https://images.nvidia.com/content/includes/gcr/pdf/nvidia-responsible-minerals-policy.pdf",
+     "date": "2026-02-05"
+    }
+   ],
+   "checked": "2026-11-26",
+   "notes": "Parnassus (2025 report p.16) reports the same plan: 'NVIDIA shared plans to enhance both its human rights and responsible minerals policies in the current fiscal year.' Timing caveat: both policies show 'Last updated' 2026-02-05, eleven days after FY26 ended (2026-01-25); NVIDIA's FY26 report says the updates happened in FY26. The FY2025 report date is not printed; deadline taken as FY26 year-end.",
+   "company_name": "Nvidia"
+  },
+  {
+   "id": "nvda-hr-steering-committee",
+   "company": "NVDA",
+   "ask_hint": "human rights due diligence on AI products",
+   "engaged_by": "Investor group including Parnassus Investments",
+   "related_proposal_id": null,
+   "promised": "Form an executive-level sustainability steering committee with oversight of human rights.",
+   "promised_quote": "It formed an executive-level sustainability steering committee with explicit oversight of human rights throughout its business",
+   "promised_date": "2024",
+   "deadline": null,
+   "commitment_source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf",
+   "commitment_source_kind": "proponent",
+   "status": "delivered",
+   "evidence": [
+    {
+     "text": "FY2024 report names the Corporate Sustainability Steering Committee as responsible for the human rights program.",
+     "quote": "our Corporate Sustainability Steering Committee is responsible for reviewing and ensuring the effectiveness of our human rights program.",
+     "url": "https://images.nvidia.com/aem-dam/Solutions/documents/FY2024-NVIDIA-Corporate-Sustainability-Report.pdf",
+     "date": "2024",
+     "date_note": "FY2024 report"
+    },
+    {
+     "text": "FY2026 report describes the CSSC's executive membership (Legal, Finance, Operations, HR).",
+     "quote": "Our CSSC is composed of members of our executive leadership team, including Legal, Finance, Operations, and Human Resources.",
+     "url": "https://images.nvidia.com/aem-dam/Solutions/documents/NVIDIA-Sustainability-Report-Fiscal-Year-2026.pdf",
+     "date": "2026",
+     "date_note": "FY2026 report"
+    }
+   ],
+   "checked": "2026-11-26",
+   "notes": "Parnassus reports this as already done (2024 report p.13, covering to 2024-06-30), not as a forward promise. Whether the committee existed before the engagement was not checked in NVIDIA's FY2023 report.",
+   "company_name": "Nvidia"
+  },
+  {
+   "id": "nvda-hr-staffing",
+   "company": "NVDA",
+   "ask_hint": "human rights due diligence on AI products",
+   "engaged_by": "Investor group including Parnassus Investments",
+   "related_proposal_id": null,
+   "promised": "Add staff to support human rights work.",
+   "promised_quote": "The company also planned to add staff to support this effort.",
+   "promised_date": null,
+   "deadline": null,
+   "commitment_source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "commitment_source_kind": "proponent",
+   "status": "no evidence found",
+   "evidence": [],
+   "checked": "2026-11-26",
+   "notes": "Parnassus 2024 report p.13 also says NVIDIA 'has added staff resources specifically to address human rights topics'. No NVIDIA statement about human rights headcount found. Looked in: NVIDIA FY2024, FY2025 and FY2026 sustainability reports (human rights and governance sections) and the Human Rights Policy (2026-02-05).",
+   "company_name": "Nvidia"
+  },
+  {
+   "id": "intu-ai-governance-disclosure",
+   "company": "INTU",
+   "ask_hint": "ask-ai-oversight-reporting",
+   "engaged_by": "Parnassus Investments",
+   "related_proposal_id": null,
+   "promised": "Publish public disclosure on AI governance and risk management practices in early 2025.",
+   "promised_quote": "In response to engaging with us, Intuit is planning for public disclosure on AI governance and risk management practices in early 2025.",
+   "promised_date": "2024",
+   "deadline": null,
+   "commitment_source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf",
+   "commitment_source_kind": "proponent",
+   "status": "delivered",
+   "evidence": [
+    {
+     "text": "Intuit's 'Responsible AI governance' web page describes its AI Governance Committee, risk-tiered review and NIST AI RMF alignment. Earliest Internet Archive capture found: 2025-04-15 (the closest capture to 2024-01-01).",
+     "quote": "our review process is designed to identify AI use cases that require heightened review based on the level of risk.",
+     "url": "https://www.intuit.com/privacy/responsible-ai/governance/",
+     "date": "2025-04-15",
+     "date_note": "seen by this date; archive capture; page shows no date"
+    },
+    {
+     "text": "Stakeholder Impact Report 2025 sets out the AI Governance program and Board oversight, and lists the disclosure as a response to shareholder feedback.",
+     "quote": "Publicly disclosing responsible AI governance structure and practices that guide how we operate and scale our AI-driven expert platform.",
+     "url": "https://www.intuit.com/oidam/intuit/ic/en_us/content/intuit-stakeholder-impact-report-2025.pdf",
+     "date": "2026-01",
+     "date_note": "covers FY25 ended 2025-07-31; file created 2026-01-26"
+    }
+   ],
+   "checked": "2026-11-26",
+   "notes": "Stated timing 'early 2025', no exact deadline. Parnassus (Sustainable Insights, 2025) says Intuit 'released public disclosure on AI governance and risk management practices in the first half of 2025'. Parnassus also says Intuit considered strengthening human rights risks in AI governance; Intuit's governance page refers to 'fundamental rights' but does not use 'human rights', so that part is not shown. Internet Archive was partly offline during the check.",
+   "company_name": "Intuit"
+  },
+  {
+   "id": "wday-nist-iso42001",
+   "company": "WDAY",
+   "ask_hint": "AI and workers' rights",
+   "engaged_by": "Parnassus Investments",
+   "related_proposal_id": null,
+   "promised": "No forward promise reported; Parnassus reports Workday completed a third-party NIST AI RMF assessment and ISO 42001 certification after engagement.",
+   "promised_quote": "Following our engagement on the topic, Workday completed a third-party assessment of its responsible AI governance framework against the National Institute of Standards in Technology AI Risk Management Framework (NIST AI RMF).",
+   "promised_date": "2025",
+   "deadline": null,
+   "commitment_source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "commitment_source_kind": "proponent",
+   "status": "delivered",
+   "evidence": [
+    {
+     "text": "Workday press release announces ISO 42001 accreditation and NIST AI RMF attestation, verified by Schellman and Coalfire.",
+     "quote": "These accreditations, independently verified by leading assessors Schellman and Coalfire",
+     "url": "https://newsroom.workday.com/2025-06-12-Workday-Achieves-Top-AI-Certifications,-Reinforcing-Commitment-to-Responsible-AI",
+     "date": "2025-06-12"
+    }
+   ],
+   "checked": "2026-11-26",
+   "notes": "Reported by Parnassus as an action Workday took after engagement, not as an earlier promise. Not a commitment in the usual sense: an outcome Parnassus credits to its engagement; Workday's release does not mention investors. Parnassus also 'pressed the company to commit to' a human rights policy, more responsible AI disclosure and board-level oversight; no Workday commitment on those is reported, so they are not listed here.",
+   "company_name": "Workday",
+   "is_commitment": false
+  }
+ ],
+ "commitment_statuses": {
+  "delivered": "the company's own document shows it done",
+  "partial": "part of the promise shows in the company's documents",
+  "not yet": "not yet due, or due and not yet shown",
+  "missed": "a stated deadline passed with no sign of it",
+  "no evidence found": "nothing found either way; places checked are in the notes"
+ },
+ "field_context": [
+  {
+   "id": "glasslewis-bigtech-2026",
+   "publisher": "Glass Lewis",
+   "title": "A Look at 2026 Big Tech Shareholder Proposals",
+   "date": "2026-07-07",
+   "url": "https://www.glasslewis.com/article/a-look-at-2026-big-tech-shareholder-proposals",
+   "text": "AI proposals at Alphabet, Amazon and Meta received 7.6% support on average in 2026, down from 9.8% in 2025 and 21.4% in 2024.",
+   "scope": "Alphabet, Amazon and Meta only; Glass Lewis's own averages.",
+   "quoted": true
+  },
+  {
+   "id": "dfking-debriefing-2026",
+   "publisher": "D.F. King",
+   "title": "The Debriefing 2026: Season Review and Fall Engagement Guide",
+   "date": "2026",
+   "url": "https://equiniti.com/media/kednjhdl/the-debriefing-2026.pdf",
+   "text": "Total number of proposals filed in 2026 is down nearly 25% from 2025 and is at the lowest level we have seen over the past decade.",
+   "scope": "All shareholder proposals, not only AI; Russell 3000, January to June 30, 2026 (page 5). The report prints no publication date.",
+   "quoted": true
+  },
+  {
+   "id": "fisch-robertson-proxies-for-politics",
+   "publisher": "Jill E. Fisch and Adriana Z. Robertson",
+   "title": "Proxies for Politics (ECGI Law Working Paper 889/2025)",
+   "date": "2025-12-21",
+   "url": "https://www.ecgi.global/publications/working-papers/proxies-for-politics",
+   "text": "The authors find that the use of political-disclosure shareholder proposals over their study period, including proposals later withdrawn, is correlated with more political transparency by companies; they say they cannot demonstrate causation.",
+   "scope": "Political-disclosure proposals, not AI proposals. This site's summary of the working paper's abstract.",
+   "quoted": false
+  }
+ ],
+ "not_recorded": "Private dialogue that no party has published, AGM questions and divestments are not in these records yet; votes against directors appear only where an exempt solicitation asked for them."
+}

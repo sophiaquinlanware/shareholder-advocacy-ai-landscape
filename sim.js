@@ -120,7 +120,7 @@
       unexposed: betaDraw(E.new_pair_unexposed, r),
       cFirst: betaDraw(E.commitment_first, r),
       cRefile: betaDraw(E.commitment_refile, r),
-      excl: betaDraw(E.exclusion, r),
+      excl: betaDraw(scen.exclRegime === "latest" && E.exclusion_latest ? E.exclusion_latest : E.exclusion, r),
     };
     const prior = P.ask_support[ask] || {};
     const pool = prior.values && prior.values.length ? prior.values : Object.values(P.ask_support).flatMap((a) => a.values || []);
@@ -317,7 +317,7 @@
     const M = setup();
     MAXSUP = 1.1 * Math.max(...Object.values(P.ask_support).flatMap((a) => a.values || [0]));
     S = { M, plans: [defaultPlan(M)], scen: { horizon: M.last + 3, rescind: false, rescindFrom: M.last + 1, leadMult: P.literature.find((l) => l.id === "lead_investor").value,
-      supportBoost: 0, refileMult: 1, floorShare: 0.2, floorCommit: 0.5, runs: 400 }, season: M.last, result: null, sweep: null };
+      supportBoost: 0, refileMult: 1, floorShare: 0.2, floorCommit: 0.5, exclRegime: "latest", runs: 400 }, season: M.last, result: null, sweep: null };
     el.innerHTML = `
       <h2>Test plans over time</h2>
       <p class="intro">Choose one or more companies and asks to file on, then see how the next seasons could unfold under a model built from this site's records: who files again, who files for the first time, how votes move, when the SEC resubmission rule blocks a refile, and when a company commits. Compare up to three plans. Each result is a scenario computed by this site from stated assumptions, not a forecast and not advice.</p>
@@ -390,12 +390,13 @@
       <label>Refile rate × <input type="number" step="0.1" min="0.5" max="1.8" data-s="refileMult" value="${sc.refileMult}"> <span class="ticker">1 = the rate in this data; the held-out test below suggests it may be higher</span></label>
       <label>Share of usual refilers who would raise a floor proposal after a rescission: <input type="number" step="0.05" min="0" max="1" data-s="floorShare" value="${sc.floorShare}"> <span class="ticker">no estimate in this data</span></label>
       <label>Chance a floor proposal ends in a commitment, against a filed one: × <input type="number" step="0.1" min="0" max="1" data-s="floorCommit" value="${sc.floorCommit}"> <span class="ticker">no estimate in this data</span></label>
+      <label>Chance a company excludes a filing: <select data-s="exclRegime"><option value="latest"${sc.exclRegime === "latest" ? " selected" : ""}>as in ${P.estimates.exclusion_latest ? P.estimates.exclusion_latest.season : "the latest season"}, the first season in which SEC staff did not review most exclusions (${P.estimates.exclusion_latest ? `${P.estimates.exclusion_latest.k} of ${P.estimates.exclusion_latest.n} company-and-ask filings` : "–"})</option><option value="all"${sc.exclRegime === "all" ? " selected" : ""}>as in all seasons (${P.estimates.exclusion.k} of ${P.estimates.exclusion.n} company-and-ask filings)</option></select> <span class="ticker">SEC staff stopped answering most no-action requests on November 17, 2025 and all of them on August 14, 2026; proponents have since gone to court over exclusions (see <a href="#causality">Laws and rules</a>)</span></label>
       <label>Runs per scenario <select data-s="runs">${[200, 400, 1000].map((n) => `<option${n === sc.runs ? " selected" : ""}>${n}</option>`).join("")}</select></label>
     </div>`;
     box.addEventListener("change", (e) => {
       const k = e.target.dataset.s;
       if (!k) return;
-      sc[k] = e.target.type === "checkbox" ? e.target.checked : +e.target.value;
+      sc[k] = e.target.type === "checkbox" ? e.target.checked : Number.isNaN(+e.target.value) ? e.target.value : +e.target.value;
     });
   }
 
@@ -547,11 +548,11 @@
         <div><dt>Refile after a gap of a season or more</dt><dd>${rate(E.lapsed_refile)}</dd></div>
         <div><dt>First filing of an ask at a company</dt><dd>${rate(E.new_pair_exposed)} when the ask was filed at a same-role company the season before; ${rate(E.new_pair_unexposed)} otherwise</dd></div>
         <div><dt>Company commits (proposal withdrawn after an agreement)</dt><dd>${rate(E.commitment_first)} of first filings; ${rate(E.commitment_refile)} of refiles</dd></div>
-        <div><dt>Company excludes the proposal</dt><dd>${rate(E.exclusion)}</dd></div>
+        <div><dt>Company excludes the proposal</dt><dd>${rate(E.exclusion)} across all seasons; ${E.exclusion_latest ? `${rate(E.exclusion_latest)} in ${E.exclusion_latest.season}, the first season in which SEC staff did not review most exclusions` : ""}</dd></div>
         <div><dt>Support</dt><dd>A refile starts from last year's figure and moves by a yearly ratio with the spread recorded across ${E.support_delta.n} refiles (${esc(B.support_model)}). A first filing draws from the ask's recorded votes at any company.</dd></div>
         <div><dt>Held-out test</dt><dd>The refile, refile-after-a-gap and first-filing rates fitted on ${B.fit_seasons.join(", ")} only, then compared with ${B.test_season} (commitments and exclusions are too rare to test on one season, and the after-a-gap rate rests on very few cases): refiles expected ${B.refiled.expected}, recorded ${B.refiled.actual} of ${B.refiled.eligible} pairs the rule left open (the model ran low; the refile setting above can raise it); refiles after a gap expected ${B.lapsed.expected}, recorded ${B.lapsed.actual} of ${B.lapsed.eligible}; first filings expected ${B.new_pairs.expected}, recorded ${B.new_pairs.actual}; support error ${B.support_error.same_as_last_year_mae} points carrying last year forward against ${B.support_error.with_average_drift_mae} with an average drift, across ${B.support_error.n} refiles.</dd></div>
         <div><dt>Settings with no estimate in this data</dt><dd>Leading a coalition (from a study of investor-network dialogues, applied here to filings), points of support a coalition adds, the share of usual refilers who would use a floor proposal after a rescission, and how much less often a floor proposal ends in a commitment. All are under Assumptions.</dd></div>
-        <div><dt>Not modelled</dt><dd>Letters, meetings, exempt solicitations and votes against directors have no outcome records here, so the model covers filings only. Companies, investors and asks are treated alike within each estimate; asks do not affect each other. Proposals filed from a critical stance on ESG are left out of support figures.</dd></div>
+        <div><dt>Not modelled</dt><dd>Letters, meetings, exempt solicitations and votes against directors have no outcome records here, so the model covers filings only. A proponent suing over an exclusion is not modelled: two 2026 rulings went opposite ways (see Laws and rules). Companies, investors and asks are treated alike within each estimate; asks do not affect each other. Proposals filed from a critical stance on ESG are left out of support figures.</dd></div>
       </dl>
       <p class="note">Two studies shaped the design. In a simulated gathering of AI agents, the agents kept to small circles of familiar partners rather than meeting new ones (Lai, Evans and others${link("https://arxiv.org/abs/2402.12590", "paper")}); and accounting for where experts already work improved predictions of future discoveries, while steering away from those places surfaced ideas people were unlikely to reach (Sourati and Evans${link("https://doi.org/10.1038/s41562-023-01648-z", "paper")}). So the ranking shows pairs never filed, and the investors that hold shares there and have filed the same ask elsewhere.</p>`;
   }

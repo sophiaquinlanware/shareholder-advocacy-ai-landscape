@@ -289,6 +289,7 @@ function drawCompany(key) {
     ${whyIncluded(c)}
     <h3 class="sub-h">AI proposal history</h3>
     ${propRows ? `<div class="table-wrap"><table><thead><tr><th scope="col">Meeting</th><th scope="col">Proposal</th><th scope="col">Filed by</th><th scope="col">Status</th><th scope="col">Support</th></tr></thead><tbody>${propRows}</tbody></table></div>${fnList(notes)}<p><button type="button" class="linklike" data-feed="${esc(t)}">See these in All proposals</button></p>` : `<p class="status-note">No AI proposals on file${t ? "" : " (no US-listed shares)"}.</p>`}
+    ${t ? `<div class="campaigns-slot" data-co="${esc(t)}"></div>` : ""}
     <h3 class="sub-h">Filers active here</h3>
     ${filers.length ? `<div class="table-wrap"><table><thead><tr><th scope="col">Organization</th><th scope="col">AI proposals here</th><th scope="col"><span class="visually-hidden">Network</span></th></tr></thead><tbody>${filers.map((f) => `<tr><td>${esc(f.node.label)}</td><td class="num">${f.n}</td><td><button type="button" class="linklike" data-net="${esc(f.node.id)}">Show in network</button></td></tr>`).join("")}</tbody></table></div>` : `<p class="status-note">No filers recorded.</p>`}
     <h3 class="sub-h">Frontier-lab ties</h3>
@@ -305,6 +306,7 @@ function drawCompany(key) {
       ${factRow("Director elections", c.director_voting)}
     </dl>`}`;
   const body = document.getElementById("co-body");
+  if (window.CAMPAIGNS) window.CAMPAIGNS.fill(body);
   body.querySelectorAll("[data-feed]").forEach((b) => b.addEventListener("click", () => { window.filterFeedCompany(b.dataset.feed); showTab("feed", true); }));
   body.querySelectorAll("[data-net]").forEach((b) => b.addEventListener("click", () => { showTab("network"); setTimeout(() => window.focusNetworkNode(b.dataset.net), 400); }));
 }

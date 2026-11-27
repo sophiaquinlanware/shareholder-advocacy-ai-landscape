@@ -1806,9 +1806,10 @@
    "lane": "government",
    "kind": "rule",
    "jurisdiction": "US federal",
-   "summary": "For the 2025-2026 season, staff said it would not respond to no-action requests except under Rule 14a-8(i)(1), citing post-shutdown resource limits. Companies still file notices.",
+   "summary": "For the season of October 1, 2025 to September 30, 2026, staff said it would not respond to no-action requests except under Rule 14a-8(i)(1), citing post-shutdown resource limits. Companies still had to send Rule 14a-8(j) notices 80 days before filing a definitive proxy; a company that added an unqualified representation of a reasonable basis to exclude got a letter saying staff would not object, without staff evaluating it.",
    "source_url": "https://www.sec.gov/newsroom/speeches-statements/statement-regarding-division-corporation-finances-role-exchange-act-rule-14a-8-process-current-proxy-season",
-   "region": "United States"
+   "region": "United States",
+   "status": "superseded August 14, 2026"
   },
   {
    "id": "eu-omnibus-proposal",
@@ -2129,6 +2130,20 @@
    "region": "United States"
   },
   {
+   "id": "chubb-14a8-pi-denied-2026",
+   "date": "2026-03-31",
+   "title": "Court declines to order Chubb to include As You Sow's proposal",
+   "actor": "U.S. District Court, District of Columbia",
+   "lane": "government",
+   "kind": "ruling",
+   "jurisdiction": "US federal",
+   "summary": "As You Sow v. Chubb Limited (26-734): the court denied a preliminary injunction over a climate-report proposal Chubb excluded on ordinary-business grounds, finding As You Sow \"has not demonstrated that it is entitled to emergency injunctive relief\". The opinion is a court-stamped filing hosted by Climate Policy Radar, not a court site.",
+   "source_url": "https://cdn.climatepolicyradar.org/navigator/USA/2026/as-you-sow-v-chubb-ltd_67bef05a8839a64c5e67095d9da7c71d.pdf",
+   "region": "United States",
+   "status": "decided (preliminary injunction denied)",
+   "source_kind": "secondary"
+  },
+  {
    "id": "cn-ai-energy-action-plan",
    "date": "2026-04-08",
    "title": "China issues an action plan linking AI and energy",
@@ -2155,6 +2170,20 @@
    "source_kind": "primary",
    "status": "in force",
    "region": "China"
+  },
+  {
+   "id": "bjs-14a8-injunction-2026",
+   "date": "2026-04-22",
+   "title": "Court orders BJ's Wholesale Club to include an excluded proposal",
+   "actor": "U.S. District Court, District of Massachusetts",
+   "lane": "government",
+   "kind": "ruling",
+   "jurisdiction": "US federal",
+   "summary": "DiNapoli v. BJ's Wholesale Club Holdings (26-11075-LTS): the court granted the New York State Common Retirement Fund's motion for injunctive relief and denied BJ's motion to dismiss, rejecting its private-right-of-action, ordinary-business, Delaware-law and vagueness arguments. The order is a court-stamped filing hosted by a law firm, not a court site.",
+   "source_url": "https://governancebeat.cooley.com/wp-content/uploads/2026/04/BJ-Order.pdf",
+   "region": "United States",
+   "status": "decided; appeal status not confirmed",
+   "source_kind": "secondary"
   },
   {
    "id": "cn-labeling-enforcement-2026",
@@ -2293,20 +2322,6 @@
    "region": "United States"
   },
   {
-   "id": "ca-bill-c36",
-   "date": "2026-06-15",
-   "title": "Canada tables privacy bill with automated decision rules",
-   "actor": "Government of Canada (ISED)",
-   "lane": "government",
-   "kind": "policy",
-   "jurisdiction": "Canada",
-   "summary": "Bill C-36, the Protecting Privacy and Consumer Data Act, would modernize Canada's private-sector privacy law, add rules on automated decisions and children's data, and create a Digital Safety and Data Protection Commission. It does not revive AIDA.",
-   "source_url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/06/government-of-canada-tables-new-legislation-to-protect-childrens-data-strengthen-privacy-and-build-trust-in-the-digital-economy.html",
-   "source_kind": "official",
-   "status": "bill, not law",
-   "region": "Americas (other)"
-  },
-  {
    "id": "eu-cada-proposal",
    "date": "2026-06-03",
    "title": "Commission proposes Cloud and AI Development Act",
@@ -2342,6 +2357,20 @@
    "jurisdiction": "Canada",
    "summary": "Bill C-34 would bar children under 16 from social media, require operators of human-like chatbots to be transparent about their reporting thresholds in crisis situations and limit harmful content, and create a Digital Safety Commission.",
    "source_url": "https://www.canada.ca/en/canadian-heritage/news/2026/06/government-of-canada-introduces-legislation-to-make-social-media-services-and-ai-chatbots-safer-for-children.html",
+   "source_kind": "official",
+   "status": "bill, not law",
+   "region": "Americas (other)"
+  },
+  {
+   "id": "ca-bill-c36",
+   "date": "2026-06-15",
+   "title": "Canada tables privacy bill with automated decision rules",
+   "actor": "Government of Canada (ISED)",
+   "lane": "government",
+   "kind": "policy",
+   "jurisdiction": "Canada",
+   "summary": "Bill C-36, the Protecting Privacy and Consumer Data Act, would modernize Canada's private-sector privacy law, add rules on automated decisions and children's data, and create a Digital Safety and Data Protection Commission. It does not revive AIDA.",
+   "source_url": "https://www.canada.ca/en/innovation-science-economic-development/news/2026/06/government-of-canada-tables-new-legislation-to-protect-childrens-data-strengthen-privacy-and-build-trust-in-the-digital-economy.html",
    "source_kind": "official",
    "status": "bill, not law",
    "region": "Americas (other)"
@@ -2428,9 +2457,10 @@
    "lane": "government",
    "kind": "rule",
    "jurisdiction": "US federal",
-   "summary": "Staff stopped responding to all no-action requests, including (i)(1), until further notice. Companies must still submit 14a-8(j) notices through an online form.",
+   "summary": "Staff stopped responding to all no-action requests, including (i)(1), and stopped sending will-not-object letters, \"effective immediately, unless and until the Division announces otherwise.\" Companies are still required to submit Rule 14a-8(j) notices, and the statement says they should use the online Shareholder Proposal Form. Staff received no (i)(1) requests in the 2025-2026 season.",
    "source_url": "https://sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426",
-   "region": "United States"
+   "region": "United States",
+   "status": "in effect until the Division announces otherwise"
   },
   {
    "id": "ceres-water-behind-the-watts",
@@ -2490,9 +2520,10 @@
    "lane": "government",
    "kind": "rule",
    "jurisdiction": "US federal",
-   "summary": "Release 34-106383, File S7-2026-32, would end the federal shareholder proposal rule and leave proposals to state law and company governing documents. 60-day comment period.",
+   "summary": "Release 34-106383, File S7-2026-32 (September 16, 2026; 91 FR 59904), would end the federal shareholder proposal rule and amend Rule 14a-4, leaving proposals to state law and company governing documents. Comments were due November 20, 2026. It is a proposal, not a final rule.",
    "source_url": "https://www.sec.gov/rules/proposed/2026/34-106383.pdf",
-   "region": "United States"
+   "region": "United States",
+   "status": "proposed; comments closed November 20, 2026"
   },
   {
    "id": "cii-statement-rescission",
@@ -2640,8 +2671,8 @@
    "from": "sec-noaction-pause",
    "to": "sec-aug14-statement",
    "type": "led to",
-   "explanation": "August statement made the temporary pause permanent and dropped the (i)(1) exception.",
-   "source_url": "https://news.ballotpedia.org/2026/08/24/sec-makes-shareholder-proposal-no-action-pause-permanent-2/"
+   "explanation": "The August statement extended the pause to all no-action requests, including (i)(1), until the Division announces otherwise.",
+   "source_url": "https://sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426"
   },
   {
    "from": "sec-oira-submission",
@@ -3265,6 +3296,20 @@
    "type": "led to",
    "explanation": "The Supreme People's Court cited the Five-Year Plan's call for AI rules as background for its opinions.",
    "source_url": "https://www.court.gov.cn/zixun/xiangqing/511101.html"
+  },
+  {
+   "from": "exclusions-2026-season",
+   "to": "bjs-14a8-injunction-2026",
+   "type": "responded to",
+   "explanation": "A proponent sued after the company excluded its proposal without SEC staff review.",
+   "source_url": "https://governancebeat.cooley.com/wp-content/uploads/2026/04/BJ-Order.pdf"
+  },
+  {
+   "from": "exclusions-2026-season",
+   "to": "chubb-14a8-pi-denied-2026",
+   "type": "responded to",
+   "explanation": "A proponent sued after the company excluded its proposal on ordinary-business grounds.",
+   "source_url": "https://cdn.climatepolicyradar.org/navigator/USA/2026/as-you-sow-v-chubb-ltd_67bef05a8839a64c5e67095d9da7c71d.pdf"
   }
  ]
 }

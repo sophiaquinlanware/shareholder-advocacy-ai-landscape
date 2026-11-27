@@ -53,6 +53,11 @@
    "k": 3,
    "n": 57
   },
+  "exclusion_latest": {
+   "k": 3,
+   "n": 19,
+   "season": 2026
+  },
   "unit": "one per company, ask and season with a filing not lead-filed from a critical stance on ESG"
  },
  "ask_support": {
@@ -3529,7 +3534,7 @@
  "rescission": {
   "id": "sec-14a8-rescission-proposal",
   "title": "SEC proposes rescinding Rule 14a-8 and amending Rule 14a-4",
-  "status": null,
+  "status": "proposed; comments closed November 20, 2026",
   "source_url": "https://www.sec.gov/rules/proposed/2026/34-106383.pdf"
  },
  "literature": [

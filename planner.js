@@ -113,6 +113,7 @@
       <h4>At ${esc(c.name)}</h4>
       ${here.length ? `<ul class="steps tight">${here.map(row).join("")}</ul>${thr ? `<p class="note">SEC resubmission thresholds for a similar proposal within three years: ${thr.join("%, ")}% after one, two or three votes (this site's reading of Rule 14a-8(i)(12)).</p>` : ""}` : `<p class="status-note">Not filed here in this dataset.</p>`}
       ${all.length > here.length ? `<details><summary>Elsewhere (${all.length - here.length})</summary><ul class="steps tight">${all.filter((p) => p.company !== t).sort((a, b) => (b.year || 0) - (a.year || 0)).map(row).join("")}</ul></details>` : ""}
+      ${t ? `<div class="campaigns-slot" data-co="${esc(t)}" data-ask="${esc(ask)}"></div>` : ""}
     </section>`;
   }
 
@@ -131,10 +132,23 @@
         ${fact("Next filing deadline", c.next_proposal_deadline ? `${esc(fmt(c.next_proposal_deadline))}${passed ? " (passed)" : ""}${src(c.next_proposal_deadline_source, "proxy")}` : `<span class="ticker">not on file</span>`)}
         ${fact("AI proposals on the next ballot", upcoming.length ? upcoming.map((p) => `${esc(p.title)} (${esc(fmt(p.meeting_date))})${src(p.proxy_url, "proxy")}`).join("<br>") : `<span class="ticker">none on file</span>`)}
         ${us ? fact("Proposal route if Rule 14a-8 ends", route ? `${esc(route)}.${c.route_status_reason ? ` <span class="ticker">${esc(c.route_status_reason)}</span>` : ""}` : `<span class="ticker">not researched</span>`) : fact("Shareholder route", `${esc((c.shareholder_route || "not researched").replace(/^./, (m) => m.toUpperCase()))}. <span class="ticker">Filing deadlines and the grid above cover US-listed companies under the US proxy rules only.</span>`)}
-        ${c.threshold && c.threshold.text ? fact("Ownership threshold", esc(c.threshold.text) + src(c.threshold.url)) : ""}
+        ${us ? fact("SEC review if the company excludes your proposal", secReview()) : ""}
+        ${us ? fact("SEC minimum holding to file a Rule 14a-8 proposal", `$2,000 of shares held for 3 years, $15,000 for 2 years, or $25,000 for 1 year${link14a8}`) : ""}
+        ${c.threshold && c.threshold.text ? fact("Holding needed under the company's own bylaws (outside Rule 14a-8)", esc(c.threshold.text) + src(c.threshold.url)) : ""}
         ${c.director_voting && c.director_voting.text ? fact("Director elections", esc(c.director_voting.text) + src(c.director_voting.url)) : ""}
         ${ties.length ? fact("Ties to frontier labs", ties.map((x) => `${esc(x.to_label || x.to)}: ${esc(x.type)}${src(x.source_url)}`).join("<br>")) : ""}
       </dl></section>`;
+  }
+
+  // The SEC staff's role in exclusions, from the dated events on the causal map (data/causality.json).
+  const link14a8 = src("https://www.ecfr.gov/current/title-17/chapter-II/part-240/subject-group-ECFR8c9733e13b955d6/section-240.14a-8", "rule text");
+  function secReview() {
+    const ev = new Map(((D.causality && D.causality.events) || []).map((e) => [e.id, e]));
+    const e1 = ev.get("sec-noaction-pause"), e2 = ev.get("sec-aug14-statement");
+    const courts = ["bjs-14a8-injunction-2026", "chubb-14a8-pi-denied-2026"].map((id) => ev.get(id)).filter(Boolean);
+    if (!e1 && !e2) return `<span class="ticker">not on file</span>`;
+    return `None at present. Staff stopped answering most no-action requests on ${esc(fmt(e1 && e1.date))}${src(e1 && e1.source_url, "SEC")} and all of them, including (i)(1), on ${esc(fmt(e2 && e2.date))}, until the Division announces otherwise${src(e2 && e2.source_url, "SEC")}.
+      <span class="ticker">A company that excludes must still send its Rule 14a-8(j) notice to the SEC and to you 80 days before filing its definitive proxy; a proponent's remedy is in court${courts.length ? `, where 2026 rulings went both ways: ${courts.map((e) => `${esc(e.title)}${src(e.source_url, "order")}`).join("; ")}` : ""}.</span>`;
   }
 
   // ---------- Ideas ----------
@@ -338,6 +352,7 @@
       if (left < wrap.scrollLeft || right > wrap.scrollLeft + wrap.clientWidth) wrap.scrollLeft = Math.max(0, left - 40);
     }
     drawShortlist();
+    if (window.CAMPAIGNS) window.CAMPAIGNS.fill(out);
     // The last step of the site: the same company and ask, tested forward in Plan and test › Test plans over time.
     const nx = document.getElementById("pl-next");
     if (nx) nx.href = planUrl().replace(/#planner$/, "#simulate");
