@@ -145,34 +145,29 @@
   }
 
   const REDUCED = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
-  // Scroll progress of the chart: 0 when its top reaches the bottom of the screen, 1 when its bottom is two thirds
-  // of the way up. Eased toward the target each frame, so the sweep flows rather than jumps.
+  // Draw-in: once the chart is on screen, the sweep runs from chips to AI products over 4 seconds by itself,
+  // whatever the reader does with the scroll (owner, 2026-11-26). It plays once; reduced motion draws it at once.
   function wireReveal() {
     if (S.revealWired) return;
     S.revealWired = true;
-    let target = 0, raf = 0;
-    const box = () => document.getElementById("vc-flow");
-    const measure = () => {
-      const el = box();
-      if (!el || !el.offsetParent) return;
-      const r = el.getBoundingClientRect(), vh = window.innerHeight;
-      target = Math.max(target, Math.min(1, (vh - r.top) / (r.height + vh * 0.35)));
-      if (!raf) raf = requestAnimationFrame(step);
+    const done = () => { S.revealP = 1.2; if (S.reveal) S.reveal.set(1.2); };
+    if (REDUCED() || typeof IntersectionObserver === "undefined") { done(); return; }
+    const DUR = 4000;
+    const ease = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+    const play = () => {
+      const t0 = performance.now();
+      const step = (now) => {
+        const t = Math.min(1, (now - t0) / DUR);
+        S.revealP = 1.2 * ease(t);
+        if (S.reveal) S.reveal.set(S.revealP);
+        if (t < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
     };
-    const step = () => {
-      raf = 0;
-      const p = S.revealP || 0;
-      const next = Math.abs(target - p) < 0.002 ? target : p + (target - p) * 0.12;
-      S.revealP = next;
-      if (S.reveal) S.reveal.set(next);
-      if (next !== target) raf = requestAnimationFrame(step);
-    };
-    if (REDUCED()) { S.revealP = 1.2; if (S.reveal) S.reveal.set(1.2); return; }
-    window.addEventListener("scroll", measure, { passive: true });
-    window.addEventListener("resize", measure);
-    measure();
-    // Opening the view by a link lands mid-page: measure again once it is shown.
-    new MutationObserver(measure).observe(document.getElementById("tab-value-chain"), { attributes: true, attributeFilter: ["hidden"] });
+    const io = new IntersectionObserver((es) => {
+      if (es.some((e) => e.isIntersecting)) { io.disconnect(); play(); }
+    }, { threshold: 0.15 });
+    io.observe(document.getElementById("vc-flow"));
   }
   const TRACE = "#e8590c";
   function trace(t) {

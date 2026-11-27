@@ -227,6 +227,37 @@
   // Fit the box to the graph once the layout settles (owner, 2026-11-26: "fit the black box to the model so
   // there's a more natural fit"): the box's height shrinks to the nodes' extent, centred, never zoomed in past
   // 100%. Skipped once the viewer has zoomed or panned.
+  // Last pass once the layout settles: push apart any circles that still touch, so none overlap (owner, 2026-11-26:
+  // "have no overlaps of nodes"). A few sweeps over a quadtree; dragged (pinned) nodes stay put.
+  function separate() {
+    const vis = state.data.nodes.filter((n) => visible(n) && Number.isFinite(n.x));
+    for (let pass = 0; pass < 8; pass++) {
+      let moved = 0;
+      const qt = d3.quadtree(vis, (d) => d.x, (d) => d.y);
+      for (const a of vis) {
+        const ra = collideR(a), reach = ra + 40;
+        qt.visit((q, x0, y0, x1, y1) => {
+          if (!q.length) {
+            for (let b = q; b; b = b.next) {
+              const d = b.data;
+              if (d !== a && a.index < d.index) {
+                const dx = d.x - a.x, dy = d.y - a.y, dist = Math.hypot(dx, dy) || 0.01, min = ra + collideR(d) - 3;
+                if (dist < min) {
+                  const push = (min - dist) / 2, ux = dx / dist, uy = dy / dist;
+                  if (a.fx == null) { a.x -= ux * push; a.y -= uy * push; }
+                  if (d.fx == null) { d.x += ux * push; d.y += uy * push; }
+                  moved++;
+                }
+              }
+            }
+          }
+          return x0 > a.x + reach || x1 < a.x - reach || y0 > a.y + reach || y1 < a.y - reach;
+        });
+      }
+      if (!moved) break;
+    }
+    if (state.draw) state.draw();
+  }
   // The space the open key takes on the left of the band (wide screens), so the graph fits beside it.
   const keyInset = () => {
     const box = document.getElementById("net-figcap");
@@ -1764,7 +1795,7 @@
     };
     state.draw = draw;
     sim.on("tick", draw);
-    sim.on("end", () => { fitToContent(); axisFollow(); declutter(); applyStyles(); });
+    sim.on("end", () => { separate(); fitToContent(); axisFollow(); declutter(); applyStyles(); });
     // Work out most of the layout before showing it (owner, 2026-11-26: the nodes "shake a lot" when a graph first
     // opens; "gently wiggly … nothing violent"): nodes start near their column, the layout runs off-screen, and
     // only the last few percent plays on screen, heavily damped.
