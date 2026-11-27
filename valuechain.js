@@ -54,8 +54,8 @@
   function shell(el) {
     const nCos = new Set(V.ties.flatMap((t) => [t.from, t.to])).size;
     el.innerHTML = `
-      <h2>AI value chain: companies by stage, from chips to AI products</h2>
-      <p class="intro">Companies by stage of the AI value chain, their sourced ties to each other, and investor engagement at each stage: ${plural(V.ties.length, "sourced tie")} between ${nCos} companies. ${esc(V.about ? "Tiers are this site's reading of each company's main role." : "")}</p>
+      <h2>A model of the AI value chain: how companies connect, from chips to AI products</h2>
+      <p class="intro">One connected model of the AI value chain: ${plural(V.ties.length, "sourced tie")} among ${nCos} companies, arranged by stage from chip makers to the companies that sell AI products. Follow a company's ties to see which frontier labs it reaches and where investors have engaged. Each company's stage is this site's reading of its main role.</p>
       ${scopeNote()}
       <div class="vc-tiers" role="group" aria-label="Value-chain stages">${V.tiers
         .slice()
@@ -63,7 +63,7 @@
         .map((t) => `<button type="button" class="chip" data-tier="${esc(t.id)}" aria-pressed="false">${esc(t.label)}</button>`)
         .join("")}</div>
       <figure class="card chart-card fig">
-        ${window.figHead(`AI value chain: sourced ties between companies, from chips to AI products`, `${plural(V.ties.length, "sourced tie")} among ${nCos} companies, dated ${window.yearSpan(V.ties.map((t) => t.as_of))}. Columns are each company's main role (this site's reading); circle size = number of ties; line pattern = type of tie.`)}
+        ${window.figHead(`The value chain model: sourced ties between companies, by stage`, `${plural(V.ties.length, "sourced tie")} among ${nCos} companies, dated ${window.yearSpan(V.ties.map((t) => t.as_of))}. Columns are each company's main role (this site's reading); circle size = number of ties; line pattern = type of tie.`)}
         <div class="net-legend" id="vc-key"></div>
         <div class="chart-scroll" tabindex="0" role="region" aria-label="Value chain chart (scrolls sideways on small screens)"><div id="vc-flow" class="vc-flow"></div></div>
         ${window.figSource("company filings and announcements, cited for each tie in the list view.")}
@@ -172,7 +172,7 @@
     // Key: one dash pattern per tie type.
     document.getElementById("vc-key").innerHTML = [...new Set(V.ties.map((t) => t.type))].map((k) =>
       `<span class="leg static"><svg class="mark vc-line" viewBox="0 0 44 10" aria-hidden="true"><line x1="2" y1="5" x2="42" y2="5" stroke="${ink}" stroke-width="2.5"${DASH[k] ? ` stroke-dasharray="${DASH[k]}"` : ""}${CAP[k] ? ` stroke-linecap="${CAP[k]}"` : ""}></line></svg>${esc(k)}</span>`).join("")
-      + `<span class="status-note">Tap a line to trace its path in orange; tap the chart again to clear. Each line is one sourced tie; open a company to read its ties in words. Circle size = number of sourced ties; companies with no sourced tie are counted in each tier's panel. Each column lists its companies with a sourced tie; the count beneath it is the companies at that stage with none yet (listed in the stage's details). Ties to frontier labs, including equity stakes and parent companies, come from Ties to each frontier lab.</span>`;
+      + `<span class="status-note">Tap a line to trace its path in orange; tap the chart again to clear. Each line is one sourced tie; open a company to read its ties in words. Circle size = number of sourced ties; Each column lists its companies with a sourced tie; the count beneath it is the companies at that stage with none yet (listed in the stage's details). Ties to frontier labs, including equity stakes and parent companies, come from Ties to each frontier lab.</span>`;
   }
 
   const REDUCED = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
