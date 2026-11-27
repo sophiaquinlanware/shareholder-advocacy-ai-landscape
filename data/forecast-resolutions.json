@@ -1,0 +1,4 @@
+{
+ "about": "Results of prediction-board questions decided by hand (for example the SEC question, or a vote postponed more than 60 days). Each entry: resolved (1, 0 or \"void\"), source_url, note.",
+ "resolutions": {}
+}

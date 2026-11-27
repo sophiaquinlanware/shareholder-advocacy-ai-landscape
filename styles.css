@@ -917,3 +917,37 @@ button + [role="status"], button + .ticker, button + .status-note, button + outp
 .vc-topics { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px 14px; }
 .vc-asks-t td:first-child { white-space: nowrap; }
 @media (max-width: 640px) { .vc-sec-b { padding-left: 4px; } .vc-stats { grid-template-columns: 1fr 1fr; } }
+/* Prediction board (board.js) */
+.bd-steps { padding-left: 20px; margin: 8px 0 16px; }
+.bd-steps li { margin: 4px 0; }
+.bd-rules p { margin: 6px 0; }
+.bd-view { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 16px 0 4px; }
+.bd-view button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); }
+.bd-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; margin: 12px 0; background: var(--surface); min-width: 0; }
+.bd-card h4 { margin: 0 0 6px; font-size: 15px; font-weight: 500; line-height: 1.35; overflow-wrap: anywhere; }
+.bd-label { font: var(--label); color: var(--ink-soft); }
+.bd-base { margin: 10px 0 2px; }
+.bd-input { margin-top: 10px; }
+.bd-input label { display: block; font-size: 14px; margin-bottom: 4px; }
+.bd-slide { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-soft); }
+.bd-slide input { flex: 1; min-width: 0; accent-color: var(--accent); }
+.bd-slide output { min-width: 3.5em; text-align: right; font-weight: 500; color: var(--ink); font-size: 15px; }
+.bd-actions button { min-height: 28px; }
+.bd-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 8px; }
+.bd-crowd { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
+.bd-crowd p { margin: 4px 0; }
+.bd-groups { list-style: none; padding: 0; margin: 6px 0; }
+.bd-groups li { display: grid; grid-template-columns: minmax(0, 14em) minmax(0, 1fr) auto; gap: 8px; align-items: center; font-size: 13px; margin: 3px 0; }
+.bd-g { overflow-wrap: anywhere; }
+.bd-bar { height: 8px; background: var(--accent-soft); border-radius: 4px; overflow: hidden; }
+.bd-bar i { display: block; height: 100%; background: var(--accent); }
+.bd-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.bd-pair .bd-card { margin: 0; }
+.bd-who { padding-left: 20px; }
+.bd-who li { margin: 4px 0; }
+.bd-lb { border-collapse: collapse; margin: 8px 0; }
+.bd-lb th, .bd-lb td { padding: 4px 12px 4px 0; text-align: left; border-bottom: 1px solid var(--line); }
+.bd-how dl div { margin: 8px 0; }
+.bd-how dt { font-weight: 500; }
+.bd-how dd { margin: 2px 0 0; }
+@media (max-width: 600px) { .bd-groups li { grid-template-columns: minmax(0, 1fr) 30% auto; } }

@@ -883,6 +883,7 @@ async function main() {
   renderStart(); // again, now that the weekly SEC check (changes, tracking) has loaded
   if (window.renderPlanner) window.renderPlanner(DATA);
   if (window.renderSimulator) window.renderSimulator(DATA);
+  if (window.renderBoard) window.renderBoard();
   document.dispatchEvent(new Event("siteready"));
 }
 main();
