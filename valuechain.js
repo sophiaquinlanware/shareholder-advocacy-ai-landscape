@@ -62,7 +62,7 @@
     const colX = (i) => 70 + (i * (W - 220)) / (FLOW.length - 1);
     // Short column headings whenever the full ones would run into each other.
     const narrow = (W - 220) / (FLOW.length - 1) < 175;
-    const rowH = 20;
+    const rowH = 36; // owner, 2026-11-26: "more space vertically between the companies"
     const cols = FLOW.map((tid, i) => {
       const ids = [...inTies].filter((id) => roleOfId(id) === tid).sort((a, b) => name(a).localeCompare(name(b)));
       return { tid, x: colX(i), ids };
