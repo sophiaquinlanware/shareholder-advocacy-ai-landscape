@@ -27,8 +27,10 @@ test("the board shows the site estimate, the public crowd and the post link", as
   await card.locator(".bd-save").click();
   const again = el.locator('.bd-card[data-q$="-bar"]').first();
   await expect(again.locator(".bd-crowd")).toContainText("Crowd forecast (n = 0)");
-  const post = again.locator(".bd-post");
-  await expect(post).toHaveAttribute(
+  // Posting opens an inline form (group, stake, confirmation), with a GitHub link as the alternative.
+  await again.locator(".bd-post > summary").click();
+  await expect(again.locator(".bd-postform select[name=group]")).toBeVisible();
+  await expect(again.locator(".bd-postform a")).toHaveAttribute(
     "href",
     /issues\/new\?template=forecast\.yml.*question=q-[a-z0-9-]+-bar.*probability=35/,
   );
@@ -56,13 +58,14 @@ test("the board says how to post a forecast and how to put a proposal on the boa
   const take = page.locator(".bd-take");
   await expect(take).toContainText("Forecast a question");
   await expect(take).toContainText("Put a proposal on the board");
-  await expect(take.locator("a.bd-btn", { hasText: "Suggest a proposal" })).toHaveAttribute(
-    "href",
-    /template=suggest-question\.yml/,
-  );
+  await take.locator(".bd-suggest > summary").click();
+  await expect(take.locator(".bd-suggestform textarea[name=question]")).toBeVisible();
+  await expect(take.locator("#bd-acct")).toBeVisible();
   await page.goto("/index.html?plan=meta-platforms~ask-ai-training-data#planner");
   await page.waitForLoadState("networkidle");
   await expect(page.locator("#pl-board")).toHaveAttribute("href", /template=suggest-question\.yml.*company=Meta/);
+  await page.locator("#pl-board-box > summary").click();
+  await expect(page.locator("#pl-board-form input[name=company]")).toHaveValue(/Meta/);
 });
 
 test("questions rank most likely first, a seat's scenario figures can be tried, and your forecasts glow at the top", async ({

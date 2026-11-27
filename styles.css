@@ -1068,3 +1068,17 @@ button.bd-btn { border: 0; font: inherit; font-weight: 500; cursor: pointer; }
 /* Collapsed model-checking sections in Test plans over time (module audit, 2026-11-27) */
 details.sim-more > summary { cursor: pointer; list-style: revert; }
 details.sim-more > summary h3 { display: inline; margin: 0; }
+/* Posting from the site (board-live.js): sign-in box and inline forms */
+.bd-acct { margin: 12px 0 4px; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--accent-soft); }
+.bd-acct-form label { display: block; font-size: 14px; margin-bottom: 6px; }
+.bd-acct-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.bd-acct-row input { flex: 1 1 220px; min-width: 0; padding: 7px 9px; border: 1px solid var(--control-edge); border-radius: var(--radius); font: inherit; }
+.bd-acct-in { margin: 0; }
+details.bd-post, details.bd-suggest { margin-top: 6px; }
+details.bd-post > summary, details.bd-suggest > summary { display: inline-block; list-style: none; }
+details.bd-post > summary::-webkit-details-marker, details.bd-suggest > summary::-webkit-details-marker { display: none; }
+.bd-postform, .bd-suggestform { display: grid; gap: 8px; margin-top: 10px; max-width: 640px; }
+.bd-postform label, .bd-suggestform label { display: grid; gap: 4px; font-size: 14px; }
+.bd-postform input:not([type="checkbox"]), .bd-postform select, .bd-suggestform input:not([type="checkbox"]), .bd-suggestform select, .bd-suggestform textarea { padding: 7px 9px; border: 1px solid var(--control-edge); border-radius: var(--radius); font: inherit; min-width: 0; }
+.bd-postform .bd-check, .bd-suggestform .bd-check { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; color: var(--ink-soft); }
+.bd-postform .bd-check input, .bd-suggestform .bd-check input { margin-top: 3px; flex: none; }

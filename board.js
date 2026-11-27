@@ -66,6 +66,30 @@
     </div>`;
   }
 
+  const GROUP_OPTS = () => (Q.groups || []).map((g) => `<option>${esc(g)}</option>`).join("");
+  function postForm(q, m) {
+    const issue = `https://github.com/${REPO}/issues/new?template=forecast.yml&title=${encodeURIComponent(`Forecast: ${q.id}`)}&question=${encodeURIComponent(q.id)}&probability=${Math.round(m.p * 100)}`;
+    return `<form class="bd-postform" data-q="${esc(q.id)}">
+      <label>Your group <select name="group" required><option value="">Choose…</option>${GROUP_OPTS()}</select></label>
+      <label class="bd-check"><input type="checkbox" name="stake"> I or my organization have a stake (filed or plan to file at a company this covers, or are that company or advise it)</label>
+      <label class="bd-check"><input type="checkbox" name="confirm" required> This is my own forecast of the outcome, from public information. It is not a statement of how I or my organization will vote, not a request for anyone to vote, file or act, and not a commitment to act.</label>
+      <button type="submit" class="bd-btn">Post ${pct(m.p)}</button> <a class="note" href="${issue}" rel="noopener" target="_blank">or post through GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>
+      <p class="note bd-post-msg" role="status"></p></form>`;
+  }
+  function suggestForm(id, co, ask) {
+    return `<form class="bd-suggestform" id="${id}">
+      <label>Company <input name="company" required maxlength="120" value="${esc(co)}"></label>
+      <label>The ask (what the proposal asks the company to do) <input name="ask" required minlength="3" maxlength="300" value="${esc(ask)}"></label>
+      <label>Where does it stand? <select name="standing" required><option value="filed, in a proxy statement">Filed and in a proxy statement</option><option value="filed, not yet in a proxy statement">Filed, not yet in a proxy statement</option><option value="not filed">Not filed (an outcome to forecast)</option></select></label>
+      <label>The question people would forecast <textarea name="question" required minlength="10" maxlength="600" rows="2" placeholder="One yes-or-no outcome with a date, for example: at least 20% support at the 2027 annual meeting"></textarea></label>
+      <label>Public source (needed for a filed proposal) <input name="source_url" type="url" placeholder="https://www.sec.gov/…"></label>
+      <label class="bd-check"><input type="checkbox" name="stake"> I or my organization have a stake in it (filed, plan to file, or are the company or advise it)</label>
+      <label class="bd-check"><input type="checkbox" name="confirm" required> This is from public information, and it is a question about an outcome, not a request for anyone to vote, file or act a certain way.</label>
+      <button type="submit" class="bd-btn">Send the suggestion</button> <span class="note">The site's maintainer checks the source before it goes on the board.</span>
+      <p class="note bd-post-msg" role="status"></p></form>`;
+  }
+  window.BOARD_SUGGEST_FORM = suggestForm;
+
   function card(q) {
     const m = M[q.id];
     const b = q.base || {};
@@ -89,9 +113,10 @@
         <p class="note bd-warn" id="bd-w-${esc(q.id)}" ${m && (start < 0.1 || start > 0.9) ? "" : "hidden"}>Below 10% or above 90% means you are nearly sure. Under Brier scoring a confident miss costs the most: 95% on something that doesn't happen scores 0.90.</p>
         <div class="bd-actions">
           <button type="button" class="bd-save" ${m ? "" : "disabled"}>${m ? "Update my forecast" : "Save my forecast"}</button>
-          ${m ? `<a class="bd-post bd-btn" href="${issue(m.p)}" rel="noopener" target="_blank">Post my forecast publicly (${pct(m.p)})<span class="visually-hidden"> (opens a GitHub form in a new tab)</span></a>` : `<span class="note">Move the slider to your own figure first (to keep the site's figure, move it away and back). Tip: set it before reading the crowd below, so the crowd doesn't pull your estimate.</span>`}
+          ${m && m.posted ? `<span class="bd-pill">Posted ${pct(m.posted)}</span>` : ""}
+          ${m && m.posted !== m.p ? `<details class="bd-post"><summary class="bd-btn">Post my forecast publicly (${pct(m.p)})</summary>${postForm(q, m)}</details>` : !m ? `<span class="note">Move the slider to your own figure first (to keep the site's figure, move it away and back). Tip: set it before reading the crowd below, so the crowd doesn't pull your estimate.</span>` : ""}
         </div>
-        ${m ? `<p class="note">Saved in this browser ${esc(day(m.made))}, not yet public. To share it, post it: a GitHub form opens with this question and your figure filled in; choose your group and submit.</p>` : ""}
+        ${m && m.posted !== m.p ? `<p class="note">Saved in this browser ${esc(day(m.made))}${m.posted ? `; your posted figure is ${pct(m.posted)}` : ", not yet public"}. Posting makes it public under your chosen name; the latest one you post counts.</p>` : ""}
       </div>
       ${crowdBlock(q, m && m.p)}`}
     </article>`;
@@ -103,7 +128,7 @@
     const status = (q) => (q.resolved === "void" ? "void" : q.resolved != null ? `resolved ${q.resolved ? "Yes" : "No"}, your score ${((M[q.id].p - q.resolved) ** 2).toFixed(3)}` : isClosed(q) ? "closed, awaiting the result" : `open until ${day(q.closes)}`);
     return `<section class="pl-card bd-minebox" aria-labelledby="bd-h-mine">
       <h3 id="bd-h-mine">Your forecasts</h3>
-      ${mineQs.length ? `<ul class="bd-minelist">${mineQs.map((q) => `<li><button type="button" class="linklike" data-jump="bd-${esc(q.id)}">${esc(q.title)}</button> <span class="bd-pill">Yours ${pct(M[q.id].p)}</span> <span class="note">Crowd ${q.crowd && q.crowd.n ? `${pct(q.crowd.equal_weight)} (n = ${q.crowd.n})` : "none yet"}; ${esc(status(q))}.</span></li>`).join("")}</ul>
+      ${mineQs.length ? `<ul class="bd-minelist">${mineQs.map((q) => `<li><button type="button" class="linklike" data-jump="bd-${esc(q.id)}">${esc(q.title)}</button> <span class="bd-pill">Yours ${pct(M[q.id].p)}</span>${M[q.id].posted ? ` <span class="note">posted ${pct(M[q.id].posted)}</span>` : ` <span class="note">not posted</span>`} <span class="note">Crowd ${q.crowd && q.crowd.n ? `${pct(q.crowd.equal_weight)} (n = ${q.crowd.n})` : "none yet"}; ${esc(status(q))}.</span></li>`).join("")}</ul>
         <p class="note">Kept in this browser. They glow wherever they appear below; post one to make it public.</p>`
         : `<p class="note">None yet. Forecasts you save appear here and glow in the list below, so you can check on them easily.</p>`}
       ${seats.map((st) => `<p><button type="button" class="chip" data-seat="${esc(st)}">Try the ${esc(st)} figures as your own</button> <span class="note">Copies this site's scenario figures for that seat into your forecasts in this browser, to adjust and post if you agree. Forecasts you already saved are kept. Nothing is posted.</span></p>`).join("")}
@@ -154,18 +179,19 @@
             <ol>
               <li>Pick a question below and read the site's starting estimate.</li>
               <li>Move the slider to your probability and press <strong>Save my forecast</strong>. It stays in this browser.</li>
-              <li>Press <strong>Post my forecast publicly</strong>. A GitHub form opens with the question and your figure filled in: choose your group and submit. Your forecast appears on the board within a few minutes, and is scored when the question resolves.</li>
+              <li>Press <strong>Post my forecast publicly</strong>, choose your group and post. It shows on the board straight away, and is scored when the question resolves.</li>
             </ol>
             <button type="button" class="bd-btn" data-jump="bd-questions">Go to the questions ↓</button>
           </div>
           <div class="bd-way">
             <h4><span class="bd-num" aria-hidden="true">2</span>Put a proposal on the board</h4>
             <p>Suggest a shareholder proposal, filed or planned, for everyone to forecast: for example whether it will reach a level of support or end in a company commitment. The site's maintainer checks each suggestion against its public source and adds it as a question.</p>
-            <a class="bd-btn" href="${SUGGEST()}" rel="noopener" target="_blank">Suggest a proposal<span class="visually-hidden"> (opens a GitHub form in a new tab)</span></a>
+            <details class="bd-suggest"><summary class="bd-btn">Suggest a proposal</summary>${suggestForm("bd-sg", "", "")}</details>
             <p class="note">From Plan an engagement, "Put this plan on the Prediction board" fills in the company and ask for you.</p>
           </div>
         </div>
-        <p class="note">Posting needs a free GitHub account (github.com/signup); your GitHub name is shown with what you post. Nothing is posted until you submit the GitHub form.</p>
+        <div class="bd-acct" id="bd-acct"></div>
+        <p class="note">No account yet? Signing in with your email creates one. You can also post through GitHub instead: <a href="${SUGGEST()}" rel="noopener" target="_blank">suggestion form</a>; each question's post button has a GitHub link too.</p>
       </section>
       <div class="pl-card bd-rules">
         <p><strong>Outcomes, not support.</strong> A forecast here is your estimate of what will happen. It is not a statement of how you or your organization will vote, not a request for anyone to vote a certain way, and not a commitment to act. Nothing on this board gathers votes, pledges or sign-ons. No money is involved and no prize is offered.</p>
@@ -202,13 +228,93 @@
         </dl>
       </details>`;
     bars(el);
+    if (window.BOARD_LIVE) window.BOARD_LIVE.mountAccount(el.querySelector("#bd-acct"));
   }
 
   function bars(root) {
     for (const i of root.querySelectorAll(".bd-bar i[data-w]")) i.style.width = `${i.dataset.w}%`;
   }
 
+  // Posting a forecast or a suggestion from the page (board-live.js); the sign-in box comes first if needed.
+  async function needSignIn(form) {
+    const live = window.BOARD_LIVE;
+    const msg = form.querySelector(".bd-post-msg");
+    if (!live) { msg.textContent = "Posting from the site isn't available right now; use the GitHub link."; return true; }
+    await live.init();
+    const st = live.state();
+    if (!st.signedIn || !st.name) {
+      msg.textContent = !st.signedIn ? "Sign in first: enter your email in the box under How to take part." : "Choose your display name first, in the box under How to take part.";
+      const acct = el.querySelector("#bd-acct");
+      if (acct) acct.scrollIntoView({ block: "center" });
+      return true;
+    }
+    return false;
+  }
+  async function liveCrowd() {
+    // Live crowd figures: forecasts posted on the site (Supabase) and through GitHub (data/predictions.json),
+    // with the same rules as scripts/build_questions.py.
+    const live = window.BOARD_LIVE;
+    if (!live) return;
+    let site = [], gh = [];
+    try { site = await live.forecasts(); } catch (e) { return; }
+    try { gh = ((await fetch("data/predictions.json").then((r) => r.json())).forecasts || []); } catch (e) { /* none */ }
+    const rows = [
+      ...gh.map((f) => ({ q: f.question, who: `gh:${f.handle}`, p: f.p, g: f.group, stake: !!f.filer, made: f.made })),
+      ...site.map((f) => ({ q: f.question, who: `site:${f.display_name}`, p: +f.p, g: f.stakeholder_group, stake: !!f.stake, made: f.made })),
+    ].sort((a, b) => String(a.made).localeCompare(String(b.made)));
+    const latest = new Map();
+    for (const r of rows) latest.set(`${r.q}|${r.who}`, r);
+    const med = (v) => { const s = [...v].sort((a, b) => a - b); const n = s.length; return n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2; };
+    const MIN = Q.min_group || 3;
+    for (const q of Q.questions) {
+      const fsAll = [...latest.values()].filter((r) => r.q === q.id && (!q.closes || String(r.made).slice(0, 10) <= q.closes));
+      const fs = fsAll.filter((r) => !r.stake);
+      const groups = {};
+      for (const r of fs) {
+        if (!groups[r.g]) groups[r.g] = [];
+        groups[r.g].push(r.p);
+      }
+      const weighted = Object.values(groups).filter((v) => v.length >= MIN);
+      const small = Object.values(groups).filter((v) => v.length < MIN).flat();
+      if (small.length >= MIN) weighted.push(small);
+      const allm = fs.length ? Math.round(med(fs.map((r) => r.p)) * 1000) / 1000 : null;
+      q.crowd = { n: fs.length, stake_left_out: fsAll.length - fs.length, weighted_groups: weighted.length,
+        headline: weighted.length >= 2 ? "equal_weight" : "all_median",
+        groups: Object.fromEntries(Object.entries(groups).map(([g, v]) => [g, { n: v.length, median: Math.round(med(v) * 1000) / 1000 }])),
+        equal_weight: weighted.length >= 2 ? Math.round((weighted.map(med).reduce((a, b) => a + b, 0) / weighted.length) * 1000) / 1000 : allm,
+        all_median: allm };
+    }
+  }
+
   function wire() {
+    el.addEventListener("submit", async (e) => {
+      const f = e.target;
+      if (!f.matches(".bd-postform, .bd-suggestform")) return;
+      e.preventDefault();
+      if (await needSignIn(f)) return;
+      const msg = f.querySelector(".bd-post-msg");
+      const fd = new FormData(f);
+      try {
+        if (f.matches(".bd-postform")) {
+          const qid = f.dataset.q;
+          const all = mine.get();
+          await window.BOARD_LIVE.forecast({ question: qid, p: all[qid].p, group: fd.get("group"), stake: fd.get("stake") === "on" });
+          all[qid].posted = all[qid].p;
+          mine.set(all);
+          await liveCrowd();
+          draw();
+          const live = el.querySelector("#bd-live");
+          if (live) live.textContent = `Posted ${pct(all[qid].p)}.`;
+          const card = el.querySelector(`#bd-${CSS.escape(qid)}`);
+          if (card) card.scrollIntoView({ block: "center" });
+        } else {
+          await window.BOARD_LIVE.suggest({ company: fd.get("company"), ask: fd.get("ask"), standing: fd.get("standing"), question: fd.get("question"),
+            source_url: fd.get("source_url") || null, stake: fd.get("stake") === "on" });
+          f.reset();
+          msg.textContent = "Thank you: your suggestion is in. The site's maintainer checks its source before adding it as a question.";
+        }
+      } catch (err) { msg.textContent = err.message; }
+    });
     el.addEventListener("input", (e) => {
       if (!e.target.matches('input[type="range"]')) return;
       const v = +e.target.value;
@@ -294,6 +400,7 @@
       try { Q = await fetch("data/forecast-questions.json").then((r) => r.json()); } catch (e) { el.innerHTML = `<p class="status-note">The board's data did not load.</p>`; return; }
       draw();
       wire();
+      if (window.BOARD_LIVE) liveCrowd().then(draw);
     };
     new MutationObserver(go).observe(el, { attributes: true, attributeFilter: ["hidden"] });
     go();

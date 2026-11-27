@@ -1,0 +1,65 @@
+name: Copy site posts into the record
+
+# Every night: copy forecasts posted on the site (Supabase) into data/predictions.json, rebuild the board's figures,
+# and open one GitHub issue per new proposal suggestion for the maintainer to review. Reads only public data with
+# Supabase's publishable key (no secret). Starts again from the newest main if a push is refused.
+on:
+  schedule:
+    - cron: "15 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  actions: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Copy forecasts and find new suggestions
+        id: sync
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "tracker-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Suggestions already opened as issues carry "(site #<id>)" in their title.
+          seen=$(gh issue list --repo "$GITHUB_REPOSITORY" --label question-suggestion --state all --limit 500 --json title \
+            | python -c "import json,re,sys; print(json.dumps([int(m.group(1)) for t in json.load(sys.stdin) for m in [re.search(r'\(site #(\d+)\)', t['title'])] if m]))")
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python scripts/sync_site_posts.py "$seen"
+            python scripts/build_questions.py
+            git add data/predictions.json data/forecast-questions.json
+            if git diff --cached --quiet; then echo "changed=no" >> "$GITHUB_OUTPUT"; break; fi
+            git commit -q -m "Prediction board: forecasts posted on the site"
+            if git push -q origin HEAD:main; then echo "changed=yes" >> "$GITHUB_OUTPUT"; break; fi
+            sleep $((i * 10))
+          done
+      - name: Open new suggestions as issues for review
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import json, subprocess, os
+          for s in json.load(open("suggestions_new.json")):
+              body = (f"Suggested on the site for the Prediction board. Check the source, then add it to data/forecast-curated.json "
+                      f"and set its status in Supabase (suggestions table).\n\n**Company:** {s['company']}\n\n**Ask:** {s['ask']}\n\n"
+                      f"**Where it stands:** {s['standing']}\n\n**Question to forecast:** {s['question']}\n\n"
+                      f"**Source:** {s.get('source_url') or 'none given'}\n\n**Stake declared:** {'yes' if s.get('stake') else 'no'}")
+              subprocess.run(["gh", "issue", "create", "--repo", os.environ["GITHUB_REPOSITORY"], "--label", "question-suggestion",
+                              "--title", f"Board suggestion: {s['company'][:60]} (site #{s['id']})", "--body", body], check=True)
+          PY
+      - name: Republish
+        if: steps.sync.outputs.changed == 'yes'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run refresh.yml --repo "$GITHUB_REPOSITORY" -f task=publish
