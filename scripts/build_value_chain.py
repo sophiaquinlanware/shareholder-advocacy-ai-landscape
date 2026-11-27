@@ -22,6 +22,7 @@ Nothing here is a recommendation: it describes where engagement has happened and
 connected to what.
 """
 
+import datetime as dt
 import json
 import statistics
 from collections import Counter, defaultdict
@@ -123,6 +124,17 @@ def main():
         if e["type"] == "works at":
             works_at[e["target"]].append(e["source"])
 
+    # Proposals lead-filed from a critical stance on ESG are left out of support figures, as elsewhere on the site
+    # (same rule as scripts/build_sim_params.py: a lead filer whose org_type is an anti-ESG proponent).
+    gnodes = {n["id"]: n for n in graph["nodes"]}
+    critical = set()
+    for e in graph["edges"]:
+        a, b = gnodes.get(e["source"]), gnodes.get(e["target"])
+        if a and b and b["type"] == "proposal" and e["type"] in ("lead filer", "filed (named in proxy)") and "anti-ESG" in (a.get("org_type") or ""):
+            critical.add(b.get("sec_id") or b["id"])
+    commitments = load("commitments.json", {}).get("commitments", [])
+    today = dt.date.today().isoformat()
+    soon = (dt.date.today() + dt.timedelta(days=90)).isoformat()
     per_tier = {}
     for tier in vc.get("tiers", []):
         # All companies in the tier (primary or secondary), so e.g. Meta and Oracle count under data centers.
@@ -143,7 +155,11 @@ def main():
                     routes.setdefault(lab_name.get(l, l), []).append(
                         {"from": i, "via": t["to"], "tie": t["type"], "then": second, "source_url": t["source_url"]})
         props = [p for p in proposals if (p.get("company") or "").upper() in tickers]
-        supports = [p["support_pct"] for p in props if isinstance(p.get("support_pct"), (int, float))]
+        voted = [p for p in props if isinstance(p.get("support_pct"), (int, float)) and p["id"] not in critical]
+        supports = [p["support_pct"] for p in voted]
+        by_year = {}
+        for p in voted:
+            by_year.setdefault(p.get("year"), []).append(p["support_pct"])
         prop_ids = {p["id"] for p in props}
         orgs = Counter()
         for t in tickers:
@@ -165,7 +181,19 @@ def main():
             "ai_proposals": len(props),
             "proposal_topics": dict(sorted(Counter(p.get("topic") or "Other" for p in props).items(), key=lambda x: (-x[1], x[0]))),
             "median_support_pct": round(statistics.median(supports), 1) if supports else None,
-            "median_support_base": {"with_recorded_support": len(supports), "proposals": len(props)},
+            "median_support_base": {"with_recorded_support": len(supports), "proposals": len(props),
+                                    "left_out_critical": sum(1 for p in props if p["id"] in critical)},
+            "support_range": [round(min(supports), 1), round(max(supports), 1)] if supports else None,
+            "support_by_year": {str(y): {"median": round(statistics.median(v), 1), "n": len(v)} for y, v in sorted(by_year.items()) if y},
+            # What engagement has won here: company commitments on record (data/commitments.json), with sources.
+            "commitments": [{"company": c["company"], "promised": c.get("promised"), "by": c.get("engaged_by"),
+                             "source_url": c.get("commitment_source_url")} for c in commitments
+                            if (c.get("company") or "").upper() in tickers and c.get("is_commitment", True)],
+            # The next open Rule 14a-8 deadlines (next 90 days) at companies in the tier, from each proxy statement.
+            "deadlines_next_90": sorted([{"company": c.get("ticker"), "name": c["name"], "date": c["next_proposal_deadline"],
+                                          "source_url": c.get("next_proposal_deadline_source")} for c in cos
+                                         if c.get("next_proposal_deadline") and today <= c["next_proposal_deadline"] <= soon],
+                                        key=lambda x: x["date"]),
             "asks_made": [{"company": p["company"], "year": p.get("year"), "title": p["title"],
                            "url": p.get("proxy_url") or p.get("source_url")} for p in sorted(props, key=lambda p: (-(p.get("year") or 0), p["company"]))][:12],
             "investor_engagements": [c["id"] for c in sorted(cos, key=lambda c: c["id"]) if c.get("basis_type") == "investor engagement"],

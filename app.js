@@ -372,7 +372,9 @@ function renderFeed() {
           reason = `<div class="reason"><strong>Reason:</strong> ${p.status_reason ? esc(p.status_reason) + src(p.status_source_url) : "Reason not yet recorded."}</div>`;
         }
         const links = [p.proxy_url ? src(p.proxy_url, "proxy") : p.source_url ? src(p.source_url) : "", p.results_url ? src(p.results_url, "results") : ""].join("");
-        return `${esc(p.title)}${links}<div class="ticker">${filerOf(p)}</div><div>${topicTag(p.topic)}</div>${reason}`;
+        // Leads from the SEC record (scripts/sec_leads.py) stay labelled until a person confirms them.
+        const auto = p.reviewed === false ? ` <span class="unverified">found automatically in the SEC record, not yet reviewed</span>` : "";
+        return `${esc(p.title)}${auto}${links}<div class="ticker">${filerOf(p)}</div><div>${topicTag(p.topic)}</div>${reason}`;
       } },
     { key: "status", label: "Status", render: (p) => `<span class="pill st-${esc(p.status)}">${esc(PROPOSAL_STATUS[p.status] || p.status)}</span>` },
     { key: "support", label: "Support", sortValue: (p) => (p.support_pct == null ? -1 : p.support_pct), cls: "num",

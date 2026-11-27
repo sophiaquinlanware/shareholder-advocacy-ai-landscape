@@ -70,6 +70,23 @@ def main():
         if cat and cat in cat_label:
             p["topic"] = cat_label[cat]
 
+    # One outcome per proposal, for colouring and counting (UI session request, 2026-11-27):
+    # commitment (withdrawn after a company commitment in data/commitments.json, or a status reason that says the
+    # company agreed or committed), majority (voted, 50% or more), below_majority, excluded, withdrawn_other, pending.
+    ledger = {c.get("related_proposal_id") for c in (json.loads((DATA / "commitments.json").read_text()).get("commitments", [])
+              if (DATA / "commitments.json").exists() else []) if c.get("is_commitment", True)}
+    for p in props:
+        st, reason = p.get("status"), (p.get("status_reason") or "").lower()
+        if st == "voted":
+            p["outcome"] = "majority" if (p.get("support_pct") or 0) >= 50 else "below_majority" if p.get("support_pct") is not None else "pending"
+        elif st == "withdrawn":
+            said = any(w in reason for w in (" committed to", "negotiated agreement", " agreed to")) and "not agreed" not in reason
+            p["outcome"] = "commitment" if p["id"] in ledger or said else "withdrawn_other"
+        elif st == "excluded":
+            p["outcome"] = "excluded"
+        else:
+            p["outcome"] = "pending"
+
     linked = 0
     for p in props:
         if p.get("vote_history_source") != "manual":

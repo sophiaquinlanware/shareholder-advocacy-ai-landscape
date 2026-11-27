@@ -544,18 +544,20 @@
       <div class="pl-grid">${rows}</div>
       <section class="pl-card pl-wide" aria-labelledby="sim-h-chart"><h3 id="sim-h-chart">Support over time</h3>
         <div id="sim-chart"></div></section>
-      <section class="pl-card pl-wide" aria-labelledby="sim-h-field"><h3 id="sim-h-field">The field, season by season</h3>
+      <details class="pl-card pl-wide sim-more" id="sim-field-box"><summary><h3 id="sim-h-field">The field, season by season</h3></summary>
         <p class="status-note">Recorded seasons show in blue what was filed. Scenario seasons show in green the share of runs in which each company has a filing (shade) or a commitment (outline), under ${esc(S.plans[0].name)}. Move the slider through time.</p>
         <p><label>Season <input type="range" id="sim-season" min="${P.seasons_observed[0]}" max="${sc.horizon}" value="${S.season}" step="1"> <output id="sim-season-out">${S.season}</output></label>
           <label>Ask <select id="sim-field-ask">${askSet.map((a) => `<option value="${esc(a)}">${esc(askLabel(a))}</option>`).join("")}</select></label></p>
-        <div id="sim-field"></div></section>
-      <section class="pl-card pl-wide" aria-labelledby="sim-h-log"><h3 id="sim-h-log">One run, step by step (${esc(S.plans[0].name)})</h3>
+        <div id="sim-field"></div></details>
+      <details class="pl-card pl-wide sim-more"><summary><h3 id="sim-h-log">One run, step by step (${esc(S.plans[0].name)})</h3></summary>
         <p class="status-note">What the agents did in the first run: filers, companies, the SEC rule and fund families. These are simulated events, not records: each filer named is drawn from the organizations that have filed this ask before, weighted toward those holding the company's shares. Fund-family votes use each family's FOR rate on this ask from Form N-PX.</p>
-        <ol class="sim-log">${S.result[0].log.slice(0, 60).map((l) => `<li${l.strong ? ' class="strong"' : ""}><span class="ticker">${l.season}</span> ${esc(l.text)}</li>`).join("") || "<li>No filings in this run.</li>"}</ol></section>`;
+        <ol class="sim-log">${S.result[0].log.slice(0, 60).map((l) => `<li${l.strong ? ' class="strong"' : ""}><span class="ticker">${l.season}</span> ${esc(l.text)}</li>`).join("") || "<li>No filings in this run.</li>"}</ol></details>`;
     drawChart(seasons);
     drawField();
     out.querySelector("#sim-season").addEventListener("input", (e) => { S.season = +e.target.value; out.querySelector("#sim-season-out").textContent = S.season; drawField(); });
     out.querySelector("#sim-field-ask").addEventListener("change", drawField);
+    // Closed by default (module audit, 2026-11-27: useful for checking the model, not for deciding); draw on open.
+    out.querySelector("#sim-field-box").addEventListener("toggle", (e) => { if (e.target.open) drawField(); });
   }
 
   function drawChart(seasons) {

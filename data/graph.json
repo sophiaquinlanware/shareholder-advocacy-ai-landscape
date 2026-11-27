@@ -658,7 +658,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000085/crm-20260416.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "must be received at our principal executive offices not later than the close of business on December 17, 2026",
-   "degree": 19
+   "degree": 20
   },
   {
    "id": "co-ADBE",
@@ -1222,7 +1222,7 @@
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
    "exchange": "Taiwan Stock Exchange / NYSE (ADR)",
    "country": "Taiwan",
-   "degree": 0
+   "degree": 1
   },
   {
    "id": "co-005930",
@@ -1371,7 +1371,7 @@
    "ticker": "MU",
    "exchange": "Nasdaq",
    "country": "US",
-   "degree": 1
+   "degree": 2
   },
   {
    "id": "co-SNOW",
@@ -2174,7 +2174,7 @@
    "description": "ESG mutual fund manager; member of WBA ethical AI coalition.",
    "website": "https://www.parnassus.com",
    "source_url": "https://www.parnassus.com",
-   "degree": 28
+   "degree": 31
   },
   {
    "id": "fidelity-intl",
@@ -29389,6 +29389,22 @@
   },
   {
    "source": "parnassus",
+   "target": "co-CRM",
+   "type": "engaged directly",
+   "layer": "investors",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "reported_by": "Parnassus",
+   "steps": [
+    {
+     "date": "2025-H1",
+     "title": "Responsible AI engagement",
+     "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+     "source_page": "21, 23"
+    }
+   ]
+  },
+  {
+   "source": "parnassus",
    "target": "co-VRSK",
    "type": "engaged directly",
    "layer": "investors",
@@ -29400,6 +29416,44 @@
      "title": "Verisk agrees to publish responsible AI disclosures",
      "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/5c7316b6-715c-48e6-be26-80717ef81499/Parnassus%20Investments_Stewardship%20Report%202024.pdf",
      "source_page": "14, 21"
+    },
+    {
+     "date": "2025-H1",
+     "title": "Responsible AI engagement continues",
+     "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+     "source_page": "21"
+    }
+   ]
+  },
+  {
+   "source": "parnassus",
+   "target": "co-TSM",
+   "type": "engaged directly",
+   "layer": "investors",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "reported_by": "Parnassus",
+   "steps": [
+    {
+     "date": "2025-H1",
+     "title": "Water quantity and quality risk engagement",
+     "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+     "source_page": "22"
+    }
+   ]
+  },
+  {
+   "source": "parnassus",
+   "target": "co-MU",
+   "type": "engaged directly",
+   "layer": "investors",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+   "reported_by": "Parnassus",
+   "steps": [
+    {
+     "date": "2025-H1",
+     "title": "Water risk engagement",
+     "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
+     "source_page": "11, 25"
     }
    ]
   },

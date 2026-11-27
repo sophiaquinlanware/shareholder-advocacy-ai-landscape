@@ -1,0 +1,301 @@
+{
+ "about": "Leads from free SEC sources, auto-detected and not yet reviewed: Rule 14a-8(j) notices of planned exclusions (the SEC's listing page) and proxy statements whose text pairs AI terms with shareholder-proposal request language (EDGAR full-text search). A person confirms each lead before it becomes a record in data/proposals.json.",
+ "checked": "2026-11-26",
+ "notices": [
+  {
+   "season": "2026-2027",
+   "company_name": "Air Products and Chemicals Inc.",
+   "date": "2026-09-15",
+   "url": "https://www.sec.gov/files/corpfin/no-action/14a-8/cheveddenapci091526-14a8.pdf",
+   "ticker": null
+  },
+  {
+   "season": "2026-2027",
+   "company_name": "Amentum Holdings, Inc.",
+   "date": "2026-09-18",
+   "url": "https://www.sec.gov/files/corpfin/no-action/14a-8/cheveddenahi091826-14a8.pdf",
+   "ticker": null
+  },
+  {
+   "season": "2026-2027",
+   "company_name": "Apple Inc.",
+   "date": "2026-10-19",
+   "url": "https://www.sec.gov/files/corpfin/no-action/14a-8/voranapple101926-14a8.pdf",
+   "ticker": "AAPL",
+   "ai_terms": [],
+   "resolved_excerpt": "Resolved: Shareholders request that the Board of Directors of Apple Inc. take appropriate steps to restore “Gulf of Mexico” and “Lake Ontario” as the primary names displayed in Apple Maps for users in the United States, while permitting supplementary display of alternative names where appropriate or legally required."
+  },
+  {
+   "season": "2026-2027",
+   "company_name": "Apple Inc.",
+   "date": "2026-10-19",
+   "url": "https://www.sec.gov/files/corpfin/no-action/14a-8/mcritchieapple101926-14a8.pdf",
+   "ticker": "AAPL",
+   "ai_terms": [],
+   "resolved_excerpt": null
+  },
+  {
+   "season": "2026-2027",
+   "company_name": "Apple Inc.",
+   "date": "2026-10-19",
+   "url": "https://www.sec.gov/files/corpfin/no-action/14a-8/donahueapple101926-14a8.pdf",
+   "ticker": "AAPL",
+   "ai_terms": [],
+   "resolved_excerpt": null
+  },
+  {
+   "season": "2026-2027",
+   "company_name": "Apple Inc.",
+   "date": "2026-10-19",
+   "url": "https://www.sec.gov/files/corpfin/no-action/14a-8/harangozoapple101926-14a8.pdf",
+   "ticker": "AAPL",
+   "ai_terms": [],
+   "resolved_excerpt": null
+  },
+  {
+   "season": "2026-2027",
+   "company_name": "Blaize Holdings, Inc.",
+   "date": "2026-09-01",
+   "url": "https://www.sec.gov/files/corpfin/no-action/14a-8/burtechbhi090126-14a8.pdf",
+   "ticker": null
+  },
+  {
+   "season": "2026-2027",
+   "company_name": "Concentrix Corporation",
+   "date": "2026-10-20",
+   "url": "https://www.sec.gov/files/corpfin/no-action/14a-8/cheveddenconcentrix102026-14a8.pdf",
+   "ticker": null
+  },
+  {
+   "season": "2026-2027",
+   "company_name": "Costco Wholesale Corporation",
+   "date": "2026-09-18",
+   "url": "https://www.sec.gov/files/corpfin/no-action/14a-8/mcritchiecostco091826-14a8.pdf",
+   "ticker": null
+  },
+  {
+   "season": "2026-2027",
+   "company_name": "Costco Wholesale Corporation",
+   "date": "2026-09-18",
+   "url": "https://www.sec.gov/files/corpfin/no-action/14a-8/modugnocostco091826-14a8.pdf",
+   "ticker": null
+  },
+  {
+   "season": "2026-2027",
+   "company_name": "Costco Wholesale Corporation",
+   "date": "2026-09-18",
+   "url": "https://www.sec.gov/files/corpfin/no-action/14a-8/ncpprcostco091826-14a8.pdf",
+   "ticker": null
+  },
+  {
+   "season": "2026-2027",
+   "company_name": "D.R. Horton, Inc.",
+   "date": "2026-09-22",
+   "url": "https://www.sec.gov/files/corpfin/no-action/14a-8/cheveddendrhorton092226-14a8.pdf",
+   "ticker": null
+  },
+  {
+   "season": "2026-2027",
+   "company_name": "Emerson Electric Co.",
+   "date": "2026-09-18",
+   "url": "https://www.sec.gov/files/corpfin/no-action/14a-8/cheveddeneeco091826-14a8.pdf",
+   "ticker": null
+  },
+  {
+   "season": "2026-2027",
+   "company_name": "Fermi Inc.",
+   "date": "2026-09-18",
+   "url": "https://www.sec.gov/files/corpfin/no-action/14a-8/vicksburgfermi091826-14a8.pdf",
+   "ticker": null
+  },
+  {
+   "season": "2026-2027",
+   "company_name": "Raymond James Financial Inc.",
+   "date": "2026-10-16",
+   "url": "https://www.sec.gov/files/corpfin/no-action/14a-8/accountabilityboardrjfinc101626-14a8.pdf",
+   "ticker": null
+  }
+ ],
+ "proxy_leads": [
+  {
+   "company_name": "Walmart Inc.  (WMT)",
+   "cik": "104169",
+   "ticker": null,
+   "form": "PRE 14A",
+   "filed": "2026-04-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/104169/000119312526152873/wmt-20260413.htm",
+   "matched": "\"artificial intelligence\" \"shareholders request\"",
+   "sic": "5331",
+   "clauses": [
+    "Shareholders request Walmart Inc. (\"Walmart\" or the \"Company\") prepare a report on the principles by which the Company seeks to address and measure the social implications on its workforce of the growing adoption of advanced technologies, including artificial intelligence and automation. The report, prepared at reasonable cost and omitting confidential and proprietary information, should be made a"
+   ],
+   "status": "company not tracked: check"
+  },
+  {
+   "company_name": "Walmart Inc.  (WMT)",
+   "cik": "104169",
+   "ticker": null,
+   "form": "DEF 14A",
+   "filed": "2026-04-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/104169/000119312526173673/wmt-20260423.htm",
+   "matched": "\"artificial intelligence\" \"shareholders request\"",
+   "sic": "5331",
+   "clauses": [
+    "Shareholders request Walmart Inc. (\"Walmart\" or the \"Company\") prepare a report on the principles by which the Company seeks to address and measure the social implications on its workforce of the growing adoption of advanced technologies, including artificial intelligence and automation. The report, prepared at reasonable cost and omitting confidential and proprietary information, should be made a"
+   ],
+   "status": "company not tracked: check"
+  },
+  {
+   "company_name": "AMAZON COM INC  (AMZN)",
+   "cik": "1018724",
+   "ticker": "AMZN",
+   "form": "DEF 14A",
+   "filed": "2026-04-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041026/tm261382-1_def14a.htm",
+   "matched": "\"artificial intelligence\" \"shareholders request\"",
+   "sic": "5961",
+   "clauses": [
+    "Shareholders request that Amazon issue a report explaining how it will meet the climate change-related commitments it has made on greenhouse gas emissions, given the massively growing energy demand from artificial intelligence and data centers that Amazon is planning to build. ​ 1 https://www.bloomberg.com/news/articles/2024-03-28/amazon-bets-150-billion-on-data-centers-required-for-ai-boom ​ 2 ht"
+   ],
+   "status": "tracked company, proposal recorded that season"
+  },
+  {
+   "company_name": "Alphabet Inc.  (GOOG, GOOGL)",
+   "cik": "1652044",
+   "ticker": "GOOGL",
+   "form": "DEF 14A",
+   "filed": "2026-04-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
+   "matched": "\"artificial intelligence\" \"shareholders request\"",
+   "sic": "7370",
+   "clauses": [
+    "Shareholders request that Alphabet publish a report, at reasonable cost, within a reasonable time, and excluding confidential or proprietary information, explaining how it will meet the climate change-related commitments it has made on GHGs, given the massively growing energy demand from artificial intelligence and data centers that Alphabet is planning to build. (1) https://wedocs.unep.org/rest/a",
+    "RESOLVED, Shareholders request the Board of Directors of Alphabet, Inc. (“Alphabet”) to update the Audit Committee (the “Committee”) Charter to provide formal oversight on the responsible development and deployment of artificial intelligence (“AI”) and AI-related risks that may impact the human rights of users and other stakeholders, including reviewing and discussing with the full Board matters d",
+    "Shareholders request the Board of Directors of Alphabet, Inc. (“Alphabet”) to update the Audit Committee (the “Committee”) Charter to provide formal oversight on the responsible development and deployment of artificial intelligence (“AI”) and AI-related risks that may impact the human rights of users and other stakeholders, including reviewing and discussing with the full Board matters deemed by t"
+   ],
+   "status": "tracked company, proposal recorded that season"
+  },
+  {
+   "company_name": "INTERNATIONAL BUSINESS MACHINES CORP  (IBM)",
+   "cik": "51143",
+   "ticker": "IBM",
+   "form": "DEF 14A",
+   "filed": "2026-03-10",
+   "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
+   "matched": "\"artificial intelligence\" \"shareholders request\"",
+   "sic": "3570",
+   "clauses": [
+    "Shareholders request that the Board of Directors of IBM issue a report, within the next year, on the methods used to eliminate bias from the Company’s artificial intelligence (AI) models, including an assessment of the risk that seeking to avoid “disparate impact” in outputs will undermine the accuracy of, and trust in, those outputs. Supporting Statement The requested report could consider: 1. Ho"
+   ],
+   "status": "tracked company, proposal recorded that season"
+  },
+  {
+   "company_name": "MICROSOFT CORP  (MSFT)",
+   "cik": "789019",
+   "ticker": "MSFT",
+   "form": "DEF 14A",
+   "filed": "2025-10-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
+   "matched": "\"artificial intelligence\" \"shareholders request\"",
+   "sic": "7372",
+   "clauses": [
+    "Shareholders request the Board of Directors of Microsoft Corp. conduct an evaluation and issue a report within the next year, at reasonable cost and excluding confidential information, assessing the risk of Microsoft’s ESP being utilized for censorship of legitimate speech. Supporting Statement Recent headlines make clear that public concern about state-sponsored censorship is rising, 7 and AI pro",
+    "Shareholders request the Board of Directors commission a report assessing the implications of siting Microsoft cloud datacenters in countries of significant human rights concern, and the Company’s strategies for mitigating these impacts. The report, prepared at reasonable cost and omitting confidential and proprietary information, should be published on the Company’s website within a year of the 2",
+    "RESOLVED : Shareholders request the Board of Directors publish a report, at reasonable cost and omitting proprietary information, assessing the effectiveness of Microsoft’s human rights due diligence (“HRDD”) processes in preventing, identifying, and addressing customer misuse of Microsoft artificial intelligence (“Al”) and cloud products or services that violates human rights or international hum",
+    "Shareholders request the Board of Directors publish a report, at reasonable cost and omitting proprietary information, assessing the effectiveness of Microsoft’s human rights due diligence (“HRDD”) processes in preventing, identifying, and addressing customer misuse of Microsoft artificial intelligence (“Al”) and cloud products or services that violates human rights or international humanitarian l",
+    "RESOLVED: Shareholders request that Microsoft report on the climate and financial risks to the Company associated with providing advanced technology, including artificial intelligence and machine learning tools, to facilitate oil and gas development and production. Board Recommendation The Board of Directors recommends a vote AGAINST the proposal for the following reasons: COMPANY STATEMENT IN OPP",
+    "Shareholders request that Microsoft report on the climate and financial risks to the Company associated with providing advanced technology, including artificial intelligence and machine learning tools, to facilitate oil and gas development and production. Board Recommendation The Board of Directors recommends a vote AGAINST the proposal for the following reasons: COMPANY STATEMENT IN OPPOSITION Th"
+   ],
+   "status": "tracked company, proposal recorded that season"
+  },
+  {
+   "company_name": "MICROSOFT CORP  (MSFT)",
+   "cik": "789019",
+   "ticker": "MSFT",
+   "form": "DEF 14A",
+   "filed": "2026-10-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
+   "matched": "\"artificial intelligence\" \"shareholders request\"",
+   "sic": "7372",
+   "clauses": [
+    "RESOLVED : Shareholders request the Board of Directors publish a report, at reasonable cost and omitting proprietary information, assessing the effectiveness of Microsoft’s human rights due diligence (“HRDD”) processes in preventing, identifying, and addressing customer misuse of Microsoft artificial intelligence (“AI”) and cloud products or services that violates human rights or international hum",
+    "Shareholders request the Board of Directors publish a report, at reasonable cost and omitting proprietary information, assessing the effectiveness of Microsoft’s human rights due diligence (“HRDD”) processes in preventing, identifying, and addressing customer misuse of Microsoft artificial intelligence (“AI”) and cloud products or services that violates human rights or international humanitarian l",
+    "Shareholders request the Board of Directors commission a report assessing the implications of siting Microsoft cloud data centers in countries of significant human rights concern, and the Company’s strategies for mitigating these impacts. The report, prepared at reasonable cost and omitting confidential and proprietary information, should be published on the Company’s website within a year of the "
+   ],
+   "status": "tracked company, proposal recorded that season"
+  },
+  {
+   "company_name": "Meta Platforms, Inc.  (META)",
+   "cik": "1326801",
+   "ticker": "META",
+   "form": "DEF 14A",
+   "filed": "2026-04-16",
+   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
+   "matched": "\"artificial intelligence\" \"shareholders request\"",
+   "sic": "7370",
+   "clauses": [
+    "Shareholders request that Meta issue a report, at reasonable cost and excluding proprietary information, explaining how it will meet the climate change-related commitments it has made on greenhouse gas emissions, given the growing energy demand from its artificial intelligence and planned data centers. META BOARD RESPONSE • As we continue to build the future of human connection and the technology ",
+    "RESOLVED , that shareholders of Meta Platforms, Inc. (“Meta”) urge the board of directors to oversee a data protection impact assessment on the company’s collection of user interactions with generative artificial intelligence (AI) chatbots (voice and text) to personalize advertising and content. It should describe how Meta is ensuring appropriate use of, and opt-out procedures for, collection of t"
+   ],
+   "status": "tracked company, proposal recorded that season"
+  },
+  {
+   "company_name": "SOUTHERN CO  (SO, SOJC, SOJD, SOJE, SOJF, SOMN)",
+   "cik": "92122",
+   "ticker": "SO",
+   "form": "PRE 14A",
+   "filed": "2026-03-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000021/so-20260323.htm",
+   "matched": "\"artificial intelligence\" \"shareholders request\"",
+   "sic": "4911",
+   "clauses": [
+    "RESOLVED: Shareholders request that Southern issue a report disclosing if and how it is putting safeguards in place to avoid shifting costs of new infrastructure for data centers to residential customers and small businesses. 1 https://www.southerncompany.com/sustainability/our-customers.html 2 https://apnews.com/article/georgia-power-data-centers-d15f7793c6b79444908ca8a7b68f7ef1 3 https://cleanen",
+    "Shareholders request that Southern issue a report disclosing if and how it is putting safeguards in place to avoid shifting costs of new infrastructure for data centers to residential customers and small businesses. 1 https://www.southerncompany.com/sustainability/our-customers.html 2 https://apnews.com/article/georgia-power-data-centers-d15f7793c6b79444908ca8a7b68f7ef1 3 https://cleanenergy.org/n"
+   ],
+   "status": "tracked company, proposal recorded that season"
+  },
+  {
+   "company_name": "SOUTHERN CO  (SO, SOJC, SOJD, SOJE, SOJF, SOMN)",
+   "cik": "92122",
+   "ticker": "SO",
+   "form": "DEF 14A",
+   "filed": "2026-04-03",
+   "url": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm",
+   "matched": "\"artificial intelligence\" \"shareholders request\"",
+   "sic": "4911",
+   "clauses": [
+    "RESOLVED: Shareholders request that Southern issue a report disclosing if and how it is putting safeguards in place to avoid shifting costs of new infrastructure for data centers to residential customers and small businesses. 1 https://www.southerncompany.com/sustainability/our-customers.html 2 https://apnews.com/article/georgia-power-data-centers-d15f7793c6b79444908ca8a7b68f7ef1 3 https://cleanen",
+    "Shareholders request that Southern issue a report disclosing if and how it is putting safeguards in place to avoid shifting costs of new infrastructure for data centers to residential customers and small businesses. 1 https://www.southerncompany.com/sustainability/our-customers.html 2 https://apnews.com/article/georgia-power-data-centers-d15f7793c6b79444908ca8a7b68f7ef1 3 https://cleanenergy.org/n"
+   ],
+   "status": "tracked company, proposal recorded that season"
+  },
+  {
+   "company_name": "Tesla, Inc.  (TSLA)",
+   "cik": "1318605",
+   "ticker": "TSLA",
+   "form": "PRE 14A",
+   "filed": "2025-09-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925087598/tm252289-4_pre14a.htm",
+   "matched": "\"artificial intelligence\" \"shareholders request\"",
+   "sic": "3711",
+   "clauses": [
+    "RESOLVED, that the shareholders of Tesla, Inc. request that the Board of Directors authorize an investment in xAI, in an amount and form deemed appropriate by the Board, to capitalize on the synergies between the two companies and strengthen Tesla’s position as a leader in AI, robotics, and energy. Supporting Statement: Tesla’s integration of Grok into its vehicles demonstrates the tangible benefi"
+   ],
+   "status": "tracked company, proposal recorded that season"
+  },
+  {
+   "company_name": "Tesla, Inc.  (TSLA)",
+   "cik": "1318605",
+   "ticker": "TSLA",
+   "form": "DEF 14A",
+   "filed": "2025-09-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925090866/tm252289-12_def14a.htm",
+   "matched": "\"artificial intelligence\" \"shareholders request\"",
+   "sic": "3711",
+   "clauses": [
+    "RESOLVED, that the shareholders of Tesla, Inc. request that the Board of Directors authorize an investment in xAI, in an amount and form deemed appropriate by the Board, to capitalize on the synergies between the two companies and strengthen Tesla’s position as a leader in AI, robotics, and energy. Supporting Statement: Tesla’s integration of Grok into its vehicles demonstrates the tangible benefi"
+   ],
+   "status": "tracked company, proposal recorded that season"
+  }
+ ]
+}

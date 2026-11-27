@@ -1,6 +1,6 @@
 # Shareholder Advocacy AI Landscape — current state
 
-Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-27 (data session: Prediction board posting, your forecasts, Parnassus water questions; tracker grid clicks).
+Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-27 (data session: SEC leads pulled weekly into the proposal records; board bug fixes).
 
 ## Sessions and branches (read this first)
 
@@ -47,6 +47,10 @@ Owner's request 2026-11-26; plan docs/plans/2026-11-26-prediction-board.md. Peop
 - **Taking part (2026-11-27):** a "How to take part" panel (1 forecast a question, 2 put a proposal on the board); "Suggest a proposal" opens `.github/ISSUE_TEMPLATE/suggest-question.yml` (label `question-suggestion`, created; not auto-added: the maintainer checks the source and adds the question to `data/forecast-curated.json`). Plan an engagement has "Put this plan on the Prediction board", prefilled with company and ask. "Your forecasts" sits at the top; your cards glow; the default view ranks most likely first (crowd, else site estimate, else your own figure).
 - **Curated questions:** Microsoft absolute water withdrawal target by June 30, 2028; Parnassus named lead on Microsoft in Ceres' VWFI by June 30, 2027; the if/then pair. Green "Parnassus Investments seat" scenario figures (15%, 35%, 22% if Ceres, 12% if not), written by this site, not counted, not Parnassus's view; "Try the seat's figures as your own" copies them into the viewer's browser. Resolved by hand.
 - **Not tested live:** the workflow has not run on GitHub yet; the first real forecast will show whether the issue-form prefill, labels and bot permissions work.
+
+## SEC leads (`scripts/sec_leads.py`, weekly in refresh.yml)
+
+Rule 14a-8(j) notices (the SEC's list; the official record of planned exclusions since staff stopped responding on August 14, 2026) and EDGAR full-text search of PRE/DEF 14A for AI terms inside a proposal's request clause. Leads at tracked companies go straight into `data/proposals.json` (excluded from a notice, or upcoming from a proxy filed in the last 120 days), with `reviewed: false`; the proposals table and the planner label them "found automatically in the SEC record, not yet reviewed". Other leads stay in `data/sec_leads.json`. First run (2026-11-27): 15 notices, 4 at Apple, none about AI; every AI request clause found at a tracked company was already recorded; one lead outside scope (Walmart, AI and workforce, 2026). Locally the SEC needs `SSL_CERT_FILE` set to certifi's bundle (python.org builds lack certificates).
 
 ## Plan an engagement (`#planner`)
 

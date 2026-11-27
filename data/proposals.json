@@ -23,7 +23,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "ask_id": "ask-dc-siting-rights",
    "category": "data-centers",
-   "topic_original": "Data center impacts"
+   "topic_original": "Data center impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "msft-2023-13",
@@ -48,7 +49,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312523259247/d356108ddef14a.htm",
    "ask_id": "ask-ai-misinformation",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "msft-2024-6",
@@ -83,7 +85,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "ask_id": "ask-dc-siting-rights",
    "category": "data-centers",
-   "topic_original": "Data center impacts"
+   "topic_original": "Data center impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "msft-2024-7",
@@ -108,7 +111,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "ask_id": "ask-ai-fossil-fuels",
    "category": "downstream-use",
-   "topic_original": "AI governance & oversight"
+   "topic_original": "AI governance & oversight",
+   "outcome": "below_majority"
   },
   {
    "id": "msft-2024-8",
@@ -143,7 +147,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "ask_id": "ask-ai-misinformation",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "msft-2024-9",
@@ -168,7 +173,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312524242883/d858775ddef14a.htm",
    "ask_id": "ask-ai-training-data",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "msft-2025-6",
@@ -193,7 +199,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "ask_id": "ask-ai-bias",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "msft-2025-7",
@@ -218,7 +225,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "ask_id": "ask-ai-training-data",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "msft-2025-8",
@@ -260,7 +268,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "ask_id": "ask-dc-siting-rights",
    "category": "data-centers",
-   "topic_original": "Data center impacts"
+   "topic_original": "Data center impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "msft-2025-9",
@@ -285,7 +294,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "ask_id": "ask-customer-due-diligence",
    "category": "downstream-use",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "msft-2025-10",
@@ -320,7 +330,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a.htm",
    "ask_id": "ask-ai-fossil-fuels",
    "category": "downstream-use",
-   "topic_original": "AI governance & oversight"
+   "topic_original": "AI governance & oversight",
+   "outcome": "below_majority"
   },
   {
    "id": "meta-2023-5",
@@ -345,7 +356,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000050/meta-20230414.htm",
    "ask_id": "ask-targeted-ads-rights",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "meta-2024-6",
@@ -370,7 +382,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "ask_id": "ask-ai-misinformation",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "meta-2024-10",
@@ -405,7 +418,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000034/meta-20240418.htm",
    "ask_id": "ask-targeted-ads-rights",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "meta-2025-10",
@@ -430,7 +444,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "ask_id": "ask-child-safety",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "meta-2025-11",
@@ -455,7 +470,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "ask_id": "ask-ai-training-data",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "meta-2025-12",
@@ -480,7 +496,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680125000040/meta-20250417.htm",
    "ask_id": "ask-dc-climate-energy",
    "category": "data-centers",
-   "topic_original": "Data center impacts"
+   "topic_original": "Data center impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "meta-2026-3",
@@ -515,7 +532,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "ask_id": "ask-ai-training-data",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "meta-2026-9",
@@ -540,7 +558,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "ask_id": "ask-dc-climate-energy",
    "category": "data-centers",
-   "topic_original": "Data center impacts"
+   "topic_original": "Data center impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "meta-2026-11",
@@ -565,7 +584,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025532/meta-20260416.htm",
    "ask_id": "ask-ai-training-data",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "googl-2023-10",
@@ -590,7 +610,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "ask_id": "ask-dc-siting-rights",
    "category": "data-centers",
-   "topic_original": "Data center impacts"
+   "topic_original": "Data center impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "googl-2023-11",
@@ -615,7 +636,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "ask_id": "ask-targeted-ads-rights",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "googl-2023-12",
@@ -640,7 +662,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817923000736/lgoog2023_def14a.htm",
    "ask_id": "ask-ai-oversight-reporting",
    "category": "governance-safety",
-   "topic_original": "AI governance & oversight"
+   "topic_original": "AI governance & oversight",
+   "outcome": "below_majority"
   },
   {
    "id": "googl-2024-11",
@@ -665,7 +688,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "ask_id": "ask-ai-oversight-reporting",
    "category": "governance-safety",
-   "topic_original": "AI governance & oversight"
+   "topic_original": "AI governance & oversight",
+   "outcome": "below_majority"
   },
   {
    "id": "googl-2024-12",
@@ -690,7 +714,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "ask_id": "ask-ai-misinformation",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "googl-2024-13",
@@ -725,7 +750,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817924000612/lgoog2024_def14a.htm",
    "ask_id": "ask-targeted-ads-rights",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "googl-2025-7",
@@ -750,7 +776,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "ask_id": "ask-dc-climate-energy",
    "category": "data-centers",
-   "topic_original": "Data center impacts"
+   "topic_original": "Data center impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "googl-2025-9",
@@ -775,7 +802,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "ask_id": "ask-customer-due-diligence",
    "category": "downstream-use",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "googl-2025-10",
@@ -800,7 +828,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "ask_id": "ask-ai-bias",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "googl-2025-11",
@@ -825,7 +854,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "ask_id": "ask-ai-training-data",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "googl-2025-12",
@@ -860,7 +890,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817925000511/goog012701-def14a.htm",
    "ask_id": "ask-targeted-ads-rights",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "googl-2025-15(floor)",
@@ -885,7 +916,8 @@
    "plain_summary_note": "Only the one-line description in the 8-K is public; no resolution text found.",
    "category": "users",
    "topic_original": "AI governance & oversight",
-   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm"
+   "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312525139948/d949049d8k.htm",
+   "outcome": "pending"
   },
   {
    "id": "googl-2026-5",
@@ -920,7 +952,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-dc-climate-energy",
    "category": "data-centers",
-   "topic_original": "Data center impacts"
+   "topic_original": "Data center impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "googl-2026-6",
@@ -945,7 +978,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-dc-water",
    "category": "data-centers",
-   "topic_original": "Data center impacts"
+   "topic_original": "Data center impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "googl-2026-11",
@@ -970,7 +1004,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-ai-training-data",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "googl-2026-12",
@@ -1005,7 +1040,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-ai-oversight-reporting",
    "category": "governance-safety",
-   "topic_original": "AI governance & oversight"
+   "topic_original": "AI governance & oversight",
+   "outcome": "below_majority"
   },
   {
    "id": "googl-2026-13",
@@ -1030,7 +1066,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-ai-misinformation",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "googl-2026-14",
@@ -1065,7 +1102,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm",
    "ask_id": "ask-ai-training-data",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "amzn-2023-7",
@@ -1091,7 +1129,8 @@
    "ask_id": "ask-customer-due-diligence",
    "category": "downstream-use",
    "topic_original": "Social & economic impacts",
-   "proponent_source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923055145/tm2314311d1_defa14a.htm"
+   "proponent_source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923055145/tm2314311d1_defa14a.htm",
+   "outcome": "below_majority"
   },
   {
    "id": "amzn-2023-23",
@@ -1117,7 +1156,8 @@
    "ask_id": "ask-customer-due-diligence",
    "category": "downstream-use",
    "topic_original": "Social & economic impacts",
-   "proponent_source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923055145/tm2314311d1_defa14a.htm"
+   "proponent_source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465923055145/tm2314311d1_defa14a.htm",
+   "outcome": "below_majority"
   },
   {
    "id": "amzn-2024-6",
@@ -1153,7 +1193,8 @@
    "ask_id": "ask-customer-due-diligence",
    "category": "downstream-use",
    "topic_original": "Social & economic impacts",
-   "proponent_source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm"
+   "proponent_source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm",
+   "outcome": "below_majority"
   },
   {
    "id": "amzn-2024-14",
@@ -1189,7 +1230,8 @@
    "ask_id": "ask-customer-due-diligence",
    "category": "downstream-use",
    "topic_original": "Social & economic impacts",
-   "proponent_source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm"
+   "proponent_source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm",
+   "outcome": "below_majority"
   },
   {
    "id": "amzn-2024-16",
@@ -1215,7 +1257,8 @@
    "ask_id": "ask-ai-oversight-reporting",
    "category": "governance-safety",
    "topic_original": "AI governance & oversight",
-   "proponent_source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm"
+   "proponent_source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924057037/tm2413031d1_defa14a.htm",
+   "outcome": "below_majority"
   },
   {
    "id": "amzn-2025-7",
@@ -1241,7 +1284,8 @@
    "ask_id": "ask-dc-climate-energy",
    "category": "data-centers",
    "topic_original": "Data center impacts",
-   "proponent_source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm"
+   "proponent_source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm",
+   "outcome": "below_majority"
   },
   {
    "id": "amzn-2025-8",
@@ -1267,7 +1311,8 @@
    "ask_id": "ask-ai-oversight-reporting",
    "category": "governance-safety",
    "topic_original": "AI governance & oversight",
-   "proponent_source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm"
+   "proponent_source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925044138/tm2513748d1_defa14a.htm",
+   "outcome": "below_majority"
   },
   {
    "id": "amzn-2025-11",
@@ -1292,7 +1337,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925033442/tm252295-1_def14a.htm",
    "ask_id": "ask-ai-training-data",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "amzn-2026-5",
@@ -1328,7 +1374,8 @@
    "ask_id": "ask-dc-climate-energy",
    "category": "data-centers",
    "topic_original": "Data center impacts",
-   "proponent_source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926054974/tm261382d4_defa14a.htm"
+   "proponent_source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926054974/tm261382d4_defa14a.htm",
+   "outcome": "below_majority"
   },
   {
    "id": "amzn-2026-floor",
@@ -1355,7 +1402,8 @@
    "category": "downstream-use",
    "topic_original": "Social & economic impacts",
    "proponent_source_url": "https://www.iccr.org/wp-content/uploads/2026/05/Amazon-Floor-Proposal_-Memo-in-Support-.pdf",
-   "plain_summary_source": "https://www.iccr.org/wp-content/uploads/2026/05/Amazon-Floor-Proposal_-Memo-in-Support-.pdf"
+   "plain_summary_source": "https://www.iccr.org/wp-content/uploads/2026/05/Amazon-Floor-Proposal_-Memo-in-Support-.pdf",
+   "outcome": "pending"
   },
   {
    "id": "aapl-2024-7",
@@ -1380,7 +1428,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817924000010/laapl2024_def14a.htm",
    "ask_id": "ask-ai-oversight-reporting",
    "category": "governance-safety",
-   "topic_original": "AI governance & oversight"
+   "topic_original": "AI governance & oversight",
+   "outcome": "below_majority"
   },
   {
    "id": "aapl-2025-4",
@@ -1405,7 +1454,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
    "ask_id": "ask-ai-training-data",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "aapl-2025-5",
@@ -1430,7 +1480,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817925000008/aapl4359751-def14a.htm",
    "ask_id": "ask-child-safety",
    "category": "users",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "tsla-2025-7",
@@ -1454,7 +1505,8 @@
    "plain_summary": "Asks the board to authorize an investment in xAI, in an amount and form the board deems appropriate.",
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925090866/tm252289-12_def14a.htm",
    "category": "governance-safety",
-   "topic_original": "AI governance & oversight"
+   "topic_original": "AI governance & oversight",
+   "outcome": "majority"
   },
   {
    "id": "nvda-2026-7",
@@ -1480,7 +1532,8 @@
    "ask_id": "ask-dc-climate-energy",
    "category": "data-centers",
    "topic_original": "Data center impacts",
-   "proponent_source_url": "https://www.greencentury.com/shareholders-call-for-nvidia-to-report-carbon-costs-of-ai/"
+   "proponent_source_url": "https://www.greencentury.com/shareholders-call-for-nvidia-to-report-carbon-costs-of-ai/",
+   "outcome": "below_majority"
   },
   {
    "id": "msft-2026-4",
@@ -1506,7 +1559,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "ask_id": "ask-dc-climate-energy",
    "category": "data-centers",
-   "topic_original": "Data center impacts"
+   "topic_original": "Data center impacts",
+   "outcome": "pending"
   },
   {
    "id": "msft-2026-5",
@@ -1542,7 +1596,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "ask_id": "ask-customer-due-diligence",
    "category": "downstream-use",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "pending"
   },
   {
    "id": "msft-2026-6",
@@ -1592,7 +1647,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526427849/d61756ddef14a.htm",
    "ask_id": "ask-dc-siting-rights",
    "category": "data-centers",
-   "topic_original": "Data center impacts"
+   "topic_original": "Data center impacts",
+   "outcome": "pending"
   },
   {
    "id": "googl-2023-audit-committee-review",
@@ -1622,7 +1678,8 @@
    },
    "meeting_date": "2023-06-02",
    "meeting_date_source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312523163590/d442583d8k.htm",
-   "item": "15"
+   "item": "15",
+   "outcome": "below_majority"
   },
   {
    "id": "googl-2024-child-online-safety",
@@ -1652,7 +1709,8 @@
     "against": 10768198081,
     "abstain": 95641307
    },
-   "item": "14"
+   "item": "14",
+   "outcome": "below_majority"
   },
   {
    "id": "meta-2023-community-standards",
@@ -1681,7 +1739,8 @@
    },
    "meeting_date": "2023-05-31",
    "meeting_date_source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000083/meta-20230531.htm",
-   "item": "10"
+   "item": "10",
+   "outcome": "below_majority"
   },
   {
    "id": "meta-2025-child-safety",
@@ -1711,7 +1770,8 @@
     "against": 4314033460,
     "abstain": 10306035
    },
-   "item": "9"
+   "item": "9",
+   "outcome": "below_majority"
   },
   {
    "id": "meta-2026-child-safety-pay",
@@ -1741,7 +1801,8 @@
     "against": 4776963503,
     "abstain": 22532654
    },
-   "item": "10"
+   "item": "10",
+   "outcome": "below_majority"
   },
   {
    "id": "amzn-2026-responsible-ai-sales",
@@ -1768,7 +1829,8 @@
    "meeting_date": "2026-05-20",
    "meeting_date_source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926065717/tm2614288d1_8k.htm",
    "source_url": "https://news.bloomberglaw.com/esg/amazon-to-block-investor-vote-on-ai-services-for-israel-dhs",
-   "proxy_url": null
+   "proxy_url": null,
+   "outcome": "excluded"
   },
   {
    "id": "aapl-2026-ai-energy",
@@ -1795,7 +1857,8 @@
    "meeting_date": "2026-02-24",
    "meeting_date_source": "https://www.sec.gov/Archives/edgar/data/320193/000114036126006577/ef20060722_8k.htm",
    "source_url": "https://www.minerva.info/post/apple-shareholders-stunted-proposals-plummet-as-sec-shift-bites",
-   "proxy_url": null
+   "proxy_url": null,
+   "outcome": "withdrawn_other"
   },
   {
    "id": "nvda-2026-military-ai",
@@ -1822,7 +1885,8 @@
    "meeting_date_source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm",
    "plain_summary_source": "https://www.sec.gov/files/corpfin/no-action/14a-8/tttnvidia31026.pdf",
    "source_url": "https://www.sec.gov/files/corpfin/no-action/14a-8/tttnvidia31026.pdf",
-   "proxy_url": null
+   "proxy_url": null,
+   "outcome": "excluded"
   },
   {
    "id": "amzn-2026-climate-cost",
@@ -1852,7 +1916,8 @@
     "against": 7732242560,
     "abstain": 60171378
    },
-   "item": "6"
+   "item": "6",
+   "outcome": "below_majority"
   },
   {
    "id": "ibm-2026-7",
@@ -1878,7 +1943,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000025/ibm-20260306.htm",
    "ask_id": "ask-ai-bias",
    "category": "users",
-   "topic_original": "AI governance & oversight"
+   "topic_original": "AI governance & oversight",
+   "outcome": "below_majority"
   },
   {
    "id": "axon-2023-6",
@@ -1904,7 +1970,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1069183/000106918323000019/axon-20230531xdef14a.htm",
    "ask_id": "ask-customer-due-diligence",
    "category": "downstream-use",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "pltr-2026-4",
@@ -1930,7 +1997,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
    "ask_id": "ask-customer-due-diligence",
    "category": "downstream-use",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "pltr-2026-5",
@@ -1956,7 +2024,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000019/pltr-20260423.htm",
    "ask_id": "ask-customer-due-diligence",
    "category": "downstream-use",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "nflx-2024-4",
@@ -1981,7 +2050,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1065280/000119312524100913/d521836ddef14a.htm",
    "ask_id": "ask-ai-oversight-reporting",
    "category": "governance-safety",
-   "topic_original": "AI governance & oversight"
+   "topic_original": "AI governance & oversight",
+   "outcome": "below_majority"
   },
   {
    "id": "dis-2024-afl-ai",
@@ -2009,7 +2079,8 @@
    "topic_original": "AI governance & oversight",
    "status_reason": "Withdrawn by the AFL-CIO after Disney committed to enhance its disclosure on its use of AI, as reported by FTI Consulting on the Harvard Law School Forum, citing Responsible Investor. SEC staff had earlier (January 3, 2024) declined Disney's request to exclude it under Rule 14a-8(i)(7). Withdrawal date not public.",
    "status_source_url": "https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/",
-   "plain_summary_source": "https://business.cch.com/srd/TheWaltDisneyCompany.pdf"
+   "plain_summary_source": "https://business.cch.com/srd/TheWaltDisneyCompany.pdf",
+   "outcome": "commitment"
   },
   {
    "id": "cmcsa-2024-afl-ai",
@@ -2037,7 +2108,8 @@
    "topic_original": "AI governance & oversight",
    "status_reason": "Withdrawn by the AFL-CIO after Comcast committed to enhance its disclosure on its use of AI, as reported by FTI Consulting on the Harvard Law School Forum, citing Responsible Investor. No SEC no-action letter; withdrawal date not public.",
    "status_source_url": "https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/",
-   "plain_summary_source": "https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/"
+   "plain_summary_source": "https://corpgov.law.harvard.edu/2024/09/29/unveiling-key-trends-in-ai-shareholder-proposals/",
+   "outcome": "commitment"
   },
   {
    "id": "so-2026-9",
@@ -2063,7 +2135,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/92122/000009212226000028/so-20260402.htm",
    "ask_id": "ask-dc-climate-energy",
    "category": "data-centers",
-   "topic_original": "Data center impacts"
+   "topic_original": "Data center impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "dlr-2026-4",
@@ -2089,7 +2162,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817926000296/dlr015307-def14a.htm",
    "ask_id": "ask-dc-water",
    "category": "data-centers",
-   "topic_original": "Data center impacts"
+   "topic_original": "Data center impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "dlr-2025-5",
@@ -2115,7 +2189,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/1297996/000130817925000509/dlr000000-def14a.htm",
    "ask_id": "ask-dc-water",
    "category": "data-centers",
-   "topic_original": "Data center impacts"
+   "topic_original": "Data center impacts",
+   "outcome": "below_majority"
   },
   {
    "id": "csco-2026-5",
@@ -2140,7 +2215,8 @@
    "plain_summary_source": "https://www.sec.gov/Archives/edgar/data/858877/000130817926000439/csco-20261029.htm",
    "ask_id": "ask-customer-due-diligence",
    "category": "downstream-use",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "pending"
   },
   {
    "id": "crm-2026-ai-human-rights",
@@ -2170,7 +2246,8 @@
    "plain_summary_note": "Secondary source: the resolution was not in a proxy statement. Text from the ICCR guide.",
    "ask_id": "ask-ai-oversight-reporting",
    "category": "governance-safety",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "withdrawn_other"
   },
   {
    "id": "crm-2026-dual-use-defense",
@@ -2200,7 +2277,8 @@
    "plain_summary_note": "The resolution was not in a proxy statement; text from Exhibit A of the company's SEC notice.",
    "ask_id": "ask-customer-due-diligence",
    "category": "downstream-use",
-   "topic_original": "Social & economic impacts"
+   "topic_original": "Social & economic impacts",
+   "outcome": "excluded"
   },
   {
    "id": "vrsk-2024-responsible-ai",
@@ -2229,7 +2307,8 @@
    "source": "Parnassus Investments Stewardship Report 2024",
    "ask_id": "ask-ai-bias",
    "category": "users",
-   "topic_original": "AI governance & oversight"
+   "topic_original": "AI governance & oversight",
+   "outcome": "commitment"
   }
  ],
  "exempt_solicitations": [

@@ -34,7 +34,10 @@ test("a plan from the planner runs as a scenario with labelled results", async (
     "Microsoft, Board oversight and AI transparency reporting: commits by",
   );
   await expect(page.locator("#sim-chart svg.sim-svg")).toBeVisible();
+  // "One run" and "The field" are closed by default (module audit, 2026-11-27); open them to check.
+  await page.locator("summary", { hasText: "One run, step by step" }).click();
   await expect(page.locator(".sim-log li").first()).toBeVisible();
+  await page.locator("#sim-field-box > summary").click();
   // The field moves back to a recorded season.
   await page.locator("#sim-season").fill("2024");
   await expect(page.locator("#sim-field")).toContainText("Recorded season 2024");
