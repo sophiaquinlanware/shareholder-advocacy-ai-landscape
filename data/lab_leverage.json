@@ -491,7 +491,7 @@
      "how_to_file": "A shareholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last annual meeting; the bylaws treat June 19, 2026 as the date of the 2026 meeting. Proposals other than nominations also need the Texas Section 21.373 ownership stake, and the notice must say whether the shareholder will solicit holders of at least 67% of the voting power. Musk and his permitted transferees are exempt from these notice rules.",
      "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052535/a32-amendedandrestatedbyla.htm",
      "threshold": "At least $1 million in market value or 3% of voting shares, held for six months before and through the meeting (bylaws Section 2.5, adopted June 15, 2026, under Texas Section 21.373).",
-     "control": "Class A shares carry one vote and Class B shares carry ten. Musk reported sole voting power over 6.42 billion shares (48.4% of Class A counted as converted), of which 5.22 billion are Class B, as of June 30, 2026. 5.33 billion Class B shares were outstanding on October 15, 2026. No proxy statement yet. Calculated from these share counts, Musk holds about 87% of total votes (this site's calculation; the filings do not state a percentage).",
+     "control": "Class A shares carry one vote and Class B shares carry ten. Musk reported sole voting power over about 0.85 billion Class A shares and 5.57 billion Class B shares (3.92 billion held in trusts, 1.30 billion restricted and 0.35 billion under options) as of June 30, 2026. 8.25 billion Class A and 5.33 billion Class B shares were outstanding on October 15, 2026. No proxy statement yet. From these figures Musk holds about 86% to 87% of total votes (86% without the options, 87% with them; this site's calculation, mixing June 30 holdings with October 15 share counts; the filings do not state a percentage).",
      "control_source": "https://www.sec.gov/Archives/edgar/data/1181412/000110465926095936/xslSCHEDULE_13G_X02/primary_doc.xml",
      "ai_proposals_filed": 0,
      "holders": [
@@ -922,73 +922,6 @@
      ]
     },
     {
-     "ticker": "AVGO",
-     "name": "Broadcom",
-     "route": "open",
-     "route_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
-     "shareholder_route": "US proxy rules apply",
-     "next_deadline": "2026-11-02",
-     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/d49254ddef14a.htm",
-     "next_deadline_status": "passed",
-     "how_to_file": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
-     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312518107559/d562806dex32.htm",
-     "threshold": "None beyond being a shareholder of record",
-     "control": "One class of stock, one vote per share. No controlling holder; Vanguard (9.9%) and BlackRock (7.3%) are the largest.",
-     "control_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/0001193125-26-085691.txt",
-     "ai_proposals_filed": 0,
-     "holders": [
-      {
-       "id": "fidelity",
-       "name": "FMR LLC",
-       "value_usd": 44752634691.0,
-       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
-      },
-      {
-       "id": "nbim",
-       "name": "Norges Bank Investment Management",
-       "value_usd": 23402660001,
-       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
-      },
-      {
-       "id": "legal-general",
-       "name": "Legal & General Group",
-       "value_usd": 11211482631.0,
-       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
-      },
-      {
-       "id": "calpers",
-       "name": "California Public Employees Retirement System",
-       "value_usd": 4530595077.0,
-       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
-      },
-      {
-       "id": "calstrs",
-       "name": "California State Teachers Retirement System",
-       "value_usd": 2377126443.0,
-       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
-      },
-      {
-       "id": "nys-common-retirement-fund",
-       "name": "New York State Common Retirement Fund",
-       "value_usd": 1740947163.0,
-       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
-      }
-     ],
-     "holders_count": 19,
-     "direct": false,
-     "levers": [
-      {
-       "type": "chip supplier",
-       "description": "Co-developing 10 GW of OpenAI-designed custom accelerators, deploying 2026-2029.",
-       "strength": 3,
-       "strength_label": "strong",
-       "strength_reason": "OpenAI's custom-silicon path.",
-       "as_of": "2025-10",
-       "source_url": "https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration/"
-      }
-     ]
-    },
-    {
      "ticker": "ORCL",
      "name": "Oracle",
      "route": "narrowing",
@@ -1086,69 +1019,69 @@
      ]
     },
     {
-     "ticker": "AAPL",
-     "name": "Apple",
+     "ticker": "AVGO",
+     "name": "Broadcom",
      "route": "open",
-     "route_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+     "route_reason": "Any record holder can still give notice of a proposal for the meeting floor, there is no controlling shareholder, and directors face majority voting.",
      "shareholder_route": "US proxy rules apply",
-     "next_deadline": "2026-09-10",
-     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm",
+     "next_deadline": "2026-11-02",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/d49254ddef14a.htm",
      "next_deadline_status": "passed",
-     "how_to_file": "A shareholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake. (The 3% for 3 years proxy access rule covers director nominations only.)",
-     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_ex3-2.htm",
+     "how_to_file": "A stockholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake.",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312518107559/d562806dex32.htm",
      "threshold": "None beyond being a shareholder of record",
-     "control": "One class of stock. Vanguard (9.6%) and BlackRock (7.1%) are the largest holders.",
-     "control_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm",
-     "ai_proposals_filed": 4,
+     "control": "One class of stock, one vote per share. No controlling holder; Vanguard (9.9%) and BlackRock (7.3%) are the largest.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/0001193125-26-085691.txt",
+     "ai_proposals_filed": 0,
      "holders": [
       {
        "id": "fidelity",
        "name": "FMR LLC",
-       "value_usd": 123213667912.0,
+       "value_usd": 44752634691.0,
        "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
       },
       {
        "id": "nbim",
        "name": "Norges Bank Investment Management",
-       "value_usd": 52718798466,
+       "value_usd": 23402660001,
        "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
       },
       {
        "id": "legal-general",
        "name": "Legal & General Group",
-       "value_usd": 35205747796.0,
+       "value_usd": 11211482631.0,
        "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
       },
       {
        "id": "calpers",
        "name": "California Public Employees Retirement System",
-       "value_usd": 12043322625.0,
+       "value_usd": 4530595077.0,
        "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
       },
       {
        "id": "calstrs",
        "name": "California State Teachers Retirement System",
-       "value_usd": 7313330668.0,
+       "value_usd": 2377126443.0,
        "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
       },
       {
        "id": "nys-common-retirement-fund",
        "name": "New York State Common Retirement Fund",
-       "value_usd": 5476118605.0,
+       "value_usd": 1740947163.0,
        "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
       }
      ],
-     "holders_count": 18,
+     "holders_count": 19,
      "direct": false,
      "levers": [
       {
-       "type": "distribution partner",
-       "description": "ChatGPT integrated into Siri and Apple Intelligence; reportedly unchanged after Gemini deal.",
-       "strength": 2,
-       "strength_label": "medium",
-       "strength_reason": "Reach across Apple's device base.",
-       "as_of": "2024-06",
-       "source_url": "https://openai.com/index/openai-and-apple-announce-partnership/"
+       "type": "chip supplier",
+       "description": "Co-developing 10 GW of OpenAI-designed custom accelerators, deploying 2026-2029.",
+       "strength": 3,
+       "strength_label": "strong",
+       "strength_reason": "OpenAI's custom-silicon path.",
+       "as_of": "2025-10",
+       "source_url": "https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration/"
       }
      ]
     },
@@ -1276,6 +1209,73 @@
        "strength_reason": "HBM is a bottleneck input.",
        "as_of": "2025-10",
        "source_url": "https://openai.com/index/samsung-and-sk-join-stargate/"
+      }
+     ]
+    },
+    {
+     "ticker": "AAPL",
+     "name": "Apple",
+     "route": "open",
+     "route_reason": "Any record holder can give notice of a floor proposal, there is no controlling shareholder, and directors face majority voting.",
+     "shareholder_route": "US proxy rules apply",
+     "next_deadline": "2026-09-10",
+     "next_deadline_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm",
+     "next_deadline_status": "passed",
+     "how_to_file": "A shareholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last meeting. No minimum stake. (The 3% for 3 years proxy access rule covers director nominations only.)",
+     "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_ex3-2.htm",
+     "threshold": "None beyond being a shareholder of record",
+     "control": "One class of stock. Vanguard (9.6%) and BlackRock (7.1%) are the largest holders.",
+     "control_source": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm",
+     "ai_proposals_filed": 4,
+     "holders": [
+      {
+       "id": "fidelity",
+       "name": "FMR LLC",
+       "value_usd": 123213667912.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/315066/000031506626002964/"
+      },
+      {
+       "id": "nbim",
+       "name": "Norges Bank Investment Management",
+       "value_usd": 52718798466,
+       "source_url": "https://www.nbim.no/api/investments/v2/2026-06-30.json?v=a67e1dcf"
+      },
+      {
+       "id": "legal-general",
+       "name": "Legal & General Group",
+       "value_usd": 35205747796.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/764068/000149511526000075/"
+      },
+      {
+       "id": "calpers",
+       "name": "California Public Employees Retirement System",
+       "value_usd": 12043322625.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/919079/000091907926000013/"
+      },
+      {
+       "id": "calstrs",
+       "name": "California State Teachers Retirement System",
+       "value_usd": 7313330668.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/1081019/000108101926000023/"
+      },
+      {
+       "id": "nys-common-retirement-fund",
+       "name": "New York State Common Retirement Fund",
+       "value_usd": 5476118605.0,
+       "source_url": "https://www.sec.gov/Archives/edgar/data/810265/000081026526000008/"
+      }
+     ],
+     "holders_count": 18,
+     "direct": false,
+     "levers": [
+      {
+       "type": "distribution partner",
+       "description": "ChatGPT integrated into Siri and Apple Intelligence; reportedly unchanged after Gemini deal.",
+       "strength": 2,
+       "strength_label": "medium",
+       "strength_reason": "Reach across Apple's device base.",
+       "as_of": "2024-06",
+       "source_url": "https://openai.com/index/openai-and-apple-announce-partnership/"
       }
      ]
     },
@@ -1436,7 +1436,7 @@
      "how_to_file": "A shareholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last annual meeting; the bylaws treat June 19, 2026 as the date of the 2026 meeting. Proposals other than nominations also need the Texas Section 21.373 ownership stake, and the notice must say whether the shareholder will solicit holders of at least 67% of the voting power. Musk and his permitted transferees are exempt from these notice rules.",
      "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052535/a32-amendedandrestatedbyla.htm",
      "threshold": "At least $1 million in market value or 3% of voting shares, held for six months before and through the meeting (bylaws Section 2.5, adopted June 15, 2026, under Texas Section 21.373).",
-     "control": "Class A shares carry one vote and Class B shares carry ten. Musk reported sole voting power over 6.42 billion shares (48.4% of Class A counted as converted), of which 5.22 billion are Class B, as of June 30, 2026. 5.33 billion Class B shares were outstanding on October 15, 2026. No proxy statement yet. Calculated from these share counts, Musk holds about 87% of total votes (this site's calculation; the filings do not state a percentage).",
+     "control": "Class A shares carry one vote and Class B shares carry ten. Musk reported sole voting power over about 0.85 billion Class A shares and 5.57 billion Class B shares (3.92 billion held in trusts, 1.30 billion restricted and 0.35 billion under options) as of June 30, 2026. 8.25 billion Class A and 5.33 billion Class B shares were outstanding on October 15, 2026. No proxy statement yet. From these figures Musk holds about 86% to 87% of total votes (86% without the options, 87% with them; this site's calculation, mixing June 30 holdings with October 15 share counts; the filings do not state a percentage).",
      "control_source": "https://www.sec.gov/Archives/edgar/data/1181412/000110465926095936/xslSCHEDULE_13G_X02/primary_doc.xml",
      "ai_proposals_filed": 0,
      "holders": [
@@ -1544,7 +1544,7 @@
      "how_to_file": "A shareholder of record can bring a proposal with notice 90 to 120 days before the anniversary of the last annual meeting; the bylaws treat June 19, 2026 as the date of the 2026 meeting. Proposals other than nominations also need the Texas Section 21.373 ownership stake, and the notice must say whether the shareholder will solicit holders of at least 67% of the voting power. Musk and his permitted transferees are exempt from these notice rules.",
      "how_to_file_source": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052535/a32-amendedandrestatedbyla.htm",
      "threshold": "At least $1 million in market value or 3% of voting shares, held for six months before and through the meeting (bylaws Section 2.5, adopted June 15, 2026, under Texas Section 21.373).",
-     "control": "Class A shares carry one vote and Class B shares carry ten. Musk reported sole voting power over 6.42 billion shares (48.4% of Class A counted as converted), of which 5.22 billion are Class B, as of June 30, 2026. 5.33 billion Class B shares were outstanding on October 15, 2026. No proxy statement yet. Calculated from these share counts, Musk holds about 87% of total votes (this site's calculation; the filings do not state a percentage).",
+     "control": "Class A shares carry one vote and Class B shares carry ten. Musk reported sole voting power over about 0.85 billion Class A shares and 5.57 billion Class B shares (3.92 billion held in trusts, 1.30 billion restricted and 0.35 billion under options) as of June 30, 2026. 8.25 billion Class A and 5.33 billion Class B shares were outstanding on October 15, 2026. No proxy statement yet. From these figures Musk holds about 86% to 87% of total votes (86% without the options, 87% with them; this site's calculation, mixing June 30 holdings with October 15 share counts; the filings do not state a percentage).",
      "control_source": "https://www.sec.gov/Archives/edgar/data/1181412/000110465926095936/xslSCHEDULE_13G_X02/primary_doc.xml",
      "ai_proposals_filed": 0,
      "holders": [

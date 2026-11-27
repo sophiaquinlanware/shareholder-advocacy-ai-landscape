@@ -867,7 +867,7 @@
    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052535/a32-amendedandrestatedbyla.htm"
   },
   "control": {
-   "text": "Class A shares carry one vote and Class B shares carry ten. Musk reported sole voting power over 6.42 billion shares (48.4% of Class A counted as converted), of which 5.22 billion are Class B, as of June 30, 2026. 5.33 billion Class B shares were outstanding on October 15, 2026. No proxy statement yet. Calculated from these share counts, Musk holds about 87% of total votes (this site's calculation; the filings do not state a percentage).",
+   "text": "Class A shares carry one vote and Class B shares carry ten. Musk reported sole voting power over about 0.85 billion Class A shares and 5.57 billion Class B shares (3.92 billion held in trusts, 1.30 billion restricted and 0.35 billion under options) as of June 30, 2026. 8.25 billion Class A and 5.33 billion Class B shares were outstanding on October 15, 2026. No proxy statement yet. From these figures Musk holds about 86% to 87% of total votes (86% without the options, 87% with them; this site's calculation, mixing June 30 holdings with October 15 share counts; the filings do not state a percentage).",
    "url": "https://www.sec.gov/Archives/edgar/data/1181412/000110465926095936/xslSCHEDULE_13G_X02/primary_doc.xml"
   },
   "director_voting": {

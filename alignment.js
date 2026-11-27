@@ -31,30 +31,37 @@
     const co = Object.fromEntries(C.filter((c) => c.ticker).map((c) => [c.ticker, c]));
     const direct = L.labs.map((l) => ({ lab: l, row: l.routes.find((r) => r.direct && (l.status === "public" || l.parent === "spacex")) })).filter((x) => x.row);
     const others = L.labs.filter((l) => l.status === "private");
+    const inhouse = L.labs.filter((l) => l.status === "in-house" && l.parent !== "spacex");
+    const today = new Date().toISOString().slice(0, 10);
+    const passed = (r) => r.next_deadline && r.next_deadline < today;
     const lever = (l) => `<li><strong>${esc(l.type)}</strong> (${esc(l.strength_label || "unrated")})${l.description ? `: ${esc(l.description)}` : ""}${src(l.source_url)}</li>`;
     const card = ({ lab, row }) => {
       const c = co[row.ticker] || {};
-      const commits = [c.engagement_basis, ...(c.evidence || [])].filter((e) => e && e.text);
+      // Safety commitments only (signatures, codes, frameworks), not corporate events.
+      const commits = [c.engagement_basis, ...(c.evidence || [])].filter((e) => e && e.text && /sign|commitment|code of practice|framework/i.test(e.text));
       const outside = lab.routes.filter((r) => !r.direct).slice(0, 4);
       return `<article class="pl-card al-lab" aria-labelledby="al-h-${esc(lab.id)}">
         <h3 id="al-h-${esc(lab.id)}">${esc(lab.name)}${row.ticker ? ` <span class="ticker">${row.name === lab.name ? "" : `${esc(row.name)} `}(${esc(row.ticker)})</span>` : ""}</h3>
         <p>${esc(lab.description || "")}${src(lab.source_url)}</p>
         <dl class="al-dl">
           <div><dt>Who controls the vote</dt><dd>${esc(row.control || "Not recorded")}${src(row.control_source)}</dd></div>
-          <div><dt>What it takes to file</dt><dd>${esc(row.threshold || "Not recorded")}. ${esc(row.how_to_file || "")}${src(row.how_to_file_source)}</dd></div>
+          <div><dt>What it takes to file</dt><dd><strong>A proposal raised at the meeting (advance notice):</strong> ${esc(String(row.threshold || "Not recorded").replace(/\.+$/, ""))}. ${esc(row.how_to_file || "")} This route needs shares held of record (not through a broker), and the proponent must present the proposal at the meeting; any proxies for it come from the proponent's own solicitation, which SEC proxy rules govern.${src(row.how_to_file_source)}<br><strong>A proposal in the company's proxy (Rule 14a-8):</strong> shares worth $2,000 held for 3 years, $15,000 for 2 years or $25,000 for 1 year, continuously up to the date the proposal is submitted and through the meeting. On the timetable the bylaws imply for 2027, shares bought at the ${esc(lab.status === "public" ? "November 2026" : "June 2026")} listing cannot meet these holding periods for the 2027 meeting; holders who owned shares before the listing may count that earlier holding.${row.ticker === "SPCX" ? " At SpaceX, the Texas ownership threshold above applies as well." : ""}${src("https://www.ecfr.gov/current/title-17/section-240.14a-8", "Rule 14a-8")}</dd></div>
           <div><dt>What an outside vote can do</dt><dd>${esc(row.route_reason || "")}</dd></div>
           <div><dt>Safety commitments on record</dt><dd>${commits.length ? `<ul class="steps tight">${commits.map((e) => `<li>${esc(e.text)}${src(e.url)}</li>`).join("")}</ul>` : "None recorded."}</dd></div>
-          <div><dt>Reported holders on file</dt><dd>${row.holders_count ? `${row.holders_count}: ${row.holders.map((h) => esc(h.name)).join(", ")}` : "None yet. Holdings reports for the quarter of the listing (Form 13F) are due 45 days after the quarter ends."}</dd></div>
+          <div><dt>Reported holders on file</dt><dd>${row.holders_count ? `${row.holders_count}, largest first: ${row.holders.map((h) => esc(h.name)).join(", ")}${row.holders_count > row.holders.length ? `, and ${row.holders_count - row.holders.length} more` : ""}` : "None yet. Institutional holdings reports (Form 13F) for the quarter ending December 31, 2026 are due about February 16, 2027."}</dd></div>
           <div><dt>AI proposals filed here so far</dt><dd>${row.ai_proposals_filed || "None"}</dd></div>
-          ${outside.length ? `<div><dt>Listed companies with the strongest ties to it</dt><dd><ul class="steps tight">${outside.map((r) => `<li><strong>${esc(r.name)}</strong>: ${r.levers.map((l) => `${esc(l.type)} (${esc(l.strength_label || "unrated")})`).join(", ")}${r.next_deadline ? `; next proposal deadline ${esc(day(r.next_deadline))}${r.next_deadline_status === "passed" ? " (passed)" : ""}` : ""}</li>`).join("")}</ul></dd></div>` : ""}
+          ${outside.length ? `<div><dt>Listed companies with the strongest ties to it</dt><dd><ul class="steps tight">${outside.map((r) => `<li><strong>${esc(r.name)}</strong>: ${r.levers.map((l) => `${esc(l.type)} (${esc(l.strength_label || "unrated")})`).join(", ")}${r.next_deadline ? `; ${passed(r) ? `last proposal deadline ${esc(day(r.next_deadline))} (passed)` : `next proposal deadline ${esc(day(r.next_deadline))}`}` : ""}</li>`).join("")}</ul></dd></div>` : ""}
         </dl>
         <p><a class="bd-btn" href="${plan(c.id || row.ticker, "ask-ai-oversight-reporting")}">Plan an engagement at ${esc(lab.name)}</a> <a href="#asks">See the safety asks</a></p>
       </article>`;
     };
     el.innerHTML = `
       <h2>Frontier labs you can file at</h2>
-      <p class="intro">Until 2026 no frontier lab had public shareholders, so investors could reach the labs only through the companies that fund, host or supply them. Two can now be reached directly: Anthropic, listed on Nasdaq in November 2026, and xAI, part of SpaceX since February 2026, listed in June 2026. In both, founders keep control of the vote, so outside proposals record shareholders' views rather than decide outcomes.</p>
+      <p class="intro">Until 2026 the standalone frontier labs had no public shareholders, so investors reached them only through the companies that fund, host or supply them; labs inside Alphabet, Meta, Microsoft and Amazon have always been reachable through their parents. Two standalone labs can now be reached directly: Anthropic, listed on Nasdaq in November 2026, and xAI, part of SpaceX since February 2026, listed in June 2026. In both, founders keep control of the vote, so outside proposals record shareholders' views rather than decide outcomes.</p>
       ${direct.map(card).join("")}
+      <h3>Labs inside listed companies</h3>
+      <p class="status-note">Shareholders reach these through the parent company's annual meeting.</p>
+      <ul class="steps">${inhouse.map((l) => { const r = l.routes.find((x) => x.direct) || {}; return `<li><strong>${esc(l.name)}</strong>: part of ${esc(r.name || l.parent)}${r.ai_proposals_filed ? `, where ${r.ai_proposals_filed} AI proposals have been filed` : ""}${r.next_deadline ? `; ${passed(r) ? "last" : "next"} proposal deadline ${esc(day(r.next_deadline))}${passed(r) ? " (passed)" : ""}` : ""}</li>`; }).join("")}</ul>
       <h3>Labs reachable only through others</h3>
       <p class="status-note">Private labs, with the listed companies most strongly tied to each (from Ties to each frontier lab).</p>
       <ul class="steps">${others.map((l) => `<li><strong>${esc(l.name)}</strong>: ${l.routes.slice(0, 3).map((r) => `${esc(r.name)} (${r.levers.map((x) => esc(x.type)).join(", ")})`).join("; ") || "no listed company tied in the records"}</li>`).join("")}</ul>
@@ -74,11 +81,11 @@
           <div><dt>Who has committed to it</dt><dd>${(a.committed || []).map((x) => `${esc(x.text)}${src(x.url)}`).join("<br>") || "No public commitments found."}</dd></div>
           <div><dt>Rules that already require it</dt><dd>${(a.required_by || []).map((x) => `${esc(x.text)}${src(x.url)}`).join("<br>") || "None found."}</dd></div>
           <div><dt>Nearest past proposals</dt><dd>${(a.precedents || []).map((x) => `${esc(x.text)}${src(x.url)}`).join("<br>") || esc(a.precedents_note || "None found.")}</dd></div>
-          <div><dt>Risk the company can exclude it</dt><dd>${esc(a.exclusion_risk || "")}${(a.exclusion_sources || []).map((u) => src(u)).join("")}</dd></div>
-          <div><dt>Why it is financially material</dt><dd>${(a.materiality || []).map((x) => `${esc(x.text)}${src(x.url)}`).join("<br>") || "No evidence recorded yet."}</dd></div>
+          <div><dt>How SEC guidance applies</dt><dd>${esc(a.exclusion_risk || "")}${(a.exclusion_sources || []).map((u, i) => src(u, ["SLB 14M", "SEC statement, August 14, 2026"][i] || "source")).join("")} <span class="note">${esc(A.exclusion_note || "")}</span></dd></div>
+          <div><dt>What filings say about financial impact</dt><dd>${(a.materiality || []).map((x) => `${esc(x.text)}${src(x.url)}`).join("<br>") || "No evidence recorded yet."}</dd></div>
           <div><dt>Example wording</dt><dd><blockquote class="al-quote">${esc(a.example)}</blockquote><span class="note">Written by this site as an illustration to adapt, not a recommendation.</span></dd></div>
         </dl>
-        <p><a href="${plan("anthropic", a.planner_ask || "ask-ai-oversight-reporting")}">Plan this at Anthropic</a> · <a href="#listed-labs">Labs you can file at</a></p>
+        <p><a href="${plan((a.target || {}).company || "anthropic", a.planner_ask || "ask-ai-oversight-reporting")}">Plan this at ${esc((a.target || {}).label || "Anthropic")}</a> · <a href="#listed-labs">Labs you can file at</a></p>
       </article>`).join("")}
       <p class="note">${esc(A.about || "")}</p>`;
   }

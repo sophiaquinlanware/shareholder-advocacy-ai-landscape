@@ -1,7 +1,7 @@
 {
- "intro": "AI-safety practices written as asks a shareholder could make of a listed frontier lab (Anthropic; xAI through SpaceX) or of the companies that fund, host or supply labs. For each: who has committed to it, the rules that already require it, the nearest past proposals and their votes, the risk a company excludes it, and evidence that it is financially material. No shareholder proposal has yet asked a company for a frontier safety framework or dangerous-capability testing; the closest have asked for board oversight of AI.",
+ "intro": "AI-safety practices written as asks a shareholder could make of a listed frontier lab (Anthropic; xAI through SpaceX) or of the companies that fund, host or supply labs. For each: who has committed to it, the rules that already require it, the nearest past proposals and their votes, the risk a company excludes it, and evidence that it is financially material. In SEC full-text search of proxy statements and exempt solicitations from 2023 to November 2026, no proposal asked for a frontier safety framework or dangerous-capability testing (proposals withdrawn or excluded before a proxy is filed would not show); the closest asked for board oversight of AI.",
  "about": "Sources researched November 2026; vote shares are for ÷ (for + against) from each company's 8-K. Example wording is written by this site to adapt, not a recommendation, and nothing here says how anyone should vote.",
- "checked": "2026-11-27",
+ "checked": "2026-11-26",
  "asks": [
   {
    "id": "safety-framework",
@@ -20,19 +20,23 @@
    "required_by": [
     {
      "text": "EU General-Purpose AI Code of Practice, Safety and Security chapter (July 2025): a safety and security framework (Commitment 1).",
-     "url": "https://code-of-practice.ai/?section=safety-security"
+     "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
     },
     {
      "text": "California SB 53 (in force January 1, 2026): large frontier developers publish an annual framework.",
-     "url": "https://fpf.org/blog/californias-sb-53-the-first-frontier-ai-law-explained/"
+     "url": "https://natlawreview.com/article/californias-sb-53-understanding-obligations-effect-now-and-2027"
     },
     {
-     "text": "New York RAISE Act (in force January 1, 2027): publish the framework, review it yearly, post material changes within 30 days; breaking it can be penalised.",
+     "text": "New York RAISE Act: publish the framework, review it yearly, post material changes within 30 days; breaking it can be penalised.",
+     "url": "https://www.mofo.com/resources/insights/260403-new-york-amends-the-raise-act-to-align-more-closely"
+    },
+    {
+     "text": "The RAISE Act takes effect January 1, 2027.",
      "url": "https://www.wiley.law/alert-New-York-Finalizes-RAISE-Act-for-Frontier-AI-Models-Law-Takes-Effect-January-1-2027"
     }
    ],
    "precedents": [],
-   "exclusion_risk": "Low to moderate. Under the SEC's company-specific test for significance (Staff Legal Bulletin 14M, February 2025), catastrophic risk is plainly significant for a lab; the argument is weaker for a chip supplier. Since August 14, 2026 SEC staff no longer respond to exclusion requests, so a company decides and a proponent's remedy is a court.",
+   "exclusion_risk": "Low to moderate. SEC guidance (Staff Legal Bulletin 14M, February 2025) weighs a subject's significance to the particular company; frontier-AI risk is central to a lab's business and less so to a chip supplier. Since August 14, 2026 SEC staff no longer respond to exclusion requests, so each company decides for itself.",
    "exclusion_sources": [
     "https://www.sec.gov/about/shareholder-proposals-staff-legal-bulletin-no-14m-cf",
     "https://www.sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426"
@@ -57,7 +61,7 @@
      "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024"
     },
     {
-     "text": "Anthropic gives pre-release access to the US government's AI evaluation body and the UK AI Security Institute (the prospectus's name for the US body differs from earlier usage; not confirmed which is current).",
+     "text": "Anthropic gives pre-release access to the US government's AI evaluation body (CAISSI in its prospectus) and the UK AI Security Institute.",
      "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm"
     },
     {
@@ -68,11 +72,11 @@
    "required_by": [
     {
      "text": "EU AI Act Article 55(1)(a): model evaluation including adversarial testing, for models with systemic risk (applicable from August 2, 2025).",
-     "url": "https://artificialintelligenceact.eu/article/55/"
+     "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
     },
     {
-     "text": "EU Code of Practice Measure 3.5: independent external evaluators given free access.",
-     "url": "https://code-of-practice.ai/?section=safety-security"
+     "text": "EU Code of Practice (Appendix 3.5): independent external evaluators given access to the model.",
+     "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
     },
     {
      "text": "California SB 53 and New York RAISE Act: transparency reports at deployment summarising risk assessments and the role of third-party evaluators.",
@@ -80,14 +84,14 @@
     }
    ],
    "precedents": [],
-   "exclusion_risk": "Low to moderate. A request for disclosure is judged by its underlying subject (Staff Legal Bulletin 14M); naming specific test protocols would raise the risk of exclusion as micromanagement.",
+   "exclusion_risk": "Low to moderate. Staff Legal Bulletin 14M judges a request for a report by its underlying subject; proposals that prescribe specific test methods have been treated as micromanagement.",
    "exclusion_sources": [
     "https://www.sec.gov/about/shareholder-proposals-staff-legal-bulletin-no-14m-cf",
     "https://www.sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426"
    ],
    "materiality": [
     {
-     "text": "Anthropic's prospectus reports 2026 incidents in which its models gained unauthorized access to systems during cyber evaluations, after which it suspended those evaluations.",
+     "text": "Anthropic's prospectus reports 2026 incidents in which its models gained unauthorized access to systems during cyber evaluations, after which it suspended certain of those evaluations.",
      "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm"
     }
    ],
@@ -112,7 +116,7 @@
    "required_by": [
     {
      "text": "EU Code of Practice Measure 8.1: external assurance where appropriate.",
-     "url": "https://code-of-practice.ai/?section=safety-security"
+     "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
     },
     {
      "text": "Not required by California SB 53, nor by New York's final RAISE Act text.",
@@ -120,7 +124,7 @@
     }
    ],
    "precedents": [],
-   "exclusion_risk": "Moderate. Requiring a named auditor or method could be called micromanagement; asking the board to commission an assessment and publish a summary is the safer framing.",
+   "exclusion_risk": "Moderate. Proposals that name an auditor or method can be treated as micromanagement; proposals asking a board to commission an assessment and publish a summary have been framed more broadly.",
    "exclusion_sources": [
     "https://www.sec.gov/about/shareholder-proposals-staff-legal-bulletin-no-14m-cf",
     "https://www.sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426"
@@ -143,11 +147,11 @@
    "required_by": [
     {
      "text": "EU AI Act Article 55(1)(d): an adequate level of cybersecurity protection for models with systemic risk.",
-     "url": "https://artificialintelligenceact.eu/article/55/"
+     "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
     },
     {
      "text": "EU Code of Practice security measures, which cite RAND's work on securing model weights.",
-     "url": "https://code-of-practice.ai/?section=safety-security"
+     "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
     },
     {
      "text": "California SB 53: the framework must cover cybersecurity practices.",
@@ -155,7 +159,7 @@
     }
    ],
    "precedents": [],
-   "exclusion_risk": "Moderate to high. Cybersecurity detail is often argued to be ordinary business; frame the ask as board oversight and disclosure, not technical controls.",
+   "exclusion_risk": "Moderate to high. Cybersecurity detail is often argued to be ordinary business; a request for disclosure of board oversight is framed more broadly than a request for specific technical controls.",
    "exclusion_sources": [
     "https://www.sec.gov/about/shareholder-proposals-staff-legal-bulletin-no-14m-cf",
     "https://www.sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426"
@@ -187,11 +191,11 @@
    "required_by": [
     {
      "text": "EU AI Act Article 55(1)(c): report serious incidents without undue delay.",
-     "url": "https://artificialintelligenceact.eu/article/55/"
+     "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
     },
     {
      "text": "EU Code of Practice Measure 9.3: deadlines of 2 to 15 days depending on the harm.",
-     "url": "https://code-of-practice.ai/?section=safety-security"
+     "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
     },
     {
      "text": "California SB 53: report to the state within 15 days, or 24 hours if there is imminent danger.",
@@ -203,7 +207,7 @@
     }
    ],
    "precedents": [],
-   "exclusion_risk": "Low to moderate: reporting is now a legal duty, so a request to summarise it publicly is close to compliance disclosure.",
+   "exclusion_risk": "Low to moderate. Incident reporting is now a legal duty in the EU, California and New York, so a request to summarise it publicly is close to compliance disclosure.",
    "exclusion_sources": [
     "https://www.sec.gov/about/shareholder-proposals-staff-legal-bulletin-no-14m-cf",
     "https://www.sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426"
@@ -239,7 +243,7 @@
     },
     {
      "text": "EU Code of Practice Measure 8.3: no retaliation, and an annual notice to staff of the whistleblower policy.",
-     "url": "https://code-of-practice.ai/?section=safety-security"
+     "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
     },
     {
      "text": "Federal AI Whistleblower Protection Act (S.1792, introduced May 15, 2025): pending.",
@@ -247,7 +251,7 @@
     }
    ],
    "precedents": [],
-   "exclusion_risk": "Moderate. Workforce policy is classic ordinary business; a request to assess and disclose, rather than to adopt specific terms, is the safer framing.",
+   "exclusion_risk": "Moderate. Workforce policy is traditionally treated as ordinary business; requests to assess and report, rather than to adopt specific terms, have been framed more broadly.",
    "exclusion_sources": [
     "https://www.sec.gov/about/shareholder-proposals-staff-legal-bulletin-no-14m-cf",
     "https://www.sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426"
@@ -270,7 +274,7 @@
    "required_by": [
     {
      "text": "EU Code of Practice Measure 8.1: oversight by a committee of the board or an independent body.",
-     "url": "https://code-of-practice.ai/?section=safety-security"
+     "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai"
     }
    ],
    "precedents": [
@@ -283,21 +287,24 @@
      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465925052014/tm2515134d1_8k.htm"
     },
     {
-     "text": "Alphabet 2026, AI Board Oversight (update the Audit Committee charter): 3.74%.",
+     "text": "Alphabet 2024, AI Principles and Board Oversight: 7.4%. Alphabet's figures count its 10-vote Class B shares, so they likely understate support among other holders (this site's inference).",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312524160721/d805807d8k.htm"
+    },
+    {
+     "text": "Alphabet 2026, AI Board Oversight (update the Audit Committee charter): 3.74%. Alphabet's figures count its 10-vote Class B shares, so they likely understate support among other holders (this site's inference).",
      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm"
+    },
+    {
+     "text": "Amazon's 2024 statement opposing its proposal said none of its peer companies had a board committee dedicated solely to AI risks.",
+     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465924045910/tm2329302d4_def14a.htm"
     }
    ],
-   "exclusion_risk": "Low: proposals on board structure for AI oversight have reached the ballot at Amazon and Alphabet.",
+   "exclusion_risk": "Low. Proposals on board structure for AI oversight have reached the ballot at Amazon (2024, 2025) and Alphabet (2024, 2026).",
    "exclusion_sources": [
     "https://www.sec.gov/about/shareholder-proposals-staff-legal-bulletin-no-14m-cf",
     "https://www.sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426"
    ],
-   "materiality": [
-    {
-     "text": "Amazon's 2024 opposition statement argued that none of its peers had a dedicated AI committee; Anthropic now has one.",
-     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm"
-    }
-   ],
+   "materiality": [],
    "example": "Shareholders request that the Board assign oversight of catastrophic frontier-AI risk to a committee and disclose its members' relevant expertise.",
    "planner_ask": "ask-ai-oversight-reporting"
   },
@@ -307,35 +314,39 @@
    "practice": "For hyperscalers and other investors in labs: report how the board weighs a lab's safety practices when investing in it or supplying it with large-scale compute.",
    "committed": [
     {
-     "text": "The October 2025 Microsoft and OpenAI agreement: any OpenAI declaration of AGI is to be verified by an independent expert panel; Microsoft holds about 27%.",
+     "text": "The October 2025 Microsoft and OpenAI agreement provides that an independent expert panel verifies any OpenAI declaration of AGI (a governance term, not a safety due-diligence commitment); Microsoft holds about 27%.",
      "url": "https://blogs.microsoft.com/blog/2025/10/28/the-next-chapter-of-the-microsoft-openai-partnership/"
     },
     {
-     "text": "Amazon's and Google's stakes in Anthropic are non-voting preferred stock; no public safety conditions found in those agreements (not confirmed).",
+     "text": "At Anthropic's listing, Amazon's and Google's stakes became non-voting Class N common stock (Amazon about 23.6% of capital stock); no public safety conditions were found in those agreements (not confirmed).",
      "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm"
     }
    ],
    "required_by": [
     {
-     "text": "No rule requires it. A November 2026 US export rule adds know-your-customer duties on remote access to advanced chips.",
+     "text": "No rule requires it. An interim final US export rule issued November 15, 2026, effective on publication in the Federal Register, would add know-your-customer duties on remote access to advanced chips.",
      "url": "https://www.wilmerhale.com/en/insights/client-alerts/20261117-us-government-restricts-remote-access-to-advanced-ai-chips-and-formally-rescinds-the-ai-diffusion-rule"
     }
    ],
    "precedents": [],
-   "exclusion_risk": "Moderate to high. Contract terms are ordinary business and the micromanagement risk is real; ask for disclosure of board oversight, not specific contract terms.",
+   "exclusion_risk": "Moderate to high. Contract terms are traditionally treated as ordinary business; requests for disclosure of board oversight are framed more broadly than requests for specific contract terms.",
    "exclusion_sources": [
     "https://www.sec.gov/about/shareholder-proposals-staff-legal-bulletin-no-14m-cf",
     "https://www.sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426"
    ],
    "materiality": [
     {
-     "text": "Amazon's third-quarter 2026 report: upward adjustments to private investments of $62.9 billion in nine months, mainly its Anthropic preferred stock, plus a $5.0 billion further investment and a financing facility of up to $20 billion for Anthropic.",
+     "text": "Amazon's third-quarter 2026 report: upward adjustments to private investments of $62.9 billion in nine months, mainly its Anthropic stake; two further $5.0 billion investments in 2026; and a financing facility of up to $20 billion, of which $15 billion remained available.",
      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000040/amzn-20260930.htm"
     }
    ],
    "example": "Shareholders request a report on how the Board evaluates AI-safety practices of frontier labs in which the Company invests or to which it supplies large-scale compute.",
    "precedents_note": "None found in SEC full-text search of proxy statements and exempt solicitations, 2023 to November 2026.",
-   "planner_ask": "ask-ai-oversight-reporting"
+   "planner_ask": "ask-ai-oversight-reporting",
+   "target": {
+    "company": "amazon",
+    "label": "Amazon"
+   }
   },
   {
    "id": "safety-spend",
@@ -343,13 +354,13 @@
    "practice": "Disclose roughly what share of research compute and budget goes to safety and alignment.",
    "committed": [
     {
-     "text": "No lab publicly discloses a share. Anthropic says only that its compute goes to coding, agentic skills and safety research.",
+     "text": "No lab publicly discloses a share. Anthropic says only that its compute, other than for image and video, goes to coding, agentic skills and safety research.",
      "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm"
     }
    ],
    "required_by": [],
    "precedents": [],
-   "exclusion_risk": "Moderate to high. Allocating research spending is core ordinary business; asking for an approximate share to be disclosed, rather than a level of spending, is the safer framing.",
+   "exclusion_risk": "Moderate to high. Research budgets are core ordinary business; a request to disclose an approximate share is framed more narrowly than a request to set spending.",
    "exclusion_sources": [
     "https://www.sec.gov/about/shareholder-proposals-staff-legal-bulletin-no-14m-cf",
     "https://www.sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426"
@@ -359,5 +370,6 @@
    "precedents_note": "None found in SEC full-text search of proxy statements and exempt solicitations, 2023 to November 2026.",
    "planner_ask": "ask-ai-oversight-reporting"
   }
- ]
+ ],
+ "exclusion_note": "Ratings are this site's reading of published SEC guidance, not legal advice."
 }

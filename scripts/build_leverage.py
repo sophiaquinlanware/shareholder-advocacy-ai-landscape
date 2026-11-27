@@ -11,6 +11,7 @@ companies by their strongest tie, then by how many kinds of tie they have, then 
 is open. This orders what the records show; it is not a forecast of influence and not a recommendation.
 """
 
+import datetime as dt
 import json
 from collections import defaultdict
 from pathlib import Path
@@ -63,7 +64,7 @@ def main():
         # The lab itself, when it is listed (Anthropic), or its listed parent (xAI in SpaceX; in-house labs).
         direct = None
         if lab.get("status") == "public":
-            direct = next((t for t, c in companies.items() if c.get("name", "").lower() == lab["name"].lower()), None)
+            direct = next((t for t, c in companies.items() if c.get("id") == lab["id"]), None)
         elif lab.get("parent") and lab["parent"] in pub:
             direct = pub[lab["parent"]]["ticker"]
         if direct and direct in companies:
@@ -72,11 +73,14 @@ def main():
                          "levers": routes.pop(direct, [])})
         for tkr, levers in routes.items():
             if tkr not in companies:
+                print(f"  note: {tkr} is tied to {lab['name']} but is not in companies.json; left out")
                 continue
             levers.sort(key=lambda l: -(l["strength"] or 0))
             rows.append({**company_block(tkr), "direct": False, "levers": levers})
+        today = dt.date.today().isoformat()
         rows.sort(key=lambda r: (not r["direct"], -max([l["strength"] or 0 for l in r["levers"]] or [0]),
-                                 -len({l["type"] for l in r["levers"]}), ROUTE_RANK.get(r["route"], 2)))
+                                 -len({l["type"] for l in r["levers"]}),
+                                 bool(r["next_deadline"]) and r["next_deadline"] < today, ROUTE_RANK.get(r["route"], 2)))
         labs.append({"id": lab["id"], "name": lab["name"], "status": lab.get("status"), "parent": lab.get("parent"),
                      "description": lab.get("description"), "source_url": lab.get("source_url"),
                      "routes": rows, "strong_routes": sum(1 for r in rows if any((l["strength"] or 0) >= 3 for l in r["levers"]))})
