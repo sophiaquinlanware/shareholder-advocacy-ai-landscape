@@ -872,7 +872,7 @@
     if (state.path && state.path.from !== n.id) state.path = null;
     const rel = state.data.links.filter((l) => l.source.id === n.id || l.target.id === n.id).map((l) => {
       const other = l.source.id === n.id ? l.target : l.source;
-      const rel = l.relation === "coverage" ? (l.coverage === "full" ? "covers (this site's reading)" : "partially covers (this site's reading)") : l.relation;
+      const rel = l.relation === "coverage" ? (l.coverage === "full" ? "covers (this site's reading)" : "partially covers (this site's reading)") : l.relation === SITE_LINK ? "addresses the same issue as (this site's link, not a sourced tie)" : l.relation;
       const dir = l.source.id === n.id ? rel : `${rel} (from)`;
       const c = conf(l);
       // Memberships and focus lists carry the date the source listed them, so they don't read as current.
@@ -1042,7 +1042,9 @@
   // Three line styles for engagement, each in the Key: met the company, wrote to it, or acted through a coalition.
   const LETTER = new Set(["wrote to", "joined an investor letter to", "sought engagement"]);
   const COALITION = new Set(["focus company of", "lists a member filing at", "made the case at", "announced member filings at"]);
-  const engageDash = (r) => (r === "engaged directly" ? "7 2 2 2" : LETTER.has(r) ? "6 2 1 2 1 2" : COALITION.has(r) ? "12 4" : null);
+  // "addresses the same issue as" is this site's topical link, not a sourced tie: drawn dotted and labelled so.
+  const SITE_LINK = "addresses the same issue as";
+  const engageDash = (r) => r === SITE_LINK ? "1 7" : (r === "engaged directly" ? "7 2 2 2" : LETTER.has(r) ? "6 2 1 2 1 2" : COALITION.has(r) ? "12 4" : null);
   let filerSet = null;
   const filerOrgs = () => {
     if (filerSet) return filerSet;
@@ -1398,6 +1400,7 @@
     engaged: { label: "Dash-dot line: investor engaged the company directly (reported by the investor; open a node for the steps)", svg: () => `<line x1="1" y1="9" x2="23" y2="9" stroke="${cssVar("--g-label")}" stroke-width="1.6" stroke-dasharray="7 2 2 2"/>` },
     wrote: { label: "Dash-dot-dot line: wrote to the company (a letter, alone or with other investors, or a request for a meeting; no meeting reported)", svg: () => `<line x1="1" y1="9" x2="23" y2="9" stroke="${cssVar("--g-label")}" stroke-width="1.6" stroke-dasharray="6 2 1 2 1 2"/>` },
     coalition: { label: "Long dashes: a coalition acted at the company (a focus company, member filings it lists or announced, or a case it made)", svg: () => `<line x1="1" y1="9" x2="23" y2="9" stroke="${cssVar("--g-label")}" stroke-width="1.6" stroke-dasharray="12 4"/>` },
+    siteLink: { label: "Wide dots: this site's link between items on the same issue, not a sourced tie", svg: () => `<line x1="1" y1="9" x2="23" y2="9" stroke="${cssVar("--g-label")}" stroke-width="1.6" stroke-dasharray="1 7"/>` },
     won: { label: "Green line: proposal succeeded (withdrawn after the company committed to act, or majority vote)", svg: (c) => `<line x1="1" y1="9" x2="23" y2="9" stroke="${c.win}" stroke-width="2.4"/>` },
     lost: { label: "Red line: voted, under 50% support", svg: () => `<line x1="1" y1="9" x2="23" y2="9" stroke="#f87171" stroke-width="2.4"/>` },
     "cov-none": { label: "No rule in this map reaches this ask", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.risk}" stroke-width="1.6" stroke-dasharray="1 2.5" stroke-linecap="round"/>` },
@@ -1410,6 +1413,7 @@
     if (state.data.links.some((l) => l.relation === "engaged directly" && inMode(l) && visible(l.source) && visible(l.target))) kinds.add("engaged");
     if (state.data.links.some((l) => LETTER.has(l.relation) && inMode(l) && visible(l.source) && visible(l.target))) kinds.add("wrote");
     if (state.data.links.some((l) => COALITION.has(l.relation) && inMode(l) && visible(l.source) && visible(l.target))) kinds.add("coalition");
+    if (state.data.links.some((l) => l.relation === SITE_LINK && inMode(l) && visible(l.source) && visible(l.target))) kinds.add("siteLink");
     state.data.links.forEach((l) => { if (visible(l.source) && visible(l.target) && inMode(l)) { const c = outcomeColor(l); if (c) kinds.add(outcomeOf(l.source) || outcomeOf(l.target)); } });
     const list = Object.keys(MARK_KEY).filter((k) => kinds.has(k));
     el.hidden = !list.length;
@@ -1703,7 +1707,9 @@
     const adj = new Map();
     const add = (a, b, l) => { if (!adj.has(a)) adj.set(a, []); adj.get(a).push({ to: b, l }); };
     state.data.links.forEach((l) => {
-      if (!PATH_REL.has(l.relation)) return;
+      // Investor outreach routes only: ties among research and advocacy groups (layer "organizations", such as
+      // a lab's membership of Partnership on AI) are not investor routes.
+      if (!PATH_REL.has(l.relation) || l.layer === "organizations") return;
       add(endId(l.source), endId(l.target), l);
       add(endId(l.target), endId(l.source), l);
     });
