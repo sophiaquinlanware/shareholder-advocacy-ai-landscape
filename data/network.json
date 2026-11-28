@@ -5272,6 +5272,335 @@
    "to": "vwfi",
    "relation": "member of",
    "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "federated-hermes-eos",
+   "to": "co-GOOGL",
+   "relation": "engaged directly",
+   "source_url": "https://www.hermes-investment.com/uploads/2025/10/5d7d02e7a7efed3add8e4ba47df1c8da/eos-ai-per-q3-2025.pdf",
+   "reported_by": "Federated Hermes EOS",
+   "steps": [
+    {
+     "date": "2025",
+     "title": "Spoke with Alphabet about supply chain best practices to manage security of supply and resilience as its energy demands grow with AI datacentres, including methane leak management (EOS says it deepened engagement with tech companies on AI-driven power demand in 2024 and 2025)",
+     "source_url": "https://www.hermes-investment.com/uploads/2025/10/5d7d02e7a7efed3add8e4ba47df1c8da/eos-ai-per-q3-2025.pdf",
+     "source_page": "3"
+    }
+   ]
+  },
+  {
+   "from": "lgim",
+   "to": "co-GOOGL",
+   "relation": "engaged directly",
+   "source_url": "https://group.legalandgeneral.com/media/imgma1vl/lgim-active-ownership-report-2023.pdf",
+   "reported_by": "LGIM",
+   "steps": [
+    {
+     "date": "2023",
+     "title": "Engaged with the four largest US tech firms building AI systems as products (Alphabet, Apple, Meta, Microsoft, named in the report's footnote); the report gives no company-level detail",
+     "source_url": "https://group.legalandgeneral.com/media/imgma1vl/lgim-active-ownership-report-2023.pdf",
+     "source_page": "83"
+    }
+   ]
+  },
+  {
+   "from": "lgim",
+   "to": "co-AAPL",
+   "relation": "engaged directly",
+   "source_url": "https://group.legalandgeneral.com/media/imgma1vl/lgim-active-ownership-report-2023.pdf",
+   "reported_by": "LGIM",
+   "steps": [
+    {
+     "date": "2023",
+     "title": "Engaged with the four largest US tech firms building AI systems as products (Alphabet, Apple, Meta, Microsoft, named in the report's footnote); the report gives no company-level detail",
+     "source_url": "https://group.legalandgeneral.com/media/imgma1vl/lgim-active-ownership-report-2023.pdf",
+     "source_page": "83"
+    }
+   ]
+  },
+  {
+   "from": "lgim",
+   "to": "co-META",
+   "relation": "engaged directly",
+   "source_url": "https://group.legalandgeneral.com/media/imgma1vl/lgim-active-ownership-report-2023.pdf",
+   "reported_by": "LGIM",
+   "steps": [
+    {
+     "date": "2023",
+     "title": "Engaged with the four largest US tech firms building AI systems as products (Alphabet, Apple, Meta, Microsoft, named in the report's footnote); the report gives no company-level detail",
+     "source_url": "https://group.legalandgeneral.com/media/imgma1vl/lgim-active-ownership-report-2023.pdf",
+     "source_page": "83"
+    }
+   ]
+  },
+  {
+   "from": "lgim",
+   "to": "co-MSFT",
+   "relation": "engaged directly",
+   "source_url": "https://group.legalandgeneral.com/media/imgma1vl/lgim-active-ownership-report-2023.pdf",
+   "reported_by": "LGIM",
+   "steps": [
+    {
+     "date": "2023",
+     "title": "Engaged with the four largest US tech firms building AI systems as products (Alphabet, Apple, Meta, Microsoft, named in the report's footnote); the report gives no company-level detail",
+     "source_url": "https://group.legalandgeneral.com/media/imgma1vl/lgim-active-ownership-report-2023.pdf",
+     "source_page": "83"
+    }
+   ]
+  },
+  {
+   "from": "domini",
+   "to": "co-GOOGL",
+   "relation": "engaged directly",
+   "source_url": "https://domini.com/wp-content/uploads/2023/07/Domini_Q2_2023-Impact-Update.pdf",
+   "reported_by": "Domini Impact Investments",
+   "steps": [
+    {
+     "date": "2023-H1",
+     "title": "Co-leading engagement with Alphabet in a collaborative investor engagement on Big Tech human rights oversight, reported under 'Engaging with AI'",
+     "source_url": "https://domini.com/wp-content/uploads/2023/07/Domini_Q2_2023-Impact-Update.pdf",
+     "source_page": "3"
+    }
+   ],
+   "note": "as part of the Council on Ethics of the Swedish AP Funds collaborative engagement"
+  },
+  {
+   "from": "domini",
+   "to": "co-AAPL",
+   "relation": "engaged directly",
+   "source_url": "https://domini.com/wp-content/uploads/2023/07/Domini_Q2_2023-Impact-Update.pdf",
+   "reported_by": "Domini Impact Investments",
+   "steps": [
+    {
+     "date": "2023-H1",
+     "title": "Co-leading engagement with Apple in a collaborative investor engagement on Big Tech human rights oversight, reported under 'Engaging with AI'",
+     "source_url": "https://domini.com/wp-content/uploads/2023/07/Domini_Q2_2023-Impact-Update.pdf",
+     "source_page": "3"
+    }
+   ],
+   "note": "as part of the Council on Ethics of the Swedish AP Funds collaborative engagement"
+  },
+  {
+   "from": "domini",
+   "to": "co-MSFT",
+   "relation": "engaged directly",
+   "source_url": "https://domini.com/wp-content/uploads/2023/07/Domini_Q2_2023-Impact-Update.pdf",
+   "reported_by": "Domini Impact Investments",
+   "steps": [
+    {
+     "date": "2023-H1",
+     "title": "Participating in a collaborative engagement with Microsoft on Big Tech human rights oversight, reported under 'Engaging with AI'",
+     "source_url": "https://domini.com/wp-content/uploads/2023/07/Domini_Q2_2023-Impact-Update.pdf",
+     "source_page": "3"
+    },
+    {
+     "date": "2026-H2",
+     "title": "Joined a dialogue with Microsoft with more than 25 investors from three collaborative initiatives on human rights due diligence in tech, framed by how AI expands what technologies can do and how they can be misused",
+     "source_url": "https://domini.com/wp-content/uploads/2026/10/Domini-Q3-2026-Impact-Update.pdf",
+     "source_page": "4"
+    }
+   ],
+   "note": "as part of collaborative investor initiatives, including the Council on Ethics of the Swedish AP Funds engagement"
+  },
+  {
+   "from": "domini",
+   "to": "co-NVDA",
+   "relation": "engaged directly",
+   "source_url": "https://domini.com/wp-content/uploads/2023/07/Domini_Q2_2023-Impact-Update.pdf",
+   "reported_by": "Domini Impact Investments",
+   "steps": [
+    {
+     "date": "2023-H1",
+     "title": "Dialogue with Nvidia after its human rights policy: sought to understand its role when customers use its GPUs to develop AI software, and encouraged a grievance mechanism",
+     "source_url": "https://domini.com/wp-content/uploads/2023/07/Domini_Q2_2023-Impact-Update.pdf",
+     "source_page": "3"
+    },
+    {
+     "date": "2024-H1",
+     "title": "Engaging Nvidia on its human rights approach for AI chips; reports Nvidia is now working with an independent expert on a human rights impact assessment",
+     "source_url": "https://domini.com/q2-2024-impact-update/"
+    }
+   ]
+  },
+  {
+   "from": "nordea",
+   "to": "co-GOOGL",
+   "relation": "engaged directly",
+   "source_url": "https://www.nordea.com/en/doc/nordea-responsible-investments-annual-report-2024.pdf",
+   "reported_by": "Nordea Asset Management",
+   "steps": [
+    {
+     "date": "2024",
+     "title": "Co-signed an investor letter to Alphabet's board asking it to act on a shareholder proposal for a human rights impact assessment of Google's AI-driven targeted advertising",
+     "source_url": "https://www.nordea.com/en/doc/nordea-responsible-investments-annual-report-2024.pdf",
+     "source_page": "34"
+    }
+   ],
+   "note": "as part of an investor letter to Alphabet's board"
+  },
+  {
+   "from": "nei",
+   "to": "co-AMZN",
+   "relation": "engaged directly",
+   "source_url": "https://www.neiinvestments.com/content/dam/nei/docs/en/responsible-investing/reports/responsible-investment-report-2025-en.pdf",
+   "reported_by": "NEI Investments",
+   "steps": [
+    {
+     "date": "2025",
+     "title": "Reports in its 2025 Responsible Investment Report a first meeting with Amazon in July (year not stated), as a co-lead in the Valuing Water Finance Initiative",
+     "source_url": "https://www.neiinvestments.com/content/dam/nei/docs/en/responsible-investing/reports/responsible-investment-report-2025-en.pdf",
+     "source_page": "40"
+    }
+   ],
+   "note": "as part of the Valuing Water Finance Initiative"
+  },
+  {
+   "from": "candriam",
+   "to": "co-GOOGL",
+   "relation": "engaged directly",
+   "source_url": "https://www.candriam.com/siteassets/medias/publications/sri-publications---candriam-policies/engagement-report-2024.pdf",
+   "reported_by": "Candriam",
+   "steps": [
+    {
+     "date": "2024",
+     "title": "Actively supported a private investor letter to Alphabet's board on its human rights due diligence for AI-driven targeted advertising, as part of ongoing engagement on AI; letter initiated by SHARE",
+     "source_url": "https://www.candriam.com/siteassets/medias/publications/sri-publications---candriam-policies/engagement-report-2024.pdf",
+     "source_page": "24"
+    }
+   ],
+   "note": "as part of an investor letter initiated by SHARE"
+  },
+  {
+   "from": "trillium",
+   "to": "co-GOOGL",
+   "relation": "engaged directly",
+   "source_url": "https://www.trilliuminvest.com/newsroom/q2-2026-shareholder-advocacy-impact-report",
+   "reported_by": "Trillium Asset Management",
+   "steps": [
+    {
+     "date": "2026-H1",
+     "title": "Reports it had previously engaged Alphabet on responsible growth and the environmental impacts of AI-related data center expansion, alongside concerns on data governance and consumer protection (engagement date not given)",
+     "source_url": "https://www.trilliuminvest.com/newsroom/q2-2026-shareholder-advocacy-impact-report"
+    }
+   ]
+  },
+  {
+   "from": "bnp-paribas-asset-management-incl-axa-im",
+   "to": "co-MSFT",
+   "relation": "engaged directly",
+   "source_url": "https://docfinder.bnpparibas-am.com/api/files/04408808-fc03-42c9-956a-f2dce0a28d94",
+   "reported_by": "BNP Paribas Asset Management",
+   "steps": [
+    {
+     "date": "2025",
+     "title": "Initial conversation with Microsoft about its overall AI risk management approach and its management of data centre energy and water use",
+     "source_url": "https://docfinder.bnpparibas-am.com/api/files/04408808-fc03-42c9-956a-f2dce0a28d94",
+     "source_page": "61"
+    }
+   ]
+  },
+  {
+   "from": "bnp-paribas-asset-management-incl-axa-im",
+   "to": "co-AAPL",
+   "relation": "engaged directly",
+   "source_url": "https://docfinder.bnpparibas-am.com/api/files/04408808-fc03-42c9-956a-f2dce0a28d94",
+   "reported_by": "BNP Paribas Asset Management",
+   "steps": [
+    {
+     "date": "2025",
+     "title": "Encouraged Apple to revise policies and procedures that protect children from generative AI products sold through the App Store, raising concerns about third-party AI companion apps",
+     "source_url": "https://docfinder.bnpparibas-am.com/api/files/04408808-fc03-42c9-956a-f2dce0a28d94",
+     "source_page": "61"
+    }
+   ]
+  },
+  {
+   "from": "bnp-paribas-asset-management-incl-axa-im",
+   "to": "co-META",
+   "relation": "engaged directly",
+   "source_url": "https://docfinder.bnpparibas-am.com/api/files/04408808-fc03-42c9-956a-f2dce0a28d94",
+   "reported_by": "BNP Paribas Asset Management",
+   "steps": [
+    {
+     "date": "2025",
+     "title": "Continued to seek a meeting with Meta, as part of a coalition of investors managing US$3.9 trillion, on responsible AI, content moderation and child safety (no meeting reported)",
+     "source_url": "https://docfinder.bnpparibas-am.com/api/files/04408808-fc03-42c9-956a-f2dce0a28d94",
+     "source_page": "61"
+    }
+   ],
+   "note": "as part of a coalition of investors managing US$3.9 trillion"
+  },
+  {
+   "from": "bnp-paribas-asset-management-incl-axa-im",
+   "to": "co-BABA",
+   "relation": "engaged directly",
+   "source_url": "https://docfinder.bnpparibas-am.com/api/files/04408808-fc03-42c9-956a-f2dce0a28d94",
+   "reported_by": "BNP Paribas Asset Management",
+   "steps": [
+    {
+     "date": "2025",
+     "title": "Spoke with Alibaba about international investor expectations for responsible AI governance; Alibaba acknowledged the need to clarify overlapping committee structures for Board-level oversight",
+     "source_url": "https://docfinder.bnpparibas-am.com/api/files/04408808-fc03-42c9-956a-f2dce0a28d94",
+     "source_page": "61"
+    }
+   ]
+  },
+  {
+   "from": "bnp-paribas-asset-management-incl-axa-im",
+   "to": "co-0700",
+   "relation": "engaged directly",
+   "source_url": "https://docfinder.bnpparibas-am.com/api/files/04408808-fc03-42c9-956a-f2dce0a28d94",
+   "reported_by": "BNP Paribas Asset Management",
+   "steps": [
+    {
+     "date": "2025",
+     "title": "Spoke with Tencent about international investor expectations for responsible AI governance; shared Microsoft's AI Transparency Report as a best-practice example",
+     "source_url": "https://docfinder.bnpparibas-am.com/api/files/04408808-fc03-42c9-956a-f2dce0a28d94",
+     "source_page": "61"
+    }
+   ]
+  },
+  {
+   "from": "green-century",
+   "to": "co-NVDA",
+   "relation": "engaged directly",
+   "source_url": "https://www.greencentury.com/green-centurys-advocates-hold-big-tech-accountable/",
+   "reported_by": "Green Century Capital Management",
+   "steps": [
+    {
+     "date": "2026-09",
+     "title": "Reports its shareholder advocacy team has regularly met with NVIDIA, Microsoft and Intel on the environmental consequences of data centers and AI (post dated September 22, 2026; meeting dates not given)",
+     "source_url": "https://www.greencentury.com/green-centurys-advocates-hold-big-tech-accountable/"
+    }
+   ]
+  },
+  {
+   "from": "green-century",
+   "to": "co-MSFT",
+   "relation": "engaged directly",
+   "source_url": "https://www.greencentury.com/green-centurys-advocates-hold-big-tech-accountable/",
+   "reported_by": "Green Century Capital Management",
+   "steps": [
+    {
+     "date": "2026-09",
+     "title": "Reports its shareholder advocacy team has regularly met with NVIDIA, Microsoft and Intel on the environmental consequences of data centers and AI (post dated September 22, 2026; meeting dates not given)",
+     "source_url": "https://www.greencentury.com/green-centurys-advocates-hold-big-tech-accountable/"
+    }
+   ]
+  },
+  {
+   "from": "share",
+   "to": "co-GOOGL",
+   "relation": "engaged directly",
+   "source_url": "https://share.ca/blog/alphabet-urged-to-address-ai-related-risks-of-targeted-ads/",
+   "reported_by": "SHARE (Shareholder Association for Research and Education)",
+   "steps": [
+    {
+     "date": "2021",
+     "title": "SHARE and other investors have been engaging Alphabet since 2021 on the AI-related risks of its targeted advertising (stated June 4, 2025)",
+     "source_url": "https://share.ca/blog/alphabet-urged-to-address-ai-related-risks-of-targeted-ads/"
+    }
+   ]
   }
  ],
  "engagements": [
