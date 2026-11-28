@@ -112,3 +112,36 @@ test("ideas leave out the company and ask already chosen", async ({ page }) => {
   await expect(ideas.locator('.pl-co[data-co="microsoft"]')).toHaveCount(0);
   await expect(ideas.locator('.pl-ask[data-ask="ask-ai-misinformation"]')).toHaveCount(0);
 });
+
+test("where to focus shows a sourced poll for the ask, and the not-found note where there is none", async ({
+  page,
+}) => {
+  await open(page, "?plan=microsoft~ask-dc-water");
+  const polls = page.locator("#pl-out .pl-focus .pl-poll");
+  await expect(polls.first()).toContainText("79%");
+  await expect(polls.first().locator("a.src")).toHaveAttribute("href", /^https:\/\//);
+  await page.selectOption("#pl-ask", "ask-ai-fossil-fuels");
+  await expect(page.locator("#pl-out .pl-focus")).toContainText("No poll found");
+});
+
+test("the tracker in Proposals and results is keyboard reachable and opens a square in the planner", async ({
+  page,
+}) => {
+  await page.goto("/index.html#tracker");
+  await page.waitForSelector("#tab-tracker button.pl-mx");
+  const first = page.locator("#tab-tracker button.pl-mx").first();
+  await expect(first).toHaveAttribute("tabindex", "0");
+  await first.focus();
+  await page.keyboard.press("ArrowRight");
+  const second = page.locator("#tab-tracker button.pl-mx").nth(1);
+  await expect(second).toBeFocused();
+  const co = await second.getAttribute("data-co"),
+    ask = await second.getAttribute("data-ask");
+  await page.keyboard.press("Enter");
+  await expect(page.locator("#tab-planner")).toBeVisible();
+  await expect(page.locator("#pl-co")).toHaveValue(co);
+  await expect(page.locator("#pl-ask")).toHaveValue(ask);
+  // Both grids are on the page now; their headings must not share an id.
+  expect(await page.locator("#pl-h-mx").count()).toBe(1);
+  expect(await page.locator("#pl-h-trk").count()).toBe(1);
+});

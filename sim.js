@@ -616,6 +616,8 @@
       cur.setAttribute("transform", `translate(${x(yr)},0)`);
       t.value = Math.round(yr); out.textContent = Math.round(yr);
       const yy = Math.round(yr);
+      if (read.dataset.yr === String(yy)) return; // announce each season once, not every animation frame
+      read.dataset.yr = String(yy);
       read.textContent = all.map(({ i, t: tg, hist, T }) => {
         const rec = hist.filter((v) => v.year === yy).map((v) => pct(v.support, 1)).join(", ");
         const sp = T.support[yy] || [];

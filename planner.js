@@ -97,10 +97,11 @@
       const on = sel.co === (c.id || c.ticker) && sel.ask === a.id;
       const band = (sel.ask === a.id ? " pl-in-row" : "") + (sel.co === (c.id || c.ticker) ? " pl-in-col" : "");
       const label = `${a.label} at ${c.name}: ${x ? `filed ${plural(x.n, "time")}${x.best != null ? `, highest support ${Math.round(x.best)}%` : ""}${x.best == null ? ", not voted (withdrawn, excluded or still to come)" : ""}${x.up ? ", on the next ballot" : ""}${x.crit ? `, ${x.crit === x.n ? (x.n === 1 ? "by a filer" : "all by filers") : `${x.crit} of them by filers`} critical of ESG${x.best != null ? " (left out of the highest support)" : ""}` : ""}` : "not filed in this dataset"}`;
-      return `<td class="${band.trim()}"><button type="button" class="pl-mx${on ? " pl-target" : ""}${x ? " filed" : ""}${x && x.crit === x.n ? " crit" : ""}${x && x.up ? " up" : ""}" data-co="${esc(c.id || c.ticker)}" data-ask="${esc(a.id)}" data-r="${r}" data-c="${i}" tabindex="${on ? 0 : -1}"${on ? ' aria-current="true"' : ""} aria-label="${esc(label)}. Opens the plan below." title="${esc(label)}. Click to open the plan below.">${x ? (x.best != null ? Math.round(x.best) : "•") : ""}</button></td>`;
+      return `<td class="${band.trim()}"><button type="button" class="pl-mx${on ? " pl-target" : ""}${x ? " filed" : ""}${x && x.crit === x.n ? " crit" : ""}${x && x.up ? " up" : ""}" data-co="${esc(c.id || c.ticker)}" data-ask="${esc(a.id)}" data-r="${r}" data-c="${i}" tabindex="${on ? 0 : -1}"${on ? ' aria-current="true"' : ""} aria-label="${esc(label)}. ${target ? "Opens the plan below." : "Opens it in Plan an engagement."}" title="${esc(label)}. ${target ? "Click to open the plan below." : "Click to open it in Plan an engagement."}">${x ? (x.best != null ? Math.round(x.best) : "•") : ""}</button></td>`;
     }).join("")}</tr>`).join("");
     const tc = target && S ? coById(S.co) : null;
-    return `<section class="pl-card pl-wide" aria-labelledby="pl-h-mx"><h3 id="pl-h-mx">${target ? "Your target against the record: each ask, by company" : "AI shareholder engagement tracker: each ask, by company"}</h3>
+    const hid = target ? "pl-h-mx" : "pl-h-trk";
+    return `<section class="pl-card pl-wide" aria-labelledby="${hid}"><h3 id="${hid}">${target ? "Your target against the record: each ask, by company" : "AI shareholder engagement tracker: each ask, by company"}</h3>
       ${target && tc ? `<p class="pl-mx-do"><span class="pl-mx pl-target" aria-hidden="true"></span> <strong>${esc(askOf(S.ask).label)} at ${esc(tc.name)}</strong>. Its row shows the same ask at other companies; its column, other asks at ${esc(tc.name)}. Click any square to retarget; arrow keys move between squares.</p>` : `<p class="pl-mx-do"><strong>Click a square to plan an engagement for that company and ask in Plan and test.</strong> Arrow keys move between squares.</p>`}
       <p class="status-note">Rows are asks (with how often each has been filed), columns are the US-listed companies. Leaving out filings from filers critical of ESG:</p>
       <ul class="pl-mx-key" aria-label="What the squares show">
@@ -497,7 +498,22 @@
   function buildTracker(el, data) {
     init(data);
     el.innerHTML = `<h2>AI shareholder engagement tracker</h2><p class="intro">Each ask, by company: the highest support each has had, and what is on the next ballot.</p>${grid(false)}`;
-    el.querySelectorAll("button.pl-mx").forEach((b) => b.addEventListener("click", () => {
+    // One square in the tab order; arrow keys, Home and End move between squares (as in the planner's grid).
+    const cells = [...el.querySelectorAll("button.pl-mx")];
+    if (cells[0]) cells[0].tabIndex = 0;
+    el.addEventListener("keydown", (e) => {
+      const b = e.target.closest && e.target.closest("button.pl-mx");
+      if (!b) return;
+      const r = +b.dataset.r, ci = +b.dataset.c, row = cells.filter((x) => +x.dataset.r === r);
+      const to = { ArrowRight: [r, ci + 1], ArrowLeft: [r, ci - 1], ArrowDown: [r + 1, ci], ArrowUp: [r - 1, ci], Home: [r, 0], End: [r, row.length - 1] }[e.key];
+      const n = to && cells.find((x) => +x.dataset.r === to[0] && +x.dataset.c === to[1]);
+      if (!n) return;
+      e.preventDefault();
+      cells.forEach((x) => { x.tabIndex = -1; });
+      n.tabIndex = 0;
+      n.focus();
+    });
+    cells.forEach((b) => b.addEventListener("click", () => {
       if (S) { S.co = b.dataset.co; S.ask = b.dataset.ask; sync(false); }
       else try { const q = new URLSearchParams(location.search); q.set("plan", `${b.dataset.co}~${b.dataset.ask}`); history.replaceState(null, "", `${location.pathname}?${q.toString()}${location.hash}`); } catch (e) { /* default plan */ }
       if (window.showTab) window.showTab("planner", true);
