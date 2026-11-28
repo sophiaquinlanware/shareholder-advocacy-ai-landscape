@@ -29,7 +29,7 @@
   const likely = (q) => (q.crowd && q.crowd.n ? q.crowd.equal_weight : q.base && q.base.p != null ? q.base.p : M && M[q.id] ? M[q.id].p : null);
   const INTRO = {
     gap: "Companies under US proxy rules where this site records no AI proposal in the latest season (leaving out filers critical of ESG), with a filing deadline still open. Filings withdrawn privately never reach a proxy statement, so some may be missing. Each question closes the day before the deadline; forecasts rest on public information only.",
-    Engagements: "Outcomes of named engagements, added by the site's maintainer with their sources. Green figures are scenarios written by this site from a seat in Take a seat: not forecasts, not counted, and not the view of the organization named.",
+    Engagements: "Outcomes of named engagements, added by the site's maintainer with their sources. Figures in grey dashed boxes are scenarios written by this site from a seat in Take a seat: not forecasts, not counted, and not the view of the organization named.",
     "If, then": "Pairs of questions: the same outcome under each answer to another question (the SEC rule, or an escalation). Only the branch whose condition happens is scored; the other is void. The gap between the two shows how much forecasters expect the first outcome to change the second. It measures expectations, not cause.",
   };
 
@@ -175,13 +175,18 @@ ${postFields()}
     const grid = (list) =>
       list.filter((q) => q.kind !== "conditional").map(card).join("") +
       byCondition(list.filter((q) => q.kind === "conditional")).map((ps) => `<div class="bd-pair">${ps.map(card).join("")}</div>`).join("");
-    const ranked = [...open].sort((a, b) => (likely(b) ?? -1) - (likely(a) ?? -1));
+    // Highest first in every view (owner, 2026-11-27). A question with no forecast or estimate yet is placed by this
+    // site's scenario figure, for order only; it is still not counted anywhere.
+    const scen = (q) => ((q.scenarios || []).length ? Math.max(...q.scenarios.map((x) => x.p)) : null);
+    const key = (q) => likely(q) ?? scen(q) ?? -1;
+    const rank = (arr) => [...arr].sort((a, b) => key(b) - key(a));
+    const ranked = rank(open);
     const groupsHtml = view === "likely"
-      ? `<p class="note">Ranked by how likely each question looks now: the crowd forecast where there is one, otherwise this site's starting estimate, otherwise your own forecast; questions with none of these come last. Your forecasts glow.</p>${ranked.map(card).join("")}`
+      ? `<p class="note">Ranked by how likely each question looks now: the crowd forecast where there is one, otherwise this site's starting estimate, otherwise your own forecast, otherwise this site's scenario figure (for order only); questions with none of these come last. Your forecasts glow.</p>${ranked.map(card).join("")}`
       : view === "company"
-      ? byCo.map((t) => `<h3>${esc(names[t] || t)}</h3>${open.filter((q) => q.company === t).map(card).join("")}`).join("") +
-        `<h3>Across companies</h3>${grid(open.filter((q) => !q.company))}`
-      : sections.map((s) => `<h3>${esc(s)}</h3>${introFor(s) ? `<p class="note">${introFor(s)}${s === "If, then" ? gapText : ""}</p>` : ""}${grid(open.filter((q) => q.section === s))}`).join("");
+      ? byCo.map((t) => `<h3>${esc(names[t] || t)}</h3>${rank(open.filter((q) => q.company === t)).map(card).join("")}`).join("") +
+        `<h3>Across companies</h3>${grid(rank(open.filter((q) => !q.company)))}`
+      : sections.map((s) => `<h3>${esc(s)}</h3>${introFor(s) ? `<p class="note">${introFor(s)}${s === "If, then" ? gapText : ""}</p>` : ""}${grid(rank(open.filter((q) => q.section === s)))}`).join("");
     const vs = Q.crowd_vs_site || {};
     const lb = Q.leaderboard || [];
     el.innerHTML = `

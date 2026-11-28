@@ -966,8 +966,9 @@ button + [role="status"], button + .ticker, button + .status-note, button + outp
 .bd-minebox { border-color: var(--accent); }
 .bd-minelist { padding-left: 18px; margin: 6px 0; }
 .bd-minelist li { margin: 6px 0; overflow-wrap: anywhere; }
-.bd-scen { margin: 8px 0 2px; padding: 6px 10px; background: var(--scenario-soft); border-left: 3px solid var(--scenario); border-radius: 4px; }
-.bd-scen strong { color: var(--scenario); }
+/* Grey with a dashed edge: a hypothetical, never the green used for proposals that succeeded or forecasts that came true (owner, 2026-11-27). */
+.bd-scen { margin: 8px 0 2px; padding: 6px 10px; background: transparent; border: 1px dashed var(--line); border-left: 3px dashed var(--ink-soft); border-radius: 4px; }
+.bd-scen strong { color: var(--ink); }
 @media (prefers-reduced-motion: no-preference) { .bd-card.bd-mine { transition: box-shadow var(--dur-micro) var(--ease); } }
 /* Tracker grid: what a click does, and a visual key (owner via UI session, 2026-11-27) */
 .pl-mx-do { margin: 6px 0; }
@@ -1265,14 +1266,15 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 /* Prediction board: no question numbers (owner, 2026-11-27). */
 #tab-predict article.bd-card h4::before { content: none; }
 /* Network timeline: the year shows large on the graph while it plays; Play glows while playing. */
-#net-year-big { position: absolute; top: 46px; left: 24px; padding: 4px 12px 8px 0; background: var(--g-bg); z-index: 3; pointer-events: none; opacity: 0; transition: opacity .4s ease; color: #fff; }
+/* Bottom left, above the Key button: the emptiest corner of the band, so the graph keeps its full size (owner, 2026-11-27: "dont shrink the graph"). */
+#net-year-big { position: absolute; bottom: 64px; left: 24px; max-width: 170px; text-shadow: 0 0 6px var(--g-bg), 0 0 2px var(--g-bg); z-index: 3; pointer-events: none; opacity: 0; transition: opacity .4s ease; color: #fff; }
 #net-year-big.on { opacity: 1; }
-#net-year-big .ny-y { display: block; font-size: 64px; line-height: 1; font-weight: 400; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+#net-year-big .ny-y { display: block; font-size: 52px; line-height: 1; font-weight: 400; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
 #net-year-big .ny-l { display: block; margin-top: 6px; font-size: 13px; color: var(--g-label-soft); }
 #net-year-big.playing .ny-y { color: #e8590c; }
 #net-play.playing { background: #e8590c; border-color: #e8590c; color: #fff; box-shadow: 0 0 0 4px rgba(232, 89, 12, .2), 0 0 18px rgba(232, 89, 12, .55); }
 @media (prefers-reduced-motion: no-preference) { #net-play.playing { animation: net-play-pulse 1.5s ease-in-out infinite alternate; } @keyframes net-play-pulse { from { box-shadow: 0 0 0 3px rgba(232, 89, 12, .15), 0 0 8px rgba(232, 89, 12, .3); } to { box-shadow: 0 0 0 5px rgba(232, 89, 12, .25), 0 0 22px rgba(232, 89, 12, .6); } } }
-@media (max-width: 640px) { #net-year-big { top: 42px; left: 16px; } #net-year-big .ny-y { font-size: 40px; } }
+@media (max-width: 640px) { #net-year-big { bottom: 60px; left: 16px; } #net-year-big .ny-y { font-size: 34px; } #net-year-big .ny-l { font-size: 12px; } }
 
 /* Header play: hubs open their section; the ranges re-shape on a click; small easter eggs (netmark.js). */
 .hdr-art { pointer-events: auto; cursor: pointer; }

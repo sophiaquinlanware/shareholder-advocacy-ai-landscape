@@ -293,11 +293,7 @@
     if (state.userZoomed || !state.svg || state.view !== "graph") return;
     const vis = state.data.nodes.filter(visible);
     if (!vis.length) return;
-    // While the year label shows, keep a clear strip for it under the column headings so no node sits behind it
-    // (owner, 2026-11-27: "make sure all the text is legble … no overlap with any nodes").
-    const badge = document.getElementById("net-year-big");
-    const reserve = badge && badge.classList.contains("on") ? badge.offsetTop + badge.offsetHeight + 8 - (HEADER_H + 10) : 0;
-    const pad = 24, top = HEADER_H + 10 + Math.max(0, reserve);
+    const pad = 24, top = HEADER_H + 10;
     let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
     for (const n of vis) {
       const r = radius(n) + 14;
@@ -2039,10 +2035,8 @@
       wrap.appendChild(el);
     }
     el.innerHTML = `<span class="ny-y">${y}</span><span class="ny-l">${playing ? "Building the network year by year" : "The network up to this year"}</span>`;
-    const was = el.classList.contains("on");
     el.classList.toggle("on", !!playing || !!state.upto);
     el.classList.toggle("playing", !!playing);
-    if (was !== el.classList.contains("on")) fitToContent(true);
   }
   function stopPlay(announce) {
     if (!playTimer) return;
