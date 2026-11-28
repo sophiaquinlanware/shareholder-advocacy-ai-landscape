@@ -269,3 +269,9 @@ The ties draw in from chips to AI products as the reader scrolls: a soft-edged m
 ## Your portfolio: the fund you play as
 
 Loading an investor's holdings marks that investor's node in the network. It gets a white glow, a thick white ring, its name, and bright white lines; the companies it holds keep their usual colours.
+
+## 2026-11-28: streams and scales
+- **Value chain line width:** one square-root scale of estimated US dollars a year through each supply tie (data/value_chain_amounts.json; method, basis, quote and source per tie; reported estimates marked). No sourced amount: a hairline in the tie type's dash. Ownership stakes are not supply and stay hairlines. Key shows $1B, $10B, $50B samples.
+- **Value chain trace:** lights stage by stage, left to right (420 ms a stage); each company turns orange as the trace reaches it. Reduced motion: at once.
+- **Proposals graph stream:** clicking a proposal lights its filers and campaigners, the coalitions among their memberships that engaged that same company, the networks those coalitions sit under (VWFI → Ceres), the company and the people at those organizations. Coalition membership lines show in the Proposals graph where the coalition files or engages.
+- **Scenario modelling:** "Actors and their strategy sets" (was "Take a seat"); actors: Proponent, Target company (with the note that a proposal may aim at a lab through it), Frontier lab reached, Fund family, Proxy advisor, Policymaker.
