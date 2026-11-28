@@ -988,12 +988,14 @@
   // Exempt solicitations aimed at a company (not at one proposal) carry no year or status, so they show only when
   // no proposal filter (Active/Past, year) is set.
   const filtering = () => (state.pstatus && state.pstatus !== "all") || !!state.year || !!state.upto || !!state.topic;
+  // Engagement outside the ballot, drawn in the Proposals view beside filings (owner, 2026-11-27).
+  const ENGAGE = new Set(["engaged directly", "focus company of", "sought engagement", "lists a member filing at", "made the case at", "announced member filings at"]);
   let filerSet = null;
   const filerOrgs = () => {
     if (filerSet) return filerSet;
     filerSet = new Set();
     for (const l of state.data.links) {
-      if (l.layer !== "proposals" || !/filer|exempt/.test(l.relation || "")) continue;
+      if (!(l.layer === "proposals" && /filer|exempt/.test(l.relation || "")) && !ENGAGE.has(l.relation)) continue;
       for (const e of [l.source, l.target]) { const n = typeof e === "object" ? e : state.byId.get(e); if (n && n.kind !== "proposal" && !isCompanyKind(n.kind)) filerSet.add(n.id); }
     }
     return filerSet;
@@ -1004,6 +1006,10 @@
     // Owner, 2026-11-27: each effort shows the people leading it. A person's "works at" line joins the Proposals view
     // when their organization filed or co-filed a proposal shown there.
     if (l.relation === "works at") return filerOrgs().has(typeof l.target === "object" ? l.target.id : l.target);
+    // Private engagement is part of each organization's record (owner, 2026-11-27: "be sure you are getting all
+    // engagements for each org and graph them"): direct engagement with a company shows here too. These ties carry
+    // no date, so they show at every point of the timeline.
+    if (ENGAGE.has(l.relation)) return true;
     if (!prop) return false;
     if (/^exempt solicitation/.test(l.relation || "") && filtering()) {
       const t = typeof l.target === "object" ? l.target : state.byId.get(l.target);
@@ -1027,6 +1033,14 @@
     if (!MODES[m]) m = "connections";
     state.mode = m;
     document.querySelectorAll("#net-mode [data-mode]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === m)));
+    // The section's tabs follow the view (a lens or a link may change it).
+    const tn = document.getElementById("tabbtn-network"), tp = document.getElementById("tabbtn-proposals");
+    if (tn && tp && (tn.getAttribute("aria-selected") === "true" || tp.getAttribute("aria-selected") === "true")) {
+      tn.setAttribute("aria-selected", String(m !== "proposals")); tn.tabIndex = m !== "proposals" ? 0 : -1;
+      tp.setAttribute("aria-selected", String(m === "proposals")); tp.tabIndex = m === "proposals" ? 0 : -1;
+      const g = document.getElementById("grp-engaging");
+      if (g) g.classList.toggle("on-props", m === "proposals");
+    }
     const ps = document.getElementById("net-pstatus");
     if (ps) ps.hidden = m !== "proposals";
     const note = document.getElementById("net-mode-note");
@@ -2229,6 +2243,12 @@
   }
 
   window.focusNetworkNode = (id) => focus(id);
+  // The section's two tabs, Network of stakeholders and Proposals, set the graph's view (app.js).
+  window.netMode = (m) => {
+    window.netWantMode = m;
+    const b = document.querySelector(`#net-mode [data-mode="${m}"]`);
+    if (b && state && state.mode !== m) b.click();
+  };
   window.renderNetwork = function (raw, people) {
     const el = document.getElementById("tab-network");
     if (typeof d3 === "undefined") {
@@ -2249,7 +2269,7 @@
     state.lens = initialLens();
     {
       const g = new URLSearchParams(location.search).get("graph");
-      state.mode = g === "proposals" || g === "connections" ? g : state.lens === "policy" ? "proposals" : "connections";
+      state.mode = window.netWantMode || (g === "proposals" || g === "connections" ? g : state.lens === "policy" ? "proposals" : "connections");
     }
     state.pstatus = "all";
     state.hiddenKinds = new Set(lens().defaults.hiddenKinds || [...state.hiddenKinds]);

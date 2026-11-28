@@ -744,7 +744,7 @@ button:active:not([disabled]) { transform: scale(.98); }
 }
 /* Marks key on one line on wide screens (owner, 2026-11-26: "make these marks all on the same plane"). */
 @media (min-width: 900px) {
-  .net-marks { flex-wrap: nowrap; }
+  .net-marks { flex-wrap: nowrap; max-width: 100%; min-width: 0; overflow-x: auto; }
   .net-marks .leg.static { white-space: nowrap; }
 }
 
@@ -1311,7 +1311,6 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 .fold > summary { cursor: pointer; font-size: 17px; font-weight: 500; padding: 4px 0; }
 .fold > summary:hover { color: var(--accent); }
 .fold .fold-body { margin-top: 8px; }
-.group:has(> #tab-feed[hidden]) .fold-feed { display: none; }
 /* Effects of AI: topic cards; an ask opens its record in place. */
 .tp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 16px; align-items: start; }
 .tp-card { padding: 16px 18px; }
@@ -1324,3 +1323,7 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 .tp-more { margin-top: 12px; border-top: 2px solid #e8590c; padding-top: 10px; }
 .tp-more h4 { margin: 0 0 4px; color: #c2410c; }
 .tp-list { padding-left: 18px; font-size: 14px; }
+/* Network and proposals: the tabs switch the graph's view, so its own switch is not shown; the proposal lists fold
+   under the Proposals graph only. */
+#grp-engaging #net-mode { display: none; }
+#grp-engaging:not(.on-props) .props-extra { display: none; }

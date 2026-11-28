@@ -219,7 +219,7 @@ test("Network views: Connections hides proposals; Proposals shows them, with Act
   await expect(page.locator('#net-mode [data-mode="connections"]')).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator("#net-pstatus")).toBeHidden();
   expect(await shown("proposal")).toBe(0);
-  await page.click('#net-mode [data-mode="proposals"]');
+  await page.click("#tabbtn-proposals");
   await expect(page).toHaveURL(/graph=proposals/);
   await expect(page.locator("#net-pstatus")).toBeVisible();
   expect(await shown("proposal")).toBeGreaterThan(10);
@@ -236,7 +236,7 @@ test("Network views: the Policymaker lens opens on Proposals; focusing a proposa
   await open(page, "?lens=policy");
   await expect(page.locator('#net-mode [data-mode="proposals"]')).toHaveAttribute("aria-pressed", "true");
   await open(page, "?lens=impact");
-  await page.click('#net-mode [data-mode="connections"]');
+  await page.click("#tabbtn-network");
   const pid = await page.evaluate(() => {
     const c = [...document.querySelectorAll("#net-graph svg > g > g > circle")].find(
       (x) => x.__data__ && x.__data__.kind === "proposal",

@@ -41,8 +41,7 @@
     <button type="button" role="tab" id="gbtn-effects" aria-controls="grp-effects" data-group="effects" aria-selected="false" tabindex="-1">Effects of AI</button>
     <button type="button" role="tab" id="gbtn-policy" aria-controls="grp-policy" data-group="policy" aria-selected="false" tabindex="-1">AI governance</button>
     <button type="button" role="tab" id="gbtn-companies" aria-controls="grp-companies" data-group="companies" aria-selected="false" tabindex="-1">Company profiles</button>
-    <button type="button" role="tab" id="gbtn-proposals" aria-controls="grp-proposals" data-group="proposals" aria-selected="false" tabindex="-1">Proposals and results</button>
-    <button type="button" role="tab" id="gbtn-engaging" aria-controls="grp-engaging" data-group="engaging" aria-selected="false" tabindex="-1">Network and contacts</button>
+    <button type="button" role="tab" id="gbtn-engaging" aria-controls="grp-engaging" data-group="engaging" aria-selected="false" tabindex="-1">Network and proposals</button>
     <button type="button" role="tab" id="gbtn-plan" aria-controls="grp-plan" data-group="plan" aria-selected="false" tabindex="-1">Plan and test</button>
   </div>
 </nav>
@@ -59,8 +58,7 @@
         <li><a href="#topics">Effects of AI</a><p>The four areas AI shareholder proposals address, and the asks in each.</p></li>
         <li><a href="#causality">AI governance</a><p>AI laws, SEC rule changes and how companies and investors responded.</p></li>
         <li><a href="#company">Company profiles</a><p>Each company's AI proposals, votes, lab ties and proposal rights.</p></li>
-        <li><a href="#feed">Proposals and results</a><p>AI proposals since 2023: filers, votes, upcoming ballots, fund votes and engagement results.</p></li>
-        <li><a href="#network">Network and contacts</a><p>Who files or backs AI proposals, how they connect, and who leads their engagement.</p></li>
+        <li><a href="#network">Network and proposals</a><p>Graphs of who engages whom and of every AI proposal since 2023; click a node for its record.</p></li>
         <li><a href="#planner">Plan and test</a><p>Upcoming deadlines, then plan one engagement and test it against past behavior.</p></li>
       </ol>
         <section class="ab-sec">
@@ -98,7 +96,7 @@
   <div id="grp-effects" class="group" role="tabpanel" aria-labelledby="gbtn-effects" hidden>
     <p class="group-q">What responsible AI covers: the four areas AI shareholder proposals address, and the asks in each.</p>
     <section id="tab-topics" class="panel" role="tabpanel" aria-labelledby="gbtn-effects" data-group="effects" hidden></section>
-    <details class="fold" id="fold-asks"><summary>AI safety asks for frontier labs</summary><section id="tab-asks" class="fold-body"></section></details>
+    <details class="fold" id="fold-asks"><summary>AI safety asks for frontier labs</summary><section id="tab-asks" class="fold-body" hidden></section></details>
     <p class="next-section"><a href="#causality">Next: AI governance →</a></p>
   </div>
 
@@ -111,32 +109,28 @@
   <div id="grp-companies" class="group" role="tabpanel" aria-labelledby="gbtn-companies" hidden>
     <p class="group-q">Each company's AI proposals, votes, lab ties and proposal rights.</p>
     <section id="tab-company" class="panel" role="tabpanel" aria-labelledby="gbtn-companies" data-group="companies" hidden></section>
-    <details class="fold" id="fold-parnassus"><summary>Compare all companies: AI disclosure scores</summary><section id="tab-parnassus" class="fold-body"></section></details>
-    <details class="fold" id="fold-rights"><summary>Compare all companies: shareholder proposal rights</summary><section id="tab-rights" class="fold-body"></section></details>
-    <p class="next-section"><a href="#feed">Next: Proposals and results →</a></p>
-  </div>
-
-  <div id="grp-proposals" class="group" role="tabpanel" aria-labelledby="gbtn-proposals" hidden>
-    <p class="group-q">AI proposals since 2023: filers, votes, upcoming ballots, fund votes and engagement results.</p>
-    <div class="subtabs" role="tablist" aria-label="Proposals and votes views">
-      <button type="button" role="tab" id="tabbtn-feed" aria-controls="tab-feed" data-tab="feed" aria-selected="true">All AI proposals</button>
-      <button type="button" role="tab" id="tabbtn-upcoming" aria-controls="tab-upcoming" data-tab="upcoming" aria-selected="false" tabindex="-1">AI proposals on upcoming ballots</button>
-    </div>
-    <section id="tab-feed" class="panel" role="tabpanel" aria-labelledby="tabbtn-feed" data-group="proposals" hidden></section>
-    <section id="tab-upcoming" class="panel" role="tabpanel" aria-labelledby="tabbtn-upcoming" data-group="proposals" hidden></section>
-    <details class="fold fold-feed" id="fold-votes"><summary>Fund family votes on every AI proposal</summary><section id="tab-votes" class="fold-body"></section></details>
-    <details class="fold fold-feed" id="fold-outcomes"><summary>Results of private engagement</summary><section id="tab-outcomes" class="fold-body"></section></details>
-    <p class="next-section"><a href="#network">Next: Network and contacts →</a></p>
+    <details class="fold" id="fold-parnassus"><summary>Compare all companies: AI disclosure scores</summary><section id="tab-parnassus" class="fold-body" hidden></section></details>
+    <details class="fold" id="fold-rights"><summary>Compare all companies: shareholder proposal rights</summary><section id="tab-rights" class="fold-body" hidden></section></details>
+    <p class="next-section"><a href="#network">Next: Network and proposals →</a></p>
   </div>
 
   <div id="grp-engaging" class="group" role="tabpanel" aria-labelledby="gbtn-engaging" hidden>
-    <p class="group-q">Who files or backs AI proposals, how they connect, and who leads their engagement.</p>
-    <div class="subtabs" role="tablist" aria-label="Who's engaging views">
-      <button type="button" role="tab" id="tabbtn-network" aria-controls="tab-network" data-tab="network" aria-selected="true">Network graph of investors, proposals and companies</button>
+    <p class="group-q">Who engages whom on AI, and every AI proposal since 2023. Click a node for its record.</p>
+    <div class="subtabs" role="tablist" aria-label="Network and proposals views">
+      <button type="button" role="tab" id="tabbtn-network" aria-controls="tab-network" data-tab="network" aria-selected="true">Network of stakeholders</button>
+      <button type="button" role="tab" id="tabbtn-proposals" aria-controls="tab-network" data-tab="proposals" aria-selected="false" tabindex="-1">Proposals</button>
       <button type="button" role="tab" id="tabbtn-people" aria-controls="tab-people" data-tab="people" aria-selected="false" tabindex="-1">Heads of stewardship and engagement: contacts</button>
     </div>
     <section id="tab-network" class="panel" role="tabpanel" aria-labelledby="tabbtn-network" data-group="engaging" hidden></section>
+    <!-- The Proposals tab shows the same graph in its Proposals view; this empty panel only names the view. -->
+    <section id="tab-proposals" class="panel" data-group="engaging" hidden></section>
     <section id="tab-people" class="panel" role="tabpanel" aria-labelledby="tabbtn-people" data-group="engaging" hidden></section>
+    <div class="props-extra">
+      <details class="fold" id="fold-feed"><summary>Every AI proposal: support over time, the full list and each ask by company</summary><section id="tab-feed" class="fold-body" hidden></section></details>
+      <details class="fold" id="fold-upcoming"><summary>AI proposals on upcoming ballots</summary><section id="tab-upcoming" class="fold-body" hidden></section></details>
+      <details class="fold" id="fold-votes"><summary>Fund family votes on every AI proposal</summary><section id="tab-votes" class="fold-body" hidden></section></details>
+      <details class="fold" id="fold-outcomes"><summary>Results of private engagement</summary><section id="tab-outcomes" class="fold-body" hidden></section></details>
+    </div>
     <p class="next-section"><a href="#planner">Next: Plan and test →</a></p>
   </div>
 
@@ -178,7 +172,7 @@
       </nav>
       <nav class="foot-col" aria-label="Proposals and network">
         <h2 class="foot-h">Proposals and network</h2>
-        <ul><li><a href="#feed">All AI proposals</a></li><li><a href="#upcoming">Upcoming ballots</a></li><li><a href="#network">Network of investors</a></li><li><a href="#people">Heads of stewardship</a></li></ul>
+        <ul><li><a href="#feed">All AI proposals</a></li><li><a href="#upcoming">Upcoming ballots</a></li><li><a href="#network">Network of stakeholders</a></li><li><a href="#proposals">Proposals graph</a></li><li><a href="#people">Heads of stewardship</a></li></ul>
       </nav>
       <nav class="foot-col" aria-label="Plan and test">
         <h2 class="foot-h">Plan and test</h2>

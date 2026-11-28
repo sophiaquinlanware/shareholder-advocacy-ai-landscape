@@ -68,9 +68,9 @@ test("List view lists every visible node with status and actions", async ({ page
 test("opening a tab puts its name in the address (#hash)", async ({ page }) => {
   await page.goto("/index.html");
   await page.waitForLoadState("networkidle");
-  await page.click('.tabs [role="tab"][data-group="proposals"]');
-  await page.click('[role="tab"][data-tab="upcoming"]');
-  await expect(page).toHaveURL(/#upcoming$/);
+  await page.click('.tabs [role="tab"][data-group="engaging"]');
+  await page.click('[role="tab"][data-tab="people"]');
+  await expect(page).toHaveURL(/#people$/);
 });
 
 test("labels are off until a node is selected, then name it and its connections", async ({ page }) => {

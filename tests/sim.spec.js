@@ -15,8 +15,7 @@ test("sections run from context to planning, each pointing to the next", async (
     "Effects of AI",
     "AI governance",
     "Company profiles",
-    "Proposals and results",
-    "Network and contacts",
+    "Network and proposals",
     "Plan and test",
   ]);
   await page.locator("#grp-engaging .next-section a").click();

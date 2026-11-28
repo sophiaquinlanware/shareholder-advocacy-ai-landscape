@@ -742,8 +742,9 @@ function renderStart() {
 // Six sections in the order of an engagement cycle, each holding one or more views (index.html). Every view
 // keeps its own address (#feed, #network, ...), so old links and the tests open the right place.
 // Old addresses for views that were renamed or folded into another view.
-const TAB_ALIASES = { tracker: "feed", votes: "feed", outcomes: "feed", parnassus: "company", rights: "company", asks: "topics", effects: "topics", why: "causality", "weigh-in": "upcoming", water: "upcoming", overview: "start", new: "upcoming" };
+const TAB_ALIASES = { feed: "proposals", upcoming: "proposals", tracker: "proposals", votes: "proposals", outcomes: "proposals", parnassus: "company", rights: "company", asks: "topics", effects: "topics", why: "causality", "weigh-in": "upcoming", water: "upcoming", overview: "start", new: "upcoming" };
 const lastView = {}; // per section, the view last open in it
+let prevView = "";
 // Tab switches crossfade with the View Transitions API (motion brief stage 7) where the browser has it, except
 // under reduced motion, on the first paint, and in automated test browsers (navigator.webdriver), where the
 // switch must be synchronous.
@@ -763,7 +764,7 @@ function applyTab(name, focus = false) {
   // The tracker is now a view of All AI proposals (owner, 2026-11-27: one page, different ways of viewing the data).
   if (name === "tracker") { window.feedWant = "grid"; if (window.feedView) window.feedView("grid"); }
   // Views folded into another one (owner, 2026-11-27: fewer tabs): open the fold and bring it into view.
-  const fold = document.getElementById("fold-" + name);
+  const fold = document.getElementById("fold-" + (name === "tracker" ? "feed" : name));
   if (fold && fold.tagName === "DETAILS") setTimeout(() => { fold.open = true; fold.scrollIntoView({ block: "start" }); }, 0);
   name = TAB_ALIASES[name] || name;
   let panel = document.getElementById("tab-" + name);
@@ -785,7 +786,14 @@ function applyTab(name, focus = false) {
     b.tabIndex = on ? 0 : -1;
     if (on && focus === true) b.focus();
   });
-  document.querySelectorAll(".panel").forEach((p) => { p.hidden = p.id !== "tab-" + name; });
+  // Network of stakeholders and Proposals are one graph in two views (owner, 2026-11-27).
+  const shown = name === "proposals" ? "network" : name;
+  document.querySelectorAll(".panel").forEach((p) => { p.hidden = p.id !== "tab-" + shown; });
+  document.getElementById("grp-engaging").classList.toggle("on-props", name === "proposals");
+  // Picking a tab sets the graph's view; opening #network keeps whatever view the address or lens chose.
+  if (name === "proposals" && window.netMode) window.netMode("proposals");
+  else if (name === "network" && prevView === "proposals" && window.netMode) window.netMode("connections");
+  prevView = name;
   const stuck = document.getElementById("sticky-page");
   const gBtn = groupBtns.find((b) => b.dataset.group === group);
   const vBtn = document.querySelector(`#grp-${group} [role="tab"][data-tab="${name}"]`);
@@ -875,6 +883,14 @@ function setupTabs() {
   window.addEventListener("popstate", onHash);
   showTab(location.hash.slice(1) || "about");
 }
+
+// A folded view's section is hidden while its fold is closed, so views that draw when shown draw at full width.
+document.addEventListener("toggle", (e) => {
+  const d = e.target;
+  if (!(d instanceof HTMLDetailsElement) || !d.classList.contains("fold")) return;
+  const b = d.querySelector(":scope > .fold-body");
+  if (b) b.hidden = !d.open;
+}, true);
 
 // Resolves once d3 (loaded async from the CDN) is available, or after it fails, so the page never hangs.
 function d3Ready() {
