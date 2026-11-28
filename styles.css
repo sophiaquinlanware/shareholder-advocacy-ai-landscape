@@ -1234,8 +1234,8 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 
 /* Planner targeting map (owner, 2026-11-27): the chosen ask's row and company's column are banded; the target square
    is orange, the colour the site uses for a traced selection. */
-.pl-mx-table td.pl-in-row, .pl-mx-table td.pl-in-col, .pl-mx-table th.pl-in-col { background: var(--accent-soft); }
-.pl-mx-table tr.pl-row-on > th { background: var(--accent-soft); font-weight: 500; }
+.pl-mx-table td.pl-in-row, .pl-mx-table td.pl-in-col, .pl-mx-table th.pl-in-col { background: #fdebe0; }
+.pl-mx-table tr.pl-row-on > th { background: #fdebe0; font-weight: 500; }
 .pl-mx.pl-target, .pl-mx.pl-target.filed { background: #e8590c; border: 2px solid #e8590c; color: #fff; box-shadow: 0 0 0 3px rgba(232, 89, 12, .2), 0 0 14px rgba(232, 89, 12, .45); }
 .pl-mx-do .pl-mx.pl-target { display: inline-block; width: 18px; height: 18px; vertical-align: -3px; }
 /* Where to focus */
@@ -1256,3 +1256,20 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 .pl-controls label input[type="search"] { flex: none; height: auto; }
 .pl-poll { display: block; margin: 0 0 8px; }
 .pl-poll .note { display: block; margin-top: 2px; }
+/* The mountain sits left of centre on wide screens, under the title, so the band balances (owner, 2026-11-27). */
+.hdr-art { overflow: hidden; }
+@media (min-width: 641px) { .hdr-art .ha-all { transform: translateX(-300px); } }
+
+/* Logo mark as a line (owner, 2026-11-27: "more simple like lines"). */
+.net-mark .nm-ridge { fill: none; stroke: var(--blue-1); stroke-opacity: .25; stroke-width: 1.2; stroke-linejoin: round; }
+.net-mark .nm-e { stroke-width: 1.6; }
+/* No frame lines around the network band (owner, 2026-11-27): keyboard focus shows on the chosen node instead. */
+.net-graph-wrap .net-graph:focus, .net-graph-wrap .net-graph:focus-visible, .net-graph-wrap svg:focus, .net-graph-wrap svg:focus-visible { outline: none; box-shadow: none; }
+
+.pl-mx-box > summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; cursor: pointer; list-style: none; }
+.pl-mx-box > summary::-webkit-details-marker { display: none; }
+.pl-mx-box > summary h3 { margin: 0; }
+.pl-mx-box > summary::before { content: "\25B8"; color: var(--blue-1); transition: transform var(--dur-micro) var(--ease); }
+.pl-mx-box[open] > summary::before { transform: rotate(90deg); }
+.pl-mx-box[open] > summary { margin-bottom: 10px; }
+.pl-empty { margin: 18px 0; padding: 16px 18px; border: 1px dashed var(--control-edge); border-radius: var(--radius); color: var(--ink-soft); }

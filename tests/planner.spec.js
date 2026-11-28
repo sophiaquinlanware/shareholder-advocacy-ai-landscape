@@ -7,8 +7,11 @@ async function open(page, query = "") {
   await page.waitForSelector("#pl-out h3");
 }
 
-test("the planner opens with a company and an ask, and shows its five parts", async ({ page }, info) => {
+test("the planner opens blank, and a plan shows its parts", async ({ page }, info) => {
   await open(page);
+  await expect(page.locator("#pl-co")).toHaveValue("");
+  await expect(page.locator(".pl-empty")).toBeVisible();
+  await open(page, "?plan=microsoft~ask-dc-climate-energy");
   await expect(page.locator("#tab-planner h2")).toHaveText("Plan an engagement");
   for (const h of ["#pl-h-mx", "#pl-h-time", "#pl-h-rec", "#pl-h-who", "#pl-h-pol", "#pl-h-ideas"])
     await expect(page.locator(h)).toBeVisible();

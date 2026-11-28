@@ -32,7 +32,7 @@
     { id: "holds", label: "Holds shares in this company" },
     { id: "coal", label: "Shares a coalition with your organization" },
   ];
-  const STORE = "planner-shortlist-v1", MINE = "planner-mine-v1";
+  const STORE = "planner-shortlist-v1", MINE = "planner-mine-v1", PLAN = "planner-plan-v1";
   // Settings last for the visit (sessionStorage); the shortlist is saved work and stays in this browser.
   const visit = { get(k, d) { try { const v = sessionStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
     set(k, v) { try { sessionStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* storage blocked */ } } };
@@ -100,8 +100,12 @@
       return `<td class="${band.trim()}"><button type="button" class="pl-mx${on ? " pl-target" : ""}${x ? " filed" : ""}${x && x.crit === x.n ? " crit" : ""}${x && x.up ? " up" : ""}" data-co="${esc(c.id || c.ticker)}" data-ask="${esc(a.id)}" data-r="${r}" data-c="${i}" tabindex="${on ? 0 : -1}"${on ? ' aria-current="true"' : ""} aria-label="${esc(label)}. Opens the plan below." title="${esc(label)}. Click to open the plan below.">${x ? (x.best != null ? Math.round(x.best) : "•") : ""}</button></td>`;
     }).join("")}</tr>`).join("");
     const tc = target && S ? coById(S.co) : null;
-    return `<section class="pl-card pl-wide" aria-labelledby="pl-h-mx"><h3 id="pl-h-mx">${target ? "Your target against the record: each ask, by company" : "AI shareholder engagement tracker: each ask, by company"}</h3>
-      ${target && tc ? `<p class="pl-mx-do"><span class="pl-mx pl-target" aria-hidden="true"></span> <strong>${esc(askOf(S.ask).label)} at ${esc(tc.name)}</strong>. Its row shows the same ask at other companies; its column, other asks at ${esc(tc.name)}. Click any square to retarget; arrow keys move between squares.</p>` : `<p class="pl-mx-do"><strong>Click a square to plan an engagement for that company and ask in Plan and test.</strong> Arrow keys move between squares.</p>`}
+    // In the planner the grid can be folded away to reach the plan below (owner, 2026-11-27).
+    const open = !target || visit.get("planner-grid-open", true);
+    const [o1, o2] = target ? [`<details class="pl-card pl-wide pl-mx-box" id="pl-mx-box"${open ? " open" : ""}><summary><h3 id="pl-h-mx">Your target against the record: each ask, by company</h3><span class="ticker pl-mx-fold">${open ? "Hide the grid" : "Show the grid"}</span></summary>`, "</details>"]
+      : [`<section class="pl-card pl-wide" aria-labelledby="pl-h-mx"><h3 id="pl-h-mx">AI shareholder engagement tracker: each ask, by company</h3>`, "</section>"];
+    return `${o1}
+      ${target && tc && S.ask ? `<p class="pl-mx-do"><span class="pl-mx pl-target" aria-hidden="true"></span> <strong>${esc(askOf(S.ask).label)} at ${esc(tc.name)}</strong>. Its row shows the same ask at other companies; its column, other asks at ${esc(tc.name)}. Click any square to retarget; arrow keys move between squares.</p>` : `<p class="pl-mx-do"><strong>Click a square to plan an engagement for that company and ask in Plan and test.</strong> Arrow keys move between squares.</p>`}
       <p class="status-note">Rows are asks (with how often each has been filed), columns are the US-listed companies. Leaving out filings from filers critical of ESG:</p>
       <ul class="pl-mx-key" aria-label="What the squares show">
         <li><span class="pl-mx filed" aria-hidden="true">34</span> highest support that ask has had at that company (% for ÷ (for + against))</li>
@@ -110,7 +114,7 @@
         <li><span class="pl-mx filed crit" aria-hidden="true"></span> dashed: filed only by filers critical of ESG</li>
         <li><span class="pl-mx" aria-hidden="true"></span> empty: no filing there in this dataset</li>
       </ul>
-      <div class="table-wrap pl-mx-wrap"><table class="pl-mx-table"><thead><tr><th scope="col"><span class="visually-hidden">Ask</span></th>${head}</tr></thead><tbody>${rows}</tbody></table></div></section>`;
+      <div class="table-wrap pl-mx-wrap"><table class="pl-mx-table"><thead><tr><th scope="col"><span class="visually-hidden">Ask</span></th>${head}</tr></thead><tbody>${rows}</tbody></table></div>${o2}`;
   }
 
   // ---------- Where to focus (owner, 2026-11-27: "help investors make asks that are optimized for collaboration and
@@ -374,12 +378,13 @@
   }
 
   // ---------- Page ----------
-  const planUrl = () => `${location.pathname}?plan=${[S.co, S.ask, S.mine].filter(Boolean).map(encodeURIComponent).join("~")}#planner`;
+  const planCode = () => [S.co, S.ask, S.mine].map((v) => encodeURIComponent(v || "")).join("~").replace(/~+$/, "");
+  const planUrl = () => `${location.pathname}${planCode() ? `?plan=${planCode()}` : ""}#planner`;
   function draw(reveal = false) {
     const c = coById(S.co);
     const out = document.getElementById("pl-out");
-    if (!c) { out.innerHTML = `<p class="status-note">Choose a company.</p>`; return; }
-    out.innerHTML = `${focus(c, S.ask)}${grid()}<div class="pl-grid">${record(c, S.ask)}${timing(c)}</div>${ideas(c, S.ask)}${organizations(c, S.ask, S.mine)}${tools(c, S.ask)}<div class="pl-grid">${yours(c, S.ask, S.mine)}${policy(S.ask)}</div>`;
+    const ready = c && S.ask;
+    out.innerHTML = ready ? `${focus(c, S.ask)}${grid()}<div class="pl-grid">${record(c, S.ask)}${timing(c)}</div>${ideas(c, S.ask)}${organizations(c, S.ask, S.mine)}${tools(c, S.ask)}<div class="pl-grid">${yours(c, S.ask, S.mine)}${policy(S.ask)}</div>` : `<p class="pl-empty">Choose a company and an ask above, or a square in the grid, and the context for that engagement appears here.</p>${grid()}`;
     out.querySelectorAll(".pl-add").forEach((b) => b.addEventListener("click", () => {
       const id = b.dataset.org, n = idx.nodes.get(id), list = getList();
       const row = b.closest("tr"), record = row ? [...row.querySelectorAll(".pl-why > li > strong")].map((s) => s.textContent.replace(/:$/, "")).join("; ") : "";
@@ -426,6 +431,9 @@
       if (left < wrap.scrollLeft || right > wrap.scrollLeft + wrap.clientWidth) wrap.scrollLeft = Math.max(0, left - 40);
     }
     drawShortlist();
+    const mxBox = document.getElementById("pl-mx-box");
+    if (mxBox) mxBox.addEventListener("toggle", () => { S.gridOpen = mxBox.open; visit.set("planner-grid-open", mxBox.open); });
+    if (!ready) { const docs = document.getElementById("pl-docs"); if (docs) docs.innerHTML = ""; return; }
     if (window.CAMPAIGNS) window.CAMPAIGNS.fill(out);
     if (window.PLANNER_TOOLS) window.PLANNER_TOOLS.fill(out, { coName: c.name, askLabel: askOf(S.ask).label, proposals: D.proposals, askOf, critical: idx.critical });
     // The last step of the site: the same company and ask, tested forward in Plan and test › Test plans over time.
@@ -454,11 +462,13 @@
     ["pl-co", "pl-ask", "pl-mine"].forEach((id) => { const el = document.getElementById(id); if (el) el.value = { "pl-co": S.co, "pl-ask": S.ask, "pl-mine": S.mine }[id] || ""; });
     const mq = document.getElementById("pl-mine-q");
     if (mq && document.activeElement !== mq) mq.value = S.mine && idx.nodes.has(S.mine) ? idx.nodes.get(S.mine).label : "";
+    store.set(PLAN, { co: S.co, ask: S.ask, mine: S.mine });
     if (write) try {
       const q = new URLSearchParams(location.search);
       q.delete("plan");
       const rest = q.toString();
-      history.replaceState(null, "", `${location.pathname}?${rest ? rest + "&" : ""}plan=${[S.co, S.ask, S.mine].filter(Boolean).map(encodeURIComponent).join("~")}${location.hash}`);
+      const code = planCode();
+      history.replaceState(null, "", `${location.pathname}${rest || code ? "?" : ""}${rest}${rest && code ? "&" : ""}${code ? `plan=${code}` : ""}${location.hash}`);
     } catch (e) { /* address bar unchanged */ }
     draw(write);
     if (focus) { const h = document.getElementById("pl-h-rec"); if (h) { h.tabIndex = -1; h.focus(); } }
@@ -528,21 +538,25 @@
     const topAsk = [...askCount.entries()].sort((a, b) => b[1] - a[1])[0];
     const fromUrl = (new URLSearchParams(location.search).get("plan") || "").split("~").map((s) => { try { return decodeURIComponent(s); } catch (e) { return ""; } });
     const soonCo = soon ? coById(soon.company) : null;
-    S = { co: fromUrl[0] || (soonCo && (soonCo.id || soonCo.ticker)) || (usCos()[0] || {}).id, ask: fromUrl[1] || (soon && soon.ask_id) || (topAsk && topAsk[0]),
-      mine: fromUrl[2] || "", memory: [], showAll: false };
+    // Owner, 2026-11-27: the planner opens blank; what you enter is kept in this browser, so it is still there after
+    // other tabs or a later visit. A shared link (?plan=) takes precedence.
+    const kept = store.get(PLAN, {});
+    const linked = fromUrl.some(Boolean);
+    S = { co: linked ? fromUrl[0] : kept.co || "", ask: linked ? fromUrl[1] : kept.ask || "", mine: linked ? fromUrl[2] || "" : kept.mine || "", memory: [], showAll: false };
     S.mine = S.mine || visit.get(MINE, "");
-    if (!tick(coById(S.co))) S.co = (soonCo && (soonCo.id || soonCo.ticker)) || (usCos()[0] || {}).id;
-    if (!D.asks.some((a) => a.id === S.ask)) S.ask = (soon && soon.ask_id) || (topAsk && topAsk[0]);
+    if (S.co && !tick(coById(S.co))) S.co = linked ? (soonCo && (soonCo.id || soonCo.ticker)) || (usCos()[0] || {}).id : "";
+    if (S.ask && !D.asks.some((a) => a.id === S.ask)) S.ask = linked ? (soon && soon.ask_id) || (topAsk && topAsk[0]) : "";
+    if (linked && !S.ask) S.ask = (soon && soon.ask_id) || (topAsk && topAsk[0]);
     if (S.mine && !idx.orgs.some((o) => o.id === S.mine)) S.mine = "";
-    S.co = (coById(S.co) || {}).id || S.co; // a ticker in a shared link selects the company by its id
+    if (S.co) S.co = (coById(S.co) || {}).id || S.co; // a ticker in a shared link selects the company by its id
     const cos = D.companies.filter((c) => tick(c)).sort((a, b) => a.name.localeCompare(b.name));
     const orgs = idx.orgs.slice().sort((a, b) => a.label.localeCompare(b.label));
     el.innerHTML = `
       <h2>Plan an engagement</h2>
       <p class="intro">Choose a company and an ask. The plan shows where the record points, who already works on it and what supports it.</p>
       <div class="net-controls pl-controls">
-        <label>Company <select id="pl-co">${cos.map((c) => `<option value="${esc(c.id || c.ticker)}">${esc(c.name)} (${esc(c.ticker)})</option>`).join("")}</select></label>
-        <label>Ask <span class="pl-hint">(what you want the company to do)</span> <select id="pl-ask">${D.asks.map((a) => `<option value="${esc(a.id)}">${esc(a.label)} (${askCount.get(a.id) || 0} filed)</option>`).join("")}</select></label>
+        <label>Company <select id="pl-co"><option value="">Choose a company</option>${cos.map((c) => `<option value="${esc(c.id || c.ticker)}">${esc(c.name)} (${esc(c.ticker)})</option>`).join("")}</select></label>
+        <label>Ask <span class="pl-hint">(what you want the company to do)</span> <select id="pl-ask"><option value="">Choose an ask</option>${D.asks.map((a) => `<option value="${esc(a.id)}">${esc(a.label)} (${askCount.get(a.id) || 0} filed)</option>`).join("")}</select></label>
         <label>Your organization (optional) <input id="pl-mine-q" type="search" list="pl-mine-list" placeholder="Type to search" autocomplete="off"><datalist id="pl-mine-list">${orgs.map((o) => `<option value="${esc(o.label)}"></option>`).join("")}</datalist></label>
         <select id="pl-mine" hidden aria-hidden="true" tabindex="-1"><option value="">Not set</option>${orgs.map((o) => `<option value="${esc(o.id)}">${esc(o.label)}</option>`).join("")}</select>
         <button type="button" class="chip" id="pl-copy" aria-describedby="pl-copy-note">Save this plan as a link</button> <span id="pl-copy-msg" class="ticker"></span>
