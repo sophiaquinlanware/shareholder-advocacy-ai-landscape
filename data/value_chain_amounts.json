@@ -1,0 +1,1225 @@
+{
+  "about": "Estimated US dollars per year flowing through each supply tie in the AI value chain, from filings and reporting. Method per tie.",
+  "updated": "2026-11-28",
+  "unit": "USD billions per year",
+  "ties": [
+    {
+      "from": "nvidia",
+      "to": "meta-platforms",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; Nvidia gave no deal value and press reports say only 'tens of billions' without a term."
+    },
+    {
+      "from": "amd",
+      "to": "meta-platforms",
+      "type": "supplies chips",
+      "usd_bn_per_year": 12.0,
+      "method": "reported estimate",
+      "basis": "Reuters reported AMD will sell up to $60B of AI chips to Meta over five years (Feb 2026); $60B over 5 years is $12B a year.",
+      "as_of": "2026-02",
+      "source_kind": "secondary",
+      "sources": [
+        {
+          "url": "https://www.thestandard.com.hk/innovation/article/325175/AMD-to-sell-up-to-60-billion-of-AI-chips-to-Meta-over-5-years",
+          "quote": "agreed to sell up to US$60 billion (HK$468 billion) worth of artificial intelligence chips to Meta Platforms over five years"
+        }
+      ],
+      "note": "'Up to' amount; AMD gave no total, only 'double-digit billions' per gigawatt. WSJ put it above $100B. The two AMD-Meta ties are the same deal; do not add them."
+    },
+    {
+      "from": "broadcom",
+      "to": "meta-platforms",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; Broadcom gives the commitment in gigawatts (over 1 GW), not dollars."
+    },
+    {
+      "from": "amd",
+      "to": "oracle",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; announced as a 50,000-GPU supercluster with no dollar value."
+    },
+    {
+      "from": "nvidia",
+      "to": "coreweave",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; CoreWeave buys Nvidia GPUs largely through OEMs and its 10-K gives no purchase amount by supplier."
+    },
+    {
+      "from": "nvidia",
+      "to": "microsoft",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; Nvidia's 10-K names large customers only as unnamed direct customers (22% and 14% of FY2026 revenue)."
+    },
+    {
+      "from": "nvidia",
+      "to": "amazon",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; deployment given in GPU count only, and Nvidia does not name customers by revenue."
+    },
+    {
+      "from": "nvidia",
+      "to": "alphabet",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; deployment given in GPU count only, and Nvidia does not name customers by revenue."
+    },
+    {
+      "from": "nvidia",
+      "to": "oracle",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; cluster size given in GPUs only, and Nvidia does not name customers by revenue."
+    },
+    {
+      "from": "nvidia",
+      "to": "nebius-group",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no purchase value given for the Vera Rubin deployment."
+    },
+    {
+      "from": "nvidia",
+      "to": "softbank-group",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; deployment given in GPU count only."
+    },
+    {
+      "from": "amd",
+      "to": "microsoft",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no dollar value given."
+    },
+    {
+      "from": "amd",
+      "to": "ibm",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no dollar value given."
+    },
+    {
+      "from": "amd",
+      "to": "g42",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no dollar value given."
+    },
+    {
+      "from": "cisco-systems",
+      "to": "g42",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no dollar value given."
+    },
+    {
+      "from": "broadcom",
+      "to": "alphabet",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; Broadcom's 8-K gives no dollar value, and Broadcom's largest customer (32% of FY2025 revenue) is unnamed."
+    },
+    {
+      "from": "broadcom",
+      "to": "apple",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; Broadcom's 10-K says one unnamed customer was 32% of FY2025 revenue but does not name Apple."
+    },
+    {
+      "from": "sk-hynix",
+      "to": "nvidia",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; Nvidia names SK hynix as a supplier but gives no purchase amount."
+    },
+    {
+      "from": "samsung-electronics",
+      "to": "nvidia",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; Nvidia names Samsung as a supplier but gives no purchase amount."
+    },
+    {
+      "from": "arm-holdings",
+      "to": "microsoft",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; Arm does not report royalties by licensee."
+    },
+    {
+      "from": "arm-holdings",
+      "to": "amazon",
+      "type": "supplies chips",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; Arm does not report royalties by licensee."
+    },
+    {
+      "from": "tsmc",
+      "to": "nvidia",
+      "type": "manufactures for",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; TSMC reports customer shares without names and Nvidia gives no purchase amount by foundry."
+    },
+    {
+      "from": "samsung-electronics",
+      "to": "nvidia",
+      "type": "manufactures for",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no purchase amount by foundry."
+    },
+    {
+      "from": "tsmc",
+      "to": "amd",
+      "type": "manufactures for",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; AMD gives no annual wafer purchase amount for TSMC."
+    },
+    {
+      "from": "tsmc",
+      "to": "broadcom",
+      "type": "manufactures for",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; Broadcom gives TSMC's share of wafers (about 95%) but no dollar amount."
+    },
+    {
+      "from": "tsmc",
+      "to": "apple",
+      "type": "manufactures for",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; TSMC reports customer shares without names; Apple gives chip volume, not dollars."
+    },
+    {
+      "from": "samsung-electronics",
+      "to": "tesla",
+      "type": "manufactures for",
+      "usd_bn_per_year": 1.96,
+      "method": "contract annualized",
+      "basis": "Samsung's regulatory filing put the Tesla foundry contract at 22.76 trillion won (about $16.54B) from July 24, 2025 to Dec 31, 2033; over about 8.4 years that is about $1.96B a year.",
+      "as_of": "2025-07",
+      "source_kind": "secondary",
+      "sources": [
+        {
+          "url": "https://www.koreatimes.co.kr/business/tech-science/20250728/samsung-foundry-wins-165-bil-chip-order-from-tesla",
+          "quote": "Samsung Electronics clinched a semiconductor foundry contract worth $16.54 billion (22.76 trillion won) from Tesla"
+        },
+        {
+          "url": "https://www.koreatimes.co.kr/business/tech-science/20250728/samsung-foundry-wins-165-bil-chip-order-from-tesla",
+          "quote": "The contract started on July 24 and will conclude on Dec. 31, 2033."
+        }
+      ],
+      "note": "Figure is from Samsung's Korean regulatory filing, read through the Korea Times report; Samsung said value and period may change."
+    },
+    {
+      "from": "digital-realty-trust",
+      "to": "oracle",
+      "type": "leases capacity to",
+      "usd_bn_per_year": 0.424,
+      "method": "disclosed",
+      "basis": "Digital Realty's 10-K gives Oracle's annualized recurring revenue as $424,130 thousand (9.0% of the total) as of December 31, 2025.",
+      "as_of": "2025-12",
+      "source_kind": "primary",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
+          "quote": "2 Oracle Corporation 42 424,130 9.0 % 10.2"
+        }
+      ]
+    },
+    {
+      "from": "digital-realty-trust",
+      "to": "ibm",
+      "type": "leases capacity to",
+      "usd_bn_per_year": 0.11,
+      "method": "disclosed",
+      "basis": "Digital Realty's 10-K gives IBM's annualized recurring revenue as $109,596 thousand (2.3% of the total) as of December 31, 2025.",
+      "as_of": "2025-12",
+      "source_kind": "primary",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
+          "quote": "5 IBM 34 109,596 2.3 % 2.6"
+        }
+      ]
+    },
+    {
+      "from": "digital-realty-trust",
+      "to": "meta-platforms",
+      "type": "leases capacity to",
+      "usd_bn_per_year": 0.073,
+      "method": "disclosed",
+      "basis": "Digital Realty's 10-K gives Meta Platforms's annualized recurring revenue as $73,494 thousand (1.6% of the total) as of December 31, 2025.",
+      "as_of": "2025-12",
+      "source_kind": "primary",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
+          "quote": "8 Meta Platforms, Inc. 49 73,494 1.6 % 2.8"
+        }
+      ]
+    },
+    {
+      "from": "digital-realty-trust",
+      "to": "microsoft",
+      "type": "leases capacity to",
+      "usd_bn_per_year": 0.077,
+      "method": "disclosed",
+      "basis": "Digital Realty's 10-K gives LinkedIn (Microsoft)'s annualized recurring revenue as $77,088 thousand (1.6% of the total) as of December 31, 2025.",
+      "as_of": "2025-12",
+      "source_kind": "primary",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
+          "quote": "7 LinkedIn Corporation 8 77,088 1.6 % 2.5"
+        }
+      ],
+      "note": "Covers LinkedIn only. The table's unnamed 'Fortune 50 Software Company' ($547.2M, 11.7%) is not attributed to Microsoft in the filing, so it is not included."
+    },
+    {
+      "from": "southern-company",
+      "to": "openai",
+      "type": "supplies power to",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no contract value found for Georgia Power's service to the OpenAI site."
+    },
+    {
+      "from": "coreweave",
+      "to": "meta-platforms",
+      "type": "provides compute to",
+      "usd_bn_per_year": 3.1,
+      "method": "contract annualized",
+      "basis": "Meta committed up to about $21.0B in March 2026 for capacity through December 20, 2032; $21.0B over about 6.8 years (Mar 2026 to Dec 2032) is about $3.1B a year.",
+      "as_of": "2026-09",
+      "source_kind": "primary",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000465/crwv-20260930.htm",
+          "quote": "Meta Platforms, Inc. (\"Meta\") initially committed to pay us up to approximately $21.0 billion (inclusive of access to new computing capacity through December 20, 2032"
+        },
+        {
+          "url": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-and-Meta-Announce-21-Billion-Expanded-AI-Infrastructure-Agreement/default.aspx",
+          "quote": "to provide AI cloud capacity through December 2032 for approximately $21 billion"
+        }
+      ],
+      "note": "'Up to' amount. Start date assumed to be the March 2026 order date; delivery may start later, which would raise the annual rate. Same CoreWeave-Meta relationship as the other CoreWeave-Meta tie; do not add the two."
+    },
+    {
+      "from": "coreweave",
+      "to": "microsoft",
+      "type": "provides compute to",
+      "usd_bn_per_year": 3.44,
+      "method": "revenue share",
+      "basis": "67% of CoreWeave's 2025 revenue of $5,131 million came from Microsoft: 0.67 x $5.131B = about $3.44B for calendar 2025.",
+      "as_of": "2025-12",
+      "source_kind": "primary",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000104/crwv-20251231.htm",
+          "quote": "We recognized an aggregate of approximately 67% of our revenue from our top customer, Microsoft, for the year ended December 31, 2025."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000104/crwv-20251231.htm",
+          "quote": "Revenue $ 5,131 $ 1,915 $ 3,216 168 % (dollars in millions, year ended December 31, 2025 vs 2024)"
+        }
+      ],
+      "note": "CoreWeave's Q3 2026 10-Q reports its top two customers at 30% and 24% of quarterly revenue but does not name them, so a 2026 figure is not computed."
+    },
+    {
+      "from": "nebius-group",
+      "to": "microsoft",
+      "type": "provides compute to",
+      "usd_bn_per_year": 2.8,
+      "method": "contract annualized",
+      "basis": "Nebius's 6-K puts the contract at about $17.4B through 2031, with services starting late 2025; $17.4B over about 6.3 years (Sept 2025 to end-2031) is about $2.8B a year.",
+      "as_of": "2025-09",
+      "source_kind": "primary",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465925088312/tm2525580d1_6k.htm",
+          "quote": "the total contract value is about $17.4 billion through 2031."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465925088312/tm2525580d1_6k.htm",
+          "quote": "Microsoft may also acquire additional services and/or capacity under the Agreement, which would increase the total contract value to about $19.4 billion."
+        }
+      ],
+      "note": "Base value; with Microsoft's option ($19.4B) it would be about $3.1B a year. The two Nebius-Microsoft ties are the same contract; do not add them."
+    },
+    {
+      "from": "nebius-group",
+      "to": "meta-platforms",
+      "type": "provides compute to",
+      "usd_bn_per_year": 5.4,
+      "method": "contract annualized",
+      "basis": "Nebius's 6-K gives a total contract value of up to about $27B for five-year capacity orders starting early 2027; $27B over 5 years is $5.4B a year.",
+      "as_of": "2026-03",
+      "source_kind": "primary",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926027886/tm268879d1_6k.htm",
+          "quote": "The Agreement and the initial Orders thereunder have a total contract value of up to approximately $27 billion."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926027886/tm268879d1_6k.htm",
+          "quote": "for a duration of 5 years, with deployments in tranches starting early 2027"
+        },
+        {
+          "url": "https://nebius.com/newsroom/nebius-signs-new-ai-infrastructure-agreement-with-meta",
+          "quote": "Under the five-year agreement, Nebius will provide $12 billion of dedicated capacity across multiple locations"
+        }
+      ],
+      "note": "'Up to' amount. The firm dedicated portion is $12B ($2.4B a year); the rest is Meta's obligation to buy unsold capacity, up to $15B. Excludes the earlier ~$3B 2025 deal. The two Nebius-Meta ties are the same contract; do not add them."
+    },
+    {
+      "from": "apple",
+      "to": "openai",
+      "type": "distributes models",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "No payment disclosed; reports describe the ChatGPT integration as having no payment either way."
+    },
+    {
+      "from": "apple",
+      "to": "alphabet",
+      "type": "distributes models",
+      "usd_bn_per_year": 1.0,
+      "method": "reported estimate",
+      "basis": "Bloomberg reported (Nov 2025) that Apple would pay Google about $1B a year for a custom Gemini model behind the new Siri.",
+      "as_of": "2025-11",
+      "source_kind": "secondary",
+      "sources": [
+        {
+          "url": "https://www.macrumors.com/2025/11/05/apple-google-new-siri-payment/",
+          "quote": "the technology is going to cost Apple approximately $1 billion per year."
+        }
+      ],
+      "note": "Unconfirmed; the joint statement gives no terms. Money flows from Apple to Google, opposite to the tie's from/to order. The two Apple-Alphabet ties are the same deal; do not add them. Separate from Google's search payments to Apple."
+    },
+    {
+      "from": "salesforce",
+      "to": "anthropic",
+      "type": "distributes models",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no dollar value for the Claudeforce partnership."
+    },
+    {
+      "from": "salesforce",
+      "to": "openai",
+      "type": "distributes models",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no dollar value given."
+    },
+    {
+      "from": "servicenow",
+      "to": "anthropic",
+      "type": "distributes models",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no dollar value given."
+    },
+    {
+      "from": "servicenow",
+      "to": "openai",
+      "type": "distributes models",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no dollar value given."
+    },
+    {
+      "from": "oracle",
+      "to": "meta-platforms",
+      "type": "distributes models",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no dollar value for Oracle hosting Llama models."
+    },
+    {
+      "from": "alibaba-group",
+      "to": "deepseek",
+      "type": "distributes models",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no dollar value given."
+    },
+    {
+      "from": "microsoft",
+      "to": "openai",
+      "type": "cloud/compute provider",
+      "usd_bn_per_year": 32.5,
+      "method": "reported estimate",
+      "basis": "UBS estimated OpenAI's incremental $250B Azure commitment (Oct 2025) runs seven to eight years, or $30-35B a year; midpoint $32.5B.",
+      "as_of": "2025-10",
+      "source_kind": "secondary",
+      "sources": [
+        {
+          "url": "https://ng.investing.com/news/stock-market-news/microsofts-new-openai-deal-strengthens-longterm-azure-growth-outlook-2171598",
+          "quote": "likely spread over seven to eight years, or roughly $30 billion to $35 billion annually."
+        },
+        {
+          "url": "https://openai.com/index/next-chapter-of-microsoft-openai-partnership/",
+          "quote": "OpenAI has contracted to purchase an incremental $250B of Azure services"
+        }
+      ],
+      "note": "Analyst estimate; the term is not disclosed. Excludes Azure spending under earlier arrangements."
+    },
+    {
+      "from": "microsoft",
+      "to": "openai",
+      "type": "revenue share/commercial agreement",
+      "usd_bn_per_year": 0.49,
+      "method": "reported estimate",
+      "basis": "Leaked documents reported by TechCrunch show Microsoft received $493.8M in net revenue-share payments from OpenAI in calendar 2024.",
+      "as_of": "2024-12",
+      "source_kind": "secondary",
+      "sources": [
+        {
+          "url": "https://www.techcrunch.com/2025/11/14/leaked-documents-shed-light-into-how-much-openai-pays-microsoft",
+          "quote": "Zitron reported this week that in 2024, Microsoft received $493.8 million in revenue share payments from OpenAI."
+        },
+        {
+          "url": "https://www.techcrunch.com/2025/11/14/leaked-documents-shed-light-into-how-much-openai-pays-microsoft",
+          "quote": "In the first three quarters of 2025, that number jumped to $865.8 million, according to documents he viewed."
+        }
+      ],
+      "note": "Unconfirmed leaked figures, net of Microsoft's payments back to OpenAI. 2025 is higher ($865.8M in nine months). Microsoft stopped paying its share in 2026 and the share is now capped."
+    },
+    {
+      "from": "microsoft",
+      "to": "anthropic",
+      "type": "cloud/compute provider",
+      "usd_bn_per_year": 7.1,
+      "method": "contract annualized",
+      "basis": "Anthropic's S-1 commits at least $47.2B (up to $49.2B) to Microsoft from November 2026 to June 2033; $47.2B over about 6.7 years is about $7.1B a year.",
+      "as_of": "2026-11",
+      "source_kind": "primary",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074338/anthropicpbc-sx1ax3.htm",
+          "quote": "we committed to spend an aggregate of at least $47.2 billion and up to $49.2 billion between November 2026 and June 2033, regardless of actual usage."
+        }
+      ],
+      "note": "Raised from the $30B announced in November 2025."
+    },
+    {
+      "from": "microsoft",
+      "to": "anthropic",
+      "type": "distribution partner",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; Microsoft does not report what it pays or receives for offering Claude in Foundry and its products. Azure compute is in the other Microsoft-Anthropic tie."
+    },
+    {
+      "from": "microsoft",
+      "to": "mistral-ai",
+      "type": "revenue share/commercial agreement",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; described only as a 'multibillion-dollar' commitment with no term."
+    },
+    {
+      "from": "alphabet",
+      "to": "anthropic",
+      "type": "cloud/compute provider",
+      "usd_bn_per_year": 16.5,
+      "method": "contract annualized",
+      "basis": "Anthropic's S-1 commits at least about $121.3B to Google from April 2026 to July 2033; $121.3B over about 7.3 years is about $16.5B a year.",
+      "as_of": "2026-11",
+      "source_kind": "primary",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074338/anthropicpbc-sx1ax3.htm",
+          "quote": "we entered into a CSP hosting agreement with Google ... pursuant to which we committed to spend at least approximately $121.3 billion between April 2026 and July 2033"
+        }
+      ],
+      "note": "Minimum commitment. Excludes Anthropic's estimated $125-150B for additional TPU compute delivered 2028-2031, which may be bought from Google or a third party."
+    },
+    {
+      "from": "alphabet",
+      "to": "ssi",
+      "type": "cloud/compute provider",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no dollar value given for SSI's TPU access."
+    },
+    {
+      "from": "alphabet",
+      "to": "thinking-machines",
+      "type": "cloud/compute provider",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not sourced precisely; reported only as 'single-digit billions' with no term."
+    },
+    {
+      "from": "alphabet",
+      "to": "openai",
+      "type": "cloud/compute provider",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no dollar value or term reported for the Google Cloud deal with OpenAI."
+    },
+    {
+      "from": "amazon",
+      "to": "anthropic",
+      "type": "cloud/compute provider",
+      "usd_bn_per_year": 11.0,
+      "method": "contract annualized",
+      "basis": "Anthropic's S-1 commits at least $110.0B to Amazon from May 2026 to April 2036; $110B over 10 years is $11.0B a year.",
+      "as_of": "2026-11",
+      "source_kind": "primary",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074338/anthropicpbc-sx1ax3.htm",
+          "quote": "In April 2026, we entered into an agreement with Amazon, pursuant to which we committed to spend an aggregate of at least $110.0 billion between May 2026 and April 2036"
+        },
+        {
+          "url": "https://www.anthropic.com/news/anthropic-amazon-compute",
+          "quote": "committing more than $100 billion over the next ten years to AWS technologies"
+        }
+      ],
+      "note": "Minimum ('at least') commitment."
+    },
+    {
+      "from": "amazon",
+      "to": "openai",
+      "type": "cloud/compute provider",
+      "usd_bn_per_year": 17.9,
+      "method": "contract annualized",
+      "basis": "$38B over seven years (Nov 2025, about $5.4B a year) plus a $100B expansion over eight years (Feb 2026, $12.5B a year) gives about $17.9B a year.",
+      "as_of": "2026-02",
+      "source_kind": "primary",
+      "sources": [
+        {
+          "url": "https://openai.com/index/aws-and-openai-partnership/",
+          "quote": "Under this new $38 billion agreement, which will have continued growth over the next seven years,"
+        },
+        {
+          "url": "https://openai.com/index/amazon-partnership/",
+          "quote": "OpenAI and AWS are expanding their existing $38 billion multi-year agreement by $100 billion over 8 years."
+        }
+      ],
+      "note": "Uncertain: adding the two rates assumes they run at the same time; the Trainium4 portion starts in 2027, so near-term spend is lower."
+    },
+    {
+      "from": "nvidia",
+      "to": "openai",
+      "type": "chip supplier",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; the deal is stated in gigawatts. Nvidia's separate $30B equity investment in OpenAI is money flowing the other way."
+    },
+    {
+      "from": "nvidia",
+      "to": "anthropic",
+      "type": "chip supplier",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; Anthropic's S-1 shows Nvidia GPUs reached through SpaceXAI, Nscale, Lambda and cloud providers, with no direct Nvidia purchase amount. Nvidia's $10B share purchase flows the other way."
+    },
+    {
+      "from": "nvidia",
+      "to": "spacex",
+      "type": "chip supplier",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; SpaceX's prospectus gives no amount paid to Nvidia."
+    },
+    {
+      "from": "nvidia",
+      "to": "mistral-ai",
+      "type": "chip supplier",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no dollar value given."
+    },
+    {
+      "from": "nvidia",
+      "to": "ssi",
+      "type": "chip supplier",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no dollar value given."
+    },
+    {
+      "from": "nvidia",
+      "to": "thinking-machines",
+      "type": "chip supplier",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; the deal is stated as at least 1 GW with no dollar value."
+    },
+    {
+      "from": "apple",
+      "to": "openai",
+      "type": "distribution partner",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "No payment disclosed; reports describe the ChatGPT integration as having no payment either way."
+    },
+    {
+      "from": "apple",
+      "to": "alphabet",
+      "type": "revenue share/commercial agreement",
+      "usd_bn_per_year": 1.0,
+      "method": "reported estimate",
+      "basis": "Bloomberg reported (Nov 2025) that Apple would pay Google about $1B a year for a custom Gemini model behind the new Siri.",
+      "as_of": "2025-11",
+      "source_kind": "secondary",
+      "sources": [
+        {
+          "url": "https://www.macrumors.com/2025/11/05/apple-google-new-siri-payment/",
+          "quote": "the technology is going to cost Apple approximately $1 billion per year."
+        }
+      ],
+      "note": "Unconfirmed; the joint statement gives no terms. Money flows from Apple to Google, opposite to the tie's from/to order. The two Apple-Alphabet ties are the same deal; do not add them. Separate from Google's search payments to Apple."
+    },
+    {
+      "from": "spacex",
+      "to": "anthropic",
+      "type": "cloud/compute provider",
+      "usd_bn_per_year": 37.2,
+      "method": "disclosed",
+      "basis": "Anthropic's S-1 says its SpaceXAI agreements run about $3.1B a month once all capacity is delivered (expected December 2026): $3.1B x 12 = $37.2B a year run rate.",
+      "as_of": "2026-11",
+      "source_kind": "primary",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074338/anthropicpbc-sx1ax3.htm",
+          "quote": "consisting of approximately $3.1 billion in the aggregate per month once all capacity has been delivered, which we expect in December 2026"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm",
+          "quote": "the customer has agreed to pay us $1.25 billion per month through May 2029, with capacity ramping in May and June 2026 at a reduced fee."
+        }
+      ],
+      "note": "Run rate at full delivery, not 2026 actual spend. SpaceX's June 2026 prospectus gave the earlier $1.25B a month ($15B a year) before later expansions. Cancellable on 90 days' notice after early 2027."
+    },
+    {
+      "from": "spacex",
+      "to": "reflection-ai",
+      "type": "cloud/compute provider",
+      "usd_bn_per_year": 1.8,
+      "method": "reported estimate",
+      "basis": "Reflection pays SpaceX about $150M a month from July 1, 2026 (about $6.3B through 2029); $150M x 12 = $1.8B a year.",
+      "as_of": "2026-06",
+      "source_kind": "secondary",
+      "sources": [
+        {
+          "url": "https://thenextweb.com/news/spacex-reflection-ai-6-3bn-compute-deal",
+          "quote": "Reflection will pay $150mn a month to rent Nvidia chips at Colossus 2, SpaceX's data centre in Memphis."
+        },
+        {
+          "url": "https://thenextweb.com/news/spacex-reflection-ai-6-3bn-compute-deal",
+          "quote": "The payments run from 1 July 2026 through 2029, and add up to about $6.3bn, according to CNBC."
+        }
+      ],
+      "note": "Either party may end it on 90 days' notice after three months. Outlets differ on the end date (May 2029 to end-2029)."
+    },
+    {
+      "from": "oracle",
+      "to": "openai",
+      "type": "cloud/compute provider",
+      "usd_bn_per_year": 60.0,
+      "method": "reported estimate",
+      "basis": "The Wall Street Journal reported OpenAI will buy $300B of Oracle compute over about five years starting 2027, or about $60B a year.",
+      "as_of": "2025-09",
+      "source_kind": "secondary",
+      "sources": [
+        {
+          "url": "https://techcrunch.com/2025/09/10/openai-and-oracle-reportedly-ink-historic-cloud-computing-deal/",
+          "quote": "to purchase $300 billion worth of compute power over a span of about five years."
+        },
+        {
+          "url": "https://techcrunch.com/2025/09/10/openai-and-oracle-reportedly-ink-historic-cloud-computing-deal/",
+          "quote": "OpenAI would start purchasing this compute in 2027."
+        }
+      ],
+      "note": "Reported, not disclosed by Oracle, which does not name the customer. Spending starts in 2027."
+    },
+    {
+      "from": "coreweave",
+      "to": "openai",
+      "type": "cloud/compute provider",
+      "usd_bn_per_year": 3.6,
+      "method": "contract annualized",
+      "basis": "OpenAI contracts total up to about $22.4B ($11.9B Mar 2025 through Oct 2030, $4B May 2025, $6.5B through May 2031); $22.4B over Mar 2025 to May 2031 (about 6.2 years) is about $3.6B a year.",
+      "as_of": "2025-12",
+      "source_kind": "primary",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000104/crwv-20251231.htm",
+          "quote": "OpenAI has committed to pay us up to approximately $11.9 billion through October 2030."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000104/crwv-20251231.htm",
+          "quote": "OpenAI has committed to pay us up to approximately $6.5 billion through May 31, 2031"
+        },
+        {
+          "url": "https://www.coreweave.com/news/coreweave-expands-agreement-with-openai-by-up-to-6-5b",
+          "quote": "The agreement announced today brings the total contract value with OpenAI up to approximately $22.4 billion."
+        }
+      ],
+      "note": "'Up to' amounts with different terms; the $4B May 2025 expansion's own end date was not checked in a filing, so the whole total is spread over the widest window."
+    },
+    {
+      "from": "coreweave",
+      "to": "meta-platforms",
+      "type": "cloud/compute provider",
+      "usd_bn_per_year": 5.4,
+      "method": "contract annualized",
+      "basis": "Sum of two concurrent Meta orders: $14.2B over Sept 2025 to Dec 2031 (about 6.25 years, $2.3B a year) plus $21.0B over Mar 2026 to Dec 2032 (about 6.8 years, $3.1B a year).",
+      "as_of": "2026-09",
+      "source_kind": "primary",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000104/crwv-20251231.htm",
+          "quote": "Meta Platforms, Inc. (\"Meta\") initially committed to pay us up to approximately $14.2 billion through December 2031"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000465/crwv-20260930.htm",
+          "quote": "Meta Platforms, Inc. (\"Meta\") initially committed to pay us up to approximately $21.0 billion (inclusive of access to new computing capacity through December 20, 2032"
+        }
+      ],
+      "note": "Both are 'up to' amounts. Covers both contracts, whereas the other CoreWeave-Meta tie covers only the $21B order; do not add the two."
+    },
+    {
+      "from": "amd",
+      "to": "openai",
+      "type": "chip supplier",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; AMD said only 'tens of billions' of revenue across 6 GW with no annual figure."
+    },
+    {
+      "from": "amd",
+      "to": "meta-platforms",
+      "type": "chip supplier",
+      "usd_bn_per_year": 12.0,
+      "method": "reported estimate",
+      "basis": "Reuters reported AMD will sell up to $60B of AI chips to Meta over five years (Feb 2026); $60B over 5 years is $12B a year.",
+      "as_of": "2026-02",
+      "source_kind": "secondary",
+      "sources": [
+        {
+          "url": "https://www.thestandard.com.hk/innovation/article/325175/AMD-to-sell-up-to-60-billion-of-AI-chips-to-Meta-over-5-years",
+          "quote": "agreed to sell up to US$60 billion (HK$468 billion) worth of artificial intelligence chips to Meta Platforms over five years"
+        }
+      ],
+      "note": "'Up to' amount; AMD gave no total, only 'double-digit billions' per gigawatt. WSJ put it above $100B. The two AMD-Meta ties are the same deal; do not add them."
+    },
+    {
+      "from": "broadcom",
+      "to": "openai",
+      "type": "chip supplier",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; stated as 10 GW with no dollar value."
+    },
+    {
+      "from": "broadcom",
+      "to": "anthropic",
+      "type": "chip supplier",
+      "usd_bn_per_year": 32.2,
+      "method": "contract annualized",
+      "basis": "Anthropic's S-1 says rent under its five-year TPU equipment leases with Broadcom totals about $161.2B; $161.2B over 5 years is about $32.2B a year.",
+      "as_of": "2026-11",
+      "source_kind": "primary",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074338/anthropicpbc-sx1ax3.htm",
+          "quote": "We have entered into five-year master equipment leases, including the 2026 Lease Arrangement, with Broadcom"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074338/anthropicpbc-sx1ax3.htm",
+          "quote": "Our rent payments over the life of these leases are equal to an aggregate of approximately $161.2 billion excluding interest"
+        }
+      ],
+      "note": "Uncertain: leases start as equipment comes online (some 2026, more from 2027), so payments are staggered; and Broadcom has assigned parts of the leases to financing entities, so not all rent goes to Broadcom."
+    },
+    {
+      "from": "broadcom",
+      "to": "alphabet",
+      "type": "chip supplier",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; Broadcom does not report revenue from Google by name."
+    },
+    {
+      "from": "salesforce",
+      "to": "anthropic",
+      "type": "distribution partner",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no dollar value given."
+    },
+    {
+      "from": "samsung-electronics",
+      "to": "openai",
+      "type": "chip supplier",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; only a letter of intent with no dollar value."
+    },
+    {
+      "from": "samsung-electronics",
+      "to": "anthropic",
+      "type": "chip supplier",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; terms undisclosed, and Anthropic's S-1 gives no Samsung purchase amount."
+    },
+    {
+      "from": "samsung-electronics",
+      "to": "perplexity",
+      "type": "distribution partner",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; no dollar value given."
+    },
+    {
+      "from": "sk-hynix",
+      "to": "openai",
+      "type": "chip supplier",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; only a letter of intent with no dollar value."
+    },
+    {
+      "from": "sk-hynix",
+      "to": "anthropic",
+      "type": "chip supplier",
+      "usd_bn_per_year": null,
+      "method": null,
+      "basis": "No sourced dollar figure.",
+      "as_of": null,
+      "source_kind": null,
+      "sources": [],
+      "note": "Not disclosed; terms undisclosed, and Anthropic's S-1 gives no SK hynix purchase amount."
+    },
+    {
+      "from": "nebius-group",
+      "to": "microsoft",
+      "type": "cloud/compute provider",
+      "usd_bn_per_year": 2.8,
+      "method": "contract annualized",
+      "basis": "Nebius's 6-K puts the contract at about $17.4B through 2031, with services starting late 2025; $17.4B over about 6.3 years (Sept 2025 to end-2031) is about $2.8B a year.",
+      "as_of": "2025-09",
+      "source_kind": "primary",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465925088312/tm2525580d1_6k.htm",
+          "quote": "the total contract value is about $17.4 billion through 2031."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465925088312/tm2525580d1_6k.htm",
+          "quote": "Microsoft may also acquire additional services and/or capacity under the Agreement, which would increase the total contract value to about $19.4 billion."
+        }
+      ],
+      "note": "Base value; with Microsoft's option ($19.4B) it would be about $3.1B a year. The two Nebius-Microsoft ties are the same contract; do not add them."
+    },
+    {
+      "from": "nebius-group",
+      "to": "meta-platforms",
+      "type": "cloud/compute provider",
+      "usd_bn_per_year": 5.4,
+      "method": "contract annualized",
+      "basis": "Nebius's 6-K gives a total contract value of up to about $27B for five-year capacity orders starting early 2027; $27B over 5 years is $5.4B a year.",
+      "as_of": "2026-03",
+      "source_kind": "primary",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926027886/tm268879d1_6k.htm",
+          "quote": "The Agreement and the initial Orders thereunder have a total contract value of up to approximately $27 billion."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926027886/tm268879d1_6k.htm",
+          "quote": "for a duration of 5 years, with deployments in tranches starting early 2027"
+        },
+        {
+          "url": "https://nebius.com/newsroom/nebius-signs-new-ai-infrastructure-agreement-with-meta",
+          "quote": "Under the five-year agreement, Nebius will provide $12 billion of dedicated capacity across multiple locations"
+        }
+      ],
+      "note": "'Up to' amount. The firm dedicated portion is $12B ($2.4B a year); the rest is Meta's obligation to buy unsold capacity, up to $15B. Excludes the earlier ~$3B 2025 deal. The two Nebius-Meta ties are the same contract; do not add them."
+    },
+    {
+      "from": "nebius-group",
+      "to": "reflection-ai",
+      "type": "cloud/compute provider",
+      "usd_bn_per_year": 0.29,
+      "method": "contract annualized",
+      "basis": "Reflection's deal is for more than $1B through 2029, signed July 2026; $1B over about 3.5 years (mid-2026 to end-2029) is about $0.29B a year.",
+      "as_of": "2026-07",
+      "source_kind": "secondary",
+      "sources": [
+        {
+          "url": "https://www.thestar.com.my/tech/tech-news/2026/07/14/ai-startup-reflection-signs-over-1-billion-computing-deal-with-nebius",
+          "quote": "it has signed a more than $1 billion deal to secure computing capacity from Nebius"
+        }
+      ],
+      "note": "'More than' $1B. Start date assumed to be signing; the term is not given in a filing."
+    },
+    {
+      "from": "alphabet",
+      "to": "meta-platforms",
+      "type": "cloud/compute provider",
+      "usd_bn_per_year": 1.7,
+      "method": "reported estimate",
+      "basis": "Reuters reported (Aug 2025) a six-year Google Cloud deal with Meta worth more than $10B; $10B over 6 years is about $1.7B a year.",
+      "as_of": "2025-08",
+      "source_kind": "secondary",
+      "sources": [
+        {
+          "url": "https://www.ksl.com/article/news/business/meta-signs-over-10-billion-cloud-deal-with-google-source-says/51364070",
+          "quote": "Google has struck a six-year cloud computing deal with Meta Platforms worth more than $10 billion"
+        }
+      ],
+      "note": "'More than' $10B. Excludes the reported Feb 2026 TPU rental deal, for which no value was found."
+    }
+  ]
+}

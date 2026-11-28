@@ -29,7 +29,7 @@
   const likely = (q) => (q.crowd && q.crowd.n ? q.crowd.equal_weight : q.base && q.base.p != null ? q.base.p : M && M[q.id] ? M[q.id].p : null);
   const INTRO = {
     gap: "Companies under US proxy rules where this site records no AI proposal in the latest season (leaving out filers critical of ESG), with a filing deadline still open. Filings withdrawn privately never reach a proxy statement, so some may be missing. Each question closes the day before the deadline; forecasts rest on public information only.",
-    Engagements: "Outcomes of named engagements, added by the site's maintainer with their sources. Figures in grey dashed boxes are scenarios written by this site from a seat in Take a seat: not forecasts, not counted, and not the view of the organization named.",
+    Engagements: "Outcomes of named engagements, added by the site's maintainer with their sources. Figures in grey dashed boxes are scenarios written by this site from one actor's strategy set in Scenario modelling: not forecasts, not counted, and not the view of the organization named.",
     "If, then": "Pairs of questions: the same outcome under each answer to another question (the SEC rule, or an escalation). Only the branch whose condition happens is scored; the other is void. The gap between the two shows how much forecasters expect the first outcome to change the second. It measures expectations, not cause.",
   };
 

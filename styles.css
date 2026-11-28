@@ -723,6 +723,7 @@ button:active:not([disabled]) { transform: scale(.98); }
   @page { margin: 22mm 20mm; }
 }
 .leg .mark.vc-line { width: 44px; height: 10px; }
+.vc-wkey .mark.vc-line { width: 30px; height: 20px; margin-left: 6px; }
 
 /* Your portfolio (network): picker and summary. */
 .net-hold.port { max-width: none; }

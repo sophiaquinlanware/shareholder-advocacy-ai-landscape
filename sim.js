@@ -15,7 +15,7 @@
 // the bands show both chance and how little data there is. Results are scenarios computed by this site, not
 // forecasts or advice (PRODUCT.md, Never claim 1, 2 and 5; owner's request of 2026-11-26).
 
-(function () {
+(() => {
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   const link = (url, label = "source") => (url ? ` <a class="src" href="${esc(url)}" target="_blank" rel="noopener">[${esc(label)}]</a>` : "");
   const pct = (x, d = 0) => (x == null || Number.isNaN(x) ? "–" : `${(Math.round(x * 10 ** d) / 10 ** d).toFixed(d)}%`);
@@ -325,9 +325,9 @@
     el.innerHTML = `
       <h2>Scenario modelling</h2>
       <p class="intro">Choose companies and asks, then see how the next seasons could unfold: refilings, new filers, vote shifts, resubmission limits and commitments. Compare up to three plans. Results are scenarios computed by this site, not forecasts or advice.</p>
-      <section class="pl-card pl-wide" aria-labelledby="sim-h-seat"><h3 id="sim-h-seat">Take a seat</h3>
-        <p class="status-note">See the moves each participant has, with what this model covers. Moves the model covers can be tried in the scenarios below. Describes options; it does not say which to take.</p>
-        <div class="seg sim-seats" role="group" aria-label="Seat">${SEATS.map((s, i) => `<button type="button" data-seat="${s.id}" aria-pressed="${i === 0}">${esc(s.label)}</button>`).join("")}</div>
+      <section class="pl-card pl-wide" aria-labelledby="sim-h-seat"><h3 id="sim-h-seat">Actors and their strategy sets</h3>
+        <p class="status-note">The moves open to each actor (proponent, target company, the frontier lab it may lead to, fund family and others), with what this model covers. Moves the model covers can be tried in the scenarios below. Describes options; it does not say which to take.</p>
+        <div class="seg sim-seats" role="group" aria-label="Actor">${SEATS.map((s, i) => `<button type="button" data-seat="${s.id}" aria-pressed="${i === 0}">${esc(s.label)}</button>`).join("")}</div>
         <div id="sim-seat" aria-live="polite"></div>
         <details><summary>Game clock: the next filing deadlines</summary><div id="sim-clock"></div></details></section>
       <div id="sim-plans"></div>
@@ -392,7 +392,7 @@
     if (add) add.addEventListener("click", () => { S.touched = true; S.plans.push({ ...JSON.parse(JSON.stringify(S.plans[S.plans.length - 1])), name: `Plan ${"ABC"[S.plans.length]}` }); drawPlans(); });
   }
 
-  // ---------- Take a seat: each participant's moves, sourced, and what the model covers ----------
+  // ---------- Actors and their strategy sets (was "Take a seat"; owner asked for a more academic name, 2026-11-28): each participant's moves, sourced, and what the model covers ----------
   const SEC_URL = "https://sec.gov/newsroom/speeches-statements/corpfin-statement-rule-14a-8-process-081426";
   const SEC_2025 = "https://www.sec.gov/newsroom/speeches-statements/statement-regarding-division-corporation-finances-role-exchange-act-rule-14a-8-process-current-proxy-season";
   const RULE_URL = "https://www.ecfr.gov/current/title-17/chapter-II/part-240/subject-group-ECFR8c9733e13b955d6/section-240.14a-8";
@@ -405,11 +405,15 @@
       { m: "Urge votes against directors after an exclusion", model: "No: one recorded case, Amazon 2026, on its engagement timeline" },
       { m: "Go to court over an exclusion", model: "No: two 2026 rulings went opposite ways (AI governance)" },
     ] },
-    { id: "company", label: "Company", moves: [
+    { id: "company", label: "Target company", about: "The company the proposal is filed at. It need not be where the change is wanted: a proposal at Microsoft or Alphabet can aim at OpenAI or Google DeepMind through ownership, cloud and model ties, so more than one layer of the AI value chain can matter (see Frontier lab reached).", moves: [
       { m: "Engage and commit, ending the proposal", model: "Yes: the commitment rate from this site's records" },
       { m: "Oppose and let it go to a vote", model: "Yes: support drawn from recorded votes" },
       { m: "Exclude it, sending the Rule 14a-8(j) notice 80 days before the definitive proxy", model: "Yes: the exclusion rate; 2026 was the first season in which SEC staff did not review most exclusions", src: SEC_2025, apply: { scen: { exclRegime: "latest" } }, label: "Use the 2026 rate" },
       { m: "Accept the risk of a lawsuit after an exclusion", model: "No: court outcomes are not modelled" },
+    ] },
+    { id: "lab", label: "Frontier lab reached", about: "A frontier lab the target company owns, funds, hosts or sells: the layer of the value chain a proposal at its parent or partner may be aimed at. Ties are on AI value chain.", moves: [
+      { m: "Change its practice when the target company commits (for example, a parent's AI policy applied to its lab)", model: "No: the model stops at the target company's commitment" },
+      { m: "Receive a proposal directly, where the lab is listed (Anthropic; xAI through SpaceX)", model: "No: founders keep control of the vote; see Frontier labs you can file at" },
     ] },
     { id: "fund", label: "Fund family", moves: [
       { m: "Vote each proposal under its own voting policy", model: "In the step-by-step log: each family votes FOR at its Form N-PX rate on the ask; vote totals come from recorded results", family: true },
@@ -429,7 +433,7 @@
     const fams = s.moves.some((m) => m.family) ? famTotals() : "";
     const isOn = (m) => (m.apply.plan ? Object.entries(m.apply.plan).every(([k, v]) => S.plans[0][k] === v) : true) && (m.apply.scen ? Object.entries(m.apply.scen).every(([k, v]) => S.scen[k] === v) : true);
     // A move already in use is stated, not offered as a button; it changes back under Assumptions or in the plan.
-    el.querySelector("#sim-seat").innerHTML = `<ul class="steps tight sim-moves">${s.moves.map((m, i) => {
+    el.querySelector("#sim-seat").innerHTML = `${s.about ? `<p class="note">${esc(s.about)}</p>` : ""}<ul class="steps tight sim-moves">${s.moves.map((m, i) => {
       const src = typeof m.src === "function" ? m.src(P) : m.src;
       const act = !m.apply ? "" : isOn(m) ? `<span class="sim-inuse">In use in the scenarios; change it under Assumptions or in the plan.</span>` : `<button type="button" class="chip sim-apply" data-i="${i}" data-move-seat="${esc(id)}">${esc(m.label)}</button>`;
       return `<li><strong>${esc(m.m)}</strong>${link(src, "source")}<div class="ticker">In this model: ${esc(m.model)}</div>${act}</li>`;
@@ -478,7 +482,7 @@
       ].map(([v, l]) => `<option value="${v}"${sc.exclRegime === v ? " selected" : ""}>${esc(l)}</option>`).join("")}</select> <span class="ticker">SEC staff stopped answering most no-action requests on November 17, 2025${link(SEC_2025, "SEC")} and all of them on August 14, 2026${link(SEC_URL, "SEC")}; proponents have since gone to court over exclusions (see <a href="#causality">AI governance</a>)</span></label>
       <label>Runs per scenario <select data-s="runs">${[200, 400, 1000].map((n) => `<option${n === sc.runs ? " selected" : ""}>${n}</option>`).join("")}</select></label>
     </div>`;
-    if (box.dataset.wired) return; // the settings can be redrawn (Take a seat); listen once
+    if (box.dataset.wired) return; // the settings can be redrawn (Actors and their strategy sets); listen once
     box.dataset.wired = "1";
     box.addEventListener("change", (e) => {
       const k = e.target.dataset.s;
@@ -707,7 +711,7 @@
       <p class="note">Two studies shaped the design. In a simulated gathering of AI agents, the agents kept to small circles of familiar partners rather than meeting new ones (Lai, Evans and others${link("https://arxiv.org/abs/2402.12590", "paper")}); and accounting for where experts already work improved predictions of future discoveries, while steering away from those places surfaced ideas people were unlikely to reach (Sourati and Evans${link("https://doi.org/10.1038/s41562-023-01648-z", "paper")}). So the ranking shows pairs never filed, and the investors that hold shares there and have filed the same ask elsewhere.</p>`;
   }
 
-  window.renderSimulator = function (data) {
+  window.renderSimulator = (data) => {
     el = document.getElementById("tab-simulate");
     if (!el) return;
     D = { asks: (data.asks && data.asks.asks) || [], graph: data.graph };

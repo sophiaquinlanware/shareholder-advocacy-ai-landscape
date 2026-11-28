@@ -1,7 +1,7 @@
 // Advocacy network: an Obsidian-style force graph of who files AI proposals where.
 // Reads data/network.json. Nodes: organizations, proposals, companies. Every node and edge carries a source.
 
-(function () {
+(() => {
   // Respect the reader's reduced-motion setting: no animated zoom, and the layout settles before it is drawn.
   const REDUCED_MOTION = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
   // Links are drawn as gentle quadratic arcs (control point 15% of the link length off the midpoint).
@@ -825,7 +825,45 @@
   // Nodes within `depth` steps of a node, through lines drawn in this view. One click on a node shows its direct
   // connections; each further click on it reaches one step further (owner, 2026-11-26: "one click lights only
   // Parnassus … one more makes it so you can see all connections to Parnassus and so on").
+  // A proposal's whole stream (owner, 2026-11-28: "you want the user to see the whole stream of work that went into
+  // each proposal"): its filers and campaigners, the coalitions they belong to and the networks those sit under, every
+  // engagement those organizations had with the company, the company, and the people leading the work.
+  function streamOf(id) {
+    const p = state.byId.get(id);
+    if (!p || p.kind !== "proposal" || state.mode !== "proposals") return null;
+    const ok = (l) => inMode(l) && visible(l.source) && visible(l.target);
+    const s = new Set([id]);
+    const orgs = [];
+    state.data.links.forEach((l) => {
+      if (!ok(l)) return;
+      const o = l.source.id === id ? l.target : l.target.id === id ? l.source : null;
+      if (!o) return;
+      s.add(o.id);
+      if (o.kind !== "proposal" && !isCompanyKind(o.kind)) orgs.push(o.id);
+    });
+    // Up through membership, but only to coalitions that engaged this company themselves (a filer's other
+    // memberships are not part of this proposal's story), then on up to the networks those coalitions sit under.
+    const co = [...s].map((x) => state.byId.get(x)).find((n) => n && isCompanyKind(n.kind));
+    const engagedCo = new Set();
+    if (co) state.data.links.forEach((l) => { if (ok(l) && ENGAGE.has(l.relation) && (l.source.id === co.id || l.target.id === co.id)) engagedCo.add(l.source.id === co.id ? l.target.id : l.source.id); });
+    const isMember = (l) => l.relation === "member of" || l.relation === "coalition role";
+    const q = [];
+    state.data.links.forEach((l) => {
+      if (!ok(l) || !isMember(l) || !orgs.includes(l.source.id) || !engagedCo.has(l.target.id)) return;
+      if (!s.has(l.target.id)) { s.add(l.target.id); q.push(l.target.id); }
+    });
+    while (q.length) {
+      const x = q.shift();
+      state.data.links.forEach((l) => {
+        if (!ok(l) || l.source.id !== x || !isMember(l)) return;
+        if (!s.has(l.target.id)) { s.add(l.target.id); q.push(l.target.id); }
+      });
+    }
+    state.data.links.forEach((l) => { if (ok(l) && l.relation === "works at" && s.has(l.target.id)) s.add(l.source.id); });
+    return s;
+  }
   function neighbors(id, depth = 1) {
+    if (depth <= 1) { const st = streamOf(id); if (st) return st; }
     const s = new Set([id]);
     let frontier = new Set([id]);
     for (let d = 0; d < depth && frontier.size; d++) {
@@ -853,7 +891,9 @@
     applyStyles();
     if (!wasOpen) fitToContent(true);
     const n = neighbors(d.id, state.depth).size - 1;
-    say(state.depth === 1
+    say(state.depth === 1 && streamOf(d.id)
+      ? `Opened ${d.label}: its stream lit, ${n} organizations, coalitions, people and the company behind it. Click it again to reach one step further.`
+      : state.depth === 1
       ? `Opened ${d.label}: ${n} direct connection${n === 1 ? "" : "s"} lit. Click it again to reach one step further.`
       : `${d.label}: ${n} nodes within 2 steps lit. Click again to return to the full network.`);
     const hint = document.getElementById("net-depth");
@@ -1065,6 +1105,12 @@
     // engagements for each org and graph them"): direct engagement with a company shows here too. These ties carry
     // no date, so they show at every point of the timeline.
     if (ENGAGE.has(l.relation)) return true;
+    // A coalition's members, and the network it sits under, join the view when the coalition files or engages here
+    // (owner, 2026-11-28: VWFI's members, Parnassus among them, and Ceres, which runs it, "should be super involved").
+    if (l.relation === "member of" || l.relation === "coalition role") {
+      const f = filerOrgs(), id = (e) => (typeof e === "object" ? e.id : e);
+      return f.has(id(l.target)) || (f.has(id(l.source)) && state.byId.get(id(l.target)) && /coalition|investor/.test(state.byId.get(id(l.target)).kind || ""));
+    }
     if (!prop) return false;
     if (/^exempt solicitation/.test(l.relation || "") && filtering()) {
       const t = typeof l.target === "object" ? l.target : state.byId.get(l.target);
@@ -1199,6 +1245,8 @@
     refreshConnected();
     const focusId = state.hover || state.selected;
     const near = focusId ? neighbors(focusId, focusId === state.selected ? state.depth || 1 : 1) : null;
+    const fn = focusId && state.byId.get(focusId);
+    const streamOn = !!(fn && fn.kind === "proposal" && state.mode === "proposals" && (focusId !== state.selected || (state.depth || 1) <= 1));
     const q = state.query;
     const P = state.path;
     // Portfolio: held companies stay lit, with everything they link to in this view (labs, filers, coalitions)
@@ -1232,7 +1280,7 @@
         if (P) return P.links.has(l) ? 0.95 : 0.03;
         // Owner, 2026-11-27 ("why are all the spider webs lit up"): one click lights only the node's own lines; lines
         // between its neighbours light only after a second click reaches further.
-        if (near) return l.source.id === focusId || l.target.id === focusId ? 0.9 : (focusId === state.selected && (state.depth || 1) > 1 && near.has(l.source.id) && near.has(l.target.id)) ? 0.4 : 0.03;
+        if (near) return l.source.id === focusId || l.target.id === focusId ? 0.9 : ((streamOn || (focusId === state.selected && (state.depth || 1) > 1)) && near.has(l.source.id) && near.has(l.target.id)) ? (streamOn ? 0.75 : 0.4) : 0.03;
         if (q) return 0.08;
         // Portfolio: the lines from held companies stand out; the rest go quiet.
         if (reach) return l.source.id === you || l.target.id === you ? 0.95 : isHeld(l.source) || isHeld(l.target) ? 0.6 : 0.03;
@@ -2316,6 +2364,8 @@
   }
 
   window.focusNetworkNode = (id) => focus(id);
+  // The labels in a proposal's lit stream (tests read it).
+  window.netStreamOf = (id) => { const s = streamOf(id); return s ? [...s].map((x) => (state.byId.get(x) || {}).label) : null; };
   // Opening the Stakeholder network or Advocacy proposals page starts clear (owner, 2026-11-28: "by default it begins
   // always clear of any filters and it begins on the network graph"): every type shown, no search, topic or year, the
   // timeline at its end, all proposals, nothing selected, and the graph rather than the list.
@@ -2338,7 +2388,7 @@
     const b = document.querySelector(`#net-mode [data-mode="${m}"]`);
     if (b && state && state.mode !== m) b.click();
   };
-  window.renderNetwork = function (raw, people) {
+  window.renderNetwork = (raw, people) => {
     const el = document.getElementById("tab-network");
     if (typeof d3 === "undefined") {
       el.innerHTML = `<h2>AI advocacy network</h2><div id="net-graph"></div>`;
