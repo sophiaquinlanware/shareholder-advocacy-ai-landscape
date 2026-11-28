@@ -989,7 +989,11 @@
   // no proposal filter (Active/Past, year) is set.
   const filtering = () => (state.pstatus && state.pstatus !== "all") || !!state.year || !!state.upto || !!state.topic;
   // Engagement outside the ballot, drawn in the Proposals view beside filings (owner, 2026-11-27).
-  const ENGAGE = new Set(["engaged directly", "focus company of", "sought engagement", "lists a member filing at", "made the case at", "announced member filings at", "joined an investor letter to"]);
+  const ENGAGE = new Set(["engaged directly", "focus company of", "sought engagement", "lists a member filing at", "made the case at", "announced member filings at", "joined an investor letter to", "wrote to"]);
+  // Three line styles for engagement, each in the Key: met the company, wrote to it, or acted through a coalition.
+  const LETTER = new Set(["wrote to", "joined an investor letter to", "sought engagement"]);
+  const COALITION = new Set(["focus company of", "lists a member filing at", "made the case at", "announced member filings at"]);
+  const engageDash = (r) => (r === "engaged directly" ? "7 2 2 2" : LETTER.has(r) ? "6 2 1 2 1 2" : COALITION.has(r) ? "12 4" : null);
   let filerSet = null;
   const filerOrgs = () => {
     if (filerSet) return filerSet;
@@ -1337,6 +1341,8 @@
     "cov-partial": { label: "Ask partly covered by a rule", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.ring}" stroke-width="1.6" stroke-dasharray="5 2"/>` },
     // Drawn as a line in the graph, so its key swatch is the same line (rings are keyed as circles).
     engaged: { label: "Dash-dot line: investor engaged the company directly (reported by the investor; open a node for the steps)", svg: () => `<line x1="1" y1="9" x2="23" y2="9" stroke="${cssVar("--g-label")}" stroke-width="1.6" stroke-dasharray="7 2 2 2"/>` },
+    wrote: { label: "Dash-dot-dot line: wrote to the company (a letter, alone or with other investors, or a request for a meeting; no meeting reported)", svg: () => `<line x1="1" y1="9" x2="23" y2="9" stroke="${cssVar("--g-label")}" stroke-width="1.6" stroke-dasharray="6 2 1 2 1 2"/>` },
+    coalition: { label: "Long dashes: a coalition acted at the company (a focus company, member filings it lists or announced, or a case it made)", svg: () => `<line x1="1" y1="9" x2="23" y2="9" stroke="${cssVar("--g-label")}" stroke-width="1.6" stroke-dasharray="12 4"/>` },
     won: { label: "Green line: proposal succeeded (withdrawn after the company committed to act, or majority vote)", svg: (c) => `<line x1="1" y1="9" x2="23" y2="9" stroke="${c.win}" stroke-width="2.4"/>` },
     lost: { label: "Red line: voted, under 50% support", svg: () => `<line x1="1" y1="9" x2="23" y2="9" stroke="#f87171" stroke-width="2.4"/>` },
     "cov-none": { label: "No rule in this map reaches this ask", svg: (c) => `<circle cx="12" cy="9" r="6" fill="none" stroke="${c.risk}" stroke-width="1.6" stroke-dasharray="1 2.5" stroke-linecap="round"/>` },
@@ -1347,6 +1353,8 @@
     const kinds = new Set();
     state.data.nodes.forEach((n) => { if (visible(n)) rings(n).forEach((m) => kinds.add(m.kind)); });
     if (state.data.links.some((l) => l.relation === "engaged directly" && inMode(l) && visible(l.source) && visible(l.target))) kinds.add("engaged");
+    if (state.data.links.some((l) => LETTER.has(l.relation) && inMode(l) && visible(l.source) && visible(l.target))) kinds.add("wrote");
+    if (state.data.links.some((l) => COALITION.has(l.relation) && inMode(l) && visible(l.source) && visible(l.target))) kinds.add("coalition");
     state.data.links.forEach((l) => { if (visible(l.source) && visible(l.target) && inMode(l)) { const c = outcomeColor(l); if (c) kinds.add(outcomeOf(l.source) || outcomeOf(l.target)); } });
     const list = Object.keys(MARK_KEY).filter((k) => kinds.has(k));
     el.hidden = !list.length;
@@ -1852,7 +1860,7 @@
     state.linkSel = g.append("g").attr("stroke", cssVar("--g-link")).attr("fill", "none").selectAll("path").data(data.links).join("path")
       .attr("stroke-width", (l) => (l.relation === "lead filer" ? 1.4 : 1) * state.cfg.linkScale)
       // Membership links are dashed; links with no source (inferred) are dotted, so the two never look alike.
-      .attr("stroke-dasharray", (l) => (l.relation === "engaged directly" ? "7 2 2 2" : l.relation === "missing" ? "5 3" : l.relation === "coverage" && l.coverage !== "full" ? "8 3" : conf(l).level === "inferred" ? "1 3" : l.relation === "member of" ? "3 3" : null));
+      .attr("stroke-dasharray", (l) => (engageDash(l.relation) ? engageDash(l.relation) : l.relation === "missing" ? "5 3" : l.relation === "coverage" && l.coverage !== "full" ? "8 3" : conf(l).level === "inferred" ? "1 3" : l.relation === "member of" ? "3 3" : null));
 
     state.node = g.append("g").selectAll("circle").data(data.nodes).join("circle")
       .attr("r", radius)
