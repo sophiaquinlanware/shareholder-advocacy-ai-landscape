@@ -15,10 +15,14 @@ test("sections run from context to planning, each pointing to the next", async (
     "Effects of AI",
     "AI governance",
     "Company profiles",
-    "Network and proposals",
+    "Network",
+    "Proposals",
     "Plan and test",
   ]);
   await page.locator("#grp-engaging .next-section a").click();
+  await expect(page.locator("#grp-proposals")).toBeVisible();
+  await expect(page.locator("#grp-proposals #tab-network")).toBeVisible();
+  await page.locator("#grp-proposals .next-section a").click();
   await expect(page.locator("#tab-planner")).toBeVisible();
 });
 

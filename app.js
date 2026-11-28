@@ -767,6 +767,10 @@ function applyTab(name, focus = false) {
   const fold = document.getElementById("fold-" + (name === "tracker" ? "feed" : name));
   if (fold && fold.tagName === "DETAILS") setTimeout(() => { fold.open = true; fold.scrollIntoView({ block: "start" }); }, 0);
   name = TAB_ALIASES[name] || name;
+  if (name === "network" && !historyReady) {
+    const q = new URLSearchParams(location.search);
+    if (q.get("graph") === "proposals" || (q.get("lens") === "policy" && q.get("graph") !== "connections")) name = "proposals";
+  }
   let panel = document.getElementById("tab-" + name);
   if (!name || !panel || !panel.dataset.group) { name = "about"; panel = document.getElementById("tab-about"); }
   const group = panel.dataset.group;
@@ -786,13 +790,14 @@ function applyTab(name, focus = false) {
     b.tabIndex = on ? 0 : -1;
     if (on && focus === true) b.focus();
   });
-  // Network of stakeholders and Proposals are one graph in two views (owner, 2026-11-27).
+  // Network and Proposals are two sections showing one graph in two views (owner, 2026-11-27): the graph's section
+  // moves to whichever is open, and the section sets the view.
   const shown = name === "proposals" ? "network" : name;
+  const net = document.getElementById("tab-network");
+  if (name === "proposals") document.getElementById("tab-proposals").after(net);
+  else if (name === "network") document.getElementById("tab-people").before(net);
   document.querySelectorAll(".panel").forEach((p) => { p.hidden = p.id !== "tab-" + shown; });
-  document.getElementById("grp-engaging").classList.toggle("on-props", name === "proposals");
-  // Picking a tab sets the graph's view; opening #network keeps whatever view the address or lens chose.
-  if (name === "proposals" && window.netMode) window.netMode("proposals");
-  else if (name === "network" && prevView === "proposals" && window.netMode) window.netMode("connections");
+  if (window.netMode && (name === "proposals" || name === "network")) window.netMode(name === "proposals" ? "proposals" : "connections");
   prevView = name;
   const stuck = document.getElementById("sticky-page");
   const gBtn = groupBtns.find((b) => b.dataset.group === group);
@@ -884,6 +889,10 @@ function setupTabs() {
   showTab(location.hash.slice(1) || "about");
 }
 
+window.netTabFollow = (m) => {
+  if (m === "proposals" && prevView === "network") showTab("proposals");
+  else if (m === "connections" && prevView === "proposals") showTab("network");
+};
 // A folded view's section is hidden while its fold is closed, so views that draw when shown draw at full width.
 document.addEventListener("toggle", (e) => {
   const d = e.target;

@@ -1037,14 +1037,8 @@
     if (!MODES[m]) m = "connections";
     state.mode = m;
     document.querySelectorAll("#net-mode [data-mode]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === m)));
-    // The section's tabs follow the view (a lens or a link may change it).
-    const tn = document.getElementById("tabbtn-network"), tp = document.getElementById("tabbtn-proposals");
-    if (tn && tp && (tn.getAttribute("aria-selected") === "true" || tp.getAttribute("aria-selected") === "true")) {
-      tn.setAttribute("aria-selected", String(m !== "proposals")); tn.tabIndex = m !== "proposals" ? 0 : -1;
-      tp.setAttribute("aria-selected", String(m === "proposals")); tp.tabIndex = m === "proposals" ? 0 : -1;
-      const g = document.getElementById("grp-engaging");
-      if (g) g.classList.toggle("on-props", m === "proposals");
-    }
+    // The Network and Proposals sections follow the view when the graph changes it (a lens, or focusing a proposal).
+    if (window.netTabFollow) window.netTabFollow(m);
     const ps = document.getElementById("net-pstatus");
     if (ps) ps.hidden = m !== "proposals";
     const note = document.getElementById("net-mode-note");

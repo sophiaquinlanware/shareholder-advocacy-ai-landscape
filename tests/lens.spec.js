@@ -7,12 +7,12 @@ async function openNetwork(page, query = "") {
   await page.waitForSelector("#net-lens input:checked", { state: "attached" });
 }
 
-test("choosing a lens updates ?lens=, keeps #network, and survives a reload", async ({ page }) => {
+test("choosing a lens updates ?lens=, opens the Policymaker lens on Proposals, and survives a reload", async ({ page }) => {
   await openNetwork(page);
   // The picker is hidden (one view for everyone); a lens is still chosen by link.
   await page.goto("/index.html?lens=policy#network");
   await page.waitForSelector("#net-lens input:checked", { state: "attached" });
-  await expect(page).toHaveURL(/\?lens=policy#network$/);
+  await expect(page).toHaveURL(/\?lens=policy#proposals$/);
   await expect(page.locator("#net-intro")).toContainText("Circle size = number of proposals with this ask");
   await page.reload();
   await page.waitForSelector("#net-lens input:checked", { state: "attached" });
