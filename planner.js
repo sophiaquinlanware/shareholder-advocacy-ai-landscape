@@ -436,7 +436,7 @@
     if (!ready) { const docs = document.getElementById("pl-docs"); if (docs) docs.innerHTML = ""; return; }
     if (window.CAMPAIGNS) window.CAMPAIGNS.fill(out);
     if (window.PLANNER_TOOLS) window.PLANNER_TOOLS.fill(out, { coName: c.name, askLabel: askOf(S.ask).label, proposals: D.proposals, askOf, critical: idx.critical });
-    // The last step of the site: the same company and ask, tested forward in Plan and test › Test plans over time.
+    // The last step of the site: the same company and ask, tested forward in Plan and test › Scenario modelling.
     const nx = document.getElementById("pl-next");
     if (nx) nx.href = planUrl().replace(/#planner$/, "#simulate");
     // The same company and ask, suggested for the Prediction board (board.js builds the GitHub form address).

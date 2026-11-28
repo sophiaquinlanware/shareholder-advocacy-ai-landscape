@@ -1,4 +1,4 @@
-// Test plans over time (sim.js) and the section order: context first, planning and testing last.
+// Scenario modelling (sim.js) and the section order: context first, planning and testing last.
 import { expect, test } from "@playwright/test";
 
 async function open(page, path) {
@@ -14,8 +14,8 @@ test("sections run from context to planning, each pointing to the next", async (
     "AI value chain",
     "Effects of AI",
     "AI governance",
-    "Network",
-    "Proposals",
+    "Stakeholder network",
+    "Advocacy proposals",
     "Plan and test",
   ]);
   await page.locator("#grp-engaging .next-section a").click();
@@ -27,7 +27,7 @@ test("sections run from context to planning, each pointing to the next", async (
 
 test("a plan from the planner runs as a scenario with labelled results", async ({ page }) => {
   await open(page, "/index.html?plan=microsoft~ask-ai-oversight-reporting#simulate");
-  await expect(page.locator("#tab-simulate h2")).toHaveText("Test plans over time");
+  await expect(page.locator("#tab-simulate h2")).toHaveText("Scenario modelling");
   await expect(page.locator('#sim-plans select[data-f="co"]').first()).toHaveValue("MSFT");
   await page.locator("#sim-run").click();
   await expect(page.locator("#sim-status")).toContainText(/updated below|unchanged/);
@@ -71,7 +71,7 @@ test("the planner hands its company and ask to the simulator", async ({ page }) 
   await open(page, "/index.html?plan=amazon~ask-dc-climate-energy#planner");
   await page.waitForSelector("#pl-out h3");
   await page.locator("#pl-next").click();
-  await expect(page.locator("#tab-simulate h2")).toHaveText("Test plans over time");
+  await expect(page.locator("#tab-simulate h2")).toHaveText("Scenario modelling");
   await expect(page.locator('#sim-plans select[data-f="co"]').first()).toHaveValue("AMZN");
   await expect(page.locator('#sim-plans select[data-f="ask"]').first()).toHaveValue("ask-dc-climate-energy");
   // A scenario is shown on arrival.

@@ -42,10 +42,9 @@
       if (c.from_pathways) { viaTie++; continue; }
       if (c.basis_type) n[c.basis_type] = (n[c.basis_type] || 0) + 1;
     }
-    const total = Object.values(n).reduce((a, b) => a + b, 0) + viaTie;
     const parts = Object.entries(n).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${esc(BASIS[k] || k)} (${v})`);
     if (viaTie) parts.push(`is named in a sourced ownership, supply or distribution tie to a frontier lab (${viaTie})`);
-    return `<details class="vc-scope"><summary>Scope: which companies this model includes, and why (${total})</summary>
+    return `<details class="vc-scope"><summary>Scope: which companies this model includes</summary>
       <p>The map models how influence travels along the AI value chain toward the frontier labs. It is not a census of every company in AI, and market share is not a criterion. A company is included when its record meets one of these tests; each is counted once, under the reason recorded for it:</p>
       <ul>${parts.map((p) => `<li>it ${p}</li>`).join("")}</ul>
       <p class="status-note">Each company's reason and source are on its profile. Companies outside these tests are out of scope.</p></details>`;

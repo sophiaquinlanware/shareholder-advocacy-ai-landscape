@@ -1343,3 +1343,4 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 .tp-askrec { margin: 4px 0; }
 .tp-askrec > summary { cursor: pointer; }
 .tp-gov { font-size: 13px; }
+.tab-row.spread { justify-content: space-between; flex-wrap: nowrap; }

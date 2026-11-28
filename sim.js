@@ -1,4 +1,4 @@
-// Test plans over time: an agent-based scenario model of AI shareholder engagement (data/sim_params.json,
+// Scenario modelling: an agent-based scenario model of AI shareholder engagement (data/sim_params.json,
 // built by scripts/build_sim_params.py). Plan: docs/plans/2026-11-26-engagement-simulator.md.
 //
 // Agents, each season (one proxy season a year):
@@ -323,7 +323,7 @@
     S = { M, plans: [defaultPlan(M)], scen: { horizon: M.last + 3, rescind: false, rescindFrom: M.last + 1, leadMult: P.literature.find((l) => l.id === "lead_investor").value,
       supportBoost: 0, refileMult: 1, floorShare: 0.2, floorCommit: 0.5, exclRegime: "latest", runs: 400 }, season: M.last, result: null, sweep: null };
     el.innerHTML = `
-      <h2>Test plans over time</h2>
+      <h2>Scenario modelling</h2>
       <p class="intro">Choose companies and asks, then see how the next seasons could unfold: refilings, new filers, vote shifts, resubmission limits and commitments. Compare up to three plans. Results are scenarios computed by this site, not forecasts or advice.</p>
       <section class="pl-card pl-wide" aria-labelledby="sim-h-seat"><h3 id="sim-h-seat">Take a seat</h3>
         <p class="status-note">See the moves each participant has, with what this model covers. Moves the model covers can be tried in the scenarios below. Describes options; it does not say which to take.</p>

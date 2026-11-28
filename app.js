@@ -682,29 +682,8 @@ function renderPeople() {
 // ---------- About: the cover page ----------
 // What the site is for, who uses it, what each section answers, and the rules it keeps (PRODUCT.md). Counts come
 // from the data so they stay current.
-function renderAbout() {
-  const el = document.getElementById("tab-about");
-  if (!el) return;
-  const cos = (DATA.companies || []).length;
-
-  const sections = [...document.querySelectorAll('.tabs [role="tab"][data-group]')].filter((b) => b.dataset.group !== "about").map((b) => {
-    const g = b.dataset.group;
-    const q = (document.querySelector(`#grp-${g} .group-q`) || {}).textContent || "";
-    const first = (document.querySelector(`#grp-${g} .panel`) || {}).id.slice(4);
-    return `<li><a href="#${esc(first)}">${esc(b.textContent)}</a><p>${esc(q)}</p></li>`;
-  }).join("");
-  // Scope counts from each company's stated, sourced basis in data/companies.json.
-  const BASIS = { "shareholder proposal": "had an AI shareholder proposal on the ballot", "safety commitment": "signed a frontier AI safety commitment", "investor engagement": "were engaged on AI, as reported by the investor", "compute agreement": "have a compute agreement with a frontier lab" };
-  const basis = {};
-  (DATA.companies || []).forEach((c) => { if (c.basis_type) basis[c.basis_type] = (basis[c.basis_type] || 0) + 1; });
-  const basisList = Object.entries(basis).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${n} ${esc(BASIS[k] || k)}`).join("; ");
-  // The cover text is written into index.html so it paints at once; only the reading-order list (from the tabs)
-  // and the scope list (from companies.json) are drawn here.
-  const list = document.getElementById("ab-sections");
-  if (list && !list.innerHTML) list.innerHTML = sections;
-  const filled = document.getElementById("ab-basis");
-  if (filled && cos) filled.innerHTML = `<strong>Companies.</strong> ${cos} in all: ${basisList}. The aim is to model where power sits in the AI value chain and how investors can reach it, not to list every company.`;
-}
+// About is written into index.html (principles, intention and sources), so it paints at once and needs no data.
+function renderAbout() {}
 
 function renderStart() {
   const el = document.getElementById("tab-start");
@@ -742,7 +721,7 @@ function renderStart() {
 // Six sections in the order of an engagement cycle, each holding one or more views (index.html). Every view
 // keeps its own address (#feed, #network, ...), so old links and the tests open the right place.
 // Old addresses for views that were renamed or folded into another view.
-const TAB_ALIASES = { feed: "proposals", upcoming: "proposals", tracker: "proposals", votes: "proposals", outcomes: "proposals", parnassus: "company", rights: "company", companies: "company", asks: "topics", effects: "topics", why: "causality", "weigh-in": "upcoming", water: "upcoming", overview: "start", new: "upcoming" };
+const TAB_ALIASES = { tracker: "feed", parnassus: "company", rights: "company", companies: "company", asks: "topics", effects: "topics", why: "causality", "weigh-in": "upcoming", water: "upcoming", overview: "start", new: "upcoming" };
 const lastView = {}; // per section, the view last open in it
 let prevView = "";
 // Tab switches crossfade with the View Transitions API (motion brief stage 7) where the browser has it, except
@@ -764,7 +743,7 @@ function applyTab(name, focus = false) {
   // The tracker is now a view of All AI proposals (owner, 2026-11-27: one page, different ways of viewing the data).
   if (name === "tracker") { window.feedWant = "grid"; if (window.feedView) window.feedView("grid"); }
   // Views folded into another one (owner, 2026-11-27: fewer tabs): open the fold and bring it into view.
-  const fold = document.getElementById("fold-" + (name === "tracker" ? "feed" : name));
+  const fold = document.getElementById("fold-" + name);
   if (fold && fold.tagName === "DETAILS") setTimeout(() => { fold.open = true; fold.scrollIntoView({ block: "start" }); }, 0);
   name = TAB_ALIASES[name] || name;
   if (name === "network" && !historyReady) {
@@ -822,7 +801,30 @@ function applyTab(name, focus = false) {
 window.showTab = showTab;
 // Header art (owner, 2026-11-27: "have the graphic scroll up past the title so that the title goes over it"): the
 // title drifts down more slowly than the page scrolls, so the ridges pass up behind it.
+// The section menu spreads along the mountain and ends under the summit (owner, 2026-11-28: "distributed over the
+// length of the mountain, stopping right at the peak point"). Wide screens only; phones keep the wrapping row.
+function spreadTabs() {
+  const row = document.querySelector(".tabs .tab-row"), peak = document.querySelector('.hdr-art .ha-hub[data-g="plan"] .ha-core');
+  if (!row || !peak) return;
+  const fit = () => {
+    row.style.paddingRight = "";
+    row.classList.remove("spread");
+    if (innerWidth < 900) return;
+    const r = row.getBoundingClientRect(), cs = getComputedStyle(row);
+    const contentRight = r.right - parseFloat(cs.paddingRight || 0);
+    const p = peak.getBoundingClientRect();
+    const end = Math.min(contentRight, p.left + p.width / 2 + 10);
+    // Room for the tabs at their natural width, or leave the row as it is.
+    const natural = [...row.children].reduce((w, b) => w + b.getBoundingClientRect().width, 0);
+    if (end - (r.left + parseFloat(cs.paddingLeft || 0)) < natural) return;
+    row.style.paddingRight = `${Math.round(r.right - end)}px`;
+    row.classList.add("spread");
+  };
+  addEventListener("resize", fit);
+  fit();
+}
 function setupHeaderArt() {
+  spreadTabs();
   const title = document.querySelector(".site-header .wrap");
   if (!title || !document.querySelector(".hdr-art") || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   let raf = 0;
