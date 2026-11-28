@@ -1318,7 +1318,7 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 .tp-stats { font-size: 14px; color: var(--ink-soft); }
 .tp-asks { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 .tp-ask .tp-n { color: var(--ink-soft); margin-left: 4px; }
-.tp-ask[aria-expanded="true"] { border-color: #e8590c; box-shadow: 0 0 0 2px rgba(232, 89, 12, .25); }
+.tp-ask[aria-expanded="true"], .tp-ef[aria-expanded="true"] { border-color: #e8590c; box-shadow: 0 0 0 2px rgba(232, 89, 12, .25); }
 .tp-ask[aria-expanded="true"] .tp-n { color: inherit; }
 .tp-more { margin-top: 12px; border-top: 2px solid #e8590c; padding-top: 10px; }
 .tp-more h4 { margin: 0 0 4px; color: #c2410c; }
@@ -1335,3 +1335,11 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 .net-list-rec[open] { min-width: 320px; }
 /* Company comparisons fold under Company profiles only. */
 .group:has(> #tab-company[hidden]) .company-extra { display: none; }
+.tp-safety { border-top: 3px solid var(--accent); }
+.tp-gap { font-size: 11px; color: var(--ink-soft); border: 1px dashed var(--control-edge); border-radius: 999px; padding: 0 6px; margin-left: 4px; }
+.tp-more h5 { margin: 12px 0 4px; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); font-weight: 400; }
+.tp-st { font-size: 11px; border: 1px solid var(--control-edge); border-radius: 999px; padding: 0 6px; white-space: nowrap; }
+.tp-st-in-force { border-color: var(--accent); color: var(--accent); }
+.tp-askrec { margin: 4px 0; }
+.tp-askrec > summary { cursor: pointer; }
+.tp-gov { font-size: 13px; }

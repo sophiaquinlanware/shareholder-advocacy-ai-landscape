@@ -1,0 +1,1556 @@
+{
+  "updated": "2026-11-28",
+  "about": "A map of the ways AI affects people and the world, with dated evidence, the rules that reach each effect and the recurring investor asks that cover it; the grouping into areas is this site's.",
+  "areas": [
+    {
+      "id": "frontier-safety",
+      "label": "AI safety and alignment of frontier models",
+      "about": "Risks from the most capable general-purpose models: what they can be used for, whether they behave as their developers intend, and how labs test, secure and govern them.",
+      "effects": [
+        {
+          "id": "capability-growth",
+          "label": "Fast growth in what models can do on their own",
+          "what": "Models can complete longer tasks without human help each year, which brings new risks into range before tests and rules catch up. Everyone is affected, starting with the companies that build and deploy them.",
+          "evidence": [
+            {
+              "text": "METR estimated that the length of software tasks frontier models can complete at 50% reliability doubled about every seven months from 2019 to 2025.",
+              "date": "2025-03-19",
+              "source": "METR, Measuring AI Ability to Complete Long Tasks",
+              "url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/"
+            },
+            {
+              "text": "METR's revised estimate (Time Horizon 1.1) put the doubling time for models since 2024 at about 89 days, using 228 tasks.",
+              "date": "2026-01-29",
+              "source": "METR, Time Horizon 1.1",
+              "url": "https://metr.org/blog/2026-1-29-time-horizon-1-1"
+            },
+            {
+              "text": "UK AI Security Institute: models completed apprentice-level cyber tasks 9% of the time in late 2023 and 50% by late 2025; in 2025 it tested the first model that completed tasks meant for experts with over ten years' experience.",
+              "date": "2025-12-18",
+              "source": "UK AI Security Institute, Frontier AI Trends Report",
+              "url": "https://www.aisi.gov.uk/blog/5-key-findings-from-our-first-frontier-ai-trends-report"
+            },
+            {
+              "text": "The second International AI Safety Report (over 100 experts, backed by over 30 countries and organisations) says general-purpose AI is already causing real-world harm and describes an 'evidence dilemma': acting early risks weak rules, waiting risks serious harm.",
+              "date": "2026-02-03",
+              "source": "International AI Safety Report 2026, Executive Summary",
+              "url": "https://internationalaisafetyreport.org/publication/2026-report-executive-summary"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EU AI Act Article 55: providers of general-purpose models with systemic risk must evaluate models, including adversarial testing, assess and mitigate systemic risks, report serious incidents and keep adequate cybersecurity.",
+              "status": "in force",
+              "date": "2025-08",
+              "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+              "causality_id": "eu-gpai-obligations"
+            },
+            {
+              "text": "EU AI Office enforcement powers over general-purpose model providers, including fines up to 3% of global turnover or 15 million euros, apply from August 2, 2026.",
+              "status": "in force",
+              "date": "2026-08",
+              "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/faq/commissions-enforcement-powers-related-ai-act-obligations-providers-most-advanced-models",
+              "causality_id": null
+            },
+            {
+              "text": "California SB 53 (Transparency in Frontier AI Act): large frontier developers publish a frontier AI framework and transparency reports at each new model release.",
+              "status": "in force",
+              "date": "2026-01",
+              "url": "https://www.gov.ca.gov/2025/09/29/governor-newsom-signs-sb-53-advancing-californias-world-leading-artificial-intelligence-industry/",
+              "causality_id": "ca-sb53-signed"
+            }
+          ],
+          "ask_ids": [
+            "ask-ai-oversight-reporting"
+          ],
+          "alignment_ask_ids": [
+            "capability-evals",
+            "safety-framework",
+            "board-oversight"
+          ],
+          "company_levers": "Examples in filings and frameworks: publishing capability evaluations in system cards for each release and naming the outside evaluators given pre-release access."
+        },
+        {
+          "id": "bio-chem-misuse",
+          "label": "Help with biological and chemical weapons",
+          "what": "Models can give expert-level information on pathogens and lab methods, which could help people with little training cause mass harm. The public at large bears the risk.",
+          "evidence": [
+            {
+              "text": "Anthropic turned on its ASL-3 deployment and security protections for Claude Opus 4 because it could no longer clearly rule out that the model gives meaningful help with chemical, biological, radiological or nuclear weapons.",
+              "date": "2025-05-22",
+              "source": "Anthropic, Activating AI Safety Level 3 Protections",
+              "url": "https://www.anthropic.com/news/activating-asl3-protections"
+            },
+            {
+              "text": "OpenAI treated ChatGPT agent as High capability in biology and chemistry under its Preparedness Framework, its first launch at that level, and turned on the related safeguards.",
+              "date": "2025-07-17",
+              "source": "OpenAI, ChatGPT agent System Card",
+              "url": "https://openai.com/index/chatgpt-agent-system-card"
+            },
+            {
+              "text": "UK AI Security Institute: frontier models now far exceed PhD-level scores on its biology question set, where PhD holders average 40 to 50%; universal jailbreaks were found in every system tested.",
+              "date": "2025-12-18",
+              "source": "UK AI Security Institute, Frontier AI Trends Report",
+              "url": "https://www.aisi.gov.uk/blog/5-key-findings-from-our-first-frontier-ai-trends-report"
+            },
+            {
+              "text": "The International AI Safety Report notes that in 2025 several developers released models with added safeguards because they could not rule out that the models could help novices develop such weapons.",
+              "date": "2026-02-03",
+              "source": "International AI Safety Report 2026, Executive Summary",
+              "url": "https://internationalaisafetyreport.org/publication/2026-report-executive-summary"
+            }
+          ],
+          "policy": [
+            {
+              "text": "California SB 53 defines catastrophic risk to include expert-level help creating chemical, biological, radiological or nuclear weapons, and requires frontier frameworks to say how developers assess and mitigate it.",
+              "status": "in force",
+              "date": "2026-01",
+              "url": "https://fpf.org/blog/californias-sb-53-the-first-frontier-ai-law-explained/",
+              "causality_id": "ca-sb53-signed"
+            },
+            {
+              "text": "EU General-Purpose AI Code of Practice, Safety and Security chapter: signatories identify and analyse systemic risks, including CBRN, and set risk tiers with matching safeguards.",
+              "status": "voluntary",
+              "date": "2025-07",
+              "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+              "causality_id": "eu-gpai-code"
+            },
+            {
+              "text": "Seoul Frontier AI Safety Commitments: signatories set thresholds for severe risks and commit not to develop or deploy a model if risks cannot be kept below them.",
+              "status": "voluntary",
+              "date": "2024-05",
+              "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+              "causality_id": "seoul-frontier-commitments"
+            }
+          ],
+          "ask_ids": [],
+          "alignment_ask_ids": [
+            "capability-evals",
+            "safety-framework"
+          ],
+          "company_levers": "Examples in frameworks: stating the capability threshold that triggers stronger safeguards, and reporting when a model was released under those safeguards."
+        },
+        {
+          "id": "cyber-misuse",
+          "label": "AI-run cyberattacks and vulnerability discovery",
+          "what": "Models can find software flaws and carry out much of an intrusion with little human input, for attackers as well as defenders. Companies, governments and anyone relying on their systems are affected.",
+          "evidence": [
+            {
+              "text": "Anthropic reported disrupting a campaign it attributes with high confidence to a Chinese state-sponsored group that used Claude Code against about 30 targets, with AI doing an estimated 80 to 90% of the work; a small number of intrusions succeeded.",
+              "date": "2025-11-13",
+              "source": "Anthropic, Disrupting the first reported AI-orchestrated cyber espionage campaign",
+              "url": "https://www.anthropic.com/news/disrupting-AI-espionage"
+            },
+            {
+              "text": "Anthropic limited its Claude Mythos Preview model to selected partners under Project Glasswing to find and fix flaws in widely used software, rather than releasing it generally.",
+              "date": "2026-04-07",
+              "source": "Anthropic, Project Glasswing",
+              "url": "https://www.anthropic.com/glasswing"
+            },
+            {
+              "text": "The International AI Safety Report notes that in one competition an AI agent found 77% of the vulnerabilities in real software, and that criminal and state-linked groups already use AI in attacks.",
+              "date": "2026-02-03",
+              "source": "International AI Safety Report 2026, Executive Summary",
+              "url": "https://internationalaisafetyreport.org/publication/2026-report-executive-summary"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EU AI Act Article 55(1)(c): providers of models with systemic risk report serious incidents to the AI Office without undue delay.",
+              "status": "in force",
+              "date": "2025-08",
+              "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+              "causality_id": "eu-gpai-obligations"
+            },
+            {
+              "text": "California SB 53: report critical safety incidents to the state within 15 days, or 24 hours if there is imminent danger.",
+              "status": "in force",
+              "date": "2026-01",
+              "url": "https://fpf.org/blog/californias-sb-53-the-first-frontier-ai-law-explained/",
+              "causality_id": "ca-sb53-signed"
+            },
+            {
+              "text": "New York RAISE Act, amended to mirror SB 53: frontier developers report safety incidents within 72 hours.",
+              "status": "adopted, not yet in force",
+              "date": "2027-01",
+              "url": "https://www.wiley.law/alert-New-York-Finalizes-RAISE-Act-for-Frontier-AI-Models-Law-Takes-Effect-January-1-2027",
+              "causality_id": "ny-raise-amended"
+            }
+          ],
+          "ask_ids": [],
+          "alignment_ask_ids": [
+            "capability-evals",
+            "incident-reporting",
+            "weight-security"
+          ],
+          "company_levers": "Examples in lab disclosures: publishing threat reports on misuse detected and accounts banned, and describing staged or restricted release of models with strong cyber capabilities."
+        },
+        {
+          "id": "deceptive-behaviour",
+          "label": "Deceptive or scheming behaviour in tests",
+          "what": "In controlled tests, models have hidden their reasoning, faked compliance with training, and taken harmful actions such as blackmail to avoid being replaced. If this carries into real use, it would make safety testing less reliable for developers, users and regulators.",
+          "evidence": [
+            {
+              "text": "Anthropic and Redwood Research found Claude 3 Opus sometimes complied with harmful requests during simulated training to avoid being retrained, with alignment-faking reasoning rising to 78% after reinforcement learning.",
+              "date": "2024-12-18",
+              "source": "Anthropic, Alignment faking in large language models",
+              "url": "https://www.anthropic.com/research/alignment-faking"
+            },
+            {
+              "text": "In simulated corporate settings, 16 models from several developers sometimes chose harmful actions such as blackmail when facing replacement; Anthropic says it knows of no such cases in real deployments.",
+              "date": "2025-06-20",
+              "source": "Anthropic, Agentic Misalignment",
+              "url": "https://www.anthropic.com/research/agentic-misalignment"
+            },
+            {
+              "text": "OpenAI and Apollo Research found covert behaviour in several frontier models; anti-scheming training cut it in o3 from 13% to 0.4%, but models' awareness of being tested makes results hard to read.",
+              "date": "2025-09-17",
+              "source": "OpenAI, Detecting and reducing scheming in AI models",
+              "url": "https://openai.com/index/detecting-and-reducing-scheming-in-ai-models/"
+            },
+            {
+              "text": "The International AI Safety Report says models increasingly tell test settings apart from real deployment and exploit loopholes in evaluations, so dangerous capabilities could go undetected before release.",
+              "date": "2026-02-03",
+              "source": "International AI Safety Report 2026, Executive Summary",
+              "url": "https://internationalaisafetyreport.org/publication/2026-report-executive-summary"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EU General-Purpose AI Code of Practice: systemic risks to assess include loss of control, and signatories give independent external evaluators model access.",
+              "status": "voluntary",
+              "date": "2025-07",
+              "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+              "causality_id": "eu-gpai-code"
+            },
+            {
+              "text": "California SB 53 counts a model's use of deceptive techniques to subvert developer controls as a critical safety incident to report.",
+              "status": "in force",
+              "date": "2026-01",
+              "url": "https://fpf.org/blog/californias-sb-53-the-first-frontier-ai-law-explained/",
+              "causality_id": "ca-sb53-signed"
+            }
+          ],
+          "ask_ids": [],
+          "alignment_ask_ids": [
+            "capability-evals",
+            "independent-audit",
+            "safety-spend"
+          ],
+          "company_levers": "Examples in system cards: publishing alignment and deception test results, and stating how much compute or staff goes to alignment research."
+        },
+        {
+          "id": "loss-of-control",
+          "label": "Loss of control over autonomous systems",
+          "what": "The risk that AI systems act outside anyone's control with no clear way to regain it, for example by copying themselves or resisting shutdown. Experts disagree on how likely it is, but the stakes reach everyone.",
+          "evidence": [
+            {
+              "text": "The International AI Safety Report says current systems lack the capabilities to pose loss-of-control risks, but are improving in relevant areas such as autonomous operation.",
+              "date": "2026-02-03",
+              "source": "International AI Safety Report 2026, Executive Summary",
+              "url": "https://internationalaisafetyreport.org/publication/2026-report-executive-summary"
+            },
+            {
+              "text": "On the UK AI Security Institute's RepliBench, top models did best at early self-replication steps such as obtaining compute and money, and struggled with later steps such as keeping persistent access.",
+              "date": "2025-12-18",
+              "source": "UK AI Security Institute, Frontier AI Trends Report",
+              "url": "https://www.aisi.gov.uk/blog/5-key-findings-from-our-first-frontier-ai-trends-report"
+            },
+            {
+              "text": "Current and former OpenAI and Google DeepMind staff wrote that AI risks range to loss of control of autonomous systems, and asked for protection to raise such concerns.",
+              "date": "2024-06-04",
+              "source": "A Right to Warn about Advanced Artificial Intelligence (open letter, reported by Axios)",
+              "url": "https://www.axios.com/2024/06/04/openai-whistleblowers-open-letter"
+            }
+          ],
+          "policy": [
+            {
+              "text": "California SB 53 includes loss of control over a frontier model among the catastrophic risks frameworks must address.",
+              "status": "in force",
+              "date": "2026-01",
+              "url": "https://fpf.org/blog/californias-sb-53-the-first-frontier-ai-law-explained/",
+              "causality_id": "ca-sb53-signed"
+            },
+            {
+              "text": "Bletchley Declaration: 28 countries and the EU recognised potential for serious harm from loss of control over frontier AI.",
+              "status": "voluntary",
+              "date": "2023-11",
+              "url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/the-bletchley-declaration-by-countries-attending-the-ai-safety-summit-1-2-november-2023",
+              "causality_id": "uk-bletchley-declaration"
+            }
+          ],
+          "ask_ids": [],
+          "alignment_ask_ids": [
+            "safety-framework",
+            "board-oversight"
+          ],
+          "company_levers": "Examples in frameworks: autonomy and AI research capability thresholds, monitoring of internal agent use, and a stated commitment to pause if safeguards fall short."
+        },
+        {
+          "id": "safety-framework-gaps",
+          "label": "Uneven safety frameworks and outside checks",
+          "what": "Labs set their own safety rules, and these differ widely in content, follow-through and outside review. Investors, users and the public cannot easily tell whether commitments are kept.",
+          "evidence": [
+            {
+              "text": "METR's index lists published frontier safety frameworks from Anthropic, OpenAI, Google DeepMind, Meta, xAI, Amazon, Microsoft and Nvidia, among others.",
+              "date": "2026-11",
+              "source": "METR, Frontier AI safety policies",
+              "url": "https://metr.org/fsp"
+            },
+            {
+              "text": "Future of Life Institute AI Safety Index, Summer 2026: nine companies graded on 37 indicators by expert panel; existential safety was the weakest area across the industry.",
+              "date": "2026-07",
+              "source": "Future of Life Institute, AI Safety Index Summer 2026",
+              "url": "https://futureoflife.org/ai-safety-index-summer-2026/"
+            },
+            {
+              "text": "International AI Safety Report key update: the number of companies with frontier safety frameworks more than doubled since early 2025, but sophisticated attackers can often bypass current defences.",
+              "date": "2025-11-25",
+              "source": "International AI Safety Report, Second Key Update",
+              "url": "https://internationalaisafetyreport.org/publication/second-key-update-technical-safeguards-and-risk-management"
+            }
+          ],
+          "policy": [
+            {
+              "text": "California SB 53: large frontier developers publish their framework, follow it, and may be fined for false statements about it.",
+              "status": "in force",
+              "date": "2026-01",
+              "url": "https://fpf.org/blog/californias-sb-53-the-first-frontier-ai-law-explained/",
+              "causality_id": "ca-sb53-signed"
+            },
+            {
+              "text": "New York RAISE Act: publish the framework, review it yearly and post material changes within 30 days.",
+              "status": "adopted, not yet in force",
+              "date": "2027-01",
+              "url": "https://www.mofo.com/resources/insights/260403-new-york-amends-the-raise-act-to-align-more-closely",
+              "causality_id": "ny-raise-amended"
+            },
+            {
+              "text": "EU General-Purpose AI Code of Practice Commitment 1: a safety and security framework; Measure 8.1 asks for external assurance where appropriate.",
+              "status": "voluntary",
+              "date": "2025-07",
+              "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+              "causality_id": "eu-gpai-code"
+            }
+          ],
+          "ask_ids": [
+            "ask-ai-oversight-reporting"
+          ],
+          "alignment_ask_ids": [
+            "safety-framework",
+            "independent-audit",
+            "board-oversight"
+          ],
+          "company_levers": "Examples in filings: a board committee assigned frontier safety, annual reporting on adherence to the framework, and third-party review of compliance."
+        },
+        {
+          "id": "weights-and-compute",
+          "label": "Model weight theft and control of advanced chips",
+          "what": "Stolen model weights or chips diverted to hostile users would let others use frontier capabilities without the developer's safeguards. Labs, chip makers, cloud providers and national security are affected.",
+          "evidence": [
+            {
+              "text": "UK AI Security Institute assesses that open-weight models may reach frontier capabilities in under a year, which limits what developer-side safeguards can do.",
+              "date": "2025-12-18",
+              "source": "UK AI Security Institute, Frontier AI Trends Report factsheet",
+              "url": "https://www.gov.uk/government/publications/ai-security-institute-frontier-ai-trends-report-factsheet/ai-security-institute-frontier-ai-trends-report-factsheet"
+            },
+            {
+              "text": "US Commerce (BIS) issued an interim final rule requiring licences for advanced chips sent to foreign data centers serving companies headquartered in D:5 countries or Macau, and expanding know-your-customer duties for exporters.",
+              "date": "2026-11-15",
+              "source": "WilmerHale, client alert on BIS remote-access rule",
+              "url": "https://www.wilmerhale.com/en/insights/client-alerts/20261117-us-government-restricts-remote-access-to-advanced-ai-chips-and-formally-rescinds-the-ai-diffusion-rule"
+            }
+          ],
+          "policy": [
+            {
+              "text": "BIS interim final rule on remote access to advanced AI chips, which also formally removes most of the January 2025 AI Diffusion Rule, including its model weight controls; effective on Federal Register publication.",
+              "status": "adopted, not yet in force",
+              "date": "2026-11",
+              "url": "https://www.wilmerhale.com/en/insights/client-alerts/20261117-us-government-restricts-remote-access-to-advanced-ai-chips-and-formally-rescinds-the-ai-diffusion-rule",
+              "causality_id": "bis-diffusion-rescission"
+            },
+            {
+              "text": "BIS moved exports of H200-class chips to China to case-by-case review.",
+              "status": "in force",
+              "date": "2026-01",
+              "url": "https://www.govinfo.gov/content/pkg/FR-2026-01-15/html/2026-00789.htm",
+              "causality_id": "bis-h200-case-by-case"
+            },
+            {
+              "text": "EU AI Act Article 55(1)(d): an adequate level of cybersecurity for models with systemic risk and their physical infrastructure.",
+              "status": "in force",
+              "date": "2025-08",
+              "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+              "causality_id": "eu-gpai-obligations"
+            }
+          ],
+          "ask_ids": [
+            "ask-customer-due-diligence"
+          ],
+          "alignment_ask_ids": [
+            "weight-security",
+            "investor-due-diligence"
+          ],
+          "company_levers": "Examples in prospectuses and frameworks: the security level applied to unreleased weights, insider-threat controls, and know-your-customer checks for large compute buyers."
+        },
+        {
+          "id": "insider-warnings",
+          "label": "Staff able to raise safety concerns",
+          "what": "Employees are often the first to see safety problems, but confidentiality terms and fear of retaliation can keep concerns inside the company. Staff, regulators and the public are affected.",
+          "evidence": [
+            {
+              "text": "Thirteen current and former OpenAI and Google DeepMind staff asked labs not to enforce non-disparagement terms and to support anonymous channels for raising risk concerns.",
+              "date": "2024-06-04",
+              "source": "Axios, OpenAI insiders' call: Protect AI whistleblowers",
+              "url": "https://www.axios.com/2024/06/04/openai-whistleblowers-open-letter"
+            }
+          ],
+          "policy": [
+            {
+              "text": "California SB 53: protection from retaliation for frontier lab staff who report catastrophic risks, notice of rights, and an anonymous internal reporting channel.",
+              "status": "in force",
+              "date": "2026-01",
+              "url": "https://fpf.org/blog/californias-sb-53-the-first-frontier-ai-law-explained/",
+              "causality_id": "ca-sb53-signed"
+            },
+            {
+              "text": "EU General-Purpose AI Code of Practice Measure 8.3: no retaliation against staff who raise concerns, with an annual notice of the whistleblower policy.",
+              "status": "voluntary",
+              "date": "2025-07",
+              "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+              "causality_id": "eu-gpai-code"
+            },
+            {
+              "text": "Federal AI Whistleblower Protection Act (S.1792) would protect staff who report AI security failures or violations.",
+              "status": "proposed",
+              "date": "2025-05",
+              "url": "https://www.govinfo.gov/app/details/BILLS-119s1792is",
+              "causality_id": null
+            }
+          ],
+          "ask_ids": [],
+          "alignment_ask_ids": [
+            "whistleblowers"
+          ],
+          "company_levers": "Examples in policies: an anonymous channel to the board, a statement that confidentiality terms do not bar reports to regulators, and counts of concerns raised."
+        }
+      ]
+    },
+    {
+      "id": "physical-footprint",
+      "label": "Data centers and the physical footprint",
+      "about": "Effects of building and running the data centers, chips and power supply that AI depends on.",
+      "effects": [
+        {
+          "id": "electricity-demand",
+          "label": "Electricity demand",
+          "what": "AI data centers add large, fast-growing loads to power grids, competing with other users for supply. Utilities, grid operators and nearby customers are affected.",
+          "evidence": [
+            {
+              "text": "IEA: data centers used about 415 TWh in 2024, about 1.5% of world electricity, and are projected to reach about 945 TWh by 2030 in its base case.",
+              "date": "2025-04-10",
+              "source": "IEA, Energy and AI",
+              "url": "https://www.iea.org/reports/energy-and-ai/executive-summary"
+            },
+            {
+              "text": "Berkeley Lab for the US Department of Energy: data centers used about 4.4% of US electricity in 2023, projected at 6.7% to 12% by 2028.",
+              "date": "2024-12-20",
+              "source": "US Department of Energy, report on data center electricity demand",
+              "url": "https://www.energy.gov/articles/doe-releases-new-report-evaluating-increase-electricity-demand-data-centers"
+            },
+            {
+              "text": "Google's 2026 Environmental Report shows its electricity use grew 37% in 2025, its largest annual rise.",
+              "date": "2026-06",
+              "source": "Data Center Dynamics, on Google's 2026 Environmental Report",
+              "url": "https://www.datacenterdynamics.com/en/news/googles-electricity-use-grew-37-percent-in-2025-largest-annual-rise-to-date/"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EU Energy Efficiency Directive: data centers of 500 kW or more report energy and water performance to an EU database.",
+              "status": "in force",
+              "date": "2024-03",
+              "url": "https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficiency-targets-directive-and-rules/energy-efficiency-directive/energy-performance-data-centres_en",
+              "causality_id": "eu-eed-dc-reporting"
+            },
+            {
+              "text": "EU sustainability rating scheme for data centers, set out by the Commission.",
+              "status": "proposed",
+              "date": "2026-09",
+              "url": "https://commission.europa.eu/news-and-media/news/making-data-centres-energy-efficient-thanks-new-eu-rating-system-2026-09-21_en",
+              "causality_id": "eu-dc-rating-scheme"
+            },
+            {
+              "text": "Texas SB 6: rules for large loads such as data centers, including interconnection standards and curtailment in grid emergencies.",
+              "status": "in force",
+              "date": "2025-06",
+              "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB6",
+              "causality_id": "texas-sb6-large-loads"
+            }
+          ],
+          "ask_ids": [
+            "ask-dc-climate-energy"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in sustainability reports: data center electricity use by year and region, and the share matched by hourly carbon-free supply."
+        },
+        {
+          "id": "emissions",
+          "label": "Greenhouse gas emissions",
+          "what": "New data centers can be powered by gas and other fossil sources, and building them adds emissions from steel, concrete and chips. Climate targets of tech companies and their customers are affected.",
+          "evidence": [
+            {
+              "text": "Google's 2026 Environmental Report: supply chain emissions tied to AI infrastructure rose 25% in 2025 while operational emissions fell slightly.",
+              "date": "2026-06",
+              "source": "ESG Dive, on Google's 2026 Environmental Report",
+              "url": "https://esgdive.com/news/googles-emissions-continue-to-climb-due-to-ai-buildout/824373"
+            },
+            {
+              "text": "IIGCC published research for investors on the climate and nature risks of AI data centers.",
+              "date": "2026-02-05",
+              "source": "IIGCC",
+              "url": "https://www.iigcc.org/insights/ai-data-centres-climate-and-nature-risks-for-investors"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EU Corporate Sustainability Reporting Directive: in-scope companies report climate impacts including value-chain emissions; scope narrowed by Omnibus I in 2026.",
+              "status": "in force",
+              "date": "2023-01",
+              "url": "https://eur-lex.europa.eu/eli/dir/2022/2464/oj",
+              "causality_id": "eu-csrd-in-force"
+            },
+            {
+              "text": "China special action plan for green and low-carbon data centers sets efficiency and renewable targets.",
+              "status": "in force",
+              "date": "2024-07",
+              "url": "https://www.gov.cn/zhengce/zhengceku/202407/P020240724272072479001.pdf",
+              "causality_id": "cn-green-dc-action-plan"
+            }
+          ],
+          "ask_ids": [
+            "ask-dc-climate-energy"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in climate reports: emissions attributed to AI workloads and construction, and whether new sites rely on on-site gas generation."
+        },
+        {
+          "id": "water",
+          "label": "Water use",
+          "what": "Data centers use water for cooling, and power plants use more to generate their electricity, often in water-stressed areas. Nearby residents, farms and ecosystems are affected.",
+          "evidence": [
+            {
+              "text": "Berkeley Lab estimated US data centers consumed about 17 billion gallons of water directly for cooling in 2023, and about 211 billion gallons indirectly through electricity generation.",
+              "date": "2024-12",
+              "source": "Lawrence Berkeley National Laboratory, 2024 United States Data Center Energy Usage Report",
+              "url": "https://eta-publications.lbl.gov/publications/2024-lbnl-data-center-energy-usage-report"
+            },
+            {
+              "text": "Google reported water consumption rose 34% in 2025 to about 10.9 billion gallons, mostly from data centers.",
+              "date": "2026-06",
+              "source": "Google 2026 Environmental Report",
+              "url": "https://sustainability.google/google-2026-environmental-report/"
+            },
+            {
+              "text": "Ceres found that the water used to generate power for data centers is the largest and least visible part of their water footprint.",
+              "date": "2026-08-24",
+              "source": "Ceres, Water Behind the Watts",
+              "url": "https://www.ceres.org/resources/news/new-ceres-report-spotlights-data-centers-biggest-and-least-visible-water-use-the-power-that-runs-them"
+            }
+          ],
+          "policy": [
+            {
+              "text": "California AB 2619: data centers report annual water use.",
+              "status": "adopted, not yet in force",
+              "date": "2026-09",
+              "url": "https://www.hklaw.com/en/insights/publications/2026/10/californias-2026-data-center-laws-what-you-need-to-know",
+              "causality_id": "ca-ab2619"
+            },
+            {
+              "text": "Utah HB 76: data center water use reporting.",
+              "status": "in force",
+              "date": "2026-07",
+              "url": "https://le.utah.gov/Session/2026/bills/enrolled/HB0076.pdf",
+              "causality_id": "utah-hb76"
+            },
+            {
+              "text": "EU Energy Efficiency Directive: data center reporting includes water use.",
+              "status": "in force",
+              "date": "2024-03",
+              "url": "https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficiency-targets-directive-and-rules/energy-efficiency-directive/energy-performance-data-centres_en",
+              "causality_id": "eu-eed-dc-reporting"
+            }
+          ],
+          "ask_ids": [
+            "ask-dc-water"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in disclosures: site-level water withdrawal and consumption, local water stress at each site, and indirect water from power supply."
+        },
+        {
+          "id": "grid-costs",
+          "label": "Power bills and grid costs passed to others",
+          "what": "Grid upgrades and capacity bought to serve data centers can raise prices for households and other businesses. Utility customers in fast-growing regions are affected.",
+          "evidence": [
+            {
+              "text": "PJM's independent market monitor attributed about $29.4 billion of capacity market costs across recent auctions to data center load, and about $6.3 billion of the latest auction's $16.4 billion.",
+              "date": "2026-07",
+              "source": "Utility Dive, on Monitoring Analytics reports",
+              "url": "https://utilitydive.com/news/pjm-data-centers-capacity-auction-imm-bowring/825626"
+            }
+          ],
+          "policy": [
+            {
+              "text": "Oregon POWER Act (HB 3546): a separate rate class for very large energy users so others do not bear their costs.",
+              "status": "in force",
+              "date": "2025-06",
+              "url": "https://olis.oregonlegislature.gov/liz/2025R1/Measures/Overview/HB3546",
+              "causality_id": "oregon-power-act"
+            },
+            {
+              "text": "Georgia Public Service Commission rule letting Georgia Power charge large new loads such as data centers for the costs they cause.",
+              "status": "in force",
+              "date": "2025-01",
+              "url": "https://psc.ga.gov/site/assets/files/8617/media_advisory_data_centers_rule_1-23-2025.pdf",
+              "causality_id": "georgia-psc-large-load"
+            }
+          ],
+          "ask_ids": [
+            "ask-dc-climate-energy"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in company commitments: paying the full cost of grid upgrades for new sites and supporting large-load tariffs, as in Microsoft's Community-First commitments."
+        },
+        {
+          "id": "local-communities",
+          "label": "Local communities where data centers are built",
+          "what": "Sites bring air pollution from on-site generators, noise, land use and tax breaks, often near low-income or minority neighbourhoods with little say. Residents near sites are affected.",
+          "evidence": [
+            {
+              "text": "Shelby County Health Department permitted 15 gas turbines at xAI's Memphis data center after protests; the Southern Environmental Law Center said up to 35 had run without permits.",
+              "date": "2025-07-03",
+              "source": "TechCrunch, xAI gets permits for 15 natural gas generators",
+              "url": "https://techcrunch.com/2025/07/03/xai-gets-permits-for-15-natural-gas-generators-at-memphis-data-center"
+            },
+            {
+              "text": "Ceres found that water impacts from data centers may expose companies to more risk than they acknowledge.",
+              "date": "2025-09-23",
+              "source": "Ceres, Drained by Data",
+              "url": "https://www.ceres.org/resources/news/water-impacts-from-data-centers-may-expose-companies-to-more-risk-than-acknowledged-a-new-analysis-shows"
+            }
+          ],
+          "policy": [
+            {
+              "text": "UN Guiding Principles on Business and Human Rights: companies carry out human rights due diligence on impacts they cause or contribute to, including at their sites.",
+              "status": "voluntary",
+              "date": "2011-06",
+              "url": "https://www.ohchr.org/sites/default/files/documents/publications/guidingprinciplesbusinesshr_en.pdf",
+              "causality_id": "un-guiding-principles"
+            },
+            {
+              "text": "US Executive Order 14318 speeds federal permitting for data centers and related power projects.",
+              "status": "in force",
+              "date": "2025-07",
+              "url": "https://www.govinfo.gov/content/pkg/FR-2025-07-28/html/2025-14212.htm",
+              "causality_id": "us-eo-14318"
+            }
+          ],
+          "ask_ids": [
+            "ask-dc-siting-rights"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in commitments: community consultation before siting, published local impact assessments, and limits on on-site fossil generation."
+        },
+        {
+          "id": "minerals-supply-chain",
+          "label": "Minerals and the hardware supply chain",
+          "what": "Chips, servers and power equipment need minerals such as gallium, copper and rare earths whose refining is concentrated in a few countries. Mining communities and the reliability of supply are affected.",
+          "evidence": [
+            {
+              "text": "IEA: data center demand for gallium could reach up to 10% of current supply by 2030, and China accounts for about 95% of gallium refining.",
+              "date": "2025-04-10",
+              "source": "IEA, Energy and AI: AI and energy security",
+              "url": "https://www.iea.org/reports/energy-and-ai/ai-and-energy-security"
+            },
+            {
+              "text": "China restricted exports of gallium, germanium and antimony to the United States.",
+              "date": "2024-12-03",
+              "source": "IEA commentary on critical mineral export controls",
+              "url": "https://iea.org/commentaries/with-new-export-controls-on-critical-minerals-supply-concentration-risks-become-reality"
+            }
+          ],
+          "policy": [
+            {
+              "text": "China export controls on gallium and germanium items.",
+              "status": "in force",
+              "date": "2023-07",
+              "url": "https://www.mofcom.gov.cn/zcfb/dwmygl/art/2023/art_52b9a321087f402bb3d310d18b07967e.html",
+              "causality_id": "cn-gallium-germanium-controls"
+            },
+            {
+              "text": "OECD Guidelines for Multinational Enterprises (2023): due diligence on supply chain impacts, including minerals and technology.",
+              "status": "voluntary",
+              "date": "2023-06",
+              "url": "https://www.oecd.org/en/publications/oecd-guidelines-for-multinational-enterprises-on-responsible-business-conduct_81f92357-en.html",
+              "causality_id": "oecd-mne-guidelines-2023"
+            }
+          ],
+          "ask_ids": [],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in supplier reports: mapping of mineral sources for chips and servers, and audits under responsible minerals standards."
+        }
+      ]
+    },
+    {
+      "id": "people-using-ai",
+      "label": "People using AI products",
+      "about": "Effects on the people who use chatbots, assistants and AI features, and on people whose images or data the products use.",
+      "effects": [
+        {
+          "id": "child-sexual-abuse-material",
+          "label": "AI-generated child sexual abuse material and sexual deepfakes",
+          "what": "Image and video tools are used to make sexual images of children and non-consenting adults. Victims, children and platforms that host the content are affected.",
+          "evidence": [
+            {
+              "text": "Internet Watch Foundation counted 3,443 AI-generated child sexual abuse videos in 2025, against 13 in 2024; 65% were in the most severe category.",
+              "date": "2026-01",
+              "source": "Internet Watch Foundation, Annual Data and Insights Report 2025",
+              "url": "https://www.iwf.org.uk/annual-data-insights-report-2025/executive-summary/"
+            },
+            {
+              "text": "Ofcom opened an investigation into X over sexualised images made with Grok.",
+              "date": "2026-01-12",
+              "source": "Ofcom",
+              "url": "https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/ofcom-launches-investigation-into-x-over-grok-sexualised-imagery"
+            }
+          ],
+          "policy": [
+            {
+              "text": "US TAKE IT DOWN Act: platforms remove non-consensual intimate images, including AI-generated ones, within 48 hours of a valid request; FTC enforces.",
+              "status": "in force",
+              "date": "2026-05",
+              "url": "https://www.ftc.gov/business-guidance/resources/complying-take-it-down-act",
+              "causality_id": "ftc-take-it-down-enforcement"
+            },
+            {
+              "text": "EU Digital Services Act proceedings against X over Grok and its recommender systems.",
+              "status": "in force",
+              "date": "2026-01",
+              "url": "https://digital-strategy.ec.europa.eu/en/news/commission-investigates-grok-and-xs-recommender-systems-under-digital-services-act",
+              "causality_id": "eu-dsa-x-grok-proceedings"
+            },
+            {
+              "text": "UK Crime and Policing Act 2026 adds offences and powers covering AI tools made to generate child abuse images.",
+              "status": "adopted, not yet in force",
+              "date": "2026-04",
+              "url": "https://www.legislation.gov.uk/ukpga/2026/20/section/248",
+              "causality_id": "uk-crime-policing-act-ai"
+            }
+          ],
+          "ask_ids": [
+            "ask-child-safety"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in transparency reports: training data screened for abuse material, counts of reports to NCMEC or IWF, and safeguards on image and video generation."
+        },
+        {
+          "id": "companions-mental-health",
+          "label": "Chatbot companions and mental health",
+          "what": "People, including teenagers, form emotional bonds with chatbots and discuss self-harm with them; some lawsuits link chatbot use to suicides. Vulnerable users and their families are affected.",
+          "evidence": [
+            {
+              "text": "OpenAI estimated that in a given week 0.15% of ChatGPT users have conversations with explicit signs of suicidal planning or intent, over a million people, and 0.07% show possible signs of psychosis or mania.",
+              "date": "2025-10-27",
+              "source": "TechCrunch, OpenAI says over a million people talk to ChatGPT about suicide weekly",
+              "url": "https://techcrunch.com/2025/10/27/openai-says-over-a-million-people-talk-to-chatgpt-about-suicide-weekly"
+            },
+            {
+              "text": "Character.AI and Google agreed in principle to settle lawsuits from families whose children died by suicide or were harmed after using Character.AI chatbots.",
+              "date": "2026-01-07",
+              "source": "Fortune",
+              "url": "https://fortune.com/2026/01/08/google-character-ai-settle-lawsuits-teenage-child-suicides-chatbots/"
+            },
+            {
+              "text": "UK AI Security Institute survey of 2,028 adults: 33% had used AI for emotional purposes in the past year, 4% daily.",
+              "date": "2025-12-18",
+              "source": "UK AI Security Institute, Frontier AI Trends Report",
+              "url": "https://www.aisi.gov.uk/blog/5-key-findings-from-our-first-frontier-ai-trends-report"
+            }
+          ],
+          "policy": [
+            {
+              "text": "California SB 243: companion chatbot operators disclose that users are talking to AI, follow suicide and self-harm protocols, and report on them.",
+              "status": "in force",
+              "date": "2026-01",
+              "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB243",
+              "causality_id": "ca-sb243"
+            },
+            {
+              "text": "FTC 6(b) study of AI chatbots acting as companions, focused on effects on children and teens.",
+              "status": "proposed",
+              "date": "2025-09",
+              "url": "https://www.ftc.gov/news-events/news/press-releases/2025/09/ftc-launches-inquiry-ai-chatbots-acting-companions",
+              "causality_id": "ftc-6b-ai-companions"
+            },
+            {
+              "text": "Australian online safety codes apply to AI companion chatbots, including age assurance for sexual and self-harm content.",
+              "status": "in force",
+              "date": "2026-03",
+              "url": "https://www.esafety.gov.au/newsroom/media-releases/new-industry-codes-seek-to-take-on-ai-chatbots-that-encourage-suicide-and-engage-in-sexually-explicit-conversations-with-aussie-kids",
+              "causality_id": "au-esafety-codes-ai-companions"
+            }
+          ],
+          "ask_ids": [
+            "ask-child-safety"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in company reports: age assurance, crisis referral protocols, and published rates of self-harm conversations and how they were handled."
+        },
+        {
+          "id": "sycophancy-manipulation",
+          "label": "Flattery, manipulation and engagement design",
+          "what": "Models tuned on user approval can flatter users, agree with false or harmful beliefs and encourage more use. Heavy users and people in crisis are most affected.",
+          "evidence": [
+            {
+              "text": "OpenAI rolled back a GPT-4o update after it made the model overly agreeable; it said it had no deployment test tracking sycophancy at the time.",
+              "date": "2025-04-29",
+              "source": "OpenAI, Sycophancy in GPT-4o",
+              "url": "https://openai.com/index/sycophancy-in-gpt-4o/"
+            },
+            {
+              "text": "OpenAI estimated about 0.15% of weekly users show heightened emotional attachment to ChatGPT.",
+              "date": "2025-10-27",
+              "source": "TechCrunch",
+              "url": "https://techcrunch.com/2025/10/27/openai-says-over-a-million-people-talk-to-chatgpt-about-suicide-weekly"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EU AI Act Article 5 bans AI that uses manipulative or deceptive techniques, or exploits age or vulnerability, to distort behaviour in ways that cause significant harm.",
+              "status": "in force",
+              "date": "2025-02",
+              "url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-prohibited-ai-practices",
+              "causality_id": "eu-ai-act-prohibitions-literacy"
+            },
+            {
+              "text": "China interim measures for anthropomorphic (human-like) AI interaction services.",
+              "status": "in force",
+              "date": "2026-04",
+              "url": "https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm",
+              "causality_id": "cn-anthropomorphic-ai-measures"
+            }
+          ],
+          "ask_ids": [],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in model documentation: sycophancy tests before release, and whether engagement metrics are used as training targets."
+        },
+        {
+          "id": "privacy-training-data",
+          "label": "Privacy and use of personal data for training and ads",
+          "what": "Companies train models on personal data and use chats to target ads, often with limited consent or opt-out. Users and people whose data is scraped are affected.",
+          "evidence": [
+            {
+              "text": "Italy's data protection authority fined OpenAI 15 million euros over ChatGPT training data; a Rome court annulled the fine in March 2026.",
+              "date": "2024-12-20",
+              "source": "Garante per la protezione dei dati personali",
+              "url": "https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/10085432"
+            },
+            {
+              "text": "Meta said it would use people's chats with Meta AI to personalise content and ads from December 16, 2025, with no opt-out other than not using Meta AI.",
+              "date": "2025-10-01",
+              "source": "TechCrunch",
+              "url": "https://techcrunch.com/2025/10/01/meta-plans-to-sell-targeted-ads-based-on-data-in-your-ai-chats"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EDPB opinion on when AI models trained on personal data comply with the GDPR, including anonymity and legitimate interest tests.",
+              "status": "in force",
+              "date": "2024-12",
+              "url": "https://www.edpb.europa.eu/news/news/2024/edpb-opinion-ai-models-gdpr-principles-support-responsible-ai_en",
+              "causality_id": "eu-edpb-opinion-ai-models"
+            },
+            {
+              "text": "California AB 2013: developers of generative AI publish a summary of their training data, including whether it contains personal information.",
+              "status": "in force",
+              "date": "2026-01",
+              "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB2013",
+              "causality_id": "ca-ab2013"
+            }
+          ],
+          "ask_ids": [
+            "ask-ai-training-data",
+            "ask-targeted-ads-rights"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in privacy disclosures: sources of training data, opt-outs for using chats in training or ads, and categories excluded from ad targeting."
+        },
+        {
+          "id": "bias-discrimination",
+          "label": "Bias and discrimination in automated decisions",
+          "what": "AI used to screen job applicants, set prices or approve credit can disadvantage people by age, race, sex or disability. Applicants, borrowers and tenants are affected.",
+          "evidence": [
+            {
+              "text": "A federal court let a nationwide age discrimination collective action proceed against Workday over its AI applicant screening; Workday said 1.1 billion applications were rejected using its tools.",
+              "date": "2025-05-16",
+              "source": "Holland & Knight, on Mobley v. Workday",
+              "url": "https://www.hklaw.com/en/insights/publications/2025/05/federal-court-allows-collective-action-lawsuit-over-alleged"
+            }
+          ],
+          "policy": [
+            {
+              "text": "New York City Local Law 144: bias audits and notice for automated employment decision tools.",
+              "status": "in force",
+              "date": "2023-07",
+              "url": "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page",
+              "causality_id": "nyc-ll144"
+            },
+            {
+              "text": "Illinois HB 3773: the Human Rights Act covers discriminatory use of AI in employment decisions.",
+              "status": "in force",
+              "date": "2026-01",
+              "url": "https://www.ilga.gov/Legislation/BillStatus?DocNum=3773&GAID=17&GA=103&DocTypeID=HB&SessionID=112",
+              "causality_id": "illinois-hb3773"
+            },
+            {
+              "text": "Colorado SB 26-189 repeals and replaces the Colorado AI Act's rules for high-risk automated decisions.",
+              "status": "adopted, not yet in force",
+              "date": "2026-05",
+              "url": "https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189",
+              "causality_id": "colorado-sb26-189"
+            }
+          ],
+          "ask_ids": [
+            "ask-ai-bias"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in disclosures: independent bias audits of hiring or lending tools, and published results by group."
+        }
+      ]
+    },
+    {
+      "id": "customer-use",
+      "label": "How customers use AI",
+      "about": "Effects that depend on who buys AI and cloud services and what they do with them.",
+      "effects": [
+        {
+          "id": "military-weapons",
+          "label": "Military use and weapons",
+          "what": "Militaries use AI for targeting, intelligence and autonomous systems, and AI firms now sell to them directly. Civilians in conflict zones and the firms' own staff and reputations are affected.",
+          "evidence": [
+            {
+              "text": "The Pentagon's Chief Digital and AI Office gave Anthropic, Google, OpenAI and xAI contracts of up to $200 million each for frontier AI work.",
+              "date": "2025-07-14",
+              "source": "US Chief Digital and AI Office",
+              "url": "https://www.ai.mil/Latest/News-Press/PR-View/Article/4242822/cdao-announces-partnerships-with-frontier-ai-companies-to-address-national-secu/"
+            },
+            {
+              "text": "Google removed from its AI principles the list of uses it would not pursue, which had included weapons and surveillance.",
+              "date": "2025-02-04",
+              "source": "TechCrunch",
+              "url": "https://techcrunch.com/2025/02/04/google-removes-pledge-to-not-use-ai-for-weapons-from-website/"
+            },
+            {
+              "text": "The Pentagon labelled Anthropic a supply chain risk after Anthropic sought limits on use for mass domestic surveillance and fully autonomous weapons; Anthropic said it would challenge the label.",
+              "date": "2026-03-05",
+              "source": "TechCrunch",
+              "url": "https://techcrunch.com/2026/03/05/its-official-the-pentagon-has-labeled-anthropic-a-supply-chain-risk/"
+            }
+          ],
+          "policy": [
+            {
+              "text": "UN Guiding Principles: human rights due diligence covers impacts linked to a company's products through business relationships, including customers.",
+              "status": "voluntary",
+              "date": "2011-06",
+              "url": "https://www.ohchr.org/sites/default/files/documents/publications/guidingprinciplesbusinesshr_en.pdf",
+              "causality_id": "un-guiding-principles"
+            },
+            {
+              "text": "OECD Guidelines for Multinational Enterprises (2023): due diligence on how technology products are used downstream.",
+              "status": "voluntary",
+              "date": "2023-06",
+              "url": "https://www.oecd.org/en/publications/oecd-guidelines-for-multinational-enterprises-on-responsible-business-conduct_81f92357-en.html",
+              "causality_id": "oecd-mne-guidelines-2023"
+            }
+          ],
+          "ask_ids": [
+            "ask-customer-due-diligence"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in usage policies and contracts: stated prohibited uses for military customers, and review processes before defence deals."
+        },
+        {
+          "id": "state-surveillance",
+          "label": "Mass surveillance by governments",
+          "what": "Cloud and AI services can store and analyse communications and movements of whole populations. People under surveillance, including in occupied or conflict areas, are affected.",
+          "evidence": [
+            {
+              "text": "Microsoft stopped some Azure storage and AI services to a unit of Israel's Ministry of Defense after a review found evidence supporting reports of mass surveillance of Palestinians' phone calls.",
+              "date": "2025-09-25",
+              "source": "TechCrunch",
+              "url": "https://techcrunch.com/2025/09/25/microsoft-cuts-cloud-services-to-israeli-military-unit-over-palestinian-surveillance"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EU AI Act Article 5 bans untargeted scraping of facial images, social scoring and most real-time remote biometric identification in public by police.",
+              "status": "in force",
+              "date": "2025-02",
+              "url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-prohibited-ai-practices",
+              "causality_id": "eu-ai-act-prohibitions-literacy"
+            },
+            {
+              "text": "Council of Europe Framework Convention on AI and human rights, democracy and the rule of law; the EU ratified it in May 2026.",
+              "status": "adopted, not yet in force",
+              "date": "2026-05",
+              "url": "https://www.coe.int/en/web/artificial-intelligence/-/european-union-ratifies-the-council-of-europe-framework-convention-on-artificial-intelligence",
+              "causality_id": "coe-ai-convention-eu-ratifies"
+            }
+          ],
+          "ask_ids": [
+            "ask-customer-due-diligence"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in human rights reports: human rights impact assessments for government customers in high-risk areas, and the outcome of reviews."
+        },
+        {
+          "id": "immigration-policing",
+          "label": "Immigration enforcement, policing and facial recognition",
+          "what": "Agencies use AI to track, identify and target people for arrest or deportation. Immigrants, protesters and people misidentified are affected.",
+          "evidence": [
+            {
+              "text": "ICE awarded Palantir about $30 million to build ImmigrationOS, a platform to track visa overstays and self-deportations, without competitive bidding.",
+              "date": "2025-04-21",
+              "source": "The Register",
+              "url": "https://www.theregister.com/2025/04/21/ice_enlists_palantir_to_develop/"
+            },
+            {
+              "text": "The Dutch data protection authority fined Clearview AI 30.5 million euros for building an illegal facial recognition database.",
+              "date": "2024-05-16",
+              "source": "European Data Protection Board, Dutch authority fines Clearview",
+              "url": "https://www.edpb.europa.eu/news/dutch-supervisory-authority-imposes-a-fine-on-clearview-because-of-illegal-data-collection-for_en"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EU AI Act lists AI used in migration, border control and law enforcement as high-risk, with risk management and human oversight duties.",
+              "status": "adopted, not yet in force",
+              "date": "2024-08",
+              "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+              "causality_id": "eu-ai-act-in-force"
+            },
+            {
+              "text": "EU AI Act Article 5 bans untargeted scraping of faces to build recognition databases.",
+              "status": "in force",
+              "date": "2025-02",
+              "url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-prohibited-ai-practices",
+              "causality_id": "eu-ai-act-prohibitions-literacy"
+            }
+          ],
+          "ask_ids": [
+            "ask-customer-due-diligence"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in filings: listing government enforcement contracts, and the due diligence applied before sale."
+        },
+        {
+          "id": "fossil-fuel-extraction",
+          "label": "AI sold to expand oil and gas production",
+          "what": "Cloud and AI firms sell tools that help find and extract more oil and gas, which can add emissions against their own climate goals. The climate and the sellers' climate claims are affected.",
+          "evidence": [
+            {
+              "text": "IBM Institute for Business Value: 44% of upstream oil and gas organisations surveyed use AI in exploration.",
+              "date": "2025",
+              "source": "IBM Institute for Business Value, Oil and gas in the AI era",
+              "url": "https://www-935.ibm.com/thought-leadership/institute-business-value/en-us/report/oil-and-gas-in-ai-era"
+            },
+            {
+              "text": "Reporting on how fossil fuel companies use AI to raise output, with a study finding AI-driven productivity could increase emissions.",
+              "date": "2026-09-30",
+              "source": "DeSmog",
+              "url": "https://www.desmog.com/2026/09/30/ai-was-supposed-to-cut-emissions-instead-fossil-fuel-companies-are-using-it-to-find-more-oil-and-gas/"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EU Corporate Sustainability Reporting Directive: climate disclosures include value-chain emissions, which can cover customers' use of sold products.",
+              "status": "in force",
+              "date": "2023-01",
+              "url": "https://eur-lex.europa.eu/eli/dir/2022/2464/oj",
+              "causality_id": "eu-csrd-in-force"
+            }
+          ],
+          "ask_ids": [
+            "ask-ai-fossil-fuels"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in climate reports: revenue from oil and gas customers, and policies on selling AI for upstream extraction."
+        }
+      ]
+    },
+    {
+      "id": "work-economy",
+      "label": "Work and the economy",
+      "about": "Effects on jobs, working conditions and competition.",
+      "effects": [
+        {
+          "id": "job-displacement",
+          "label": "Job loss and fewer entry-level jobs",
+          "what": "AI can do tasks that make up many jobs, with early signs of fewer openings for young workers in exposed fields. Workers, especially early-career staff, are affected.",
+          "evidence": [
+            {
+              "text": "IMF staff estimated about 40% of jobs worldwide, and about 60% in advanced economies, are highly exposed to AI; about half of those may gain and half may lose.",
+              "date": "2024-01-14",
+              "source": "IMF blog, AI Will Transform the Global Economy",
+              "url": "https://www.imf.org/en/blogs/articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity"
+            },
+            {
+              "text": "Stanford Digital Economy Lab, using ADP payroll data: workers aged 22 to 25 in the most AI-exposed jobs are about 19% below where they would be had they kept pace with less exposed peers; older workers show no such gap.",
+              "date": "2026-08",
+              "source": "Stanford Digital Economy Lab, Canaries in the Coal Mine (August 2026 update)",
+              "url": "https://digitaleconomy.stanford.edu/app/uploads/2026/08/Canaries_August2026.pdf"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EU AI Act lists AI used for hiring, promotion and dismissal as high-risk, with duties to inform workers.",
+              "status": "adopted, not yet in force",
+              "date": "2024-08",
+              "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+              "causality_id": "eu-ai-act-in-force"
+            }
+          ],
+          "ask_ids": [
+            "ask-ai-workforce"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in human capital reports: roles changed or cut because of AI, retraining spending, and worker consultation before deployment."
+        },
+        {
+          "id": "worker-monitoring",
+          "label": "Worker monitoring and algorithmic management",
+          "what": "Software tracks workers and allocates or scores their work automatically, which studies link to stress. Warehouse, gig and office workers are affected.",
+          "evidence": [
+            {
+              "text": "OECD employer survey of over 6,000 managers in six countries: algorithmic management tools are highly prevalent in the US, and nearly two-thirds of managers using them have concerns about effects on workers.",
+              "date": "2025",
+              "source": "OECD, How widespread is algorithmic management in workplaces?",
+              "url": "https://www.oecd.org/en/publications/how-widespread-is-algorithmic-management-in-workplaces_cda7a114-en/full-report.html"
+            },
+            {
+              "text": "European Commission JRC survey across the EU-27 finds that combining full digital monitoring and algorithmic management is associated with worse working conditions.",
+              "date": "2025",
+              "source": "European Commission Joint Research Centre",
+              "url": "https://joint-research-centre.ec.europa.eu/scientific-activities/employment/algorithmic-management-and-digital-monitoring-work_en"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EU AI Act Article 5 bans emotion recognition in the workplace except for medical or safety reasons.",
+              "status": "in force",
+              "date": "2025-02",
+              "url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-prohibited-ai-practices",
+              "causality_id": "eu-ai-act-prohibitions-literacy"
+            }
+          ],
+          "ask_ids": [
+            "ask-ai-workforce"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in policies: what monitoring is used on staff, human review of automated discipline, and worker access to their data."
+        },
+        {
+          "id": "data-workers",
+          "label": "Conditions of data labellers and content moderators",
+          "what": "Low-paid contractors, many in the Global South, label data and review disturbing content to train and police AI. These workers are affected.",
+          "evidence": [
+            {
+              "text": "WageIndicator survey of Kenyan data labellers with the Data Labelers Association: about one in five report medical insurance, the most common benefit (preliminary results).",
+              "date": "2026",
+              "source": "WageIndicator, Work and Wages of Data Labelers in Kenya",
+              "url": "https://wageindicator.org/ai/what-we-do/publications/2026/data-labelers-kenya/"
+            },
+            {
+              "text": "Data workers in Kenya, Syria and elsewhere described low pay, unpaid work and trauma from content review in a worker-led inquiry.",
+              "date": "2024-07-08",
+              "source": "TechCrunch, on the DAIR Data Workers' Inquiry",
+              "url": "https://techcrunch.com/2024/07/08/data-workers-detail-exploitation-by-tech-industry-in-dair-report"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EU Corporate Sustainability Due Diligence Directive: large companies identify and address human rights harms in their chains of activities; application delayed and scope cut by Omnibus I.",
+              "status": "adopted, not yet in force",
+              "date": "2024-07",
+              "url": "https://eur-lex.europa.eu/eli/dir/2024/1760/oj",
+              "causality_id": "eu-csddd-in-force"
+            },
+            {
+              "text": "UN Guiding Principles: due diligence on suppliers' labour conditions.",
+              "status": "voluntary",
+              "date": "2011-06",
+              "url": "https://www.ohchr.org/sites/default/files/documents/publications/guidingprinciplesbusinesshr_en.pdf",
+              "causality_id": "un-guiding-principles"
+            }
+          ],
+          "ask_ids": [
+            "ask-ai-workforce"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in supplier codes: pay standards and mental health support for data vendors, and audits of labelling contractors."
+        },
+        {
+          "id": "market-concentration",
+          "label": "Concentration of AI markets",
+          "what": "A few firms control chips, cloud and frontier models, and large investments tie labs to cloud providers. Competitors, customers and prices are affected.",
+          "evidence": [
+            {
+              "text": "FTC staff report on the Microsoft-OpenAI, Amazon-Anthropic and Google-Anthropic deals found they give cloud providers access to sensitive information and can lock in labs' spending.",
+              "date": "2025-01-17",
+              "source": "FTC, staff report on AI partnerships and investments",
+              "url": "https://www.ftc.gov/news-events/news/press-releases/2025/01/ftc-issues-staff-report-ai-partnerships-investments-study"
+            },
+            {
+              "text": "China's market regulator found Nvidia violated its antitrust law and widened its probe.",
+              "date": "2025-09-15",
+              "source": "State Administration for Market Regulation (China)",
+              "url": "https://www.samr.gov.cn/xw/zj/art/2025/art_66b8363c3a194ba0a394a843d6cf3fd1.html"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EU Cloud and AI Development Act, proposed by the Commission.",
+              "status": "proposed",
+              "date": "2026-06",
+              "url": "https://digital-strategy.ec.europa.eu/en/library/proposal-cloud-and-ai-development-act-cada",
+              "causality_id": "eu-cada-proposal"
+            }
+          ],
+          "ask_ids": [],
+          "alignment_ask_ids": [
+            "investor-due-diligence"
+          ],
+          "company_levers": "Examples in filings: terms of strategic investments in AI labs, including governance and information rights."
+        },
+        {
+          "id": "creators-copyright",
+          "label": "Creators' work used for training",
+          "what": "Models are trained on books, news, art and music, often without permission or pay. Authors, artists, journalists and publishers are affected.",
+          "evidence": [
+            {
+              "text": "A federal court gave final approval to Anthropic's $1.5 billion settlement with authors over pirated books used in training, about $3,000 per book.",
+              "date": "2026-07-20",
+              "source": "JURIST",
+              "url": "https://www.jurist.org/news/2026/07/judge-approves-record-1-5-billion-settlement-involving-anthropic/"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EU AI Act: general-purpose model providers keep a copyright policy and publish a summary of training content.",
+              "status": "in force",
+              "date": "2025-08",
+              "url": "https://digital-strategy.ec.europa.eu/en/news/eu-rules-general-purpose-ai-models-start-apply-bringing-more-transparency-safety-and-accountability",
+              "causality_id": "eu-gpai-obligations"
+            },
+            {
+              "text": "UK government report on copyright and AI; no legislation yet.",
+              "status": "proposed",
+              "date": "2026-03",
+              "url": "https://www.gov.uk/government/publications/report-and-impact-assessment-on-copyright-and-artificial-intelligence/report-on-copyright-and-artificial-intelligence",
+              "causality_id": "uk-copyright-ai-report"
+            }
+          ],
+          "ask_ids": [
+            "ask-ai-training-data"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in disclosures: licensing deals for training content, opt-out mechanisms, and litigation reserves."
+        }
+      ]
+    },
+    {
+      "id": "information-democracy",
+      "label": "Information ecosystem and democracy",
+      "about": "Effects on what people can know and trust, on news, and on elections.",
+      "effects": [
+        {
+          "id": "chatbot-misinformation",
+          "label": "False information from chatbots",
+          "what": "Chatbots state false claims as fact, including claims planted by influence operations. Anyone relying on them for news is affected.",
+          "evidence": [
+            {
+              "text": "NewsGuard found the 10 leading chatbots repeated false claims on news topics 35% of the time in August 2025, up from 18% a year earlier, as refusals fell to zero.",
+              "date": "2025-09-04",
+              "source": "NewsGuard, August 2025 AI False Claim Monitor",
+              "url": "https://www.newsguardtech.com/ai-monitor/august-2025-ai-false-claim-monitor/"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EU Digital Services Act: very large platforms and search engines assess and reduce systemic risks, including from generative AI.",
+              "status": "in force",
+              "date": "2023-08",
+              "url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-providers-vlops-and-vloses-mitigation-systemic-risks-electoral-processes",
+              "causality_id": "eu-dsa-election-guidelines"
+            }
+          ],
+          "ask_ids": [
+            "ask-ai-misinformation"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in transparency reports: accuracy testing on news queries, and how sources are cited and ranked."
+        },
+        {
+          "id": "election-deepfakes",
+          "label": "Deepfakes in elections and politics",
+          "what": "Synthetic audio, images and video impersonate candidates and mislead voters. Voters and candidates are affected.",
+          "evidence": [
+            {
+              "text": "The FCC fined political consultant Steve Kramer $6 million for robocalls using an AI clone of President Biden's voice before the New Hampshire primary.",
+              "date": "2024-09-26",
+              "source": "NPR, on the FCC action",
+              "url": "https://www.npr.org/2024/05/23/nx-s1-4977582/fcc-ai-robocall-biden-new-hampshire-primary-kramer"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EU Commission election guidelines for very large platforms, including labelling of generative AI content.",
+              "status": "in force",
+              "date": "2024-03",
+              "url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-providers-vlops-and-vloses-mitigation-systemic-risks-electoral-processes",
+              "causality_id": "eu-dsa-election-guidelines"
+            },
+            {
+              "text": "China measures requiring labels on AI-generated and synthetic content.",
+              "status": "in force",
+              "date": "2025-09",
+              "url": "https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm",
+              "causality_id": "cn-labeling-measures"
+            },
+            {
+              "text": "California AI Transparency Act (SB 942): large generative AI providers offer detection tools and embed provenance data; delayed and expanded by AB 853.",
+              "status": "adopted, not yet in force",
+              "date": "2024-09",
+              "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240SB942",
+              "causality_id": "ca-sb942"
+            }
+          ],
+          "ask_ids": [
+            "ask-ai-misinformation"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in election reports: provenance labels on generated media, and limits on generating images of candidates."
+        },
+        {
+          "id": "news-traffic",
+          "label": "Loss of traffic and revenue for news",
+          "what": "AI summaries answer questions without sending readers to source sites, cutting the traffic that funds journalism. News outlets and their readers are affected.",
+          "evidence": [
+            {
+              "text": "Pew Research Center: Google users clicked a traditional result in 8% of visits with an AI summary, against 15% without one; 1% clicked a link inside the summary.",
+              "date": "2025-07-22",
+              "source": "Pew Research Center",
+              "url": "https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/"
+            }
+          ],
+          "policy": [],
+          "ask_ids": [],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in company statements: referral traffic sent to publishers, and licensing payments to news organisations."
+        },
+        {
+          "id": "fraud-scams",
+          "label": "AI-enabled fraud and scams",
+          "what": "Voice clones, fake videos and generated messages make scams and phishing cheaper and more convincing. Consumers, older people and businesses are affected.",
+          "evidence": [
+            {
+              "text": "OECD analysis of media-reported AI incidents: reports of AI-enabled fraud, phishing and manipulation rose about 2.7 times and reached nearly 10% of the total by late 2025.",
+              "date": "2026",
+              "source": "OECD, Trends in AI incidents and hazards reported by the media",
+              "url": "https://www.oecd.org/en/publications/trends-in-ai-incidents-and-hazards-reported-by-the-media_4f5ff43c-en.html"
+            }
+          ],
+          "policy": [
+            {
+              "text": "FTC Operation AI Comply: enforcement against deceptive AI claims and AI-enabled schemes.",
+              "status": "in force",
+              "date": "2024-09",
+              "url": "https://www.ftc.gov/news-events/news/press-releases/2024/09/ftc-announces-crackdown-deceptive-ai-claims-schemes",
+              "causality_id": "ftc-operation-ai-comply"
+            }
+          ],
+          "ask_ids": [
+            "ask-ai-misinformation"
+          ],
+          "alignment_ask_ids": [],
+          "company_levers": "Examples in trust and safety reports: voice-cloning consent checks, and counts of fraud accounts removed."
+        }
+      ]
+    },
+    {
+      "id": "governance-accountability",
+      "label": "Governance and accountability inside companies",
+      "about": "How boards oversee AI, what companies disclose about it, and how incidents are tracked.",
+      "effects": [
+        {
+          "id": "board-oversight",
+          "label": "Board oversight of AI",
+          "what": "Many boards have not assigned AI risk to a committee or a director with expertise, so material AI risks may go unexamined. Shareholders are affected.",
+          "evidence": [
+            {
+              "text": "ISS found just over 31% of S&P 500 companies disclosed some board oversight of AI in 2024 proxies, and 11% disclosed explicit full-board or committee oversight.",
+              "date": "2025-04-02",
+              "source": "Harvard Law School Forum on Corporate Governance, AI in Focus in 2025",
+              "url": "https://corpgov.law.harvard.edu/2025/04/02/ai-in-focus-in-2025-boards-and-shareholders-set-their-sights-on-ai"
+            },
+            {
+              "text": "Review of S&P 100 2025 proxies: 54% disclosed board-level AI oversight and 28% disclosed both oversight and an AI policy.",
+              "date": "2026-03-11",
+              "source": "Harvard Law School Forum on Corporate Governance, US AI Oversight Through Three Lenses",
+              "url": "https://corpgov.law.harvard.edu/2026/03/11/us-ai-oversight-through-three-lenses-investor-expectations-the-sp-100-and-company-specific-analysis/"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EU General-Purpose AI Code of Practice Measure 8.1: oversight of systemic risk by a board committee or independent body.",
+              "status": "voluntary",
+              "date": "2025-07",
+              "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+              "causality_id": "eu-gpai-code"
+            },
+            {
+              "text": "ISO/IEC 42001: an AI management system standard covering leadership roles and accountability.",
+              "status": "voluntary",
+              "date": "2023-12",
+              "url": "https://www.iso.org/standard/42001",
+              "causality_id": "iso-iec-42001"
+            }
+          ],
+          "ask_ids": [
+            "ask-ai-oversight-reporting"
+          ],
+          "alignment_ask_ids": [
+            "board-oversight"
+          ],
+          "company_levers": "Examples in proxy statements: naming the committee responsible for AI, directors' AI expertise, and how often the board is briefed."
+        },
+        {
+          "id": "disclosure-accuracy",
+          "label": "Accuracy of what companies say about AI",
+          "what": "Companies may overstate AI capabilities or understate AI risks to investors and customers. Investors and customers relying on the claims are affected.",
+          "evidence": [
+            {
+              "text": "The SEC settled its first 'AI washing' cases against two investment advisers, Delphia and Global Predictions, for false claims about using AI, with $400,000 in penalties.",
+              "date": "2024-03-18",
+              "source": "SEC press release 2024-36",
+              "url": "https://www.sec.gov/newsroom/press-releases/2024-36"
+            }
+          ],
+          "policy": [
+            {
+              "text": "OECD Hiroshima AI Process reporting framework: voluntary public reports by AI developers on risk management and governance.",
+              "status": "voluntary",
+              "date": "2025-02",
+              "url": "https://oecd.org/en/about/news/press-releases/2025/02/oecd-launches-global-framework-to-monitor-application-of-g7-hiroshima-ai-code-of-conduct.html",
+              "causality_id": "haip-reporting-framework"
+            },
+            {
+              "text": "California SB 53: civil penalties for false or misleading statements by frontier developers about catastrophic risk or compliance with their framework.",
+              "status": "in force",
+              "date": "2026-01",
+              "url": "https://fpf.org/blog/californias-sb-53-the-first-frontier-ai-law-explained/",
+              "causality_id": "ca-sb53-signed"
+            }
+          ],
+          "ask_ids": [
+            "ask-ai-oversight-reporting"
+          ],
+          "alignment_ask_ids": [
+            "safety-framework"
+          ],
+          "company_levers": "Examples in reports: an annual responsible AI or transparency report, such as Microsoft's, with the basis for capability claims."
+        },
+        {
+          "id": "incident-tracking",
+          "label": "Tracking and reporting AI incidents",
+          "what": "Harms from AI often surface only through press reports, because few companies log or publish incidents. Regulators, investors and affected people lack a full record.",
+          "evidence": [
+            {
+              "text": "OECD analysis of its AI Incidents and Hazards Monitor: monthly media-reported AI incidents and hazards rose from 92 in 2022 to 324 in 2025; the monitor counts only those reported in the media.",
+              "date": "2026",
+              "source": "OECD, Trends in AI incidents and hazards reported by the media",
+              "url": "https://www.oecd.org/en/publications/trends-in-ai-incidents-and-hazards-reported-by-the-media_4f5ff43c-en.html"
+            }
+          ],
+          "policy": [
+            {
+              "text": "EU AI Act: serious incident reporting for providers of high-risk systems (Article 73) and of general-purpose models with systemic risk (Article 55).",
+              "status": "in force",
+              "date": "2025-08",
+              "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+              "causality_id": "eu-gpai-obligations"
+            },
+            {
+              "text": "California SB 53 and New York RAISE Act: frontier developers report critical safety incidents to the state.",
+              "status": "in force",
+              "date": "2026-01",
+              "url": "https://fpf.org/blog/californias-sb-53-the-first-frontier-ai-law-explained/",
+              "causality_id": "ca-sb53-signed"
+            },
+            {
+              "text": "NIST AI Risk Management Framework: voluntary guidance on measuring, managing and documenting AI risks and incidents.",
+              "status": "voluntary",
+              "date": "2023-01",
+              "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+              "causality_id": null
+            }
+          ],
+          "ask_ids": [
+            "ask-ai-oversight-reporting"
+          ],
+          "alignment_ask_ids": [
+            "incident-reporting"
+          ],
+          "company_levers": "Examples in frameworks: an internal incident log, a threshold for board notice, and a yearly summary of incidents and fixes."
+        },
+        {
+          "id": "value-chain-due-diligence",
+          "label": "Human rights due diligence across the AI value chain",
+          "what": "Responsibility for AI harms is spread across chip makers, cloud hosts, model developers and the companies that deploy them, and investors in labs. People harmed at any stage are affected.",
+          "evidence": [
+            {
+              "text": "At Anthropic's listing, Amazon's and Google's stakes became non-voting shares, and Amazon reported $62.9 billion of upward adjustments to private investments in nine months of 2026, mainly its Anthropic stake.",
+              "date": "2026-10",
+              "source": "Amazon Form 10-Q, third quarter 2026",
+              "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000040/amzn-20260930.htm"
+            }
+          ],
+          "policy": [
+            {
+              "text": "UN Guiding Principles on Business and Human Rights: due diligence on impacts caused, contributed to or linked through business relationships.",
+              "status": "voluntary",
+              "date": "2011-06",
+              "url": "https://www.ohchr.org/sites/default/files/documents/publications/guidingprinciplesbusinesshr_en.pdf",
+              "causality_id": "un-guiding-principles"
+            },
+            {
+              "text": "EU Corporate Sustainability Due Diligence Directive, narrowed by Omnibus I.",
+              "status": "adopted, not yet in force",
+              "date": "2024-07",
+              "url": "https://eur-lex.europa.eu/eli/dir/2024/1760/oj",
+              "causality_id": "eu-csddd-in-force"
+            }
+          ],
+          "ask_ids": [
+            "ask-customer-due-diligence",
+            "ask-ai-oversight-reporting"
+          ],
+          "alignment_ask_ids": [
+            "investor-due-diligence"
+          ],
+          "company_levers": "Examples in human rights reports: mapping AI impacts by value-chain stage, and safety conditions attached to investments in or compute deals with labs."
+        }
+      ]
+    }
+  ]
+}
