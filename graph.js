@@ -2101,6 +2101,8 @@
     return ys.length ? [Math.min(...ys), Math.max(...ys)] : [0, 0];
   }
   let playTimer = null;
+  // Three seconds a year, so each year's new ties can be read before the next arrive (owner, 2026-11-28: "go slower").
+  const PLAY_MS = 3000;
   // While the network plays, the year shows large on the graph and Play glows (owner, 2026-11-27: "make it more
   // visually clear … it is playing you through the years").
   function yearBadge(y, playing) {
@@ -2199,7 +2201,7 @@
           b.classList.add("glow");
           setTimeout(() => b.classList.remove("glow"), 6000);
         }
-      }, 1500);
+      }, PLAY_MS);
     });
   }
 
