@@ -10,6 +10,7 @@
   const plural = (n, one, many = one + "s") => `${n} ${n === 1 ? one : many}`;
   const fmt = (iso) => (iso ? window.DATES.long(String(iso).slice(0, 10)) : "");
   const median = (v) => { if (!v.length) return null; const s = [...v].sort((a, b) => a - b), m = Math.floor(s.length / 2); return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+  const fmtMonth = (ym) => { const [y, m] = String(ym || "").split("-"); return m ? `${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][+m - 1]} ${y}` : String(ym || ""); };
   const pct = (x) => (x == null ? "" : `${Math.round(x * 10) / 10}%`);
   const money = (usd) => (usd < 1e6 ? "under $1M" : `$${Math.round(usd / 1e6).toLocaleString("en-US")}M`);
   // A deadline marked open when the data was built may have passed since.
@@ -143,7 +144,7 @@
         <div><dt>Already working on it</dt><dd>${orgs.length ? `${orgs.map((o) => esc(o.name)).join(", ")}. ${jump("pl-h-who", "All organizations")}` : "No filer on file for this ask or at this company."}</dd></div>
         <div><dt>Largest reported holders of ${esc(c.name)}</dt><dd>${holders.length ? holders.map((h) => `${esc((idx.nodes.get(h.org) || {}).label || h.org)}${h.value ? ` (${money(h.value)})` : ""}${src(h.url)}`).join("; ") : "None reported in this dataset."}</dd></div>
         <div><dt>Policy support</dt><dd>${cov.length ? `${plural(cov.length, "policy", "policies")} already require part of this ask${regions.length ? ` (${esc(regions.join(", "))})` : ""}. ${jump("pl-h-pol", "Details")}` : "No policy on the map requires part of this ask yet."}</dd></div>
-        <div><dt>Public opinion</dt><dd>${polls.length ? polls.map((p) => `${esc(p.pollster)}, ${esc(p.fielded)}${p.population ? `, ${esc(p.population)}` : ""}: ${esc(p.result)}${src(p.url)}`).join("<br>") : "No sourced poll on file for this ask yet."}</dd></div>
+        <div><dt>Public opinion (polls)</dt><dd>${polls.length ? polls.map((p) => `<span class="pl-poll"><strong>${esc(p.result)}</strong> <span class="ticker">${esc(p.population || "")}${p.n ? `, n = ${Number(p.n).toLocaleString("en-US")}` : ""}; ${esc(p.pollster)}, fieldwork from ${esc(fmtMonth(p.fielded))}</span>${src(p.url)}${p.fit_note ? `<span class="note">${esc(p.fit_note)}</span>` : ""}</span>`).join("") : ((D.opinion && D.opinion.not_found) || {})[ask] ? esc(D.opinion.not_found[ask]) : "No sourced poll on file for this ask yet."}</dd></div>
       </dl>
       <p class="note">Computed by this site from the records on this page. A record shows what has happened, not what will; this is not a recommendation.</p>
     </section>`;

@@ -1254,3 +1254,5 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 .sim-play input[type="range"] { width: 220px; accent-color: #e8590c; }
 .sim-read { flex: 1 1 100%; margin: 0; font-size: 13px; color: var(--ink); min-height: 1.5em; }
 .pl-controls label input[type="search"] { flex: none; height: auto; }
+.pl-poll { display: block; margin: 0 0 8px; }
+.pl-poll .note { display: block; margin-top: 2px; }
