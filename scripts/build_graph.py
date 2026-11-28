@@ -123,11 +123,19 @@ def main():
             if e["relation"] in ("lead filer", "co-filer", "exempt solicitation"):
                 filers[e["to"]].add(e["from"])
 
-    # Coalition engagements with companies (e.g. the Valuing Water Finance Initiative's focus companies).
+    # Coalition records at companies (docs/plans/2026-11-27-coalition-paths.md §3). The edge type says only what the
+    # source shows: a focus list, a member filing the coalition lists, or support while shareholders vote.
+    # members_named holds only organizations the source itself names.
+    ENG_TYPE = {"filing": "lists a member filing at", "making the case": "made the case at"}
     for g in net.get("engagements", []):
         co = "co-" + g["company"].upper()
+        co = co if co in nodes else "co-" + g["company"]  # companies without a ticker keep their id
         if g["coalition"] in nodes and co in nodes:
-            edge(co, g["coalition"], "focus company of", "investors", g.get("source_url"), context=g.get("what"), as_of=g.get("as_of"))
+            extra = {k: g[k] for k in ("activity", "topic", "year", "members_named", "proposal_ids") if g.get(k) not in (None, [])}
+            if g.get("activity") in ENG_TYPE:
+                edge(g["coalition"], co, ENG_TYPE[g["activity"]], "investors", g.get("source_url"), context=g.get("what"), as_of=g.get("as_of"), **extra)
+            else:
+                edge(co, g["coalition"], "focus company of", "investors", g.get("source_url"), context=g.get("what"), as_of=g.get("as_of"), **extra)
 
     # Derived: organizations that worked on the same proposal are connected.
     pairs = defaultdict(list)

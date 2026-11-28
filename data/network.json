@@ -5120,6 +5120,158 @@
    "relation": "member of",
    "source_url": "https://www.unpri.org/initiatives/advance",
    "note": "Advance is a PRI-led initiative"
+  },
+  {
+   "from": "ceres-investor-network",
+   "to": "ceres",
+   "relation": "member of",
+   "source_url": "https://www.ceres.org/about",
+   "note": "network run by Ceres"
+  },
+  {
+   "from": "parnassus",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/98a6f185-030f-4bfc-a590-3dbe85a9a0d2/Parnassus%20Investments%20Stewardship%20Report%202026.pdf",
+   "note": "Parnassus 2026 Annual Sustainability & Stewardship Report, p. 9: \"Parnassus is a member of the Valuing Water Finance Initiative\""
+  },
+  {
+   "from": "achmea-investment-management",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "bailard",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "bon-secours-mercy-health",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "christian-brothers-investment-services",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "daughters-of-charity-province-of-st-louise",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "dnb-asset-management",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "episcopal-church-dfms",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "ethos-foundation",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "franklin-templeton",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "illinois-state-treasurer",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "lapff",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "lbp-am",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "manulife-investment-management",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "maryknoll-sisters",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "northwest-coalition-for-responsible-investment",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "pggm",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "socially-responsible-investment-coalition",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "seventh-generation-interfaith-coalition-for-responsible-investment",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "sisters-of-st-francis-philadelphia",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "sumitomo-mitsui-trust-am",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "sustainable-advisors-alliance",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "swedbank-robur",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+  },
+  {
+   "from": "vermont-pension-investment-commission",
+   "to": "vwfi",
+   "relation": "member of",
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
   }
  ],
  "engagements": [
@@ -5128,28 +5280,1038 @@
    "company": "GOOGL",
    "what": "On the VWFI focus list (high-tech); assessed in the 2023 and 2025 benchmarks. 2025 benchmark notes Google's target to replenish 120% of freshwater it consumes across offices and data centers by 2030 and its watershed risk framework for siting and cooling choices at data centers.",
    "source_url": "https://assets.ceres.org/files/vwfi-benchmark-tech-2025-(1).pdf",
-   "as_of": "2025-10"
+   "as_of": "2025-10",
+   "topic": "water",
+   "year": 2025,
+   "activity": "coalition campaign",
+   "members_named": []
   },
   {
    "coalition": "vwfi",
    "company": "AMZN",
    "what": "On the VWFI focus list (high-tech); assessed in the 2023 and 2025 benchmarks. 2025 benchmark says Amazon again had the lowest relative overall score of the five tech companies, and describes its outside-air cooling and on-site water recycling at data centers.",
    "source_url": "https://assets.ceres.org/files/vwfi-benchmark-tech-2025-(1).pdf",
-   "as_of": "2025-10"
+   "as_of": "2025-10",
+   "topic": "water",
+   "year": 2025,
+   "activity": "coalition campaign",
+   "members_named": []
   },
   {
    "coalition": "vwfi",
    "company": "AAPL",
    "what": "On the VWFI focus list (high-tech); assessed in the 2023 and 2025 benchmarks. 2025 benchmark says Apple is the only tech company with a supplier water target (50% average supplier water reuse by 2030) and aims to certify its own data centers to the Alliance for Water Stewardship Standard.",
    "source_url": "https://assets.ceres.org/files/vwfi-benchmark-tech-2025-(1).pdf",
-   "as_of": "2025-10"
+   "as_of": "2025-10",
+   "topic": "water",
+   "year": 2025,
+   "activity": "coalition campaign",
+   "members_named": []
   },
   {
    "coalition": "vwfi",
    "company": "MSFT",
    "what": "On the VWFI focus list (high-tech); assessed in the 2023 and 2025 benchmarks. 2025 benchmark says Microsoft had the highest individual score among the five tech companies and cites its water-positive-by-2030 goal, 40% data center water use efficiency target and move to chip-level cooling so AI operations use zero water for cooling.",
    "source_url": "https://assets.ceres.org/files/vwfi-benchmark-tech-2025-(1).pdf",
-   "as_of": "2025-10"
+   "as_of": "2025-10",
+   "topic": "water",
+   "year": 2025,
+   "activity": "coalition campaign",
+   "members_named": []
+  },
+  {
+   "coalition": "iccr",
+   "company": "GOOGL",
+   "proposal_ids": [
+    "googl-2023-dc-siting-hr"
+   ],
+   "topic": "data centers in human rights hot spots",
+   "year": 2023,
+   "activity": "filing",
+   "what": "ICCR's 2023 Proxy Resolutions and Voting Guide lists the resolution \"Data Operations in Human Rights Hotspots\" at Alphabet as filed by ICCR members, naming SumOfUs as lead sponsor and 5 co-filers in its index of leads and co-filers.",
+   "members_named": [
+    "eko",
+    "aviva",
+    "dana",
+    "marianists",
+    "omi-us",
+    "nordea"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2023/07/iccrs2023proxyresolutionsandvotingguide03.06.23.pdf",
+   "as_of": "2023-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "GOOGL",
+   "proposal_ids": [
+    "googl-2023-targeted-ads-hr"
+   ],
+   "topic": "human rights assessment of targeted ads",
+   "year": 2023,
+   "activity": "filing",
+   "what": "ICCR's 2023 Proxy Resolutions and Voting Guide lists the resolution \"Human Rights Impact Assessment\" at Alphabet as filed by ICCR members, naming SHARE as lead sponsor and 1 co-filer in its index of leads and co-filers.",
+   "members_named": [
+    "share",
+    "commonspirit"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2023/07/iccrs2023proxyresolutionsandvotingguide03.06.23.pdf",
+   "as_of": "2023-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "GOOGL",
+   "proposal_ids": [
+    "googl-2023-algorithm-disclosure"
+   ],
+   "topic": "algorithmic systems disclosure",
+   "year": 2023,
+   "activity": "filing",
+   "what": "ICCR's 2023 Proxy Resolutions and Voting Guide lists the resolution \"Improving Algorithmic Systems Disclosures\" at Alphabet as filed by ICCR members, naming Trillium Asset Management as lead sponsor and 5 co-filers in its index of leads and co-filers.",
+   "members_named": [
+    "trillium",
+    "adrian-dominican",
+    "congregation-of-st-joseph-oh",
+    "mercy",
+    "providence-st-joseph-health",
+    "presentation-sisters-aberdeen"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2023/07/iccrs2023proxyresolutionsandvotingguide03.06.23.pdf",
+   "as_of": "2023-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "AMZN",
+   "proposal_ids": [
+    "amzn-2023-customer-dd"
+   ],
+   "topic": "customer due diligence on use of technology",
+   "year": 2023,
+   "activity": "filing",
+   "what": "ICCR's 2023 Proxy Resolutions and Voting Guide lists the resolution \"Customer Due Diligence\" at Amazon as filed by ICCR members, naming American Baptist Home Mission Societies as lead sponsor and 2 co-filers in its index of leads and co-filers.",
+   "members_named": [
+    "abhms",
+    "maryknoll-sisters",
+    "sisters-of-charity-st-elizabeth"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2023/07/iccrs2023proxyresolutionsandvotingguide03.06.23.pdf",
+   "as_of": "2023-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "AMZN",
+   "proposal_ids": [
+    "amzn-2023-facial-recognition"
+   ],
+   "topic": "facial recognition",
+   "year": 2023,
+   "activity": "filing",
+   "what": "ICCR's 2023 Proxy Resolutions and Voting Guide lists the resolution \"Rekognition: Facial Recognition Technology\" at Amazon as filed by ICCR members, naming Harrington Investments as lead sponsor and 3 co-filers in its index of leads and co-filers.",
+   "members_named": [
+    "harrington",
+    "bon-secours-mercy-health",
+    "commonspirit",
+    "mercy"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2023/07/iccrs2023proxyresolutionsandvotingguide03.06.23.pdf",
+   "as_of": "2023-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "META",
+   "proposal_ids": [
+    "meta-2023-targeted-ads-hr"
+   ],
+   "topic": "human rights impact assessment of targeted ads",
+   "year": 2023,
+   "activity": "filing",
+   "what": "ICCR's 2023 Proxy Resolutions and Voting Guide lists the resolution \"HRIA - Meta Targeted Ads\" at Meta as filed by ICCR members, naming Mercy Investment Services as lead sponsor and 3 co-filers in its index of leads and co-filers.",
+   "members_named": [
+    "mercy",
+    "commonspirit",
+    "omi-us",
+    "nei"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2023/07/iccrs2023proxyresolutionsandvotingguide03.06.23.pdf",
+   "as_of": "2023-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "GOOGL",
+   "proposal_ids": [
+    "googl-2024-ai-principles-oversight"
+   ],
+   "topic": "AI principles and board oversight",
+   "year": 2024,
+   "activity": "filing",
+   "what": "ICCR's 2024 Proxy Resolutions and Voting Guide lists the resolution \"AI Principles and Board Oversight\" at Alphabet as filed by ICCR members, naming Trillium Asset Management as lead sponsor and 4 co-filers in its index of leads and co-filers.",
+   "members_named": [
+    "trillium",
+    "benedictine-baltimore",
+    "benedictine-mt-scholastica",
+    "bon-secours-mercy-health",
+    "congregation-of-st-joseph-oh"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2024/02/2024-ICCR-Proxy-Resolutions-and-Voting-Guide02.26.24-MED.pdf",
+   "as_of": "2024-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "GOOGL",
+   "proposal_ids": [
+    "googl-2024-genai-misinfo"
+   ],
+   "topic": "generative AI misinformation",
+   "year": 2024,
+   "activity": "filing",
+   "what": "ICCR's 2024 Proxy Resolutions and Voting Guide lists the resolution \"Report on Generative Artificial Intelligence Misinformation and Disinformation Risks\" at Alphabet as filed by ICCR members, naming Arjuna Capital as lead sponsor and 2 co-filers in its index of leads and co-filers.",
+   "members_named": [
+    "arjuna",
+    "eko",
+    "open-mic"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2024/02/2024-ICCR-Proxy-Resolutions-and-Voting-Guide02.26.24-MED.pdf",
+   "as_of": "2024-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "GOOGL",
+   "proposal_ids": [
+    "googl-2024-ai-targeted-ads-hr"
+   ],
+   "topic": "human rights impact of AI-driven ads",
+   "year": 2024,
+   "activity": "filing",
+   "what": "ICCR's 2024 Proxy Resolutions and Voting Guide lists the resolution \"Report on Human Rights Impact of AI Driven Advertising Practices\" at Alphabet as filed by ICCR members, naming SHARE as lead sponsor and 3 co-filers in its index of leads and co-filers.",
+   "members_named": [
+    "share",
+    "adrian-dominican",
+    "commonspirit",
+    "mercy"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2024/02/2024-ICCR-Proxy-Resolutions-and-Voting-Guide02.26.24-MED.pdf",
+   "as_of": "2024-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "AMZN",
+   "proposal_ids": [
+    "amzn-2024-customer-dd"
+   ],
+   "topic": "customer due diligence on use of technology",
+   "year": 2024,
+   "activity": "filing",
+   "what": "ICCR's 2024 Proxy Resolutions and Voting Guide lists the resolution \"Customer Due Diligence\" at Amazon as filed by ICCR members, naming American Baptist Home Mission Societies as lead sponsor and 4 co-filers in its index of leads and co-filers.",
+   "members_named": [
+    "abhms",
+    "benedictine-baltimore",
+    "maryknoll-sisters",
+    "omi-us",
+    "sisters-of-charity-st-elizabeth"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2024/02/2024-ICCR-Proxy-Resolutions-and-Voting-Guide02.26.24-MED.pdf",
+   "as_of": "2024-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "AMZN",
+   "proposal_ids": [
+    "amzn-2024-ai-board-committee"
+   ],
+   "topic": "board committee on AI risks",
+   "year": 2024,
+   "activity": "filing",
+   "what": "ICCR's 2024 Proxy Resolutions and Voting Guide lists the resolution \"Human Rights Impact of AI Deployment\" at Amazon as filed by ICCR members, naming AFL-CIO as lead sponsor and 2 co-filers in its index of leads and co-filers.",
+   "members_named": [
+    "afl-cio",
+    "adrian-dominican",
+    "mercy"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2024/02/2024-ICCR-Proxy-Resolutions-and-Voting-Guide02.26.24-MED.pdf",
+   "as_of": "2024-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "META",
+   "proposal_ids": [
+    "meta-2024-genai-misinfo"
+   ],
+   "topic": "generative AI misinformation",
+   "year": 2024,
+   "activity": "filing",
+   "what": "ICCR's 2024 Proxy Resolutions and Voting Guide lists the resolution \"Report on Generative Artificial Intelligence Misinformation and Disinformation Risks\" at Meta as filed by ICCR members, naming Arjuna Capital as lead sponsor and 2 co-filers in its index of leads and co-filers.",
+   "members_named": [
+    "arjuna",
+    "eko",
+    "open-mic"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2024/02/2024-ICCR-Proxy-Resolutions-and-Voting-Guide02.26.24-MED.pdf",
+   "as_of": "2024-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "META",
+   "proposal_ids": [
+    "meta-2024-ai-targeted-ads-hr"
+   ],
+   "topic": "human rights impact assessment of AI-driven ads",
+   "year": 2024,
+   "activity": "filing",
+   "what": "ICCR's 2024 Proxy Resolutions and Voting Guide lists the resolution \"Human Rights Impact Assessment\" at Meta as filed by ICCR members, naming Mercy Investment Services as lead sponsor in its index of leads and co-filers.",
+   "members_named": [
+    "mercy"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2024/02/2024-ICCR-Proxy-Resolutions-and-Voting-Guide02.26.24-MED.pdf",
+   "as_of": "2024-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "AAPL",
+   "proposal_ids": [
+    "aapl-2024-ai-transparency"
+   ],
+   "topic": "AI transparency report",
+   "year": 2024,
+   "activity": "filing",
+   "what": "ICCR's 2024 Proxy Resolutions and Voting Guide lists the resolution \"AI Transparency Report\" at Apple as filed by ICCR members, naming AFL-CIO as lead sponsor in its index of leads and co-filers.",
+   "members_named": [
+    "afl-cio"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2024/02/2024-ICCR-Proxy-Resolutions-and-Voting-Guide02.26.24-MED.pdf",
+   "as_of": "2024-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "GOOGL",
+   "proposal_ids": [
+    "googl-2025-ai-targeted-ads-hr"
+   ],
+   "topic": "human rights impact of AI-driven ads",
+   "year": 2025,
+   "activity": "filing",
+   "what": "ICCR's 2025 Proxy Resolutions and Voting Guide lists the resolution \"Report on Human Rights Impact of AI Driven Advertising Practices\" at Alphabet as filed by ICCR members, naming SHARE as lead sponsor and 6 co-filers in its index of leads and co-filers.",
+   "members_named": [
+    "share",
+    "benedictine-baltimore",
+    "benedictine-mt-scholastica",
+    "benedictine-cullman",
+    "commonspirit",
+    "omi-us",
+    "scl"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2025/03/2025_ICCR_Proxy_Resolutions_and_Voting_Guide_Final_03.17.25.pdf",
+   "as_of": "2025-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "GOOGL",
+   "proposal_ids": [
+    "googl-2025-cahra-hrdd"
+   ],
+   "topic": "human rights due diligence in conflict-affected areas",
+   "year": 2025,
+   "activity": "filing",
+   "what": "ICCR's 2025 Proxy Resolutions and Voting Guide lists the resolution \"Report on Human Rights Risks in Conflict-Affected and High-Risk Areas\" at Alphabet as filed by ICCR members, naming Zevin Asset Management as lead sponsor in its index of leads and co-filers.",
+   "members_named": [
+    "zevin"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2025/03/2025_ICCR_Proxy_Resolutions_and_Voting_Guide_Final_03.17.25.pdf",
+   "as_of": "2025-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "AMZN",
+   "proposal_ids": [
+    "amzn-2025-ai-board-oversight"
+   ],
+   "topic": "board oversight of AI human rights risks",
+   "year": 2025,
+   "activity": "filing",
+   "what": "ICCR's 2025 Proxy Resolutions and Voting Guide lists the resolution \"Human Rights Impact of AI Deployment\" at Amazon as filed by ICCR members, naming AFL-CIO as lead sponsor in its index of leads and co-filers.",
+   "members_named": [
+    "afl-cio"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2025/03/2025_ICCR_Proxy_Resolutions_and_Voting_Guide_Final_03.17.25.pdf",
+   "as_of": "2025-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "META",
+   "proposal_ids": [
+    "meta-2025-dc-ghg"
+   ],
+   "topic": "data center energy transition plan",
+   "year": 2025,
+   "activity": "filing",
+   "what": "ICCR's 2025 Proxy Resolutions and Voting Guide lists the resolution \"Disclose Climate Transition Plan for Data Centers\" at Meta as filed by ICCR members, naming As You Sow as lead sponsor in its index of leads and co-filers.",
+   "members_named": [
+    "as-you-sow"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2025/03/2025_ICCR_Proxy_Resolutions_and_Voting_Guide_Final_03.17.25.pdf",
+   "as_of": "2025-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "GOOGL",
+   "proposal_ids": [
+    "googl-2026-ai-board-oversight"
+   ],
+   "topic": "board oversight of AI",
+   "year": 2026,
+   "activity": "filing",
+   "what": "ICCR's 2026 Proxy Resolutions and Voting Guide lists the resolution \"Formal Oversight of AI Development and Deployment\" at Alphabet as filed by ICCR members, naming SHARE as lead sponsor in its index of leads and co-filers.",
+   "members_named": [
+    "share"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "as_of": "2026-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "GOOGL",
+   "proposal_ids": [
+    "googl-2026-ai-misinfo"
+   ],
+   "topic": "AI-generated misinformation",
+   "year": 2026,
+   "activity": "filing",
+   "what": "ICCR's 2026 Proxy Resolutions and Voting Guide lists the resolution \"Report on Generative Artificial Intelligence Misinformation and Disinformation Risks\" at Alphabet as filed by ICCR members, naming Vancity Investment Management as lead sponsor in its index of leads and co-filers.",
+   "members_named": [
+    "vancity"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "as_of": "2026-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "GOOGL",
+   "proposal_ids": [
+    "googl-2026-data-privacy-cloud"
+   ],
+   "topic": "oversight of customer and user data (cloud)",
+   "year": 2026,
+   "activity": "filing",
+   "what": "ICCR's 2026 Proxy Resolutions and Voting Guide lists the resolution \"Risks Arising From Gaps in Oversight of Customer/User Data Processed through Google\" at Alphabet as filed by ICCR members, naming Zevin Asset Management as lead sponsor and 7 co-filers in its index of leads and co-filers.",
+   "members_named": [
+    "zevin",
+    "benedictine-mt-scholastica",
+    "benedictine-cullman",
+    "boston-common",
+    "omi-us",
+    "scl",
+    "episcopal-church-dfms",
+    "united-church-funds"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "as_of": "2026-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "GOOGL",
+   "topic": "data center energy demand and climate commitments",
+   "year": 2026,
+   "activity": "filing",
+   "what": "ICCR's 2026 Proxy Resolutions and Voting Guide lists the resolution \"Report on Climate Commitments Given Growing Data Center Energy Demand\" at Alphabet as filed by ICCR members, naming Trillium Asset Management as lead sponsor and 2 co-filers in its index of leads and co-filers.",
+   "members_named": [
+    "trillium",
+    "adrian-dominican",
+    "congregation-of-st-joseph-oh"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "as_of": "2026-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "AMZN",
+   "proposal_ids": [
+    "amzn-2026-responsible-ai-sales"
+   ],
+   "topic": "AI sales and responsible AI approach",
+   "year": 2026,
+   "activity": "filing",
+   "what": "ICCR's 2026 Proxy Resolutions and Voting Guide lists the resolution \"Alignment of AI Sales and Development with Responsible AI Approach\" at Amazon as filed by ICCR members, naming American Baptist Home Mission Societies as lead sponsor and 9 co-filers in its index of leads and co-filers.",
+   "members_named": [
+    "abhms",
+    "adrian-dominican",
+    "benedictine-mt-scholastica",
+    "daughters-of-charity-province-of-st-louise",
+    "maryknoll-sisters",
+    "omi-us",
+    "northstar",
+    "northwest-women-religious-investment-trust",
+    "scl"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "as_of": "2026-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "AMZN",
+   "proposal_ids": [
+    "amzn-2026-dc-climate"
+   ],
+   "topic": "data center energy demand and climate commitments",
+   "year": 2026,
+   "activity": "filing",
+   "what": "ICCR's 2026 Proxy Resolutions and Voting Guide lists the resolution \"Report on Climate Commitments Given Growing Data Center Energy Demand\" at Amazon as filed by ICCR members, naming As You Sow as lead sponsor and 1 co-filer in its index of leads and co-filers.",
+   "members_named": [
+    "as-you-sow",
+    "mercy"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "as_of": "2026-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "META",
+   "proposal_ids": [
+    "meta-2026-genai-chatbot-dpia"
+   ],
+   "topic": "data protection assessment for generative AI chatbots",
+   "year": 2026,
+   "activity": "filing",
+   "what": "ICCR's 2026 Proxy Resolutions and Voting Guide lists the resolution \"Board Oversight of Data Protection Assessment - AI Chatbots\" at Meta as filed by ICCR members, naming Mercy Investment Services as lead sponsor in its index of leads and co-filers.",
+   "members_named": [
+    "mercy"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "as_of": "2026-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "META",
+   "proposal_ids": [
+    "meta-2026-climate-ai-dc"
+   ],
+   "topic": "data center energy demand and climate commitments",
+   "year": 2026,
+   "activity": "filing",
+   "what": "ICCR's 2026 Proxy Resolutions and Voting Guide lists the resolution \"Report on Climate Commitments Given Growing Data Center Energy Demand\" at Meta as filed by ICCR members, naming Presbyterian Church (USA) as lead sponsor and 1 co-filer in its index of leads and co-filers.",
+   "members_named": [
+    "pcusa",
+    "adrian-dominican"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "as_of": "2026-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "MSFT",
+   "proposal_ids": [
+    "msft-2026-hrdd-ai-misuse"
+   ],
+   "topic": "human rights due diligence and misuse of AI and cloud",
+   "year": 2026,
+   "activity": "making the case",
+   "what": "ICCR's \"Vote Your Proxies\" page for 2026 lists an exempt solicitation on the Microsoft Human Rights Due Diligence / AI proposal for the 8 December 2026 meeting, posted 23 September 2026. The page names no filers.",
+   "members_named": [],
+   "source_url": "https://www.iccr.org/vote-your-proxies-see-2026s-proxy-memos-and-exempt-solicitations/",
+   "as_of": "2026-09"
+  },
+  {
+   "coalition": "iccr",
+   "company": "AMZN",
+   "proposal_ids": [
+    "amzn-2026-worker-ai-council"
+   ],
+   "topic": "worker AI advisory council (floor proposal)",
+   "year": 2026,
+   "activity": "making the case",
+   "what": "ICCR's \"Vote Your Proxies\" page for 2026 lists a memo in support of a floor proposal asking Amazon to set up an AI advisory council, for the 20 May 2026 meeting, posted 13 May 2026. The page names no filers.",
+   "members_named": [],
+   "source_url": "https://www.iccr.org/vote-your-proxies-see-2026s-proxy-memos-and-exempt-solicitations/",
+   "as_of": "2026-05"
+  },
+  {
+   "coalition": "iahr",
+   "company": "GOOGL",
+   "proposal_ids": [
+    "googl-2023-dc-siting-hr",
+    "googl-2023-targeted-ads-hr",
+    "googl-2023-algorithm-disclosure"
+   ],
+   "topic": "data centers in human rights hot spots, AI and targeted ads, algorithmic systems",
+   "year": 2023,
+   "activity": "coalition campaign",
+   "what": "Members of the Investor Alliance for Human Rights announced a series of proposals filed for the 2023 proxies of Alphabet; this row covers the three that concern data centers, AI and targeted ads, and algorithmic systems, with the filer named for each.",
+   "members_named": [
+    "eko",
+    "ucc-pension",
+    "trillium"
+   ],
+   "source_url": "https://investorsforhumanrights.org/2023-meta-and-alphabet-shareholder-resolutions",
+   "as_of": "2023-01"
+  },
+  {
+   "coalition": "iahr",
+   "company": "AMZN",
+   "proposal_ids": [
+    "amzn-2023-customer-dd",
+    "amzn-2023-facial-recognition"
+   ],
+   "topic": "customer due diligence and facial recognition",
+   "year": 2023,
+   "activity": "coalition campaign",
+   "what": "Members of the Investor Alliance for Human Rights announced a series of proposals filed for the 2023 proxies of Amazon; this row covers the customer due diligence and facial recognition proposals, with the filer named for each.",
+   "members_named": [
+    "abhms",
+    "iasj",
+    "harrington"
+   ],
+   "source_url": "https://investorsforhumanrights.org/2023-meta-and-alphabet-shareholder-resolutions",
+   "as_of": "2023-01"
+  },
+  {
+   "coalition": "iahr",
+   "company": "META",
+   "proposal_ids": [
+    "meta-2023-targeted-ads-hr"
+   ],
+   "topic": "human rights impact assessment of targeted advertising",
+   "year": 2023,
+   "activity": "coalition campaign",
+   "what": "Members of the Investor Alliance for Human Rights announced a series of proposals filed for the 2023 proxies of Meta; this row covers the human rights impact assessment of targeted advertising, filed by Mercy Investment Services.",
+   "members_named": [
+    "mercy"
+   ],
+   "source_url": "https://investorsforhumanrights.org/2023-meta-and-alphabet-shareholder-resolutions",
+   "as_of": "2023-01"
+  },
+  {
+   "coalition": "iahr",
+   "company": "GOOGL",
+   "proposal_ids": [
+    "googl-2024-ai-principles-oversight",
+    "googl-2024-genai-misinfo",
+    "googl-2024-ai-targeted-ads-hr"
+   ],
+   "topic": "AI principles and oversight, generative AI misinformation, AI-driven targeted ads",
+   "year": 2024,
+   "activity": "coalition campaign",
+   "what": "The Investor Alliance for Human Rights \"2024 Tech Proposals\" page lists the proposals at Alphabet with a lead filer for each; this row covers the three about AI.",
+   "members_named": [
+    "trillium",
+    "arjuna",
+    "share"
+   ],
+   "source_url": "https://investorsforhumanrights.org/news/2024-tech-proposals",
+   "as_of": "2024-02"
+  },
+  {
+   "coalition": "iahr",
+   "company": "AMZN",
+   "proposal_ids": [
+    "amzn-2024-ai-board-committee",
+    "amzn-2024-customer-dd",
+    "amzn-2024-facial-recognition"
+   ],
+   "topic": "human rights impact of AI deployment, customer due diligence, facial recognition",
+   "year": 2024,
+   "activity": "coalition campaign",
+   "what": "The Investor Alliance for Human Rights \"2024 Tech Proposals\" page lists the proposals at Amazon with a lead filer for each; this row covers the three on AI deployment, customer due diligence and facial recognition.",
+   "members_named": [
+    "afl-cio",
+    "iasj",
+    "harrington"
+   ],
+   "source_url": "https://investorsforhumanrights.org/news/2024-tech-proposals",
+   "as_of": "2024-02"
+  },
+  {
+   "coalition": "iahr",
+   "company": "META",
+   "proposal_ids": [
+    "meta-2024-genai-misinfo",
+    "meta-2024-ai-targeted-ads-hr"
+   ],
+   "topic": "generative AI misinformation, human rights impact assessment",
+   "year": 2024,
+   "activity": "coalition campaign",
+   "what": "The Investor Alliance for Human Rights \"2024 Tech Proposals\" page lists the proposals at Meta with a lead filer for each; this row covers the generative AI misinformation and human rights impact assessment proposals.",
+   "members_named": [
+    "arjuna",
+    "open-mic",
+    "mercy"
+   ],
+   "source_url": "https://investorsforhumanrights.org/news/2024-tech-proposals",
+   "as_of": "2024-02"
+  },
+  {
+   "coalition": "iahr",
+   "company": "GOOGL",
+   "topic": "digital rights and AI accountability engagement",
+   "year": 2025,
+   "activity": "coalition campaign",
+   "what": "Alphabet is on the Investor Alliance for Human Rights list of Big Tech companies in its collective investor engagement on digital rights and AI accountability, based on the 2025 Ranking Digital Rights Big Tech Score Card. The list names no investors.",
+   "members_named": [],
+   "source_url": "https://investorsforhumanrights.org/sites/default/files/attachments/2025-12/List%20of%20RDR%20engagement%20companies%20Dec%202025.pdf",
+   "as_of": "2025-12"
+  },
+  {
+   "coalition": "iahr",
+   "company": "AMZN",
+   "topic": "digital rights and AI accountability engagement",
+   "year": 2025,
+   "activity": "coalition campaign",
+   "what": "Amazon is on the Investor Alliance for Human Rights list of Big Tech companies in its collective investor engagement on digital rights and AI accountability, based on the 2025 Ranking Digital Rights Big Tech Score Card. The list names no investors.",
+   "members_named": [],
+   "source_url": "https://investorsforhumanrights.org/sites/default/files/attachments/2025-12/List%20of%20RDR%20engagement%20companies%20Dec%202025.pdf",
+   "as_of": "2025-12"
+  },
+  {
+   "coalition": "iahr",
+   "company": "AAPL",
+   "topic": "digital rights and AI accountability engagement",
+   "year": 2025,
+   "activity": "coalition campaign",
+   "what": "Apple is on the Investor Alliance for Human Rights list of Big Tech companies in its collective investor engagement on digital rights and AI accountability, based on the 2025 Ranking Digital Rights Big Tech Score Card. The list names no investors.",
+   "members_named": [],
+   "source_url": "https://investorsforhumanrights.org/sites/default/files/attachments/2025-12/List%20of%20RDR%20engagement%20companies%20Dec%202025.pdf",
+   "as_of": "2025-12"
+  },
+  {
+   "coalition": "iahr",
+   "company": "META",
+   "topic": "digital rights and AI accountability engagement",
+   "year": 2025,
+   "activity": "coalition campaign",
+   "what": "Meta is on the Investor Alliance for Human Rights list of Big Tech companies in its collective investor engagement on digital rights and AI accountability, based on the 2025 Ranking Digital Rights Big Tech Score Card. The list names no investors.",
+   "members_named": [],
+   "source_url": "https://investorsforhumanrights.org/sites/default/files/attachments/2025-12/List%20of%20RDR%20engagement%20companies%20Dec%202025.pdf",
+   "as_of": "2025-12"
+  },
+  {
+   "coalition": "iahr",
+   "company": "MSFT",
+   "topic": "digital rights and AI accountability engagement",
+   "year": 2025,
+   "activity": "coalition campaign",
+   "what": "Microsoft is on the Investor Alliance for Human Rights list of Big Tech companies in its collective investor engagement on digital rights and AI accountability, based on the 2025 Ranking Digital Rights Big Tech Score Card. The list names no investors.",
+   "members_named": [],
+   "source_url": "https://investorsforhumanrights.org/sites/default/files/attachments/2025-12/List%20of%20RDR%20engagement%20companies%20Dec%202025.pdf",
+   "as_of": "2025-12"
+  },
+  {
+   "coalition": "racial-justice-investing",
+   "company": "MSFT",
+   "proposal_ids": [
+    "msft-2025-hrdd-ai-misuse"
+   ],
+   "topic": "human rights due diligence and misuse of AI and cloud",
+   "year": 2025,
+   "activity": "making the case",
+   "what": "Racial Justice Investing is one of the groups named as having produced the investor briefing \"Risky Business\" backing the Microsoft proposal on human rights due diligence, filed as an exempt solicitation. The lead proponents named are the Religious of the Sacred Heart of Mary Charitable Trust and the Sisters of the Sacred Heart of Mary.",
+   "members_named": [
+    "iasj",
+    "eko",
+    "cmei",
+    "racial-justice-investing",
+    "rshm"
+   ],
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925015002/i1016250px14a6g.htm",
+   "as_of": "2025-07"
+  },
+  {
+   "coalition": "racial-justice-investing",
+   "company": "MSFT",
+   "proposal_ids": [
+    "msft-2026-hrdd-ai-misuse"
+   ],
+   "topic": "human rights due diligence and misuse of AI and cloud",
+   "year": 2026,
+   "activity": "making the case",
+   "what": "Racial Justice Investing is named, with the filer Investor Advocates for Social Justice, in the exempt solicitation on the refiled Microsoft proposal on human rights due diligence. The lead proponents named are the Religious of the Sacred Heart of Mary Charitable Trust and the Sisters of the Sacred Heart of Mary.",
+   "members_named": [
+    "iasj",
+    "eko",
+    "racial-justice-investing",
+    "rshm"
+   ],
+   "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465926011511/o91268px14a6g.htm",
+   "as_of": "2026-07"
+  },
+  {
+   "coalition": "wba-cic-ethical-ai",
+   "company": "MSFT",
+   "topic": "engagement on ethical AI",
+   "year": 2025,
+   "activity": "coalition campaign",
+   "what": "The Collective Impact Coalition for Ethical AI 2025 progress report says Microsoft was the only one of the five largest technology companies actively engaging with the coalition, and that it gave investors access to its Chief Responsible AI Officer.",
+   "members_named": [],
+   "source_url": "https://www.worldbenchmarkingalliance.org/sites/default/files/2026-01/2025_AI_CIC_Progress_Report_v2%20(1).pdf",
+   "as_of": "2026-01"
+  },
+  {
+   "coalition": "wba-cic-ethical-ai",
+   "company": "GOOGL",
+   "topic": "engagement on ethical AI",
+   "year": 2025,
+   "activity": "coalition campaign",
+   "what": "The Collective Impact Coalition for Ethical AI 2025 progress report lists Alphabet among the companies investors attempted to engage on ethical AI, and says Alphabet and the other large US cloud companies did not engage beyond a cursory acknowledgment.",
+   "members_named": [],
+   "source_url": "https://www.worldbenchmarkingalliance.org/sites/default/files/2026-01/2025_AI_CIC_Progress_Report_v2%20(1).pdf",
+   "as_of": "2026-01"
+  },
+  {
+   "coalition": "wba-cic-ethical-ai",
+   "company": "AMZN",
+   "topic": "engagement on ethical AI",
+   "year": 2025,
+   "activity": "coalition campaign",
+   "what": "The Collective Impact Coalition for Ethical AI 2025 progress report lists Amazon among the companies investors attempted to engage on ethical AI, and says Amazon and the other large US cloud companies did not engage beyond a cursory acknowledgment.",
+   "members_named": [],
+   "source_url": "https://www.worldbenchmarkingalliance.org/sites/default/files/2026-01/2025_AI_CIC_Progress_Report_v2%20(1).pdf",
+   "as_of": "2026-01"
+  },
+  {
+   "coalition": "wba-cic-ethical-ai",
+   "company": "META",
+   "topic": "engagement on ethical AI",
+   "year": 2025,
+   "activity": "coalition campaign",
+   "what": "The Collective Impact Coalition for Ethical AI 2025 progress report lists Meta among the companies investors attempted to engage on ethical AI, and says Meta and the other large US cloud companies did not engage beyond a cursory acknowledgment.",
+   "members_named": [],
+   "source_url": "https://www.worldbenchmarkingalliance.org/sites/default/files/2026-01/2025_AI_CIC_Progress_Report_v2%20(1).pdf",
+   "as_of": "2026-01"
+  },
+  {
+   "coalition": "wba-cic-ethical-ai",
+   "company": "AAPL",
+   "topic": "engagement on ethical AI",
+   "year": 2025,
+   "activity": "coalition campaign",
+   "what": "The Collective Impact Coalition for Ethical AI 2025 progress report lists Apple among the companies investors attempted to engage on ethical AI, and says Apple and the other large US cloud companies did not engage beyond a cursory acknowledgment.",
+   "members_named": [],
+   "source_url": "https://www.worldbenchmarkingalliance.org/sites/default/files/2026-01/2025_AI_CIC_Progress_Report_v2%20(1).pdf",
+   "as_of": "2026-01"
+  },
+  {
+   "coalition": "iccr",
+   "company": "NVDA",
+   "proposal_ids": [
+    "nvda-2026-product-ghg"
+   ],
+   "topic": "Data center impacts: emissions from AI chips in use",
+   "year": 2026,
+   "activity": "filing",
+   "what": "ICCR's 2026 proxy resolutions guide lists a resolution asking NVIDIA to report the greenhouse gas emissions from use of its sold products, with status Filed, and its filer index names the lead filer and co-filer.",
+   "members_named": [
+    "green-century",
+    "mercy"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "as_of": "2026-03"
+  },
+  {
+   "coalition": "iccr",
+   "company": "NVDA",
+   "proposal_ids": [
+    "nvda-2026-military-ai"
+   ],
+   "topic": "Military sales of AI chips and human rights",
+   "year": 2026,
+   "activity": "filing",
+   "what": "ICCR's 2026 proxy resolutions guide lists a resolution asking NVIDIA to publish the strategic rationale for its military sales and contracts, with status Filed, and its filer index names Open MIC as lead filer.",
+   "members_named": [
+    "open-mic"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "as_of": "2026-03"
+  },
+  {
+   "coalition": "iahr",
+   "company": "BABA",
+   "topic": "digital rights and AI accountability engagement",
+   "year": 2025,
+   "activity": "coalition campaign",
+   "what": "Alibaba is on the Investor Alliance for Human Rights' list of technology companies it engages, based on the 2025 Ranking Digital Rights Big Tech Score Card.",
+   "members_named": [],
+   "source_url": "https://investorsforhumanrights.org/sites/default/files/attachments/2025-12/List%20of%20RDR%20engagement%20companies%20Dec%202025.pdf",
+   "as_of": "2025-12"
+  },
+  {
+   "coalition": "iahr",
+   "company": "beijing-baidu-network-technology",
+   "topic": "digital rights and AI accountability engagement",
+   "year": 2025,
+   "activity": "coalition campaign",
+   "what": "Baidu is on the Investor Alliance for Human Rights' list of technology companies it engages, based on the 2025 Ranking Digital Rights Big Tech Score Card.",
+   "members_named": [],
+   "source_url": "https://investorsforhumanrights.org/sites/default/files/attachments/2025-12/List%20of%20RDR%20engagement%20companies%20Dec%202025.pdf",
+   "as_of": "2025-12"
+  },
+  {
+   "coalition": "iahr",
+   "company": "0700",
+   "topic": "digital rights and AI accountability engagement",
+   "year": 2025,
+   "activity": "coalition campaign",
+   "what": "Tencent is on the Investor Alliance for Human Rights' list of technology companies it engages, based on the 2025 Ranking Digital Rights Big Tech Score Card.",
+   "members_named": [],
+   "source_url": "https://investorsforhumanrights.org/sites/default/files/attachments/2025-12/List%20of%20RDR%20engagement%20companies%20Dec%202025.pdf",
+   "as_of": "2025-12"
+  },
+  {
+   "coalition": "region-vi-coalition-for-responsible-investment",
+   "company": "PLTR",
+   "proposal_ids": [
+    "pltr-2026-5"
+   ],
+   "topic": "human rights impact assessment (AI software)",
+   "year": 2026,
+   "activity": "making the case",
+   "what": "Region VI Coalition for Responsible Investment is a signatory of a May 14, 2026 investor letter to Palantir's board supporting a shareholder proposal for a Human Rights Impact Assessment, filed as an exempt solicitation by Investor Advocates for Social Justice.",
+   "members_named": [],
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000121465926006347/pti515261px14a6g.htm",
+   "as_of": "2026-05"
+  },
+  {
+   "coalition": "iccr",
+   "company": "PLTR",
+   "proposal_ids": [
+    "pltr-2026-5"
+   ],
+   "topic": "human rights impact assessment (AI software)",
+   "year": 2026,
+   "activity": "making the case",
+   "what": "ICCR's 2026 proxy memos and exempt solicitations page lists a Palantir Human Rights Impact Assessment item, posted 05.20.26, annual meeting 06.04.26.",
+   "members_named": [],
+   "source_url": "https://www.iccr.org/vote-your-proxies-see-2026s-proxy-memos-and-exempt-solicitations/",
+   "as_of": "2026-05"
+  },
+  {
+   "coalition": "racial-justice-investing",
+   "company": "CSCO",
+   "topic": "human rights impact assessment (surveillance, military and immigration end uses)",
+   "year": 2026,
+   "activity": "making the case",
+   "what": "An investor briefing for Cisco's 2026 annual meeting, whose disclaimer names Ekō, RJI, CMEI and Azzad Asset Management, supports shareholder proposal 5 asking for an independent Human Rights Impact Assessment.",
+   "members_named": [
+    "eko",
+    "cmei",
+    "azzad"
+   ],
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0000858877/000121465926014472/x1116261px14a6g.htm",
+   "as_of": "2026-11"
+  },
+  {
+   "coalition": "iccr",
+   "company": "NFLX",
+   "topic": "AI transparency report",
+   "year": 2024,
+   "activity": "filing",
+   "what": "ICCR's 2024 proxy guide lists an AI Transparency Report resolution at Netflix, asking for a public report on its use of AI and the board's role in overseeing it; its filer index names AFL-CIO as filer.",
+   "members_named": [
+    "afl-cio"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2024/02/2024-ICCR-Proxy-Resolutions-and-Voting-Guide02.26.24-MED.pdf",
+   "as_of": "2024-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "warner-bros-discovery",
+   "topic": "AI transparency report",
+   "year": 2024,
+   "activity": "filing",
+   "what": "ICCR's 2024 proxy guide lists an AI Transparency Report resolution at Warner Bros., asking for a public report on its use of AI and the board's role in overseeing it; its filer index names AFL-CIO as filer.",
+   "members_named": [
+    "afl-cio"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2024/02/2024-ICCR-Proxy-Resolutions-and-Voting-Guide02.26.24-MED.pdf",
+   "as_of": "2024-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "DIS",
+   "topic": "AI transparency report",
+   "year": 2024,
+   "activity": "filing",
+   "what": "ICCR's 2024 proxy guide lists an AI Transparency Report resolution at Disney, asking for a public report on its use of AI and the board's role in overseeing it; its filer index names AFL-CIO as filer.",
+   "members_named": [
+    "afl-cio"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2024/02/2024-ICCR-Proxy-Resolutions-and-Voting-Guide02.26.24-MED.pdf",
+   "as_of": "2024-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "CMCSA",
+   "topic": "AI transparency report",
+   "year": 2024,
+   "activity": "filing",
+   "what": "ICCR's 2024 proxy guide lists an AI Transparency Report resolution at Comcast, asking for a public report on its use of AI and the board's role in overseeing it; its filer index names AFL-CIO as filer.",
+   "members_named": [
+    "afl-cio"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2024/02/2024-ICCR-Proxy-Resolutions-and-Voting-Guide02.26.24-MED.pdf",
+   "as_of": "2024-02"
+  },
+  {
+   "coalition": "iccr",
+   "company": "SO",
+   "topic": "data-center demand and fossil fuel build-out",
+   "year": 2025,
+   "activity": "filing",
+   "what": "ICCR's 2025 proxy guide lists a resolution asking Southern Company to disclose the assumptions behind relying on fossil fuels, citing load growth driven by manufacturing and data center expansion; its filer index names As You Sow.",
+   "members_named": [
+    "as-you-sow"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2025/03/2025_ICCR_Proxy_Resolutions_and_Voting_Guide_Final_03.17.25.pdf",
+   "as_of": "2025-03"
+  },
+  {
+   "coalition": "iccr",
+   "company": "SO",
+   "topic": "data-center infrastructure costs",
+   "year": 2026,
+   "activity": "filing",
+   "what": "ICCR's 2026 proxy guide lists a resolution asking Southern Company to report on safeguards against shifting the costs of new data center infrastructure to residential customers and small businesses; its filer index names As You Sow, Adrian Dominican Sisters and Mercy Investment Services.",
+   "members_named": [
+    "as-you-sow",
+    "adrian-dominican",
+    "mercy"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "as_of": "2026-03"
+  },
+  {
+   "coalition": "iccr",
+   "company": "DLR",
+   "topic": "data-center water use",
+   "year": 2025,
+   "activity": "filing",
+   "what": "ICCR's 2025 proxy guide lists a resolution asking Digital Realty Trust to report quantitative water use reduction targets by data center location; its filer index names Zevin Asset Management.",
+   "members_named": [
+    "zevin"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2025/03/2025_ICCR_Proxy_Resolutions_and_Voting_Guide_Final_03.17.25.pdf",
+   "as_of": "2025-03"
+  },
+  {
+   "coalition": "iccr",
+   "company": "DLR",
+   "topic": "data-center water risk",
+   "year": 2026,
+   "activity": "filing",
+   "what": "ICCR's 2026 proxy guide lists a resolution asking Digital Realty to disclose region-level water risk and water intensity metrics, noting AI accounted for 50% of bookings as of Q3 2025; its filer index names NorthStar Asset Management and Proxy Impact.",
+   "members_named": [
+    "northstar",
+    "proxy-impact"
+   ],
+   "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
+   "as_of": "2026-03"
+  },
+  {
+   "coalition": "vwfi",
+   "company": "MSFT",
+   "topic": "water",
+   "year": 2026,
+   "activity": "coalition campaign",
+   "what": "Parnassus's 2026 stewardship report says it is a member of the Valuing Water Finance Initiative and has engaged sustainability leaders at Microsoft through it for several years.",
+   "members_named": [
+    "parnassus"
+   ],
+   "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/98a6f185-030f-4bfc-a590-3dbe85a9a0d2/Parnassus%20Investments%20Stewardship%20Report%202026.pdf",
+   "as_of": "2026"
   }
  ],
  "proposal_links": [
