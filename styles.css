@@ -1331,3 +1331,5 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 .net-rec { width: 100%; font-size: 13px; border-collapse: collapse; }
 .net-rec td, .net-rec th { padding: 3px 6px 3px 0; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; }
 .net-rec .num { text-align: center; }
+.net-list-rec > summary { cursor: pointer; color: var(--accent); }
+.net-list-rec[open] { min-width: 320px; }

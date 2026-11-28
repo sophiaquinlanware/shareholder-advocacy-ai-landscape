@@ -1986,10 +1986,12 @@
     const rows = state.data.nodes.filter(visible)
       .filter((n) => !state.query || n.label.toLowerCase().includes(state.query))
       .sort((a, b) => ((dir === "descending" ? -1 : 1) * ((val(a) ?? -1) - (val(b) ?? -1))) || a.label.localeCompare(b.label));
+    // A node's record (the panel's votes, coverage, campaigns and commitments), folded so the table stays scannable.
+    const recCell = (n) => { const r = recordHtml(n); return `<td>${r ? `<details class="net-list-rec"><summary>Record</summary>${r}</details>` : ""}</td>`; };
     const body = rows.map((n) => {
       const acts = actions(n).map((x, i) => actionHtml(x, n.id, i));
       const heldCell = state.holdings.size ? `<td>${tickerOf(n) ? (isHeld(n) ? "Held" : "Not held") : "Not a holding"}</td>` : "";
-      return `<tr><td><button type="button" class="linklike" data-id="${esc(n.id)}">${esc(n.label)}</button></td><td>${esc(TYPE_LABEL[n.kind])}</td>${m ? `<td class="num">${val(n) ?? "–"}</td>` : ""}<td class="num">${n.degree || 0}</td>${heldCell}<td>${esc(rings(n).map((r) => r.text).join(", "))}</td><td>${acts.join("<br>")}</td></tr>`;
+      return `<tr><td><button type="button" class="linklike" data-id="${esc(n.id)}">${esc(n.label)}</button></td><td>${esc(TYPE_LABEL[n.kind])}</td>${m ? `<td class="num">${val(n) ?? "–"}</td>` : ""}<td class="num">${n.degree || 0}</td>${heldCell}<td>${esc(rings(n).map((r) => r.text).join(", "))}</td><td>${acts.join("<br>")}</td>${recCell(n)}</tr>`;
     }).join("");
     const el = document.getElementById("net-list");
     const sortLabel = m ? m.label : "Connections";
@@ -1997,8 +1999,8 @@
     document.getElementById("net-list-table").innerHTML = `<div class="table-wrap"><table><thead><tr><th scope="col">Name</th><th scope="col">Type</th>
       ${m ? `<th scope="col" aria-sort="${dir}"><button type="button" class="th-sort" id="net-list-sort">${esc(sortLabel)} ${dir === "descending" ? "↓" : "↑"}</button></th><th scope="col">Connections</th>`
         : `<th scope="col" aria-sort="${dir}"><button type="button" class="th-sort" id="net-list-sort">Connections ${dir === "descending" ? "↓" : "↑"}</button></th>`}
-      ${state.holdings.size ? `<th scope="col">Held</th>` : ""}<th scope="col">Status</th><th scope="col">${esc(lens().actionsHeading || "Engagement levers")}</th></tr></thead>
-      <tbody>${body || `<tr><td colspan="${(m ? 6 : 5) + (state.holdings.size ? 1 : 0)}">No matches.</td></tr>`}</tbody></table></div>`;
+      ${state.holdings.size ? `<th scope="col">Held</th>` : ""}<th scope="col">Status</th><th scope="col">${esc(lens().actionsHeading || "Engagement levers")}</th><th scope="col">Record</th></tr></thead>
+      <tbody>${body || `<tr><td colspan="${(m ? 7 : 6) + (state.holdings.size ? 1 : 0)}">No matches.</td></tr>`}</tbody></table></div>`;
     document.getElementById("net-list-count").textContent = `${rows.length} nodes in this view (${lens().label}), sorted by ${sortLabel.toLowerCase()}.${state.upto ? ` Proposals and events up to ${state.upto} only (year slider above).` : ""}`;
     document.getElementById("net-list-sort").addEventListener("click", () => {
       state.listSort = dir === "descending" ? "ascending" : "descending";

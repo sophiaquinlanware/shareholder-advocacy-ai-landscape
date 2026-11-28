@@ -63,7 +63,16 @@ test("keyboard: Down announces a node, Enter opens it, Escape clears", async ({ 
 test("List view lists every visible node with status and actions", async ({ page }) => {
   await openNetwork(page, "?lens=impact&graph=proposals");
   await page.click('#tab-network .seg [data-view="list"]');
-  await expect(page.locator("#net-list th")).toHaveText(["Name", "Type", /Connections/, "Status", "Engagement levers"]);
+  await expect(page.locator("#net-list-table > .table-wrap > table > thead > tr > th")).toHaveText([
+    "Name",
+    "Type",
+    /Connections/,
+    "Status",
+    "Engagement levers",
+    "Record",
+  ]);
+  // A proposal's record (fund family votes) is in the list too, folded.
+  await expect(page.locator("#net-list .net-list-rec", { hasText: "How fund families voted" }).first()).toBeAttached();
   await expect(page.locator("#net-list tbody tr", { hasText: "Upcoming vote" }).first()).toBeVisible();
 });
 
