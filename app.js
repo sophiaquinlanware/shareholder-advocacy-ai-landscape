@@ -777,6 +777,8 @@ function applyTab(name, focus = false) {
   else if (name === "network") document.getElementById("tab-people").before(net);
   document.querySelectorAll(".panel").forEach((p) => { p.hidden = p.id !== "tab-" + shown; });
   if (window.netMode && (name === "proposals" || name === "network")) window.netMode(name === "proposals" ? "proposals" : "connections");
+  // A later visit to either graph page starts clear; the first view of a visit keeps what its link asked for.
+  if (historyReady && !following && (name === "proposals" || name === "network") && window.netReset) window.netReset();
   prevView = name;
   const stuck = document.getElementById("sticky-page");
   const gBtn = groupBtns.find((b) => b.dataset.group === group);
@@ -891,9 +893,13 @@ function setupTabs() {
   showTab(location.hash.slice(1) || "about");
 }
 
+let following = false;
 window.netTabFollow = (m) => {
+  // Following the graph's own view change keeps its selection and filters (no reset).
+  following = true;
   if (m === "proposals" && prevView === "network") showTab("proposals");
   else if (m === "connections" && prevView === "proposals") showTab("network");
+  following = false;
 };
 // A folded view's section is hidden while its fold is closed, so views that draw when shown draw at full width.
 document.addEventListener("toggle", (e) => {
@@ -977,7 +983,7 @@ async function main() {
     vcTies: (DATA.value_chain && DATA.value_chain.all_ties) || [],
   });
   window.renderCausality(DATA.causality);
-  if (window.renderValueChain) window.renderValueChain(DATA.value_chain, DATA.companies);
+  if (window.renderValueChain) window.renderValueChain(DATA.value_chain, DATA.companies, DATA.graph);
   window.renderScorecard(DATA.scorecard);
   window.renderVotes(DATA.fund_votes, DATA.proposals, DATA.pass_through_voting);
   renderPeople();

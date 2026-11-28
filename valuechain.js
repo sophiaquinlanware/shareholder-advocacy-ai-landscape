@@ -140,8 +140,8 @@
         const mx = (a.x + b.x) / 2;
         return a.x === b.x ? `M${a.x},${a.y}C${a.x + 60},${a.y} ${b.x + 60},${b.y} ${b.x},${b.y}` : `M${a.x},${a.y}C${mx},${a.y} ${mx},${b.y} ${b.x},${b.y}`;
       })
-      .attr("class", "vc-tie").attr("stroke", ink).attr("stroke-opacity", 0.7).attr("stroke-width", (t) => (CAP[t.type] ? 3 : 2)).attr("stroke-dasharray", (t) => DASH[t.type] || null).attr("stroke-linecap", (t) => CAP[t.type] || "butt")
-      .append("title").text((t) => `${name(t.from)} ${phrase(t.type)} ${name(t.to)}`);
+      .attr("class", "vc-tie").attr("stroke", ink).attr("stroke-opacity", (t) => (t.share ? 0.85 : 0.6)).attr("stroke-width", wOf).attr("stroke-dasharray", (t) => (t.share ? null : DASH[t.type] || null)).attr("stroke-linecap", (t) => (t.share ? "butt" : CAP[t.type] || "butt"))
+      .append("title").text((t) => `${name(t.from)} ${phrase(t.type)} ${name(t.to)}${t.share ? `: ${shareText(t)}` : ""}${t.deal ? `; ${dealText(t.deal)}` : ""}`);
     // Tap (or Enter on) a line to trace it: the tie and every tie upstream of it and downstream of it along the
     // value chain turn orange, so a path from chips to AI products reads at a glance (owner, 2026-11-26). Wide,
     // invisible strokes make thin and dotted lines easy to hit.
@@ -158,20 +158,20 @@
     svg.on("click", () => { if (S.traced) trace(null); });
     const nodes = drawn.append("g").selectAll("g").data([...pos.entries()]).join("g").attr("transform", ([, p]) => `translate(${p.x},${p.y})`);
     const co = nodes.filter(([id]) => id !== "__capital__")
-      .attr("tabindex", 0).attr("role", "button").attr("aria-label", ([id]) => `${name(id)}: ${plural(deg.get(id) || 0, "tie")}`).style("cursor", "pointer")
+      .attr("tabindex", 0).attr("role", "button").attr("aria-label", ([id]) => `${name(id)}: ${plural(deg.get(id) || 0, "tie")}${SIZE.has(id) ? `; ${sizeText(SIZE.get(id))}` : ""}`).style("cursor", "pointer")
       .on("click", (ev, [id]) => { ev.stopPropagation(); showCompany(id); })
       .on("keydown", (ev, [id]) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); showCompany(id); } });
-    co.append("circle").attr("r", ([id]) => (deg.get(id) ? 3 + Math.sqrt(deg.get(id)) * 1.6 : 3.5))
-      .attr("fill", ([id]) => (deg.get(id) ? cssVar("--blue-1") : cssVar("--surface"))).attr("stroke", cssVar("--blue-1")).attr("stroke-width", 1.2);
+    co.append("circle").attr("r", ([id]) => rOf(id))
+      .attr("fill", ([id]) => (PEER.has(id) ? cssVar("--blue-1") : cssVar("--surface"))).attr("stroke", cssVar("--blue-1")).attr("stroke-width", 1.4);
     // Names sit just above each circle, clear of the lines that leave it sideways, larger and with a wide white
     // outline so crossing lines never run through the letters.
-    co.append("text").attr("x", ([id]) => (compact ? 4 + Math.sqrt(deg.get(id) || 1) * 1.6 + 4 : 0)).attr("y", ([id]) => (compact ? 4 : -(3 + Math.sqrt(deg.get(id) || 1) * 1.6) - 6)).attr("text-anchor", compact ? "start" : "middle").attr("font-size", compact ? 12 : 13).attr("font-weight", 400).attr("fill", ([id]) => (deg.get(id) ? cssVar("--ink") : cssVar("--ink-soft")))
+    co.append("text").attr("x", ([id]) => (compact ? rOf(id) + 4 : 0)).attr("y", ([id]) => (compact ? 4 : -rOf(id) - 6)).attr("text-anchor", compact ? "start" : "middle").attr("font-size", compact ? 12 : 13).attr("font-weight", 400).attr("fill", ([id]) => (deg.get(id) ? cssVar("--ink") : cssVar("--ink-soft")))
       .attr("stroke", cssVar("--surface")).attr("stroke-width", 5).attr("stroke-linejoin", "round").attr("paint-order", "stroke").text(([id]) => { const n = name(id), max = compact ? 20 : 26; return n.length > max ? n.slice(0, max - 1) + "…" : n; });
     untiedCols.forEach((c) => svg.append("text").attr("x", c.x).attr("y", top + c.ids.length * rowH + 4).attr("text-anchor", compact ? "start" : "middle").attr("font-size", 11.5).attr("fill", cssVar("--ink-soft")).text(`+${c.untied} with no sourced tie yet`));
     // Key: one dash pattern per tie type.
     document.getElementById("vc-key").innerHTML = [...new Set(V.ties.map((t) => t.type))].map((k) =>
       `<span class="leg static"><svg class="mark vc-line" viewBox="0 0 44 10" aria-hidden="true"><line x1="2" y1="5" x2="42" y2="5" stroke="${ink}" stroke-width="2.5"${DASH[k] ? ` stroke-dasharray="${DASH[k]}"` : ""}${CAP[k] ? ` stroke-linecap="${CAP[k]}"` : ""}></line></svg>${esc(k)}</span>`).join("")
-      + `<span class="status-note">Tap a line to trace its path in orange; tap the chart again to clear. Each line is one sourced tie; open a company to read its ties in words. Circle size = number of sourced ties; Each column lists its companies with a sourced tie; the count beneath it is the companies at that stage with none yet (listed in the stage's details). Ties to frontier labs, including equity stakes and parent companies, come from Listed companies tied to each lab.</span>`;
+      + `<span class="status-note">Tap a line to trace its path in orange; tap the chart again to clear. Each line is one sourced tie; open a company to read its ties in words. Filled circle size: market share, compared only among companies measured the same way (${peerKeyText()}). Hollow circles: size not known among peers; open a company for any figure it has. Line width: share of the supplier's revenue from that customer, from the supplier's own filing; thin lines: share not known. Deal values are in words, never in the width. Each column lists its companies with a sourced tie; the count beneath it is the companies at that stage with none yet (listed in the stage's details). Ties to frontier labs, including equity stakes and parent companies, come from Listed companies tied to each lab.</span>`;
   }
 
   const REDUCED = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -205,7 +205,7 @@
     if (typeof d3 === "undefined") return;
     const ties = V.ties;
     if (!t) {
-      d3.selectAll("#vc-flow path.vc-tie").attr("stroke", cssVar("--blue-2")).attr("stroke-opacity", 0.7).attr("stroke-width", (x) => (CAP[x.type] ? 3 : 2));
+      d3.selectAll("#vc-flow path.vc-tie").attr("stroke", cssVar("--blue-2")).attr("stroke-opacity", (x) => (x.share ? 0.85 : 0.6)).attr("stroke-width", wOf);
       announce("Trace cleared.");
       return;
     }
@@ -224,7 +224,7 @@
     d3.selectAll("#vc-flow path.vc-tie")
       .attr("stroke", (x) => (on.has(x) ? TRACE : cssVar("--blue-2")))
       .attr("stroke-opacity", (x) => (on.has(x) ? 1 : 0.4))
-      .attr("stroke-width", (x) => (x === t ? 3.4 : on.has(x) ? 2.6 : 1.8) + (CAP[x.type] ? 1 : 0));
+      .attr("stroke-width", (x) => Math.max(wOf(x), x === t ? 3.4 : on.has(x) ? 2.6 : 1.2));
     d3.selectAll("#vc-flow path.vc-tie").filter((x) => on.has(x)).raise();
     announce(`Traced ${name(t.from)} ${phrase(t.type)} ${name(t.to)}: ${on.size} ${on.size === 1 ? "tie" : "ties"} on its path, in orange. Tap the chart again to clear.`);
   }
@@ -248,7 +248,7 @@
     d3.selectAll("#vc-flow path.vc-tie")
       .attr("stroke", (x) => (on.has(x) ? TRACE : cssVar("--blue-2")))
       .attr("stroke-opacity", (x) => (on.has(x) ? 1 : 0.4))
-      .attr("stroke-width", (x) => (x.from === id || x.to === id ? 3.2 : on.has(x) ? 2.6 : 1.8) + (CAP[x.type] ? 1 : 0));
+      .attr("stroke-width", (x) => Math.max(wOf(x), x.from === id || x.to === id ? 3.2 : on.has(x) ? 2.6 : 1.2));
     d3.selectAll("#vc-flow path.vc-tie").filter((x) => on.has(x)).raise();
     return on.size;
   }
@@ -282,7 +282,7 @@
     setTimeout(() => { el.textContent = t; }, 50);
   }
   function tieList(ties) {
-    return `<ul class="conn">${ties.map((t) => `<li>${esc(name(t.from))} ${esc(phrase(t.type))} ${esc(name(t.to))}${t.as_of ? ` <span class="ticker">(${esc(window.DATES.long(t.as_of))})</span>` : ""}. ${esc(t.description || "")}${src(t.source_url)}${t.source_kind === "secondary" ? ' <span class="conf">· reported (secondary source)</span>' : ""}</li>`).join("") || "<li>None sourced yet.</li>"}</ul>`;
+    return `<ul class="conn">${ties.map((t) => `<li>${esc(name(t.from))} ${esc(phrase(t.type))} ${esc(name(t.to))}${t.as_of ? ` <span class="ticker">(${esc(window.DATES.long(t.as_of))})</span>` : ""}${t.share ? `. <strong>${esc(shareText(t))}</strong>${src(t.share.source_url)}` : ""}${t.deal ? `. ${esc(dealText(t.deal))}${src(t.deal.source_url)}` : ""}. ${esc(t.description || "")}${src(t.source_url)}${t.source_kind === "secondary" ? ' <span class="conf">· reported (secondary source)</span>' : ""}</li>`).join("") || "<li>None sourced yet.</li>"}</ul>`;
   }
 
   function showTier(tid, section) {
@@ -367,6 +367,7 @@
     panel.innerHTML = `
       <p class="eyebrow" style="margin:0 0 4px">${esc(window.ROLES ? window.ROLES.label(window.ROLES.roleOf(c)) : tierLabel(c.tier))}${window.ROLES && window.ROLES.alsoOf(c).length ? ` · also ${esc(window.ROLES.alsoOf(c).map(window.ROLES.label).join(", "))}` : ""}</p>
       <h3 id="vc-panel-h" tabindex="-1">${esc(c.name || id)}</h3>
+      ${SIZE.has(id) ? `<p><strong>Size:</strong> ${esc(sizeText(SIZE.get(id)))}${src(SIZE.get(id).source_url)}${PEER.has(id) ? "" : ' <span class="ticker">(no peer measured the same way, so its circle is hollow)</span>'}</p>` : ""}
       <h4>Ties from ${esc(c.name || id)}</h4>${tieList(outs)}
       <h4>Ties to ${esc(c.name || id)}</h4>${tieList(ins)}
       ${c.ticker && window.LENS_CTX && window.LENS_CTX.hasCompany && window.LENS_CTX.hasCompany(c.ticker) ? `<button type="button" class="chip" id="vc-open-co">Open company profile</button>` : ""}`;
@@ -385,8 +386,8 @@
 
   function drawTieTable() {
     const rows = [...V.ties].sort((a, b) => a.type.localeCompare(b.type) || name(a.from).localeCompare(name(b.from)))
-      .map((t) => `<tr><td><button type="button" class="linklike" data-co="${esc(t.from)}">${esc(name(t.from))}</button></td><td>${esc(phrase(t.type))}</td><td><button type="button" class="linklike" data-co="${esc(t.to)}">${esc(name(t.to))}</button></td><td class="nowrap">${esc(t.as_of || "")}</td><td>${src(t.source_url)}${t.source_kind === "secondary" ? ' <span class="conf">· reported (secondary source)</span>' : ""}</td></tr>`).join("");
-    document.getElementById("vc-ties").innerHTML = `<table><thead><tr><th scope="col">From</th><th scope="col">Tie</th><th scope="col">To</th><th scope="col">As of</th><th scope="col">Source</th></tr></thead><tbody>${rows}</tbody></table>`;
+      .map((t) => `<tr><td><button type="button" class="linklike" data-co="${esc(t.from)}">${esc(name(t.from))}</button></td><td>${esc(phrase(t.type))}</td><td><button type="button" class="linklike" data-co="${esc(t.to)}">${esc(name(t.to))}</button></td><td>${t.share ? `${esc(shareText(t))}${src(t.share.source_url)}` : ""}${t.deal ? `${t.share ? "; " : ""}${esc(dealText(t.deal))}${src(t.deal.source_url)}` : ""}</td><td class="nowrap">${esc(t.as_of || "")}</td><td>${src(t.source_url)}${t.source_kind === "secondary" ? ' <span class="conf">· reported (secondary source)</span>' : ""}</td></tr>`).join("");
+    document.getElementById("vc-ties").innerHTML = `<table><thead><tr><th scope="col">From</th><th scope="col">Tie</th><th scope="col">To</th><th scope="col">Share of revenue or deal</th><th scope="col">As of</th><th scope="col">Source</th></tr></thead><tbody>${rows}</tbody></table>`;
   }
 
   // Stage figures that bear on a decision (module audit, 2026-11-27): support and its trend, commitments won,
@@ -473,13 +474,55 @@
     });
   }
 
-  window.renderValueChain = function (data, companies) {
+  // Size and weight (owner, 2026-11-28: circle size should show market share and line thickness the share of business,
+  // said in the key). From data/graph.json: companies' size (a market share, sized only against peers measured the
+  // same way) and ties' revenue_share (share of the supplier's revenue from that customer, from the supplier's own
+  // filing). Deals are shown in words, never as thickness. Without a figure, a circle is hollow and a line thin.
+  let SIZE = new Map(), PEER = new Map();
+  const peerKey = (z) => [z.measure, z.segment, z.year, z.source_kind].join("|");
+  function joinFigures(G) {
+    SIZE = new Map(); PEER = new Map();
+    if (!G || !G.nodes) return;
+    const byTicker = new Map([...CO.values()].filter((c) => c.ticker).map((c) => [String(c.ticker), c.id]));
+    const idOf = (nid) => { const n = G.nodes.find((x) => x.id === nid); if (!n) return null; const t = n.ticker || String(n.id).replace(/^(co|lab)-/, ""); return byTicker.get(String(t)) || (CO.has(t) ? t : null); };
+    const groups = new Map();
+    G.nodes.filter((n) => n.size && n.size.value != null).forEach((n) => {
+      const id = idOf(n.id); if (!id) return;
+      SIZE.set(id, n.size);
+      const k = peerKey(n.size); if (!groups.has(k)) groups.set(k, []); groups.get(k).push(id);
+    });
+    groups.forEach((ids, k) => { if (ids.length > 1) { const max = Math.max(...ids.map((i) => SIZE.get(i).value)); ids.forEach((i) => PEER.set(i, { k, max, n: ids.length })); } });
+    G.edges.filter((e) => e.revenue_share || e.deal).forEach((e) => {
+      const a = idOf(e.source), b = idOf(e.target); if (!a || !b) return;
+      const t = V.ties.find((x) => x.from === a && x.to === b && x.type === e.type) || V.ties.find((x) => x.from === a && x.to === b);
+      if (!t) return;
+      if (e.revenue_share) t.share = e.revenue_share;
+      if (e.deal) t.deal = e.deal;
+    });
+  }
+  // The peer groups behind the filled circles, named in the key.
+  function peerKeyText() {
+    const ks = [...new Set([...PEER.values()].map((p) => p.k))];
+    if (!ks.length) return "none yet";
+    return ks.map((k) => {
+      const ids = [...PEER].filter(([, p]) => p.k === k).map(([i]) => i);
+      const z = SIZE.get(ids[0]);
+      return `${esc(z.measure)}${z.segment ? ` within ${esc(z.segment)}` : ""}, ${esc(z.year)}${z.source_kind === "research firm estimate" ? " (research firm estimate)" : ""}: ${ids.map((i) => `${esc(name(i))} ${SIZE.get(i).value}%`).join(", ")}`;
+    }).join("; ");
+  }
+  const rOf = (id) => (PEER.has(id) ? 4 + 12 * Math.sqrt(SIZE.get(id).value / PEER.get(id).max) : 4.5);
+  const wOf = (t) => (t.share ? 1.5 + (t.share.value / 100) * 16 : 1.2);
+  const sizeText = (z) => `${z.value}${z.unit === "%" ? "%" : ` ${z.unit}`} ${z.measure}${z.segment ? `, ${z.segment}` : ""}, ${z.year}${z.source_kind === "research firm estimate" ? " (an estimate by a research firm)" : ""}`;
+  const shareText = (t) => `${t.share.value}% of ${name(t.from)}'s revenue${t.share.via_parent ? ` (via ${t.share.via_parent})` : ""}, ${t.share.fiscal_basis || t.share.as_of}`;
+  const dealText = (d) => `deal about ${d.value} ${d.unit}${d.term ? ` (${d.term})` : ""}${d.as_of ? `, ${d.as_of}` : ""}`;
+  window.renderValueChain = function (data, companies, graph) {
     const el = document.getElementById("tab-value-chain");
     if (!el) return;
     if (!data || !data.tiers || !data.ties) { el.innerHTML = `<div class="coming"><h2>AI value chain</h2><p>Being sourced now.</p></div>`; return; }
     V = data;
     CO = new Map((companies || []).map((c) => [c.id, c]));
     mergeLabTies();
+    joinFigures(graph);
     shell(el);
     drawTieTable();
     drawHeat();

@@ -280,3 +280,16 @@ test("Proposals chart: a mark brings its proposal to the top of the table, both 
   const box = await page.locator("#feed-chart").boundingBox();
   expect(box.y + box.height).toBeGreaterThan(0);
 });
+
+test("Opening the Stakeholder network again starts clear: every type shown, no search, the graph view", async ({
+  page,
+}) => {
+  await open(page, "?lens=impact");
+  await page.locator("#net-legend .leg").first().click();
+  await page.locator("#net-legend .leg").first().click();
+  await page.fill("#net-search", "Parnassus");
+  await page.click('.tabs [role="tab"][data-group="about"]');
+  await page.click('.tabs [role="tab"][data-group="engaging"]');
+  await expect(page.locator("#net-search")).toHaveValue("");
+  await expect(page.locator("#net-legend .leg[data-state='off'], #net-legend .leg[data-state='lit']")).toHaveCount(0);
+});

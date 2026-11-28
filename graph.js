@@ -2316,6 +2316,22 @@
   }
 
   window.focusNetworkNode = (id) => focus(id);
+  // Opening the Stakeholder network or Advocacy proposals page starts clear (owner, 2026-11-28: "by default it begins
+  // always clear of any filters and it begins on the network graph"): every type shown, no search, topic or year, the
+  // timeline at its end, all proposals, nothing selected, and the graph rather than the list.
+  window.netReset = () => {
+    if (!state || !state.data) return;
+    const set = (id, v, ev) => { const x = document.getElementById(id); if (x && x.value !== v) { x.value = v; x.dispatchEvent(new Event(ev, { bubbles: true })); } };
+    set("net-search", "", "input");
+    set("net-topic", "", "change");
+    set("net-year", "", "change");
+    if (state.upto) { stopPlay(); scrubTo(yearRange()[1], () => { applyStyles(); intro(); }, false); scrubSync(); }
+    if (state.hiddenKinds.size || (state.litKinds && state.litKinds.size)) { const all = document.querySelector("#net-legend [data-all]"); if (all) all.click(); }
+    if ((state.hiddenCats && state.hiddenCats.size) || (state.litCats && state.litCats.size)) { const cat = document.querySelector("[data-cat-all]"); if (cat) cat.click(); }
+    const ps = document.querySelector('#net-pstatus [data-pstatus="all"]'); if (ps && ps.getAttribute("aria-pressed") !== "true") ps.click();
+    const gv = document.querySelector('#tab-network .seg [data-view="graph"]'); if (gv && state.view !== "graph") gv.click();
+    if (state.selected) clearSelection();
+  };
   // The section's two tabs, Network of stakeholders and Proposals, set the graph's view (app.js).
   window.netMode = (m) => {
     window.netWantMode = m;
