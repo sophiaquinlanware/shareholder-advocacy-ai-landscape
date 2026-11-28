@@ -374,7 +374,7 @@ function renderFeed() {
         const links = [p.proxy_url ? src(p.proxy_url, "proxy") : p.source_url ? src(p.source_url) : "", p.results_url ? src(p.results_url, "results") : ""].join("");
         // Leads from the SEC record (scripts/sec_leads.py) stay labelled until a person confirms them.
         const auto = p.reviewed === false ? ` <span class="unverified">found automatically in the SEC record, not yet reviewed</span>` : "";
-        return `${esc(p.title)}${auto}${links}<div class="ticker">${filerOf(p)}</div><div>${topicTag(p.topic)}</div>${reason}`;
+        return `<span class="feed-t">${esc(p.title)}</span>${auto}${links}<div class="ticker">${filerOf(p)}</div><div>${topicTag(p.topic)}</div>${reason}`;
       } },
     { key: "status", label: "Status", render: (p) => `<span class="pill st-${esc(p.status)}">${esc(PROPOSAL_STATUS[p.status] || p.status)}</span>` },
     { key: "support", label: "Support", sortValue: (p) => (p.support_pct == null ? -1 : p.support_pct), cls: "num",
@@ -398,6 +398,7 @@ function renderFeed() {
     feedNotes = footnotes(rows);
     const box = document.getElementById("feed-table");
     box.innerHTML = sortableTable(cols, rows, sort, (p) => `id="prop-${esc(p.id)}"`) + fnList(feedNotes);
+    pinRow();
     wireSort(box, sort, drawTable);
     const filtered = Object.values(F).some(Boolean);
     document.getElementById("feed-count").textContent = `Showing ${plural(rows.length, "proposal")}${filtered ? ` of ${all.length}` : ""}.`;
@@ -483,18 +484,33 @@ function renderFeed() {
     svg.append("g").selectAll("path").data(pts).join("path")
       .attr("transform", (p) => `translate(${x(new Date(p.meeting_date + "T12:00:00")) + spread.get(p.id)},${y(p.support_pct)})`)
       .attr("d", (p) => d3.symbol(d3[symbolName(topicStyle(p.topic).shape)], 64)())
-      .attr("fill", (p) => topicColor(p.topic))
+      .attr("fill", (p) => (p.id === pickedProp ? "#e8590c" : topicColor(p.topic)))
+      .attr("class", (p) => (p.id === pickedProp ? "feed-pick" : null))
       .attr("stroke", cssVar("--surface")).attr("stroke-width", 0.8)
       .style("cursor", "pointer")
+      // A mark brings its proposal to the top of the table, right under the chart, and both turn orange, so the
+      // chart stays in view (owner, 2026-11-27).
       .on("click", (ev, p) => {
-        const row = document.getElementById("prop-" + p.id);
-        if (!row) return;
-        document.querySelectorAll("#feed-table tr.hit").forEach((r) => r.classList.remove("hit"));
-        row.classList.add("hit");
-        row.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+        pickedProp = p.id;
+        d3.select(ev.currentTarget.parentNode).selectAll("path")
+          .attr("fill", (q) => (q.id === pickedProp ? "#e8590c" : topicColor(q.topic)))
+          .attr("class", (q) => (q.id === pickedProp ? "feed-pick" : null));
+        d3.select(ev.currentTarget).raise();
+        const row = pinRow();
+        if (row) row.scrollIntoView({ block: "nearest", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
       })
       .append("title").text((p) => `${companyName(p.company)}, ${fmtDate(p.meeting_date, true)}: ${p.title}. ${p.support_pct}%${p.support_note ? ". " + p.support_note : ""}`);
   };
+  // The proposal picked on the chart sits first in the table, in orange, until another is picked.
+  var pickedProp = null;
+  function pinRow() {
+    document.querySelectorAll("#feed-table tr.hit").forEach((r) => r.classList.remove("hit"));
+    const row = pickedProp && document.getElementById("prop-" + pickedProp);
+    if (!row) return null;
+    row.parentNode.insertBefore(row, row.parentNode.firstChild);
+    row.classList.add("hit");
+    return row;
+  }
   // A filter set while the view is hidden (for example from Company profiles) redraws the chart when it is next shown.
   const redraw = () => { drawStatus(); drawTable(); if (!el.hidden) drawChart(); else delete el.dataset.drawn; };
 

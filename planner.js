@@ -384,7 +384,7 @@
     const c = coById(S.co);
     const out = document.getElementById("pl-out");
     const ready = c && S.ask;
-    out.innerHTML = ready ? `${focus(c, S.ask)}${grid()}<div class="pl-grid">${record(c, S.ask)}${timing(c)}</div>${ideas(c, S.ask)}${organizations(c, S.ask, S.mine)}${tools(c, S.ask)}<div class="pl-grid">${yours(c, S.ask, S.mine)}${policy(S.ask)}</div>` : `<p class="pl-empty">Choose a company and an ask above, or a square in the grid, and the context for that engagement appears here.</p>${grid()}`;
+    out.innerHTML = ready ? `${focus(c, S.ask)}<p class="note pl-trk-link">Every ask at every company is in <a href="#tracker">the tracker</a> in Proposals and results.</p><div class="pl-grid">${record(c, S.ask)}${timing(c)}</div>${ideas(c, S.ask)}${organizations(c, S.ask, S.mine)}${tools(c, S.ask)}<div class="pl-grid">${yours(c, S.ask, S.mine)}${policy(S.ask)}</div>` : `<p class="pl-empty">Choose a company and an ask above, or a square in the grid, and the context for that engagement appears here.</p>${grid()}`;
     out.querySelectorAll(".pl-add").forEach((b) => b.addEventListener("click", () => {
       const id = b.dataset.org, n = idx.nodes.get(id), list = getList();
       const row = b.closest("tr"), record = row ? [...row.querySelectorAll(".pl-why > li > strong")].map((s) => s.textContent.replace(/:$/, "")).join("; ") : "";

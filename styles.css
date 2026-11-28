@@ -1290,3 +1290,9 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 .ha-note { position: absolute; right: 24px; bottom: 12px; margin: 0; padding: 6px 12px; border-radius: 999px; background: var(--ink); color: var(--bg); font-size: 13px; transition: opacity .8s ease; z-index: 3; }
 .ha-note.out { opacity: 0; }
 .site-header { position: relative; }
+
+/* Proposals chart: the picked mark and its row, in the site's selection orange. */
+#feed-table tr.hit td { background: rgba(232, 89, 12, .07); }
+#feed-table tr.hit td:first-child { box-shadow: inset 3px 0 0 #e8590c; }
+#feed-table tr.hit .feed-t { color: #c2410c; font-weight: 500; } /* the same orange, one step deeper so text passes 4.5:1 */
+.feed-pick { stroke: #e8590c; stroke-width: 6; stroke-opacity: .25; }

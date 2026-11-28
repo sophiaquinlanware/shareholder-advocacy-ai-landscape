@@ -13,7 +13,7 @@ test("the planner opens blank, and a plan shows its parts", async ({ page }, inf
   await expect(page.locator(".pl-empty")).toBeVisible();
   await open(page, "?plan=microsoft~ask-dc-climate-energy");
   await expect(page.locator("#tab-planner h2")).toHaveText("Plan an engagement");
-  for (const h of ["#pl-h-mx", "#pl-h-time", "#pl-h-rec", "#pl-h-who", "#pl-h-pol", "#pl-h-ideas"])
+  for (const h of ["#pl-h-time", "#pl-h-rec", "#pl-h-who", "#pl-h-pol", "#pl-h-ideas"])
     await expect(page.locator(h)).toBeVisible();
   await expect(page.locator("#pl-co")).not.toHaveValue("");
   await expect(page.locator("#pl-ask")).not.toHaveValue("");
@@ -47,9 +47,11 @@ test("collaborators come with their reasons and sources, and the shortlist keeps
   await expect(page.locator("#pl-shortlist h3")).toHaveText("Your shortlist (1)");
 });
 
-test("the company × ask grid opens a plan for the chosen square", async ({ page }) => {
-  await open(page);
-  const cell = page.locator('.pl-mx[data-co="nvidia"][data-ask="ask-customer-due-diligence"]');
+test("the planner has no grid of its own; a tracker square opens a plan for that square", async ({ page }) => {
+  await open(page, "?plan=microsoft~ask-dc-climate-energy");
+  await expect(page.locator("#tab-planner .pl-mx")).toHaveCount(0);
+  await page.goto("/index.html#tracker");
+  const cell = page.locator('#tab-tracker .pl-mx[data-co="nvidia"][data-ask="ask-customer-due-diligence"]');
   await cell.click();
   await expect(page.locator("#pl-co")).toHaveValue("nvidia");
   await expect(page.locator("#pl-ask")).toHaveValue("ask-customer-due-diligence");
@@ -66,28 +68,22 @@ test("shortlisting keeps focus on the button, and fund votes carry a source and 
   await expect(votes.locator("a.src")).toHaveCount(1);
 });
 
-test("arrow keys move between grid squares", async ({ page }) => {
-  await open(page, "?plan=microsoft~ask-dc-climate-energy");
-  const current = page.locator('.pl-mx[aria-current="true"]');
-  await current.focus();
-  await page.keyboard.press("ArrowRight");
-  await expect(page.locator(".pl-mx:focus")).toHaveAttribute("tabindex", "0");
-});
-
 test("filings from filers critical of ESG are marked and left out of the support figures", async ({ page }) => {
   await open(page, "?plan=microsoft~ask-ai-training-data");
   const rec = page.locator("#pl-h-rec").locator("..");
   await expect(rec).toContainText("filers critical of ESG and are left out of the support figures");
   await expect(rec.locator("li").first()).toContainText("filed by a filer critical of ESG");
   // The grid leaves them out too: a square filed only by such filers is dashed and shows no support number.
-  const sq = page.locator('.pl-mx[data-co="microsoft"][data-ask="ask-ai-training-data"]');
+  await page.goto("/index.html#tracker");
+  const sq = page.locator('#tab-tracker .pl-mx[data-co="microsoft"][data-ask="ask-ai-training-data"]');
   await expect(sq).toHaveClass(/crit/);
   await expect(sq).toHaveAttribute("aria-label", /all by filers critical of ESG/);
   await expect(sq).not.toHaveText(/\d/);
 });
 
 test("grid rows keep the full ask name for screen readers and fit two lines on phones", async ({ page }, info) => {
-  await open(page);
+  await page.goto("/index.html#tracker");
+  await page.waitForSelector("#tab-tracker .pl-mx-row");
   const row = page.locator(".pl-mx-row").first();
   await expect(row.locator(".pl-long")).toHaveText("Data center water use");
   if (info.project.name.startsWith("phone")) {
@@ -144,7 +140,7 @@ test("the tracker in Proposals and results is keyboard reachable and opens a squ
   await expect(page.locator("#tab-planner")).toBeVisible();
   await expect(page.locator("#pl-co")).toHaveValue(co);
   await expect(page.locator("#pl-ask")).toHaveValue(ask);
-  // Both grids are on the page now; their headings must not share an id.
-  expect(await page.locator("#pl-h-mx").count()).toBe(1);
+  // One grid on the site: the tracker (owner, 2026-11-27: no redundant graphs).
+  expect(await page.locator("#pl-h-mx").count()).toBe(0);
   expect(await page.locator("#pl-h-trk").count()).toBe(1);
 });

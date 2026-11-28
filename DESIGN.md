@@ -107,6 +107,8 @@ One vocabulary: company roles from `roles.js` everywhere (the value-chain tiers 
 - **Header:** h1 (no logo; owner, 2026-11-27: "dont ahve any logo here at all"), a one-line description, the SEC check date, then the header art: blue ridges with one trail node per section climbing a jagged main peak, after the owner's reference mountain but wider at the base. On screens 641px and wider the summit sits right of the title.
 - **Network year label:** while the timeline plays, the year shows large at the band's bottom left, above the Key button, in orange while playing. The graph keeps its full size (owner, 2026-11-27: "dont shrink the graph"). A test checks that no node sits under it.
 - **Prediction board order:** highest first in every view: crowd forecast, else starting estimate, else your forecast, else the scenario figure (order only). Scenario figures sit in grey dashed boxes, never green, so they aren't read as proposals that succeeded.
+- **One company × ask grid:** the tracker in Proposals and results. The planner has none of its own and links to it (owner, 2026-11-27: no redundant graphs). A tracker square opens that company and ask in the planner.
+- **Proposals chart click:** a mark brings its proposal to the top of the table, right under the chart, and the mark, row edge and title turn orange; the chart stays in view.
 - **Sortable table:** `<th aria-sort>` with a `<button class="th-sort">`; the active column shows ↑ or ↓.
 - **Status filter:** buttons with counts (`.status-btn`, `aria-pressed`).
 - **Count line:** `.count-line`, `aria-live="polite"`; it states what the filters show.

@@ -264,3 +264,19 @@ test("Laws and rules: region and status filters narrow the chart; Show everythin
   await page.click("#cz-reset");
   await expect(page.locator("#cz-count")).toHaveText(`${total} of ${total} events shown.`);
 });
+
+test("Proposals chart: a mark brings its proposal to the top of the table, both in orange", async ({ page }) => {
+  await page.goto("/index.html#feed");
+  await page.waitForLoadState("networkidle");
+  const marks = page.locator("#feed-chart svg path[style*='cursor']");
+  await expect(marks.first()).toBeVisible();
+  const n = await marks.count();
+  await marks.nth(Math.floor(n / 2)).click({ force: true });
+  const first = page.locator("#feed-table tbody tr").first();
+  await expect(first).toHaveClass(/hit/);
+  await expect(page.locator("#feed-chart .feed-pick")).toHaveCount(1);
+  await expect(page.locator("#feed-chart .feed-pick")).toHaveAttribute("fill", "#e8590c");
+  // The chart stays on screen.
+  const box = await page.locator("#feed-chart").boundingBox();
+  expect(box.y + box.height).toBeGreaterThan(0);
+});

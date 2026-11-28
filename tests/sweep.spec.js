@@ -18,7 +18,7 @@ test("a planner link with a ticker or a broken code still opens a plan", async (
   await open(page, "/index.html?plan=MSFT~ask-ai-misinformation#planner");
   await page.waitForSelector("#pl-out h3");
   await expect(page.locator("#pl-co")).toHaveValue("microsoft");
-  await expect(page.locator('.pl-mx[aria-current="true"]')).toHaveCount(1);
+  await expect(page.locator("#pl-ask")).toHaveValue("ask-ai-misinformation");
   await open(page, "/index.html?plan=%E0%A4%A#planner");
   await expect(page.locator("#pl-out h3").first()).toBeVisible();
 });
