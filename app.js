@@ -742,7 +742,7 @@ function renderStart() {
 // Six sections in the order of an engagement cycle, each holding one or more views (index.html). Every view
 // keeps its own address (#feed, #network, ...), so old links and the tests open the right place.
 // Old addresses for views that were renamed or folded into another view.
-const TAB_ALIASES = { feed: "proposals", upcoming: "proposals", tracker: "proposals", votes: "proposals", outcomes: "proposals", parnassus: "company", rights: "company", asks: "topics", effects: "topics", why: "causality", "weigh-in": "upcoming", water: "upcoming", overview: "start", new: "upcoming" };
+const TAB_ALIASES = { feed: "proposals", upcoming: "proposals", tracker: "proposals", votes: "proposals", outcomes: "proposals", parnassus: "company", rights: "company", companies: "company", asks: "topics", effects: "topics", why: "causality", "weigh-in": "upcoming", water: "upcoming", overview: "start", new: "upcoming" };
 const lastView = {}; // per section, the view last open in it
 let prevView = "";
 // Tab switches crossfade with the View Transitions API (motion brief stage 7) where the browser has it, except

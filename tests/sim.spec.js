@@ -14,7 +14,6 @@ test("sections run from context to planning, each pointing to the next", async (
     "AI value chain",
     "Effects of AI",
     "AI governance",
-    "Company profiles",
     "Network",
     "Proposals",
     "Plan and test",

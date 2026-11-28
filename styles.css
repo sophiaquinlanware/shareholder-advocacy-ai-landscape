@@ -216,7 +216,7 @@ tr.hit td { background: var(--accent-soft); }
    Every value reaches 3:1 or more on white; similar hues sit in different regions of the grouped layout. */
 :root {
   --n-company: var(--blue); --n-lab: #6d28d9; --n-proposal: var(--blue);
-  --n-manager: #059669; --n-nonprofit: #e11d48; --n-faith: #c026d3; --n-pension: #ea580c;
+  --n-manager: #059669; --n-research: #7c3aed; --n-nonprofit: #e11d48; --n-faith: #c026d3; --n-pension: #ea580c;
   --n-labor: #b45309; --n-foundation: #4d7c0f; --n-coalition: #0f766e; --n-other: #64748b;
   --n-person: #4f46e5; --n-policy: #334155; --n-response: #0e7490; --n-public: #be185d;
   /* Value-chain tiers (companies by primary tier). */
@@ -244,7 +244,7 @@ tr.hit td { background: var(--accent-soft); }
   --gn-company: #fda4af; --gn-lab: #f87171; --gn-proposal: #ffff1a; /* neon yellow (owner, 2026-11-27: "brighter, more neon … to differentiate it from the orange") */
   --gn-manager: #38bdf8; --gn-nonprofit: #bfdbfe; --gn-faith: #3b82f6; --gn-pension: #a5b4fc;
   --gn-labor: #22d3ee; --gn-foundation: #e0e7ff; --gn-coalition: #4ade80; --gn-other: #94a3b8;
-  --gn-person: #d4d4d8; --gn-policy: #ffffff; --gn-response: #a8a29e; --gn-public: #c8b89a;
+  --gn-person: #d4d4d8; --gn-research: #c084fc; --gn-policy: #ffffff; --gn-response: #a8a29e; --gn-public: #c8b89a;
   --gn-tier-chips: #fbcfe8; --gn-tier-datacenters: #f472b6; --gn-tier-compute: #db2777;
   --gn-tier-labs: #f87171; --gn-tier-capital: #c2410c; --gn-tier-deployers: #fda4af;
   /* Company roles (roles.js): cloud and model platforms, consumer products, business and government products. */
@@ -1333,3 +1333,5 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 .net-rec .num { text-align: center; }
 .net-list-rec > summary { cursor: pointer; color: var(--accent); }
 .net-list-rec[open] { min-width: 320px; }
+/* Company comparisons fold under Company profiles only. */
+.group:has(> #tab-company[hidden]) .company-extra { display: none; }

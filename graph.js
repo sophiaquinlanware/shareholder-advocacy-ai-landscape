@@ -26,6 +26,7 @@
     foundation: "Foundation",
     coalition: "Coalition",
     other: "Other investor",
+    research: "Research or advocacy organization",
     person: "Head of stewardship or engagement",
     lab: "Frontier AI lab (tier not yet assigned)",
     policy: "Policy or rule",
@@ -46,6 +47,7 @@
     foundation: "--n-foundation",
     coalition: "--n-coalition",
     other: "--n-other",
+    research: "--n-research",
     person: "--n-person",
     lab: "--n-lab",
     policy: "--n-policy",
@@ -94,6 +96,8 @@
     const nodes = G.nodes.map((n) => {
       let kind = n.type;
       if (kind === "investor") kind = TYPE_VAR[n.org_type] ? n.org_type : "other";
+      // Research and advocacy groups outside investing (owner, 2026-11-28: "a lay of the land of all stakeholders").
+      if (n.type === "organization" || n.org_type === "research or advocacy organization") kind = "research";
       if (kind === "company" || kind === "lab") {
         // Main role from the company record (by ticker, else by id), else from the node's own tier.
         const co = (window.companyFor && window.companyFor(n)) || null;
@@ -165,6 +169,7 @@
     { x: 0.62, label: "Asks", kinds: ["ask"] },
     { x: 0.73, label: "AI companies, by role", kinds: ["company", ...TIERS.filter((t) => t.id !== "labs").map((t) => "tier-" + t.id)] },
     { x: 0.92, label: "Frontier labs", kinds: ["lab", "tier-labs"] },
+    { x: 0.98, label: "Research and advocacy", kinds: ["research"] },
   ];
   const TOP_BAND = ["policy", "response", "public"];
   // Columns whose node types are all hidden give up their space; the rest spread across the width.
@@ -459,8 +464,8 @@
 
   function shell(el) {
     el.innerHTML = `
-      <h2>AI advocacy network</h2>
-      <p class="count-line">Connections: sourced relationships among investors, coalitions, companies and frontier labs. Proposals: the AI shareholder proposals filed at each company, with their filers. Company–lab ties alone: AI value chain › Listed companies tied to each lab.</p>
+      <h2 id="net-h2">${state.mode === "proposals" ? HEAD.proposals[0] : HEAD.connections[0]}</h2>
+      <p class="count-line" id="net-h2-sub">${state.mode === "proposals" ? HEAD.proposals[1] : HEAD.connections[1]}</p>
       <!-- One view for everyone (owner, 2026-11-26: "maybe it's not necessary to have different view settings"); old ?lens= links still open their view. -->
       <fieldset class="lens-pick" id="net-lens" hidden><legend>View as</legend>${Object.entries(window.LENSES || {}).map(([id, l]) =>
         `<label class="chip"><input type="radio" name="net-lens" value="${esc(id)}"${id === state.lens ? " checked" : ""}> ${esc(l.label)}</label>`).join("")}</fieldset>
@@ -505,7 +510,7 @@
       </div>
       <div class="net-body is-graph">
         <div class="net-graph-wrap">
-          <div id="net-graph" class="net-graph" tabindex="0" role="application" aria-roledescription="network graph" aria-describedby="net-kb-hint" aria-label="AI advocacy network graph: investors, proposals, companies, labs and policy. Up and Down arrows move between nodes, Enter opens one, Escape clears. The List view has the same data as a table."></div>
+          <div id="net-graph" class="net-graph" tabindex="0" role="application" aria-roledescription="network graph" aria-describedby="net-kb-hint" aria-label="AI shareholder advocacy graph: investors, proposals, companies, labs and policy. Up and Down arrows move between nodes, Enter opens one, Escape clears. The List view has the same data as a table."></div>
           <div class="net-keybox">
             <button type="button" class="net-key-btn" id="net-key-btn" aria-expanded="false" aria-controls="net-figcap">Key</button>
             <div class="net-figcap" id="net-figcap" hidden></div>
@@ -1020,7 +1025,7 @@
   const MODES = {
     connections: { label: "Connections", eyebrow: "Relationships among investors, companies and labs", hides: () => new Set(["proposal", "ask", "gap"]) },
     // Policy and responses stay in Proposals for the Policymaker lens, whose asks link to them.
-    proposals: { label: "Proposals", eyebrow: "Proposals: filers to companies", hides: () => new Set(["lab", "tier-labs", ...(state.lens === "policy" ? [] : ["policy", "response", "public"])]) },
+    proposals: { label: "Proposals", eyebrow: "Proposals: filers to companies", hides: () => new Set(["lab", "tier-labs", ...(state.lens === "policy" ? [] : ["policy", "public"])]) },
   };
   const mode = () => {
     const m = MODES[state.mode] || MODES.connections;
@@ -1033,7 +1038,7 @@
   // no proposal filter (Active/Past, year) is set.
   const filtering = () => (state.pstatus && state.pstatus !== "all") || !!state.year || !!state.upto || !!state.topic;
   // Engagement outside the ballot, drawn in the Proposals view beside filings (owner, 2026-11-27).
-  const ENGAGE = new Set(["engaged directly", "focus company of", "sought engagement", "lists a member filing at", "made the case at", "announced member filings at", "joined an investor letter to", "wrote to"]);
+  const ENGAGE = new Set(["engaged directly", "focus company of", "sought engagement", "lists a member filing at", "made the case at", "announced member filings at", "joined an investor letter to", "wrote to", "responded to"]);
   // Three line styles for engagement, each in the Key: met the company, wrote to it, or acted through a coalition.
   const LETTER = new Set(["wrote to", "joined an investor letter to", "sought engagement"]);
   const COALITION = new Set(["focus company of", "lists a member filing at", "made the case at", "announced member filings at"]);
@@ -1077,9 +1082,17 @@
     proposals: "AI shareholder proposals by company, with lead filers, co-filers and exempt solicitations for or against. Active: on a ballot not yet held. Past: voted, withdrawn or excluded. A past proposal's line to its company is green if it succeeded (withdrawn after the company committed to act, or a majority vote) and red if it failed (voted, under 50% support).",
   };
   // Switch the graph between its two views; the layout is rebuilt so it only uses that view's links.
+  // Each page names its own graph (owner, 2026-11-28: under Proposals it should say proposals, not advocacy network).
+  const HEAD = {
+    connections: ["Network of stakeholders", "Sourced relationships among investors, coalitions, companies and frontier labs, and the people leading the work. Company–lab ties alone: AI value chain › Listed companies tied to each lab."],
+    proposals: ["AI shareholder proposals", "Every AI shareholder proposal at each company with its filers, and engagement outside the ballot: meetings, letters and coalition work."],
+  };
   function setMode(m, announce = true) {
     if (!MODES[m]) m = "connections";
     state.mode = m;
+    const h2 = document.getElementById("net-h2"), sub = document.getElementById("net-h2-sub");
+    if (h2) h2.textContent = HEAD[m][0];
+    if (sub) sub.textContent = HEAD[m][1];
     document.querySelectorAll("#net-mode [data-mode]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === m)));
     // The Network and Proposals sections follow the view when the graph changes it (a lens, or focusing a proposal).
     if (window.netTabFollow) window.netTabFollow(m);
