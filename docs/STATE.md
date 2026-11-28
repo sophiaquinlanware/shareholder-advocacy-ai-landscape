@@ -1,6 +1,6 @@
 # Shareholder Advocacy AI Landscape — current state
 
-Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-27 (data session: public-opinion polls by ask, data/public_opinion.json, for the UI session's "Where to focus" card).
+Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-27 (data session: bug sweep of the tracker and support chart; public-opinion polls by ask, data/public_opinion.json, for the UI session's "Where to focus" card).
 
 ## Sessions and branches (read this first)
 
@@ -81,7 +81,7 @@ Every chart is screenshot-ready (title, measure, count, years, key, source), exc
 
 ## Latest check
 
-`npm run check` on data/public-opinion (2026-11-27): lint pass, build pass, Playwright 344 passed; Lighthouse phone 97/100/100/100, desktop accessibility, best practices and SEO 100 but performance 77, below the bar of 80 (79 on main before this change, which adds no page code). Needs a look (queue 17).
+`npm run check` on fix/sweep-2 (2026-11-27): lint pass, build pass, Playwright 352 passed; Lighthouse phone 99/100/100/100, desktop 85/100/100/100. Desktop performance varies run to run (77 to 87 seen on the same code).
 
 ## Queue (found, not picked up)
 
@@ -104,7 +104,7 @@ Every chart is screenshot-ready (title, measure, count, years, key, source), exc
 15. **People follow-ups:** network.json records for `allianz-global-investors`, `jpmorgan-am`, `dimensional-fund-advisors`, `robeco`; rename "Church of England Pensions Board (National Investing Bodies)" so it isn't read as including the Church Commissioners; own-site source URLs for 11 organizations sourced to agendas; newer profile URLs for olga-hancock, adam-c-t-matthews, richard-manley; AI lines that describe firm work (Green Century, NYC Comptroller staff, CalPERS directors). Not yet covered: Capital Group, Fidelity, BlackRock, State Street, Nuveen, Calvert, Natixis, Generation IM, Columbia Threadneedle, DWS, Nordea, Parnassus staff; labor funds (AFL-CIO, Teamsters, AFSCME, SEIU), LGPS Central, AP7, HESTA, AustralianSuper, Nathan Cummings Foundation; PRI in Person 2024 and CII agendas.
 
 16. **Safety asks follow-ups:** companies tied to labs but not in companies.json (Micron MU, Snowflake SNOW, ASML); the listing month in the filing-routes text is hard-coded until a third lab lists; link the Code of Practice chapter PDF directly; company whistleblower policies not reviewed.
-17. **Lighthouse desktop performance** is 77–79, under the bar of 80, so `npm run check` exits 1 at its last step on main. Polls are dated; recheck public_opinion.json twice a year.
+17. **Lighthouse desktop performance** varies from 77 to 87 on the same code, so an occasional run under the bar of 80 is noise; re-run before chasing it. Polls are dated; recheck public_opinion.json twice a year.
 
 ## Owner actions
 
