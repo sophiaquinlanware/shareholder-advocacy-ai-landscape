@@ -37,3 +37,16 @@ test("Effects of AI: areas lead with AI safety; an effect opens its evidence, ru
   // A rule that is on the AI governance page links there.
   await expect(page.locator("#tab-topics .tp-card .tp-ef").first()).toHaveAttribute("aria-expanded", "true");
 });
+
+test("Stakeholder network: research and advocacy group and investor profiles open on a click", async ({ page }) => {
+  await page.goto("/index.html#groups");
+  await page.waitForLoadState("networkidle");
+  await page.locator("#tab-groups .pf-q").fill("METR");
+  await page.locator("#tab-groups .pf-item", { hasText: "METR" }).first().click();
+  await expect(page.locator("#tab-groups .pf-card h3")).toHaveText("METR");
+  await expect(page.locator("#tab-groups .pf-card")).toContainText("evaluated");
+  await page.goto("/index.html#investors");
+  await page.waitForLoadState("networkidle");
+  await page.locator("#tab-investors .pf-item", { hasText: "Parnassus Investments" }).first().click();
+  await expect(page.locator("#tab-investors .pf-card")).toContainText("engaged directly");
+});

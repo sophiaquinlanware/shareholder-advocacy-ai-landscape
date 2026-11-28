@@ -986,6 +986,7 @@ async function main() {
   if (window.renderBoard) window.renderBoard();
   if (window.renderAlignment) window.renderAlignment();
   if (window.renderTopics) window.renderTopics(DATA);
+  if (window.renderProfiles) window.renderProfiles(DATA);
   document.dispatchEvent(new Event("siteready"));
 }
 main();

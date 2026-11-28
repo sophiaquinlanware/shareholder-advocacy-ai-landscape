@@ -101,7 +101,9 @@
     <div class="subtabs" role="tablist" aria-label="Network views">
       <button type="button" role="tab" id="tabbtn-network" aria-controls="tab-network" data-tab="network" aria-selected="true">Network of stakeholders</button>
       <button type="button" role="tab" id="tabbtn-company" aria-controls="tab-company" data-tab="company" aria-selected="false" tabindex="-1">Company profiles</button>
-      <button type="button" role="tab" id="tabbtn-people" aria-controls="tab-people" data-tab="people" aria-selected="false" tabindex="-1">Heads of stewardship and engagement: contacts</button>
+      <button type="button" role="tab" id="tabbtn-investors" aria-controls="tab-investors" data-tab="investors" aria-selected="false" tabindex="-1">Investor profiles</button>
+      <button type="button" role="tab" id="tabbtn-groups" aria-controls="tab-groups" data-tab="groups" aria-selected="false" tabindex="-1">Research and advocacy groups</button>
+      <button type="button" role="tab" id="tabbtn-people" aria-controls="tab-people" data-tab="people" aria-selected="false" tabindex="-1">People: heads of stewardship and engagement</button>
     </div>
     <!-- The graph. It moves into the Proposals section when that opens (one graph, two views; app.js). -->
     <section id="tab-network" class="panel" role="tabpanel" aria-labelledby="tabbtn-network" data-group="engaging" hidden></section>
@@ -111,6 +113,8 @@
       <details class="fold" id="fold-parnassus"><summary>Compare all companies: AI disclosure scores</summary><section id="tab-parnassus" class="fold-body" hidden></section></details>
       <details class="fold" id="fold-rights"><summary>Compare all companies: shareholder proposal rights</summary><section id="tab-rights" class="fold-body" hidden></section></details>
     </div>
+    <section id="tab-investors" class="panel" role="tabpanel" aria-labelledby="tabbtn-investors" data-group="engaging" hidden></section>
+    <section id="tab-groups" class="panel" role="tabpanel" aria-labelledby="tabbtn-groups" data-group="engaging" hidden></section>
     <section id="tab-people" class="panel" role="tabpanel" aria-labelledby="tabbtn-people" data-group="engaging" hidden></section>
     <p class="next-section"><a href="#proposals">Next: Advocacy proposals →</a></p>
   </div>
@@ -171,7 +175,7 @@
       </nav>
       <nav class="foot-col" aria-label="Proposals and network">
         <h2 class="foot-h">Proposals and network</h2>
-        <ul><li><a href="#feed">All AI proposals</a></li><li><a href="#upcoming">Upcoming ballots</a></li><li><a href="#network">Network of stakeholders</a></li><li><a href="#proposals">Proposals graph</a></li><li><a href="#people">Heads of stewardship</a></li></ul>
+        <ul><li><a href="#feed">All AI proposals</a></li><li><a href="#upcoming">Upcoming ballots</a></li><li><a href="#network">Network of stakeholders</a></li><li><a href="#proposals">Proposals graph</a></li><li><a href="#investors">Investor profiles</a></li><li><a href="#groups">Research and advocacy groups</a></li><li><a href="#people">People</a></li></ul>
       </nav>
       <nav class="foot-col" aria-label="Plan and test">
         <h2 class="foot-h">Plan and test</h2>
@@ -213,6 +217,7 @@
 <script defer src="sim.js"></script>
 <script defer src="alignment.js"></script>
 <script defer src="topics.js"></script>
+<script defer src="profiles.js"></script>
 <script defer src="board-live.js"></script>
 <script defer src="board.js"></script>
 <script defer src="planner-docs.js"></script>

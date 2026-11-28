@@ -1344,3 +1344,13 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 .tp-askrec > summary { cursor: pointer; }
 .tp-gov { font-size: 13px; }
 .tab-row.spread { justify-content: space-between; flex-wrap: nowrap; }
+/* Investor and research-group profiles: a searchable list beside the chosen profile. */
+.pf-controls { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 12px; }
+.pf-controls input { flex: 1 1 260px; }
+.pf-wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 16px; align-items: start; }
+@media (max-width: 899px) { .pf-wrap { grid-template-columns: 1fr; } }
+.pf-list { list-style: none; padding: 0; margin: 0; max-height: 70vh; overflow-y: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+.pf-list li { padding: 6px 10px; border-bottom: 1px solid var(--line); }
+.pf-item[aria-current="true"] { color: #c2410c; font-weight: 500; }
+.pf-card { padding: 14px 16px; position: sticky; top: 64px; }
+.pf-quote { color: var(--ink-soft); font-size: 13px; }
