@@ -1242,8 +1242,12 @@
     const rank = (d) => (d.id === focusId ? 0 : d.id === state.hover || d.id === state.kbId ? 1 : isCompanyKind(d.kind) ? 2 : 3);
     items.sort((a, b) => rank(a.d) - rank(b.d) || (b.d.degree || 0) - (a.d.degree || 0));
     const placed = [];
-    // Shown node circles count as obstacles too, so a label doesn't print over another shown node.
-    const circles = items.map(({ d }) => ({ x: d.x, y: d.y, r: radius(d) }));
+    // Every shown node counts as an obstacle, with its rings, so no label prints over a circle or a ring (owner,
+    // 2026-11-27: "dont have this kind of overlap in text and graphics").
+    const ringPad = (d) => (rings(d).length ? 12 : 0);
+    // With a node selected, the faded nodes (12% opacity) stay out of the count so its connections can still be named.
+    const lit = focusId ? neighbors(focusId, focusId === state.selected ? state.depth || 1 : 1) : null;
+    const circles = state.data.nodes.filter((d) => d.x != null && visible(d) && (!lit || lit.has(d.id))).map((d) => ({ x: d.x, y: d.y, r: radius(d) + ringPad(d) }));
     const hits = (b) => placed.some((p) => b[0] < p[2] && p[0] < b[2] && b[1] < p[3] && p[1] < b[3])
       || circles.some((c) => c.x > b[0] - c.r && c.x < b[2] + c.r && c.y > b[1] - c.r && c.y < b[3] + c.r && !(c.x === b.nx && c.y === b.ny));
     // Candidate spots: right, left, above, below, then the four diagonals. If none is free, the label is
@@ -1268,7 +1272,7 @@
       const full = d.label.length > 42 ? d.label.slice(0, 40) + "…" : d.label;
       const short = d.label.length > SHORT ? d.label.slice(0, SHORT - 1) + "…" : d.label;
       const h = fs * 1.3;
-      const r = radius(d) + 4;
+      const r = radius(d) + 4 + ringPad(d);
       let pick = null;
       let text = full;
       // Measured width of the text (the browser's own measure), plus a small gap.

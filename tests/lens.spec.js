@@ -7,7 +7,9 @@ async function openNetwork(page, query = "") {
   await page.waitForSelector("#net-lens input:checked", { state: "attached" });
 }
 
-test("choosing a lens updates ?lens=, opens the Policymaker lens on Proposals, and survives a reload", async ({ page }) => {
+test("choosing a lens updates ?lens=, opens the Policymaker lens on Proposals, and survives a reload", async ({
+  page,
+}) => {
   await openNetwork(page);
   // The picker is hidden (one view for everyone); a lens is still chosen by link.
   await page.goto("/index.html?lens=policy#network");
@@ -73,7 +75,7 @@ test("opening a tab puts its name in the address (#hash)", async ({ page }) => {
   await expect(page).toHaveURL(/#people$/);
 });
 
-test("labels are off until a node is selected, then name it and its connections", async ({ page }) => {
+test("labels are off until a node is selected, then name it and its connections", async ({ page }, info) => {
   await openNetwork(page, "?lens=impact");
   await page.waitForTimeout(800);
   const shown = () =>
@@ -86,7 +88,8 @@ test("labels are off until a node is selected, then name it and its connections"
   await page.evaluate(() => window.focusNetworkNode("co-MSFT"));
   const after = await shown();
   expect(after).toContain("Microsoft");
-  expect(after.length).toBeGreaterThan(5);
+  // Labels never cover a lit node or its rings (owner, 2026-11-27), so a phone's narrow graph names fewer of them.
+  expect(after.length).toBeGreaterThan(info.project.name.startsWith("phone") ? 2 : 5);
 });
 
 test("graph labels never overlap, including after selecting a busy node", async ({ page }) => {

@@ -59,6 +59,7 @@ test("every tab: no sideways scrolling, no overlapping text", async ({ page }, i
 });
 
 test("every local link on every tab points at a file that exists", async ({ page, request }) => {
+  test.setTimeout(90000); // walks every view, like the layout test
   await page.goto("/index.html");
   await page.waitForLoadState("networkidle");
   const hrefs = new Set();
