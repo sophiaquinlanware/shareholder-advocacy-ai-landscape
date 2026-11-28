@@ -314,6 +314,67 @@ def main():
                 if c.get(k):
                     nodes[key][k] = c[k]
 
+    # Everything the folded sections show, carried in the graph so the Network and Proposals pages can draw it
+    # (owner, 2026-11-28: all the data from the other sections "stored and able to be ... visually represented"
+    # in both graphs). Each field keeps its source; nothing is computed here beyond joining records.
+    def pnode(pid):
+        return nodes.get(pid) or nodes.get(twin_of.get(pid, ""))
+
+    # Fund-family votes (data/fund_votes.json, from N-PX filings): a list on each proposal node. Rows marked
+    # NEEDS_CHECK are held back and counted; unreviewed rows say so (PRODUCT.md Never claim 4).
+    fv = load("fund_votes.json") or {}
+    reviewed = {(r["family"], pid) for r in fv.get("reviewed", []) if isinstance(r, dict) for pid in r.get("proposal_ids", [])}
+    for r in fv.get("summary", []):
+        t = pnode(r["proposal_id"])
+        if not t:
+            print(f"  warning: fund vote for unknown proposal {r['proposal_id']}")
+            continue
+        if r.get("vote") == "NEEDS_CHECK":
+            t["fund_votes_held_back"] = t.get("fund_votes_held_back", 0) + 1
+            continue
+        t.setdefault("fund_votes", []).append({"family": r["family"], "vote": r["vote"], "counts": r.get("counts"),
+                                              "sources": r.get("sources", []),
+                                              "reviewed": bool(r.get("reviewed")) or (r["family"], r["proposal_id"]) in reviewed})
+
+    # Campaign stage and commitments (data/campaigns.json): one summary per ask at each company, on the company node,
+    # and the campaign id on each of its proposals.
+    cp = load("campaigns.json") or {}
+    for c in cp.get("campaigns", []):
+        co = nodes.get("co-" + c["company"].upper()) or nodes.get("co-" + c["company"])
+        if co:
+            co.setdefault("campaigns", []).append({k: c.get(k) for k in ("id", "ask", "ask_label", "stage", "stage_label", "stage_basis",
+                                                                       "filings", "votes", "best_support")})
+        for p in c.get("proposals", []):
+            t = pnode(p if isinstance(p, str) else p.get("id", ""))
+            if t:
+                t["campaign_id"] = c["id"]
+    for m in cp.get("commitments", []):
+        co = nodes.get("co-" + m["company"].upper()) or nodes.get("co-" + m["company"])
+        if co:
+            co.setdefault("commitments", []).append({k: m.get(k) for k in ("id", "engaged_by", "related_proposal_id", "promised", "status",
+                                                                         "commitment_source_url", "commitment_source_kind")})
+
+    # How far each ask is already required by a policy (data/coverage.json), on proposals with that ask.
+    cov = defaultdict(list)
+    for x in (load("coverage.json") or {}).get("entries", []):
+        cov[x["ask_id"]].append({k: x.get(k) for k in ("policy_id", "graph_id", "coverage", "note", "source_url", "reviewed")})
+    for n in nodes.values():
+        if n["type"] == "proposal" and n.get("ask_id") in cov:
+            n["policy_coverage"] = cov[n["ask_id"]]
+
+    # Company-to-company ties across the AI value chain (data/value_chain_ties.json; the company-to-lab ties come from
+    # pathways.json above). Names are matched to company nodes by their label.
+    labels = {n["label"].lower(): n["id"] for n in nodes.values() if n["type"] in ("company", "lab")}
+    def by_name(s):
+        s = s.lower()
+        return labels.get(s) or next((i for lab, i in labels.items() if lab.startswith(s) or s.startswith(lab.split(" (")[0])), None)
+    for t in (load("value_chain_ties.json") or {}).get("ties", []):
+        a, b = by_name(t["from"]), by_name(t["to"])
+        if a and b:
+            edge(a, b, t["type"], "companies", t.get("source_url"), description=t.get("description"), as_of=t.get("as_of"))
+        else:
+            print(f"  warning: value-chain tie not matched: {t['from']} -> {t['to']}")
+
     # Degree, for sizing dots.
     deg = defaultdict(int)
     for e in edges:
