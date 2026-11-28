@@ -578,6 +578,9 @@
     P.thresholds.values.forEach((v) => { if (v < maxY) svg += `<line x1="${m.l}" x2="${W - m.r}" y1="${y(v)}" y2="${y(v)}" stroke="var(--ink-soft)" stroke-dasharray="4 4"/>`; });
     for (let yr = y0; yr <= y1; yr++) svg += `<text x="${x(yr)}" y="${H - 8}" text-anchor="middle" font-size="11" fill="var(--ink-soft)">${yr}</text>`;
     svg += `<line x1="${x(S.M.last + 0.5)}" x2="${x(S.M.last + 0.5)}" y1="${m.t}" y2="${H - m.b}" stroke="var(--ink)"/><text x="${x(S.M.last + 0.5) + 10}" y="${m.t + 10}" font-size="11" fill="var(--ink)">scenarios →</text>`;
+    // Owner, 2026-11-27: "make this visual more dynamic so you can see it move over time". The plot is revealed up to
+    // a season (a clip that follows a time cursor), played through once and scrubbable with the slider below.
+    svg += `<defs><clipPath id="sim-clip"><rect id="sim-clip-r" x="0" y="0" width="${W}" height="${H}"/></clipPath></defs><g clip-path="url(#sim-clip)">`;
     all.forEach(({ i, hist, T }) => {
       const col = COLORS[i];
       const pts = seasons.filter((s) => (T.support[s] || []).length >= 5);
@@ -588,6 +591,7 @@
       }
       hist.forEach((v) => { svg += `<circle cx="${x(v.year)}" cy="${y(v.support)}" r="4" fill="var(--accent)"><title>${v.year}: ${pct(v.support, 1)} (recorded)</title></circle>`; });
     });
+    svg += `</g><g id="sim-cursor"><line x1="0" x2="0" y1="${m.t}" y2="${H - m.b}" stroke="#e8590c" stroke-width="1.5"/></g>`;
     const rows = all.flatMap(({ i, t, hist, T }) => [...new Set([...hist.map((v) => v.year), ...seasons])].sort().map((yr) => {
       const rec = hist.filter((v) => v.year === yr).map((v) => pct(v.support, 1)).join(", ");
       const s = T.support[yr] || [];
@@ -601,7 +605,38 @@
       ${S.plans.map((p, i) => `<span><svg width="22" height="12" aria-hidden="true"><rect x="0" y="2" width="22" height="8" fill="${COLORS[i]}" opacity=".2"/><line x1="0" x2="22" y1="6" y2="6" stroke="${COLORS[i]}" stroke-width="2"/></svg> ${esc(p.name)}: middle and middle 80% of runs</span>`).join("")}
       <span><svg width="22" height="12" aria-hidden="true"><line x1="0" x2="22" y1="6" y2="6" stroke="var(--ink-soft)" stroke-dasharray="4 4"/></svg> Rule 14a-8(i)(12) bars: 5%, 15%, 25%</span></div>`;
     const source = window.figSource ? window.figSource("8-K vote results for recorded votes; scenarios computed by this site from data/sim_params.json, not a forecast and not advice;") : "";
-    box.innerHTML = `<figure class="card chart-card fig">${head}${key}${svg}</svg>${source}</figure><details><summary>The same figures as a table</summary><div class="table-wrap"><table><thead><tr><th scope="col">Plan</th><th scope="col">Target</th><th scope="col">Season</th><th scope="col">Recorded vote</th><th scope="col">Scenario middle</th><th scope="col">Middle 80% of runs</th><th scope="col">Runs with a vote</th></tr></thead><tbody>${rows}</tbody></table></div><p class="ticker">A dash in the recorded column: no recorded vote on this ask at this company.</p></details>`;
+    const ctl = `<div class="sim-play"><button type="button" class="chip" id="sim-play-btn">Play over time</button>
+      <label>Season <input type="range" id="sim-t" min="${y0}" max="${y1}" step="1" value="${y1}"> <output id="sim-t-out">${y1}</output></label>
+      <p class="sim-read" id="sim-read" aria-live="polite"></p></div>`;
+    box.innerHTML = `<figure class="card chart-card fig">${head}${key}${ctl}${svg}</svg>${source}</figure><details><summary>The same figures as a table</summary><div class="table-wrap"><table><thead><tr><th scope="col">Plan</th><th scope="col">Target</th><th scope="col">Season</th><th scope="col">Recorded vote</th><th scope="col">Scenario middle</th><th scope="col">Middle 80% of runs</th><th scope="col">Runs with a vote</th></tr></thead><tbody>${rows}</tbody></table></div><p class="ticker">A dash in the recorded column: no recorded vote on this ask at this company.</p></details>`;
+    const clip = box.querySelector("#sim-clip-r"), cur = box.querySelector("#sim-cursor"), t = box.querySelector("#sim-t"), out = box.querySelector("#sim-t-out"), read = box.querySelector("#sim-read");
+    const show = (yr) => {
+      const px = Math.min(W, x(yr) + 12);
+      clip.setAttribute("width", px);
+      cur.setAttribute("transform", `translate(${x(yr)},0)`);
+      t.value = Math.round(yr); out.textContent = Math.round(yr);
+      const yy = Math.round(yr);
+      read.textContent = all.map(({ i, t: tg, hist, T }) => {
+        const rec = hist.filter((v) => v.year === yy).map((v) => pct(v.support, 1)).join(", ");
+        const sp = T.support[yy] || [];
+        const what = rec ? `recorded ${rec}` : sp.length >= 5 ? `scenario middle ${pct(quant(sp, 0.5))} (80% of runs ${pct(quant(sp, 0.1))} to ${pct(quant(sp, 0.9))})` : "no vote";
+        return `${S.plans[i].name}, ${coName(tg.co)}: ${what}`;
+      }).join(" · ") + ` (${yy}${yy > S.M.last ? ", scenario" : ""})`;
+    };
+    let raf = 0;
+    const play = () => {
+      cancelAnimationFrame(raf);
+      const start = performance.now(), dur = 900 * (y1 - y0);
+      const step = (now) => { const k = Math.min(1, (now - start) / dur); show(y0 + k * (y1 - y0)); if (k < 1) raf = requestAnimationFrame(step); };
+      raf = requestAnimationFrame(step);
+    };
+    t.addEventListener("input", () => { cancelAnimationFrame(raf); show(+t.value); });
+    box.querySelector("#sim-play-btn").addEventListener("click", play);
+    show(y1);
+    if (!navigator.webdriver && !matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+      const io = new IntersectionObserver((es) => { if (es[0].isIntersecting) { io.disconnect(); play(); } }, { threshold: 0.5 });
+      io.observe(box.querySelector(".sim-svg"));
+    }
   }
 
   function drawField() {

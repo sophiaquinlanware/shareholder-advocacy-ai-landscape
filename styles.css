@@ -1231,3 +1231,26 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 .pl-controls .pl-hint { display: inline; white-space: nowrap; }
 .pl-controls #pl-copy { align-self: flex-end; }
 @media (max-width: 640px) { .pl-controls .pl-hint { white-space: normal; } }
+
+/* Planner targeting map (owner, 2026-11-27): the chosen ask's row and company's column are banded; the target square
+   is orange, the colour the site uses for a traced selection. */
+.pl-mx-table td.pl-in-row, .pl-mx-table td.pl-in-col, .pl-mx-table th.pl-in-col { background: var(--accent-soft); }
+.pl-mx-table tr.pl-row-on > th { background: var(--accent-soft); font-weight: 500; }
+.pl-mx.pl-target, .pl-mx.pl-target.filed { background: #e8590c; border: 2px solid #e8590c; color: #fff; box-shadow: 0 0 0 3px rgba(232, 89, 12, .2), 0 0 14px rgba(232, 89, 12, .45); }
+.pl-mx-do .pl-mx.pl-target { display: inline-block; width: 18px; height: 18px; vertical-align: -3px; }
+/* Where to focus */
+.pl-focus { border-left: 4px solid var(--blue-1); }
+.pl-focus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px 28px; margin: 8px 0 6px; }
+.pl-focus-grid dt { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); margin: 0 0 4px; }
+.pl-focus-grid dd { margin: 0; line-height: 1.5; }
+.pl-focus-grid ul { margin: 0; padding-left: 18px; }
+.pl-controls input[type="search"] { min-width: 260px; font: inherit; color: var(--ink); padding: 8px 12px; border: 1px solid var(--control-edge); border-radius: var(--radius); background: var(--surface); }
+@media (max-width: 640px) { .pl-controls input[type="search"] { min-width: 0; width: 100%; } }
+.pl-focus-grid li .linklike { display: inline; text-align: left; padding: 0; }
+
+/* Support over time: play and scrub through seasons (owner, 2026-11-27). */
+.sim-play { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; margin: 4px 0 10px; }
+.sim-play label { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-soft); }
+.sim-play input[type="range"] { width: 220px; accent-color: #e8590c; }
+.sim-read { flex: 1 1 100%; margin: 0; font-size: 13px; color: var(--ink); min-height: 1.5em; }
+.pl-controls label input[type="search"] { flex: none; height: auto; }

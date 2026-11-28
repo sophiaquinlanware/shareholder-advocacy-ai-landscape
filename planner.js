@@ -71,7 +71,11 @@
   const roleLabel = (c) => (window.ROLES ? window.ROLES.label(window.ROLES.roleOf(c)) : c.tier || "");
 
   // ---------- Grid: asks × companies (brainstorm) ----------
-  function grid() {
+  // In the planner (target = true) the chosen ask's row and company's column are banded and the chosen square is
+  // orange, so the target reads against how nearby squares have done (owner, 2026-11-27). The same grid, plain,
+  // is the tracker in Proposals and results.
+  function grid(target = true) {
+    const sel = target && S ? S : {};
     const cos = usCos();
     const cell = new Map();
     D.proposals.forEach((p) => {
@@ -86,15 +90,17 @@
       cell.set(k, x);
     });
     const totals = new Map(D.asks.map((a) => [a.id, D.proposals.filter((p) => p.ask_id === a.id).length]));
-    const head = cos.map((c) => `<th scope="col"><abbr title="${esc(c.name)}">${esc(tick(c))}</abbr></th>`).join("");
-    const rows = D.asks.map((a, r) => `<tr><th scope="row" class="pl-mx-row"><span class="pl-long">${esc(a.label)}</span><span class="pl-short" aria-hidden="true">${esc(a.short_label || a.label)}</span> <span class="ticker">${totals.get(a.id)} filed</span></th>${cos.map((c, i) => {
+    const head = cos.map((c) => `<th scope="col"${sel.co === (c.id || c.ticker) ? ' class="pl-in-col"' : ""}><abbr title="${esc(c.name)}">${esc(tick(c))}</abbr></th>`).join("");
+    const rows = D.asks.map((a, r) => `<tr${sel.ask === a.id ? ' class="pl-row-on"' : ""}><th scope="row" class="pl-mx-row"><span class="pl-long">${esc(a.label)}</span><span class="pl-short" aria-hidden="true">${esc(a.short_label || a.label)}</span> <span class="ticker">${totals.get(a.id)} filed</span></th>${cos.map((c, i) => {
       const x = cell.get(a.id + "|" + tick(c));
-      const on = S.co === (c.id || c.ticker) && S.ask === a.id;
+      const on = sel.co === (c.id || c.ticker) && sel.ask === a.id;
+      const band = (sel.ask === a.id ? " pl-in-row" : "") + (sel.co === (c.id || c.ticker) ? " pl-in-col" : "");
       const label = `${a.label} at ${c.name}: ${x ? `filed ${plural(x.n, "time")}${x.best != null ? `, highest support ${Math.round(x.best)}%` : ""}${x.best == null ? ", not voted (withdrawn, excluded or still to come)" : ""}${x.up ? ", on the next ballot" : ""}${x.crit ? `, ${x.crit === x.n ? (x.n === 1 ? "by a filer" : "all by filers") : `${x.crit} of them by filers`} critical of ESG${x.best != null ? " (left out of the highest support)" : ""}` : ""}` : "not filed in this dataset"}`;
-      return `<td><button type="button" class="pl-mx${x ? " filed" : ""}${x && x.crit === x.n ? " crit" : ""}${x && x.up ? " up" : ""}" data-co="${esc(c.id || c.ticker)}" data-ask="${esc(a.id)}" data-r="${r}" data-c="${i}" tabindex="${on ? 0 : -1}"${on ? ' aria-current="true"' : ""} aria-label="${esc(label)}. Opens the plan below." title="${esc(label)}. Click to open the plan below.">${x ? (x.best != null ? Math.round(x.best) : "•") : ""}</button></td>`;
+      return `<td class="${band.trim()}"><button type="button" class="pl-mx${on ? " pl-target" : ""}${x ? " filed" : ""}${x && x.crit === x.n ? " crit" : ""}${x && x.up ? " up" : ""}" data-co="${esc(c.id || c.ticker)}" data-ask="${esc(a.id)}" data-r="${r}" data-c="${i}" tabindex="${on ? 0 : -1}"${on ? ' aria-current="true"' : ""} aria-label="${esc(label)}. Opens the plan below." title="${esc(label)}. Click to open the plan below.">${x ? (x.best != null ? Math.round(x.best) : "•") : ""}</button></td>`;
     }).join("")}</tr>`).join("");
-    return `<section class="pl-card pl-wide" aria-labelledby="pl-h-mx"><h3 id="pl-h-mx">AI shareholder engagement tracker: each ask, by company</h3>
-      <p class="pl-mx-do"><strong>Click a square to plan an engagement for that company and ask: the plan opens below the grid.</strong> Arrow keys move between squares.</p>
+    const tc = target && S ? coById(S.co) : null;
+    return `<section class="pl-card pl-wide" aria-labelledby="pl-h-mx"><h3 id="pl-h-mx">${target ? "Your target against the record: each ask, by company" : "AI shareholder engagement tracker: each ask, by company"}</h3>
+      ${target && tc ? `<p class="pl-mx-do"><span class="pl-mx pl-target" aria-hidden="true"></span> <strong>${esc(askOf(S.ask).label)} at ${esc(tc.name)}</strong>. Its row shows the same ask at other companies; its column, other asks at ${esc(tc.name)}. Click any square to retarget; arrow keys move between squares.</p>` : `<p class="pl-mx-do"><strong>Click a square to plan an engagement for that company and ask in Plan and test.</strong> Arrow keys move between squares.</p>`}
       <p class="status-note">Rows are asks (with how often each has been filed), columns are the US-listed companies. Leaving out filings from filers critical of ESG:</p>
       <ul class="pl-mx-key" aria-label="What the squares show">
         <li><span class="pl-mx filed" aria-hidden="true">34</span> highest support that ask has had at that company (% for ÷ (for + against))</li>
@@ -104,6 +110,43 @@
         <li><span class="pl-mx" aria-hidden="true"></span> empty: no filing there in this dataset</li>
       </ul>
       <div class="table-wrap pl-mx-wrap"><table class="pl-mx-table"><thead><tr><th scope="col"><span class="visually-hidden">Ask</span></th>${head}</tr></thead><tbody>${rows}</tbody></table></div></section>`;
+  }
+
+  // ---------- Where to focus (owner, 2026-11-27: "help investors make asks that are optimized for collaboration and
+  // political and business receptiveness … guide you to a more productive space") ----------
+  // A summary computed from the records below: the ask's record, related asks with a stronger record, who already
+  // works on it, who holds the company, what policy covers, and public polling where a sourced poll is on file.
+  function askStats(a) {
+    const all = D.proposals.filter((p) => p.ask_id === a);
+    const voted = all.filter((p) => p.status === "voted" && p.support_pct != null && !idx.critical.has(p.id)).map((p) => p.support_pct);
+    return { n: all.length, votes: voted.length, med: median(voted), wins: all.filter((p) => p.outcome === "commitment" || p.outcome === "majority").length };
+  }
+  const statText = (x) => `${x.med != null ? `median support ${pct(x.med)} across ${plural(x.votes, "vote")}` : "no recorded vote"}; ${plural(x.wins, "commitment or majority", "commitments or majorities")} in ${plural(x.n, "filing")}`;
+  function focus(c, ask) {
+    const t = tick(c), me = askStats(ask), cat = askOf(ask).category;
+    const peers = new Set(D.proposals.filter((p) => p.company === t).map((p) => p.ask_id));
+    const related = D.asks.filter((a) => a.id !== ask && (a.category === cat || peers.has(a.id))).map((a) => ({ a, x: askStats(a.id) }))
+      .filter(({ x }) => x.n >= 2 && (x.wins > me.wins || (x.med != null && (me.med == null || x.med >= me.med + 3))))
+      .sort((p, q) => q.x.wins - p.x.wins || (q.x.med ?? 0) - (p.x.med ?? 0)).slice(0, 3);
+    const orgs = organizationsData(c).slice(0, 3);
+    const holders = idx.holdsAt.filter((h) => h.co === t).sort((a, b) => (b.value || 0) - (a.value || 0))
+      .filter((h, i, arr) => arr.findIndex((y) => y.org === h.org) === i).slice(0, 3);
+    const cov = ((D.coverage && D.coverage.entries) || []).filter((r) => r.ask_id === ask && r.coverage !== "none");
+    const ev = new Map(((D.causality && D.causality.events) || []).map((e) => [e.id, e]));
+    const regions = [...new Set(cov.map((r) => (ev.get(r.policy_id) || {}).region).filter(Boolean))];
+    const polls = ((D.opinion && D.opinion.polls) || []).filter((p) => p.ask_id === ask).slice(0, 2);
+    const jump = (id, text) => `<a href="#${id}" class="pl-jump" data-to="${id}">${text}</a>`;
+    return `<section class="pl-card pl-wide pl-focus" aria-labelledby="pl-h-focus"><h3 id="pl-h-focus">Where to focus: ${esc(askOf(ask).label)} at ${esc(c.name)}</h3>
+      <dl class="pl-focus-grid">
+        <div><dt>Record of this ask</dt><dd>${esc(statText(me))}. ${jump("pl-h-rec", "Details")}</dd></div>
+        <div><dt>Related asks with a stronger record</dt><dd>${related.length ? `<ul>${related.map(({ a, x }) => `<li><button type="button" class="linklike pl-ask" data-ask="${esc(a.id)}">${esc(a.label)}</button>: ${esc(statText(x))}</li>`).join("")}</ul>` : "None in this dataset: this ask has the strongest record among related asks."}</dd></div>
+        <div><dt>Already working on it</dt><dd>${orgs.length ? `${orgs.map((o) => esc(o.name)).join(", ")}. ${jump("pl-h-who", "All organizations")}` : "No filer on file for this ask or at this company."}</dd></div>
+        <div><dt>Largest reported holders of ${esc(c.name)}</dt><dd>${holders.length ? holders.map((h) => `${esc((idx.nodes.get(h.org) || {}).label || h.org)}${h.value ? ` (${money(h.value)})` : ""}${src(h.url)}`).join("; ") : "None reported in this dataset."}</dd></div>
+        <div><dt>Policy support</dt><dd>${cov.length ? `${plural(cov.length, "policy", "policies")} already require part of this ask${regions.length ? ` (${esc(regions.join(", "))})` : ""}. ${jump("pl-h-pol", "Details")}` : "No policy on the map requires part of this ask yet."}</dd></div>
+        <div><dt>Public opinion</dt><dd>${polls.length ? polls.map((p) => `${esc(p.pollster)}, ${esc(p.fielded)}${p.population ? `, ${esc(p.population)}` : ""}: ${esc(p.result)}${src(p.url)}`).join("<br>") : "No sourced poll on file for this ask yet."}</dd></div>
+      </dl>
+      <p class="note">Computed by this site from the records on this page. A record shows what has happened, not what will; this is not a recommendation.</p>
+    </section>`;
   }
 
   // ---------- How this ask has gone ----------
@@ -335,7 +378,7 @@
     const c = coById(S.co);
     const out = document.getElementById("pl-out");
     if (!c) { out.innerHTML = `<p class="status-note">Choose a company.</p>`; return; }
-    out.innerHTML = `${grid()}<div class="pl-grid">${record(c, S.ask)}${timing(c)}</div>${ideas(c, S.ask)}${organizations(c, S.ask, S.mine)}${tools(c, S.ask)}<div class="pl-grid">${yours(c, S.ask, S.mine)}${policy(S.ask)}</div>`;
+    out.innerHTML = `${focus(c, S.ask)}${grid()}<div class="pl-grid">${record(c, S.ask)}${timing(c)}</div>${ideas(c, S.ask)}${organizations(c, S.ask, S.mine)}${tools(c, S.ask)}<div class="pl-grid">${yours(c, S.ask, S.mine)}${policy(S.ask)}</div>`;
     out.querySelectorAll(".pl-add").forEach((b) => b.addEventListener("click", () => {
       const id = b.dataset.org, n = idx.nodes.get(id), list = getList();
       const row = b.closest("tr"), record = row ? [...row.querySelectorAll(".pl-why > li > strong")].map((s) => s.textContent.replace(/:$/, "")).join("; ") : "";
@@ -346,6 +389,7 @@
     }));
     out.querySelectorAll(".pl-ask").forEach((b) => b.addEventListener("click", () => { S.ask = b.dataset.ask; sync(true); }));
     out.querySelectorAll(".pl-co").forEach((b) => b.addEventListener("click", () => { S.co = b.dataset.co; sync(true); }));
+    out.querySelectorAll(".pl-jump").forEach((a) => a.addEventListener("click", (e) => { const h = document.getElementById(a.dataset.to); if (!h) return; e.preventDefault(); h.tabIndex = -1; h.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" }); h.focus({ preventScroll: true }); }));
     const more = document.getElementById("pl-more");
     if (more) more.addEventListener("click", () => { S.showAll = !S.showAll; draw(); document.getElementById("pl-h-who").focus(); });
     // Grid: one square in the tab order; arrow keys move.
@@ -407,6 +451,8 @@
     const cm = document.getElementById("pl-copy-msg");
     if (cm) cm.textContent = ""; // a copied link belongs to the previous plan
     ["pl-co", "pl-ask", "pl-mine"].forEach((id) => { const el = document.getElementById(id); if (el) el.value = { "pl-co": S.co, "pl-ask": S.ask, "pl-mine": S.mine }[id] || ""; });
+    const mq = document.getElementById("pl-mine-q");
+    if (mq && document.activeElement !== mq) mq.value = S.mine && idx.nodes.has(S.mine) ? idx.nodes.get(S.mine).label : "";
     if (write) try {
       const q = new URLSearchParams(location.search);
       q.delete("plan");
@@ -438,7 +484,33 @@
   }
 
   // Build the planner only when its view is first shown, so the rest of the site loads without waiting for it.
+  // Data and indexes, set once for the planner and the tracker.
+  function init(data) {
+    if (D) return;
+    D = { graph: data.graph && data.graph.nodes ? data.graph : { nodes: [], edges: [] }, proposals: (data.proposals && data.proposals.proposals) || [],
+      companies: data.companies || [], asks: (data.asks && data.asks.asks) || [], people: (data.people && data.people.people) || [],
+      fundVotes: data.fund_votes, holdings: data.holdings, coverage: data.coverage, causality: data.causality, valueChain: data.value_chain, opinion: data.public_opinion };
+    idx = index();
+  }
+  // Proposals and results › Tracker: the plain grid; a square opens that company and ask in Plan an engagement.
+  function buildTracker(el, data) {
+    init(data);
+    el.innerHTML = `<h2>AI shareholder engagement tracker</h2><p class="intro">Each ask, by company: the highest support each has had, and what is on the next ballot.</p>${grid(false)}`;
+    el.querySelectorAll("button.pl-mx").forEach((b) => b.addEventListener("click", () => {
+      if (S) { S.co = b.dataset.co; S.ask = b.dataset.ask; sync(false); }
+      else try { const q = new URLSearchParams(location.search); q.set("plan", `${b.dataset.co}~${b.dataset.ask}`); history.replaceState(null, "", `${location.pathname}?${q.toString()}${location.hash}`); } catch (e) { /* default plan */ }
+      if (window.showTab) window.showTab("planner", true);
+    }));
+  }
+  function whenShown(id, fn) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (!el.hidden) { fn(el); return; }
+    const mo = new MutationObserver(() => { if (!el.hidden) { mo.disconnect(); fn(el); } });
+    mo.observe(el, { attributes: true, attributeFilter: ["hidden"] });
+  }
   window.renderPlanner = function (data) {
+    whenShown("tab-tracker", (t) => buildTracker(t, data));
     const el = document.getElementById("tab-planner");
     if (!el) return;
     if (el.hidden) {
@@ -449,10 +521,7 @@
     build(el, data);
   };
   function build(el, data) {
-    D = { graph: data.graph && data.graph.nodes ? data.graph : { nodes: [], edges: [] }, proposals: (data.proposals && data.proposals.proposals) || [],
-      companies: data.companies || [], asks: (data.asks && data.asks.asks) || [], people: (data.people && data.people.people) || [],
-      fundVotes: data.fund_votes, holdings: data.holdings, coverage: data.coverage, causality: data.causality, valueChain: data.value_chain };
-    idx = index();
+    init(data);
     const soon = D.proposals.filter((p) => p.status === "upcoming" && p.meeting_date).sort((a, b) => a.meeting_date.localeCompare(b.meeting_date))[0];
     const askCount = new Map(); D.proposals.forEach((p) => p.ask_id && askCount.set(p.ask_id, (askCount.get(p.ask_id) || 0) + 1));
     const topAsk = [...askCount.entries()].sort((a, b) => b[1] - a[1])[0];
@@ -469,11 +538,12 @@
     const orgs = idx.orgs.slice().sort((a, b) => a.label.localeCompare(b.label));
     el.innerHTML = `
       <h2>Plan an engagement</h2>
-      <p class="intro">Choose a company and an ask, or a square in the grid. Add your organization to see its record and shared coalitions.</p>
+      <p class="intro">Choose a company and an ask. The plan shows where the record points, who already works on it and what supports it.</p>
       <div class="net-controls pl-controls">
         <label>Company <select id="pl-co">${cos.map((c) => `<option value="${esc(c.id || c.ticker)}">${esc(c.name)} (${esc(c.ticker)})</option>`).join("")}</select></label>
         <label>Ask <span class="pl-hint">(what you want the company to do)</span> <select id="pl-ask">${D.asks.map((a) => `<option value="${esc(a.id)}">${esc(a.label)} (${askCount.get(a.id) || 0} filed)</option>`).join("")}</select></label>
-        <label>Your organization (optional) <select id="pl-mine"><option value="">Not set</option>${orgs.map((o) => `<option value="${esc(o.id)}">${esc(o.label)}</option>`).join("")}</select></label>
+        <label>Your organization (optional) <input id="pl-mine-q" type="search" list="pl-mine-list" placeholder="Type to search" autocomplete="off"><datalist id="pl-mine-list">${orgs.map((o) => `<option value="${esc(o.label)}"></option>`).join("")}</datalist></label>
+        <select id="pl-mine" hidden aria-hidden="true" tabindex="-1"><option value="">Not set</option>${orgs.map((o) => `<option value="${esc(o.id)}">${esc(o.label)}</option>`).join("")}</select>
         <button type="button" class="chip" id="pl-copy" aria-describedby="pl-copy-note">Save this plan as a link</button> <span id="pl-copy-msg" class="ticker"></span>
         <p class="ticker pl-copy-note" id="pl-copy-note">Copies a web address that reopens this company, ask and organization. Bookmark it or send it to a colleague; nothing is stored on a server.</p>
       </div>
@@ -517,7 +587,19 @@
       });
     }
     document.getElementById("pl-ask").addEventListener("change", (e) => { S.ask = e.target.value; sync(); });
-    document.getElementById("pl-mine").addEventListener("change", (e) => { S.mine = e.target.value; visit.set(MINE, S.mine); sync(); });
+    // Search by name (owner, 2026-11-27: "make it so you can search for your org"): a typed name that matches an
+    // organization sets it; clearing the box clears it.
+    const mq = document.getElementById("pl-mine-q");
+    const pick = () => {
+      const v = mq.value.trim().toLowerCase();
+      const o = v ? idx.orgs.find((x) => x.label.toLowerCase() === v) : null;
+      if (v && !o) return;
+      const id = o ? o.id : "";
+      if (id === S.mine) return;
+      S.mine = id; visit.set(MINE, S.mine); sync();
+    };
+    mq.addEventListener("change", pick);
+    mq.addEventListener("input", () => { if (!mq.value.trim() || idx.orgs.some((x) => x.label.toLowerCase() === mq.value.trim().toLowerCase())) pick(); });
     document.getElementById("pl-copy").addEventListener("click", async () => {
       const url = location.origin + planUrl();
       const st = document.getElementById("pl-status");
