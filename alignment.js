@@ -1,5 +1,5 @@
 // Two views for engaging frontier labs on safety (data session):
-//   AI value chain › Labs you can file at: frontier labs whose shareholders can now reach them directly (Anthropic
+//   AI value chain › Listed labs: file directly: frontier labs whose shareholders can now reach them directly (Anthropic
 //     listed in November 2026; xAI inside SpaceX, listed June 2026), what it takes to file, who controls the vote,
 //     their safety commitments on record, and the listed companies with the strongest ties to them.
 //   Plan and test › Safety asks: AI-safety practices written as shareholder asks, with who has committed to each,
@@ -25,7 +25,7 @@
   };
   const json = (f) => fetch(`data/${f}`).then((r) => r.json());
 
-  // ---------- Labs you can file at ----------
+  // ---------- Listed labs: file directly ----------
   async function listedLabs(el) {
     const [L, C] = await Promise.all([json("lab_leverage.json"), json("companies.json")]);
     const co = Object.fromEntries(C.filter((c) => c.ticker).map((c) => [c.ticker, c]));
@@ -63,7 +63,7 @@
       <p class="status-note">Shareholders reach these through the parent company's annual meeting.</p>
       <ul class="steps">${inhouse.map((l) => { const r = l.routes.find((x) => x.direct) || {}; return `<li><strong>${esc(l.name)}</strong>: part of ${esc(r.name || l.parent)}${r.ai_proposals_filed ? `, where ${r.ai_proposals_filed} AI proposals have been filed` : ""}${r.next_deadline ? `; ${passed(r) ? "last" : "next"} proposal deadline ${esc(day(r.next_deadline))}${passed(r) ? " (passed)" : ""}` : ""}</li>`; }).join("")}</ul>
       <h3>Labs reachable only through others</h3>
-      <p class="status-note">Private labs, with the listed companies most strongly tied to each (from Ties to each frontier lab).</p>
+      <p class="status-note">Private labs, with the listed companies most strongly tied to each (from Listed companies tied to each lab).</p>
       <ul class="steps">${others.map((l) => `<li><strong>${esc(l.name)}</strong>: ${l.routes.slice(0, 3).map((r) => `${esc(r.name)} (${r.levers.map((x) => esc(x.type)).join(", ")})`).join("; ") || "no listed company tied in the records"}</li>`).join("")}</ul>
       <p class="note">Order: the strongest recorded ties first. This orders what the records show; it is not a forecast of influence and not a recommendation.</p>`;
   }
@@ -85,7 +85,7 @@
           <div><dt>What filings say about financial impact</dt><dd>${(a.materiality || []).map((x) => `${esc(x.text)}${src(x.url)}`).join("<br>") || "No evidence recorded yet."}</dd></div>
           <div><dt>Example wording</dt><dd><blockquote class="al-quote">${esc(a.example)}</blockquote><span class="note">Written by this site as an illustration to adapt, not a recommendation.</span></dd></div>
         </dl>
-        <p><a href="${plan((a.target || {}).company || "anthropic", a.planner_ask || "ask-ai-oversight-reporting")}">Plan this at ${esc((a.target || {}).label || "Anthropic")}</a> · <a href="#listed-labs">Labs you can file at</a></p>
+        <p><a href="${plan((a.target || {}).company || "anthropic", a.planner_ask || "ask-ai-oversight-reporting")}">Plan this at ${esc((a.target || {}).label || "Anthropic")}</a> · <a href="#listed-labs">Listed labs: file directly</a></p>
       </article>`).join("")}
       <p class="note">${esc(A.about || "")}</p>`;
   }

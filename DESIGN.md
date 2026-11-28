@@ -90,7 +90,7 @@ Site name: **"Shareholder advocacy on AI"** (owner request, 2026-11-26, commit 7
 Six sections, in the order of an engagement cycle (owner, 2026-11-26: "like you are an analyst from [Parnassus] ... eliminate any redundancies ... It feels chronological ... clear why each thing is there"; plan docs/plans/2026-11-26-analyst-restructure.md). Each section opens with the question it answers, then a row of views:
 
 - **Deadlines and votes:** Key dates and findings (`#start`) · AI proposals on upcoming ballots (`#upcoming`) · New SEC filings (`#new`)
-- **AI value chain:** Chips to AI products (`#value-chain`) · Ties to each frontier lab (`#pathways`)
+- **AI value chain:** Chips to AI products (`#value-chain`) · Listed companies tied to each lab (`#pathways`)
 - **Company profiles:** One company in full (`#company`) · AI disclosure scores (`#parnassus`) · Shareholder proposal rights (`#rights`)
 - **Proposals and results:** All AI proposals (`#feed`) · How fund families voted (`#votes`) · Results of private engagement (`#outcomes`; moved here from Network and contacts, owner 2026-11-26: that section maps the network and players)
 - **Network and contacts** (owner, 2026-11-26; was "Investors and contacts"): Network of investors, proposals and companies (`#network`) · Heads of stewardship and engagement (`#people`; owner: no count in the tab, name them by their job titles)

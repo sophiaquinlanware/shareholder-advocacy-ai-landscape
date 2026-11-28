@@ -172,7 +172,7 @@
     // Key: one dash pattern per tie type.
     document.getElementById("vc-key").innerHTML = [...new Set(V.ties.map((t) => t.type))].map((k) =>
       `<span class="leg static"><svg class="mark vc-line" viewBox="0 0 44 10" aria-hidden="true"><line x1="2" y1="5" x2="42" y2="5" stroke="${ink}" stroke-width="2.5"${DASH[k] ? ` stroke-dasharray="${DASH[k]}"` : ""}${CAP[k] ? ` stroke-linecap="${CAP[k]}"` : ""}></line></svg>${esc(k)}</span>`).join("")
-      + `<span class="status-note">Tap a line to trace its path in orange; tap the chart again to clear. Each line is one sourced tie; open a company to read its ties in words. Circle size = number of sourced ties; Each column lists its companies with a sourced tie; the count beneath it is the companies at that stage with none yet (listed in the stage's details). Ties to frontier labs, including equity stakes and parent companies, come from Ties to each frontier lab.</span>`;
+      + `<span class="status-note">Tap a line to trace its path in orange; tap the chart again to clear. Each line is one sourced tie; open a company to read its ties in words. Circle size = number of sourced ties; Each column lists its companies with a sourced tie; the count beneath it is the companies at that stage with none yet (listed in the stage's details). Ties to frontier labs, including equity stakes and parent companies, come from Listed companies tied to each lab.</span>`;
   }
 
   const REDUCED = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -322,7 +322,7 @@
       <p class="status-note vc-tier-use">Median support: votes for ÷ (for + against), computed by this site; proposals lead-filed by filers critical of ESG are left out. Each section below opens the records and sources.</p>
       <p class="vc-sec-all"><button type="button" class="tool" id="vc-open-all">Open all sections</button></p>
       ${sec("vc-reach", "Frontier labs reached from this stage", labsDirect.length + labsTwo.length, `
-        <p class="status-note">Through sourced ties here and in Ties to each frontier lab (chips, compute, distribution, equity stakes and parent companies)${ownLabs}.</p>
+        <p class="status-note">Through sourced ties here and in Listed companies tied to each lab (chips, compute, distribution, equity stakes and parent companies)${ownLabs}.</p>
         <p><strong>Directly:</strong> ${labsDirect.map(esc).join(", ") || "none in the data"}.</p>
         ${routes.length ? `<p><strong>In two steps</strong> (company → company → lab):</p><ul class="conn">${routes.join("")}</ul>` : ""}
         <p class="status-note">Ties out of this stage: ${p.ties_from_tier ?? 0}; into it: ${p.ties_into_tier ?? 0}. A tie between two companies at the same stage counts both ways.</p>`, true)}

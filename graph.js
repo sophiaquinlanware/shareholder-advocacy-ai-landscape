@@ -460,7 +460,7 @@
   function shell(el) {
     el.innerHTML = `
       <h2>AI advocacy network</h2>
-      <p class="count-line">Connections: sourced relationships among investors, coalitions, companies and frontier labs. Proposals: the AI shareholder proposals filed at each company, with their filers. Company–lab ties alone: AI value chain › Ties to each frontier lab.</p>
+      <p class="count-line">Connections: sourced relationships among investors, coalitions, companies and frontier labs. Proposals: the AI shareholder proposals filed at each company, with their filers. Company–lab ties alone: AI value chain › Listed companies tied to each lab.</p>
       <!-- One view for everyone (owner, 2026-11-26: "maybe it's not necessary to have different view settings"); old ?lens= links still open their view. -->
       <fieldset class="lens-pick" id="net-lens" hidden><legend>View as</legend>${Object.entries(window.LENSES || {}).map(([id, l]) =>
         `<label class="chip"><input type="radio" name="net-lens" value="${esc(id)}"${id === state.lens ? " checked" : ""}> ${esc(l.label)}</label>`).join("")}</fieldset>

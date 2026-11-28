@@ -1,4 +1,4 @@
-// Labs you can file at, and Safety asks (alignment.js).
+// Listed labs: file directly, and Safety asks (alignment.js).
 import { expect, test } from "@playwright/test";
 
 test("listed labs show who controls the vote, how to file and a planner link", async ({ page }) => {
