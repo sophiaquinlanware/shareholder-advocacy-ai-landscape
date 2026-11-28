@@ -989,7 +989,7 @@
   // no proposal filter (Active/Past, year) is set.
   const filtering = () => (state.pstatus && state.pstatus !== "all") || !!state.year || !!state.upto || !!state.topic;
   // Engagement outside the ballot, drawn in the Proposals view beside filings (owner, 2026-11-27).
-  const ENGAGE = new Set(["engaged directly", "focus company of", "sought engagement", "lists a member filing at", "made the case at", "announced member filings at"]);
+  const ENGAGE = new Set(["engaged directly", "focus company of", "sought engagement", "lists a member filing at", "made the case at", "announced member filings at", "joined an investor letter to"]);
   let filerSet = null;
   const filerOrgs = () => {
     if (filerSet) return filerSet;
