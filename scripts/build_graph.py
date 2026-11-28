@@ -118,7 +118,7 @@ def main():
     filers = defaultdict(set)
     for e in net.get("edges", []):
         if e["from"] in nodes and e["to"] in nodes:
-            layer = "investors" if e["relation"] in ("member of", "engaged directly", "sought engagement", "joined an investor letter to") else "proposals"
+            layer = "investors" if e["relation"] in ("member of", "engaged directly", "sought engagement", "joined an investor letter to", "wrote to") else "proposals"
             edge(e["from"], e["to"], e["relation"], layer, e.get("source_url"), **{k: e[k] for k in ("note", "as_of", "reported_by", "steps") if e.get(k)})
             if e["relation"] in ("lead filer", "co-filer", "exempt solicitation"):
                 filers[e["to"]].add(e["from"])

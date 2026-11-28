@@ -5599,6 +5599,270 @@
      "source_url": "https://share.ca/blog/alphabet-urged-to-address-ai-related-risks-of-targeted-ads/"
     }
    ]
+  },
+  {
+   "from": "boston-common",
+   "to": "co-MSFT",
+   "relation": "engaged directly",
+   "source_url": "https://bostoncommonasset.com/stewardship-engagement/responsible-ai-insights-and-impact/",
+   "reported_by": "Boston Common Asset Management",
+   "steps": [
+    {
+     "date": "2025",
+     "title": "Held dialogue with Microsoft on AI responsibility 'year after year', including with its Chief Responsible AI Officer in 2025; a Q4 dialogue focused on reporting implementation effectiveness and expanding AI human rights impact assessments (Boston Common's Jan 2026 post on 2023 to 2025 engagements)",
+     "source_url": "https://bostoncommonasset.com/stewardship-engagement/responsible-ai-insights-and-impact/"
+    },
+    {
+     "title": "Reviewed Microsoft's AI agent governance tools and says it intends to continue engaging on liability and on human rights due diligence for agentic AI (post published 2026-08-21; engagement date not stated)",
+     "source_url": "https://bostoncommonasset.com/stewardship-engagement/agentic-ai-governance/"
+    },
+    {
+     "title": "Engaging Microsoft on data center water withdrawals, PUE disclosure and board oversight of its Community-First AI Infrastructure plan, and co-leading a collaborative dialogue on human rights due diligence (post published 2026-10-02; engagement date not stated)",
+     "source_url": "https://bostoncommonasset.com/stewardship-engagement/the-ai-buildout/"
+    }
+   ],
+   "note": "includes a collaborative dialogue Boston Common co-leads on human rights due diligence"
+  },
+  {
+   "from": "boston-common",
+   "to": "co-CRM",
+   "relation": "engaged directly",
+   "source_url": "https://bostoncommonasset.com/stewardship-engagement/responsible-ai-insights-and-impact/",
+   "reported_by": "Boston Common Asset Management",
+   "steps": [
+    {
+     "date": "2023",
+     "title": "Engaged Salesforce collaboratively on customer AI due diligence and risk assessment (reported in Jan 2026 post on 2023 to 2025 engagements)",
+     "source_url": "https://bostoncommonasset.com/stewardship-engagement/responsible-ai-insights-and-impact/"
+    },
+    {
+     "date": "2026-H1",
+     "title": "Held a dialogue with Salesforce on how it applies human rights policies to government customers and evaluates high-risk AI use cases",
+     "source_url": "https://bostoncommonasset.com/stewardship-engagement/ai-governance-and-digital-human-rights/"
+    }
+   ]
+  },
+  {
+   "from": "boston-common",
+   "to": "co-AVGO",
+   "relation": "engaged directly",
+   "source_url": "https://bostoncommonasset.com/stewardship-engagement/responsible-ai-insights-and-impact/",
+   "reported_by": "Boston Common Asset Management",
+   "steps": [
+    {
+     "date": "2024",
+     "title": "Held a dialogue with Broadcom on its AI governance and oversight; Boston Common says it has not adopted substantive policies or disclosures at this stage",
+     "source_url": "https://bostoncommonasset.com/stewardship-engagement/responsible-ai-insights-and-impact/"
+    }
+   ]
+  },
+  {
+   "from": "boston-common",
+   "to": "co-BABA",
+   "relation": "engaged directly",
+   "source_url": "https://bostoncommonasset.com/stewardship-engagement/responsible-ai-insights-and-impact/",
+   "reported_by": "Boston Common Asset Management",
+   "steps": [
+    {
+     "title": "Discussed investor expectations on AI governance and ongoing dialogue with Alibaba's AI governance team, and urged it to formalize its algorithmic approach (Jan 2026 post covering engagement over 2023 to 2025; no single date given)",
+     "source_url": "https://bostoncommonasset.com/stewardship-engagement/responsible-ai-insights-and-impact/"
+    }
+   ]
+  },
+  {
+   "from": "boston-common",
+   "to": "co-0700",
+   "relation": "engaged directly",
+   "source_url": "https://bostoncommonasset.com/stewardship-engagement/responsible-ai-insights-and-impact/",
+   "reported_by": "Boston Common Asset Management",
+   "steps": [
+    {
+     "date": "2025",
+     "title": "Discussed investor expectations on AI governance at annual meetings with Tencent, and in 2025 urged it to develop AI human rights due diligence and impact assessment",
+     "source_url": "https://bostoncommonasset.com/stewardship-engagement/responsible-ai-insights-and-impact/"
+    }
+   ]
+  },
+  {
+   "from": "boston-common",
+   "to": "co-TSM",
+   "relation": "engaged directly",
+   "source_url": "https://bostoncommonasset.com/stewardship-engagement/the-ai-buildout/",
+   "reported_by": "Boston Common Asset Management",
+   "steps": [
+    {
+     "title": "Asked TSMC about future emissions and declining water recycling at its Arizona and China sites, in an engagement on AI infrastructure; also part of WBA Ethical AI outreach (post published 2026-10-02; engagement date not stated)",
+     "source_url": "https://bostoncommonasset.com/stewardship-engagement/the-ai-buildout/"
+    }
+   ],
+   "note": "AI governance outreach is part of the World Benchmarking Alliance Ethical AI initiative"
+  },
+  {
+   "from": "boston-common",
+   "to": "co-005930",
+   "relation": "engaged directly",
+   "source_url": "https://bostoncommonasset.com/stewardship-engagement/the-ai-buildout/",
+   "reported_by": "Boston Common Asset Management",
+   "steps": [
+    {
+     "title": "Asked Samsung Electronics for division-wide efficiency targets, interim 2030 and 2035 decarbonization targets, site water targets and a PFAS phase-out timeline in an engagement on AI infrastructure (post published 2026-10-02; engagement date not stated)",
+     "source_url": "https://bostoncommonasset.com/stewardship-engagement/the-ai-buildout/"
+    }
+   ]
+  },
+  {
+   "from": "boston-common",
+   "to": "co-000660",
+   "relation": "engaged directly",
+   "source_url": "https://bostoncommonasset.com/stewardship-engagement/responsible-ai-insights-and-impact/",
+   "reported_by": "Boston Common Asset Management",
+   "steps": [
+    {
+     "date": "2022",
+     "title": "Introduced core investor AI expectations in Seoul in 2022 and continues to advocate that SK hynix adopt a public Responsible AI policy (Jan 2026 post)",
+     "source_url": "https://bostoncommonasset.com/stewardship-engagement/responsible-ai-insights-and-impact/"
+    },
+    {
+     "title": "Recommended company-wide product efficiency and absolute emissions-reduction targets and a PFAS elimination timeline, and asked about water reuse at Cheongju, in an engagement on AI infrastructure (post published 2026-10-02; engagement date not stated)",
+     "source_url": "https://bostoncommonasset.com/stewardship-engagement/the-ai-buildout/"
+    }
+   ]
+  },
+  {
+   "from": "boston-common",
+   "to": "co-NVDA",
+   "relation": "sought engagement",
+   "source_url": "https://bostoncommonasset.com/stewardship-engagement/the-ai-buildout/",
+   "reported_by": "Boston Common Asset Management",
+   "steps": [
+    {
+     "title": "Listed Nvidia among companies in recent collaborative outreach through the WBA Ethical AI initiative; no meeting reported (post published 2026-10-02)",
+     "source_url": "https://bostoncommonasset.com/stewardship-engagement/the-ai-buildout/"
+    }
+   ],
+   "note": "as part of the World Benchmarking Alliance Ethical AI initiative"
+  },
+  {
+   "from": "axa-im",
+   "to": "co-MSFT",
+   "relation": "engaged directly",
+   "source_url": "https://core.axa-im.com/sites/core/files/2025-03/STEWARDSHIP_2024-FinalB.pdf",
+   "reported_by": "AXA Investment Managers",
+   "steps": [
+    {
+     "date": "2024",
+     "title": "Met Microsoft ahead of its 2024 AGM to understand its approach to responsible AI, as a member of the Big Tech and Human Rights coalition; the meeting concerned a shareholder proposal on AI-generated misinformation, which AXA IM did not support",
+     "source_url": "https://core.axa-im.com/sites/core/files/2025-03/STEWARDSHIP_2024-FinalB.pdf",
+     "source_page": "64"
+    }
+   ],
+   "note": "as part of the Big Tech and Human Rights coalition"
+  },
+  {
+   "from": "axa-im",
+   "to": "co-GOOGL",
+   "relation": "engaged directly",
+   "source_url": "https://nordics.axa-im.com/sites/nordics/files/2025-03/AXA-IM-STEWARDSHIP2023-REPORT%20(1).pdf",
+   "reported_by": "AXA Investment Managers",
+   "steps": [
+    {
+     "date": "2023",
+     "title": "Reports it has engaged Alphabet since 2019, meeting the company regularly on human rights and privacy (noting growing AI adoption may raise privacy and discrimination risks), and in 2023 wrote to Alphabet through the Big Tech and Human Rights initiative on human rights risks of its products and business model, with discussions to start in 2024",
+     "source_url": "https://nordics.axa-im.com/sites/nordics/files/2025-03/AXA-IM-STEWARDSHIP2023-REPORT%20(1).pdf",
+     "source_page": "23"
+    }
+   ],
+   "note": "letter sent through the Big Tech and Human Rights initiative; the regular meetings are on human rights and privacy, with AI named as a risk driver"
+  },
+  {
+   "from": "aberdeen-investments-formerly-abrdn",
+   "to": "co-META",
+   "relation": "engaged directly",
+   "source_url": "https://www.aberdeenplc.com/en-gb/news-and-insights/responsible-ai-what-role-can-an-investor-play",
+   "reported_by": "Aberdeen Investments (formerly abrdn)",
+   "steps": [
+    {
+     "title": "Met Meta and discussed how it uses AI in targeted advertising; says it remained concerned Meta is insufficiently prepared for AI-generated third-party content (article published 24 Jul 2024; engagement date not stated)",
+     "source_url": "https://www.aberdeenplc.com/en-gb/news-and-insights/responsible-ai-what-role-can-an-investor-play"
+    }
+   ]
+  },
+  {
+   "from": "aberdeen-investments-formerly-abrdn",
+   "to": "co-MSFT",
+   "relation": "engaged directly",
+   "source_url": "https://www.aberdeenplc.com/en-gb/news-and-insights/responsible-ai-what-role-can-an-investor-play",
+   "reported_by": "Aberdeen Investments (formerly abrdn)",
+   "steps": [
+    {
+     "title": "Gave Microsoft feedback on how its Responsible AI Transparency Report could evolve, after discussing AI transparency with several companies (article published 24 Jul 2024; engagement date not stated)",
+     "source_url": "https://www.aberdeenplc.com/en-gb/news-and-insights/responsible-ai-what-role-can-an-investor-play"
+    }
+   ]
+  },
+  {
+   "from": "aberdeen-investments-formerly-abrdn",
+   "to": "co-AAPL",
+   "relation": "engaged directly",
+   "source_url": "https://www.aberdeenplc.com/en-gb/news-and-insights/responsible-ai-what-role-can-an-investor-play",
+   "reported_by": "Aberdeen Investments (formerly abrdn)",
+   "steps": [
+    {
+     "title": "Met Apple and the proponent of an AI transparency resolution to discuss their arguments, and was concerned that Apple had not said when it would disclose ethical guidelines on AI (article published 24 Jul 2024; engagement date not stated)",
+     "source_url": "https://www.aberdeenplc.com/en-gb/news-and-insights/responsible-ai-what-role-can-an-investor-play"
+    }
+   ]
+  },
+  {
+   "from": "vancity",
+   "to": "co-MSFT",
+   "relation": "engaged directly",
+   "source_url": "https://cdn.prod.website-files.com/66a43806f1488b6c2efe10d3/677ecbd3143970011bbdd3bd_VCIM_Shareholder_Engagement_Report_2024_FNL.pdf",
+   "reported_by": "Vancity Investment Management",
+   "steps": [
+    {
+     "title": "Listed Microsoft under 'Ethical use of artificial intelligence' and reached out, as part of WBA's coalition, for an in-depth discussion of how Microsoft is implementing ethical AI principles (2023 Q2 to 2024 Q2 report; engagement date not stated)",
+     "source_url": "https://cdn.prod.website-files.com/66a43806f1488b6c2efe10d3/677ecbd3143970011bbdd3bd_VCIM_Shareholder_Engagement_Report_2024_FNL.pdf",
+     "source_page": "20"
+    },
+    {
+     "date": "2024-08",
+     "title": "Attended a call with Microsoft's Director of ESG Engagement on its approach to responsible AI, a group discussion convened by the WBA Collective Impact Coalition on Ethical AI",
+     "source_url": "https://cdn.prod.website-files.com/66a43806f1488b6c2efe10d3/680fffef2a47e020504f37de_VCIM_Q3_engagement_report_2024_V1.pdf",
+     "source_page": "8"
+    }
+   ],
+   "note": "as part of the World Benchmarking Alliance's Collective Impact Coalition on Ethical AI"
+  },
+  {
+   "from": "vancity",
+   "to": "co-GOOGL",
+   "relation": "wrote to",
+   "source_url": "https://cdn.prod.website-files.com/66a43806f1488b6c2efe10d3/68d7154f4e82af29769bc2ba_VCIM%20-%20Q1_2025_Engagement_Report_V3.pdf",
+   "reported_by": "Vancity Investment Management",
+   "steps": [
+    {
+     "date": "2025",
+     "title": "Wrote to Alphabet expressing concerns about its transparency, accountability and responsible AI practices in AI-driven targeted advertising, and urged a human rights impact assessment (Q1 2025 report; no meeting reported)",
+     "source_url": "https://cdn.prod.website-files.com/66a43806f1488b6c2efe10d3/68d7154f4e82af29769bc2ba_VCIM%20-%20Q1_2025_Engagement_Report_V3.pdf",
+     "source_page": "8"
+    }
+   ]
+  },
+  {
+   "from": "klp",
+   "to": "co-GOOGL",
+   "relation": "wrote to",
+   "source_url": "https://www.klp.no/om-klp/samfunnsansvar/ansvarlig-investor-og-eier/_/attachment/inline/f8b494f6-0eb0-4d12-991f-3a71cc6887f1:fa36fc7a27894240797bbd45ae52b7bae231ddff/Selskapsoppf%C3%B8lging-KLP-2025.pdf",
+   "reported_by": "KLP",
+   "steps": [
+    {
+     "date": "2025",
+     "title": "Wrote to Alphabet about its decision to remove the ban on using AI in weapons and surveillance systems (from KLP's 2025 company follow-up list; no meeting or response reported)",
+     "source_url": "https://www.klp.no/om-klp/samfunnsansvar/ansvarlig-investor-og-eier/_/attachment/inline/f8b494f6-0eb0-4d12-991f-3a71cc6887f1:fa36fc7a27894240797bbd45ae52b7bae231ddff/Selskapsoppf%C3%B8lging-KLP-2025.pdf",
+     "source_page": "3"
+    }
+   ]
   }
  ],
  "engagements": [
@@ -6045,7 +6309,10 @@
     "congregation-of-st-joseph-oh"
    ],
    "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
-   "as_of": "2026-02"
+   "as_of": "2026-02",
+   "proposal_ids": [
+    "googl-2026-ai-board-oversight"
+   ]
   },
   {
    "coalition": "iccr",
