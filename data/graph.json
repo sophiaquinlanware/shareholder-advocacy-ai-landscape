@@ -107,7 +107,7 @@
      "best_support": 33.58
     }
    ],
-   "degree": 87
+   "degree": 98
   },
   {
    "id": "co-GOOGL",
@@ -262,7 +262,7 @@
      "best_support": 18.56
     }
    ],
-   "degree": 91
+   "degree": 99
   },
   {
    "id": "co-META",
@@ -359,7 +359,7 @@
      "best_support": 17.02
     }
    ],
-   "degree": 58
+   "degree": 71
   },
   {
    "id": "co-AMZN",
@@ -447,7 +447,7 @@
      "best_support": 20.11
     }
    ],
-   "degree": 54
+   "degree": 62
   },
   {
    "id": "co-NVDA",
@@ -537,7 +537,7 @@
      "commitment_source_kind": "proponent"
     }
    ],
-   "degree": 54
+   "degree": 56
   },
   {
    "id": "co-AAPL",
@@ -608,7 +608,7 @@
      "best_support": null
     }
    ],
-   "degree": 40
+   "degree": 42
   },
   {
    "id": "co-TSLA",
@@ -782,7 +782,7 @@
    "basis_type": "safety commitment",
    "description": "2024: G42 signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "co-inflection-ai",
@@ -802,7 +802,7 @@
    "basis_type": "safety commitment",
    "description": "2024: Inflection AI signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
-   "degree": 0
+   "degree": 2
   },
   {
    "id": "co-035420",
@@ -822,7 +822,7 @@
    "basis_type": "safety commitment",
    "description": "2024: Naver signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
-   "degree": 0
+   "degree": 1
   },
   {
    "id": "co-magic",
@@ -841,7 +841,7 @@
    "basis_type": "safety commitment",
    "description": "Undated: Magic is named in the Frontier AI Safety Commitments signatory list as an organization added to the original list (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
-   "degree": 0
+   "degree": 1
   },
   {
    "id": "co-00100",
@@ -861,7 +861,7 @@
    "basis_type": "safety commitment",
    "description": "Undated: MiniMax signed the Frontier AI Safety Commitments as an added signatory (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
-   "degree": 0
+   "degree": 1
   },
   {
    "id": "co-2513",
@@ -881,7 +881,7 @@
    "basis_type": "safety commitment",
    "description": "2024: Zhipu.ai signed the Frontier AI Safety Commitments (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
-   "degree": 0
+   "degree": 2
   },
   {
    "id": "co-01-ai",
@@ -900,7 +900,7 @@
    "basis_type": "safety commitment",
    "description": "Undated: 01.ai signed the Frontier AI Safety Commitments as an added signatory (gov.uk Frontier AI Safety Commitments page)",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
-   "degree": 0
+   "degree": 1
   },
   {
    "id": "co-deepseek",
@@ -920,7 +920,7 @@
    "basis_type": "safety commitment",
    "description": "2024: DeepSeek joined sixteen other Chinese companies in signing China's AI Safety Commitments (Carnegie Endowment analysis)",
    "source_url": "https://carnegieendowment.org/research/2025/01/deepseek-and-other-chinese-firms-converge-with-western-companies-on-ai-promises",
-   "degree": 1
+   "degree": 3
   },
   {
    "id": "co-beijing-volcano-engine-technology",
@@ -959,7 +959,7 @@
    "basis_type": "safety commitment",
    "description": "Undated: Aleph Alpha is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
    "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
-   "degree": 0
+   "degree": 1
   },
   {
    "id": "co-black-forest-labs",
@@ -979,7 +979,7 @@
    "basis_type": "safety commitment",
    "description": "Undated: Black Forest Labs is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
    "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
-   "degree": 0
+   "degree": 1
   },
   {
    "id": "co-reflection-ai",
@@ -1018,7 +1018,7 @@
    "basis_type": "safety commitment",
    "description": "Undated: Writer is listed as a signatory of the EU General-Purpose AI Code of Practice (European Commission signatory list)",
    "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
-   "degree": 0
+   "degree": 1
   },
   {
    "id": "co-stability-ai",
@@ -1037,7 +1037,7 @@
    "basis_type": "safety commitment",
    "description": "2023: Stability AI signed the US voluntary AI commitments in the second round of eight companies (White House fact sheet, September 2023)",
    "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
-   "degree": 0
+   "degree": 1
   },
   {
    "id": "co-scale-ai",
@@ -1056,7 +1056,7 @@
    "basis_type": "safety commitment",
    "description": "2023: Scale AI signed the US voluntary AI commitments in the second round of eight companies (White House fact sheet, September 2023)",
    "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
-   "degree": 0
+   "degree": 1
   },
   {
    "id": "co-IBM",
@@ -1094,7 +1094,7 @@
      "best_support": null
     }
    ],
-   "degree": 14
+   "degree": 20
   },
   {
    "id": "co-CRM",
@@ -1143,7 +1143,7 @@
      "best_support": null
     }
    ],
-   "degree": 23
+   "degree": 26
   },
   {
    "id": "co-ADBE",
@@ -1167,7 +1167,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000043/adbe-20260227.htm",
    "next_proposal_deadline_status": "passed",
    "next_proposal_deadline_quote": "we must receive the proposal at our principal executive offices, addressed to the Corporate Secretary, no later than October 30, 2026",
-   "degree": 12
+   "degree": 14
   },
   {
    "id": "co-INTU",
@@ -1202,7 +1202,7 @@
      "commitment_source_kind": "proponent"
     }
    ],
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "co-VRSK",
@@ -1308,7 +1308,7 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000039/now-20260406.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "must be received by the Company not later than December 7, 2026",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "co-PLTR",
@@ -1344,7 +1344,7 @@
      "best_support": 12.47
     }
    ],
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "co-CSCO",
@@ -1505,7 +1505,7 @@
    "basis_type": "safety commitment",
    "description": "2024: Alibaba (China) Co., Ltd. signed China's AI Safety Commitments as a first signatory (China AI Industry Alliance; ETO AGORA)",
    "source_url": "https://agora.eto.tech/instrument/1831",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "co-0700",
@@ -1878,7 +1878,7 @@
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "exchange": "Korea Exchange",
    "country": "South Korea",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "co-000660",
@@ -2017,7 +2017,7 @@
      "best_support": 9.74
     }
    ],
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "co-MU",
@@ -2083,7 +2083,7 @@
    "tier": "labs",
    "description": "ChatGPT/GPT maker; PBC controlled by OpenAI Foundation; $852B post-money (Mar 2026); confidential IPO filing June 2026.",
    "source_url": "https://techcrunch.com/2026/06/08/following-anthropic-openai-files-confidentially-for-ipo/",
-   "degree": 20
+   "degree": 37
   },
   {
    "id": "lab-anthropic",
@@ -2094,7 +2094,7 @@
    "tier": "labs",
    "description": "Claude maker; IPO priced $83/share on Nasdaq (ANT) November 19, 2026; founders keep voting control via Class F share.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/0001628280-26-074944-index.htm",
-   "degree": 18
+   "degree": 33
   },
   {
    "id": "lab-xai",
@@ -2105,7 +2105,7 @@
    "tier": "labs",
    "description": "Grok maker; acquired by SpaceX in all-stock deal Feb 2026 (xAI valued about $250B).",
    "source_url": "https://www.axios.com/2026/02/02/elon-musk-spacex-xai",
-   "degree": 5
+   "degree": 9
   },
   {
    "id": "lab-mistral",
@@ -2116,7 +2116,7 @@
    "tier": "labs",
    "description": "French open-weight/sovereign AI lab; €3B Series D led by Samsung, Sept 2026.",
    "source_url": "https://techcrunch.com/2026/09/08/mistral-raises-e3b-as-sovereign-ai-becomes-big-business/",
-   "degree": 8
+   "degree": 11
   },
   {
    "id": "lab-ssi",
@@ -2149,7 +2149,7 @@
    "tier": "labs",
    "description": "US open-weight frontier lab; $2B round led by Nvidia (Oct 2025).",
    "source_url": "https://techcrunch.com/2025/10/09/reflection-raises-2b-to-be-americas-open-frontier-ai-lab-challenging-deepseek",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "lab-cohere",
@@ -2160,7 +2160,7 @@
    "tier": "labs",
    "description": "Canadian enterprise/sovereign AI lab; Series E initial close Oct 2026 targeting up to C$7B.",
    "source_url": "https://lightreading.com/ai-machine-learning/cohere-wraps-initial-close-of-new-funding-round-to-fuel-sovereign-ai-efforts",
-   "degree": 3
+   "degree": 6
   },
   {
    "id": "lab-perplexity",
@@ -2182,7 +2182,7 @@
    "tier": "labs",
    "description": "Alphabet's AI lab; builds Gemini models.",
    "source_url": "https://deepmind.google/about/",
-   "degree": 4
+   "degree": 9
   },
   {
    "id": "lab-msl",
@@ -7725,7 +7725,7 @@
     }
    ],
    "campaign_id": "GOOGL|ask-ai-oversight-reporting",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "googl-2024-genai-misinfo",
@@ -9243,7 +9243,7 @@
     }
    ],
    "campaign_id": "GOOGL|ask-ai-oversight-reporting",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "googl-2026-ai-misinfo",
@@ -9774,7 +9774,7 @@
     }
    ],
    "campaign_id": "META|ask-targeted-ads-rights",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "meta-2025-ai-data-usage",
@@ -11179,7 +11179,7 @@
     }
    ],
    "campaign_id": "AMZN|ask-ai-oversight-reporting",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "amzn-2025-ai-data-usage",
@@ -11800,7 +11800,7 @@
     }
    ],
    "campaign_id": "AAPL|ask-ai-oversight-reporting",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "aapl-2025-ai-data-ethics",
@@ -17760,7 +17760,7 @@
    "jurisdiction": "US federal",
    "description": "Inaugural annual report on how Microsoft builds, deploys and oversees generative AI, fulfilling a July 2023 White House commitment.",
    "source_url": "https://blogs.microsoft.com/on-the-issues/2024/05/01/responsible-ai-transparency-report-2024/",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "ev-oecd-ai-principles-2024",
@@ -17788,7 +17788,7 @@
    "jurisdiction": "Global",
    "description": "Voluntary pledges by AI developers to publish safety frameworks setting risk thresholds and mitigations, and to report on how they meet them, with frameworks due before the next summit in France.",
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
-   "degree": 1
+   "degree": 20
   },
   {
    "id": "ev-meta-genai-vote-2024",
@@ -18264,7 +18264,7 @@
    "jurisdiction": "Global",
    "description": "Statement on Inclusive and Sustainable AI for People and the Planet, signed by about 60 countries plus the EU and the African Union Commission, sets nonbinding priorities. The United States and United Kingdom did not sign. No company duties.",
    "source_url": "https://www.elysee.fr/en/emmanuel-macron/2025/02/11/statement-on-inclusive-and-sustainable-artificial-intelligence-for-people-and-the-planet",
-   "degree": 1
+   "degree": 2
   },
   {
    "id": "ev-sec-slb-14m",
@@ -18502,7 +18502,7 @@
    "jurisdiction": "US federal",
    "description": "Criminalizes publishing nonconsensual intimate images, including AI deepfakes, and requires covered platforms to remove reported images within 48 hours, with FTC enforcement from May 19, 2026.",
    "source_url": "https://www.ftc.gov/business-guidance/resources/complying-take-it-down-act",
-   "degree": 1
+   "degree": 2
   },
   {
    "id": "ev-ie-dpc-meta-ai-training-2025",
@@ -18572,7 +18572,7 @@
    "jurisdiction": "US federal",
    "description": "Second annual report on Microsoft's responsible AI practices and customer support.",
    "source_url": "https://blogs.microsoft.com/on-the-issues/2025/06/20/our-2025-responsible-ai-transparency-report/",
-   "degree": 1
+   "degree": 2
   },
   {
    "id": "ev-texas-sb6-large-loads",
@@ -18642,7 +18642,7 @@
    "jurisdiction": "EU",
    "description": "Voluntary code with transparency, copyright, and safety and security chapters, offered as a way for model providers to show AI Act compliance.",
    "source_url": "https://digital-strategy.ec.europa.eu/en/policies/gpai-code-practice",
-   "degree": 8
+   "degree": 17
   },
   {
    "id": "ev-openai-eu-code",
@@ -18712,7 +18712,7 @@
    "jurisdiction": "US federal",
    "description": "Over 90 nonbinding federal actions on innovation, infrastructure and diplomacy, plus executive orders including faster permitting for data centers.",
    "source_url": "https://www.whitehouse.gov/releases/2025/07/white-house-unveils-americas-ai-action-plan",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "ev-us-eo-14318",
@@ -19062,7 +19062,7 @@
    "jurisdiction": "California",
    "description": "Large frontier developers must publish safety frameworks and transparency reports and report critical safety incidents; whistleblower protections; AG enforces penalties.",
    "source_url": "https://www.gov.ca.gov/2025/09/29/governor-newsom-signs-sb-53-advancing-californias-world-leading-artificial-intelligence-industry/",
-   "degree": 3
+   "degree": 8
   },
   {
    "id": "ev-cn-rare-earth-chip-controls",
@@ -19230,7 +19230,7 @@
    "jurisdiction": "US federal",
    "description": "EO 14365 creates a DOJ AI Litigation Task Force, ties some state funding to AI laws, and asks for a preemptive federal framework.",
    "source_url": "https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence/",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "ev-ny-raise-signed",
@@ -19244,7 +19244,7 @@
    "jurisdiction": "New York",
    "description": "Requires large frontier developers to publish safety frameworks and report incidents within 72 hours; signed on condition of 2026 chapter amendments.",
    "source_url": "https://www.governor.ny.gov/news/governor-hochul-signs-nation-leading-legislation-require-ai-frameworks-ai-frontier-models",
-   "degree": 2
+   "degree": 4
   },
   {
    "id": "ev-jp-ai-basic-plan",
@@ -21416,7 +21416,7 @@
    "ask_id": "ask-ai-oversight-reporting",
    "category": "governance-safety",
    "campaign_id": "CRM|ask-ai-oversight-reporting",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "crm-2026-dual-use-defense",
@@ -21466,6 +21466,942 @@
    "category": "users",
    "campaign_id": "VRSK|ask-ai-bias",
    "degree": 3
+  },
+  {
+   "id": "org-metr",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "METR",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit research",
+   "focus": [
+    "safety and alignment",
+    "evaluation"
+   ],
+   "description": "A nonprofit that studies the most advanced AI agents.",
+   "website": "https://metr.org",
+   "source_url": "https://metr.org/about",
+   "degree": 6
+  },
+  {
+   "id": "org-miri",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Machine Intelligence Research Institute (MIRI)",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit research",
+   "focus": [
+    "safety and alignment"
+   ],
+   "description": "Does research and public outreach intended to help prevent human extinction.",
+   "website": "https://intelligence.org",
+   "source_url": "https://intelligence.org/about/",
+   "degree": 0
+  },
+  {
+   "id": "org-redwood-research",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Redwood Research",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit research",
+   "focus": [
+    "safety and alignment"
+   ],
+   "description": "A nonprofit AI safety and security research organization.",
+   "website": "https://www.redwoodresearch.org",
+   "source_url": "https://www.redwoodresearch.org/",
+   "degree": 2
+  },
+  {
+   "id": "org-apollo-research",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Apollo Research",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit research",
+   "focus": [
+    "safety and alignment",
+    "evaluation"
+   ],
+   "description": "Its goal is to secure frontier AI systems across development, deployment, and governance.",
+   "website": "https://www.apolloresearch.ai",
+   "source_url": "https://www.apolloresearch.ai/about",
+   "degree": 2
+  },
+  {
+   "id": "org-cais",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Center for AI Safety (CAIS)",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit research",
+   "focus": [
+    "safety and alignment"
+   ],
+   "description": "An AI safety non-profit whose mission is to reduce societal-scale risks from artificial intelligence.",
+   "website": "https://safe.ai",
+   "source_url": "https://safe.ai/about",
+   "degree": 2
+  },
+  {
+   "id": "org-far-ai",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "FAR.AI",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit research",
+   "focus": [
+    "safety and alignment",
+    "evaluation"
+   ],
+   "description": "An AI security research and adoption non-profit.",
+   "website": "https://www.far.ai",
+   "source_url": "https://www.far.ai/about",
+   "degree": 0
+  },
+  {
+   "id": "org-epoch-ai",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Epoch AI",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit research",
+   "focus": [
+    "governance"
+   ],
+   "description": "A data-first research nonprofit investigating the future of artificial intelligence.",
+   "website": "https://epoch.ai",
+   "source_url": "https://epoch.ai/about",
+   "degree": 0
+  },
+  {
+   "id": "org-govai",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Centre for the Governance of AI (GovAI)",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit research",
+   "focus": [
+    "governance"
+   ],
+   "description": "A think tank that aims to help decision-makers in government and industry navigate the transition to advanced AI.",
+   "website": "https://www.governance.ai",
+   "source_url": "https://www.governance.ai/about-us",
+   "degree": 0
+  },
+  {
+   "id": "org-cset",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Center for Security and Emerging Technology (CSET)",
+   "org_type": "research or advocacy organization",
+   "kind": "university centre",
+   "focus": [
+    "governance",
+    "safety and alignment"
+   ],
+   "description": "A policy research organization within Georgetown University's Walsh School of Foreign Service.",
+   "website": "https://cset.georgetown.edu",
+   "source_url": "https://cset.georgetown.edu/about-us/",
+   "degree": 1
+  },
+  {
+   "id": "org-fli",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Future of Life Institute (FLI)",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "safety and alignment",
+    "governance"
+   ],
+   "description": "Steering transformative technology towards benefiting life and away from extreme large-scale risks.",
+   "website": "https://futureoflife.org",
+   "source_url": "https://futureoflife.org/about-us/",
+   "degree": 4
+  },
+  {
+   "id": "org-ai-futures-project",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "AI Futures Project",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit research",
+   "focus": [
+    "safety and alignment",
+    "governance"
+   ],
+   "description": "A 501(c)(3) nonprofit research organization.",
+   "website": "https://www.aifutures.org",
+   "source_url": "https://www.aifutures.org/about",
+   "degree": 1
+  },
+  {
+   "id": "org-uk-aisi",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "UK AI Security Institute",
+   "org_type": "research or advocacy organization",
+   "kind": "government AI safety institute",
+   "focus": [
+    "safety and alignment",
+    "evaluation"
+   ],
+   "description": "A mission-driven research organisation in the heart of the UK government.",
+   "website": "https://www.aisi.gov.uk",
+   "source_url": "https://www.aisi.gov.uk/about",
+   "degree": 2
+  },
+  {
+   "id": "org-us-caisi",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "US Center for AI Standards and Innovation (CAISI)",
+   "org_type": "research or advocacy organization",
+   "kind": "government AI safety institute",
+   "focus": [
+    "standards",
+    "evaluation"
+   ],
+   "description": "Serves as industry's primary point of contact within the U.S. government for AI standards and testing.",
+   "website": "https://www.nist.gov/caisi",
+   "source_url": "https://www.nist.gov/caisi",
+   "degree": 6
+  },
+  {
+   "id": "org-encode-ai",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Encode AI",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "governance",
+    "safety and alignment"
+   ],
+   "description": "We’re a small advocacy team shaping history‘s most important transition.",
+   "website": "https://encodeai.org/",
+   "source_url": "https://encodeai.org/",
+   "degree": 2
+  },
+  {
+   "id": "org-secure-ai-project",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Secure AI Project",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "governance",
+    "safety and alignment"
+   ],
+   "description": "We develop and advocate for pragmatic policies to reduce risks of severe harm from advanced AI.",
+   "website": "https://secureaiproject.org/",
+   "source_url": "https://secureaiproject.org/",
+   "degree": 2
+  },
+  {
+   "id": "org-pai",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Partnership on AI",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit research",
+   "focus": [
+    "governance",
+    "safety and alignment"
+   ],
+   "description": "Partnership on AI's mission begins: \"Bringing diverse voices together across global sectors, disciplines, and demographics\".",
+   "website": "https://partnershiponai.org/",
+   "source_url": "https://partnershiponai.org/about/",
+   "degree": 15
+  },
+  {
+   "id": "org-cdt",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Center for Democracy & Technology",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "civil rights and bias",
+    "privacy",
+    "governance"
+   ],
+   "description": "We shape technology policy, governance, and design with a focus on equity and democratic values.",
+   "website": "https://cdt.org/",
+   "source_url": "https://cdt.org/about/",
+   "degree": 1
+  },
+  {
+   "id": "org-eff",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Electronic Frontier Foundation",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "privacy",
+    "governance"
+   ],
+   "description": "EFF's mission is to ensure that technology supports freedom, justice, and innovation for all people of the world.",
+   "website": "https://www.eff.org/",
+   "source_url": "https://www.eff.org/about",
+   "degree": 1
+  },
+  {
+   "id": "org-common-sense-media",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Common Sense Media",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "child safety",
+    "evaluation"
+   ],
+   "description": "Common Sense Media protects and prepares kids in the digital era, leading the way to a healthier childhood.",
+   "website": "https://about.commonsensemedia.org/",
+   "source_url": "https://about.commonsensemedia.org/",
+   "degree": 4
+  },
+  {
+   "id": "org-thorn",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Thorn",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit research",
+   "focus": [
+    "child safety"
+   ],
+   "description": "Thorn is on a mission to create a world where every child can simply be a kid.",
+   "website": "https://www.thorn.org/",
+   "source_url": "https://www.thorn.org/about/",
+   "degree": 2
+  },
+  {
+   "id": "org-stanford-hai",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Stanford HAI",
+   "org_type": "research or advocacy organization",
+   "kind": "university centre",
+   "focus": [
+    "evaluation",
+    "governance"
+   ],
+   "description": "Stanford HAI's mission is to advance humanity through AI and data science.",
+   "website": "https://hai.stanford.edu/",
+   "source_url": "https://hai.stanford.edu/about",
+   "degree": 7
+  },
+  {
+   "id": "org-berkeley-chai",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Center for Human-Compatible AI",
+   "org_type": "research or advocacy organization",
+   "kind": "university centre",
+   "focus": [
+    "safety and alignment"
+   ],
+   "description": "CHAI aims to develop the conceptual and technical wherewithal to reorient the general thrust of AI research.",
+   "website": "https://humancompatible.ai/",
+   "source_url": "https://humancompatible.ai/about/",
+   "degree": 1
+  },
+  {
+   "id": "org-data-society",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Data & Society",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit research",
+   "focus": [
+    "governance",
+    "civil rights and bias"
+   ],
+   "description": "Data & Society is an independent nonprofit research and policy institute.",
+   "website": "https://datasociety.net",
+   "source_url": "https://datasociety.net/about/",
+   "degree": 0
+  },
+  {
+   "id": "org-access-now",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Access Now",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "civil rights and bias",
+    "privacy",
+    "governance"
+   ],
+   "description": "Access Now defends and extends the digital rights of people and communities at risk.",
+   "website": "https://www.accessnow.org",
+   "source_url": "https://www.accessnow.org/about-us/",
+   "degree": 1
+  },
+  {
+   "id": "org-ajl",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Algorithmic Justice League",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "civil rights and bias",
+    "evaluation"
+   ],
+   "description": "We're leading a cultural movement towards EQUITABLE and ACCOUNTABLE AI",
+   "website": "https://www.ajl.org",
+   "source_url": "https://www.ajl.org/about",
+   "degree": 3
+  },
+  {
+   "id": "org-parentstogether",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "ParentsTogether Action",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "child safety"
+   ],
+   "description": "ParentsTogether Action brings parents together to make a difference on the issues that matter most to our kids and families.",
+   "website": "https://parentstogetheraction.org",
+   "source_url": "https://parentstogetheraction.org/about/",
+   "degree": 1
+  },
+  {
+   "id": "org-aflcio-technology-institute",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "AFL-CIO Technology Institute",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "labour"
+   ],
+   "description": "source pending (aflcio.org returned 403 to automated fetches)",
+   "website": "https://aflcio.org",
+   "source_url": "https://news.microsoft.com/source/2023/12/11/afl-cio-and-microsoft-announce-new-tech-labor-partnership-on-ai-and-the-future-of-the-workforce/",
+   "degree": 1
+  },
+  {
+   "id": "org-cwa",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Communications Workers of America",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "labour"
+   ],
+   "description": "Members of the Communications Workers of America are part of one of America's largest and most diverse unions.",
+   "website": "https://cwa-union.org",
+   "source_url": "https://cwa-union.org/about",
+   "degree": 1
+  },
+  {
+   "id": "org-earthjustice",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Earthjustice",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "environment and data centers"
+   ],
+   "description": "Earthjustice is the premier nonprofit public interest environmental law organization.",
+   "website": "https://earthjustice.org",
+   "source_url": "https://earthjustice.org/about",
+   "degree": 1
+  },
+  {
+   "id": "org-selc",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Southern Environmental Law Center",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "environment and data centers"
+   ],
+   "description": "We are one of the nation's most powerful defenders of the environment, rooted right here in the South.",
+   "website": "https://www.selc.org",
+   "source_url": "https://www.selc.org/about-us/",
+   "degree": 1
+  },
+  {
+   "id": "org-oxford-internet-institute",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Oxford Internet Institute",
+   "org_type": "research or advocacy organization",
+   "kind": "university centre",
+   "focus": [
+    "governance"
+   ],
+   "description": "The Oxford Internet Institute is the University of Oxford's multidisciplinary department for the study of technology and society.",
+   "website": "https://www.oii.ox.ac.uk",
+   "source_url": "https://www.oii.ox.ac.uk/about/",
+   "degree": 0
+  },
+  {
+   "id": "org-ieee-sa",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "IEEE Standards Association",
+   "org_type": "research or advocacy organization",
+   "kind": "standards body",
+   "focus": [
+    "standards"
+   ],
+   "description": "IEEE SA's global community has developed resources and standards globally recognized in the area of applied ethics and systems engineering.",
+   "website": "https://standards.ieee.org",
+   "source_url": "https://standards.ieee.org/initiatives/autonomous-intelligence-systems/",
+   "degree": 0
+  },
+  {
+   "id": "org-frontier-model-forum",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Frontier Model Forum",
+   "org_type": "research or advocacy organization",
+   "kind": "industry body",
+   "focus": [
+    "safety and alignment",
+    "governance"
+   ],
+   "description": "The Frontier Model Forum (FMF) is an industry-supported non-profit dedicated to advancing frontier AI safety and security.",
+   "website": "https://www.frontiermodelforum.org/",
+   "source_url": "https://www.frontiermodelforum.org/about-us/",
+   "degree": 6
+  },
+  {
+   "id": "resp-fli-pause-giant-ai-experiments-2023",
+   "type": "response",
+   "layer": "policy",
+   "label": "Pause Giant AI Experiments: An Open Letter",
+   "date": "2023-03-22",
+   "kind": "joint statement or open letter",
+   "actors": [
+    "org-fli"
+   ],
+   "description": "FLI open letter calling on AI labs to pause for at least six months the training of systems more powerful than GPT-4.",
+   "source_url": "https://futureoflife.org/open-letter/pause-giant-ai-experiments/",
+   "signatories_as_of": "2026-11-28",
+   "degree": 1
+  },
+  {
+   "id": "resp-cais-statement-on-ai-risk-2023",
+   "type": "response",
+   "layer": "policy",
+   "label": "Statement on AI Risk",
+   "date": "2023-05",
+   "kind": "joint statement or open letter",
+   "actors": [
+    "org-cais"
+   ],
+   "description": "One-sentence statement hosted by CAIS saying that mitigating the risk of extinction from AI should be a global priority.",
+   "source_url": "https://safe.ai/work/statement-on-ai-risk",
+   "signatories_as_of": "2026-11-28",
+   "degree": 1
+  },
+  {
+   "id": "resp-fmti-2025",
+   "type": "response",
+   "layer": "policy",
+   "label": "2025 Foundation Model Transparency Index",
+   "date": "2025-12-11",
+   "kind": "report or disclosure",
+   "actors": [
+    "org-stanford-hai"
+   ],
+   "description": "Third annual index scoring foundation model developers on transparency.",
+   "source_url": "https://arxiv.org/abs/2512.10169",
+   "signatories_as_of": null,
+   "degree": 1
+  },
+  {
+   "id": "resp-thorn-safety-by-design-2024",
+   "type": "response",
+   "layer": "policy",
+   "label": "Thorn and All Tech Is Human Safety by Design generative AI principles",
+   "date": "2024-04-23",
+   "kind": "commitment",
+   "actors": [
+    "org-thorn",
+    "lab-openai",
+    "lab-anthropic",
+    "co-GOOGL",
+    "co-META",
+    "co-MSFT",
+    "lab-mistral"
+   ],
+   "description": "Companies commit to principles against AI-generated child sexual abuse material.",
+   "source_url": "https://www.thorn.org/press-releases/thorn-atih-generative-ai-principles/",
+   "signatories_as_of": "2026-11-28",
+   "degree": 7
+  },
+  {
+   "id": "resp-anthropic-rsp-v1-2023",
+   "type": "response",
+   "layer": "policy",
+   "label": "Anthropic publishes its Responsible Scaling Policy",
+   "date": "2023-09-19",
+   "kind": "policy position",
+   "actors": [
+    "lab-anthropic"
+   ],
+   "description": "Anthropic publishes its Responsible Scaling Policy, a framework tying safety measures to a model's potential for catastrophic risk.",
+   "source_url": "https://www.anthropic.com/news/anthropics-responsible-scaling-policy",
+   "signatories_as_of": null,
+   "degree": 1
+  },
+  {
+   "id": "resp-anthropic-rsp-v2-2024",
+   "type": "response",
+   "layer": "policy",
+   "label": "Anthropic publishes an updated Responsible Scaling Policy",
+   "date": "2024-10-15",
+   "kind": "policy position",
+   "actors": [
+    "lab-anthropic"
+   ],
+   "description": "Anthropic publishes a significant update to its Responsible Scaling Policy.",
+   "source_url": "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy",
+   "signatories_as_of": null,
+   "degree": 1
+  },
+  {
+   "id": "resp-anthropic-rsp-v3-2026",
+   "type": "response",
+   "layer": "policy",
+   "label": "Anthropic releases Responsible Scaling Policy version 3",
+   "date": "2026-02-24",
+   "kind": "policy position",
+   "actors": [
+    "lab-anthropic"
+   ],
+   "description": "Anthropic releases the third version of its Responsible Scaling Policy.",
+   "source_url": "https://www.anthropic.com/news/responsible-scaling-policy-v3",
+   "signatories_as_of": null,
+   "degree": 1
+  },
+  {
+   "id": "resp-openai-preparedness-beta-2023",
+   "type": "response",
+   "layer": "policy",
+   "label": "OpenAI introduces its Preparedness Framework (Beta)",
+   "date": "2023-12-18",
+   "kind": "policy position",
+   "actors": [
+    "lab-openai"
+   ],
+   "description": "OpenAI introduces a living document describing how it tracks, evaluates and protects against catastrophic risks from powerful models.",
+   "source_url": "https://cdn.openai.com/openai-preparedness-framework-beta.pdf",
+   "signatories_as_of": null,
+   "degree": 1
+  },
+  {
+   "id": "resp-openai-preparedness-v2-2025",
+   "type": "response",
+   "layer": "policy",
+   "label": "OpenAI releases an updated Preparedness Framework",
+   "date": "2025-04-15",
+   "kind": "policy position",
+   "actors": [
+    "lab-openai"
+   ],
+   "description": "OpenAI releases an update to its Preparedness Framework for tracking and preparing for advanced AI capabilities that could introduce risks of severe harm.",
+   "source_url": "https://openai.com/index/updating-our-preparedness-framework/",
+   "signatories_as_of": null,
+   "degree": 1
+  },
+  {
+   "id": "resp-gdm-fsf-v1-2024",
+   "type": "response",
+   "layer": "policy",
+   "label": "Google DeepMind introduces the Frontier Safety Framework",
+   "date": "2024-05-17",
+   "kind": "policy position",
+   "actors": [
+    "lab-gdm"
+   ],
+   "description": "Google DeepMind introduces a set of protocols for identifying future AI capabilities that could cause severe harm.",
+   "source_url": "https://deepmind.google/discover/blog/introducing-the-frontier-safety-framework/",
+   "signatories_as_of": null,
+   "degree": 1
+  },
+  {
+   "id": "resp-gdm-fsf-v2-2025",
+   "type": "response",
+   "layer": "policy",
+   "label": "Google DeepMind updates the Frontier Safety Framework",
+   "date": "2025-02-04",
+   "kind": "policy position",
+   "actors": [
+    "lab-gdm"
+   ],
+   "description": "Google DeepMind publishes its second iteration of the Frontier Safety Framework, with stronger security protocols.",
+   "source_url": "https://deepmind.google/discover/blog/updating-the-frontier-safety-framework/",
+   "signatories_as_of": null,
+   "degree": 1
+  },
+  {
+   "id": "resp-gdm-fsf-v3-2025",
+   "type": "response",
+   "layer": "policy",
+   "label": "Google DeepMind publishes the third Frontier Safety Framework",
+   "date": "2025-09-22",
+   "kind": "policy position",
+   "actors": [
+    "lab-gdm"
+   ],
+   "description": "Google DeepMind publishes the third iteration of its Frontier Safety Framework.",
+   "source_url": "https://deepmind.google/discover/blog/strengthening-our-frontier-safety-framework/",
+   "signatories_as_of": null,
+   "degree": 1
+  },
+  {
+   "id": "resp-meta-frontier-ai-framework-2025",
+   "type": "response",
+   "layer": "policy",
+   "label": "Meta shares its Frontier AI Framework",
+   "date": "2025-02-03",
+   "kind": "policy position",
+   "actors": [
+    "co-META"
+   ],
+   "description": "Meta shares a framework outlining how it considers risk in model-release decisions.",
+   "source_url": "https://about.fb.com/news/2025/02/meta-approach-frontier-ai/",
+   "signatories_as_of": null,
+   "degree": 1
+  },
+  {
+   "id": "resp-meta-advanced-ai-scaling-v2-2026",
+   "type": "response",
+   "layer": "policy",
+   "label": "Meta publishes version 2 of its framework, renamed Advanced AI Scaling Framework",
+   "date": "2026-04-07",
+   "kind": "policy position",
+   "actors": [
+    "co-META"
+   ],
+   "description": "Meta renames its Frontier AI Framework the Advanced AI Scaling Framework and updates its risk threshold language.",
+   "source_url": "https://ai.meta.com/static-resource/Meta_Advanced-AI-Scaling-Framework-v2",
+   "signatories_as_of": null,
+   "degree": 1
+  },
+  {
+   "id": "resp-xai-rmf-2025",
+   "type": "response",
+   "layer": "policy",
+   "label": "xAI publishes its Risk Management Framework",
+   "date": "2025-08-20",
+   "kind": "policy position",
+   "actors": [
+    "lab-xai"
+   ],
+   "description": "xAI publishes its Risk Management Framework (version dated August 20, 2025) for handling significant risks from developing and releasing models such as Grok.",
+   "source_url": "https://data.x.ai/2025-08-20-xai-risk-management-framework.pdf",
+   "signatories_as_of": null,
+   "degree": 1
+  },
+  {
+   "id": "resp-msft-fgf-2025",
+   "type": "response",
+   "layer": "policy",
+   "label": "Microsoft publishes its Frontier Governance Framework",
+   "date": "2025-02",
+   "kind": "policy position",
+   "actors": [
+    "co-MSFT"
+   ],
+   "description": "Microsoft publishes the initial version of its Frontier Governance Framework, which manages national security and public safety risks from more capable AI models.",
+   "source_url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/Frontier-Governance-Framework-Feb-2026.pdf",
+   "signatories_as_of": null,
+   "degree": 1
+  },
+  {
+   "id": "resp-msft-fgf-2026",
+   "type": "response",
+   "layer": "policy",
+   "label": "Microsoft updates its Frontier Governance Framework",
+   "date": "2026-02",
+   "kind": "policy position",
+   "actors": [
+    "co-MSFT"
+   ],
+   "description": "Microsoft publishes a one-year update of its Frontier Governance Framework, adding harmful manipulation and loss of control as tracked high-risk capabilities.",
+   "source_url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/Frontier-Governance-Framework-Feb-2026.pdf",
+   "signatories_as_of": null,
+   "degree": 1
+  },
+  {
+   "id": "resp-google-rai-report-2025",
+   "type": "response",
+   "layer": "policy",
+   "label": "Google publishes its 2025 Responsible AI Progress Report",
+   "date": "2025-02",
+   "kind": "report or disclosure",
+   "actors": [
+    "co-GOOGL"
+   ],
+   "description": "Google publishes its Responsible AI Progress Report, describing how it governs, maps, measures and manages AI risks.",
+   "source_url": "https://ai.google/static/documents/ai-responsibility-update-published-february-2025.pdf",
+   "signatories_as_of": null,
+   "degree": 2
+  },
+  {
+   "id": "resp-google-rai-report-2026",
+   "type": "response",
+   "layer": "policy",
+   "label": "Google publishes its 2026 Responsible AI Progress Report",
+   "date": "2026-02",
+   "kind": "report or disclosure",
+   "actors": [
+    "co-GOOGL"
+   ],
+   "description": "Google publishes its 2026 Responsible AI Progress Report.",
+   "source_url": "https://ai.google/static/documents/ai-responsibility-update-2026.pdf",
+   "signatories_as_of": null,
+   "degree": 2
+  },
+  {
+   "id": "resp-meta-human-rights-report-2024",
+   "type": "response",
+   "layer": "policy",
+   "label": "Meta publishes its 2024 Human Rights Report",
+   "date": null,
+   "kind": "report or disclosure",
+   "actors": [
+    "co-META"
+   ],
+   "description": "Meta's annual Human Rights Report for 2024, covering its AI work among other topics. The report file is dated December 2025 by its upload path.",
+   "source_url": "https://humanrights.fb.com/wp-content/uploads/2025/12/2024-Meta-Human-Rights-Report.pdf",
+   "signatories_as_of": null,
+   "degree": 2
+  },
+  {
+   "id": "resp-salesforce-trusted-ai-report-2025",
+   "type": "response",
+   "layer": "policy",
+   "label": "Salesforce publishes its first Trusted AI and Agents Impact Report",
+   "date": "2025-02",
+   "kind": "report or disclosure",
+   "actors": [
+    "co-CRM"
+   ],
+   "description": "Salesforce publishes its first Trusted AI Impact Report on its AI principles, policies and review processes.",
+   "source_url": "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/reports/salesforce-trusted-ai-and-agents-impact-report.pdf",
+   "signatories_as_of": null,
+   "degree": 2
+  },
+  {
+   "id": "resp-aws-responsible-ai-page",
+   "type": "response",
+   "layer": "policy",
+   "label": "Amazon Web Services responsible AI page",
+   "date": null,
+   "kind": "report or disclosure",
+   "actors": [
+    "co-AMZN"
+   ],
+   "description": "Amazon Web Services describes its responsible AI approach, dimensions and tools on its website.",
+   "source_url": "https://aws.amazon.com/ai/responsible-ai/",
+   "signatories_as_of": null,
+   "degree": 2
+  },
+  {
+   "id": "resp-apple-rai-principles-2024",
+   "type": "response",
+   "layer": "policy",
+   "label": "Apple describes its Responsible AI principles for Apple Intelligence",
+   "date": "2024-06-10",
+   "kind": "policy position",
+   "actors": [
+    "co-AAPL"
+   ],
+   "description": "Apple states Responsible AI principles to guide how it develops AI tools and the models behind them.",
+   "source_url": "https://machinelearning.apple.com/research/introducing-apple-foundation-models",
+   "signatories_as_of": null,
+   "degree": 2
+  },
+  {
+   "id": "resp-white-house-voluntary-commitments-2023-07",
+   "type": "response",
+   "layer": "policy",
+   "label": "White House voluntary AI commitments from seven companies",
+   "date": "2023-07-21",
+   "kind": "commitment",
+   "actors": [
+    "co-AMZN",
+    "lab-anthropic",
+    "co-GOOGL",
+    "co-inflection-ai",
+    "co-META",
+    "co-MSFT",
+    "lab-openai"
+   ],
+   "description": "Seven AI companies committed at the White House to voluntary measures on safety, security and trust, as listed in the White House fact sheet.",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "signatories_as_of": "2026-11-27",
+   "degree": 7
+  },
+  {
+   "id": "resp-white-house-voluntary-commitments-2023-09",
+   "type": "response",
+   "layer": "policy",
+   "label": "White House voluntary AI commitments from eight additional companies",
+   "date": "2023-09-12",
+   "kind": "commitment",
+   "actors": [
+    "co-ADBE",
+    "lab-cohere",
+    "co-IBM",
+    "co-NVDA",
+    "co-PLTR",
+    "co-CRM",
+    "co-scale-ai",
+    "co-stability-ai"
+   ],
+   "description": "Eight further AI companies made the same voluntary commitments, as listed in the White House fact sheet.",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "signatories_as_of": "2026-11-27",
+   "degree": 8
+  },
+  {
+   "id": "resp-cot-monitorability-paper-2025",
+   "type": "response",
+   "layer": "policy",
+   "label": "Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety",
+   "date": "2025-07-15",
+   "kind": "joint statement or open letter",
+   "actors": [],
+   "description": "Position paper by individual authors from AI labs and research organizations recommending research into, and tracking of, chain-of-thought monitorability.; the organizations themselves are not recorded as signatories and no ties are drawn from the affiliations. Its authors sign as individuals; their listed affiliations are not organizational authorship.",
+   "source_url": "https://arxiv.org/abs/2507.11473",
+   "signatories_as_of": "2026-11-27",
+   "degree": 0
+  },
+  {
+   "id": "resp-right-to-warn-2024",
+   "type": "response",
+   "layer": "policy",
+   "label": "A Right to Warn about Advanced AI",
+   "date": "2024-06-04",
+   "kind": "joint statement or open letter",
+   "actors": [],
+   "description": "Open letter from current and former employees of frontier AI companies on whistleblower protections and open criticism. Signers are individuals; none of the named signers has a person record on this site, so no ties are drawn.",
+   "source_url": "https://righttowarn.ai/",
+   "signatories_as_of": "2026-11-27",
+   "degree": 0
   }
  ],
  "edges": [
@@ -38032,6 +38968,1701 @@
      "source_page": "34"
     }
    ]
+  },
+  {
+   "source": "org-metr",
+   "target": "lab-openai",
+   "type": "evaluated",
+   "layer": "organizations",
+   "source_url": "https://metr.org/evaluations/openai-o3-report/",
+   "quote": "METR received access to earlier checkpoints of o3 and o4-mini from OpenAI three weeks prior to model release.",
+   "date": "2025-04-16",
+   "note": "Preliminary evaluation of o3 and o4-mini, published by METR.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-metr",
+   "target": "lab-openai",
+   "type": "announced a partnership with",
+   "layer": "organizations",
+   "source_url": "https://metr.org/about",
+   "quote": "We have previously partnered with OpenAI, Anthropic, Google DeepMind, Meta and Amazon to pilot frontier risk assessments.",
+   "note": "METR's own statement names the lab; it gives no date.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-metr",
+   "target": "lab-anthropic",
+   "type": "announced a partnership with",
+   "layer": "organizations",
+   "source_url": "https://metr.org/about",
+   "quote": "We have previously partnered with OpenAI, Anthropic, Google DeepMind, Meta and Amazon to pilot frontier risk assessments.",
+   "note": "METR's own statement names the lab; it gives no date.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-metr",
+   "target": "lab-gdm",
+   "type": "announced a partnership with",
+   "layer": "organizations",
+   "source_url": "https://metr.org/about",
+   "quote": "We have previously partnered with OpenAI, Anthropic, Google DeepMind, Meta and Amazon to pilot frontier risk assessments.",
+   "note": "METR's own statement names the lab; it gives no date.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-apollo-research",
+   "target": "lab-openai",
+   "type": "evaluated",
+   "layer": "organizations",
+   "source_url": "https://www.apolloresearch.ai/science",
+   "quote": "We found that o1 has the capability to do basic in-context scheming",
+   "date": "2024-12-05",
+   "note": "Apollo's pre-deployment evaluation as listed on its science page; the primary document is the OpenAI o1 system card.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-apollo-research",
+   "target": "lab-openai",
+   "type": "announced a partnership with",
+   "layer": "organizations",
+   "source_url": "https://www.apolloresearch.ai/science/stress-testing-deliberative-alignment-for-anti-scheming-training",
+   "quote": "We partnered with OpenAI to assess frontier language models for early signs of scheming",
+   "date": "2025-09-17",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-anthropic",
+   "target": "org-redwood-research",
+   "type": "announced a partnership with",
+   "layer": "organizations",
+   "source_url": "https://www.anthropic.com/research/alignment-faking",
+   "quote": "This research was a collaboration between Anthropic's Alignment Science team and Redwood Research.",
+   "date": "2024-12-18",
+   "note": "Announced by Anthropic as a research collaboration (alignment faking paper).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-uk-aisi",
+   "target": "lab-anthropic",
+   "type": "evaluated",
+   "layer": "organizations",
+   "source_url": "https://aisi.gov.uk/work/pre-deployment-evaluation-of-anthropics-upgraded-claude-3-5-sonnet",
+   "quote": "US AISI and UK AISI conducted testing during a limited period of pre-deployment access to the upgraded Sonnet 3.5 model.",
+   "date": "2024-11-19",
+   "note": "Joint testing with the US AI Safety Institute.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-uk-aisi",
+   "target": "lab-openai",
+   "type": "evaluated",
+   "layer": "organizations",
+   "source_url": "https://aisi.gov.uk/work/pre-deployment-evaluation-of-openais-o1-model",
+   "quote": "US AISI and UK AISI conducted testing during a limited period of pre-deployment access to the o1 model.",
+   "date": "2024-12-18",
+   "note": "Joint testing with the US AI Safety Institute.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-cset",
+   "target": "ev-us-ai-action-plan",
+   "type": "submitted comments on",
+   "layer": "organizations",
+   "source_url": "https://cset.georgetown.edu/publication/csets-recommendations-for-an-ai-action-plan/",
+   "quote": "has submitted a set of strategic recommendations to guide the United States",
+   "date": "2025-03-14",
+   "note": "Submitted to the request for information for developing the AI Action Plan, before the plan was released.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-fli",
+   "target": "resp-fli-pause-giant-ai-experiments-2023",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://futureoflife.org/open-letter/pause-giant-ai-experiments/",
+   "quote": "We call on all AI labs to immediately pause for at least 6 months the training of AI systems more powerful than GPT-4.",
+   "date": "2023-03-22",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-cais",
+   "target": "resp-cais-statement-on-ai-risk-2023",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://safe.ai/work/statement-on-ai-risk",
+   "quote": "Mitigating the risk of extinction from AI should be a global priority alongside other societal-scale risks such as pandemics and nuclear war.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-fli",
+   "target": "lab-anthropic",
+   "type": "evaluated",
+   "layer": "organizations",
+   "source_url": "https://futureoflife.org/ai-safety-index-summer-2025/",
+   "quote": "Anthropic gets the best overall grade (C+)",
+   "date": "2025-07-17",
+   "note": "FLI AI Safety Index, Summer 2025: grades by an expert panel FLI convened.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-fli",
+   "target": "lab-openai",
+   "type": "evaluated",
+   "layer": "organizations",
+   "source_url": "https://futureoflife.org/ai-safety-index-summer-2025/",
+   "quote": "OpenAI secured second place ahead of Google DeepMind",
+   "date": "2025-07-17",
+   "note": "FLI AI Safety Index, Summer 2025.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-fli",
+   "target": "ev-ca-sb53-signed",
+   "type": "publicly supported",
+   "layer": "organizations",
+   "source_url": "https://futureoflife.org/ai-policy/michael-kleinman-reacts-to-breakthrough-ai-safety-legislation/",
+   "quote": "We applaud Governor Newsom for signing this vital legislation.",
+   "date": "2025-10-03",
+   "note": "Statement by FLI's Head of US Policy, published by FLI.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-metr",
+   "target": "co-META",
+   "type": "announced a partnership with",
+   "layer": "organizations",
+   "source_url": "https://metr.org/",
+   "quote": "We have previously partnered with OpenAI, Anthropic, Google DeepMind, Meta and Amazon to pilot frontier risk assessments.",
+   "note": "Announced by METR on its home page, in the past tense ('previously partnered'). The page links Meta to ai.meta.com; this site ties it to co-META, not to lab-msl.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-metr",
+   "target": "co-AMZN",
+   "type": "announced a partnership with",
+   "layer": "organizations",
+   "source_url": "https://metr.org/",
+   "quote": "We have previously partnered with OpenAI, Anthropic, Google DeepMind, Meta and Amazon to pilot frontier risk assessments.",
+   "note": "Announced by METR on its home page, in the past tense ('previously partnered'). The page links Amazon to aws.amazon.com/nova; this site ties it to co-AMZN, not to lab-amazon-agi.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-us-caisi",
+   "target": "co-deepseek",
+   "type": "evaluated",
+   "layer": "organizations",
+   "source_url": "https://www.nist.gov/news-events/news/2025/09/caisi-evaluation-deepseek-ai-models-finds-shortcomings-and-risks",
+   "quote": "The Center for AI Standards and Innovation (CAISI) at the Department of Commerce’s National Institute of Standards and Technology (NIST) evaluated AI models from the People’s Republic of China (PRC) developer DeepSeek and found they lag behind U.S. models in performance, cost, security and adoption.",
+   "date": "2025-09-30",
+   "note": "CAISI later published a second evaluation, of DeepSeek V4 Pro, on 2026-05-01 (nist.gov/news-events/news/2026/05/caisi-evaluation-deepseek-v4-pro).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-us-caisi",
+   "target": "co-2513",
+   "type": "evaluated",
+   "layer": "organizations",
+   "source_url": "https://www.nist.gov/news-events/news/2026/09/caisis-assessment-zais-glm-53-cyber-capabilities",
+   "quote": "CAISI evaluated GLM-5.3’s performance on four benchmarks covering vulnerability discovery and exploit development",
+   "date": "2026-09-17",
+   "note": "The quote is the page's sentence on what CAISI evaluated; the page names Z.ai (formerly Zhipu AI) as the developer of GLM-5.3.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-us-caisi",
+   "target": "lab-openai",
+   "type": "evaluated",
+   "layer": "organizations",
+   "source_url": "https://www.nist.gov/news-events/news/2024/12/pre-deployment-evaluation-openais-o1-model",
+   "quote": "The U.S. Artificial Intelligence Safety Institute (US AISI) and the UK Artificial Intelligence Safety Institute (UK AISI) conducted a joint pre-deployment evaluation of OpenAI’s latest model, o1 (released December 5, 2024).",
+   "date": "2024-12-18",
+   "note": "Published under the institute's earlier name (US AI Safety Institute); org-us-caisi is the same body, now CAISI. Joint with UK AISI; findings were shared with OpenAI before release.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-us-caisi",
+   "target": "lab-anthropic",
+   "type": "evaluated",
+   "layer": "organizations",
+   "source_url": "https://www.nist.gov/news-events/news/2024/11/pre-deployment-evaluation-anthropics-upgraded-claude-35-sonnet",
+   "quote": "The U.S. Artificial Intelligence Safety Institute (US AISI) and the UK Artificial Intelligence Safety Institute (UK AISI) conducted a joint pre-deployment evaluation of Anthropic’s latest model – the upgraded Claude 3.5 Sonnet (released October 22, 2024).",
+   "date": "2024-11-19",
+   "note": "Published under the institute's earlier name (US AI Safety Institute); org-us-caisi is the same body, now CAISI. Joint with UK AISI; findings were shared with Anthropic before release.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-us-caisi",
+   "target": "lab-anthropic",
+   "type": "announced a partnership with",
+   "layer": "organizations",
+   "source_url": "https://www.nist.gov/news-events/news/2024/08/us-ai-safety-institute-signs-agreements-regarding-ai-safety-research",
+   "quote": "Today, the U.S. Artificial Intelligence Safety Institute at the U.S. Department of Commerce’s National Institute of Standards and Technology (NIST) announced agreements that enable formal collaboration on AI safety research, testing and evaluation with both Anthropic and OpenAI.",
+   "date": "2024-08-29",
+   "note": "Published under the institute's earlier name (US AI Safety Institute); org-us-caisi is the same body, now CAISI. Agreements for formal collaboration, as announced by the institute.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-us-caisi",
+   "target": "lab-openai",
+   "type": "announced a partnership with",
+   "layer": "organizations",
+   "source_url": "https://www.nist.gov/news-events/news/2024/08/us-ai-safety-institute-signs-agreements-regarding-ai-safety-research",
+   "quote": "Today, the U.S. Artificial Intelligence Safety Institute at the U.S. Department of Commerce’s National Institute of Standards and Technology (NIST) announced agreements that enable formal collaboration on AI safety research, testing and evaluation with both Anthropic and OpenAI.",
+   "date": "2024-08-29",
+   "note": "Published under the institute's earlier name (US AI Safety Institute); org-us-caisi is the same body, now CAISI. Agreements for formal collaboration, as announced by the institute.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-redwood-research",
+   "target": "ev-ca-sb53-signed",
+   "type": "publicly supported",
+   "layer": "organizations",
+   "source_url": "https://encodeai.org/wp-content/uploads/2025/08/SB-53_Support_AFC_8.7.pdf",
+   "quote": "On behalf of the organizations signed below, we write to you today in support of SB 53 (Wiener), as amended on July 17th, 2025.",
+   "date": "2025-08-07",
+   "note": "Supported SB 53 as amended on July 17, 2025, in a coalition letter of 2025-08-07, before later amendments; the letter is signed by named individuals \"on behalf of the organizations signed below\".",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-ai-futures-project",
+   "target": "ev-ca-sb53-signed",
+   "type": "publicly supported",
+   "layer": "organizations",
+   "source_url": "https://encodeai.org/wp-content/uploads/2025/08/SB-53_Support_AFC_8.7.pdf",
+   "quote": "On behalf of the organizations signed below, we write to you today in support of SB 53 (Wiener), as amended on July 17th, 2025.",
+   "date": "2025-08-07",
+   "note": "Supported SB 53 as amended on July 17, 2025, in a coalition letter of 2025-08-07, before later amendments; the letter is signed by named individuals \"on behalf of the organizations signed below\".",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-encode-ai",
+   "target": "ev-ca-sb53-signed",
+   "type": "publicly supported",
+   "layer": "organizations",
+   "source_url": "https://encodeai.org/wp-content/uploads/2025/08/SB-53_Support_AFC_8.7.pdf",
+   "quote": "On behalf of the organizations signed below, we write to you today in support of SB 53 (Wiener), as amended on July 17th, 2025.",
+   "date": "2025-08-07",
+   "note": "Supported SB 53 as amended on July 17, 2025, in a coalition letter of 2025-08-07, before later amendments; the letter is signed by named individuals \"on behalf of the organizations signed below\".",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-secure-ai-project",
+   "target": "ev-ca-sb53-signed",
+   "type": "publicly supported",
+   "layer": "organizations",
+   "source_url": "https://encodeai.org/wp-content/uploads/2025/08/SB-53_Support_AFC_8.7.pdf",
+   "quote": "On behalf of the organizations signed below, we write to you today in support of SB 53 (Wiener), as amended on July 17th, 2025.",
+   "date": "2025-08-07",
+   "note": "Supported SB 53 as amended on July 17, 2025, in a coalition letter of 2025-08-07, before later amendments; the letter is signed by named individuals \"on behalf of the organizations signed below\".",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-secure-ai-project",
+   "target": "ev-ny-raise-signed",
+   "type": "publicly supported",
+   "layer": "organizations",
+   "source_url": "https://secureaiproject.org/bills-we-support/",
+   "quote": "We’ve supported prescient lawmakers in their efforts to develop, explain, negotiate, and advance such bills in nine states so far: Utah, Nebraska, Tennessee, Michigan, Colorado, New York, Massachusetts, Illinois, and California.",
+   "note": "The page's 'Bills We Support' table lists the New York RAISE Act as signed into law (2025).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-encode-ai",
+   "target": "ev-ny-raise-signed",
+   "type": "publicly supported",
+   "layer": "organizations",
+   "source_url": "https://encodeai.org/",
+   "quote": "We helped pass the nation’s second landmark AI law",
+   "note": "Encode's home page, read through WebFetch (direct fetch was blocked by Cloudflare); the page describes this law as the New York RAISE Act.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-cais",
+   "target": "lab-anthropic",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://safe.ai/news/anthropic-is-not-a-safe-ai-company",
+   "quote": "Anthropic is not a safe AI company, and we must reject its reckless attempt to amass power in the name of the greater good.",
+   "date": "2026-11-18",
+   "note": "CAIS press release saying it joined the MisAnthropic Statement; the quote is the statement's text as reproduced there.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-stanford-hai",
+   "target": "resp-fmti-2025",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://hai.stanford.edu/news/transparency-in-ai-is-on-the-decline",
+   "quote": "The Foundation Model Transparency Index is an annual report that comprehensively assesses the transparency of major AI companies in relation to their flagship models.",
+   "date": "2025-12-09",
+   "note": "Stanford HAI's own article on the index; the paper (arXiv 2512.10169) lists its individual authors.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-stanford-hai",
+   "target": "co-IBM",
+   "type": "evaluated",
+   "layer": "organizations",
+   "source_url": "https://hai.stanford.edu/news/transparency-in-ai-is-on-the-decline",
+   "quote": "At the top, IBM scored the highest score in the Index's history at 95/100.",
+   "date": "2025-12-09",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-stanford-hai",
+   "target": "lab-xai",
+   "type": "evaluated",
+   "layer": "organizations",
+   "source_url": "https://hai.stanford.edu/news/transparency-in-ai-is-on-the-decline",
+   "quote": "xAI and Midjourney's scores of 14/100 are among the lowest in the Index's history.",
+   "date": "2025-12-09",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-stanford-hai",
+   "target": "co-META",
+   "type": "evaluated",
+   "layer": "organizations",
+   "source_url": "https://hai.stanford.edu/news/transparency-in-ai-is-on-the-decline",
+   "quote": "Meta and OpenAI started in first and second in 2023, but now are last and second-to-last, respectively.",
+   "date": "2025-12-09",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-stanford-hai",
+   "target": "lab-openai",
+   "type": "evaluated",
+   "layer": "organizations",
+   "source_url": "https://hai.stanford.edu/news/transparency-in-ai-is-on-the-decline",
+   "quote": "Meta and OpenAI started in first and second in 2023, but now are last and second-to-last, respectively.",
+   "date": "2025-12-09",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-stanford-hai",
+   "target": "co-deepseek",
+   "type": "evaluated",
+   "layer": "organizations",
+   "source_url": "https://arxiv.org/abs/2512.10169",
+   "quote": "evaluates companies like Alibaba, DeepSeek, and xAI for the first time",
+   "date": "2025-12-11",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-stanford-hai",
+   "target": "co-BABA",
+   "type": "evaluated",
+   "layer": "organizations",
+   "source_url": "https://arxiv.org/abs/2512.10169",
+   "quote": "evaluates companies like Alibaba, DeepSeek, and xAI for the first time",
+   "date": "2025-12-11",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-common-sense-media",
+   "target": "co-META",
+   "type": "evaluated",
+   "layer": "organizations",
+   "source_url": "https://about.commonsensemedia.org/press-room/press-releases/meta-ai-companions-unsafe-for-kids-common-sense-media-report-finds",
+   "quote": "a strong recommendation that Meta AI is not used by anyone under the age of 18.",
+   "date": "2025-08-28",
+   "note": "Risk assessment of Meta AI.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-common-sense-media",
+   "target": "co-GOOGL",
+   "type": "evaluated",
+   "layer": "organizations",
+   "source_url": "https://about.commonsensemedia.org/press-room/press-releases/googles-gemini-platforms-for-kids-and-teens-pose-risks-despite-added-filters-common-sense-media-reports",
+   "quote": "Both AI systems received \"High Risk\" overall ratings",
+   "date": "2025-09-05",
+   "note": "Risk assessments of Gemini Under 13 and Gemini with teen protections.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-eff",
+   "target": "ev-us-take-it-down-act",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://www.eff.org/deeplinks/2025/02/take-it-down-act-flawed-attempt-protect-victims-will-lead-censorship",
+   "quote": "This bill contains none of those minimal speech protections and essentially greenlights misuse of its takedown regime.",
+   "date": "2025-02-11",
+   "note": "Published while the bill was pending, before it was signed.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-thorn",
+   "target": "resp-thorn-safety-by-design-2024",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://www.thorn.org/press-releases/thorn-atih-generative-ai-principles/",
+   "quote": "Today, these companies are committing to implement principles that guard against the creation and spread of AI-generated child sexual abuse material (AIG-CSAM) and other sexual harms against children.",
+   "date": "2024-04-23",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-openai",
+   "target": "resp-thorn-safety-by-design-2024",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.thorn.org/press-releases/thorn-atih-generative-ai-principles/",
+   "quote": "Anthropic, Civitai, Google, Meta, Metaphysic, Microsoft, Mistral AI, OpenAI, and Stability AI",
+   "date": "2024-04-23",
+   "note": "Named in Thorn's list of committing companies.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-anthropic",
+   "target": "resp-thorn-safety-by-design-2024",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.thorn.org/press-releases/thorn-atih-generative-ai-principles/",
+   "quote": "Anthropic, Civitai, Google, Meta, Metaphysic, Microsoft, Mistral AI, OpenAI, and Stability AI",
+   "date": "2024-04-23",
+   "note": "Named in Thorn's list of committing companies.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-GOOGL",
+   "target": "resp-thorn-safety-by-design-2024",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.thorn.org/press-releases/thorn-atih-generative-ai-principles/",
+   "quote": "Anthropic, Civitai, Google, Meta, Metaphysic, Microsoft, Mistral AI, OpenAI, and Stability AI",
+   "date": "2024-04-23",
+   "note": "Named in Thorn's list of committing companies.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-META",
+   "target": "resp-thorn-safety-by-design-2024",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.thorn.org/press-releases/thorn-atih-generative-ai-principles/",
+   "quote": "Anthropic, Civitai, Google, Meta, Metaphysic, Microsoft, Mistral AI, OpenAI, and Stability AI",
+   "date": "2024-04-23",
+   "note": "Named in Thorn's list of committing companies.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-MSFT",
+   "target": "resp-thorn-safety-by-design-2024",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.thorn.org/press-releases/thorn-atih-generative-ai-principles/",
+   "quote": "Anthropic, Civitai, Google, Meta, Metaphysic, Microsoft, Mistral AI, OpenAI, and Stability AI",
+   "date": "2024-04-23",
+   "note": "Named in Thorn's list of committing companies.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-mistral",
+   "target": "resp-thorn-safety-by-design-2024",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.thorn.org/press-releases/thorn-atih-generative-ai-principles/",
+   "quote": "Anthropic, Civitai, Google, Meta, Metaphysic, Microsoft, Mistral AI, OpenAI, and Stability AI",
+   "date": "2024-04-23",
+   "note": "Named in Thorn's list of committing companies.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-cdt",
+   "target": "org-pai",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://partnershiponai.org/partners/",
+   "quote": "Our 156 Partners around the globe",
+   "note": "Listed as \"CDT\" among partner logos on PAI's partners page (names read from the page's logo list).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-thorn",
+   "target": "org-pai",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://partnershiponai.org/partners/",
+   "quote": "Our 156 Partners around the globe",
+   "note": "Listed as \"Thorn\" among partner logos on PAI's partners page (names read from the page's logo list).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-berkeley-chai",
+   "target": "org-pai",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://partnershiponai.org/partners/",
+   "quote": "Our 156 Partners around the globe",
+   "note": "Listed as \"Center for Human-Compatible AI\" among partner logos on PAI's partners page (names read from the page's logo list).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-openai",
+   "target": "org-pai",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://partnershiponai.org/partners/",
+   "quote": "Our 156 Partners around the globe",
+   "note": "Listed as \"OpenAI\" among partner logos on PAI's partners page (names read from the page's logo list).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-anthropic",
+   "target": "org-pai",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://partnershiponai.org/partners/",
+   "quote": "Our 156 Partners around the globe",
+   "note": "Listed as \"Anthropic\" among partner logos on PAI's partners page (names read from the page's logo list).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-gdm",
+   "target": "org-pai",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://partnershiponai.org/partners/",
+   "quote": "Our 156 Partners around the globe",
+   "note": "Listed as \"Google DeepMind\" among partner logos on PAI's partners page (names read from the page's logo list).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-GOOGL",
+   "target": "org-pai",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://partnershiponai.org/partners/",
+   "quote": "Our 156 Partners around the globe",
+   "note": "Listed as \"Google\" among partner logos on PAI's partners page (names read from the page's logo list).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-MSFT",
+   "target": "org-pai",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://partnershiponai.org/partners/",
+   "quote": "Our 156 Partners around the globe",
+   "note": "Listed as \"Microsoft\" among partner logos on PAI's partners page (names read from the page's logo list).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-META",
+   "target": "org-pai",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://partnershiponai.org/partners/",
+   "quote": "Our 156 Partners around the globe",
+   "note": "Listed as \"Meta\" among partner logos on PAI's partners page (names read from the page's logo list).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-AMZN",
+   "target": "org-pai",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://partnershiponai.org/partners/",
+   "quote": "Our 156 Partners around the globe",
+   "note": "Listed as \"Amazon\" among partner logos on PAI's partners page (names read from the page's logo list).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-AAPL",
+   "target": "org-pai",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://partnershiponai.org/partners/",
+   "quote": "Our 156 Partners around the globe",
+   "note": "Listed as \"Apple\" among partner logos on PAI's partners page (names read from the page's logo list).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-IBM",
+   "target": "org-pai",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://partnershiponai.org/partners/",
+   "quote": "Our 156 Partners around the globe",
+   "note": "Listed as \"IBM\" among partner logos on PAI's partners page (names read from the page's logo list).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-CRM",
+   "target": "org-pai",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://partnershiponai.org/partners/",
+   "quote": "Our 156 Partners around the globe",
+   "note": "Listed as \"Salesforce\" among partner logos on PAI's partners page (names read from the page's logo list).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-ADBE",
+   "target": "org-pai",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://partnershiponai.org/partners/",
+   "quote": "Our 156 Partners around the globe",
+   "note": "Listed as \"Adobe\" among partner logos on PAI's partners page (names read from the page's logo list).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-INTU",
+   "target": "org-pai",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://partnershiponai.org/partners/",
+   "quote": "Our 156 Partners around the globe",
+   "note": "Listed as \"Intuit\" among partner logos on PAI's partners page (names read from the page's logo list).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-common-sense-media",
+   "target": "co-META",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://about.commonsensemedia.org/press-room/press-releases/meta-ai-companions-unsafe-for-kids-common-sense-media-report-finds",
+   "quote": "Meta AI poses unacceptable risks to teen safety.",
+   "date": "2025-08-28",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-common-sense-media",
+   "target": "lab-openai",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://about.commonsensemedia.org/press-room/press-releases/common-sense-media-report-finds-chatgpt-and-sora-pose-risks-to-teens-despite-safety-features",
+   "quote": "Common Sense Media research continues to recommend that teens not use ChatGPT for mental health or emotional support.",
+   "date": "2025-10-23",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-parentstogether",
+   "target": "co-META",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://parentstogetheraction.org/2025/04/28/meta-ai-chatbots-present-grooming-and-sexual-exploitation-risks/",
+   "quote": "These chatbots can roleplay risky grooming behaviors and scenarios with young users",
+   "date": "2025-04-28",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-ajl",
+   "target": "co-MSFT",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://gs.ajl.org/",
+   "quote": "to powerfully demonstrate algorithmic bias from IBM, Microsoft, and Face++",
+   "date": "2018",
+   "note": "Gender Shades project page; the source gives the year 2018 only in text.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-ajl",
+   "target": "co-IBM",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://gs.ajl.org/",
+   "quote": "to powerfully demonstrate algorithmic bias from IBM, Microsoft, and Face++",
+   "date": "2018",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-ajl",
+   "target": "co-AMZN",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://gs.ajl.org/",
+   "quote": "demonstrated similar disparities with Amazon",
+   "date": "2019",
+   "note": "Refers to the Actionable Auditing follow-up (listed as 2019 on the page).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-access-now",
+   "target": "ev-paris-ai-action-summit",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://www.accessnow.org/press-release/ai-action-summit-a-missed-opportunity-for-human-rights-centered-ai-governance/",
+   "quote": "As a result, the Summit failed to meet the current consensus standards at the United Nations General Assembly (UNGA).",
+   "date": "2025-02-14",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-cwa",
+   "target": "ev-us-eo-14365",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://cwa-union.org/news/releases/cwa-statement-executive-order-ai",
+   "quote": "is trying to stop state legislators from regulating AI to protect our jobs and our privacy.",
+   "date": "2025-12-12",
+   "note": "Statement on the executive order on state AI regulation.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-aflcio-technology-institute",
+   "target": "co-MSFT",
+   "type": "announced a partnership with",
+   "layer": "organizations",
+   "source_url": "https://news.microsoft.com/source/2023/12/11/afl-cio-and-microsoft-announce-new-tech-labor-partnership-on-ai-and-the-future-of-the-workforce/",
+   "quote": "Microsoft and the AFL-CIO's Technology Institute will jointly develop and implement new content",
+   "date": "2023-12-11",
+   "note": "Announced by Microsoft and the AFL-CIO; the page opened is Microsoft's. AFL-CIO's own page returned 403.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-earthjustice",
+   "target": "lab-xai",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://earthjustice.org/press/2026/xai-sued-for-illegal-power-plant",
+   "quote": "xAI has been pumping illegal pollution into this community in its rush to power the 'Colossus 2' data center.",
+   "date": "2026-04-14",
+   "note": "Earthjustice is co-counsel with the Southern Environmental Law Center for the NAACP in the lawsuit.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-selc",
+   "target": "co-SO",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://www.selc.org/news/southern-companys-fossil-fuel-gamble/",
+   "quote": "The only guarantee is a dirtier South",
+   "date": "2025-12-12",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-anthropic",
+   "target": "resp-anthropic-rsp-v1-2023",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://www.anthropic.com/news/anthropics-responsible-scaling-policy",
+   "quote": "Today, we’re publishing our Responsible Scaling Policy (RSP)",
+   "date": "2023-09-19",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-anthropic",
+   "target": "resp-anthropic-rsp-v2-2024",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy",
+   "quote": "Today we are publishing a significant update to our Responsible Scaling Policy (RSP)",
+   "date": "2024-10-15",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-anthropic",
+   "target": "resp-anthropic-rsp-v3-2026",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://www.anthropic.com/news/responsible-scaling-policy-v3",
+   "quote": "We’re releasing the third version of our Responsible Scaling Policy (RSP)",
+   "date": "2026-02-24",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-openai",
+   "target": "resp-openai-preparedness-beta-2023",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://cdn.openai.com/openai-preparedness-framework-beta.pdf",
+   "quote": "we are introducing our Preparedness Framework, a living document describing OpenAI’s processes to track, evaluate, forecast, and protect against catastrophic risks posed by increasingly powerful models.",
+   "date": "2023-12-18",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-openai",
+   "target": "resp-openai-preparedness-v2-2025",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://openai.com/index/updating-our-preparedness-framework/",
+   "quote": "We’re releasing an update to our Preparedness Framework, our process for tracking and preparing for advanced AI capabilities that could introduce new risks of severe harm.",
+   "date": "2025-04-15",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-gdm",
+   "target": "resp-gdm-fsf-v1-2024",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://deepmind.google/discover/blog/introducing-the-frontier-safety-framework/",
+   "quote": "Today, we are introducing our Frontier Safety Framework",
+   "date": "2024-05-17",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-gdm",
+   "target": "resp-gdm-fsf-v2-2025",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://deepmind.google/discover/blog/updating-the-frontier-safety-framework/",
+   "quote": "Our next iteration of the FSF sets out stronger security protocols on the path to AGI",
+   "date": "2025-02-04",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-gdm",
+   "target": "resp-gdm-fsf-v3-2025",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://deepmind.google/discover/blog/strengthening-our-frontier-safety-framework/",
+   "quote": "Today, we’re publishing the third iteration of our Frontier Safety Framework (FSF)",
+   "date": "2025-09-22",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-META",
+   "target": "resp-meta-frontier-ai-framework-2025",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://about.fb.com/news/2025/02/meta-approach-frontier-ai/",
+   "quote": "Today, we’re sharing our Frontier AI Framework, which outlines our consideration of risk in our model-release decisions",
+   "date": "2025-02-03",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-META",
+   "target": "resp-meta-advanced-ai-scaling-v2-2026",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://ai.meta.com/static-resource/Meta_Advanced-AI-Scaling-Framework-v2",
+   "quote": "Renamed from “Frontier AI Framework” to “Advanced AI Scaling Framework”.",
+   "date": "2026-04-07",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-xai",
+   "target": "resp-xai-rmf-2025",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://data.x.ai/2025-08-20-xai-risk-management-framework.pdf",
+   "quote": "This Risk Management Framework (“RMF”) outlines xAI’s approach to policies for handling significant risks associated with the development, deployment, and release of AI models such as Grok.",
+   "date": "2025-08-20",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-MSFT",
+   "target": "resp-msft-fgf-2025",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/Frontier-Governance-Framework-Feb-2026.pdf",
+   "quote": "February 2025 Initial version",
+   "date": "2025-02",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-MSFT",
+   "target": "resp-msft-fgf-2026",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/Frontier-Governance-Framework-Feb-2026.pdf",
+   "quote": "February 2026 One year update following finalization of the EU Code of Practice for General Purpose AI",
+   "date": "2026-02",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-GOOGL",
+   "target": "resp-google-rai-report-2025",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://ai.google/static/documents/ai-responsibility-update-published-february-2025.pdf",
+   "quote": "since then, we’ve published annual AI responsibility reports detailing our progress.",
+   "date": "2025-02",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "resp-google-rai-report-2025",
+   "target": "googl-2024-ai-principles-oversight",
+   "type": "addresses the same issue as",
+   "layer": "organizations",
+   "source_url": "https://ai.google/static/documents/ai-responsibility-update-published-february-2025.pdf",
+   "quote": "since then, we’ve published annual AI responsibility reports detailing our progress.",
+   "note": "linked by this site by topic; the source does not say it answers this",
+   "basis": "site topical link",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-GOOGL",
+   "target": "resp-google-rai-report-2026",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://ai.google/static/documents/ai-responsibility-update-2026.pdf",
+   "quote": "Progress Report Published in February 2026",
+   "date": "2026-02",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "resp-google-rai-report-2026",
+   "target": "googl-2026-ai-board-oversight",
+   "type": "addresses the same issue as",
+   "layer": "organizations",
+   "source_url": "https://ai.google/static/documents/ai-responsibility-update-2026.pdf",
+   "quote": "Progress Report Published in February 2026",
+   "note": "linked by this site by topic; the source does not say it answers this",
+   "basis": "site topical link",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-META",
+   "target": "resp-meta-human-rights-report-2024",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://humanrights.fb.com/wp-content/uploads/2025/12/2024-Meta-Human-Rights-Report.pdf",
+   "quote": "This annual Human Rights Report covers insights and actions from January 1, 2024, through December 31, 2024.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "resp-meta-human-rights-report-2024",
+   "target": "meta-2024-ai-targeted-ads-hr",
+   "type": "addresses the same issue as",
+   "layer": "organizations",
+   "source_url": "https://humanrights.fb.com/wp-content/uploads/2025/12/2024-Meta-Human-Rights-Report.pdf",
+   "quote": "This annual Human Rights Report covers insights and actions from January 1, 2024, through December 31, 2024.",
+   "note": "linked by this site by topic; the source does not say it answers this",
+   "basis": "site topical link",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-CRM",
+   "target": "resp-salesforce-trusted-ai-report-2025",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/reports/salesforce-trusted-ai-and-agents-impact-report.pdf",
+   "quote": "In this first-ever Trusted AI Impact Report, we aim to reinforce that commitment and provide a comprehensive overview of our efforts and learnings on this topic.",
+   "date": "2025-02",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "resp-salesforce-trusted-ai-report-2025",
+   "target": "crm-2026-ai-human-rights",
+   "type": "addresses the same issue as",
+   "layer": "organizations",
+   "source_url": "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/reports/salesforce-trusted-ai-and-agents-impact-report.pdf",
+   "quote": "In this first-ever Trusted AI Impact Report, we aim to reinforce that commitment and provide a comprehensive overview of our efforts and learnings on this topic.",
+   "note": "linked by this site by topic; the source does not say it answers this",
+   "basis": "site topical link",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-AMZN",
+   "target": "resp-aws-responsible-ai-page",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://aws.amazon.com/ai/responsible-ai/",
+   "quote": "At AWS, we make responsible AI practical and scalable",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "resp-aws-responsible-ai-page",
+   "target": "amzn-2025-ai-board-oversight",
+   "type": "addresses the same issue as",
+   "layer": "organizations",
+   "source_url": "https://aws.amazon.com/ai/responsible-ai/",
+   "quote": "At AWS, we make responsible AI practical and scalable",
+   "note": "linked by this site by topic; the source does not say it answers this",
+   "basis": "site topical link",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-AAPL",
+   "target": "resp-apple-rai-principles-2024",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://machinelearning.apple.com/research/introducing-apple-foundation-models",
+   "quote": "we have created a set of Responsible AI principles to guide how we develop AI tools, as well as the models that underpin them",
+   "date": "2024-06-10",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "resp-apple-rai-principles-2024",
+   "target": "aapl-2024-ai-transparency",
+   "type": "addresses the same issue as",
+   "layer": "organizations",
+   "source_url": "https://machinelearning.apple.com/research/introducing-apple-foundation-models",
+   "quote": "we have created a set of Responsible AI principles to guide how we develop AI tools, as well as the models that underpin them",
+   "note": "linked by this site by topic; the source does not say it answers this",
+   "basis": "site topical link",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-MSFT",
+   "target": "ev-msft-rai-report-2024",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://blogs.microsoft.com/on-the-issues/2024/05/01/responsible-ai-transparency-report-2024/",
+   "quote": "We believe we have an obligation to share our responsible AI practices with the public",
+   "date": "2024-05-01",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-MSFT",
+   "target": "ev-msft-rai-report-2025",
+   "type": "published",
+   "layer": "organizations",
+   "source_url": "https://blogs.microsoft.com/on-the-issues/2025/06/20/our-2025-responsible-ai-transparency-report/",
+   "quote": "Their insights have informed this second annual Responsible AI Transparency Report",
+   "date": "2025-06-20",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-AMZN",
+   "target": "resp-white-house-voluntary-commitments-2023-07",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "quote": "Today, these seven leading AI companies are committing to:",
+   "date": "2023-07-21",
+   "note": "Named among the seven companies in the White House fact sheet.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-anthropic",
+   "target": "resp-white-house-voluntary-commitments-2023-07",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "quote": "Today, these seven leading AI companies are committing to:",
+   "date": "2023-07-21",
+   "note": "Named among the seven companies in the White House fact sheet.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-GOOGL",
+   "target": "resp-white-house-voluntary-commitments-2023-07",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "quote": "Today, these seven leading AI companies are committing to:",
+   "date": "2023-07-21",
+   "note": "Named among the seven companies in the White House fact sheet.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-inflection-ai",
+   "target": "resp-white-house-voluntary-commitments-2023-07",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "quote": "Today, these seven leading AI companies are committing to:",
+   "date": "2023-07-21",
+   "note": "Named among the seven companies in the White House fact sheet.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-META",
+   "target": "resp-white-house-voluntary-commitments-2023-07",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "quote": "Today, these seven leading AI companies are committing to:",
+   "date": "2023-07-21",
+   "note": "Named among the seven companies in the White House fact sheet.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-MSFT",
+   "target": "resp-white-house-voluntary-commitments-2023-07",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "quote": "Today, these seven leading AI companies are committing to:",
+   "date": "2023-07-21",
+   "note": "Named among the seven companies in the White House fact sheet.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-openai",
+   "target": "resp-white-house-voluntary-commitments-2023-07",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "quote": "Today, these seven leading AI companies are committing to:",
+   "date": "2023-07-21",
+   "note": "Named among the seven companies in the White House fact sheet.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-ADBE",
+   "target": "resp-white-house-voluntary-commitments-2023-09",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "quote": "Today, these eight leading AI companies commit to:",
+   "date": "2023-09-12",
+   "note": "Named among the eight companies in the White House fact sheet.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-cohere",
+   "target": "resp-white-house-voluntary-commitments-2023-09",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "quote": "Today, these eight leading AI companies commit to:",
+   "date": "2023-09-12",
+   "note": "Named among the eight companies in the White House fact sheet.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-IBM",
+   "target": "resp-white-house-voluntary-commitments-2023-09",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "quote": "Today, these eight leading AI companies commit to:",
+   "date": "2023-09-12",
+   "note": "Named among the eight companies in the White House fact sheet.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-NVDA",
+   "target": "resp-white-house-voluntary-commitments-2023-09",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "quote": "Today, these eight leading AI companies commit to:",
+   "date": "2023-09-12",
+   "note": "Named among the eight companies in the White House fact sheet.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-PLTR",
+   "target": "resp-white-house-voluntary-commitments-2023-09",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "quote": "Today, these eight leading AI companies commit to:",
+   "date": "2023-09-12",
+   "note": "Named among the eight companies in the White House fact sheet.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-CRM",
+   "target": "resp-white-house-voluntary-commitments-2023-09",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "quote": "Today, these eight leading AI companies commit to:",
+   "date": "2023-09-12",
+   "note": "Named among the eight companies in the White House fact sheet.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-scale-ai",
+   "target": "resp-white-house-voluntary-commitments-2023-09",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "quote": "Today, these eight leading AI companies commit to:",
+   "date": "2023-09-12",
+   "note": "Named among the eight companies in the White House fact sheet.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-stability-ai",
+   "target": "resp-white-house-voluntary-commitments-2023-09",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+   "quote": "Today, these eight leading AI companies commit to:",
+   "date": "2023-09-12",
+   "note": "Named among the eight companies in the White House fact sheet.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-AMZN",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The UK and Republic of Korea governments announced that the following organisations have agreed to the Frontier AI Safety Commitments:",
+   "date": "2024-05-21",
+   "note": "On the UK government's signatory list.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-anthropic",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The UK and Republic of Korea governments announced that the following organisations have agreed to the Frontier AI Safety Commitments:",
+   "date": "2024-05-21",
+   "note": "On the UK government's signatory list.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-cohere",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The UK and Republic of Korea governments announced that the following organisations have agreed to the Frontier AI Safety Commitments:",
+   "date": "2024-05-21",
+   "note": "On the UK government's signatory list.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-GOOGL",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The UK and Republic of Korea governments announced that the following organisations have agreed to the Frontier AI Safety Commitments:",
+   "date": "2024-05-21",
+   "note": "On the UK government's signatory list.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-g42",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The UK and Republic of Korea governments announced that the following organisations have agreed to the Frontier AI Safety Commitments:",
+   "date": "2024-05-21",
+   "note": "On the UK government's signatory list.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-IBM",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The UK and Republic of Korea governments announced that the following organisations have agreed to the Frontier AI Safety Commitments:",
+   "date": "2024-05-21",
+   "note": "On the UK government's signatory list.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-inflection-ai",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The UK and Republic of Korea governments announced that the following organisations have agreed to the Frontier AI Safety Commitments:",
+   "date": "2024-05-21",
+   "note": "On the UK government's signatory list.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-META",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The UK and Republic of Korea governments announced that the following organisations have agreed to the Frontier AI Safety Commitments:",
+   "date": "2024-05-21",
+   "note": "On the UK government's signatory list.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-MSFT",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The UK and Republic of Korea governments announced that the following organisations have agreed to the Frontier AI Safety Commitments:",
+   "date": "2024-05-21",
+   "note": "On the UK government's signatory list.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-mistral",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The UK and Republic of Korea governments announced that the following organisations have agreed to the Frontier AI Safety Commitments:",
+   "date": "2024-05-21",
+   "note": "On the UK government's signatory list.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-035420",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The UK and Republic of Korea governments announced that the following organisations have agreed to the Frontier AI Safety Commitments:",
+   "date": "2024-05-21",
+   "note": "On the UK government's signatory list.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-openai",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The UK and Republic of Korea governments announced that the following organisations have agreed to the Frontier AI Safety Commitments:",
+   "date": "2024-05-21",
+   "note": "On the UK government's signatory list.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-005930",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The UK and Republic of Korea governments announced that the following organisations have agreed to the Frontier AI Safety Commitments:",
+   "date": "2024-05-21",
+   "note": "On the UK government's signatory list.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-xai",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The UK and Republic of Korea governments announced that the following organisations have agreed to the Frontier AI Safety Commitments:",
+   "date": "2024-05-21",
+   "note": "On the UK government's signatory list.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-2513",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The UK and Republic of Korea governments announced that the following organisations have agreed to the Frontier AI Safety Commitments:",
+   "date": "2024-05-21",
+   "note": "On the UK government's signatory list.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-magic",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The following organisations have been added to the existing list:",
+   "note": "On the UK government's list of organisations added later; the page gives no date for the additions.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-00100",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The following organisations have been added to the existing list:",
+   "note": "On the UK government's list of organisations added later; the page gives no date for the additions.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-01-ai",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The following organisations have been added to the existing list:",
+   "note": "On the UK government's list of organisations added later; the page gives no date for the additions.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-NVDA",
+   "target": "ev-seoul-frontier-commitments",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+   "quote": "The following organisations have been added to the existing list:",
+   "note": "On the UK government's list of organisations added later; the page gives no date for the additions.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-AMZN",
+   "target": "ev-eu-gpai-code",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+   "quote": "Signatories of the code of practice",
+   "note": "Named on the Commission's list of signatories.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-aleph-alpha",
+   "target": "ev-eu-gpai-code",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+   "quote": "Signatories of the code of practice",
+   "note": "Named on the Commission's list of signatories.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-black-forest-labs",
+   "target": "ev-eu-gpai-code",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+   "quote": "Signatories of the code of practice",
+   "note": "Named on the Commission's list of signatories.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-cohere",
+   "target": "ev-eu-gpai-code",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+   "quote": "Signatories of the code of practice",
+   "note": "Named on the Commission's list of signatories.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-IBM",
+   "target": "ev-eu-gpai-code",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+   "quote": "Signatories of the code of practice",
+   "note": "Named on the Commission's list of signatories.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-mistral",
+   "target": "ev-eu-gpai-code",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+   "quote": "Signatories of the code of practice",
+   "note": "Named on the Commission's list of signatories.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-reflection",
+   "target": "ev-eu-gpai-code",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+   "quote": "Signatories of the code of practice",
+   "note": "Named on the Commission's list of signatories.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-NOW",
+   "target": "ev-eu-gpai-code",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+   "quote": "Signatories of the code of practice",
+   "note": "Named on the Commission's list of signatories.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-writer",
+   "target": "ev-eu-gpai-code",
+   "type": "signed",
+   "layer": "organizations",
+   "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+   "quote": "Signatories of the code of practice",
+   "note": "Named on the Commission's list of signatories.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-AMZN",
+   "target": "org-frontier-model-forum",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://www.frontiermodelforum.org/membership/",
+   "quote": "The current members of the FMF are Amazon, Anthropic, Google, Meta, Microsoft, and OpenAI.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-anthropic",
+   "target": "org-frontier-model-forum",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://www.frontiermodelforum.org/membership/",
+   "quote": "The current members of the FMF are Amazon, Anthropic, Google, Meta, Microsoft, and OpenAI.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-GOOGL",
+   "target": "org-frontier-model-forum",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://www.frontiermodelforum.org/membership/",
+   "quote": "The current members of the FMF are Amazon, Anthropic, Google, Meta, Microsoft, and OpenAI.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-META",
+   "target": "org-frontier-model-forum",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://www.frontiermodelforum.org/membership/",
+   "quote": "The current members of the FMF are Amazon, Anthropic, Google, Meta, Microsoft, and OpenAI.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "co-MSFT",
+   "target": "org-frontier-model-forum",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://www.frontiermodelforum.org/membership/",
+   "quote": "The current members of the FMF are Amazon, Anthropic, Google, Meta, Microsoft, and OpenAI.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "lab-openai",
+   "target": "org-frontier-model-forum",
+   "type": "member of",
+   "layer": "organizations",
+   "source_url": "https://www.frontiermodelforum.org/membership/",
+   "quote": "The current members of the FMF are Amazon, Anthropic, Google, Meta, Microsoft, and OpenAI.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
   },
   {
    "source": "co-NVDA",

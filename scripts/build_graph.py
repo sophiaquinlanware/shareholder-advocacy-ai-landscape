@@ -314,6 +314,39 @@ def main():
                 if c.get(k):
                     nodes[key][k] = c[k]
 
+    # Research and advocacy organizations, company and lab responses, and their sourced ties
+    # (data/stakeholders.json; docs/plans/2026-11-28-stakeholder-map.md). A tie's relation must be one of the fixed
+    # list, and both its ends must exist; anything else stops the build, so no unsourced kind of claim slips in.
+    STAKE_RELATIONS = {"signed", "published", "evaluated", "announced a partnership with", "testified at",
+                       "submitted comments on", "helped draft", "published a critique of", "publicly supported",
+                       "member of", "responded to", "addresses the same issue as"}
+    sh = load("stakeholders.json") or {}
+    for o in sh.get("organizations", []):
+        node(o["id"], type="organization", layer="organizations", label=o["name"], org_type=o.get("org_type"),
+             kind=o.get("kind"), focus=o.get("focus"), description=o.get("description"), website=o.get("website"),
+             source_url=o.get("source_url"))
+    for r in sh.get("responses", []):
+        node(r["id"], type="response", layer="policy", label=r["title"], date=r.get("date"), kind=r.get("kind"),
+             actors=r.get("actors"), description=r.get("summary"), source_url=r.get("source_url"),
+             signatories_as_of=r.get("signatories_as_of"))
+    bad, seen_ties = [], set()
+    for t in sh.get("ties", []):
+        key = (t["from"], t["relation"], t["to"], t.get("date"))
+        key2 = (t["from"], t["relation"], t["to"], t.get("source_url"))
+        if key in seen_ties or key2 in seen_ties:
+            bad.append(f"duplicate: {t['from']} -[{t['relation']}]-> {t['to']} {t.get('date') or ''}")
+            continue
+        seen_ties.update((key, key2))
+        if t["relation"] not in STAKE_RELATIONS or t["from"] not in nodes or t["to"] not in nodes:
+            bad.append(f"{t['from']} -[{t['relation']}]-> {t['to']}")
+            continue
+        edge(t["from"], t["to"], t["relation"], "organizations", t.get("source_url"),
+             **{k: t[k] for k in ("quote", "date", "note", "basis", "review_status") if t.get(k)})
+    for r in sh.get("responses", []):
+        bad += [f"{r['id']}: actor {a} is not a node id" for a in r.get("actors") or [] if a not in nodes]
+    if bad:
+        raise SystemExit("stakeholders.json ties with an unknown relation or a missing end:\n  " + "\n  ".join(bad))
+
     # Everything the folded sections show, carried in the graph so the Network and Proposals pages can draw it
     # (owner, 2026-11-28: all the data from the other sections "stored and able to be ... visually represented"
     # in both graphs). Each field keeps its source; nothing is computed here beyond joining records.
