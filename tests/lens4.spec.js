@@ -86,6 +86,24 @@ test("Play changes its name to Pause and back (no aria-pressed)", async ({ page 
   await expect(page.locator("#net-scrub-status")).toContainText("Stopped at");
 });
 
+test("The year label on the network never sits over a node", async ({ page }) => {
+  await open(page, "?lens=impact&graph=proposals");
+  await page.locator("#net-play").click();
+  const badge = page.locator("#net-year-big.on");
+  await expect(badge).toBeVisible();
+  await page.waitForTimeout(1200); // the refit glides for 450ms
+  const hits = await page.evaluate(() => {
+    const b = document.getElementById("net-year-big").getBoundingClientRect();
+    return [...document.querySelectorAll("#net-graph circle")].filter((c) => {
+      const r = c.getBoundingClientRect();
+      if (!r.width || getComputedStyle(c).display === "none" || Number(getComputedStyle(c).opacity) === 0) return false;
+      return r.left < b.right && r.right > b.left && r.top < b.bottom && r.bottom > b.top;
+    }).length;
+  });
+  expect(hits).toBe(0);
+  await page.locator("#net-play").click();
+});
+
 test("Value chain: a tier opens its details; zero cells are not buttons; capped lists aren't counted", async ({
   page,
 }) => {

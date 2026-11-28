@@ -1,6 +1,6 @@
-// The header art and logo mark grow as the site is read (owner, 2026-11-27): the first time a view opens, its node
-// on the trail lights and links to its section's hub; a section's hub lights with its first view, and the matching
-// node in the logo fills. Kept in this browser only; nothing is sent anywhere.
+// The header art grows as the site is read (owner, 2026-11-27): the first time a view opens, its node
+// on the trail lights and links to its section's hub; a section's hub lights with its first view.
+// Kept in this browser only; nothing is sent anywhere. There is no logo (owner, 2026-11-27: "dont ahve any logo here at all").
 (() => {
   const KEY = "net-visited-v1";
   let seen = new Set();
@@ -23,10 +23,6 @@
         if (fresh.newGroup) { const hub = svg.querySelector(`.ha-hub[data-g="${fresh.g}"]`); if (hub) hub.classList.add("new"); }
       }
     }
-    document.querySelectorAll(".net-mark").forEach((m) => {
-      m.querySelectorAll(".nm-n").forEach((n) => n.classList.toggle("on", groups.has(n.dataset.g)));
-      m.querySelectorAll(".nm-e").forEach((e) => e.classList.toggle("on", groups.has(e.dataset.g) && groups.has(e.dataset.h)));
-    });
   }
   window.NETMARK = {
     visit(view) {

@@ -553,8 +553,6 @@ tbody th.sticky-col { text-transform: none; letter-spacing: 0; font-size: 13px; 
   .net-graph-wrap .net-graph { height: clamp(420px, 70vh, 680px); }
   .net-body .net-panel { margin-top: 12px; max-height: none; }
 }
-.net-marks .mark-swatch { width: 24px; height: 18px; flex: none; }
-.net-marks .leg.static { padding-right: 6px; }
 /* Select boxes: one chevron, vertically centred, the same in every browser (owner: the arrows weren't centred). */
 select { -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%236b6b6b' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 11px center; background-size: 10px 6px; padding-right: 30px !important; }
 /* Full-width rules (owner, 2026-11-26: "lines all the way through the sheet … like the header lines … not
@@ -745,7 +743,6 @@ button:active:not([disabled]) { transform: scale(.98); }
   .net-body.is-graph .net-panel:has(> .status-note:only-child) .status-note { color: var(--g-label-soft); font-size: 13px; }
 }
 /* Marks key on one line on wide screens (owner, 2026-11-26: "make these marks all on the same plane"). */
-.net-marks { align-items: center; }
 @media (min-width: 900px) {
   .net-marks { flex-wrap: nowrap; }
   .net-marks .leg.static { white-space: nowrap; }
@@ -1196,16 +1193,7 @@ details.bd-post > summary::-webkit-details-marker, details.bd-suggest > summary:
 @keyframes ha-pulse { 0% { opacity: 0; } 30% { opacity: 1; } 100% { opacity: 1; } }
 @keyframes ha-breathe { from { opacity: .55; } to { opacity: 1; } }
 /* The logo mark: a small network shaped as a mountain, beside the title and in the sticky bar. */
-h1.brand { display: flex; align-items: center; gap: 14px; }
-.net-mark { flex: none; width: 46px; height: 44px; overflow: visible; }
-.st-site .net-mark { width: 20px; height: 19px; vertical-align: -4px; margin-right: 8px; }
-.net-mark .nm-hill { fill: var(--blue-1); fill-opacity: .1; }
-.net-mark .nm-e { stroke: var(--blue-1); stroke-width: .9; stroke-opacity: .25; transition: stroke-opacity .6s ease; }
-.net-mark .nm-e.on { stroke-opacity: .85; }
-.net-mark .nm-n { fill: var(--bg); stroke: var(--blue-1); stroke-width: 1.4; transition: fill .6s ease; }
-.net-mark .nm-n.on { fill: var(--blue-1); }
-@media (max-width: 640px) { h1.brand { gap: 10px; } .net-mark { width: 36px; height: 34px; } }
-@media (prefers-reduced-motion: reduce) { .hdr-art *, .net-mark * { animation: none !important; transition: none !important; } }
+@media (prefers-reduced-motion: reduce) { .hdr-art * { animation: none !important; transition: none !important; } }
 .hdr-art .ha-back { fill: url(#ha-back); }
 .hdr-art .ha-mid { fill: url(#ha-mid); }
 .hdr-art .ha-peak { fill: url(#ha-peak); }
@@ -1258,11 +1246,11 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 .pl-poll .note { display: block; margin-top: 2px; }
 /* The mountain sits left of centre on wide screens, under the title, so the band balances (owner, 2026-11-27). */
 .hdr-art { overflow: hidden; }
-@media (min-width: 641px) { .hdr-art .ha-all { transform: translateX(-300px); } }
+/* Summit sits right of the title. The shift stays within the ridges' spare width (400 units each side) at every width. */
+@media (min-width: 641px) { .hdr-art .ha-all { transform: translateX(560px); } }
+@media (min-width: 1600px) { .hdr-art .ha-all { transform: translateX(400px); } }
 
 /* Logo mark as a line (owner, 2026-11-27: "more simple like lines"). */
-.net-mark .nm-ridge { fill: none; stroke: var(--blue-1); stroke-opacity: .25; stroke-width: 1.2; stroke-linejoin: round; }
-.net-mark .nm-e { stroke-width: 1.6; }
 /* No frame lines around the network band (owner, 2026-11-27): keyboard focus shows on the chosen node instead. */
 .net-graph-wrap .net-graph:focus, .net-graph-wrap .net-graph:focus-visible, .net-graph-wrap svg:focus, .net-graph-wrap svg:focus-visible { outline: none; box-shadow: none; }
 
@@ -1277,14 +1265,14 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 /* Prediction board: no question numbers (owner, 2026-11-27). */
 #tab-predict article.bd-card h4::before { content: none; }
 /* Network timeline: the year shows large on the graph while it plays; Play glows while playing. */
-#net-year-big { position: absolute; top: 56px; left: max(24px, calc(50vw - 600px)); z-index: 3; pointer-events: none; opacity: 0; transition: opacity .4s ease; color: #fff; }
+#net-year-big { position: absolute; top: 46px; left: 24px; padding: 4px 12px 8px 0; background: var(--g-bg); z-index: 3; pointer-events: none; opacity: 0; transition: opacity .4s ease; color: #fff; }
 #net-year-big.on { opacity: 1; }
 #net-year-big .ny-y { display: block; font-size: 64px; line-height: 1; font-weight: 400; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
 #net-year-big .ny-l { display: block; margin-top: 6px; font-size: 13px; color: var(--g-label-soft); }
 #net-year-big.playing .ny-y { color: #e8590c; }
 #net-play.playing { background: #e8590c; border-color: #e8590c; color: #fff; box-shadow: 0 0 0 4px rgba(232, 89, 12, .2), 0 0 18px rgba(232, 89, 12, .55); }
 @media (prefers-reduced-motion: no-preference) { #net-play.playing { animation: net-play-pulse 1.5s ease-in-out infinite alternate; } @keyframes net-play-pulse { from { box-shadow: 0 0 0 3px rgba(232, 89, 12, .15), 0 0 8px rgba(232, 89, 12, .3); } to { box-shadow: 0 0 0 5px rgba(232, 89, 12, .25), 0 0 22px rgba(232, 89, 12, .6); } } }
-@media (max-width: 640px) { #net-year-big { top: 44px; left: 16px; } #net-year-big .ny-y { font-size: 40px; } }
+@media (max-width: 640px) { #net-year-big { top: 42px; left: 16px; } #net-year-big .ny-y { font-size: 40px; } }
 
 /* Header play: hubs open their section; the ranges re-shape on a click; small easter eggs (netmark.js). */
 .hdr-art { pointer-events: auto; cursor: pointer; }
@@ -1296,10 +1284,6 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 @keyframes ha-draw { to { stroke-dashoffset: 0; } }
 .hdr-art .ha-burst line { stroke: #e8590c; stroke-width: 1; stroke-dasharray: 600; stroke-dashoffset: 600; animation: ha-burst 2.2s ease-out forwards; }
 @keyframes ha-burst { 40% { stroke-dashoffset: 0; opacity: .8; } 100% { stroke-dashoffset: 0; opacity: 0; } }
-.net-mark:hover .nm-n { animation: nm-climb 1.4s ease-in-out; }
-.net-mark:hover .nm-n:nth-of-type(2) { animation-delay: .1s; } .net-mark:hover .nm-n:nth-of-type(3) { animation-delay: .2s; }
-.net-mark:hover .nm-n:nth-of-type(4) { animation-delay: .3s; } .net-mark:hover .nm-n:nth-of-type(5) { animation-delay: .4s; }
-.net-mark:hover .nm-n:nth-of-type(6) { animation-delay: .5s; } .net-mark:hover .nm-n:nth-of-type(7) { animation-delay: .6s; }
 @keyframes nm-climb { 0%, 100% { fill: inherit; } 40% { fill: #e8590c; stroke: #e8590c; } }
 .ha-note { position: absolute; right: 24px; bottom: 12px; margin: 0; padding: 6px 12px; border-radius: 999px; background: var(--ink); color: var(--bg); font-size: 13px; transition: opacity .8s ease; z-index: 3; }
 .ha-note.out { opacity: 0; }

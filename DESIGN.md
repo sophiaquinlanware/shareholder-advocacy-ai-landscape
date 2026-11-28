@@ -104,7 +104,7 @@ One vocabulary: company roles from `roles.js` everywhere (the value-chain tiers 
 
 ## Components
 
-- **Header:** site name (eyebrow), h1, and a meta line of computed counts.
+- **Header:** h1 (no logo; owner, 2026-11-27: "dont ahve any logo here at all"), a one-line description, the SEC check date, then the header art: blue ridges with one trail node per section climbing a jagged main peak, after the owner's reference mountain but wider at the base. On screens 641px and wider the summit sits right of the title.
 - **Sortable table:** `<th aria-sort>` with a `<button class="th-sort">`; the active column shows ↑ or ↓.
 - **Status filter:** buttons with counts (`.status-btn`, `aria-pressed`).
 - **Count line:** `.count-line`, `aria-live="polite"`; it states what the filters show.
