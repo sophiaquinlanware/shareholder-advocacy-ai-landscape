@@ -251,7 +251,17 @@
    "description": "Oracle is Digital Realty's second-largest customer, 9.0% of annualized recurring revenue across 42 locations.",
    "as_of": "2026-02",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
-   "source_kind": "primary"
+   "source_kind": "primary",
+   "weight": {
+    "measure": "share of supplier revenue",
+    "value": 9.0,
+    "unit": "%",
+    "as_of": "2025-12",
+    "fiscal_basis": "annualized recurring revenue as of December 31, 2025",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
+    "source_kind": "company filing",
+    "quote": "Oracle Corporation 42 424,130 9.0 % 10.2"
+   }
   },
   {
    "from": "Digital Realty Trust",
@@ -260,7 +270,17 @@
    "description": "IBM is Digital Realty's fifth-largest customer, 2.3% of annualized recurring revenue across 34 locations.",
    "as_of": "2026-02",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
-   "source_kind": "primary"
+   "source_kind": "primary",
+   "weight": {
+    "measure": "share of supplier revenue",
+    "value": 2.3,
+    "unit": "%",
+    "as_of": "2025-12",
+    "fiscal_basis": "annualized recurring revenue as of December 31, 2025",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
+    "source_kind": "company filing",
+    "quote": "IBM 34 109,596 2.3 % 2.6"
+   }
   },
   {
    "from": "Digital Realty Trust",
@@ -269,7 +289,17 @@
    "description": "Meta Platforms is Digital Realty's eighth-largest customer, 1.6% of annualized recurring revenue across 49 locations.",
    "as_of": "2026-02",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
-   "source_kind": "primary"
+   "source_kind": "primary",
+   "weight": {
+    "measure": "share of supplier revenue",
+    "value": 1.6,
+    "unit": "%",
+    "as_of": "2025-12",
+    "fiscal_basis": "annualized recurring revenue as of December 31, 2025",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
+    "source_kind": "company filing",
+    "quote": "Meta Platforms, Inc. 49 73,494 1.6 % 2.8"
+   }
   },
   {
    "from": "Digital Realty Trust",
@@ -278,7 +308,18 @@
    "description": "LinkedIn, a Microsoft subsidiary, is Digital Realty's seventh-largest customer by annualized recurring revenue.",
    "as_of": "2026-02",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
-   "source_kind": "primary"
+   "source_kind": "primary",
+   "weight": {
+    "measure": "share of supplier revenue",
+    "value": 1.6,
+    "unit": "%",
+    "as_of": "2025-12",
+    "fiscal_basis": "annualized recurring revenue as of December 31, 2025",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
+    "source_kind": "company filing",
+    "quote": "LinkedIn Corporation 8 77,088 1.6 %",
+    "via_parent": "LinkedIn Corporation"
+   }
   },
   {
    "from": "Southern Company",
@@ -296,7 +337,15 @@
    "description": "Expanded long-term agreement for dedicated AI cloud capacity across multiple sites through December 2032, about $21 billion.",
    "as_of": "2026-04",
    "source_url": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-and-Meta-Announce-21-Billion-Expanded-AI-Infrastructure-Agreement/default.aspx",
-   "source_kind": "primary"
+   "source_kind": "primary",
+   "deal": {
+    "value": 21,
+    "unit": "USD billions",
+    "term": "approximately; through December 20, 2032",
+    "as_of": "2026-03",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000154/crwv-20260331.htm",
+    "quote": "Meta has initially committed to pay the Company approximately $21 billion, inclusive of (i) access to new computing capacity under the Order Form through December 20, 2032 and (ii) the exercise of an existing option to access additional computing capacity under a previous order form through April 10, 2032."
+   }
   },
   {
    "from": "CoreWeave",
@@ -305,7 +354,17 @@
    "description": "Microsoft was CoreWeave's top customer, about 67% of its 2025 revenue.",
    "as_of": "2026-03",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000104/crwv-20251231.htm",
-   "source_kind": "primary"
+   "source_kind": "primary",
+   "weight": {
+    "measure": "share of supplier revenue",
+    "value": 67,
+    "unit": "%",
+    "as_of": "2025-12",
+    "fiscal_basis": "fiscal year ended December 31, 2025",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000104/crwv-20251231.htm",
+    "source_kind": "company filing",
+    "quote": "We recognized an aggregate of approximately 67% of our revenue from our top customer, Microsoft, for the year ended December 31, 2025."
+   }
   },
   {
    "from": "Nebius Group",
@@ -314,7 +373,15 @@
    "description": "Multi-year agreement to deliver dedicated AI capacity to Microsoft from Nebius's Vineland, New Jersey data center.",
    "as_of": "2025-09",
    "source_url": "https://nebius.com/newsroom/nebius-announces-multi-billion-dollar-agreement-with-microsoft-for-ai-infrastructure",
-   "source_kind": "primary"
+   "source_kind": "primary",
+   "deal": {
+    "value": 17.4,
+    "unit": "USD billions",
+    "term": "about; through 2031 (about 19.4 if Microsoft acquires additional capacity)",
+    "as_of": "2025-09",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465925088312/tm2525580d1_6k.htm",
+    "quote": "Subject to the satisfaction of the deployment and availability of the GPU Services, the total contract value is about $17.4 billion through 2031."
+   }
   },
   {
    "from": "Nebius Group",
@@ -323,7 +390,15 @@
    "description": "Five-year deal to provide $12 billion of dedicated capacity on Nvidia Vera Rubin from early 2027.",
    "as_of": "2026-03",
    "source_url": "https://nebius.com/newsroom/nebius-signs-new-ai-infrastructure-agreement-with-meta",
-   "source_kind": "primary"
+   "source_kind": "primary",
+   "deal": {
+    "value": 27,
+    "unit": "USD billions",
+    "term": "up to about; five years ($12 billion dedicated plus up to $15 billion additional)",
+    "as_of": "2026-03",
+    "source_url": "https://nebius.com/newsroom/nebius-signs-new-ai-infrastructure-agreement-with-meta",
+    "quote": "The agreement has a contract value of up to approximately $27 billion."
+   }
   },
   {
    "from": "Apple",

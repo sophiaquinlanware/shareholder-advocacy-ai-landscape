@@ -402,9 +402,25 @@ def main():
     for t in (load("value_chain_ties.json") or {}).get("ties", []):
         a, b = by_name(t["from"]), by_name(t["to"])
         if a and b:
-            edge(a, b, t["type"], "companies", t.get("source_url"), description=t.get("description"), as_of=t.get("as_of"))
+            if t.get("weight") and t["weight"].get("measure") != "share of supplier revenue":
+                raise SystemExit(f"value_chain_ties.json: weight on {t['from']} -> {t['to']} must be share of supplier revenue")
+            edge(a, b, t["type"], "companies", t.get("source_url"), description=t.get("description"), as_of=t.get("as_of"),
+                 # "revenue_share", not "weight": co-filing edges already use "weight" for a count of proposals.
+                 **({"revenue_share": t["weight"]} if t.get("weight") else {}), **({"deal": t["deal"]} if t.get("deal") else {}))
         else:
             print(f"  warning: value-chain tie not matched: {t['from']} -> {t['to']}")
+
+    # Company size in its value-chain segment (data/companies.json "size"; plan 2026-11-28 value chain weights):
+    # drawn only against peers with the same measure, segment, source and year.
+    for c in load("companies.json") or []:
+        s = c.get("size")
+        if not s:
+            continue
+        if not s.get("segment"):
+            raise SystemExit(f"companies.json: size for {c.get('ticker') or c.get('id')} has no segment")
+        key = "co-" + (c["ticker"].upper() if c.get("ticker") and c["ticker"] not in ("private", "UNVERIFIED") else c.get("id", ""))
+        if key in nodes:
+            nodes[key]["size"] = s
 
     # Degree, for sizing dots.
     deg = defaultdict(int)

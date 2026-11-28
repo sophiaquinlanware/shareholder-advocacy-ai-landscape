@@ -107,6 +107,16 @@
      "best_support": 33.58
     }
    ],
+   "size": {
+    "measure": "share of cloud infrastructure services market (Synergy Research Group)",
+    "segment": "cloud infrastructure",
+    "value": 19,
+    "unit": "%",
+    "year": "Q3 2026",
+    "source_url": "https://www.techinsights.com/node/61958",
+    "source_kind": "research firm estimate",
+    "quote": "Microsoft and Google continued to post substantially higher growth rates than Amazon, while holding a 19% and 16% market share, respectively."
+   },
    "degree": 98
   },
   {
@@ -262,6 +272,16 @@
      "best_support": 18.56
     }
    ],
+   "size": {
+    "measure": "share of cloud infrastructure services market (Synergy Research Group)",
+    "segment": "cloud infrastructure",
+    "value": 16,
+    "unit": "%",
+    "year": "Q3 2026",
+    "source_url": "https://www.techinsights.com/node/61958",
+    "source_kind": "research firm estimate",
+    "quote": "Microsoft and Google continued to post substantially higher growth rates than Amazon, while holding a 19% and 16% market share, respectively."
+   },
    "degree": 99
   },
   {
@@ -447,6 +467,16 @@
      "best_support": 20.11
     }
    ],
+   "size": {
+    "measure": "share of cloud infrastructure services market (Synergy Research Group)",
+    "segment": "cloud infrastructure",
+    "value": 26,
+    "unit": "%",
+    "year": "Q3 2026",
+    "source_url": "https://www.techinsights.com/node/61958",
+    "source_kind": "research firm estimate",
+    "quote": "Amazon retained the largest share of the Q3 worldwide market at 26%."
+   },
    "degree": 62
   },
   {
@@ -537,6 +567,16 @@
      "commitment_source_kind": "proponent"
     }
    ],
+   "size": {
+    "measure": "Data Center revenue",
+    "segment": "Data Center segment",
+    "value": 193.7,
+    "unit": "USD billions",
+    "year": "FY2026",
+    "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/default.aspx",
+    "source_kind": "company filing",
+    "quote": "Full-year revenue rose 68% to a record $193.7 billion."
+   },
    "degree": 56
   },
   {
@@ -1742,6 +1782,16 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526402816/orcl-20260925.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "Proposals for inclusion in 2027 proxy statement ... No later than the close of business on May 28, 2027.",
+   "size": {
+    "measure": "Cloud Infrastructure (IaaS) revenue",
+    "segment": "cloud infrastructure",
+    "value": 18.1,
+    "unit": "USD billions",
+    "year": "FY2026",
+    "source_url": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Record-Q4-and-FY-2026-Results-Driven-by-Cloud-Infrastructure--Cloud-Applications/default.aspx",
+    "source_kind": "company filing",
+    "quote": "FY 2026 Cloud Infra (IaaS) Revenue $18.1 billion, up 77% USD, and up 75% constant currency"
+   },
    "degree": 21
   },
   {
@@ -1807,6 +1857,16 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/2488/000119312526129057/d85856ddef14a.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "submitted in writing ... and received by us on or before November 27, 2026",
+   "size": {
+    "measure": "Data Center segment revenue",
+    "segment": "Data Center segment",
+    "value": 16.6,
+    "unit": "USD billions",
+    "year": 2025,
+    "source_url": "https://ir.amd.com/news-events/press-releases/detail/1276/amd-reports-fourth-quarter-and-full-year-2025-financial-results",
+    "source_kind": "company filing",
+    "quote": "For the full year 2025, Data Center segment revenue was a record $16.6 billion, up 32% year-over-year, reflecting growth across both EPYC CPUs and AMD Instinct GPUs."
+   },
    "degree": 29
   },
   {
@@ -1832,6 +1892,16 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526085691/d49254ddef14a.htm",
    "next_proposal_deadline_status": "passed",
    "next_proposal_deadline_quote": "must comply with ... Rule 14a-8 ... and be received no later than November 2, 2026",
+   "size": {
+    "measure": "AI semiconductor revenue, quarterly",
+    "segment": "AI semiconductors",
+    "value": 16.7,
+    "unit": "USD billions",
+    "year": "Q3 FY2026",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001730168/000173016826000076/avgo-08022026x8kxex99.htm",
+    "source_kind": "company filing",
+    "quote": "Q3 AI semiconductor revenue of $16.7 billion grew 221% year-over-year, and 54% quarter-over-quarter,"
+   },
    "degree": 27
   },
   {
@@ -1853,6 +1923,16 @@
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/91360fd7-d84f-4f28-bc04-01cf1e43bcae/Parnassus%20Investments_Stewardship%20Report_2025_Web.pdf",
    "exchange": "Taiwan Stock Exchange / NYSE (ADR)",
    "country": "Taiwan",
+   "size": {
+    "measure": "share of global foundry revenue (TrendForce)",
+    "segment": "foundry",
+    "value": 72.5,
+    "unit": "%",
+    "year": "2Q26",
+    "source_url": "https://www.trendforce.com/presscenter/news/20260909-13225.html",
+    "source_kind": "research firm estimate",
+    "quote": "TSMC maintained its lead with 2Q26 revenue nearing $40.2 billion, a 12.1% increase QoQ, capturing a 72.5% market share."
+   },
    "degree": 6
   },
   {
@@ -1878,6 +1958,16 @@
    "source_url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
    "exchange": "Korea Exchange",
    "country": "South Korea",
+   "size": {
+    "measure": "share of DRAM revenue (TrendForce)",
+    "segment": "DRAM memory",
+    "value": 39.4,
+    "unit": "%",
+    "year": "2Q26",
+    "source_url": "https://www.trendforce.com/presscenter/news/20260907-13219.html",
+    "source_kind": "research firm estimate",
+    "quote": "The company ranked first with a market share of 39.4%."
+   },
    "degree": 9
   },
   {
@@ -1899,6 +1989,16 @@
    "source_url": "https://openai.com/index/samsung-and-sk-join-stargate/",
    "exchange": "Korea Exchange",
    "country": "South Korea",
+   "size": {
+    "measure": "share of DRAM revenue (TrendForce)",
+    "segment": "DRAM memory",
+    "value": 24.9,
+    "unit": "%",
+    "year": "2Q26",
+    "source_url": "https://www.trendforce.com/presscenter/news/20260907-13219.html",
+    "source_kind": "research firm estimate",
+    "quote": "Its 2Q26 revenue increased 37.9% QoQ to $38.59 billion, while market share edged down to 24.9%."
+   },
    "degree": 4
   },
   {
@@ -1924,6 +2024,16 @@
    "next_proposal_deadline_source": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000191/crwv-20260422.htm",
    "next_proposal_deadline_status": "open",
    "next_proposal_deadline_quote": "our Corporate Secretary must receive the written proposal ... not later than December 23, 2026",
+   "size": {
+    "measure": "Total revenue, quarterly",
+    "segment": "AI cloud",
+    "value": 3661,
+    "unit": "USD millions",
+    "year": "Q3 2026",
+    "source_url": "https://investingnews.com/coreweave-reports-strong-third-quarter-2026-results/",
+    "source_kind": "company filing",
+    "quote": "Third Quarter 2026 Financial Highlights (In millions, except percentages and per share amounts) Three Months Ended September 30, 2026 2025 Revenue $ 3,661 $ 1,365"
+   },
    "degree": 12
   },
   {
@@ -1945,6 +2055,16 @@
    "source_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465925088312/tm2525580d1_6k.htm",
    "exchange": "Nasdaq",
    "country": "Netherlands",
+   "size": {
+    "measure": "Nebius AI cloud segment revenue, quarterly",
+    "segment": "AI cloud",
+    "value": 973.8,
+    "unit": "USD millions",
+    "year": "Q3 2026",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001513845/000110465926126238/nbis-ex99d1.htm",
+    "source_kind": "company filing",
+    "quote": "Revenues for the Nebius AI cloud business grew by $842.7 million, or 643%, from $131.1 million in the third quarter of 2025 to $973.8 million in the third quarter of 2026."
+   },
    "degree": 6
   },
   {
@@ -40914,7 +41034,17 @@
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
    "description": "Oracle is Digital Realty's second-largest customer, 9.0% of annualized recurring revenue across 42 locations.",
-   "as_of": "2026-02"
+   "as_of": "2026-02",
+   "revenue_share": {
+    "measure": "share of supplier revenue",
+    "value": 9.0,
+    "unit": "%",
+    "as_of": "2025-12",
+    "fiscal_basis": "annualized recurring revenue as of December 31, 2025",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
+    "source_kind": "company filing",
+    "quote": "Oracle Corporation 42 424,130 9.0 % 10.2"
+   }
   },
   {
    "source": "co-DLR",
@@ -40923,7 +41053,17 @@
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
    "description": "IBM is Digital Realty's fifth-largest customer, 2.3% of annualized recurring revenue across 34 locations.",
-   "as_of": "2026-02"
+   "as_of": "2026-02",
+   "revenue_share": {
+    "measure": "share of supplier revenue",
+    "value": 2.3,
+    "unit": "%",
+    "as_of": "2025-12",
+    "fiscal_basis": "annualized recurring revenue as of December 31, 2025",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
+    "source_kind": "company filing",
+    "quote": "IBM 34 109,596 2.3 % 2.6"
+   }
   },
   {
    "source": "co-DLR",
@@ -40932,7 +41072,17 @@
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
    "description": "Meta Platforms is Digital Realty's eighth-largest customer, 1.6% of annualized recurring revenue across 49 locations.",
-   "as_of": "2026-02"
+   "as_of": "2026-02",
+   "revenue_share": {
+    "measure": "share of supplier revenue",
+    "value": 1.6,
+    "unit": "%",
+    "as_of": "2025-12",
+    "fiscal_basis": "annualized recurring revenue as of December 31, 2025",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
+    "source_kind": "company filing",
+    "quote": "Meta Platforms, Inc. 49 73,494 1.6 % 2.8"
+   }
   },
   {
    "source": "co-DLR",
@@ -40941,7 +41091,18 @@
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
    "description": "LinkedIn, a Microsoft subsidiary, is Digital Realty's seventh-largest customer by annualized recurring revenue.",
-   "as_of": "2026-02"
+   "as_of": "2026-02",
+   "revenue_share": {
+    "measure": "share of supplier revenue",
+    "value": 1.6,
+    "unit": "%",
+    "as_of": "2025-12",
+    "fiscal_basis": "annualized recurring revenue as of December 31, 2025",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
+    "source_kind": "company filing",
+    "quote": "LinkedIn Corporation 8 77,088 1.6 %",
+    "via_parent": "LinkedIn Corporation"
+   }
   },
   {
    "source": "co-SO",
@@ -40959,7 +41120,15 @@
    "layer": "companies",
    "source_url": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-and-Meta-Announce-21-Billion-Expanded-AI-Infrastructure-Agreement/default.aspx",
    "description": "Expanded long-term agreement for dedicated AI cloud capacity across multiple sites through December 2032, about $21 billion.",
-   "as_of": "2026-04"
+   "as_of": "2026-04",
+   "deal": {
+    "value": 21,
+    "unit": "USD billions",
+    "term": "approximately; through December 20, 2032",
+    "as_of": "2026-03",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000154/crwv-20260331.htm",
+    "quote": "Meta has initially committed to pay the Company approximately $21 billion, inclusive of (i) access to new computing capacity under the Order Form through December 20, 2032 and (ii) the exercise of an existing option to access additional computing capacity under a previous order form through April 10, 2032."
+   }
   },
   {
    "source": "co-CRWV",
@@ -40968,7 +41137,17 @@
    "layer": "companies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000104/crwv-20251231.htm",
    "description": "Microsoft was CoreWeave's top customer, about 67% of its 2025 revenue.",
-   "as_of": "2026-03"
+   "as_of": "2026-03",
+   "revenue_share": {
+    "measure": "share of supplier revenue",
+    "value": 67,
+    "unit": "%",
+    "as_of": "2025-12",
+    "fiscal_basis": "fiscal year ended December 31, 2025",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000104/crwv-20251231.htm",
+    "source_kind": "company filing",
+    "quote": "We recognized an aggregate of approximately 67% of our revenue from our top customer, Microsoft, for the year ended December 31, 2025."
+   }
   },
   {
    "source": "co-NBIS",
@@ -40977,7 +41156,15 @@
    "layer": "companies",
    "source_url": "https://nebius.com/newsroom/nebius-announces-multi-billion-dollar-agreement-with-microsoft-for-ai-infrastructure",
    "description": "Multi-year agreement to deliver dedicated AI capacity to Microsoft from Nebius's Vineland, New Jersey data center.",
-   "as_of": "2025-09"
+   "as_of": "2025-09",
+   "deal": {
+    "value": 17.4,
+    "unit": "USD billions",
+    "term": "about; through 2031 (about 19.4 if Microsoft acquires additional capacity)",
+    "as_of": "2025-09",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465925088312/tm2525580d1_6k.htm",
+    "quote": "Subject to the satisfaction of the deployment and availability of the GPU Services, the total contract value is about $17.4 billion through 2031."
+   }
   },
   {
    "source": "co-NBIS",
@@ -40986,7 +41173,15 @@
    "layer": "companies",
    "source_url": "https://nebius.com/newsroom/nebius-signs-new-ai-infrastructure-agreement-with-meta",
    "description": "Five-year deal to provide $12 billion of dedicated capacity on Nvidia Vera Rubin from early 2027.",
-   "as_of": "2026-03"
+   "as_of": "2026-03",
+   "deal": {
+    "value": 27,
+    "unit": "USD billions",
+    "term": "up to about; five years ($12 billion dedicated plus up to $15 billion additional)",
+    "as_of": "2026-03",
+    "source_url": "https://nebius.com/newsroom/nebius-signs-new-ai-infrastructure-agreement-with-meta",
+    "quote": "The agreement has a contract value of up to approximately $27 billion."
+   }
   },
   {
    "source": "co-AAPL",
