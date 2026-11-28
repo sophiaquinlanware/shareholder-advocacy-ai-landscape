@@ -43,7 +43,7 @@ test("an ask's panel: recurrence, support by year, coverage scoped and not confi
 test("an ask with no coverage entries reads 'not yet assessed', never 'no rule'", async ({ page }) => {
   const C = JSON.parse(readFileSync("data/coverage.json", "utf8"));
   C.entries = C.entries.filter((e) => e.ask_id !== "ask-ai-bias");
-  await page.route("**/data/coverage.json", (r) => r.fulfill({ json: C }));
+  await page.route("**/data/coverage.json*", (r) => r.fulfill({ json: C }));
   await open(page);
   await page.evaluate(() => window.focusNetworkNode("ask-ai-bias"));
   await expect(panel(page)).toContainText("Coverage not yet assessed");
@@ -134,8 +134,8 @@ test("Proposals: filter by what a proposal asks about (when the data has categor
     p.category = i % 2 ? "users" : "data-centers";
     p.topic = i % 2 ? "Harms to people using AI products" : "Data center externalities";
   });
-  await page.route("**/data/asks.json", (r) => r.fulfill({ json: A }));
-  await page.route("**/data/proposals.json", (r) => r.fulfill({ json: P }));
+  await page.route("**/data/asks.json*", (r) => r.fulfill({ json: A }));
+  await page.route("**/data/proposals.json*", (r) => r.fulfill({ json: P }));
   await page.goto("/index.html#feed");
   await page.waitForLoadState("networkidle");
   const n = P.proposals.filter((p) => p.category === "users" && p.company && p.year).length;

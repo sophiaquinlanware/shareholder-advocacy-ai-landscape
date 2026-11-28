@@ -117,6 +117,7 @@ One vocabulary: company roles from `roles.js` everywhere (the value-chain tiers 
   - **Effects of AI** (`#topics`, topics.js): the four areas from data/asks.json, each with its asks; clicking an ask opens its filings, support (leaving out filers critical of ESG) and polls in place. Safety asks (`#asks`) fold in below.
   - **Folded views:** AI disclosure scores and proposal rights fold under Company profiles; fund family votes and results of private engagement fold under the Proposals graph. Old hashes (`#parnassus`, `#rights`, `#votes`, `#outcomes`, `#asks`) open the host view with the fold open.
   - **Picking a proposal** (a chart mark or a table row) also opens how each fund family voted on it.
+- **Deploys show at once:** the build tags every local script, stylesheet and data URL with `?v=` and a hash of the built files (scripts/build.mjs), on the preloads and the fetches alike, so a new deploy isn't held back by GitHub Pages' 10-minute cache. Fonts are left untagged so their preload matches the stylesheet. Tests that stub a data file match `**/data/x.json*`.
 - **Sortable table:** `<th aria-sort>` with a `<button class="th-sort">`; the active column shows ↑ or ↓.
 - **Status filter:** buttons with counts (`.status-btn`, `aria-pressed`).
 - **Count line:** `.count-line`, `aria-live="polite"`; it states what the filters show.

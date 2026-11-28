@@ -44,7 +44,7 @@ async function open(page, { fixtureData = true, query = "?lens=impact" } = {}) {
   await page.clock.setFixedTime(TODAY);
   if (fixtureData) {
     const G = fixture();
-    await page.route("**/data/graph.json", (route) => route.fulfill({ json: G }));
+    await page.route("**/data/graph.json*", (route) => route.fulfill({ json: G }));
   }
   await page.goto(`/index.html${query}#network`);
   await page.waitForLoadState("networkidle");
