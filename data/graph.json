@@ -117,7 +117,7 @@
     "source_kind": "research firm estimate",
     "quote": "Microsoft and Google continued to post substantially higher growth rates than Amazon, while holding a 19% and 16% market share, respectively."
    },
-   "degree": 98
+   "degree": 99
   },
   {
    "id": "co-GOOGL",
@@ -282,7 +282,7 @@
     "source_kind": "research firm estimate",
     "quote": "Microsoft and Google continued to post substantially higher growth rates than Amazon, while holding a 19% and 16% market share, respectively."
    },
-   "degree": 99
+   "degree": 101
   },
   {
    "id": "co-META",
@@ -379,7 +379,7 @@
      "best_support": 17.02
     }
    ],
-   "degree": 71
+   "degree": 74
   },
   {
    "id": "co-AMZN",
@@ -477,7 +477,7 @@
     "source_kind": "research firm estimate",
     "quote": "Amazon retained the largest share of the Q3 worldwide market at 26%."
    },
-   "degree": 62
+   "degree": 63
   },
   {
    "id": "co-NVDA",
@@ -2203,7 +2203,7 @@
    "tier": "labs",
    "description": "ChatGPT/GPT maker; PBC controlled by OpenAI Foundation; $852B post-money (Mar 2026); confidential IPO filing June 2026.",
    "source_url": "https://techcrunch.com/2026/06/08/following-anthropic-openai-files-confidentially-for-ipo/",
-   "degree": 37
+   "degree": 40
   },
   {
    "id": "lab-anthropic",
@@ -2214,7 +2214,7 @@
    "tier": "labs",
    "description": "Claude maker; IPO priced $83/share on Nasdaq (ANT) November 19, 2026; founders keep voting control via Class F share.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/0001628280-26-074944-index.htm",
-   "degree": 33
+   "degree": 34
   },
   {
    "id": "lab-xai",
@@ -2225,7 +2225,7 @@
    "tier": "labs",
    "description": "Grok maker; acquired by SpaceX in all-stock deal Feb 2026 (xAI valued about $250B).",
    "source_url": "https://www.axios.com/2026/02/02/elon-musk-spacex-xai",
-   "degree": 9
+   "degree": 13
   },
   {
    "id": "lab-mistral",
@@ -18748,7 +18748,7 @@
    "jurisdiction": "US federal",
    "description": "Proposed moratorium on state AI laws was removed from the budget reconciliation bill before passage.",
    "source_url": "https://www.ncsl.org/press-room/details/partnership-not-preemption-state-legislators-stand-against-federal-ai-overreach",
-   "degree": 1
+   "degree": 3
   },
   {
    "id": "ev-eu-gpai-code",
@@ -18832,7 +18832,7 @@
    "jurisdiction": "US federal",
    "description": "Over 90 nonbinding federal actions on innovation, infrastructure and diplomacy, plus executive orders including faster permitting for data centers.",
    "source_url": "https://www.whitehouse.gov/releases/2025/07/white-house-unveils-americas-ai-action-plan",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "ev-us-eo-14318",
@@ -19238,7 +19238,7 @@
    "jurisdiction": "California",
    "description": "Moved SB 942's start to August 2, 2026 and added duties for large online platforms and generative AI hosting platforms from 2027 and capture-device makers from 2028.",
    "source_url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB853",
-   "degree": 1
+   "degree": 2
   },
   {
    "id": "ev-cn-cybersecurity-law-ai-amendment",
@@ -19350,7 +19350,7 @@
    "jurisdiction": "US federal",
    "description": "EO 14365 creates a DOJ AI Litigation Task Force, ties some state funding to AI laws, and asks for a preemptive federal framework.",
    "source_url": "https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence/",
-   "degree": 6
+   "degree": 8
   },
   {
    "id": "ev-ny-raise-signed",
@@ -22102,6 +22102,120 @@
    "website": "https://www.frontiermodelforum.org/",
    "source_url": "https://www.frontiermodelforum.org/about-us/",
    "degree": 6
+  },
+  {
+   "id": "org-consumer-reports",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Consumer Reports",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "consumer protection",
+    "governance"
+   ],
+   "description": "Consumer Reports is an independent, nonprofit member organization that works side by side with consumers for truth, transparency, and fairness in the marketplace.",
+   "website": "https://www.consumerreports.org/",
+   "source_url": "https://advocacy.consumerreports.org/press_release/consumer-reports-backs-senate-vote-upholding-states-role-over-ai-regulation/",
+   "degree": 3
+  },
+  {
+   "id": "org-public-citizen",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Public Citizen",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "consumer protection",
+    "governance"
+   ],
+   "description": "Public Citizen is a nonprofit consumer advocacy organization that champions the public interest in the halls of power.",
+   "website": "https://www.citizen.org/",
+   "source_url": "https://www.citizen.org/about/",
+   "degree": 3
+  },
+  {
+   "id": "org-epic",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Electronic Privacy Information Center (EPIC)",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "privacy",
+    "consumer protection",
+    "civil rights and bias"
+   ],
+   "description": "EPIC is a public interest research center in Washington, D.C., established in 1994 to focus public attention on emerging civil liberties issues and to secure the fundamental right to privacy in the digital age for all people through advocacy, research, and litigation.",
+   "website": "https://epic.org/",
+   "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
+   "degree": 7
+  },
+  {
+   "id": "org-cfa",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Consumer Federation of America",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "consumer protection",
+    "governance"
+   ],
+   "description": "The Consumer Federation of America (CFA) is an association of non-profit consumer organizations that was established in 1968 to advance the consumer interest.",
+   "website": "https://consumerfed.org/",
+   "source_url": "https://consumerfed.org/",
+   "degree": 3
+  },
+  {
+   "id": "org-color-of-change",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Color Of Change",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "civil rights and bias",
+    "consumer protection"
+   ],
+   "description": "Since 2005, Color Of Change has made vital progress as one of the nation’s leading racial justice organizations to help people respond effectively to injustice in the world around us.",
+   "website": "https://colorofchange.org/",
+   "source_url": "https://colorofchange.org/about/",
+   "degree": 1
+  },
+  {
+   "id": "org-nclc",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "National Consumer Law Center",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "consumer protection",
+    "civil rights and bias"
+   ],
+   "description": "NCLC uses the tools of advocacy, education, and litigation to fight for economic justice for low-income and other vulnerable people who have been abused, deceived, discriminated against, or left behind in our economy.",
+   "website": "https://www.nclc.org/",
+   "source_url": "https://www.nclc.org/about-us/",
+   "degree": 1
+  },
+  {
+   "id": "org-tech-oversight-project",
+   "type": "organization",
+   "layer": "organizations",
+   "label": "Tech Oversight Project",
+   "org_type": "research or advocacy organization",
+   "kind": "nonprofit advocacy",
+   "focus": [
+    "governance",
+    "child safety",
+    "consumer protection"
+   ],
+   "description": "The Tech Oversight Project is a nonprofit organization dedicated to reining in Big Tech for the damages they’ve caused by urging lawmakers to support comprehensive legislation on antitrust, online safety, privacy, and artificial intelligence.",
+   "website": "https://techoversight.org/",
+   "source_url": "https://techoversight.org/about/",
+   "degree": 3
   },
   {
    "id": "resp-fli-pause-giant-ai-experiments-2023",
@@ -40781,6 +40895,253 @@
    "layer": "organizations",
    "source_url": "https://www.frontiermodelforum.org/membership/",
    "quote": "The current members of the FMF are Amazon, Anthropic, Google, Meta, Microsoft, and OpenAI.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-consumer-reports",
+   "target": "ev-senate-strikes-moratorium",
+   "type": "publicly supported",
+   "layer": "organizations",
+   "source_url": "https://advocacy.consumerreports.org/press_release/consumer-reports-backs-senate-vote-upholding-states-role-over-ai-regulation/",
+   "quote": "We are pleased with the bipartisan vote to reject the 10-year moratorium on states regulating AI.",
+   "date": "2025-07-01",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-consumer-reports",
+   "target": "ev-us-ai-action-plan",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://advocacy.consumerreports.org/press_release/consumer-reports-raises-concerns-over-white-house-ai-action-plan",
+   "quote": "Consumer Reports is concerned about provisions in the plan that would block federal AI-related funding from going to states with so-called “burdensome” AI laws",
+   "date": "2025-07-23",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-consumer-reports",
+   "target": "ev-ca-ab853",
+   "type": "publicly supported",
+   "layer": "organizations",
+   "source_url": "https://advocacy.consumerreports.org/research/consumer-reports-urges-gov-newsom-to-sign-california-ai-transparency-act-ab-853/",
+   "quote": "Consumer Reports sent a letter to California Governor Gavin Newsom requesting that he sign the California AI Transparency Act (AB 853).",
+   "note": "Support for AB 853 before signature, as published by Consumer Reports.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-cfa",
+   "target": "ev-senate-strikes-moratorium",
+   "type": "publicly supported",
+   "layer": "organizations",
+   "source_url": "https://consumerfed.org/news/press-releases/cfa-statement-on-resounding-rebuke-of-ai-regulation-moratorium-in-the-senate/",
+   "quote": "The tech lobby attempted to manipulate the legislative process, but they were soundly defeated",
+   "date": "2025-07-01",
+   "note": "Quote is attributed in the statement to Ben Winters, CFA's Director of AI and Privacy.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-cfa",
+   "target": "co-META",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://consumerfed.org/news/press-releases/consumer-advocates-demand-investigation-into-blatant-deception-by-ai-companies-offering-therapy-bot-characters/",
+   "quote": "Character.AI and Meta’s AI Studio have enabled therapy chatbot characters to engage in the unlicensed practice of medicine",
+   "date": "2025-06-13",
+   "note": "CFA-led complaint to state attorneys general, licensing boards and the FTC, joined by 22 groups. Character.AI is not a tracked company.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-public-citizen",
+   "target": "lab-openai",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://www.citizen.org/news/public-citizen-letter-calls-on-open-ai-to-withdraw-sora-2-video-generation/",
+   "quote": "The rushed release of Sora 2 exemplifies a consistent and dangerous pattern of OpenAI rushing to market with a product that is either inherently unsafe or lacking in needed guardrails.",
+   "date": "2025-11-11",
+   "note": "Letter asking OpenAI to withdraw Sora 2.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-public-citizen",
+   "target": "ev-us-eo-14365",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://www.citizen.org/news/trump-grants-his-greedy-big-tech-buddies-christmas-wish-with-dangerous-ai-preemption-eo/",
+   "quote": "The President cannot unilaterally preempt state law.",
+   "date": "2025-12-11",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-public-citizen",
+   "target": "lab-xai",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://www.citizen.org/wp-content/uploads/Public_Citizen_OMB_8.28.25.pdf",
+   "quote": "Allowing Grok into federal systems would likely invite chaos, controversy, and deeply compromised governance",
+   "date": "2025-08-28",
+   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change organized it).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-color-of-change",
+   "target": "lab-xai",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://www.citizen.org/wp-content/uploads/Public_Citizen_OMB_8.28.25.pdf",
+   "quote": "Allowing Grok into federal systems would likely invite chaos, controversy, and deeply compromised governance",
+   "date": "2025-08-28",
+   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change organized it).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-cfa",
+   "target": "lab-xai",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://www.citizen.org/wp-content/uploads/Public_Citizen_OMB_8.28.25.pdf",
+   "quote": "Allowing Grok into federal systems would likely invite chaos, controversy, and deeply compromised governance",
+   "date": "2025-08-28",
+   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change organized it).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-epic",
+   "target": "lab-xai",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://www.citizen.org/wp-content/uploads/Public_Citizen_OMB_8.28.25.pdf",
+   "quote": "Allowing Grok into federal systems would likely invite chaos, controversy, and deeply compromised governance",
+   "date": "2025-08-28",
+   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change organized it).",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-epic",
+   "target": "co-AMZN",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
+   "quote": "However, each of these companies failed to live up to their own commitments",
+   "date": "2026-07-31",
+   "note": "Comment to the FTC, Matter No. P264200. The preceding sentence names Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI as having pledged to self-regulate voluntarily.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-epic",
+   "target": "lab-anthropic",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
+   "quote": "However, each of these companies failed to live up to their own commitments",
+   "date": "2026-07-31",
+   "note": "Comment to the FTC, Matter No. P264200. The preceding sentence names Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI as having pledged to self-regulate voluntarily.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-epic",
+   "target": "co-GOOGL",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
+   "quote": "However, each of these companies failed to live up to their own commitments",
+   "date": "2026-07-31",
+   "note": "Comment to the FTC, Matter No. P264200. The preceding sentence names Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI as having pledged to self-regulate voluntarily.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-epic",
+   "target": "co-META",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
+   "quote": "However, each of these companies failed to live up to their own commitments",
+   "date": "2026-07-31",
+   "note": "Comment to the FTC, Matter No. P264200. The preceding sentence names Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI as having pledged to self-regulate voluntarily.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-epic",
+   "target": "co-MSFT",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
+   "quote": "However, each of these companies failed to live up to their own commitments",
+   "date": "2026-07-31",
+   "note": "Comment to the FTC, Matter No. P264200. The preceding sentence names Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI as having pledged to self-regulate voluntarily.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-epic",
+   "target": "lab-openai",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
+   "quote": "However, each of these companies failed to live up to their own commitments",
+   "date": "2026-07-31",
+   "note": "Comment to the FTC, Matter No. P264200. The preceding sentence names Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI as having pledged to self-regulate voluntarily.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-nclc",
+   "target": "ev-us-eo-14365",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://www.nclc.org/trump-ai-order-seeks-to-block-states-from-protecting-people-from-big-tech-risks/",
+   "quote": "The actions that President Trump is directing federal agencies to take to block states from protecting people from current and future AI dangers are reckless, unlawful, and will not stand up to challenge",
+   "note": "Statement issued the day after the order, quoting NCLC advocates.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-tech-oversight-project",
+   "target": "co-GOOGL",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://techoversight.org/2025/09/16/chatbot-hearing",
+   "quote": "trillion-dollar Big Tech companies are pouring millions into campaigns to scare lawmakers out of protecting the very kids Google, OpenAI, and Meta hurt",
+   "date": "2025-09-16",
+   "note": "Statement after a Senate Judiciary Committee hearing on chatbots and minors.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-tech-oversight-project",
+   "target": "co-META",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://techoversight.org/2025/09/16/chatbot-hearing",
+   "quote": "trillion-dollar Big Tech companies are pouring millions into campaigns to scare lawmakers out of protecting the very kids Google, OpenAI, and Meta hurt",
+   "date": "2025-09-16",
+   "note": "Statement after a Senate Judiciary Committee hearing on chatbots and minors.",
+   "basis": "sourced",
+   "review_status": "auto-detected, not yet reviewed"
+  },
+  {
+   "source": "org-tech-oversight-project",
+   "target": "lab-openai",
+   "type": "published a critique of",
+   "layer": "organizations",
+   "source_url": "https://techoversight.org/2025/09/16/chatbot-hearing",
+   "quote": "trillion-dollar Big Tech companies are pouring millions into campaigns to scare lawmakers out of protecting the very kids Google, OpenAI, and Meta hurt",
+   "date": "2025-09-16",
+   "note": "Statement after a Senate Judiciary Committee hearing on chatbots and minors.",
    "basis": "sourced",
    "review_status": "auto-detected, not yet reviewed"
   },
