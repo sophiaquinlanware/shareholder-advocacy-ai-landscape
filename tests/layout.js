@@ -20,8 +20,13 @@ export function findOverlappingText() {
     const el = node.parentElement;
     if (!el || el.closest("svg, [hidden], script, style")) continue;
     // Text inside a closed <details> (other than its <summary>) is not shown, though browsers still report boxes for it.
-    const closed = el.closest("details:not([open])");
-    if (closed && !el.closest("summary")) continue;
+    // Checked at every level, so a summary nested inside another closed <details> counts as hidden too.
+    let hid = false;
+    for (let d = el.closest("details:not([open])"); d; d = d.parentElement && d.parentElement.closest("details:not([open])")) {
+      const sum = el.closest("summary");
+      if (!sum || sum.parentElement !== d) { hid = true; break; }
+    }
+    if (hid) continue;
     const style = getComputedStyle(el);
     if (style.visibility === "hidden" || style.opacity === "0") continue;
     const range = document.createRange();

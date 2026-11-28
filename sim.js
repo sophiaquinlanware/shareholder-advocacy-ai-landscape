@@ -403,7 +403,7 @@
       { m: "Negotiate and withdraw for a company commitment", model: "Yes: the commitment rate from this site's records (first filings and refiles apart)" },
       { m: "File an exempt solicitation (Form PX14A6G) before the vote", model: "No: shown as records on company profiles' engagement timelines" },
       { m: "Urge votes against directors after an exclusion", model: "No: one recorded case, Amazon 2026, on its engagement timeline" },
-      { m: "Go to court over an exclusion", model: "No: two 2026 rulings went opposite ways (Laws and rules)" },
+      { m: "Go to court over an exclusion", model: "No: two 2026 rulings went opposite ways (AI governance)" },
     ] },
     { id: "company", label: "Company", moves: [
       { m: "Engage and commit, ending the proposal", model: "Yes: the commitment rate from this site's records" },
@@ -421,7 +421,7 @@
     { id: "policy", label: "Policymaker", moves: [
       { m: "Adopt the SEC's proposed rescission of Rule 14a-8", model: "Yes, as a switch: from a season on, only floor proposals (raised in person at the meeting) where a company's own rules allow them", src: P0 => (P0.rescission || {}).source_url, apply: { scen: { rescind: true } }, label: "Turn on" },
       { m: "Resume SEC staff review of exclusions", model: "Yes, roughly: use the exclusion rate of the seasons with SEC staff review", src: SEC_URL, apply: { scen: { exclRegime: "before" } }, label: "Use those seasons' rate" },
-      { m: "Pass laws that cover an ask", model: "No: policy coverage by ask is on Laws and rules and in the planner" },
+      { m: "Pass laws that cover an ask", model: "No: policy coverage by ask is on AI governance and in the planner" },
     ] },
   ];
   function drawSeat(id) {
@@ -475,7 +475,7 @@
         ["latest", `as in ${P.estimates.exclusion_latest ? P.estimates.exclusion_latest.season : "the latest season"}, the first season in which SEC staff did not review most exclusions (${P.estimates.exclusion_latest ? `${P.estimates.exclusion_latest.k} of ${P.estimates.exclusion_latest.n}` : "–"} company-and-ask filings)`],
         ["before", `as in the seasons with SEC staff review, to ${P.estimates.exclusion_before ? P.estimates.exclusion_before.until : ""} (${P.estimates.exclusion_before ? `${P.estimates.exclusion_before.k} of ${P.estimates.exclusion_before.n}` : "–"})`],
         ["all", `as in all seasons (${P.estimates.exclusion.k} of ${P.estimates.exclusion.n})`],
-      ].map(([v, l]) => `<option value="${v}"${sc.exclRegime === v ? " selected" : ""}>${esc(l)}</option>`).join("")}</select> <span class="ticker">SEC staff stopped answering most no-action requests on November 17, 2025${link(SEC_2025, "SEC")} and all of them on August 14, 2026${link(SEC_URL, "SEC")}; proponents have since gone to court over exclusions (see <a href="#causality">Laws and rules</a>)</span></label>
+      ].map(([v, l]) => `<option value="${v}"${sc.exclRegime === v ? " selected" : ""}>${esc(l)}</option>`).join("")}</select> <span class="ticker">SEC staff stopped answering most no-action requests on November 17, 2025${link(SEC_2025, "SEC")} and all of them on August 14, 2026${link(SEC_URL, "SEC")}; proponents have since gone to court over exclusions (see <a href="#causality">AI governance</a>)</span></label>
       <label>Runs per scenario <select data-s="runs">${[200, 400, 1000].map((n) => `<option${n === sc.runs ? " selected" : ""}>${n}</option>`).join("")}</select></label>
     </div>`;
     if (box.dataset.wired) return; // the settings can be redrawn (Take a seat); listen once
@@ -702,7 +702,7 @@
         <div><dt>Support</dt><dd>A refile starts from last year's figure and moves by a yearly ratio with the spread recorded across ${E.support_delta.n} refiles (${esc(B.support_model)}). A first filing draws from the ask's recorded votes at any company.</dd></div>
         <div><dt>Held-out test</dt><dd>The refile, refile-after-a-gap and first-filing rates fitted on ${B.fit_seasons.join(", ")} only, then compared with ${B.test_season} (commitments and exclusions are too rare to test on one season, and the after-a-gap rate rests on very few cases): refiles expected ${B.refiled.expected}, recorded ${B.refiled.actual} of ${B.refiled.eligible} pairs the rule left open (the model ran low; the refile setting above can raise it); refiles after a gap expected ${B.lapsed.expected}, recorded ${B.lapsed.actual} of ${B.lapsed.eligible}; first filings expected ${B.new_pairs.expected}, recorded ${B.new_pairs.actual}; support error ${B.support_error.same_as_last_year_mae} points carrying last year forward against ${B.support_error.with_average_drift_mae} with an average drift, across ${B.support_error.n} refiles.</dd></div>
         <div><dt>Settings with no estimate in this data</dt><dd>Leading a coalition (from a study of investor-network dialogues, applied here to filings), points of support a coalition adds, the share of usual refilers who would use a floor proposal after a rescission, and how much less often a floor proposal ends in a commitment. All are under Assumptions.</dd></div>
-        <div><dt>Not modelled</dt><dd>Letters, meetings, exempt solicitations and votes against directors have no outcome records here, so the model covers filings only. A proponent suing over an exclusion is not modelled: two 2026 rulings went opposite ways (see Laws and rules). Companies, investors and asks are treated alike within each estimate; asks do not affect each other. Proposals filed from a critical stance on ESG are left out of support figures.</dd></div>
+        <div><dt>Not modelled</dt><dd>Letters, meetings, exempt solicitations and votes against directors have no outcome records here, so the model covers filings only. A proponent suing over an exclusion is not modelled: two 2026 rulings went opposite ways (see AI governance). Companies, investors and asks are treated alike within each estimate; asks do not affect each other. Proposals filed from a critical stance on ESG are left out of support figures.</dd></div>
       </dl>
       <p class="note">Two studies shaped the design. In a simulated gathering of AI agents, the agents kept to small circles of familiar partners rather than meeting new ones (Lai, Evans and others${link("https://arxiv.org/abs/2402.12590", "paper")}); and accounting for where experts already work improved predictions of future discoveries, while steering away from those places surfaced ideas people were unlikely to reach (Sourati and Evans${link("https://doi.org/10.1038/s41562-023-01648-z", "paper")}). So the ranking shows pairs never filed, and the investors that hold shares there and have filed the same ask elsewhere.</p>`;
   }

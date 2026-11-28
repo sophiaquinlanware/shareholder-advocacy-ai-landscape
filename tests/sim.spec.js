@@ -12,7 +12,8 @@ test("sections run from context to planning, each pointing to the next", async (
   expect(tabs.map((s) => s.trim())).toEqual([
     "About",
     "AI value chain",
-    "Laws and rules",
+    "Effects of AI",
+    "AI governance",
     "Company profiles",
     "Proposals and results",
     "Network and contacts",

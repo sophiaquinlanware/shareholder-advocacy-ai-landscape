@@ -1296,3 +1296,31 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 #feed-table tr.hit td:first-child { box-shadow: inset 3px 0 0 #e8590c; }
 #feed-table tr.hit .feed-t { color: #c2410c; font-weight: 500; } /* the same orange, one step deeper so text passes 4.5:1 */
 .feed-pick { stroke: #e8590c; stroke-width: 6; stroke-opacity: .25; }
+
+.feed-views { margin: 4px 0 12px; }
+/* The Key button sits on top of the graph on a solid fill, so nodes pass under it, never over it (owner, 2026-11-27). */
+.net-keybox { z-index: 4; }
+.net-key-btn { background: #2b2b2b; }
+.net-key-btn:hover, .net-key-btn[aria-expanded="true"] { background: #3a3a3a; }
+#feed-table tbody tr[id^="prop-"] { cursor: pointer; }
+#feed-table tr.feed-more td { background: rgba(232, 89, 12, .04); box-shadow: inset 3px 0 0 #e8590c; padding-top: 4px; }
+.feed-more-h { margin: 4px 0 6px; font-size: 14px; font-weight: 500; }
+.feed-votes { margin: 0 0 6px; padding-left: 18px; columns: 2 260px; }
+/* Views folded into another (owner, 2026-11-27: fewer tabs, context on demand). */
+.fold { margin: 20px 0 0; border-top: 1px solid var(--line); padding-top: 12px; }
+.fold > summary { cursor: pointer; font-size: 17px; font-weight: 500; padding: 4px 0; }
+.fold > summary:hover { color: var(--accent); }
+.fold .fold-body { margin-top: 8px; }
+.group:has(> #tab-feed[hidden]) .fold-feed { display: none; }
+/* Effects of AI: topic cards; an ask opens its record in place. */
+.tp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 16px; align-items: start; }
+.tp-card { padding: 16px 18px; }
+.tp-card h3 { margin: 0 0 6px; }
+.tp-stats { font-size: 14px; color: var(--ink-soft); }
+.tp-asks { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.tp-ask .tp-n { color: var(--ink-soft); margin-left: 4px; }
+.tp-ask[aria-expanded="true"] { border-color: #e8590c; box-shadow: 0 0 0 2px rgba(232, 89, 12, .25); }
+.tp-ask[aria-expanded="true"] .tp-n { color: inherit; }
+.tp-more { margin-top: 12px; border-top: 2px solid #e8590c; padding-top: 10px; }
+.tp-more h4 { margin: 0 0 4px; color: #c2410c; }
+.tp-list { padding-left: 18px; font-size: 14px; }

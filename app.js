@@ -346,10 +346,15 @@ function renderFeed() {
     </div>
     ${catNote ? `<p class="status-note">${esc(catNote)}</p>` : ""}
     <p class="count-line" id="feed-count" aria-live="polite"></p>
-    <figure class="card chart-card">
+    <div class="seg feed-views" role="group" aria-label="Chart">
+      <button type="button" data-fv="time" aria-pressed="true">Support over time</button>
+      <button type="button" data-fv="grid" aria-pressed="false">Each ask by company</button>
+    </div>
+    <figure class="card chart-card" id="feed-fig">
       <div class="chart-scroll" id="feed-chart"></div>
       <figcaption class="chart-key" id="feed-key"></figcaption>
     </figure>
+    <div id="feed-trk" hidden></div>
     <div class="table-wrap" id="feed-table"></div>`;
 
   const F = { status: "", co: "", topic: "", year: "", cat: "" };
@@ -501,16 +506,60 @@ function renderFeed() {
       })
       .append("title").text((p) => `${companyName(p.company)}, ${fmtDate(p.meeting_date, true)}: ${p.title}. ${p.support_pct}%${p.support_note ? ". " + p.support_note : ""}`);
   };
+  // Two views of the same proposals: support over time, or the best result for each ask at each company.
+  window.feedView = (v) => {
+    const grid = v === "grid";
+    document.querySelectorAll(".feed-views [data-fv]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.fv === v)));
+    document.getElementById("feed-fig").hidden = grid;
+    const trk = document.getElementById("feed-trk");
+    trk.hidden = !grid;
+    if (grid && !trk.dataset.built) {
+      // The grid is drawn by planner.js, which may load after this; try again shortly until it is there.
+      if (window.buildTrackerInto) { trk.dataset.built = "1"; window.buildTrackerInto(trk); }
+      else setTimeout(() => { if (!trk.hidden) window.feedView("grid"); }, 100);
+    }
+  };
+  document.querySelectorAll(".feed-views [data-fv]").forEach((b) => b.addEventListener("click", () => window.feedView(b.dataset.fv)));
+  if (window.feedWant) window.feedView(window.feedWant);
   // The proposal picked on the chart sits first in the table, in orange, until another is picked.
   var pickedProp = null;
+  var voteIx = null;
+  // What opens under a picked proposal: how each fund family voted on it (Form N-PX), so the votes come up on a click
+  // rather than on a tab of their own (owner, 2026-11-27).
+  function moreFor(p) {
+    const FV = window.FundVotes;
+    if (!voteIx && FV && DATA.fund_votes) voteIx = FV.index(DATA.fund_votes);
+    if (!p.meeting_date || p.status !== "voted") return `<p class="note">Fund family votes appear once a proposal has gone to a vote.</p>`;
+    if (!voteIx || !voteIx.usable(p.id)) return `<p class="note">No fund family votes recorded for this proposal yet.</p>`;
+    const items = voteIx.families.map((f) => {
+      const r = voteIx.byKey.get(`${f}|${p.id}`);
+      if (!r) return `<li><strong>${esc(f)}:</strong> ${FV.coverage(voteIx, f, p.meeting_date) ? "no vote found" : "not checked"}</li>`;
+      const u = (r.sources || [])[0];
+      return `<li><strong>${esc(f)}:</strong> ${esc(FV.voteText(r))}${u ? src(u, "N-PX") : ""}${r.reviewed ? "" : " <span class=\"note\">(not yet checked by a person)</span>"}</li>`;
+    }).join("");
+    return `<h4 class="feed-more-h">How fund families voted</h4><ul class="feed-votes">${items}</ul><p class="note">From SEC Form N-PX. No vote is rated; nothing here suggests how to vote.</p>`;
+  }
   function pinRow() {
     document.querySelectorAll("#feed-table tr.hit").forEach((r) => r.classList.remove("hit"));
+    document.querySelectorAll("#feed-table tr.feed-more").forEach((r) => r.remove());
     const row = pickedProp && document.getElementById("prop-" + pickedProp);
     if (!row) return null;
     row.parentNode.insertBefore(row, row.parentNode.firstChild);
     row.classList.add("hit");
+    const p = all.find((x) => x.id === pickedProp);
+    if (p) row.insertAdjacentHTML("afterend", `<tr class="feed-more"><td colspan="${row.children.length}">${moreFor(p)}</td></tr>`);
     return row;
   }
+  // A click anywhere on a row (not a link) picks that proposal too.
+  document.getElementById("feed-table").addEventListener("click", (e) => {
+    if (e.target.closest("a, button")) return;
+    const tr = e.target.closest("tr[id^='prop-']");
+    if (!tr) return;
+    pickedProp = tr.id.slice(5);
+    pinRow();
+    const svg = document.querySelector("#feed-chart svg");
+    if (svg && window.d3) d3.select(svg).selectAll("path").filter((q) => q && q.id).attr("fill", (q) => (q.id === pickedProp ? "#e8590c" : topicColor(q.topic))).attr("class", (q) => (q.id === pickedProp ? "feed-pick" : null));
+  });
   // A filter set while the view is hidden (for example from Company profiles) redraws the chart when it is next shown.
   const redraw = () => { drawStatus(); drawTable(); if (!el.hidden) drawChart(); else delete el.dataset.drawn; };
 
@@ -693,7 +742,7 @@ function renderStart() {
 // Six sections in the order of an engagement cycle, each holding one or more views (index.html). Every view
 // keeps its own address (#feed, #network, ...), so old links and the tests open the right place.
 // Old addresses for views that were renamed or folded into another view.
-const TAB_ALIASES = { why: "causality", "weigh-in": "upcoming", water: "upcoming", overview: "start", new: "upcoming" };
+const TAB_ALIASES = { tracker: "feed", votes: "feed", outcomes: "feed", parnassus: "company", rights: "company", asks: "topics", effects: "topics", why: "causality", "weigh-in": "upcoming", water: "upcoming", overview: "start", new: "upcoming" };
 const lastView = {}; // per section, the view last open in it
 // Tab switches crossfade with the View Transitions API (motion brief stage 7) where the browser has it, except
 // under reduced motion, on the first paint, and in automated test browsers (navigator.webdriver), where the
@@ -711,6 +760,11 @@ function showTab(name, focus = false) {
   else applyTab(name, focus);
 }
 function applyTab(name, focus = false) {
+  // The tracker is now a view of All AI proposals (owner, 2026-11-27: one page, different ways of viewing the data).
+  if (name === "tracker") { window.feedWant = "grid"; if (window.feedView) window.feedView("grid"); }
+  // Views folded into another one (owner, 2026-11-27: fewer tabs): open the fold and bring it into view.
+  const fold = document.getElementById("fold-" + name);
+  if (fold && fold.tagName === "DETAILS") setTimeout(() => { fold.open = true; fold.scrollIntoView({ block: "start" }); }, 0);
   name = TAB_ALIASES[name] || name;
   let panel = document.getElementById("tab-" + name);
   if (!name || !panel || !panel.dataset.group) { name = "about"; panel = document.getElementById("tab-about"); }
@@ -904,6 +958,7 @@ async function main() {
   if (window.renderSimulator) window.renderSimulator(DATA);
   if (window.renderBoard) window.renderBoard();
   if (window.renderAlignment) window.renderAlignment();
+  if (window.renderTopics) window.renderTopics(DATA);
   document.dispatchEvent(new Event("siteready"));
 }
 main();

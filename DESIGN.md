@@ -104,11 +104,15 @@ One vocabulary: company roles from `roles.js` everywhere (the value-chain tiers 
 
 ## Components
 
-- **Header:** h1 (no logo; owner, 2026-11-27: "dont ahve any logo here at all"), a one-line description, the SEC check date, then the header art: blue ridges with one trail node per section climbing a jagged main peak, after the owner's reference mountain but wider at the base. On screens 641px and wider the summit sits right of the title.
+- **Header:** h1 (no logo; owner, 2026-11-27: "dont ahve any logo here at all"), a one-line description, the SEC check date, then the header art: blue ridges with one trail node per section (no per-view dots; owner, 2026-11-27: simpler) climbing a jagged main peak, after the owner's reference mountain but wider at the base. On screens 641px and wider the summit sits right of the title.
 - **Network year label:** while the timeline plays, the year shows large at the band's bottom left, above the Key button, in orange while playing. The graph keeps its full size (owner, 2026-11-27: "dont shrink the graph"). A test checks that no node sits under it.
 - **Prediction board order:** highest first in every view: crowd forecast, else starting estimate, else your forecast, else the scenario figure (order only). Scenario figures sit in grey dashed boxes, never green, so they aren't read as proposals that succeeded.
-- **One company × ask grid:** the tracker in Proposals and results. The planner has none of its own and links to it (owner, 2026-11-27: no redundant graphs). A tracker square opens that company and ask in the planner.
+- **One company × ask grid:** a view of All AI proposals ("Support over time" | "Each ask by company"; owner, 2026-11-27: one page, different ways of viewing the data). `#tracker` opens that view. The planner has no grid of its own and links to it. A square opens that company and ask in the planner.
 - **Proposals chart click:** a mark brings its proposal to the top of the table, right under the chart, and the mark, row edge and title turn orange; the chart stays in view.
+- **Sections (owner, 2026-11-27: fewer tabs, context on click):** About · AI value chain · Effects of AI · AI governance (was "Laws and rules") · Company profiles · Proposals and results · Network and contacts · Plan and test.
+  - **Effects of AI** (`#topics`, topics.js): the four areas from data/asks.json, each with its asks; clicking an ask opens its filings, support (leaving out filers critical of ESG) and polls in place. Safety asks (`#asks`) fold in below.
+  - **Folded views:** AI disclosure scores and proposal rights fold under Company profiles; fund family votes and results of private engagement fold under All AI proposals. Old hashes (`#parnassus`, `#rights`, `#votes`, `#outcomes`, `#asks`) open the host view with the fold open.
+  - **Picking a proposal** (a chart mark or a table row) also opens how each fund family voted on it.
 - **Sortable table:** `<th aria-sort>` with a `<button class="th-sort">`; the active column shows ↑ or ↓.
 - **Status filter:** buttons with counts (`.status-btn`, `aria-pressed`).
 - **Count line:** `.count-line`, `aria-live="polite"`; it states what the filters show.
