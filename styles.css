@@ -1273,3 +1273,34 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 .pl-mx-box[open] > summary::before { transform: rotate(90deg); }
 .pl-mx-box[open] > summary { margin-bottom: 10px; }
 .pl-empty { margin: 18px 0; padding: 16px 18px; border: 1px dashed var(--control-edge); border-radius: var(--radius); color: var(--ink-soft); }
+
+/* Prediction board: no question numbers (owner, 2026-11-27). */
+#tab-predict article.bd-card h4::before { content: none; }
+/* Network timeline: the year shows large on the graph while it plays; Play glows while playing. */
+#net-year-big { position: absolute; top: 56px; left: max(24px, calc(50vw - 600px)); z-index: 3; pointer-events: none; opacity: 0; transition: opacity .4s ease; color: #fff; }
+#net-year-big.on { opacity: 1; }
+#net-year-big .ny-y { display: block; font-size: 64px; line-height: 1; font-weight: 400; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+#net-year-big .ny-l { display: block; margin-top: 6px; font-size: 13px; color: var(--g-label-soft); }
+#net-year-big.playing .ny-y { color: #e8590c; }
+#net-play.playing { background: #e8590c; border-color: #e8590c; color: #fff; box-shadow: 0 0 0 4px rgba(232, 89, 12, .2), 0 0 18px rgba(232, 89, 12, .55); }
+@media (prefers-reduced-motion: no-preference) { #net-play.playing { animation: net-play-pulse 1.5s ease-in-out infinite alternate; } @keyframes net-play-pulse { from { box-shadow: 0 0 0 3px rgba(232, 89, 12, .15), 0 0 8px rgba(232, 89, 12, .3); } to { box-shadow: 0 0 0 5px rgba(232, 89, 12, .25), 0 0 22px rgba(232, 89, 12, .6); } } }
+@media (max-width: 640px) { #net-year-big { top: 44px; left: 16px; } #net-year-big .ny-y { font-size: 40px; } }
+
+/* Header play: hubs open their section; the ranges re-shape on a click; small easter eggs (netmark.js). */
+.hdr-art { pointer-events: auto; cursor: pointer; }
+.hdr-art .ha-hub { cursor: pointer; }
+.hdr-art .ha-hub:hover .ha-core { stroke-width: 3; }
+.hdr-art .ha-back, .hdr-art .ha-mid, .hdr-art .ha-front { transform-box: fill-box; transform-origin: 50% 100%; transition: transform 1.2s cubic-bezier(.2, .8, .2, 1); }
+.hdr-art .ha-mesh circle { transition: cx 1.2s cubic-bezier(.2, .8, .2, 1), cy 1.2s cubic-bezier(.2, .8, .2, 1); }
+.hdr-art .ha-draw { stroke-dasharray: 400; stroke-dashoffset: 400; animation: ha-draw 1.4s ease-out forwards; }
+@keyframes ha-draw { to { stroke-dashoffset: 0; } }
+.hdr-art .ha-burst line { stroke: #e8590c; stroke-width: 1; stroke-dasharray: 600; stroke-dashoffset: 600; animation: ha-burst 2.2s ease-out forwards; }
+@keyframes ha-burst { 40% { stroke-dashoffset: 0; opacity: .8; } 100% { stroke-dashoffset: 0; opacity: 0; } }
+.net-mark:hover .nm-n { animation: nm-climb 1.4s ease-in-out; }
+.net-mark:hover .nm-n:nth-of-type(2) { animation-delay: .1s; } .net-mark:hover .nm-n:nth-of-type(3) { animation-delay: .2s; }
+.net-mark:hover .nm-n:nth-of-type(4) { animation-delay: .3s; } .net-mark:hover .nm-n:nth-of-type(5) { animation-delay: .4s; }
+.net-mark:hover .nm-n:nth-of-type(6) { animation-delay: .5s; } .net-mark:hover .nm-n:nth-of-type(7) { animation-delay: .6s; }
+@keyframes nm-climb { 0%, 100% { fill: inherit; } 40% { fill: #e8590c; stroke: #e8590c; } }
+.ha-note { position: absolute; right: 24px; bottom: 12px; margin: 0; padding: 6px 12px; border-radius: 999px; background: var(--ink); color: var(--bg); font-size: 13px; transition: opacity .8s ease; z-index: 3; }
+.ha-note.out { opacity: 0; }
+.site-header { position: relative; }

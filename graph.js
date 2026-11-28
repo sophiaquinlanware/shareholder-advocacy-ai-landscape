@@ -2022,12 +2022,29 @@
     return ys.length ? [Math.min(...ys), Math.max(...ys)] : [0, 0];
   }
   let playTimer = null;
+  // While the network plays, the year shows large on the graph and Play glows (owner, 2026-11-27: "make it more
+  // visually clear … it is playing you through the years").
+  function yearBadge(y, playing) {
+    const wrap = document.querySelector(".net-graph-wrap");
+    if (!wrap) return;
+    let el = document.getElementById("net-year-big");
+    if (!el) {
+      el = document.createElement("div");
+      el.id = "net-year-big";
+      el.setAttribute("aria-hidden", "true");
+      wrap.appendChild(el);
+    }
+    el.innerHTML = `<span class="ny-y">${y}</span><span class="ny-l">${playing ? "Building the network year by year" : "The network up to this year"}</span>`;
+    el.classList.toggle("on", !!playing || !!state.upto);
+    el.classList.toggle("playing", !!playing);
+  }
   function stopPlay(announce) {
     if (!playTimer) return;
     clearInterval(playTimer);
     playTimer = null;
     const b = document.getElementById("net-play");
-    if (b) b.textContent = "Play";
+    if (b) { b.textContent = "Play"; b.classList.remove("playing"); }
+    yearBadge(state.upto || yearRange()[1], false);
     if (state.selected && state.byId.get(state.selected)) showPanel(state.byId.get(state.selected));
     if (announce) document.getElementById("net-scrub-status").textContent = `Stopped at ${state.upto || yearRange()[1]}.`;
   }
@@ -2071,6 +2088,7 @@
       }
     }
     refresh();
+    yearBadge(y, !!playTimer);
     if (state.ringSel) placeFocusMark();
     // The panel is refreshed when the user moves the slider or Play stops, not on every Play step (focus safety).
     if (!playTimer && state.selected && state.byId.get(state.selected)) showPanel(state.byId.get(state.selected));
@@ -2088,6 +2106,8 @@
       const [lo, hi] = yearRange();
       let y = state.upto && state.upto < hi ? state.upto : lo;
       b.textContent = "Pause";
+      b.classList.add("playing");
+      playTimer = -1; // marks play as started for the first step
       scrubTo(y, refresh, true);
       playTimer = setInterval(() => {
         y += 1;

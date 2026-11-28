@@ -217,6 +217,7 @@ ${postFields()}
       </div>
       ${mineHtml()}
       <h3 id="bd-questions" class="visually-hidden">Questions</h3>
+      <p class="note bd-key"><span class="bd-k bd-k-open"></span>Open <span class="bd-k bd-k-post">★</span>Your posted forecast <span class="bd-k bd-k-right"></span>Resolved, your forecast beat a 50% guess <span class="bd-k bd-k-wrong"></span>Resolved, it did worse</p>
       <div class="bd-view" role="group" aria-label="Group questions">
         <span class="bd-label">Show</span>
         <button type="button" data-view="likely" aria-pressed="${view === "likely"}">Most likely first</button>
@@ -225,7 +226,6 @@ ${postFields()}
       </div>
       ${groupsHtml}
       <h3>Resolved</h3>
-      <p class="note bd-key"><span class="bd-k bd-k-open"></span>Open <span class="bd-k bd-k-post">★</span>Your posted forecast <span class="bd-k bd-k-right"></span>Resolved, your forecast beat a 50% guess <span class="bd-k bd-k-wrong"></span>Resolved, it did worse</p>
       ${shut.length ? shut.map(card).join("") : `<p class="status-note">No question has resolved yet.${(() => { const n = open.filter((q) => !isClosed(q)).sort((x, y) => (x.closes > y.closes ? 1 : -1))[0]; return n ? ` Next to close for forecasts: ${esc(day(n.closes))}.` : ""; })()}</p>`}
       ${vs.questions || lb.length ? `<h3>Scores</h3>
       <p>${vs.questions ? `On ${vs.questions} resolved question${vs.questions === 1 ? "" : "s"}, the crowd scored ${vs.crowd_brier} and this site's starting estimates ${vs.site_brier} (Brier; lower is better).` : "When questions close, this compares the crowd with the site's starting estimates (Brier score; lower is better)."}</p>
