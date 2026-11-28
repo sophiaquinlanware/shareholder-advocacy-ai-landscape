@@ -18028,7 +18028,7 @@
    "type": "member of",
    "layer": "investors",
    "source_url": "https://content.parnassus.com/094ee837-48bb-001c-6959-053670061ebf/98a6f185-030f-4bfc-a590-3dbe85a9a0d2/Parnassus%20Investments%20Stewardship%20Report%202026.pdf",
-   "note": "Parnassus 2026 Annual Sustainability & Stewardship Report, p. 9: \"Parnassus is a member of the Valuing Water Finance Initiative\""
+   "note": "Parnassus 2026 Annual Sustainability & Stewardship Report, p. 8: \"Parnassus is a member of the Valuing Water Finance Initiative\""
   },
   {
    "source": "achmea-investment-management",
@@ -18189,7 +18189,8 @@
    "target": "vwfi",
    "type": "member of",
    "layer": "investors",
-   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories"
+   "source_url": "https://sdgs.un.org/partnerships/valuing-water-finance-initiative-signatories",
+   "note": "Listed on the UN page as \"Vermont Pension Investment Committee\", the body's earlier name."
   },
   {
    "source": "federated-hermes-eos",
@@ -18376,8 +18377,8 @@
    "reported_by": "NEI Investments",
    "steps": [
     {
-     "date": "2025",
-     "title": "Reports in its 2025 Responsible Investment Report a first meeting with Amazon in July (year not stated), as a co-lead in the Valuing Water Finance Initiative",
+     "date": "2023",
+     "title": "First meeting with Amazon in July, by Q1 2024 (the story was first published in Q1 2024), as a co-lead in the Valuing Water Finance Initiative",
      "source_url": "https://www.neiinvestments.com/content/dam/nei/docs/en/responsible-investing/reports/responsible-investment-report-2025-en.pdf",
      "source_page": "40"
     }
@@ -18450,7 +18451,7 @@
   {
    "source": "bnp-paribas-asset-management-incl-axa-im",
    "target": "co-META",
-   "type": "engaged directly",
+   "type": "sought engagement",
    "layer": "investors",
    "source_url": "https://docfinder.bnpparibas-am.com/api/files/04408808-fc03-42c9-956a-f2dce0a28d94",
    "note": "as part of a coalition of investors managing US$3.9 trillion",
@@ -18505,8 +18506,7 @@
    "reported_by": "Green Century Capital Management",
    "steps": [
     {
-     "date": "2026-09",
-     "title": "Reports its shareholder advocacy team has regularly met with NVIDIA, Microsoft and Intel on the environmental consequences of data centers and AI (post dated September 22, 2026; meeting dates not given)",
+     "title": "Reports its shareholder advocacy team has regularly met with NVIDIA, Microsoft and Intel on the environmental consequences of data centers and AI (no dates given)",
      "source_url": "https://www.greencentury.com/green-centurys-advocates-hold-big-tech-accountable/"
     }
    ]
@@ -18520,8 +18520,7 @@
    "reported_by": "Green Century Capital Management",
    "steps": [
     {
-     "date": "2026-09",
-     "title": "Reports its shareholder advocacy team has regularly met with NVIDIA, Microsoft and Intel on the environmental consequences of data centers and AI (post dated September 22, 2026; meeting dates not given)",
+     "title": "Reports its shareholder advocacy team has regularly met with NVIDIA, Microsoft and Intel on the environmental consequences of data centers and AI (no dates given)",
      "source_url": "https://www.greencentury.com/green-centurys-advocates-hold-big-tech-accountable/"
     }
    ]
@@ -18660,7 +18659,7 @@
    "type": "lists a member filing at",
    "layer": "investors",
    "source_url": "https://www.iccr.org/wp-content/uploads/2023/07/iccrs2023proxyresolutionsandvotingguide03.06.23.pdf",
-   "context": "ICCR's 2023 Proxy Resolutions and Voting Guide lists the resolution \"Customer Due Diligence\" at Amazon as filed by ICCR members, naming American Baptist Home Mission Societies as lead sponsor and 2 co-filers in its index of leads and co-filers.",
+   "context": "ICCR's 2023 Proxy Resolutions and Voting Guide lists the resolution \"Customer Due Diligence\" at Amazon as filed by ICCR members, naming American Baptist Home Mission Societies as lead sponsor and 3 co-filers in its index of leads and co-filers.",
    "as_of": "2023-02",
    "activity": "filing",
    "topic": "customer due diligence on use of technology",
@@ -18668,7 +18667,8 @@
    "members_named": [
     "abhms",
     "maryknoll-sisters",
-    "sisters-of-charity-st-elizabeth"
+    "sisters-of-charity-st-elizabeth",
+    "capuchin-province-st-joseph"
    ],
    "proposal_ids": [
     "amzn-2023-customer-dd"
@@ -19065,7 +19065,7 @@
    "type": "lists a member filing at",
    "layer": "investors",
    "source_url": "https://www.iccr.org/wp-content/uploads/2026/03/2026-ICCR-Proxy-Resolutions-Voting-Guide-FINAL.pdf",
-   "context": "ICCR's 2026 Proxy Resolutions and Voting Guide lists the resolution \"Report on Climate Commitments Given Growing Data Center Energy Demand\" at Amazon as filed by ICCR members, naming As You Sow as lead sponsor and 1 co-filer in its index of leads and co-filers.",
+   "context": "ICCR's 2026 Proxy Resolutions and Voting Guide lists the resolution \"Report on Climate Commitments Given Growing Data Center Energy Demand\" at Amazon as filed by ICCR members, naming As You Sow and Mercy Investment Services as co-lead sponsors in its index of leads and co-filers.",
    "as_of": "2026-02",
    "activity": "filing",
    "topic": "data center energy demand and climate commitments",
@@ -19146,14 +19146,14 @@
    ]
   },
   {
-   "source": "co-GOOGL",
-   "target": "iahr",
-   "type": "focus company of",
+   "source": "iahr",
+   "target": "co-GOOGL",
+   "type": "announced member filings at",
    "layer": "investors",
    "source_url": "https://investorsforhumanrights.org/2023-meta-and-alphabet-shareholder-resolutions",
    "context": "Members of the Investor Alliance for Human Rights announced a series of proposals filed for the 2023 proxies of Alphabet; this row covers the three that concern data centers, AI and targeted ads, and algorithmic systems, with the filer named for each.",
    "as_of": "2023-01",
-   "activity": "coalition campaign",
+   "activity": "announced filings",
    "topic": "data centers in human rights hot spots, AI and targeted ads, algorithmic systems",
    "year": 2023,
    "members_named": [
@@ -19168,14 +19168,14 @@
    ]
   },
   {
-   "source": "co-AMZN",
-   "target": "iahr",
-   "type": "focus company of",
+   "source": "iahr",
+   "target": "co-AMZN",
+   "type": "announced member filings at",
    "layer": "investors",
    "source_url": "https://investorsforhumanrights.org/2023-meta-and-alphabet-shareholder-resolutions",
    "context": "Members of the Investor Alliance for Human Rights announced a series of proposals filed for the 2023 proxies of Amazon; this row covers the customer due diligence and facial recognition proposals, with the filer named for each.",
    "as_of": "2023-01",
-   "activity": "coalition campaign",
+   "activity": "announced filings",
    "topic": "customer due diligence and facial recognition",
    "year": 2023,
    "members_named": [
@@ -19189,14 +19189,14 @@
    ]
   },
   {
-   "source": "co-META",
-   "target": "iahr",
-   "type": "focus company of",
+   "source": "iahr",
+   "target": "co-META",
+   "type": "announced member filings at",
    "layer": "investors",
    "source_url": "https://investorsforhumanrights.org/2023-meta-and-alphabet-shareholder-resolutions",
    "context": "Members of the Investor Alliance for Human Rights announced a series of proposals filed for the 2023 proxies of Meta; this row covers the human rights impact assessment of targeted advertising, filed by Mercy Investment Services.",
    "as_of": "2023-01",
-   "activity": "coalition campaign",
+   "activity": "announced filings",
    "topic": "human rights impact assessment of targeted advertising",
    "year": 2023,
    "members_named": [
@@ -19207,14 +19207,14 @@
    ]
   },
   {
-   "source": "co-GOOGL",
-   "target": "iahr",
-   "type": "focus company of",
+   "source": "iahr",
+   "target": "co-GOOGL",
+   "type": "announced member filings at",
    "layer": "investors",
    "source_url": "https://investorsforhumanrights.org/news/2024-tech-proposals",
    "context": "The Investor Alliance for Human Rights \"2024 Tech Proposals\" page lists the proposals at Alphabet with a lead filer for each; this row covers the three about AI.",
    "as_of": "2024-02",
-   "activity": "coalition campaign",
+   "activity": "announced filings",
    "topic": "AI principles and oversight, generative AI misinformation, AI-driven targeted ads",
    "year": 2024,
    "members_named": [
@@ -19229,14 +19229,14 @@
    ]
   },
   {
-   "source": "co-AMZN",
-   "target": "iahr",
-   "type": "focus company of",
+   "source": "iahr",
+   "target": "co-AMZN",
+   "type": "announced member filings at",
    "layer": "investors",
    "source_url": "https://investorsforhumanrights.org/news/2024-tech-proposals",
    "context": "The Investor Alliance for Human Rights \"2024 Tech Proposals\" page lists the proposals at Amazon with a lead filer for each; this row covers the three on AI deployment, customer due diligence and facial recognition.",
    "as_of": "2024-02",
-   "activity": "coalition campaign",
+   "activity": "announced filings",
    "topic": "human rights impact of AI deployment, customer due diligence, facial recognition",
    "year": 2024,
    "members_named": [
@@ -19251,14 +19251,14 @@
    ]
   },
   {
-   "source": "co-META",
-   "target": "iahr",
-   "type": "focus company of",
+   "source": "iahr",
+   "target": "co-META",
+   "type": "announced member filings at",
    "layer": "investors",
    "source_url": "https://investorsforhumanrights.org/news/2024-tech-proposals",
    "context": "The Investor Alliance for Human Rights \"2024 Tech Proposals\" page lists the proposals at Meta with a lead filer for each; this row covers the generative AI misinformation and human rights impact assessment proposals.",
    "as_of": "2024-02",
-   "activity": "coalition campaign",
+   "activity": "announced filings",
    "topic": "generative AI misinformation, human rights impact assessment",
    "year": 2024,
    "members_named": [
@@ -19277,10 +19277,10 @@
    "type": "focus company of",
    "layer": "investors",
    "source_url": "https://investorsforhumanrights.org/sites/default/files/attachments/2025-12/List%20of%20RDR%20engagement%20companies%20Dec%202025.pdf",
-   "context": "Alphabet is on the Investor Alliance for Human Rights list of Big Tech companies in its collective investor engagement on digital rights and AI accountability, based on the 2025 Ranking Digital Rights Big Tech Score Card. The list names no investors.",
+   "context": "Alphabet is on the Investor Alliance for Human Rights list of technology companies it engages, based on the 2025 Ranking Digital Rights Big Tech Score Card. The list names no investors.",
    "as_of": "2025-12",
    "activity": "coalition campaign",
-   "topic": "digital rights and AI accountability engagement",
+   "topic": "digital rights engagement (Ranking Digital Rights Big Tech Scorecard)",
    "year": 2025
   },
   {
@@ -19289,10 +19289,10 @@
    "type": "focus company of",
    "layer": "investors",
    "source_url": "https://investorsforhumanrights.org/sites/default/files/attachments/2025-12/List%20of%20RDR%20engagement%20companies%20Dec%202025.pdf",
-   "context": "Amazon is on the Investor Alliance for Human Rights list of Big Tech companies in its collective investor engagement on digital rights and AI accountability, based on the 2025 Ranking Digital Rights Big Tech Score Card. The list names no investors.",
+   "context": "Amazon is on the Investor Alliance for Human Rights list of technology companies it engages, based on the 2025 Ranking Digital Rights Big Tech Score Card. The list names no investors.",
    "as_of": "2025-12",
    "activity": "coalition campaign",
-   "topic": "digital rights and AI accountability engagement",
+   "topic": "digital rights engagement (Ranking Digital Rights Big Tech Scorecard)",
    "year": 2025
   },
   {
@@ -19301,10 +19301,10 @@
    "type": "focus company of",
    "layer": "investors",
    "source_url": "https://investorsforhumanrights.org/sites/default/files/attachments/2025-12/List%20of%20RDR%20engagement%20companies%20Dec%202025.pdf",
-   "context": "Apple is on the Investor Alliance for Human Rights list of Big Tech companies in its collective investor engagement on digital rights and AI accountability, based on the 2025 Ranking Digital Rights Big Tech Score Card. The list names no investors.",
+   "context": "Apple is on the Investor Alliance for Human Rights list of technology companies it engages, based on the 2025 Ranking Digital Rights Big Tech Score Card. The list names no investors.",
    "as_of": "2025-12",
    "activity": "coalition campaign",
-   "topic": "digital rights and AI accountability engagement",
+   "topic": "digital rights engagement (Ranking Digital Rights Big Tech Scorecard)",
    "year": 2025
   },
   {
@@ -19313,10 +19313,10 @@
    "type": "focus company of",
    "layer": "investors",
    "source_url": "https://investorsforhumanrights.org/sites/default/files/attachments/2025-12/List%20of%20RDR%20engagement%20companies%20Dec%202025.pdf",
-   "context": "Meta is on the Investor Alliance for Human Rights list of Big Tech companies in its collective investor engagement on digital rights and AI accountability, based on the 2025 Ranking Digital Rights Big Tech Score Card. The list names no investors.",
+   "context": "Meta is on the Investor Alliance for Human Rights list of technology companies it engages, based on the 2025 Ranking Digital Rights Big Tech Score Card. The list names no investors.",
    "as_of": "2025-12",
    "activity": "coalition campaign",
-   "topic": "digital rights and AI accountability engagement",
+   "topic": "digital rights engagement (Ranking Digital Rights Big Tech Scorecard)",
    "year": 2025
   },
   {
@@ -19325,10 +19325,10 @@
    "type": "focus company of",
    "layer": "investors",
    "source_url": "https://investorsforhumanrights.org/sites/default/files/attachments/2025-12/List%20of%20RDR%20engagement%20companies%20Dec%202025.pdf",
-   "context": "Microsoft is on the Investor Alliance for Human Rights list of Big Tech companies in its collective investor engagement on digital rights and AI accountability, based on the 2025 Ranking Digital Rights Big Tech Score Card. The list names no investors.",
+   "context": "Microsoft is on the Investor Alliance for Human Rights list of technology companies it engages, based on the 2025 Ranking Digital Rights Big Tech Score Card. The list names no investors.",
    "as_of": "2025-12",
    "activity": "coalition campaign",
-   "topic": "digital rights and AI accountability engagement",
+   "topic": "digital rights engagement (Ranking Digital Rights Big Tech Scorecard)",
    "year": 2025
   },
   {
@@ -19428,7 +19428,7 @@
    "type": "focus company of",
    "layer": "investors",
    "source_url": "https://www.worldbenchmarkingalliance.org/sites/default/files/2026-01/2025_AI_CIC_Progress_Report_v2%20(1).pdf",
-   "context": "The Collective Impact Coalition for Ethical AI 2025 progress report lists Apple among the companies investors attempted to engage on ethical AI, and says Apple and the other large US cloud companies did not engage beyond a cursory acknowledgment.",
+   "context": "The Collective Impact Coalition for Ethical AI 2025 progress report lists Apple among the companies selected for engagement, and says Apple, after a productive conversation in 2024, had a poor record of engagement and was unresponsive or unwilling to engage.",
    "as_of": "2026-01",
    "activity": "coalition campaign",
    "topic": "engagement on ethical AI",
@@ -19480,7 +19480,7 @@
    "context": "Alibaba is on the Investor Alliance for Human Rights' list of technology companies it engages, based on the 2025 Ranking Digital Rights Big Tech Score Card.",
    "as_of": "2025-12",
    "activity": "coalition campaign",
-   "topic": "digital rights and AI accountability engagement",
+   "topic": "digital rights engagement (Ranking Digital Rights Big Tech Scorecard)",
    "year": 2025
   },
   {
@@ -19492,7 +19492,7 @@
    "context": "Baidu is on the Investor Alliance for Human Rights' list of technology companies it engages, based on the 2025 Ranking Digital Rights Big Tech Score Card.",
    "as_of": "2025-12",
    "activity": "coalition campaign",
-   "topic": "digital rights and AI accountability engagement",
+   "topic": "digital rights engagement (Ranking Digital Rights Big Tech Scorecard)",
    "year": 2025
   },
   {
@@ -19504,7 +19504,7 @@
    "context": "Tencent is on the Investor Alliance for Human Rights' list of technology companies it engages, based on the 2025 Ranking Digital Rights Big Tech Score Card.",
    "as_of": "2025-12",
    "activity": "coalition campaign",
-   "topic": "digital rights and AI accountability engagement",
+   "topic": "digital rights engagement (Ranking Digital Rights Big Tech Scorecard)",
    "year": 2025
   },
   {
@@ -19528,7 +19528,7 @@
    "type": "made the case at",
    "layer": "investors",
    "source_url": "https://www.iccr.org/vote-your-proxies-see-2026s-proxy-memos-and-exempt-solicitations/",
-   "context": "ICCR's 2026 proxy memos and exempt solicitations page lists a Palantir Human Rights Impact Assessment item, posted 05.20.26, annual meeting 06.04.26.",
+   "context": "ICCR's 2026 proxy memos and exempt solicitations page lists a Palantir Human Rights Impact Assessment item, posted 05.20.26, annual meeting 06.03.26.",
    "as_of": "2026-05",
    "activity": "making the case",
    "topic": "human rights impact assessment (AI software)",
@@ -19551,7 +19551,8 @@
    "members_named": [
     "eko",
     "cmei",
-    "azzad"
+    "azzad",
+    "racial-justice-investing"
    ]
   },
   {

@@ -118,7 +118,7 @@ def main():
     filers = defaultdict(set)
     for e in net.get("edges", []):
         if e["from"] in nodes and e["to"] in nodes:
-            layer = "investors" if e["relation"] in ("member of", "engaged directly") else "proposals"
+            layer = "investors" if e["relation"] in ("member of", "engaged directly", "sought engagement") else "proposals"
             edge(e["from"], e["to"], e["relation"], layer, e.get("source_url"), **{k: e[k] for k in ("note", "as_of", "reported_by", "steps") if e.get(k)})
             if e["relation"] in ("lead filer", "co-filer", "exempt solicitation"):
                 filers[e["to"]].add(e["from"])
@@ -126,7 +126,7 @@ def main():
     # Coalition records at companies (docs/plans/2026-11-27-coalition-paths.md §3). The edge type says only what the
     # source shows: a focus list, a member filing the coalition lists, or support while shareholders vote.
     # members_named holds only organizations the source itself names.
-    ENG_TYPE = {"filing": "lists a member filing at", "making the case": "made the case at"}
+    ENG_TYPE = {"filing": "lists a member filing at", "making the case": "made the case at", "announced filings": "announced member filings at"}
     for g in net.get("engagements", []):
         co = "co-" + g["company"].upper()
         co = co if co in nodes else "co-" + g["company"]  # companies without a ticker keep their id
