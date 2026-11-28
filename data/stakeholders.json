@@ -728,7 +728,7 @@
    "title": "Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety",
    "kind": "joint statement or open letter",
    "actors": [],
-   "summary": "Position paper by individual authors from AI labs and research organizations recommending research into, and tracking of, chain-of-thought monitorability. Actors are the author affiliations as listed on the paper; the organizations themselves are not recorded as signatories and no ties are drawn from the affiliations. Its authors sign as individuals; their listed affiliations are not organizational authorship.",
+   "summary": "Position paper by individual authors from AI labs and research organizations recommending research into, and tracking of, chain-of-thought monitorability.; the organizations themselves are not recorded as signatories and no ties are drawn from the affiliations. Its authors sign as individuals; their listed affiliations are not organizational authorship.",
    "source_url": "https://arxiv.org/abs/2507.11473",
    "signatories_source_url": "https://arxiv.org/html/2507.11473",
    "signatories_as_of": "2026-11-27"
@@ -941,8 +941,8 @@
    "relation": "evaluated",
    "date": "2026-09-17",
    "source_url": "https://www.nist.gov/news-events/news/2026/09/caisis-assessment-zais-glm-53-cyber-capabilities",
-   "quote": "CAISI evaluated GLM-5.3's performance on four benchmarks covering vulnerability discovery and exploit development",
-   "note": "CAISI's assessment of GLM-5.3 cyber capabilities; the page also says CAISI previously assessed GLM-5.2. The quote is the page's sentence naming the company; the evaluation is the page's subject.",
+   "quote": "CAISI evaluated GLM-5.3’s performance on four benchmarks covering vulnerability discovery and exploit development",
+   "note": "The quote is the page's sentence on what CAISI evaluated; the page names Z.ai (formerly Zhipu AI) as the developer of GLM-5.3.",
    "basis": "sourced",
    "review_status": "auto-detected, not yet reviewed"
   },
@@ -1050,7 +1050,7 @@
    "relation": "publicly supported",
    "source_url": "https://encodeai.org/",
    "quote": "We helped pass the nation’s second landmark AI law",
-   "note": "Encode's home page, read through WebFetch (direct fetch was blocked by Cloudflare); the page describes this law as the New York RAISE Act. Date is the signing date from the event, not stated by the page.",
+   "note": "Encode's home page, read through WebFetch (direct fetch was blocked by Cloudflare); the page describes this law as the New York RAISE Act.",
    "basis": "sourced",
    "review_status": "auto-detected, not yet reviewed"
   },

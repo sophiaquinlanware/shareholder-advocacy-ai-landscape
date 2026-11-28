@@ -41,3 +41,21 @@ Confirmed against their sources:
 ## Result
 
 149 ties, 33 organizations, 27 responses.
+
+## Round 2: 84, PASS
+
+The reviewer re-opened every changed source. All the corrected quotes and dates hold:
+- CAISI on Zhipu
+- Stanford HAI, dated 2025-12-09
+- SELC
+- Thorn
+- AJL (2018 and 2019)
+- Seoul (2024-05-21 for the 15 original signers, no date for the later ones)
+
+The reviewer also confirmed that response actors resolve to node ids and that the dropped ties are gone.
+
+Applied after round 2:
+- **Notes:** three notes that contradicted their own data were rewritten (the chain-of-thought paper summary, the CAISI note, the Encode note).
+- **CAISI quote:** the apostrophe now matches the source's curly one.
+- **Duplicate check:** the build now also rejects duplicates that share a source URL.
+- **Actor check:** the build now checks that every response actor is a node id.

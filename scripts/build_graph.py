@@ -332,15 +332,18 @@ def main():
     bad, seen_ties = [], set()
     for t in sh.get("ties", []):
         key = (t["from"], t["relation"], t["to"], t.get("date"))
-        if key in seen_ties:
+        key2 = (t["from"], t["relation"], t["to"], t.get("source_url"))
+        if key in seen_ties or key2 in seen_ties:
             bad.append(f"duplicate: {t['from']} -[{t['relation']}]-> {t['to']} {t.get('date') or ''}")
             continue
-        seen_ties.add(key)
+        seen_ties.update((key, key2))
         if t["relation"] not in STAKE_RELATIONS or t["from"] not in nodes or t["to"] not in nodes:
             bad.append(f"{t['from']} -[{t['relation']}]-> {t['to']}")
             continue
         edge(t["from"], t["to"], t["relation"], "organizations", t.get("source_url"),
              **{k: t[k] for k in ("quote", "date", "note", "basis", "review_status") if t.get(k)})
+    for r in sh.get("responses", []):
+        bad += [f"{r['id']}: actor {a} is not a node id" for a in r.get("actors") or [] if a not in nodes]
     if bad:
         raise SystemExit("stakeholders.json ties with an unknown relation or a missing end:\n  " + "\n  ".join(bad))
 
