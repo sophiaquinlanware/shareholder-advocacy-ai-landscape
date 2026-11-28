@@ -358,9 +358,7 @@ def main():
     cov = defaultdict(list)
     for x in (load("coverage.json") or {}).get("entries", []):
         cov[x["ask_id"]].append({k: x.get(k) for k in ("policy_id", "graph_id", "coverage", "note", "source_url", "reviewed")})
-    for n in nodes.values():
-        if n["type"] == "proposal" and n.get("ask_id") in cov:
-            n["policy_coverage"] = cov[n["ask_id"]]
+    # Stored once per ask (top-level "coverage_by_ask"); a proposal finds its rows through its ask_id.
 
     # Company-to-company ties across the AI value chain (data/value_chain_ties.json; the company-to-lab ties come from
     # pathways.json above). Names are matched to company nodes by their label.
@@ -383,7 +381,7 @@ def main():
     for n in nodes.values():
         n["degree"] = deg[n["id"]]
 
-    out = {"nodes": list(nodes.values()), "edges": edges}
+    out = {"nodes": list(nodes.values()), "edges": edges, "coverage_by_ask": dict(cov)}
     (DATA / "graph.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
     by_type = defaultdict(int)
     for n in nodes.values():
