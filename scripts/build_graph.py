@@ -329,8 +329,13 @@ def main():
         node(r["id"], type="response", layer="policy", label=r["title"], date=r.get("date"), kind=r.get("kind"),
              actors=r.get("actors"), description=r.get("summary"), source_url=r.get("source_url"),
              signatories_as_of=r.get("signatories_as_of"))
-    bad = []
+    bad, seen_ties = [], set()
     for t in sh.get("ties", []):
+        key = (t["from"], t["relation"], t["to"], t.get("date"))
+        if key in seen_ties:
+            bad.append(f"duplicate: {t['from']} -[{t['relation']}]-> {t['to']} {t.get('date') or ''}")
+            continue
+        seen_ties.add(key)
         if t["relation"] not in STAKE_RELATIONS or t["from"] not in nodes or t["to"] not in nodes:
             bad.append(f"{t['from']} -[{t['relation']}]-> {t['to']}")
             continue
