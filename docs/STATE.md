@@ -1,6 +1,6 @@
 # Shareholder Advocacy AI Landscape — current state
 
-Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-27 (data session: SEC leads pulled weekly into the proposal records; board bug fixes).
+Rewritten in place, never appended. Hard cap 200 lines. Last updated 2026-11-27 (data session: public-opinion polls by ask, data/public_opinion.json, for the UI session's "Where to focus" card).
 
 ## Sessions and branches (read this first)
 
@@ -63,6 +63,8 @@ Rule 14a-8(j) notices (the SEC's list; the official record of planned exclusions
 
 ## Plan an engagement (`#planner`)
 
+**Public opinion (data/public_opinion.json, 2026-11-27):** 18 polls across 11 asks, each figure checked against the pollster's own page (data review R1 88 PASS); `fit_note` where a poll only partly matches the ask; `not_found` lists AI sold to oil and gas (no poll). The UI session's "Where to focus" card reads it; planner.js is the UI session's until they push.
+
 `planner-docs.js` (UI session) adds "Evaluate the level of escalation" (seven rungs, what's on record at this company for this ask, nothing recommended) and "Draft a document and save it as a PDF" (email, board letter, coalition invitation, Rule 14a-8 proposal with a 500-word count, engagement plan; numbered sources; print layout prints the draft only). Plan docs/plans/2026-11-27-planner-escalation-docs.md. Dates use `window.DATES.long`; `planner.js` is released back to the data session.
 
 ## Lab pathways (`#pathways`)
@@ -79,7 +81,7 @@ Every chart is screenshot-ready (title, measure, count, years, key, source), exc
 
 ## Latest check
 
-`npm run check` on design/board-posting before merge: lint pass, build pass, Playwright 332 passed; Lighthouse phone 94/100/100/100, desktop 90/100/100/100.
+`npm run check` on data/public-opinion (2026-11-27): lint pass, build pass, Playwright 344 passed; Lighthouse phone 97/100/100/100, desktop accessibility, best practices and SEO 100 but performance 77, below the bar of 80 (79 on main before this change, which adds no page code). Needs a look (queue 17).
 
 ## Queue (found, not picked up)
 
@@ -102,6 +104,7 @@ Every chart is screenshot-ready (title, measure, count, years, key, source), exc
 15. **People follow-ups:** network.json records for `allianz-global-investors`, `jpmorgan-am`, `dimensional-fund-advisors`, `robeco`; rename "Church of England Pensions Board (National Investing Bodies)" so it isn't read as including the Church Commissioners; own-site source URLs for 11 organizations sourced to agendas; newer profile URLs for olga-hancock, adam-c-t-matthews, richard-manley; AI lines that describe firm work (Green Century, NYC Comptroller staff, CalPERS directors). Not yet covered: Capital Group, Fidelity, BlackRock, State Street, Nuveen, Calvert, Natixis, Generation IM, Columbia Threadneedle, DWS, Nordea, Parnassus staff; labor funds (AFL-CIO, Teamsters, AFSCME, SEIU), LGPS Central, AP7, HESTA, AustralianSuper, Nathan Cummings Foundation; PRI in Person 2024 and CII agendas.
 
 16. **Safety asks follow-ups:** companies tied to labs but not in companies.json (Micron MU, Snowflake SNOW, ASML); the listing month in the filing-routes text is hard-coded until a third lab lists; link the Code of Practice chapter PDF directly; company whistleblower policies not reviewed.
+17. **Lighthouse desktop performance** is 77–79, under the bar of 80, so `npm run check` exits 1 at its last step on main. Polls are dated; recheck public_opinion.json twice a year.
 
 ## Owner actions
 

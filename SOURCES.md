@@ -28,6 +28,7 @@ The tracker has two phases.
 | How far policy already covers each recurring ask (`data/coverage.json`) | The enacted text of each policy in `data/causality.json` (legislature, EUR-Lex), with a law firm summary where the legislature page cannot be fetched | Reviewed by hand; every row starts `reviewed: false` until a person confirms it | When a policy in the causality map changes, and yearly |
 | Engagement timelines (`data/campaigns.json`, built by `scripts/build_campaigns.py`) | The records above: proxy statements, PX14A6G exempt solicitations, 8-K vote results, withdrawal and exclusion sources; investor stewardship reports for company-level steps | Built automatically from reviewed records | Weekly |
 | Commitments ledger (`data/commitments.json`) | The commitment's source (company, proponent or third party, labelled), and delivery evidence from the company's own documents only | Reviewed by hand | Quarterly, and before relying on a status |
+| Public opinion on each ask (`data/public_opinion.json`) | The pollster's own release or report (Pew, Gallup, AP-NORC, YouGov, Quinnipiac, Yale, Morning Consult, Heatmap/Embold); question paraphrased, figure and sample size as published; a sponsor is named when a poll was paid for by an advocacy group | Reviewed by hand; an ask with no credible poll is left out | Twice a year |
 | Wider-field figures (`data/field_context.json`) | The publisher's own report or paper (Glass Lewis, D.F. King, academic working papers), quoted with its scope | Reviewed by hand | As published |
 
 ## Which companies are in scope

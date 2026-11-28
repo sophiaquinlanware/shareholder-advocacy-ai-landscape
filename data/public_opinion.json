@@ -1,0 +1,212 @@
+{
+ "updated": "2026-11-27",
+ "about": "Public-opinion polls on each ask, from the pollster's own page. Questions are paraphrased; fielded is the month fieldwork began; fit_note says where a poll only partly matches the ask. Figures were checked against the source page on the date above. An ask with no credible poll is left out.",
+ "not_found": {
+  "ask-ai-fossil-fuels": "No poll found on AI used by or sold to oil and gas companies."
+ },
+ "polls": [
+  {
+   "ask_id": "ask-dc-water",
+   "pollster": "AP-NORC and the Energy Policy Institute at the University of Chicago",
+   "fielded": "2026-07",
+   "population": "US adults",
+   "n": 3424,
+   "question": "How concerned are people about data centers' effect on the local water supply?",
+   "result": "79% say they are concerned about data centers' effect on the water supply",
+   "pct": 79,
+   "url": "https://apnorc.org/wp-content/uploads/2026/09/2026-AP-NORC-EPIC-Press-Release.pdf"
+  },
+  {
+   "ask_id": "ask-dc-siting-rights",
+   "pollster": "Yale Program on Climate Change Communication",
+   "fielded": "2026-04",
+   "population": "US adults",
+   "n": 1060,
+   "question": "Would people support or oppose building a data center in their local area?",
+   "result": "56% oppose a local data center; 15% support one",
+   "pct": 56,
+   "url": "https://climatecommunication.yale.edu/publications/six-americas-and-data-centers/",
+   "fit_note": "Measures local opposition, not rights or community consent specifically."
+  },
+  {
+   "ask_id": "ask-dc-siting-rights",
+   "pollster": "Heatmap Pro, conducted by Embold Research",
+   "fielded": "2026-10",
+   "population": "US registered voters",
+   "n": 2537,
+   "question": "Would voters support or oppose a data center planned for their area?",
+   "result": "More than 70% say they would oppose one",
+   "pct": 70,
+   "url": "https://heatmap.news/daily/data-center-support-oppose-polling",
+   "fit_note": "Measures local opposition, not rights or community consent specifically."
+  },
+  {
+   "ask_id": "ask-dc-climate-energy",
+   "pollster": "Pew Research Center",
+   "fielded": "2026-07",
+   "population": "US adults",
+   "n": 10548,
+   "question": "Are data centers mostly good or mostly bad for home energy costs?",
+   "result": "50% say mostly bad for home energy costs, up from 38% in January 2026",
+   "pct": 50,
+   "url": "https://www.pewresearch.org/short-reads/2026/09/22/americans-views-of-data-centers-have-turned-more-negative/"
+  },
+  {
+   "ask_id": "ask-dc-climate-energy",
+   "pollster": "AP-NORC and the Energy Policy Institute at the University of Chicago",
+   "fielded": "2026-07",
+   "population": "US adults",
+   "n": 3424,
+   "question": "How concerned are people about data centers' effect on local electricity prices?",
+   "result": "84% say they are concerned about the effect on local electricity prices",
+   "pct": 84,
+   "url": "https://apnorc.org/wp-content/uploads/2026/09/2026-AP-NORC-EPIC-Press-Release.pdf"
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "pollster": "Morning Consult, for Americans for Responsible Innovation",
+   "fielded": "2025-02",
+   "population": "US registered voters",
+   "n": 2076,
+   "question": "Should children under 16 be barred from AI chatbots built to form romantic or erotic relationships?",
+   "result": "82% agree, 68% strongly",
+   "pct": 82,
+   "url": "https://ari.us/wp-content/uploads/2025/03/ARI_AI-Polling-Feb-2025_AI-Chatbots.pdf"
+  },
+  {
+   "ask_id": "ask-child-safety",
+   "pollster": "Pew Research Center",
+   "fielded": "2025-09",
+   "population": "US parents of teens ages 13 to 17",
+   "n": 1458,
+   "question": "Would parents be comfortable with their teen getting emotional support or advice from an AI chatbot?",
+   "result": "Only 18% of parents say they would be comfortable",
+   "pct": 18,
+   "url": "https://www.pewresearch.org/internet/2026/02/24/what-parents-say-about-their-teens-ai-use/"
+  },
+  {
+   "ask_id": "ask-targeted-ads-rights",
+   "pollster": "YouGov",
+   "fielded": "2024-11",
+   "population": "US adults",
+   "n": null,
+   "question": "How comfortable are people with companies using their online behavior to personalize ads?",
+   "result": "56% are uncomfortable; 18% are comfortable",
+   "pct": 56,
+   "url": "https://commercial.yougov.com/rs/464-VHH-988/images/WP-2025-03-US-personalized-advertising-report.pdf",
+   "fit_note": "Asks about personalized ads generally, not AI specifically."
+  },
+  {
+   "ask_id": "ask-customer-due-diligence",
+   "pollster": "Quinnipiac University",
+   "fielded": "2026-03",
+   "population": "US adults",
+   "n": 1397,
+   "question": "Do people support or oppose the military using AI to select military targets?",
+   "result": "51% oppose; 36% support",
+   "pct": 51,
+   "url": "https://poll.qu.edu/poll-release?releaseid=3955",
+   "fit_note": "Asks about military use of AI, not about vendors checking their customers."
+  },
+  {
+   "ask_id": "ask-customer-due-diligence",
+   "pollster": "Gallup, with the Special Competitive Studies Project",
+   "fielded": "2025-04",
+   "population": "US adults",
+   "n": 3128,
+   "question": "Do people support or oppose the US developing AI-enabled autonomous weapons for military conflicts?",
+   "result": "48% oppose; 39% support. If other nations build them first, 53% support",
+   "pct": 48,
+   "url": "https://news.gallup.com/poll/695297/american-views-national-security-charts.aspx",
+   "fit_note": "Asks about military use of AI, not about vendors checking their customers."
+  },
+  {
+   "ask_id": "ask-ai-misinformation",
+   "pollster": "YouGov",
+   "fielded": "2025-06",
+   "population": "US adult citizens",
+   "n": 1112,
+   "question": "How concerned are people about AI spreading misleading video and audio deepfakes?",
+   "result": "63% are very concerned, up from 58% in March 2025",
+   "pct": 63,
+   "url": "https://yougov.com/en-us/articles/52615-americans-increasingly-likely-say-ai-artificial-intelligence-negatively-affect-society-poll/"
+  },
+  {
+   "ask_id": "ask-ai-misinformation",
+   "pollster": "Pew Research Center",
+   "fielded": "2024-08",
+   "population": "US adults",
+   "n": 9720,
+   "question": "How concerned are people that groups trying to sway the 2024 election would use AI to spread false information?",
+   "result": "57% are extremely or very concerned, with similar shares of Republicans and Democrats",
+   "pct": 57,
+   "url": "https://www.pewresearch.org/short-reads/2024/09/19/concern-over-the-impact-of-ai-on-2024-presidential-campaign/"
+  },
+  {
+   "ask_id": "ask-ai-bias",
+   "pollster": "Pew Research Center",
+   "fielded": "2024-08",
+   "population": "US adults",
+   "n": 5410,
+   "question": "How concerned are people about bias in decisions made by AI?",
+   "result": "55% are highly concerned",
+   "pct": 55,
+   "url": "https://www.pewresearch.org/internet/2025/04/03/how-the-us-public-and-ai-experts-view-artificial-intelligence/"
+  },
+  {
+   "ask_id": "ask-ai-training-data",
+   "pollster": "YouGov",
+   "fielded": "2024-05",
+   "population": "US adults",
+   "n": 12876,
+   "question": "Should AI companies be allowed to train their models on the open internet, which includes large amounts of copyrighted material?",
+   "result": "44% say they should not; 20% say they should",
+   "pct": 44,
+   "url": "https://yougov.com/en-us/articles/49867-americans-consent-be-required-data-used-to-train-ai-models-artificial-intelligence-poll"
+  },
+  {
+   "ask_id": "ask-ai-workforce",
+   "pollster": "Gallup, with Bentley University",
+   "fielded": "2026-05",
+   "population": "US adults",
+   "n": 3270,
+   "question": "Will AI reduce the number of US jobs over the next 10 years?",
+   "result": "79% say it will, up from 73% in 2025",
+   "pct": 79,
+   "url": "https://news.gallup.com/poll/712751/americans-cool-toward-ai.aspx"
+  },
+  {
+   "ask_id": "ask-ai-workforce",
+   "pollster": "Quinnipiac University",
+   "fielded": "2026-03",
+   "population": "Employed US adults",
+   "n": 800,
+   "question": "How concerned are workers that AI may make their own job obsolete?",
+   "result": "30% are very or somewhat concerned, up from 21% in April 2025",
+   "pct": 30,
+   "url": "https://poll.qu.edu/poll-release?releaseid=3955"
+  },
+  {
+   "ask_id": "ask-ai-oversight-reporting",
+   "pollster": "Quinnipiac University",
+   "fielded": "2026-09",
+   "population": "US adults",
+   "n": 1202,
+   "question": "Should companies developing AI have to meet independent safety standards, even if that slows development?",
+   "result": "86% support the requirement",
+   "pct": 86,
+   "url": "https://poll.qu.edu/poll-release?releaseid=3969"
+  },
+  {
+   "ask_id": "ask-ai-oversight-reporting",
+   "pollster": "Quinnipiac University",
+   "fielded": "2026-03",
+   "population": "US adults",
+   "n": 1397,
+   "question": "Are businesses doing enough to be open about how they use AI?",
+   "result": "76% say businesses are not doing enough",
+   "pct": 76,
+   "url": "https://poll.qu.edu/poll-release?releaseid=3955"
+  }
+ ]
+}

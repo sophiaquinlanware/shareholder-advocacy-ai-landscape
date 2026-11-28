@@ -41,6 +41,8 @@ def main():
         {"dataset": "Laws, rules and the causal map", "date": max((e.get("date") or "" for e in ev), default=""), "kind": "latest event",
          "how": "Date of the latest event on the map, not a check date; events reviewed by hand", "view": "causality"},
         {"dataset": "Policy coverage by ask", "date": load("coverage.json").get("checked", ""), "kind": "checked", "how": "Reviewed by hand; each row awaits a person's sign-off", "view": "planner"},
+        {"dataset": "Public-opinion polls by ask", "date": load("public_opinion.json").get("updated", ""), "kind": "checked",
+         "how": f"{len(load('public_opinion.json').get('polls', []))} polls from the pollsters' own pages, checked by hand", "view": "planner"},
         {"dataset": "Commitments ledger", "date": max((c.get("checked") or "" for c in led), default=""), "kind": "checked", "how": "Delivery checked against company documents by hand", "view": "outcomes"},
         {"dataset": "AI disclosure scores", "date": load("scorecard.json").get("scored", ""), "kind": "scored", "how": "Scored by this site against published recommendations", "view": "parnassus"},
         {"dataset": "Lab ties", "date": (load("pathways.json").get("meta") or {}).get("compiled") or load("pathways.json").get("compiled", ""), "kind": "compiled", "how": "Reviewed by hand", "view": "pathways"},
