@@ -5426,7 +5426,7 @@
   {
    "from": "nordea",
    "to": "co-GOOGL",
-   "relation": "engaged directly",
+   "relation": "joined an investor letter to",
    "source_url": "https://www.nordea.com/en/doc/nordea-responsible-investments-annual-report-2024.pdf",
    "reported_by": "Nordea Asset Management",
    "steps": [
@@ -5448,7 +5448,7 @@
    "steps": [
     {
      "date": "2023",
-     "title": "First meeting with Amazon in July, by Q1 2024 (the story was first published in Q1 2024), as a co-lead in the Valuing Water Finance Initiative",
+     "title": "First meeting with Amazon in July 2023, inferred from the story's Q1 2024 publication, as a co-lead in the Valuing Water Finance Initiative",
      "source_url": "https://www.neiinvestments.com/content/dam/nei/docs/en/responsible-investing/reports/responsible-investment-report-2025-en.pdf",
      "source_page": "40"
     }
@@ -5458,7 +5458,7 @@
   {
    "from": "candriam",
    "to": "co-GOOGL",
-   "relation": "engaged directly",
+   "relation": "joined an investor letter to",
    "source_url": "https://www.candriam.com/siteassets/medias/publications/sri-publications---candriam-policies/engagement-report-2024.pdf",
    "reported_by": "Candriam",
    "steps": [
@@ -5479,7 +5479,6 @@
    "reported_by": "Trillium Asset Management",
    "steps": [
     {
-     "date": "2026-H1",
      "title": "Reports it had previously engaged Alphabet on responsible growth and the environmental impacts of AI-related data center expansion, alongside concerns on data governance and consumer protection (engagement date not given)",
      "source_url": "https://www.trilliuminvest.com/newsroom/q2-2026-shareholder-advocacy-impact-report"
     }
@@ -6337,7 +6336,8 @@
     "rshm"
    ],
    "source_url": "https://www.sec.gov/Archives/edgar/data/789019/000121465925015002/i1016250px14a6g.htm",
-   "as_of": "2025-07"
+   "as_of": "2025-07",
+   "note": "The SEC text renders the first name as \"Ek?\"; this filing gives microsoft@eko.org, so it is Ekō (eko)."
   },
   {
    "coalition": "racial-justice-investing",
