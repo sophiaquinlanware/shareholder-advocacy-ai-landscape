@@ -19,8 +19,12 @@ test("a company profile shows its engagement timeline and commitments ledger, ea
   await expect(slot.locator(".cp-ledger")).toContainText("Delivered");
 });
 
-test("Results of private engagement opens with outcomes across the ladder and the field figures", async ({ page }) => {
+test("Results fold under Every AI proposal: #outcomes opens it with the ladder and the field figures", async ({
+  page,
+}) => {
   await open(page, "/index.html#outcomes");
+  await expect(page.locator("#tab-feed")).toBeVisible();
+  await expect(page.locator("#fold-outcomes")).toHaveAttribute("open", "");
   const box = page.locator("#tab-outcomes .cp-outcomes");
   await expect(box).toContainText("Withdrawn after a company commitment");
   await expect(box).toContainText("Commitments ledger, all companies");
@@ -44,4 +48,26 @@ test("the simulator's exclusion setting names the first season without SEC revie
   await expect(page.locator('#sim-settings select[data-s="exclRegime"] option').first()).toContainText(
     "did not review most exclusions",
   );
+});
+
+test("fund family votes are a fold under Every AI proposal, not a tab", async ({ page }) => {
+  await open(page, "/index.html#votes");
+  await expect(page.locator("#tabbtn-votes")).toHaveCount(0);
+  await expect(page.locator("#tab-feed")).toBeVisible();
+  await expect(page.locator("#fold-votes")).toHaveAttribute("open", "");
+  await expect(page.locator("#tab-votes h2")).toBeVisible();
+  // The folds stay with Every AI proposal.
+  await open(page, "/index.html#upcoming");
+  await expect(page.locator("#fold-votes")).toBeHidden();
+});
+
+test("company profiles open with no company picked and no filters", async ({ page }) => {
+  await open(page, "/index.html#company");
+  await expect(page.locator("#co-pick")).toHaveValue("");
+  await expect(page.locator("#co-role")).toHaveValue("");
+  await expect(page.locator("#co-body")).toContainText("Pick a company");
+  await page.locator("#co-pick").selectOption({ label: "Microsoft (MSFT)" });
+  await page.locator("#tabbtn-investors").click();
+  await page.locator("#tabbtn-company").click();
+  await expect(page.locator("#co-pick")).toHaveValue("");
 });

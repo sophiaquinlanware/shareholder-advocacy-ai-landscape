@@ -125,15 +125,16 @@
       <button type="button" role="tab" id="tabbtn-proposals" aria-controls="tab-network" data-tab="proposals" aria-selected="true">Proposals graph</button>
       <button type="button" role="tab" id="tabbtn-feed" aria-controls="tab-feed" data-tab="feed" aria-selected="false" tabindex="-1">Every AI proposal</button>
       <button type="button" role="tab" id="tabbtn-upcoming" aria-controls="tab-upcoming" data-tab="upcoming" aria-selected="false" tabindex="-1">Upcoming ballots</button>
-      <button type="button" role="tab" id="tabbtn-votes" aria-controls="tab-votes" data-tab="votes" aria-selected="false" tabindex="-1">Fund family votes</button>
-      <button type="button" role="tab" id="tabbtn-outcomes" aria-controls="tab-outcomes" data-tab="outcomes" aria-selected="false" tabindex="-1">Results of private engagement</button>
     </div>
     <!-- Names the graph view; the graph section is placed right after it while it is open. -->
     <section id="tab-proposals" class="panel" data-group="proposals" hidden></section>
     <section id="tab-feed" class="panel" role="tabpanel" aria-labelledby="tabbtn-feed" data-group="proposals" hidden></section>
     <section id="tab-upcoming" class="panel" role="tabpanel" aria-labelledby="tabbtn-upcoming" data-group="proposals" hidden></section>
-    <section id="tab-votes" class="panel" role="tabpanel" aria-labelledby="tabbtn-votes" data-group="proposals" hidden></section>
-    <section id="tab-outcomes" class="panel" role="tabpanel" aria-labelledby="tabbtn-outcomes" data-group="proposals" hidden></section>
+    <!-- Fund votes and results are views of the same proposals (owner, 2026-11-28): folds under Every AI proposal, not tabs. -->
+    <div class="feed-extra">
+      <details class="fold" id="fold-outcomes"><summary>Results: votes, withdrawals, exclusions and company commitments</summary><section id="tab-outcomes" class="fold-body" hidden></section></details>
+      <details class="fold" id="fold-votes"><summary>Fund family votes, all proposals side by side</summary><section id="tab-votes" class="fold-body" hidden></section></details>
+    </div>
     <p class="next-section"><a href="#planner">Next: Plan and test →</a></p>
   </div>
 

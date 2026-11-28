@@ -1335,6 +1335,7 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 .net-list-rec[open] { min-width: 320px; }
 /* Company comparisons fold under Company profiles only. */
 .group:has(> #tab-company[hidden]) .company-extra { display: none; }
+.group:has(> #tab-feed[hidden]) .feed-extra { display: none; }
 .tp-safety { border-top: 3px solid var(--accent); }
 .tp-gap { font-size: 11px; color: var(--ink-soft); border: 1px dashed var(--control-edge); border-radius: 999px; padding: 0 6px; margin-left: 4px; }
 .tp-more h5 { margin: 12px 0 4px; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); font-weight: 400; }

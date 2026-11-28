@@ -189,7 +189,21 @@ function openCompany(ticker) {
   }
   pick.value = key;
   drawCompany(key);
+  openingCompany = true;
   showTab("company", true);
+  openingCompany = false;
+}
+// Company profiles open blank, with no filters (owner, 2026-11-28), unless a company was asked for.
+let openingCompany = false;
+function resetCompany() {
+  const pick = document.getElementById("co-pick");
+  if (!pick) return;
+  ["co-role", "co-basis"].forEach((id) => {
+    const s = document.getElementById(id);
+    if (s && s.value) { s.value = ""; s.dispatchEvent(new Event("change")); }
+  });
+  pick.value = "";
+  drawCompany("");
 }
 function renderCompany() {
   const el = document.getElementById("tab-company");
@@ -213,13 +227,12 @@ function renderCompany() {
   const pick = document.getElementById("co-pick");
   const fill = () => {
     const list = all.filter(({ c }) => (!F.sector || (R && R.roleOf(c) === F.sector)) && (!F.basis || c.basis_type === F.basis));
-    // First visit: the company with the soonest AI ballot, so the profile opens on something to act on.
-    const soon = ((DATA.upcoming && DATA.upcoming.meetings) || []).filter((m) => (m.items || []).length).sort((a, b) => String(a.sort).localeCompare(String(b.sort)))[0];
-    const preferred = soon && list.find((e) => e.key === keyForTicker(soon.ticker));
-    const keep = list.some((e) => e.key === pick.value) ? pick.value : (preferred || list[0] || {}).key;
-    pick.innerHTML = list.map(({ key, c }) => `<option value="${esc(key)}">${esc(c.name)}${realTicker(c.ticker) ? ` (${esc(c.ticker)})` : ""}</option>`).join("");
+    // Opens with no company picked (owner, 2026-11-28).
+    const keep = list.some((e) => e.key === pick.value) ? pick.value : "";
+    pick.innerHTML = `<option value="">Pick a company (${list.length})</option>` + list.map(({ key, c }) => `<option value="${esc(key)}">${esc(c.name)}${realTicker(c.ticker) ? ` (${esc(c.ticker)})` : ""}</option>`).join("");
     document.getElementById("co-count").textContent = `${plural(list.length, "company", "companies")}${F.sector || F.basis ? ` of ${all.length}` : ""}.`;
-    if (keep) { pick.value = keep; drawCompany(keep); } else document.getElementById("co-body").innerHTML = `<p class="status-note">No companies match.</p>`;
+    pick.value = keep;
+    drawCompany(keep);
   };
   pick.addEventListener("change", (e) => drawCompany(e.target.value));
   const s = document.getElementById("co-role"), b = document.getElementById("co-basis");
@@ -231,6 +244,7 @@ function factRow(label, obj) {
   return obj && obj.text ? `<div><dt>${esc(label)}</dt><dd>${esc(obj.text)}${src(obj.url)}</dd></div>` : `<div><dt>${esc(label)}</dt><dd><span class="unverified">source pending</span></dd></div>`;
 }
 function drawCompany(key) {
+  if (!key) { document.getElementById("co-body").innerHTML = `<p class="status-note">Pick a company to see its profile, or open one from a company node in the network graph.</p>`; return; }
   const entry = companyEntries().find((e) => e.key === key) || { c: { ticker: key, name: key } };
   const c = entry.c;
   const t = realTicker(c.ticker);
@@ -721,7 +735,7 @@ function renderStart() {
 // Six sections in the order of an engagement cycle, each holding one or more views (index.html). Every view
 // keeps its own address (#feed, #network, ...), so old links and the tests open the right place.
 // Old addresses for views that were renamed or folded into another view.
-const TAB_ALIASES = { tracker: "feed", parnassus: "company", rights: "company", companies: "company", asks: "topics", effects: "topics", why: "causality", "weigh-in": "upcoming", water: "upcoming", overview: "start", new: "upcoming" };
+const TAB_ALIASES = { tracker: "feed", votes: "feed", outcomes: "feed", parnassus: "company", rights: "company", companies: "company", asks: "topics", effects: "topics", why: "causality", "weigh-in": "upcoming", water: "upcoming", overview: "start", new: "upcoming" };
 const lastView = {}; // per section, the view last open in it
 let prevView = "";
 // Tab switches crossfade with the View Transitions API (motion brief stage 7) where the browser has it, except
@@ -779,6 +793,7 @@ function applyTab(name, focus = false) {
   if (window.netMode && (name === "proposals" || name === "network")) window.netMode(name === "proposals" ? "proposals" : "connections");
   // A later visit to either graph page starts clear; the first view of a visit keeps what its link asked for.
   if (historyReady && !following && (name === "proposals" || name === "network") && window.netReset) window.netReset();
+  if (historyReady && !openingCompany && name === "company") resetCompany();
   prevView = name;
   const stuck = document.getElementById("sticky-page");
   const gBtn = groupBtns.find((b) => b.dataset.group === group);

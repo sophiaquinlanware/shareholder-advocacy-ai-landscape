@@ -3,7 +3,7 @@
 // (prepared by Parnassus Investments and other investors, April 2025).
 // Reads data/scorecard.json. Every square links to the company's own document.
 
-(function () {
+(() => {
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const link = (url, label = "source") => url ? `<a class="src" href="${esc(url)}" target="_blank" rel="noopener">[${esc(label)}]</a>` : `<span class="unverified">source pending</span>`;
   const POINTS = { met: 2, partial: 1, silent: 0 };
@@ -53,7 +53,7 @@
     if (had) { const b = document.querySelector(`#sc-matrix .sc-cell[data-t="${CSS.escape(t)}"][data-k="${CSS.escape(k)}"]`); if (b) b.focus(); }
   }
 
-  window.renderScorecard = function (data) {
+  window.renderScorecard = (data) => {
     const el = document.getElementById("tab-parnassus");
     if (!data || !data.companies || !data.companies.length) {
       el.innerHTML = `<div class="coming"><h2>AI disclosure scores</h2><p>Being scored now.</p></div>`;
@@ -84,11 +84,8 @@
       </div>
       <div id="sc-matrix" class="table-wrap sc-wrap"></div>
       <aside id="sc-panel" class="net-panel sc-panel" aria-live="polite"><p class="status-note">Select a square for its evidence.</p></aside>
-      <h2>Documents reviewed</h2><ul class="steps">${docs}</ul>`;
-    const out = document.getElementById("tab-outcomes");
-    if (out) out.innerHTML = tl
-      ? `<h2>Results of private engagement</h2><p class="intro">Company changes after private engagement on AI, as reported by the investor. Covers Parnassus Investments only, from its stewardship reports.</p><ul class="timeline">${tl}</ul>`
-      : `<h2>Results of private engagement</h2><p class="status-note">No reported engagement outcomes on file.</p>`;
+      <h2>Documents reviewed</h2><ul class="steps">${docs}</ul>
+      ${tl ? `<h2>Company changes Parnassus reports after its private engagement</h2><p class="intro">As reported by the investor in its stewardship reports.</p><ul class="timeline">${tl}</ul>` : ""}`;
     el.querySelectorAll("[data-p]").forEach((b) => b.addEventListener("click", () => {
       S.pillar = b.dataset.p;
       el.querySelectorAll("[data-p]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));

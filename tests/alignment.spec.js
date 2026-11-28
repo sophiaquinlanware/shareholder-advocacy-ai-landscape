@@ -50,3 +50,16 @@ test("Stakeholder network: research and advocacy group and investor profiles ope
   await page.locator("#tab-investors .pf-item", { hasText: "Parnassus Investments" }).first().click();
   await expect(page.locator("#tab-investors .pf-card")).toContainText(/engaged directly/i);
 });
+
+test("profiles filter by what each works on within responsible AI", async ({ page }) => {
+  await page.goto("/index.html#groups");
+  await page.waitForLoadState("networkidle");
+  const all = await page.locator("#tab-groups .pf-item").count();
+  await page.locator("#tab-groups .pf-topic").selectOption("Safety and alignment");
+  const n = await page.locator("#tab-groups .pf-item").count();
+  expect(n).toBeGreaterThan(0);
+  expect(n).toBeLessThan(all);
+  await page.goto("/index.html#investors");
+  await page.waitForLoadState("networkidle");
+  await expect(page.locator("#tab-investors .pf-topic option").nth(1)).toBeAttached();
+});

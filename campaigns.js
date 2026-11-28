@@ -1,9 +1,9 @@
 // Engagement campaigns: one ask at one company as dated states (filed, exempt solicitations, voted, withdrawn with or
 // without a commitment, excluded, on the ballot, delivery evidence), its milestone stage, engagement steps investors
 // report at the company level, and the commitments ledger. Data: data/campaigns.json (scripts/build_campaigns.py),
-// loaded the first time a company profile, the planner or "Results of private engagement" needs it.
+// loaded the first time a company profile, the planner or the Results fold under Every AI proposal needs it.
 //   window.CAMPAIGNS.fill(root)  fills every .campaigns-slot inside root (data-co = ticker, optional data-ask)
-(function () {
+(() => {
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   const link = (url, label = "source") => (url ? ` <a class="src" href="${esc(url)}" target="_blank" rel="noopener">[${esc(label)}]</a>` : ` <span class="unverified">source pending</span>`);
   const D = (v) => (window.DATES ? window.DATES.long(v) : String(v));
@@ -74,7 +74,7 @@
     return `<h4>The engagement ladder here</h4>${c ? campaignHtml(c, true, false) : `<p class="status-note">No campaign on this ask at this company yet: it would start at "${esc(data.stages[0])}".</p>`}
       ${led.length ? `<p class="ticker">${led.length} company commitment${led.length === 1 ? "" : "s"} on AI on record here: <a href="#company" class="cp-open-co" data-co="${esc(co)}">see the commitments ledger on the company profile</a>.</p>` : ""}`;
   }
-  // Results of private engagement: what engagement has produced across the companies tracked.
+  // Results (fold under Every AI proposal): what engagement has produced across the companies tracked.
   function outcomesHtml() {
     const m = data.metrics;
     const stages = Object.entries(m.campaigns_by_stage).map(([k, v]) => `<li>${esc(k)}: ${v}</li>`).join("");
@@ -115,16 +115,13 @@
     setTimeout(go, 50);
   });
 
-  // "Results of private engagement" (scorecard.js draws it): add the outcome summary once the view is shown.
+  // Results, folded under Every AI proposal: add the outcome summary once the fold opens.
   document.addEventListener("DOMContentLoaded", () => {
     const el = document.getElementById("tab-outcomes");
     if (!el) return;
     const go = () => {
       if (el.hidden || el.querySelector(".campaigns-slot")) return;
-      const h = el.querySelector("h2");
-      if (!h) return;
-      const intro = h.nextElementSibling && h.nextElementSibling.matches("p.intro") ? h.nextElementSibling : h;
-      intro.insertAdjacentHTML("afterend", `<div class="campaigns-slot" data-kind="outcomes"></div>`);
+      el.insertAdjacentHTML("beforeend", `<div class="campaigns-slot" data-kind="outcomes"></div>`);
       fill(el);
     };
     new MutationObserver(go).observe(el, { attributes: true, attributeFilter: ["hidden"], childList: true });

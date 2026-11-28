@@ -340,7 +340,7 @@
       ${sec("vc-safety", "AI safety commitments signed here", (p.safety_commitments || []).length, list(p.safety_commitments, coLine))}
       ${sec("vc-routes", "How shareholders can reach these companies", null, `
         <p><strong>Shareholder routes:</strong> ${routesMix ? esc(routesMix) : "not recorded"}.</p>
-        <p>How each fund family voted on these proposals: Proposals and results › Fund family votes on AI proposals.</p>`)}
+        <p>How each fund family voted on these proposals: Advocacy proposals › Every AI proposal › Fund family votes.</p>`)}
       <p class="status-note">${drawn} of these companies have a sourced tie and appear in the map above. Not a recommendation.</p>`;
     const all = document.getElementById("vc-open-all");
     all.addEventListener("click", () => {
