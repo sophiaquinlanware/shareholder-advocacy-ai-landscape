@@ -900,6 +900,7 @@
     } else {
       facts = `<p>${esc(n.description || "")} ${link(n.source_url)}</p>${n.website ? `<p><a href="${esc(n.website)}" target="_blank" rel="noopener">Website</a></p>` : ""}`;
     }
+    facts += recordHtml(n);
     const head = `<p class="eyebrow" style="margin:0 0 4px">${esc(TYPE_LABEL[n.kind])}</p><h3>${esc(n.label)}</h3>${ringHtml}`;
     // For an ask, its name and coverage mark come first, so the long figures below are clearly about it.
     // Name and type first (owner, 2026-11-26), then the engagement block, then the facts.
@@ -914,6 +915,49 @@
     wireActions(document.getElementById("net-panel"));
     document.getElementById("net-close").addEventListener("click", clearSelection);
     wirePathFinder(n);
+  }
+
+  // The record that used to sit in the Proposals tabs (owner, 2026-11-27: everything "stored and able to be
+  // translated and visually represented in both the network and proposal graph"), opened on a click:
+  // a proposal's meeting, outcome, fund family votes and policy coverage; a company's campaigns and commitments.
+  function recordHtml(n) {
+    const out = [];
+    const VOTE = { FOR: "For", AGAINST: "Against", ABSTAIN: "Abstain", SPLIT: "Split", WITHHOLD: "Withhold" };
+    if (n.kind === "proposal") {
+      const bits = [];
+      if (n.meeting_date) bits.push(`<strong>Meeting:</strong> ${esc(window.DATES.long(n.meeting_date))}`);
+      if (n.filing_deadline) bits.push(`<strong>Filing deadline:</strong> ${esc(window.DATES.long(n.filing_deadline))}`);
+      if (bits.length) out.push(`<p>${bits.join(" · ")}</p>`);
+      if (n.status_reason) out.push(`<p><strong>Why it ended:</strong> ${esc(n.status_reason)} ${link(n.status_source_url)}</p>`);
+      if (n.results_url) out.push(`<p>${link(n.results_url, "vote results")}</p>`);
+      const fv = n.fund_votes || [];
+      if (fv.length) {
+        const rows = fv.map((r) => `<tr><td>${esc(r.family)}</td><td>${esc(VOTE[r.vote] || r.vote)}${r.vote === "SPLIT" && r.counts ? ` <span class="ticker">(${Object.entries(r.counts).map(([k, v]) => `${v} ${esc((VOTE[k] || k).toLowerCase())}`).join(", ")})</span>` : ""}${r.reviewed ? "" : ' <span class="unverified">auto-detected, not yet reviewed</span>'}</td><td>${(r.sources || []).slice(0, 1).map((u) => link(u, "N-PX")).join("")}</td></tr>`).join("");
+        out.push(`<h4 class="net-rec-h">How fund families voted</h4><table class="net-rec"><tbody>${rows}</tbody></table>${n.fund_votes_held_back ? `<p class="ticker">${esc(n.fund_votes_held_back)} more held back until checked.</p>` : ""}<p class="ticker">From SEC Form N-PX. No vote is rated; nothing here suggests how to vote.</p>`);
+      }
+      const cov = (n.ask_id && state.coverageByAsk && state.coverageByAsk[n.ask_id]) || [];
+      if (cov.length) {
+        const items = cov.map((c) => {
+          const ev = c.graph_id && state.byId.get(c.graph_id);
+          const name = ev ? `<button type="button" class="linklike" data-id="${esc(ev.id)}">${esc(ev.label)}</button>` : esc(c.policy_id);
+          return `<li>${name}: ${esc(c.coverage === "full" ? "covers this ask" : c.coverage === "partial" ? "partly covers it" : "does not cover it")}. ${esc(c.note || "")} ${link(c.source_url)}${c.reviewed ? "" : ' <span class="unverified">this site\'s reading, not yet reviewed</span>'}</li>`;
+        }).join("");
+        out.push(`<h4 class="net-rec-h">Rules that reach this ask</h4><ul class="conn">${items}</ul>`);
+      }
+    }
+    if (isCompanyKind(n.kind)) {
+      const cs = n.campaigns || [];
+      if (cs.length) {
+        const rows = cs.map((c) => `<tr><td>${esc(c.ask_label)}</td><td>${esc(c.stage_label)}${c.stage_basis ? ` <span class="ticker">(${esc(c.stage_basis)})</span>` : ""}</td><td class="num">${esc(c.filings)}</td><td class="num">${c.best_support != null ? esc(c.best_support) + "%" : ""}</td></tr>`).join("");
+        out.push(`<h4 class="net-rec-h">Each ask here, and how far it has got</h4><table class="net-rec"><thead><tr><th>Ask</th><th>Furthest step</th><th class="num">Filed</th><th class="num">Best support</th></tr></thead><tbody>${rows}</tbody></table>`);
+      }
+      const cm = n.commitments || [];
+      if (cm.length) {
+        const items = cm.map((c) => `<li><strong>${esc(c.status)}:</strong> ${esc(c.promised)} <span class="ticker">(engaged by ${esc(c.engaged_by)}${c.commitment_source_kind === "proponent" ? "; as reported by the investor" : ""})</span> ${link(c.commitment_source_url)}</li>`).join("");
+        out.push(`<h4 class="net-rec-h">Commitments the company made</h4><ul class="conn">${items}</ul>`);
+      }
+    }
+    return out.join("");
   }
 
   // One action item: its text, its links and, for a button, a real control (panel and List view alike).
@@ -2272,6 +2316,7 @@
     const defaults = { ...DEFAULTS, labelMin: twelfth ? twelfth.degree || 0 : 0 };
     state = { data, byId: new Map(data.nodes.map((n) => [n.id, n])), defaults, cfg: loadSettings(defaults), hiddenKinds: new Set(), hiddenLabels: new Set(), query: "", topic: "", year: "", view: "graph", selected: null, hover: null, kbId: null, path: null, gaps: false, hiddenCats: new Set(), litKinds: new Set(), litCats: new Set() };
     state.holdings = loadHoldings();
+    state.coverageByAsk = (raw && raw.coverage_by_ask) || {};
     state.lens = initialLens();
     {
       const g = new URLSearchParams(location.search).get("graph");

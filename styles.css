@@ -1326,3 +1326,8 @@ td.num, th.num, .vc-heat td.num, .vc-heat th.num { text-align: center; }
 /* Network and proposals: the tabs switch the graph's view, so its own switch is not shown; the proposal lists fold
    under the Proposals graph only. */
 #tab-network #net-mode { display: none; }
+/* Network panel: a node's record (proposal votes and coverage, company campaigns and commitments). */
+.net-rec-h { margin: 14px 0 4px; font-size: 14px; }
+.net-rec { width: 100%; font-size: 13px; border-collapse: collapse; }
+.net-rec td, .net-rec th { padding: 3px 6px 3px 0; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; }
+.net-rec .num { text-align: center; }
