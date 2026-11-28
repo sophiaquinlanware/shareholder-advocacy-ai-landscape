@@ -574,7 +574,7 @@
     "unit": "USD billions",
     "year": "FY2026",
     "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/default.aspx",
-    "source_kind": "company filing",
+    "source_kind": "company release",
     "quote": "Full-year revenue rose 68% to a record $193.7 billion."
    },
    "degree": 56
@@ -1789,7 +1789,7 @@
     "unit": "USD billions",
     "year": "FY2026",
     "source_url": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Record-Q4-and-FY-2026-Results-Driven-by-Cloud-Infrastructure--Cloud-Applications/default.aspx",
-    "source_kind": "company filing",
+    "source_kind": "company release",
     "quote": "FY 2026 Cloud Infra (IaaS) Revenue $18.1 billion, up 77% USD, and up 75% constant currency"
    },
    "degree": 21
@@ -1862,9 +1862,9 @@
     "segment": "Data Center segment",
     "value": 16.6,
     "unit": "USD billions",
-    "year": 2025,
+    "year": "2025",
     "source_url": "https://ir.amd.com/news-events/press-releases/detail/1276/amd-reports-fourth-quarter-and-full-year-2025-financial-results",
-    "source_kind": "company filing",
+    "source_kind": "company release",
     "quote": "For the full year 2025, Data Center segment revenue was a record $16.6 billion, up 32% year-over-year, reflecting growth across both EPYC CPUs and AMD Instinct GPUs."
    },
    "degree": 29
@@ -2030,7 +2030,7 @@
     "value": 3661,
     "unit": "USD millions",
     "year": "Q3 2026",
-    "source_url": "https://investingnews.com/coreweave-reports-strong-third-quarter-2026-results/",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000461/coreweave3q26earningspress.htm",
     "source_kind": "company filing",
     "quote": "Third Quarter 2026 Financial Highlights (In millions, except percentages and per share amounts) Three Months Ended September 30, 2026 2025 Revenue $ 3,661 $ 1,365"
    },
@@ -40927,6 +40927,7 @@
    "layer": "organizations",
    "source_url": "https://advocacy.consumerreports.org/research/consumer-reports-urges-gov-newsom-to-sign-california-ai-transparency-act-ab-853/",
    "quote": "Consumer Reports sent a letter to California Governor Gavin Newsom requesting that he sign the California AI Transparency Act (AB 853).",
+   "date": "2025-10-10",
    "note": "Support for AB 853 before signature, as published by Consumer Reports.",
    "basis": "sourced",
    "review_status": "auto-detected, not yet reviewed"
@@ -40986,7 +40987,7 @@
    "source_url": "https://www.citizen.org/wp-content/uploads/Public_Citizen_OMB_8.28.25.pdf",
    "quote": "Allowing Grok into federal systems would likely invite chaos, controversy, and deeply compromised governance",
    "date": "2025-08-28",
-   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change organized it).",
+   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change are listed first among the signers).",
    "basis": "sourced",
    "review_status": "auto-detected, not yet reviewed"
   },
@@ -40998,7 +40999,7 @@
    "source_url": "https://www.citizen.org/wp-content/uploads/Public_Citizen_OMB_8.28.25.pdf",
    "quote": "Allowing Grok into federal systems would likely invite chaos, controversy, and deeply compromised governance",
    "date": "2025-08-28",
-   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change organized it).",
+   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change are listed first among the signers).",
    "basis": "sourced",
    "review_status": "auto-detected, not yet reviewed"
   },
@@ -41010,7 +41011,7 @@
    "source_url": "https://www.citizen.org/wp-content/uploads/Public_Citizen_OMB_8.28.25.pdf",
    "quote": "Allowing Grok into federal systems would likely invite chaos, controversy, and deeply compromised governance",
    "date": "2025-08-28",
-   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change organized it).",
+   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change are listed first among the signers).",
    "basis": "sourced",
    "review_status": "auto-detected, not yet reviewed"
   },
@@ -41022,7 +41023,7 @@
    "source_url": "https://www.citizen.org/wp-content/uploads/Public_Citizen_OMB_8.28.25.pdf",
    "quote": "Allowing Grok into federal systems would likely invite chaos, controversy, and deeply compromised governance",
    "date": "2025-08-28",
-   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change organized it).",
+   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change are listed first among the signers).",
    "basis": "sourced",
    "review_status": "auto-detected, not yet reviewed"
   },
@@ -41032,7 +41033,7 @@
    "type": "published a critique of",
    "layer": "organizations",
    "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
-   "quote": "However, each of these companies failed to live up to their own commitments",
+   "quote": "Big Tech companies like Amazon, Anthropic, Google, Inflection, Meta, Microsoft, and OpenAI all pledged to voluntarily self-regulate amid a wave of public concern about AI harms. However, each of these companies failed to live up to their own commitments",
    "date": "2026-07-31",
    "note": "Comment to the FTC, Matter No. P264200. The preceding sentence names Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI as having pledged to self-regulate voluntarily.",
    "basis": "sourced",
@@ -41044,7 +41045,7 @@
    "type": "published a critique of",
    "layer": "organizations",
    "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
-   "quote": "However, each of these companies failed to live up to their own commitments",
+   "quote": "Big Tech companies like Amazon, Anthropic, Google, Inflection, Meta, Microsoft, and OpenAI all pledged to voluntarily self-regulate amid a wave of public concern about AI harms. However, each of these companies failed to live up to their own commitments",
    "date": "2026-07-31",
    "note": "Comment to the FTC, Matter No. P264200. The preceding sentence names Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI as having pledged to self-regulate voluntarily.",
    "basis": "sourced",
@@ -41056,7 +41057,7 @@
    "type": "published a critique of",
    "layer": "organizations",
    "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
-   "quote": "However, each of these companies failed to live up to their own commitments",
+   "quote": "Big Tech companies like Amazon, Anthropic, Google, Inflection, Meta, Microsoft, and OpenAI all pledged to voluntarily self-regulate amid a wave of public concern about AI harms. However, each of these companies failed to live up to their own commitments",
    "date": "2026-07-31",
    "note": "Comment to the FTC, Matter No. P264200. The preceding sentence names Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI as having pledged to self-regulate voluntarily.",
    "basis": "sourced",
@@ -41068,7 +41069,7 @@
    "type": "published a critique of",
    "layer": "organizations",
    "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
-   "quote": "However, each of these companies failed to live up to their own commitments",
+   "quote": "Big Tech companies like Amazon, Anthropic, Google, Inflection, Meta, Microsoft, and OpenAI all pledged to voluntarily self-regulate amid a wave of public concern about AI harms. However, each of these companies failed to live up to their own commitments",
    "date": "2026-07-31",
    "note": "Comment to the FTC, Matter No. P264200. The preceding sentence names Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI as having pledged to self-regulate voluntarily.",
    "basis": "sourced",
@@ -41080,7 +41081,7 @@
    "type": "published a critique of",
    "layer": "organizations",
    "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
-   "quote": "However, each of these companies failed to live up to their own commitments",
+   "quote": "Big Tech companies like Amazon, Anthropic, Google, Inflection, Meta, Microsoft, and OpenAI all pledged to voluntarily self-regulate amid a wave of public concern about AI harms. However, each of these companies failed to live up to their own commitments",
    "date": "2026-07-31",
    "note": "Comment to the FTC, Matter No. P264200. The preceding sentence names Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI as having pledged to self-regulate voluntarily.",
    "basis": "sourced",
@@ -41092,7 +41093,7 @@
    "type": "published a critique of",
    "layer": "organizations",
    "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
-   "quote": "However, each of these companies failed to live up to their own commitments",
+   "quote": "Big Tech companies like Amazon, Anthropic, Google, Inflection, Meta, Microsoft, and OpenAI all pledged to voluntarily self-regulate amid a wave of public concern about AI harms. However, each of these companies failed to live up to their own commitments",
    "date": "2026-07-31",
    "note": "Comment to the FTC, Matter No. P264200. The preceding sentence names Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI as having pledged to self-regulate voluntarily.",
    "basis": "sourced",
@@ -41105,6 +41106,7 @@
    "layer": "organizations",
    "source_url": "https://www.nclc.org/trump-ai-order-seeks-to-block-states-from-protecting-people-from-big-tech-risks/",
    "quote": "The actions that President Trump is directing federal agencies to take to block states from protecting people from current and future AI dangers are reckless, unlawful, and will not stand up to challenge",
+   "date": "2025-12-12",
    "note": "Statement issued the day after the order, quoting NCLC advocates.",
    "basis": "sourced",
    "review_status": "auto-detected, not yet reviewed"
@@ -41462,7 +41464,7 @@
     "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
     "source_kind": "company filing",
     "quote": "LinkedIn Corporation 8 77,088 1.6 %",
-    "via_parent": "LinkedIn Corporation"
+    "via_parent": "LinkedIn Corporation, a Microsoft subsidiary (the filing names LinkedIn)"
    }
   },
   {

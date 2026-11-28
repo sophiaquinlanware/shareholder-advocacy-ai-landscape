@@ -553,7 +553,7 @@
    "unit": "USD billions",
    "year": "FY2026",
    "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/default.aspx",
-   "source_kind": "company filing",
+   "source_kind": "company release",
    "quote": "Full-year revenue rose 68% to a record $193.7 billion."
   }
  },
@@ -3118,7 +3118,7 @@
    "unit": "USD billions",
    "year": "FY2026",
    "source_url": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Record-Q4-and-FY-2026-Results-Driven-by-Cloud-Infrastructure--Cloud-Applications/default.aspx",
-   "source_kind": "company filing",
+   "source_kind": "company release",
    "quote": "FY 2026 Cloud Infra (IaaS) Revenue $18.1 billion, up 77% USD, and up 75% constant currency"
   }
  },
@@ -3277,9 +3277,9 @@
    "segment": "Data Center segment",
    "value": 16.6,
    "unit": "USD billions",
-   "year": 2025,
+   "year": "2025",
    "source_url": "https://ir.amd.com/news-events/press-releases/detail/1276/amd-reports-fourth-quarter-and-full-year-2025-financial-results",
-   "source_kind": "company filing",
+   "source_kind": "company release",
    "quote": "For the full year 2025, Data Center segment revenue was a record $16.6 billion, up 32% year-over-year, reflecting growth across both EPYC CPUs and AMD Instinct GPUs."
   }
  },
@@ -3585,7 +3585,7 @@
    "value": 3661,
    "unit": "USD millions",
    "year": "Q3 2026",
-   "source_url": "https://investingnews.com/coreweave-reports-strong-third-quarter-2026-results/",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000461/coreweave3q26earningspress.htm",
    "source_kind": "company filing",
    "quote": "Third Quarter 2026 Financial Highlights (In millions, except percentages and per share amounts) Three Months Ended September 30, 2026 2025 Revenue $ 3,661 $ 1,365"
   }

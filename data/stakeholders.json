@@ -2413,7 +2413,8 @@
    "quote": "Consumer Reports sent a letter to California Governor Gavin Newsom requesting that he sign the California AI Transparency Act (AB 853).",
    "note": "Support for AB 853 before signature, as published by Consumer Reports.",
    "basis": "sourced",
-   "review_status": "auto-detected, not yet reviewed"
+   "review_status": "auto-detected, not yet reviewed",
+   "date": "2025-10-10"
   },
   {
    "from": "org-cfa",
@@ -2465,7 +2466,7 @@
    "source_url": "https://www.citizen.org/wp-content/uploads/Public_Citizen_OMB_8.28.25.pdf",
    "quote": "Allowing Grok into federal systems would likely invite chaos, controversy, and deeply compromised governance",
    "date": "2025-08-28",
-   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change organized it).",
+   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change are listed first among the signers).",
    "basis": "sourced",
    "review_status": "auto-detected, not yet reviewed"
   },
@@ -2476,7 +2477,7 @@
    "source_url": "https://www.citizen.org/wp-content/uploads/Public_Citizen_OMB_8.28.25.pdf",
    "quote": "Allowing Grok into federal systems would likely invite chaos, controversy, and deeply compromised governance",
    "date": "2025-08-28",
-   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change organized it).",
+   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change are listed first among the signers).",
    "basis": "sourced",
    "review_status": "auto-detected, not yet reviewed"
   },
@@ -2487,7 +2488,7 @@
    "source_url": "https://www.citizen.org/wp-content/uploads/Public_Citizen_OMB_8.28.25.pdf",
    "quote": "Allowing Grok into federal systems would likely invite chaos, controversy, and deeply compromised governance",
    "date": "2025-08-28",
-   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change organized it).",
+   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change are listed first among the signers).",
    "basis": "sourced",
    "review_status": "auto-detected, not yet reviewed"
   },
@@ -2498,7 +2499,7 @@
    "source_url": "https://www.citizen.org/wp-content/uploads/Public_Citizen_OMB_8.28.25.pdf",
    "quote": "Allowing Grok into federal systems would likely invite chaos, controversy, and deeply compromised governance",
    "date": "2025-08-28",
-   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change organized it).",
+   "note": "Joint letter to OMB; the organization is on the letter's own signature list (Public Citizen and Color of Change are listed first among the signers).",
    "basis": "sourced",
    "review_status": "auto-detected, not yet reviewed"
   },
@@ -2507,7 +2508,7 @@
    "to": "co-AMZN",
    "relation": "published a critique of",
    "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
-   "quote": "However, each of these companies failed to live up to their own commitments",
+   "quote": "Big Tech companies like Amazon, Anthropic, Google, Inflection, Meta, Microsoft, and OpenAI all pledged to voluntarily self-regulate amid a wave of public concern about AI harms. However, each of these companies failed to live up to their own commitments",
    "date": "2026-07-31",
    "note": "Comment to the FTC, Matter No. P264200. The preceding sentence names Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI as having pledged to self-regulate voluntarily.",
    "basis": "sourced",
@@ -2518,7 +2519,7 @@
    "to": "lab-anthropic",
    "relation": "published a critique of",
    "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
-   "quote": "However, each of these companies failed to live up to their own commitments",
+   "quote": "Big Tech companies like Amazon, Anthropic, Google, Inflection, Meta, Microsoft, and OpenAI all pledged to voluntarily self-regulate amid a wave of public concern about AI harms. However, each of these companies failed to live up to their own commitments",
    "date": "2026-07-31",
    "note": "Comment to the FTC, Matter No. P264200. The preceding sentence names Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI as having pledged to self-regulate voluntarily.",
    "basis": "sourced",
@@ -2529,7 +2530,7 @@
    "to": "co-GOOGL",
    "relation": "published a critique of",
    "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
-   "quote": "However, each of these companies failed to live up to their own commitments",
+   "quote": "Big Tech companies like Amazon, Anthropic, Google, Inflection, Meta, Microsoft, and OpenAI all pledged to voluntarily self-regulate amid a wave of public concern about AI harms. However, each of these companies failed to live up to their own commitments",
    "date": "2026-07-31",
    "note": "Comment to the FTC, Matter No. P264200. The preceding sentence names Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI as having pledged to self-regulate voluntarily.",
    "basis": "sourced",
@@ -2540,7 +2541,7 @@
    "to": "co-META",
    "relation": "published a critique of",
    "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
-   "quote": "However, each of these companies failed to live up to their own commitments",
+   "quote": "Big Tech companies like Amazon, Anthropic, Google, Inflection, Meta, Microsoft, and OpenAI all pledged to voluntarily self-regulate amid a wave of public concern about AI harms. However, each of these companies failed to live up to their own commitments",
    "date": "2026-07-31",
    "note": "Comment to the FTC, Matter No. P264200. The preceding sentence names Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI as having pledged to self-regulate voluntarily.",
    "basis": "sourced",
@@ -2551,7 +2552,7 @@
    "to": "co-MSFT",
    "relation": "published a critique of",
    "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
-   "quote": "However, each of these companies failed to live up to their own commitments",
+   "quote": "Big Tech companies like Amazon, Anthropic, Google, Inflection, Meta, Microsoft, and OpenAI all pledged to voluntarily self-regulate amid a wave of public concern about AI harms. However, each of these companies failed to live up to their own commitments",
    "date": "2026-07-31",
    "note": "Comment to the FTC, Matter No. P264200. The preceding sentence names Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI as having pledged to self-regulate voluntarily.",
    "basis": "sourced",
@@ -2562,7 +2563,7 @@
    "to": "lab-openai",
    "relation": "published a critique of",
    "source_url": "https://epic.org/wp-content/uploads/2026/07/EPIC-FTC-AI-Policy-Statement-Comment.pdf",
-   "quote": "However, each of these companies failed to live up to their own commitments",
+   "quote": "Big Tech companies like Amazon, Anthropic, Google, Inflection, Meta, Microsoft, and OpenAI all pledged to voluntarily self-regulate amid a wave of public concern about AI harms. However, each of these companies failed to live up to their own commitments",
    "date": "2026-07-31",
    "note": "Comment to the FTC, Matter No. P264200. The preceding sentence names Amazon, Anthropic, Google, Inflection, Meta, Microsoft and OpenAI as having pledged to self-regulate voluntarily.",
    "basis": "sourced",
@@ -2576,7 +2577,8 @@
    "quote": "The actions that President Trump is directing federal agencies to take to block states from protecting people from current and future AI dangers are reckless, unlawful, and will not stand up to challenge",
    "note": "Statement issued the day after the order, quoting NCLC advocates.",
    "basis": "sourced",
-   "review_status": "auto-detected, not yet reviewed"
+   "review_status": "auto-detected, not yet reviewed",
+   "date": "2025-12-12"
   },
   {
    "from": "org-tech-oversight-project",
